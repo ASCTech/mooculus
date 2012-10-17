@@ -1,0 +1,60 @@
+This is the 1151 schedule.
+
+* Week 1
+** 1.4 Review of functions
+** 2.1 Idea of limits
+* Week 2
+** 2.2 Definition of limits
+** 2.3 Limit laws
+** 2.4 Infinite limits
+* Week 3
+** 2.5 Limits at infinity
+** 2.6 Continuity
+* Week 4
+** 3.1 Derivative
+** 3.1 More derivative
+** 3.2 Rules of differentiation
+* Week 5
+** MIDTERM
+** 3.3 Product and quotient rules
+** 3.4 Derivatives of trig functions
+* Week 6
+** 3.5 Derivatives as rates of change
+** 3.6 Chain rule
+** 3.7 Implicit differentiation
+* Week 7
+** 3.8 Derivatives of exp and log
+** 3.9 Derivatives of inverse trig functions
+** 3.10 Related rates
+* Week 8
+** 3.10 Related rates again
+** 4.1 Maxima and minima
+** 4.2 What derivatives tell us
+* Week 9
+** MIDTERM
+** 4.3 Graphing functions
+** 4.4 Optimization problems
+* Week 10
+** 4.4 Optimization problems
+** 4.5 Linear approximation and differentiakls
+** 4.6 Mean value theorem
+* Week 11
+** 4.7 L'hopital's rule
+** 4.8 Newton's method
+** 4.9 Antiderivatives
+* Week 12
+** 5.1 Approximation area under curve
+** 5.1 Approximating area under curve
+* Week 13
+** MIDTERM 3
+** 5.2 Definite integral
+** 5.3 Fundamental theorem of calculuis
+* Week 14
+** 5.4 Working with integrals
+* Week 15
+** 5.5 Substitution rule
+** 5.5 Substitution rule again
+** 6.1 Velocity and net change
+* Week 16
+** 6.2 Regions Between curves
+** Final exam
