@@ -1,64 +1,177 @@
-* What is the desired name of your class? *This question is required.
-For Example: "Generation Rx"
-* What is the desired shortname for your course? *
-Ghrist's is "calcsing"
-* Write a short 1-2 sentence (<200 character) course description. *
-Ghrist: Calculus is one of the grandest achievements of human thought, explaining everything from planetary orbits to the optimal size of a city to the periodicity of a heartbeat. This brisk course covers the core ideas of single-variable Calculus with emphases on conceptual understanding and applications. The course is ideal for students beginning in the engineering, physical, and social sciences. Distinguishing features of the course include:
+* More aggressive online features?
+
+- forum features
+- youtube live for office hours
+- calculus call-in show
+- google voice phone number (call me at 773-809-5659, leave a message)
+- khan academy style exercises
+
+* What is the desired name of your class? 
+Calculus One (I think this is nice to have One spelled out, like the
+Statistics One course in Coursera already, or Air Force One)
+
+* What is the desired shortname for your course?
+calculus1
+
+* Write a short 1-2 sentence (<200 character) course description.
+
+Calculus is about the very large, the very small, and how things
+change.  The surprise is that something so abstract ends up explaining
+so much of the real world.
+
+The surprise is that, by studying something so abstract, we
+end up explaining the real world: with calculus, we can navigate
+spacecraft, maximize profit, dose medicine, solve equations.
+
+Calculus invites us to study some abstract concepts, like infinity,
+the infinitely small, the way things change.  The wonderful surprise
+is that such abstractions end up explaining the world: not only the
+physical world, but how humans act.
+
+Calculus starts with profound concepts (infinity, the infinitely
+small, how things change); the surprise is that these human thoughts
+end up explaining the world---
+
+ us by showing something so
+abstract explains the world
+
+This course is an introduction to calculus, ideal for someone who has
+never seen the subject before, or for someone who wants to review
+calculus.
+
+
+
+The course is ideal for a student who hasn't seen calculus before, or
+who wishes to review calculus.
+
+Ghrist: Calculus is one of the grandest achievements of human thought,
+explaining everything from planetary orbits to the optimal size of a
+city to the periodicity of a heartbeat. This brisk course covers the
+core ideas of single-variable Calculus with emphases on conceptual
+understanding and applications.  The course is ideal for students
+beginning in the engineering, physical, and social
+sciences. Distinguishing features of the course include:
 
 the introduction and use of Taylor series and approximations from the beginning;
 a novel synthesis of discrete and continuous forms of Calculus;
 an emphasis on the conceptual over the computational; and
 a clear, entertaining, unified approach.
-* How many hours per week can your students expect to spend on this class including videos and assignments? *This question is required.
+
+* How many hours per week can your students expect to spend on this class including videos and assignments?
 6 - 10 hours per week?
-* Write a 1-2 paragraph description of your course. *This question is required.
-This description should provide an overview of what the course will cover and showcase what is exciting about the course.
-* Write a 1-2 paragraph bio about yourself. *
-* Please write a brief sentence that will explain each week's (or module's) topic. We will be asking for a syllabus from you later. *This question is required
-* Write a paragraph briefly explaining the format of your course. *This question is required.
 
-For example: "The class will consist of lecture videos, which are between 8 and 12 minutes in length. These contain 1-2 integrated quiz questions per video. There will also be standalone homeworks that are not part of video lectures, optional programming assignments, and a (not optional) final exam. Discussion boards will be used in this class."
-* Write 1-2 paragraphs about any prerequisite background that students should have in order to succeed in your course. *This question is required.
+* Write a 1-2 paragraph description of your course. 
 
-For example: "Programming proficiency in an object-oriented programming language such as Java, C#, C++, Python, or Ruby is required." Conversely, for an introductory computer science course, you may want to let students know that no programming background is required.
+Mostly about differential calculus.
+
+Emphasis on 
+
+
+
+* Write a 1-2 paragraph bio about yourself.
+
+Jim Fowler teaches mathematics at The Ohio State University; he
+studied at Harvard University and at the University of Chicago.
+
+his research emphasizes symmetries of high-dimensional objects.
+
+Robert Ghrist is the Andrea Mitchell University Professor of
+Mathematics and Electrical & Systems Engineering at the University of
+Pennsylvania.
+
+Prof. Ghrist is an applied mathematician whose expertise consists of
+finding novel applications for previously un-applied branches of
+Mathematics to Engineering Systems.
+
+Examples include applications of algebraic topology to sensor
+networks, sheaf theory to optimization and network data, CAT(0)
+geometry to robot motion planning, and braid theory to dynamical
+systems.
+
+His work has been honored by Scientific American as a "SciAm50 Top for
+Research Innovation" in 2007 and a Presidential Early Career Award for
+Scientists and Engineers (PECASE) in 2004. The S. Reid Warren,
+Jr. Award was granted to Prof. Ghrist by Penn students in 2009 for
+exceptional teaching.
+
+* Please write a brief sentence that will explain each week's (or module's) topic. We will be asking for a syllabus from you later
+
+* Write a paragraph briefly explaining the format of your course. 
+
+The course consists of lecture videos, typically between five and
+fifteen minutes in length.  These videos contain quiz questions.
+There are homework assignments, three midterms, and a final exam.
+
+* Write 1-2 paragraphs about any prerequisite background that students should have in order to succeed in your course. 
+
+Previous exposure to calculus is not required; to succeed, a student
+should have seen algebra and trigonometry.
+
 * If applicable, provide a list of suggested readings in advance.
 
-These readings could be articles/books that will be covered during the class, or textbooks that cover the content in greater detail. As far as possible, we recommend not requiring students to purchase any books as this can be a significant barrier to entry for students that are less well off. Online and free resources are highly encouraged.
+There are free calculus texts available, for example,
+
+http://www.whitman.edu/mathematics/calculus/
+
+but presumably I could take that text and produce a version with more
+interactive figures and such, using, say, the lovely tufte class.
+
 * Write your answer to suggested Frequently Asked Question (FAQ) #1: What resources will I need for this class?
+
+Mathematics is a human activity; pen and paper is highly recommended.
+You do NOT need a graphing calculator.
+
 * Write your answer to suggested FAQ #2: What is the coolest thing I'll learn if I take this class?
 
+
+
 Think of a short, one-liner to pique their interest.
+
 * Write any additional FAQs and their responses that may be specific to your course.
 
-One mandatory FAQ from Coursera that will be added to all courses is:
-[Mandatory] Will I get a certificate after completing this class?
-[Default Response] Yes. Students who successfully complete the class will receive a certificate signed by the instructor.
+Will I get a certificate after completing this class?
+
+Yes.  Students who successfully complete the class will receive a certificate signed by the instructor.
+
 * As a response to students signing up for your class, please write a welcoming email to the students who click on the "Take Class" button on your class course description page.
 
-In past runs of courses, students have greatly appreciated receiving a welcome email from the professor teaching their course. *This question is required.
-
-Here is an example of a sample email. Yours could be more or less detailed.
 Dear [Student Name],
 
-Thank you for signing up for [CLASSNAME]! With the explosion of digital images everywhere on the Internet and in our personal lives, computer vision has emerged as one of the most exciting fields in today's technology world. We hope that you will join us in an adventure to learn about the fundamental theories and building blocks, as well as the current state-of-the-art methods and techniques in computer vision.
+Thank you for signing up for Calculus One.
 
-We expect our class to be offered in the fall of 2012. We'll notify you again when the class starts.
+With the explosion of digital images everywhere on the Internet and in
+our personal lives, computer vision has emerged as one of the most
+exciting fields in today's technology world. We hope that you will
+join us in an adventure to learn about the fundamental theories and
+building blocks, as well as the current state-of-the-art methods and
+techniques in computer vision.
 
-Yours,
+We'll notify you again in January 2013 to begin our time together.
 
-Silvio and Fei-Fei
+~jim
 
 * Finally, as the course begins, an additional welcome email is sent to students in your course. Please write an email that welcomes them to the start of the class and explains the structure of the course, expectations, initial action steps for the students, a thank you for embarking on the journey of your course, etc.
 
-This letter can be revised and updated before the course begins. *This question is required.
-
-Here is an example of a sample email. Yours could be more or less detailed.
 Dear [Student Name],
 
-Welcome to [Coursename]. You can now access the course materials from www.coursera.org/course/gamification. You are pioneering both an emerging field and a novel form of online learning. My teaching team and I have done our best to create a substantive and engaging experience. We'll do everything we can to make the course run smoothly, but bear with us -- this is all new!
+Welcome to Calculus One.
 
-If you have not yet filled out the informational survey, please do so at [http://COURSESITE-SURVEY-LINK]. This will provide useful information on who is taking the course. I encourage you to consider yourself an active participant in this course.
+You can now access the course at www.coursera.org/course/calculus1
 
-Gamification is a subject that is developing quickly in the real world. In some aspects it is uncertain or controversial today. The course will give you a foundation to understand what gamification is and how to apply it. The rest is up to you. Thank you for joining me on this adventure!
+You are pioneering both an emerging field and a novel form of online
+learning. My teaching team and I have done our best to create a
+substantive and engaging experience. We'll do everything we can to
+make the course run smoothly, but bear with us -- this is all new!
 
--Kevin Werbach-
+If you have not yet filled out the informational survey, please do so
+at [http://COURSESITE-SURVEY-LINK]. This will provide useful
+information on who is taking the course. I encourage you to consider
+yourself an active participant in this course.
+
+Gamification is a subject that is developing quickly in the real
+world. In some aspects it is uncertain or controversial today. The
+course will give you a foundation to understand what gamification is
+and how to apply it. The rest is up to you. Thank you for joining me
+on this adventure!
+
+~jim

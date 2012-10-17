@@ -1,40 +1,40 @@
-This is the 1151 schedule.
+This is the 1151 schedule; I should be moving the MOOC somewhat faster than it does.
 
-* Week 1
+* Week 1: Limits, conceptually
 ** 1.4 Review of functions
 ** 2.1 Idea of limits
-* Week 2
+* Week 2: Limits, precisely
 ** 2.2 Definition of limits
 ** 2.3 Limit laws
 ** 2.4 Infinite limits
-* Week 3
+* Week 3: Continuity
 ** 2.5 Limits at infinity
 ** 2.6 Continuity
-* Week 4
+* Week 4: The Derivative
 ** 3.1 Derivative
 ** 3.1 More derivative
 ** 3.2 Rules of differentiation
-* Week 5
+* Week 5: Techniques of Differentiation
 ** MIDTERM
 ** 3.3 Product and quotient rules
 ** 3.4 Derivatives of trig functions
-* Week 6
+* Week 6: 
 ** 3.5 Derivatives as rates of change
 ** 3.6 Chain rule
 ** 3.7 Implicit differentiation
-* Week 7
+* Week 7: Derivatives of Transcendental Functions
 ** 3.8 Derivatives of exp and log
 ** 3.9 Derivatives of inverse trig functions
 ** 3.10 Related rates
-* Week 8
+* Week 8: Applications
 ** 3.10 Related rates again
 ** 4.1 Maxima and minima
 ** 4.2 What derivatives tell us
-* Week 9
+* Week 9: Optimization
 ** MIDTERM
 ** 4.3 Graphing functions
 ** 4.4 Optimization problems
-* Week 10
+* Week 10: 
 ** 4.4 Optimization problems
 ** 4.5 Linear approximation and differentiakls
 ** 4.6 Mean value theorem
@@ -42,10 +42,10 @@ This is the 1151 schedule.
 ** 4.7 L'hopital's rule
 ** 4.8 Newton's method
 ** 4.9 Antiderivatives
-* Week 12
+* Week 12: Integrals, conceptually
 ** 5.1 Approximation area under curve
 ** 5.1 Approximating area under curve
-* Week 13
+* Week 13: Integrals, precisely
 ** MIDTERM 3
 ** 5.2 Definite integral
 ** 5.3 Fundamental theorem of calculuis
@@ -57,4 +57,7 @@ This is the 1151 schedule.
 ** 6.1 Velocity and net change
 * Week 16
 ** 6.2 Regions Between curves
+** 6.3 Volume by slicing
+** 6.4 Volume by shells
+** Other topics: Surface area, arc length, centers of mass
 ** Final exam
