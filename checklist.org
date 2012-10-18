@@ -7,6 +7,7 @@
 - khan academy style exercises
 
 * What is the desired name of your class? 
+
 Calculus One (I think this is nice to have One spelled out, like the
 Statistics One course in Coursera already, or Air Force One)
 
@@ -15,31 +16,44 @@ calculus1
 
 * Write a short 1-2 sentence (<200 character) course description.
 
-Calculus is about the very large, the very small, and how things
-change.  The surprise is that something so abstract ends up explaining
-so much of the real world.
+Calculus One is a first introduction to differential and integral
+calculus.  The course emphasizes
 
-The surprise is that, by studying something so abstract, we
-end up explaining the real world: with calculus, we can navigate
-spacecraft, maximize profit, dose medicine, solve equations.
+
+
+* How many hours per week can your students expect to spend on this class including videos and assignments?
+6 - 10 hours per week?
+
+* Write a 1-2 paragraph description of your course. 
+
+Calculus is about the very large, the very small, and how things
+change.  The surprise is that something seemingly so abstract ends up
+explaining the real world: calculus plays a starring role in the
+biological, physical, and social sciences.
+
+
+
+This course is a first introduction to 
+
+This course is a first
+introduction
+
+- clear, patient explanations
+- five to fifteen minute videos
+- emphasizing mastery
+- instant feedback on homework
+- individual tutoring
+
+Mostly about differential calculus.
 
 Calculus invites us to study some abstract concepts, like infinity,
 the infinitely small, the way things change.  The wonderful surprise
 is that such abstractions end up explaining the world: not only the
 physical world, but how humans act.
 
-Calculus starts with profound concepts (infinity, the infinitely
-small, how things change); the surprise is that these human thoughts
-end up explaining the world---
-
- us by showing something so
-abstract explains the world
-
-This course is an introduction to calculus, ideal for someone who has
-never seen the subject before, or for someone who wants to review
+This course is a first introduction to calculus, ideal for someone who
+has never seen the subject before, or for someone who wants to review
 calculus.
-
-
 
 The course is ideal for a student who hasn't seen calculus before, or
 who wishes to review calculus.
@@ -57,12 +71,7 @@ a novel synthesis of discrete and continuous forms of Calculus;
 an emphasis on the conceptual over the computational; and
 a clear, entertaining, unified approach.
 
-* How many hours per week can your students expect to spend on this class including videos and assignments?
-6 - 10 hours per week?
 
-* Write a 1-2 paragraph description of your course. 
-
-Mostly about differential calculus.
 
 Emphasis on 
 
@@ -70,37 +79,20 @@ Emphasis on
 
 * Write a 1-2 paragraph bio about yourself.
 
-Jim Fowler teaches mathematics at The Ohio State University; he
-studied at Harvard University and at the University of Chicago.
-
-his research emphasizes symmetries of high-dimensional objects.
-
-Robert Ghrist is the Andrea Mitchell University Professor of
-Mathematics and Electrical & Systems Engineering at the University of
-Pennsylvania.
-
-Prof. Ghrist is an applied mathematician whose expertise consists of
-finding novel applications for previously un-applied branches of
-Mathematics to Engineering Systems.
-
-Examples include applications of algebraic topology to sensor
-networks, sheaf theory to optimization and network data, CAT(0)
-geometry to robot motion planning, and braid theory to dynamical
-systems.
-
-His work has been honored by Scientific American as a "SciAm50 Top for
-Research Innovation" in 2007 and a Presidential Early Career Award for
-Scientists and Engineers (PECASE) in 2004. The S. Reid Warren,
-Jr. Award was granted to Prof. Ghrist by Penn students in 2009 for
-exceptional teaching.
+Jim Fowler teaches mathematics at The Ohio State University.  His
+research focuses on geometric group theory and the topology of
+high-dimensional manifolds; in other words, he studies the symmetries
+of objects with many degrees of freedom.  Prior to OSU, he received an
+undergraduate degree from Harvard University, and received a
+Ph.D. from the University of Chicago in 2009.
 
 * Please write a brief sentence that will explain each week's (or module's) topic. We will be asking for a syllabus from you later
 
 * Write a paragraph briefly explaining the format of your course. 
 
-The course consists of lecture videos, typically between five and
-fifteen minutes in length.  These videos contain quiz questions.
-There are homework assignments, three midterms, and a final exam.
+The course consists of short lecture videos, typically between five
+and fifteen minutes in length.  There are homework assignments, three
+midterms, and a final exam.
 
 * Write 1-2 paragraphs about any prerequisite background that students should have in order to succeed in your course. 
 
@@ -118,11 +110,9 @@ interactive figures and such, using, say, the lovely tufte class.
 
 * Write your answer to suggested Frequently Asked Question (FAQ) #1: What resources will I need for this class?
 
-Mathematics is a human activity; pen and paper is highly recommended.
-You do NOT need a graphing calculator.
+Mathematics is a human activity; pen and paper is highly recommended.  You do not need a graphing calculator.
 
 * Write your answer to suggested FAQ #2: What is the coolest thing I'll learn if I take this class?
-
 
 
 Think of a short, one-liner to pique their interest.
@@ -138,6 +128,11 @@ Yes.  Students who successfully complete the class will receive a certificate si
 Dear [Student Name],
 
 Thank you for signing up for Calculus One.
+
+Calculus is a triumph of humankind, and quantitative techniques are
+becoming increasingly important to making the modern world work.  I am
+looking forward to your being introduced to this, perhaps the most
+important development of the past five hundred years.
 
 With the explosion of digital images everywhere on the Internet and in
 our personal lives, computer vision has emerged as one of the most
