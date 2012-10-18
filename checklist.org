@@ -17,7 +17,7 @@ calculus1
 * Write a short 1-2 sentence (<200 character) course description.
 
 Calculus One is a first introduction to differential and integral
-calculus.  The course emphasizes
+calculus.
 
 
 
@@ -31,6 +31,12 @@ change.  The surprise is that something seemingly so abstract ends up
 explaining the real world: calculus plays a starring role in the
 biological, physical, and social sciences.
 
+This course is a first introduction to calculus, ideal for someone who
+has never seen the subject before or for someone who wants a careful
+review.  The course features
+- interactive graphs to provide intuition,
+- instant feedback on practice problems,
+- 
 
 
 This course is a first introduction to 
@@ -46,26 +52,6 @@ introduction
 
 Mostly about differential calculus.
 
-Calculus invites us to study some abstract concepts, like infinity,
-the infinitely small, the way things change.  The wonderful surprise
-is that such abstractions end up explaining the world: not only the
-physical world, but how humans act.
-
-This course is a first introduction to calculus, ideal for someone who
-has never seen the subject before, or for someone who wants to review
-calculus.
-
-The course is ideal for a student who hasn't seen calculus before, or
-who wishes to review calculus.
-
-Ghrist: Calculus is one of the grandest achievements of human thought,
-explaining everything from planetary orbits to the optimal size of a
-city to the periodicity of a heartbeat. This brisk course covers the
-core ideas of single-variable Calculus with emphases on conceptual
-understanding and applications.  The course is ideal for students
-beginning in the engineering, physical, and social
-sciences. Distinguishing features of the course include:
-
 the introduction and use of Taylor series and approximations from the beginning;
 a novel synthesis of discrete and continuous forms of Calculus;
 an emphasis on the conceptual over the computational; and
@@ -79,12 +65,15 @@ Emphasis on
 
 * Write a 1-2 paragraph bio about yourself.
 
-Jim Fowler teaches mathematics at The Ohio State University.  His
-research focuses on geometric group theory and the topology of
-high-dimensional manifolds; in other words, he studies the symmetries
-of objects with many degrees of freedom.  Prior to OSU, he received an
-undergraduate degree from Harvard University, and received a
-Ph.D. from the University of Chicago in 2009.
+Jim Fowler teaches mathematics at The Ohio State University.  Broadly
+speaking, he is a geometer and topologist; more specifically, he
+studies the topology of high-dimensional manifolds and geometric group
+theory.  
+
+ in other words, his research considers the symmetries of
+objects with many degrees of freedom.  Prior to OSU, he received an
+undergraduate degree from Harvard University and received a Ph.D. from
+the University of Chicago.
 
 * Please write a brief sentence that will explain each week's (or module's) topic. We will be asking for a syllabus from you later
 
@@ -96,8 +85,8 @@ midterms, and a final exam.
 
 * Write 1-2 paragraphs about any prerequisite background that students should have in order to succeed in your course. 
 
-Previous exposure to calculus is not required; to succeed, a student
-should have seen algebra and trigonometry.
+Previous exposure to calculus is not expected; to succeed, a student
+should have seen algebra and trigonometry at the high school level.
 
 * If applicable, provide a list of suggested readings in advance.
 
@@ -114,8 +103,7 @@ Mathematics is a human activity; pen and paper is highly recommended.  You do no
 
 * Write your answer to suggested FAQ #2: What is the coolest thing I'll learn if I take this class?
 
-
-Think of a short, one-liner to pique their interest.
+When you push the square root button, how does the calculator do that?
 
 * Write any additional FAQs and their responses that may be specific to your course.
 
@@ -129,20 +117,18 @@ Dear [Student Name],
 
 Thank you for signing up for Calculus One.
 
-Calculus is a triumph of humankind, and quantitative techniques are
-becoming increasingly important to making the modern world work.  I am
-looking forward to your being introduced to this, perhaps the most
-important development of the past five hundred years.
+Calculus has changed the world: by providing a systematic way to
+understand how things change, it has permitted humans to explain
+the motions of heavenly bodies, 
 
-With the explosion of digital images everywhere on the Internet and in
-our personal lives, computer vision has emerged as one of the most
-exciting fields in today's technology world. We hope that you will
-join us in an adventure to learn about the fundamental theories and
-building blocks, as well as the current state-of-the-art methods and
-techniques in computer vision.
+Calculus can change you: the word "mathematics" comes from the same
+word as "discipline."  Doing mathematics will train you to think
+carefully, and precisely.  And it's a lot of fun.
 
-We'll notify you again in January 2013 to begin our time together.
+I am looking forward to having you in the class.  I'll notify you
+again in January 2013 to begin our time together.
 
+thank you,
 ~jim
 
 * Finally, as the course begins, an additional welcome email is sent to students in your course. Please write an email that welcomes them to the start of the class and explains the structure of the course, expectations, initial action steps for the students, a thank you for embarking on the journey of your course, etc.
@@ -152,6 +138,8 @@ Dear [Student Name],
 Welcome to Calculus One.
 
 You can now access the course at www.coursera.org/course/calculus1
+
+Calculus is very old, but this is a very new way of presenting it.
 
 You are pioneering both an emerging field and a novel form of online
 learning. My teaching team and I have done our best to create a
