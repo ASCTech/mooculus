@@ -5,6 +5,16 @@
 - calculus call-in show
 - google voice phone number (call me at 773-809-5659, leave a message)
 - khan academy style exercises
+- invite people to participate by presenting their own solutions to problems
+
+- Grow some mold at home!  How fast does it grow?
+- Time the fall of some objects
+- Play the epsilon-delta game
+- Do related rates with mixtures and food coloring
+- Build a water clock
+- optimize the area included by a fence
+- spring problems with sines and cosines
+- lissajous figures?
 
 * What is the desired name of your class? 
 
@@ -17,9 +27,7 @@ calculus1
 * Write a short 1-2 sentence (<200 character) course description.
 
 Calculus One is a first introduction to differential and integral
-calculus.
-
-
+calculus, emphasizing problem solving.
 
 * How many hours per week can your students expect to spend on this class including videos and assignments?
 6 - 10 hours per week?
@@ -31,57 +39,50 @@ change.  The surprise is that something seemingly so abstract ends up
 explaining the real world: calculus plays a starring role in the
 biological, physical, and social sciences.
 
-This course is a first introduction to calculus, ideal for someone who
-has never seen the subject before or for someone who wants a careful
-review.  The course features
-- interactive graphs to provide intuition,
+This course is a first introduction to calculus, suitable for someone
+who has never seen the subject before or for someone who wants a
+careful review.  One learns calculus by doing calculus, and so this
+course encourages you to participate by providing you with
 - instant feedback on practice problems,
-- 
-
-
-This course is a first introduction to 
-
-This course is a first
-introduction
-
-- clear, patient explanations
-- five to fifteen minute videos
-- emphasizing mastery
-- instant feedback on homework
-- individual tutoring
-
-Mostly about differential calculus.
-
-the introduction and use of Taylor series and approximations from the beginning;
-a novel synthesis of discrete and continuous forms of Calculus;
-an emphasis on the conceptual over the computational; and
-a clear, entertaining, unified approach.
-
-
-
-Emphasis on 
-
-
+- interactive graphs and games for you to play,
+- calculus projects and demos you can try at home, and
+- opportunities for you to explain your thought process.
 
 * Write a 1-2 paragraph bio about yourself.
 
-Jim Fowler teaches mathematics at The Ohio State University.  Broadly
-speaking, he is a geometer and topologist; more specifically, he
-studies the topology of high-dimensional manifolds and geometric group
-theory.  
+Jim Fowler teaches mathematics at The Ohio State University.  His
+research interests broadly include geometry and topology, and
+specifically the topology of high-dimensional manifolds and geometric
+group theory, which means he gets to think about highly
+symmetric---and therefore very beautiful---geometric objects.
 
- in other words, his research considers the symmetries of
-objects with many degrees of freedom.  Prior to OSU, he received an
-undergraduate degree from Harvard University and received a Ph.D. from
-the University of Chicago.
+Prior to OSU, he received an undergraduate degree from Harvard
+University and received a Ph.D. from the University of Chicago.
 
 * Please write a brief sentence that will explain each week's (or module's) topic. We will be asking for a syllabus from you later
+
+** Week 1: Limits, conceptually
+** Week 2: Limits, precisely
+** Week 3: Infinity and Continuity
+** Week 4: The Derivative
+** Week 5: Techniques of Differentiation
+** Week 6: Chain rule
+** Week 7: Derivatives of Transcendental Functions
+** Week 8: Applications of Derivatives
+** Week 9: Optimization
+** Week 10: Linear approximation
+** Week 11: Antidifferentiation
+** Week 12: Integration
+** Week 13: Fundamental theorem of calculus
+** Week 14: Techniques of integration
+** Week 15: Substitution rule
+** Week 16: Volume
 
 * Write a paragraph briefly explaining the format of your course. 
 
 The course consists of short lecture videos, typically between five
-and fifteen minutes in length.  There are homework assignments, three
-midterms, and a final exam.
+and fifteen minutes in length.  Homework assignments, three midterms,
+and a final exam provide opportunities for feedback.
 
 * Write 1-2 paragraphs about any prerequisite background that students should have in order to succeed in your course. 
 
@@ -99,7 +100,8 @@ interactive figures and such, using, say, the lovely tufte class.
 
 * Write your answer to suggested Frequently Asked Question (FAQ) #1: What resources will I need for this class?
 
-Mathematics is a human activity; pen and paper is highly recommended.  You do not need a graphing calculator.
+Mathematics is a human activity: to participate, pen and paper is
+highly recommended.  You do not need a graphing calculator.
 
 * Write your answer to suggested FAQ #2: What is the coolest thing I'll learn if I take this class?
 
@@ -117,18 +119,14 @@ Dear [Student Name],
 
 Thank you for signing up for Calculus One.
 
-Calculus has changed the world: by providing a systematic way to
-understand how things change, it has permitted humans to explain
-the motions of heavenly bodies, 
+Calculus has changed the world, but calculus will also change you: the
+word "mathematics" comes from the same Greek root as that for
+"discipline."  The discipline of doing a bit of mathematics each day
+will train you to think well.  And it'll be a lot of fun.
 
-Calculus can change you: the word "mathematics" comes from the same
-word as "discipline."  Doing mathematics will train you to think
-carefully, and precisely.  And it's a lot of fun.
-
-I am looking forward to having you in the class.  I'll notify you
+I am looking forward to having you in our class.  I'll notify you
 again in January 2013 to begin our time together.
 
-thank you,
 ~jim
 
 * Finally, as the course begins, an additional welcome email is sent to students in your course. Please write an email that welcomes them to the start of the class and explains the structure of the course, expectations, initial action steps for the students, a thank you for embarking on the journey of your course, etc.
@@ -139,22 +137,17 @@ Welcome to Calculus One.
 
 You can now access the course at www.coursera.org/course/calculus1
 
-Calculus is very old, but this is a very new way of presenting it.
+Calculus is very old, but this is a very new way of presenting it.  
 
 You are pioneering both an emerging field and a novel form of online
 learning. My teaching team and I have done our best to create a
 substantive and engaging experience. We'll do everything we can to
 make the course run smoothly, but bear with us -- this is all new!
 
-If you have not yet filled out the informational survey, please do so
-at [http://COURSESITE-SURVEY-LINK]. This will provide useful
-information on who is taking the course. I encourage you to consider
-yourself an active participant in this course.
+If you have not yet filled out the survey, please do so at
+[http://COURSESITE-SURVEY-LINK]. This will provide useful information
+for us to tailor the course to its students.  I encourage you to consider yourself an active participant.
 
-Gamification is a subject that is developing quickly in the real
-world. In some aspects it is uncertain or controversial today. The
-course will give you a foundation to understand what gamification is
-and how to apply it. The rest is up to you. Thank you for joining me
-on this adventure!
+Thank you for joining us in our adventure.
 
 ~jim

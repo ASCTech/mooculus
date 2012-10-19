@@ -7,7 +7,7 @@ This is the 1151 schedule; I should be moving the MOOC somewhat faster than it d
 ** 2.2 Definition of limits
 ** 2.3 Limit laws
 ** 2.4 Infinite limits
-* Week 3: Continuity
+* Week 3: Infinity and Continuity
 ** 2.5 Limits at infinity
 ** 2.6 Continuity
 * Week 4: The Derivative
@@ -18,7 +18,7 @@ This is the 1151 schedule; I should be moving the MOOC somewhat faster than it d
 ** MIDTERM
 ** 3.3 Product and quotient rules
 ** 3.4 Derivatives of trig functions
-* Week 6: 
+* Week 6: Chain rule
 ** 3.5 Derivatives as rates of change
 ** 3.6 Chain rule
 ** 3.7 Implicit differentiation
@@ -34,28 +34,28 @@ This is the 1151 schedule; I should be moving the MOOC somewhat faster than it d
 ** MIDTERM
 ** 4.3 Graphing functions
 ** 4.4 Optimization problems
-* Week 10: 
+* Week 10: Linear approximation
 ** 4.4 Optimization problems
 ** 4.5 Linear approximation and differentiakls
 ** 4.6 Mean value theorem
-* Week 11
+* Week 11: Antidifferentiation
 ** 4.7 L'hopital's rule
 ** 4.8 Newton's method
 ** 4.9 Antiderivatives
-* Week 12: Integrals, conceptually
+* Week 12: Integration
 ** 5.1 Approximation area under curve
 ** 5.1 Approximating area under curve
-* Week 13: Integrals, precisely
+* Week 13: Fundamental theorem of calculus
 ** MIDTERM 3
 ** 5.2 Definite integral
 ** 5.3 Fundamental theorem of calculuis
-* Week 14
+* Week 14: Techniques of integration
 ** 5.4 Working with integrals
-* Week 15
+* Week 15: Substitution rule
 ** 5.5 Substitution rule
 ** 5.5 Substitution rule again
 ** 6.1 Velocity and net change
-* Week 16
+* Week 16: Volume
 ** 6.2 Regions Between curves
 ** 6.3 Volume by slicing
 ** 6.4 Volume by shells
