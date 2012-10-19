@@ -7,14 +7,38 @@
 - khan academy style exercises
 - invite people to participate by presenting their own solutions to problems
 
-- Grow some mold at home!  How fast does it grow?
+"By taking calculus out of the classroom, we'll be able to see
+examples of calculus in our everyday lives---examples you can try at
+home to experience the awesome power of calculus for yourself."
+ 
+- Grow some mold at home!  How fast does it grow?  grey goo example?
 - Time the fall of some objects
+- doppler shift to compute the speed of sound
+- a piano player playing the circle of fifths
 - Play the epsilon-delta game
 - Do related rates with mixtures and food coloring
 - Build a water clock
+- fill a vase up; how does the height of water change?
 - optimize the area included by a fence
-- spring problems with sines and cosines
-- lissajous figures?
+- spring problems with sines and cosines?
+- lissajous figures
+- gears of various sizes
+- position of a bubble boundary
+- coffee temperature (newton's law of cooling)
+- melting ice cube
+- some sort of economics example?
+- build a slide rule
+- cut out and weigh paper models
+- estimate number of marbles inside a complicated curve
+- the feeling of power
+- estimate the value of pi
+- buffon's needle problem
+- nomogram, estimating error
+- sliders controlling other sliders
+- sundials, how fast the shadow is moving
+- lego models on a little treadmill, with a lamppost nearby
+- reflection problems with lasers
+- people walking around a barrier; people finding shortest distance
 
 * What is the desired name of your class? 
 
@@ -27,7 +51,7 @@ calculus1
 * Write a short 1-2 sentence (<200 character) course description.
 
 Calculus One is a first introduction to differential and integral
-calculus, emphasizing problem solving.
+calculus, emphasizing engaging examples from everyday life.
 
 * How many hours per week can your students expect to spend on this class including videos and assignments?
 6 - 10 hours per week?
@@ -37,12 +61,16 @@ calculus, emphasizing problem solving.
 Calculus is about the very large, the very small, and how things
 change.  The surprise is that something seemingly so abstract ends up
 explaining the real world: calculus plays a starring role in the
-biological, physical, and social sciences.
+biological, physical, and social sciences.  And by taking calculus out
+of the classroom in this online course, we will see examples of
+calculus appearing in daily life.
 
-This course is a first introduction to calculus, suitable for someone
-who has never seen the subject before or for someone who wants a
-careful review.  One learns calculus by doing calculus, and so this
-course encourages you to participate by providing you with
+This course is a first and friendly introduction to calculus, suitable
+for someone who has never seen the subject before, or for someone who
+has seen some calculus but wants to review the concepts and to
+practice applying those concepts to solve problems.  One learns
+calculus by doing calculus, and so this course encourages you to
+participate by providing you with
 - instant feedback on practice problems,
 - interactive graphs and games for you to play,
 - calculus projects and demos you can try at home, and
@@ -51,10 +79,12 @@ course encourages you to participate by providing you with
 * Write a 1-2 paragraph bio about yourself.
 
 Jim Fowler teaches mathematics at The Ohio State University.  His
-research interests broadly include geometry and topology, and
-specifically the topology of high-dimensional manifolds and geometric
-group theory, which means he gets to think about highly
-symmetric---and therefore very beautiful---geometric objects.
+research interests broadly include geometry and topology, and more
+specifically, his interests focus on the topology of high-dimensional
+manifolds and geometric group theory, which means he gets to think
+about highly symmetric (and therefore very beautiful) geometric
+objects.  He's particularly fond of using computational techniques to
+attack problems in pure mathematics.
 
 Prior to OSU, he received an undergraduate degree from Harvard
 University and received a Ph.D. from the University of Chicago.
@@ -89,6 +119,9 @@ and a final exam provide opportunities for feedback.
 Previous exposure to calculus is not expected; to succeed, a student
 should have seen algebra and trigonometry at the high school level.
 
+If you have seen some calculus, this course will provide a rigorous
+review of the concepts.
+
 * If applicable, provide a list of suggested readings in advance.
 
 There are free calculus texts available, for example,
@@ -96,16 +129,21 @@ There are free calculus texts available, for example,
 http://www.whitman.edu/mathematics/calculus/
 
 but presumably I could take that text and produce a version with more
-interactive figures and such, using, say, the lovely tufte class.
+interactive figures and such, using, say, the lovely tufte class and
+my own ability to convert the latex source to HTML.
 
 * Write your answer to suggested Frequently Asked Question (FAQ) #1: What resources will I need for this class?
 
 Mathematics is a human activity: to participate, pen and paper is
-highly recommended.  You do not need a graphing calculator.
+highly recommended.  You certainly should not be using a graphing
+calculator.
 
 * Write your answer to suggested FAQ #2: What is the coolest thing I'll learn if I take this class?
 
-When you push the square root button, how does the calculator do that?
+The coolest thing you'll learn is that all the cool things you learn
+are connected at the deepest level: whether it's where three bubbles
+meet, how to tell time with water, or how to calculate square roots by
+hand, there is one system which binds them together.
 
 * Write any additional FAQs and their responses that may be specific to your course.
 
@@ -119,14 +157,15 @@ Dear [Student Name],
 
 Thank you for signing up for Calculus One.
 
-Calculus has changed the world, but calculus will also change you: the
-word "mathematics" comes from the same Greek root as that for
-"discipline."  The discipline of doing a bit of mathematics each day
-will train you to think well.  And it'll be a lot of fun.
+Calculus changed the world, and calculus will also change you: the
+discipline of doing a bit of mathematics each day will improve your
+computational skills, and deepen your understanding of the concepts
+which make the modern world possible.
 
-I am looking forward to having you in our class.  I'll notify you
-again in January 2013 to begin our time together.
+I am looking forward to having you participate in our class.  I'll
+notify you again in January 2013 to begin our time together.
 
+thank you,
 ~jim
 
 * Finally, as the course begins, an additional welcome email is sent to students in your course. Please write an email that welcomes them to the start of the class and explains the structure of the course, expectations, initial action steps for the students, a thank you for embarking on the journey of your course, etc.
@@ -137,17 +176,20 @@ Welcome to Calculus One.
 
 You can now access the course at www.coursera.org/course/calculus1
 
-Calculus is very old, but this is a very new way of presenting it.  
+Calculus is very old, but this is a very new way of presenting it.  By
+taking calculus out of the classroom, we'll demonstrate applications
+of calculus that would be hard to do in front of a traditional
+blackboard.  And since this is online, you'll be able to interact with
+the graphs and get instant feedback on your work.
 
-You are pioneering both an emerging field and a novel form of online
-learning. My teaching team and I have done our best to create a
-substantive and engaging experience. We'll do everything we can to
-make the course run smoothly, but bear with us -- this is all new!
+There might be some bumps along the way, but I'm excited to have you
+partnering with us.  If you have not yet filled out the survey, please
+do so at
 
-If you have not yet filled out the survey, please do so at
-[http://COURSESITE-SURVEY-LINK]. This will provide useful information
-for us to tailor the course to its students.  I encourage you to consider yourself an active participant.
+  [http://COURSESITE-SURVEY-LINK]
 
-Thank you for joining us in our adventure.
+This will provide information for us to tailor the course to you, so
+you can participate fully and succeed at calculus.
 
+thank you,
 ~jim

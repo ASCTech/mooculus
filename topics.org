@@ -12,7 +12,7 @@ This is the 1151 schedule; I should be moving the MOOC somewhat faster than it d
 ** 2.6 Continuity
 * Week 4: The Derivative
 ** 3.1 Derivative
-** 3.1 More derivative
+** 3.1 More derivativesxs
 ** 3.2 Rules of differentiation
 * Week 5: Techniques of Differentiation
 ** MIDTERM
@@ -36,7 +36,7 @@ This is the 1151 schedule; I should be moving the MOOC somewhat faster than it d
 ** 4.4 Optimization problems
 * Week 10: Linear approximation
 ** 4.4 Optimization problems
-** 4.5 Linear approximation and differentiakls
+** 4.5 Linear approximation and differentials
 ** 4.6 Mean value theorem
 * Week 11: Antidifferentiation
 ** 4.7 L'hopital's rule
