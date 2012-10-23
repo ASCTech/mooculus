@@ -1,0 +1,293 @@
+\section{The natural logarithm}{}{}
+\nobreak
+The function $f(t)=1/t$ is continuous on $(0, \infty ) $.
+By the fundamental theorem of calculus, $f$ has an antiderivative on
+on the interval with end points $x$ and $1$ whenever $x>0 $. This
+observation allows us to make the following definition.
+
+\begin{definition} The {\dfont natural logarithm} $\ln(x)$ is an antiderivative of
+$1/x$, given by 
+$$\ln x = \int _1 ^x {1\over t}\,dt.$$
+\end{definition}
+
+Figure~\xrefn{fig:log as area} gives a geometric interpretation of $\ln$.
+Note that when $x<1$, $\ln x$ is negative.
+
+\figure
+\vbox{\beginpicture
+\normalgraphs
+\ninepoint
+\setcoordinatesystem units <1.2truecm,1.2truecm>
+\setplotarea x from 0 to 3.1, y from 0 to 3.4
+\axis left /
+\axis bottom ticks withvalues {$1$} {$x$} / at 1 2 / /
+\put {\hbox{area is $\ln x$}} [bl] <2pt,2pt> at 1.75 1
+\arrow <4pt> [0.35, 1] from 1.75 1 to 1.5 0.4
+\putrule from 2 0 to 2 0.5
+\putrule from 1 0 to 1 1
+\plot 0.300 3.333 0.368 2.721 0.435 2.299 0.502 1.990 0.570 1.754 
+0.638 1.569 0.705 1.418 0.772 1.294 0.840 1.190 0.908 1.102 
+0.975 1.026 1.042 0.959 1.110 0.901 1.178 0.849 1.245 0.803 
+1.312 0.762 1.380 0.725 1.448 0.691 1.515 0.660 1.582 0.632 
+1.650 0.606 1.718 0.582 1.785 0.560 1.852 0.540 1.920 0.521 
+1.988 0.503 2.055 0.487 2.122 0.471 2.190 0.457 2.258 0.443 
+2.325 0.430 2.392 0.418 2.460 0.407 2.528 0.396 2.595 0.385 
+2.662 0.376 2.730 0.366 2.798 0.357 2.865 0.349 2.932 0.341 
+3.000 0.333 /
+\setcoordinatesystem units <1.2truecm,1.2truecm> point at -5 0
+\setplotarea x from 0 to 3.1, y from 0 to 3.4
+\axis left /
+\axis bottom ticks withvalues {$x$} {$1$} / at 0.5 1 / /
+\put {\hbox{area is $-\ln x$}} [bl] <2pt,2pt> at 1 1.5
+\arrow <4pt> [0.35, 1] from 1 1.5 to 0.75 1
+\putrule from 0.5 0 to 0.5 2
+\putrule from 1 0 to 1 1
+\plot 0.300 3.333 0.368 2.721 0.435 2.299 0.502 1.990 0.570 1.754 
+0.638 1.569 0.705 1.418 0.772 1.294 0.840 1.190 0.908 1.102 
+0.975 1.026 1.042 0.959 1.110 0.901 1.178 0.849 1.245 0.803 
+1.312 0.762 1.380 0.725 1.448 0.691 1.515 0.660 1.582 0.632 
+1.650 0.606 1.718 0.582 1.785 0.560 1.852 0.540 1.920 0.521 
+1.988 0.503 2.055 0.487 2.122 0.471 2.190 0.457 2.258 0.443 
+2.325 0.430 2.392 0.418 2.460 0.407 2.528 0.396 2.595 0.385 
+2.662 0.376 2.730 0.366 2.798 0.357 2.865 0.349 2.932 0.341 
+3.000 0.333 /
+\endpicture}
+\figrdef{fig:log as area}
+\endfigure{$\ln(x)$ is an area.}
+
+Some properties of this function $\ln x$ are now easy to see.
+
+\begin{theorem} Suppose that $x,y >0 $ and $q\in \Q$.
+\label{thm:log rules}
+\begin{itemize} % BADBAD
+\item{a.} $\ds{d\over dx} \ln x = {1\over x}.$
+\item{b.} $\ln(1) = 0$.
+\item{c.} $\ln (xy) = \ln x+ \ln y $
+\item{d.} $\ln(x/y) = \ln x - \ln y $
+\item{e.} $\ln x^q  = q\ln x $.
+\end{itemize}
+
+\begin{proof} Part (a) is simply the Fundamental Theorem of Calculus
+(\xrefn{thm:fundamental_theorem_II}). Part (b) follows directly from
+the definition, since 
+$$\ln(1)=\int_1^1 {1\over t}\,dt.$$
+
+Part (c) is a bit more involved; start with:
+$$\ln(xy)=\int_1^{xy} {1\over t}\,dt=
+\int_1^{x} {1\over t}\,dt+\int_x^{xy} {1\over t}\,dt
+=\ln(x)+\int_x^{xy} {1\over t}\,dt.$$
+
+In the remaining integral, use the substitution $u=t/x$ to get
+$$\int_x^{xy} {1\over t}\,dt=\int_1^{y} {1\over xu}x\,du
+=\int_1^{y} {1\over u}\,du=\ln(y).$$
+
+% Fix $y>0$ and set $g(x) =\ln (xy)$.
+% By the chain rule,
+% $\ds g'(x) = {1\over xy} y = {1\over x} = {d\over dx} \ln x$.
+% Since $g(x)$ and $\ln x$ have the same derivative, 
+% $g(x) =\ln x + C$ for some constant $C$.
+% To ascertain $C$ we substitute an appropriate value for $x$.
+% When $x=1$,
+% $g(1) = \ln (1\cdot y)= \ln(y)$, and also 
+% $g(1) = \ln(1)+C= C$, so $\ln(y) = C$ and thus
+% $\ln(xy)=\ln(x)+\ln(y)$.
+
+
+
+Parts (d) and (e) are left as exercises.
+\end{proof}
+
+Part (e) is in fact true for any real number $q$
+(not just rationals) but one of the points of our approach here is
+to give a rigorous definition of real powers which so far we have
+not done.
+
+ We now turn to the task of sketching the graph of $\ln x$.
+
+ \begin{theorem} $\ln x $ is increasing and 
+its graph is concave down everywhere.
+
+\begin{proof} Since ${d\over dx}\ln x =1/x$ is positive 
+for $x>0$, the Mean Value Theorem (\xrefn{thm:mvt}) implies that $\ln x$
+is increasing.
+The second derivative of $\ln x$ is then $-1/x^2$ which is negative,
+so the graph is concave down.
+\end{proof}
+
+Notice that this theorem implies that $\ln x$ is
+injective.
+
+\begin{theorem} $\ds\lim_{x\to\infty} \ln x =\infty$
+
+\begin{proof} Note that $\ln 2 >0 $ and for $n\in\N$,
+$\ln 2^n =n\ln 2$. Since $\ln x$ is increasing, 
+when $x> 2^n$, $\ln(x)>n\ln2$. Since
+$\ds\lim_{n\to\infty}n\ln2=\infty$,
+also $\ds\lim_{x\to\infty} \ln x =\infty$.
+\end{proof}
+
+
+\cor $\lim_{x\to 0^+} \ln x =-\infty$
+
+\begin{proof} If $0< x< 1 $, then $(1/x)>1$ and
+$\lim_{x\to 0^+} (1/x) = \infty $. Let $y=1/x$; then
+$\lim _{x\to 0^+} \ln x= \lim_{y\to \infty}\ln(1/y)
+=\lim_{y\to \infty}\ln(1)-\ln(y)=\lim_{y\to \infty}-\ln(y)
+=-\infty$.
+\end{proof}
+
+
+ Thus, the domain of $\ln $ is $(0, \infty ) $ and the range is
+ $\R$; $\ln(x)$ is shown in figure~\xrefn{fig:graph of natural logarithm}.
+
+\figure
+\vbox{\beginpicture
+\normalgraphs
+\ninepoint
+\setcoordinatesystem units <1.2truecm,1.2truecm>
+\setplotarea x from 0 to 6.1, y from -2.5 to 2
+\axis left ticks numbered from -2 to 2 by 1 /
+\axis bottom shiftedto y=0 ticks numbered from 1 to 6 by 1 /
+\axis bottom shiftedto y=0 ticks numbered withvalues {$e$} / at 2.718 / /
+\put {$\bullet$} at 2.718 1
+\plot 0.100 -2.303 0.248 -1.396 0.395 -0.929 0.542 -0.612 0.690 -0.371 
+0.838 -0.177 0.985 -0.015 1.132 0.124 1.280 0.247 1.428 0.356 
+1.575 0.454 1.722 0.544 1.870 0.626 2.018 0.702 2.165 0.772 
+2.312 0.838 2.460 0.900 2.608 0.958 2.755 1.013 2.902 1.066 
+3.050 1.115 3.198 1.162 3.345 1.207 3.492 1.251 3.640 1.292 
+3.788 1.332 3.935 1.370 4.082 1.407 4.230 1.442 4.378 1.476 
+4.525 1.510 4.672 1.542 4.820 1.573 4.968 1.603 5.115 1.632 
+5.262 1.661 5.410 1.688 5.558 1.715 5.705 1.741 5.852 1.767 
+6.000 1.792 /
+\endpicture}
+\figrdef{fig:graph of natural logarithm}
+\endfigure{The graph of $\ln(x)$.}
+
+By the intermediate value theorem (\xrefn{thm:intermediate value theorem})
+there is a number $e$ such
+that $\ln e = 1 $. The number $e$ is also known as
+{\dfont Napier's constant\index{Napier's constant}}.
+
+It turns out that $e$ is not rational. In fact, $e$ is not the root of
+a polynomial with rational coefficients which means that $e$ is a
+{\dfont transcendental number\index{transcendental number}}. We will
+not prove these assertions here.
+The value of $e$ is 
+approximately $2.718$.
+
+% We now consider several examples of calculus computations involving
+% the natural logarithm.
+% \begin{lem} Let $g(x) >0 $ for every $x$ in the domain of $g$. If
+% $g$ is differentiable, then
+% \begin{equation} [\ln g(x)]' = \frac{g'(x) }{g(x) } . \end{equation} \end{lem}
+% The result follows by an immediate application of the chain rule.
+
+\begin{example} Let $f(x) =\ln (x^5 + 7x +12) $. Compute $f'(x) $.
+
+Using the chain rule:
+$\ds f'(x) = {1\over x^5 +7x+ 12}(5x+7)$.
+\end{example}
+
+\begin{example} Let $f(x) =\ln (-x) $ for $x<0 $. Compute $f'(x) $.
+$$f'(x) ={1\over -x}(-1) ={1\over x}.$$
+So the derivatives of $\ln(x)$ and $\ln(-x)$ are the same. Thus, you
+will often see $\ds\int{1\over x}\,dx=\ln|x|+C$ as the general
+antiderivative of $1/x$.
+\end{example}
+
+\begin{example} Compute $\ds\int \tan x \,dx $.
+
+Use $u=\cos x$:
+$$
+\int\tan x\,dx=\int{\sin x\over\cos x}\,dx=\int -{1\over u}\,du
+=-\ln |u|+C = -\ln|\cos x| +C.$$
+Using one of the properties of the logarithm, we could go further:
+$$-\ln|\cos x| +C=\ln|(\cos x)^{-1}|+C=\ln|\sec x|+C.$$
+\vglue-20pt\end{example}
+
+\begin{example} Let $\ds f(x) = {x^{18} (x+2)^{6/7}\over (x^{10} + 4x^2 +1 )^6 }$.
+ Compute $f'(x) $
+
+ Computing the derivative directly is straightforward
+ but irritating. We therefore take an indirect approach. Note that
+ $f(x) >0 $ for every $x$.
+ Let $g(x) = \ln f(x) $. Then $g'(x) = f'(x)/f(x)$ and so 
+$f'(x) =f(x)g'(x)$. Now
+$$\eqalign{
+g(x) &=\ln\left({x^{18} (x+2)^{6/7}\over (x^{10} + 4x^2 +1 )^6 }\right) \\
+&= 18\ln x +{6\over 7} \ln (x+2) - 6\ln (x^{10} +4x^2 +1) \\}$$
+Hence, 
+$$g'(x) = {18\over x} +{6\over 7(x+2)}
+-{6(10x^9 +8x )\over x^{10} +4x^2 +1 }.$$
+Therefore,
+$$f'(x) = {x^{18} (x+2)^{6/7}\over (x^{10} + 4x^2 +1 )^6 }
+\left({18\over x} +{6\over 7(x+2)}
+-{6(10x^9 +8x )\over x^{10} +4x^2 +1 }\right).$$
+\vglue-20pt\end{example}
+
+\begin{exercises}
+
+\exer Prove parts (d) and (e) of theorem~\xrefn{thm:log rules}.
+
+\noindent
+In subsequent exercises, it is understood that the arguments in any
+logarithms are positive unless otherwise stated.
+
+\exer Expand $\ln ((x+45)^7 (x-2))$.
+
+\exer Expand $\ds\ln {x^3\over 3x-5 +(7/x)} $.
+
+\exer Sketch the graph of $y= \ln (x-7)^3  + 14 $.
+
+\exer Sketch the graph of $y=\ln |x| $ for $x\neq 0$.
+
+\exer Write $\ln 3x + 17 \ln (x-2) -
+2\ln (x^2 + 4x + 1) $ as a single logarithm.
+
+\exer Differentiate $f(x) =x\ln x $.
+
+\exer Differentiate $f(x) =\ln (\ln (3x) )$.
+
+\exer Sketch the graph of $\ln (x^2 - 2x) $. 
+
+\exer Differentiate $\ds f(x) ={1+\ln (3x^2 )\over 1+ \ln
+(4x)} $. 
+
+\exer Differentiate $f(x) =\ln |\sec x +\tan x |
+$.
+
+\exer Find the second derivative of $f(x) =\sqrt{\ln (x^4
+-2) } $. 
+
+\exer Find the equation of the tangent line to $f(x) =\ln x
+$ at $x=a $. 
+
+\exer Differentiate $\ds f(x) ={x^8 (x-23)^{1/2}\over 
+27 x^6(4x-6)^8 }$.
+  
+
+\exer If $f(x) = \ln (x^3 + 2 ) $ compute $f'(e^{1/3} )
+$.
+
+\exer Compute
+$\ds\int _1 ^e {1\over x}\,dx$.
+
+
+\exer Compute the derivative with respect to $x$ of $\ds\int _1 ^{\ln
+  x} \ln t\, dt $. (Assume that $x>1$.)
+
+\exer Compute
+$\ds\int _0 ^{\pi/6} \tan (2x)\, dx$.
+
+
+\exer Compute $\ds\int {\ln x\over x}\,dx$.
+
+
+\exer Compute $\ds\int {\sin (2x)\over 1+\cos ^2 x }\,dx$.
+
+
+\exer Find the volume of the solid obtained by rotating the
+region under $y=1/\sqrt{x}$ from $1$ to $e$ about the
+$x$-axis.
+
+\end{exercises}

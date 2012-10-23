@@ -1,0 +1,320 @@
+\section{Second Order Homogeneous Equations}{}{}
+\label{sec:second order homogeneous}
+\nobreak
+A second order differential equation is one containing the second
+derivative. These are in general quite complicated, but one fairly
+simple type is useful: the second order linear equation with constant
+coefficients. 
+
+\begin{example} Consider the intial value problem $\ddot y-\dot y-2y=0$,
+$y(0)=5$, $\dot y(0)=0$. We make an inspired guess: might there be a
+solution of the form $\ds e^{rt}$? This seems at least plausible,
+since in this case $\ds\ddot y$, $\ds\dot y$, and $y$ all
+involve $\ds e^{rt}$. 
+
+If such a function is a solution then
+$$\eqalign{
+r^2 e^{rt}-r e^{rt}-2e^{rt}&=0 \\
+e^{rt}(r^2-r-2)&=0 \\
+(r^2-r-2)&=0 \\
+(r-2)(r+1)&=0, \\}
+$$
+so $r$ is $2$ or $-1$. Not only are $\ds f=e^{2t}$ and $\ds g=e^{-t}$
+solutions, but notice that $\ds y=Af+Bg$ is also, for any constants $A$
+and $B$:
+$$\eqalign{
+(Af+Bg)''-(Af+Bg)'-2(Af+Bg)&=Af''+Bg''-Af'-Bg'-2Af-2Bg \\
+&=A(f''-f'-2f)+B(g''-g'-2g) \\
+&=A(0)+B(0)=0. \\}
+$$
+Can we find $A$ and $B$ so that this is a solution to the initial
+value problem? Let's substitute:
+$$
+5=y(0)=Af(0)+Bg(0)=Ae^0+Be^0=A+B
+$$
+and 
+$$0=\dot y(0)=Af'(0)+Bg'(0)=A2e^{0}+B(-1)e^0=2A-B.$$
+So we need to find $A$ and $B$ that make both $5=A+B$ and $0=2A-B$
+true. This is a simple set of simultaneous equations: solve $B=2A$,
+substitute to get $5=A+2A=3A$. Then $A=5/3$ and $B=10/3$, and the
+desired solution is $\ds (5/3)e^{2t}+(10/3)e^{-t}$. You now see why
+the initial condition in this case included both $y(0)$ and $\dot
+y(0)$: we needed two equations in the two unknowns $A$ and $B$
+\end{example}
+
+You should of course wonder whether there might be other solutions;
+the answer is no. We will not prove this, but here is the theorem that
+tells us what we need to know:
+
+\begin{theorem} Given 
+\label{thm:solns to second order homogeneous}
+the differential equation $\ds a\ddot y+b\dot y+cy=0$, $a\not=0$,
+consider the quadratic polynomial $ax^2+bx+c$, called the
+     {\dfont characteristic polynomial\index{characteristic
+         polynomial}}. Using the quadratic formula, this polynomial
+     always has one or two roots, call them $r$ and $s$.  The general
+     solution of the differential equation is:
+
+\begin{itemize} % BADBAD
+\item{(a)} $\ds y=Ae^{rt}+Be^{st}$, if the roots $r$ and $s$ are real
+  numbers and $r\not=s$.
+
+\item{(b)} $\ds y=Ae^{rt}+Bte^{rt}$, if $r=s$ is real.
+
+\item{(c)} $\ds y=A\cos(\beta t)e^{\alpha t}+B\sin(\beta t)e^{\alpha t}$, 
+if the roots $r$ and $s$ are complex numbers $\alpha+\beta i$ and
+$\alpha-\beta i$.
+
+\end{itemize}
+\end{theorem}
+
+\begin{example} Suppose 
+\label{example:damped spring oscillation}
+a mass $m$ is hung on a spring with spring
+constant $k$. If the spring is compressed or stretched and then
+released, the mass will oscillate up and down. Because of friction,
+the oscillation will be damped: eventually the motion will cease. The
+damping will depend on the amount of friction; for example, if the
+system is suspended in oil the motion will cease sooner than if the
+system is in air. Using some simple physics, it is not hard to see
+that the position of the mass is described by this differential
+equation:
+$\ds m\ddot y+b\dot y+ky=0$. Using $m=1$, $b=4$, and $k=5$ we find the
+motion of the mass. The characteristic polynomial is 
+$x^2+4x+5$ with roots $(-4\pm\sqrt{16-20})/2=-2\pm i$. Thus the
+general solution is
+$\ds y=A\cos(t)e^{-2t}+B\sin(t)e^{-2t}$.
+Suppose we know that $y(0)=1$ and $\dot y(0)=2$. Then as before we
+form two simultaneous equations: from $y(0)=1$ we get
+$1=A\cos(0)e^0+B\sin(0)e^0=A$. For the second we compute
+$$\ddot y=-2Ae^{-2t}\cos(t)+Ae^{-2t}(-\sin(t))-2Be^{-2t}\sin(t)+
+Be^{-2t}\cos(t),$$
+and then
+$$2=-2Ae^0\cos(0)-Ae^0\sin(0)-2Be^0\sin(0)+Be^0\cos(0)
+=-2A+B.$$
+So we get $A=1$, $B=4$, and $\ds y=\cos(t)e^{-2t}+4\sin(t)e^{-2t}$.
+
+Here is a useful trick that makes this easier to understand: We have
+$\ds y=(\cos t+4\sin t)e^{-2t}$. The expression $\cos t+4 \sin t$ is a
+bit reminiscent of the trigonometric formula
+$\cos(\alpha-\beta)=\cos(\alpha)\cos(\beta)+\sin(\alpha)\sin(\beta)$
+with $\alpha=t$.
+Let's rewrite it a bit as
+$$\sqrt{17}\left({1\over\sqrt{17}}\cos t + {4\over\sqrt{17}}\sin t\right).$$
+Note that $\ds (1/\sqrt{17})^2+(4/\sqrt{17})^2=1$, 
+which means that there is an angle
+$\beta$ with $\ds \cos\beta=1/\sqrt{17}$ and 
+$\ds \sin\beta=4/\sqrt{17}$ (of course, $\beta$ may not be a ``nice'' angle). Then
+$$\cos t+4\sin t = \sqrt{17}\left(\cos t\cos \beta+\sin\beta\sin t\right)
+=\sqrt{17}\cos(t-\beta).$$
+Thus, the solution may also be written
+$\ds y=\sqrt{17}e^{-2t}\cos(t-\beta)$.
+This is a cosine curve  that has been shifted $\beta$ to the
+right; the $\ds \sqrt{17}e^{-2t}$ has the effect of diminishing the
+amplitude of the cosine as $t$ increases; see
+figure~\xrefn{fig:damped oscillation}. The oscillation is damped very
+quickly, so in the first graph it is not clear that this is an
+oscillation. The second graph shows a restricted range for $t$.
+\end{example}
+
+Other physical systems that oscillate can also be described by such
+differential equations. Some electric circuits, for example, generate
+oscillating current.
+
+\figure
+\vbox{\beginpicture
+\normalgraphs
+\sevenpoint
+\setcoordinatesystem units <1truecm,1truecm>
+\setplotarea x from 0 to 5, y from -1 to 5
+\axis left shiftedto x=0 ticks length <2pt> numbered from -1 to 5 by 1 /
+\axis bottom shiftedto y=0 ticks length <2pt> numbered from 0 to 5 by 1 /
+%\put {$t$} [tl] <0pt,-3pt> at 1.06 0
+%\put {$y$} [b] <0pt,3pt> at 0 0.56
+\plot 0.000 4.123 0.083 4.640 0.167 4.874 0.250 4.898 0.333 4.771
+0.417 4.539 0.500 4.240 0.583 3.900 0.667 3.542 0.750 3.182
+0.833 2.829 0.917 2.494 1.000 2.180 1.083 1.891 1.167 1.628
+1.250 1.391 1.333 1.181 1.417 0.996 1.500 0.834 1.583 0.693
+1.667 0.572 1.750 0.468 1.833 0.380 1.917 0.305 2.000 0.243
+2.083 0.191 2.167 0.149 2.250 0.114 2.333 0.085 2.417 0.062
+2.500 0.044 2.583 0.030 2.667 0.019 2.750 0.010 2.833 0.004
+2.917 -0.001 3.000 -0.004 3.083 -0.007 3.167 -0.008 3.250 -0.009
+3.333 -0.009 3.417 -0.009 3.500 -0.009 3.583 -0.008 3.667 -0.008
+3.750 -0.007 3.833 -0.006 3.917 -0.006 4.000 -0.005 4.083 -0.004
+4.167 -0.004 4.250 -0.003 4.333 -0.003 4.417 -0.002 4.500 -0.002
+4.583 -0.002 4.667 -0.001 4.750 -0.001 4.833 -0.001 4.917 -0.001
+5.000 -0.001 /
+\setcoordinatesystem units <2truecm,60truecm> point at -1 0
+\setplotarea x from 2.5 to 5, y from -0.01 to 0.05
+\axis left shiftedto x=2.5 ticks length <2pt> numbered from -0.01 to 0.05 by 0.01 /
+\axis bottom shiftedto y=0 ticks length <2pt> numbered from 3 to 5 by 1 /
+%\put {$t$} [tl] <0pt,-3pt> at 1.06 0
+%\put {$y$} [b] <0pt,3pt> at 0 0.56
+\plot 2.50000 0.04425 2.54167 0.03663 2.58333 0.02988 2.62500 0.02393 2.66667
+0.01871
+2.70833 0.01413 2.75000 0.01015 2.79167 0.00670 2.83333 0.00372 2.87500
+0.00117
+2.91667 -0.00100 2.95833 -0.00283 3.00000 -0.00435 3.04167 -0.00560
+3.08333 -0.00662
+3.12500 -0.00743 3.16667 -0.00806 3.20833 -0.00852 3.25000 -0.00885
+3.29167 -0.00905
+3.33333 -0.00915 3.37500 -0.00916 3.41667 -0.00910 3.45833 -0.00897
+3.50000 -0.00880
+3.54167 -0.00858 3.58333 -0.00832 3.62500 -0.00804 3.66667 -0.00773
+3.70833 -0.00741
+3.75000 -0.00708 3.79167 -0.00675 3.83333 -0.00641 3.87500 -0.00607
+3.91667 -0.00574
+3.95833 -0.00541 4.00000 -0.00509 4.04167 -0.00478 4.08333 -0.00448
+4.12500 -0.00418
+4.16667 -0.00390 4.20833 -0.00363 4.25000 -0.00338 4.29167 -0.00313
+4.33333 -0.00290
+4.37500 -0.00268 4.41667 -0.00248 4.45833 -0.00228 4.50000 -0.00210
+4.54167 -0.00192
+4.58333 -0.00176 4.62500 -0.00161 4.66667 -0.00147 4.70833 -0.00134
+4.75000 -0.00122
+4.79167 -0.00111 4.83333 -0.00101 4.87500 -0.00091 4.91667 -0.00082
+4.95833 -0.00074
+5.00000 -0.00066 /
+\endpicture}
+\figrdef{fig:damped oscillation}
+\endfigure{Graph of a damped oscillation.}
+
+\begin{example} Find the solution to the intial value problem
+$\ds\ddot y-4\dot y+4y=0$, $y(0)=-3$, $\dot y(0)=1$. The
+characteristic polynomial is $x^2-4x+4=(x-2)^2$, so there is one root,
+$r=2$, 
+and the general solution is $\ds Ae^{2t}+Bte^{2t}$. Substituting
+$t=0$ we get $-3=A+0=A$. The first derivative is
+$\ds 2Ae^{2t}+2Bte^{2t}+Be^{2t}$; substituting $t=0$ gives
+$1=2A+0+B=2A+B=2(-3)+B=-6+B$, so $B=7$. The solution is
+$\ds -3e^{2t}+7te^{2t}$.
+\end{example}
+
+\begin{exercises}
+
+\exercise Verify that the function in part (a) of
+theorem~\xrefn{thm:solns to second order homogeneous} is a solution to
+the differential equation $\ds a\ddot y+b\dot y+cy=0$.
+
+\exercise Verify that the function in part (b) of
+theorem~\xrefn{thm:solns to second order homogeneous} is a solution to
+the differential equation $\ds a\ddot y+b\dot y+cy=0$.
+
+\exercise Verify that the function in part (c) of
+theorem~\xrefn{thm:solns to second order homogeneous} is a solution to
+the differential equation $\ds a\ddot y+b\dot y+cy=0$.
+
+\exercise Solve the initial value problem $\ds\ddot y-\omega^2y=0$,
+$y(0)=1$, $\ds\dot y(0)=1$, assuming $\omega\not=0$.
+\begin{answer} $\ds {\omega+1\over2\omega}e^{\omega t}+
+{\omega-1\over2\omega}e^{-\omega t}$
+\end{answer}
+
+\exercise Solve the initial value problem $\ds2\ddot y+18y=0$,
+$y(0)=2$, $\ds\dot y(0)=15$.
+\begin{answer} $\ds 2\cos(3t)+5\sin(3t)$
+\end{answer}
+
+%k9
+\exercise Solve the initial value problem 
+$\ds \ddot y+6\dot y +5y=0$,
+$y(0)=1$, $\ds\dot y(0)=0$.
+\begin{answer} $\ds -(1/4)e^{-5t}+(5/4)e^{-t}$
+\end{answer}
+%k10
+\exercise Solve the initial value problem 
+$\ds\ddot y-\dot y-12y=0$,
+$y(0)=0$, $\ds\dot y(0)=14$.
+\begin{answer} $\ds-2e^{-3t}+2e^{4t}$
+\end{answer}
+%k11
+\exercise Solve the initial value problem 
+$\ds\ddot y+12\dot y+36y=0$,
+$y(0)=5$, $\ds\dot y(0)=-10$.
+\begin{answer} $\ds 5e^{-6t}+20te^{-6t}$
+\end{answer}
+%k12
+\exercise Solve the initial value problem 
+$\ds\ddot y-8\dot y+16y=0$,
+$y(0)=-3$, $\ds\dot y(0)=4$.
+\begin{answer} $\ds (16t-3)e^{4t}$
+\end{answer}
+%k13
+\exercise Solve the initial value problem 
+$\ds\ddot y+5y=0$,
+$y(0)=-2$, $\ds\dot y(0)=5$.
+\begin{answer} $\ds -2\cos(\sqrt5t)+\sqrt{5}\sin(\sqrt{5}t)$
+\end{answer}
+%k14
+\exercise Solve the initial value problem 
+$\ds\ddot y+y=0$,
+$y(\pi/4)=0$, $\ds\dot y(\pi/4)=2$.
+\begin{answer} $\ds -\sqrt2\cos t+\sqrt2\sin t$
+\end{answer}
+%k15
+\exercise Solve the initial value problem 
+$\ds\ddot y+12\dot y+37y=0$,
+$y(0)=4$, $\ds\dot y(0)=0$.
+\begin{answer} $\ds e^{-6t}\left(4\cos t+24\sin t\right)$
+\end{answer}
+%k16
+\exercise Solve the initial value problem 
+$\ds\ddot y+6\dot y+18y=0$,
+$y(0)=0$, $\ds\dot y(0)=6$.
+\begin{answer} $\ds 2e^{-3t}\sin(3t)$
+\end{answer}
+%k17
+\exercise Solve the initial value problem 
+$\ds\ddot y+4y=0$,
+$y(0)=\sqrt3$, $\ds\dot y(0)=2$. Put your answer in the form developed
+at the end of exercise~\xrefn{example:damped spring oscillation}.
+\begin{answer} $\ds 2\cos(2t-\pi/6)$
+\end{answer}
+%k18
+\exercise Solve the initial value problem 
+$\ds\ddot y+100y=0$,
+$y(0)=5$, $\ds\dot y(0)=50$. Put your answer in the form developed
+at the end of exercise~\xrefn{example:damped spring oscillation}.
+\begin{answer} $\ds 5\sqrt2\cos(10t-\pi/4)$
+\end{answer}
+%k19
+\exercise Solve the initial value problem 
+$\ds\ddot y+4\dot y+13y=0$,
+$y(0)=1$, $\ds\dot y(0)=1$. Put your answer in the form developed
+at the end of exercise~\xrefn{example:damped spring oscillation}.
+\begin{answer} $\ds \sqrt2 e^{-2t}\cos(3t-\pi/4)$
+\end{answer}
+%k20
+\exercise Solve the initial value problem 
+$\ds\ddot y-8\dot y+25y=0$,
+$y(0)=3$, $\ds\dot y(0)=0$. Put your answer in the form developed
+at the end of exercise~\xrefn{example:damped spring oscillation}.
+\begin{answer} $\ds 5e^{4t}\cos(3t+\arcsin(4/5))$
+\end{answer}
+%k21
+\exercise A mass-spring system $\ds m\ddot y+b\dot y+kx$ has
+$k=29$, $b=4$, and $m=1$. At time $t=0$ the position is $y(0)=2$ and
+the velocity is $\dot y(0)=1$. Find $y(t)$.
+\begin{answer} $\ds (2\cos(5t)+\sin(5t))e^{-2t}$
+\end{answer}
+%k22
+\exercise A mass-spring system $\ds m\ddot y+b\dot y+kx$ has
+$k=24$, $b=12$, and $m=3$. At time $t=0$ the position is $y(0)=0$ and
+the velocity is $\dot y(0)=-1$. Find $y(t)$.
+\begin{answer} $\ds-(1/2)e^{-2t}\sin(2t)$
+\end{answer}
+
+\exercise Consider 
+\label{exer:second order really first order}
+the differential equation $\ds a\ddot y + b\dot
+y=0$, with $a$ and $b$ both non-zero. Find the general solution by the
+method of this section. Now let $\ds g=\dot y$; the equation may be
+written as $\ds a\dot g+bg=0$, a first order linear homogeneous
+equation. Solve this for $g$, then use the relationship $\ds g=\dot y$ to
+find $y$.
+
+%k23
+\exercise Suppose that $y(t)$ is a solution to $\ds a\ddot y+b\dot
+y+cy=0$, $y(t_0)=0$, $\ds\dot y(t_0)=0$. Show that $y(t)=0$.
+
+\end{exercises}

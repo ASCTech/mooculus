@@ -1,0 +1,266 @@
+\section{Rational Functions}{}{}
+\nobreak
+A {\dfont rational function\index{rational function}\index{function!rational}}
+is a fraction with polynomials in the numerator and
+denominator.  For example, 
+$$
+  {x^3\over x^2+x-6},
+  \qquad\qquad
+  {1\over (x-3)^2},
+  \qquad\qquad
+  {x^2+1\over x^2-1},
+$$ 
+are all rational functions of $x$.  There is a general technique
+called ``partial fractions''\index{partial fractions} that, in
+principle, allows us to integrate any rational function.  The
+algebraic steps in the technique are rather cumbersome if the
+polynomial in the denominator has degree more than 2, and the
+technique requires that we factor the denominator, something that is
+not always possible.  However, in practice one does not often run
+across rational functions with high degree polynomials in the
+denominator for which one has to find the antiderivative function.  So
+we shall explain how to find the antiderivative of a rational function
+only when the denominator is a quadratic polynomial $\ds ax^2+bx+c$.
+
+We should mention a special type of rational function that we already
+know how to integrate: If the denominator has the form $\ds (ax+b)^n$,
+the substitution $u=ax+b$ will always work.  The denominator becomes
+$\ds u^n$, and each $x$ in the numerator is replaced by $(u-b)/a$, and
+$dx=du/a$. While it may be tedious to complete the integration if the
+numerator has high degree, it is merely a matter of algebra.
+
+\begin{example}
+Find $\ds\int{x^3\over(3-2x)^5}\,dx.$ Using the substitution 
+$u=3-2x$ we get
+$$\eqalign{
+  \int{x^3\over(3-2x)^5}\,dx
+  &={1\over -2}\int {\left({u-3\over-2}\right)^3\over u^5}\,du
+  ={1\over 16}\int {u^3-9u^2+27u-27\over u^5}\,du \\
+  &={1\over 16}\int u^{-2}-9u^{-3}+27u^{-4}-27u^{-5}\,du \\
+  &={1\over 16}\left({u^{-1}\over-1}-{9u^{-2}\over-2}+{27u^{-3}\over-3}
+  -{27u^{-4}\over-4}\right)+C \\
+  &={1\over 16}\left({(3-2x)^{-1}\over-1}-{9(3-2x)^{-2}\over-2}+
+  {27(3-2x)^{-3}\over-3}
+  -{27(3-2x)^{-4}\over-4}\right)+C \\
+  &=-{1\over
+    16(3-2x)}+{9\over32(3-2x)^2}-{9\over16(3-2x)^3}+{27\over64(3-2x)^4}+C \\ 
+}$$
+\vglue-10pt\end{example}
+
+We now proceed to the case in which the denominator is a quadratic
+polynomial.  We can always factor out the coefficient of $\ds x^2$ and put
+it outside the integral, so we can assume that the denominator has the
+form $\ds x^2+bx+c$.  There are three possible cases, depending on how
+the quadratic factors: either $\ds x^2+bx+c=(x-r)(x-s)$,
+$\ds x^2+bx+c=(x-r)^2$, or it doesn't factor. We can use the quadratic
+formula to decide which of these we have, and to factor the quadratic
+if it is possible.
+
+\begin{example}
+Determine whether $\ds x^2+x+1$ factors, and factor it if possible.
+The quadratic formula tells us that $\ds x^2+x+1=0$ when
+$$x={-1\pm\sqrt{1-4}\over 2}.$$
+Since there is no square root of $-3$, this quadratic does not factor.
+\end{example}
+
+\begin{example}
+Determine whether $\ds x^2-x-1$ factors, and factor it if possible.
+The quadratic formula tells us that $\ds x^2-x-1=0$ when
+$$x={1\pm\sqrt{1+4}\over 2}={1\pm\sqrt{5}\over2}.$$
+Therefore
+$$
+  x^2-x-1=\left(x-{1+\sqrt{5}\over2}\right)\left(x-{1-\sqrt{5}\over2}\right).
+$$
+\vskip-10pt\end{example}
+
+If $\ds x^2+bx+c=(x-r)^2$ then we have the special case we have already
+seen, that can be handled with a substitution. The other two cases
+require different approaches.
+
+If  $\ds x^2+bx+c=(x-r)(x-s)$, we have an integral of the form
+$$\int{p(x)\over (x-r)(x-s)}\,dx$$
+where $p(x)$ is a polynomial. The first step is to make sure that
+$p(x)$ has degree less than 2.
+
+\begin{example}
+Rewrite $\ds\int {x^3\over (x-2)(x+3)}\,dx$ in terms of an integral
+with a numerator that has degree less than 2. To do this we use 
+\url{http://en.wikipedia.org/wiki/Polynomial_long_division}long
+division of polynomials\endurl\index{long division of polynomials} to 
+discover that
+$$
+  {x^3\over (x-2)(x+3)}={x^3\over x^2+x-6}=x-1+{7x-6\over x^2+x-6}=
+  x-1+{7x-6\over (x-2)(x+3)},
+$$
+so 
+$$
+  \int {x^3\over (x-2)(x+3)}\,dx=\int x-1\,dx +\int {7x-6\over
+  (x-2)(x+3)}\,dx.
+$$
+The first integral is easy, so only the second requires some work.
+\end{example}
+
+Now consider the following simple algebra of fractions:
+$$
+  {A\over x-r}+{B\over x-s}={A(x-s)+B(x-r)\over (x-r)(x-s)}=
+  {(A+B)x-As-Br\over (x-r)(x-s)}.
+$$
+That is, adding two fractions with constant numerator and denominators
+$(x-r)$ and $(x-s)$ produces a fraction with denominator $(x-r)(x-s)$
+and a polynomial of degree less than 2 for the numerator. We want to
+reverse this process: starting with a single fraction, we want to
+write it as a sum of two simpler fractions. An example should make it
+clear how to proceed.
+
+\begin{example} Evaluate $\ds\int {x^3\over (x-2)(x+3)}\,dx$.  We start by
+writing $\ds{7x-6\over (x-2)(x+3)}$ as the sum of two fractions.  We
+want to end up with
+$${7x-6\over (x-2)(x+3)}={A\over x-2}+{B\over x+3}.$$
+If we go ahead and add the fractions on the right hand side we get
+$${7x-6\over (x-2)(x+3)}={(A+B)x+3A-2B\over (x-2)(x+3)}.$$
+So all we need to do is find $A$ and $B$ so that $7x-6=(A+B)x+3A-2B$,
+which is to say, we need $7=A+B$ and $-6=3A-2B$. This is a problem
+you've seen before: solve a system of two equations in two
+unknowns. There are many ways to proceed; here's one: If $7=A+B$ then
+$B=7-A$ and so $-6=3A-2B=3A-2(7-A)=3A-14+2A=5A-14$. This is easy to
+solve for $A$: $\ds A= 8/5$, and then $B=7-A=7-8/5=27/5$. Thus
+$$
+  \int {7x-6\over (x-2)(x+3)}\,dx=
+  \int {8\over5}{1\over x-2}+{27\over5}{1\over x+3}\,dx=
+  {8\over5}\ln |x-2|+{27\over5}\ln|x+3|+C.
+$$
+The answer to the original problem is now
+$$\eqalign{
+  \int {x^3\over (x-2)(x+3)}\,dx
+  &=\int x-1\,dx +\int {7x-6\over (x-2)(x+3)}\,dx \\
+  &={x^2\over 2}-x+{8\over5}\ln |x-2|+{27\over5}\ln|x+3|+C. \\
+}$$
+\vskip-10pt\end{example}
+
+Now suppose that $\ds x^2+bx+c$ doesn't factor. Again we can use long
+division to ensure that the numerator has degree less than 2, then we
+complete the square.
+
+\begin{example} 
+Evaluate $\ds\int {x+1\over x^2+4x+8}\,dx$. The quadratic denominator
+does not factor. We could complete the square and use a trigonometric
+substitution, but it is simpler to rearrange the integrand:
+$$
+  \int {x+1\over x^2+4x+8}\,dx = \int {x+2\over x^2+4x+8}\,dx -
+  \int {1\over x^2+4x+8}\,dx.
+$$
+The first integral is an easy substitution problem, using $u=x^2+4x+8$:
+$$
+  \int {x+2\over x^2+4x+8}\,dx={1\over2}\int {du\over u}=
+  {1\over2}\ln|x^2+4x+8|.
+$$
+For the second integral we complete the square:
+$$
+  x^2+4x+8=(x+2)^2+4=4\left(\left({x+2\over2}\right)^2+1\right),
+$$
+making the integral
+$$ 
+  {1\over4}\int {1\over\left({x+2\over2}\right)^2+1}\,dx.
+$$
+Using $\ds u={x+2\over2}$ we get
+$$
+  {1\over4}\int {1\over\left({x+2\over2}\right)^2+1}\,dx=
+  {1\over4}\int {2\over u^2+1}\,dx=
+  {1\over2}\arctan\left({x+2\over2}\right).
+$$
+The final answer is now 
+$$
+  \int {x+1\over x^2+4x+8}\,dx={1\over2}\ln|x^2+4x+8|-
+  {1\over2}\arctan\left({x+2\over2}\right)+C.
+$$
+\end{example}
+
+% Too nasty?
+% \begin{example}
+% Evaluate $\ds\int {x\over x^2+x+1}\,dx$. We have seen that this
+% quadratic does not factor. We complete the square:
+% $$ 
+%   x^2+x+1=x^2+x+{1\over 4} + 1 -{1\over4}=x^2+x+{1\over 4}+{3\over4}=
+%   \left(x+{1\over2}\right)^2+{3\over4}.
+% $$
+% Now factor out $3/4$:
+% $$
+%   {3\over4}\left({4\over3}\left(x+{1\over2}\right)^2+1\right)
+%   ={3\over4}\left(\left({2\over\sqrt{3}}x+{1\over\sqrt3}\right)^2+1\right).
+% $$
+% This can be done as a rather messy trigonometric substitution problem,
+% but it is easier to do a bit more rewriting:
+% $$
+%   \int {x\over x^2+x+1}\,dx=\int{x+(1/2)\over x^2+x+1}\,dx-
+%   \int{1/2\over x^2+x+1}\,dx.
+% $$
+% Now the first integral is an easy substitution, using $u=x^2+x+1$:
+% $$
+%   \int {x+(1/2)\over x^2+x+1}\,dx={1\over2}\int {du\over u}=
+%   {1\over2}\ln|x^2+x+1|.
+% $$
+% The second integral is 
+% $$
+%   {1\over2}\int{dx\over x^2+x+1}=
+%   {1\over2}\int{1\over(3/4)((2x/\sqrt3+1/\sqrt3)^2+1)}\,dx.
+% $$
+% Using $u=2x/\sqrt3+1/\sqrt3$ this becomes
+% $$ 
+%   {1\over\sqrt3}\int{du\over u^2+1}={1\over\sqrt3}\arctan(u)=
+%   {1\over\sqrt3}\arctan\left({2\over\sqrt3}x+{1\over\sqrt3}\right).
+% $$
+% Thus the final answer is
+% $$
+%   \int {x\over x^2+x+1}\,dx = {1\over2}\ln|x^2+x+1|-
+%   {1\over\sqrt3}\arctan\left({2\over\sqrt3}x+{1\over\sqrt3}\right)+C.
+% $$
+% \end{example}
+
+\begin{exercises}
+
+Find the antiderivatives.
+\twocol
+
+\exercise $\ds\int {1\over 4-x^2}\,dx$
+\begin{answer} $-\ln|x-2|/4+\ln|x+2|/4+C$
+\end{answer}
+
+\exercise $\ds\int {x^4\over 4-x^2}\,dx$
+\begin{answer} $\ds -x^3/3-4x-4\ln|x-2|+$\hfill\break$4\ln|x+2| +C$
+\end{answer}
+
+\exercise $\ds\int {1\over x^2+10x+25}\,dx$
+\begin{answer} $-1/(x+5) +C$
+\end{answer}
+
+\exercise $\ds\int {x^2\over 4-x^2}\,dx$
+\begin{answer} $-x-\ln|x-2|+\ln|x+2| +C$
+\end{answer}
+
+\exercise $\ds\int {x^4\over 4+x^2}\,dx$
+\begin{answer} $\ds -4x+x^3/3+8\arctan(x/2) +C$
+\end{answer}
+
+\exercise $\ds\int {1\over x^2+10x+29}\,dx$
+\begin{answer} $(1/2)\arctan(x/2+5/2) +C$
+\end{answer}
+
+\exercise $\ds\int {x^3\over 4+x^2}\,dx$
+\begin{answer} $\ds x^2/2-2\ln(4+x^2) +C$
+\end{answer}
+
+\exercise $\ds\int {1\over x^2+10x+21}\,dx$
+\begin{answer} $(1/4)\ln|x+3|-(1/4)\ln|x+7| +C$
+\end{answer}
+
+\exercise $\ds\int {1\over 2x^2-x-3}\,dx$
+\begin{answer} $(1/5)\ln|2x-3|-(1/5)\ln|1+x| +C$
+\end{answer}
+
+\exercise $\ds\int {1\over x^2+3x}\,dx$
+\begin{answer} $(1/3)\ln|x|-(1/3)\ln|x+3| +C$
+\end{answer}
+
+\endtwocol
+
+\end{exercises}

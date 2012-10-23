@@ -1,0 +1,397 @@
+\section{Sequences}{}{}
+\nobreak
+While the idea of a sequence of numbers, $a_1,a_2,a_3,\ldots$ is
+straightforward, it is useful to think of a sequence as a function. We
+have up until now dealt with functions whose domains are the real
+numbers, or a subset of the real numbers, like $f(x)=\sin x$. A
+sequence is a function with domain the natural numbers
+$\N=\{1,2,3,\ldots\}$ or the non-negative integers,
+$\ds \Z^{\ge0}=\{0,1,2,3,\ldots\}$. The range of the function is still
+allowed to be the real numbers; in symbols, we say that a sequence is
+a function $f\colon \N\to\R$. Sequences are written in a few different
+ways, all equivalent; these all mean the same thing:
+$$
+  \displaylines{a_1,a_2,a_3,\ldots \\
+  \left\{a_n\right\}_{n=1}^\infty \\
+  \left\{f(n)\right\}_{n=1}^\infty \\}
+%%  \left\{a_n\mid n\in\N\right\} \\
+%%  \left\{f(n)\mid n\in\N\right\} \\
+$$
+
+
+As with functions on the real numbers,
+we will most often encounter sequences that can be expressed by a
+formula. We have already seen the sequence $\ds a_i=f(i)=1-1/2^i$, and others
+are easy to come by:
+$$\eqalign{
+  f(i)&={i\over i+1} \\
+  f(n)&={1\over2^n} \\
+  f(n)&=\sin(n\pi/6) \\
+  f(i)&={(i-1)(i+2)\over2^i} \\
+}$$
+Frequently these formulas will make sense if thought of either as
+functions with domain $\R$ or $\N$, though occasionally one will make
+sense only for integer values. 
+
+Faced with a sequence we are interested in the limit
+$$\lim_{i\to \infty} f(i) = \lim_{i\to\infty} a_i.$$
+We already understand
+$$\lim_{x\to\infty} f(x)$$
+when $x$ is a real valued variable; now we simply want to restrict the
+``input'' values to be integers. No real difference is required in the
+definition of limit, except that we specify, perhaps implicitly, that
+the variable is an integer.  Compare this definition to
+definition~\xrefn{defn:limit at infinity}.
+
+\begin{definition} \relax\index{limit of a sequence}
+Suppose that $\ds\left\{a_n\right\}_{n=1}^\infty$ is a sequence.
+We say that $\ds \lim_{n\to \infty}a_n=L$ if for every $\epsilon>0$
+there is an $N > 0$ so that whenever $n>N$, $|a_n-L|<\epsilon$. If
+$\ds \lim_{n\to\infty}a_n=L$ we say that the sequence {\dfont
+converges\index{convergent sequence}\index{sequence!convergent}\/},
+otherwise it {\dfont diverges\index{divergent
+sequence}\index{sequence!divergent}\/}.  
+\end{definition} 
+
+If $f(i)$ defines a sequence, and $f(x)$ makes sense, and 
+$\ds \lim_{x\to\infty}f(x)=L$, then it is clear that
+$\ds \lim_{i\to\infty}f(i)=L$ as well, but it is important to note that
+the converse of this statement is not true. For example, since
+$\ds \lim_{x\to\infty}(1/x)=0$, it is clear that also
+$\ds \lim_{i\to\infty}(1/i)=0$, that is, the numbers
+$${1\over1},{1\over2},{1\over3},{1\over4},{1\over5},{1\over6},\ldots$$
+get closer and closer to 0. Consider this, however: Let 
+$f(n)=\sin(n\pi)$. This is the sequence
+$$
+  \sin(0\pi), \sin(1\pi),\sin(2\pi),\sin(3\pi),\ldots=0,0,0,0,\ldots
+$$
+since $\sin(n\pi)=0$ when $n$ is an integer. Thus
+$\ds \lim_{n\to\infty}f(n)=0$. But $\ds \lim_{x\to\infty}f(x)$, when $x$ is
+real, does not exist: as $x$ gets bigger and bigger, the values
+$\sin(x\pi)$ do not get closer and closer to a single value, but take
+on all values between $-1$ and $1$ over and over. In general, whenever
+you want to know $\ds \lim_{n\to\infty}f(n)$ you should first attempt to
+compute $\ds \lim_{x\to\infty}f(x)$, since if the latter exists it is also
+equal to the first limit. But if for some reason
+$\ds \lim_{x\to\infty}f(x)$ does not exist, it may still be true that 
+$\ds \lim_{n\to\infty}f(n)$ exists, but you'll have to figure out
+another way to compute it.
+
+It is occasionally useful to think of the graph of a sequence. Since
+the function is defined only for integer values, the graph is just a
+sequence of dots. In figure~\xrefn{fig:graphs of sequences} we see the
+graphs of two sequences and the graphs of the corresponding real
+functions.
+
+\figure
+\vbox{\beginpicture
+\normalgraphs
+\ninepoint
+\setcoordinatesystem units <0.5truecm,0.5truecm> point at -14 0
+\setplotarea x from 0 to 10, y from 0 to 5
+\axis left ticks numbered from 0 to 5 by 1 /
+\axis bottom  ticks numbered from 0 to 10 by 5 /
+\setquadratic
+\plot 0.200 5.000 0.445 2.247 0.690 1.449 0.935 1.070 1.180 0.847 
+1.425 0.702 1.670 0.599 1.915 0.522 2.160 0.463 2.405 0.416 
+2.650 0.377 2.895 0.345 3.140 0.318 3.385 0.295 3.630 0.275 
+3.875 0.258 4.120 0.243 4.365 0.229 4.610 0.217 4.855 0.206 
+5.100 0.196 5.345 0.187 5.590 0.179 5.835 0.171 6.080 0.164 
+6.325 0.158 6.570 0.152 6.815 0.147 7.060 0.142 7.305 0.137 
+7.550 0.132 7.795 0.128 8.040 0.124 8.285 0.121 8.530 0.117 
+8.775 0.114 9.020 0.111 9.265 0.108 9.510 0.105 9.755 0.103 
+10.000 0.100 /
+\put {$f(x)=1/x$} at 5 2.5
+\setcoordinatesystem units <0.5truecm,0.5truecm> point at 0 0
+\setplotarea x from 0 to 10, y from 0 to 5
+\axis left ticks numbered from 0 to 5 by 1 /
+\axis bottom  ticks numbered from 0 to 10 by 5 /
+\multiput {\fivepoint$\bullet$} at 1 1 2 0.5 3 0.3333 4 0.25 5 0.2
+6 0.1667 7 0.1429 8 0.125 9 0.1111 10 0.1 /
+\put {$f(n)=1/n$} at 5 2.5
+\setcoordinatesystem units <0.63truecm,1truecm> point at -11.1 3
+\setplotarea x from 0 to 8, y from -1 to 1
+\axis left ticks numbered from -1 to 1 by 1 /
+\axis bottom shiftedto y=0 /
+\setquadratic
+\plot 0.000 0.000 0.080 0.249 0.160 0.482 0.240 0.685 0.320 0.844 
+0.400 0.951 0.480 0.998 0.560 0.982 0.640 0.905 0.720 0.771 
+0.800 0.588 0.880 0.368 0.960 0.125 1.040 -0.125 1.120 -0.368 
+1.200 -0.588 1.280 -0.771 1.360 -0.905 1.440 -0.982 1.520 -0.998 
+1.600 -0.951 1.680 -0.844 1.760 -0.685 1.840 -0.482 1.920 -0.249 
+2.000 0.000 2.080 0.249 2.160 0.482 2.240 0.685 2.320 0.844 
+2.400 0.951 2.480 0.998 2.560 0.982 2.640 0.905 2.720 0.771 
+2.800 0.588 2.880 0.368 2.960 0.125 3.040 -0.125 3.120 -0.368 
+3.200 -0.588 3.280 -0.771 3.360 -0.905 3.440 -0.982 3.520 -0.998 
+3.600 -0.951 3.680 -0.844 3.760 -0.685 3.840 -0.482 3.920 -0.249 
+4.000 0.000 4.080 0.249 4.160 0.482 4.240 0.685 4.320 0.844 
+4.400 0.951 4.480 0.998 4.560 0.982 4.640 0.905 4.720 0.771 
+4.800 0.588 4.880 0.368 4.960 0.125 5.040 -0.125 5.120 -0.368 
+5.200 -0.588 5.280 -0.771 5.360 -0.905 5.440 -0.982 5.520 -0.998 
+5.600 -0.951 5.680 -0.844 5.760 -0.685 5.840 -0.482 5.920 -0.249 
+6.000 0.000 6.080 0.249 6.160 0.482 6.240 0.685 6.320 0.844 
+6.400 0.951 6.480 0.998 6.560 0.982 6.640 0.905 6.720 0.771 
+6.800 0.588 6.880 0.368 6.960 0.125 7.040 -0.125 7.120 -0.368 
+7.200 -0.588 7.280 -0.771 7.360 -0.905 7.440 -0.982 7.520 -0.998 
+7.600 -0.951 7.680 -0.844 7.760 -0.685 7.840 -0.482 7.920 -0.249 
+8.000 0.000 /
+\put {$f(x)=\sin(x\pi)$} at 4 1.3
+\setcoordinatesystem units <0.63truecm,1truecm> point at 0 3
+\setplotarea x from 0 to 8, y from -1 to 1
+\axis left ticks numbered from -1 to 1 by 1 /
+\axis bottom shiftedto y=0 ticks numbered from 1 to 8 by 1 /
+\multiput {\fivepoint$\bullet$} at 0 0 1 0 2 0 3 0 4 0 5 0 6 0 7 0 8 0 /
+\put {$f(n)=\sin(n\pi)$} at 4 0.5
+\endpicture}
+\figrdef{fig:graphs of sequences}
+\endfigure{Graphs of sequences and their corresponding real functions.}
+
+Not surprisingly, the properties of limits of real functions translate
+into properties of sequences quite easily. 
+Theorem~\xrefn{thm:properties of limits} about limits becomes
+
+%\vbox{
+\begin{theorem} \relax\label{thm:properties of sequences}
+Suppose that $\ds\lim_{n\to\infty}a_n=L$ and 
+$\ds\lim_{n\to\infty}b_n=M$ and
+$k$ is some constant. Then
+$$\eqalign{
+&\lim_{n\to\infty} ka_n = k\lim_{n\to\infty}a_n=kL \\
+&\lim_{n\to\infty} (a_n+b_n) = \lim_{n\to\infty}a_n+\lim_{n\to\infty}b_n=L+M \\
+&\lim_{n\to\infty} (a_n-b_n) = \lim_{n\to\infty}a_n-\lim_{n\to\infty}b_n=L-M \\
+&\lim_{n\to\infty} (a_nb_n) = \lim_{n\to\infty}a_n\cdot\lim_{n\to\infty}b_n=LM \\
+&\lim_{n\to\infty} {a_n\over b_n} = {\lim_{n\to\infty}a_n\over
+  \lim_{n\to\infty}b_n}={L\over M},\hbox{ if $M$ is not 0} \\
+}$$
+\end{proof}
+%}
+
+Likewise the Squeeze Theorem (\xrefn{thm:squeeze theorem}) becomes
+
+\begin{theorem}\relax\label{thm:squeeze theorem for sequences}
+Suppose that $\ds a_n \le b_n \le c_n$ for all $n>N$, for some $N$.
+If $\ds\lim_{n\to\infty}a_n=\ds\lim_{n\to\infty}c_n=L$, 
+then $\ds\lim_{n\to\infty}b_n=L$.
+\end{proof}
+
+And a final useful fact:
+
+\begin{theorem} \relax\label{thm:absolute value sequence}
+$\ds\lim_{n\to\infty}|a_n|=0$ if and only if
+$\ds\lim_{n\to\infty}a_n=0$.
+\end{proof}
+
+This says simply that the size of $\ds a_n$ gets close to zero if and
+only if $\ds a_n$ gets close to zero.
+
+\begin{example}
+Determine whether $\ds\left\{{n\over n+1}\right\}_{n=0}^\infty$ converges or
+diverges. If it converges, compute the limit. Since this makes sense
+for real numbers we consider
+$$
+\lim_{x\to\infty}{x\over x+1}=\lim_{x\to\infty}1-{1\over x+1}=1-0=1.
+$$
+Thus the sequence converges to 1.
+\end{example}
+
+\begin{example}
+Determine whether $\ds\bigg\{{\ln n\over n}\bigg\}_{n=1}^\infty$ converges or
+diverges. If it converges, compute the limit. We compute
+$$\lim_{x\to\infty}{\ln x\over x}=\lim_{x\to\infty}{1/x\over 1}=
+0,$$
+using L'H\^opital's Rule. 
+Thus the sequence converges to 0.
+\end{example}
+
+\begin{example}
+Determine whether $\ds\{(-1)^n\}_{n=0}^\infty$ converges or
+diverges. If it converges, compute the limit. This does not make sense
+for all real exponents, but the sequence is easy to understand: it is
+$$1,-1,1,-1,1\ldots$$
+and clearly diverges.
+\end{example}
+\label{example:alternating ones}
+
+\begin{example}
+Determine whether $\ds\{(-1/2)^n\}_{n=0}^\infty$ converges or
+diverges. If it converges, compute the limit. We consider the sequence 
+$\ds\{|(-1/2)^n|\}_{n=0}^\infty=\{(1/2)^n\}_{n=0}^\infty$.
+Then
+$$
+  \lim_{x\to\infty}\left({1\over2}\right)^x=\lim_{x\to\infty}{1\over2^x}=0,
+$$
+so by theorem~\xrefn{thm:absolute value sequence} the sequence converges to 0.
+\end{example}
+
+\begin{example}
+Determine whether $\ds\{(\sin n)/\sqrt{n}\}_{n=1}^\infty$ converges or
+diverges. If it converges, compute the limit. 
+Since $|\sin n|\le 1$, $\ds 0\le|\sin n/\sqrt{n}|\le
+1/\sqrt{n}$ and we can use theorem~\xrefn{thm:squeeze theorem for
+sequences} with $\ds a_n=0$ and $\ds c_n=1/\sqrt{n}$. Since
+$\ds\lim_{n\to\infty} a_n=\ds\lim_{n\to\infty} c_n=0$, 
+$\ds\lim_{n\to\infty}\sin n/\sqrt{n}=0$ and the sequence converges to 0.
+\end{example}
+
+\begin{example}
+A particularly common and useful sequence is $\ds \{r^n\}_{n=0}^\infty$,
+for various values of $r$. Some are quite easy to understand: If $r=1$
+the sequence converges to 1 since every term is 1, and likewise if
+$r=0$ the sequence converges to 0. If $r=-1$ this is
+the sequence of example~\xrefn{example:alternating ones} and
+diverges. If $r>1$ or $r<-1$ the terms $\ds r^n$ get large without limit,
+so the sequence diverges. If $0<r<1$ then the sequence converges to
+0. If $-1<r<0$ then $\ds |r^n|=|r|^n$ and $0<|r|<1$, so the sequence
+$\ds \{|r|^n\}_{n=0}^\infty$ converges to 0, so also 
+$\ds\{r^n\}_{n=0}^\infty$ converges to 0.
+converges. In summary, $\ds \{r^n\}$ converges precisely when
+$-1<r\le1$ in which case
+$$
+  \lim_{n\to\infty} r^n=\cases{
+  0& if $-1<r<1$ \\
+  1& if $r=1$ \\}
+$$
+\vskip-10pt\end{example}
+
+Sometimes we will not be able to determine the limit of a sequence,
+but we still would like to know whether it converges. In some cases we
+can determine this even without being able to compute the limit.
+
+A sequence is called {\dfont increasing\index{sequence!increasing}\/}
+or sometimes {\dfont strictly increasing\/} if $\ds a_i<a_{i+1}$ for all
+$i$. It is called {\dfont
+non-decreasing\index{sequence!non-decreasing}\/} or sometimes
+(unfortunately) {\dfont increasing\/} if $\ds a_i\le a_{i+1}$ for all
+$i$. Similarly a sequence is {\dfont
+decreasing\index{sequence!decreasing}\/} if $\ds a_i>a_{i+1}$ for all $i$
+and {\dfont non-increasing\index{sequence!non-increasing}\/} if
+$\ds a_i\ge a_{i+1}$ for all $i$. If a sequence has any of these
+properties it is called {\dfont monotonic\index{sequence!monotonic}\/}.
+
+\begin{example}
+The sequence
+$$
+  \left\{{2^i-1\over2^i}\right\}_{i=1}^\infty=
+  {1\over2},{3\over4},{7\over8},{15\over16},\ldots,
+$$
+is increasing, and
+$$ 
+  \left\{{n+1\over n}\right\}_{i=1}^\infty=
+  {2\over1},{3\over2},{4\over3},{5\over4},\ldots
+$$
+is decreasing.
+\end{example}
+
+A sequence is {\dfont bounded above\index{sequence!bounded above}\/}
+if there is some number $N$ such that $\ds a_n\le N$ for every $n$,
+and {\dfont bounded below\index{sequence!bounded below}\/} if there is
+some number $N$ such that $\ds a_n\ge N$ for every $n$. If a sequence
+is bounded above and bounded below it is {\dfont
+bounded\index{sequence!bounded}\/}. If a sequence $\ds
+\{a_n\}_{n=0}^\infty$ is increasing or non-decreasing it is bounded
+below (by $\ds a_0$), and if it is decreasing or non-increasing it is
+bounded above (by $\ds a_0$).  Finally, with all this new terminology
+we can state an important theorem.
+
+\begin{theorem} If a sequence is bounded and monotonic then it converges.
+\end{proof}
+
+We will not prove this; the proof appears in many calculus books. It
+is not hard to believe: suppose that a sequence is increasing and
+bounded, so each term is larger than the one before, yet never larger
+than some fixed value $N$. The terms must then get closer and closer
+to some value between $\ds a_0$ and $N$. It need not be $N$, since $N$ may
+be a ``too-generous'' upper bound; the limit will be the
+smallest number that is above all of the terms $\ds a_i$.
+
+\begin{example}
+All of the terms $\ds (2^i-1)/2^i$ are less than 2, and the sequence is
+increasing. As we have seen, the limit of the sequence is 1---1 is the
+smallest number that is bigger than all the terms in the sequence.
+Similarly, all of the terms $(n+1)/n$ are bigger than $1/2$, and the
+limit is 1---1 is the largest number that is smaller than the terms of
+the sequence.
+\end{example}
+
+We don't actually need to know that a sequence is monotonic to apply
+this theorem---it is enough to know that the sequence is
+``eventually'' monotonic, that is, that at some point it becomes
+increasing or decreasing. For example, the sequence $10$, $9$, $8$,
+$15$, $3$, $21$, $4$, $3/4$, $7/8$, $15/16$, $31/32,\ldots$ is not
+increasing, because among the first few terms it is not. But starting
+with the term $3/4$ it is increasing, so the theorem tells us that the
+sequence $3/4, 7/8, 15/16, 31/32,\ldots$ converges.  Since convergence
+depends only on what happens as $n$ gets large, adding a few
+terms at the beginning can't turn a convergent sequence into a
+divergent one.
+
+\begin{example}
+Show that $\ds\{n^{1/n}\}$ converges. 
+\par\nobreak\ssk\noindent
+We first show that 
+this sequence is decreasing, that is, that $\ds n^{1/n}>
+(n+1)^{1/(n+1)}$. Consider the real function $\ds f(x)=x^{1/x}$ when
+$x\ge1$. We can compute the derivative, $\ds f'(x)=x^{1/x}(1-\ln x)/x^2$,
+and note that when $x\ge 3$ this is negative. Since the function has
+negative slope, $\ds n^{1/n}>
+(n+1)^{1/(n+1)}$ when $n\ge 3$. Since all terms of the sequence are
+positive, the sequence is decreasing and bounded when $n\ge3$, and so
+the sequence converges. (As it happens, we can compute the limit in
+this case, but we know it converges even without knowing the limit; see
+exercise~\xrefn{exercise:exponential limit}.)
+\end{example}
+
+\begin{example}
+Show that $\ds\{n!/n^n\}$ converges.
+\par\nobreak\ssk\noindent
+Again we show that the sequence is decreasing, and since each term is
+positive the sequence converges. We can't take the derivative this
+time, as $x!$ doesn't make sense for $x$ real. But we note that if 
+$\ds a_{n+1}/a_n < 1$ then $\ds a_{n+1}< a_n$, which is what we want to
+know. So we look at $\ds a_{n+1}/a_n$:
+$$ 
+  {a_{n+1}\over a_n} = {(n+1)!\over (n+1)^{n+1}}{n^n\over n!}=
+  {(n+1)!\over n!}{n^n\over (n+1)^{n+1}}=
+  {n+1\over n+1}\left({n\over n+1}\right)^n=
+  \left({n\over n+1}\right)^n < 1.
+$$
+(Again it is possible to compute the limit; see
+exercise~\xrefn{exercise:factorial limit}.)
+\end{example}
+
+\begin{exercises}
+
+\exercise \label{exercise:exponential limit}
+Compute $\ds\lim_{x\to\infty} x^{1/x}$.
+\begin{answer} $1$
+\end{answer}
+
+\exercise Use the squeeze theorem to show that 
+$\ds\lim_{n\to\infty} {n!\over n^n}=0$.
+\label{exercise:factorial limit}
+
+\exercise Determine whether $\ds\{\sqrt{n+47}-\sqrt{n}\}_{n=0}^\infty$ 
+converges or diverges. If it converges, compute the limit.
+\begin{answer} $0$
+\end{answer}
+
+\exercise Determine whether 
+$\ds\left\{{n^2+1\over (n+1)^2}\right\}_{n=0}^\infty$ 
+converges or diverges. If it converges, compute the limit.
+\begin{answer} $1$
+\end{answer}
+
+\exercise Determine whether 
+$\ds\left\{{n+47\over\sqrt{n^2+3n}}\right\}_{n=1}^\infty$ 
+converges or diverges. If it converges, compute the limit.
+\begin{answer} $1$
+\end{answer}
+
+\exercise Determine whether 
+$\ds\left\{{2^n\over n!}\right\}_{n=0}^\infty$ 
+converges or diverges. 
+\begin{answer} $0$
+\end{answer}
+
+\end{exercises}
+

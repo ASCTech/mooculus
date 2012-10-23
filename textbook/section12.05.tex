@@ -1,0 +1,443 @@
+\section{Lines and Planes}{}{}
+\nobreak
+Lines and planes are perhaps the simplest of curves and surfaces in
+three dimensional space. They also will prove important as we seek to
+understand more complicated curves and surfaces. 
+
+The equation of a line in two dimensions is $ax+by=c$; it is
+reasonable to expect that a line in three dimensions is
+given by $ax + by +cz = d$; reasonable, but wrong---it turns out that
+this is the equation of a plane.
+
+A plane does not have an obvious ``direction'' as does a line. It is
+possible to associate a plane with a direction in a very useful way,
+however: there are exactly two directions perpendicular to a
+plane. Any vector with one of these two directions is called {\dfont
+  normal\index{normal}\index{vector!normal to a plane}\/} to the plane.
+So while there are many normal vectors to a given plane, they are all
+parallel or anti-parallel to each other.
+
+Suppose two points $\ds (v_1,v_2,v_3)$ and $\ds (w_1,w_2,w_3)$ are in a plane;
+then the vector $\ds \langle w_1-v_1,w_2-v_2,w_3-v_3\rangle$ is parallel
+to the plane; in particular, if this vector is placed with its tail at
+$\ds (v_1,v_2,v_3)$ then its head is at $\ds (w_1,w_2,w_3)$ and it lies in the
+plane. As a result, any vector perpendicular to the plane is
+perpendicular to $\ds \langle w_1-v_1,w_2-v_2,w_3-v_3\rangle$. In fact, it
+is easy to see that the plane consists of {\em precisely\/} those points
+$\ds (w_1,w_2,w_3)$ for which $\ds \langle w_1-v_1,w_2-v_2,w_3-v_3\rangle$ is
+perpendicular to a normal to the plane, as indicated in 
+figure~\xrefn{fig:plane defined via perp vectors}. Turning this around, suppose
+we know that $\langle a,b,c\rangle$ is normal to a plane containing
+the point $\ds (v_1,v_2,v_3)$. Then $(x,y,z)$ is in the plane if and only
+if $\langle a,b,c\rangle$ is perpendicular to $\ds \langle
+x-v_1,y-v_2,z-v_3\rangle$. In turn, we know that this is true
+precisely when $\ds \langle a,b,c\rangle\cdot\langle
+x-v_1,y-v_2,z-v_3\rangle=0$. That is, $(x,y,z)$ is in the plane if and
+only if
+$$\eqalign{
+  \langle a,b,c\rangle\cdot\langle x-v_1,y-v_2,z-v_3\rangle&=0 \\
+  a(x-v_1)+b(y-v_2)+c(z-v_3)&=0 \\
+  ax+by+cz-av_1-bv_2-cv_3&=0 \\
+  ax+by+cz&=av_1+bv_2+cv_3. \\
+}$$
+Working backwards, note that if $(x,y,z)$ is a point satisfying 
+$ax+by+cz=d$ then
+$$\eqalign{
+  ax+by+cz&=d \\
+  ax+by+cz-d&=0 \\
+  a(x-d/a)+b(y-0)+c(z-0)&=0 \\
+  \langle a,b,c\rangle\cdot\langle x-d/a,y,z\rangle&=0. \\
+}$$
+Namely, $\langle a,b,c\rangle$ is perpendicular to the vector with
+tail at $(d/a,0,0)$ and head at $(x,y,z)$. This means that the points
+$(x,y,z)$ that satisfy the equation $ax+by+cz=d$ form a plane
+perpendicular to $\langle a,b,c\rangle$. (This doesn't
+work if $a=0$, but in that case we can use $b$ or $c$ in the role of
+$a$. That is, either $a(x-0)+b(y-d/b)+c(z-0)=0$ or 
+$a(x-0)+b(y-0)+c(z-d/c)=0$.)
+
+\figure
+\vbox{\beginpicture
+\normalgraphs
+\ninepoint
+\setcoordinatesystem units <3truecm,3truecm>
+\setplotarea x from 0 to 1.1, y from 0 to 1.1
+\put {\hbox{\epsfxsize6cm\epsfbox{plane_as_perps.eps}}} at 0 0
+\endpicture}
+\figrdef{fig:plane defined via perp vectors}
+\endfigure{A plane defined via vectors perpendicular to a normal.
+(\expandafter\url\expandafter{\liveurl jmol_plane}%
+AP\endurl)}
+%(\expandafter\url\expandafter{\sageurl 2750}%
+%AP\endurl)}
+
+Thus, given a vector $\langle a,b,c\rangle$ we know that all planes
+perpendicular to this vector have the form $ax+by+cz=d$, and any surface
+of this form is a plane perpendicular to $\langle a,b,c\rangle$.
+
+\begin{example}
+Find an equation for the plane perpendicular to $\langle 1,2,3\rangle$
+and containing the point $(5,0,7)$.
+
+Using the derivation above, 
+the plane is $1x+2y+3z=1\cdot5+2\cdot0+3\cdot7=26$. Alternately, we
+know that the plane is $x+2y+3z=d$, and to find $d$ we may substitute
+the known point on the plane to get $5+2\cdot0+3\cdot7=d$, so $d=26$.
+\end{example}
+
+\begin{example}
+Find a vector normal to the plane $2x-3y+z=15$.
+
+One example is $\langle 2, -3,1\rangle$. Any vector parallel or
+anti-parallel to this works as well, so for example
+$-2\langle 2, -3,1\rangle=\langle -4,6,-2\rangle$ is also normal to the plane.
+\end{example}
+
+We will frequently need to find an equation for a plane given certain
+information about the plane. While there may occasionally be slightly
+shorter ways to get to the desired result, it is always possible, and
+usually advisable, to use the given information to find a normal to
+the plane and a point on the plane, and then to find the equation as
+above. 
+
+\begin{example} The planes $x-z=1$ and $y+2z=3$ intersect in a line. Find a
+third plane that contains this line and is perpendicular to the plane
+$x+y-2z=1$. 
+
+First, we note that two planes are perpendicular if and only if their
+normal vectors are perpendicular. Thus, we seek a vector $\langle
+a,b,c\rangle$ that is
+perpendicular to $\langle 1,1,-2\rangle$. In addition, since the
+desired plane is to contain a certain line, $\langle
+a,b,c\rangle$ must be perpendicular to any vector parallel to this
+line. Since $\langle
+a,b,c\rangle$ must be perpendicular to two vectors, we may find it by
+computing the cross product of the two. So we need a vector parallel
+to the line of intersection of the given planes. For this, it suffices
+to know two points on the line. To find two points on this line, we
+must find two points that are simultaneously on the two planes, 
+$x-z=1$ and $y+2z=3$. Any point on both planes will satisfy 
+$x-z=1$ and $y+2z=3$. It is easy to find values for $x$ and $z$
+satisfying the first, such as $x=1, z=0$ and $x=2, z=1$. Then
+we can find corresponding values for $y$ using the second equation,
+namely $y=3$ and $y=1$, so
+$(1,3,0)$ and $(2,1,1)$ are both on the line
+of intersection because both are on both planes. Now 
+$\langle 2-1,1-3,1-0\rangle=\langle 1,-2,1\rangle$ is parallel to the
+line. Finally, we may choose $\langle a,b,c\rangle=\langle
+1,1,-2\rangle\times \langle 1,-2,1\rangle=\langle -3,-3,-3\rangle$.
+While this vector will do perfectly well, any vector parallel or
+anti-parallel to it will work as well, so for example we might choose
+$\langle 1,1,1\rangle$ which is anti-parallel to it. 
+
+Now we know that $\langle 1,1,1\rangle$ is normal to the desired plane
+and $(2,1,1)$ is a point on the plane. Therefore an equation of the
+plane is $x+y+z=4$. As a quick check, since $(1,3,0)$ is also on the
+line, it should be on the plane; since $1+3+0=4$, we see that this is
+indeed the case.
+
+Note that had we used $\langle -3,-3,-3\rangle$ as the normal, we
+would have discovered the equation $-3x-3y-3z=-12$, then we might well
+have noticed that we could divide both sides by $-3$ to get the
+equivalent $x+y+z=4$.
+\end{example}
+
+So we now understand equations of planes; let us turn to
+lines. Unfortunately, it turns out to be quite inconvenient to
+represent a typical line with a single equation; we need to approach
+lines in a different way.
+
+Unlike a plane, a line in three dimensions does have an obvious
+direction, namely, the direction of any vector parallel to it. In fact
+a line can be defined and uniquely identified by providing one point
+on the line and a vector parallel to the line (in one of two possible
+directions). That is, the line consists of exactly those points we can
+reach by starting at the point and going for some distance in the
+direction of the vector. Let's see how we can translate this into more
+mathematical language. 
+
+Suppose a line contains the point $\ds (v_1,v_2,v_3)$ and is parallel
+to the vector $\langle a,b,c\rangle$. If we place the vector $\ds
+\langle v_1,v_2,v_3\rangle$ with its tail at the origin and its head
+at $\ds (v_1,v_2,v_3)$, and if we place the vector $\langle
+a,b,c\rangle$ with its tail at $\ds (v_1,v_2,v_3)$, then the head of
+$\langle a,b,c\rangle$ is at a point on the line. We can get to {\it
+  any\/} point on the line by doing the same thing, except using
+$t\langle a,b,c\rangle$ in place of $\langle a,b,c\rangle$, where $t$
+is some real number. Because of the way vector addition works, the
+point at the head of the vector $t\langle a,b,c\rangle$ is the point
+at the head of the vector $\ds \langle v_1,v_2,v_3\rangle+t\langle
+a,b,c\rangle$, namely $\ds (v_1+ta,v_2+tb,v_3+tc)$; see
+figure~\xrefn{fig:vector line}.
+
+\figure
+\vbox{\beginpicture
+\normalgraphs
+\ninepoint
+\setcoordinatesystem units <6truemm,6truemm>
+\setplotarea x from -3 to 7, y from 0 to 4.5
+\arrow <4pt> [0.35, 1] from 0 0 to 2 3
+\arrow <4pt> [0.35, 1] from 2 3 to 7 4
+\arrow <4pt> [0.35, 1] from 0 0 to 7 4
+\put {$(v_1,v_2,v_3)$} [br] <-3pt,3pt> at 2 3
+\put {$\langle v_1,v_2,v_3\rangle$} [r] <-5pt,0pt> at 1 1.5
+\put {$t\langle a,b,c\rangle$} [br] <0pt,4pt> at 4.5 3.5
+\put {$\langle v_1,v_2,v_3\rangle+t\langle a,b,c\rangle$} [tl]
+  <3pt,-3pt> at 3.5 2
+\setdashes
+\plot -3 2 9.5 4.5 /
+\endpicture}
+\figrdef{fig:vector line}
+\endfigure{Vector form of a line.}
+
+In other words, as $t$ runs through all possible real values, the
+vector $\ds \langle v_1,v_2,v_3\rangle+t\langle a,b,c\rangle$ points to
+every point on the line when its tail is placed at the origin. Another
+common way to write this is as a set of 
+{\dfont parametric equations\index{parametric equations}\/}:
+$$ x= v_1+ta\qquad y=v_2+tb \qquad z=v_3+tc.$$
+It is occasionally useful to use this form of a line even in two
+dimensions; a vector form for a line in the $x$-$y$ plane is
+$\ds \langle v_1,v_2\rangle+t\langle a,b\rangle$, which is the same as
+$\ds \langle v_1,v_2,0\rangle+t\langle a,b,0\rangle$.
+
+\begin{example} Find a vector expression for the line through $(6,1,-3)$ and
+$(2,4,5)$. To get a vector parallel to the line we subtract $\langle
+6,1,-3\rangle-\langle2,4,5\rangle=\langle 4,-3,-8\rangle$.  The line
+is then given by $\langle 2,4,5\rangle+t\langle 4,-3,-8\rangle$; there
+are of course many other possibilities, such as $\langle
+6,1,-3\rangle+t\langle 4,-3,-8\rangle$.
+\end{example}
+
+\begin{example}
+\relax\label{exam:intersecting lines}
+Determine whether the lines $\langle 1,1,1\rangle+t\langle 1,2,-1\rangle$ and
+$\langle 3,2,1\rangle+t\langle -1,-5,3\rangle$ are parallel, intersect, or
+neither.
+
+In two dimensions, two lines either intersect or are parallel; in
+three dimensions, lines that do not intersect might not be parallel.
+In this case, since the direction vectors for the lines are not
+parallel or anti-parallel we know the lines are not parallel.
+If they intersect, there must be two values $a$ and $b$ so that
+$\langle 1,1,1\rangle+a\langle 1,2,-1\rangle=
+\langle 3,2,1\rangle+b\langle -1,-5,3\rangle$, that is, 
+$$\eqalign{
+  1+a&=3-b \\
+  1+2a&=2-5b \\
+  1-a&=1+3b \\
+}$$
+This gives three equations in two unknowns, so there may or may not be
+a solution in general. In this case, it is easy to discover that $a=3$
+and $b=-1$ satisfies all three equations, so the lines do intersect at
+the point $(4,7,-2)$.
+\end{example}
+
+\begin{example} Find the distance from the point $(1,2,3)$ to the plane
+$2x-y+3z=5$. The distance from a point $P$ to a plane is the shortest
+distance from $P$ to any point on the plane; this is the
+distance measured from $P$ perpendicular to the plane; see
+figure~\xrefn{fig:point to plane}. This distance 
+is the absolute value of the scalar projection of 
+$\ds \overrightarrow{\vrule height8pt width 0pt QP}$
+onto a normal vector $\bf n$, where $Q$ is any point on the plane.
+It is easy to find a point on the plane, say $(1,0,1)$.
+Thus the distance is
+$$
+  {\langle 0,2,2\rangle\cdot\langle 2,-1,3\rangle\over|\langle 2,-1,3\rangle|}=
+  {4\over\sqrt{14}}.
+$$
+\end{example}
+
+\figure
+\vbox{\beginpicture
+\normalgraphs
+\ninepoint
+\setcoordinatesystem units <6truemm,6truemm>
+\setplotarea x from -2 to 4, y from -3.5 to 4.5
+\put {$P$} [b] <0pt,3pt> at 1 4
+\put {$\bf n$} [b] <0pt,3pt> at -1.5 2
+\put {$Q$} [t] <0pt,-3pt> at 0 0
+\multiput {$\bullet$} at 0 0 1 4 /
+\arrow <4pt> [0.35, 1] from 0 0 to 1 4
+\arrow <4pt> [0.35, 1] from 0 0 to -1.5 2
+\setdashes
+\setlinear
+\plot -2 0 4 4.5 3.5 0.5 -2.5 -3.5 -2 0 /
+\endpicture}
+\figrdef{fig:point to plane}
+\endfigure{Distance from a point to a plane.}
+
+\begin{example} Find the distance from the point $(-1,2,1)$ to the line
+$\langle 1,1,1\rangle + t\langle 2,3,-1\rangle$. Again we want the distance
+measured perpendicular to the line, as indicated in
+figure~\xrefn{fig:point to line}. The desired distance is 
+$$
+  |\overrightarrow{\vrule height8pt width 0pt QP}|\sin\theta=
+  {|\overrightarrow{\vrule height8pt width 0pt QP}\times{\bf A}|\over|{\bf A}|},
+$$
+where $\bf A$ is any vector parallel to the line. From the equation of
+the line, we can use $Q=(1,1,1)$ and ${\bf A}=\langle 2,3,-1\rangle$, so
+the distance is 
+$$
+  {|\langle -2,1,0\rangle\times\langle2,3,-1\rangle|\over\sqrt{14}}=
+  {|\langle-1,-2,-8\rangle|\over\sqrt{14}}={\sqrt{69}\over\sqrt{14}}.
+$$
+\end{example}
+
+\figure
+\vbox{\beginpicture
+\normalgraphs
+\ninepoint
+\setcoordinatesystem units <6truemm,6truemm>
+\setplotarea x from -3 to 4, y from -1.5 to 4
+\put {$P$} [b] <0pt,3pt> at 2 4
+\put {$\theta$} [b] <3pt,3pt> at -0.5 -0.25
+\put {$Q$} [t] <0pt,-3pt> at -1 -0.5
+\put {$\bf A$} [t] <0pt,-3pt> at 1 0.5
+\put {$|\overrightarrow{\vrule height8pt width 0pt QP}|\sin\theta$}
+     [bl] <3pt,3pt> at 2.6 2.8
+\multiput {$\bullet$} at -1 -0.5 2 4 /
+\arrow <4pt> [0.35, 1] from -1 -0.5 to 1 0.5
+\arrow <4pt> [0.35, 1] from -1 -0.5 to 2 4
+\setdashes
+\setlinear
+\plot -3 -1.5 4 2 /
+\plot 2 4 3.2 1.6 /
+\endpicture}
+\figrdef{fig:point to line}
+\endfigure{Distance from a point to a line.}
+
+\begin{exercises}
+
+\exercise Find an equation of the plane containing $(6,2,1)$ and
+perpendicular to $\langle 1,1,1\rangle$.
+\begin{answer} $(x-6)+(y-2)+(z-1)=0$
+\end{answer}
+
+\exercise Find an equation of the plane containing $(-1,2,-3)$ and
+perpendicular to $\langle 4,5,-1\rangle$.
+\begin{answer} $4(x+1)+5(y-2)-(z+3)=0$
+\end{answer}
+
+\exercise Find an equation of the plane containing $(1,2,-3)$,
+$(0,1,-2)$ and $(1,2,-2)$.
+\begin{answer} $(x-1)-(y-2)=0$
+\end{answer}
+
+\exercise Find an equation of the plane containing $(1,0,0)$,
+$(4,2,0)$ and $(3,2,1)$.
+\begin{answer} $-2(x-1)+3y-2z=0$
+\end{answer}
+
+\exercise Find an equation of the plane containing $(1,0,0)$ and the
+line $\langle 1,0,2\rangle + t\langle 3,2,1\rangle$.
+\begin{answer} $4(x-1)-6y = 0$
+\end{answer}
+
+\exercise Find an equation of the plane containing the line of
+intersection of $x+y+z=1$ and $x-y+2z=2$, and perpendicular to the
+$x$-$y$ plane.
+\begin{answer} $x+3y=0$
+\end{answer}
+
+\exercise Find an equation of the line through $(1,0,3)$ and 
+$(1,2,4)$.
+\begin{answer} $\langle 1,0,3\rangle+t\langle 0,2,1\rangle$
+\end{answer}
+
+\exercise Find an equation of the line through $(1,0,3)$ and 
+perpendicular to the plane $x+2y-z=1$.
+\begin{answer} $\langle 1,0,3\rangle+t\langle 1,2,-1\rangle$
+\end{answer}
+
+\exercise Find an equation of the line through the origin
+and perpendicular to the plane $x+y-z=2$.
+\begin{answer} $t\langle 1,1,-1\rangle$
+\end{answer}
+
+\exercise Find $a$ and $c$ so that $(a,1,c)$ is on the line through
+$(0,2,3)$ and $(2,7,5)$.
+\begin{answer} $-2/5$, $13/5$
+\end{answer}
+
+\exercise Explain how to discover the solution in
+example~\xrefn{exam:intersecting lines}.
+
+\exercise Determine whether the lines $\langle 1,3,-1\rangle+t\langle
+1,1,0\rangle$ and $\langle 0,0,0\rangle+t\langle 1,4,5\rangle$ are
+parallel, intersect, or neither.
+\begin{answer} neither
+\end{answer}
+
+\exercise Determine whether the lines $\langle 1,0,2\rangle+t\langle
+-1,-1,2\rangle$ and $\langle 4,4,2\rangle+t\langle 2,2,-4\rangle$ are
+parallel, intersect, or neither.
+\begin{answer} parallel
+\end{answer}
+
+\exercise Determine whether the lines $\langle 1,2,-1\rangle+t\langle
+1,2,3\rangle$ and $\langle 1,0,1\rangle+t\langle 2/3,2,4/3\rangle$ are
+parallel, intersect, or neither.
+\begin{answer} intersect
+\end{answer}
+
+\exercise Determine whether the lines $\langle 1,1,2\rangle+t\langle
+1,2,-3\rangle$ and $\langle 2,3,-1\rangle+t\langle 2,4,-6\rangle$ are
+parallel, intersect, or neither.
+\begin{answer} same line
+\end{answer}
+
+\exercise Find a unit normal vector to each of the coordinate planes.
+
+\exercise Show that $\langle 2,1,3 \rangle + t \langle 1,1,2 \rangle$ and
+$\langle 3, 2, 5 \rangle + s \langle 2, 2, 4 \rangle$ are the same
+line.
+
+\exercise Give a prose description for each of the following processes:
+
+\begin{itemize} % BADBAD
+
+\item{a.} Given two distinct points, find the line that goes through them.
+
+\item{b.} Given three points (not all on the same line), find the plane
+  that goes through them. Why do we need the caveat that not all
+  points be on the same line?
+
+\item{c.} Given a line and a point not on the line, find the plane that
+contains them both.
+
+\item{d.} Given a plane and a point not on the plane, find the line that
+is perpendicular to the plane through the given point.
+
+\end{itemize}
+
+\exercise Find the distance from $(2,2,2)$ to $x+y+z=-1$.
+\begin{answer} $\ds 7/\sqrt3$
+\end{answer}
+
+\exercise Find the distance from $(2,-1,-1)$ to $2x-3y+z=2$.
+\begin{answer} $\ds 4/\sqrt{14}$
+\end{answer}
+
+\exercise Find the distance from $(2,-1,1)$ to 
+$\langle 2,2,0\rangle+t\langle 1,2,3\rangle$.
+\begin{answer} $\ds \sqrt{131}/\sqrt{14}$
+\end{answer}
+
+\exercise Find the distance from $(1,0,1)$ to 
+$\langle 3,2,1\rangle+t\langle 2,-1,-2\rangle$.
+\begin{answer} $\ds \sqrt{68}/3$
+\end{answer}
+
+\exercise Find the cosine of the angle
+between the planes $x+y+z=2$ and $x+2y+3z=8$.
+\begin{answer} $\ds \sqrt{42}/7$
+\end{answer}
+
+\exercise Find the cosine of the angle
+between the planes $x-y+2z=2$ and $3x-2y+z=5$.
+\begin{answer} $\ds \sqrt{21}/6$
+\end{answer}
+
+\end{exercises}

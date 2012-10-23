@@ -1,0 +1,244 @@
+\section{Other bases}{}{}
+
+Notice that if $q\in \Q$ and $a>0$ then
+$a^q = e^{\ln (a^q ) } = e^{q\ln a }$.
+This equation motivates the following definition.
+
+\begin{definition}
+For $a>0 $ and $x\in\R$, we define
+$a^x = e^{x\ln a}$. The function $f(x)=a^x $ is the exponential function
+ with base $a$.
+Separately, we define $0^x =0 $ for $x>0 $.
+\end{definition}
+
+Notice also that for $x\in \R$ and $a>0$,
+$\ln a^x = \ln (e^{x\ln a }) = x\ln a$.
+Hence, the power rule for the natural logarithm works even when the
+power is irrational.
+
+We now show that the familiar rules for exponents are valid.
+
+\begin{theorem} For $x,y \in \R$ and $a,b>0$:
+\label{thm:general exp rules}
+
+\begin{itemize} % BADBAD
+
+\item{a} $a^{x+y} = a^x a^y$
+
+\item{b} $a^{x-y} = a^x/a^y$
+
+\item{c} $(a^x)^y = a^{xy}$
+
+\item{d} $(ab)^x = a^x b^x$
+
+\end{itemize}
+
+\begin{proof}
+
+(a) We compute:
+$a^{x+y} = e^{(x+y) \ln a } = e^{x\ln a + y\ln a} =
+e^{x\ln a } e^{y\ln a } = a^x a^y$.
+
+The proof of (b) is similar and left as an exercise.
+
+(c) We compute:
+$(a^x )^y = e^{y\ln(a^x)} = e^{yx\ln a} = a^{xy}$.
+
+(d) We compute:
+$(ab)^x = e^{x\ln (ab) } = e^{x\ln a +x\ln b}
+= e^{x \ln a } e^{x\ln b} = a^x b^x$.
+\end{proof}
+
+
+\begin{theorem} If $f(x) =a^x $ (with $a>0 $) then $f'(x) =  a^x \ln a $.
+\begin{proof} 
+$$f'(x) = {d\over dx}(e^{x\ln a}) = e^{x\ln a}\ln a  =a^x \ln a.$$
+\vskip-20pt
+\end{proof}
+
+\cor For $a>0 $ and $a\neq 1$, $\ds\int a^x\,dx
+ = {a^x\over\ln a} + C$.
+\end{proof}
+
+We are now in a position to prove the general power rule.
+
+\begin{theorem} (Power Rule) If $f(x) = x^n $, $x>0$, and $n$ is any real number,
+then $f'(x) =nx^{n-1}$.
+\begin{proof}
+$\ds f'(x) ={d\over dx} x^n = {d\over dx} e^{n\ln x} = 
+e^{n\ln x}{n\over x}
+= {nx^n \over x} = nx^{n-1}$.
+\end{proof}
+
+The restriction that $x>0 $ is necessary since we have not defined
+exponential expressions with negative bases and arbitrary real powers.
+
+We now turn to logarithms base $a$. Note that if $a>0 $ and $a\neq 1 $
+ then $a^x \ln a \neq 0 $ for every $x$. Hence, the function $f(x)
+ =a^x $ is injective.
+
+\begin{definition} If $a>0$ and $a\neq1$, the inverse of $a^x$ is called the
+{\dfont logarithmic function base} $a$. In symbols, we write this
+function as  $\ds \log _a x$.
+\end{definition}
+
+We exclude $a=1$ because $1^x = 1$ is not injective
+on any domain containing more than one point.
+
+
+\begin{remark}{Remark} If $a=10 $ we usually write $\log $ instead of $\log
+_{10}$, and of course $\log _e =\ln$.
+In more advanced texts,
+``$\log $'' refers to the natural logarithm.
+\end{remark}
+
+
+\begin{theorem} The following hold for $a, x, y >0 $, $a\neq 1 $, and
+$q\in \R$:
+\label{thm:general log rules}
+
+\begin{itemize} % BADBAD
+
+\item{a.} $\ds\log _a (xy) =\log _a x +\log _a y $
+
+\item{b.} $\ds\log _a {x\over y} = \log _a x -\log _a y $
+
+\item{c.} $\ds\log _a x^q = q\log _a x .$
+
+\end{itemize}
+\begin{proof}
+(a) Let $u= \log_a x$ and $v= \log_a y$. Then $a^u =x $ and $a^v
+= y$, and $\ds xy = a^u a^v = a^{u+v}$, so 
+$\ds \log _a (xy) = u+v = \log_a x+\log_a y$.
+
+ The other parts are left as exercises.
+\end{proof}
+
+ When computing decimal approximations to logs of
+arbitrary bases with a calculator or a computer algebra system the
+following result comes in handy.
+
+\lem If $a, b>0 $, $a ,b \neq 1 $, and $x>0 $,
+$\ds\log_a x = {\log_b  x\over \log_b a}$.
+\begin{proof}
+Let $y=\log_a x $, so $a^y = x$. Then
+$\ds\log_b x = \log_b (a^y ) = y\log_b a =\log_a x \log _b a$.
+\end{proof}
+
+Typically this is useful when $b=e$ and $b=10$, since calculators can
+typically compute logarithms to those bases.
+
+
+\begin{theorem} $\ds{d\over dx} \log _a x = {1\over x\ln a}$.
+\begin{proof}
+By the preceding lemma, $f(x) =\ln x/\ln a$, and the derivative is
+then easy.
+\end{proof}
+
+Finally, we express $e^x$ as a limit. When $x=1$ we get a limit
+expression for $e$ which is sometimes taken as the definition of
+$e$.
+
+\begin{theorem} If $x\geq 0$,
+$\ds e^x = \lim_{n\to\infty} \left(
+1+{x\over n}\right)^n$.
+\begin{proof}
+If $x=0$ both expressions are 1.
+
+If $x>0$ we begin by rewriting the right side as we have  before:
+$$\left(1+{x\over n}\right)^n=\left(e^{\ln (1+x/n)}\right)^n=
+e^{n\ln (1+x/n)}.$$
+Now because $e^x$ is continuous,
+$$\lim_{n\to\infty}e^{n\ln (1+x/n)}=e^{\lim_{n\to\infty}n\ln (1+x/n)}.$$
+So really we need to compute $\ds\lim_{n\to\infty}n\ln (1+x/n)$, for
+which we use L'H\^opitals rule:
+$$\lim_{n\to\infty}n\ln (1+x/n)=\lim_{n\to\infty}{\ln (1+x/n)\over 1/n}=
+\lim_{n\to\infty}{{1\over 1+x/n}{-x\over n^2} \over -1/n^2}=
+\lim_{n\to\infty}{1\over 1+x/n}x = x.$$
+\end{proof}
+
+This same simple fact, $\ds a=e^{\ln a}$, is useful in many similar
+situations.
+
+
+\begin{example} Let $f(x) =x^x$, $x>0$. Compute $f'(x)$ and
+$\ds\lim_{x\to0^+} f(x)$.
+
+Start with $f(x)=x^x = e^{x\ln x}$. Then 
+$$f'(x)=e^{x\ln x}\left(x{1\over x}+\ln x\right)=x^x(1+\ln x).$$
+For the limit, we again notice that
+$$\lim_{x\to0^+} x^x = \lim_{x\to0^+}e^{x\ln x}
+=e^{\lim_{x\to0^+} x\ln x}.$$
+Then we compute the limit by L'H\^opital's rule again:
+$$\lim_{x\to0^+}x\ln x = \lim_{x\to0^+}{\ln x\over 1/x}=
+\lim_{x\to0^+}{1/x\over -1/x^2}=\lim_{x\to0^+}(-x)=0.$$
+Thus $\ds\lim_{x\to0^+} x^x=e^0=1$.
+\end{example}
+
+\begin{example} Compute $\ds\int_{\pi/6}^{\pi/3} 2^{\cos x} \sin x\; dx$.
+
+Let $u=\cos x$, so $du=-\sin x\;dx $. Changing the limits, when
+$x=\pi/6$, $u =\sqrt{3}/2$, and when $x=\pi/3$,
+$u=1/2$. Then
+$$\int_{\pi/6}^{\pi/3} 2^{\cos x} \sin x\;dx
+ =-\int_{\sqrt{3}/2}^{1/2} 2^u du
+= \left.-{2^u\over\ln 2}\right|_{\sqrt{3}/2}^{1/2} 
+  ={-2^{1/2} +2^{\sqrt{3}/2}\over\ln 2}.$$
+\end{example}
+
+\begin{exercises}
+
+\exercise Prove part (b) of theorem~\xrefn{thm:general exp rules}.
+
+\exercise Sketch the graph of $\ds y=a^x $ in the three cases $a>1$,
+$a=1$, and $0<a< 1 $. What happens to the graph as $a\to 0^+$?
+What happens to the graph as $a\to\infty $?
+
+\exercise Sketch the graph of $\ds y=\log_a x$ in the two cases $a>1$ and
+$0<a< 1 $. What happens to the graph as $a\to 0^+$?  What happens to
+the graph as $a\to\infty$? (Use the previous exercise together with
+exercise~\xrefn{sec:inverse
+  functions}.\xrefn{exer:inverse is reflection}.)
+
+
+\exercise Prove parts (b) and (c) of theorem~\xrefn{thm:general log rules}.
+
+\exercise Sketch the graph of $\ds y=3^{6x-1} + 5 $.
+
+\exercise Sketch the graph of $\ds y= -(1/2)^{-3x}$. 
+
+\exercise Sketch the graph of $\ds y=4\log_2 (12x + 6)-2$.
+
+\exercise Compute the second derivative of $\ds f(x)=x^x$.
+
+\exercise Compute $\ds f'(\pi/4)$ when $\ds f(x)
+= 5^{\sin 3x} + \log_7 x$. 
+
+\exercise Compute the derivative of 
+$\ds f(x) = 3^x - 4x^2 + \sin(3x) - \pi^e$. 
+
+\exercise Compute $\ds \int_1^2 3^x - x^3\,dx$.
+
+\exercise Compute $\int \sin (2^x ) 2^x dx $.
+
+
+\exercise Find the area of the region given by
+$\ds \{(x, y) \mid 1 \leq x \leq 2 , 2^x \leq y \leq 3^x\}$.
+
+\exercise Find the average of the function $\ds f(x)= 2x\cdot 5^{x^2}$
+on the interval $[4,9]$.
+
+
+\exercise Find the volume of the solid obtained by rotating the
+region
+$\ds \{(x,y) \mid 2 \leq x \leq 4, (\log _2 x)/x
+\leq y \leq 2^x \}$ about the line $y=-1 $. 
+
+ \exercise Show that $\log_a x =-\log_{1/a} x $ for any
+ $a>0, a\neq 1$.
+ Interpret this result geometrically; that is, sketch the graph of
+ $y=\log_a x$ and $y=\log_{1/a} x$ on the same diagram and
+ point out how the graphs are related to each other.
+
+\end{exercises}
+

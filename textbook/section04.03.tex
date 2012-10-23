@@ -1,0 +1,184 @@
+\section{A hard limit}{}{}
+\nobreak
+We want to compute this limit:
+$$\lim_{\Delta x\to0} {\sin\Delta x\over \Delta x}.$$
+Equivalently, to make the notation a bit simpler, we can compute
+$$\lim_{x\to0} {\sin x\over x}.$$
+In the original context we need to keep $x$ and $\Delta x$ separate,
+but here it doesn't hurt to rename $\Delta x$ to something more
+convenient. 
+
+To do this we
+need to be quite clever, and to employ some indirect reasoning. The
+indirect reasoning is embodied in a theorem, frequently called the
+{\dfont squeeze theorem\index{squeeze theorem}.}
+
+\begin{theorem} (Squeeze Theorem)
+Suppose that $g(x) \le f(x) \le h(x)$ for all $x$ close to $a$ but not
+equal to $a$. If $\lim_{x\to a}g(x)=L=\lim_{x
+\to a}h(x)$, then $\lim_{x\to a}f(x)=L$.
+\label{thm:squeeze theorem}
+\end{theorem}
+
+This theorem can be proved using the official definition of limit. We
+won't prove it here, but point out that it is easy to understand and
+believe graphically. The condition says that $f(x)$ is trapped between
+$g(x)$ below and $h(x)$ above, and that at $x=a$, both $g$ and $h$
+approach the same value. This means the situation looks something like
+figure~\xrefn{fig:squeeze}. The wiggly curve is $x^2\sin(\pi/x)$, the
+upper and lower curves are $x^2$ and $-x^2$. Since the sine function
+is always between $-1$ and $1$, $-x^2\le x^2\sin(\pi/x)\le x^2$, and
+it is easy to see that $\lim_{x\to0}-x^2=0=\lim_{x\to0}x^2$.
+It is not so easy to see directly, that is algebraically, that 
+$\lim_{x\to0}x^2\sin(\pi/x)=0$, because the $\pi/x$ prevents us from
+simply plugging in $x=0$. The squeeze theorem makes this ``hard
+limit'' as easy as the trivial limits involving $x^2$.
+
+% BADBAD
+% \figure
+% \vbox{\beginpicture
+% \normalgraphs
+% \ninepoint
+% \setcoordinatesystem units <4truecm,4truecm>
+% \setplotarea x from -1 to 1, y from -1 to 1
+% \axis left shiftedto x=0 /
+% \axis bottom shiftedto y=0 /
+% \setquadratic
+% \plot -1.000 0.000 -0.980 0.060 -0.961 0.118 -0.941 0.173 -0.922 0.224
+% -0.902 0.272 -0.882 0.317 -0.863 0.357 -0.843 0.392 -0.824 0.423
+% -0.804 0.448 -0.784 0.468 -0.765 0.481 -0.745 0.488 -0.726 0.488
+% -0.706 0.481 -0.686 0.467 -0.667 0.445 -0.647 0.415 -0.628 0.377
+% -0.608 0.332 -0.588 0.280 -0.569 0.223 -0.549 0.161 -0.530 0.096
+% -0.510 0.032 -0.490 -0.030 -0.471 -0.084 -0.451 -0.128 -0.432 -0.156
+% -0.412 -0.165 -0.392 -0.152 -0.373 -0.117 -0.353 -0.063 -0.334 -0.001
+% -0.314 0.054 -0.294 0.082 -0.275 0.068 -0.255 0.016 -0.236 -0.039
+% -0.216 -0.043 -0.196 0.011 -0.177 0.028 -0.157 -0.022 -0.138 0.014
+% -0.118 -0.014 -0.098 -0.005 -0.079 -0.005 -0.059 -0.001 -0.040 0.001
+% -0.020 0.000 0 0
+% 0.020 0.000 0.040 -0.001 0.059 0.001 0.079 0.005 0.098 0.005
+% 0.118 0.014 0.138 -0.014 0.157 0.022 0.177 -0.028 0.196 -0.011
+% 0.216 0.043 0.236 0.039 0.255 -0.016 0.275 -0.068 0.294 -0.082
+% 0.314 -0.054 0.334 0.001 0.353 0.063 0.373 0.117 0.392 0.152
+% 0.412 0.165 0.432 0.156 0.451 0.128 0.471 0.084 0.490 0.030
+% 0.510 -0.032 0.530 -0.096 0.549 -0.161 0.569 -0.223 0.588 -0.280
+% 0.608 -0.332 0.628 -0.377 0.647 -0.415 0.667 -0.445 0.686 -0.467
+% 0.706 -0.481 0.726 -0.488 0.745 -0.488 0.765 -0.481 0.784 -0.468
+% 0.804 -0.448 0.824 -0.423 0.843 -0.392 0.863 -0.357 0.882 -0.317
+% 0.902 -0.272 0.922 -0.224 0.941 -0.173 0.961 -0.118 0.980 -0.060
+% 1.000 0.000 /
+% \plot -1 1 0 0 1 1 /
+% \plot -1 -1 0 0 1 -1 /
+% \endpicture}
+% \figrdef{fig:squeeze}
+% \endfigure{The squeeze theorem.}
+
+To do the hard limit that we want, $\lim_{x\to0}
+(\sin x)/x$, we will find two simpler functions $g$ and $h$ so that 
+$g(x)\le (\sin x)/x\le h(x)$, and so that
+$\lim_{x\to0}g(x)=\lim_{x\to0}h(x)$. Not too surprisingly, this will
+require some trigonometry and geometry. Referring to
+figure~\xrefn{fig:hard limit}, $x$ is the measure of the angle in
+radians. Since the circle has radius 1, the coordinates of point $A$
+are $(\cos x,\sin x)$, and the area of the small triangle is 
+$(\cos x\sin x)/2$. This triangle is completely contained within the
+circular wedge-shaped region bordered by two lines and the circle from
+$(1,0)$ to point $A$. Comparing the areas of the triangle and the
+wedge we see
+$(\cos x\sin x)/2 \le x/2$, since the area of a circular region with
+angle $\theta$ and radius $r$ is $\theta r^2/2$. With a little algebra
+this turns into $(\sin x)/x \le 1/\cos x$, giving us the $h$ we seek.
+
+% BADBAD
+% \figure
+% \vbox{\beginpicture
+% \normalgraphs
+% \ninepoint
+% \setcoordinatesystem units <4truecm,4truecm>
+% \setplotarea x from 0 to 1, y from 0 to 1
+% \circulararc 90 degrees from 1 0 center at 0 0
+% \axis left ticks numbered from 0 to 1 by 1 /
+% \axis bottom ticks numbered from 1 to 1 by 1 /
+% \putrule from  0.8660254040 0 to 0.8660254040 0.5
+% \putrule from  1 0 to 1 .577
+% \plot 0 0 1 .577 /
+% \put {$x$} [bl] <5pt,2.5pt> at 0.1 0
+% \put {$A$} [r] <-6pt,2pt> at 0.8660254040 0.5
+% \put {$B$} [bl] <3pt,3pt> at 1  .577
+% \circulararc 30 degrees from 0.1 0 center at 0 0
+% \endpicture}
+% \figrdef{fig:hard limit}
+% \endfigure{Visualizing $\sin x / x$.}
+
+To find $g$, we note that the circular wedge is completely contained
+inside the larger triangle. The height of the triangle, from $(1,0)$
+to point $B$, is $\tan x$, so comparing areas we get
+$x/2 \le (\tan x)/2 = \sin x / (2\cos x)$. With a little algebra this
+becomes $\cos x \le (\sin x)/x$. So now we have 
+$$ \cos x \le {\sin x\over x}\le {1\over\cos x}.$$
+Finally, the two limits $\lim_{x\to0}\cos x$ and $\lim_{x\to0}1/\cos x$
+are easy, because $\cos(0)=1$. By the squeeze theorem,
+$\lim_{x\to0} (\sin x)/x = 1$ as well.
+
+Before we can complete the calculation of the derivative of the sine,
+we need one other limit:
+$$\lim_{x\to0}{\cos x - 1\over x}.$$
+This limit is just as hard as $\sin x/x$, but closely related to it,
+so that we don't have to a similar calculation; instead we can do a
+bit of tricky algebra.
+$${\cos x - 1\over x}={\cos x - 1\over x}{\cos x+1\over\cos x+1}
+={\cos^2 x - 1\over x(\cos x+1)}={-\sin^2 x\over x(\cos x+1)}=
+-{\sin x\over x}{\sin x\over \cos x + 1}.$$
+To compute the desired limit it is sufficient to compute the limits of
+the two final fractions, as $x$ goes to 0. The first of these is the
+hard limit we've just done, namely 1. The second turns out to be
+simple, because the denominator presents no problem:
+$$\lim_{x\to0}{\sin x\over \cos x + 1}={\sin 0\over \cos 0+1}=
+{0\over 2}  = 0.$$
+Thus,
+$$\lim_{x\to0}{\cos x - 1\over x}=0.$$
+
+\begin{exercises}
+
+\twocol
+
+\exercise Compute $\ds\lim_{x\to 0} {\sin (5x)\over x}$
+\begin{answer} $5$
+\end{answer}
+
+%(Hint: make the substitution $y=5x $ and note
+% that $y\to 0 $ as $x\to 0 $.)
+
+
+\exercise Compute $\ds\lim_{x\to 0 } {\sin(7x)\over\sin (2x)}$
+\begin{answer} $7/2$
+\end{answer}
+
+\exercise  Compute $\ds\lim_{x\to 0 } {\cot (4x) \over\csc (3x)}$
+\begin{answer} $3/4$
+\end{answer}
+
+\exercise Compute $\ds\lim_{x\to 0 } {\tan x\over x}$
+\begin{answer} $1$
+\end{answer}
+
+\endtwocol
+
+\exercise Compute $\ds\lim_{x\to \pi/4} {\sin x
+    -\cos x \over\cos (2x)}$
+ \begin{answer} $-\sqrt2/2$
+\end{answer}
+
+\exercise  For all $x\geq 0$, $4x-9 \leq f(x) \leq x^2 - 4x +7$. Find
+  $\ds\lim_{x\to4}f(x)$.
+\begin{answer} $7$
+\end{answer}
+
+\exercise  For all $x$, $2x \leq g(x) \leq x^4 - x^2 +2$. Find
+  $\ds\lim_{x\to1}g(x)$.
+\begin{answer} $2$
+\end{answer}
+
+\exercise Use the Squeeze Theorem to show that $\ds\lim_{x\to0} x^4
+ \cos(2/x)=0$.
+
+\end{exercises}

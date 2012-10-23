@@ -1,0 +1,206 @@
+\section{The Fundamental Theorem of Line Integrals}{}{}
+
+One way to write the Fundamental Theorem of Calculus
+(\xrefn{thm:fundamental_theorem_I}) is:
+$$\int_a^b f'(x)\,dx = f(b)-f(a).$$
+That is, to compute the integral of a derivative $f'$ 
+we need only compute the values of $f$ at the endpoints. Something
+similar is true for line integrals of a certain form.
+
+\begin{theorem} (Fundamental Theorem of Line Integrals) Suppose a curve $C$ is
+given by the vector function ${\bf r}(t)$, with ${\bf a}={\bf r}(a)$
+and ${\bf b}={\bf r}(b)$. Then
+$$\int_C \nabla f\cdot d{\bf r} = f({\bf b})-f({\bf a}),$$
+provided that $\bf r$ is sufficiently nice.
+\begin{proof}
+
+We write ${\bf r}=\langle x(t),y(t),z(t)\rangle$, so 
+that ${\bf r}'=\langle x'(t),y'(t),z'(t)\rangle$. Also,
+we know that $\nabla f=\langle f_x,f_y,f_z\rangle$. Then
+$$\int_C \nabla f\cdot d{\bf r} = 
+\int_a^b \langle f_x,f_y,f_z\rangle\cdot\langle
+x'(t),y'(t),z'(t)\rangle\,dt=
+\int_a^b f_x x'+f_y y'+f_z z' \,dt.$$
+By the chain rule (see section~\xrefn{sec:multivariable chain rules})
+$f_x x'+f_y y'+f_z z'=df/dt$, where $f$ in this context means
+$f(x(t),y(t),z(t))$, a function of $t$. In other words, all we have is
+$$\int_a^b f'(t)\,dt=f(b)-f(a).$$
+In this context,
+$f(a)=f(x(a),y(a),z(a))$.
+Since ${\bf a}={\bf r}(a)=\langle x(a),y(a),z(a)\rangle$, we can
+write $f(a)=f({\bf a})$---this is a bit of a cheat, since we are
+simultaneously using $f$ to mean $f(t)$ and $f(x,y,z)$, and since
+$f(x(a),y(a),z(a))$ is not technically the same as 
+$f(\langle x(a),y(a),z(a)\rangle)$,
+but the
+concepts are clear and the different uses are compatible. Doing the
+same for $b$, we get
+$$\int_C \nabla f\cdot d{\bf r} = \int_a^b f'(t)\,dt=f(b)-f(a)=f({\bf
+  b})-f({\bf a}).$$ 
+\vglue-20pt\end{proof}
+
+This theorem, like the Fundamental Theorem of Calculus, says roughly
+that if we integrate a ``derivative-like function'' ($f'$ or $\nabla
+f$) the result depends only on the values of the original function ($f$)
+at the endpoints.
+
+If a vector field $\bf F$ is the gradient of a function, ${\bf
+  F}=\nabla f$, we say that $\bf F$ is a {\dfont conservative
+vector field\index{conservative vector field}}. If $\bf F$ is a
+conservative force field, then the integral for work,
+$\int_C {\bf F}\cdot d{\bf r}$, is in the form required by the
+Fundamental Theorem of Line Integrals. This means that in a
+conservative force field, the amount of work required to move an
+object from point $\bf a$ to point $\bf b$ depends only on those
+points, not on the path taken between them.
+
+\begin{example}
+An object moves in the force field 
+$${\bf F}=
+\left
+\langle {-x\over (x^2+y^2+z^2)^{3/2}},{-y\over (x^2+y^2+z^2)^{3/2}},{-z\over
+  (x^2+y^2+z^2)^{3/2}}\right\rangle,$$
+along the curve ${\bf r}=\langle 1+t,t^3,t\cos(\pi t)\rangle$ as $t$
+ranges from 0 to 1. Find the work done by the force on the object.
+
+The straightforward way to do this involves substituting the
+components of ${\bf r}$ into $\bf F$, forming the dot product ${\bf
+  F}\cdot{\bf r}'$, and then trying to compute the integral, but this
+integral is extraordinarily messy, perhaps impossible to compute. But
+since ${\bf F}=\nabla (1/\sqrt{x^2+y^2+z^2})$ we need only substitute:
+$$\int_C {\bf F}\cdot d{\bf r}=
+\left.{1\over \sqrt{x^2+y^2+z^2}}\right|_{(1,0,0)}^{(2,1,-1)}=
+{1\over\sqrt6}-1.
+$$
+\end{example}
+
+Another immediate consequence of the Fundamental Theorem involves
+{\dfont closed paths\index{closed paths}}. A path $C$ is closed if it
+forms a loop, so that traveling over the $C$ curve brings you back to
+the starting point. If $C$ is a closed path, we can integrate around
+it starting at any point $\bf a$; since the starting and ending points are the
+same,
+$$\int_C \nabla f\cdot d{\bf r}=f({\bf a})-f({\bf a})=0.$$
+For example, in a gravitational field (an inverse square law field)
+the amount of work required to move an object around a closed path is
+zero. Of course, it's only the {\it net\/} amount of work that is
+zero. It may well take a great deal of work to get from point $\bf a$
+to point $\bf b$, but then the return trip will ``produce'' work. For
+example, it takes work to pump water from a lower to a higher elevation,
+but if you then let gravity pull the water back down, you can recover
+work by running a water wheel or generator. (In the real world you
+won't recover all the work because of various losses along the way.)
+
+To make use of the Fundamental Theorem of Line Integrals, we need to
+be able to spot conservative vector fields $\bf F$ and to compute 
+$f$ so that ${\bf F}=\nabla f$. Suppose that ${\bf F}=\langle
+P,Q\rangle = \nabla f$. Then $P=f_x$ and $Q=f_y$, and provided that
+$f$ is sufficiently nice, we know from Clairaut's Theorem
+(\xrefn{thm:clairaut}) that $P_y=f_{xy}=f_{yx}=Q_x$. If we compute
+$P_y$ and $Q_x$ and find that they are not equal, then $\bf F$ is not
+conservative. If $P_y=Q_x$, then, again provided that $\bf F$ is
+sufficiently nice, we can be assured that $\bf F$ is conservative.
+Ultimately, what's important is that we be able to find $f$; as this
+amounts to finding anti-derivatives, we may not always succeed.
+
+\begin{example} Find an $f$ so that $\langle 3+2xy,x^2-3y^2\rangle = \nabla f$.
+
+First, note that 
+$${\partial\over\partial y}(3+2xy)=2x\qquad\hbox{and}\qquad
+{\partial\over\partial x}(x^2-3y^2)=2x,$$
+so the desired $f$ does exist. This means that $f_x=3+2xy$, so that
+$f=3x+x^2y+g(y)$; the first two terms are needed to get $3+2xy$, and
+the $g(y)$ could be any function of $y$, as it would disappear upon
+taking a derivative with respect to $x$. Likewise, since
+$f_y=x^2-3y^2$, $f=x^2y-y^3+h(x)$. The question now becomes, is it
+possible to find $g(y)$ and $h(x)$ so that
+$$3x+x^2y+g(y)=x^2y-y^3+h(x),$$
+and of course the answer is yes: $g(y)=-y^3$, $h(x)=3x$. Thus,
+$f=3x+x^2y-y^3$.
+\end{example}
+
+\pagerdef{page:test for conservative vector field}
+We can test a vector field ${\bf F}=\v{P,Q,R}$ in a similar
+way. Suppose that $\v{P,Q,R}=\v{f_x,f_y,f_z}$. If we temporarily hold
+$z$ constant, then then $f(x,y,z)$ is a function of $x$ and $y$, and
+by Clairaut's Theorem $P_y=f_{xy}=f_{yx}=Q_x$.
+Likewise, holding $y$ constant implies $P_z=f_{xz}=f_{zx}=R_x$, and
+with $x$ constant we get $Q_z=f_{yz}=f_{zy}=R_y$. Conversely, if we
+find that $P_y=Q_x$, $P_z=R_x$, and $P_z=R_x$ then $\bf F$ is
+conservative.
+
+\begin{exercises}
+
+
+\exercise Find an $f$ so that $\nabla f=\langle 2x+y^2,2y+x^2\rangle$, or
+explain why there is no such $f$.
+\begin{answer} no $f$
+\end{answer}
+
+\exercise Find an $f$ so that $\nabla f=\langle x^3,-y^4\rangle$, 
+or explain why there is no such $f$.
+\begin{answer} $x^4/4-y^5/5$
+\end{answer}
+
+\exercise Find an $f$ so that $\nabla f=\langle xe^y,ye^x \rangle$, 
+or explain why there is no such $f$.
+\begin{answer}  no $f$
+\end{answer}
+
+\exercise Find an $f$ so that $\nabla f=\langle y\cos x,y\sin x \rangle$, 
+or explain why there is no such $f$.
+\begin{answer}  no $f$
+\end{answer}
+
+\exercise Find an $f$ so that $\nabla f=\langle y\cos x,\sin x\rangle$, 
+or explain why there is no such $f$.
+\begin{answer} $y\sin x$
+\end{answer}
+
+\exercise Find an $f$ so that $\nabla f=\langle x^2y^3,xy^4\rangle$, 
+or explain why there is no such $f$.
+\begin{answer} no $f$
+\end{answer}
+
+\exercise Find an $f$ so that $\nabla f=\langle yz,xz,xy\rangle$, 
+or explain why there is no such $f$.
+\begin{answer} $xyz$
+\end{answer}
+
+% Albert
+\exercise Evaluate $\ds\int_C (10x^4 - 2xy^3)\,dx - 3x^2y^2\,dy$ where $C$ is
+the part of the curve $x^5-5x^2y^2-7x^2=0$ from $(0,0)$ to
+$(3,2)$.
+\begin{answer} 414
+\end{answer}
+
+%/Albert
+
+\exercise Let 
+${\bf F}=
+\langle yz,xz,xy\rangle$.
+Find the work done by this force field on an object that moves from 
+$(1,0,2)$ to $(1,2,3)$.
+\begin{answer} $6$
+\end{answer}
+
+\exercise Let 
+${\bf F}=
+\langle e^y,xe^y+\sin z,y\cos z\rangle$.
+Find the work done by this force field on an object that moves from 
+$(0,0,0)$ to $(1,-1,3)$.
+\begin{answer} $1/e-\sin3$
+\end{answer}
+
+\exercise Let 
+$${\bf F}=
+\left
+\langle {-x\over (x^2+y^2+z^2)^{3/2}},{-y\over (x^2+y^2+z^2)^{3/2}},{-z\over
+  (x^2+y^2+z^2)^{3/2}}\right\rangle.$$
+Find the work done by this force field on an object that moves from 
+$(1,1,1)$ to $(4,5,6)$.
+\begin{answer} $1/\sqrt{77}-1/\sqrt3$
+\end{answer}
+
+\end{exercises}
+

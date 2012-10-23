@@ -1,0 +1,304 @@
+\section{Second Order Linear Equations}{}{}
+%\label{sec:2nd order differential equations}
+\nobreak
+Now we consider second order equations of the form $\ds a\ddot y+b\dot
+y+cy=f(t)$, with $a$, $b$, and $c$ constant. Of course, if $a=0$ this
+is really a first order equation, so we assume $a\not=0$.
+Also, much
+as in exercise~\xrefn{exer:second order really first order} of
+section~\xrefn{sec:second order homogeneous}, if $c=0$ we can solve
+the related first order equation $\ds a\dot h+bh=f(t)$, and then solve
+$\ds h=\dot y$ for $y$. So we will only examine examples in which
+$c\not=0$.
+
+Suppose that
+$\ds y_1(t)$ and $\ds y_2(t)$ are solutions to $\ds a\ddot y+b\dot
+y+cy=f(t)$, and consider the function $\ds h=y_1-y_2$. We substitute
+this function into the left hand side of the differential equation and
+simplify: 
+$$
+a(y_1-y_2)''+b(y_1-y_2)'+c(y_1-y_2)=ay_1''+by_1'+cy_1 -
+(ay_2''+by_2'+cy_2)=f(t)-f(t)=0.
+$$ 
+So $h$ is a solution to the homogeneous equation $\ds a\ddot
+y+b\dot y+cy=0$. Since we know how to find all such $h$, then with
+just one particular solution $\ds y_2$ we can express all possible
+solutions $\ds y_1$, namely, $\ds y_1=h+y_2$, where now $h$ is the
+general solution to the homogeneous equation. Of course, this is
+exactly how we approached the first order linear equation.
+
+To make use of this observation we need a method to find a single
+solution $y_2$. This turns out to be somewhat more difficult than the
+first order case, but if $f(t)$ is of a certain simple form, we can
+find a solution using the {\dfont method of undetermined
+  coefficients\index{undetermined coefficients}}, sometimes 
+more whimsically called the
+{\dfont method of judicious guessing\index{judicious guessing}}.
+
+\begin{example} Solve the differential equation $\ds \ddot y-\dot
+y-6y=18t^2+5$. The general solution of the homogeneous equation is
+$\ds Ae^{3t}+Be^{-2t}$. We guess that a solution to the
+non-homogeneous equation might look like $f(t)$ itself, namely,
+a quadratic $\ds y=at^2+bt+c$. Substituting this guess into the
+differential equation we get
+$$
+\ddot y-\dot y-6y = 2a-(2at+b)-6(at^2+bt+c) = -6at^2+(-2a-6b)t+(2a-b-6c).
+$$
+We want this to equal $18t^2+5$, so we need 
+$$\eqalign{
+-6a&=18 \\
+-2a-6b&=0 \\
+2a-b-6c&=5 \\}
+$$
+This is a system of three equations in three unknowns and is not hard
+to solve: $a=-3$, $b=1$, $c=-2$. Thus the general solution to the
+differential equation is $\ds Ae^{3t}+Be^{-2t}-3t^2+t-2$.
+\end{example}
+
+So the ``judicious guess'' is a function with the same form as $f(t)$
+but with undetermined (or better, yet to be determined)
+coefficients. This works whenever $f(t)$ is a polynomial.
+
+\begin{example} Consider the initial value problem $\ds m\ddot y +ky=-mg$,
+$y(0)=2$, $\ds\dot y(0)=50$. The left hand side represents a mass-spring
+system with no damping, i.e., $b=0$. Unlike the homogeneous case, we
+now consider the force due to gravity, $-mg$, assuming the spring is
+vertical at the surface of the earth, so that $g=980$. To be specific,
+let us take $m=1$ and $k=100$. The general solution to the homogeneous
+equation is $\ds A\cos(10t)+B\sin(10t)$. For the solution to the 
+non-homogeneous equation we guess simply a constant $y=a$, since $-mg=-980$
+is a constant. Then $\ds \ddot y+100y= 100a$ so $a=-980/100=-9.8$. The
+desired general solution is then $\ds A\cos(10t)+B\sin(10t)-9.8$.
+Substituting the initial conditions we get
+$$\eqalign{
+2&=A-9.8 \\
+50&=10B \\}
+$$
+so $A=11.8$ and $B=5$ and the solution is $\ds 11.8\cos(10t)+5\sin(10t)-9.8$.
+\end{example}
+
+More generally, this method can be used when a function similar to
+$f(t)$ has derivatives that are also similar to $f(t)$; in the
+examples so far, since $f(t)$ was a polynomial, so were its derivatives.
+The method will work if $f(t)$ has the form $p(t)e^{\alpha t}\cos(\beta t)+
+q(t)e^{\alpha t}\sin(\beta t)$, where $p(t)$ and $q(t)$ are
+polynomials; when $\alpha=\beta=0$ this is simply $p(t)$, a
+polynomial. In the most general form it is not simple to describe the
+appropriate judicious guess; we content ourselves with some examples
+to illustrate the process.
+
+\begin{example} Find the general solution to $\ds\ddot y+7\dot
+y+10y=e^{3t}$. The characteristic equation is $r^2+7r+10=(r+5)(r+2)$,
+so the solution to the homogeneous equation is
+$Ae^{-5t}+Be^{-2t}$. For a particular solution to the inhomogeneous
+equation we guess $Ce^{3t}$. Substituting we get
+$$
+9Ce^{3t}+21Ce^{3t}+10Ce^{3t}=e^{3t}40C.
+$$
+When $C=1/40$ this is equal to $f(t)=e^{3t}$, so the solution is
+$Ae^{-5t}+Be^{-2t}+(1/40)e^{3t}$.
+\end{example}
+
+\begin{example} Find the general solution to $\ds\ddot y+7\dot
+y+10y=e^{-2t}$. Following the last example we might guess
+$Ce^{-2t}$, but since this is a solution to the homogeneous equation
+it cannot work. Instead we guess $Cte^{-2t}$. Then
+$$
+(-2Ce^{-2t}-2Ce^{-2t}+4Cte^{-2t})+7(Ce^{-2t}-2Cte^{-2t})+10Cte^{-2t}
+=e^{-2t}(-3C).
+$$
+Then $C=-1/3$ and the solution is $Ae^{-5t}+Be^{-2t}-(1/3)te^{-2t}$.
+\end{example}
+
+In general, if $f(t)=e^{kt}$ and $k$ is one of the roots of the
+characteristic equation, then we guess $Cte^{kt}$ instead of
+$Ce^{kt}$. If $k$ is the only root of the characteristic equation,
+then $Cte^{kt}$ will not work, and we must guess $Ct^2e^{kt}$.
+
+\begin{example} Find the general solution to $\ds\ddot y-6\dot
+y+9y=e^{3t}$. The characteristic equation is 
+$\ds r^2-6r+9=(r-3)^2$, so the general solution to the homogeneous
+equation is $Ae^{3t}+Bte^{3t}$. Guessing $Ct^2e^{3t}$ for the
+particular solution, we get
+$$
+(9Ct^2e^{3t}+6Cte^{3t}+6Cte^{3t}+2Ce^{3t})-6(3Ct^2e^{3t}+2Cte^{3t})+9Ct^2e^{3t}
+=e^{3t}2C.
+$$
+The solution is thus $\ds Ae^{3t}+Bte^{3t}+(1/2)t^2e^{3t}$.
+\end{example}
+
+It is common in various physical systems to encounter an $f(t)$ of the
+form $\ds a\cos(\omega t)+b\sin(\omega t)$.
+
+\begin{example} Find the general solution to $\ds\ddot y+6\dot
+y+25y=\cos(4t)$. The roots of the characteristic equation are
+$-3\pm 4i$, so the solution to the homogeneous equation is
+$\ds e^{-3t}(A\cos(4t)+B\sin(4t))$. For a particular solution, we
+guess $C\cos(4t)+D\sin(4t)$. Substituting as usual:
+$$\eqalign{
+(-16C\cos(4t)&+-16D\sin(4t))+6(-4C\sin(4t)+4D\cos(4t))+25(C\cos(4t)+D\sin(4t)) \\
+&=(24D+9C)\cos(4t)+(-24C+9D)\sin(4t). \\}
+$$
+To make this equal to $\cos(4t)$ we need
+$$\eqalign{
+24D+9C&=1 \\
+9D-24C&=0 \\}
+$$
+which gives $C=1/73$ and $D=8/219$. The full solution is then
+$\ds e^{-3t}(A\cos(4t)+B\sin(4t))+(1/73)\cos(4t)+(8/219)\sin(4t)$.
+
+The function $\ds e^{-3t}(A\cos(4t)+B\sin(4t))$ is a damped
+oscillation as in example~\xrefn{example:damped spring oscillation},
+while $\ds(1/73)\cos(4t)+(8/219)\sin(4t)$ is a simple undamped
+oscillation. As $t$ increases, the sum $\ds
+e^{-3t}(A\cos(4t)+B\sin(4t))$ approaches zero, so the solution
+$$e^{-3t}(A\cos(4t)+B\sin(4t))+(1/73)\cos(4t)+(8/219)\sin(4t)$$
+becomes more and more like the simple oscillation
+$\ds(1/73)\cos(4t)+(8/219)\sin(4t)$---notice that the initial
+conditions don't matter to this long term behavior. The damped portion
+is called the 
+{\dfont transient\index{transient part of solution to d.e.}\/} part of the
+solution, and the simple oscillation is called the {\dfont
+  steady state\index{steady state part of solution to d.e.}\/} 
+part of the solution. 
+A physical example is a mass-spring system. If the only force on the
+mass is due to the spring, then the behavior of the system is a damped
+oscillation. If in addition an external force is applied to the mass,
+and if the force varies according to a function of the form
+ $\ds a\cos(\omega t)+b\sin(\omega t)$, then the long term behavior
+will be a simple oscillation determined by the steady state part of the
+general solution; the initial position of the mass will not matter.
+\end{example}
+
+As with the exponential form, such a simple guess may not work.
+
+\begin{example} Find the general solution to $\ds\ddot y+16y=-\sin(4t)$. 
+The roots of the characteristic equation are $\pm4i$, so the
+solution to the homogeneous equation is $A\cos(4t)+B\sin(4t)$. Since
+both $\cos(4t)$ and $\sin(4t)$ are solutions to the homogeneous
+equation,  $C\cos(4t)+D\sin(4t)$ is also, so it cannot be a solution
+to the non-homogeneous equation. Instead, we guess
+$Ct\cos(4t)+Dt\sin(4t)$. Then substituting:
+$$\eqalign{
+(-16Ct\cos(4t)&-16D\sin(4t)+8D\cos(4t)-8C\sin(4t)))+16(Ct\cos(4t)+Dt\sin(4t)) \\
+&=8D\cos(4t)-8C\sin(4t). \\}
+$$
+Thus $C=1/8$, $D=0$, and the solution is
+$\ds C\cos(4t)+D\sin(4t)+(1/8)t\cos(4t)$.
+\end{example}
+
+In general, if $f(t)=a\cos(\omega t)+b\sin(\omega t)$, and $\pm \omega
+i$ are the roots of the characteristic equation, then instead of 
+$C\cos(\omega t)+D\sin(\omega t)$ we guess $Ct\cos(\omega t)+Dt\sin(\omega t)$.
+
+\begin{exercises}
+
+Find the general solution to the differential equation.
+
+\exer $\ds\ddot y -10\dot y+25y=\cos t$
+\begin{answer} $Ae^{5t}+Bte^{5t}+(6/169)\cos t-(5/338)\sin t$
+\end{answer}
+
+\exer $\ds\ddot y+2\sqrt2\dot y+2y=10$
+\begin{answer} $\ds Ae^{-\sqrt2t}+Bte^{-\sqrt2t}+5$
+\end{answer}
+
+\exer $\ds\ddot y+16y=8t^2+3t-4$
+\begin{answer} $\ds A\cos(4t)+B\sin(4t)+ (1/2)t^2+(3/16)t-5/16$
+\end{answer}
+
+\exer $\ds\ddot y+2y=\cos(5t)+\sin(5t)$
+\begin{answer} $\ds A\cos(\sqrt2t)+B\sin(\sqrt2t)-(\cos(5t)+\sin(5t))/23$
+\end{answer}
+
+\exer $\ds\ddot y-2\dot y+2y=e^{2t}$
+\begin{answer} $\ds e^{t}(A\cos t+B\sin t)+e^{2t}/2$
+\end{answer}
+
+\exer $\ds\ddot y-6y+13=1+2t+e^{-t}$
+\begin{answer} $\ds Ae^{\sqrt6t}+Be^{-\sqrt6t}+2-t/3-e^{-t}/5$
+\end{answer}
+
+\exer $\ds\ddot y+\dot y-6y=e^{-3t}$
+\begin{answer} $\ds Ae^{-3t}+Be^{2t}-(1/5)te^{-3t}$
+\end{answer}
+
+\exer $\ds\ddot y-4\dot y+3y=e^{3t}$
+\begin{answer} $\ds Ae^t+Be^{3t}+(1/2)te^{3t}$
+\end{answer}
+
+\exer $\ds\ddot y+16y=\cos(4t)$
+\begin{answer} $\ds A\cos(4t)+B\sin(4t)+(1/8)t\sin(4t)$
+\end{answer}
+
+\exer $\ds\ddot y +9y=3\sin(3t)$
+\begin{answer} $\ds A\cos(3t)+B\sin(3t)-(1/2)t\cos(3t)$
+\end{answer}
+
+\exer $\ds\ddot y+12\dot y+36y=6e^{-6t}$
+\begin{answer} $\ds Ae^{-6t}+Bte^{-6t}+3t^2e^{-6t}$
+\end{answer}
+
+\exer $\ds\ddot y-8\dot y+16y=-2e^{4t}$
+\begin{answer} $\ds Ae^{4t}+Bte^{4t}-t^2e^{4t}$
+\end{answer}
+
+\exer $\ds\ddot y+6\dot y+5y=4$
+\begin{answer} $\ds Ae^{-t}+Be^{-5t}+(4/5)$
+\end{answer}
+
+\exer $\ds\ddot y-\dot y-12y=t$
+\begin{answer} $\ds Ae^{4t}+Be^{-3t}+(1/144)-(t/12)$
+\end{answer}
+
+\exer $\ds\ddot y+5y=8\sin(2t)$
+\begin{answer} $\ds A\cos(\sqrt5t)+B\sin(\sqrt5t)+8\sin(2t)$
+\end{answer}
+
+\exer $\ds\ddot y-4y=4e^{2t}$
+\begin{answer} $\ds Ae^{2t}+Be^{-2t}+te^{2t}$
+\end{answer}
+
+Solve the initial value problem.
+
+\exer $\ds\ddot y-y=3t+5$, $y(0)=0$, $\ds\dot y(0)=0$
+\begin{answer} $\ds 4e^{t}+e^{-t}-3t-5$
+\end{answer}
+
+\exer $\ds\ddot y+9y=4t$, $y(0)=0$, $\ds\dot y(0)=0$
+\begin{answer} $\ds -(4/27)\sin(3t)+(4/9)t$
+\end{answer}
+
+\exer $\ds\ddot y +12\dot y +37y=10e^{-4t}$, $y(0)=4$, $\ds\dot y(0)=0$
+\begin{answer} $\ds e^{-6t}(2\cos t+20\sin t)+2e^{-4t}$
+\end{answer}
+
+\exer $\ds\ddot y+6\dot y+18y=\cos t-\sin t$, $y(0)=0$, $\ds\dot
+y(0)=2$ 
+\begin{answer} $\ds
+\left(-{23\over 325}\cos(3t)+{592\over 975}\sin(3t)\right)+
+{23\over325}\cos t-{11\over325}\sin t$
+\end{answer}
+
+\exer Find the solution for the mass-spring equation
+$\ds\ddot y+4\dot y+29y=689\cos(2t)$.
+\begin{answer} $\ds e^{-2t}(A\sin(5t)+B\cos(5t))+8\sin(2t)+25\cos(2t)$
+\end{answer}
+
+\exer Find the solution for the mass-spring equation
+$\ds3\ddot y+12\dot y+24y=2\sin t$.
+\begin{answer} $\ds e^{-2t}(A\sin(2t)+B\cos(2t))+(14/195)\sin t-(8/195)\cos t$
+\end{answer}
+
+\exer Consider the differential 
+equation $\ds m\ddot y+b\dot y+ky=\cos(\omega t)$,
+with $m$, $b$, and $k$ all positive and $\ds b^2<2mk$; this equation
+is a model for a damped mass-spring system with external 
+driving force $\cos(\omega t)$.
+Show that the steady state part of the solution has amplitude
+$${1\over \sqrt{(k-m\omega^2)^2+\omega^2b^2}}.$$
+Show that this amplitude is largest when 
+$\ds \omega={\sqrt{4mk-2b^2}\over 2m}$. This is the 
+{\dfont resonant frequency\index{resonant frequency}} of the system.
+
+\end{exercises}

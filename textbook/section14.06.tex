@@ -1,0 +1,129 @@
+\section{Higher order derivatives}{}{}
+
+In single variable calculus we saw that the second derivative is often
+useful: in appropriate circumstances it measures acceleration; it can
+be used to identify maximum and minimum points; it tells us something
+about how sharply curved a graph is. Not surprisingly, second
+derivatives are also useful in the multi-variable case, but again not
+surprisingly, things are a bit more complicated.
+
+It's easy to see where some complication is going to come from: with
+two variables there are four possible second derivatives. To take a
+``derivative,'' we must take a partial derivative with respect to $x$
+or $y$, and there are four ways to do it: $x$ then $x$, $x$ then $y$, 
+$y$ then $x$, $y$ then $y$.
+
+\exam Compute all four second derivatives of $f(x,y)=x^2y^2$.
+
+Using an obvious notation, we get:
+$$f_{xx}=2y^2\qquad f_{xy}=4xy\qquad f_{yx}=4xy\qquad f_{yy}=2x^2.$$
+\endexam
+
+You will have noticed that two of these are the same, the ``mixed
+partials'' computed by taking partial derivatives with respect to both
+variables in the two possible orders. This is not an accident---as
+long as the function is reasonably nice, this will always be true.
+
+\begin{theorem} (Clairaut's Theorem) If the mixed partial derivatives are
+continuous, they are equal.
+\end{theorem}
+\label{thm:clairaut}
+\index{Clairaut's Theorem}
+
+\exam Compute the mixed partials of $\ds f=xy/(x^2+y^2)$.
+$$
+f_x={y^3-x^2y\over(x^2+y^2)^2}\qquad
+f_{xy}=-{x^4-6x^2y^2+y^4\over (x^2+y^2)^3}
+$$
+We leave $f_{yx}$ as an exercise.
+\endexam
+
+\begin{exercises}
+
+\exercise Let $\ds f=xy/(x^2+y^2)$; compute $f_{xx}$, $f_{yx}$, and $f_{yy}$.
+\begin{answer} $f_{xx}=(2x^3y-6xy^3)/(x^2+y^2)^3$,
+$f_{yy}=(2xy^3-6x^3y)/(x^2+y^2)^3$
+\end{answer}
+
+\exercise Find all first and second partial derivatives of
+$x^3y^2+y^5$.
+\begin{answer} $f_x=3x^2y^2$, $f_y=2x^3y+5y^4$, 
+$f_{xx}=6xy^2$, $f_{yy}=2x^3+20y^3$, $f_{xy}=6x^2y$
+\end{answer}
+
+\exercise Find all first and second partial derivatives of
+$4x^3+xy^2+10$.
+\begin{answer} $f_x=12x^2+y^2$, $f_y=2xy$, \hfill\break 
+$f_{xx}=24x$, $f_{yy}=2x$, $f_{xy}=2y$
+\end{answer}
+
+\exercise Find all first and second partial derivatives of
+$x\sin y$.
+\begin{answer} $f_x=\sin y$, $f_y=x\cos y$, $f_{xx}=0$, $f_{yy}=-x\sin y$,
+$f_{xy}=\cos y$
+\end{answer}
+
+\exercise Find all first and second partial derivatives of
+$\sin(3x)\cos(2y)$.
+\begin{answer} $\ds f_x=3\cos(3x)\cos(2y)$,\hfill\break 
+$\ds f_y=-2\sin(3x)\sin(2y)$,\hfill\break 
+$\ds f_{xy}=-6\cos(3x)\sin(2y)$,\hfill\break 
+$\ds f_{yy}=-4\sin(3x)\cos(2y)$,\hfill\break 
+$\ds f_{xx}=-9\sin(3x)\cos(2y)$
+\end{answer}
+
+\exercise Find all first and second partial derivatives of
+$e^{x+y^2}$.
+\begin{answer} $\ds f_x=e^{x+y^2}$, $\ds f_y=2ye^{x+y^2}$,\hfill\break 
+$\ds f_{xx}=e^{x+y^2}$,\hfill\break 
+$\ds f_{yy}=4y^2e^{x+y^2}+2e^{x+y^2}$,\hfill\break 
+$\ds f_{xy}=2ye^{x+y^2}$
+\end{answer}
+
+\exercise Find all first and second partial derivatives of
+$\ln\sqrt{x^3+y^4}$.
+\begin{answer} $\ds f_x={3x^2\over2(x^3+y^4)}$, 
+$\ds f_y={2y^3\over x^3+y^4}$,
+$\ds f_{xx}={3x\over x^3+y^4}-{9x^4\over 2(x^3+y^4)^2}$, 
+$\ds f_{yy}={6y^2\over x^3+y^4}-{8y^6\over (x^3+y^4)^2}$,\hfill\break 
+$\ds f_{xy}={-6x^2y^3\over (x^3+y^4)^2}$
+\end{answer}
+
+\exercise Find all first and second partial derivatives of
+$z$ with respect to $x$ and $y$ if 
+$x^2+4y^2+16z^2-64=0$.
+\begin{answer} $\ds z_x={-x\over16z}$, 
+$\ds z_y={-y\over4z}$,\hfill\break 
+$\ds z_{xx}=-{16z^2+x^2\over16^2z^3}$,\hfill\break 
+$\ds z_{yy}=-{4z^2+y^2\over16z^3}$,\hfill\break 
+$\ds z_{xy}={-xy\over64z^3}$
+\end{answer}
+
+\exercise Find all first and second partial derivatives of
+$z$ with respect to $x$ and $y$ if 
+$xy+yz+xz=1$.
+\begin{answer} $\ds z_x=-{y+z\over x+y}$, 
+$\ds z_y=-{x+z\over x+y}$,\hfill\break 
+$\ds z_{xx}=2{y+z\over(x+y)^2}$, 
+$\ds z_{yy}=2{x+z\over(x+y)^2}$,\hfill\break 
+$\ds z_{xy}={2z\over(x+y)^2}$
+\end{answer}
+
+\exercise Let $\alpha$ and $k$ be constants.  Prove that the function 
+$u(x,t)=e^{-\alpha^2k^2t}\sin(kx)$
+is a solution to the heat equation $u_t=\alpha^2u_{xx}$
+
+\exercise Let $a$ be a constant.  Prove that $u=\sin(x-at)+\ln(x+at)$ is
+  a solution to the wave equation $u_{tt}=a^2u_{xx}$.
+
+%% \exercise Let $f(x,y)$ be a continuous differentiable function.  Analyze
+%%   the level curves near a critical value if that critical value is a
+%%   max or a min.  What if the level curve is a saddle point?
+
+\exercise How many third-order derivatives does a function of 2 variables
+  have?  How many of these are distinct?
+
+\exercise How many $n$th order derivatives does a function of 2 variables
+  have?  How many of these are distinct?
+
+\end{exercises}

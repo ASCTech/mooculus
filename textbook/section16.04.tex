@@ -1,0 +1,271 @@
+\section{Green's Theorem}{}{}
+\nobreak
+We now come to the first of three important theorems that extend the
+Fundamental Theorem of Calculus to higher dimensions. (The Fundamental
+Theorem of Line Integrals has already done this in one way, but in
+that case we were still dealing with an essentially one-dimensional
+integral.) They all share with the Fundamental Theorem the following
+rather vague description: {\it To compute a certain sort of integral over a
+region, we may do a computation on the boundary of the region
+that involves one fewer integrations.}
+
+Note that this does indeed describe the Fundamental Theorem of
+Calculus and the Fundamental Theorem of Line Integrals: to
+compute a single integral over an interval, we do a computation on the
+boundary (the endpoints) that involves one fewer integrations, namely,
+no integrations at all.
+
+\begin{theorem} (Green's Theorem) If the vector field ${\bf F}=\langle
+P,Q\rangle$ and the region $D$ are sufficiently nice, and if $C$ is
+the boundary of $D$ ($C$ is a closed curve), then
+$$\dint{D} {\partial Q\over\partial x}
+-{\partial P\over\partial y} \,dA = \int_C P\,dx +Q\,dy ,$$
+provided the integration on the right is done counter-clockwise around
+$C$.\end{theorem} 
+\label{thm:greens theorem}
+
+To indicate that an integral $\ds\int_C$ is being done over a closed
+curve in the counter-clockwise direction, we usually write
+$\ds\oint_C$. We also use the notation $\partial D$ to mean the
+boundary of $D$ {\dfont oriented\index{oriented curve}\/} in the
+counterclockwise direction. With this notation,
+$\ds\oint_C=\int_{\partial D}$.
+
+We already know one case, not particularly interesting, in which this
+theorem is true: If $\bf F$ is conservative, we know that the integral
+$\ds\oint_C {\bf F}\cdot d{\bf r}=0$, because any integral of a
+conservative vector field around a closed curve is zero. We also know
+in this case that $\partial P/\partial y=\partial Q/\partial x$, so
+the double integral  in the theorem is simply the integral of the zero
+function, namely, 0. So in the case that $\bf F$ is conservative, the
+theorem says simply that $0=0$. 
+
+\begin{example} We illustrate the theorem by computing both sides of
+$$\int_{\partial D} x^4\,dx + xy\,dy=\dint{D} y-0\,dA,$$
+where $D$ is the triangular region with corners $(0,0)$, $(1,0)$,
+$(0,1)$. 
+
+Starting with the double integral:
+$$\dint{D} y-0\,dA=\int_0^1\int_0^{1-x} y\,dy\,dx=
+\int_0^1
+{(1-x)^2\over2}\,dx=\left.-{(1-x)^3\over6}\right|_0^1={1\over6}.$$
+
+There is no single formula to describe the boundary of $D$, so to
+compute the left side directly we need to compute three separate
+integrals corresponding to the three sides of the triangle, and each
+of these integrals we break into two integrals, the ``$dx$'' part and
+the ``$dy$'' part.
+The three sides are described by $y=0$, $y=1-x$, and $x=0$. The
+integrals are then
+$$\eqalign{
+\int_{\partial D}\!\!\! x^4\,dx + xy\,dy&=
+\int_0^1 x^4\,dx+\int_0^0 0\,dy+\int_1^0 x^4\,dx+\int_0^1 (1-y)y\,dy+
+\int_0^0 0\,dx+\int_1^0 0\,dy \\
+&={1\over5}+0-{1\over5}+{1\over6}+0+0={1\over6}. \\}
+$$
+
+Alternately, we could describe the three sides in vector form as
+$\langle t,0\rangle$, $\langle 1-t,t\rangle$, and $\langle
+0,1-t\rangle$. Note that in each case, as $t$ ranges from 0 to 1, we
+follow the corresponding side in the correct direction. Now
+$$\eqalign{
+\int_{\partial D} x^4\,dx + xy\,dy&=
+\int_0^1 t^4 + t\cdot 0\,dt + \int_0^1 -(1-t)^4 + (1-t)t\,dt
++\int_0^1 0 + 0\,dt \\
+&=\int_0^1 t^4\,dt + \int_0^1 -(1-t)^4 + (1-t)t\,dt
+={1\over6}. \\
+}$$ 
+% The three integrals on the right in the first line deserve a
+% bit of explanation. The first arises from
+% $$\int_C {\bf F}\cdot d{\bf r},$$
+% where $C$ is given by ${\bf r}=\langle t,0\rangle$, that is, by
+% $x=t$ and $y=0$. This implies that $dx=dt$ and $dy=0\cdot dt$. 
+% Now substituting into $x^4\,dx + xy\,dy$ gives
+% $t^4\,dt+t\cdot0\cdot0\,dt$. In the second integral we have 
+% ${\bf r}=\langle 1-t,t\rangle$, so $x=1-t$, $y=t$,
+% $dx=-dt$, and $dy=dt$. Substitution gives the integral shown. The
+% third integral arises in the same way.
+%
+%Now computing the easy integrals gives
+%$(1/5)+(-1/5+1/2-1/3)+(0)=1/6$ as before.
+\end{example}
+
+In this case, none of the integrations are difficult, but the second
+approach is somewhat tedious because of the necessity to set up three
+different integrals. In different circumstances, either of the
+integrals, the single or the double, might be easier to
+compute. Sometimes it is worthwhile to turn a single integral into the
+corresponding double integral, sometimes exactly the opposite approach
+is best.
+
+Here is a clever use of Green's Theorem: We know that areas can be
+computed using double integrals, namely,
+$$\dint{D} 1\,dA$$
+computes the area of region $D$. If we can find $P$ and $Q$ so that
+$\partial Q/\partial x-\partial P/\partial y=1$, then the area is also
+$$\int_{\partial D} P\,dx+Q\,dy.$$
+It is quite easy to do this: $P=0,Q=x$ works, as do
+$P=-y, Q=0$ and $P=-y/2,Q=x/2$. 
+
+\begin{example} An ellipse centered at the origin, with its two principal axes
+aligned with the $x$ and $y$ axes, is given by
+$${x^2\over a^2}+{y^2\over b^2}=1.$$ We find the area of the interior
+of the ellipse
+via Green's theorem. To do this we need a vector equation for the
+boundary; one such equation is $\langle a\cos t,b\sin t\rangle$, as
+$t$ ranges from 0 to $2\pi$. We
+can easily verify this by substitution:
+$${x^2\over a^2}+{y^2\over b^2}=
+{a^2\cos^2 t\over a^2}+{b^2\sin^2t\over b^2}=
+\cos^2t+\sin^2t=1.$$
+Let's consider the three possibilities for $P$ and $Q$ above:
+Using 0 and $x$ gives
+$$\oint_C 0\,dx+x\,dy=\int_0^{2\pi} a\cos(t)b\cos(t)\,dt=
+\int_0^{2\pi} ab\cos^2(t)\,dt.$$
+Using $-y$ and 0 gives
+$$\oint_C -y\,dx+0\,dy=\int_0^{2\pi} -b\sin(t)(-a\sin(t))\,dt=
+\int_0^{2\pi} ab\sin^2(t)\,dt.$$
+Finally, using $-y/2$ and $x/2$ gives
+$$\eqalign{
+\oint_C -{y\over2}\,dx+{x\over2}\,dy&=
+\int_0^{2\pi} -{b\sin(t)\over2}(-a\sin(t))\,dt
++{a\cos(t)\over2}(b\cos(t))\,dt \\
+&=\int_0^{2\pi} {ab\sin^2t\over2}+{ab\cos^2t\over2}\,dt=
+\int_0^{2\pi} {ab\over2}\,dt=\pi ab. \\}$$
+The first two integrals are not particularly difficult, but the third
+is very easy, though the choice of $P$ and $Q$ seems more complicated.
+\end{example}
+
+\figure
+\vbox{\beginpicture
+\normalgraphs
+\ninepoint
+\setcoordinatesystem units <1truecm,1truecm>
+\setplotarea x from -3.1 to 3.1, y from -2.1 to 2.1
+\axis left shiftedto x=0 /
+\axis bottom shiftedto y=0 /
+\put {$(0,b)$} [bl] <2pt,2pt> at 0 2
+\put {$(a,0)$} [tl] <2pt,-2pt> at 3 0
+\multiput {\eightpoint$\bullet$} at 0 2 3 0 /
+\ellipticalarc axes ratio 3:2 360 degrees from 3 0 center at 0 0
+\endpicture}
+\figrdef{fig:standard ellipse}
+\endfigure{A ``standard'' ellipse, ${x^2\over a^2}+{y^2\over b^2}=1$.}
+
+\goodbreak
+\noindent{\begin{proof}font Proof of 
+Green's Theorem.}\kern1pc\bgroup
+
+We cannot here prove Green's Theorem in general, but we can do a
+special case. We seek to prove that 
+$$\oint_C P\,dx +Q\,dy = \dint{D} {\partial Q\over\partial x}
+-{\partial P\over\partial y} \,dA.$$
+It is sufficient to show that
+$$\oint_C P\,dx=\dint{D}-{\partial P\over\partial y} \,dA\qquad\hbox{and}
+\qquad\oint_C Q\,dy=\dint{D} {\partial Q\over\partial x}\,dA,$$
+which we can do if we can compute the double integral in both possible
+ways, that is, using $dA=dy\,dx$ and $dA=dx\,dy$.
+
+For the first equation, we start with
+$$\dint{D}{\partial P\over\partial y}\,dA=
+\int_a^b\int_{g_1(x)}^{g_2(x)} {\partial P\over \partial y}\,dy\,dx=
+\int_a^b P(x,g_2(x))-P(x,g_1(x))\,dx.$$
+Here we have simply used the ordinary Fundamental Theorem of Calculus,
+since for the inner integral we are integrating a derivative with
+respect to $y$: an antiderivative of $\partial P/\partial y$ with
+respect to $y$ is simply $P(x,y)$, and then we substitute $g_1$ and
+$g_2$ for $y$ and subtract.
+
+Now we need to manipulate $\oint_C P\,dx$. The boundary of region $D$
+consists of 4 parts, given by the equations $y=g_1(x)$, $x=b$,
+$y=g_2(x)$, and $x=a$. On the portions $x=b$ and $x=a$, $dx=0\,dt$, so
+the corresponding integrals are zero. For the other two portions, we
+use the parametric forms $x=t$, $y=g_1(t)$, $a\le t\le b$, and
+$x=t$, $y=g_2(t)$, letting $t$ range from $b$ to $a$, since we are
+integrating counter-clockwise around the boundary.
+The resulting integrals give us
+$$\eqalign{
+\oint_C P\,dx = \int_a^b P(t,g_1(t))\,dt+\int_b^a P(t,g_2(t))\,dt
+&=\int_a^b P(t,g_1(t))\,dt-\int_a^b P(t,g_2(t))\,dt \\
+&=\int_a^b P(t,g_1(t))-P(t,g_2(t))\,dt \\
+}$$
+which is the result of the double integral times $-1$, as desired.
+
+The equation involving $Q$ is essentially the same, and left as an
+exercise.
+\end{proof}
+
+\begin{exercises}
+
+\exercise Compute $\ds\int_{\partial D} 2y\,dx + 3x\,dy$, 
+where $D$ is described by $0\le x\le1$, $0\le y\le 1$.
+\begin{answer} $1$
+\end{answer}
+
+\exercise Compute $\ds\int_{\partial D} xy\,dx + xy\,dy$, 
+where $D$ is described by $0\le x\le1$, $0\le y\le 1$.
+\begin{answer} $0$
+\end{answer}
+
+\exercise Compute $\ds\int_{\partial D} e^{2x+3y}\,dx + e^{xy}\,dy$, 
+where $D$ is described by $-2\le x\le 2$, $-1\le y\le 1$.
+\begin{answer} $1/(2e)-1/(2e^7)+e/2-e^7/2$
+\end{answer}
+
+\exercise Compute $\ds\int_{\partial D} y\cos x\,dx + y\sin x\,dy$, 
+where $D$ is described by $0\le x\le \pi/2$, $1\le y\le 2$.
+\begin{answer} $1/2$
+\end{answer}
+
+\exercise Compute $\ds\int_{\partial D} x^2y\,dx + xy^2\,dy$, 
+where $D$ is described by $0\le x\le 1$, $0\le y\le x$.
+\begin{answer} $-1/6$
+\end{answer}
+
+\exercise Compute $\ds\int_{\partial D} x\sqrt{y}\,dx + \sqrt{x+y}\,dy$, 
+where $D$ is described by $1\le x\le 2$, $2x\le y\le 4$.
+\begin{answer} $(2\sqrt3-10\sqrt5+8\sqrt6)/3-2\sqrt2/5+1/5$
+\end{answer}
+
+\exercise Compute $\ds\int_{\partial D} (x/y)\,dx + (2+3x)\,dy$, 
+where $D$ is described by $1\le x\le 2$, $1\le y\le x^2$.
+\begin{answer} $11/2-\ln(2)$
+\end{answer}
+
+\exercise Compute $\ds\int_{\partial D} \sin y\,dx + \sin x\,dy$, 
+where $D$ is described by $0\le x\le \pi/2$, $x\le y\le \pi/2$.
+\begin{answer} $2-\pi/2$
+\end{answer}
+
+\exercise Compute $\ds\int_{\partial D} x\ln y\,dx$,
+where $D$ is described by $1\le x\le 2$, $\ds e^x\le y\le e^{x^2}$.
+\begin{answer} $-17/12$
+\end{answer}
+
+\exercise Compute $\ds\int_{\partial D} \sqrt{1+x^2}\,dy$, 
+where $D$ is described by $-1\le x\le 1$, $x^2\le y\le 1$.
+\begin{answer} $0$
+\end{answer}
+
+\exercise Compute $\ds\int_{\partial D} x^2y\,dx - xy^2\,dy$, 
+where $D$ is described by $x^2+y^2\le 1$.
+\begin{answer} $-\pi/2$
+\end{answer}
+
+\exercise Compute $\ds\int_{\partial D} y^3\,dx + 2x^3\,dy$, 
+where $D$ is described by $x^2+y^2\le 4$.
+\begin{answer} $12\pi$
+\end{answer}
+
+% Albert
+
+\exercise Evaluate $\ds\oint_C (y-\sin(x))\,dx + \cos(x) \, dy$,
+where $C$ is the boundary of the triangle with vertices $(0,0)$,
+$(1,0)$, and $(1,2)$ oriented counter-clockwise.
+\begin{answer} $2\cos(1)-2\sin(1)-1$
+\end{answer}
+%/Albert
+\exercise Finish our proof of Green's Theorem by showing that
+$\ds\oint_C Q\,dy=\dint{D} {\partial Q\over\partial x}\,dA$.
+
+\end{exercises}

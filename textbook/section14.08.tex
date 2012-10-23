@@ -1,0 +1,332 @@
+\section{Lagrange Multipliers}{}{}
+
+Many applied max/min problems take the form of the last two examples:
+we want to find an extreme value of a function, like $V=xyz$, subject
+to a constraint, like $\ds1=\sqrt{x^2+y^2+z^2}$. Often this can be
+done, as we have, by explicitly combining the equations and then
+finding critical points. There is another approach that is often
+convenient, the method of {\dfont Lagrange multipliers}\index{Lagrange
+  multipliers}.
+
+It is somewhat easier to understand two variable problems, so we begin
+with one as an example. Suppose the perimeter of a rectangle is to be
+100 units. Find the rectangle with largest area. This is a fairly
+straightforward problem from single variable calculus. We write down
+the two equations: $A=xy$, $P=100=2x+2y$, solve the second of these
+for $y$ (or $x$), substitute into the first, and end up with a
+one-variable maximization problem. Let's now think of it differently:
+the equation $A=xy$ defines a surface, and the equation $100=2x+2y$
+defines a curve (a line, in this case) in the $x$-$y$ plane. If we
+graph both of these in the three-dimensional coordinate system, we can
+phrase the problem like this: what is the highest point on the surface
+above the line? The solution we already understand effectively
+produces the equation of the cross-section of the surface above the
+line and then treats it as a single variable problem. Instead, imagine
+that we draw the level curves (the contour lines) for the surface in
+the $x$-$y$ plane, along with the line.
+
+\figure
+\vbox{\beginpicture
+\normalgraphs
+\ninepoint
+\setcoordinatesystem units <3truecm,3truecm>
+\setplotarea x from -1 to 1, y from 0 to 1
+\put {\hbox{\epsfxsize6cm\epsfbox{lagrange.eps}}} at 0 0
+\endpicture}
+\figrdef{fig:lagrange}
+\endfigure{Constraint line with contour plot of the surface $xy$.}
+
+Imagine that the line represents a hiking trail and the contour lines
+are, as on a topographic map, the lines of constant altitude. How
+could you estimate, based on the graph, the high (or low) points on
+the path? As the path crosses contour lines, you know the path must be
+increasing or decreasing in elevation. At some point you will see the
+path just touch a contour line (tangent to it), and then begin to
+cross contours in the opposite order---that point of tangency must be
+a maximum or minimum point. If we can identify all such points, we can
+then check them to see which gives the maximum and which the minimum
+value. As usual, we also need to check boundary points; in this
+problem, we know that $x$ and $y$ are positive, so we are interested
+in just the portion of the line in the first quadrant, as shown. The
+endpoints of the path, the two points on the axes, are not points of
+tangency, but they are the two places that the function $xy$ is a
+minimum in the first quadrant.
+
+How can we actually make use of this? At the points of tangency that
+we seek, the constraint curve (in this case the line) and the level
+curve have the same slope---their tangent lines are parallel. This also
+means that the constraint curve is perpendicular to the gradient
+vector of the function; going a bit further, if we can express the
+constraint curve itself as a level curve, then we seek the points at
+which the two level curves have parallel gradients.
+The curve $100=2x+2y$ can be thought of as a level curve of the
+function $2x+2y$; figure~\xrefn{fig:lagrange two} shows both sets of
+level curves on a single graph. We are interested in those points
+where two level curves are tangent---but there are many such points,
+in fact an infinite number, as we've only shown a few of the level
+curves. All along the line $y=x$ are points at which two level curves
+are tangent. While this might seem to be a show-stopper, it is
+not. 
+
+\figure
+\vbox{\beginpicture
+\normalgraphs
+\ninepoint
+\setcoordinatesystem units <3truecm,3truecm>
+\setplotarea x from -1 to 1, y from 0 to 1
+\put {\hbox{\epsfxsize6cm\epsfbox{lagrange2.eps}}} at 0 0
+\endpicture}
+\figrdef{fig:lagrange two}
+\endfigure{Contour plots for $2x+2y$ and $xy$.}
+
+The gradient of $2x+2y$ is $\langle 2,2\rangle$, and the gradient of
+$xy$ is $\langle y,x\rangle$. They are parallel when
+$\langle 2,2\rangle=\lambda\langle y,x\rangle$, that is, when
+$2=\lambda y$ and $2=\lambda x$. We have two equations in three
+unknowns, which typically results in many solutions (as we
+expected). A third equation will reduce the number of solutions; the
+third equation is the original constraint, $100=2x+2y$. So we have the
+following system to solve:
+$$2=\lambda y \qquad 2=\lambda x\qquad 100=2x+2y.$$
+In the first two equations, $\lambda$ can't be 0, so we may divide by
+it to get $x=y=2/\lambda$. Substituting into the third equation we get 
+$$\eqalign{
+2{2\over \lambda}+2{2\over \lambda}&=100 \\
+{8\over100}&=\lambda \\
+}$$
+so $x=y=25$. Note that we are not really interested in the value of
+$\lambda$---it is a clever tool, the Lagrange multiplier, introduced
+to solve the problem. In many cases, as here, it is easier to find
+$\lambda$ than to find everything else without using $\lambda$.
+
+The same method works for functions of three variables, except of
+course everything is one dimension higher: the function to be
+optimized is a function of three variables and the constraint represents
+a surface---for example, the function may represent temperature, and
+we may be interested in the maximum temperature on some surface, like
+a sphere.
+The points we seek are those at which the constraint
+surface is tangent to a level surface of the function. Once again, we
+consider the constraint surface to be a level surface of some
+function, and we look for points at which the two gradients are
+parallel, giving us three equations in four unknowns. The constraint
+provides a fourth equation.
+
+\begin{example} 
+Recall example~\xrefn{exam:box diagonal}: the diagonal of a box is 1,
+we seek to maximize the volume. The constraint is $\ds
+1=\sqrt{x^2+y^2+z^2}$, which is the same as
+$1=x^2+y^2+z^2$. The function to maximize is $xyz$. The two gradient
+vectors are $\langle 2x,2y,2z\rangle$ and $\langle yz,xz,xy\rangle$,
+so the equations to be solved are
+$$\eqalign{
+yz&=2x\lambda \\
+xz&=2y\lambda \\
+xy&=2z\lambda \\
+1&=x^2+y^2+z^2 \\
+}$$
+If $\lambda=0$ then at least two of $x$, $y$, $z$ must be 0, giving a
+volume of 0, which will not be the maximum. If we multiply the first
+two equations by $x$ and $y$ respectively, we get
+$$\eqalign{
+xyz&=2x^2\lambda \\
+xyz&=2y^2\lambda \\
+}$$
+so $2x^2\lambda=2y^2\lambda$ or $x^2=y^2$; in the same way we can show
+$x^2=z^2$. Hence the fourth equation becomes
+$1=x^2+x^2+x^2$ or $x=1/\sqrt3$, and so $x=y=z=1/\sqrt3$ gives the
+maximum volume. This is of course the same answer we obtained
+previously.
+\end{example}
+
+Another possibility is that we have a function of three variables, and
+we want to find a maximum or minimum value not on a surface but on a
+curve; often the curve is the intersection of two surfaces, so that we
+really have two constraint equations, say $g(x,y,z)=c_1$ and
+$h(x,y,z)=c_2$. It turns out that at points on the intersection of the
+surfaces where $f$ has a maximum or minimum value,
+$$\nabla f=\lambda\nabla g+\mu \nabla h.$$
+As before, this gives us three equations, one for each component of
+the vectors, but now in five unknowns, $x$, $y$, $z$, $\lambda$, and
+$\mu$. Since there are two constraint functions, we have a total of
+five equations in five unknowns, and so can usually find the solutions
+we need.
+
+\begin{example} The plane $x+y-z=1$ intersects the cylinder $x^2+y^2=1$ in an
+ellipse. Find the points on the ellipse closest to and farthest from
+the origin.
+
+We want the extreme values of $f=\sqrt{x^2+y^2+z^2}$ subject to the
+constraints  $g=x^2+y^2=1$ and $h=x+y-z=1$. To simplify the algebra,
+we may use instead $f=x^2+y^2+z^2$, since this has a maximum or
+minimum value at exactly the points at which $\sqrt{x^2+y^2+z^2}$ does.
+The gradients are
+$$\nabla f =\langle 2x,2y,2z\rangle\qquad
+\nabla g = \langle 2x,2y,0\rangle\qquad
+\nabla h = \langle 1,1,-1\rangle,$$
+so the equations we need to solve are
+$$\eqalign{
+2x&=\lambda 2x+\mu \\
+2y&=\lambda 2y+\mu \\
+2z&=0-\mu \\
+1&=x^2+y^2 \\
+1&=x+y-z. \\
+}$$
+Subtracting the first two we get
+$2y-2x=\lambda(2y-2x)$, so either $\lambda=1$ or $x=y$. If $\lambda=1$
+then $\mu=0$, so $z=0$ and the last two equations are
+$$1=x^2+y^2\qquad\hbox{and}\qquad 1=x+y.$$
+Solving these gives $x=1$, $y=0$, or $x=0$, $y=1$, so the points of
+interest are $(1,0,0)$ and $(0,1,0)$, which are both distance 1 from
+the origin. If $x=y$, the fourth equation is $2x^2=1$, giving 
+$x=y=\pm1/\sqrt2$, and from the fifth equation we get
+$z=-1\pm\sqrt2$. The distance from the origin to 
+$(1/\sqrt2,1/\sqrt2,-1+\sqrt2)$ is $\sqrt{4-2\sqrt2}\approx 1.08$ and
+the distance from the origin to 
+$(-1/\sqrt2,-1/\sqrt2,-1-\sqrt2)$ is $\sqrt{4+2\sqrt2}\approx 2.6$.
+Thus, the points $(1,0,0)$ and $(0,1,0)$ are closest to the origin and 
+$(-1/\sqrt2,-1/\sqrt2,-1-\sqrt2)$ is farthest from the origin.
+The Java 
+\expandafter\url\expandafter{\liveurl lagrange_two_constraints.html}%
+applet \endurl shows the cylinder, the plane, the four points of
+interest, and the origin.
+\end{example}
+
+\begin{exercises}
+
+\exercise A six-sided rectangular box is to hold $1/2$ cubic meter;
+what shape should the box be to minimize surface area?
+\begin{answer} a cube
+\end{answer}
+
+\exercise The post office will accept packages whose combined length
+and girth are at most 130 inches (girth is the maximum distance around
+the package perpendicular to the length). What is the largest volume
+that can be sent in a rectangular box?
+\begin{answer} $65/3\times 65/3\times 130/3$
+\end{answer}
+
+\exercise The bottom of a rectangular box costs twice as much per unit
+area as the sides and top. Find the shape for a given volume that will
+minimize cost.
+\begin{answer} It has a square base, and is one and one half times as tall as wide.
+If the volume is $V$ the dimensions are $\root 3 \of {2V/3}\times
+\root 3 \of {2V/3}\times \root 3\of {9V/4}$.
+\end{answer}
+
+\exercise Using Lagrange multipliers, find the shortest
+distance from the point $(x_0,y_0,z_0)$ to the plane $ax+by+cz=d$.
+\begin{answer} $|ax_0+by_0+cz_0-d|/\sqrt{a^2+b^2+c^2}$
+\end{answer}
+
+\exercise Find all points on the surface $xy-z^2+1=0$ that are closest
+to the origin.
+\begin{answer} $(0,0,1)$, $(0,0,-1)$
+\end{answer}
+
+\exercise The material for the bottom of an aquarium costs half as
+much as the high strength glass for the four sides. Find the shape of
+the cheapest aquarium that holds a given volume $V$.
+\begin{answer} $\root 3\of{4V}\times\root 3\of{4V}\times\root 3\of{V/16}$
+\end{answer}
+
+\exercise The plane $x-y+z=2$ intersects the cylinder $x^2+y^2=4$ in an
+ellipse. Find the points on the ellipse closest to and farthest from
+the origin.
+\begin{answer} Farthest: $(-\sqrt2,\sqrt2,2+2\sqrt2)$; closest:
+$(2,0,0)$, $(0,-2,0)$
+\end{answer}
+
+%% Albert
+
+\exercise Find three positive numbers whose sum is 48 and whose
+product is as large as possible.
+\begin{answer} $x=y=z=16$
+\end{answer}
+
+\exercise Find all points on the plane $x+y+z = 5$ in the first octant at
+which $\ds f(x,y,z) = xy^2z^2$ has a maximum value.
+\begin{answer} $(1,2,2)$
+\end{answer}
+
+\exercise Find the points on the surface $x^2 -yz = 5$ that are closest to the
+origin.
+\begin{answer} $\ds (0,\sqrt{5},-\sqrt{5})$, $\ds (0,-\sqrt{5},\sqrt{5})$
+\end{answer}
+
+\exercise A manufacturer makes two models of an item, standard and deluxe.  It
+costs \$40 to manufacture the standard model and \$60 for the deluxe.  A
+market research firm estimates that if the standard model is priced at $x$
+dollars and the deluxe at $y$ dollars, then the manufacturer will sell
+$500(y-x)$ of the standard items and $45,000+500(x-2y)$ of the deluxe each
+year.  How should the items be priced to maximize profit?
+\begin{answer} standard \$65, deluxe \$75
+\end{answer}
+
+\exercise A length of sheet metal 27 in.\ wide is to be made into a
+water trough by bending up two sides as shown in
+figure~\xrefn{fig:trough two}.  Find $x$ and $\phi$ so that the
+trapezoid--shaped cross section has maximum area.
+\begin{answer} $x=9$, $\phi=\pi/3$
+\end{answer}
+
+\figure
+\vbox{\beginpicture
+\normalgraphs
+\ninepoint
+\setcoordinatesystem units <1truecm,1truecm>
+\setplotarea x from 0 to 5, y from -0.5 to 1
+\plot 0 1 1 0 4 0 5 1 /
+\put {$x$} [bl] <2pt,2pt> at 0.5 0.5
+\put {$x$} [br] <-2pt,2pt> at 4.5 0.5
+\put {$27-2x$} [t] <0pt,-3pt> at 2.5 0
+\put {$\phi$} at 4.7 0.35
+\put {$\phi$} at 0.3 0.35
+\circulararc 45 degrees from 4.5 0 center at 4 0
+\circulararc -45 degrees from 0.5 0 center at 1 0
+\setdashes
+\putrule from 4 0 to 5.3 0
+\putrule from -0.3 0 to 1 0
+\endpicture}
+\figrdef{fig:trough two}
+\endfigure{Cross-section of a trough.}
+
+\exercise Find the maximum and minimum values of $f(x,y,z)=6x+3y+2z$ subject
+to the constraint $\ds g(x,y,z) = 4x^2+2y^2 + z^2 - 70 = 0$.
+\begin{answer} $35$, $-35$
+\end{answer}
+
+\exercise Find the maximum and minimum values of $f(x,y)=e^{xy}$ subject
+to the constraint $g(x,y) = x^3+y^3 - 16 = 0$.  
+\begin{answer} maximum $e^4$, no minimum
+\end{answer}
+
+\exercise Find the maximum and minimum values of $\ds f(x,y) = xy +
+\sqrt{9-x^2-y^2}$ when $\ds x^2+y^2 \leq 9$.
+\begin{answer} $5$, $-9/2$
+\end{answer}
+
+\exercise Find three real numbers whose sum is 9 and the sum of whose squares
+is a small as possible.  
+\begin{answer} $3$, $3$, $3$
+\end{answer}
+
+\exercise Find the dimensions of the closed rectangular box with maximum volume
+that can be inscribed in the unit sphere.
+\begin{answer} a cube of side length $\ds 2/\sqrt{3}$
+\end{answer}
+
+\vfill
+
+\exercise The contour map here shows wind speed in knots during Hurricane
+Andrew on August 24, 1992.  Use it to estimate the value of the directional
+derivative of the wind speed at Homestead, FL, in the direction of the eye
+of the hurricane.  Explain the meaning of your answer to a lay person.
+\begin{answer} $\approx 5/8$ knots/mi
+\end{answer}
+
+\centerline{\epsfxsize8truecm\epsfbox{hurricane_wind.eps}}
+
+%% /Albert
+
+\end{exercises}

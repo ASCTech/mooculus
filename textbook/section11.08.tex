@@ -1,0 +1,144 @@
+\section{Power Series}{}{}
+\nobreak
+Recall that we were able to analyze all geometric series ``simultaneously''
+to discover that
+$$\sum_{n=0}^\infty kx^n = {k\over 1-x},$$
+if $|x|<1$, and that the series diverges when $|x|\ge 1$. At the time,
+we thought of $x$ as an unspecified constant, but we could just as
+well think of it as a variable, in which case the series
+$$\sum_{n=0}^\infty kx^n$$
+is a function, namely, the function $k/(1-x)$, as long as
+$|x|<1$. While $k/(1-x)$ is a reasonably easy function to deal with,
+the more complicated $\sum kx^n$ does have its
+attractions: it appears to be an infinite version of one of the
+simplest function types---a polynomial. This leads naturally to the
+questions: Do other functions have representations as series? Is there
+an advantage to viewing them in this way?
+
+The geometric series has a special feature that makes it unlike a
+typical polynomial---the coefficients of the powers of $x$ are the
+same, namely $k$. We will need to allow more general coefficients if
+we are to get anything other than the geometric series. 
+
+\begin{definition} A power series has the form 
+$$\ds\sum_{n=0}^\infty a_nx^n,$$ 
+with the understanding that $\ds a_n$ may depend on $n$ but not on
+$x$.
+\end{definition}
+
+\begin{example} $\ds\sum_{n=1}^\infty {x^n\over n}$ is a power series. We can
+investigate convergence using the ratio test:
+$$
+  \lim_{n\to\infty} {|x|^{n+1}\over n+1}{n\over |x|^n}
+  =\lim_{n\to\infty} |x|{n\over n+1} =|x|.
+$$
+Thus when $|x|<1$ the series converges and when $|x|>1$ it diverges,
+leaving only two values in doubt. When $x=1$ the series is the
+harmonic series and diverges; when $x=-1$ it is the alternating
+harmonic series (actually the negative of the usual alternating
+harmonic series) and converges. Thus, we may think of 
+$\ds\sum_{n=1}^\infty {x^n\over n}$ as a function from the interval
+$[-1,1)$ to the real numbers.
+\end{example}
+
+A bit of thought reveals that the ratio test applied to a power series
+will always have the same nice form. In general, we will compute
+$$
+  \lim_{n\to\infty} {|a_{n+1}||x|^{n+1}\over |a_n||x|^n}
+  =\lim_{n\to\infty} |x|{|a_{n+1}|\over |a_n|} =
+  |x|\lim_{n\to\infty} {|a_{n+1}|\over |a_n|} =L|x|,
+$$
+assuming that $\ds \lim |a_{n+1}|/|a_n|$ exists. Then the series
+converges if $L|x|<1$, that is, if $|x|<1/L$, and diverges if
+$|x|>1/L$. Only the two values $x=\pm1/L$ require further
+investigation. Thus the series will definitely define a function on
+the interval $(-1/L,1/L)$, and perhaps will extend to one or both
+endpoints as well. Two special cases deserve mention: if $L=0$ the
+limit is $0$ no matter what value $x$ takes, so the series converges
+for all $x$ and the function is defined for all real numbers. If
+$L=\infty$, then no matter what value $x$ takes the limit is infinite
+and the series converges only when $x=0$. The value $1/L$ is called
+the {\dfont radius of convergence\index{radius of convergence}%
+\index{series!radius of convergence}\/} of the series, and the
+interval on which the series converges is the {\dfont interval of
+convergence\index{interval of convergence}\index{series!interval
+of convergence}}.
+
+Consider again the geometric series,
+$$\sum_{n=0}^\infty x^n={1\over 1-x}.$$
+Whatever benefits there might be in using the series form of this
+function are only available to us when $x$ is between $-1$ and
+$1$. Frequently we can address this shortcoming by modifying the power
+series slightly. Consider this series:
+$$
+  \sum_{n=0}^\infty {(x+2)^n\over 3^n}=
+  \sum_{n=0}^\infty \left({x+2\over 3}\right)^n={1\over 1-{x+2\over 3}}=
+  {3\over 1-x},
+$$
+because this is just a geometric series with $x$ replaced by
+$(x+2)/3$. Multiplying both sides by $1/3$ 
+gives\pagerdef{page:alt series for 1 over 1-x}
+$$\sum_{n=0}^\infty {(x+2)^n\over 3^{n+1}}={1\over 1-x},$$
+the same function as before. For what values of $x$ does this series
+converge? Since it is a geometric series, we know that it converges
+when 
+$$\eqalign{
+  |x+2|/3&<1 \\
+  |x+2|&<3 \\
+  -3 < x+2 &< 3 \\
+  -5<x&<1. \\
+}$$
+So we have a series representation for $1/(1-x)$ that works on a
+larger interval than before, at the expense of a somewhat more
+complicated series. The endpoints of the interval of convergence now
+are $-5$ and $1$, but note that they can be more compactly described
+as $-2\pm3$. We say that $3$ is the radius of convergence, and
+we now say that the series is centered at $-2$.
+
+\begin{definition} A power series centered at $a$ has the form
+$$\ds\sum_{n=0}^\infty a_n(x-a)^n,$$ 
+with the understanding that $\ds a_n$ may depend on $n$ but not on
+$x$.
+\end{definition}
+
+\begin{exercises}
+
+Find the radius and interval of convergence for each series.  In
+exercises~\xrefn{exer:no endpoints one} and~\xrefn{exer:no endpoints two},
+do not attempt to determine whether the endpoints are in the
+interval of convergence.
+
+\twocol
+
+\exercise $\ds\sum_{n=0}^\infty n x^n$
+\begin{answer} $R=1$, $I=(-1,1)$
+\end{answer}
+
+\exercise $\ds\sum_{n=0}^\infty {x^n\over n!}$
+\begin{answer} $R=\infty$, $I=(-\infty,\infty)$
+\end{answer}
+
+\exercise 
+\relax\label{exer:no endpoints one}
+$\ds\sum_{n=1}^\infty {n!\over n^n}x^n$
+\begin{answer} $R=e$, $I=(-e,e)$
+\end{answer}
+
+\exercise 
+\relax\label{exer:no endpoints two}
+$\ds\sum_{n=1}^\infty {n!\over n^n}(x-2)^n$
+\begin{answer} $R=e$, $I=(2-e,2+e)$
+\end{answer}
+
+\exercise $\ds\sum_{n=1}^\infty {(n!)^2\over n^n}(x-2)^n$
+\begin{answer} $R=0$, converges only when $x=2$
+\end{answer}
+
+\exercise $\ds\sum_{n=1}^\infty {(x+5)^n\over n(n+1)}$
+\begin{answer} $R=1$, $I=[-6,-4]$
+\end{answer}
+
+\endtwocol
+
+\end{exercises}
+

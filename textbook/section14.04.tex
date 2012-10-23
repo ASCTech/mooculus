@@ -1,0 +1,181 @@
+\section{The Chain Rule}{}{}
+\label{sec:multivariable chain rules}
+Consider the surface $z=x^2y+xy^2$, and suppose that 
+$x=2+t^4$ and $y=1-t^3$. We can think of the latter two equations as
+describing how $x$ and $y$ change relative to, say, time. Then
+$$z=x^2y+xy^2=(2+t^4)^2(1-t^3)+(2+t^4)(1-t^3)^2$$ 
+tells us explicitly how the $z$ coordinate of the corresponding point on the
+surface depends on $t$. If we want to know $dz/dt$ we can compute it
+more or less directly---it's actually a bit simpler to use the chain
+rule:
+$$\eqalign{
+  {dz\over dt}&=x^2y'+2xx'y+x2yy'+x'y^2 \\
+  &=(2xy+y^2)x'+(x^2+2xy)y' \\
+  &=(2(2+t^4)(1-t^3)+(1-t^3)^2)(4t^3)+((2+t^4)^2+2(2+t^4)(1-t^3))(-3t^2) \\
+}$$ 
+If we look carefully at the middle step,
+$dz/dt=(2xy+y^2)x'+(x^2+2xy)y'$, we notice that $2xy+y^2$ is $\partial
+z/\partial x$, and $x^2+2xy$ is $\partial z/\partial y$.
+This turns out to be true in general, and gives us a new chain rule:
+
+\begin{theorem} Suppose that $z=f(x,y)$, $f$ is differentiable,
+$x=g(t)$, and $y=h(t)$.
+Assuming that the relevant derivatives exist, 
+$${dz\over dt}={\partial z\over \partial x}{dx\over dt}+
+{\partial z\over \partial y}{dy\over dt}.
+$$
+\begin{proof}
+If $f$ is differentiable, then 
+$$\Delta z=f_x(x_0,y_0)\Delta x+f_y(x_0,y_0)\Delta y+\epsilon_1\Delta
+x + \epsilon_2\Delta y,$$
+where $\epsilon_1$ and $\epsilon_2$ approach 0 as 
+$(x,y)$ approaches $(x_0,y_0)$. Then
+$${\Delta z\over\Delta t}=
+f_x{\Delta x\over\Delta t}+f_y{\Delta y\over\Delta t}+\epsilon_1{\Delta
+x\over\Delta t} + \epsilon_2{\Delta y\over\Delta t}.
+\eqrdef{eq:dz over dt}
+\eqno{(\xrefn{eq:dz over dt})}
+$$
+As $\Delta t$ approaches 0, $(x,y)$ approaches $(x_0,y_0)$ and so
+$$\eqalign{
+\lim_{\Delta t\to0}{\Delta z\over\Delta t} &=  {dz\over dt} \\
+\lim_{\Delta t\to0}\epsilon_1{\Delta x\over\Delta t} &= 0\cdot{dx\over dt}  \\
+\lim_{\Delta t\to0}\epsilon_2{\Delta y\over\Delta t} &= 0\cdot{dy\over dt}  \\
+}$$
+and so taking the limit of~(\xrefn{eq:dz over dt})
+ as $\Delta t$ goes to 0 gives 
+$$
+{dz\over dt}=
+f_x{dx\over dt}+f_y{dy\over dt},
+$$
+as desired.
+\end{proof}
+
+We can write the chain rule in way that is somewhat closer to the
+single variable chain rule:
+$${df\over dt}=\langle f_x,f_y\rangle\cdot\langle x',y'\rangle,$$
+or (roughly) the derivatives of the outside function ``times'' the
+derivatives of the inside functions.
+Not surprisingly, essentially the same chain rule works for functions
+of more than two variables, for example, given a function of three
+variables $f(x,y,z)$, where each of $x$, $y$ and $z$ is a function of
+$t$, 
+$${df\over dt}=\langle f_x,f_y,f_z\rangle\cdot\langle x',y',z'\rangle.$$
+
+We can even extend the idea further. Suppose that $f(x,y)$ is a
+function and $x=g(s,t)$ and $y=h(s,t)$ are functions of two variables
+$s$ and $t$. Then $f$ is ``really'' a function of $s$ and $t$ as well, and 
+$${\partial f\over\partial s}=f_xg_s+f_yh_s\qquad
+{\partial f\over\partial t}=f_xg_t+f_yh_t.$$
+The natural extension of this to $f(x,y,z)$ works as well.
+
+Recall that we used the ordinary chain rule to do implicit
+differentiation\index{implicit differentiation}. We can do the same
+with the new chain rule.
+
+\exam $x^2+y^2+z^2 = 4$ defines a sphere, which is not a function of
+$x$ and $y$, though it can be thought of as two functions, the top and
+bottom hemispheres. We can think of $z$ as one of these two functions,
+so really $z=z(x,y)$, and we can think of $x$ and $y$ as particularly
+simple functions of $x$ and $y$, and let $f(x,y,z)=x^2+y^2+z^2$.
+Since $f(x,y,z)=4$, $\partial f/\partial x=0$, but
+using the chain rule:
+$$\eqalign{
+0={\partial f\over\partial x}&=f_x{\partial x\over\partial x}+
+f_y{\partial y\over\partial x}+f_z{\partial z\over \partial x} \\
+&=(2x)(1)+(2y)(0)+(2z){\partial z\over\partial x}, \\
+}$$
+noting that since $y$ is temporarily held constant its derivative
+${\partial y/\partial x}=0$. Now we can solve for $\partial z/\partial
+x$:
+$${\partial z\over \partial x}=-{2x\over 2z}=-{x\over z}.
+$$
+In a similar manner we can compute $\partial z/\partial y$.
+\endexam
+
+\begin{exercises}
+
+\exercise Use the chain rule to compute $dz/dt$ for
+$z=\sin(x^2+y^2)$, $x=t^2+3$, $y=t^3$.
+\begin{answer} $4xt\cos(x^2+y^2)+6yt^2\cos(x^2+y^2)$
+\end{answer}
+
+\exercise Use the chain rule to compute $dz/dt$ for
+$z=x^2y$, $x=\sin(t)$, $y=t^2+1$.
+\begin{answer} $2xy\cos t+2x^2t$
+\end{answer}
+
+\exercise Use the chain rule to compute $\partial z/\partial s$ and 
+$\partial z/\partial t$ for
+$z=x^2y$, $x=\sin(st)$, $y=t^2+s^2$.
+\begin{answer} $2xyt\cos(st)+2x^2s$, $2xys\cos(st)+2x^2t$
+\end{answer}
+
+\exercise Use the chain rule to compute $\partial z/\partial s$ and 
+$\partial z/\partial t$ for
+$z=x^2y^2$, $x=st$, $y=t^2-s^2$.
+\begin{answer} $2xy^2t-4yx^2s$, $2xy^2s+4yx^2t$
+\end{answer}
+
+\exercise Use the chain rule to compute $\partial z/\partial x$ and 
+$\partial z/\partial y$ for $2x^2+3y^2-2z^2=9$.
+\begin{answer} $x/z$, $3y/(2z)$
+\end{answer}
+
+\exercise Use the chain rule to compute $\partial z/\partial x$ and 
+$\partial z/\partial y$ for $2x^2+y^2+z^2=9$.
+\begin{answer} $-2x/z$, $-y/z$
+\end{answer}
+
+%% Balof
+%% \exercise Find $\frac{dy}{dx}$ in each case both by Implicit
+%%   Differentiation and by the Implicit Function Theorem.
+%% 
+%% \begin{enumerate}
+%% \item $x^3+y^3+3xy=6$
+%% \item $\sin(xy)=4$
+%% \item $e^{x}+xy+\ln(y)=12$
+
+%% \exercise Describe the points on the unit circle, $x^2+y^2=1$, where we
+%%   {\em cannot\/} define one variable in terms of the other.
+%% 
+%% \exercise Describe the points on the unit sphere, $x^2+y^2+z^2=1$, where
+%%   we {\em cannot} define one of the variables in terms of the other
+%%   two.
+
+\exercise Chemistry students will recognize the {\em ideal gas law\/}, given
+  by $PV=nRT$ which relates the Pressure, Volume, and Temperature of
+  $n$ moles of gas.  (R is the ideal gas constant).  Thus, we can view
+  pressure, volume, and temperature as variables, each one dependent
+  on the other two.
+
+\begin{itemize} % BADBAD
+\item{a.} If pressure of a gas is increasing at a rate of $0.2
+  Pa/\hbox{min}$ and temperature is increasing at a rate of $1
+  K/\hbox{min}$, how fast is the volume changing?
+\item{b.} If the volume of a gas is decreasing at a rate of $0.3
+  L/\hbox{min}$ and temperature is increasing at a rate of $.5
+  K/\hbox{min}$, how fast is the pressure changing?
+\item{c.} If the pressure of a gas is decreasing at a rate of $0.4
+  Pa/\hbox{min}$ and the volume is increasing at a rate of $3
+  L/\hbox{min}$, how fast is the temperature changing?
+\end{itemize}
+\begin{answer} (a) $\ds V'=(nR-0.2V)/P$\hfill\break
+(b) $\ds P'=(nR+0.6P)/2V$\hfill\break
+(c) $\ds T' = (3P-0.4V)/(nR)$
+\end{answer}
+
+\exercise Verify the following identity in the case of the ideal gas law:
+$${\partial P\over \partial V} {\partial V\over \partial T} 
+{\partial T\over \partial P}=-1$$
+
+\exercise The previous exercise was a special case of the following
+fact, which you are to verify here: If $F(x,y,z)$ is a function of 3
+variables, and the relation $F(x,y,z)=0$ defines each of the variables
+in terms of the other two, namely $x=f(y,z)$, $y=g(x,z)$ and
+$z=h(x,y)$, then
+$${\partial x\over \partial y} {\partial y\over \partial z} 
+{\partial z\over \partial x}=-1$$
+
+\end{exercises}
+

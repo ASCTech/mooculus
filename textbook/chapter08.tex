@@ -1,0 +1,46 @@
+\iflatetranscendentals
+\chapter{Applications of Integration}
+
+\input section09.01
+\input section09.02
+\input section09.03
+\input section09.04
+\input section09.05
+\else
+\chapter{Techniques of Integration}
+
+Over the next few sections we examine some techniques that are
+frequently successful when seeking antiderivatives of
+functions. Sometimes this is a simple problem, since it will be
+apparent that the function you wish to integrate is a derivative in
+some straightforward way. For example, faced with
+$$\int x^{10}\,dx$$
+we realize immediately that the derivative of $\ds x^{11}$ will supply an
+$\ds x^{10}$: $\ds (x^{11})'=11x^{10}$. We don't want the ``11'', but
+constants are easy to alter, because differentiation
+``ignores'' them in certain circumstances, so
+$${d\over dx}{1\over 11}{x^{11}}={1\over 11}11{x^{10}}=x^{10}.$$
+
+From our knowledge of derivatives, we can immediately write down a
+number of antiderivatives. Here is a list of those most often used:
+
+$$\displaylines{
+\int x^n\,dx={x^{n+1}\over n+1}+C, \quad\hbox{if $n\not=-1$} \\
+\int x^{-1}\,dx = \ln |x|+C \\
+\int e^x\,dx = e^x+C \\
+\int \sin x\,dx = -\cos x+C \\
+\int \cos x\,dx = \sin x+C \\
+\int \sec^2 x\,dx = \tan x+C \\
+\int \sec x\tan x\,dx = \sec x+C \\
+\int {1\over1+x^2}\,dx = \arctan x+C \\
+\int {1\over \sqrt{1-x^2}}\,dx = \arcsin x+C \\
+}$$
+
+\input section08.01
+\input section08.02
+\input section08.03
+\input section08.04
+\input section08.05
+\input section08.06
+\input section08.07
+\fi

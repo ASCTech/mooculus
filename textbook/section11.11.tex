@@ -1,0 +1,286 @@
+\section{Taylor's Theorem}{}{}
+\nobreak
+One of the most important uses of infinite series is the potential for
+using an initial portion of the series for $f$ to approximate $f$. We
+have seen, for example, that when we add up the first $n$ terms of an
+alternating series with decreasing terms that the difference between
+this and the true value is at most the size of the next term. A
+similar result is true of many Taylor series.
+
+\begin{theorem} Suppose that $f$ is defined on some open interval $I$ around $a$ and
+suppose $\ds f^{(N+1)}(x)$ exists on this interval. Then
+for each $x\not=a$ in $I$ there is a value $z$ between
+$x$ and $a$ so that
+$$ 
+  f(x) = \sum_{n=0}^N {f^{(n)}(a)\over n!}\,(x-a)^n + 
+  {f^{(N+1)}(z)\over (N+1)!}(x-a)^{N+1}. 
+$$ 
+\begin{proof}
+The proof requires some cleverness to set up, but then the details are
+quite elementary. We want to define a function $F(t)$. 
+Start with the equation
+$$F(t)=\sum_{n=0}^N{f^{(n)}(t)\over n!}\,(x-t)^n + B(x-t)^{N+1}.$$
+Here we have replaced $a$ by $t$ in the first $N+1$ terms of the
+Taylor series, and added a carefully chosen term on the end, with $B$
+to be determined. Note that
+we are temporarily keeping $x$ fixed, so the only variable in this
+equation is $t$, and we will be interested
+only in $t$ between $a$ and $x$. Now substitute $t=a$:
+$$F(a)=\sum_{n=0}^N{f^{(n)}(a)\over n!}\,(x-a)^n + B(x-a)^{N+1}.$$
+Set this equal to $f(x)$:
+$$f(x)=\sum_{n=0}^N{f^{(n)}(a)\over n!}\,(x-a)^n + B(x-a)^{N+1}.$$
+Since $x\not=a$, we can solve this for $B$, which is a
+``constant''---it depends on $x$ and $a$ but those are temporarily 
+fixed.  Now we
+have defined a function $F(t)$ with the property that
+$F(a)=f(x)$. Consider also $F(x)$: all terms with a positive power of
+$(x-t)$ become zero when we substitute $x$ for $t$, so we are left
+with $\ds F(x)=f^{(0)}(x)/0!=f(x)$. So $F(t)$ is a function with the same
+value on the endpoints of the interval $[a,x]$. 
+By Rolle's theorem (\xrefn{thm:rolle}), we
+know that there is a value $z\in(a,x)$ such that $F'(z)=0$. Let's look
+at $F'(t)$. Each term in $F(t)$, except the first term and the extra
+term involving $B$, is a product, so to take the derivative we use the
+product rule on each of these terms. It will help to write out the
+first few terms of the definition:
+$$\eqalign{
+  F(t)=f(t)&+{f^{(1)}(t)\over 1!}(x-t)^1+{f^{(2)}(t)\over 2!}(x-t)^2+
+  {f^{(3)}(t)\over 3!}(x-t)^3+\cdots \\
+  &+{f^{(N)}(t)\over N!}(x-t)^N+
+  B(x-t)^{N+1}. \\}
+$$
+Now take the derivative:
+$$\eqalign{
+  F'(t) = f'(t) &+ 
+  \left({f^{(1)}(t)\over 1!}(x-t)^0(-1)+{f^{(2)}(t)\over
+    1!}(x-t)^1\right) \\
+  &+\left({f^{(2)}(t)\over 1!}(x-t)^1(-1)+{f^{(3)}(t)\over
+    2!}(x-t)^2\right) \\
+  &+\left({f^{(3)}(t)\over 2!}(x-t)^2(-1)+{f^{(4)}(t)\over
+    3!}(x-t)^3\right)+\dots+ \\
+  &+\left({f^{(N)}(t)\over (N-1)!}(x-t)^{N-1}(-1)+{f^{(N+1)}(t)\over
+    N!}(x-t)^N\right) \\
+  &+B(N+1)(x-t)^N(-1). \\}
+$$
+Now most of the terms in this expression cancel out,
+leaving just
+$$F'(t) = {f^{(N+1)}(t)\over N!}(x-t)^N+B(N+1)(x-t)^N(-1).$$
+At some $z$, $F'(z)=0$ so
+$$\eqalign{
+  0&={f^{(N+1)}(z)\over N!}(x-z)^N+B(N+1)(x-z)^N(-1) \\
+  B(N+1)(x-z)^N&={f^{(N+1)}(z)\over N!}(x-z)^N \\
+  B&={f^{(N+1)}(z)\over (N+1)!}. \\
+}$$
+Now we can write 
+$$
+  F(t)=\sum_{n=0}^N{f^{(n)}(t)\over n!}\,(x-t)^n + 
+  {f^{(N+1)}(z)\over (N+1)!}(x-t)^{N+1}.
+$$
+Recalling that $F(a)=f(x)$ we get
+$$
+  f(x)=\sum_{n=0}^N{f^{(n)}(a)\over n!}\,(x-a)^n + 
+  {f^{(N+1)}(z)\over (N+1)!}(x-a)^{N+1},
+$$
+which is what we wanted to show.
+\end{proof}
+
+It may not be immediately obvious that this is particularly useful;
+let's look at some examples.
+
+\begin{example} Find a polynomial approximation for $\sin x$ accurate to $\pm
+0.005$. 
+
+From Taylor's theorem:
+$$
+  \sin x= \sum_{n=0}^N{f^{(n)}(a)\over n!}\,(x-a)^n + 
+  {f^{(N+1)}(z)\over (N+1)!}(x-a)^{N+1}.
+$$
+What can we say about the size of the term
+$${f^{(N+1)}(z)\over (N+1)!}(x-a)^{N+1}?$$
+Every derivative of $\sin x$ is $\pm\sin x$ or $\pm\cos x$, so
+$\ds |f^{(N+1)}(z)|\le 1$. The factor $\ds (x-a)^{N+1}$ is a bit more
+difficult, since $x-a$ could be quite large. Let's pick $a=0$ and
+$|x|\le\pi/2$; if we can compute $\sin x$ for $x\in[-\pi/2,\pi/2]$, we
+can of course compute $\sin x$ for all $x$.
+
+We need to pick $N$ so that 
+$$\left|{x^{N+1}\over (N+1)!}\right|< 0.005.$$
+Since we have limited $x$ to $[-\pi/2,\pi/2]$,
+$$\left|{x^{N+1}\over (N+1)!}\right|<{2^{N+1}\over (N+1)!}.$$
+The quantity on the right decreases with increasing $N$, so all we
+need to do is find an $N$ so that 
+$${2^{N+1}\over (N+1)!}<0.005.$$
+A little trial and error shows that $N=8$ works, 
+and in fact $\ds 2^{9}/9!<0.0015$, so 
+$$\eqalign{
+  \sin x &=\sum_{n=0}^8{f^{(n)}(0)\over n!}\,x^n \pm 0.0015 \\
+  &=x-{x^3\over 6}+{x^5\over 120}-{x^7\over 5040}\pm 0.0015. \\
+}$$
+Figure~\xrefn{fig:sine approximation} shows the graphs of $\sin x$ and
+and the approximation on $[0,3\pi/2]$. As $x$ gets larger, the
+approximation heads to negative infinity very quickly, since it is
+essentially acting like $\ds -x^7$.
+\end{example}
+
+\figure
+\vbox{\beginpicture
+\normalgraphs
+\ninepoint
+\setcoordinatesystem units <2truecm,0.7truecm>
+\setplotarea x from 0 to 5, y from -5 to 1
+\axis left ticks numbered from -5 to 1 by 1 /
+\axis bottom shiftedto y=0 ticks numbered from 1 to 5 by 1 /
+\setquadratic
+\plot 0.000 0.000 0.047 0.047 0.094 0.094 0.141 0.141 0.188 0.187 
+0.236 0.233 0.283 0.279 0.330 0.324 0.377 0.368 0.424 0.412 
+0.471 0.454 0.518 0.495 0.565 0.536 0.613 0.575 0.660 0.613 
+0.707 0.649 0.754 0.685 0.801 0.718 0.848 0.750 0.895 0.780 
+0.942 0.809 0.990 0.836 1.037 0.861 1.084 0.884 1.131 0.905 
+1.178 0.924 1.225 0.941 1.272 0.956 1.319 0.969 1.367 0.979 
+1.414 0.988 1.461 0.994 1.508 0.998 1.555 1.000 1.602 0.999 
+1.649 0.997 1.696 0.992 1.744 0.985 1.791 0.975 1.838 0.964 
+1.885 0.950 1.932 0.934 1.979 0.917 2.026 0.896 2.073 0.874 
+2.121 0.850 2.168 0.824 2.215 0.796 2.262 0.766 2.309 0.735 
+2.356 0.701 2.403 0.666 2.450 0.629 2.498 0.591 2.545 0.550 
+2.592 0.509 2.639 0.466 2.686 0.421 2.733 0.375 2.780 0.328 
+2.827 0.279 2.875 0.230 2.922 0.179 2.969 0.126 3.016 0.073 
+3.063 0.018 3.110 -0.037 3.157 -0.094 3.204 -0.152 3.252 -0.212 
+3.299 -0.272 3.346 -0.334 3.393 -0.397 3.440 -0.461 3.487 -0.527 
+3.534 -0.595 3.581 -0.664 3.629 -0.735 3.676 -0.808 3.723 -0.884 
+3.770 -0.962 3.817 -1.042 3.864 -1.125 3.911 -1.212 3.958 -1.302 
+4.006 -1.395 4.053 -1.493 4.100 -1.596 4.147 -1.703 4.194 -1.816 
+4.241 -1.936 4.288 -2.061 4.335 -2.194 4.383 -2.335 4.430 -2.484 
+4.477 -2.642 4.524 -2.811 4.571 -2.990 4.618 -3.181 4.665 -3.385 
+4.712 -3.602 /
+\plot 0.000 0.000 0.047 0.047 0.094 0.094 0.141 0.141 0.188 0.187 
+0.236 0.233 0.283 0.279 0.330 0.324 0.377 0.368 0.424 0.412 
+0.471 0.454 0.518 0.495 0.565 0.536 0.613 0.575 0.660 0.613 
+0.707 0.649 0.754 0.685 0.801 0.718 0.848 0.750 0.895 0.780 
+0.942 0.809 0.990 0.836 1.037 0.861 1.084 0.884 1.131 0.905 
+1.178 0.924 1.225 0.941 1.272 0.956 1.319 0.969 1.367 0.979 
+1.414 0.988 1.461 0.994 1.508 0.998 1.555 1.000 1.602 1.000 
+1.649 0.997 1.696 0.992 1.744 0.985 1.791 0.976 1.838 0.965 
+1.885 0.951 1.932 0.935 1.979 0.918 2.026 0.898 2.073 0.876 
+2.121 0.853 2.168 0.827 2.215 0.800 2.262 0.771 2.309 0.740 
+2.356 0.707 2.403 0.673 2.450 0.637 2.498 0.600 2.545 0.562 
+2.592 0.522 2.639 0.482 2.686 0.440 2.733 0.397 2.780 0.353 
+2.827 0.309 2.875 0.264 2.922 0.218 2.969 0.172 3.016 0.125 
+3.063 0.078 3.110 0.031 3.157 -0.016 3.204 -0.063 3.252 -0.110 
+3.299 -0.156 3.346 -0.203 3.393 -0.249 3.440 -0.294 3.487 -0.339 
+3.534 -0.383 3.581 -0.426 3.629 -0.468 3.676 -0.509 3.723 -0.549 
+3.770 -0.588 3.817 -0.625 3.864 -0.661 3.911 -0.696 3.958 -0.729 
+4.006 -0.760 4.053 -0.790 4.100 -0.818 4.147 -0.844 4.194 -0.869 
+4.241 -0.891 4.288 -0.911 4.335 -0.930 4.383 -0.946 4.430 -0.960 
+4.477 -0.972 4.524 -0.982 4.571 -0.990 4.618 -0.996 4.665 -0.999 
+4.712 -1.000 /
+\endpicture}
+\figrdef{fig:sine approximation}
+\endfigure{$\sin x$ and a polynomial approximation.
+(\expandafter\url\expandafter{\liveurl jsxgraph/taylor_series.html}%
+AP\endurl)}
+
+We can extract a bit more information from this example. If we do not
+limit the value of $x$, we still have 
+$$
+  \left|{f^{(N+1)}(z)\over (N+1)!}x^{N+1}\right|\le 
+  \left|{x^{N+1}\over (N+1)!}\right|
+$$
+so that $\sin x$ is represented by 
+$$
+  \sum_{n=0}^N{f^{(n)}(0)\over n!}\,x^n \pm 
+  \left|{x^{N+1}\over (N+1)!}\right|.
+$$
+If we can show that 
+$$
+  \lim_{N\to\infty} \left|{x^{N+1}\over (N+1)!}\right|=0
+$$
+for each $x$ then 
+$$
+  \sin x=\sum_{n=0}^\infty{f^{(n)}(0)\over n!}\,x^n
+  = \sum_{n=0}^\infty (-1)^n{x^{2n+1}\over (2n+1)!},
+$$
+that is, the sine function is actually equal to its
+Maclaurin series for all $x$. How can we prove that the limit is zero?
+Suppose that $N$ is larger than $|x|$, and let $M$ be the largest
+integer less than $|x|$ (if $M=0$ the following is even easier). Then
+$$
+  \eqalign{
+  {|x^{N+1}|\over (N+1)!} &= {|x|\over N+1}{|x|\over N}{|x|\over N-1}\cdots
+    {|x|\over M+1}{|x|\over M}{|x|\over M-1}\cdots {|x|\over 2}{|x|\over 1} \\
+  &\le {|x|\over N+1}\cdot 1\cdot 1\cdots 1\cdot
+    {|x|\over M}{|x|\over M-1}\cdots {|x|\over 2}{|x|\over 1} \\
+  &={|x|\over N+1}{|x|^M\over M!}.
+  }
+$$
+The quantity $|x|^M/ M!$ is a constant, so 
+$$
+  \lim_{N\to\infty} {|x|\over N+1}{|x|^M\over M!} = 0
+$$
+and by the Squeeze Theorem (\xrefn{thm:squeeze theorem for sequences})
+$$
+  \lim_{N\to\infty} \left|{x^{N+1}\over (N+1)!}\right|=0
+$$
+as desired. Essentially the same argument works for $\cos x$ and $\ds
+e^x$; unfortunately, it is more difficult to show that most functions
+are equal to their Maclaurin series.
+
+\begin{example} Find a polynomial approximation for $\ds e^x$ near $x=2$
+accurate to $\pm
+0.005$. 
+
+From Taylor's theorem:
+$$
+  e^x= \sum_{n=0}^N{e^2\over n!}\,(x-2)^n + 
+  {e^z\over (N+1)!}(x-2)^{N+1},
+$$
+since $\ds f^{(n)}(x)=e^x$ for all $n$. We are interested in $x$ near 2,
+and we need to keep $\ds |(x-2)^{N+1}|$ in check, so we may as well
+specify that $|x-2|\le 1$, so $x\in[1,3]$. Also
+$$\left|{e^z\over (N+1)!}\right|\le {e^3\over (N+1)!},$$
+so we need to find an $N$ that makes $\ds e^3/(N+1)!\le 0.005$. This time
+$N=5$ makes $\ds e^3/(N+1)!< 0.0015$, so the approximating polynomial is
+$$
+  e^x=e^2+e^2(x-2)+{e^2\over2}(x-2)^2+{e^2\over6}(x-2)^3+
+  {e^2\over24}(x-2)^4+{e^2\over120}(x-2)^5
+  \pm 0.0015.
+$$
+This presents an additional problem for approximation, since we also
+need to approximate $\ds e^2$, and any approximation we use will increase
+the error, but we will not pursue this complication.
+\end{example}
+
+Note well that in these examples we found polynomials of a certain
+accuracy only on a small interval, even though the series for $\sin x$
+and $\ds e^x$ converge for all $x$; this is typical. To get the same
+accuracy on a larger interval would require more terms. 
+
+\begin{exercises}
+
+\exercise Find a polynomial approximation for $\cos x$ on $[0,\pi]$,
+accurate to $\ds \pm 10^{-3}$
+\begin{answer} $\ds 1-{x^2\over2}+{x^4\over24}-{x^6\over 720}
++\cdots+{x^{12}\over 12!}$
+\end{answer}
+
+\exercise How many terms of the series for $\ln x$ centered at 1 are
+required so that the guaranteed error on $[1/2,3/2]$ is
+at most $\ds 10^{-3}$? What if the interval is instead $[1,3/2]$? 
+\begin{answer} $1000$; $8$ 
+\end{answer}
+
+\exercise Find the first three nonzero terms in the Taylor series for
+$\tan x$ on $[-\pi/4,\pi/4]$,
+and compute the guaranteed error term as given by 
+Taylor's theorem. (You may want to use Sage or a similar aid.)
+\begin{answer} $\ds x+{x^3\over3}+{2x^5\over15}$, error $\pm 1.27$.
+\end{answer}
+
+\exercise Show that $\cos x$ is equal to its Taylor series for all $x$
+by showing that the limit of the error term is zero as $N$ approaches
+infinity. 
+
+\exercise Show that $\ds e^x$ is equal to its Taylor series for all $x$
+by showing that the limit of the error term is zero as $N$ approaches
+infinity. 
+
+\end{exercises}

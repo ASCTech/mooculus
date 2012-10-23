@@ -1,0 +1,142 @@
+\section{Linear Approximations}{}{}
+\nobreak
+Newton's method is one example of the usefulness of the tangent line
+as an approximation to a curve. Here we explore another such
+application.
+
+Recall that the tangent line to $f(x)$ at a point $x=a$ is given by
+$L(x) = f'(a) (x-a) + f(a)$.  The tangent line in this context is also
+called the {\dfont linear approximation\index{linear approximation}\/}
+to $f$ at $a$.
+
+If $f$ is differentiable at $a$ then $L$ is a good approximation of
+$f$ so long as $x$ is ``not too far'' from $a$.  Put another way, if
+$f$ is differentiable at $a$ then under a microscope $f$ will look
+very much like a straight line. Figure~\xrefn{fig:linear
+approximation} shows a tangent line to $\ds y=x^2$ at three different
+magnifications. 
+
+If we want to approximate $f(b)$,
+because computing it exactly is difficult, we can approximate the
+value using a linear approximation, provided that we can compute the
+tangent line at some $a$ close to $b$.
+
+\figure
+\hbox to \hsize{\hss
+\epsfxsize4.5cm\epsfbox{linear_approx_1.eps}\hfill
+\epsfxsize4.5cm\epsfbox{linear_approx_2.eps}\hfill
+\epsfxsize4.5cm\epsfbox{linear_approx_3.eps}\hfill
+\hss}
+\figrdef{fig:linear approximation}
+\endfigure{The linear approximation to $\ds y=x^2$.}
+
+\begin{example} Let $\ds f(x)=\sqrt{x+4}$. Then $\ds f'(x)=1/(2\sqrt{x+4})$.
+ The linear approximation to $f$ at $x=5$ is $\ds
+L(x)=1/(2\sqrt{5+4})(x-5)+\sqrt{5+4}=(x-5)/6+3$.  As an immediate
+application we can approximate square roots of numbers near 9 by hand.
+To estimate $\ds\sqrt{10}$, we substitute 6 into the linear
+approximation instead of into $f(x)$, so
+$\ds \sqrt{6+4}\approx (6-5)/6+3 = 19/6\approx 3.1\overline{6}$.
+This rounds to $3.17$ while the square root of 10 is actually
+$3.16$ to two decimal places, so this estimate is only accurate to one
+decimal place. This is not too surprising, as 10 is really not very
+close to 9; on the other hand, for many calculations, $3.2$ would be
+accurate enough.
+\endexam
+
+With modern calculators and computing software it may not appear
+necessary to use linear approximations. But in fact they are quite
+useful. In cases requiring an explicit numerical approximation, they
+allow us to get a quick rough estimate which can be used as a
+``reality check'' on a more complex calculation. In some complex
+calculations involving functions, the linear approximation makes an
+otherwise intractable calculation possible, without serious loss of
+accuracy.
+
+\exam\relax
+\label{exam:linear approximation of sine}
+Consider the trigonometric function $\sin x$. Its linear approximation
+at $x=0$ is simply $L(x)=x$. When $x$ is small this is quite a good
+approximation and is used frequently by engineers and scientists
+to simplify some calculations.
+\endexam
+
+\begin{definition} Let $y=f(x)$ be a differentiable function. We define a new
+  independent variable $dx$, and a new dependent variable
+  $dy=f'(x)\,dx$. Notice that $dy$ is a function both of $x$ (since
+  $f'(x)$ is a function of $x$) and of $dx$.  We say that $dx$ and
+  $dy$ are \dfont{differentials\index{differential}}.  
+\end{definition}
+
+Let $\Delta x =x-a$ and $\Delta y= f(x)-f(a)$.
+If $x$ is near $a$ then $\Delta x$ is small. If we set
+$dx=\Delta x$ then 
+$$dy = f'(a)\,dx \approx {\Delta y\over\Delta x}\Delta x = \Delta y.$$
+Thus, $dy$ can be used to approximate $\Delta y$, the actual change in
+the function $f$ between $a$ and $x$. This is exactly the
+approximation given by the tangent line:
+$$dy = f'(a)(x-a) = f'(a)(x-a)+f(a)-f(a)=L(x)-f(a).$$
+While $L(x)$ approximates $f(x)$, $dy$ approximates how $f(x)$ has
+changed from $f(a)$.
+Figure~\xrefn{fig:differentials} illustrates the relationships.
+
+\figure
+\vbox{\beginpicture
+\normalgraphs
+\sevenpoint
+\setcoordinatesystem units <2truecm,2truecm>
+\setplotarea x from 0 to 4.5, y from 0 to 2.5
+\axis left /
+\axis bottom ticks withvalues {$a$} {$x$} / at 1 3 / /
+\plot 0.500 0.707 0.588 0.766 0.675 0.822 0.762 0.873 0.850 0.922 
+0.938 0.968 1.025 1.012 1.112 1.055 1.200 1.095 1.288 1.135 
+1.375 1.173 1.462 1.209 1.550 1.245 1.638 1.280 1.725 1.313 
+1.812 1.346 1.900 1.378 1.988 1.410 2.075 1.440 2.162 1.471 
+2.250 1.500 2.338 1.529 2.425 1.557 2.512 1.585 2.600 1.612 
+2.688 1.639 2.775 1.666 2.862 1.692 2.950 1.718 3.038 1.743 
+3.125 1.768 3.212 1.792 3.300 1.817 3.388 1.841 3.475 1.864 
+3.562 1.887 3.650 1.910 3.738 1.933 3.825 1.956 3.912 1.978 
+4.000 2.000 /
+\setlinear
+\plot 1 1 3 2 3 1 1 1 /
+\betweenarrows {$dx=\Delta x$} from 1 0.8 to 3 0.8
+\betweenarrows {$\Delta y$} from 3.2 1 to 3.2 1.73
+\betweenarrows {$dy$} from 3.6 1 to 3.6 2
+\setdashes <2pt>
+\putrule from 3 2 to 3.6 2
+\putrule from 3 1 to 3.6 1
+\putrule from 3 1.73 to 3.2 1.73
+\endpicture}
+\figrdef{fig:differentials}
+\endfigure{Differentials.}
+
+\begin{exercises}
+
+\exercise Let $\ds f(x) = x^4$. If $a=1$ and $dx= \Delta x =1/2$, 
+what are $\Delta y$ and $dy$?
+\begin{answer} $\Delta y=65/16$, $dy=2$
+\end{answer}
+
+\exercise Let $\ds f(x) = \sqrt{x}$. If $a=1$ and $dx= \Delta x
+=1/10$, what are $\Delta y$ and $dy$?
+\begin{answer} $\ds \Delta y=\sqrt{11/10}-1$, $dy=0.05$
+\end{answer}
+
+
+\exercise Let $f(x) = \sin (2x)$. If $a=\pi$ and $dx= \Delta x
+=\pi/100$, what are $\Delta y$ and $dy$?
+\begin{answer} $\ds \Delta y=\sin(\pi/50)$, $dy=\pi/50$
+\end{answer}
+
+\exercise Use differentials to estimate the amount of paint needed to
+ apply a coat of paint 0.02 cm thick to a sphere with diameter $40$
+ meters. (Recall that the volume of a sphere of radius $r$ is $V
+ =(4/3)\pi r^3$. Notice that you are given that $dr=0.02$.)
+\begin{answer} $dV=8\pi/25$
+\end{answer}
+
+\exercise Show in detail that the linear approximation of
+ $\sin x$ at $x=0$ is $L(x)=x$ and the linear approximation of $\cos x$
+ at $x=0$ is $L(x)=1$.
+
+\end{exercises}

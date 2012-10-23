@@ -1,0 +1,236 @@
+\section{Work}{}{}
+\nobreak
+A fundamental concept in classical physics is {\dfont
+work\index{work}\/}: If an object is moved in a straight line against
+a force $F$ for a distance $s$ the work done is $W=Fs$.
+
+\begin{example}
+How much work is done in lifting a 10 pound weight vertically a
+distance of 5 feet? The force due to gravity on a 10 pound weight is
+10 pounds at the surface of the earth, and it does not change
+appreciably over 5 feet. The work done is $W=10\cdot 5=50$ foot-pounds.
+\end{example}
+
+In reality few situations are so simple. The force might not be
+constant over the range of motion, as in the next example.
+
+\begin{example} How much work is done in lifting a 10 pound weight from the
+surface of the earth to an orbit 100 miles above the surface? Over 100
+miles the force due to gravity does change significantly, so we need
+to take this into account. The force exerted on a 10 pound weight at a
+distance $r$ from the center of the earth is $\ds F=k/r^2$ and by
+definition it is 10 when $r$ is the radius of the earth (we assume the
+earth is a sphere). How can we approximate the work done? We divide
+the path from the surface to orbit into $n$ small subpaths. On each
+subpath the force due to gravity is roughly constant, with value
+$\ds k/r_i^2$ at distance $\ds r_i$. The work to raise the object from
+$\ds r_i$ to $\ds r_{i+1}$ is thus approximately $\ds k/r_i^2\Delta r$ and the
+total work is approximately
+$$\sum_{i=0}^{n-1} {k\over r_i^2}\Delta r,$$
+or in the limit
+$$W=\int_{r_0}^{r_1} {k\over r^2}\,dr,$$
+where $\ds r_0$ is the radius of the earth and $\ds r_1$ is $\ds r_0$ plus 100
+miles. The work is
+$$W=\int_{r_0}^{r_1} {k\over r^2}\,dr=
+-\left.{k\over r}\right|_{r_0}^{r_1}=-{k\over r_1}+{k\over r_0}.$$
+Using $\ds r_0=20925525$ feet we have $\ds r_1=21453525$. The force on the 10
+pound weight at the surface of the earth is 10 pounds, so 
+$\ds 10=k/20925525^2$, giving $k=4378775965256250$. Then
+$$-{k\over r_1}+{k\over r_0}={491052320000\over 95349}\approx 5150052
+\quad\hbox{foot-pounds}.$$
+Note that if we assume the force due to gravity is 10 pounds over the
+whole distance we would calculate the work as $\ds 10(r_1-r_0)=10\cdot100\cdot
+5280=5280000$, somewhat higher since we don't account for the
+weakening of the gravitational force.
+\end{example}
+
+\begin{example} How much work is done in lifting a 10 kilogram object from the
+surface of the earth to a distance $D$ from the center of the earth?
+This is the same problem as before in different units, and we are not
+specifying a value for $D$. As before
+$$W=\int_{r_0}^{D} {k\over r^2}\,dr= -\left.{k\over
+  r}\right|_{r_0}^{D}=-{k\over D}+{k\over r_0}.$$ 
+While ``weight in pounds'' is a measure of force, ``weight in
+kilograms'' is a measure of mass. To convert to force we need to use
+Newton's law $F=ma$. At the surface of the earth the acceleration due
+to gravity is approximately 9.8 meters per second squared, so the
+force is $F=10\cdot 9.8=98$. The units here are ``kilogram-meters per
+second squared'' or ``kg m/s$^2$'', also known as a
+Newton\index{Newton} (N), so $F=98$~N.  The radius of the earth is
+approximately 6378.1 kilometers or 6378100 meters.
+Now the problem proceeds as before. From
+$\ds F=k/r^2$ we compute $k$:
+$\ds 98=k/6378100^2$, $\ds k= 3.986655642\cdot 10^{15}$. Then the work is:
+$$W=-{k\over D}+6.250538000\cdot 10^8\quad\hbox{Newton-meters.}$$
+As $D$ increases $W$ of course gets larger, since the quantity being
+subtracted, $-k/D$, gets smaller. But note that the work $W$ will
+never exceed $\ds 6.250538000\cdot 10^8$, and in fact will approach this
+value as $D$ gets larger. In short, with a finite amount of work, namely
+$\ds 6.250538000\cdot 10^8$ N-m, we can lift the 10 kilogram object as far
+as we wish from earth.
+\end{example}
+\label{example:object to infinity}
+
+Next is an example in which the force is constant, but there are many
+objects moving different distances.
+
+\begin{example} Suppose that a water tank is shaped like a right circular
+cone with the tip at the bottom, and has height 10 meters and radius 2
+meters at the top. If the tank is full, how much work is required
+to pump all the water out over the top? Here we have a large number of
+atoms of water that must be lifted different distances to get to the
+top of the tank. Fortunately, we don't really have to deal with
+individual atoms---we can consider all the atoms at a given depth
+together. 
+
+To approximate the work, we can divide the water in the tank into
+horizontal sections, approximate the volume of water in a section by a
+thin disk, and compute the amount of work required to lift each disk
+to the top of the tank. As usual, we take the limit as the sections
+get thinner and thinner to get the total work.
+
+\figure
+\vbox{\beginpicture
+\normalgraphs
+\ninepoint
+\setcoordinatesystem units <0.5truecm,0.5truecm>
+\setplotarea x from -2 to 2, y from 0 to 10
+\axis left shiftedto x=0 /
+\plot -2 10 0 0 2 10 -2 10 /
+\setdashes
+\putrule from -1.2 6 to 1.2 6
+\betweenarrows {$h$} from -0.4 6 to -0.4 10
+\betweenarrows {10} from 2.3 0 to 2.3 10
+\setplotsymbol ({\teeny.})
+\plotsymbolspacing=.2pt
+\put {2} [b] <0pt,2pt> at 1 10
+\arrow <2pt> [0.7, 2] from 0.5 10.4 to 0 10.4
+\arrow <2pt> [0.7, 2] from 1.5 10.4 to 2 10.4
+\endpicture}
+\figrdef{fig:conical water tank}
+\endfigure{Cross-section of a conical water tank.}
+
+At depth $h$ the circular cross-section through the tank has radius
+$r=(10-h)/5$, by similar triangles,
+ and area $\ds \pi(10-h)^2/25$. A section of the tank at depth
+$h$ thus has volume approximately $\ds \pi(10-h)^2/25\Delta h$ and so
+contains $\ds \sigma\pi(10-h)^2/25\Delta h$ kilograms of water, where
+$\sigma$ is the density of water in kilograms per cubic meter;
+$\sigma\approx 1000$. The force due to gravity on this much water is
+$\ds 9.8\sigma\pi(10-h)^2/25\Delta h$, and finally, this section of water
+must be lifted a distance $h$, which requires
+$\ds h9.8\sigma\pi(10-h)^2/25\Delta h$ Newton-meters of work. The total
+work is therefore
+$$W={9.8\sigma\pi\over 25} \int_0^{10} h(10-h)^2\,dh={980000\over3}\pi\approx
+1026254\quad\hbox{Newton-meters.}$$
+\end{example}
+
+A spring has a ``natural length,'' its length if nothing is stretching
+or compressing it. If the spring is either stretched or compressed the
+spring provides an opposing force; according to {\dfont Hooke's
+Law\index{Hooke's Law}\/} the magnitude of this force is proportional to the
+distance the spring has been stretched or compressed: $F=kx$.
+The constant of proportionality, $k$, of course depends on the
+spring. Note that $x$ here represents the {\em change\/} in length from the
+natural length.
+
+\begin{example} Suppose $k=5$ for a given spring that has a natural length of
+$0.1$ meters. Suppose a force is applied that compresses the spring to
+length $0.08$. What is the magnitude of the force? Assuming that the
+constant $k$ has appropriate dimensions (namely, kg/s$^2$), the force is
+$5(0.1-0.08)=5(0.02)=0.1$ Newtons.
+\end{example}
+
+\begin{example} How much work is done in compressing the spring in the
+previous example from its natural length to $0.08$ meters? From $0.08$
+meters to $0.05$ meters? How much work is done to stretch the spring
+from $0.1$ meters to $0.15$ meters?  We can approximate the work by
+dividing the distance that the spring is compressed (or stretched)
+into small subintervals. Then the force exerted by the spring is
+approximately constant over the subinterval, so the work required to
+compress the spring from $\ds x_i$ to $\ds x_{i+1}$ is approximately
+$\ds 5(x_i-0.1)\Delta x$.  The total work is approximately
+$$\sum_{i=0}^{n-1} 5(x_i-0.1)\Delta x$$
+and in the limit
+$$W=\int_{0.1}^{0.08} 5(x-0.1)\,dx=\left.{5(x-0.1)^2\over2}\right|_{0.1}^{0.08}=
+{5(0.08-0.1)^2\over2}-{5(0.1-0.1)^2\over2}={1\over1000}\,\hbox{N-m}.$$
+The other values we seek simply use different limits. To compress the
+spring from $0.08$
+meters to $0.05$ meters takes
+$$W=\int_{0.08}^{0.05} 5(x-0.1)\,dx=\left.{5x^2\over2}\right|_{0.08}^{0.05}=
+{5(0.05-0.1)^2\over2}-{5(0.08-0.1)^2\over2}={21\over4000}\quad\hbox{N-m}$$
+and to stretch the spring
+from $0.1$ meters to $0.15$ meters requires
+$$W=\int_{0.1}^{0.15} 5(x-0.1)\,dx=\left.{5x^2\over2}\right|_{0.1}^{0.15}=
+{5(0.15-0.1)^2\over2}-{5(0.1-0.1)^2\over2}={1\over160}\quad\hbox{N-m}.$$
+\end{example}
+
+\begin{exercises}
+
+\exercise How much work is done in lifting a 100 kilogram weight from
+the surface of the earth to an orbit 35,786 kilometers above the
+surface of the earth?
+\begin{answer} $\approx 5,305,028,516$ N-m
+\end{answer}
+
+\exercise How much work is done in lifting a 100 kilogram weight from
+an orbit 1000 kilometers above the surface of the earth to an orbit
+35,786 kilometers above the surface of the earth?
+\begin{answer} $\approx 4,457,854,041$ N-m
+\end{answer}
+
+\exercise A water tank has the shape of an upright cylinder with radius $r=1$
+meter and height 10 meters. If the depth of the water is 5 meters, how
+much work is required to pump all the water out the top of the tank?
+\begin{answer} $367,500 \pi$ N-m
+\end{answer}
+
+\exercise Suppose the tank of the previous problem is lying on its
+side, so that the circular ends are vertical, and that it has the same
+amount of water as before. How much work is required to pump the water
+out the top of the tank (which is now 2 meters above the bottom of the
+tank)?
+\begin{answer} $49000\pi + 196000/3$ N-m
+\end{answer}
+
+\exercise A water tank has the shape of the bottom half of a sphere
+with radius $r=1$ meter. If the tank is full,
+how much work is required to pump all the water out
+the top of the tank?
+\begin{answer} $2450\pi$ N-m
+\end{answer}
+
+\exercise A spring has constant $k=10$ kg/s$^2$. How much work is done
+in compressing it $1/10$ meter from its natural length?
+\begin{answer} $0.05$ N-m
+\end{answer}
+
+\exercise A force of 2 Newtons will compress a spring from 1 meter
+(its natural length) to
+0.8 meters. How much work is required to stretch the spring from 
+1.1 meters to 1.5 meters?
+\begin{answer} $6/5$ N-m
+\end{answer}
+
+\exercise A 20 meter long steel cable has density 2 kilograms per
+meter, and is hanging straight down. How much work is required to lift
+the entire cable to the height of its top end?
+\begin{answer} $3920$ N-m
+\end{answer}
+
+\exercise The cable in the previous problem has a 100 kilogram bucket
+of concrete attached to its lower end. How much work is required to lift
+the entire cable and bucket to the height of its top end?
+\begin{answer} $23520$ N-m
+\end{answer}
+
+\exercise Consider again the cable and bucket of the previous problem.
+How much work is required to lift the bucket 10 meters by raising the
+cable 10 meters? (The top half of the cable ends up at the height of
+the top end of the cable, while the bottom half of the cable is lifted
+10 meters.)
+\begin{answer} $12740$ N-m
+\end{answer}
+
+\end{exercises}
+

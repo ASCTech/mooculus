@@ -1,0 +1,139 @@
+\section{An example}{}{}
+
+We started the last section by saying, ``It is often necessary to know
+how sensitive the value of $y$ is to small changes in $x$.'' We have
+seen one purely mathematical example of this: finding the
+``steepness'' of a curve at a point is precisely this problem. Here is
+a more applied example.
+
+With careful measurement it might be possible to discover that a
+dropped ball has height $\ds h(t)=h_0-kt^2$, $t$ seconds after it is
+released. (Here $h_0$ is the initial height of the ball, when $t=0$,
+and $k$ is some number determined by the experiment.)  A natural
+question is then, ``How fast is the ball going at time $t$?'' We can
+certainly get a pretty good idea with a little simple arithmetic. To
+make the calculation more concrete, let's say $\ds h_0=100$ meters and $k=4.9$
+and suppose we're interested in the speed at $t=2$. We know that when
+$t=2$ the height is $100-4\cdot 4.9=80.4$. A second later, at $t=3$,
+the height is $100-9\cdot 4.9=55.9$, so in that second the ball has
+traveled $80.4-55.9=24.5$ meters. This means that the {\it average\/}
+speed during that time was 24.5 meters per second. So we might guess
+that 24.5 meters per second is not a terrible estimate of the speed at
+$t=2$. But certainly we can do better. At $t=2.5$ the height is
+$\ds 100-4.9(2.5)^2=69.375$. During the half second from $t=2$ to $t=2.5$ the
+ball dropped $80.4-69.375=11.025$ meters, at an average speed of 
+$11.025/(1/2)=22.05$ meters per second; this should be a better estimate
+of the speed at $t=2$. So it's clear now how to get better and better
+approximations: compute average speeds over shorter and shorter time
+intervals. Between $t=2$ and $t=2.01$, for example, the ball drops
+0.19649 meters in one hundredth of a second, at an average speed of
+19.649 meters per second.
+
+We can't do this forever, and we still might reasonably ask what the
+actual speed precisely at $t=2$ is. If $\Delta t$ is some tiny amount
+of time, what we want to know is what happens to the average speed
+$(h(2)-h(2+\Delta t))/\Delta t$ as $\Delta t$ gets smaller and
+smaller. Doing a bit of algebra:
+\begin{align*}
+{h(2)-h(2+\Delta t)\over \Delta t}&={80.4-(100-4.9(2+\Delta
+    t)^2)\over \Delta t} \\
+&={80.4 - 100 + 19.6+19.6\Delta t+4.9\Delta t^2\over \Delta t} \\
+&={19.6\Delta t+4.9\Delta t^2\over \Delta t} \\
+&=19.6 + 4.9\Delta t \\
+\end{align*}
+
+When $\Delta t$ is very small, this is very close to 19.6, and indeed
+it seems clear that as $\Delta t$ goes to zero, the average speed goes
+to 19.6, so the exact speed at $t=2$ is 19.6 meters per second. This
+calculation should look very familiar. In the language of the previous
+section, we might have started with $\ds f(x)=100-4.9x^2$ and asked for
+the slope of the tangent line at $x=2$. We would have answered that
+question by computing
+$$
+{f(2+\Delta x) - f(2)\over \Delta x}
+={-19.6\Delta x-4.9\Delta x^2\over \Delta x}
+=-19.6-4.9\Delta x
+$$ The algebra is the same, except that following the pattern of the
+previous section the subtraction would be reversed, and we would say
+that the slope of the tangent line is $-19.6$. Indeed, in hindsight,
+perhaps we should have subtracted the other way even for the dropping
+ball. At $t=2$ the height is 80.4; one second later the height is
+55.9. The usual way to compute a ``distance traveled'' is to subtract
+the earlier position from the later one, or $55.9-80.4=-24.5$. This
+tells us that the distance traveled is 24.5 meters, and the negative
+sign tells us that the height went down during the second. If we
+continue the original calculation we then get $-19.6$ meters per
+second as the exact speed at $t=2$. If we interpret the negative sign
+as meaning that the motion is downward, which seems reasonable, then
+in fact this is the same answer as before, but with even more
+information, since the numerical answer contains the direction of
+motion as well as the speed. Thus, the speed of the ball is the value
+of the derivative of a certain function, namely, of the function that
+gives the position of the ball. (More properly, this is the {\em
+  velocity\index{velocity}\/} of the ball; velocity is signed speed,
+that is, speed with a direction indicated by the sign.)
+
+The upshot is that this problem, finding the speed of the ball, is
+{\it exactly\/} the same problem mathematically as finding the slope
+of a curve. This may already be enough evidence to convince you that
+whenever some quantity is changing (the height of a curve or the
+height of a ball or the size of the economy or the distance of a space
+probe from earth or the population of the world) the rate at which the
+quantity is changing can, in principle, be computed in exactly the
+same way, by finding a derivative.
+
+\begin{exercises}
+
+\exercise
+An object is traveling in a straight line so that its position (that
+is, distance from some fixed point) is
+given by this table:
+
+\bsk
+
+% BADBAD
+% \begintable
+% \hfill time (seconds)\vtt 0\vt 1\vt 2\vt 3\elt
+% \hfill distance (meters)\vtt 0\vt 10\vt 25\vt 60\endtable
+
+{}Find the average speed of the object during the following time
+intervals: $[0,1]$, $[0,2]$, $[0,3]$,
+$[1,2]$, $[1,3]$, $[2,3]$. If you had to guess the speed at
+$t=2$ just on the basis of these, what would you guess?
+\begin{answer} $10$, $25/2$, $20$, $15$, $25$, $35$.
+\end{answer}
+
+\exercise
+Let $\ds y=f(t)=t^2$, where $t$ is the time in seconds and $y$ is the distance
+in meters that an object falls on a certain airless planet.  Draw a graph
+of this function between $t=0$ and $t=3$.  Make a table of the average
+speed of the falling object between (a) 2 sec and 3 sec, (b) 2 sec and
+2.1 sec, (c) 2 sec and 2.01 sec, (d) 2 sec and 2.001 sec.  Then use algebra
+to find a simple formula for the average speed between time $2$ and time
+$2+
+\Delta t$.  (If you substitute $\Delta t=1,\>0.1,\>0.01,\>0.001$ in this
+formula you should again get the answers to parts (a)--(d).)  Next, in your
+formula for average speed (which should be in simplified form) determine
+what happens as $\Delta t$ approaches zero.  This is the instantaneous
+speed.  Finally, in your graph of $\ds y=t^2$ draw the straight line
+through the point $(2,4)$ whose slope is the instantaneous velocity you
+just computed; it should of course be the tangent line.
+\begin{answer} $5$, $4.1$, $4.01$, $4.001$, $4+\Delta t\rightarrow 4$
+\end{answer}
+
+\exercise
+If an object is dropped from an 80-meter high window, its height $y$ above
+the ground at time $t$ seconds is given by the formula $\ds y=f(t)=80-4.9t^2$.
+(Here we are neglecting air resistance; the graph of this function was
+shown in figure~\xrefn{fig:data plot}.)  Find the average velocity of
+the falling object between (a) 1 sec and 1.1 sec, (b) 1 sec and 1.01 sec,
+(c) 1 sec and 1.001 sec.  Now use algebra to find a simple formula for the
+average velocity of the falling object between 1 sec and $1+\Delta t$ sec.
+Determine what happens to this average velocity as $\Delta t$ approaches 0.
+That is the instantaneous velocity at time $t=1$ second (it will be negative,
+because the object is falling).
+\begin{answer} $-10.29$, $-9.849$, $-9.8049$, \hfill\break
+$-9.8-4.9\Delta t\rightarrow -9.8$
+\end{answer}
+
+\end{exercises}

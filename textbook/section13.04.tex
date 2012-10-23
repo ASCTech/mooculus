@@ -1,0 +1,154 @@
+\section{Motion along a curve}{}{}
+
+We have already seen that if $t$ is time and an object's location is
+given by ${\bf r}(t)$, then the derivative ${\bf r}'(t)$ is the
+velocity vector\index{velocity vector} ${\bf v}(t)$.
+Just as ${\bf v}(t)$ is a vector describing how ${\bf r}(t)$ changes,
+so is ${\bf v}'(t)$ a vector describing how ${\bf v}(t)$ changes,
+namely, ${\bf a}(t)={\bf v}'(t)={\bf r}''(t)$ is the 
+{\dfont acceleration vector\index{acceleration vector}}.
+
+\begin{example} Suppose ${\bf r}(t)=\langle \cos t,\sin t,1\rangle$. Then
+${\bf v}(t)=\langle -\sin t,\cos t,0\rangle$ and 
+${\bf a}(t)=\langle -\cos t,-\sin t,0\rangle$. This describes the
+motion of an object traveling on a circle of radius 1, with constant
+$z$ coordinate 1. The velocity vector is of course tangent to the
+curve; note that ${\bf a}\cdot{\bf v}=0$, so ${\bf v}$ and ${\bf a}$
+are perpendicular. In fact, it is not hard to see that ${\bf a}$
+points from the location of the object to the center of the circular
+path at $(0,0,1)$.
+\end{example}
+
+Recall that the unit tangent vector is given by ${\bf T}(t)=
+{\bf v}(t)/|{\bf v}(t)|$, so ${\bf v}=|{\bf v}|{\bf T}$. If we take
+the derivative of both sides of this equation we get
+$${\bf a}=|{\bf v}|'{\bf T}+|{\bf v}|{\bf T}'.
+\eqrdef{eq:acceleration decomposition initial}
+\eqno{(\xrefn{eq:acceleration decomposition initial})}$$
+Also recall the definition of the curvature,
+$\kappa=|{\bf T}'|/|{\bf v}|$, or $|{\bf T}'|=\kappa|{\bf v}|$. Finally,
+    recall that we defined the unit normal vector as
+${\bf N}={\bf T}'/|{\bf T}'|$, so ${\bf T}'=|{\bf T}'|{\bf N}=
+\kappa|{\bf v}|{\bf N}$.
+Substituting into equation~\xrefn{eq:acceleration decomposition
+  initial} we get
+$${\bf a}=|{\bf v}|'{\bf T}+\kappa|{\bf v}|^2{\bf N}.
+\eqrdef{eq:acceleration decomposition final}
+\eqno{(\xrefn{eq:acceleration decomposition final})}$$
+The quantity $|{\bf v}(t)|$ is the speed of the object, often written as
+$v(t)$; $|{\bf v}(t)|'$ is the rate at which the speed is changing, or
+the scalar acceleration of the object, $a(t)$. Rewriting 
+equation~\xrefn{eq:acceleration decomposition final} with these gives
+us
+$${\bf a}=a{\bf T}+\kappa v^2{\bf N}=
+a_{T}{\bf T}+a_{N}{\bf N};$$
+$a_T$ is the {\dfont tangential component of
+  acceleration\index{acceleration!tangential component}\/} and 
+$a_N$ is the {\dfont normal component of
+  acceleration\index{acceleration!normal component}}. 
+We have already seen that $a_T$ measures how the speed is changing; if
+you are riding in a vehicle with large $a_T$ you will feel a force
+pulling you into your seat. The other component, $a_N$, measures how
+sharply your direction is changing {\it with respect to time}. So it
+naturally is related to how sharply the path is curved, measured by
+$\kappa$, and also to how fast you are going. Because $a_N$ includes
+$v^2$, note that the effect of speed is magnified; doubling your speed
+around a curve quadruples the value of $a_N$. You feel the effect of
+this as a force pushing you toward the outside of the curve, the
+``centrifugal force.''
+
+In practice, if want $a_N$ we would use the formula for $\kappa$:
+$$a_N=\kappa |{\bf v}|^2= {|{\bf r}'\times{\bf r}''|\over
+|{\bf r}'|^3}|{\bf r}'|^2={|{\bf r}'\times{\bf r}''|\over|{\bf r}'|}.$$
+To compute $a_T$ we can project ${\bf a}$ onto ${\bf v}$:
+$$a_T={{\bf v}\cdot{\bf a}\over|{\bf v}|}={{\bf r}'\cdot{\bf r}''\over
+|{\bf r}'|}.$$
+
+\begin{example} Suppose ${\bf r}=\langle t,t^2,t^3\rangle$. 
+Compute ${\bf v}$, ${\bf a}$,
+$a_T$, and $a_N$.
+
+Taking derivatives we get
+${\bf v}=\langle 1,2t,3t^2\rangle$ 
+and ${\bf a}=\langle 0,2,6t\rangle$. Then
+$$a_T={4t+18t^3\over \sqrt{1+4t^2+9t^4}}
+\quad\hbox{and}\quad
+a_N={\sqrt{4+36t^2+36t^4}\over\sqrt{1+4t^2+9t^4}}.$$
+\end{example}
+
+\begin{exercises}
+
+\exercise Let ${\bf r}=\langle \cos t,\sin t,t\rangle$. 
+Compute ${\bf v}$, ${\bf a}$,
+$a_T$, and $a_N$.
+\begin{answer} $\langle -\sin t,\cos t,1\rangle$,
+$\langle -\cos t, -\sin t,0\rangle$,
+$0$, $1$
+\end{answer}
+
+\exercise Let ${\bf r}=\langle \cos t,\sin t,t^2\rangle$. 
+Compute ${\bf v}$, ${\bf a}$,
+$a_T$, and $a_N$.
+\begin{answer} $\langle -\sin t,\cos t,2t\rangle$,
+$\langle -\cos t, -\sin t,2\rangle$,
+$4t/\sqrt{4t^2+1}$, $\sqrt{4t^2+5}/\sqrt{4t^2+1}$
+\end{answer}
+
+\exercise Let ${\bf r}=\langle \cos t,\sin t,e^t\rangle$. 
+Compute ${\bf v}$, ${\bf a}$,
+$a_T$, and $a_N$.
+\begin{answer} $\langle -\sin t,\cos t,e^t\rangle$,
+$\langle -\cos t, -\sin t,e^t\rangle$,
+$e^{2t}/\sqrt{e^{2t}+1}$, $\sqrt{2e^{2t}+1}/\sqrt{e^{2t}+1}$
+\end{answer}
+
+\exercise Let ${\bf r}=\langle e^t,\sin t,e^t\rangle$. 
+Compute ${\bf v}$, ${\bf a}$,
+$a_T$, and $a_N$.
+\begin{answer} $\langle e^t,\cos t,e^t\rangle$,
+$\langle e^t, -\sin t,e^t\rangle$,
+$(2e^{2t}-\cos t\sin t)/\sqrt{2e^{2t}+\cos^2 t}$, 
+$\sqrt{2}e^t|\cos t+\sin t|/\sqrt{2e^{2t}+\cos^2 t}$
+\end{answer}
+
+\exercise Suppose an object moves so that its acceleration is given by
+${\bf a}=\langle -3\cos t,-2\sin t,0\rangle$. At time $t=0$ the object
+is at $(3,0,0)$ and its velocity vector is $\langle
+0,2,0\rangle$. Find ${\bf v}(t)$ and ${\bf r}(t)$ for the object.
+\begin{answer} $\langle -3\sin t,2\cos t,0\rangle$,
+$\langle 3\cos t, 2\sin t,0\rangle$
+\end{answer}
+
+\exercise Suppose an object moves so that its acceleration is given by
+${\bf a}=\langle -3\cos t,-2\sin t,0\rangle$. At time $t=0$ the object
+is at $(3,0,0)$ and its velocity vector is $\langle
+0,2.1,0\rangle$. Find ${\bf v}(t)$ and ${\bf r}(t)$ for the object.
+\begin{answer} $\langle -3\sin t,2\cos t+0.1,0\rangle$,
+$\langle 3\cos t, 2\sin t+t/10,0\rangle$
+\end{answer}
+
+\exercise Suppose an object moves so that its acceleration is given by
+${\bf a}=\langle -3\cos t,-2\sin t,0\rangle$. At time $t=0$ the object
+is at $(3,0,0)$ and its velocity vector is $\langle
+0,2,1\rangle$. Find ${\bf v}(t)$ and ${\bf r}(t)$ for the object.
+\begin{answer} $\langle -3\sin t,2\cos t,1\rangle$,
+$\langle 3\cos t, 2\sin t,t\rangle$
+\end{answer}
+
+\exercise Suppose an object moves so that its acceleration is given by
+${\bf a}=\langle -3\cos t,-2\sin t,0\rangle$. At time $t=0$ the object
+is at $(3,0,0)$ and its velocity vector is $\langle
+0,2.1,1\rangle$. Find ${\bf v}(t)$ and ${\bf r}(t)$ for the object.
+\begin{answer} $\langle -3\sin t,2\cos t+1/10,1\rangle$,
+$\langle 3\cos t, 2\sin t+t/10,t\rangle$
+\end{answer}
+
+\exercise Describe a situation in which the normal component of
+acceleration is 0 and the tangential component of acceleration is
+non-zero. Is it possible for the tangential component of acceleration
+to be 0 while the normal component of acceleration is non-zero? Explain.
+Finally, is it possible for an object to move (not be stationary)
+so that both the tangential and normal components of acceleration are 0?
+Explain.
+
+\end{exercises}

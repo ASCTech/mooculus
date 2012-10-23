@@ -1,0 +1,250 @@
+\section{Kinetic energy; improper integrals}{}{}
+\label{sec:improper integrals}
+\nobreak
+Recall example~\xrefn{example:object to infinity} in which we computed
+the work required to lift an object from the surface of the earth to
+some large distance $D$ away. Since $\ds F=k/x^2$ we computed
+$$\int_{r_0}^D {k\over x^2}\,dx=-{k\over D}+{k\over r_0}.$$
+We noticed that as $D$ increases, $k/D$ decreases to zero so that the
+amount of work increases to $\ds k/r_0$. More precisely,
+$$
+  \lim_{D\to\infty}\int_{r_0}^D {k\over x^2}\,dx= 
+  \lim_{D\to\infty}-{k\over D}+{k\over r_0}={k\over r_0}.
+$$
+We might reasonably describe this calculation as computing the amount
+of work required to lift the object ``to infinity,'' and abbreviate
+the limit as
+$$
+  \lim_{D\to\infty}\int_{r_0}^D {k\over x^2}\,dx= \int_{r_0}^\infty
+  {k\over x^2}\,dx.
+$$ 
+Such an integral, with a limit of infinity, is called an {\dfont
+improper integral\index{improper integral}\index{integral!improper}\/}.
+This is a bit unfortunate, since it's not really ``improper'' to do
+this, nor is it really ``an integral''---it is an abbreviation for the
+limit of a particular sort of integral. Nevertheless, we're stuck with
+the term, and the operation itself is perfectly legitimate. It may at
+first seem odd that a finite amount of work is sufficient to lift an
+object to ``infinity'', but sometimes surprising things are
+nevertheless true, and this is such a case. If the value of an
+improper integral is a finite number, as in this example, we say that
+the integral {\dfont converges\index{improper integral!convergent}},
+and if not we say that the integral 
+{\dfont diverges\index{improper integral!diverges}}.
+
+Here's another way, perhaps even more surprising, to interpret this
+calculation. We know that one interpretation of
+$$\int_{1}^D {1\over x^2}\,dx$$
+is the area under $\ds y=1/x^2$ from $x=1$ to $x=D$. Of course, as $D$
+increases this area increases. But since
+$$\int_{1}^D {1\over x^2}\,dx=-{1\over D}+{1\over1},$$
+while the area increases, it never exceeds 1, that is
+$$\int_{1}^\infty {1\over x^2}\,dx= 1.$$
+The area of the infinite region under $\ds y=1/x^2$ from $x=1$ to infinity
+is finite.
+
+Consider a slightly different sort of improper integral:
+$\ds \int_{-\infty}^\infty xe^{-x^2}\,dx$. There are two ways we might
+try to compute this. First, we could break it up into two more
+familiar integrals:
+$$
+  \int_{-\infty}^\infty xe^{-x^2}\,dx=
+  \int_{-\infty}^0 xe^{-x^2}\,dx+\int_{0}^\infty xe^{-x^2}\,dx.
+$$
+Now we do these as before:
+$$
+  \int_{-\infty}^0 xe^{-x^2}\,dx=\lim_{D\to\infty}
+  \left.-{e^{-x^2}\over2}\right|_D^0=-{1\over2},
+$$
+and
+$$
+  \int_0^\infty xe^{-x^2}\,dx=\lim_{D\to\infty}
+  \left.-{e^{-x^2}\over2}\right|_0^D={1\over2},
+$$
+so 
+$$\ds \int_{-\infty}^\infty xe^{-x^2}\,dx=-{1\over2}+{1\over2}=0.$$
+Alternately, we might try
+$$
+  \int_{-\infty}^\infty xe^{-x^2}\,dx=
+  \lim_{D\to\infty}\int_{-D}^D xe^{-x^2}\,dx=
+  \lim_{D\to\infty}\left.-{e^{-x^2}\over2}\right|_{-D}^D=
+  \lim_{D\to\infty} -{e^{-D^2}\over2}+{e^{-D^2}\over2}=0.
+$$
+So we get the same answer either way. This does not always happen;
+sometimes the second approach gives a finite number, while the first
+approach does not; the exercises provide examples. In general, we
+interpret the integral $\ds\int_{-\infty}^\infty f(x)\,dx$ according
+to the first method: both integrals $\ds\int_{-\infty}^a
+f(x)\,dx$ and $\ds\int_{a}^\infty f(x)\,dx$ must converge for the
+original integral to converge. The second approach does turn out to be
+useful; when $\ds\lim_{D\to\infty}\int_{-D}^D f(x)\,dx=L$, and $L$ is
+finite, then $L$ is called the 
+{\dfont Cauchy Principal Value\index{Cauchy Principal Value}\/} of
+$\ds\int_{-\infty}^\infty f(x)\,dx$.
+
+Here's a more concrete application of these ideas. We know that
+in general
+$$W=\int_{x_0}^{x_1} F\,dx$$ 
+is the work done against the force $F$ in moving from $\ds x_0$ to
+$\ds x_1$. In the case that $F$ is the force of gravity exerted by the
+earth, it is customary to make $F<0$ since the force is ``downward.''
+This makes the work $W$ negative when it should be positive, so
+typically the work in this case is defined as
+$$W=-\int_{x_0}^{x_1} F\,dx.$$
+Also, by Newton's Law, $F=ma(t)$. This means that 
+$$W=-\int_{x_0}^{x_1} ma(t)\,dx.$$
+Unfortunately this integral is a bit problematic: $a(t)$ is in terms
+of $t$, while the limits and the ``$dx$'' are in terms of $x$. But $x$
+and $t$ are certainly related here: $x=x(t)$ is the function that
+gives the position of the object at time $t$, so $v=v(t)=dx/dt=x'(t)$
+is its velocity and $a(t)=v'(t)=x''(t)$. We can use $v=x'(t)$ as a
+substitution to convert the integral from ``$dx$'' to ``$dv$'' in the
+usual way, with a bit of cleverness along the way:
+$$\eqalign{
+  dv&=x''(t)\,dt=a(t)\,dt=a(t){dt\over dx}\,dx \\
+  {dx\over dt}\,dv&=a(t)\,dx \\
+  v\,dv&=a(t)\,dx. \\
+}$$ 
+Substituting in the integral:
+$$
+  W=-\int_{x_0}^{x_1} ma(t)\,dx=-\int_{v_0}^{v_1} mv\,dv=
+  -\left.{mv^2\over2}\right|_{v_0}^{v_1}=-{mv_1^2\over2}+{mv_0^2\over2}.
+$$
+You may recall seeing the expression $\ds mv^2/2$ in a physics course---it
+is called the {\dfont kinetic energy\index{kinetic energy}\/} of the
+object. We have shown here that the work done in moving the object
+from one place to another is the same as the change in kinetic energy.
+
+We know that the work required to move an object from the surface
+of the earth to infinity is
+$$W=\int_{r_0}^\infty {k\over r^2}\,dr={k\over r_0}.$$ 
+At the surface of the earth the acceleration due
+to gravity is approximately 9.8 meters per second squared, so the
+force on an object of mass $m$ is $F=9.8m$. The radius of the earth is
+approximately 6378.1 kilometers or 6378100 meters. Since the force due
+to gravity obeys an inverse square law, $\ds F=k/r^2$ and
+$\ds 9.8m=k/6378100^2$, $k= 398665564178000m$ and
+$W=62505380 m$.
+
+Now suppose that the initial velocity of the object, $\ds v_0$, is just
+enough to get it to infinity, that is, just enough so that the object
+never slows to a stop, but so that its speed decreases to zero, i.e., so
+that $\ds v_1=0$. Then 
+$$62505380 m=W=-{mv_1^2\over2}+{mv_0^2\over2}={mv_0^2\over2}$$
+so
+$$v_0=\sqrt{125010760}\approx 11181\quad\hbox{meters per second},$$
+or about 40251 kilometers per hour. This speed is called the {\dfont
+escape velocity\index{escape velocity}\/}. Notice that the mass of
+the object, $m$, canceled out at the last step; the escape velocity
+is the same for all objects. Of course, it takes considerably more
+energy to get a large object up to 40251 kph than a small one, so it
+is certainly more difficult to get a large object into deep space than
+a small one. Also, note that while we have computed the escape
+velocity for the earth, this speed would not in fact get an object
+``to infinity'' because of the large mass in our neighborhood called
+the sun. Escape velocity for the sun {\em starting at the distance of
+the earth from the sun\/} is nearly 4 times the escape velocity we
+have calculated.
+
+\begin{exercises}
+
+\exercise Is the area under $y=1/x$ from 1 to infinity finite or
+infinite? If finite, compute the area.
+\begin{answer} $\infty$
+\end{answer}
+
+\exercise Is the area under $\ds y=1/x^3$ from 1 to infinity finite or
+infinite? If finite, compute the area.
+\begin{answer} $1/2$
+\end{answer}
+
+\exercise Does $\ds\int_0^\infty x^2+2x-1\,dx$ converge or diverge? If
+it converges, find the value.
+\begin{answer} diverges 
+\end{answer}
+
+\exercise Does $\ds\int_1^\infty 1/\sqrt{x}\,dx$ converge or diverge? If
+it converges, find the value.
+\begin{answer} diverges
+\end{answer}
+
+%wills
+\exercise Does $\ds\int_0^\infty e^{-x }\,dx$ converge or diverge? If
+it converges, find the value.
+\begin{answer} 1
+\end{answer}
+
+\exercise $\ds\int_0^{1/2} (2x-1)^{-3}\,dx$ is an improper integral of
+a slightly different sort. Express it as a limit and determine whether
+it converges or diverges; if 
+it converges, find the value.
+\begin{answer} diverges
+\end{answer}
+
+\exercise Does $\ds\int_0^1 1/\sqrt{x}\,dx$ converge or diverge? If
+it converges, find the value.
+\begin{answer} $2$
+\end{answer}
+
+%wills
+\exercise Does $\ds\int_0^{\pi/2} \sec^2x\,dx$ converge or diverge? If
+it converges, find the value.
+\begin{answer} diverges
+\end{answer}
+
+%wills
+\exercise Does $\ds\int_{-\infty}^\infty{x^2\over 4+x^6}\,dx$ 
+converge or diverge? If
+it converges, find the value.
+\begin{answer} $\pi/6$
+\end{answer}
+
+%wills
+\exercise Does $\ds\int_{-\infty}^\infty x\,dx$ 
+converge or diverge? If
+it converges, find the value. Also find the Cauchy Principal Value, if
+it exists.
+\begin{answer} diverges, $0$
+\end{answer}
+
+%wills
+\exercise Does $\ds\int_{-\infty}^\infty \sin x\,dx$ 
+converge or diverge? If
+it converges, find the value. Also find the Cauchy Principal Value, if
+it exists.
+\begin{answer} diverges, $0$
+\end{answer}
+
+\exercise Does $\ds\int_{-\infty}^\infty \cos x\,dx$ 
+converge or diverge? If
+it converges, find the value. Also find the Cauchy Principal Value, if
+it exists.
+\begin{answer} diverges, no CPV
+\end{answer}
+
+\exercise \relax
+\label{exer:gabriels horn}
+Suppose the curve $y=1/x$ is rotated around the $x$-axis
+generating a sort of funnel or horn shape, called {\dfont
+  Gabriel's horn\index{Gabriel's horn}\/} or {\dfont Toricelli's
+  trumpet\index{Toricelli's trumpet}}. Is the volume of this funnel
+from $x=1$ to infinity finite or infinite? If finite, compute the
+volume.  
+\begin{answer} $\pi$ 
+\end{answer}
+
+\exercise An officially sanctioned baseball must be between 142 and
+149 grams. How much work, in Newton-meters, does it take to throw a
+ball at 80 miles per hour? At 90 mph? At 100.9 mph?  (According to the
+Guinness Book of World Records, at
+\url{http://www.baseball-almanac.com/recbooks/rb_guin.shtml}
+{\vb|http://www.baseball-almanac.com/recbooks/rb_guin.shtml|}\endurl, ``The
+greatest reliably recorded speed at which a baseball has been pitched
+is 100.9 mph by Lynn Nolan Ryan (California Angels) at Anaheim Stadium
+in California on August 20, 1974.'')
+\begin{answer} 80 mph: $90.8$ to $95.3$ N\hfill\break
+90 mph: $114.9$ to $120.6$ N\hfill\break
+$100.9$ mph: $144.5$ to $151.6$ N
+\end{answer}
+
+\end{exercises}

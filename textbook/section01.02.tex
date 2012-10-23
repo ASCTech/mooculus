@@ -1,0 +1,124 @@
+\section{Distance Between Two Points; Circles}{}{}
+
+Given two points $(x_1,y_1)$ and $(x_2,y_2)$, recall that their
+horizontal distance from one another is $\Delta x=x_2-x_1$ and their
+vertical distance from one another is $\Delta y=y_2-y_1$.  (Actually,
+the word ``distance'' normally denotes ``positive distance''. $\Delta
+x$ and $\Delta y$ are {\it signed\/} distances, but this is clear from
+context.)  The actual (positive) distance from one point to the other
+is the length of the hypotenuse of a right triangle with legs $|\Delta
+x|$ and $|\Delta y|$, as shown in figure~\xrefn{fig:distance between
+points}.  The Pythagorean theorem then says that the distance between
+the two points is the square root of the sum of the squares of the
+horizontal and vertical sides:
+$$
+  \hbox{distance}
+    =\sqrt{(\Delta x)^2+(\Delta y)^2}=\sqrt{(x_2-x_1)^2+ (y_2-y_1)^2}.
+$$
+For example, the distance between points $A(2,1)$ and $B(3,3)$ is
+$\sqrt{(3-2)^2+(3-1)^2}=\sqrt{5}$.
+
+% BADBAD
+% \figure
+% \vbox{\beginpicture
+% \normalgraphs
+% \ninepoint
+% \setcoordinatesystem units <0.5truein,0.5truein>
+% \setplotarea x from 0 to 3, y from 0 to 2
+% \putrule from 0 0 to 3 0
+% \putrule from 3 0 to 3 2
+% \plot 0 0 3 2 /
+% \put {$(x_1,y_1)$} [r] <-5pt,0pt> at 0 0
+% \put {$(x_2,y_2)$} [l] <5pt,0pt> at 3 2
+% \put {$\Delta x$} [t] <0pt,-5pt> at 1.5 0
+% \put {$\Delta y$} [l] <5pt,0pt> at 3 1
+% \endpicture}
+% \figrdef{fig:distance between points}
+% \endfigure{Distance between two points, $\Delta x$ and $\Delta y$ positive.}
+
+As a special case of the distance formula, suppose we want to know the
+distance of a point $(x,y)$ to the origin.  According to the distance
+formula, this is $\sqrt{(x-0)^2+(y-0)^2}=\sqrt{x^2+y^2}$.
+
+A point $(x,y)$ is at a distance $r$ from the origin if and only if
+$\sqrt{x^2+y^2}=r$, or, if we square both sides: $x^2+y^2=r^2$.  This is
+the equation of the circle\index{circle!equation of} 
+of radius $r$ centered at the origin.
+The special case $r=1$ is called the unit 
+circle\index{unit circle}\index{circle!unit}; 
+its equation is
+$x^2+y^2=1$.
+
+Similarly, if $C(h,k)$ is any fixed point, then a point $(x,y)$ is at a
+distance $r$ from the point $C$ if and only if $\sqrt{(x-h)^2+(y-k)^2}=r$,
+i.e., if and only if 
+$$
+(x-h)^2+(y-k)^2=r^2.
+$$
+This is the equation of the circle\index{circle!equation of} 
+of radius $r$ centered at the
+point $(h,k)$.  For example, the circle of radius 5 centered at the
+point $(0,-6)$ has equation $(x-0)^2+(y--6)^2=25$, or
+$x^2+(y+6)^2=25$.  If we
+expand this we get $x^2+y^2+12y+36=25$ or 
+$x^2+y^2+12y+11=0$, but the original form is usually more useful.
+
+\begin{example} Graph the circle $x^2-2x+y^2+4y-11=0$. With a little thought
+we convert this to $(x-1)^2+(y+2)^2-16=0$ or $(x-1)^2+(y+2)^2=16$.
+Now we see that this is the circle with radius 4 and center $(1,-2)$,
+which is easy to graph.
+\end{example}
+
+\begin{exercises}
+
+\exercise
+Find the equation of the circle of radius 3 centered at: 
+\begin{itemize} % BADBAD
+\item{a)}{$(0,0)$} {d)}{$(0,3)$}
+\item{b)}{$(5,6)$} {e)}{$(0,-3)$}
+\item{c)}{$(-5,-6)$} {f)}{$(3,0)$}
+\end{itemize}
+\begin{answer} (a) $x^2+y^2=9$
+{} (b) $(x-5)^2+(y-6)^2=9$
+{} (c) $(x+5)^2+(y+6)^2=9$
+%\item{} (c) $x^2+(y-3)^2=9$
+%\item{} (c) $x^2+(y+3)^2=9$
+%\item{} (c) $(x-3)^2+y^2=9$
+\end{answer}
+
+\exercise
+For each pair of points $A(x_1,y_1)$ and $B(x_2,y_2)$ find (i) $\Delta x$
+and $\Delta y$ in going from $A$ to $B$, (ii) the slope of the line joining
+$A$ and $B$, (iii) the equation of the line joining $A$ and $B$ in the form
+$y=mx+b$, (iv) the distance from $A$ to $B$, and (v) an equation of
+the circle with center at $A$ that goes through $B$.
+
+\begin{itemize} % BADBAD
+\item{a)}{$A(2,0)$, $B(4,3)$} {d)}{$A(-2,3)$, $B(4,3)$}
+\item{b)}{$A(1,-1)$, $B(0,2)$} {e)}{$A(-3,-2)$, $B(0,0)$} 
+\item{c)}{$A(0,0)$, $B(-2,-2)$} {f)}{$A(0.01,-0.01)$, $B(-0.01,0.05)$}
+\end{itemize}
+\begin{answer} (a) $\Delta x=2$, $\Delta y = 3$, $m=3/2$, $y=(3/2)x-3$, $\sqrt{13}$
+
+{}(b) $\Delta x=-1$, $\Delta y = 3$, $m=-3$, $y=-3x+2$, $\sqrt{10}$
+
+{}(c) $\Delta x=-2$, $\Delta y = -2$, $m=1$, $y=x$, $\sqrt{8}$
+\end{answer}
+
+\exercise
+Graph the circle $x^2+y^2+10y=0$.
+
+\exercise
+Graph the circle $x^2-10x+y^2=24$.
+
+\exercise
+Graph the circle $x^2-6x+y^2-8y=0$.
+
+\exercise Find the standard equation of the circle passing through $(-2,1)$
+ and tangent to the line $3x-2y =6$ at the point $(4,3)$.  Sketch. 
+ (Hint: The line through the center of the circle and the point of tangency
+ is perpendicular to the tangent line.)
+\begin{answer} $(x+2/7)^2+(y-41/7)^2=1300/49$
+\end{answer}
+
+\end{exercises}

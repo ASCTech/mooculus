@@ -1,0 +1,220 @@
+\section{Surface Integrals}{}{}
+
+In the integral for surface area,
+$$\int_a^b\int_c^d |{\bf r}_u\times{\bf r}_v|\,du\,dv,$$
+the integrand $|{\bf r}_u\times{\bf r}_v|\,du\,dv$
+is the area of a tiny parallelogram, that is, a very small surface
+area, so it is reasonable to abbreviate it $dS$; then a shortened
+version of the integral is
+$$\dint{D} 1\cdot dS.$$
+We have already seen that if $D$ is a region in the plane, the area of
+$D$ may be computed with 
+$$\dint{D} 1\cdot dA,$$
+so this is really quite familiar, but the $dS$ hides a little more
+detail than does $dA$.
+
+Just as we can integrate functions $f(x,y)$ over regions in the plane,
+using
+$$\dint{D} f(x,y)\, dA,$$
+so we can compute integrals over surfaces in space, using
+$$\dint{D} f(x,y,z)\, dS.$$
+In practice this means that we have a vector function
+${\bf r}(u,v)=\langle x(u,v),y(u,v),z(u,v)\rangle$ for the surface,
+and the integral we compute is
+$$\int_a^b\int_c^d f(x(u,v),y(u,v),z(u,v))|{\bf r}_u\times{\bf
+  r}_v|\,du\,dv.$$ 
+That is, we express everything in terms of $u$ and $v$, and then we
+can do an ordinary double integral.
+
+\begin{example} Suppose a thin object occupies the upper hemisphere of 
+$x^2+y^2+z^2=1$ and has density $\sigma(x,y,z)=z$. Find the mass 
+and center of mass of the
+object. (Note that the object is just a thin shell; it does not occupy
+the interior of the hemisphere.)
+
+We write the hemisphere as ${\bf r}(\phi,\theta)=
+\langle \cos\theta\sin\phi, \sin\theta\sin\phi, \cos\phi\rangle$,
+$0\le\phi\le \pi/2$ and $0\le\theta\le 2\pi$. So
+${\bf r}_\theta = \langle -\sin\theta\sin\phi, \cos\theta\sin\phi, 0\rangle$
+and 
+${\bf r}_\phi =\langle \cos\theta\cos\phi, \sin\theta\cos\phi, -\sin\phi\rangle$.
+Then
+$${\bf r}_\theta\times{\bf r}_\phi =
+\langle -\cos\theta\sin^2\phi,-\sin\theta\sin^2\phi,-\cos\phi\sin\phi\rangle$$
+and
+$$ |{\bf r}_\theta\times{\bf r}_\phi| = |\sin\phi| = \sin\phi,$$
+since we are interested only in $0\le\phi\le \pi/2$.
+Finally, the density is $z=\cos\phi$ and the integral for mass is
+$$\int_0^{2\pi}\int_0^{\pi/2} \cos\phi\sin\phi\,d\phi\,d\theta=\pi.$$
+
+By symmetry, the center of mass is clearly on the $z$-axis, so we only
+need to find the $z$-coordinate of the center of mass. The moment
+around the $x$-$y$ plane is
+$$\int_0^{2\pi}\int_0^{\pi/2} z\cos\phi\sin\phi\,d\phi\,d\theta
+=\int_0^{2\pi}\int_0^{\pi/2} \cos^2\phi\sin\phi\,d\phi\,d\theta
+={2\pi\over 3},$$
+so the center of mass is at $(0,0,2/3)$.
+\end{example}
+
+Now suppose that ${\bf F}$ is a vector field; imagine that it
+represents the velocity of some fluid at each point in space. We would
+like to measure how much fluid is passing through a surface $D$, the
+{\dfont flux\index{flux}\/} across $D$. As usual, we imagine computing
+the flux across a very small section of the surface, with area $dS$,
+and then adding up all such small fluxes over $D$ with an
+integral. Suppose that vector $\bf N$ is a unit normal to the surface
+at a point; ${\bf F}\cdot{\bf N}$ is the scalar projection of $\bf F$
+onto the direction of $\bf N$, so it measures how fast the fluid is
+moving across the surface. In one unit of time the fluid moving across
+the surface will fill a volume of ${\bf F}\cdot{\bf N}\,dS$, which is
+therefore the rate at which the fluid is moving across a small patch
+of the surface. Thus, the total flux across $D$ is
+$$\dint{D} {\bf F}\cdot{\bf N}\,dS=\dint{D} {\bf F}\cdot\,d{\bf S},$$
+defining $d{\bf S}={\bf N}\,dS$.
+As usual, certain conditions must be met for this to work out; chief
+among them is the nature of the surface. As we integrate over the
+surface, we must choose the normal vectors $\bf N$ in such a way that
+they point ``the same way'' through the surface. For example, if the
+surface is roughly horizontal in orientation, we might want to measure
+the flux in the ``upwards'' direction, or if the surface is closed,
+like a sphere, we might want to measure the flux ``outwards'' across
+the surface. In the first case we would choose $\bf N$ to have
+positive $z$ component, in the second we would make sure that $\bf N$
+points away from the origin. Unfortunately, there are surfaces that
+are not {\dfont orientable\index{orientable surface}\/}: they have
+only one side, so that it is not possible to choose the normal vectors
+to point in the ``same way'' through the surface. The most famous such
+surface is the M\"obius strip shown in figure~\xrefn{fig:moebius}. It
+is quite easy to make such a strip with a piece of paper and some
+tape. If you have never done this, it is quite instructive; in
+particular, you should draw a line down the center of the strip until
+you return to your starting point. No matter how unit normal vectors
+are assigned to the points of the M\"obius strip, there will be normal
+vectors very close to each other pointing in opposite directions.
+
+\figure
+\vbox{\beginpicture
+\normalgraphs
+\ninepoint
+\setcoordinatesystem units <2.5truecm,2.5truecm>
+\setplotarea x from -1 to 1, y from 0 to 1
+\put {\hbox{\epsfxsize7cm\epsfbox{moebius.eps}}} at 0 0
+\endpicture}
+\figrdef{fig:moebius}
+\endfigure{A M\"obius strip.
+(\expandafter\url\expandafter{\liveurl moebius.html}%
+AP\endurl)}
+
+Assuming that the quantities involved are well behaved, however, the
+flux of the vector field across the surface ${\bf r}(u,v)$ is
+$$\dint{D} {\bf F}\cdot{\bf N}\,dS
+=\dint{D}{\bf F}\cdot 
+ {{\bf r}_u\times{\bf r}_v\over|{\bf r}_u\times{\bf r}_v|}
+ |{\bf r}_u\times{\bf r}_v|\,dA
+=\dint{D}{\bf F}\cdot ({\bf r}_u\times{\bf r}_v)\,dA.$$
+In practice, we may have to use ${\bf r}_v\times{\bf r}_u$
+or even something a bit more complicated to make sure that the normal
+vector points in the desired direction.
+
+\begin{example} Compute the flux of ${\bf F}=\langle x,y,z^4\rangle$ across the
+cone $z=\sqrt{x^2+y^2}$, $0\le z\le 1$, in the downward direction.
+
+We write the cone as a vector function: ${\bf r}=\langle v\cos u, v\sin u,
+v\rangle$, $0\le u\le 2\pi$ and $0\le v\le 1$.
+Then ${\bf r}_u=\langle -v\sin u, v\cos u,0\rangle$ and 
+${\bf r}_v=\langle \cos u, \sin u, 1\rangle$ and
+${\bf r}_u\times{\bf r}_v=\langle v\cos u,v\sin u,-v\rangle$.
+The third coordinate $-v$ is negative, which is exactly what we
+desire, that is, the normal vector points down through the
+surface. Then 
+$$\eqalign{
+\int_0^{2\pi}\int_0^1 \langle x,y,z^4\rangle\cdot\langle v\cos
+u,v\sin u,-v\rangle \,dv\,du
+&=\int_0^{2\pi}\int_0^1 xv\cos u+yv\sin u-z^4v\,dv\,du \\
+&=\int_0^{2\pi}\int_0^1 v^2\cos^2 u+ v^2\sin^2 u-v^5\,dv\,du \\
+&=\int_0^{2\pi}\int_0^1 v^2-v^5\,dv\,du={\pi\over3}. \\
+}$$
+\end{example}
+
+\begin{exercises}
+
+\exercise Find the center of mass of an object that occupies the upper
+hemisphere of $x^2+y^2+z^2=1$ and has density $x^2+y^2$.
+\begin{answer} $(0,0,3/8)$
+\end{answer}
+
+\exercise Find the center of mass of an object that occupies the
+surface $z=xy$, $0\le x\le1$, $0\le y\le 1$ and has density $\sqrt{1+x^2+y^2}$.
+\begin{answer} $(11/20,11/20,3/10)$
+\end{answer}
+
+% Albert
+\exercise Find the center of mass of an object that occupies the
+surface $\ds z=\sqrt{x^2+y^2}$, $1\le z\le4$ and has density $x^2z$.
+\begin{answer} $(0,0,1364/425)$
+\end{answer}
+%/Albert
+
+\exercise Find the centroid of the surface of a right circular cone of
+height $h$ and base radius $r$, not including the base.
+\begin{answer} on center axis, $h/3$ above the base
+\end{answer}
+
+\exercise Evaluate $\ds \dint{D} \langle 2,-3,4\rangle\cdot {\bf
+  N}\,dS$, where $D$ is given by $z=x^2+y^2$, $-1\le x\le 1$, $-1\le
+y\le 1$, oriented up.
+\begin{answer} $16$
+\end{answer}
+
+\exercise Evaluate $\ds \dint{D} \langle x,y,3\rangle\cdot {\bf
+  N}\,dS$, where $D$ is given by $z=3x-5y$, $1\le x\le 2$, $0\le
+y\le 2$, oriented up.
+\begin{answer} $7$
+\end{answer}
+
+\exercise Evaluate $\ds \dint{D} \langle x,y,-2\rangle\cdot {\bf
+  N}\,dS$, where $D$ is given by $z=1-x^2-y^2$, $x^2+y^2\le1$,
+oriented up.
+\begin{answer} $-\pi$
+\end{answer}
+
+\exercise Evaluate $\ds \dint{D} \langle xy, yz,zx\rangle\cdot {\bf
+  N}\,dS$, where $D$ is given by $z=x+y^2+2$, $0\le x\le 1$, $x\le
+y\le 1$, oriented up.
+\begin{answer} $-137/120$
+\end{answer}
+
+\exercise Evaluate $\ds \dint{D} \langle e^x, e^y,z\rangle\cdot {\bf
+  N}\,dS$, where $D$ is given by $z=xy$, $0\le x\le 1$, $-x\le
+y\le x$, oriented up.
+\begin{answer} $-2/e$
+\end{answer}
+
+\exercise Evaluate $\ds \dint{D} \langle xz,yz,z\rangle\cdot {\bf
+N}\,dS$, where $D$ is given by $z=a^2-x^2-y^2$, $x^2+y^2\le b^2$, 
+oriented up.
+\begin{answer} $\pi b^2(-4b^4-3b^2+6a^2b^2+6a^2)/6$
+\end{answer}
+
+\exercise A fluid has density 870 kg/m$^3$ and flows with velocity ${\bf v} =
+ \langle z,y^2,x^2\rangle$, where distances are in meters and the
+ components of ${\bf v}$ are in meters per second.  Find the rate of flow
+ outward through the portion of the cylinder $x^2+y^2 = 4$, $0\leq
+ z\leq 1$ for which $y>0$.
+\begin{answer} $4/3$ kg/s
+\end{answer}
+
+\exercise Gauss's Law says that the net charge, $Q$,
+enclosed by a closed surface, $S$, is 
+$$Q=\epsilon_0 \dint{} {\bf E}\cdot {\bf N}\,dS$$ 
+where ${\bf E}$ is an electric field and $\epsilon_0$ (the
+permittivity of free space) is a known constant; {\bf N} is oriented
+outward. 
+Use Gauss's Law to find the charge contained in the cube with vertices
+$(\pm 1, \pm 1, \pm 1)$ if the electric field is 
+${\bf E} = \langle x,y,z\rangle$.
+\begin{answer} $24\epsilon_0$
+\end{answer}
+
+\end{exercises}
+

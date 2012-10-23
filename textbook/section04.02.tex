@@ -1,0 +1,27 @@
+\section{The Derivative of $\sin x$}{}{The Derivative of the sine}
+\nobreak
+What about the derivative of the sine function? The rules for
+derivatives that we have are no help, since $\sin x$ is not an
+algebraic function. We need to return to the definition of the
+derivative, set up a limit, and try to compute it. Here's the
+definition:
+$${d\over dx}\sin x = \lim_{\Delta x\to0} {\sin(x+\Delta x)-\sin x
+  \over \Delta x}.$$
+Using some trigonometric identities, we can make a little progress on
+  the quotient:
+\begin{align*}
+{\sin(x+\Delta x)-\sin x
+  \over \Delta x}&={\sin x \cos \Delta x + \sin \Delta x \cos x - \sin
+  x\over \Delta x} \\
+&=\sin x{\cos \Delta x - 1\over \Delta x}+\cos x{\sin\Delta x\over
+  \Delta x}. \\
+\end{align*}
+
+\noindent
+This isolates the difficult bits in the two limits
+$$\lim_{\Delta x\to0}{\cos \Delta x - 1\over \Delta x}\quad\hbox{and}\quad
+ \lim_{\Delta x\to0} {\sin\Delta x\over \Delta x}.$$
+Here we get a little lucky: it turns out that once we know the second
+ limit the first is quite easy. The second is quite tricky,
+ however. Indeed, it is the hardest limit we will actually compute,
+ and we devote a section to it.

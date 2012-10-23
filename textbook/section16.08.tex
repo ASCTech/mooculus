@@ -1,0 +1,212 @@
+\section{Stokes's Theorem}{}{}
+
+Recall that one version of Green's Theorem (see
+equation~\xrefn{eq:greens theorem second form}) is
+$$\int_{\partial D} {\bf F}\cdot d{\bf r}
+=\dint{D}(\nabla\times {\bf F})\cdot{\bf k}\,dA.
+$$
+Here $D$ is a region in the $x$-$y$ plane and $\bf k$ is a unit normal
+to $D$ at every point. If $D$ is instead an orientable surface in
+space, there is an obvious way to alter this equation, and it turns
+out still to be true:
+
+\begin{theorem} (Stokes's Theorem) Provided that the quantities involved are
+sufficiently nice, and in particular if $D$ is orientable, 
+$$\int_{\partial D} {\bf F}\cdot d{\bf r}
+=\dint{D}(\nabla\times {\bf F})\cdot{\bf N}\,dS,
+$$
+if $\partial D$ is oriented counter-clockwise relative to $\bf N$.
+\end{theorem}
+
+Note how little has changed: $\bf k$ becomes $\bf N$, a unit normal to
+the surface, and $dA$ becomes $dS$, since this is now a general
+surface integral. The phrase ``counter-clockwise relative to $\bf N$''
+means that if we take the direction of $\bf N$ to be ``up'', then we
+go around the boundary counter-clockwise when viewed from ``above''.
+
+\begin{example} Let 
+${\bf F}=\langle e^{xy}\cos z,x^2z,xy\rangle$ 
+and the surface $D$ be $x=\sqrt{1-y^2-z^2}$, oriented in
+the positive $x$ direction.
+It quickly becomes apparent that the surface integral in Stokes's
+Theorem is intractable, so we try the line integral. The boundary of
+$D$ is the unit circle in the $y$-$z$ plane, ${\bf r}=\langle 0,\cos
+u,\sin u\rangle$, $0\le u\le 2\pi$. The integral is
+$$\int_0^{2\pi} \langle e^{xy}\cos z,x^2z,xy\rangle\cdot
+\langle 0,-\sin u,\cos u\rangle\,du=
+\int_0^{2\pi} 0\,du = 0,$$
+because $x=0$.
+\end{example}
+
+An interesting consequence of Stokes's Theorem is that if $D$ and $E$
+are two orientable surfaces with the same boundary, then
+$$
+\dint{D}(\nabla\times {\bf F})\cdot{\bf N}\,dS
+=\int_{\partial D} {\bf F}\cdot d{\bf r}
+=\int_{\partial E} {\bf F}\cdot d{\bf r}
+=\dint{E}(\nabla\times {\bf F})\cdot{\bf N}\,dS.
+$$
+Sometimes both of the integrals 
+$$\dint{D}(\nabla\times {\bf F})\cdot{\bf N}\,dS
+\qquad\hbox{and}\qquad\int_{\partial D} {\bf F}\cdot d{\bf r}$$
+are difficult, but you may be able to find a second surface $E$ so
+that
+$$\dint{E}(\nabla\times {\bf F})\cdot{\bf N}\,dS
+$$
+has the same value but is easier to compute.
+
+\begin{example} In the previous example, the line integral was easy to
+compute. But we might also notice that another surface $E$ with the
+same boundary is the flat disk $y^2+z^2\le 1$. The unit normal $\bf N$
+for this surface is simply ${\bf i}=\langle 1,0,0\rangle$. We compute
+the curl:
+$$\nabla\times{\bf F}=\langle x-x^2,-e^{xy}\sin z-y,2xz-xe^{xy}\cos
+z\rangle.$$ 
+Since $x=0$ everywhere on the surface,
+$$(\nabla\times{\bf F})\cdot {\bf N}=
+\langle 0,-e^{xy}\sin z-y,2xz-xe^{xy}\cos
+z\rangle\cdot\langle 1,0,0\rangle=0,$$
+so the surface integral is
+$$\dint{E}0\,dS=0,$$
+as before. In this case, of course, it is still somewhat easier to
+compute the line integral, avoiding $\nabla\times{\bf F}$ entirely.
+\end{example}
+
+\begin{example} Let ${\bf F}=\langle -y^2,x,z^2\rangle$, and let the curve $C$
+be the intersection of the cylinder $x^2+y^2=1$ with the plane
+$y+z=2$, oriented counter-clockwise when viewed from above.
+We compute $\ds\int_C {\bf F}\cdot d{\bf r}$ in two ways.
+
+First we do it directly: a vector function for $C$ is
+${\bf r}=\langle \cos u,\sin u, 2-\sin u\rangle$, so
+${\bf r}'=\langle -\sin u,\cos u,-\cos u\rangle$, and the integral is then
+$$\int_0^{2\pi} y^2\sin u+x\cos u-z^2\cos u\,du
+=\int_0^{2\pi} \sin^3 u+\cos^2 u-(2-\sin u)^2\cos u\,du
+=\pi.$$
+
+To use Stokes's Theorem, we pick a surface with $C$ as the boundary;
+the simplest such surface is that portion of the plane $y+z=2$ inside
+the cylinder. This has vector equation ${\bf r}=\langle
+v\cos u,v\sin u,2-v\sin u\rangle$. We compute
+${\bf r}_u= \langle -v\sin u,v\cos u,-v\cos u\rangle$,
+${\bf r}_v= \langle \cos u,\sin u, -\sin u\rangle$, and 
+${\bf r}_u\times{\bf r}_v=\langle 0,-v,-v\rangle$. To match the
+orientation of $C$ we need to use the normal $\langle
+0,v,v\rangle$. The curl of $\bf F$ is $\langle 0,0,1+2y\rangle=
+\langle 0,0,1+2v\sin u\rangle$, and
+the surface integral from Stokes's Theorem is
+$$\int_0^{2\pi}\int_0^1 (1+2v\sin u)v\,dv\,du=\pi.$$
+In this case the surface integral was more work to set up, but the
+resulting integral is somewhat easier.
+\end{example}
+
+\vskip6pt\noindent{\begin{proof}font Proof of 
+Stokes's Theorem.}\kern1pc\bgroup
+
+We can prove here a special case of Stokes's Theorem, which perhaps
+not too surprisingly uses Green's Theorem.
+
+Suppose the surface $D$ of interest can be expressed in the form
+$z=g(x,y)$, and let ${\bf F}=\langle P,Q,R\rangle$. Using the vector
+function ${\bf r}=\langle x,y,g(x,y)\rangle$ for the surface we get the
+surface integral
+$$\eqalign{
+\dint{D} \nabla\times{\bf F}\cdot d{\bf S}&=
+\dint{E} \langle R_y-Q_z,P_z-R_x,Q_x-P_y\rangle\cdot
+\langle -g_x,-g_y,1\rangle\,dA \\
+&=\dint{E} -R_yg_x+Q_zg_x-P_zg_y+R_xg_y+Q_x-P_y\,dA. \\}$$
+Here $E$ is the region in the $x$-$y$ plane directly below the surface
+$D$. 
+
+For the line integral, we need a vector function for $\partial D$. If 
+$\langle x(t),y(t)\rangle$ is a vector function for 
+$\partial E$ then we may use ${\bf r}(t)=\langle x(t),y(t),g(x(t),y(t))\rangle$
+to represent $\partial D$. Then
+$$\int_{\partial D}{\bf F}\cdot d{\bf r}
+=\int_a^b P{dx\over dt}+Q{dy\over dt}+R{dz\over dt}\,dt
+=\int_a^b P{dx\over dt}+Q{dy\over dt}+R\left({\partial z\over\partial
+    x}{dx\over dt}+{\partial z\over\partial y}{dy\over dt}\right)\,dt.$$
+using the chain rule for $dz/dt$. Now we continue to manipulate this:
+$$
+\eqalign{
+\int_a^b P{dx\over dt}+Q{dy\over dt}+&R\left({\partial z\over\partial
+    x}{dx\over dt}+{\partial z\over\partial y}{dy\over dt}\right)\,dt \\
+&=\int_a^b \left[\left(P+R{\partial z\over\partial x}\right){dx\over dt}+
+\left(Q+R{\partial z\over\partial y}\right){dy\over dt}\right]\,dt \\
+&=\int_{\partial E} \left(P+R{\partial z\over\partial x}\right)\,dx+
+\left(Q+R{\partial z\over\partial y}\right)\,dy, \\}$$
+which now looks just like the line integral of Green's Theorem, except
+that the functions $P$ and $Q$ of Green's Theorem have been replaced
+by the more complicated $P+R(\partial z/\partial x)$
+and $Q+R(\partial z/\partial y)$. We can apply Green's Theorem to get
+$$\int_{\partial E} \left(P+R{\partial z\over\partial x}\right)\,dx+
+\left(Q+R{\partial z\over\partial y}\right)\,dy=
+\dint{E} {\partial\over \partial x}\left(Q+R{\partial z\over\partial y}\right)
+-{\partial\over \partial y}\left(P+R{\partial z\over\partial x}\right)\,dA.$$
+Now we can use the chain rule again to evaluate the derivatives
+inside this integral, and it becomes
+$$\eqalign{
+\dint{E} &Q_x+Q_zg_x+R_xg_y+R_zg_xg_y+Rg_{yx}-
+\left(P_y+P_zg_y+R_yg_x+R_zg_yg_x+Rg_{xy}\right)\,dA \\
+&=\dint{E} Q_x+Q_zg_x+R_xg_y-P_y-P_zg_y-R_yg_x\,dA, \\
+}$$
+which is the same as the expression we obtained for the surface
+integral.
+\end{proof}
+
+\begin{exercises}
+
+\exercise
+Let ${\bf F}=\langle z,x,y\rangle$.
+The plane $z=2x+2y-1$ and the paraboloid $z=x^2+y^2$ intersect in a
+closed curve. Stokes's Theorem implies that
+$$\dint{D_1} (\nabla\times{\bf F})\cdot {\bf N}\,dS=
+\oint_C {\bf F}\cdot d{\bf r}=
+\dint{D_2} (\nabla\times{\bf F})\cdot {\bf N}\,dS,
+$$
+where the line integral is computed over the intersection $C$ of the plane
+and the paraboloid, and the two surface integrals are computed over
+the portions of the two surfaces that have boundary $C$ (provided, of
+course, that the orientations all match). Compute all three integrals.
+\begin{answer} $-3\pi$
+\end{answer}
+
+\exercise Let $D$ be the portion of $z=1-x^2-y^2$ above the $x$-$y$
+plane, oriented up, and let ${\bf F}=\langle
+xy^2,-x^2y,xyz\rangle$. Compute $\ds\dint{D} (\nabla\times{\bf
+F})\cdot {\bf N}\,dS$.
+\begin{answer} $0$
+\end{answer}
+
+\exercise Let $D$ be the portion of $z=2x+5y$ inside $x^2+y^2=1$,
+oriented up, and
+let ${\bf F}=\langle y,z,-x\rangle$. Compute
+$\ds\int_{\partial D} {\bf F}\cdot d{\bf r}$.
+\begin{answer} $-4\pi$
+\end{answer}
+
+%Albert
+\exercise Compute $\ds\oint_C x^2z\,dx + 3x\,dy x^3 - y^3\,dz$, where $C$
+is the unit circle $\ds x^2+y^2=1$ oriented counter-clockwise.
+\begin{answer} $3\pi$
+\end{answer}
+%/Albert
+
+\exercise Let $D$ be the portion of $z=px+qy+r$ over a region in the
+$x$-$y$ plane that has area $A$, oriented up, and 
+let ${\bf F}=\langle ax+by+cz,ax+by+cz,ax+by+cz\rangle$. Compute
+$\ds\int_{\partial D} {\bf F}\cdot d{\bf r}$.
+\begin{answer} $A(p(c-b)+q(a-c)+a-b)$
+\end{answer}
+
+\exercise Let $D$ be any surface and 
+let ${\bf F}=\langle P(x),Q(y),R(z)\rangle$ ($P$ depends only on $x$,
+$Q$ only on $y$, and $R$ only on $z$). Show that
+$\ds\int_{\partial D} {\bf F}\cdot d{\bf r}=0$.
+
+\exercise Show that $\ds\int_C f\nabla g+g\nabla f\cdot d{\bf r}=0$, where
+$\bf r$ describes a closed curve $C$ to which Stokes's Theorem
+applies.
+
+\end{exercises}
+

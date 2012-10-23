@@ -1,0 +1,159 @@
+\section{Comparison Tests}{}{}
+\nobreak
+As we begin to compile a list of convergent and divergent series, new
+ones can sometimes be analyzed by comparing them to ones that we
+already understand.
+
+\begin{example} Does $\ds\sum_{n=2}^\infty {1\over n^2\ln n}$ converge?
+
+\ssk
+The obvious first approach, based on what we know, is the integral test.
+Unfortunately, we can't compute the required antiderivative. But
+looking at the series, it would appear that it must converge, because
+the terms we are adding are smaller than the terms of a $p$-series,
+that is,
+$${1\over n^2\ln n}<{1\over n^2},$$
+when $n\ge3$. Since adding up the terms $\ds 1/n^2$ doesn't get ``too
+big'', the new series ``should'' also converge. Let's make this more
+precise.
+
+The series $\ds\sum_{n=2}^\infty {1\over n^2\ln n}$ converges if and
+only if $\ds\sum_{n=3}^\infty {1\over n^2\ln n}$ converges---all we've
+done is dropped the initial term. We know that 
+$\ds\sum_{n=3}^\infty {1\over n^2}$ converges. Looking at two typical
+partial sums:
+$$
+  s_n={1\over 3^2\ln 3}+{1\over 4^2\ln 4}+{1\over 5^2\ln 5}+\cdots+
+  {1\over n^2\ln n} < {1\over 3^2}+{1\over 4^2}+
+  {1\over 5^2}+\cdots+{1\over n^2}=t_n.
+$$
+Since the $p$-series converges, say to $L$, and since the terms are positive,
+$\ds t_n<L$. Since the terms of the new series are positive, the $\ds s_n$
+form an increasing sequence and $\ds s_n<t_n<L$ for all $n$. Hence the
+sequence $\ds \{s_n\}$ is bounded and so converges.
+\end{example}
+
+Sometimes, even when the integral test applies, comparison to a known
+series is easier, so it's generally a good idea to think about doing a
+comparison before doing the integral test.
+
+\begin{example} Does $\ds\sum_{n=2}^\infty {|\sin n|\over n^2}$ converge?
+
+\ssk
+We can't apply the integral test here, because the terms of this
+series are not decreasing. Just as in the previous example, however,
+$$ {|\sin n|\over n^2}\le {1\over n^2},$$
+because $|\sin n|\le 1$. Once again the partial sums are
+non-decreasing and bounded above by $\ds \sum 1/n^2=L$, so the new series
+converges. 
+\end{example}
+\label{example:absolute sine over n squared}
+
+Like the integral test, the comparison test can be used to show both
+convergence and divergence. In the case of the integral test, a single
+calculation will confirm whichever is the case. To use the comparison
+test we must first have a good idea as to convergence or divergence
+and pick the sequence for comparison accordingly.
+
+\begin{example} Does $\ds\sum_{n=2}^\infty {1\over\sqrt{n^2-3}}$ converge?
+\ssk
+We observe that the $-3$ should have little effect compared to the
+$\ds n^2$ inside the square root, and therefore guess that the terms are
+enough like $\ds 1/\sqrt{n^2}=1/n$ that the series should diverge. We
+attempt to show this by comparison to the harmonic series. We note
+that 
+$${1\over\sqrt{n^2-3}} > {1\over\sqrt{n^2}} = {1\over n},$$
+so that
+$$
+  s_n={1\over\sqrt{2^2-3}}+{1\over\sqrt{3^2-3}}+\cdots+
+  {1\over\sqrt{n^2-3}} > {1\over 2} + {1\over3}+\cdots+{1\over n}=t_n,
+$$
+where $\ds t_n$ is 1 less than the corresponding partial sum of the
+harmonic series (because we start at $n=2$ instead of $n=1$). Since
+$\ds\lim_{n\to\infty}t_n=\infty$, $\ds\lim_{n\to\infty}s_n=\infty$ as
+well.
+\end{example}
+
+So the general approach is this: If you believe that a new series is
+convergent, attempt to find a convergent series whose terms are
+larger than the terms of the new series; if you believe that a new
+series is divergent, attempt to find a divergent series whose terms
+are smaller than the terms of the new series.
+
+\begin{example} Does $\ds\sum_{n=1}^\infty {1\over\sqrt{n^2+3}}$ converge?
+\ssk
+Just as in the last example, we guess that this is very much like the
+harmonic series and so diverges. Unfortunately,
+$${1\over\sqrt{n^2+3}} < {1\over n},$$
+so we can't compare the series directly to the harmonic series.
+A little thought leads us to
+$${1\over\sqrt{n^2+3}} > {1\over\sqrt{n^2+3n^2}} = {1\over2n},$$ so if
+$\sum 1/(2n)$ diverges then the given series diverges. But since $\sum
+1/(2n)=(1/2)\sum 1/n$, theorem~\xrefn{thm:series are linear} implies
+that it does indeed diverge.
+\end{example}
+
+For reference we summarize the comparison test in a theorem.
+
+\begin{theorem} Suppose that $\ds a_n$ and $\ds b_n$ are non-negative for all $n$ and
+that $\ds a_n\le b_n$ when $n\ge N$, for some $N$.
+
+\begin{itemize} % BADBAD
+\item{} If $\ds\sum_{n=0}^\infty b_n$ converges, so does 
+$\ds\sum_{n=0}^\infty a_n$.
+\item{} If $\ds\sum_{n=0}^\infty a_n$ diverges, so does 
+$\ds\sum_{n=0}^\infty b_n$.
+
+\end{itemize}
+\end{proof}
+
+\begin{exercises}
+
+Determine whether the series converge or diverge.
+
+\twocol
+
+\exercise $\ds\sum_{n=1}^\infty {1\over 2n^2+3n+5} $
+\begin{answer} converges
+\end{answer}
+
+\exercise $\ds\sum_{n=2}^\infty {1\over 2n^2+3n-5} $
+\begin{answer}  converges
+\end{answer}
+
+\exercise $\ds\sum_{n=1}^\infty {1\over 2n^2-3n-5} $
+\begin{answer}  converges
+\end{answer}
+
+\exercise $\ds\sum_{n=1}^\infty {3n+4\over 2n^2+3n+5} $
+\begin{answer} diverges
+\end{answer}
+
+\exercise $\ds\sum_{n=1}^\infty {3n^2+4\over 2n^2+3n+5} $
+\begin{answer} diverges
+\end{answer}
+
+\exercise $\ds\sum_{n=1}^\infty {\ln n\over n}$
+\begin{answer} diverges
+\end{answer}
+
+\exercise $\ds\sum_{n=1}^\infty {\ln n\over n^3}$
+\begin{answer} converges
+\end{answer}
+
+\exercise $\ds\sum_{n=2}^\infty {1\over \ln n}$
+\begin{answer} diverges
+\end{answer}
+
+\exercise $\ds\sum_{n=1}^\infty {3^n\over 2^n+5^n}$
+\begin{answer} converges
+\end{answer}
+
+\exercise $\ds\sum_{n=1}^\infty {3^n\over 2^n+3^n}$
+\begin{answer} diverges
+\end{answer}
+
+\endtwocol
+
+\end{exercises}
+

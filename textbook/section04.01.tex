@@ -1,0 +1,238 @@
+\section{Trigonometric Functions}{}{}
+\nobreak
+When you first encountered the trigonometric functions it was probably
+in the context of ``triangle trigonometry,'' defining, for example,
+the sine of an angle as the ``side opposite over the hypotenuse.''
+While this will still be useful in an informal way, we need to use a
+more expansive definition of the trigonometric functions. First an
+important note: while degree measure of angles is sometimes convenient
+because it is so familiar, it turns out to be ill-suited to
+mathematical calculation, so (almost) everything we do will be in
+terms of {\dfont radian\index{radian measure} measure\/} of angles.
+
+To define the radian measurement system,
+we consider the unit circle in the $xy$-plane:
+% BADBAD
+% $$\vbox{
+% \beginpicture
+% \normalgraphs
+% \sevenpoint
+% \setcoordinatesystem units <3truecm,3truecm>
+% \setplotarea x from -1.1 to 1.1, y from -1.1 to 1.1
+% \axis left shiftedto x=0 /
+% \axis bottom shiftedto y=0 /
+% \circulararc 360 degrees from 1 0 center at 0 0
+% %\putrule from  0.8660254040 0 to 0.8660254040 0.5
+% %\putrule from  1 0 to 1 .577
+% \plot 0 0 0.8660254040 0.5 /
+% \plot 0 0 0.8660254040 -0.5 /
+% \put {$x$} [bl] <5pt,2.5pt> at 0.1 0
+% \put {$(\cos x, \sin x)$} [bl] <3pt,3pt> at  0.8660254040 0.5
+% \put {$y$} [tl] <5pt,-2.5pt> at 0.1 0
+% \put {$A$} [r] <-4pt,2pt> at 0.8660254040 0.5
+% \put {$B$} [r] <-4pt,-2pt> at 0.8660254040 -0.5
+% \put {$(1,0)$} [tl] <2pt,-3pt> at 1 0
+% \endpicture}$$
+
+An angle, $x$, at the center of the circle is
+associated with an arc of the circle which is said to {\dfont
+  subtend\index{subtend}} the angle. In the figure, this arc is the portion of
+the circle from point $(1,0)$ to point $A$. The length of this arc is
+the radian measure of the angle $x$; the fact that the radian measure
+is an actual geometric length is largely responsible for the
+usefulness of radian measure. The circumference of the unit circle is
+$2\pi r=2\pi(1)=2\pi$, so the radian measure of the full circular
+angle (that is, of the 360 degree angle) is $2\pi$.
+
+While an angle with a particular measure can appear anywhere around
+the circle, we need a fixed, conventional location so that we can use
+the coordinate system to define properties of the angle. 
+The standard convention is to place the starting radius for the angle
+on the positive $x$-axis, and to measure positive angles
+counterclockwise around the circle. In the figure, $x$ is the standard
+location of the angle $\pi/6$, that is, the length of the arc from
+$(1,0)$ to $A$ is $\pi/6$. The angle $y$ in the picture is $-\pi/6$,
+because the distance from $(1,0)$ to $B$ along the circle is also 
+$\pi/6$, but in a clockwise direction.
+
+Now the fundamental trigonometric definitions are:
+the cosine of $x$ and the sine of $x$ are the first and second
+coordinates of the point $A$, as indicated in the figure. The angle
+$x$ shown can be viewed as an angle of a right triangle, meaning the
+usual triangle definitions of the sine and cosine also make
+sense. Since the hypotenuse of the triangle is 1, the ``side opposite
+over hypotenuse'' definition of the sine is the second coordinate of
+point $A$ over 1, which is just the second coordinate; in other words,
+both methods give the same value for the sine.
+
+The simple triangle definitions work only for angles that can ``fit''
+in a right triangle, namely, angles between 0 and $\pi/2$. The
+coordinate definitions, on the other hand, apply to any angles, as
+indicated in this figure:
+% BADBAD
+% $$\vbox{
+% \beginpicture
+% \normalgraphs
+% \sevenpoint
+% \setcoordinatesystem units <3truecm,3truecm>
+% \setplotarea x from -1.1 to 1.1, y from -1.1 to 1.1
+% \axis left shiftedto x=0 /
+% \axis bottom shiftedto y=0 /
+% \circulararc 360 degrees from 1 0 center at 0 0
+% \plot 0 0 -0.8660254040 -0.5 /
+% \setplotsymbol ({\tenrm.})
+% \circulararc 210 degrees from 1 0 center at 0 0
+% \put {$x$} [br] <-5pt,5pt> at 0 0
+% \put {$A$} [b] <2pt,5pt> at -0.8660254040 -0.5
+% \put {$(\cos x, \sin x)$} [tr] <-3pt,-3pt> at  -0.8660254040 -0.5
+% \endpicture}$$
+
+The angle $x$ is subtended by the heavy arc in the figure, that is, 
+$x=7\pi/6$. Both coordinates of point $A$ in this figure are negative,
+so the sine and cosine of $7\pi/6$ are both negative.
+
+The remaining trigonometric functions can be most easily defined in
+terms of the sine and cosine, as usual:
+\begin{align*}
+\tan x &= {\sin x\over \cos x} \\
+\cot x &= {\cos x \over \sin x} \\
+\sec x &= {1\over \cos x} \\
+\csc x &= {1\over \sin x} \\
+\end{align*}
+and they can also be defined as the corresponding ratios of
+coordinates. 
+
+Although the trigonometric functions are defined in terms of the unit
+circle, the unit circle diagram is not what we normally consider the
+graph of a trigonometric function. (The unit circle is the graph of,
+well, the circle.) We can easily get a qualitatively correct idea of
+the graphs of the trigonometric functions from the unit circle
+diagram. Consider the sine function, $y=\sin x$. As $x$ increases from
+0 in the unit circle diagram, the second coordinate of the point $A$
+goes from 0 to a maximum of 1, then back to 0, then to a minimum of
+$-1$, then back to 0, and then it obviously repeats itself. So the
+graph of $y=\sin x$ must look something like this:
+
+% BADBAD
+% $$\vbox{
+% \beginpicture
+% \normalgraphs
+% \sevenpoint
+% \setcoordinatesystem units <1truecm,1truecm>
+% \setplotarea x from -6.3 to 6.3, y from -1.1 to 1.1
+% \axis left shiftedto x=0 ticks length <2pt> withvalues {$-1$} {$1$} / at -1 1 / /
+% \axis bottom shiftedto y=0 ticks length <2pt> withvalues 
+%   {$\pi/2$} {$\pi$} {$3\pi/2$} {$2\pi$} {$-\pi/2$} {$-\pi$} {$-3\pi/2$} {$-2\pi$} /
+%   at 1.57 3.14 4.71 6.28 -1.57 -3.14 -4.71 -6.28 / /
+% \setquadratic
+% \plot -6.283 0.000 -6.158 0.125 -6.032 0.249 -5.906 0.368 -5.781 0.482 
+% -5.655 0.588 -5.529 0.685 -5.404 0.771 -5.278 0.844 -5.152 0.905 
+% -5.027 0.951 -4.901 0.982 -4.775 0.998 -4.650 0.998 -4.524 0.982 
+% -4.398 0.951 -4.273 0.905 -4.147 0.844 -4.021 0.771 -3.896 0.685 
+% -3.770 0.588 -3.644 0.482 -3.519 0.368 -3.393 0.249 -3.267 0.125 
+% -3.142 0.000 -3.016 -0.125 -2.890 -0.249 -2.765 -0.368 -2.639 -0.482 
+% -2.513 -0.588 -2.388 -0.685 -2.262 -0.771 -2.136 -0.844 -2.011 -0.905 
+% -1.885 -0.951 -1.759 -0.982 -1.634 -0.998 -1.508 -0.998 -1.382 -0.982 
+% -1.257 -0.951 -1.131 -0.905 -1.005 -0.844 -0.880 -0.771 -0.754 -0.685 
+% -0.628 -0.588 -0.503 -0.482 -0.377 -0.368 -0.251 -0.249 -0.126 -0.125 
+% 0.000 0.000 0.126 0.125 0.251 0.249 0.377 0.368 0.503 0.482 
+% 0.628 0.588 0.754 0.685 0.880 0.771 1.005 0.844 1.131 0.905 
+% 1.257 0.951 1.382 0.982 1.508 0.998 1.634 0.998 1.759 0.982 
+% 1.885 0.951 2.011 0.905 2.136 0.844 2.262 0.771 2.388 0.685 
+% 2.513 0.588 2.639 0.482 2.765 0.368 2.890 0.249 3.016 0.125 
+% 3.142 0.000 3.267 -0.125 3.393 -0.249 3.519 -0.368 3.644 -0.482 
+% 3.770 -0.588 3.896 -0.685 4.021 -0.771 4.147 -0.844 4.273 -0.905 
+% 4.398 -0.951 4.524 -0.982 4.650 -0.998 4.775 -0.998 4.901 -0.982 
+% 5.027 -0.951 5.152 -0.905 5.278 -0.844 5.404 -0.771 5.529 -0.685 
+% 5.655 -0.588 5.781 -0.482 5.906 -0.368 6.032 -0.249 6.158 -0.125 
+% 6.283 0.000 /
+% \endpicture}$$
+
+Similarly, as angle $x$ increases from 0 in the unit circle diagram,
+the first coordinate of the point $A$ goes from 1 to 0 then to $-1$,
+back to 0 and back to 1, so the graph of $y=\cos x$ must look
+something like this:
+
+% BADBAD
+% $$\vbox{
+% \beginpicture
+% \normalgraphs
+% \sevenpoint
+% \setcoordinatesystem units <1truecm,1truecm>
+% \setplotarea x from -6.3 to 6.3, y from -1.1 to 1.1
+% \axis left shiftedto x=0 ticks length <2pt> withvalues {$-1$} {$1$} / at -1 1 / /
+% \axis bottom shiftedto y=0 ticks length <2pt> withvalues 
+%   {$\pi/2$} {$\pi$} {$3\pi/2$} {$2\pi$} {$-\pi/2$} {$-\pi$} {$-3\pi/2$} {$-2\pi$} /
+%   at 1.57 3.14 4.71 6.28 -1.57 -3.14 -4.71 -6.28 / /
+% \setquadratic
+% \plot
+% -6.283 1.000 -6.178 0.995 -6.074 0.978 -5.969 0.951 -5.864 0.914 
+% -5.760 0.866 -5.655 0.809 -5.550 0.743 -5.445 0.669 -5.341 0.588 
+% -5.236 0.500 -5.131 0.407 -5.027 0.309 -4.922 0.208 -4.817 0.105 
+% -4.712 0.000 -4.608 -0.105 -4.503 -0.208 -4.398 -0.309 -4.294 -0.407 
+% -4.189 -0.500 -4.084 -0.588 -3.979 -0.669 -3.875 -0.743 -3.770 -0.809 
+% -3.665 -0.866 -3.560 -0.914 -3.456 -0.951 -3.351 -0.978 -3.246 -0.995 
+% -3.142 -1.000 -3.037 -0.995 -2.932 -0.978 -2.827 -0.951 -2.723 -0.914 
+% -2.618 -0.866 -2.513 -0.809 -2.409 -0.743 -2.304 -0.669 -2.199 -0.588 
+% -2.094 -0.500 -1.990 -0.407 -1.885 -0.309 -1.780 -0.208 -1.676 -0.105 
+% -1.571 0.000 -1.466 0.105 -1.361 0.208 -1.257 0.309 -1.152 0.407 
+% -1.047 0.500 -0.942 0.588 -0.838 0.669 -0.733 0.743 -0.628 0.809 
+% -0.524 0.866 -0.419 0.914 -0.314 0.951 -0.209 0.978 -0.105 0.995 
+% 0.000 1.000 0.105 0.995 0.209 0.978 0.314 0.951 0.419 0.914 
+% 0.524 0.866 0.628 0.809 0.733 0.743 0.838 0.669 0.942 0.588 
+% 1.047 0.500 1.152 0.407 1.257 0.309 1.361 0.208 1.466 0.105 
+% 1.571 0.000 1.676 -0.105 1.780 -0.208 1.885 -0.309 1.990 -0.407 
+% 2.094 -0.500 2.199 -0.588 2.304 -0.669 2.409 -0.743 2.513 -0.809 
+% 2.618 -0.866 2.723 -0.914 2.827 -0.951 2.932 -0.978 3.037 -0.995 
+% 3.142 -1.000 3.246 -0.995 3.351 -0.978 3.456 -0.951 3.560 -0.914 
+% 3.665 -0.866 3.770 -0.809 3.875 -0.743 3.979 -0.669 4.084 -0.588 
+% 4.189 -0.500 4.294 -0.407 4.398 -0.309 4.503 -0.208 4.608 -0.105 
+% 4.712 0.000 4.817 0.105 4.922 0.208 5.027 0.309 5.131 0.407 
+% 5.236 0.500 5.341 0.588 5.445 0.669 5.550 0.743 5.655 0.809 
+% 5.760 0.866 5.864 0.914 5.969 0.951 6.074 0.978 6.178 0.995 
+% 6.283 1.000 /
+% \endpicture}$$
+
+\begin{exercises} Some useful trigonometric identities are in
+appendix~\xrefn{chap:formulas}.
+
+\exercise Find all values of $\theta$ such that
+$\sin(\theta) = -1$; give your answer in radians.
+\begin{answer} $2n\pi-\pi/2$, any integer $n$
+\end{answer}
+
+\exercise Find all values of $\theta$ such that
+$\cos(2\theta) = 1/2$; give your answer in radians.
+\begin{answer} $n\pi\pm\pi/6$, any integer $n$
+\end{answer}
+
+\exercise Use an angle sum identity to compute
+  $\cos(\pi/12)$.
+\begin{answer} $(\sqrt2+\sqrt6)/4$
+\end{answer}
+
+\exercise Use an angle sum identity to compute
+  $\tan(5\pi/12)$.
+\begin{answer} $-(1+\sqrt3)/(1-\sqrt3)=2+\sqrt3$
+\end{answer}
+
+\exercise Verify the identity $\ds \cos^2(t)/(1-\sin(t)) =
+  1+\sin(t)$.
+
+\exercise Verify the identity $2\csc(2\theta)=\sec(\theta)\csc(\theta)$.
+
+\exercise Verify the identity $\sin(3\theta) - \sin(\theta) = 2\cos(2\theta)
+  \sin(\theta)$.
+
+\exercise Sketch $y=2\sin(x)$.
+
+\exercise Sketch $y=\sin(3x)$.
+
+\exercise Sketch $y=\sin(-x)$.
+
+\exercise Find all of the solutions of $\ds 2\sin(t) -1 -\sin^2(t) =0$ in the
+ interval $[0,2\pi]$.
+\begin{answer} $t=\pi/2$
+\end{answer}
+
+\end{exercises}

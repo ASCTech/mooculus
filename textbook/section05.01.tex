@@ -1,0 +1,307 @@
+\section{Maxima and Minima}{}{}
+\nobreak
+A {\dfont local maximum\index{local maximum} point\/} on a function is a
+point $(x,y)$ on the graph of the function whose $y$ coordinate is
+larger than all other $y$ coordinates on the graph at points ``close
+to'' $(x,y)$. More precisely, $(x,f(x))$ is a local maximum if there
+is an interval $(a,b)$ with $a<x<b$ and $f(x)\ge f(z)$ for every $z$
+in $(a,b)$. Similarly, $(x,y)$ is a {\dfont local minimum\index{local
+minimum} point\/} if it has locally the smallest $y$ coordinate. Again
+being more precise: $(x,f(x))$ is a local minimum if there
+is an interval $(a,b)$ with $a<x<b$ and $f(x)\le f(z)$ for every $z$
+in $(a,b)$. A 
+{\dfont local extremum\index{local
+extremum}\/} is either a local minimum or a local maximum.
+
+Local maximum and minimum points are quite distinctive on the graph of
+a function, and are therefore useful in understanding the shape of the
+graph. In many applied problems we want to find the largest or
+smallest value that a function achieves (for example, we might want
+to find the minimum cost at which some task can be performed) and so
+identifying maximum and minimum points will be useful for applied
+problems as well. Some examples of local maximum and minimum points
+are shown in figure~\xrefn{fig:max and min points}.
+
+% BADBAD
+% \figure
+% \vbox{\beginpicture
+% \normalgraphs
+% \ninepoint
+% \setcoordinatesystem units <1.5truecm,1.5truecm>
+% \setplotarea x from -1.5 to 1.5, y from -1.5 to 1.5
+% \axis left shiftedto x=0 /
+% \axis bottom shiftedto y=0 /
+% \setquadratic
+% \plot -1.400 -1.344 -1.330 -1.023 -1.260 -0.740 -1.190 -0.495 -1.120 -0.285 
+% -1.050 -0.108 -0.980 0.039 -0.910 0.156 -0.840 0.247 -0.770 0.313 
+% -0.700 0.357 -0.630 0.380 -0.560 0.384 -0.490 0.372 -0.420 0.346 
+% -0.350 0.307 -0.280 0.258 -0.210 0.201 -0.140 0.137 -0.070 0.070 
+% 0.000 0.000 0.070 -0.070 0.140 -0.137 0.210 -0.201 0.280 -0.258 
+% 0.350 -0.307 0.420 -0.346 0.490 -0.372 0.560 -0.384 0.630 -0.380 
+% 0.700 -0.357 0.770 -0.313 0.840 -0.247 0.910 -0.156 0.980 -0.039 
+% 1.050 0.108 1.120 0.285 1.190 0.495 1.260 0.740 1.330 1.023 
+% 1.400 1.344 /
+% \put {$\bullet$} at -0.5512 0.3752
+% \put {$\bullet$} at 0.5512 -0.3752
+% \put {$A$} [b] <0pt,4pt> at -0.5512 0.3752
+% \put {$B$} [t] <0pt,-4pt> at 0.5512 -0.3752
+% \setcoordinatesystem units <1.5truecm,1.5truecm> point at -4 0
+% \setplotarea x from -1.5 to 1.5, y from -1.5 to 1.5
+% \axis left shiftedto x=0 /
+% \axis bottom shiftedto y=0 /
+% \setlinear
+% \plot -1.5 -1 -1 0.5 -0.25 -0.25 0.5 1.4 1.5 -0.5 /
+% \multiput {$\bullet$} at -1 0.5 -0.25 -0.25 0.5 1.4 /
+% \multiput {$A$} [b] <0pt,4pt> at -1 0.5 0.5 1.4 /
+% \put {$B$} [t] <0pt,-4pt> at -0.25 -0.25 
+% \endpicture}
+% \figrdef{fig:max and min points}
+% \endfigure{Some local maximum points ($A$) and minimum points ($B$).}
+
+If $(x,f(x))$ is a point where $f(x)$ reaches a local maximum or minimum,
+and if the derivative of $f$ exists at $x$, then the graph has a
+tangent line and the tangent line must be horizontal. This is
+important enough to state as a theorem, though we will not prove it.
+
+\begin{theorem} (Fermat's Theorem) If $f(x)$ has a local extremum at $x=a$ and
+$f$ is differentiable at $a$, then $f'(a)=0$.
+\end{theorem}
+\index{Fermat's Theorem}
+
+Thus, the only
+points at which a function can have a local maximum or minimum are
+points at which the derivative is zero, as in the left hand graph in
+figure~\xrefn{fig:max and min points},
+or the derivative is undefined, as in the right hand graph. Any value
+of $x$ for which $f'(x)$ is zero or undefined is called a
+{\dfont critical\index{critical value}
+value\/} for $f$.
+When looking for local maximum and minimum points, you are likely to
+make two sorts of mistakes: You may forget that a maximum or minimum
+can occur where the derivative does not exist, and so forget to check
+whether the derivative exists everywhere. You might also assume that
+any place that the derivative is zero is a local maximum or minimum
+point, but this is not true. A portion of the graph of $\ds f(x)=x^3$ is
+shown in figure~\xrefn{fig:non extremum}. The derivative of $f$ is
+$f'(x)=3x^2$, and $f'(0)=0$, but there is neither a maximum nor
+minimum at $(0,0)$.
+
+% BADBAD
+% \figure
+% \vbox{\beginpicture
+% \normalgraphs
+% \ninepoint
+% \setcoordinatesystem units <1.5truecm,0.75truecm>
+% \setplotarea x from -1.5 to 1.5, y from -3.4 to 3.4
+% \axis left shiftedto x=0 /
+% \axis bottom shiftedto y=0 /
+% \setquadratic
+% \plot -1.500 -3.375 -1.425 -2.894 -1.350 -2.460 -1.275 -2.073 -1.200 -1.728 
+% -1.125 -1.424 -1.050 -1.158 -0.975 -0.927 -0.900 -0.729 -0.825 -0.562 
+% -0.750 -0.422 -0.675 -0.308 -0.600 -0.216 -0.525 -0.145 -0.450 -0.091 
+% -0.375 -0.053 -0.300 -0.027 -0.225 -0.011 -0.150 -0.003 -0.075 -0.000 
+% 0.000 0.000 0.075 0.000 0.150 0.003 0.225 0.011 0.300 0.027 
+% 0.375 0.053 0.450 0.091 0.525 0.145 0.600 0.216 0.675 0.308 
+% 0.750 0.422 0.825 0.562 0.900 0.729 0.975 0.927 1.050 1.158 
+% 1.125 1.424 1.200 1.728 1.275 2.073 1.350 2.460 1.425 2.894 
+% 1.500 3.375 /
+% \endpicture}
+% \figrdef{fig:non extremum}
+% \endfigure{No maximum or minimum even though the derivative is zero.}
+
+Since the derivative is zero or undefined at both local maximum and
+local minimum points, we need a way to determine which, if either,
+actually occurs. The most
+elementary approach, but one that is often tedious or difficult, is to
+test directly whether the $y$ coordinates ``near'' the potential
+maximum or minimum are above or below the $y$ coordinate at the point
+of interest. Of course, there are too many points ``near'' the point
+to test, but a little thought shows we need only test two provided we
+know that $f$ is continuous (recall that this means that the graph of
+$f$ has no jumps or gaps).
+
+Suppose, for example, that we have identified three points at which
+$f'$ is zero or nonexistent: $\ds (x_1,y_1)$, $\ds (x_2,y_2)$, $\ds (x_3,y_3)$,
+and $\ds x_1<x_2<x_3$ (see figure~\xrefn{fig:testing for max and
+min}). Suppose that we compute the value of $f(a)$ for $\ds x_1<a<x_2$, and
+that $\ds f(a)<f(x_2)$. What can we say about the graph between $a$ and
+$\ds x_2$? Could there be a point $\ds (b,f(b))$, $\ds a<b<x_2$ with
+$\ds f(b)>f(x_2)$? No: if there were, the graph would go up from
+$(a,f(a))$ to $(b,f(b))$ then down to $\ds (x_2,f(x_2))$ and somewhere in
+between would have a local maximum point. (This is not obvious; it is
+a result of the Extreme Value Theorem, theorem~\xrefn{thm:evt}.)
+But at that local maximum
+point the derivative of $f$ would be zero or nonexistent, yet we
+already know that the derivative is zero or nonexistent only at $\ds x_1$,
+$\ds x_2$, and $\ds x_3$. The upshot is that one computation tells us that
+$\ds (x_2,f(x_2))$ has the largest $y$ coordinate of any point on the
+graph near $\ds x_2$ and to the left of $\ds x_2$. We can perform the same
+test on the right. If we find that on both sides of $\ds x_2$ the values
+are smaller, then there must be a local maximum at $\ds (x_2,f(x_2))$; if
+we find that on both sides of $\ds x_2$ the values are larger, then there
+must be a local minimum at $\ds (x_2,f(x_2))$; if we find one of each,
+then there is neither a local maximum or minimum at $\ds x_2$.
+
+% BADBAD
+% \figure
+% \vbox{\beginpicture
+% \normalgraphs
+% \ninepoint
+% \setcoordinatesystem units <1.5truecm,1truecm>
+% \setplotarea x from -1.5 to 1.5, y from -1.5 to 1.5
+% \axis left shiftedto x=0 /
+% \axis bottom shiftedto y=0 ticks withvalues 
+% {$x_1$} {$a$} {$b$} {$x_2$} {$x_3$} / at
+% -1.3 -1 -0.5 0.5 1 / /
+% \multiput {$\bullet$} at -1.3 0.5 -1 0.8 0.5 1.3 1 0.2 /
+% \setquadratic
+% \endpicture}
+% \figrdef{fig:testing for max and min}
+% \endfigure{Testing for a maximum or minimum.}
+
+It is not always easy to compute the value of a function at a
+particular point. The task is made easier by the availability of
+calculators and computers, but they have their own drawbacks---they do
+not always allow us to distinguish between values that are very close
+together. Nevertheless, because this method is conceptually simple and
+sometimes easy to perform, you should always consider it.
+
+\begin{example}
+Find all local maximum and minimum points for the function 
+$\ds f(x)=x^3-x$. The derivative is $\ds f'(x)=3x^2-1$. This is defined
+everywhere and is zero at $\ds x=\pm \sqrt{3}/3$. Looking first at
+$\ds x=\sqrt{3}/3$, we see that $\ds f(\sqrt{3}/3)=-2\sqrt{3}/9$. Now we test
+two points on either side of 
+$\ds x=\sqrt{3}/3$, making sure that neither is farther away than
+the nearest critical value; since $\ds \sqrt{3}<3$, $\ds \sqrt{3}/3<1$ and
+we can use $x=0$ and $x=1$. Since
+$\ds f(0)=0>-2\sqrt{3}/9$
+and $\ds f(1)=0>-2\sqrt{3}/9$, there must be a local minimum at 
+$\ds x=\sqrt{3}/3$. For $\ds x=-\sqrt{3}/3$, we see that
+$\ds f(-\sqrt{3}/3)=2\sqrt{3}/9$. This time we can use $x=0$ and $x=-1$,
+and we find that $\ds f(-1)=f(0)=0< 2\sqrt{3}/9$, so there must be a local
+maximum at $\ds x=-\sqrt{3}/3$.
+\end{example}
+\label{exam:simple cubic}
+
+Of course this example is made very simple by our choice of points to
+test, namely $x=-1$, $0$, $1$. We could have used other values, say
+$-5/4$, $1/3$, and $3/4$, but this would have made the calculations
+considerably more tedious.
+
+\begin{example}
+\label{example:max and min}
+Find all local maximum and minimum points for 
+$f(x)=\sin x+\cos x$. The derivative is $f'(x)=\cos x-\sin x$. This is
+always defined and is zero whenever $\cos x=\sin x$. Recalling that
+the $\cos x$ and $\sin x$ are the $x$ and $y$ coordinates of points on
+a unit circle, we see that $\cos x=\sin x$ when $x$ is $\pi/4$, 
+$\pi/4\pm\pi$, $\pi/4\pm2\pi$, $\pi/4\pm3\pi$, etc. Since both sine
+and cosine have a period of $2\pi$, we need only determine the status
+of $x=\pi/4$ and $x=5\pi/4$. We can use $0$ and $\pi/2$ to test the
+critical value $x= \pi/4$. 
+We find that $\ds f(\pi/4)=\sqrt{2}$, $\ds f(0)=1<\sqrt{2}$ and $\ds f(\pi/2)=1$,
+so there is a local maximum when $x=\pi/4$ and also when
+$x=\pi/4\pm2\pi$, $\pi/4\pm4\pi$, etc. We can summarize this more
+neatly by saying that there are local maxima at $\pi/4\pm 2k\pi$ for
+every integer $k$.
+
+We use $\pi$ and $2\pi$ to test the critical value $x=5\pi/4$. The
+relevant values are $\ds f(5\pi/4)=-\sqrt2$, $\ds f(\pi)=-1>-\sqrt2$,
+$\ds f(2\pi)=1>-\sqrt2$, so there is a local minimum at $x=5\pi/4$,
+$5\pi/4\pm2\pi$, $5\pi/4\pm4\pi$, etc. More succinctly, there are
+local minima at $5\pi/4\pm 2k\pi$ for
+every integer $k$.
+\end{example}
+
+\begin{exercises} In problems 1--12, find all local maximum and minimum
+points $(x,y)$ by the method of this section.
+
+\twocol
+\exercise $\ds y=x^2-x$ 
+\begin{answer} min at $x=1/2$
+\end{answer}
+
+\exercise $\ds y=2+3x-x^3$ 
+\begin{answer} min at $x=-1$, max at $x=1$
+\end{answer}
+
+\exercise $\ds y=x^3-9x^2+24x$
+\begin{answer} max at $x=2$, min at $x=4$
+\end{answer}
+
+\exercise $\ds y=x^4-2x^2+3$ 
+\begin{answer} min at $x=\pm 1$, max at $x=0$.
+\end{answer}
+
+\exercise $\ds y=3x^4-4x^3$
+\begin{answer} min at $x=1$
+\end{answer}
+
+\exercise $\ds y=(x^2-1)/x$
+\begin{answer} none
+\end{answer}
+
+\exercise $\ds y=3x^2-(1/x^2)$ 
+\begin{answer} none
+\end{answer}
+
+\exercise $y=\cos(2x)-x$ 
+\begin{answer} min at $x=7\pi/12+k\pi$, max at $x=-\pi/12+k\pi$, for integer $k$.
+\end{answer}
+
+\exercise $\ds f(x) = \begin{cases} x-1 & x < 2  \\
+x^2 & x\geq 2 \end{cases}$
+\begin{answer} none
+\end{answer}
+
+ \exercise $\ds f(x) = \begin{cases} x-3 & x < 3  \\
+x^3  & 3\leq x \leq 5 \\
+1/x  & x>5 \end{cases}$
+\begin{answer} local max at $x=5$
+\end{answer}
+
+\exercise $\ds f(x) = x^2 - 98x + 4$
+%(Hint: Complete the square.)
+\begin{answer} local min at $x=49$
+\end{answer}
+
+\exercise $\ds f(x) =\begin{cases} -2 & x = 0  \\
+1/x^2 & x \neq 0 \end{cases}$
+\begin{answer} local min at $x=0$
+\end{answer}
+
+\endtwocol
+\bsk
+\exercise  For any real number $x$ there is a unique
+  integer $n$ such that $n \leq x < n +1$, and the greatest
+  integer\index{greatest integer} function is defined as $\ds\lfloor
+  x\rfloor = n$. Where
+  are the critical values of the greatest integer function?  Which are
+  local maxima and which are local minima?
+
+\exercise Explain why the function $f(x) =1/x$ has no local
+maxima or minima.
+
+\exercise How many critical points can a quadratic polynomial function have?
+\begin{answer} one
+\end{answer}
+
+\exercise Show that a cubic polynomial can have at most two critical
+points. Give examples to show that a cubic polynomial can have zero,
+one, or two critical points.
+
+\exercise Explore the family of functions $\ds f(x) = x^3 + cx +1$ where $c$
+ is a constant.  How many and what types of local extremes are there?
+ Your answer should depend on the value of $c$, that is, different
+ values of $c$ will give different answers.
+
+\exercise We generalize the preceding two questions. Let $n$ be a
+positive integer and let $f$ be a polynomial of degree $n$. How many
+critical points can $f$ have? (Hint: Recall the {\dfont Fundamental
+  Theorem of Algebra\index{Fundamental Theorem of Algebra}}, 
+which says that a polynomial of degree $n$ has
+  at most $n$ roots.)
+
+\end{exercises}
+

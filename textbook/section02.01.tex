@@ -1,0 +1,276 @@
+\section{The slope of a function}{}{}
+\label{sec:slope of a function}
+
+Suppose that $y$ is a function of $x$, say $y = f(x)$.
+It is often necessary to know how sensitive the value of $y$
+is to small changes in $x$.
+
+% Example 1
+\begin{example}
+Take, for example, $\ds y=f(x)=\sqrt{625-x^2}$ (the upper semicircle of radius
+25 centered at the origin).  When $x=7$, we find that $\ds y=\sqrt{625-49}=24$.
+Suppose we want to know how much $y$ changes when $x$ increases a little,
+say to 7.1 or 7.01.
+
+In the case of a straight line $y=mx+b$, the slope $m=\Delta y/\Delta
+x$ measures the change in $y$ per unit change in $x$. This can be
+interpreted as a measure of ``sensitivity''; for example, if
+$y=100x+5$, a small change in $x$ corresponds to a change one hundred
+times as large in $y$, so $y$ is quite sensitive to changes in $x$.
+
+Let us look at the
+same ratio $\Delta y/\Delta x$ for our function
+$\ds y=f(x)=\sqrt{625-x^2}$ when $x$ changes from 7 to $7.1$.  Here $\Delta
+x=7.1-7=0.1$ is the change in $x$, and
+\begin{align*}
+ \Delta y =f(x+\Delta x)-f(x)&=f(7.1)-f(7) \\
+          &=\sqrt{625-7.1^2}-\sqrt{625-7^2}\approx 23.9706-24=-0.0294. \\
+\end{align*}
+Thus, $\Delta y/\Delta x\approx -0.0294/0.1=-0.294$. This means that $y$
+changes by less than one third the change in $x$, so apparently $y$ is
+not very sensitive to changes in $x$ at $x=7$. We say ``apparently''
+here because we don't really know what happens between 7 and
+$7.1$. Perhaps $y$ changes dramatically as $x$ runs through the values
+from 7 to $7.1$, but at $7.1$ $y$ just happens to be close to its
+value at $7$. This is not in fact the case for this particular
+function, but we don't yet know why.
+\end{example}
+
+One way to interpret the above calculation is by reference to a line.
+We have computed the slope of the line through $(7,24)$ and
+$(7.1,23.9706)$, called a {\dfont chord\index{chord}} of the circle.
+In general, if we draw the chord from the point $(7,24)$ to a nearby
+point on the semicircle $(7+\Delta x,\,f(7+\Delta x))$, the slope of this
+chord is the so-called {\dfont difference quotient\index{difference quotient}}
+$$
+\hbox{slope~of~chord}={f(7+\Delta x)-f(7)\over \Delta x}=
+{\sqrt{625-(7+\Delta x)^2}-24\over \Delta x}.
+$$ For example, if $x$ changes only from 7 to 7.01, then the
+difference quotient (slope of the chord) is approximately equal to
+$(23.997081-24)/0.01=-0.2919$.  This is slightly less steep than the
+chord from $(7,24)$ to $(7.1,23.9706)$.
+
+As the second value $7+\Delta x$ moves in towards 7, the chord joining
+$(7,f(7))$ to $(7+\Delta x,f(7+\Delta x))$ shifts slightly.  As
+indicated in figure~\xrefn{fig:chords}, as $\Delta x$ gets smaller and
+smaller, the chord joining $(7,24)$ to $(7+\Delta x,f(7+\Delta x))$
+gets closer and closer to the {\dfont tangent line\index{tangent
+    line}} to the circle at the point $(7,24)$.  (Recall that the
+tangent line is the line that just grazes the circle at that point,
+i.e., it doesn't meet the circle at any second point.)  Thus, as
+$\Delta x$ gets smaller and smaller, the slope $\Delta y/\Delta x$ of
+the chord gets closer and closer to the slope of the tangent line.
+This is actually quite difficult to see when $\Delta x$ is small,
+because of the scale of the graph. The values of $\Delta x$ used for
+the figure are $1$, $5$, $10$ and $15$, not really very small values.
+The tangent line is the one that is uppermost at the right hand
+endpoint.
+
+% \figure
+% \vbox{\beginpicture
+% \normalgraphs
+% \ninepoint
+% \setcoordinatesystem units <2truemm,2truemm>
+% \setplotarea x from 0 to 26, y from 0 to 26
+% \circulararc 90 degrees from 25 0 center at 0 0
+% \axis left ticks numbered from 5 to 25 by 5 /
+% \axis bottom ticks numbered from 5 to 25 by 5 /
+% \plot 0 26.04 25 18.75 /
+% \plot 0 26.2 25 18.3379 /
+% \plot 0 26.896 25 16.554 /
+% \plot 0 27.97 25 13.8 /
+% \plot 0 30.2 25 8.02 /
+% \endpicture}
+% \figrdef{fig:chords}
+% \endfigure{Chords approximating the tangent line.
+% (\expandafter\url\expandafter{\liveurl jsxgraph/secant_lines.html}%
+% AP\endurl)}
+
+So far we have found the slopes of two chords that should be close to
+the slope of the tangent line, but what is the slope of the tangent
+line exactly? Since the tangent line touches the circle at just one
+point, we will never be able to calculate its slope directly, using
+two ``known'' points on the line. What we need is a way to capture
+what happens to the slopes of the chords as they get ``closer and
+closer'' to the tangent line.
+
+Instead of looking at more particular values of $\Delta x$, let's see
+what happens if we do some algebra with the difference quotient using
+just $\Delta x$. The slope of a chord from $(7,24)$ to a nearby point
+is given by
+\begin{align*}
+{\sqrt{625-(7+\Delta x)^2} - 24\over \Delta x}&=
+{\sqrt{625-(7+\Delta x)^2} - 24\over \Delta x}{\sqrt{625-(7+\Delta
+    x)^2}+24\over \sqrt{625-(7+\Delta x)^2}+24} \\
+&={625-(7+\Delta x)^2-24^2\over \Delta x(\sqrt{625-(7+\Delta x)^2}+24)} \\
+&={49-49-14\Delta x-\Delta x^2\over  \Delta x(\sqrt{625-(7+\Delta
+    x)^2}+24)} \\
+&={\Delta x(-14-\Delta x)\over \Delta x(\sqrt{625-(7+\Delta
+    x)^2}+24)} \\
+&= {-14-\Delta x\over\sqrt{625-(7+\Delta
+    x)^2}+24} \\
+\end{align*}
+Now, can we tell by looking at this last formula what happens when
+$\Delta x$ gets very close to zero? The numerator clearly gets very
+close to $-14$ while the denominator gets very close to
+$\ds \sqrt{625-7^2}+24=48$. Is the fraction therefore very close to 
+$-14/48 = -7/24 \cong -0.29167$? It certainly seems reasonable, and in
+fact it is true: as $\Delta x$ gets closer and closer to zero, the
+difference quotient does in fact get closer and closer to $-7/24$, and
+so the slope of the tangent line is exactly $-7/24$.
+
+What about the slope of the tangent line at $x=12$? Well, 12 can't be
+all that different from 7; we just have to redo the calculation with
+12 instead of 7. This won't be hard, but it will be a bit
+tedious. What if we try to do all the algebra without using a specific
+value for $x$? Let's copy from above, replacing 7 by  $x$. We'll have
+to do a bit more than that---for example, 
+the ``24'' in the calculation came from 
+$\ds \sqrt{625-7^2}$, so we'll need to fix that too.
+\begin{align*}
+&{\sqrt{625-(x+\Delta x)^2} - \sqrt{625-x^2}\over \Delta x}= \\
+\qquad&={\sqrt{625-(x+\Delta x)^2} - \sqrt{625-x^2}\over \Delta x}{\sqrt{625-(x+\Delta
+    x)^2}+\sqrt{625-x^2}\over \sqrt{625-(x+\Delta x)^2}+\sqrt{625-x^2}} \\
+&={625-(x+\Delta x)^2-625+x^2\over \Delta x(\sqrt{625-(x+\Delta x)^2}+\sqrt{625-x^2})} \\
+&={625-x^2-2x\Delta x-\Delta x^2-625+x^2\over  \Delta x(\sqrt{625-(x+\Delta
+    x)^2}+\sqrt{625-x^2})} \\
+&={\Delta x(-2x-\Delta x)\over \Delta x(\sqrt{625-(x+\Delta
+    x)^2}+\sqrt{625-x^2})} \\
+&= {-2x-\Delta x\over\sqrt{625-(x+\Delta
+    x)^2}+\sqrt{625-x^2}} \\
+\end{align*}
+Now what happens when $\Delta x$ is very close to zero? Again it seems
+apparent that the quotient will be very close to
+$${-2x\over \sqrt{625-x^2}+\sqrt{625-x^2}}
+={-2x\over 2\sqrt{625-x^2}}={-x\over \sqrt{625-x^2}}.
+$$
+Replacing $x$ by 7 gives $-7/24$, as before, and now we can easily do
+the computation for 12  or any other value of
+$x$ between $-25$ and 25.
+
+So now we have a single, simple formula, $\ds {-x/ \sqrt{625-x^2}}$,
+that tells us the slope of the tangent line for any value of
+$x$. This slope, in turn, tells us how sensitive the value of $y$ is
+to changes in the value of $x$. 
+
+What do we call such a formula? That is, a formula with one variable,
+so that substituting an ``input'' value for the variable produces a
+new ``output'' value? This is a function. Starting with one function,
+$\ds \sqrt{625-x^2}$, we have derived, by means of some slightly nasty
+algebra, a new function, $\ds {-x/ \sqrt{625-x^2}}$, that gives us
+important information about the original function. This new function
+in fact is called the {\dfont derivative\index{derivative}} of the
+original function. If the original is referred to as $f$ or $y$ then
+the derivative is often written $f'$ or $y'$ and pronounced ``f
+prime'' or ``y prime'', so in this case we might write $\ds f'(x)=-x/
+\sqrt{625-x^2}$. At a particular point, say $x=7$, we say that
+$f'(7)=-7/24$ or ``$f$ prime of 7 is $-7/24$'' or ``the derivative of
+$f$ at 7 is $-7/24$.''
+
+To summarize, we compute the derivative of $f(x)$ by forming the
+difference quotient
+$$
+{f(x+\Delta x)-f(x)\over \Delta x},
+$$
+which is the slope of a line, then we figure out what happens when
+$\Delta x$ gets very close to 0. 
+
+
+We should note that in 
+the particular case of a circle, there's a simple way to find the
+derivative.  Since the tangent to a circle at a point is perpendicular to
+the radius drawn to the point of contact, its slope is the negative
+reciprocal of the slope of the radius.  The radius joining $(0,0)$ to
+$(7,24)$ has slope 24/7.  Hence, the tangent line has slope
+$-7/24$. In general, a radius to the point $\ds (x,\sqrt{625-x^2})$ has
+slope $\ds \sqrt{625-x^2}/x$, so the slope of the tangent line is
+$\ds {-x/ \sqrt{625-x^2}}$, as before. It is {\bf NOT} always true that a
+tangent line is perpendicular to a line from the origin---don't use
+this shortcut in any other circumstance. 
+
+As above, and as you might expect, for different values of $x$ we
+generally get different values of the derivative $f'(x)$. Could it be
+that the derivative always has the same value? This would mean that
+the slope of $f$, or the slope of its tangent line, is the same
+everywhere. One curve that always has the same slope is a line; it
+seems odd to talk about the tangent line to a line, but if it makes
+sense at all the tangent line must be the line itself. It is not hard
+to see that the derivative of $f(x)=mx+b$ is $f'(x)=m$; see
+exercise~\xrefn{ex:derivative of a line} .
+
+\begin{exercises}
+
+\exercise
+Draw the graph of the function $\ds y=f(x)=\sqrt{169-x^2}$ between $x=0$
+and $x=13$.  Find the slope $\Delta y/\Delta x$ of the chord between the
+points of the circle lying over (a) $x=12$ and $x=13$, (b) $x=12$ and
+$x=12.1$,  (c) $x=12$ and $x=12.01$, (d) $x=12$ and $x=12.001$.  Now use
+the geometry of tangent lines on a circle to find (e) the exact value of the
+derivative $f'(12)$.  Your answers to (a)--(d) should be getting closer and
+closer to your answer to (e).
+\begin{answer} $-5$, $-2.47106145$, $-2.4067927$, $-2.400676$, $-2.4$
+\end{answer}
+
+\exercise
+Use geometry to find the derivative $f'(x)$ of the function
+$\ds f(x)=\sqrt{625-x^2}$ in the text for each of the following $x$: (a) 20,
+(b) 24, (c) $-7$, (d) $-15$.  Draw a graph of the upper semicircle, and
+draw the tangent line at each of these four points.
+\begin{answer} $-4/3$, $-24/7$, $7/24$, $3/4$
+\end{answer}
+
+
+\exercise
+Draw the graph of the function $y=f(x)=1/x$ between $x=1/2$ and $x=4$.
+Find the slope of the chord between (a) $x=3$ and $x=3.1$, (b) $x=3$ and
+$x=3.01$, (c) $x=3$ and $x=3.001$.  Now use algebra to find a simple
+formula for the slope of the chord between $(3,f(3))$ and $(3+\Delta
+x,f(3+\Delta x))$.  Determine what happens when $\Delta x$ approaches 0.
+In your graph of $y=1/x$, draw the straight line through the point
+$(3,1/3)$ whose slope is this limiting value of the difference quotient as
+$\Delta x$ approaches 0.
+\begin{answer} $-0.107526881$, $-0.11074197$, $-0.1110741$, 
+$\ds{-1\over3(3+\Delta x)}\rightarrow {-1\over9}$
+\end{answer}
+
+\exercise
+Find an algebraic expression for the difference quotient $\ds \bigl(f(1+\Delta
+x)-f(1)\bigr)/\Delta x$ when $\ds f(x)=x^2-(1/x)$.  Simplify the expression as
+much as possible.  Then determine what happens as $\Delta x$ approaches 0.
+That value is $f'(1)$.
+\begin{answer} $\ds{3+3\Delta x+\Delta x^2\over1+\Delta x}\rightarrow3$ 
+\end{answer}
+
+\exercise
+Draw the graph of $\ds y=f(x)=x^3$ between $x=0$ and $x=1.5$.  Find the slope
+of the chord between (a) $x=1$ and $x=1.1$, (b) $x=1$ and $x=1.001$, (c)
+$x=1$ and $x=1.00001$.  Then use algebra to find a simple formula for the
+slope of the chord between $1$ and $1+\Delta x$.  (Use the expansion
+$\ds (A+B)^3=A^3+3A^2B+3AB^2+B^3$.)  Determine what happens as $\Delta x$
+approaches 0, and in your graph of $\ds y=x^3$ draw the straight line through
+the point $(1,1)$ whose slope is equal to the value you just found.
+\begin{answer} $3.31$, $3.003001$, $3.0000$,\hfill\break
+ $3+3\Delta x+\Delta x^2\rightarrow3$
+\end{answer}
+
+\exercise
+Find an algebraic expression for the difference quotient $(f(x+\Delta
+x)-f(x))/\Delta x$ when $f(x)=mx+b$.  Simplify the expression as
+much as possible.  Then determine what happens as $\Delta x$ approaches 0.
+That value is $f'(x)$.
+\begin{answer} $m$
+\end{answer}
+\label{ex:derivative of a line}
+
+\exercise Sketch the unit circle.  Discuss the behavior of the slope
+of the tangent line at various angles around the circle.  Which
+trigonometric function gives the slope of the tangent line at an angle
+$\theta$?  Why? Hint: think in terms of ratios of sides of
+  triangles.
+
+ \exercise Sketch the parabola $\ds y=x^2$.  For what values of $x$ on the parabola
+ is the slope of the tangent line positive?  Negative?  What do you notice
+ about the graph at the point(s) where the sign of the slope changes from
+ positive to negative and vice versa?
+
+\end{exercises}

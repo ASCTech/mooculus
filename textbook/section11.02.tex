@@ -1,0 +1,214 @@
+\section{Series}{}{}
+\nobreak
+While much more can be said about sequences, we now turn to our
+principal interest, series. Recall that a series, roughly speaking, is
+the sum of a sequence: if $\ds\{a_n\}_{n=0}^\infty$ is a sequence then the
+associated series is
+$$\sum_{i=0}^\infty a_n=a_0+a_1+a_2+\cdots$$
+Associated with a series is a second sequence, called the {\dfont sequence of
+  partial sums\index{sequence!of partial sums}\/} 
+$\ds\{s_n\}_{n=0}^\infty$:
+$$s_n=\sum_{i=0}^n a_i.$$
+So
+$$s_0=a_0,\quad s_1=a_0+a_1,\quad s_2=a_0+a_1+a_2,\quad \ldots$$
+A series converges\index{series!convergent}\index{convergent series} 
+if the sequence of partial sums converges, and otherwise the series 
+diverges\index{series!divergent}\index{divergent series}.
+
+\begin{example}
+If $\ds a_n=kx^n$, $\ds\sum_{n=0}^\infty a_n$ is called a 
+{\dfont geometric series\index{geometric series}\index{series!geometric}\/}.
+A typical partial sum is
+$$s_n=k+kx+kx^2+kx^3+\cdots+kx^n=k(1+x+x^2+x^3+\cdots+x^n).$$
+We note that
+$$\eqalign{
+  s_n(1-x)&=k(1+x+x^2+x^3+\cdots+x^n)(1-x) \\
+  &=k(1+x+x^2+x^3+\cdots+x^n)1-k(1+x+x^2+x^3+\cdots+x^{n-1}+x^n)x \\
+  &=k(1+x+x^2+x^3+\cdots+x^n-x-x^2-x^3-\cdots-x^n-x^{n+1}) \\
+  &=k(1-x^{n+1}) \\
+}$$
+so
+$$\eqalign{
+  s_n(1-x)&=k(1-x^{n+1}) \\
+  s_n&=k{1-x^{n+1}\over 1-x}. \\
+}$$
+If $|x|<1$, $\ds\lim_{n\to\infty}x^n=0$ so
+$$
+  \lim_{n\to\infty}s_n=\lim_{n\to\infty}k{1-x^{n+1}\over 1-x}=
+  k{1\over 1-x}.
+$$ 
+Thus, when $|x|<1$ the geometric series converges to $k/(1-x)$. When, for
+  example, $k=1$ and $x=1/2$:
+$$
+  s_n={1-(1/2)^{n+1}\over 1-1/2}={2^{n+1}-1\over 2^n}=2-{1\over 2^n}
+  \hbox{\quad and\quad } \sum_{n=0}^\infty {1\over 2^n} = 
+  {1\over 1-1/2} = 2.
+$$
+We began the chapter with the series
+$$\sum_{n=1}^\infty {1\over 2^n},$$
+namely, the geometric series without the first term $1$. Each partial
+sum of this series is 1 less than the corresponding partial sum for 
+the geometric series, so of course the limit is also one less than the
+value of the geometric series, that is,
+$$\sum_{n=1}^\infty {1\over 2^n}=1.$$
+\vskip-10pt\end{example}
+
+It is not hard to see that the following theorem follows from
+theorem~\xrefn{thm:properties of sequences}. 
+
+\begin{theorem} \relax\label{thm:series are linear}
+Suppose that $\sum a_n$ and $\sum b_n$ are convergent series,
+and $c$ is a constant. Then
+
+\begin{itemize} % BADBAD
+\item{1.} $\ds\sum ca_n$ is convergent and $\ds\sum ca_n=c\sum a_n$
+\item{2.} $\ds\sum (a_n+b_n)$ is convergent and 
+$\ds\sum (a_n+b_n)=\sum a_n+\sum b_n$.
+\end{itemize}
+\end{proof}
+
+The two parts of this theorem are subtly different. Suppose that
+$\sum a_n$ diverges; does $\sum ca_n$ also diverge? Yes: suppose
+instead that $\sum ca_n$ converges; then by the theorem,
+$\sum (1/c)ca_n$ converges, but this is the same as $\sum a_n$,
+which by assumption diverges. Hence $\sum ca_n$ also diverges. Note
+that we are applying the theorem with $a_n$ replaced by $ca_n$ and $c$
+replaced by $(1/c)$.
+
+Now suppose that $\sum a_n$ and $\sum b_n$ diverge; does
+$\sum (a_n+b_n)$ also diverge? Now the answer is no: Let $a_n=1$ and
+$b_n=-1$, so certainly $\sum a_n$ and $\sum b_n$ diverge. But
+$\sum (a_n+b_n)=\sum(1+-1)=\sum 0 = 0$. Of course, sometimes 
+$\sum (a_n+b_n)$ will also diverge, for example, if $a_n=b_n=1$, then
+$\sum (a_n+b_n)=\sum(1+1)=\sum 2$ diverges.
+
+In general, the sequence of partial sums $\ds s_n$ is harder to understand
+and analyze than the sequence of terms $\ds a_n$, and it is difficult
+to determine whether series converge and if so to what. Sometimes
+things are relatively simple, starting with the following.
+
+\begin{theorem} If $\sum a_n$ converges then $\ds\lim_{n\to\infty}a_n=0$.
+\begin{proof} Since $\sum a_n$ converges, $\ds\lim_{n\to\infty}s_n=L$ and 
+$\ds\lim_{n\to\infty}s_{n-1}=L$, because this really says the same
+thing but ``renumbers'' the terms. By
+theorem~\xrefn{thm:properties of sequences}, 
+$$
+  \lim_{n\to\infty} (s_{n}-s_{n-1})=
+  \lim_{n\to\infty} s_{n}-\lim_{n\to\infty}s_{n-1}=L-L=0.
+$$
+But
+$$
+  s_{n}-s_{n-1}=(a_0+a_1+a_2+\cdots+a_n)-(a_0+a_1+a_2+\cdots+a_{n-1})
+  =a_n,
+$$
+so as desired $\ds\lim_{n\to\infty}a_n=0$.
+\end{proof}
+\label{thm:divergence test}
+
+This theorem presents an easy divergence\index{divergence test} 
+test: if given a series $\sum
+a_n$ the limit $\ds\lim_{n\to\infty}a_n$ does not exist or has a value
+other than zero, the series diverges. Note well that the converse is
+{\em not\/} true: If $\ds\lim_{n\to\infty}a_n=0$ then the series does
+not necessarily converge.
+
+\begin{example}
+Show that $\ds\sum_{n=1}^\infty {n\over n+1}$ diverges.
+\par\nobreak\ssk\noindent
+We compute the limit:
+$$\lim _{n\to\infty}{n\over n+1}=1\not=0.$$
+Looking at the first few terms perhaps makes it clear that the series
+has no chance of converging:
+$${1\over2}+{2\over3}+{3\over4}+{4\over5}+\cdots$$
+will just get larger and larger; indeed, after a bit longer the series
+starts to look very much like $\cdots+1+1+1+1+\cdots$, and of course
+if we add up enough 1's we can make the sum as large as we desire.
+\end{example}
+
+\begin{example}
+Show that $\ds\sum_{n=1}^\infty {1\over n}$ diverges.
+\par\nobreak\ssk\noindent
+Here the theorem does not apply: $\ds\lim _{n\to\infty} 1/n=0$, so it
+looks like perhaps the series converges. Indeed, if you have the
+fortitude (or the software) to add up the first 1000 terms you will find that
+$$\sum_{n=1}^{1000} {1\over n}\approx 7.49,$$
+so it might be reasonable to speculate that the series converges to
+something in the neighborhood of 10. But in fact the partial sums do go
+to infinity; they just get big very, very slowly. Consider the
+following:
+\msk
+\hbox to \hsize{$\ds 1+{1\over 2}+{1\over 3}+{1\over 4} > 
+1+{1\over 2}+{1\over 4}+{1\over
+  4} = 1+{1\over 2}+{1\over 2}$\hfill}
+\msk
+\hbox to \hsize{$\ds 1+{1\over 2}+{1\over 3}+{1\over 4}+
+{1\over 5}+{1\over 6}+{1\over
+    7}+{1\over 8} > 
+1+{1\over 2}+{1\over 4}+{1\over 4}+{1\over 8}+{1\over 8}+{1\over
+    8}+{1\over 8} = 1+{1\over 2}+{1\over 2}+{1\over 2}$\hfill}
+\msk
+\hbox to \hsize{$\ds 1+{1\over 2}+{1\over 3}+\cdots+{1\over16}>
+1+{1\over 2}+{1\over 4}+{1\over 4}+{1\over 8}+\cdots+{1\over
+  8}+{1\over16}+\cdots +{1\over16} =1+{1\over 2}+{1\over 2}+{1\over
+  2}+{1\over 2}$\hfill}
+
+\msk\noindent
+and so on. By swallowing up more and more terms we can always manage
+to add at least another $1/2$ to the sum, and by adding enough of
+these we can make the partial sums as big as we like. In fact, it's
+not hard to see from this pattern that
+$$1+{1\over 2}+{1\over 3}+\cdots+{1\over 2^n} > 1+{n\over 2},$$
+so to make sure the sum is over 100, for example, we'd add
+up terms until we get to around $\ds 1/2^{198}$, that is,
+about $\ds 4\cdot 10^{59}$ terms. This series, $\sum (1/n)$, is called the
+{\dfont harmonic series\index{series!harmonic}\index{harmonic series}\/}.
+\end{example}
+
+\begin{exercises}
+
+\exercise Explain why $\ds\sum_{n=1}^\infty {n^2\over 2n^2+1}$
+diverges.
+\begin{answer} $\ds\lim_{n\to\infty} n^2/(2n^2+1)=1/2$
+\end{answer}
+
+\exercise Explain why $\ds\sum_{n=1}^\infty {5\over 2^{1/n}+14}$
+diverges.
+\begin{answer} $\ds\lim_{n\to\infty} 5/(2^{1/n}+14)=1/3$
+\end{answer}
+
+\exercise Explain why $\ds\sum_{n=1}^\infty {3\over n}$
+diverges.
+\begin{answer} $\sum_{n=1}^\infty {1\over n}$ diverges, so $\ds\sum_{n=1}^\infty 3{1\over n}$ diverges
+\end{answer}
+
+\twocol
+
+\exercise Compute $\ds\sum_{n=0}^\infty {4\over (-3)^n}- {3\over 3^n}$. 
+\begin{answer} $-3/2$
+\end{answer}
+
+\exercise Compute $\ds\sum_{n=0}^\infty {3\over 2^n}+ {4\over 5^n}$. 
+\begin{answer} $11$
+\end{answer}
+
+\exercise Compute $\ds\sum_{n=0}^\infty {4^{n+1}\over 5^n}$.
+\begin{answer} $20$
+\end{answer}
+
+\exercise Compute $\ds\sum_{n=0}^\infty {3^{n+1}\over 7^{n+1}}$.
+\begin{answer} $3/4$
+\end{answer}
+
+\exercise Compute $\ds\sum_{n=1}^\infty \left({3\over 5}\right)^n$.
+\begin{answer} $3/2$
+\end{answer}
+
+\exercise Compute $\ds\sum_{n=1}^\infty {3^n\over 5^{n+1}}$.
+\begin{answer} $3/10$
+\end{answer}
+
+\endtwocol
+
+\end{exercises}
+
+

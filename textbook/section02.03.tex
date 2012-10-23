@@ -1,0 +1,558 @@
+\section{Limits}{}{}
+\label{sec:limits}
+
+In the previous two sections we computed some quantities of interest
+(slope, velocity) by seeing that some expression ``goes to'' or
+``approaches'' or ``gets really close to'' a particular value. In the
+examples we saw, this idea may have been clear enough, but it is too
+fuzzy to rely on in more difficult circumstances. In this section we
+will see how to make the idea more precise.
+
+There is an important feature of the examples we have seen. Consider
+again the formula
+$${-19.6\Delta x-4.9\Delta x^2\over \Delta x}.
+$$
+We wanted to know what happens to this fraction as ``$\Delta x$ goes
+to zero.'' Because we were able to simplify the fraction, it was easy
+to see the answer, but it was not quite as simple as ``substituting
+zero for $\Delta x$,'' as that would give
+$${-19.6\cdot 0 - 4.9\cdot 0\over 0},$$
+which is meaningless. The quantity we are really interested in does
+not make sense ``at zero,'' and this is why the answer to the original
+problem (finding a velocity or a slope) was not immediately obvious. In
+other words, we are generally going to want to figure out what a
+quantity ``approaches'' in situations where we can't merely plug in a
+value. If you would like to think about a hard example (which we will
+analyze later) consider what happens to $(\sin x)/x$ as $x$ approaches
+zero. 
+
+\begin{example}
+Does $\ds \sqrt{x}$ approach 1.41 as $x$ approaches 2? In this case it
+is possible to compute the actual value $\ds \sqrt{2}$ to a high precision
+to answer the question. But since in general we won't be able to do
+that, let's not. We might start by computing $\ds \sqrt{x}$ for values of
+$x$ close to 2, as we did in the previous sections. Here are some
+values: $\ds \sqrt{2.05} = 1.431782106$,
+        $\ds \sqrt{2.04} = 1.428285686$,
+        $\ds \sqrt{2.03} = 1.424780685$,
+        $\ds \sqrt{2.02} = 1.421267040$,
+        $\ds \sqrt{2.01} = 1.417744688$,
+        $\ds \sqrt{2.005} = 1.415980226$,
+        $\ds \sqrt{2.004} = 1.415627070$,
+        $\ds \sqrt{2.003} = 1.415273825$,
+        $\ds \sqrt{2.002} = 1.414920492$,
+        $\ds \sqrt{2.001} = 1.414567072$.
+So it looks at least possible that indeed these values ``approach''
+1.41---already $\ds \sqrt{2.001}$ is quite close. If we continue this
+process, however, at some point we will appear to ``stall.'' In fact, 
+$\ds \sqrt{2}=1.414213562\ldots$, so we will never even get as far as
+1.4142, no matter how long we continue the sequence. 
+\end{example}
+
+So in a fuzzy,
+everyday sort of sense, it is true that $\ds \sqrt{x}$ ``gets close to''
+1.41, but it does not ``approach'' 1.41 in the sense we want. To
+compute an exact slope or an exact velocity, what we want to know is that
+a given quantity becomes ``arbitrarily close'' to a fixed value,
+meaning that the first quantity can be made ``as close as we like'' to
+the fixed value. Consider again the quantities
+$${-19.6\Delta x-4.9\Delta x^2\over \Delta x}=-19.6-4.9\Delta x.
+$$
+These two quantities are equal as long as $\Delta x$ is not zero; if
+$\Delta x$ is zero, the left hand quantity is meaningless, while the
+right hand one is $-19.6$. Can we say more than we did before about
+why the right hand side ``approaches'' $-19.6$, in the desired sense?
+Can we really make it ``as close as we want'' to $-19.6$? Let's try a
+test case. Can we make $-19.6-4.9\Delta x$ within one millionth
+($0.000001$) of $-19.6$? The values within a millionth of $-19.6$ are
+those in the interval $(-19.600001,-19.599999)$. As $\Delta x$
+approaches zero, does $-19.6-4.9\Delta x$ eventually reside inside
+this interval? If $\Delta x$ is positive, this would require that
+$-19.6-4.9\Delta x> -19.600001$. This is something we can manipulate
+with a little algebra:
+\begin{align*}
+-19.6-4.9\Delta x&> -19.600001 \\
+-4.9\Delta x&>-0.000001 \\
+\Delta x&<-0.000001/-4.9 \\
+\Delta x&<0.0000002040816327\ldots \\
+\end{align*}
+Thus, we can say with certainty that if $\Delta x$ is positive and
+less than $0.0000002$, then $\Delta x < 0.0000002040816327\ldots$ and
+so $-19.6-4.9\Delta x > -19.600001$. We could do a similar calculation
+if $\Delta x$ is negative.
+
+So now we know that we can make $-19.6-4.9\Delta x$ within one
+millionth of $-19.6$. But can we make it ``as close as we want''?
+In this case, it is quite simple to see that the answer is yes, by
+modifying the calculation we've just done. It may be helpful to think
+of this as a game. I claim that I can make $-19.6-4.9\Delta x$ as
+close as you desire to $-19.6$ by making $\Delta x$ ``close enough''
+to zero. So the game is: you give me a number, like $\ds 10^{-6}$, and I
+have to come up with a number representing how close $\Delta x$ must
+be to zero to guarantee that $-19.6-4.9\Delta x$ is at least as close
+to $-19.6$ as you have requested. 
+
+Now if we actually play this game, I could redo the calculation above
+for each new number you provide. What I'd like to do is somehow see
+that I will always succeed, and even more, I'd like to have a simple
+strategy so that I don't have to do all that algebra every time.
+A strategy in this case would be a formula that gives me a correct
+answer no matter what you specify. So suppose the number you give me
+is $\epsilon$. How close does $\Delta x$ have to be to zero to
+guarantee that $-19.6-4.9\Delta x$ is in $(-19.6-\epsilon,
+-19.6+\epsilon)$? If $\Delta x$ is positive, we need:
+\begin{align*}
+-19.6-4.9\Delta x&> -19.6-\epsilon \\
+-4.9\Delta x&>-\epsilon \\
+\Delta x&<-\epsilon/-4.9 \\
+\Delta x&<\epsilon/4.9 \\
+\end{align*}
+So if I pick any number $\delta$ that is less than $\epsilon/4.9$, the
+algebra tells me that whenever $\Delta x<\delta$ then 
+$\Delta x<\epsilon/4.9$ and so $-19.6-4.9\Delta x$ is within
+$\epsilon$ of $-19.6$. (This is exactly what I did in the example:
+I picked $\delta = 0.0000002 < 0.0000002040816327\ldots$.)
+A similar calculation again works for negative
+$\Delta x$.
+The important fact is that this is now a completely general result---it
+shows that I can always win, no matter what ``move'' you make.
+
+Now we can codify this by giving a precise definition to replace the
+fuzzy, ``gets closer and closer'' language we have used so
+far. Henceforward, we will say something like ``the limit of
+$\ds (-19.6\Delta x-4.9\Delta x^2)/\Delta x$ as $\Delta x$ goes to zero is
+$-19.6$,'' and abbreviate this mouthful as
+$$\lim_{\Delta x\to 0} {-19.6\Delta x-4.9\Delta x^2\over \Delta x}
+= -19.6.
+$$
+Here is the actual, official definition of ``limit''\index{limit}.
+
+\begin{definition} (Limit) Suppose $f$ is a function. We say that $\ds \lim_{x\to
+  a}f(x)=L$ if for every $\epsilon>0$ there is a $\delta > 0$ so that
+  whenever $0 < |x-a| < \delta$, $|f(x)-L|<\epsilon$.
+\end{definition}
+\label{def:limit}
+
+The $\epsilon$ and $\delta$ here play exactly the role they did in the
+preceding discussion. The definition says, in a very precise way, that
+$f(x)$ can be made as close as desired to $L$ (that's the 
+$|f(x)-L|<\epsilon$ part) by making $x$ close enough to $a$ (the 
+$0 < |x-a| < \delta$ part). Note that we specifically make no mention
+of what must happen if $x=a$, that is, if $|x-a|=0$. This is because
+in the cases we are most interested in, substituting $a$ for $x$
+doesn't even make sense.
+
+Make sure you are not confused by the names of important
+quantities. The generic definition talks about $f(x)$, but the
+function and the variable might have other names. In the discussion
+above, the function we analyzed was 
+$${-19.6\Delta x-4.9\Delta x^2\over \Delta x}.
+$$
+and the variable of the limit was not $x$ but $\Delta x$. The $x$ was
+the variable of the original function; when we were trying to compute
+a slope or a velocity, $x$ was essentially a fixed quantity, telling us
+at what point we wanted the slope. (In the velocity problem, it was
+literally a fixed quantity, as we focused on the time 2.) The quantity
+$a$ of the definition in all the examples was zero: we were always
+interested in what happened as $\Delta x$ became very close to zero.
+
+Armed with a precise definition, we can now prove that certain
+quantities behave in a particular way. The bad news is that even
+proofs for simple quantities can be quite tedious and complicated; the
+good news is that we rarely need to do such proofs, because most
+expressions act the way you would expect, and this can be proved once
+and for all.
+
+\exam\relax
+\label{exam:epsilon-delta proof}
+Let's show carefully that $\ds \lim_{x\to 2} x+4 = 6$. This is not
+something we ``need'' to prove, since it is ``obviously'' true. But if
+we couldn't prove it using our official definition there would be
+something very wrong with the definition.
+
+As is often the case in mathematical proofs, it helps to work
+backwards. We want to end up showing that under certain circumstances
+$x+4$ is close to 6; precisely, we want to show that
+$|x+4-6|<\epsilon$,
+or $|x-2|<\epsilon$. Under what circumstances? We want this to be true
+whenever $0<|x-2|<\delta$. So the question becomes: can we choose a
+value for $\delta$ that guarantees that $0<|x-2|<\delta$ implies
+$|x-2|<\epsilon$? Of course: no matter what $\epsilon$ is,
+$\delta=\epsilon$ works.
+%\end{example}
+
+So it turns out to be very easy to prove something ``obvious,'' which
+is nice. It doesn't take long before things get trickier, however.
+
+\begin{example}
+It seems clear that $\ds \lim_{x\to 2} x^2=4$. Let's try to prove it. We
+will want to be able to show that $\ds |x^2-4|<\epsilon$ whenever 
+$0<|x-2|<\delta$, by choosing $\delta$ carefully. Is there any
+connection between $|x-2|$ and $\ds |x^2-4|$? Yes, and it's not hard to
+spot, but it is not so simple as the previous example. We can write
+$\ds |x^2-4|=|(x+2)(x-2)|$. Now when $|x-2|$ is small, part of 
+$|(x+2)(x-2)|$ is small, namely $(x-2)$. What about $(x+2)$? If $x$ is
+close to 2, $(x+2)$ certainly can't be too big, but we need to somehow
+be precise about it. Let's recall the ``game'' version of what is
+going on here. You get to pick an $\epsilon$ and I have to pick a
+$\delta$ that makes things work out. Presumably it is the really tiny
+values of $\epsilon$ I need to worry about, but I have to be prepared
+for anything, even an apparently ``bad'' move like $\epsilon=1000$.
+I expect that $\epsilon$ is going to be small, and that the
+corresponding $\delta$ will be small, certainly less than 1.
+If $\delta\le 1$ then
+$|x+2|<5$ when $|x-2|<\delta$ (because if $x$ is
+within 1 of 2, then $x$ is between 1 and 3 and $x+2$ is between 3 and
+5). So then I'd be trying to show that
+$|(x+2)(x-2)|<5|x-2|<\epsilon$. So now how can I pick $\delta$ so that 
+$|x-2|<\delta$ implies $5|x-2|<\epsilon$? This is easy: use
+$\delta=\epsilon/5$, so $5|x-2|<5(\epsilon/5) = \epsilon$. But what if
+the $\epsilon$ you choose is not small? If you choose
+$\epsilon=1000$, should I pick $\delta=200$? No, to keep things
+``sane'' I will never pick a $\delta$ bigger than 1. Here's the final
+``game strategy:'' When you pick a value for $\epsilon$ I will pick
+$\delta=\epsilon/5$ or $\delta=1$, whichever is smaller. Now when 
+$|x-2|<\delta$, I know both that $|x+2|<5$ and that
+$|x-2|<\epsilon/5$. Thus $|(x+2)(x-2)|<5(\epsilon/5) = \epsilon$.
+
+This has been a long discussion, but most of it was explanation and
+scratch work. If this were written down as a proof, it would be quite
+short, like this:
+
+Proof that $\ds \lim_{x\to 2}x^2=4$. Given any $\epsilon$, pick
+$\delta=\epsilon/5$ or $\delta=1$, whichever is smaller. Then when
+$|x-2|<\delta$, $|x+2|<5$ and
+$|x-2|<\epsilon/5$. Hence $\ds |x^2-4|=|(x+2)(x-2)|<5(\epsilon/5) =
+\epsilon$. 
+\end{example}
+
+It probably seems obvious that $\ds \lim_{x\to2}x^2=4$, and it is worth
+examining more closely why it seems obvious. If we write $\ds x^2=x\cdot
+x$, and ask what happens when $x$ approaches 2, we might say something
+like, ``Well, the first $x$ approaches 2, and the second $x$
+approaches 2, so the product must approach $2\cdot2$.'' In fact this is
+pretty much right on the money, except for that word ``must.'' Is it
+really true that if $x$ approaches $a$ and $y$ approaches $b$ then
+$xy$ approaches $ab$? It is, but it is not really obvious, since $x$
+and $y$ might be quite complicated. The good news is that we can see
+that this is true once and for all, and then we don't have to worry
+about it ever again. When we say that $x$ might be ``complicated'' we
+really mean that in practice it might be a function. Here is then what
+we want to know:
+
+\begin{theorem} Suppose $\ds \lim_{x\to a} f(x)=L$ and $\ds \lim_{x\to a}g(x)=M$. Then
+\hfill\break
+$\lim_{x\to a} f(x)g(x) = LM$.
+\end{theorem}
+
+\begin{proof} We have to use the official definition of limit to make sense
+of this. So given any $\epsilon$ we need to find a $\delta$ so that
+$0<|x-a|<\delta$ implies $|f(x)g(x)-LM|<\epsilon$. What do we have to
+work with? We know that we can make $f(x)$ close to $L$ and $g(x)$
+close to $M$, and we have to somehow connect these facts to make
+$f(x)g(x)$ close to $LM$.
+
+We use, as is so often the case, a little algebraic
+trick: 
+\begin{align*}
+|f(x)g(x)-LM|&= |f(x)g(x)-f(x)M+f(x)M-LM| \\
+&=|f(x)(g(x)-M)+(f(x)-L)M| \\
+&\le |f(x)(g(x)-M)|+|(f(x)-L)M| \\
+&=|f(x)||g(x)-M|+|f(x)-L||M|.
+\end{align*}
+
+This is all straightforward except perhaps for the ``$\le$''. That is
+an example of the {\dfont triangle inequality%
+\index{triangle inequality}\pagerdef{page:triangle inequality}}, 
+which says that if $a$ and $b$ are any real
+numbers then $|a+b|\le |a|+|b|$. If you look at a few examples, using
+positive and negative numbers in various combinations for $a$ and $b$,
+you should quickly understand why this is true; we will not prove it
+formally. 
+
+Since $\ds \lim_{x\to a}f(x) =L$, there is a value $\ds \delta_1$ so that
+$0<|x-a|<\delta_1$ implies $|f(x)-L|<|\epsilon/(2M)|$, 
+This means that $0<|x-a|<\delta_1$ implies
+$|f(x)-L||M|< \epsilon/2$. You can see where this is going: if we can
+make $|f(x)||g(x)-M|<\epsilon/2$ also, then we'll be done.
+
+We can make $|g(x)-M|$ smaller than any fixed number by making $x$
+close enough to $a$; unfortunately, $\epsilon/(2f(x))$ is not a fixed
+number, since $x$ is a variable. Here we need another little trick,
+just like the one we used in analyzing $x^2$. We can find a $\delta_2$
+so that $|x-a|<\delta_2$ implies that $|f(x)-L|<1$, meaning that $L-1
+< f(x) < L+1$. This means that $|f(x)|<N$, where $N$ is either $|L-1|$
+or $|L+1|$, depending on whether $L$ is negative or positive. The
+important point is that $N$ doesn't depend on $x$. Finally, we know that
+there is a $\delta_3$ so that $0<|x-a|<\delta_3$ implies
+$|g(x)-M|<\epsilon/(2N)$. Now we're ready to put everything
+together. Let $\delta$ be the smallest of $\delta_1$, $\delta_2$, and
+$\delta_3$. Then $|x-a|<\delta$ implies that
+$|f(x)-L|<|\epsilon/(2M)|$, $|f(x)|<N$, and
+$|g(x)-M|<\epsilon/(2N)$. Then 
+\begin{align*}
+|f(x)g(x)-LM|&\le|f(x)||g(x)-M|+|f(x)-L||M| \\
+&<N{\epsilon\over 2N}+\left|{\epsilon\over 2M}\right||M| \\
+&={\epsilon\over 2}+{\epsilon\over 2}=\epsilon.
+\end{align*}
+This is just what we needed, so by the official definition,
+$\ds \lim_{x\to a}f(x)g(x)=LM$.
+\end{proof}
+
+A handful of such theorems give us the tools to compute many limits
+without explicitly working with the definition of limit.
+
+\begin{theorem} Suppose that $\ds \lim_{x\to a}f(x)=L$ and $\ds \lim_{x\to a}g(x)=M$ and
+$k$ is some constant. Then
+\begin{align*}
+&\lim_{x\to a} kf(x) = k\lim_{x\to a}f(x)=kL \\
+&\lim_{x\to a} (f(x)+g(x)) = \lim_{x\to a}f(x)+\lim_{x\to a}g(x)=L+M \\
+&\lim_{x\to a} (f(x)-g(x)) = \lim_{x\to a}f(x)-\lim_{x\to a}g(x)=L-M \\
+&\lim_{x\to a} (f(x)g(x)) = \lim_{x\to a}f(x)\cdot\lim_{x\to a}g(x)=LM \\
+&\lim_{x\to a} {f(x)\over g(x)} = {\lim_{x\to a}f(x)\over\lim_{x\to
+    a}g(x)}={L\over M},\hbox{ if $M$ is not 0}
+\end{align*}
+\label{thm:properties of limits}
+\end{theorem}
+
+Roughly speaking, these rules say that to compute the limit of an
+algebraic expression, it is enough to compute the limits of the
+``innermost bits'' and then combine these limits. This often means
+that it is possible to simply plug in a value for the variable, since
+$\ds \lim_{x\to a} x =a$.
+
+\begin{example}
+Compute $\ds
+\lim_{x\to 1}{x^2-3x+5\over x-2}$. If we apply the theorem
+in all its gory detail, we get
+\begin{align*}
+\lim_{x\to 1}{x^2-3x+5\over x-2}&=
+{\lim_{x\to 1}(x^2-3x+5)\over \lim_{x\to1}(x-2)} \\
+&={(\lim_{x\to 1}x^2)-(\lim_{x\to1}3x)+(\lim_{x\to1}5)\over 
+  (\lim_{x\to1}x)-(\lim_{x\to1}2)} \\
+&={(\lim_{x\to 1}x)^2-3(\lim_{x\to1}x)+5\over (\lim_{x\to1}x)-2} \\
+&={1^2-3\cdot1+5\over 1-2} \\
+&={1-3+5\over -1} = -3 \\
+\end{align*}
+\end{example}
+
+It is worth commenting on the trivial limit $\ds \lim_{x\to1}5$. From one
+point of view this might seem meaningless, as the number 5 can't
+``approach'' any value, since it is simply a fixed number. But 5 can,
+and should, be interpreted here as the function that has value 5
+everywhere, $f(x)=5$, with graph a horizontal line. From this point of
+view it makes sense to ask what happens to the height of the function
+as $x$ approaches 1.
+
+Of course, as we've already seen, we're primarily interested in limits
+that aren't so easy, namely, limits in which a denominator approaches
+zero. There are a handful of algebraic tricks that work on many of
+these limits.
+
+\begin{example}
+Compute $\ds\lim_{x\to1}{x^2+2x-3\over x-1}$. We can't
+simply plug in $x=1$ because that makes the denominator zero. 
+However:
+\begin{align*}
+\lim_{x\to1}{x^2+2x-3\over x-1}&=\lim_{x\to1}{(x-1)(x+3)\over x-1} \\
+&=\lim_{x\to1}(x+3)=4 \\
+\end{align*}
+\vskip-10pt
+\end{example}
+
+While theorem~\xrefn{thm:properties of limits} is very helpful, we
+need a bit more to work easily with limits. Since the theorem applies
+when some limits are already known, we need to know the behavior of
+some functions that cannot themselves be constructed from the simple
+arithmetic operations of the theorem, such as $\ds\sqrt{x}$. Also,
+there is one other extraordinarily useful way to put functions
+together: composition\index{composition of functions}. If $f(x)$ and
+$g(x)$ are functions, we can form two functions by composition:
+$f(g(x))$ and $g(f(x))$. For example, if $\ds f(x)=\sqrt{x}$ and $\ds
+\ds g(x)=x^2+5$, then $\ds f(g(x))=\sqrt{x^2+5}$ and $\ds
+g(f(x))=(\sqrt{x})^2+5=x+5$.  Here is a companion to
+theorem~\xrefn{thm:properties of limits} for composition:
+
+\begin{theorem} Suppose that $\ds \lim_{x\to a}g(x)=L$ and $\ds \lim_{x\to L}f(x)=f(L)$. Then
+$$\lim_{x\to a} f(g(x)) = f(L).$$
+\label{thm:limit of composition}
+\end{theorem}
+
+Note the special form of the condition on $f$: it is not enough to
+know that $\ds\lim_{x\to L}f(x) = M$, though it is a bit tricky to see
+why. Many of the most familiar functions do have this property, and
+this theorem can therefore be applied. For example:
+
+\begin{theorem} Suppose that $n$ is a positive integer. Then
+$$\lim_{x\to a}\root n\of{x} = \root n\of{a},$$
+provided that $a$ is positive if $n$ is even.
+\label{thm:continuity of roots}
+\end{theorem}
+
+This theorem is not too difficult to prove from the definition of limit.
+
+Another of the most common algebraic tricks was used in
+section~\xrefn{sec:slope of a function}. Here's another example:
+
+\begin{example}
+Compute $\ds\lim_{x\to-1} {\sqrt{x+5}-2\over x+1}$.
+\begin{align*}
+\lim_{x\to-1} {\sqrt{x+5}-2\over x+1}&=
+\lim_{x\to-1} {\sqrt{x+5}-2\over x+1}{\sqrt{x+5}+2\over \sqrt{x+5}+2} \\
+&=\lim_{x\to-1} {x+5-4\over (x+1)(\sqrt{x+5}+2)} \\
+&=\lim_{x\to-1} {x+1\over (x+1)(\sqrt{x+5}+2)} \\
+&=\lim_{x\to-1} {1\over \sqrt{x+5}+2}={1\over4} \\
+\end{align*}
+At the very last step we have used theorems~\xrefn{thm:limit of
+composition} and \xrefn{thm:continuity of roots}.
+\end{example}
+
+Occasionally we will need a slightly modified version of the limit
+definition. Consider the function $\ds f(x)=\sqrt{1-x^2}$, the upper half of
+the unit circle. What can we say about $\ds \lim_{x\to 1}f(x)$? It is
+apparent from the graph of this familiar function that as $x$ gets
+close to 1 from the left, the value of $f(x)$ gets close to zero. It
+does not even make sense to ask what happens as $x$ approaches 1 from
+the right, since $f(x)$ is not defined there. The definition of the
+limit, however, demands that $f(1+\Delta x)$ be close to $f(1)$
+whether $\Delta x$ is positive or negative. Sometimes the limit of a
+function exists from one side or the other (or both) even though the
+limit does not exist. Since it is useful to be able to talk about this
+situation, we introduce the concept of 
+{\dfont one sided limit\index{one sided limit}}:
+
+\begin{definition} (One-sided limit) Suppose that $f(x)$ is a function. We say that
+$\ds \lim_{x\to a^-}f(x)=L$ if for every $\epsilon>0$ there is a $\delta >
+0$ so that whenever $0 < a-x < \delta$, $|f(x)-L|<\epsilon$.  We say
+that $\lim_{x\to a^+}f(x)=L$ if for every $\epsilon>0$ there is a
+$\delta > 0$ so that whenever $0 < x-a < \delta$, $|f(x)-L|<\epsilon$.
+\end{definition}
+
+Usually $\ds \lim_{x\to a^-}f(x)$ is read ``the limit of $f(x)$ from the
+left'' and $\ds \lim_{x\to a^+}f(x)$ is read ``the limit of $f(x)$ from the
+right''.
+
+\begin{example}
+Discuss $\ds\lim_{x\to 0}{x\over|x|}$, 
+$\ds\lim_{x\to 0^-}{x\over|x|}$,
+and $\ds\lim_{x\to 0^+}{x\over|x|}$.
+
+The function $f(x)=x/|x|$ is undefined at 0; when $x>0$, $|x|=x$ and
+so $f(x)=1$; when $x<0$, $|x|=-x$ and $f(x)=-1$. Thus
+$\ds \lim_{x\to 0^-}{x\over|x|}=\lim_{x\to 0^-}-1=-1$ while 
+$\ds \lim_{x\to 0^+}{x\over|x|}=\lim_{x\to 0^+}1=1$. The limit of $f(x)$
+must be equal to both the left and right limits; since they are
+different, the limit $\ds \lim_{x\to 0}{x\over|x|}$ does not exist.
+\end{example}
+
+\begin{exercises}
+
+Compute the limits. If a limit does not exist, explain why.
+
+\twocol
+
+\exercise $\ds \lim_{x\to 3}{x^2+x-12\over x-3}$
+\begin{answer} 7
+\end{answer}
+
+\exercise $\ds \lim_{x\to 1}{x^2+x-12\over x-3}$
+\begin{answer} 5
+\end{answer}
+
+\exercise $\ds \lim_{x\to -4}{x^2+x-12\over x-3}$
+\begin{answer} 0
+\end{answer}
+
+\exercise $\ds \lim_{x\to 2} {x^2+x-12\over x-2}$
+\begin{answer} undefined
+\end{answer}
+
+\exercise $\ds \lim_{x\to 1} {\sqrt{x+8}-3\over x-1}$
+\begin{answer} $1/6$
+\end{answer}
+
+\exercise $\ds \lim_{x\to 0^+} \sqrt{{1\over x}+2} - \sqrt{1\over x}$.
+\begin{answer} 0
+\end{answer}
+
+\exercise $\ds\lim _{x\to 2} 3$
+\begin{answer} 3
+\end{answer}
+
+\exercise $\ds\lim _{x\to 4 } 3x^3 - 5x $
+\begin{answer} 172
+\end{answer}
+
+\exercise $\ds \lim _{x\to 0 } {4x - 5x^2\over x-1}$
+\begin{answer} 0
+\end{answer}
+
+\exercise $\ds\lim _{x\to 1 } {x^2 -1 \over x-1 }$
+\begin{answer} 2
+\end{answer}
+
+\exercise $\ds\lim _{x\to 0^ + } {\sqrt{2-x^2 }\over x}$
+\begin{answer} does not exist
+\end{answer}
+
+\exercise $\ds\lim _{x\to 0^ + } {\sqrt{2-x^2}\over x+1}$
+\begin{answer} $\ds \sqrt2$
+\end{answer}
+
+\exercise $\ds\lim _{x\to a } {x^3 -a^3\over x-a}$
+\begin{answer} $\ds 3a^2$
+\end{answer}
+
+\exercise $\ds\lim _{x\to 2 } (x^2 +4)^3$
+\begin{answer} 512
+\end{answer}
+
+\exercise $\ds\lim _{x\to 1 } \begin{cases}
+x-5 & x\neq 1, \\
+7 & x=1. \end{cases}$
+\begin{answer} $-4$
+\end{answer}
+
+\endtwocol
+
+\msk
+\exercise $\ds\lim _{x\to 0 } x\sin \left( {1\over x}\right)$
+(Hint: Use the fact that $|\sin a |< 1 $ for any real number $a$. You
+should probably use the definition of a limit here.)
+\begin{answer} $0$
+\end{answer}
+
+\exercise Give an $\epsilon$--$\delta$ proof, similar to
+example~\xrefn{exam:epsilon-delta proof},
+of the fact that 
+$\ds \lim_{x\to 4} (2x-5) = 3$. 
+ 
+\exercise Evaluate the expressions by reference to this graph:\hfill\break
+
+% BADBAD
+%\hbox{\epsfxsize8cm\epsfbox{limit-exercise-graph.eps}}\hfill\break
+
+% \halign{&\indent#\hfill \\
+%  (a) $\ds \lim_{x\to 4} f(x)$ & 
+%  (b) $\ds \lim_{x\to -3} f(x)$ & 
+%  (c) $\ds \lim_{x\to 0} f(x)$  \\
+%  (d) $\ds \lim_{x\to 0^-} f(x)$ & 
+%  (e) $\ds \lim_{x\to 0^+} f(x)$ & 
+%  (f) $\ds f(-2)$  \\
+%  (g) $\ds \lim_{x\to 2^-} f(x)$ & 
+%  (h) $\ds \lim_{x\to -2^-} f(x)$ & 
+%  (i) $\ds \lim_{x\to 0} f(x+1)$  \\
+%  (j) $\ds f(0)$ & 
+%  (k) $\ds \lim_{x\to 1^-} f(x-4)$ & 
+%  (l) $\ds \lim_{x\to 0^+} f(x-2)$  \\}
+% \begin{answer} (a) $8$, (b) $6$, (c) dne, (d) $-2$, (e) $-1$, (f) $8$,
+%  (g) $7$, (h) $6$, (i) $3$, (j) $-3/2$, (k) $6$, (l) $2$
+% \end{answer}
+
+\exercise Use a calculator to estimate $\ds\lim_{x\to 0}
+{\sin x\over x}$.
+
+\exercise Use a calculator to estimate $\ds\lim_{x\to 0}
+{\tan(3x)\over\tan(5x)}$.
+
+\end{exercises}

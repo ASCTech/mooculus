@@ -1,0 +1,225 @@
+\section{The Divergence Theorem}{}{}
+\nobreak
+The third version of Green's Theorem (equation~\xrefn{eq:greens
+  theorem third form}) we saw was:
+$$\int_{\partial D} {\bf F}\cdot{\bf N}\,ds=\dint{D} \nabla\cdot{\bf
+  F}\,dA.$$ With minor changes this turns into another equation, the
+Divergence Theorem\index{Divergence Theorem}:
+\begin{theorem} (Divergence Theorem) Under suitable conditions, if $E$ is a
+region of three dimensional space and $D$ is its boundary surface,
+oriented outward, then
+$$\dint{D} {\bf F}\cdot{\bf N}\,dS=\tint{E} \nabla\cdot{\bf
+  F}\,dV.$$
+\end{theorem}
+
+\goodbreak
+\vskip6pt\noindent{\begin{proof}font Proof of 
+the Divergence Theorem.}\kern1pc\bgroup
+
+Again this theorem is too difficult to prove here, but a special case
+is easier. In the proof of a special case of Green's Theorem, we
+needed to know that we could describe the region of integration in
+both possible orders, so that we could set up one double integral
+using $dx\,dy$ and another using $dy\,dx$. Similarly here, we need to
+be able to describe the three-dimensional region $E$ in different
+ways.
+
+We start by rewriting the triple integral:
+$$\tint{E} \nabla\cdot{\bf
+  F}\,dV = \tint{E} (P_x+Q_y+R_z)\,dV
+=\tint{E} P_x\,dV + \tint{E} Q_y\,dV + \tint{E} R_z\,dV.$$
+The double integral may be rewritten:
+$$\dint{D} {\bf F}\cdot{\bf N}\,dS
+=\dint{D} (P{\bf i}+Q{\bf j}+R{\bf k})\cdot{\bf N}\,dS
+=\dint{D} P{\bf i}\cdot{\bf N}\,dS+\dint{D} Q{\bf j}\cdot{\bf N}\,dS+
+\dint{D} R{\bf k}\cdot{\bf N}\,dS.$$
+To prove that these give the same value it is sufficient to prove that
+$$\eqalign{
+\dint{D} P{\bf i}\cdot{\bf N}\,dS&=\tint{E} P_x\,dV, \\
+\dint{D} Q{\bf j}\cdot{\bf N}\,dS&=\tint{E} Q_y\,dV,\;\hbox{and} \\
+\dint{D} R{\bf k}\cdot{\bf N}\,dS&=\tint{E} R_z\,dV. \\
+}\eqrdef{eq:divergence proof}
+\eqno{(\xrefn{eq:divergence proof})}
+$$
+% $$
+% \dint{D} P{\bf i}\cdot{\bf N}\,dS=\tint{E} P_x\,dV,\;
+% \dint{D} Q{\bf j}\cdot{\bf N}\,dS=\tint{E} Q_y\,dV,\;\hbox{and}\;
+% \dint{D} R{\bf k}\cdot{\bf N}\,dS=\tint{E} R_z\,dV.$$
+Not surprisingly, these are all pretty much the same; we'll do the
+first one.
+
+We set the triple integral up with $dx$ innermost:
+$$\tint{E} P_x\,dV=\dint{B}\int_{g_1(y,z)}^{g_2(y,z)} P_x\,dx\,dA=
+\dint{B} P(g_2(y,z),y,z)-P(g_1(y,z),y,z)\,dA,$$
+where $B$ is the region in the $y$-$z$ plane over which we integrate.
+The boundary surface of $E$ consists of a ``top'' $x=g_2(y,z)$, a
+``bottom'' $x=g_1(y,z)$, and a ``wrap-around side'' that is vertical
+to the $y$-$z$ plane. To integrate over the entire boundary surface,
+we can integrate over each of these (top, bottom, side) and add the
+results. Over the side surface, the vector $\bf N$ is perpendicular to
+the vector $\bf i$, so
+$$
+\dint{\hbox{\sevenpoint side}} P{\bf i}\cdot{\bf N}\,dS = 
+\dint{\hbox{\sevenpoint side}}
+0\,dS=0.$$
+Thus, we are left with just the surface integral over the top plus the
+surface integral over the bottom. For the top, we use the vector
+function
+${\bf r}=\langle g_2(y,z),y,z\rangle$ which gives 
+${\bf r}_y\times{\bf r}_z=\langle 1,-g_{2y},-g_{2z}\rangle$; the dot
+product of this with ${\bf i}=\langle 1,0,0\rangle$ is 1. Then
+$$
+\dint{\hbox{\sevenpoint top}} P{\bf i}\cdot{\bf N}\,dS
+=\dint{B} P(g_2(y,z),y,z)\,dA.$$
+In almost identical fashion we get
+$$
+\dint{\hbox{\sevenpoint bottom}} P{\bf i}\cdot{\bf N}\,dS
+=-\dint{B} P(g_1(y,z),y,z)\,dA,$$
+where the negative sign is needed to make $\bf N$ point in the
+negative $x$ direction. Now
+$$\dint{D} P{\bf i}\cdot{\bf N}\,dS
+=\dint{B} P(g_2(y,z),y,z)\,dA-\dint{B}
+    P(g_1(y,z),y,z)\,dA,$$ which is the same as the value of the
+    triple integral above.
+\end{proof}
+
+\begin{example} Let ${\bf F}=\langle 2x,3y,z^2\rangle$, and consider the
+three-dimensional volume inside the cube with faces parallel to the
+principal planes and opposite corners at
+$(0,0,0)$ and $(1,1,1)$. We compute the two integrals of the
+divergence theorem.
+
+The triple integral is the easier of the two:
+$$\int_0^1\int_0^1\int_0^1 2+3+2z\,dx\,dy\,dz=6.$$
+The surface integral must be separated into six parts, one for each
+face of the cube. One face is $z=0$ or ${\bf r}=\langle u,v,0\rangle$, $0\le
+u,v\le 1$. Then ${\bf r}_u=\langle 1,0,0\rangle$, 
+${\bf r}_v=\langle 0,1,0\rangle$, and ${\bf r}_u\times{\bf r}_v=
+\langle 0,0,1\rangle$. We need this to be oriented downward (out of
+the cube), so we use
+$\langle 0,0,-1\rangle$ and the corresponding integral is
+$$\int_0^1\int_0^1 -z^2\,du\,dv=\int_0^1\int_0^1 0\,du\,dv=0.$$
+
+Another face is $y=1$ or ${\bf r}=\langle u,1,v\rangle$. Then ${\bf
+  r}_u=\langle 1,0,0\rangle$, ${\bf r}_v=\langle 0,0,1\rangle$, and
+${\bf r}_u\times{\bf r}_v= \langle 0,-1,0\rangle$. We need a normal in
+the positive $y$ direction, so we convert this to $\langle
+0,1,0\rangle$, and the corresponding integral is
+$$\int_0^1\int_0^1 3y\,du\,dv=\int_0^1\int_0^1 3\,du\,dv=3.$$
+
+The remaining four integrals have values 0, 0, 2, and 1, and the sum
+of these is 6, in agreement with the triple integral.
+\end{example}
+
+\begin{example} Let ${\bf F}=\langle x^3,y^3,z^2\rangle$, and consider the
+cylindrical volume $x^2+y^2\le9$, $0\le z\le2$.
+The triple integral (using cylindrical coordinates) is 
+$$\int_0^{2\pi}\int_0^3\int_0^2 (3r^2+2z)r\,dz\,dr\,d\theta=279\pi.$$
+
+For the surface we need three integrals. The top of the cylinder can
+be represented by
+${\bf r}=\langle v\cos u,v\sin u,2\rangle$; 
+${\bf r}_u\times{\bf r}_v=\langle 0,0,-v\rangle$, which points down
+into the cylinder,
+so we convert it to $\langle 0,0,v\rangle$. Then
+$$\int_0^{2\pi}\int_0^3 \langle v^3\cos^3u,v^3\sin^3u,4\rangle\cdot
+\langle 0,0,v\rangle\,dv\,du=
+\int_0^{2\pi}\int_0^3 4v\,dv\,du=36\pi.$$
+The bottom is 
+${\bf r}=\langle v\cos u,v\sin u,0\rangle$; 
+${\bf r}_u\times{\bf r}_v=\langle 0,0,-v\rangle$ and
+$$\int_0^{2\pi}\int_0^3 \langle v^3\cos^3u,v^3\sin^3u,0\rangle\cdot
+\langle 0,0,-v\rangle\,dv\,du=
+\int_0^{2\pi}\int_0^3 0\,dv\,du=0.$$
+The side of the cylinder is ${\bf r}=\langle 3\cos u,3\sin u,v\rangle$;
+${\bf r}_u\times{\bf r}_v=\langle 3\cos u,3\sin u,0\rangle$ which does
+point outward, so
+$$\eqalign{
+\int_0^{2\pi}\int_0^2 &\langle 27\cos^3 u,27\sin^3 u,v^2\rangle\cdot
+\langle 3\cos u,3\sin u,0\rangle \,dv\,du \\
+&=\int_0^{2\pi}\int_0^2 81\cos^4 u+81\sin^4u\,dv\,du=243\pi. \\}$$
+The total surface integral is thus $36\pi+0+243\pi=279\pi$.
+\end{example}
+
+\begin{exercises}
+
+% Albert
+\exercise Using $\ds{\bf F}=\langle 3x,y^3,-2z^2\rangle$ and the
+region bounded by $\ds x^2+y^2=9$, $z=0$, and $z=5$, compute both
+integrals from the Divergence Theorem.
+\begin{answer} both are $-45\pi/4$
+\end{answer}
+%/Albert
+
+\exercise Let $E$ be the volume described by 
+$0\le x\le a$, $0\le y\le b$, $0\le z\le c$, and 
+${\bf F}= \langle x^2,y^2,z^2\rangle$. Compute
+$\ds\dint{\partial E} {\bf F}\cdot {\bf N}\,dS$.
+\begin{answer} $a^2bc+ab^2c+abc^2$
+\end{answer}
+
+\exercise Let $E$ be the volume described by 
+$0\le x\le 1$, $0\le y\le 1$, $0\le z\le 1$, and 
+${\bf F}= \langle 2xy,3xy,ze^{x+y}\rangle$. Compute
+$\ds\dint{\partial E} {\bf F}\cdot {\bf N}\,dS$.
+\begin{answer} $e^2-2e+7/2$
+\end{answer}
+
+\exercise Let $E$ be the volume described by 
+$0\le x\le 1$, $0\le y\le x$, $0\le z\le x+y$, and 
+${\bf F}= \langle x,2y,3z\rangle$. Compute
+$\ds\dint{\partial E} {\bf F}\cdot {\bf N}\,dS$.
+\begin{answer} $3$
+\end{answer}
+
+\exercise Let $E$ be the volume described by 
+$x^2+y^2+z^2\le 4$, and 
+${\bf F}= \langle x^3,y^3,z^3\rangle$. Compute
+$\ds\dint{\partial E} {\bf F}\cdot {\bf N}\,dS$.
+\begin{answer} $384\pi/5$
+\end{answer}
+
+\exercise Let $E$ be the hemisphere described by 
+$0\le z\le \sqrt{1-x^2-y^2}$, and \hfill\break
+${\bf F}= \langle \sqrt{x^2+y^2+z^2},\sqrt{x^2+y^2+z^2},
+\sqrt{x^2+y^2+z^2}\rangle$. Compute
+$\ds\dint{\partial E} {\bf F}\cdot {\bf N}\,dS$.
+\begin{answer} $\pi/3$
+\end{answer}
+
+\exercise Let $E$ be the volume described by 
+$x^2+y^2\le1$, $0\le z\le4$, and 
+${\bf F}= \langle xy^2,yz,x^2z\rangle$. Compute
+$\ds\dint{\partial E} {\bf F}\cdot {\bf N}\,dS$.
+\begin{answer} $10\pi$
+\end{answer}
+
+\exercise Let $E$ be the solid cone above the $x$-$y$ plane and
+inside $z=1-\sqrt{x^2+y^2}$, and 
+${\bf F}= \langle x\cos^2 z,y\sin^2z,\sqrt{x^2+y^2}z\rangle$. Compute
+$\ds\dint{\partial E} {\bf F}\cdot {\bf N}\,dS$.
+\begin{answer} $\pi/2$
+\end{answer}
+
+\exercise Prove the other two equations in the 
+display~\xrefn{eq:divergence proof}.
+
+\exercise Suppose $D$ is a closed surface, and that $D$ and $F$ are
+sufficiently nice. Show that 
+$$\dint{D} (\nabla \times {\bf F}) \cdot {\bf N}\, dS = 0$$
+where $\bf N$ is the outward pointing unit normal.
+
+\exercise Suppose $D$ is a closed surface, $D$ is sufficiently nice,
+and $F=\langle a,b,c\rangle$ is a constant vector field.
+Show that 
+$$\dint{D} {\bf F} \cdot {\bf N}\, dS = 0$$
+where $\bf N$ is the outward pointing unit normal.
+
+% Albert
+\exercise We know that the volume of a region $E$ may often be computed as
+$\ds \tint{E}dx\,dy\,dz$. Show that this volume may also be computed as
+$\ds{1\over3} \dint{\partial E} \langle x,y,z\rangle \cdot {\bf N}\,dS$
+where ${\bf N}$ is the outward pointing unit normal to $\partial E$.
+%/Albert
+
+\end{exercises}

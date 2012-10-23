@@ -1,0 +1,81 @@
+\section{Calculus with Power Series}{}{}
+\nobreak
+Now we know that some functions can be expressed as power series,
+which look like infinite polynomials. Since calculus, that is,
+computation of derivatives and antiderivatives, is easy for
+polynomials, the obvious question is whether the same is true
+for infinite series. The answer is yes:
+
+\begin{theorem} Suppose the power series $f(x)=\ds\sum_{n=0}^\infty a_n(x-a)^n$ has
+radius of convergence $R$. Then
+$$\eqalign{
+  f'(x)&=\sum_{n=0}^\infty na_n(x-a)^{n-1}, \\
+  \int f(x)\,dx &= C+\sum_{n=0}^\infty {a_n\over n+1}(x-a)^{n+1}, \\
+}$$
+and these two series have radius of convergence $R$ as well.
+\end{proof}
+
+\begin{example}
+Starting with the geometric series:
+$$\eqalign{
+  {1\over 1-x} &= \sum_{n=0}^\infty x^n \\
+  \int{1\over 1-x}\,dx &= -\ln|1-x| = \sum_{n=0}^\infty {1\over
+    n+1}x^{n+1} \\
+  \ln|1-x| &= \sum_{n=0}^\infty -{1\over n+1}x^{n+1} \\
+}$$
+when $|x|<1$. The series does not converge when $x=1$ but does
+converge when $x=-1$ or $1-x=2$. The interval of convergence is
+$[-1,1)$, or $0<1-x\le2$, so
+we can use the series to represent $\ln(x)$
+when $0<x\le2$. For example
+$$
+  \ln(3/2)=\ln(1--1/2)=
+  \sum_{n=0}^\infty (-1)^n{1\over n+1}{1\over 2^{n+1}}
+$$
+and so
+$$
+  \ln(3/2)\approx {1\over 2}-{1\over 8}+{1\over 24}-{1\over 64}
+  +{1\over 160}-{1\over 384}+{1\over 896}
+  ={909\over 2240}\approx 0.406
+.$$
+Because this is an alternating series with decreasing terms,
+we know that the true value is between $909/2240$ and
+$909/2240-1/2048=29053/71680\approx .4053$, so correct to two decimal
+places the value is $0.41$. 
+
+What about $\ln(9/4)$? Since $9/4$ is larger than 2 we cannot use the
+series directly, but
+$$\ln(9/4)=\ln((3/2)^2)=2\ln(3/2)\approx 0.82,$$
+so in fact we get a lot more from this one calculation than first
+meets the eye. To estimate the true value accurately we actually need
+to be a bit more careful.
+When we multiply by two we know that the true value is between
+$0.8106$ and $0.812$, so rounded to two decimal places the true value
+is $0.81$.
+\end{example}
+
+\begin{exercises}
+
+\exercise Find a series representation for $\ln 2$.
+\begin{answer} the alternating harmonic series
+\end{answer}
+
+\exercise Find a power series representation for $\ds 1/(1-x)^2$.
+\begin{answer} $\ds\sum_{n=0}^\infty (n+1)x^n$
+\end{answer}
+
+\exercise Find a power series representation for $\ds 2/(1-x)^3$.
+\begin{answer} $\ds\sum_{n=0}^\infty (n+1)(n+2)x^n$
+\end{answer}
+
+\exercise Find a power series representation for $\ds 1/(1-x)^3$.
+What is the radius of convergence?
+\begin{answer} $\ds\sum_{n=0}^\infty {(n+1)(n+2)\over 2}x^n$, $R=1$
+\end{answer}
+
+\exercise Find a power series representation for $\ds\int\ln(1-x)\,dx$.
+\begin{answer} $\ds C+\sum_{n=0}^\infty {-1\over (n+1)(n+2)}x^{n+2}$ 
+\end{answer}
+
+\end{exercises}
+

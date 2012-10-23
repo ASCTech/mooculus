@@ -1,0 +1,120 @@
+\section{Powers of sine and cosine}{}{}
+\nobreak
+Functions consisting of products of the sine and cosine can be
+integrated by using substitution and trigonometric identities. These
+can sometimes be tedious, but the technique is straightforward. Some
+examples will suffice to explain the approach.
+
+\begin{example}
+Evaluate $\ds\int \sin^5 x\,dx$.
+Rewrite the function:
+$$
+  \int \sin^5 x\,dx=\int \sin x \sin^4 x\,dx=
+  \int \sin x (\sin^2 x)^2\,dx=
+  \int \sin x (1-\cos^2 x)^2\,dx.
+$$
+Now use $u=\cos x$, $du=-\sin x\,dx$:
+$$\eqalign{
+  \int \sin x (1-\cos^2 x)^2\,dx&=\int -(1-u^2)^2\,du \\
+  &=\int -(1-2u^2+u^4)\,du \\
+  &=-u+{2\over3}u^3-{1\over5}u^5+C \\
+  &=-\cos x+{2\over3}\cos^3 x-{1\over5}\cos^5x+C. \\
+}$$
+\vskip-10pt\end{example}
+
+\begin{example}
+Evaluate $\ds\int \sin^6 x\,dx$.
+Use $\ds \sin^2x =(1-\cos(2x))/2$ to
+rewrite the function:
+$$\eqalign{
+  \int \sin^6 x\,dx=\int (\sin^2 x)^3\,dx&=
+  \int {(1-\cos 2x)^3\over 8}\,dx \\
+  &={1\over 8}\int 1-3\cos 2x+3\cos^2 2x-\cos^3 2x\,dx. \\}
+$$
+Now we have four integrals to evaluate:
+$$\int 1\,dx=x$$
+and
+$$\int -3\cos 2x\,dx = -{3\over 2}\sin 2x$$
+are easy. The $\ds \cos^3 2x$ integral is like the previous example:
+$$\eqalign{
+  \int -\cos^3 2x\,dx&=\int -\cos 2x\cos^2 2x\,dx \\
+  &=\int -\cos 2x(1-\sin^2 2x)\,dx \\
+  &=\int -{1\over 2}(1-u^2)\,du \\
+  &=-{1\over 2}\left(u-{u^3\over 3}\right) \\
+  &=-{1\over 2}\left(\sin 2x-{\sin^3 2x\over 3}\right).}
+$$
+And finally we use another trigonometric identity,
+$\ds \cos^2x=(1+\cos(2x))/2$:
+$$
+  \int 3\cos^2 2x\,dx=3\int {1+\cos 4x\over 2}\,dx=
+  {3\over 2}\left(x+{\sin 4x\over 4}\right).
+$$
+So at long last we get
+$$
+  \int \sin^6 x\,dx = {x\over8} -{3\over 16}\sin 2x 
+  -{1\over 16}\left(\sin 2x-{\sin^3 2x\over 3}\right)
+  +{3\over 16}\left(x+{\sin 4x\over 4}\right)+C.
+$$
+\vskip-10pt\end{example}
+
+\begin{example}
+Evaluate $\ds\int \sin^2x\cos^2x\,dx$. 
+Use the formulas
+$\ds \sin^2x =(1-\cos(2x))/2$ and $\ds \cos^2x =(1+\cos(2x))/2$ to get:
+$$
+  \int \sin^2x\cos^2x\,dx=\int {1-\cos(2x)\over2}\cdot
+  {1+\cos(2x)\over2}\,dx.
+$$
+The remainder is left as an exercise.
+\end{example}
+
+\begin{exercises}
+
+Find the antiderivatives.
+
+\twocol
+
+\exercise $\ds\int \sin^2 x\,dx$
+\begin{answer} $x/2-\sin(2x)/4+C$
+\end{answer}
+
+\exercise $\ds\int \sin^3 x\,dx$
+\begin{answer} $\ds -\cos x+(\cos^3x)/3+C$
+\end{answer}
+
+\exercise $\ds\int \sin^4 x\,dx$
+\begin{answer} $3x/8-(\sin 2x)/4+(\sin 4x)/32+C$
+\end{answer}
+
+\exercise $\ds\int \cos^2 x\sin^3 x\,dx$
+\begin{answer} $\ds (\cos^5 x)/5-(\cos^3x)/3+C$
+\end{answer}
+
+\exercise $\ds\int \cos^3 x\,dx$
+\begin{answer} $\ds \sin x-(\sin^3x)/3+C$
+\end{answer}
+
+\exercise $\ds\int \sin^2 x\cos^2 x\,dx$
+\begin{answer} $x/8-(\sin 4x)/32+C$
+\end{answer}
+
+\exercise $\ds\int \cos^3 x \sin^2 x\,dx$
+\begin{answer} $\ds (\sin^3x)/3-(\sin^5x)/5+C$
+\end{answer}
+
+\exercise $\ds\int \sin x (\cos x)^{3/2}\,dx$
+\begin{answer} $\ds -2(\cos x)^{5/2}/5+C$
+\end{answer}
+
+\exercise $\ds\int \sec^2 x\csc^2 x\,dx$
+\begin{answer} $\tan x-\cot x+C$
+\end{answer}
+
+\exercise $\ds\int \tan^3x \sec x\,dx$
+\begin{answer} $\ds (\sec^3x)/3-\sec x+C$
+\end{answer}
+
+\endtwocol
+
+\end{exercises}
+

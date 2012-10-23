@@ -1,0 +1,205 @@
+\section{Shifts and Dilations}{}{}
+
+Many functions in applications are built up from simple functions by
+inserting constants in various places.  It is important to understand
+the effect such constants have on the appearance of the graph.
+
+\ssk\noindent
+{\bf Horizontal shifts.} {\it If we replace $x$ by $x-C$ everywhere it
+occurs in the formula for $f(x)$, then the graph shifts over $C$ to the
+right.} (If $C$ is negative, then this means that the graph shifts over
+$|C|$ to the left.)  For example, the graph of $y=(x-2)^2$ is the
+$x^2$-parabola shifted over to have its vertex at the point 2 on the
+$x$-axis.  The graph of $y=(x+1)^2$ is the same parabola shifted over to
+the left so as to have its vertex at $-1$ on the $x$-axis. Note well:
+when replacing $x$ by $x-C$ we must pay attention to meaning, not
+merely appearance. Starting with $y=x^2$ and literally replacing $x$
+by $x-2$ gives $y=x-2^2$. This is $y=x-4$, a line with slope 1, not a
+shifted parabola.
+
+\ssk\noindent
+{\bf Vertical shifts.} {\it If we replace $y$ by $y-D$, then the graph
+moves up $D$ units.}  (If $D$ is negative, then this means that the graph
+moves down $|D|$ units.)  If the formula is written in the form
+$y=f(x)$ and if $y$ is replaced by $y-D$ to get $y-D=f(x)$, we can
+equivalently move $D$ to the other side of the equation and write
+$y=f(x)+D$.  Thus, this principle can be stated: {\it to get the
+graph of $y=f(x)+D$, take the graph of $y=f(x)$ and move it $D$ units up.}
+For example, the function $y=x^2-4x=(x-2)^2-4$ can be obtained from
+$y=(x-2)^2$ (see the last paragraph) by moving the graph 4 units down.
+The result is the $x^2$-parabola shifted 2 units to the right and 4 units
+down so as to have its vertex at the point $(2,-4)$.
+
+\ssk\noindent
+{\bf Warning.}  Do not confuse $f(x)+D$ and $f(x+D)$.  For example,
+if $f(x)$ is the function $x^2$, then $f(x)+2$ is the function $x^2+2$,
+while $f(x+2)$ is the function $(x+2)^2=x^2+4x+4$.
+
+\begin{example} (Circles) An important example of the above two principles
+starts with the circle $x^2+y^2=r^2$.  This is the circle of radius
+$r$ centered at the origin.  (As we saw, this is not a single function
+$y=f(x)$, but rather two functions $y=\pm\sqrt{r^2-x^2}$ put together;
+in any case, the two shifting principles apply to equations like this
+one that are not in the form $y=f(x)$.)  If we replace $x$
+by $x-C$ and replace $y$ by $y-D$---getting the equation
+$(x-C)^2+(y-D)^2=r^2$---the effect on the circle is to move it $C$ to
+the right and $D$ up, thereby obtaining the circle of radius $r$
+centered at the point $(C,D)$.  This tells us how to write the
+equation of any circle, not necessarily centered at the origin.
+\end{example}
+
+We will later want to use two more principles concerning the effects of
+constants on the appearance of the graph of a function.
+
+\ssk\noindent {\bf Horizontal dilation.}  {\it If $x$ is replaced by
+$x/A$ in a formula and $A>1$, then the effect on the graph is to
+expand it by a factor of $A$ in the $x$-direction (away from the
+$y$-axis).} If $A$ is between 0 and
+1 then the effect on the graph is to contract by a factor of $1/A$
+(towards the $y$-axis). 
+We use the word ``dilate'' to mean expand or contract.
+
+For example, replacing $x$ by
+$x/0.5=x/(1/2)=2x$ has the effect of contracting toward the $y$-axis by a factor
+of 2.  If $A$ is negative, we dilate by a factor of $|A|$ and then
+flip about the $y$-axis.  Thus, replacing $x$ by $-x$ has the effect of
+taking the mirror image of the graph with respect to the $y$-axis.  For
+example, the function $y=\sqrt{-x}$, which has domain 
+$\{x\in\R\mid x\le 0\}$, is obtained
+by taking the graph of $\sqrt{x}$ and flipping it around the $y$-axis into
+the second quadrant.
+
+\smallskip
+\noindent
+{\bf Vertical dilation.}  {\it If $y$ is replaced by $y/B$ in a formula and
+$B>0$, then the effect on the graph is to dilate it by a factor of $B$ in
+the vertical direction.} As before, this is an expansion or
+contraction depending on whether $B$ is larger or smaller than one.
+Note that if we have a function $y=f(x)$,
+replacing $y$ by $y/B$ is equivalent to multiplying the function on the
+right by $B$: $y=Bf(x)$.  The effect on the graph is to expand the picture
+away from the $x$-axis by a factor of $B$ if $B>1$, to contract it toward
+the $x$-axis by a factor of $1/B$ if $0<B<1$, and to dilate by $|B|$ and
+then flip about the $x$-axis if $B$ is negative.
+
+\begin{example} (Ellipses)
+A basic example of the two expansion principles is given by an {\dfont ellipse
+of semimajor axis $a$ and semiminor axis $b$}.  We get such an ellipse by
+starting with the unit circle---the circle of radius 1 centered at the
+origin, the equation of which is $x^2+y^2=1$---and dilating  by a factor
+of $a$ horizontally and by a factor of $b$ vertically.  To get the equation
+of the resulting
+ellipse, which crosses the $x$-axis at $\pm a$ and crosses the $y$-axis
+at $\pm b$, we replace $x$ by $x/a$ and $y$ by $y/b$ in the equation
+for the unit circle.  This gives 
+$$
+\left({x\over a}\right)^2+\left({y\over b}\right)^2=1
+\qquad\hbox{or}\qquad {x^2\over a^2}+{y^2\over b^2}=1.
+$$
+\end{example}
+
+Finally, if we want to analyze a function that involves both
+shifts and dilations, it is usually simplest to work with the
+dilations first, and then the shifts.  For instance, if we want to
+dilate a function by a factor of $A$ in the $x$-direction and then
+shift $C$ to the right, we do this by replacing $x$ first by $x/A$
+and then by $(x-C)$ in the formula.  As an example, suppose that,
+after dilating our unit circle by $a$ in the $x$-direction and by $b$
+in the $y$-direction to get the ellipse in the last paragraph, we then
+wanted to shift it a distance $h$ to the right and a distance $k$
+upward, so as to be centered at the point $(h,k)$.  The new ellipse
+would have equation
+$$
+\left({x-h\over a}\right)^2+\left({y-k\over b}\right)^2=1.
+$$
+Note well that this is different than first doing shifts by $h$ and $k$ and
+then dilations by $a$ and $b$:
+$$
+\left({x\over a}-h\right)^2+\left({y\over b}-k\right)^2=1.
+$$
+See figure~\xrefn{fig:ellipses}.
+
+% BADBAD
+% \figure
+% \vbox{\beginpicture
+% \normalgraphs
+% \ninepoint
+% \setcoordinatesystem units <1truecm,1truecm> point at 3.5 0
+% \setplotarea x from -1.5 to 3.5, y from -2.5 to 4.5
+% \axis bottom shiftedto y=0 ticks numbered from 1 to 3 by 1 /
+% \axis bottom shiftedto y=0 ticks numbered from -1 to -1 by 1 /
+% \axis left shiftedto x=0 ticks numbered from 1 to 4 by 1 /
+% \axis left shiftedto x=0 ticks numbered from -2 to -1 by 1 /
+% \setquadratic
+% \ellipticalarc axes ratio 4:6 360 degrees from 3 1 center at 1 1
+% \setcoordinatesystem units <1truecm,1truecm> point at -3.5 2
+% \setplotarea x from 0 to 4.5, y from 0 to 6.5
+% \axis bottom shiftedto y=0 ticks numbered from 0 to 4 by 1 /
+% \axis left shiftedto x=0 ticks numbered from 0 to 6 by 1 /
+% \setquadratic
+% \ellipticalarc axes ratio 4:6 360 degrees from 4 3 center at 2 3
+% \endpicture}
+% \figrdef{fig:ellipses}
+% \endfigure{Ellipses: $\left({x-1\over 2}\right)^2+\left({y-1\over 3}\right)^2=1$ on the left, $\left({x\over 2}-1\right)^2+\left({y\over 3}-1\right)^2=1$ on the right.}
+
+\begin{exercises}
+
+Starting with the graph of $\ds y=\sqrt{x}$, the graph of $\ds y=1/x$, and the
+graph of $\ds y=\sqrt{1-x^2}$ (the upper unit semicircle), sketch the
+graph of each of the following functions:
+
+\twocol
+\exercise $\ds f(x)=\sqrt{x-2}$
+\exercise $\ds f(x)=-1-1/(x+2)$
+\exercise $\ds f(x)=4+\sqrt{x+2}$
+\exercise $\ds y=f(x)=x/(1-x)$
+\exercise $\ds y=f(x)=-\sqrt{-x}$
+\exercise $\ds f(x)=2+\sqrt{1-(x-1)^2}$
+\exercise $\ds f(x)=-4+\sqrt{-(x-2)}$
+\exercise $\ds f(x)=2\sqrt{1-(x/3)^2}$
+\exercise $\ds f(x)=1/(x+1)$
+\exercise $\ds f(x)=4+2\sqrt{1-(x-5)^2/9}$
+\exercise $\ds f(x)=1+1/(x-1)$
+\exercise $\ds f(x)=\sqrt{100-25(x-1)^2}+2$
+\endtwocol
+
+\msk
+\noindent
+The graph of $f(x)$ is shown below.
+Sketch the graphs of the following functions.
+
+% BADBAD
+% \exercise $\ds y=f(x-1)$
+% \vadjust{\rightline{%
+% \vbox to 0pt{\vskip-5pt\beginpicture
+% \normalgraphs
+% \ninepoint
+% \setcoordinatesystem units <1truecm,1truecm>
+% \setplotarea x from 0 to 3.25, y from -1.5 to 2
+% \axis bottom shiftedto y=0 ticks numbered from 1 to 3 by 1 /
+% \axis left ticks numbered from -1 to 2 by 1 /
+% \setquadratic
+% \plot 
+% 0.000 -1.285 0.054 -0.643 0.108 -0.088 0.162 0.387 0.217 0.788 
+% 0.271 1.120 0.325 1.391 0.379 1.604 0.433 1.766 0.488 1.882 
+% 0.542 1.956 0.596 1.993 0.650 1.998 0.704 1.976 0.758 1.929 
+% 0.812 1.862 0.867 1.779 0.921 1.684 0.975 1.578 1.029 1.467 
+% 1.083 1.351 1.138 1.235 1.192 1.120 1.246 1.008 1.300 0.903 
+% 1.354 0.805 1.408 0.716 1.462 0.637 1.517 0.571 1.571 0.517 
+% 1.625 0.476 1.679 0.450 1.733 0.438 1.788 0.441 1.842 0.458 
+% 1.896 0.490 1.950 0.536 2.004 0.595 2.058 0.666 2.112 0.749 
+% 2.167 0.841 2.221 0.943 2.275 1.051 2.329 1.164 2.383 1.279 
+% 2.438 1.396 2.492 1.510 2.546 1.620 2.600 1.722 2.654 1.813 
+% 2.708 1.890 2.762 1.949 2.817 1.987 2.871 2.000 2.925 1.983 
+% 2.979 1.932 3.033 1.842 3.088 1.710 3.142 1.528 3.196 1.294 
+% 3.250 1.000 /
+% \endpicture\vskip0pt\vss}\hskip3cm}}
+
+\exercise $\ds y=1+f(x+2)$
+\exercise $\ds y=1+2f(x)$
+\exercise $\ds y=2f(3x)$
+\exercise $\ds y=2f(3(x-2))+1$
+\exercise $\ds y=(1/2)f(3x-3)$
+\exercise $\ds y=f(1+x/3)+2$
+
+\end{exercises}

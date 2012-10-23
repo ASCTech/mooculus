@@ -1,0 +1,186 @@
+\section{Second Order Linear Equations, take two}{}{}
+%\label{sec:2nd order differential equations two} 
+\nobreak 
+The method of the last section works only when the function $f(t)$ in
+$\ds a\ddot y+b\dot y+cy=f(t)$ has a particularly nice form, namely,
+when the derivatives of $f$ look much like $f$ itself. In other cases
+we can try variation of parameters\index{variation of parameters} as
+we did in the first order case.
+
+Since as before
+$a\not=0$, we can always divide by $a$ to make the coefficient of
+$\ds\ddot y$ equal to 1. Thus, to simplify the discussion, we assume $a=1$. 
+We know that the differential equation $\ds \ddot y+b\dot y+cy=0$
+has a general solution $\ds Ay_1+By_2$. As before, we guess a
+particular solution to $\ds \ddot y+b\dot y+cy=f(t)$; this time we use
+the guess $\ds y=u(t)y_1+v(t)y_2$. Compute the derivatives:
+$$\eqalign{
+\dot y&=\dot uy_1+u\dot y_1+\dot vy_2+v\dot y_2 \\
+\ddot y&=\ddot uy_1+\dot u\dot y_1+\dot u\dot y_1+u\ddot y_1+\ddot vy_2+\dot
+v\dot y_2+\dot v\dot y_2+v\ddot y_2. \\}
+$$
+Now substituting:
+$$\eqalign{
+\ddot y+b\dot y+cy&=
+\ddot uy_1+\dot u\dot y_1+\dot u\dot y_1+u\ddot y_1+\ddot vy_2+\dot
+v\dot y_2+\dot v\dot y_2+v\ddot y_2 \\
+&\qquad + b\dot uy_1+bu\dot y_1+b\dot vy_2+bv\dot y_2+cuy_1+cvy_2 \\
+&=(u\ddot y_1+bu\dot y_1+cuy_1)+(v\ddot y_2+bv\dot y_2+cvy_2) \\
+&\qquad + b(\dot uy_1+\dot vy_2) + (\ddot uy_1+\dot u\dot y_1+\ddot vy_2+\dot
+v\dot y_2)+
+(\dot u\dot y_1+\dot v\dot y_2) \\
+&=0+0+ b(\dot uy_1+\dot vy_2) + (\ddot uy_1+\dot u\dot y_1+\ddot vy_2+\dot
+v\dot y_2)+
+(\dot u\dot y_1+\dot v\dot y_2). \\
+}
+$$
+The first two terms in parentheses are zero because $y_1$ and $y_2$
+are solutions to the associated homogeneous equation. Now we engage in
+some wishful thinking. If $\ds \dot uy_1+\dot vy_2=0$ then also
+$\ds \ddot uy_1+\dot u\dot y_1+\ddot vy_2+\dot
+v\dot y_2=0$, by taking derivatives of both sides. This reduces the
+entire expression to $\ds \dot u\dot y_1+\dot v\dot y_2$. We want this
+to be $f(t)$, that is, we need 
+$\ds \dot u\dot y_1+\dot v\dot y_2=f(t)$.
+So we would very much like these equations to be true:
+$$\eqalign{
+\dot uy_1+\dot vy_2&=0 \\
+\dot u\dot y_1+\dot v\dot y_2&=f(t). \\}
+$$
+This is a system of two equations in the two unknowns $\ds\dot u$ and
+$\ds\dot v$, so we can solve as usual to get $\ds\dot u=g(t)$ and
+$\ds\dot v=h(t)$. Then we can find $u$ and $v$ by computing
+antiderivatives. This is of course the sticking point in the whole
+plan, since the antiderivatives may be impossible to
+find. Nevertheless, this sometimes works out and is worth a try.
+
+\begin{example} Consider the equation $\ds\ddot y-5\dot y+6y=\sin t$. We can
+solve this by the method of undetermined coefficients, but we will use
+variation of parameters. The solution to the homogeneous equation is
+$\ds Ae^{2t}+Be^{3t}$, so the 
+simultaneous equations to be solved are
+$$\eqalign{
+\dot ue^{2t}+\dot ve^{3t}&=0 \\
+2\dot ue^{2t}+3\dot ve^{3t}&=\sin t. \\}
+$$
+If we multiply the first equation by 2 and subtract it from the second
+equation we get
+$$\eqalign{
+\dot ve^{3t}&=\sin t \\
+\dot v&=e^{-3t}\sin t \\
+v&=-{1\over 10}(3\sin t+\cos t)e^{-3t}, \\}
+$$
+using integration by parts. Then from the first equation:
+$$\eqalign{
+\dot u&=-e^{-2t}\dot ve^{3t}=-e^{-2t}e^{-3t}\sin(t)e^{3t}=-e^{-2t}\sin
+t \\
+u&={1\over 5}(2\sin t+\cos t)e^{-2t}. \\}
+$$
+Now the particular solution we seek is
+$$\eqalign{
+ue^{2t}+ve^{3t}&={1\over 5}(2\sin t+\cos t)e^{-2t}e^{2t}
+-{1\over 10}(3\sin t+\cos t)e^{-3t}e^{3t} \\
+&={1\over 5}(2\sin t+\cos t)-{1\over 10}(3\sin t+\cos t) \\
+&={1\over 10}(\sin t+\cos t), \\}
+$$
+and the solution to the differential equation is
+$\ds Ae^{2t}+Be^{3t}+(\sin t+\cos t)/10$. For comparison (and
+practice) you might want to solve this using the method of
+undetermined coefficients.
+\end{example}
+
+\begin{example} The differential equation $\ds\ddot y-5\dot y+6y=e^t\sin t$
+can be solved using the method of undetermined coefficients, though we
+have not seen any examples of such a solution. Again, we will solve it
+by variation of parameters. The equations to be solved are 
+$$\eqalign{
+\dot ue^{2t}+\dot ve^{3t}&=0 \\
+2\dot ue^{2t}+3\dot ve^{3t}&=e^t\sin t. \\}
+$$
+If we multiply the first equation by 2 and subtract it from the second
+equation we get
+$$\eqalign{
+\dot ve^{3t}&=e^t\sin t \\
+\dot v&=e^{-3t}e^t\sin t=e^{-2t}\sin t \\
+v&=-{1\over 5}(2\sin t+\cos t)e^{-2t}. \\}
+$$
+Then substituting we get
+$$\eqalign{
+\dot u&=-e^{-2t}\dot ve^{3t}=-e^{-2t}e^{-2t}\sin(t)e^{3t}=-e^{-t}\sin
+t \\
+u&={1\over 2}(\sin t+\cos t)e^{-t}. \\}
+$$
+The particular solution is
+$$\eqalign{
+ue^{2t}+ve^{3t}&={1\over 2}(\sin t+\cos t)e^{-t}e^{2t}
+-{1\over 5}(2\sin t+\cos t)e^{-2t}e^{3t} \\
+&={1\over 2}(\sin t+\cos t)e^t-{1\over 5}(2\sin t+\cos t)e^t \\
+&={1\over 10}(\sin t+3\cos t)e^t, \\}
+$$
+and the solution to the differential equation is
+$\ds Ae^{2t}+Be^{3t}+e^t(\sin t+3\cos t)/10$.
+\end{example}
+
+\begin{example} The differential equation $\ds\ddot y -2\dot y+y=e^t/t^2$ is
+not of the form amenable to the method of undetermined
+coefficients. The solution to the homogeneous equation is
+$\ds Ae^t+Bte^t$ and so the simultaneous equations are
+$$\eqalign{
+\dot ue^{t}+\dot vte^{t}&=0 \\
+\dot ue^{t}+\dot vte^{t}+\dot ve^t&={e^t\over t^2}. \\}
+$$
+Subtracting the equations gives
+$$\eqalign{
+\dot ve^{t}&={e^t\over t^2} \\
+\dot v&={1\over t^2} \\
+v&=-{1\over t}. \\}
+$$
+Then substituting we get
+$$\eqalign{
+\dot ue^t&=-\dot vte^t=-{1\over t^2}te^t \\
+\dot u&=-{1\over t} \\
+u&=-\ln t. \\}
+$$
+The solution is $\ds Ae^t+Bte^t-e^t\ln t-e^t$.
+\end{example}
+
+\begin{exercises}
+
+Find the general solution to the differential equation using variation
+of parameters.
+
+\exercise $\ds\ddot y+y=\tan x$
+\begin{answer} $\ds A\sin(t)+B\cos(t)-\hfill\break\cos t\ln|\sec t+\tan t|$
+\end{answer}
+
+\exercise $\ds\ddot y+y=e^{2t}$
+\begin{answer} $\ds A\sin(t)+B\cos(t)+{1\over5}e^{2t}$
+\end{answer}
+
+\exercise $\ds\ddot y+4y=\sec x$
+\begin{answer} $\ds A\sin(2t)+B\cos(2t)+\cos t-\sin t\cos t\ln|\sec t+\tan t|$
+\end{answer}
+
+\exercise $\ds\ddot y+4y=\tan x$
+\begin{answer} $\ds A\sin(2t)+B\cos(2t)+{1\over2}\sin(2t)\sin^2(t)+
+{1\over2}\sin(2t)\ln|\cos t|-{t\over2}\cos(2t)+{1\over4}\sin(2t)\cos(2t)$
+\end{answer}
+
+\exercise $\ds\ddot y+\dot y-6y=t^2e^{2t}$
+\begin{answer} $\ds Ae^{2t}+Be^{-3t}+{t^3\over15}e^{2t}-\left({t^2\over5}
+-{2t\over25}+{2\over125}\right){e^{2t}\over5}$
+\end{answer}
+
+\exercise $\ds\ddot y-2\dot y+2y=e^{t}\tan(t)$
+\begin{answer} $\ds Ae^{t}\sin t+Be^{t}\cos t-e^t\cos t\ln|\sec t+\tan t|$
+\end{answer}
+
+\exercise $\ds\ddot y-2\dot y+2y=\sin(t)\cos(t)$ (This is rather messy
+when done by variation of parameters; compare to undetermined coefficients.)
+\begin{answer} $\ds Ae^{t}\sin t+Be^{t}\cos t-
+{1\over10}\cos t(\cos^3 t+3\sin^3 t-2\cos t-\sin t)+
+{1\over10}\sin t(\sin^3 t-3\cos^3 t-2\sin t+\cos t)=
+{1\over10}\cos(2t)-{1\over20}\sin(2t)$
+\end{answer}
+
+\end{exercises}

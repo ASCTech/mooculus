@@ -1,0 +1,355 @@
+\section{Functions}{}{}
+\label{sec:functions}
+
+A {\dfont function}\index{function} $y=f(x)$ is a rule for determining
+$y$ when we're given a value of $x$.  For example, the rule
+$y=f(x)=2x+1$ is a function.  Any line $y=mx+b$ is called a {\dfont
+linear} function\index{function!linear}.  The graph of a function
+looks like a curve above (or below) the $x$-axis, where for any value
+of $x$ the rule $y=f(x)$ tells us how far to go above (or below) the
+$x$-axis to reach the curve.
+
+Functions can be defined in various ways: by an algebraic formula or several
+algebraic formulas, by
+a graph, or by an experimentally determined table of values.  (In the latter
+case, the table gives a bunch of points in the plane, which we might then
+interpolate with a smooth curve, if that makes sense.)
+
+Given a value of $x$, a function must give
+at most one value of $y$.  Thus, vertical lines are not functions.  For
+example, the line $x=1$ has infinitely many values of $y$ if $x=1$. It
+is also true that 
+if $x$ is any number not 1 there is no $y$ which corresponds to $x$,
+but that is not a problem---only multiple $y$ values is a problem.
+
+In addition to lines, another familiar example of a  
+function is the parabola $y=f(x)=x^2$.  We can draw the graph of this
+function by taking various values of $x$ (say, at regular intervals) and
+plotting the points $(x,f(x))=(x,x^2)$.  Then connect the points with a
+smooth curve.  (See figure~\xrefn{fig:some graphs}.)
+
+The two examples $y=f(x)=2x+1$ and $y=f(x)=x^2$ are both functions which
+can be evaluated at {\it any} value of $x$ from negative infinity to
+positive infinity.  For many functions, however, it only makes sense to
+take $x$ in some interval or outside of some ``forbidden'' region.  The
+interval of $x$-values at which we're allowed to evaluate the function is
+called the {\dfont domain\index{domain}} of the function.
+
+% BADBAD
+% \figure
+% \hbox to \hsize{\vbox{\beginpicture
+% \normalgraphs
+% \ninepoint
+% \setcoordinatesystem units <0.7truecm,0.7truecm>
+% \setplotarea x from -3 to 3, y from -3 to 3
+% \axis left shiftedto x=0 /
+% \axis bottom shiftedto y=0 /
+% \setquadratic
+% \plot -2.5 3 0 0 2.5 3 /
+% \put {$y=f(x)=x^2$} [t] <0pt,-5pt> at 0 -3
+% \endpicture}\hfill
+% \vbox{\beginpicture
+% \normalgraphs
+% \ninepoint
+% \setcoordinatesystem units <0.7truecm,0.7truecm>
+% \setplotarea x from -3 to 3, y from -3 to 3
+% \axis left shiftedto x=0 /
+% \axis bottom shiftedto y=0 /
+% \setquadratic
+% \plot 0 0 1 1 3 1.732 /
+% \put {$y=f(x)=\sqrt{x}$} [t] <0pt,-5pt> at 0 -3
+% \endpicture}\hfill
+% \vbox{\beginpicture
+% \normalgraphs
+% \ninepoint
+% \setcoordinatesystem units <0.7truecm,0.7truecm>
+% \setplotarea x from -3 to 3, y from -3 to 3
+% \axis left shiftedto x=0 /
+% \axis bottom shiftedto y=0 /
+% \setquadratic
+% \plot -3.000 -0.333 -2.867 -0.349 -2.733 -0.366 -2.600 -0.385 -2.467 -0.405 
+% -2.333 -0.429 -2.200 -0.455 -2.067 -0.484 -1.933 -0.517 -1.800 -0.556 
+% -1.667 -0.600 -1.533 -0.652 -1.400 -0.714 -1.267 -0.789 -1.133 -0.882 
+% -1.000 -1.000 -0.867 -1.154 -0.733 -1.364 -0.600 -1.667 -0.467 -2.143 
+% -0.333 -3.000 /
+% \plot 0.333 3.000 0.467 2.143 0.600 1.667 0.733 1.364 0.867 1.154 
+% 1.000 1.000 1.133 0.882 1.267 0.789 1.400 0.714 1.533 0.652 
+% 1.667 0.600 1.800 0.556 1.933 0.517 2.067 0.484 2.200 0.455 
+% 2.333 0.429 2.467 0.405 2.600 0.385 2.733 0.366 2.867 0.349 
+% 3.000 0.333 /
+% \put {$y=f(x)=1/x$} [t] <0pt,-5pt> at 0 -3
+% \endpicture}}
+% \figrdef{fig:some graphs}
+% \endfigure{Some graphs.}
+
+For example, the square-root function $y=f(x)=\sqrt{x}$ is the rule
+which says, given an $x$-value, take the nonnegative number whose
+square is $x$.  This rule only makes sense if $x$ is positive or zero.
+We say that the domain of this function is $x\ge 0$, or more formally
+$\{x\in\R\mid x\ge 0\}$.  Alternately, we
+can use interval notation, and write that the domain is $[0,\infty)$.
+(In interval notation, square brackets mean that the endpoint is
+included, and a parenthesis means that the endpoint is not included.)
+The fact that the domain of $y=\sqrt{x}$ is $[0,\infty)$ means that in the
+graph of this function ((see figure~\xrefn{fig:some graphs})
+we have points $(x,y)$ only above $x$-values on the right side of the
+$x$-axis.
+
+
+Another example of a function whose domain is not the entire $x$-axis
+is: $y=f(x)=1/x$, the reciprocal function.  We cannot substitute $x=0$
+in this formula.  The function makes sense, however, for any nonzero
+$x$, so we take the domain to be: $\{x\in\R\mid x\ne 0\}$.  The graph
+of this function does not have any point $(x,y)$ with $x=0$.  As $x$
+gets close to 0 from either side, the graph goes off toward infinity.
+We call the vertical line $x=0$ an {\dfont
+  asymptote\index{asymptote}}.
+
+To summarize, two reasons why certain $x$-values are excluded from the
+domain of a function are that (i) we cannot divide by zero, and (ii)
+we cannot take the square root of a negative number. We will
+encounter some other ways in which functions might be undefined later.
+
+Another reason why the domain of a function might be restricted is
+that in a given situation the $x$-values outside of some range might
+have no practical meaning.  For example, if $y$ is the area of a
+square of side $x$, then we can write $y=f(x)=x^2$.  In a purely
+mathematical context the domain of the function $y=x^2$ is all of
+$\R$.  But in the story-problem context of finding areas of squares,
+we restrict the domain to positive values of $x$, because a square
+with negative or zero side makes no sense.
+
+In a problem in pure mathematics, we usually take the domain to be all
+values of $x$ at which the formulas can be evaluated.  But in
+a story problem there might be further restrictions on the domain
+because only certain values of $x$ are of interest or make practical
+sense.
+
+In a story problem, often letters different from $x$ and $y$ are used.
+For example, the volume $V$ of a sphere is a function of the radius
+$r$, given by the formula $V=f(r)=\frac4/3\pi r^3$.
+Also, letters different from $f$ may be used.  For example, if $y$ is
+the velocity of something at time $t$, we may write $y=v(t)$ with
+the letter $v$ (instead of $f$) standing for the velocity function (and
+$t$ playing the role of $x$).
+
+The letter playing the role of $x$ is called the {\dfont independent
+variable}, and the letter playing the role of $y$ is called the
+{\dfont dependent variable\index{dependent variable}} (because its
+value ``depends on'' the value of the independent
+variable\index{independent variable}).  In story problems, when one
+has to translate from English into mathematics, a crucial step is to
+determine what letters stand for variables.  If only words and no
+letters are given, then we have to decide which letters to use.  Some
+letters are traditional.  For example, almost always, $t$ stands for
+time.
+
+\begin{example} An open-top box is made from an $a\times b$ rectangular piece of
+ cardboard by cutting out a square of side $x$ from each of the four
+ corners, and then folding the sides up and sealing them with duct
+ tape.  Find a formula for the volume $V$ of the box as a function of
+ $x$, and find the domain of this function.
+
+
+The box we get will have height $x$ and rectangular base of
+dimensions $a-2x$ by $b-2x$.  Thus, 
+$$
+     V=f(x)=x(a-2x)(b-2x).
+$$
+Here $a$ and $b$ are constants, and $V$ is the variable that depends
+on $x$, i.e., $V$ is playing the role of $y$.  
+
+This formula makes mathematical sense for any $x$, but in the story
+problem the domain is much less.  In the first place, $x$ must be
+positive.  In the second place, it must be less than half the length
+of either of the sides of the cardboard.  Thus, the domain is
+$$
+ \{x\in\R\mid 0<x<{1\over2}(\hbox{minimum~of~$a$~and~$b$})\}.
+$$
+In interval notation we write: the domain is the interval
+$(0,\min(a,b)/2)$. (You might think about whether we could allow 0 or 
+(minimum~of~$a$~and~$b$) to be in the domain. They make a certain
+physical sense, though we normally would not call the result a box. If we
+were to allow these values, what would the corresponding volumes be?
+Does that make sense?)
+\end{example}
+
+\begin{example} (Circle of radius $r$ centered at the origin) The equation for
+this circle is usually given in the form $x^2+y^2=r^2$.  To write the
+equation in the form $y=f(x)$ we solve for $y$, obtaining
+$y=\pm\sqrt{r^2-x^2}$.  But {\it this is not a function}, because when
+we substitute a value in $(-r,r)$ for $x$ there are two corresponding
+values of $y$.
+To get a function, we must choose one of the two signs in front of the
+square root.  If we choose the positive sign, for example, we get the
+upper semicircle $y=f(x)=\sqrt{r^2- x^2}$ (see figure~\xrefn{fig:upper
+semicircle}).  The domain of this function is the interval $[-r,r]$,
+i.e., $x$ must be between $-r$ and $r$ (including the endpoints).  If
+$x$ is outside of that interval, then $r^2-x^2$ is negative, and we
+cannot take the square root.  In terms of the graph, this just means
+that there are no points on the curve whose $x$-coordinate is greater
+than $r$ or less than $-r$.
+\end{example}
+
+% BADBAD
+% \figure
+% \vbox{\beginpicture
+% \normalgraphs
+% \ninepoint
+% \setcoordinatesystem units <0.5truein,0.5truein>
+% \setplotarea x from -3.1 to 3.1, y from 0 to 3.1
+% \axis bottom ticks withvalues {$-r$} {$r$} / at -3 3 / /
+% \axis left shiftedto x=0 /
+% \circulararc 180 degrees from 3 0 center at 0 0
+% \endpicture}
+% \figrdef{fig:upper semicircle}
+% \endfigure{Upper semicircle $y=\sqrt{r^2- x^2}$}
+
+\begin{example}
+Find the domain of 
+$$
+ y=f(x)={1\over\sqrt{4x-x^2}}.
+$$
+To answer this question, we must rule out the $x$-values that make
+$4x-x^2$ negative (because we cannot take the square root of a
+negative number)
+and also the $x$-values that make $4x-x^2$ zero (because if $4x-x^2=0$, then
+when we take the square root we get 0, and we cannot divide by 0).
+In other words, the domain consists of all $x$ for which $4x-x^2$ is
+strictly positive.  We give two different methods to find out when  $
+4x-x^2>0$.
+
+{\it First method.} Factor $4x-x^2$ as $x(4-x)$.  The product of two numbers
+is positive when either both are positive or both are negative, i.e., if
+either $x>0$ and $4-x>0$, or else $x<0$ and $4-x<0$.  The latter alternative
+is impossible, since if $x$ is negative, then $4-x$ is greater than 4, and
+so cannot be negative.  As for the first alternative, the condition $4-x>0$
+can be rewritten (adding $x$ to both sides) as $4>x$, so we need:
+$x>0$ and $4>x$ (this is sometimes combined in the form $4>x>0$, or,
+equivalently, $0<x<4$).  In interval notation, this says that the domain
+is the interval $(0,4)$.
+
+{\it Second method.}  Write $4x-x^2$ as $-(x^2-4x)$, and then complete
+the square, obtaining $-\Bigl((x-2)^2-4\Bigr)=4-(x-2)^2$.  For this
+to be positive we need $(x-2)^2<4$, which means that $x-2$ must be less
+than 2 and greater than $-2$:  $-2<x-2<2$.  Adding 2 to everything gives
+$0<x<4$.  Both of these methods are equally correct; you may use either
+in a problem of this type.
+\end{example}
+
+A function does not always have to be given by a single formula, as we
+have already seen (in the income tax problem, for example).  
+Suppose that $y=v(t)$ is the velocity function for a car
+which starts out from rest (zero velocity) at time $t=0$; then
+increases its speed steadily to 20 m/sec, taking 10 seconds to do
+this; then travels at constant speed 20 m/sec for 15 seconds; and
+finally applies the brakes to decrease speed steadily to 0, taking 5
+seconds to do this.  The formula for $y=v(t)$ is different in each of
+the three time intervals: first $y=2x$, then $y=20$, then $y=-4x+120$.
+The graph of this function is shown in figure~\xrefn{fig:piecewise
+velocity}.
+
+% BADBAD
+% \figure
+% \vbox{\beginpicture
+% \normalgraphs
+% \ninepoint
+% \setcoordinatesystem units <4truemm,2truemm>
+% \setplotarea x from 0 to 31, y from 0 to 22
+% \axis bottom ticks withvalues {$10$} {$25$} {$30$} / at 10 25 30 / /
+% \axis left ticks numbered from 0 to 20 by 10 /
+% \plot 0 0 10 20 25 20 30 0 /
+% \put {$t$} [l] <3pt,0pt> at 31 0
+% \put {$v$} [b] <0pt,3pt> at 0 22
+% \endpicture}
+% \figrdef{fig:piecewise velocity}
+% \endfigure{A velocity function.}
+
+Not all functions are given by formulas at all.  A function can be
+given by an experimentally determined table of values, or by a
+description other than a formula.  For example, the population $y$ of
+the U.S. is a function of the time $t$: we can write $y=f(t)$.  This
+is a perfectly good function---we could graph it (up to the
+present) if we had data for various $t$---but we can't find an
+algebraic formula for it.
+
+\begin{exercises}
+
+Find the domain of each of the following functions:
+
+\exercise $\ds y=f(x)=\sqrt{2x-3}$
+\begin{answer} $\ds \{x\mid x\ge 3/2\}$
+\end{answer}
+\exercise $\ds y=f(x)=1/(x+1)$
+\begin{answer} $\ds \{x\mid x\not=-1\}$
+\end{answer}
+\exercise $\ds y=f(x)=1/(x^2-1)$
+\begin{answer} $\ds \{x\mid x\not=1 \hbox{ and } x\not=-1\}$
+\end{answer}
+\exercise $\ds y=f(x)=\sqrt{-1/x}$
+\begin{answer} $\ds \{x\mid x<0\}$
+\end{answer}
+\exercise $\ds y=f(x)={\root 3 \of x}$
+\begin{answer} $\ds \{x\mid x\in \R\}$, i.e., all $x$
+\end{answer}
+\exercise $\ds y=f(x)={\root 4 \of x}$
+\begin{answer} $\ds \{x\mid x\ge0\}$
+\end{answer}
+\exercise $\ds y=f(x)=\sqrt{r^2-(x-h)^2\ }$, where
+$r$ and $h$ are positive constants.
+\begin{answer} $\ds \{x\mid h-r\le x\le h+r\}$
+\end{answer}
+\exercise $\ds y=f(x)=\sqrt{1-(1/x)}$
+\begin{answer} $\ds \{x\mid x\ge 1\}$
+\end{answer}
+\exercise $\ds y=f(x)=1/\sqrt{1-(3x)^2}$
+\begin{answer} $\ds \{x\mid -1/3< x< 1/3\}$
+\end{answer}
+\exercise $\ds y=f(x)=\sqrt{x}+1/(x-1)$
+\begin{answer} $\ds \{x\mid x\ge0  \hbox{ and } x\not=1\}$
+\end{answer}
+\exercise $\ds y=f(x)=1/(\sqrt{x}-1)$
+\begin{answer} $\ds \{x\mid x\ge0  \hbox{ and } x\not=1\}$
+\end{answer}
+
+\exercise Find the domain of $\ds h(x) = \begin{cases}
+(x^2-9)/(x-3)& x\neq 3 \\
+ 6 \mbox{ if $x=3$.} \end{cases}$
+\begin{answer} $\R$
+\end{answer}
+
+\exercise Suppose $f(x) = 3x-9$ and $\ds g(x) = \sqrt{x}$.  What is the
+domain of the composition $(g\circ f)(x)$?  (Recall that 
+{\dfont composition\index{function composition}%
+\index{composition of functions}\/}
+is defined as $(g\circ f)(x) = g(f(x))$.)  What is the
+domain of $(f\circ g)(x)$?
+\begin{answer} $\ds \{x\mid x\ge3\}$, $\{x\mid x\ge0\}$
+\end{answer}
+
+\exercise A farmer wants to build a fence along a river.  He has
+500 feet of fencing and wants to enclose a rectangular pen on three
+sides (with the river providing the fourth side).  If $x$ is the
+length of the side perpendicular to the river, determine the area of
+the pen as a function of $x$.  What is the domain of this function?
+\begin{answer} $A=x(500-2x)$, $\ds \{x\mid 0\le x\le 250\}$
+\end{answer}
+
+\exercise A can in the shape of a cylinder is to be made with a total
+of 100 square centimeters of material in the side, top, and bottom;
+the manufacturer wants the can to hold the maximum possible
+volume. Write the volume as a function of the radius $r$ of the can;
+find the domain of the function.
+\begin{answer} $\ds V=r(50-\pi r^2)$, $\ds \{r\mid 0< r\le \sqrt{50/\pi}\}$
+\end{answer}
+
+\exercise A can in the shape of a cylinder is to be made to hold a
+volume of one liter (1000 cubic centimeters). The manufacturer wants
+to use the least possible material for the can. Write the surface area
+of the can (total of the top, bottom, and side) as a function of the
+radius $r$ of the can; find the domain of the function.
+\begin{answer} $\ds A=2\pi r^2+2000/r$, $\ds \{r\mid 0<r<\infty\}$
+\end{answer}
+
+\end{exercises}
+

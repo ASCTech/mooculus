@@ -1,0 +1,204 @@
+\section{Moment and Center of Mass}{}{}
+
+Using a single integral we were able to compute the center of mass for
+a one-dimensional object with variable density, and a two dimensional
+object with constant density. With a double integral we can handle two
+dimensions and variable density.
+
+Just as before, the coordinates of the center of mass are
+$$\bar x={M_y\over M} \qquad \bar y={M_x\over M},$$
+where $M$ is the total mass, $M_y$ is the moment\index{moment}
+ around the $y$-axis,
+and $M_x$ is the moment around the $x$-axis. (You may want to review
+the concepts in section~\xrefn{sec:center of mass}.) 
+
+The key to the computation, just as before, is the approximation of
+mass. In the two-dimensional case, we treat density $\sigma$ as mass
+per square area, so when density is constant, mass is 
+$(\hbox{density})(\hbox{area})$. If we have a two-dimensional region
+with varying density given by $\sigma(x,y)$, and we divide the region
+into small subregions with area $\Delta A$, then the mass of one
+subregion is approximately $\sigma(x_i,y_j)\Delta A$, the total mass
+is approximately the sum of many of these, 
+and as usual the sum
+turns into an integral in the limit:
+$$M=\int_{x_0}^{x_1}\int_{y_0}^{y_1} \sigma(x,y)\,dy\,dx,$$
+and similarly for computations in cylindrical coordinates.
+Then as before
+$$\eqalign{
+M_x &= \int_{x_0}^{x_1}\int_{y_0}^{y_1} y\sigma(x,y)\,dy\,dx \\
+M_y &= \int_{x_0}^{x_1}\int_{y_0}^{y_1} x\sigma(x,y)\,dy\,dx. \\
+}$$
+
+\begin{example} Find the center of mass of a thin, uniform plate whose shape
+is the region between $y=\cos x$ and the $x$-axis between $x=-\pi/2$
+and $x=\pi/2$. Since the density is constant, we may take
+$\sigma(x,y)=1$. 
+
+It is clear that $\bar x=0$, but for practice let's
+compute it anyway. First we compute the mass:
+$$
+M=\int_{-\pi/2}^{\pi/2} \int_0^{\cos x} 1\,dy\,dx
+=\int_{-\pi/2}^{\pi/2} \cos x\,dx
+=\left.\sin x\right|_{-\pi/2}^{\pi/2}=2.
+$$
+Next,
+$$
+M_x=\int_{-\pi/2}^{\pi/2} \int_0^{\cos x} y\,dy\,dx
+=\int_{-\pi/2}^{\pi/2} {1\over2}\cos^2 x\,dx={\pi\over4}.
+$$
+Finally,
+$$
+M_y=\int_{-\pi/2}^{\pi/2} \int_0^{\cos x} x\,dy\,dx
+=\int_{-\pi/2}^{\pi/2} x\cos x\,dx=0.
+$$
+So $\bar x=0$ as expected, and $\bar y=\pi/4/2=\pi/8$. 
+This is the same problem as in example~\xrefn{exam:center of mass
+  under cos}; it may be helpful to compare the two solutions.
+\end{example}
+
+\begin{example} Find the center of mass of a two-dimensional plate 
+that occupies the quarter circle $x^2+y^2\le1$ in the
+first quadrant and has density
+$k(x^2+y^2)$. It seems clear that because of the symmetry of both the
+region and the density function (both are important!), $\bar x=\bar
+y$. We'll do both to check our work.
+
+Jumping right in:
+$$
+M=\int_0^1 \int_0^{\sqrt{1-x^2}} k(x^2+y^2)\,dy\,dx
+=k\int_0^1 x^2\sqrt{1-x^2}+{(1-x^2)^{3/2}\over3}\,dx.
+$$
+This integral is something we can do, but it's a bit unpleasant. Since
+everything in sight is related to a circle, let's back up and try
+polar coordinates. Then $x^2+y^2=r^2$ and
+$$M=\int_0^{\pi/2} \int_0^{1} k(r^2)\,r\,dr\,d\theta
+=k\int_0^{\pi/2}\left.{r^4\over4}\right|_0^1\,d\theta
+=k\int_0^{\pi/2} {1\over4}\,d\theta
+=k{\pi\over8}.
+$$
+Much better. Next, since $y=r\sin\theta$,
+$$M_x=k\int_0^{\pi/2} \int_0^{1} r^4\sin\theta\,dr\,d\theta
+=k\int_0^{\pi/2} {1\over5}\sin\theta\,d\theta
+=k\left.-{1\over5}\cos\theta\right|_0^{\pi/2}={k\over5}.
+$$
+Similarly,
+$$M_y=k\int_0^{\pi/2} \int_0^{1} r^4\cos\theta\,dr\,d\theta
+=k\int_0^{\pi/2} {1\over5}\cos\theta\,d\theta
+=k\left.{1\over5}\sin\theta\right|_0^{\pi/2}={k\over5}.
+$$
+Finally, $\ds\bar x = \bar y = {8\over5\pi}$.
+\end{example}
+
+\begin{exercises}
+
+\exercise Find the center of mass of a two-dimensional plate 
+that occupies the square $[0,1]\times[0,1]$
+and has density
+function $xy$.
+\begin{answer} $\bar x=\bar y=2/3$
+\end{answer}
+
+\exercise Find the center of mass of a two-dimensional plate 
+that occupies the triangle $0\le x\le1$, $0\le y\le x$,
+and has density
+function $xy$.
+\begin{answer} $\bar x=4/5$, $\bar y=8/15$
+\end{answer}
+
+\exercise Find the center of mass of a two-dimensional plate 
+that occupies the upper unit semicircle centered at $(0,0)$
+and has density
+function $y$.
+\begin{answer} $\bar x=0$, $\bar y=3\pi/16$
+\end{answer}
+
+\exercise Find the center of mass of a two-dimensional plate 
+that occupies the upper unit semicircle centered at $(0,0)$
+and has density
+function $x^2$.
+\begin{answer} $\bar x=0$, $\bar y=16/(15\pi)$
+\end{answer}
+
+% Albert
+\exercise Find the center of mass of a two-dimensional plate 
+that occupies the triangle formed by $x=2$, $y=x$, and $y=2x$
+and has density
+function $2x$.
+\begin{answer} $\bar x=3/2$, $\bar y=9/4$
+\end{answer}
+
+\exercise Find the center of mass of a two-dimensional plate 
+that occupies the triangle formed by $x=0$, $y=x$, and $2x+y=6$
+and has density
+function $\ds x^2$.
+\begin{answer} $\bar x=6/5$, $\bar y=12/5$
+\end{answer}
+
+\exercise Find the center of mass of a two-dimensional plate 
+that occupies the region enclosed by the parabolas $x=y^2$, $y=x^2$
+and has density
+function $\ds\sqrt{x}$.
+\begin{answer} $\bar x=14/27$, $\bar y=28/55$
+\end{answer}
+
+\exercise Find the centroid of the area in the first quadrant bounded by
+ $x^2-8y+4=0$, $x^2=4y$, and $x=0$. (Recall that the centroid\index{centroid}
+is the center of mass when the density is 1 everywhere.)
+\begin{answer} $(3/4,2/5)$
+\end{answer}
+
+\exercise Find the centroid of one loop of the three-leaf rose
+$r=\cos(3\theta)$.  (Recall that the centroid\index{centroid} is the
+center of mass when the density is 1 everywhere, and that the mass in
+this case is the same as the area, which was the subject of
+exercise~\xrefn{exer:area of three-leaf rose loop} in
+section~\xrefn{sec:Double Integrals in Cylindrical Coordinates}.)  The
+computations of the integrals for the moments $M_x$ and $M_y$ are
+elementary but quite long; Sage can help.
+\begin{answer} $\ds\left({81\sqrt3\over80\pi},0\right)$
+\end{answer}
+
+%/Albert
+
+\exercise Find the center of mass of a two dimensional
+object that occupies the region $0\le x\le \pi$, $0\le y\le \sin x$,
+with density $\sigma=1$.
+\begin{answer} $\bar x=\pi/2$, $\bar y=\pi/8$ 
+\end{answer}
+
+\exercise A two-dimensional object has shape given by 
+$r=1+\cos\theta$ and density $\sigma(r,\theta)=2+\cos\theta$. Set up
+the three integrals required to compute the center of mass.
+\begin{answer} $\ds M=\int_0^{2\pi} \int_0^{1+\cos\theta} (2+\cos\theta)r\,dr\,d\theta$,
+\hfill\break
+$\ds M_x=\int_0^{2\pi} \int_0^{1+\cos\theta} \sin\theta(2+\cos\theta)r^2\,dr\,d\theta$,
+\hfill\break
+$\ds M_y=\int_0^{2\pi} \int_0^{1+\cos\theta} \cos\theta(2+\cos\theta)r^2\,dr\,d\theta$.
+\end{answer}
+
+\exercise A two-dimensional object has shape given by 
+$r=\cos\theta$ and density $\sigma(r,\theta)=r+1$. Set up
+the three integrals required to compute the center of mass.
+\begin{answer} $\ds M=\int_{-\pi/2}^{\pi/2} \int_0^{\cos\theta} (r+1)r\,dr\,d\theta$,
+\hfill\break
+$\ds M_x=\int_{-\pi/2}^{\pi/2} \int_0^{\cos\theta} \sin\theta(r+1)r^2\,dr\,d\theta$,
+\hfill\break
+$\ds M_y=\int_{-\pi/2}^{\pi/2} \int_0^{\cos\theta} \cos\theta(r+1)r^2\,dr\,d\theta$.
+\end{answer}
+
+\exercise A two-dimensional object sits inside $r=1+\cos\theta$
+and outside $r=\cos\theta$, and has density $1$ everywhere.
+Set up
+the integrals required to compute the center of mass.
+\begin{answer} $\ds M= \int_{-\pi/2}^{\pi/2}\int_{\cos\theta}^{1+\cos\theta}
+r\,dr\,d\theta + \int_{\pi/2}^{3\pi/2}\int_0^{1+\cos\theta}r\,dr\,d\theta$,
+\hfill\break
+$\ds M_x=\int_{-\pi/2}^{\pi/2}\int_{\cos\theta}^{1+\cos\theta}
+r^2\sin\theta\,dr\,d\theta + \int_{\pi/2}^{3\pi/2}\int_0^{1+\cos\theta}r^2\sin\theta\,dr\,d\theta$,
+\hfill\break
+$\ds M_y=\int_{-\pi/2}^{\pi/2}\int_{\cos\theta}^{1+\cos\theta}
+r^2\cos\theta\,dr\,d\theta + \int_{\pi/2}^{3\pi/2}\int_0^{1+\cos\theta}r^2\cos\theta\,dr\,d\theta$.
+\end{answer}
+
+\end{exercises}

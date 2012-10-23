@@ -1,0 +1,100 @@
+\chapter{Analytic Geometry}
+
+Much of the mathematics in this chapter will be review for you.  However, the
+examples will be oriented toward applications and so 
+will take some thought.
+
+In the $(x,y)$ coordinate system we normally write the $x$-axis
+horizontally, with positive numbers to the right of the origin, and
+the $y$-axis vertically, with positive numbers above the origin.  That
+is, unless stated otherwise, we take ``rightward'' to be the positive
+$x$-direction and ``upward'' to be the positive $y$-direction.  In a
+purely mathematical situation, we normally choose the same scale for
+the $x$- and $y$-axes.  For example, the line joining the origin to
+the point $(a,a)$ makes an angle of 45${}^\circ$ with the $x$-axis
+(and also with the $y$-axis).
+
+In applications, often letters other than $x$ and $y$ are used, and
+often different scales are chosen in the horizontal and vertical
+directions.  For example, suppose you drop something from a window,
+and you want to study how its height above the ground changes from
+second to second.  It is natural to let the letter $t$ denote the time
+(the number of seconds since the object was released) and to let the
+letter $h$ denote the height.  For each $t$ (say, at one-second
+intervals) you have a corresponding height $h$.  This information can
+be tabulated, and then plotted on the $(t,h)$ coordinate plane, as
+shown in figure~\xrefn{fig:data plot}.
+
+% BADBAD
+% \figure
+% \vbox{
+% \begintable
+% seconds\| 0 \| 1 \| 2 \| 3\| 4\elt
+% meters\| 80 \| 75.1 \| 60.4 \| 35.9 \| 1.6 \endtable
+% \bsk
+% %\centerline{\epsfysize150pt\epsfbox{124.figAA.ps}}
+% \centerline{\vbox{\beginpicture
+% \normalgraphs
+% \ninepoint
+% \setcoordinatesystem units <2truecm,0.5truemm>
+% \setplotarea x from 0 to 4.2, y from 0 to 90
+% \axis left shiftedto x=0 ticks numbered from 20 to 80 by 20 /
+% \axis bottom shiftedto y=0 ticks numbered from 0 to 4 by 1 /
+% \put {$t$} [l] <3pt,0pt> at 4.2 0
+% \put {$h$} [l] <3pt,0pt> at 0 90
+% \setquadratic
+% \plot 0 80 1 75.1 2 60.4 3 35.9 4 1.6 /
+% \multiput {$\bullet$} at 0 80 1 75.1 2 60.4 3 35.9 4 1.6 /
+% \endpicture}}}
+% \figrdef{fig:data plot}
+% \endfigure{A data plot, height versus time.}
+
+
+%----------------------------
+%\begin{center}
+%
+%\begin{minipage}[c]{2in}
+%\begin{tabular}{rr}
+%  \underline{$t~\text{(sec)}$} & \underline{$s~\text{(meters)}$}\\ 
+%              0 &80.0~\\ 1 &75.1~\\ 2 &60.4~\\ 3 & 35.9~\\ 4 & 1.6~
+%\end{tabular}
+%\end{minipage}
+%\begin{minipage}[c]{3in}
+%\begin{psfigure}{3in}{1.5in}{124.figAA.ps}
+%\end{psfigure}
+%\end{minipage}\\
+%
+%\end{center}
+%---------------------------
+
+We use the word ``quadrant'' for each of the four regions into which
+the plane is divided by the axes: the first quadrant is where points
+have both coordinates positive, or the ``northeast'' portion of the
+plot, and the second, third, and fourth quadrants are counted off
+counterclockwise, so the second quadrant is the northwest, the third
+is the southwest, and the fourth is the southeast.
+
+Suppose we have two points $A$ and $B$ in the $(x,y)$-plane.
+We often want to know the change in $x$-coordinate (also called the
+``horizontal distance'') in going from $A$ to $B$.  This is often
+written $\Delta x$, where the meaning of $\Delta$ (a capital delta in
+the Greek alphabet) is ``change in''. (Thus, $\Delta x$ can be read as
+``change in $x$'' although it usually is read as ``delta $x$''. The
+point is that $\Delta x$ denotes a single number, and should not be
+interpreted as ``delta times $x$''.)  
+For example, if $A=(2,1)$ and $B=(3,3)$, $\Delta
+x=3-2=1$.  Similarly, the ``change in $y$'' is written $\Delta y$.  In
+our example, $\Delta y= 3-1=2$, the difference between the
+$y$-coordinates of the two points.  It is the vertical distance you
+have to move in going from $A$ to $B$.  The general formulas for the
+change in $x$ and the change in $y$ between a point $(x_1,y_1)$ and a
+point $(x_2,y_2)$ are:
+$$
+\Delta x=x_2-x_1,\qquad\qquad\Delta y=y_2-y_1.
+$$
+Note that either or both of these might be negative.
+
+\input section01.01
+\input section01.02
+\input section01.03
+\input section01.04

@@ -1,0 +1,442 @@
+\section{Other Coordinate Systems}{}{}
+\nobreak
+Coordinate systems are tools that let us use algebraic methods to
+understand geometry. While the {\dfont rectangular\index{rectangular
+    coordinates}\index{coordinates!rectangular}\/} (also called
+{\dfont Cartesian\index{Cartesian
+    coordinates}\index{coordinates!Cartesian}\/}) coordinates that we
+have been discussing are the most common, some problems are easier to
+analyze in alternate coordinate systems.
+
+A coordinate system is a scheme that allows us to identify any point
+in the plane or in three-dimensional space by a set of numbers. In
+rectangular coordinates these numbers are interpreted, roughly
+speaking, as the lengths of the sides of a rectangular ``box.''
+
+In two dimensions you may already be familiar with an alternative,
+called {\dfont polar coordinates\index{polar
+coordinates}\index{coordinates!polar}\/}. In this system, each
+point in the plane is identified by a pair of numbers $(r,\theta)$.
+The number $\theta$ measures the angle between the positive
+$x$-axis and a vector with tail at the origin and head at the
+point, as shown in figure~\xrefn{fig:polar coordinates}; the number
+$r$ measures the distance from the origin to the
+point. Either of these may be negative; a negative $\theta$ indicates
+the angle is measured clockwise from the positive
+$x$-axis instead of counter-clockwise, and a negative $r$ indicates
+the point at distance $|r|$ in the opposite of the direction given by
+$\theta$. 
+Figure~\xrefn{fig:polar coordinates} also shows the point with
+rectangular coordinates $\ds (1,\sqrt3)$ and polar coordinates 
+$(2,\pi/3)$, 2 units from the origin and $\pi/3$ radians from the
+positive $x$-axis.
+
+\figure
+\vbox{\beginpicture
+\normalgraphs
+\ninepoint
+\setcoordinatesystem units <15truemm,15truemm>
+\setplotarea x from 0 to 1.3, y from 0 to 2
+\axis left /
+\axis bottom /
+\arrow <4pt> [0.35, 1] from 0 0 to 1 1.73
+\put {$x$} [l] <3pt,0pt> at 1.3 0
+\put {$y$} [b] <0pt,3pt> at 0 2
+\put {$(r,\theta)$} [l] <3pt,0pt> at 1 1.73
+\put {$r$} [br] <-2pt,2pt> at 0.5 0.86
+\put {$\theta$} [bl] <2pt,0pt> at 0.173 0.1
+\arrow <4pt> [0.35,1] from 0.5 -0.2 to 0 -0.2
+\arrow <4pt> [0.35,1] from 0.5 -0.2 to 1 -0.2
+\put {$r\cos\theta$} at 0.5 -0.4
+\put {$r\sin\theta$} [l] <3pt,0pt> at 1 0.86
+%\put {$\ds{\pi\over 3}$} [bl] <2pt,2pt> at 0.2 0
+\circulararc 60 degrees from 0.2 0 center at 0 0
+\setdashes
+\plot 1 0 1 1.73 /
+\setsolid
+\setcoordinatesystem units <15truemm,15truemm> point at -3 0
+\setplotarea x from 0 to 1.3, y from 0 to 2
+\axis left /
+\axis bottom /
+\arrow <4pt> [0.35, 1] from 0 0 to 1 1.73
+\put {$x$} [l] <3pt,0pt> at 1.3 0
+\put {$y$} [b] <0pt,3pt> at 0 2
+\put {$(2,\pi/3)$} [l] <3pt,0pt> at 1 1.73
+\put {$\pi/3$} [bl] <2pt,0pt> at 0.173 0.1
+\circulararc 60 degrees from 0.2 0 center at 0 0
+\setdashes
+\endpicture}
+\figrdef{fig:polar coordinates}
+\endfigure{Polar coordinates: the general case and
+the point with rectangular coordinates $\ds (1,\sqrt3)$.}
+
+We can extend polar coordinates to three dimensions simply by adding a
+$z$ coordinate; this is called {\dfont cylindrical
+coordinates\index{cylindrical coordinates}\index{coordinates!cylindrical}\/}.
+Each point in three-dimensional space is represented by three
+coordinates $(r,\theta,z)$ in the obvious way: this point is $z$ units
+above or below the point $(r,\theta)$ in the $x$-$y$ plane,
+as shown in figure~\xrefn{fig:cylindrical coordinates}. The point
+with rectangular coordinates $\ds (1,\sqrt3, 3)$ and cylindrical
+coordinates $(2,\pi/3,3)$ is also indicated
+in figure~\xrefn{fig:cylindrical coordinates}.
+
+\figure
+\vbox{\beginpicture
+\normalgraphs
+\ninepoint
+\setcoordinatesystem units <10truemm,10truemm>
+\setplotarea x from 0 to 2, y from -1 to 3.3
+\axis bottom shiftedto y=0 /
+\putrule from 0 0 to 0 3.3
+\plot 0 0 -1 -1 /
+\plot 0 0 1.5 -0.7 1.5 2.3 /
+\put {$(r,\theta,z)$} [l] <3pt,0pt> at 1.5 2.3
+\put {$\bullet$} at 1.5 2.3
+\put {$z$} [b] <0pt,3pt> at 0 3.3
+\put {$x$} [tr] <-3pt,-3pt> at -1 -1
+\put {$y$} [l] <3pt,0pt> at 2 0
+\put {$\theta$} [t] <0pt,-3pt> at 0 -0.3
+\put {$z$} [l] <3pt,0pt> at 1.5 1
+\put {$r$} [tr] <-2pt,-2pt> at 1 -0.467
+\circulararc 110 degrees from -0.2 -0.2 center at 0 0
+\setcoordinatesystem units <10truemm,10truemm> point at -5 0
+\setplotarea x from 0 to 2, y from -1 to 3.3
+\axis bottom shiftedto y=0 /
+\putrule from 0 0 to 0 3.3
+\plot 0 0 -1 -1 /
+\arrow <4pt> [0.35, 1] from 0 0 to 1.5 -0.7
+\put {$(2,\pi/3,3)$} [l] <3pt,0pt> at 1.5 2.3
+\put {$\bullet$} at 1.5 2.3
+\put {$z$} [b] <0pt,3pt> at 0 3.3
+\put {$x$} [tr] <-3pt,-3pt> at -1 -1
+\put {$y$} [l] <3pt,0pt> at 2 0
+\put {$\pi/3$} [t] <0pt,-3pt> at 0 -0.3
+\circulararc 110 degrees from -0.2 -0.2 center at 0 0
+%\put {$\ds{\pi\over 3}$} [bl] <2pt,2pt> at 0.2 0
+\setdashes
+\plot 1.5 -0.7 1.5 2.3 /
+\endpicture}
+\figrdef{fig:cylindrical coordinates}
+\endfigure{Cylindrical coordinates: the general case
+and the point with rectangular coordinates $\ds (1,\sqrt3, 3)$.}
+
+Some figures with relatively complicated equations in rectangular
+coordinates will be represented by simpler equations in cylindrical
+coordinates. For example, the cylinder in figure~\xrefn{fig:cylinder}
+has equation $\ds x^2+y^2=4$ in rectangular coordinates, but equation
+$r=2$ in cylindrical coordinates.
+
+\figure
+\vbox{\beginpicture
+\normalgraphs
+\ninepoint
+\setcoordinatesystem units <3truecm,3truecm>
+\setplotarea x from 0 to 1.1, y from 0 to 1.1
+\put {\hbox{\epsfxsize7cm\epsfbox{cylinder.eps}}} at 0 0
+\endpicture}
+\figrdef{fig:cylinder}
+\endfigure{The cylinder $r=2$.}
+
+Given a point $(r,\theta)$ in polar coordinates, it is easy 
+to see  (as in figure~\xrefn{fig:polar coordinates}) that
+the rectangular coordinates of the same point are
+$(r\cos\theta,r\sin\theta)$, and so the point $(r,\theta,z)$ in
+cylindrical coordinates is $(r\cos\theta,r\sin\theta,z)$ in
+rectangular coordinates. This means it is usually easy to convert any
+equation from rectangular to cylindrical coordinates: simply substitute
+$$\eqalign{
+  x&=r\cos\theta \\
+  y&=r\sin\theta \\}
+$$
+and leave $z$ alone.
+For example,
+starting with $\ds x^2+y^2=4$ and substituting $x=r\cos\theta$,
+$y=r\sin\theta$ gives 
+$$\eqalign{
+  r^2\cos^2\theta+r^2\sin^2\theta&=4 \\
+  r^2(\cos^2\theta+\sin^2\theta)&=4 \\
+  r^2&=4 \\
+  r&=2. \\
+}$$
+Of course, it's easy to see directly that this defines a cylinder as
+mentioned above.
+
+Cylindrical coordinates are an obvious extension of polar coordinates
+to three dimensions, but the use of the $z$ coordinate means they are
+not as closely analogous to polar coordinates as another standard
+coordinate system. In polar coordinates, we identify a point by a
+direction and distance from the origin; in three dimensions we can do
+the same thing, in a variety of ways. The question is: how do we
+represent a direction? One way is to give the angle of rotation,
+$\theta$, from the positive $x$ axis, just as in cylindrical
+coordinates, and also an angle of rotation, $\phi$, from the positive
+$z$ axis. Roughly speaking, $\theta$ is like longitude and $\phi$ is
+like latitude. (Earth longitude is measured as a positive or negative
+angle from the prime meridian, and is always between 0 and 180
+degrees, east or west; $\theta$ can be any positive or negative angle,
+and we use radians except in informal circumstances. 
+Earth latitude is measured north or south
+from the equator; $\phi$ is measured from the north pole down.) This
+system is called {\dfont spherical coordinates\index{spherical
+coordinates}\index{coordinates!spherical}\/}; 
+the coordinates are listed in the order
+$(\rho,\theta,\phi)$, where $\rho$ is the distance from the
+origin, and like $r$ in cylindrical coordinates it may be negative. 
+The general case and an
+example are pictured in figure~\xrefn{fig:spherical coordinates}; the
+length marked $r$ is the $r$ of cylindrical coordinates.
+
+\figure
+\vbox{\beginpicture
+\normalgraphs
+\ninepoint
+\setcoordinatesystem units <10truemm,10truemm>
+\setplotarea x from 0 to 2, y from -1 to 3.3
+\axis bottom shiftedto y=0 /
+\putrule from 0 0 to 0 3.3
+\plot 0 0 -1 -1 /
+\arrow <4pt> [0.35, 1] from 0 0 to 1.5 -0.7
+\arrow <4pt> [0.35, 1] from 0 0 to 1.5 2.3
+\put {$(\rho,\theta,\phi)$} [l] <3pt,0pt> at 1.5 2.3
+\put {$z$} [b] <0pt,3pt> at 0 3.3
+\put {$x$} [tr] <-3pt,-3pt> at -1 -1
+\put {$y$} [l] <3pt,0pt> at 2 0
+\put {$\theta$} [t] <0pt,-3pt> at 0 -0.3
+\put {$\phi$} [bl] <2pt,2pt> at 0 0.4
+\put {$\rho$} [tl] <2pt,2pt> at 0.75 1.15
+\put {$r$} [tr] <-2pt,-2pt> at 1 -0.467
+\circulararc 110 degrees from -0.2 -0.2 center at 0 0
+\circulararc -32 degrees from 0 0.4  center at 0 0
+\setdashes
+\plot 1.5 -0.7 1.5 2.3 /
+\setsolid
+\setcoordinatesystem units <10truemm,10truemm> point at -5 0
+\setplotarea x from 0 to 2, y from -1 to 3.3
+\axis bottom shiftedto y=0 /
+\putrule from 0 0 to 0 3.3
+\plot 0 0 -1 -1 /
+\arrow <4pt> [0.35, 1] from 0 0 to 1.5 -0.7
+\arrow <4pt> [0.35, 1] from 0 0 to 1.5 2.3
+\put {$(\sqrt{13},\pi/3,\arctan(2/3))$} [l] <3pt,0pt> at 1.5 2.3
+\put {$z$} [b] <0pt,3pt> at 0 3.3
+\put {$x$} [tr] <-3pt,-3pt> at -1 -1
+\put {$y$} [l] <3pt,0pt> at 2 0
+\put {$\pi/3$} [t] <0pt,-3pt> at 0 -0.3
+\circulararc 110 degrees from -0.2 -0.2 center at 0 0
+\circulararc -32 degrees from 0 0.4  center at 0 0
+%\put {$\ds{\pi\over 3}$} [bl] <2pt,2pt> at 0.2 0
+\setdashes
+\plot 1.5 -0.7 1.5 2.3 /
+\endpicture}
+\figrdef{fig:spherical coordinates}
+\endfigure{Spherical coordinates: the general case and the point 
+with rectangular coordinates $\ds (1,\sqrt3 , 3)$.}
+
+As with cylindrical coordinates, we can easily convert equations
+in rectangular coordinates to the equivalent in spherical coordinates,
+though it is a bit more difficult to discover the proper substitutions.
+Figure~\xrefn{fig:rectangular to spherical coordinates} shows
+the typical point in spherical coordinates from 
+figure~\xrefn{fig:spherical coordinates},
+viewed now so that the arrow marked $r$ in the original graph appears as
+the horizontal ``axis'' in the left hand graph. From this diagram it
+is easy to see that the $z$ coordinate is $\rho\cos\phi$, and that 
+$r=\rho\sin\phi$, as shown. Thus, in converting from rectangular to
+spherical coordinates we will replace $z$ by $\rho\cos\phi$. To see
+the substitutions for $x$ and $y$ we now view the same point from
+above, as shown in the right hand graph. The hypotenuse of the
+triangle in the right hand graph
+is $r=\rho\sin\phi$, so the sides of the triangle, as shown,
+are $x=r\cos\theta=\rho\sin\phi\cos\theta$ and 
+$y=r\sin\theta=\rho\sin\phi\sin\theta$. So the
+upshot is that to convert from rectangular to spherical coordinates,
+we make these substitutions:
+$$\eqalign{
+  x&=\rho\sin\phi\cos\theta \\
+  y&=\rho\sin\phi\sin\theta \\
+  z&=\rho\cos\phi. \\}
+$$
+
+\figure
+\vbox{\beginpicture
+\normalgraphs
+\ninepoint
+\setcoordinatesystem units <10truemm,10truemm>
+\setplotarea x from 0 to 2.3, y from -1 to 3.3
+\axis bottom shiftedto y=0 /
+\putrule from 0 0 to 0 3.3
+\plot 0 0 2 3 /
+\put {$(\rho,\theta,\phi)$} [l] <3pt,0pt> at 2 3
+\put {$z$} [b] <0pt,3pt> at 0 3.3
+\put {$\phi$} [bl] <2pt,2pt> at 0 0.4
+\put {$\rho$} [tl] <2pt,2pt> at 1 1.5
+\circulararc -32 degrees from 0 0.4  center at 0 0
+\put {$\rho\sin\phi$} [t] <0pt,-3pt> at 1 0
+\arrow <4pt> [0.35,1] from 0.3 -0.3 to 0 -0.3
+\arrow <4pt> [0.35,1] from 1.7 -0.3 to 2 -0.3
+\put {$\rho\sin\phi$} at 1 3
+\arrow <4pt> [0.35,1] from 0.3 3 to 0 3
+\arrow <4pt> [0.35,1] from 1.7 3 to 2 3
+\put {$\rho\cos\phi$} [r] <-3pt,0pt> at 0 1.5
+\arrow <4pt> [0.35,1] from -0.3 1.8 to -0.3 3
+\arrow <4pt> [0.35,1] from -0.3 1.2 to -0.3 0
+\setdashes
+\plot 2 0 2 3 /
+\setsolid
+\setcoordinatesystem units <17truemm,17truemm> point at -3 0
+\setplotarea x from 0 to 1.3, y from 0 to 2
+\axis bottom shiftedto y=0 /
+\axis left /
+\plot 0 0 1 1.728 /
+\arrow <4pt> [0.35, 1] from 0 0 to 1 1.728
+\put {\rotstart{-60 rotate}$\rho\sin\phi$\rotfinish} <3pt,-3pt> at 0.5 0.86
+\put {$x$} [l] <3pt,0pt> at 1.3 0
+\put {$y$} [b] <0pt,3pt> at 0 2
+\put {$\theta$} [bl] <2pt,2pt> at 0.346 0.2 
+\put {$\rho\sin\phi\cos\theta$} at 0.5 -0.4
+\arrow <4pt> [0.35,1] from 0.5 -0.1 to 1 -0.1
+\arrow <4pt> [0.35,1] from 0.5 -0.1 to 0 -0.1
+\put {$\rho\sin\phi\sin\theta$} [l] <3pt,0pt> at 1 0.85
+\arrow <4pt> [0.35,1] from 1.3 1.1 to 1.3 1.728
+\arrow <4pt> [0.35,1] from 1.3 0.5 to 1.3 0
+\circulararc 60 degrees from 0.4 0 center at 0 0
+\setdashes
+\plot 1 0 1 1.728 /
+\endpicture}
+\figrdef{fig:rectangular to spherical coordinates}
+\endfigure{Converting from rectangular to spherical coordinates.}
+
+\begin{example}
+As the cylinder had a simple equation in cylindrical coordinates, so
+does the sphere in spherical coordinates: $\rho=2$ is the sphere of
+radius 2. If we start with the
+Cartesian equation of the sphere and substitute, we get the spherical
+equation: 
+$$\eqalign{
+  x^2+y^2+z^2&=2^2 \\
+  \rho^2\sin^2\phi\cos^2\theta+
+     \rho^2\sin^2\phi\sin^2\theta+\rho^2\cos^2\phi&=2^2 \\
+  \rho^2\sin^2\phi(\cos^2\theta+\sin^2\theta)+\rho^2\cos^2\phi&=2^2 \\
+  \rho^2\sin^2\phi+\rho^2\cos^2\phi&=2^2 \\
+  \rho^2(\sin^2\phi+\cos^2\phi)&=2^2 \\
+  \rho^2&=2^2 \\
+  \rho&=2 \\
+}$$
+\vskip-10pt\end{example}
+
+\begin{example}
+Find an equation for the cylinder $\ds x^2+y^2=4$ in spherical
+coordinates.
+
+Proceeding as in the previous example:
+$$\eqalign{
+  x^2+y^2&=4 \\
+  \rho^2\sin^2\phi\cos^2\theta+
+     \rho^2\sin^2\phi\sin^2\theta=4 \\
+  \rho^2\sin^2\phi(\cos^2\theta+\sin^2\theta)&=4 \\
+  \rho^2\sin^2\phi&=4 \\
+  \rho\sin\phi&=2 \\
+  \rho&={2\over\sin\phi} \\
+}$$
+\vskip-10pt\end{example}
+
+\begin{exercises}
+
+\exercise Convert the following points in rectangular coordinates to
+cylindrical and spherical coordinates:
+
+\begin{itemize} % BADBAD
+\item{a.} $(1,1,1)$
+\item{b.} $(7,-7,5)$
+\item{c.} $(\cos(1),\sin(1),1)$
+\item{d.} $(0,0,-\pi)$
+\begin{answer} $\ds (\sqrt2,\pi/4,1)$, $\ds (\sqrt3,\pi/4,\arccos(1/\sqrt3))$; 
+$\ds (7\sqrt2,7\pi/4,5)$, $\ds (\sqrt{123},7\pi/4,\arccos(5/\sqrt{123})$; 
+$(1,1,1)$, $\ds (\sqrt2,1,\pi/4)$; 
+$(0,0,-\pi)$, $(\pi,0,\pi)$
+\end{answer}
+\end{itemize}
+
+\exercise Find an equation for the sphere $\ds x^2+y^2+z^2=4$ in
+cylindrical coordinates.
+\begin{answer} $\ds r^2+z^2=4$
+\end{answer}
+
+\exercise Find an equation for the $y$-$z$ plane in cylindrical
+coordinates. 
+\begin{answer} $r\cos\theta=0$
+\end{answer}
+
+\exercise Find an equation equivalent to $\ds x^2+y^2+2z^2+2z-5=0$ in
+cylindrical coordinates.
+\begin{answer} $\ds r^2+2z^2+2z-5=0$
+\end{answer}
+
+\exercise Suppose the curve $\ds \ds z=e^{-x^2}$ in the $x$-$z$ plane is
+rotated around the $z$ axis. Find an equation for the resulting
+surface in cylindrical coordinates.
+\begin{answer} $\ds \ds z=e^{-r^2}$
+\end{answer}
+
+\exercise Suppose the curve $\ds z=x$ in the $x$-$z$ plane is
+rotated around the $z$ axis. Find an equation for the resulting
+surface in cylindrical coordinates.
+\begin{answer} $z=r$
+\end{answer}
+\label{ex:rotate z=x z axis cylindrical}
+
+\exercise Find an equation for the plane $y=0$ in
+spherical coordinates.
+\begin{answer} $\sin\theta=0$
+\end{answer}
+
+\exercise Find an equation for the plane $z=1$ in
+spherical coordinates.
+\begin{answer} $1=\rho\cos\phi$
+\end{answer}
+
+\exercise Find an equation for the sphere with radius 1 and center at
+$(0,1,0)$ in spherical coordinates.
+\begin{answer} $\rho=2\sin\theta\sin\phi$.
+\end{answer}
+
+\exercise Find an equation for the cylinder $\ds x^2+y^2=4$ in
+spherical coordinates.
+\begin{answer} $\rho\sin\phi=2$
+\end{answer}
+
+\exercise Suppose the curve $\ds z=x$ in the $x$-$z$ plane is
+rotated around the $z$ axis. Find an equation for the resulting
+surface in spherical coordinates.
+\begin{answer} $\ds \cos\phi=1/\sqrt2$
+\end{answer}
+\label{ex:rotate z=x z axis spherical}
+
+\exercise Plot the polar equations $r=\sin(\theta)$ and $r=\cos(\theta)$
+and comment on their similarities.  (If you get stuck on how to plot
+these, you can multiply both sides of each equation by $r$ and convert
+back to rectangular coordinates).
+
+\exercise Extend exercises \xrefn{ex:rotate z=x z axis cylindrical} 
+and 
+\xrefn{ex:rotate z=x z axis spherical} by rotating the curve $z=mx$
+around the $z$ axis and converting to both cylindrical and spherical
+coordinates.
+\begin{answer} $z=mr$; $\cot\phi=m$ if $m\neq0$, $\phi=0$ if $m=0$
+\end{answer}
+
+\exercise Convert the spherical formula $\rho=\sin \theta \sin \phi$ to
+rectangular coordinates and describe the surface defined by the
+formula (Hint: Multiply both sides by $\rho$.)
+\begin{answer} A sphere with radius $1/2$, center at $(0,1/2,0)$
+\end{answer}
+
+\exercise We can describe points in the first octant by $x >0$, $y>0$ and
+$z>0$.  Give similar inequalities for the first octant in cylindrical
+and spherical coordinates.
+\begin{answer} $0<\theta<\pi/2$, $0<\phi<\pi/2$, $\rho>0$;
+$0<\theta<\pi/2$, $r>0$, $z>0$
+\end{answer}
+
+\end{exercises}

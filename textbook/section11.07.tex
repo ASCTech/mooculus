@@ -1,0 +1,160 @@
+\section{The Ratio and Root Tests}{}{}
+\nobreak
+Does the series $\ds\sum_{n=0}^\infty {n^5\over 5^n}$ converge? It is
+possible, but a bit unpleasant, to approach this with the integral
+test or the comparison test, but there is an easier way. Consider what
+happens as we move from one term to the next in this series:
+$$\cdots+{n^5\over5^n}+{(n+1)^5\over 5^{n+1}}+\cdots$$
+The denominator goes up by a factor of 5, $\ds 5^{n+1}=5\cdot5^n$, but the
+numerator goes up by much less: $\ds (n+1)^5=n^5+5n^4+10n^3+10n^2+5n+1$,
+which is much less than $\ds 5n^5$ when $n$ is large, because $\ds 5n^4$ is
+much less than $\ds n^5$. So we might guess that in the long run it begins
+to look as if each term is $1/5$ of the previous term. We have seen
+series that behave like this:
+$$\sum_{n=0}^\infty {1\over 5^n} = {5\over4},$$
+a geometric series. So we might try comparing the given series to some
+variation of this geometric series. This is possible, but a bit
+messy. We can in effect do the same thing, but bypass most of the
+unpleasant work.
+
+The key is to notice that
+$$
+  \lim_{n\to\infty} {a_{n+1}\over a_n}=
+  \lim_{n\to\infty} {(n+1)^5\over 5^{n+1}}{5^n\over n^5}=
+  \lim_{n\to\infty} {(n+1)^5\over n^5}{1\over 5}=1\cdot {1\over5}
+    ={1\over 5}.
+$$ 
+This is really just what we noticed above, done a bit more officially:
+in the long run, each term is one fifth of the previous term. Now pick
+some number between $1/5$ and $1$, say $1/2$. Because
+$$\lim_{n\to\infty} {a_{n+1}\over a_n}={1\over5},$$
+then when $n$ is big enough, say $n\ge N$ for some $N$, 
+$$
+  {a_{n+1}\over a_n}<{1\over2} \hbox{\quad and\quad} a_{n+1}<{a_n\over2}.
+$$
+So $\ds a_{N+1}< a_N/2$, $\ds a_{N+2}<a_{N+1}/2<a_N/4$,
+$\ds a_{N+3}<a_{N+2}/2< a_{N+1}/4<a_N/8$, and so on. The general form is
+$\ds a_{N+k}< a_N/2^k$. So if we look at the series
+$$
+  \sum_{k=0}^\infty a_{N+k}=
+  a_N+a_{N+1}+a_{N+2}+a_{N+3}+\cdots+a_{N+k}+\cdots,
+$$
+its terms are less than or equal to the terms of the sequence
+$$
+  a_N+{a_N\over2}+{a_N\over4}+{a_N\over8}+\cdots+{a_N\over2^k}+\cdots=
+  \sum_{k=0}^\infty {a_N\over 2^k} = 2a_N.
+$$
+So by the comparison test, $\ds\sum_{k=0}^\infty a_{N+k}$ converges,
+and this means that $\ds\sum_{n=0}^\infty a_{n}$ converges, since
+we've just added the fixed number $\ds a_0+a_1+\cdots+a_{N-1}$.
+
+Under what circumstances could we do this? What was crucial was that
+the limit of $\ds a_{n+1}/a_n$, say $L$, was less than 1 so that we could pick a
+value $r$ so that $L<r<1$. The fact that $L<r$ ($1/5<1/2$ in our
+example) means that we can compare the series $\sum a_n$ to $\sum
+r^n$, and the fact that $r<1$ guarantees that $\sum r^n$
+converges. That's really all that is required to make the argument
+work. We also made use of the fact that the terms of the series were
+positive; in general we simply consider the absolute values of the
+terms and we end up testing for absolute convergence.
+
+\begin{theorem} (The Ratio Test)
+Suppose that $\ds\lim_{n\to \infty} |a_{n+1}/a_n|=L$. If $L<1$
+the series $\sum a_n$ converges absolutely, 
+if $L>1$ the series diverges, and if
+$L=1$ this test gives no information.
+\begin{proof}
+The example above essentially proves the first part of this, if we
+simply replace $1/5$ by $L$ and $1/2$ by $r$. 
+Suppose that $L>1$, and pick $r$ so that $1<r<L$.
+Then for $n\ge N$, for some $N$,
+$${|a_{n+1}|\over |a_n|} > r \hbox{\quad and\quad} |a_{n+1}| > r|a_n|.$$
+This implies that $\ds |a_{N+k}|>r^k|a_N|$, but since $r>1$ this means
+that $\ds\lim_{k\to\infty}|a_{N+k}|\not=0$, which means also that
+$\ds\lim_{n\to\infty}a_n\not=0$. By the divergence test, the series
+diverges. 
+
+To see that we get no information when $L=1$, we need to exhibit two
+series with $L=1$, one that converges and one that diverges. It is
+easy to see that $\sum 1/n^2$ and $\sum 1/n$ do the job.
+\end{proof}
+
+\begin{example} The ratio test is particularly useful for series involving
+the factorial function. Consider $\ds\sum_{n=0}^\infty  5^n/n!$. 
+$$
+  \lim_{n\to\infty} {5^{n+1}\over (n+1)!}{n!\over 5^n}=
+  \lim_{n\to\infty} {5^{n+1}\over 5^n}{n!\over (n+1)!}=
+  \lim_{n\to\infty} {5}{1\over (n+1)}=0.
+$$
+Since $0<1$, the series converges.
+\end{example}
+
+A similar argument, which we will not do, justifies a similar test
+that is occasionally easier to apply. 
+
+\begin{theorem} (The Root Test) 
+\label{thm:root test}
+Suppose that $\ds\lim_{n\to \infty} |a_n|^{1/n}=L$. If $L<1$
+the series $\sum a_n$ converges absolutely, 
+if $L>1$ the series diverges, and if
+$L=1$ this test gives no information.
+\end{proof}
+
+The proof of the root test is actually easier than that of the ratio
+test, and is a good exercise.
+
+\begin{example} Analyze $\ds\sum_{n=0}^\infty {5^n\over n^n}$.
+\ssk
+The ratio test turns out to be a bit difficult on this series (try
+it). Using the root test:
+$$
+  \lim_{n\to\infty} \left({5^n\over n^n}\right)^{1/n}=
+  \lim_{n\to\infty} {(5^n)^{1/n}\over (n^n)^{1/n}}=
+  \lim_{n\to\infty} {5\over n}=0.
+$$
+Since $0<1$, the series converges.
+\end{example}
+
+The root test is frequently useful when $n$ appears as an exponent in
+the general term of the series.
+
+\begin{exercises}
+
+\exercise Compute $\ds\lim_{n\to\infty} |a_{n+1}/a_n|$ for the series
+$\sum 1/n^2$.
+
+\exercise Compute $\ds\lim_{n\to\infty} |a_{n+1}/a_n|$ for the series
+$\sum 1/n$.
+
+\exercise Compute $\ds\lim_{n\to\infty} |a_n|^{1/n}$ for the series
+$\sum 1/n^2$.
+
+\exercise Compute $\ds\lim_{n\to\infty} |a_n|^{1/n}$ for the series
+$\sum 1/n$.
+
+\msk\noindent Determine whether the series converge.
+\twocol
+
+\exercise $\ds\sum_{n=0}^\infty (-1)^{n}{3^n\over 5^n}$
+\begin{answer} converges
+\end{answer}
+
+\exercise $\ds\sum_{n=1}^\infty {n!\over n^n}$
+\begin{answer} converges
+\end{answer}
+
+\exercise $\ds\sum_{n=1}^\infty {n^5\over n^n}$
+\begin{answer} converges
+\end{answer}
+
+\exercise $\ds\sum_{n=1}^\infty {(n!)^2\over n^n}$
+\begin{answer} diverges
+\end{answer}
+
+\endtwocol
+
+\ssk
+\exercise Prove theorem \xrefn{thm:root test}, the root test.
+
+\end{exercises}
+

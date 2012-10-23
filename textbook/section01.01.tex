@@ -1,0 +1,439 @@
+\section{Lines}{}{}
+
+If we have two points $A(x_1,y_1)$ and $B(x_2,y_2)$, then we can draw one
+and only one line through both points.  By the {\it slope} of this line
+we mean the ratio of $\Delta y$ to $\Delta x$.  The slope is often denoted
+$m$: $m=\Delta y/\Delta x=(y_2-y_1)/(x_2-x_1)$.  For example, the line
+joining the points $(1,-2)$ and $(3,5)$ has slope
+$(5+2)/(3-1)=7/2$.
+
+
+% example 1:
+
+\begin{example} According to the 1990 U.S. federal income tax schedules, a head
+of household paid 15\% on taxable income up to \$26050. If taxable
+income was between \$26050 and \$134930, then, in addition, 28\% was to
+be paid on the amount between \$26050 and \$67200, and 33\% paid on
+the amount over \$67200 (if any).  Interpret the tax bracket
+information (15\%, 28\%, or 33\%) using mathematical terminology, and
+graph the tax on the $y$-axis against the taxable income on the
+$x$-axis.
+
+The percentages, when converted to decimal values 0.15, 0.28, and 0.33,
+are the {\it slopes} of the straight lines which form the graph of the
+tax for
+the corresponding tax brackets.  The tax graph is what's called a
+{\it polygonal line}, i.e., it's made up of several straight line segments
+of different slopes.  The first line starts at the point (0,0) and heads
+upward with slope 0.15 (i.e., it goes upward 15 for every increase of
+100 in the $x$-direction), until it reaches the point above $x=26050$.
+Then the graph ``bends upward,'' i.e., the slope changes to 0.28.  As
+the horizontal coordinate goes from $x=26050$ to $x=67200$, the line
+goes upward 28 for each 100 in the $x$-direction.  At $x=67200$ the
+line turns upward again and continues with slope 0.33.  See
+figure~\xrefn{fig:irs}.
+\end{example}
+
+% BADBAD
+% \figure
+% \vbox{
+% %\centerline{\epsfysize100pt\epsfxsize300pt\epsfbox{124.figAB.ps}}
+% %\bsk
+% \centerline{\vbox{\beginpicture
+% \normalgraphs
+% \ninepoint
+% \setcoordinatesystem units <1truemm,1.5truemm>
+% \setplotarea x from 0 to 100, y from 0 to 31
+% \axis left shiftedto x=0 ticks withvalues {$10000$} {$20000$}
+%       {$30000$} / at 10 20 30 / /
+% \axis bottom shiftedto y=0 ticks withvalues {$50000$}
+%       {$100000$} / at 50 100 / /
+% \setlinear
+% \plot 0 0 26.05 3.907 67.2 15.429 100 26.253 /
+% \multiput {$\bullet$} at 26.05 3.907 67.2 15.429 /
+% \endpicture}}}
+% \figrdef{fig:irs}
+% \endfigure{Tax vs.~income.}
+%%---------------------------------
+%\begin{centering}
+%\begin{psfigure}{\textwidth}{1.75in}{124.figAB.ps}
+%\end{psfigure} \\
+%\end{centering}
+%
+%%---------------------------------
+%\end{example}
+
+The most familiar form of the equation of a straight line is:
+$y=mx+b$.  Here $m$ is the slope of the line: if you increase $x$ by
+1, the equation tells you that you have to increase $y$ by $m$.  If
+you increase $x$ by $\Delta x$, then $y$ increases by $\Delta
+y=m\Delta x$.  The number $b$ is called the {\it y-intercept}, because
+it is where the line crosses the $y$-axis.  If you know two points on
+a line, the formula $m=(y_2-y_1)/ (x_2-x_1)$ gives you the slope.
+Once you know a point and the slope, then the $y$-intercept can be
+found by substituting the coordinates of either point in the equation:
+$y_1=mx_1+b$, i.e., $b=y_1-mx_1$.  Alternatively, one can use the
+``point-slope'' form of the equation of a straight line: start with
+$(y-y_1)/(x-x_1)=m$ and then multiply to get $(y-y_1)=m(x-x_1)$, the
+point-slope form. Of course, this may be further manipulated to get
+$y=mx-mx_1+y_1$, which is essentially the ``$mx+b$'' form.
+
+It is possible to find the equation of a line between two points directly
+from the relation $(y-y_1)/(x-x_1)=(y_2-y_1)/(x_2-x_1)$, which says ``the
+slope measured between the point $(x_1,y_1)$ and the point $(x_2,y_2)$ is
+the same as the slope measured between the point $(x_1,y_1)$ and any other
+point $(x,y)$ on the line.''  For example, if we want to find the equation
+of the line joining our earlier points $A(2,1)$ and $B(3,3)$, we can use
+this formula:
+$$
+{y-1\over x-2}={3-1\over 3-2}=2,\qquad\hbox{so~that}\qquad
+y-1=2(x-2),\qquad\hbox{i.e.,}\qquad y=2x-3.
+$$
+Of course, this is really just the point-slope formula, except that we
+are not computing $m$ in a separate step.
+
+The slope $m$ of a line in the form $y=mx+b$ tells us the
+direction in which the line is pointing.  If $m$ is positive, the line goes
+into the 1st quadrant as you go from left to right.   If $m$ is large and
+positive, it has a steep incline, while if $m$ is small and positive, 
+then the line has a small angle of inclination.  If $m$ is negative, the
+line goes into the 4th quadrant as you go from left to right.  If $m$ is
+a large negative number (large in absolute value), then the line points
+steeply downward; while if $m$ is negative but near zero, then it points
+only a little downward.  These four possibilities are illustrated in 
+figure~\xrefn{fig:graphs of lines}.
+
+% BADBAD
+% \figure
+% \vbox{
+% %\centerline{\epsfbox{124.figAC.ps}}
+% \centerline{\vbox{\beginpicture
+% \normalgraphs
+% \sevenpoint
+% \setcoordinatesystem units <3truemm,3truemm>
+% \setplotarea x from -5 to 5, y from -5 to 5
+% \axis left shiftedto x=0 /
+% \axis bottom shiftedto y=0 /
+% \setlinear
+% \plot -1 -5 2.33 5 /
+% \linethickness 0.1pt
+% \axis left ticks in andacross from -5 to 5 by 1 /
+% \axis left ticks in andacross numbered from -4 to 4 by 2 /
+% \axis bottom ticks in andacross from -5 to 5 by 1 /
+% \axis bottom ticks in andacross numbered from -4 to 4 by 2 /
+% \endpicture}\qquad\vbox{\beginpicture
+% \normalgraphs
+% \sevenpoint
+% \setcoordinatesystem units <3truemm,3truemm>
+% \setplotarea x from -5 to 5, y from -5 to 5
+% \axis left shiftedto x=0 /
+% \axis bottom shiftedto y=0 /
+% \setlinear
+% \plot -5 1 5 2 /
+% \linethickness 0.1pt
+% \axis left ticks in andacross from -5 to 5 by 1 /
+% \axis left ticks in andacross numbered from -4 to 4 by 2 /
+% \axis bottom ticks in andacross from -5 to 5 by 1 /
+% \axis bottom ticks in andacross numbered from -4 to 4 by 2 /
+% \endpicture}\qquad\vbox{\beginpicture
+% \normalgraphs
+% \sevenpoint
+% \setcoordinatesystem units <3truemm,3truemm>
+% \setplotarea x from -5 to 5, y from -5 to 5
+% \axis left shiftedto x=0 /
+% \axis bottom shiftedto y=0 /
+% \setlinear
+% \plot -0.5 5 2 -5 /
+% \linethickness 0.1pt
+% \axis left ticks in andacross from -5 to 5 by 1 /
+% \axis left ticks in andacross numbered from -4 to 4 by 2 /
+% \axis bottom ticks in andacross from -5 to 5 by 1 /
+% \axis bottom ticks in andacross numbered from -4 to 4 by 2 /
+% \endpicture}\qquad\vbox{\beginpicture
+% \normalgraphs
+% \sevenpoint
+% \setcoordinatesystem units <3truemm,3truemm>
+% \setplotarea x from -5 to 5, y from -5 to 5
+% \axis left shiftedto x=0 /
+% \axis bottom shiftedto y=0 /
+% \setlinear
+% \plot -5 2 5 1 /
+% \linethickness 0.1pt
+% \axis left ticks in andacross from -5 to 5 by 1 /
+% \axis left ticks in andacross numbered from -4 to 4 by 2 /
+% \axis bottom ticks in andacross from -5 to 5 by 1 /
+% \axis bottom ticks in andacross numbered from -4 to 4 by 2 /
+% \endpicture}}}
+% \figrdef{fig:graphs of lines}
+% \endfigure{Lines with slopes 3, $0.1$, $-4$, and $-0.1$.}
+%---------------------------------
+
+%\medskip
+%
+%\begin{centering}
+%\begin{psfigure}{\hboxwidth}{1.75in}{124.figAC.ps}
+%\puttext{-120,-48}{$m=3$}
+%\puttext{-30,-48}{$m=0.1$}
+%\puttext{50,-48}{$m=-4$} 
+%\puttext{130,-48}{$m=-0.1$}
+%\end{psfigure}\\
+%\end{centering}
+%---------------------------------
+%\smallskip
+
+If $m=0$, then the line is horizontal: its equation is simply $y=b$.
+
+%\smallskip
+
+There is one type of line that cannot be written in the form $y=mx+b$,
+namely, vertical lines.  A vertical line has an equation of the form $x=a$.
+Sometimes one says that a vertical line has an ``infinite'' slope.
+
+%\smallskip
+
+Sometimes it is useful to find the $x$-intercept of a line $y=mx+b$.  This is
+the $x$-value when $y=0$.  Setting $mx+b$ equal to 0 and solving for
+$x$ gives: $x=-b/m$.  For example, the line $y=2x-3$ through the points
+$A(2,1)$ and $B(3,3)$ has $x$-intercept $3/2$.
+
+%\bigskip
+
+\begin{example} Suppose that you are driving to Seattle at constant speed, and
+notice that after you have been traveling for 1 hour (i.e., $t=1$),
+you pass a sign saying it is 110 miles to Seattle, and after driving
+another half-hour you pass a sign saying it is 85 miles to Seattle.  Using
+the horizontal axis for the time $t$ and the vertical axis for the
+distance $y$ from Seattle, graph and find the equation $y=mt+b$ for
+your distance from Seattle.  Find the slope, $y$-intercept, and
+$t$-intercept, and describe the practical meaning of each.
+%\smallskip
+
+The graph of $y$ versus $t$ is a straight line because you are traveling
+at constant speed.  The line passes through the two points $(1,110)$ and
+$(1.5,85)$, so its slope is $m=(85-110)/(1.5-1)=-50$.  The meaning of the
+slope is that you are traveling at 50 mph; $m$ is negative because you are
+traveling {\it toward\/} Seattle, i.e., your distance $y$ is {\it
+decreasing}.  The word ``velocity'' is often used for $m=-50$, when we want
+to indicate direction, while the word ``speed'' refers to the magnitude
+(absolute value) of velocity, which is 50 mph.  To find the equation of the
+line, we use the point-slope formula:
+$$
+    {y-110\over t-1}=-50,\qquad\hbox{so~that}\qquad y=-50(t-1)+110=-50t+160.
+$$ 
+The meaning of the $y$-intercept 160 is that when $t=0$ (when you
+started the trip) you were 160 miles from Seattle.  To find the
+$t$-intercept, set $0=-50t+160$, so that $t=160/50=3.2$.  The meaning
+of the $t$-intercept is the duration of your trip, from the start
+until you arrive in Seattle.
+After traveling 3 hours and 12 minutes, your distance $y$ from Seattle will be
+0.  
+\end{example} 
+\label{example:drive to Seattle}
+
+\begin{exercises}
+
+\exercise Find the equation of the line through $(1,1)$ and $(-5, -3)$ in
+the form $y=mx+b$.
+\begin{answer} $(2/3)x+(1/3)$
+\end{answer}
+
+\exercise Find the equation of the line through $(-1,2)$ with slope $-2$ in
+the form $y=mx+b$.
+\begin{answer} $y=-2x$
+\end{answer}
+
+\exercise Find the equation of the line through $(-1,1)$ and $(5, -3)$ in
+the form $y=mx+b$.
+\begin{answer} $(-2/3)x+(1/3)$
+\end{answer}
+
+
+\exercise Change the equation $y-2x=2$ to the form $y=mx+b$, graph the
+line, and find the $y$-intercept and $x$-intercept.
+\begin{answer} $y=2x+2$, 2, $-1$
+\end{answer}
+
+\exercise Change the equation $x+y=6$ to the form $y=mx+b$, graph the
+line, and find the $y$-intercept and $x$-intercept.
+\begin{answer} $y=-x+6$, 6, 6
+\end{answer}
+
+
+\exercise Change the equation $x=2y-1$ to the form $y=mx+b$, graph the
+line, and find the $y$-intercept and $x$-intercept.
+\begin{answer} $y=x/2+1/2$, $1/2$, $-1$
+\end{answer}
+
+\exercise Change the equation $3=2y$ to the form $y=mx+b$, graph the
+line, and find the $y$-intercept and $x$-intercept.
+\begin{answer} $y=3/2$, $y$-intercept: $3/2$, no $x$-intercept
+\end{answer}
+
+
+\exercise Change the equation $2x+3y+6=0$ to the form $y=mx+b$, graph the
+line, and find the $y$-intercept and $x$-intercept.
+\begin{answer} $y=(-2/3)x-2$, $-2$, $-3$
+\end{answer}
+
+\exercise Determine whether the lines $3x+6y=7$ and $2x+4y=5$ are parallel.
+\begin{answer} yes
+\end{answer}
+
+\exercise Suppose a triangle in the $x,y$--plane has vertices $(-1,0)$,
+$(1,0)$ and $(0,2)$.  Find the equations of the three lines that lie along
+ the sides of the triangle in $y=mx+b$ form.
+\begin{answer} $y=0$, $y=-2x+2$, $y=2x+2$
+\end{answer}
+
+\exercise Suppose that you are driving to Seattle at constant speed.
+After you have been traveling for an hour you pass a sign saying it is
+130 miles to Seattle, and after driving another 20 minutes you pass a
+sign saying it is 105 miles to Seattle.  Using the horizontal axis for
+the time $t$ and the vertical axis for the distance $y$ from your
+starting point, graph and find the equation $y=mt+b$ for your distance
+from your starting point. How long does the trip to Seattle take?
+\begin{answer} $y=75t$, 164 minutes
+\end{answer}
+
+
+\exercise
+Let $x$ stand for temperature in degrees Celsius (centigrade), and let
+$y$ stand for temperature in degrees Fahrenheit.  A temperature of $0^\circ$C
+corresponds to $32^\circ$F, and a temperature of
+$100^\circ$C corresponds to $212^\circ$F.  Find the
+equation of the line that relates temperature Fahrenheit $y$ to
+temperature Celsius $x$ in the form $y=mx+b$.  
+Graph the line, and find the point at which this line intersects $y=x$.
+What is the practical meaning of this point?
+\begin{answer} $y=(9/5)x+32$, $(-40,-40)$
+\end{answer}
+
+\exercise
+A car rental firm has the following charges for a certain type of car:
+\$25 per day with 100 free miles included, \$0.15 per mile for more than
+100 miles.  Suppose you want to rent a car for one day, and you know you'll
+use it for more than 100 miles.  What is the equation relating the cost
+$y$ to the number of miles $x$ that you drive the car?
+\begin{answer} $y=0.15x+10$
+\end{answer}
+
+\exercise A photocopy store advertises the following prices: 5\cents~per
+copy for the first 20 copies, 4\cents~per copy for the 21st through
+100th copy, and 3\cents~per copy after the 100th copy.  Let $x$ be the
+number of copies, and let $y$ be the total cost of photocopying.  (a)
+Graph the cost as $x$ goes from 0 to 200 copies.  (b) Find the
+equation in the form $y=mx+b$ that tells you the cost of making $x$
+copies when $x$ is more than 100.
+\begin{answer} $0.03x+1.2$
+\end{answer}
+
+\exercise
+In the Kingdom of Xyg the tax system works as follows.  Someone who
+earns less than 100 gold coins per month pays no tax.  Someone who earns
+between 100 and 1000 gold coins pays tax equal to 10\% of the amount over
+100 gold coins that he or she earns.  Someone who earns over 1000 gold coins
+must hand over to the King all of the money earned over 1000 in addition to
+the tax on the first 1000.  (a) Draw a
+graph of the tax paid $y$ versus the money earned $x$, and give
+formulas for $y$ in terms of $x$ in each of the regions $0\le x\le 100$,
+$100\le x\le 1000$, and $x\ge 1000$.  (b) Suppose that the King of Xyg
+decides to use the second of these line segments (for $100\le x\le 1000$)
+for $x\le 100$ as well.  Explain in practical terms what the King is doing,
+and what the meaning is of the $y$-intercept. 
+\begin{answer} (a) $\ds y=\begin{cases} 0 & 0\le x<100 \\
+(x/10)-10& 100\le x\le 1000 \\
+x-910 & 1000<x 
+\end{cases}$
+\end{answer}
+
+\exercise
+The tax for a single taxpayer is described in the
+figure~\xrefn{fig:tax schedule}. Use this
+information to graph tax versus taxable income (i.e., $x$ is the
+amount on Form 1040, line 37, and $y$ is the amount on Form 1040, line 38).
+Find the slope and $y$-intercept of each line that makes up the polygonal
+graph, up to $x=97620$.
+\begin{answer} $\ds y=\begin{cases} 0.15x & 0\le x\le 19450 \\
+0.28x-2528.50&  19450<x\le 47050 \\
+0.33x-4881 & 47050<x\le 97620 \\
+\end{cases}$
+\end{answer}
+
+% \font\bigbf cmbx10 scaled \magstep1
+% \font\Bigbf cmbx10 scaled \magstep2
+% \newbox\temp\setbox\temp\hbox{{\bf \bigbf Schedule X}---}
+% \figure
+% \vbox{\leftline{\bf \Bigbf 1990 Tax Rate Schedules}
+%\noindent{\bf Caution:} 
+%{\it use ONLY if your taxable income (form 1040, line 37) is {\rm\$}50,000 or
+%more. If less, use the {\bf Tax Table}. (Even though you cannot use the
+%tax rate schedules below if your taxable income is less than {\rm\$}50,000, we
+%show all levels of taxable income so that taxpayers can see the tax rate
+%that applies to each level.)}
+
+% BADBAD
+% \msk
+% \hrule
+% \hbox to \hsize{\vbox{\divide\hsize by 2\msk
+% \leftline{{\bf \bigbf Schedule X}---Use if your filing status  is}
+% \leftline{\hskip\wd\temp{\bf   Single}}\msk
+% \sevenpoint\advance\hsize by -5pt
+% \halign to \hsize{#\tabskip0pt plus10pt&#&#&#\tabskip0pt \\
+% If the amount\hfill&&Enter on\hfill&of the\hfill \\
+% on Form 1040\hfill&But not\hfill&Form 1040\hfill&amount\hfill \\
+% line 37 is over:\hfill&over:\hfill&line 38\hfill&over:\hfill \\
+% \noalign{\ssk\hrule\ssk}
+% \hfill\$0&\hfill\$19,450&\hfill {\bf 15\%}&\hfill {\bf\$0} \\
+% \hfill 19,450&\hfill 47,050&\hfill {\bf\$2,917.50+28\%}&\hfill {\bf 19,450} \\
+% \hfill 47,050&\hfill 97,620&\hfill {\bf\$10,645.50+33\%}&\hfill {\bf 47,050} \\
+% &&\leaders\hrule\hfill\span  \\
+% &&Use {\bf Worksheet}\hfill \\
+% \hfill 97,620&\leaders\hbox{.}\hfill&below to figure\hfill \\
+% &&your tax\hfill \\
+% }\ssk
+% }\vrule\hfill\vbox{\divide\hsize by 2\advance\hsize by -5pt\msk
+% \setbox\temp\hbox{{\bf \bigbf Schedule Z}---}
+% \leftline{{\bf \bigbf Schedule Z}---Use if your filing status is} 
+% \leftline{\hskip\wd\temp{\bf  Head of household}}
+% \msk
+% \sevenpoint\tabskip0pt
+% \halign to \hsize{#\tabskip0pt plus10pt&#&#&#\tabskip0pt \\
+% If the amount\hfill&&Enter on\hfill&of the\hfill \\
+% on Form 1040\hfill&But not\hfill&Form 1040\hfill&amount\hfill \\
+% line 37 is over:\hfill&over:\hfill&line 38\hfill&over:\hfill \\
+% \noalign{\ssk\hrule\ssk}
+% \hfill\$0&\hfill\$26,050&\hfill {\bf 15\%}&\hfill {\bf\$0} \\
+% \hfill 26,050&\hfill 67,200&\hfill {\bf\$3,907.50+28\%}&\hfill {\bf 26,050} \\
+% \hfill 67,200&\hfill 134,930&\hfill {\bf\$15,429.50+33\%}&\hfill {\bf 67,200} \\
+% &&\leaders\hrule\hfill\span  \\
+% &&Use {\bf Worksheet}\hfill \\
+% \hfill 134,930&\leaders\hbox{.}\hfill&below to figure\hfill \\
+% &&your tax\hfill \\
+% }\ssk}}\hrule}
+% \figrdef{fig:tax schedule}
+% \endfigure{Tax Schedule.}
+
+\exercise
+Market research tells you that if you set the price of an item at
+\$1.50, you will be able to sell 5000 items; and for every 10 cents you
+lower the price below \$1.50 you will be able to sell another 1000 items.
+Let $x$ be the number of items you can sell, and let $P$ be the price of
+an item.  (a)~Express $P$ linearly in terms of $x$, in other words,
+express $P$ in the form $P=mx+b$.  (b)~Express $x$
+linearly in terms of $P$.
+\begin{answer} (a) $P=-0.0001x+2$
+(b) $x=-10000P+20000$
+\end{answer}
+
+\exercise
+An instructor gives a 100-point final exam, and decides that a score
+90 or above will be a grade of 4.0, a score of 40 or below will be a grade
+of 0.0, and between 40 and 90 the grading will be linear.  Let $x$ be
+the exam score, and let $y$ be the corresponding grade.  Find a formula
+of the form $y=mx+b$ which applies to scores $x$ between 40 and 90.
+\begin{answer} $(2/25)x-(16/5)$
+\end{answer}
+
+\end{exercises}
+
+

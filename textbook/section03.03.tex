@@ -1,0 +1,176 @@
+\section{The Product Rule}{}{}
+\index{product rule}
+
+Consider the product of two simple functions, say
+$\ds f(x)=(x^2+1)(x^3-3x)$. An obvious guess for the derivative of $f$ is
+the product of the derivatives of the constituent functions:
+$\ds (2x)(3x^2-3)=6x^3-6x$. Is this correct? We can easily check, by
+rewriting $f$ and doing the calculation in a way that is known to
+work. First, $\ds f(x)=x^5-3x^3+x^3-3x=x^5-2x^3-3x$, and then
+$\ds f'(x)=5x^4-6x^2-3$. Not even close! What went ``wrong''? Well,
+nothing really, except the guess was wrong. 
+
+So the derivative of $f(x)g(x)$ is NOT as simple as
+$f'(x)g'(x)$. Surely there is some rule for such a situation? There
+is, and it is instructive to ``discover'' it by trying to do the
+general calculation even without knowing the answer in advance.
+\begin{align*}
+{d\over dx}(&f(x)g(x)) = \lim_{\Delta x \to0} {f(x+\Delta
+  x)g(x+\Delta x) - f(x)g(x)\over \Delta x} \\
+&=\lim_{\Delta x \to0} {f(x+\Delta
+  x)g(x+\Delta x)-f(x+\Delta x)g(x) + f(x+\Delta x)g(x)- f(x)g(x)\over
+  \Delta x} \\ 
+&=\lim_{\Delta x \to0} {f(x+\Delta
+  x)g(x+\Delta x)-f(x+\Delta x)g(x)\over \Delta x} + 
+\lim_{\Delta x \to0} {f(x+\Delta x)g(x)- f(x)g(x)\over
+  \Delta x} \\ 
+&=\lim_{\Delta x \to0} f(x+\Delta x){
+ g(x+\Delta x)-g(x)\over \Delta x} + 
+\lim_{\Delta x \to0} {f(x+\Delta x)- f(x)\over
+  \Delta x}g(x) \\ 
+&=f(x)g'(x) + f'(x)g(x) \\
+\end{align*}
+A couple of items here need discussion. First, we used a standard
+trick, ``add and subtract the same thing'', to transform what we had
+into a more useful form. After some rewriting, we realize that we have
+two limits that produce $f'(x)$ and $g'(x)$. Of course, $f'(x)$ and
+$g'(x)$ must actually exist for this to make sense.
+We also replaced
+$\ds \lim_{\Delta x\to0}f(x+\Delta x)$ with $f(x)$---why is this justified? 
+
+What we really need to know here is that $\ds \lim_{\Delta x\to
+  0}f(x+\Delta x)=f(x)$, or in the language of
+section~\xrefn{sec:adjectives for functions}, that $f$ is continuous
+at $x$.  We already know that $f'(x)$ exists (or the whole approach,
+writing the derivative of $fg$ in terms of $f'$ and $g'$, doesn't make
+sense). This turns out to imply that $f$ is continuous as well. Here's
+why:
+\begin{align*}
+\lim_{\Delta x\to 0} f(x+\Delta x) &= \lim_{\Delta x\to 0} (f(x+\Delta
+x) -f(x) + f(x)) \\
+&= \lim_{\Delta x\to 0} {f(x+\Delta x) -f(x)\over \Delta x}\Delta x +
+\lim_{\Delta x\to 0} f(x) \\
+&=f'(x)\cdot 0 + f(x) = f(x) \\
+\end{align*}
+
+% \figure
+% \vbox{\beginpicture
+% \normalgraphs
+% \ninepoint
+% \setcoordinatesystem units <1truecm,1truecm>
+% \setplotarea x from -2 to 2, y from -2 to 2
+% \axis left shiftedto x=0  /
+% \axis bottom shiftedto y=0 /
+% \linethickness 1pt
+% \put {$\bullet$} at 2 2
+% \put {$\bullet$} at 1 1
+% \put {$\bullet$} at 0 0
+% \put {$\bullet$} at -1 -1
+% \put {$\bullet$} at -2 -2
+% \put {$\circ$} at 1 0
+% \put {$\circ$} at 2 1
+% \put {$\circ$} at 0 -1
+% \put {$\circ$} at -1 -2
+% \putrule from -2 -2 to -1 -2
+% \putrule from -1 -1 to 0 -1
+% \putrule from 0 0 to 1 0
+% \putrule from 1 1 to 2 1
+% \endpicture}
+% \figrdef{fig:step function}
+% \endfigure{The greatest integer function.}
+
+
+To summarize: the product\index{product rule} rule says that
+$${d\over dx}(f(x)g(x)) = f(x)g'(x) + f'(x)g(x).
+$$
+
+Returning to the example we started with, let $\ds f(x)=(x^2+1)(x^3-3x)$.
+Then $\ds f'(x)=(x^2+1)(3x^2-3)+(2x)(x^3-3x)=3x^4-3x^2+3x^2-3+2x^4-6x^2=
+5x^4-6x^2-3$, as before. In this case it is probably simpler to
+multiply $f(x)$ out first, then compute the derivative; here's an
+example for which we really need the product rule.
+
+\begin{example} Compute the derivative of $\ds f(x)=x^2\sqrt{625-x^2}$.  We have
+already computed $\ds {d\over
+  dx}\sqrt{625-x^2}={-x\over\sqrt{625-x^2}}$.  Now
+$$f'(x)=x^2{-x\over\sqrt{625-x^2}}+2x\sqrt{625-x^2}=
+{-x^3+2x(625-x^2)\over \sqrt{625-x^2}}=
+{-3x^3+1250x\over \sqrt{625-x^2}}.
+$$
+\vskip-10pt\end{example}
+
+\begin{exercises}
+
+In 1--4, find the derivatives of the functions using the product rule.
+
+\exercise $\ds x^3(x^3-5x+10)$
+\begin{answer} $\ds 3x^2(x^3-5x+10)+x^3(3x^2-5)$
+\end{answer}
+
+\exercise $\ds (x^2+5x-3)(x^5-6x^3+3x^2-7x+1)$
+\begin{answer} $\ds (x^2+5x-3)(5x^4-18x^2+6x-7)+(2x+5)(x^5-6x^3+3x^2-7x+1)$
+\end{answer}
+
+\exercise $\ds \sqrt{x}\sqrt{625-x^2}$
+\begin{answer} $\ds \ds{\sqrt{625-x^2}\over 2\sqrt{x}}-{x\sqrt{x}\over\sqrt{625-x^2}}$
+\end{answer}
+
+\exercise $\displaystyle {\sqrt{625-x^2}\over x^{20}}$
+\begin{answer} $\ds{-1\over x^{19}\sqrt{625-x^2}}-{20\sqrt{625-x^2}\over x^{21}}$
+\end{answer}
+
+\exercise Use the product rule to compute the derivative of $\ds f(x)=(2x-3)^2$.
+ Sketch the function.  Find an equation of the tangent line to the curve at
+ $x=2$.  Sketch the tangent line at $x=2$.
+\begin{answer} $f'=4(2x-3)$, $y=4x-7$
+\end{answer}
+
+\exercise
+Suppose that $f$, $g$, and $h$ are differentiable functions.
+Show that $(fgh)'(x) = f'(x) g(x)h(x) + f(x)g'(x) h(x) + f(x) g(x)
+h'(x)$.
+
+\exercise
+State and prove a rule to compute $(fghi)'(x)$, 
+similar to the rule in the previous problem.
+
+\begin{remark}{Product notation}
+Suppose $\ds f_1 , f_2 , \ldots f_n$ are functions.
+The product of all these functions can be written
+$$ \prod _{k=1 } ^n f_k.$$
+This is similar to the use of $\ds \sum$ to denote a 
+sum.
+For example,
+$$\prod _{k=1 } ^5 f_k =f_1 f_2 f_3 f_4 f_5$$
+and
+$$
+\prod _ {k=1 } ^n k = 1\cdot 2 \cdot \ldots \cdot n = n!.$$
+We sometimes use somewhat more complicated conditions; for example
+$$\prod _{k=1 , k\neq j } ^n f_k$$
+denotes the product of $\ds f_1$ through $\ds f_n$ except for $\ds f_j$.
+For example, 
+$$\prod _{k=1 , k\neq 4} ^5 x^k = x\cdot x^2 \cdot x^3 \cdot x^5 =
+x^{11}.$$
+\end{remark}
+
+\exercise
+  The {\dfont generalized product rule\index{product rule!generalized}\/} 
+says that if $\ds f_1 , f_2 ,\ldots ,f_n$ are differentiable functions at
+  $x$ then
+$${d\over dx}\prod _{k=1 } ^n f_k(x) = 
+\sum _{j=1 } ^n \left(f'_j (x) \prod _{k=1 , k\neq j} ^n
+   f_k (x)\right).$$
+Verify that this is the same as your answer to the previous problem
+when $n=4$,
+and write out what this says when $n=5$.
+
+%% Wills
+%% \exercise 
+%% The generalized product rule is trivial when $n=1$. The case
+%% when $n=2$ is shown in the text and the case when $n=3$ is assigned
+%% in an earlier exercise. Use mathematical induction to show that the
+%% generalized product rule is true for any positive integer $n$.
+%%  \end{exer}
+
+\end{exercises}
+

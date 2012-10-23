@@ -1,0 +1,283 @@
+\section{Newton's Method}{}{}
+\nobreak
+Suppose you have a function $f(x)$, and you want to find as accurately as
+possible where it crosses the $x$-axis; in other words, you want to solve
+$f(x)=0$.  Suppose you know of no way to find an exact solution by any
+algebraic procedure, but you are able to use an approximation,
+provided it can be made quite close to the true value.
+Newton's method is a way to find a solution to the
+equation to as many decimal places as you want.  It is what is called an
+``iterative procedure,'' meaning that it can be repeated again and again to
+get an answer of greater and greater accuracy.  Iterative procedures like
+Newton's method are well suited to programming for a
+computer. Newton's method uses the fact that the tangent line to a
+curve is a good approximation to the curve near the point of tangency.
+
+\begin{example} Approximate $\ds \sqrt{3}$. Since $\ds \sqrt{3}$ is a solution to
+$\ds x^2=3$ or $\ds x^2-3=0$, we use $\ds f(x)=x^2-3$. We start by guessing
+something reasonably close to the true value; this is usually easy to
+do; let's use $\ds \sqrt3\approx2$. Now use the tangent line to the curve
+when $x=2$ as an approximation to the curve, as shown in
+figure~\xrefn{fig:newtons method}. Since $f'(x)=2x$, the slope of this
+tangent line is 4 and its equation is $y=4x-7$. The tangent line is
+quite close to $f(x)$, so it crosses the $x$-axis near the point at
+which $f(x)$ crosses, that is, near $\ds \sqrt3$. It is easy to find where
+the tangent line crosses the $x$-axis: solve $0=4x-7$ to get
+$x=7/4=1.75$. This is certainly a better approximation than 2, but let
+us say not close enough. We can improve it by doing the same thing
+again: find the tangent line at $x=1.75$, find where this new tangent
+line crosses the $x$-axis, and use that value as a better
+approximation. We can continue this indefinitely, though it gets a bit
+tedious. Lets see if we can shortcut the process. Suppose the best
+approximation to the intercept we have so far is $\ds x_i$. To find a
+better approximation we will always
+do the same thing: find the slope of the tangent line at $\ds x_i$, find the
+equation of the tangent line, find the $x$-intercept. The slope is
+$\ds 2x_i$. The tangent line is $\ds y=(2x_i)(x-x_i)+(x_i^2-3)$, using
+the point-slope formula for a line. Finally, the intercept is found by
+solving $\ds 0 =(2x_i)(x-x_i)+(x_i^2-3)$. With a little algebra this turns
+into $\ds x=(x_i^2+3)/(2x_i)$; this is the next approximation, which we
+naturally call $\ds x_{i+1}$. Instead of doing the whole tangent line
+computation every time we can simply use this formula to get as many
+approximations as we want. Starting with $\ds x_0=2$, we get
+$\ds x_1=(x_0^2+3)/(2x_0)=(2^2+3)/4=7/4$ (the same approximation we got
+above, of course), $\ds x_2=(x_1^2+3)/(2x_1)=
+((7/4)^2+3)/(7/2)=97/56\approx 1.73214$, $\ds x_3\approx 1.73205$, and so
+on. This is still a bit tedious by hand, but with a calculator or,
+even better, a good computer program, it is quite easy to get many,
+many approximations. We might guess already that $1.73205$ is accurate
+to two decimal places, and in fact it turns out that it is accurate to
+5 places.  \end{example}
+
+\figure
+\vbox{\beginpicture
+\normalgraphs
+\sevenpoint
+\setcoordinatesystem units <1.5truecm,0.6truecm>
+\setplotarea x from 0 to 4, y from -4 to 7
+\axis left /
+\axis bottom shiftedto y=0 ticks numbered from 1 to 2 by 1 /
+\plot 0.000 -3.000 0.150 -2.978 0.300 -2.910 0.450 -2.798 0.600 -2.640 
+0.750 -2.438 0.900 -2.190 1.050 -1.898 1.200 -1.560 1.350 -1.178 
+1.500 -0.750 1.650 -0.278 1.800 0.240 1.950 0.802 2.100 1.410 
+2.250 2.062 2.400 2.760 2.550 3.502 2.700 4.290 2.850 5.122 
+3.000 6.000 /
+\setlinear
+\plot 1 -3 3.5 7 /
+\endpicture}
+\figrdef{fig:newtons method}
+\endfigure{Newton's method.
+(\expandafter\url\expandafter{\liveurl jsxgraph/newtons_method.html}%
+AP\endurl)}
+
+Let's think about this process in more general terms. We want to
+approximate a solution to $f(x)=0$.
+We start with a rough guess, which we call $\ds x_0$.  We use the tangent
+line to $f(x)$ to get a new approximation that we hope will be closer
+to the true value. What is the equation of the tangent line when
+$\ds x=x_0$? The slope is $\ds f'(x_0)$ and the line goes through
+$\ds(x_0,f(x_0))$, so the equation of the line is
+$$ y=f'(x_0)(x-x_0)+f(x_0).$$
+Now we find where this crosses the $x$-axis by substituting $y=0$ and
+solving for $x$:
+$$x={x_0f'(x_0)-f(x_0)\over f'(x_0)} = x_0 - {f(x_0)\over f'(x_0)}.$$
+We will typically want to compute more than one of these improved
+approximations, so we number them consecutively; from $\ds x_0$ we have
+computed $\ds x_1$:
+$$x_1={x_0f'(x_0)-f(x_0)\over f'(x_0)} = x_0 - {f(x_0)\over f'(x_0)},$$
+and in general from $\ds x_i$ we compute $\ds x_{i+1}$:
+$$x_{i+1}={x_if'(x_i)-f(x_i)\over f'(x_i)} = x_i - {f(x_i)\over f'(x_i)}.$$
+
+\begin{example}
+Returning to the previous example, $\ds f(x)=x^2-3$, $f'(x)=2x$, and the
+formula becomes $\ds x_{i+1}=x_i - (x_i^2-3)/(2x_i)=(x_i^2+3)/(2x_i)$, as
+before.
+\end{example}
+
+In practice, which is to say, if you need to approximate a value in
+the course of designing a bridge or a building or an airframe, you
+will need to have some confidence that the approximation you settle on
+is accurate enough. As a rule of thumb, once a certain number of
+decimal places stop changing from one approximation to the next it is
+likely that those decimal places are correct. Still, this may not be
+enough assurance, in which case we can test the result for accuracy.
+
+\begin{example} Find the $x$ coordinate of the intersection of the curves $y=2x$
+and $y=\tan x$, accurate to three decimal places. To put this in the
+context of Newton's method, we note that we want to know where $2x=\tan
+x$ or $f(x)=\tan x-2x=0$. We compute $\ds f'(x)=\sec^2 x - 2$ and set up the
+formula:
+$$x_{i+1} = x_i-{\tan x_i -2x_i\over \sec^2 x_i - 2}.$$ From the graph
+in figure~\xrefn{fig:tanx vs x} 
+we guess $\ds x_0=1$ as a starting point, then using the formula we
+compute $\ds x_1=1.310478030$, $\ds x_2=1.223929096$, $\ds x_3=1.176050900$,
+$\ds x_4=1.165926508$, $\ds x_5=1.165561636$.  So we guess that the first
+three places are correct, but that is not the same as saying $1.165$
+is correct to three decimal places---$1.166$ might be the correct,
+rounded approximation. How can we tell? We can substitute $1.165$,
+$1.1655$ and $1.166$ into $\tan x - 2x$; this
+gives $-0.002483652$, $-0.000271247$, $0.001948654$. Since the first
+two are negative and the third is positive, $\tan x - 2x$ crosses the
+$x$ axis between $1.1655$ and $1.166$, so the correct value to three
+places is $1.166$.
+\end{example}
+
+\figure
+\vbox{\beginpicture
+\normalgraphs
+\sevenpoint
+\setcoordinatesystem units <3truecm,0.25truecm>
+\setplotarea x from 0 to 1.5, y from 0 to 15
+\axis left ticks numbered from 0 to 15 by 5 /
+\axis bottom shiftedto y=0 ticks length <2pt> withvalues {$1$} {$1.5$} / at
+1 1.5 / /
+\plot 0.000 0.000 0.038 0.038 0.075 0.075 0.112 0.113 0.150 0.151 
+0.188 0.190 0.225 0.229 0.262 0.269 0.300 0.309 0.338 0.351 
+0.375 0.394 0.412 0.438 0.450 0.483 0.488 0.530 0.525 0.579 
+0.562 0.630 0.600 0.684 0.638 0.741 0.675 0.800 0.712 0.864 
+0.750 0.932 0.788 1.004 0.825 1.083 0.862 1.167 0.900 1.260 
+0.938 1.362 0.975 1.475 1.012 1.601 1.050 1.743 1.088 1.905 
+1.125 2.093 1.162 2.312 1.200 2.572 1.238 2.888 1.275 3.282 
+1.312 3.785 1.350 4.455 1.388 5.394 1.425 6.810 1.462 9.198 
+1.500 14.101  /
+\setlinear
+\plot 0 0 1.5 3 /
+\setcoordinatesystem units <3truecm,0.25truecm> point at -2.5 0
+\setplotarea x from 0 to 1.5, y from 0 to 15
+\axis left ticks numbered from 0 to 15 by 5 /
+\axis bottom shiftedto y=0 ticks length <2pt> withvalues {$1$} {$1.5$} / at
+1 1.5 / /
+\plot 0.000 -0.000 0.037 -0.037 0.075 -0.075 0.113 -0.112 0.150 -0.149
+0.188 -0.185 0.225 -0.221 0.263 -0.256 0.300 -0.291 0.338 -0.324
+0.375 -0.356 0.412 -0.387 0.450 -0.417 0.487 -0.445 0.525 -0.471
+0.562 -0.495 0.600 -0.516 0.637 -0.534 0.675 -0.550 0.713 -0.561
+0.750 -0.568 0.787 -0.571 0.825 -0.567 0.863 -0.558 0.900 -0.540
+0.938 -0.513 0.975 -0.475 1.012 -0.424 1.050 -0.357 1.087 -0.270
+1.125 -0.157 1.163 -0.013 1.200 0.172 1.238 0.413 1.275 0.732
+1.312 1.160 1.350 1.755 1.387 2.619 1.425 3.960 1.462 6.273
+1.500 11.101 /
+\endpicture}
+\figrdef{fig:tanx vs x}
+\endfigure{$y=\tan x$ and $y=2x$ on the left, $y=\tan x-2x$ on the right.}
+
+\begin{exercises}
+
+\exercise Approximate the fifth root of 7, using $\ds x_0=1.5$ as a
+first guess. Use Newton's method to find $\ds x_3$ as your
+approximation.  
+\begin{answer} $\ds x_3=1.475773162$ 
+\end{answer}
+
+\exercise Use Newton's Method to approximate the cube root of 10 to
+two decimal places.
+\begin{answer} $2.15$
+\end{answer}
+
+\exercise The function 
+$\ds f(x)=x^3-3x^2-3x+6$ has a root between 3 and 4, because
+$f(3)=-3$ and $f(4)=10$. Approximate the root to two decimal places.
+\begin{answer}  $3.36$
+\end{answer}
+
+\exercise A rectangular piece of cardboard of dimensions $8\times 17$
+is used to make an open-top box by cutting out a small square of side
+$x$ from each corner and bending up the sides.  (See
+exercise~\xrefn{sec:optimization}.\xrefn{exercise: cardboard box}.)
+If $x=2$, then the volume of the box is $2\cdot 4\cdot 13=104$.  Use
+Newton's method to find a value of $x$ for which the box has volume
+100, accurate to 3 significant figures.  
+\begin{answer} $2.19$ or $1.26$
+\end{answer}
+
+% Mike Wills stuff
+% \iflatetranscendentals
+% 
+% \begin{remark} {Further investigation} Newton's method does not always
+% work. The following result gives sufficient conditions for when it
+% does.  \end{remark}
+% 
+% \begin{theorem} (Newton) Let $f:[a,b] \rightarrow \R$ be continuous. Suppose that
+% $f(c) =0$ for some $c$ in $(a,b)$.  Suppose that $f''$ exists and is
+% bounded on $(a,b)$; that is, there exists $M>0$ such that
+% $$f''(x) \leq M $$ 
+% for every $x\in (a,b)$.
+% 
+% Suppose that $f'$ is bounded away from zero; that is, there exists
+% $\epsilon >0$ such that
+% $$f'(x) \geq \epsilon $$ for every $x \in (a,b)$. Then there is a
+% closed interval $I:=[d,e] \subset (a,b)$ containing $c$ such that
+% the sequence given recursively by
+% $$x_n = x_{n-1} -f(x_{n-1})/f'(x_{n -1}) $$ converges to
+% $c$. Moreover, $x_n$ is in $I$ for each $n$.
+% \end{proof}
+% 
+% \noindent
+% For this to make sense it helps if we have a notion of convergence of
+% sequences. We will do this in second semester calculus. For now, we
+% will just use the intuitive statement ``as $n$ gets large, $x_n$ gets
+% arbitrarily close to $c$" and write 
+% $\displaystyle{\lim _{n\rightarrow\infty } x_n }= c$.
+% 
+% \noindent
+% Let us now analyze the various conditions in the statement.
+% 
+% \noindent
+% Bounding $f'$ away from zero should seem reasonable from the
+% definition of $\ds x_n$ but it is not necessary. The following
+% exercise shows that Newton's method may work even if $f'$ is not
+% bounded away from zero.
+% 
+% \exercise Let $\ds f(x) = x^2$. Adopt the notation of Newton's
+% theorem. Show that if $\ds x_{n-1 } \neq 0$ then $\ds x_n
+% =x_{n-1}/2$. Suppose that $\ds x_0 = 1.$ What is $\ds x_1$? How about
+% $\ds x_2$? How about $\ds x_n$? Argue that $\ds x_n$ converges to zero
+% as $n$ goes to $\infty$ when $\ds x_0 =1$.
+% 
+% \noindent
+% In the above example, any $\ds x_0$ except zero will do.  The next
+% exercise illustrates what can go wrong if we do not bound $f'$ away
+% from zero.
+% 
+% \exercise Let $\ds f(x) = x^4 - 4x - 11$. Then $f(0)<0 < f(3)$ so by
+% the intermediate value theorem there exists a root between $x=0$ and
+% $x=3$. What happens if we apply Newton's method when we start at $\ds
+% x_0 =1$?  Sketch the graph of $f$ on the interval $[0,3]$.
+%  
+% \noindent
+% We also require a bound on the second derivative. The following
+% exercise shows what can go wrong.
+% 
+% \exercise Let $\ds f(x) = x^{1/3}$. Observe that $x=0$ is a root of
+% $f$.  Compute $f''(x)$ and explain why $f''$ is unbounded near
+% $x=0$. Attempt to use Newton's method with $\ds x_0 = 1$.  What
+% happens? Illustrate your conclusion with a diagram.
+%  
+% \noindent
+% Newton's method, when it works, is extremely fast. The number of
+% decimal places of accuracy approximately doubles with each successive
+% iteration.
+%  
+% \noindent
+% The statement of Newton's theorem does not tell us how to how to find
+% the closed interval $I$. The proof gives some indication but is beyond
+% the scope of the course.
+%  
+% \noindent
+% For our purposes, we can use a graphing calculator to give us an idea
+% of where to look for the roots of a given function and then apply
+% Newton's method to get a good decimal approximation.
+%  
+% \exercise Use Newton's method to find the coordinates of the
+% inflection point of $\ds y=x^3/12 + \sin x$ correct to six decimal
+% places.
+%  
+% \exercise Let $a$ be a non-zero number. Suppose we want to compute a
+% decimal expansion of $1/a$.  This could be difficult if $a$ is big or
+% has a large number of decimal places. Newton's method gives us a way
+% of computing $a$ without division.  Let $f(x) = 1/x - a$. Notice that
+% $f$ has a root at $x=1/a$.  Using the notation of Newton's theorem,
+% show that $\ds x_{n} =2x_{n-1} - ax_{n-1}^2$.
+%  
+% \fi
+
+\end{exercises}

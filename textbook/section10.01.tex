@@ -1,0 +1,386 @@
+\section{Polar Coordinates}{}{}
+\nobreak
+Coordinate systems are tools that let us use algebraic methods to
+understand geometry. While the {\dfont rectangular\index{rectangular
+    coordinates}\index{coordinates!rectangular}\/} (also called
+{\dfont Cartesian\index{Cartesian
+    coordinates}\index{coordinates!Cartesian}\/}) coordinates that we
+have been using are the most common, some problems are easier to
+analyze in alternate coordinate systems.
+
+A coordinate system is a scheme that allows us to identify any point
+in the plane or in three-dimensional space by a set of numbers. In
+rectangular coordinates these numbers are interpreted, roughly
+speaking, as the lengths of the sides of a rectangle. 
+In {\dfont polar\index{polar coordinates}\index{coordinates!polar}
+coordinates\/} a 
+point in the plane is identified by a pair of numbers $(r,\theta)$.
+The number $\theta$ measures the angle between the positive
+$x$-axis and a ray that goes through the point,
+as shown in figure~\xrefn{fig:polar coordinates example}; the number
+$r$ measures the distance from the origin to the
+point. Figure~\xrefn{fig:polar coordinates example} shows the point with
+rectangular coordinates $\ds (1,\sqrt3)$ and polar coordinates 
+$(2,\pi/3)$, 2 units from the origin and $\pi/3$ radians from the
+positive $x$-axis.
+
+\figure
+\vbox{\beginpicture
+\normalgraphs
+\ninepoint
+\setcoordinatesystem units <15truemm,15truemm>
+\setplotarea x from 0 to 1.25, y from 0 to 1.9
+\axis left ticks length <2pt> withvalues {$\sqrt3$} / at 1.728 / /
+\axis bottom ticks length <2pt> withvalues {$1$} / at 1 / /
+\arrow <4pt> [0.35, 1] from 0 0 to 1.2 2.078
+\put {$(2,\pi/3)$} [l] <3pt,0pt> at 1 1.73
+\put {$\bullet$} at 1 1.728
+\circulararc 60 degrees from 0.2 0 center at 0 0
+\endpicture}
+\figrdef{fig:polar coordinates example}
+\endfigure{Polar coordinates of the point $\ds (1,\sqrt3)$.}
+
+Just as we describe curves in the plane using equations involving $x$
+and $y$, so can we describe curves using equations involving $r$ and
+$\theta$. Most common are equations of the form $r=f(\theta)$. 
+
+\begin{example} Graph the curve given by $r=2$. All points with $r=2$ are at
+distance 2 from the origin, so $r=2$ describes the circle of radius 2
+with center at the origin.
+\end{example}
+
+\begin{example} Graph the curve given by $r=1+\cos\theta$. We first consider
+$y=1+\cos x$, as in figure~\xrefn{fig:cardioid}. As $\theta$ goes
+through the values in $[0,2\pi]$, the value of $r$ tracks the value of
+$y$, forming the ``cardioid\index{cardioid}'' 
+shape of  figure~\xrefn{fig:cardioid}.
+For example, when $\theta=\pi/2$, $r=1+\cos(\pi/2)=1$, so we graph the
+point at distance 1 from the origin along the positive $y$-axis, which
+is at an angle of $\pi/2$ from the positive $x$-axis. When
+$\theta=7\pi/4$, $\ds r=1+\cos(7\pi/4)=1+\sqrt2/2\approx 1.71$, and the
+corresponding point appears in the fourth quadrant. This illustrates
+one of the potential benefits of using polar coordinates: the equation
+for this curve in rectangular coordinates would be quite complicated.
+\end{example}
+
+\figure
+\vbox{\beginpicture
+\normalgraphs
+\ninepoint
+\setcoordinatesystem units <12truemm,12truemm>
+\setplotarea x from 0 to 6.2832, y from 0 to 2.2
+\axis left ticks length <2pt> numbered from 0 to 2 by 1 /
+\axis bottom ticks length <2pt> withvalues 
+  {$\pi/2$} {$\pi$} {$3\pi/2$} {$2\pi$} / at 1.57 3.14 4.7 6.28 / /
+\multiput {$\bullet$} at 1.57 1 5.5 1.71 /
+\setquadratic
+\plot
+0.000 2.000 0.105 1.995 0.209 1.978 0.314 1.951 0.419 1.914 
+0.524 1.866 0.628 1.809 0.733 1.743 0.838 1.669 0.942 1.588 
+1.047 1.500 1.152 1.407 1.257 1.309 1.361 1.208 1.466 1.105 
+1.571 1.000 1.676 0.895 1.780 0.792 1.885 0.691 1.990 0.593 
+2.094 0.500 2.199 0.412 2.304 0.331 2.409 0.257 2.513 0.191 
+2.618 0.134 2.723 0.086 2.827 0.049 2.932 0.022 3.037 0.005 
+3.142 0.000 3.246 0.005 3.351 0.022 3.456 0.049 3.560 0.086 
+3.665 0.134 3.770 0.191 3.875 0.257 3.979 0.331 4.084 0.412 
+4.189 0.500 4.294 0.593 4.398 0.691 4.503 0.792 4.608 0.895 
+4.712 1.000 4.817 1.105 4.922 1.208 5.027 1.309 5.131 1.407 
+5.236 1.500 5.341 1.588 5.445 1.669 5.550 1.743 5.655 1.809 
+5.760 1.866 5.864 1.914 5.969 1.951 6.074 1.978 6.178 1.995 
+6.283 2.000 /
+\setcoordinatesystem units <12truemm,12truemm> point at -8 -1
+\setplotarea x from -1 to 2.5, y from -1.5 to 1.5
+\axis left shiftedto x=0 /
+\axis bottom shiftedto y=0 /
+\put {$\bullet$} at 0 1
+\put {$\bullet$} at 1.207 -1.207
+\setquadratic
+\plot 2.000 0.000 1.984 0.208 1.935 0.411 1.856 0.603 1.748 0.778 
+1.616 0.933 1.464 1.063 1.295 1.166 1.117 1.240 0.933 1.285 
+0.750 1.299 0.572 1.285 0.405 1.245 0.251 1.182 0.115 1.098 
+-0.000 1.000 -0.094 0.891 -0.165 0.775 -0.214 0.657 -0.241 0.542 
+-0.250 0.433 -0.242 0.333 -0.221 0.246 -0.191 0.172 -0.155 0.112 
+-0.116 0.067 -0.079 0.035 -0.047 0.015 -0.021 0.005 -0.005 0.001 
+0.000 0.000 -0.005 -0.001 -0.021 -0.005 -0.047 -0.015 -0.079 -0.035 
+-0.116 -0.067 -0.155 -0.112 -0.191 -0.172 -0.221 -0.246 -0.242 -0.333 
+-0.250 -0.433 -0.241 -0.542 -0.214 -0.657 -0.165 -0.775 -0.094 -0.891 
+0.000 -1.000 0.115 -1.098 0.251 -1.182 0.405 -1.245 0.572 -1.285 
+0.750 -1.299 0.933 -1.285 1.117 -1.240 1.295 -1.166 1.464 -1.063 
+1.616 -0.933 1.748 -0.778 1.856 -0.603 1.935 -0.411 1.984 -0.208 
+2.000 0.000 /
+\setdashes
+\arrow <4pt> [0.35, 1] from 0 0 to 1.207 -1.207
+\endpicture}
+\figrdef{fig:cardioid}
+\endfigure{A cardioid: $y=1+\cos x$ on the left, $r=1+\cos\theta$ on
+  the right.}
+
+Each point in the plane is associated with exactly one pair of numbers
+in the rectangular coordinate system; each point is associated with an
+infinite number of pairs in polar coordinates. In the cardioid
+example, we considered only the range $0\le \theta\le2\pi$, and
+already there was a duplicate: $(2,0)$ and $(2,2\pi)$ are the same
+point. Indeed, every value of $\theta$ outside the interval $[0,2\pi)$
+duplicates a point on the curve $r=1+\cos\theta$ when
+$0\le\theta<2\pi$. We can even make sense of polar coordinates like
+$(-2,\pi/4)$: go to the direction $\pi/4$ and then move a distance 2
+in the opposite direction; see figure~\xrefn{fig:negative r
+coordinate}. As usual, a negative angle $\theta$ means an angle
+measured clockwise from the positive $x$-axis. The point in
+figure~\xrefn{fig:negative r coordinate} also has coordinates
+$(2,5\pi/4)$ and $(2,-3\pi/4)$.
+
+\figure
+\vbox{\beginpicture
+\normalgraphs
+\eightpoint
+\setcoordinatesystem units <10truemm,10truemm>
+\setplotarea x from -2 to 2, y from -2 to 2
+\axis left shiftedto x=0 ticks length <2pt> 
+  withvalues $-2$ $-1$ {} $1$ $2$ / quantity 5 /
+\axis bottom shiftedto y=0 ticks length <2pt> 
+  withvalues $-2$ $-1$ {} $1$ $2$ / quantity 5 /
+\put {$\pi/4$} [bl] <3pt,-4pt> at 0.4 0.3
+\put {$\bullet$} at -1.4142 -1.4142
+\circulararc 45 degrees from 0.4 0 center at 0 0
+\setdashes\arrow <4pt> [0.35, 1] from 1 1 to -1.4142 -1.4142
+\endpicture}
+\figrdef{fig:negative r coordinate}
+\endfigure{The point $(-2,\pi/4)=(2,5\pi/4)=(2,-3\pi/4)$ in polar coordinates.}
+
+The relationship\index{coordinates!converting rectangular to polar}
+between rectangular and polar coordinates is quite easy to
+understand. The point with polar coordinates $(r,\theta)$ has
+rectangular coordinates $x=r\cos\theta$ and $y=r\sin\theta$; this
+follows immediately from the definition of the sine and cosine
+functions. Using figure~\xrefn{fig:negative r coordinate} as an
+example, the point shown has rectangular coordinates 
+$\ds x=(-2)\cos(\pi/4)=-\sqrt2\approx 1.4142$ and 
+$\ds y=(-2)\sin(\pi/4)=-\sqrt2$.  This makes it very easy to convert
+equations from rectangular to polar coordinates.
+
+\begin{example} Find the equation of the line $y=3x+2$ in polar
+coordinates. We merely substitute: $r\sin\theta=3r\cos\theta+2$, or 
+$\ds r= {2\over \sin\theta-3\cos\theta}$.
+\end{example}
+
+\begin{example} Find the equation of the circle $\ds (x-1/2)^2+y^2=1/4$ in polar
+coordinates. Again substituting:
+$\ds (r\cos\theta-1/2)^2+r^2\sin^2\theta=1/4$. A bit of algebra turns this
+into $r=\cos(t)$. You should try plotting a few $(r,\theta)$ values to
+convince yourself that this makes sense.
+\end{example}
+
+\begin{example} Graph the polar equation $r=\theta$. Here the distance from
+the origin exactly matches the angle, so a bit of thought makes it
+clear that when $\theta\ge0$ we get the spiral of 
+Archimedes\index{spiral of Archimedes} in 
+figure~\xrefn{fig:spiral of Archimedes}. When $\theta<0$, $r$ is also
+negative, and so the full graph is the right hand picture in the
+figure.
+\end{example}
+
+\figure
+\vbox{\beginpicture
+\normalgraphs
+\eightpoint
+\setcoordinatesystem units <5truemm,5truemm>
+\setplotarea x from -3.4 to 6.5, y from -4.8 to 2
+\axis left shiftedto x=0 /
+\axis bottom shiftedto y=0 /
+\multiput {$\bullet$} at 0.54 0.84 0 1.57 -3.14 0 6.28 0 /
+\put {$(2\pi,2\pi)$} [b] <0pt,3pt> at 6.28 0
+\put {$(\pi,\pi)$} [br] <-3pt,0pt> at -3.14 0
+\put {$(\pi/2,\pi/2)$} [br] <-2pt,4pt> at 0 1.57
+\put {$(1,1)$} [bl] <3pt,0pt> at 0.54 0.84
+\plot 0.000 0.000 0.104 0.011 0.205 0.044 0.299 0.097 0.383 0.170
+0.453 0.262 0.508 0.369 0.545 0.490 0.561 0.623 0.554 0.762
+0.524 0.907 0.469 1.052 0.388 1.195 0.283 1.332 0.153 1.458
+0.000 1.571 -0.175 1.666 -0.370 1.741 -0.582 1.793 -0.809 1.818
+-1.047 1.814 -1.293 1.779 -1.542 1.712 -1.790 1.612 -2.033 1.477
+-2.267 1.309 -2.487 1.107 -2.689 0.874 -2.868 0.610 -3.020 0.317
+-3.142 0.000 -3.229 -0.339 -3.278 -0.697 -3.287 -1.068 -3.253 -1.448
+-3.174 -1.833 -3.050 -2.216 -2.879 -2.593 -2.663 -2.957 -2.401 -3.304
+-2.094 -3.628 -1.746 -3.922 -1.359 -4.183 -0.936 -4.405 -0.482 -4.582
+0.000 -4.712 0.504 -4.791 1.023 -4.814 1.553 -4.781 2.087 -4.688
+2.618 -4.534 3.139 -4.321 3.644 -4.047 4.125 -3.714 4.575 -3.324
+4.988 -2.880 5.357 -2.385 5.677 -1.845 5.941 -1.263 6.145 -0.646
+6.283 0.000 /
+\setcoordinatesystem units <5truemm,5truemm> point at -18 0
+\setplotarea x from -6.5 to 6.5, y from -4.8 to 2
+\axis left shiftedto x=0 /
+\axis bottom shiftedto y=0 /
+\multiput {$\bullet$} at -0.54 0.84 0 1.57 3.14 0 -6.28 0 /
+\put {$(-2\pi,-2\pi)$} [b] <0pt,3pt> at -6.28 0
+\put {$(-\pi,-\pi)$} [bl] <3pt,2pt> at 3.14 0
+\put {$(-\pi/2,-\pi/2)$} [br] <-2pt,4pt> at 0 1.57
+\put {$(-1,-1)$} [t] <0pt,0pt> at -1.5 -1
+\plot -6.283 0.000 -6.145 -0.646 -5.941 -1.263 -5.677 -1.845 -5.357 -2.385
+-4.988 -2.880 -4.575 -3.324 -4.125 -3.714 -3.644 -4.047 -3.139 -4.321
+-2.618 -4.534 -2.087 -4.688 -1.553 -4.781 -1.023 -4.814 -0.504 -4.791
+0.000 -4.712 0.482 -4.582 0.936 -4.405 1.359 -4.183 1.746 -3.922
+2.094 -3.628 2.401 -3.304 2.663 -2.957 2.879 -2.593 3.050 -2.216
+3.174 -1.833 3.253 -1.448 3.287 -1.068 3.278 -0.697 3.229 -0.339
+3.142 0.000 3.020 0.317 2.868 0.610 2.689 0.874 2.487 1.107
+2.267 1.309 2.033 1.477 1.790 1.612 1.542 1.712 1.293 1.779
+1.047 1.814 0.809 1.818 0.582 1.793 0.370 1.741 0.175 1.666
+0.000 1.571 -0.153 1.458 -0.283 1.332 -0.388 1.195 -0.469 1.052
+-0.524 0.907 -0.554 0.762 -0.561 0.623 -0.545 0.490 -0.508 0.369
+-0.453 0.262 -0.383 0.170 -0.299 0.097 -0.205 0.044 -0.104 0.011
+0.000 0.000 0.104 0.011 0.205 0.044 0.299 0.097 0.383 0.170
+0.453 0.262 0.508 0.369 0.545 0.490 0.561 0.623 0.554 0.762
+0.524 0.907 0.469 1.052 0.388 1.195 0.283 1.332 0.153 1.458
+0.000 1.571 -0.175 1.666 -0.370 1.741 -0.582 1.793 -0.809 1.818
+-1.047 1.814 -1.293 1.779 -1.542 1.712 -1.790 1.612 -2.033 1.477
+-2.267 1.309 -2.487 1.107 -2.689 0.874 -2.868 0.610 -3.020 0.317
+-3.142 0.000 -3.229 -0.339 -3.278 -0.697 -3.287 -1.068 -3.253 -1.448
+-3.174 -1.833 -3.050 -2.216 -2.879 -2.593 -2.663 -2.957 -2.401 -3.304
+-2.094 -3.628 -1.746 -3.922 -1.359 -4.183 -0.936 -4.405 -0.482 -4.582
+0.000 -4.712 0.504 -4.791 1.023 -4.814 1.553 -4.781 2.087 -4.688
+2.618 -4.534 3.139 -4.321 3.644 -4.047 4.125 -3.714 4.575 -3.324
+4.988 -2.880 5.357 -2.385 5.677 -1.845 5.941 -1.263 6.145 -0.646
+6.283 0.000 /
+\setdashes <2pt>
+\setlinear
+\plot -2 -0.9 -0.54 0.84 /
+%\altarrow <4pt,5pt> [0.35, 1] from -2 -0.9 to -0.54 0.84
+\endpicture}
+\figrdef{fig:spiral of Archimedes}
+\endfigure{The spiral of Archimedes and the full graph of $r=\theta$.}
+
+Converting polar equations to rectangular equations can be somewhat
+trickier, and graphing polar equations directly is also not always easy.
+
+\begin{example} Graph $r=2\sin\theta$. Because the sine is periodic, we know
+that we will get the entire curve for values of $\theta$ in
+$[0,2\pi)$. As $\theta$ runs from 0 to $\pi/2$, $r$ increases from 0
+to 2. Then as $\theta$ continues to $\pi$, $r$ decreases again to
+0. When $\theta$ runs from $\pi$ to $2\pi$, $r$ is negative, and it
+is not hard to see that the first part of the curve is simply traced
+out again, so in fact we get the whole curve for values of $\theta$
+in $[0,\pi)$. Thus, the curve looks something like
+figure~\xrefn{fig:circle from polar equation}. Now, this suggests
+that the curve could possibly be a circle, and if it is, it would
+have to be the circle $\ds x^2+(y-1)^2=1$. Having made this guess, we
+can easily check it. First we substitute for $x$ and $y$ to get
+$\ds (r\cos\theta)^2+(r\sin\theta-1)^2=1$; expanding and simplifying
+does indeed turn this into $r=2\sin\theta$.
+\end{example}
+
+\figure
+\vbox{\beginpicture
+\normalgraphs
+\ninepoint
+\setcoordinatesystem units <15truemm,15truemm>
+\setplotarea x from -1 to 1, y from 0 to 2.2
+\axis left shiftedto x=0 ticks length <2pt> numbered from 1 to 1 by 1 /
+\axis bottom ticks length <2pt> numbered from -1 to 1 by 1 /
+\circulararc 360 degrees from 1 1 center at 0 1
+\endpicture}
+\figrdef{fig:circle from polar equation}
+\endfigure{Graph of $r=2\sin\theta$.}
+
+\begin{exercises}
+% Almost all from Keisler
+
+\exercise Plot these polar coordinate points on one graph:
+$(2,\pi/3)$, $(-3,\pi/2)$, $(-2,-\pi/4)$, $(1/2,\pi)$, $(1,4\pi/3)$, 
+$(0,3\pi/2)$.
+
+\noindent Find an equation in polar coordinates that has the same
+graph as the given equation in rectangular coordinates.
+
+\twocol
+
+\exercise $\ds y=3x$
+\begin{answer} $\ds \theta=\arctan(3)$
+\end{answer}
+
+\exercise $\ds y=-4$
+\begin{answer} $\ds r=-4\csc\theta$
+\end{answer}
+
+\exercise $\ds xy^2=1$
+\begin{answer} $\ds r=\sec\theta\csc^2\theta$
+\end{answer}
+
+\exercise $\ds x^2+y^2=5$
+\begin{answer} $\ds r=\sqrt{5}$
+\end{answer}
+
+\exercise $\ds y=x^3$
+\begin{answer} $\ds r^2=\sin\theta\sec^3\theta$
+\end{answer}
+
+\exercise $\ds y=\sin x$
+\begin{answer} $\ds r\sin\theta=\sin(r\cos\theta)$
+\end{answer}
+
+\exercise $\ds y=5x+2$
+\begin{answer} $\ds r=2/(\sin\theta-5\cos\theta)$
+\end{answer}
+
+\exercise $\ds x=2$
+\begin{answer} $\ds r=2\sec\theta$
+\end{answer}
+
+\exercise $\ds y=x^2+1$
+\begin{answer} $\ds 0=r^2\cos^2\theta-r\sin\theta+1$
+\end{answer}
+
+\exercise $\ds y=3x^2-2x$
+\begin{answer} $\ds 0=3r^2\cos^2\theta-2r\cos\theta-r\sin\theta$
+\end{answer}
+
+\exercise $\ds y=x^2+y^2$
+\begin{answer} $\ds r=\sin\theta$
+\end{answer}
+
+\endtwocol
+\bsk
+\noindent Sketch the curve.
+\twocol
+
+\exercise $\ds r=\cos\theta$
+
+\exercise $\ds r=\sin(\theta+\pi/4)$
+
+\exercise $\ds r=-\sec\theta$
+
+\exercise $\ds r=\theta/2$, $\theta\ge0$
+
+\exercise $\ds r=1+\theta^1/\pi^2$
+
+\exercise $\ds r=\cot\theta\csc\theta$
+
+\exercise $\ds r={1\over\sin\theta+\cos\theta}$
+
+\exercise $\ds r^2=-2\sec\theta\csc\theta$
+
+\endtwocol
+
+\bigbreak
+\noindent Find an equation in rectangular coordinates that has the same
+graph as the given equation in polar coordinates.
+
+\twocol
+
+\exercise $\ds r=\sin(3\theta)$
+\begin{answer} $\ds (x^2+y^2)^2=4x^2y-(x^2+y^2)y$
+\end{answer}
+
+\exercise $\ds r=\sin^2\theta$
+\begin{answer} $\ds (x^2+y^2)^{3/2}=y^2$
+\end{answer}
+
+\exercise $\ds r=\sec\theta\csc\theta$
+\begin{answer} $\ds x^2+y^2=x^2y^2$
+\end{answer}
+
+\exercise $\ds r=\tan\theta$
+\begin{answer} $\ds x^4+x^2y^2=y^2$
+\end{answer}
+
+\endtwocol
+
+\end{exercises}

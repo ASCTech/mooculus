@@ -1,0 +1,473 @@
+\section{Volume}{}{}
+\label{sec:volume}
+\nobreak
+We have seen how to compute certain areas by using integration; some
+volumes may also be computed by evaluating an integral. Generally, the
+volumes that we can compute this way have cross-sections that are easy
+to describe.
+
+\figure
+\vbox{\beginpicture
+\normalgraphs
+\ninepoint
+\setcoordinatesystem units <0.3truecm,0.3truecm>
+\setplotarea x from -10 to 10, y from -3 to 20
+\put {\hbox{\epsfxsize9truecm\epsfbox{pyramid_steps.eps}}} at 30 10
+\axis bottom shiftedto y=0 ticks withvalues {$x_i$} / at 7 / /
+\put {$y_i\rightarrow$} [l] <-5pt,-1truept> at -10 6
+\plot -10 0 0 20 10 0 /
+\putrule from -10 0 to -10 1
+\putrule from -10 1 to 10 1
+\putrule from 10 1 to 10 0
+\putrule from -9.5 1 to -9.5 2
+\putrule from -9.5 2 to 9.5 2
+\putrule from 9.5 2 to 9.5 1
+\putrule from -9 2 to -9 3
+\putrule from -9 3 to 9 3
+\putrule from 9 3 to 9 2
+\putrule from -8.5 3 to -8.5 4
+\putrule from -8.5 4 to 8.5 4
+\putrule from 8.5 4 to 8.5 3
+\putrule from -8 4 to -8 5
+\putrule from -8 5 to 8 5
+\putrule from 8 5 to 8 4
+\putrule from -7.5 5 to -7.5 6
+\putrule from -7.5 6 to 7.5 6
+\putrule from 7.5 6 to 7.5 5
+\putrule from -7 6 to -7 7
+\putrule from -7 7 to 7 7
+\putrule from 7 7 to 7 6
+\putrule from -6.5 7 to -6.5 8
+\putrule from -6.5 8 to 6.5 8
+\putrule from 6.5 8 to 6.5 7
+\putrule from -6 8 to -6 9
+\putrule from -6 9 to 6 9
+\putrule from 6 9 to 6 8
+\put {$\vdots$} at 0 13
+\endpicture}
+\figrdef{fig:pyramid}
+\endfigure{Volume of a pyramid approximated by rectangular prisms.
+(\expandafter\url\expandafter{\liveurl pyramid.html}%
+AP\endurl)}
+
+\begin{example}
+Find the volume of a pyramid with a square base that is 20 meters tall
+and 20 meters on a side at the base. As with most of our applications
+of integration, we begin by asking how we might approximate the
+volume. Since we can easily compute the volume of a rectangular prism
+(that is, a ``box''), we will use some boxes to approximate the volume of
+the pyramid, as shown in figure~\xrefn{fig:pyramid}: on the left is a
+cross-sectional view, on the right is a 3D view of part of the pyramid
+with some of the boxes used to approximate the volume.
+
+Each box has volume of the form $\ds (2x_i)(2x_i)\Delta y$. Unfortunately,
+there are two variables here; fortunately, we can write $x$ in terms
+of $y$: $x=10-y/2$ or $\ds x_i=10-y_i/2$. Then the total volume is
+approximately
+$$\sum_{i=0}^{n-1} 4(10-y_i/2)^2\Delta y$$
+and in the limit we get the volume as the value of an integral:
+$$
+  \int_0^{20} 4(10-y/2)^2\,dy=\int_0^{20} (20-y)^2\,dy=
+  \left.-{(20-y)^3\over3}\right|_0^{20}=
+  -{0^3\over3}--{20^3\over3}={8000\over3}.
+$$
+As you may know, the volume of a pyramid is 
+$(1/3)(\hbox{height})(\hbox{area of base})=(1/3)(20)(400)$, which
+agrees with our answer.
+\end{example}
+
+\begin{example}
+The base of a solid is the region between $\ds f(x)=x^2-1$ and
+$\ds g(x)=-x^2+1$, and its cross-sections perpendicular to the $x$-axis 
+are equilateral triangles. See figure~\xrefn{fig:triangular
+  cross-sections}; the solid has been truncated to show a triangular
+cross-section above $x=1/2$.
+Find the volume of the solid.
+
+\figure
+\vbox{\beginpicture
+\normalgraphs
+\ninepoint
+\setcoordinatesystem units <3truecm,3truecm>
+\setplotarea x from -1.1 to 1.1, y from -1.1 to 1.1
+\put {\hbox{\epsfxsize6truecm\epsfbox{triangular_solid.eps}}} at 3 0
+\axis bottom shiftedto y=0 ticks withvalues {$-1\quad$} {$1$} / at -1 1 / /
+\axis left shiftedto x=0 ticks withvalues {$-1\quad$} {$1\quad$} / at -1 1 / /
+\plot
+-1.000 0.000 -0.900 -0.190 -0.800 -0.360 -0.700 -0.510 -0.600 -0.640 
+-0.500 -0.750 -0.400 -0.840 -0.300 -0.910 -0.200 -0.960 -0.100 -0.990 
+0.000 -1.000 0.100 -0.990 0.200 -0.960 0.300 -0.910 0.400 -0.840 
+0.500 -0.750 0.600 -0.640 0.700 -0.510 0.800 -0.360 0.900 -0.190 
+1.000 0.000 /
+\plot
+-1.000 0.000 -0.900 0.190 -0.800 0.360 -0.700 0.510 -0.600 0.640 
+-0.500 0.750 -0.400 0.840 -0.300 0.910 -0.200 0.960 -0.100 0.990 
+0.000 1.000 0.100 0.990 0.200 0.960 0.300 0.910 0.400 0.840 
+0.500 0.750 0.600 0.640 0.700 0.510 0.800 0.360 0.900 0.190 
+1.000 0.000 /
+\endpicture}
+\figrdef{fig:triangular cross-sections}
+\endfigure{Solid with equilateral triangles as cross-sections.
+(\expandafter\url\expandafter{\liveurl jmol_triangular_x_sections}%
+AP\endurl)}
+%(\expandafter\url\expandafter{\sageurl 2761}%
+%AP\endurl)}
+
+A cross-section at a value $\ds x_i$ on the $x$-axis is a triangle with
+base $\ds 2(1-x_i^2)$ and height $\ds \sqrt3(1-x_i^2)$, so the area of the
+cross-section is 
+$$
+  {1\over2}(\hbox{base})(\hbox{height})=
+  (1-x_i^2)\sqrt3(1-x_i^2),
+$$
+and the volume of a thin ``slab'' is then
+$$(1-x_i^2)\sqrt3(1-x_i^2)\Delta x.$$
+Thus the total volume is 
+$$\int_{-1}^1 \sqrt3(1-x^2)^2\,dx={16\over15}\sqrt3.$$
+\vskip-10pt\end{example}
+
+One easy way to get ``nice'' cross-sections is by rotating a plane
+figure around a line. For example, in figure~\xrefn{fig:solid of
+  rotation} we see a plane region under a curve and between two
+vertical lines; then the result of rotating this around the $\ds x$-axis;
+then a typical circular cross-section.
+
+% \figure\vbox{
+% \hbox{\hfill\epsfxsize4truecm\raise1.7cm\vbox{\epsfbox{125.figBCa.ps}}
+% \epsfbox{125.figBCd.ps}
+% \epsfbox{125.figBCc.ps}
+% \hfill}\vglue-20pt}
+% \figrdef{fig:solid of rotation}
+% \endfigure{A solid of rotation.}
+\figure\vbox{
+\hbox{\hfill\raise53pt\vbox{
+\beginpicture
+\normalgraphs
+\ninepoint
+\setcoordinatesystem units <5.5truemm,5.5truemm>
+\setplotarea x from 0 to 8, y from -4 to 4
+\axis left /
+\axis bottom shiftedto y=0 / 
+\putrule from 1 0 to 1 4 
+\putrule from 6 0 to 6 3
+\plot 1 4 1.150 3.546 
+1.312 3.125 1.475 2.772 1.638 2.484 1.800 2.255 1.962 2.082 
+2.125 1.961 2.288 1.886 2.450 1.854 2.612 1.859 2.775 1.898 
+2.938 1.967 3.100 2.060 3.262 2.174 3.425 2.303 3.588 2.444 
+3.750 2.593 3.912 2.744 4.075 2.894 4.238 3.037 4.400 3.170 
+4.562 3.289 4.725 3.388 4.888 3.464 5.050 3.511 5.212 3.527 
+5.375 3.505 5.538 3.443 5.700 3.334 5.862 3.176 6.025 2.964 /
+\endpicture
+}
+\quad\epsfxsize3.8cm\epsfbox{rotated_surface.eps}
+\quad\epsfxsize3.8cm\epsfbox{one_disk.eps}
+\hfill}\vglue-0pt}
+\figrdef{fig:solid of rotation}
+\endfigure{A solid of rotation.}
+
+Of course a real ``slice'' of this figure will not have straight
+sides, but we can approximate the volume of the slice by a cylinder or
+disk with circular top and bottom and straight sides; the volume of
+this disk will have the form $\ds \pi r^2\Delta x$. As long as we can
+write $r$ in terms of $x$ we can compute the volume by an integral.
+
+\begin{example}
+Find the volume of a right circular cone with base radius 10 and
+height 20. (A right circular cone is one with a circular base and with
+the tip of the cone directly over the center of the base.)
+We can view this cone as produced by the rotation of the line
+$y=x/2$ rotated about the $x$-axis, as indicated in
+figure~\xrefn{fig:line to cone}.
+
+\figure
+\vbox{\beginpicture
+\normalgraphs
+\ninepoint
+\setcoordinatesystem units <0.25truecm,0.25truecm>
+\setplotarea x from 0 to 20, y from 0 to 10
+\axis bottom shiftedto y=0 ticks withvalues {$0$} {$20$} / at 0 20 / /
+\put {\hbox{\epsfxsize6cm\epsfbox{cone.eps}}} at 40 5
+\plot 0 0 20 10 /
+\putrule from 20 0 to 20 10
+\endpicture}
+\figrdef{fig:line to cone}
+\endfigure{A region that generates a cone; approximating the volume
+by circular disks.
+(\expandafter\url\expandafter{\liveurl cone.html}%
+AP\endurl)}
+
+At a particular point on the $x$-axis, say $\ds x_i$, the radius of the
+resulting cone is the $y$-coordinate of the corresponding point on the
+line, namely $\ds y_i=x_i/2$. Thus the total volume is approximately
+$$\sum_{i=0}^{n-1} \pi (x_i/2)^2\,dx$$
+and the exact volume is
+$$
+  \int_0^{20} \pi
+  {x^2\over4}\,dx={\pi\over4}{20^3\over3}={2000\pi\over3}.
+$$ 
+Note that we can instead do the calculation with a generic height and
+radius: 
+$$
+  \int_0^{h} \pi{r^2\over h^2}x^2\,dx
+  ={\pi r^2\over h^2}{h^3\over3}={\pi r^2h\over3},
+$$ 
+giving us the usual formula for the volume of a cone.
+\end{example}
+
+\begin{example}
+Find the volume of the object generated when the area between
+$\ds y=x^2$ and $y=x$ is rotated around the $x$-axis. This solid has a
+``hole'' in the middle; we can compute the volume by subtracting the
+volume of the hole from the volume enclosed by the outer surface of
+the solid. In figure~\xrefn{fig:solid with hole} we show the region
+that is rotated, the resulting solid with the front half cut away,
+the cone that forms the outer surface, the
+horn-shaped hole, and a cross-section perpendicular to the $x$-axis.
+
+\figure
+\vbox{\beginpicture
+\normalgraphs
+\ninepoint
+\setcoordinatesystem units <3truecm,3truecm>
+\setplotarea x from 0 to 1.1, y from 0 to 1.1
+\axis bottom shiftedto y=0 ticks withvalues {$0$} {$1$} / at 0 1 / /
+\axis left shiftedto x=0 ticks withvalues {$0$} {$1$} / at 0 1 / /
+\put {\hbox{\epsfxsize3cm\epsfbox{cutaway_horn.eps}}} at 3 0
+\put {\hbox{\epsfxsize3cm\epsfbox{outer_cone.eps}}} at 0 -2
+\put {\hbox{\epsfxsize3cm\epsfbox{horn.eps}}} at 2 -2
+\put {\hbox{\epsfxsize3cm\epsfbox{washer_section.eps}}} at 4 -2
+\plot 0 0 1 1 /
+\setquadratic
+\plot
+0.000 0.000 0.100 0.010 0.200 0.040 0.300 0.090 0.400 0.160 
+0.500 0.250 0.600 0.360 0.700 0.490 0.800 0.640 0.900 0.810 
+1.000 1.000 /
+\endpicture}
+\figrdef{fig:solid with hole}
+\endfigure{%
+Solid with a hole, showing the outer cone and the shape to
+be removed to form the hole.
+(\expandafter\url\expandafter{\liveurl solid_with_hole.html}%
+AP\endurl)}
+
+We have already computed the volume of a cone; in this case it is
+$\pi/3$. At a particular value of $x$, say $\ds x_i$, the cross-section of
+the horn is a circle with radius $\ds x_i^2$, so the volume of the horn is
+$$\int_0^1 \pi(x^2)^2\,dx=\int_0^1 \pi x^4\,dx=\pi{1\over 5},$$
+so the desired volume is $\pi/3-\pi/5=2\pi/15$.
+
+As with the area between curves, there is an alternate approach that
+computes the desired volume ``all at once'' by approximating the
+volume of the actual solid. We can approximate the volume of a slice
+of the solid with a washer-shaped volume, as indicated in
+figure~\xrefn{fig:solid with hole}.
+%{fig:washer}.
+
+The volume of such a washer is the area of the face times the
+thickness. The thickness, as usual, is $\Delta x$, while the area of
+the face is the area of the outer circle minus the area of the inner
+circle, say $\ds \pi R^2-\pi r^2$. In the present example, at a particular $\ds x_i$,
+the radius $R$ is $\ds x_i$ and $r$ is $\ds x_i^2$. Hence, the whole volume is
+$$
+  \int_0^1 \pi x^2-\pi x^4\,dx=
+  \left.\pi\left({x^3\over3}-{x^5\over5}\right)\right|_0^1=
+  \pi\left({1\over3}-{1\over5}\right)={2\pi\over15}.
+$$
+Of course, what we have done here is exactly the same calculation as
+before, except we have in effect recomputed the volume of the outer cone.
+\end{example}
+
+Suppose the region between $f(x)=x+1$ and $\ds g(x)=(x-1)^2$ is rotated around
+the $y$-axis; see figure~\xrefn{fig:shell method}. It is possible, but
+inconvenient, to compute the  volume of the resulting solid by the
+method we have used so far. The problem is that there are two
+``kinds'' of typical rectangles: those that go from the line to the
+parabola and those that touch the parabola on both ends. To compute
+the volume using this approach, we need to break the problem into two
+parts and compute two integrals:
+$$
+  \pi\int_0^1 (1+\sqrt{y})^2-(1-\sqrt{y})^2\,dy+
+  \pi\int_1^4  (1+\sqrt{y})^2-(y-1)^2\,dy={8\over3}\pi + {65\over6}\pi
+  ={27\over2}\pi.
+$$
+If instead we consider a typical vertical rectangle, {but still rotate
+  around the $y$-axis,} we get a thin ``shell'' instead of a thin
+``washer''. If we add up the volume of such thin shells we will get an
+approximation to the true volume. What is the volume of such a shell?
+Consider the shell at $\ds x_i$.
+Imagine that we cut the shell vertically in one place and ``unroll''
+it into a thin, flat sheet. This sheet will be almost a rectangular
+prism that is $\Delta x$ thick, $\ds f(x_i)-g(x_i)$ tall, and $\ds 2\pi x_i$
+wide (namely, the circumference of the shell before it was unrolled).
+The volume will then be approximately the volume of a rectangular
+prism with these dimensions: $\ds 2\pi x_i(f(x_i)-g(x_i))\Delta x$. If we
+add these up and take the limit as usual, we get the integral
+$$
+  \int_0^3 2\pi x(f(x)-g(x))\,dx=
+  \int_0^3 2\pi x(x+1-(x-1)^2)\,dx={27\over2}\pi.
+$$
+Not only does this accomplish the task with only one integral, the
+integral is somewhat easier than those in the previous
+calculation. Things are not always so neat, but it is often the case
+that one of the two methods will be simpler than the other, so it is
+worth considering both before starting to do calculations.
+
+\figure
+\vbox{\beginpicture
+\normalgraphs
+\ninepoint
+\setcoordinatesystem units <1truecm,1truecm>
+\setplotarea x from 0 to 3.1, y from 0 to 4.1
+\axis bottom shiftedto y=0 ticks numbered from 0 to 3 by 1 /
+\axis left shiftedto x=0 ticks numbered from 0 to 4 by 1 /
+\putrule from 1 2 to 2.4142 2
+\putrule from 1 1.8 to 2.4142 1.8
+\putrule from 1 1.8 to 1 2
+\putrule from 2.4142 1.8 to 2.4142 2
+\putrule from 0.25 .5625 to 1.75 .5625
+\putrule from 0.25 .3625 to 1.75 .3625
+\putrule from 0.25 .3625 to 0.25 .5625
+\putrule from 1.75 .3625 to 1.75 .5625
+\plot 0 1 3 4 /
+\setquadratic
+\plot
+0.000 1.000 0.150 0.722 0.300 0.490 0.450 0.302 0.600 0.160 
+0.750 0.062 0.900 0.010 1.050 0.002 1.200 0.040 1.350 0.122 
+1.500 0.250 1.650 0.422 1.800 0.640 1.950 0.902 2.100 1.210 
+2.250 1.562 2.400 1.960 2.550 2.402 2.700 2.890 2.850 3.422 
+3.000 4.000 /
+\setcoordinatesystem units <1truecm,1truecm> point at -5 0
+\setplotarea x from 0 to 3.1, y from 0 to 4.1
+\axis bottom shiftedto y=0 ticks numbered from 0 to 3 by 1 /
+\axis left shiftedto x=0 ticks numbered from 0 to 4 by 1 /
+\put {\hbox{\epsfxsize4cm\epsfbox{shell.eps}}} at 7 2
+\putrule from 1.5 0.25 to 1.5 2.5
+\putrule from 1.7 0.25 to 1.7 2.5
+\putrule from 1.5 0.25 to 1.7 0.25
+\putrule from 1.5 2.5 to 1.7 2.5
+\setlinear
+\plot 0 1 3 4 /
+\setquadratic
+\plot
+0.000 1.000 0.150 0.722 0.300 0.490 0.450 0.302 0.600 0.160 
+0.750 0.062 0.900 0.010 1.050 0.002 1.200 0.040 1.350 0.122 
+1.500 0.250 1.650 0.422 1.800 0.640 1.950 0.902 2.100 1.210 
+2.250 1.562 2.400 1.960 2.550 2.402 2.700 2.890 2.850 3.422 
+3.000 4.000 /
+\endpicture}
+\figrdef{fig:shell method}
+\endfigure{Computing volumes with ``shells''.
+%(\url{http://www.whitman.edu/mathematics/calculus/live/shell.html}%
+%AP\endurl)}
+(\expandafter\url\expandafter{\liveurl shell.html}%
+AP\endurl)}
+
+\begin{example} Suppose the area under $\ds y=-x^2+1$ between $x=0$ and $x=1$ is
+rotated around the $x$-axis. Find the volume by both methods.
+
+\msk
+Disk method: $\ds \int_0^1 \pi(1-x^2)^2\,dx={8\over15}\pi$.
+
+\msk
+Shell method: $\ds \int_0^1 2\pi y \sqrt{1-y}\,dy={8\over15}\pi$.
+\end{example}
+
+\begin{exercises}
+
+\exercise
+Verify that $\ds\pi\int_0^1 (1+\sqrt{y})^2-(1-\sqrt{y})^2\,dy+
+\pi\int_1^4  (1+\sqrt{y})^2-(y-1)^2={8\over3}\pi + {65\over6}\pi
+={27\over2}\pi$.
+
+\exercise Verify that $\ds\int_0^3 2\pi x(x+1-(x-1)^2)\,dx={27\over2}\pi$.
+
+\exercise Verify that $\ds \int_0^1 \pi(1-x^2)^2\,dx={8\over15}\pi$.
+
+\exercise Verify that $\ds \int_0^1 2\pi y \sqrt{1-y}\,dy={8\over15}\pi$.
+
+\exercise
+Use integration to find the volume of the solid obtained by revolving 
+the region bounded by $x+y=2$ and the $x$ and $y$ axes around the
+$x$-axis. 
+\begin{answer} $8\pi/3$
+\end{answer}
+
+\exercise
+Find the volume of the solid obtained by revolving 
+the region bounded by $\ds y=x-x^2$
+and the $x$-axis around the
+$x$-axis. 
+\begin{answer} $\pi/30$
+\end{answer}
+
+\exercise
+Find the volume of the solid obtained by revolving 
+the region bounded by $\ds y=\sqrt{\sin x}$ between $x=0$ and
+$x=\pi/2$, the $y$-axis, and the line
+$y=1$ around the
+$x$-axis. 
+\begin{answer} $\pi(\pi/2-1)$
+\end{answer}
+
+\exercise
+Let $S$ be the region of the $xy$-plane bounded above by the curve
+$\ds x^3y=64$, below by the line $y=1$, on the left by  the line $x=2$, and
+on the right by the line $x=4$.  Find
+the volume of the solid obtained by rotating $S$ around (a) the $x$-axis,
+(b) the line $y=1$, (c) the $y$-axis, (d) the line $x=2$.
+\begin{answer} (a) $114\pi/5$ (b) $74\pi/5$ (c) $20\pi$\hfill\break
+(d) $4\pi$
+\end{answer}
+
+\exercise The equation $\ds x^2/9+y^2/4=1$ describes an ellipse.  Find the
+volume of the solid obtained by rotating the ellipse around the
+$x$-axis and also around the $y$-axis. These solids are
+called {\dfont ellipsoids\/}; one is vaguely rugby-ball shaped, one is
+sort of flying-saucer shaped, or perhaps squished-beach-ball-shaped.
+\begin{answer} $16\pi$, $24\pi$
+\end{answer}
+
+\figure
+\vbox{\beginpicture
+\normalgraphs
+\ninepoint
+\setcoordinatesystem units <3truecm,3truecm>
+\setplotarea x from 0 to 1.1, y from 0 to 0.5
+\put {\hbox{\epsfxsize3cm\epsfbox{rugby.eps}}} at 0 0
+\put {\hbox{\epsfxsize3cm\epsfbox{ufo.eps}}} at 2 0
+\endpicture}
+\figrdef{fig:ellipsoids}
+\endfigure{Ellipsoids.
+%(\url{http://www.whitman.edu/mathematics/calculus/live/ellipsoid.html}%
+%AP\endurl)}
+(\expandafter\url\expandafter{\liveurl ellipsoid.html}%
+AP\endurl)}
+
+\exercise Use integration to compute the volume of a sphere of radius
+$r$. You should of course get the well-known formula $\ds 4\pi r^3/3$.
+
+\exercise
+A hemispheric bowl of radius $r$ contains water to a depth $h$.  Find
+the volume of water in the bowl.
+\begin{answer} $\ds \pi h^2(3r-h)/3$
+\end{answer}
+
+\exercise The base of a tetrahedron (a triangular pyramid) of height $h$
+is an equilateral triangle of side $s$.  Its cross-sections
+perpendicular to an altitude are equilateral triangles.  Express its
+volume $V$ as an integral, and find a formula for $V$ in terms of $h$
+and $s$. Verify that your answer is $(1/3)(\hbox{area of
+  base})(\hbox{height})$. 
+
+%% fixme: include picture? see exercise_9.3.13.mw
+\exercise
+The base of a solid is the region between $f(x)=\cos x$ and
+$g(x)=-\cos x$, $-\pi/2\le x\le\pi/2$,
+and its cross-sections perpendicular to the $x$-axis 
+are squares.
+Find the volume of the solid.
+\begin{answer} $2\pi$
+\end{answer}
+
+\end{exercises}
+

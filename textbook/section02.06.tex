@@ -1,0 +1,387 @@
+% From Mike Wills
+\section{More About Limits and Continuity}{}{}
+
+When we gave the formal definition of a limit (\xrefn{def:limit}) we
+assumed that $a$ and $L$ were finite. However, there are occasions
+when this point of view is too limiting. We state here some limit
+definitions when either $a$ or $L$ (or both) is infinite.
+
+\begin{definition} \relax (i) Let $I$ be an open interval containing $a$. Let $f$ be a
+(real-valued) function defined on $I$ except possibly at $a$.
+
+We say that $f$ approaches $\infty $ as $x$ approaches $a$ if given
+$N>0 $ there exists $\delta >0 $ such that $f(x) >N$ whenever $0<
+|x-a| < \delta $.  In this situation, we write $\displaystyle{\lim
+_{x\rightarrow a} f(x) }=\infty $.
+
+We say that $f$ approaches $-\infty $ as $x$ approaches $a$ if given
+ $N>0 $ there exists $\delta >0 $ such that $f(x) <-N $ whenever
+ $0<|x-a| < \delta $. In this situation, we write $\displaystyle{\lim
+ _{x\rightarrow a} f(x) }=-\infty $.
+
+
+With some minor modifications, this definition can be modified to
+one-sided limits.
+
+ (ii) Let $I$ be an interval of the form $(b,\infty ) $. Let $f$ be a
+ function defined on $I$.
+
+ We say that $f$ approaches $L$ (a finite number) as $x$ approaches
+  $\infty $ if given $\epsilon >0 $ there exists $M>0 $ such that
+  $|f(x) -L |< \epsilon $ whenever $x>M $.  In this situation, we
+  write $\displaystyle{\lim _{x\rightarrow \infty } f(x) }=L $.
+
+We say that $f$ approaches $\infty $ as $x$ approaches $\infty $ if
+  given $N >0 $ there exists $M>0 $ such that $f(x) > N $ whenever
+  $x>M $.  In this situation, we write $\displaystyle{\lim
+  _{x\rightarrow \infty } f(x) }=L $.
+
+ We say that $f$ approaches $-\infty $ as $x$ approaches $\infty $ if
+  given $N >0 $ there exists $M>0 $ such that $ f(x) < -N$ whenever
+  $x>M $.  In this situation, we write $\displaystyle{\lim
+  _{x\rightarrow \infty } f(x) }=L $.
+
+ Limits as $x$ approaches $-\infty $ are defined analogously.
+
+\end{definition}
+\label{def:extended limits}
+
+ \begin{example} Let $\ds f(x) ={1\over x^2} $. Then $\displaystyle{\lim
+ _{x\rightarrow 0} f(x) }= 0$.
+ 
+ Let $N>0 $. (When computing limits rigorously this is an excellent
+ first statement.)  We need to find $\delta >0 $ such that if $0< |x|
+ <\delta $ then $f(x) >N$.
+
+ Now if $|x| < \delta $ then ${1\over |x|} > {1\over \delta } $ and
+hence ${1\over |x|^2 } > {1\over \delta ^2} $.  By choosing $\delta
+>0$ so that
+$$ {1\over \delta ^2 } = N  ,
+\eqrdef{eq:example choose delta}
+\eqno{(\xrefn{eq:example choose delta})}
+$$
+the desired condition on $\delta $ will be satisfied. Solving for $\delta $ in equation \xrefn{eq:example choose delta} we obtain
+$$\delta ={1\over\sqrt{N}}.$$
+
+Thus, if $$0<|x| <{1\over \sqrt{N}} $$ then $f(x) >N $ as required.
+ \endexam
+
+ The above proof contained a lot of repetition. As one acquires a
+ facility with these kinds of proofs much of the repetition can be
+ dispensed with. However, there is rarely any harm in overwriting a
+ proof, and you are encouraged to write a lot when asked to provide a
+ proof.
+
+%  In any case, you will only occasionally be asked to give formal
+%   proofs since the focus of the calculus course here at Weber State
+%   is computational. There is a time and place for serious proof
+%   writing and it is called analysis. (Math 3810, 4210, and 4220 at
+%   Weber State.)
+
+\begin{example} Let $\ds f(x) ={\sin x\over x} $. Then $\displaystyle{\lim
+_{x\rightarrow \infty } f(x) } =0 $.
+
+Let $\epsilon >0 $. We need to find $M>0 $ such that $|f(x)| <
+\epsilon $ whenever $x>M.$
+
+Now if $$x>M >0$$ then $${1\over M} > {1\over x} >0.$$ Since $|\sin
+x | \leq 1 $ for any real number $x$, it follows that
+$$
+   |f(x) | =\Big{|} {\sin x\over x} \Big{|} \leq \Big{|} {1\over x}
+  \Big{|} < {1\over M}.\eqrdef{eq:example choose M}
+  \eqno{(\xrefn{eq:example choose M})}
+$$ 
+By choosing $M ={1\over \epsilon } $ the calculation in
+\xrefn{eq:example choose M} yields the desired result.
+\endexam
+
+
+There are several important limit laws that can aid with
+calculations. We have seen one (\xrefn{thm:properties of limits});
+here are some more:
+
+
+\begin{theorem} Suppose that $a$ is a finite number, and $f$ is a function
+defined on an interval containing $a$ except (possibly) at $a$. Then
+$\displaystyle{\lim _{x\to a} } $ exists if and only if both
+$\displaystyle{\lim _{x\to a^+ } } $ and $\displaystyle{\lim
+_{x\to a^-} } $ exist {\em and\/} are equal.
+ \label{thm:more properties of limits}
+\end{theorem} 
+
+This result is frequently used to show that a limit does not exist. For example, $
+ \displaystyle{\lim _{x\to 1} {1\over x-1}  }$ does not exist because the two one sided limits are not equal.
+
+ \begin{theorem} In this result, $a$ may be finite or $\pm \infty $. Suppose that
+  $\displaystyle{\lim _{x\to a} f(x)
+ } =\infty $,  $\displaystyle{\lim _{x\to a} g(x)
+ } =\infty $, and $ \displaystyle{\lim _{x\to a} h(x)
+ } =c $, where $f$, $g$, and $h$ are functions defined near $a$ and $c$ is a positive number.
+ Then the following hold:
+
+\begin{itemize} % BADBAD
+
+\item{ (i)} $\displaystyle{\lim _{x\to a} (f(x) +g(x))
+ } =\infty $
+
+\item{ (ii)} $\displaystyle{\lim _{x\to a} f(x)g(x)
+ } =\infty $
+
+\item{ (iii)} $\displaystyle{\lim _{x\to a} f(x)h(x)
+ } =\infty $
+
+\item{(iv)} $\displaystyle{\lim _{x\to a} f(x)(-g(x))
+ } =-\infty $
+
+
+\item{ (v)} $\displaystyle{\lim _{x\to a} f(x)(-h(x))
+ } =-\infty $
+
+\end{itemize}
+ \label{thm:yet more properties of limits}
+\end{theorem}
+
+Notice that there was no result for $\displaystyle{\lim _{x\to a}
+ (f(x) -g(x)) } $. This is because that limit may not exist, and even
+ when it does, the value of the limit could be anywhere in $[-\infty ,
+ \infty ] $- that is, any real number or $\pm \infty $. The expression
+ $$ \displaystyle{\lim _{x\to a} f(x) } -\displaystyle{\lim _{x\to a}
+ g(x) } =\infty -\infty $$ is an example of an 
+{\dfont indeterminate form\index{indeterminate form}}. 
+Another indeterminate form is $0\cdot \infty $. We will discuss
+ such forms later when we look at
+ L'H\^opital's rule.
+
+If we replace all the limits in the preceding theorem with one-sided
+limits (all approaching from the same side of $a$) the results remain
+valid.
+
+\begin{theorem} (Comparison theorem)
+Suppose that $f(x) \leq g(x) $ and that $\displaystyle{\lim _{x\to a} }f(x)=L $ and
+ $\displaystyle{\lim _{x\to a} }g(x) =M $. Then  $L \leq M $.
+\label{thm: comparison theorem}
+ \end{theorem}
+
+\begin{theorem} (The squeeze theorem) \index{squeeze theorem}
+Suppose that $f(x) \leq h(x) \leq g(x) $ and that
+$\displaystyle{\lim _{x\to a} }f(x) =\displaystyle{\lim _{x\to a} }g(x)=L $.
+
+Then $\displaystyle{\lim _{x\to a} }h(x) =L $.
+\label{thm:the squeeze theorem}
+\end{theorem}
+
+We've implicitly used the squeeze theorem (which follows from the comparison theorem) in several examples, mostly
+ involving $\sin $ and $\cos $.
+
+Continuity is a fundamental concept in advanced mathematics. Most of
+the functions that we discuss in calculus are continuous or at least
+{\dfont piecewise continuous\index{piecewise continuous}} (as defined
+later in Definition \xrefn{def:piecewise continuous}).
+This is a bit misleading; continuity is a rather special
+condition and in some sense the probability of picking a function at
+random defined on all of $\R=(-\infty, \infty )$ that is
+continuous anywhere at all is zero. There are two reasons that we
+usually restrict our attention to functions that are continuous. First
+(and this is not really that good of a reason), they are relatively
+easy to handle; second, many physical phenomena are well-approximated
+by continuous functions.
+
+We recall and extend the definition of continuity from the text:
+
+\begin{definition} Let $I=(c,d) $ be an open interval and let $a$ be in $I$. Let
+ $f:I \to \R$ be a function.  Then $f$ is continuous
+ at $a$ if $\displaystyle{\lim _{x\to a} f(x) }= f(a). $
+
+ If given any $a$ in $I$, $f$ is continuous at $a$ then $f$ is
+ continuous on $I$.
+
+ If $c$ and $d$ are finite numbers, and $f$ is defined at $c$ and $d$
+  then $f$ is continuous on $[c,d] $ if $f$ is continuous on $I$,
+  $\displaystyle{\lim _{x\to c^+ } f(x) }= f(c)$ and
+  $\displaystyle{\lim _{x\to d^- } f(x) }= f(d)$. If $f$ is not
+  continuous at $a$ then $f$ is {\dfont
+  discontinuous\index{discontinuous}} at $a$.
+\end{definition} 
+
+For technical reasons, it is often convenient for us to define continuity
+on closed intervals rather than open.
+
+\begin{theorem} If $f$ and $g$ are continuous at $a$ and $c$ is a constant,
+ then $f\pm g$, $fg$, and $cf $ are all continuous at $a$. If $g(a) \neq 0 $, then
+  ${f\over g} $ is also continuous at $a$.
+  \end{theorem}
+
+The proof follows easily from the corresponding results for limits.
+
+  \begin{theorem} If $g$ is continuous at $a$ and $f$ is continuous at $g(a) $
+   then $f\circ g $ is continuous at $a$.
+   \end{theorem}
+
+Thus, the composition of continuous functions is continuous.
+
+
+\begin{example} Let $P$ and $Q$ be polynomials. Then $P$ is
+    continuous on all of $\R$, and $P/Q$ is continuous away from the
+    roots of $Q$.
+
+    Trigonometric functions and root functions are also continuous on
+    their domains.
+
+    In previous courses, you may have seen exponential and logarithmic
+    functions. These functions are also continuous.
+\endexam
+
+It is often worthwhile considering how a function can fail to be
+continuous. We give three important examples of discontinuities.
+
+\begin{definition} Suppose that $\displaystyle{\lim _{x\to a^+ } f(x) }  =L$ and
+   $\displaystyle{\lim _{x\to a^-} f(x) =M} $ with $L$ and $ M$ both finite.
+
+
+ If $L=M$ but $f(a) \neq L $ (possibly because $f(a) $ is undefined)
+  then $f$ has a {\dfont removable discontinuity\index{removable
+  discontinuity}} 
+ at $x= a$.
+
+  If $f$ is undefined at $x=a$ and $a$ is a removable discontinuity of $f$ at $x=a$,
+    a {\dfont continuous extension\index{continuous extension}} of $f$ to $a$
+  is given by
+$$g(x) =\cases{
+f(x) & $x\neq a$, \\
+\ds\lim _{x\to a} f(x) & $x=a$ \\}
+$$
+\end{definition}
+
+\begin{example} Note that $f(x) = {x^2 \over x} $ is undefined at
+   $x=0$. However, the discontinuity is removable, and $g(x)=x $ is a
+   continuous extension of $f$ to $x=0 $.
+\endexam
+
+\begin{definition} Suppose that $\displaystyle{\lim _{x\to a^+ } f(x) }  =L$ and
+   $\displaystyle{\lim _{x\to a^-} f(x) =M} $ with $L$ and $ M$ both finite.  If $L\neq M$,
+then $f$ has a {\dfont jump discontinuity\index{jump discontinuity}}
+   at $a$.
+\end{definition}
+
+\begin{example} The discontinuities of the greatest integer function are jump
+discontinuities.
+\endexam
+
+
+\begin{definition} If $f$ is discontinuous at $a$ but the discontinuity is neither
+a jump discontinuity nor a removable discontinuity then the
+discontinuity is {\dfont essential\index{essential discontinuity}}.
+If at least one of the one-sided limits is $\pm \infty$ then the
+discontinuity is {\dfont infinite\index{infinite discontinuity}}.
+\end{definition}
+
+\begin{example} The function $\ds f(x) =\sin (1/x)$ has an
+essential discontinuity at $x=0 $.  (Try to graph $f$ on a graphing
+calculator or on a computer algebra system.)
+\endexam
+
+\begin{example} If $P$ and $Q$ are non-zero polynomials,
+ and $P(a) \neq 0 =Q(a) $ then ${P/Q}$ has an infinite discontinuity at $x=a $.
+ \endexam
+
+\begin{definition} Suppose that $f$ is a function defined on a closed bounded
+ interval $I$. If $f$ has finitely many discontinuities, none of which
+ are essential, then $f$ is 
+{\dfont piecewise continuous\index{piecewise continuous}} on $I$.
+\end{definition}
+\label{def:piecewise continuous}
+
+ \begin{example} Any continuous function on $I$ is piecewise continuous. The
+ greatest integer function is piecewise continuous on any closed
+ bounded interval. The function $f(x)= x/( x^2 -4)$ fails to be
+ piecewise continuous on any closed bounded interval containing $2$ or
+ $-2$. \endexam
+
+Piecewise continuity plays an important role when we think about integration.
+
+We close with an important result relating differentiability and continuity.
+
+\begin{theorem} If $f$ is differentiable at $a$ then $f$ is continuous at
+$a$.
+
+\begin{proof} We need to show that $\displaystyle{\lim _{x\to a} f(x) } =f(a) $.
+
+Since $f$ is differentiable at $a$ we know that:
+$$\eqalign{
+\lim_{x\to a} {f(x)-f(a) \over x-a}  =f'(a)
+   \qquad &(\hbox{Definition of derivative.}) \\
+\lim _{x\to a } {f(x)-f(a) \over x-a}  = {\lim _{x\to a }f'(a) }
+   \qquad & \vtop{\hbox{(Limit of a constant is}\hbox{a constant.)}} \\
+\displaystyle{\lim _{x\to a } {f(x)-f(a) \over x-a} } -  \displaystyle{\lim _{x\to a }f'(a) }
+  = 0 \qquad& \\
+\displaystyle{\lim _{x\to a }\Big{(} {f(x)-f(a) \over x-a}  -f'(a) \Big{)}}
+  = 0
+\qquad& \vtop{\hbox{(Difference of limits is}\hbox{limit of difference.)}}  \\
+ \displaystyle{\lim _{x\to a} (x-a)}
+ \Big{(} \displaystyle{\lim _{x\to a } {f(x)-f(a) \over x-a}  -f'(a) \Big{)}}
+ = 0\qquad& \\
+\displaystyle{\lim _{x\to a}\Big{(} (x-a) {f(x)-f(a) \over x-a}  -(x-a) f'(a) \Big{)}}
+  = 0\qquad&\vtop{\hbox{(Product of limits is}\hbox{limit of product.)}} \\ 
+\displaystyle{\lim _{x\to a}  \Big{(} f(x)-f(a)     -(x-a) f'(a) \Big{)} }
+  = 0 \qquad& \\
+ \displaystyle{\lim _{x\to a}   \Big{(} f(x)-f(a)     -(x-a) f'(a) \Big{)} }
+ = - \displaystyle{\lim _{x\to a} (x-a)f'(a) }
+\qquad&
+\vtop{\hbox{(Right hand side is just a}\hbox{fancy way of writing zero.)}}
+  \\ \displaystyle{\lim _{x\to a}  \Big{(} f(x)-f(a)     -(x-a) f'(a) \Big{)} }
+ +\displaystyle{\lim _{x\to a} (x-a)f'(a)
+  }
+  =0 \qquad& \\
+  \displaystyle{\lim _{x\to a}   \Big{(}f(x)-f(a) \Big{)} }   =0
+\qquad&
+\vtop{\hbox{(Sum of limits is}\hbox{limit of sum.)}} \\ 
+\displaystyle{\lim _{x\to a}  \Big{(} f(x)-f(a) \Big{)} } +f(a)
+=f(a)\qquad& \\ 
+\ds\lim _{x\to a}\Big(f(x)-f(a)\Big) +\lim _{x\to a} f(a)  = f(a)
+  \qquad&\vtop{\hbox{(Limit of a constant is}\hbox{a constant.)}}
+  \\ \displaystyle{\lim _{x\to a}   f(x) }   =f(a)
+\qquad&\vtop{\hbox{(Sum of limits is}\hbox{limit of sum.)}} \\}$$
+The last line is exactly what we wished to show.\end{proof}
+
+
+This proof looks more complicated than it really is. The main idea is
+to manipulate the various limits involved using the limit laws and
+being careful not to assume a limit exists before we have shown the
+existence of the limit- in other words, it is easy to get caught up in
+circular reasoning if one is not careful.
+
+We have now shown that differentiability implies continuity. The
+converse is false. As a simple example, consider $f(x)= |x| $ at
+$x=0$. In fact, it is possible to construct functions that are
+continuous everywhere and differentiable nowhere. We shall not do so
+in this course.
+
+\begin{exercises}
+
+Compute the following limits (without a formal proof). If the limit is
+undefined, explain why.
+
+\exercise $\ds{\lim _{x\to 1 }  {1\over x-1} } $
+\exercise $\ds{ \lim _{x\to \infty } {\cos x\over x } }$
+\exercise $\ds{\lim _{x\to \infty } x^3 - x } $ (Hint: Factor $x$ first.)
+\exercise $\ds{\lim _{x\to -\infty } {1\over x^4 } }$
+\exercise $\ds{\lim _{x\to 0^+ } {1\over x} }$
+\exercise $\ds{\lim _{t\to \infty } (\cos ^2 t + \sin ^2 t )} $
+
+\exercise Prove that $\ds{\lim _{x\to 0} } {1\over x^4 } =\infty $
+
+\exercise Classify the discontinuities of $\ds f(x)  = \cases{ 1/ x & $x\neq 0$, \\
+ 3 & $x=0$. \\}$
+
+\exercise Classify the discontinuities of $\ds f(x)  = {(x+1)^3\over x^2 -1}$.
+
+\exercise Classify the discontinuities of $\ds f(x) = x\sin (1/x)$, $x\neq 0$.
+
+\exercise Classify the discontinuities of $\ds f(x) = 
+\cases{ 4-x^2   & $x\geq$  0, \\
+x^3 & $x< 0$. \\}$
+
+\exercise Explain why $\ds f(x) =\cases{ x^2\cos (1/ x^4) & $x\neq 0$ \\
+0 &  $x=0$ \\}$
+is continuous on all of $\R$.
+\end{exercises}

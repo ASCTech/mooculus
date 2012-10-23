@@ -1,0 +1,57 @@
+\chapter{Sequences and Series}
+
+Consider the following sum:
+$${1\over2}+{1\over4}+{1\over8}+{1\over16}+\cdots+{1\over2^i}+\cdots$$
+The dots at the end indicate that the sum goes on forever. Does this
+make sense? Can we assign a numerical value to an infinite sum? While
+at first it may seem difficult or impossible, we have certainly done
+something similar when we talked about one quantity getting ``closer
+and closer'' to a fixed quantity. Here we could ask whether, as we add
+more and more terms, the sum gets closer and closer to some fixed
+value. That is, look at
+$$\eqalign{
+{1\over2}&={1\over2} \\
+{3\over4}&={1\over2}+{1\over4} \\
+{7\over8}&={1\over2}+{1\over4}+{1\over8} \\
+{15\over16}&={1\over2}+{1\over4}+{1\over8}+{1\over16} \\
+}$$
+and so on, and ask whether these values have a limit. It seems pretty
+clear that they do, namely $1$. In fact, as we will see, it's not hard
+to show that 
+$${1\over2}+{1\over4}+{1\over8}+{1\over16}+\cdots+{1\over2^i}=
+{2^i-1\over2^i}=1-{1\over2^i}$$
+and then
+$$\lim_{i\to\infty} 1-{1\over2^i}=1-0=1.$$
+There is one place that you have long accepted this notion of infinite
+sum without really thinking of it as a sum:
+$$0.3333\bar3 =
+{3\over10}+{3\over100}+{3\over1000}+{3\over10000}+\cdots=
+{1\over3},$$
+for example, or
+$$3.14159\ldots = 3+{1\over10}+{4\over100}+{1\over1000}+{5\over10000}+
+{9\over100000}+\cdots = \pi.$$
+Our first task, then,  to investigate infinite sums, called 
+{\dfont series\index{series}\/}, is to investigate limits of {\dfont
+  sequences\index{sequence}\/} of numbers. That is, we officially
+call
+$$\sum_{i=1}^\infty {1\over2^i}=
+{1\over2}+{1\over4}+{1\over8}+{1\over16}+\cdots+{1\over2^i}+\cdots$$
+a series, while
+$${1\over2},{3\over4},{7\over8},{15\over16},\ldots,{2^i-1\over2^i},\ldots$$
+is a sequence, and
+$$\sum_{i=1}^\infty {1\over2^i}=\lim_{i\to\infty} {2^i-1\over2^i},$$
+that is, the value of a series is the limit of a particular sequence.
+
+
+\input section11.01
+\input section11.02
+\input section11.03
+\input section11.04
+\input section11.05
+\input section11.06
+\input section11.07
+\input section11.08
+\input section11.09
+\input section11.10
+\input section11.11
+\input section11.12

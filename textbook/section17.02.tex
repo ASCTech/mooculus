@@ -1,0 +1,150 @@
+\section{First Order Homogeneous Linear Equations}{}{}
+%\label{sec:first order homogeneous linear}
+\nobreak
+A simple, but important and useful, type of separable equation is the
+{\dfont first order homogeneous linear equation\/}:
+
+\begin{definition} A first order homogeneous linear differential equation
+is one of
+the form $\ds \dot y + p(t)y=0$
+or equivalently
+$\ds \dot y = -p(t)y$.
+\end{definition}
+
+``Linear'' in this definition indicates that both $\dot y$ and $y$
+occur to the first power; ``homogeneous'' refers to the zero on the
+right hand side of the first form of the equation.
+
+\begin{example} The equation $\ds \dot y = 2t(25-y)$ can be written
+$\ds \dot y + 2ty= 50t$. This is linear, but not homogeneous. The
+equation $\ds \dot y=ky$, or $\ds \dot y-ky=0$ is linear and
+homogeneous, with a particularly simple $p(t)=-k$.
+\end{example}
+
+Because first order homogeneous linear equations are separable, we can
+solve them in the usual way:
+$$\eqalign{
+\dot y &= -p(t)y \\
+\int {1\over y}\,dy = \int -p(t)\,dt \\
+\ln|y| &= P(t)+C \\
+y&=\pm\,e^{P(t)} \\
+y&=Ae^{P(t)}, \\}
+$$
+where $P(t)$ is an anti-derivative of $-p(t)$. As in previous
+examples, if we allow $A=0$ we get the constant solution $y=0$.
+
+\begin{example} Solve the initial value problems $\ds \dot y + y\cos t =0$,
+$y(0)=1/2$ and $y(2)=1/2$. We start with
+$$P(t)=\int -\cos t\,dt = -\sin t,$$
+so the general solution to the differential equation is
+$$y=Ae^{-\sin t}.$$
+To compute $A$ we substitute:
+$$ {1\over 2} = Ae^{-\sin 0} = A,$$
+so the solutions is 
+$$ y = {1\over 2} e^{-\sin t}.$$
+For the second problem,
+$$ \eqalign{
+{1\over 2} &= Ae^{-\sin 2} \\
+A &= {1\over 2}e^{\sin 2} \\}
+$$
+so the solution is 
+$$ y = {1\over 2}e^{\sin 2}e^{-\sin t}.$$
+\vskip-15pt\end{example}
+
+\begin{example} Solve the initial value problem $y\dot y+3y=0$, $y(1)=2$,
+assuming $t>0$. We
+write the equation in standard form: $\dot y+3y/t=0$. Then
+$$P(t)=\int -{3\over t}\,dt=-3\ln t$$
+and 
+$$ y=Ae^{-3\ln t}=At^{-3}.$$
+Substituting to find $A$:
+$\ds 2=A(1)^{-3}=A$, so the solution is $\ds y=2t^{-3}$.
+\end{example}
+
+\begin{exercises}
+
+Find the general solution of each equation in 1--4.
+
+\exercise $\ds\dot y+5y=0$
+\begin{answer} $\ds y=Ae^{-5t}$
+\end{answer}
+
+\exercise $\ds\dot y-2y=0$
+\begin{answer} $\ds y=Ae^{2t}$
+\end{answer}
+
+\exercise $\ds\dot y+{y\over 1+t^2}=0$
+\begin{answer} $\ds y=Ae^{-\arctan t}$
+\end{answer}
+
+\exercise $\ds\dot y+t^2y=0$
+\begin{answer} $\ds y=Ae^{-t^3/3}$
+\end{answer}
+
+In 5--14, solve the initial value problem.
+
+\exercise $\ds\dot y + y=0$, $y(0)=4$
+\begin{answer} $\ds y=4e^{-t}$
+\end{answer}
+
+\exercise $\ds\dot y -3y=0$, $y(1)=-2$
+\begin{answer} $\ds y=-2e^{3t-3}$
+\end{answer}
+
+\exercise $\ds\dot y + y\sin t = 0$, $y(\pi)=1$
+\begin{answer} $\ds y=e^{1+\cos t}$
+\end{answer}
+
+\exercise $\ds\dot y +ye^t=0$, $y(0)=e$
+\begin{answer} $\ds y=e^2e^{-e^t}$
+\end{answer}
+
+\exercise $\ds\dot y +y\sqrt{1+t^4}=0$, $y(0)=0$
+\begin{answer} $\ds y=0$
+\end{answer}
+
+\exercise $\ds\dot y + y\cos(e^t)=0$, $y(0)=0$
+\begin{answer} $\ds y=0$
+\end{answer}
+
+\exercise $\ds t\dot y - 2y = 0$, $y(1)=4$
+\begin{answer} $\ds y=4t^2$
+\end{answer}
+
+\exercise $\ds t^2\dot y + y = 0$, $y(1)=-2$, $t>0$
+\begin{answer} $\ds y=-2e^{(1/t)-1}$
+\end{answer}
+
+\exercise $\ds t^3\dot y = 2y$, $y(1)=1$, $t>0$
+\begin{answer} $\ds y=e^{1-t^{-2}}$
+\end{answer}
+
+\exercise $\ds t^3\dot y = 2y$, $y(1)=0$, $t>0$
+\begin{answer} $\ds y=0$
+\end{answer}
+
+
+\exercise A function $y(t)$ is a solution of $\ds\dot y +
+ky=0$. Suppose that $y(0)=100$ and $y(2)=4$. Find $k$ and find $y(t)$.
+\begin{answer} $k=\ln 5$, $\ds y=100e^{-t\ln 5}$
+\end{answer}
+
+\exercise A function $y(t)$ is a solution of $\ds\dot y +
+t^ky=0$. Suppose that $y(0)=1$ and $y(1)=e^{-13}$. Find $k$ and find
+$y(t)$. 
+\begin{answer} $k=-12/13$, $\ds y=\exp(-13 t^{1/13})$
+\end{answer}
+
+\exercise A bacterial culture grows at a rate proportional to its
+population. If the population is one million at $t=0$ and 1.5
+million at $t=1$ hour, find the population as a function of time.
+\begin{answer} $\ds y=10^6e^{t\ln(3/2)}$
+\end{answer}
+
+\exercise A radioactive element decays with a half-life of 6 years. If
+a mass of the element weighs ten pounds at $t=0$, find the amount of
+the element at time $t$.
+\begin{answer} $\ds y=10e^{-t\ln(2)/6}$
+\end{answer}
+
+\end{exercises}

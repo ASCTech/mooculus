@@ -1,0 +1,192 @@
+\section{Trigonometric Substitutions}{}{}
+\nobreak
+So far we have seen that it sometimes helps to replace a subexpression
+of a function by a single variable. Occasionally it can help to
+replace the original variable by something more complicated. This
+seems like a ``reverse'' substitution, but it is really no different
+in principle than ordinary substitution.
+
+\begin{example}\relax
+\label{exam:cos squared}
+Evaluate $\ds\int \sqrt{1-x^2}\,dx$. Let $x=\sin u$ so 
+$dx=\cos u\,du$. Then
+$$
+  \int \sqrt{1-x^2}\,dx=\int\sqrt{1-\sin^2 u}\cos u\,du=
+  \int\sqrt{\cos^2 u}\cos u\,du.
+$$
+We would like to replace $\ds \sqrt{\cos^2 u}$ by $\cos u$, but this is
+valid only if $\cos u $ is positive, since $\ds \sqrt{\cos^2 u}$ is
+positive. Consider again the substitution $x=\sin u$. We could just as
+well think of this as $u=\arcsin x$. If we do, then by the definition
+of the arcsine, $-\pi/2\le u\le\pi/2$, so $\cos u\ge0$. Then we
+continue:
+$$\eqalign{
+  \int\sqrt{\cos^2 u}\cos u\,du&=\int\cos^2u\,du=\int {1+\cos
+    2u\over2}\,du = {u\over 2}+{\sin 2u\over4}+C \\
+  &={\arcsin x\over2}+{\sin(2\arcsin x)\over4}+C. \\
+}$$
+This is a perfectly good answer, though the term
+$\sin(2\arcsin x)$ is a bit unpleasant. It is possible to simplify
+this. Using the identity $\sin 2x=2\sin x\cos x$, we can write
+$\ds \sin 2u=2\sin u\cos u=2\sin(\arcsin x)\sqrt{1-\sin^2 u}=
+2x\sqrt{1-\sin^2(\arcsin x)}=2x\sqrt{1-x^2}.$ Then the full
+antiderivative is 
+$$
+  {\arcsin x\over2}+{2x\sqrt{1-x^2}\over4}=
+  {\arcsin x\over2}+{x\sqrt{1-x^2}\over2}+C.
+$$
+\vskip-10pt\end{example}
+
+This type of substitution is usually indicated when the function you
+wish to integrate contains a polynomial expression that might allow
+you to use the fundamental identity $\ds \sin^2x+\cos^2x=1$ in
+one of three forms:
+$$
+  \cos^2 x=1-\sin^2x
+  \qquad
+  \sec^2x=1+\tan^2x
+  \qquad
+  \tan^2x=\sec^2x-1.
+$$
+If your function contains $\ds 1-x^2$, as in the example above, try
+$x=\sin u$; if it contains $\ds 1+x^2$ try $x=\tan u$; and if it contains
+$\ds x^2-1$, try $x=\sec u$. Sometimes you will need to try something a
+bit different to handle constants other than one.
+
+\begin{example}
+Evaluate $\ds\int\sqrt{4-9x^2}\,dx$. We start by rewriting this so
+that it looks more like the previous example:
+$$
+  \int\sqrt{4-9x^2}\,dx=\int\sqrt{4(1-(3x/2)^2)}\,dx
+  =\int 2\sqrt{1-(3x/2)^2}\,dx.
+$$
+Now let $3x/2=\sin u$ so $(3/2)\,dx=\cos u \,du$ or
+$dx=(2/3)\cos u\,du$. Then
+$$\eqalign{
+\int 2\sqrt{1-(3x/2)^2}\,dx&=\int 2\sqrt{1-\sin^2u}\,(2/3)\cos u\,du
+={4\over3}\int \cos^2u\,du \\
+&={4u\over 6}+{4\sin 2u\over12}+C \\
+&={2\arcsin(3x/2)\over3}+{2\sin u \cos u\over3}+C \\
+&={2\arcsin(3x/2)\over3}+{2\sin(\arcsin(3x/2))\cos(\arcsin(3x/2))\over3}+C \\
+&={2\arcsin(3x/2)\over3}+{2(3x/2)\sqrt{1-(3x/2)^2}\over3}+C \\
+&={2\arcsin(3x/2)\over3}+{x\sqrt{4-9x^2}\over2}+C, \\
+}$$
+using some of the work from example~\xrefn{exam:cos squared}.
+\end{example}
+
+\begin{example}
+Evaluate $\ds\int\sqrt{1+x^2}\,dx$. Let $x=\tan u$, 
+$\ds dx=\sec^2 u\,du$, so
+$$
+  \int\sqrt{1+x^2}\,dx=\int \sqrt{1+\tan^2 u}\sec^2u\,du=
+  \int\sqrt{\sec^2u}\sec^2u\,du.
+$$
+Since $u=\arctan(x)$, $-\pi/2\le u\le\pi/2$ and $\sec u\ge0$, so 
+$\ds \sqrt{\sec^2u}=\sec u$. Then
+$$\int\sqrt{\sec^2u}\sec^2u\,du=\int \sec^3 u \,du.$$
+In problems of this type, two integrals come up frequently:
+$\ds \int\sec^3u\,du$ and $\int\sec u\,du$. Both have relatively nice
+expressions but they are a bit tricky to discover. 
+
+First we do $\int\sec u\,du$\index{integral!of $\sec x$}, which we
+will need to compute $\ds \int\sec^3u\,du$:
+$$\eqalign{
+  \int\sec u\,du&=\int\sec u\,{\sec u +\tan u\over \sec u +\tan u}\,du \\
+  &=\int{\sec^2 u +\sec u\tan u\over \sec u +\tan u}\,du. \\
+}$$
+Now let $w=\sec u +\tan u$, $\ds dw=\sec u \tan u + \sec^2u\,du$, exactly
+the numerator of the function we are integrating. Thus
+$$\eqalign{
+  \int\sec u\,du=\int{\sec^2 u +\sec u\tan u\over \sec u +\tan u}\,du&=
+  \int{1\over w}\,dw=\ln |w|+C \\
+  &=\ln|\sec u +\tan u|+C. \\
+}$$
+
+Now for $\ds \int\sec^3 u\,du$\index{integral!of $\sec^3x$}:
+$$\eqalign{
+  \sec^3u&={\sec^3u\over2}+{\sec^3u\over2}={\sec^3u\over2}+{(\tan^2u+1)\sec
+    u\over 2} \\
+  &={\sec^3u\over2}+{\sec u \tan^2 u\over2}+{\sec u\over 2}=
+  {\sec^3u+\sec u \tan^2u\over 2}+{\sec u\over 2}. \\
+}$$
+We already know how to integrate $\sec u$, so we just need the first
+quotient. This is ``simply'' a matter of recognizing the product rule
+in action:
+$$\int \sec^3u+\sec u \tan^2u\,du=\sec u \tan u.$$
+
+So putting these together we get
+$$
+  \int\sec^3u\,du={\sec u \tan u\over2}+{\ln|\sec u +\tan u|
+  \over2}+C,
+$$
+and reverting to the original variable $x$:
+$$\eqalign{
+  \int\sqrt{1+x^2}\,dx&={\sec u \tan u\over2}+{\ln|\sec u +\tan
+    u|\over2}+C \\
+  &={\sec(\arctan x) \tan(\arctan x)\over2}
+    +{\ln|\sec(\arctan x) +\tan(\arctan x)|\over2}+C \\
+  &={ x\sqrt{1+x^2}\over2}
+    +{\ln|\sqrt{1+x^2} +x|\over2}+C, \\
+}$$
+using $\tan(\arctan x)=x$ and 
+$\ds \sec(\arctan x)=\sqrt{1+\tan^2(\arctan x)}=\sqrt{1+x^2}$.
+\end{example}
+
+\begin{exercises}
+
+Find the antiderivatives.
+
+\twocol
+
+\exercise $\ds\int\csc x\,dx$
+\begin{answer} $-\ln|\csc x+\cot x|+C$
+\end{answer}
+
+\exercise $\ds\int\csc^3 x\,dx$
+\begin{answer} $-\csc x\cot x/2-(1/2)\ln|\csc x+\cot x|+C$
+\end{answer}
+
+\exercise $\ds\int\sqrt{x^2-1}\,dx$
+\begin{answer} $\ds x\sqrt{x^2-1}/2-\ln|x+\sqrt{x^2-1}|/2+C$
+\end{answer}
+
+\exercise $\ds\int\sqrt{9+4x^2}\,dx$
+\begin{answer} $\ds x\sqrt{9+4x^2}/2+\hbox{$\ds(9/4)\ln|2x+\sqrt{9+4x^2}|+C$}$
+\end{answer}
+
+\exercise $\ds\int x\sqrt{1-x^2}\,dx$
+\begin{answer} $\ds -(1-x^2)^{3/2}/3+C$
+\end{answer}
+
+\exercise $\ds\int x^2\sqrt{1-x^2}\,dx$
+\begin{answer} $\arcsin(x)/8-\sin(4\arcsin x)/32+C$
+\end{answer}
+
+\exercise $\ds\int{1\over\sqrt{1+x^2}}\,dx$
+\begin{answer} $\ds \ln|x+\sqrt{1+x^2}|+C$
+\end{answer}
+
+\exercise $\ds\int\sqrt{x^2+2x}\,dx$
+\begin{answer} $\ds (x+1)\sqrt{x^2+2x}/2-\hbox{$\ds\ln|x+1+\sqrt{x^2+2x}|/2+C$}$
+\end{answer}
+
+\exercise $\ds\int{1\over x^2(1+x^2)}\,dx$
+\begin{answer} $-\arctan x - 1/x+C$
+\end{answer}
+
+\exercise $\ds\int{x^2\over\sqrt{4-x^2}}\,dx$
+\begin{answer} $\ds 2\arcsin(x/2)-x\sqrt{4-x^2}/2+C$
+\end{answer}
+
+\exercise $\ds\int{\sqrt{x}\over\sqrt{1-x}}\,dx$
+\begin{answer} $\ds \arcsin(\sqrt{x})-\sqrt{x}\sqrt{1-x}+C$
+\end{answer}
+
+\exercise $\ds\int{x^3\over\sqrt{4x^2-1}}\,dx$
+\begin{answer} $\ds (2x^2+1)\sqrt{4x^2-1}/24+C$
+\end{answer}
+
+\endtwocol
+
+\end{exercises}
+

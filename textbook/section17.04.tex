@@ -1,0 +1,224 @@
+\section{Approximation}{}{}
+%\label{sec:differential equations}
+\nobreak
+We have seen how to solve a restricted collection of differential
+equations, or more  accurately, how to attempt to solve them---we may
+not be able to find the required anti-derivatives. Not surprisingly,
+non-linear equations can be even more difficult to solve. Yet much is
+known about solutions to some more general equations.
+
+Suppose $\phi(t,y)$ is a function of two variables. A more general
+class of first order differential equations has the form $\ds\dot
+y=\phi(t,y)$. This is not necessarily a linear first order equation,
+since $\phi$ may depend on $y$ in some complicated way; note however
+that $\ds\dot y$ appears in a very simple form. Under suitable
+conditions on the function $\phi$, it can be shown that every such
+differential equation has a solution, and moreover that for each
+initial condition the associated initial value problem has exactly one
+solution. In practical applications this is obviously a very desirable
+property. 
+
+\begin{example} The equation $\ds\dot y=t-y^2$ is a first order non-linear
+equation, because $y$ appears to the second power. We will not be able
+to solve this equation.
+\end{example}
+
+\begin{example} The equation $\ds\dot y=y^2$ is also non-linear, but it is
+separable and can be solved by separation of variables.
+\end{example}
+
+Not all differential equations that are important in practice can be
+solved exactly, so techniques have been developed to approximate
+solutions. We describe one such technique, {\dfont Euler's
+  Method\index{Euler's Method}}, which is simple though not particularly
+useful compared to some more sophisticated techniques.
+
+Suppose we wish to approximate a solution to the initial value problem
+$\ds\dot y=\phi(t,y)$, $\ds y(t_0)=y_0$, for $t\ge t_0$. Under
+reasonable conditions on $\phi$, we know the solution exists,
+represented by a curve in the $t$-$y$ plane; call this solution
+$f(t)$. The point $\ds (t_0,y_0)$ is of course on this curve. We also
+know the slope of the curve at this point, namely
+$\ds\phi(t_0,y_0)$. If we follow the tangent line for a brief
+distance, we arrive at a point that should be almost on the graph of
+$f(t)$, namely $\ds(t_0+\Delta t, y_0+\phi(t_0,y_0)\Delta t)$; call
+this point $\ds(t_1,y_1)$. Now we pretend, in effect, that this point
+really is on the graph of $f(t)$, in which case we again know the
+slope of the curve through $\ds(t_1,y_1)$, namely
+$\ds\phi(t_1,y_1)$. So we can compute a new point,
+$\ds(t_2,y_2)=(t_1+\Delta t, y_1+\phi(t_1,y_1)\Delta t)$ that 
+is a little farther along, still close to the graph of $f(t)$ but
+probably not quite so close as $\ds(t_1,y_1)$. We can continue in this
+way, doing a sequence of straightforward calculations, until we have
+an approximation $\ds(t_n,y_n)$ for whatever time $\ds t_n$ we need. 
+At each step we do essentially the same calculation, namely
+$$(t_{i+1},y_{i+1})=(t_i+\Delta t, y_i+\phi(t_i,y_i)\Delta t).$$
+We expect that smaller time steps $\Delta t$ will give better
+approximations, but of course it will require more work to compute to
+a specified time. It is possible to compute a guaranteed upper bound
+on how far off the approximation might be, that is, how far $\ds y_n$
+is from $f(t_n)$. Suffice it to say that the bound is not particularly
+good and that there are other more complicated approximation
+techniques that do better.
+
+\begin{example} Let us compute an approximation to the solution for $\ds\dot
+y=t-y^2$, $y(0)=0$, when $t=1$. We will use $\Delta t=0.2$, which is
+easy to do even by hand, though we should not expect the resulting
+approximation to be very good. We get
+$$\eqalign{
+(t_1,y_1)&=(0+0.2,0+(0-0^2)0.2) = (0.2,0) \\
+(t_2,y_2)&=(0.2+0.2,0+(0.2-0^2)0.2) = (0.4,0.04) \\
+(t_3,y_3)&=(0.6,0.04+(0.4-0.04^2)0.2) = (0.6,0.11968) \\
+(t_4,y_4)&=(0.8,0.11968+(0.6-0.11968^2)0.2) = (0.8,0.23681533952) \\
+(t_5,y_5)&=(1.0,0.23681533952+(0.6-0.23681533952^2)0.2) = (1.0,0.385599038513605) \\}
+$$
+So $y(1)\approx 0.3856$. As it turns out, this is not accurate to
+even one decimal place. Figure~\xrefn{fig:euler method vs rk} shows
+these points connected by line segments (the lower curve) compared to
+a solution obtained by a much better approximation technique. Note
+that the shape is approximately correct even though the end points are
+quite far apart.
+
+It is easy to write a short function in Sage to do Euler's method; see 
+\expandafter\url\expandafter{\sageurl 2381}this Sage worksheet.\endurl
+\end{example}
+
+\figure
+\vbox{\beginpicture
+\normalgraphs
+\sevenpoint
+\setcoordinatesystem units <8truecm,8truecm>
+\setplotarea x from 0 to 1.05, y from 0 to 0.55
+\axis left shiftedto x=0 ticks length <2pt> numbered from 0 to 0.5 by 0.5 /
+\axis bottom shiftedto y=0 ticks length <2pt> numbered from 0 to 1 by 1 /
+\put {$t$} [tl] <0pt,-3pt> at 1.06 0
+\put {$y$} [b] <0pt,3pt> at 0 0.56
+\setlinear
+\plot 
+0 0
+0.2 0.0000
+0.4 0.0400
+0.6 0.1196
+0.8 0.2368
+1.0 0.3855 /
+\setquadratic
+\plot 0  0  
+0.025000000000000001  0.00031249951171971195 
+0.050000000000000003  0.0012499843752447799  
+0.075000000000000011 0.0028123813539146945  
+0.10000000000000001 0.0049995000624952881  
+0.125  0.0078109744935353819 
+0.14999999999999999  0.0112462047261264  
+0.17499999999999999 0.015304298951036615  
+0.19999999999999998  0.019984015983738772 
+0.22499999999999998  0.025283708473608849  
+0.24999999999999997 0.031201267053176683  
+0.27499999999999997  0.037734065705321729 
+0.29999999999999999  0.044878908658235558  
+0.32500000000000001 0.052631979147269851  
+0.35000000000000003  0.060988790408866761 
+0.37500000000000006  0.069944139294007487  
+0.40000000000000008 0.079492062906380986  
+0.4250000000000001  0.089625798683132307 
+0.45000000000000012  0.10033774834298456  
+0.47500000000000014 0.11161944612716239  
+0.50000000000000011  0.12346153175236174 
+0.52500000000000013  0.1358537284815772  
+0.55000000000000016 0.14878482669758133  
+0.57500000000000018  0.16224267333504916 
+0.6000000000000002  0.17621416749066984  
+0.62500000000000022 0.1906852624861928  
+0.65000000000000024  0.20564097460749087 
+0.67500000000000027  0.22106539868385133  
+0.70000000000000029 0.23694173060647841  
+0.72500000000000031  0.25325229681444411 
+0.75000000000000033  0.26997859070107927  
+0.77500000000000036 0.28710131581523379  
+0.80000000000000038  0.30460043565128503 
+0.8250000000000004  0.32245522974067869  
+0.85000000000000042 0.34064435567768192  
+0.87500000000000044  0.35914591663448664 
+0.90000000000000047  0.37793753384740725  
+0.92500000000000049 0.39699642348821867  
+0.95000000000000051  0.41629947727413563 
+0.97500000000000053  0.4358233461178857  
+1.0000000000000004 0.45554452607694396 /
+\setplotsymbol ({\teeny.})
+\plotsymbolspacing=.2pt
+\arrow <4pt> [0.35, 1] from 1.05 0 to 1.06 0
+\arrow <4pt> [0.35, 1] from 0 0.55 to 0 0.56
+\endpicture}
+\figrdef{fig:euler method vs rk}
+\endfigure{Approximating a solution to $\ds\dot y=t-y^2$, $y(0)=0$.}
+
+Euler's method is related to another technique that can help in
+understanding a differential equation in a qualitative way. Euler's
+method is based on the ability to compute the slope of a solution
+curve at any point in the plane, simply by computing $\phi(t,y)$. If
+we compute $\phi(t,y)$ at many points, say in a grid, and plot a small
+line segment with that slope at the point, we can get an idea of how
+solution curves must look. Such a plot is called a 
+{\dfont slope field\index{slope field}}. A slope field for 
+$\ds\phi=t-y^2$ is shown in figure~\xrefn{fig:slope field}; compare
+this to figure~\xrefn{fig:euler method vs rk}.
+With a little practice, one can sketch reasonably accurate solution
+curves based on the slope field, in essence doing Euler's method
+visually.
+
+\figure
+\hbox to \hsize{\hss
+\epsfxsize6.5cm\epsfbox{slope_field.eps}
+\hss}
+\figrdef{fig:slope field}
+\endfigure{A slope field for $\ds\dot y=t-y^2$.}
+
+Even when a differential equation can be solved explicitly, the slope
+field can help in understanding what the solutions look like with
+various initial conditions. Recall the logistic equation from
+exercise~\xrefn{exer:logistic equation} in 
+section~\xrefn{sec:first order differential equations}, $\ds\dot y =
+ky(M-y)$: $y$ is a population at time $t$, $M$ is a measure of how
+large a population the environment can support, and $k$ measures the
+reproduction rate of the population.
+Figure~\xrefn{fig:logistic slope field} shows a slope field
+for this equation that is quite informative. 
+It is apparent that if the initial population is smaller than $M$ it
+rises to $M$ over the long term, while if the initial population is
+greater than $M$ it decreases to $M$.
+It is quite easy to
+generate slope fields with Sage; follow the AP link in the figure caption.
+
+\figure
+\hbox to \hsize{\hss
+\epsfxsize12cm\epsfbox{logistic_slope_field.eps}
+\hss}
+\figrdef{fig:logistic slope field}
+\endfigure{A slope field for $\ds\dot y=0.2y(10-y)$.
+(\expandafter\url\expandafter{\sageurl 2380}%
+AP\endurl)}
+
+\begin{exercises}
+
+In problems 1--4, compute the Euler approximations for the initial
+value problem for $0\le t\le 1$ and $\Delta t=0.2$. If you have access
+to Sage, generate the slope field first and attempt to sketch the
+solution curve. Then use Sage to compute better approximations with
+smaller values of $\Delta t$.
+
+\exercise $\ds\dot y=t/y$, $y(0)=1$
+\begin{answer} $y(1)\approx 1.355$
+\end{answer}
+
+\exercise $\ds\dot y=t+y^3$, $y(0)=1$
+\begin{answer} $y(1)\approx 40.31$
+\end{answer}
+
+\exercise $\ds\dot y=\cos(t+y)$, $y(0)=1$
+\begin{answer} $y(1)\approx 1.05$
+\end{answer}
+
+\exercise $\ds\dot y=t\ln y$, $y(0)=2$
+\begin{answer} $y(1)\approx 2.30$
+\end{answer}
+
+\end{exercises}

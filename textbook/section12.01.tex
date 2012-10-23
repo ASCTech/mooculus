@@ -1,0 +1,223 @@
+\section{The Coordinate System}{}{}
+\nobreak
+So far we have been investigating functions of the form $y=f(x)$, with
+one independent and one dependent variable. Such functions can be
+represented in two dimensions, using two numerical axes that allow us
+to identify every point in the plane with two numbers. We now want to
+talk about three-dimensional space; to identify every point in three
+dimensions we require three numerical values. The obvious way to make
+this association is to add one new axis, perpendicular to the $x$ and
+$y$ axes we already understand. We could, for example, add a third
+axis, the $z$ axis, with the positive $z$ axis coming straight out of
+the page, and the negative $z$ axis going out the back of the
+page. This is difficult to work with on a printed page, so more often
+we draw a view of the three axes from an angle:
+$$\vbox{\beginpicture
+\normalgraphs
+\ninepoint
+\setcoordinatesystem units <7truemm,7truemm>
+\setplotarea x from 0 to 5, y from 0 to 5
+\axis left /
+\axis bottom /
+\plot 0 0 -3 -3 /
+\put {$x$} [l] <4pt,0pt> at 5 0
+\put {$y$} [b] <0pt,4pt> at 0 5
+\put {$z$} [tr] <-4pt,-4pt> at -3 -3
+\endpicture
+}$$
+You must then imagine that the $z$ axis is perpendicular to the other
+two. Just as we have investigated functions of the form $y=f(x)$ in
+two dimensions, we will investigate three dimensions largely by
+considering functions; now the functions will (typically) have the
+form $z=f(x,y)$. Because we are used to having the result of a
+function graphed in the vertical direction, it is somewhat easier to
+maintain that convention in three dimensions. To accomplish this, we
+normally rotate the axes so that $z$ points up; the result is then:
+$$\vbox{\beginpicture
+\normalgraphs
+\ninepoint
+\setcoordinatesystem units <6truemm,6truemm>
+\setplotarea x from 0 to 5, y from 0 to 6
+\axis left /
+\axis bottom /
+\plot 0 0 -3 -3 /
+\setdashes
+\plot 4 0 3 -1 /
+\plot 3 -1 -1 -1 /
+\plot 3 -1 3 4 /
+\setdots
+\plot 0 5 4 5 3 4 -1 4 0 5 /
+\plot -1 4 -1 -1 /
+\plot 4 5 4 0 /
+\put {$\bullet$} at 3 4
+\put {$(2,4,5)$} [tr] <-4pt,-4pt> at 3 4
+\put {$y$} [l] <4pt,0pt> at 5 0
+\put {$z$} [b] <0pt,4pt> at 0 6
+\put {$x$} [tr] <-4pt,-4pt> at -3 -3
+\put {$4$} [b] <0pt,3pt> at 4 0
+\put {$2$} [br] <-2pt,2pt> at -1 -1
+\put {$5$} [r] <-3pt,0pt> at 0 5
+\endpicture
+}$$
+Note that if you imagine looking down from above, along the $z$ axis,
+the positive $z$ axis will come straight toward you, the positive $y$
+axis will point up, and the positive $x$ axis will point to your
+right, as usual. Any point in space is identified by providing the
+three coordinates of the point, as shown; naturally, we list the
+coordinates in the order $(x,y,z)$. One useful way to think of
+this is to use the $x$ and $y$ coordinates to identify a point in the
+$x$-$y$ plane, then move straight up (or down) a distance given by
+the $z$ coordinate.
+
+It is now fairly simple to understand some ``shapes'' in three
+dimensions that correspond to simple conditions on the coordinates. In
+two dimensions the equation $x=1$ describes the vertical line through
+$(1,0)$. In three dimensions, it still describes all points with
+$x$-coordinate 1, but this is now a plane, as in
+figure~\xrefn{fig:plane}.
+
+\figure
+\vbox{\beginpicture
+\normalgraphs
+\ninepoint
+\setcoordinatesystem units <3truecm,3truecm>
+\setplotarea x from 0 to 1.1, y from 0 to 1.1
+\put {\hbox{\epsfxsize7cm\epsfbox{plane.eps}}} at 0 0
+\endpicture}
+\figrdef{fig:plane}
+\endfigure{The plane $x=1$.
+(\expandafter\url\expandafter{\liveurl plane.html}%
+AP\endurl)}
+
+Recall the very useful distance formula in two dimensions: the
+distance between points $\ds (x_1,y_1)$ and $\ds (x_2,y_2)$ is
+$\ds \sqrt{(x_1-x_2)^2+(y_1-y_2)^2}$; this comes directly from the
+Pythagorean theorem. What is the distance between two points
+$\ds (x_1,y_1,z_1)$ and $\ds (x_2,y_2,z_2)$ in three dimensions?
+Geometrically, we want the length of the long diagonal labeled $c$ in
+the ``box'' in figure~\xrefn{fig:3d distance formula}. Since $a$,
+$b$, $c$ form a right triangle, $\ds a^2+b^2=c^2$. $b$ is the vertical
+distance between $\ds (x_1,y_1,z_1)$ and $\ds (x_2,y_2,z_2)$, so
+$\ds b=|z_1-z_2|$.  The length $a$ runs parallel to the $x$-$y$ plane, so
+it is simply the distance between $\ds (x_1,y_1)$ and $\ds (x_2,y_2)$, that
+is, $\ds a^2=(x_1-x_2)^2+(y_1-y_2)^2$. Now we see that
+$\ds c^2=(x_1-x_2)^2+(y_1-y_2)^2+(z_1-z_2)^2$ and
+$\ds c=\sqrt{(x_1-x_2)^2+(y_1-y_2)^2+(z_1-z_2)^2}$. 
+
+It is sometimes useful to give names to points, for example we might
+let $P_1=(x_1,y_1,z_1)$, or more concisely we might refer to the point
+$P_1(x_1,y_1,z_1)$, and subsequently use just $P_1$. Distance between
+two points in either two or three dimensions is sometimes denoted by
+$d$, so for example the formula for the distance between $P_1(x_1,y_1,z_1)$
+and $P_2(x_2,y_2,z_2)$ might be expressed as
+$$d(P_1,P_2)=\sqrt{(x_1-x_2)^2+(y_1-y_2)^2+(z_1-z_2)^2}.$$
+
+\figure
+\vbox{\beginpicture
+\normalgraphs
+\ninepoint
+\setcoordinatesystem units <7truemm,7truemm>
+\setplotarea x from 0 to 7, y from 0 to 6
+\axis left /
+\axis bottom /
+\plot 0 0 -3 -3 /
+\setdashes
+\plot 5 2 4 1 /
+\plot 4 1 1 1 1 5 4 5 5 6 5 2 /
+\plot 4 1 4 5 /
+\plot 5 6 2 6 1 5 /
+\setdots
+\plot 2 6 2 2 1 1 /
+\plot 2 2 5 2 /
+\setsolid
+\plot 4 1 2 2 4 5 /
+\put {$a$} [tr] <-2pt,-2pt> at 3 1.5
+\put {$b$} [l] <2pt,0pt> at 4 3
+\put {$c$} [br] <-2pt,2pt> at 3 3.5
+%\put {$(2,4,5)$} [l] <4pt,0pt> at 3 4
+\put {$y$} [l] <4pt,0pt> at 7 0
+\put {$z$} [b] <0pt,4pt> at 0 6
+\put {$x$} [tr] <-4pt,-4pt> at -3 -3
+\endpicture}
+\figrdef{fig:3d distance formula}
+\endfigure{Distance in three dimensions.}
+
+In two dimensions, the distance formula immediately gives us the
+equation of a circle: the circle of radius $r$ and center at $(h,k)$
+consists of all points $(x,y)$ at distance $r$ from $(h,k)$, so the
+equation is $\ds r=\sqrt{(x-h)^2+(y-k)^2}$ or $\ds r^2=(x-h)^2+(y-k)^2$. Now
+we can get the similar equation $\ds r^2=(x-h)^2+(y-k)^2+(z-l)^2$, which
+describes all points $(x,y,z)$ at distance $r$ from $(h,k,l)$, namely,
+the sphere with radius $r$ and center $(h,k,l)$.
+
+\begin{exercises}
+
+\exercise Sketch the location of the points $(1,1,0)$, $(2,3,-1)$,
+and $(-1,2,3)$ on a single set of axes.
+
+\exercise Describe geometrically the set of points $(x,y,z)$ that
+satisfy $z=4$.
+
+\exercise Describe geometrically the set of points $(x,y,z)$ that
+satisfy $y=-3$.
+
+\exercise Describe geometrically the set of points $(x,y,z)$ that
+satisfy $x+y=2$.
+
+\exercise The equation $x+y+z=1$ describes some collection of points
+in $\ds \R^3$. Describe and sketch the points that satisfy $x+y+z=1$ and
+are in the $x$-$y$ plane, in the $x$-$z$ plane, and in the 
+$y$-$z$ plane.
+
+\exercise Find the lengths of the sides of the triangle with 
+vertices $(1,0,1)$, $(2,2,-1)$, and $(-3,2,-2)$.
+\begin{answer} $3$, $\ds \sqrt{26}$, $\ds \sqrt{29}$.
+\end{answer}
+
+\exercise Find the lengths of the sides of the triangle with 
+vertices $(2,2,3)$, $(8,6,5)$, and $(-1,0,2)$. Why do the results tell
+you that this isn't really a triangle?
+\begin{answer} $\ds \sqrt{14}$, $\ds 2\sqrt{14}$, $\ds 3\sqrt{14}$.
+\end{answer}
+
+\exercise Find an equation of the sphere with center at $(1,1,1)$ and
+radius 2.
+\begin{answer} $\ds (x-1)^2+(y-1)^2+(z-1)^2=4$.
+\end{answer}
+
+\exercise Find an equation of the sphere with center at $(2,-1,3)$ and
+radius 5.
+\begin{answer} $\ds (x-2)^2+(y+1)^2+(z-3)^2=25$.
+\end{answer}
+
+\exercise Find an equation of the sphere with center $(3, -2, 1)$ and
+that goes through the point $(4, 2, 5)$.
+
+\exercise Find an equation of the sphere with center at $(2,1,-1)$ and
+radius 4. Find an equation for the intersection of this sphere with
+the $y$-$z$ plane; describe this intersection geometrically.
+\begin{answer} $\ds (x-2)^2+(y-1)^2+(z+1)^2=16$,
+$\ds (y-1)^2+(z+1)^2=12$
+\end{answer}
+
+\exercise Consider the sphere of radius 5 centered at $(2,3,4)$.  What is
+the intersection of this sphere with each of the coordinate planes?
+
+\exercise Show that for all values of $\theta$ and $\phi$, the point
+$(a\sin\phi\cos\theta,a\sin\phi\sin\theta,a\cos\phi)$ lies on the
+sphere given by $\ds x^2+y^2+z^2=a^2$.
+
+\exercise Prove that the midpoint of the line segment connecting
+$\ds (x_1,y_1,z_1)$ to $\ds (x_2,y_2,z_2)$ is at 
+$\ds\left({x_1+x_2\over 2},{y_1+y_2\over 2},{z_1+z_2\over 2}\right)$.
+
+\exercise Any three points $P_1(x_1,y_1,z_1)$, $P_2(x_2,y_2,z_2)$,
+$P_3(x_3,y_3,z_3)$, lie in a plane and form a triangle.  The {\dfont
+triangle inequality\index{triangle inequality}\/} says that $\ds
+d(P_1,P_3)\le d(P_1,P_2)+d(P_2,P_3)$.  Prove the triangle inequality
+using either algebra (messy) or the law of cosines (less messy).
+
+\exercise Is it possible for a plane to intersect a sphere in exactly two
+points?  Exactly one point? Explain.  
+
+\end{exercises}

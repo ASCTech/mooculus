@@ -1,0 +1,362 @@
+\section{Vectors}{}{}
+\nobreak A vector\index{vector} is a quantity consisting of a
+non-negative magnitude and a direction. We could represent a vector in
+two dimensions as $(m,\theta)$, where $m$ is the magnitude and
+$\theta$ is the direction, measured as an angle from some agreed upon
+direction. For example, we might think of the vector $\ds
+(5,45^\circ)$ as representing ``5 km toward the northeast''; that is,
+this vector might be a {\dfont displacement
+vector\index{vector!displacement}\index{displacement vector}\/},
+indicating, say, that your grandfather walked 5 kilometers toward the
+northeast to school in the snow. On the other hand, the same vector
+could represent a velocity, indicating that your grandfather walked at
+5 km/hr toward the northeast. What the vector does not indicate is
+where this walk occurred: a vector represents a magnitude and a
+direction, but not a location. Pictorially it is useful to represent a
+vector as an arrow; the direction of the vector, naturally, is the
+direction in which the arrow points; the magnitude of the vector is
+reflected in the length of the arrow.
+
+It turns out that many, many quantities behave as vectors, e.g.,
+displacement, velocity, acceleration, force. Already we can get some
+idea of their usefulness using displacement vectors. Suppose that your
+grandfather walked 5 km NE and then 2 km SSE; if the terrain allows,
+and perhaps armed with a compass, how could your grandfather have
+walked directly to his destination? We can use vectors (and a bit of
+geometry) to answer this question. We begin by noting that since
+vectors do not include a specification of position, we can ``place''
+them anywhere that is convenient. So we can picture your grandfather's
+journey as two displacement vectors drawn head to tail:
+$$\vbox{\beginpicture
+\normalgraphs
+\ninepoint
+\setcoordinatesystem units <7truemm,7truemm>
+\setplotarea x from 0 to 5, y from 0 to 3.6
+\arrow <4pt> [0.35, 1] from 0 0 to 3.54 3.54
+\arrow <4pt> [0.35, 1] from 3.54 3.54 to 4.3 1.69
+\setdashes
+\arrow <4pt> [0.35, 1] from 0 0 to 4.3 1.69
+\endpicture
+}$$
+The displacement vector for the shortcut route is the vector drawn
+with a dashed line, from the tail of the first to the head of the
+second. With a little trigonometry, we can compute that the third
+vector has magnitude approximately 4.62 and direction $\ds
+21.43^\circ$, so walking 4.62 km in the direction $\ds 21.43^\circ$
+north of east (approximately ENE) would get your grandfather to
+school. This sort of calculation is so common, we dignify it with a
+name: we say that the third vector is the {\dfont sum\index{sum!of
+vectors}\index{vector!sum}\/} of the other two vectors. There is
+another common way to picture the sum of two vectors. Put the vectors
+tail to tail and then complete the parallelogram they indicate; the
+sum of the two vectors is the diagonal of the
+parallelogram\index{parallelogram!and vector sum}:
+$$\vbox{\beginpicture
+\normalgraphs
+\ninepoint
+\setcoordinatesystem units <7truemm,7truemm>
+\setplotarea x from 0 to 5, y from -2 to 3.6
+\arrow <4pt> [0.35, 1] from 0 0 to 3.54 3.54
+\arrow <4pt> [0.35, 1] from 0 0 to 0.77 -1.85
+\setdashes
+\arrow <4pt> [0.35, 1] from 0 0 to 4.3 1.69
+\setdots
+\plot 3.54 3.54 4.3 1.69 0.77 -1.85 /
+\endpicture
+}$$
+This is a more natural representation in some circumstances. For
+example, if the two original vectors represent forces acting on an
+object, the sum of the two vectors is the net or effective force on
+the object, and it is nice to draw all three with their tails at the
+location of the object.
+
+We also define {\dfont scalar multiplication\index{scalar
+multiplication}\index{vector!scalar multiplication}\/} for
+vectors: if $\bf A$ is a vector $(m,\theta)$ and $a\ge 0$ is a real
+number, the vector $a\bf A$ is $(am,\theta)$, namely, it points in
+the same direction but has $a$ times the magnitude. If $a<0$, $a\bf
+A$ is $(|a|m,\theta+\pi)$, with $|a|$ times the magnitude and
+pointing in the opposite direction (unless we specify otherwise,
+angles are measured in radians).
+
+Now we can understand subtraction of vectors: 
+${\bf A}-{\bf B}={\bf A}+(-1){\bf B}$:
+$$\vbox{\beginpicture
+\normalgraphs
+\ninepoint
+\setcoordinatesystem units <7truemm,7truemm>
+\setplotarea x from 0 to 5, y from 0 to 3.6
+\altarrow <4pt,5pt> [0.35, 1] from 0 0 to 3.54 3.54
+\arrow <4pt> [0.35, 1] from 0 0 to 4.3 1.69
+\altarrow <4pt,5pt> [0.35, 1] from 4.3 1.69 to 3.54 3.54
+\put {$\bf A$} [br] <-2pt,2pt> at 1.72 1.72
+\put {$\bf B$} [tl] <2pt,-2pt> at 2.15 0.84
+\put {${\bf A}-\bf B$} [bl] <2pt,2pt> at 3.92 2.615
+\setcoordinatesystem units <7truemm,7truemm> point at -6 0
+\setplotarea x from 0 to 5, y from 0 to 3.6
+\altarrow <4pt,5pt> [0.35, 1] from 0 0 to 3.54 3.54
+\altarrow <4pt,10pt> [0.35, 1] from 4.3 1.69 to 0 0
+\altarrow <4pt,5pt> [0.35, 1] from 4.3 1.69 to 3.54 3.54
+\put {$\bf A$} [br] <-2pt,2pt> at 1.72 1.72
+\put {$-\bf B$} [tl] <2pt,-2pt> at 2.15 0.84
+\put {${\bf A}-\bf B$} [bl] <2pt,2pt> at 3.92 2.615
+\endpicture}$$
+Note that as you would expect, ${\bf B} + ({\bf A}-{\bf B}) = {\bf A}$.
+
+We can represent a vector in ways other than $(m,\theta)$, and in fact
+$(m,\theta)$ is not generally used at all. How else could we describe
+a particular vector? Consider again the vector $\ds (5,45^\circ)$. Let's
+draw it again, but impose a coordinate system. If we put the tail of
+the arrow at the origin, the head of the arrow ends up at
+the point $\ds (5/\sqrt2,5/\sqrt2)\approx(3.54, 3.54)$.
+$$\vbox{\beginpicture
+\normalgraphs
+\ninepoint
+\setcoordinatesystem units <7truemm,7truemm>
+\setplotarea x from 0 to 5, y from 0 to 4
+\axis left /
+\axis bottom /
+\arrow <4pt> [0.35, 1] from 0 0 to 3.54 3.54
+\put {$(3.54, 3.54)$} [l] <3pt,0pt> at 3.54 3.54
+\circulararc 45 degrees from 1 0 center at 0 0
+\put {$5$} [br] <-2pt,2pt> at 1.72 1.72
+\put {$45^\circ$} [bl] <2pt,2pt> at 1 0.3
+\endpicture
+}$$
+In this picture the coordinates $(3.54,3.54)$ identify the head of the
+arrow, provided we know that the tail of the arrow has been placed at
+$(0,0)$. Then in fact the vector can always be identified as
+$(3.54,3.54)$, no matter where it is placed; we just have to remember
+that the numbers 3.54 must be interpreted as a {\it change\/} from the
+position of the tail, not as the actual coordinates of the arrow head;
+to emphasize this we will write $\langle 3.54,3.54\rangle$ to mean the
+vector and $(3.54,3.54)$ to mean the point. Then if the vector
+$\langle 3.54,3.54\rangle$ is drawn with its tail at $(1,2)$ it looks
+like this:
+$$\vbox{\beginpicture
+\normalgraphs
+\ninepoint
+\setcoordinatesystem units <7truemm,7truemm>
+\setplotarea x from 0 to 5, y from 0 to 6
+\axis left /
+\axis bottom /
+\arrow <4pt> [0.35, 1] from 1 2 to 4.54 5.54
+\setdashes
+\plot 1 2 4.54 2 4.54 5.54 /
+\put {$3.54$} [t] <0pt,-3pt> at 2.72 2
+\put {$3.54$} [l] <3pt,0pt> at 4.54 3.72
+\put {$(4.54,5.54)$} [l] <3pt,0pt> at 4.54 5.54
+\endpicture
+}$$ 
+Consider again the two part trip: 5 km NE and then 2 km SSE. The
+vector representing the first part of the trip is $\ds \langle
+5/\sqrt2,5/\sqrt2\rangle$, and the second part of the trip is
+represented by $\langle 2\cos(-3\pi/8),2\sin(-3\pi/8)\rangle
+\approx\langle 0.77,-1.85 \rangle$.  We can represent the sum of these
+with the usual head to tail picture:
+$$\vbox{\beginpicture
+\normalgraphs
+\ninepoint
+\setcoordinatesystem units <9truemm,9truemm>
+\setplotarea x from 0 to 5, y from 0 to 5
+\axis bottom /
+\axis left /
+\arrow <4pt> [0.35, 1] from 0 0 to 3.54 3.54
+\arrow <4pt> [0.35, 1] from 3.54 3.54 to 4.3 1.69
+\setdashes
+\arrow <4pt> [0.35, 1] from 0 0 to 4.3 1.69
+\put {$3.54$} [b] <0pt,3pt> at 1.7 3.54
+\put {$0.77$} [b] <0pt,3pt> at 3.9 3.54
+\put {$-1.85$} [l] <3pt,0pt> at 4.3 2.69
+\put {$(4.3,1.69)$} [l] <3pt,0pt> at 4.3 1.69
+\plot 0 3.54 4.3 3.54 4.3 1.69 /
+\endpicture
+}$$
+It is clear from the picture that the coordinates of the destination
+point are $\ds (5/\sqrt2+2\cos(-3\pi/8),5/\sqrt2+2\sin(-3\pi/8))$ or
+approximately $(4.3,1.69)$, so the sum of the two vectors is $\ds
+\langle 5/\sqrt2+2\cos(-3\pi/8),5/\sqrt2+2\sin(-3\pi/8)\rangle \approx
+\langle 4.3,1.69\rangle$. Adding the two vectors is easier in this
+form than in the $(m,\theta)$ form, provided that we're willing to
+have the answer in this form as well.
+
+It is easy to see that scalar multiplication and vector subtraction
+are also easy to compute in this form: $a\langle v,w\rangle=\langle
+av,aw\rangle$ and $\ds \langle v_1,w_1\rangle - \langle v_2,w_2\rangle
+=\langle v_1-v_2,w_1-w_2\rangle$. What about the magnitude? The
+magnitude of the vector $\langle v,w\rangle$ is still the length of
+the corresponding arrow representation; this is the distance from the
+origin to the point $(v,w)$, namely, the distance from the tail to the
+head of the arrow. We know how to compute distances, so the magnitude of
+the vector is simply $\ds \sqrt{v^2+w^2}$, which we also denote with
+absolute value bars: $\ds |\langle v,w\rangle|=\sqrt{v^2+w^2}$.
+
+In three dimensions, vectors are still quantities consisting of a
+magnitude and a direction, but of course there are many more possible
+directions. It's not clear how we might represent the direction
+explicitly, but the coordinate version of vectors makes just as much
+sense in three dimensions as in two. By $\langle 1,2,3\rangle$ we mean
+the vector whose head is at $(1,2,3)$ if its tail is at the origin. As
+before, we can place the vector anywhere we want; if it has its tail
+at $(4,5,6)$ then its head is at $(5,7,9)$. It remains true that
+arithmetic is easy to do with vectors in this form:
+$$\eqalign{
+  &a\langle v_1,v_2,v_3\rangle=\langle av_1,av_2,av_3\rangle \\
+  &\langle v_1,v_2,v_3\rangle + \langle w_1,w_2,w_3\rangle
+  =\langle v_1+w_1,v_2+w_2,v_3+w_3\rangle \\
+  &\langle v_1,v_2,v_3\rangle - \langle w_1,w_2,w_3\rangle
+  =\langle v_1-w_1,v_2-w_2,v_3-w_3\rangle \\}
+$$
+The magnitude of the vector is again the distance from the origin to
+the head of the arrow, or 
+$\ds |\langle v_1,v_2,v_3\rangle|=\sqrt{v_1^2+v_2^2+v_3^2}$.
+
+\figure
+\vbox{\beginpicture
+\normalgraphs
+\ninepoint
+\setcoordinatesystem units <6truemm,6truemm>
+\setplotarea x from 0 to 5, y from 0 to 6
+\axis left /
+\axis bottom /
+\plot 0 0 -3 -3 /
+\altarrow <4pt,10pt> [0.35, 1] from 0 0 to 3 4
+\setdashes
+\plot 4 0 3 -1 /
+\plot 3 -1 -1 -1 /
+\plot 3 -1 3 4 /
+\setdots
+\plot 0 5 4 5 3 4 -1 4 0 5 /
+\plot -1 4 -1 -1 /
+\plot 4 5 4 0 /
+\put {$\bullet$} at 3 4
+%\put {$(2,4,5)$} [tr] <-4pt,-4pt> at 3 4
+\put {$y$} [l] <4pt,0pt> at 5 0
+\put {$z$} [b] <0pt,4pt> at 0 6
+\put {$x$} [tr] <-4pt,-4pt> at -3 -3
+\put {$4$} [b] <0pt,3pt> at 4 0
+\put {$2$} [br] <-2pt,2pt> at -1 -1
+\put {$5$} [r] <-3pt,0pt> at 0 5
+\endpicture}
+\figrdef{fig:3d vector}
+\endfigure{The vector $\langle 2,4,5\rangle$ with its tail at the origin.}
+
+Three particularly simple vectors turn out to be quite useful: 
+${\bf i}=\langle1,0,0\rangle$, ${\bf j}=\langle0,1,0\rangle$, and 
+${\bf k}=\langle0,0,1\rangle$. These play much the same role for
+vectors that the axes play for points. In particular, notice that
+$$\eqalign{
+  \langle v_1,v_2,v_3\rangle &= \langle v_1,0,0\rangle + \langle
+  0,v_2,0\rangle + \langle 0,0,v_3\rangle \\
+  &=v_1\langle1,0,0\rangle + v_2\langle0,1,0\rangle + v_3\langle0,0,1\rangle \\
+  &= v_1{\bf i} + v_2{\bf j} + v_3{\bf k} \\
+}$$
+
+We will frequently want to produce a vector that points from one point
+to another. That is, if $P$ and $Q$ are points, we seek the vector
+$\bf x$ such that when the tail of $\bf x$ is placed at $P$, its head
+is at $Q$; we refer to this vector as $\ds \overrightarrow{\vrule
+height8pt width 0pt PQ}$. If we know the coordinates of $P$ and $Q$,
+the coordinates of the vector are easy to find.
+
+\begin{example}
+Suppose $P=(1,-2,4)$ and $Q=(-2,1,3)$. The vector
+$\ds \overrightarrow{\vrule height8pt width 0pt PQ}$ is
+$\langle -2-1,1--2,3-4\rangle=\langle -3,3,-1\rangle$ and
+$\ds \overrightarrow{\vrule height8pt width 0pt QP}=\langle 3,-3,1\rangle$.
+\end{example}
+
+\begin{exercises}
+
+\exercise Draw the vector $\langle 3,-1\rangle$ with its tail at the
+origin. 
+
+\exercise Draw the vector $\langle 3,-1,2\rangle$ with its tail at the
+origin. 
+
+\exercise Let ${\bf A}$ be the vector with tail at the origin and head
+at $(1,2)$; let ${\bf B}$ be the vector with tail at the origin and head
+at $(3,1)$. Draw ${\bf A}$ and ${\bf B}$ and a vector ${\bf C}$ with 
+tail at $(1,2)$ and head at $(3,1)$. Draw $\bf C$ with its tail at the origin.
+
+\exercise Let ${\bf A}$ be the vector with tail at the origin and head
+at $(-1,2)$; let ${\bf B}$ be the vector with tail at the origin and head
+at $(3,3)$. Draw ${\bf A}$ and ${\bf B}$ and a vector ${\bf C}$ with 
+tail at $(-1,2)$ and head at $(3,3)$. Draw $\bf C$ with its tail at the origin.
+
+\exercise Let ${\bf A}$ be the vector with tail at the origin and head
+at $(5,2)$; let ${\bf B}$ be the vector with tail at the origin and head
+at $(1,5)$. Draw ${\bf A}$ and ${\bf B}$ and a vector ${\bf C}$ with 
+tail at $(5,2)$ and head at $(1,5)$. Draw $\bf C$ with its tail at the origin.
+
+\exercise Find $|{\bf v}|$, ${\bf v}+{\bf w}$, ${\bf v}-{\bf w}$,
+$|{\bf v}+{\bf w}|$, $|{\bf v}-{\bf w}|$ and $-2{\bf v}$ for
+${\bf v} = \langle 1,3\rangle$ and ${\bf w} = \langle -1,-5\rangle$.
+\begin{answer} $\ds \sqrt{10}$, $\langle 0,-2\rangle$, $\langle 2,8\rangle$
+2, $\ds 2\sqrt{17}$, $\langle -2,-6\rangle$
+\end{answer}
+
+\exercise Find $|{\bf v}|$, ${\bf v}+{\bf w}$, ${\bf v}-{\bf w}$,
+$|{\bf v}+{\bf w}|$, $|{\bf v}-{\bf w}|$ and $-2{\bf v}$ for
+${\bf v} = \langle 1,2,3\rangle$ and ${\bf w} = \langle -1,2,-3\rangle$.
+\begin{answer} $\ds \sqrt{14}$, $\langle 0,4,0\rangle$, $\langle 2,0,6\rangle$
+4, $\ds 2\sqrt{10}$, $\langle -2,-4,-6\rangle$
+\end{answer}
+
+\exercise Find $|{\bf v}|$, ${\bf v}+{\bf w}$, ${\bf v}-{\bf w}$,
+$|{\bf v}+{\bf w}|$, $|{\bf v}-{\bf w}|$ and $-2{\bf v}$ for
+${\bf v} = \langle 1,0,1\rangle$ and ${\bf w} = \langle -1,-2,2 \rangle$.
+\begin{answer} $\ds \sqrt{2}$, $\langle 0,-2,3\rangle$, $\langle 2,2,-1\rangle$
+$\ds \sqrt{13}$, $3$, $\langle -2, 0, -2\rangle$
+\end{answer}
+
+\exercise Find $|{\bf v}|$, ${\bf v}+{\bf w}$, ${\bf v}-{\bf w}$,
+$|{\bf v}+{\bf w}|$, $|{\bf v}-{\bf w}|$ and $-2{\bf v}$ for
+${\bf v} = \langle 1,-1,1\rangle$ and ${\bf w} = \langle 0,0,3\rangle$.
+\begin{answer} $\ds \sqrt{3}$, $\langle 1,-1,4\rangle$, $\langle 1,-1,-2\rangle$
+$\ds 3\sqrt{2}$, $\ds \sqrt{6}$, $\langle -2, 2, -2\rangle$
+\end{answer}
+
+\exercise Find $|{\bf v}|$, ${\bf v}+{\bf w}$, ${\bf v}-{\bf w}$,
+$|{\bf v}+{\bf w}|$, $|{\bf v}-{\bf w}|$ and $-2{\bf v}$ for
+${\bf v} = \langle 3,2,1\rangle$ and ${\bf w} = \langle -1,-1,-1\rangle$.
+\begin{answer} $\ds \sqrt{14}$, $\langle 2,1,0\rangle$, $\langle 4,3,2\rangle$
+$\ds \sqrt{5}$, $\ds \sqrt{29}$, $\langle -6,-4, -2\rangle$
+\end{answer}
+
+\exercise Let $P=(4,5,6)$, $Q=(1,2,-5)$. Find 
+$\ds \overrightarrow{\vrule height8pt width 0pt PQ}$. Find a vector with
+the same direction as $\ds \overrightarrow{\vrule height8pt width 0pt PQ}$
+but with length 1. Find a vector with
+the same direction as $\ds \overrightarrow{\vrule height8pt width 0pt PQ}$
+but with length 4.
+\begin{answer} $\langle -3, -3, -11\rangle$,
+$\langle -3/\sqrt{139},-3/\sqrt{139},-11/\sqrt{139}\rangle$
+$\langle -12/\sqrt{139},-12/\sqrt{139},-44/\sqrt{139}\rangle$
+\end{answer}
+
+\exercise If $A, B$, and $C$ are three points, find
+$\ds \overrightarrow{\vrule height8pt width 0pt AB}+
+\overrightarrow{\vrule height8pt width 0pt BC}+
+\overrightarrow{\vrule height8pt width 0pt CA}$.
+\begin{answer} $\langle 0,0,0\rangle$
+\end{answer}
+
+\exercise Consider the 12 vectors that have their tails at the center of a
+clock and their respective heads at each of the 12 digits.  What is
+the sum of these vectors?  What if we remove the vector corresponding
+to 4 o'clock?  What if, instead, all vectors have their
+tails at 12 o'clock, and their heads on the remaining digits?
+\begin{answer} $\bf 0$; $\langle -r\sqrt3/2,r/2\rangle$; $\langle
+10r,0\rangle$; where $r$ is the radius of the clock
+\end{answer}
+
+\exercise Let $\bf a$ and $\bf b$ be nonzero vectors in two dimensions
+that are not parallel or anti-parallel.  Show, algebraically, that if
+$\bf c$ is any two dimensional vector, there are scalars $s$ and $t$
+such that ${\bf c}=s{\bf a}+t{\bf b}$.
+
+\exercise Does the statement in the previous exercise hold if the vectors
+$\bf a$, $\bf b$, and $\bf c$ are three dimensional vectors? Explain.
+
+\end{exercises}

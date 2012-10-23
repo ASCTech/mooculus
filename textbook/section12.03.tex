@@ -1,0 +1,450 @@
+%% Better component exercises like the example: into & down roof eg.
+\section{The Dot Product}{}{}
+\nobreak
+Here's a question whose answer turns out to be very useful: Given two
+vectors, what is the angle between them?
+
+It may not be immediately clear that the question makes sense, but
+it's not hard to turn it into a question that does. Since vectors have
+no position, we are as usual free to place vectors wherever we
+like. If the two vectors are placed tail-to-tail, there is now a
+reasonable interpretation of the question: we seek the measure of the
+smallest angle between the two vectors, in the plane in which they lie.
+Figure~\xrefn{fig:angle between vectors} illustrates the situation.
+
+\figure
+\vbox{\beginpicture
+\normalgraphs
+\ninepoint
+\setcoordinatesystem units <6truemm,6truemm>
+\setplotarea x from 0 to 7, y from 0 to 4
+\arrow <4pt> [0.35, 1] from 0 0 to 3 4
+\arrow <4pt> [0.35, 1] from 0 0 to 7 3
+\setdashes
+\plot 3 4 7 3 /
+\put {\bf A} [b] <0pt,3pt> at 3 4
+\put {\bf B} [l] <3pt,0pt> at 7 3
+\put {$\theta$} [bl] <11pt,8pt> at 0 0
+\endpicture}
+\figrdef{fig:angle between vectors}
+\endfigure{The angle between vectors {\bf A} and {\bf B}.}
+
+Since the angle $\theta$ lies in a triangle, we can compute it using a
+bit of trigonometry, namely, the law of cosines\index{law of
+cosines}\index{cosines!law of}. The lengths of the sides of the
+triangle in figure~\xrefn{fig:angle between vectors} are $|{\bf A}|$,
+$|{\bf B}|$, and $|{\bf A}-{\bf B}|$. Let $\ds {\bf A}=\langle
+a_1,a_2,a_3\rangle$ and $\ds {\bf B}=\langle b_1,b_2,b_3\rangle$; then
+$$\eqalign{
+  |{\bf A}-{\bf B}|^2&=|{\bf A}|^2+|{\bf B}|^2-2|{\bf A}||{\bf B}|\cos\theta \\
+  2|{\bf A}||{\bf B}|\cos\theta&=|{\bf A}|^2+|{\bf B}|^2-|{\bf A}-{\bf B}|^2 \\
+  &=a_1^2+a_2^2+a_3^2+b_1^2+b_2^2+b_3^2-(a_1-b_1)^2-(a_2-b_2)^2-(a_3-b_3)^2 \\
+  &=a_1^2+a_2^2+a_3^2+b_1^2+b_2^2+b_3^2 \\
+  &\qquad-(a_1^2-2a_1b_1+b_1^2)
+  -(a_2^2-2a_2b_2+b_2^2)-(a_3^2-2a_3b_3+b_3^2) \\
+  &=2a_1b_1+2a_2b_2+2a_3b_3 \\
+  |{\bf A}||{\bf B}|\cos\theta&=a_1b_1+a_2b_2+a_3b_3 \\
+  \cos\theta&=(a_1b_1+a_2b_2+a_3b_3)/(|{\bf A}||{\bf B}|) \\
+}$$
+So a bit of simple arithmetic with the coordinates of {\bf A} and {\bf
+B} allows us to compute the cosine of the angle between them. If
+necessary we can use the arccosine to get $\theta$, but in many
+problems $\cos\theta$ turns out to be all we really need.
+
+The numerator of the fraction that gives us $\cos\theta$ turns up a
+lot, so we give it a name and more compact notation: we call it
+the {\dfont dot  product\index{dot product}\/}, and write it as
+$${\bf A}\cdot{\bf B} = a_1b_1+a_2b_2+a_3b_3.$$
+This is the same symbol we use for ordinary multiplication, but there
+should never be any confusion; you can tell from context whether we
+are ``multiplying'' vectors or numbers. (We might also use the dot for
+scalar multiplication: $a\cdot{\bf V}=a{\bf V}$; again, it is clear
+what is meant from context.)
+
+\begin{example} Find the angle between the vectors ${\bf A}=\langle 1,2,1\rangle$ and
+${\bf B}=\langle 3,1,-5\rangle$. We know that
+$\cos\theta={\bf A}\cdot{\bf B}/(|{\bf A}||{\bf B}|)=
+(1\cdot3 + 2\cdot1 + 1\cdot(-5))/(|{\bf A}||{\bf B}|)=0$, so
+$\theta=\pi/2$, that is, the vectors are perpendicular.
+\end{example}
+
+\begin{example} Find the angle between the vectors ${\bf A}=\langle 3,3,0\rangle$ and
+${\bf B}=\langle 1,0,0\rangle$. We compute
+$$\eqalign{
+\cos\theta &= (3\cdot1 + 3\cdot0 + 0\cdot0)/(\sqrt{9+9+0}\sqrt{1+0+0}) \\
+&= 3/\sqrt{18} = 1/\sqrt2 \\}$$
+so $\theta=\pi/4$.
+\end{example}
+
+\begin{example} Some special cases are worth looking at: Find the angles
+between ${\bf A}$ and ${\bf A}$; ${\bf A}$ and ${\bf -A}$;  ${\bf A}$
+and ${\bf 0}=\langle 0,0,0\rangle$.
+
+$\ds \cos\theta= {\bf A}\cdot{\bf A}/(|{\bf A}||{\bf A}|)=(a_1^2+a_2^2+a_3^2)/
+(\sqrt{a_1^2+a_2^2+a_3^2}\sqrt{a_1^2+a_2^2+a_3^2})=1$, so the angle
+between ${\bf A}$ and itself is zero, which of course is correct.
+
+$\ds\cos\theta={\bf A}\cdot{\bf -A}/(|{\bf A}||{\bf -A}|)=(-a_1^2-a_2^2-a_3^2)/
+(\sqrt{a_1^2+a_2^2+a_3^2}\sqrt{a_1^2+a_2^2+a_3^2})=-1$, so the angle
+is $\pi$, that is, the vectors point in opposite directions, as of
+course we already knew.
+
+$\ds \cos\theta= {\bf A}\cdot{\bf 0}/(|{\bf A}||{\bf 0}|)=(0+0+0)/
+(\sqrt{a_1^2+a_2^2+a_3^2}\sqrt{0^2+0^2+0^2})$, which is undefined.
+On the other hand, note that since ${\bf A}\cdot{\bf 0}=0$ it looks
+at first as if $\cos\theta$ will be zero, which as we have seen means
+that vectors are perpendicular; only when we notice that the
+denominator is also zero do we run into trouble. One way to ``fix''
+this is to adopt the convention that the zero vector ${\bf 0}$ is
+perpendicular to all vectors; then we can say in general that if
+${\bf A}\cdot{\bf B}=0$, {\bf A} and {\bf B} are perpendicular.
+\end{example}
+
+Generalizing the examples, note the following useful facts:
+\begin{itemize} % BADBAD
+\item{1.} If {\bf A} is parallel or anti-parallel to {\bf B} then
+${\bf A}\cdot{\bf B}/(|{\bf A}||{\bf B}|)=\pm1$, and conversely, if
+${\bf A}\cdot{\bf B}/(|{\bf A}||{\bf B}|)=1$, {\bf A} and {\bf B}
+are parallel, while if ${\bf A}\cdot{\bf B}/(|{\bf A}||{\bf
+B}|)=-1$, {\bf A} and {\bf B} are anti-parallel. (Vectors are
+parallel\index{vector!parallel}\index{parallel vectors} 
+if they point in the same direction,
+anti-parallel\index{vector!anti-parallel}\index{anti-parallel vectors} 
+if they point in opposite directions.)
+\item{2.} If {\bf A} is perpendicular to {\bf B} then 
+${\bf A}\cdot{\bf B}/(|{\bf A}||{\bf B}|)=0$, and conversely if 
+${\bf A}\cdot{\bf B}/(|{\bf A}||{\bf B}|)=0$ then 
+{\bf A} and {\bf B} are perpendicular.
+\end{itemize}
+
+Given two vectors, it is often useful to find the {\dfont
+projection\index{vector!projection}\index{projection of a vector}\/} 
+of one vector onto the other, because this turns out to have important
+meaning in many circumstances. More precisely, given ${\bf A}$ and
+${\bf B}$, we seek a vector parallel to $\bf B$ but with length
+determined by $\bf A$ in a natural way, as shown in
+figure~\xrefn{fig:vector projection}. $\bf V$ is chosen so that the
+triangle formed by $\bf A$, $\bf V$, and ${\bf A}-{\bf V}$
+is a right triangle.
+
+\figure
+\vbox{\beginpicture
+\normalgraphs
+\ninepoint
+\setcoordinatesystem units <6truemm,6truemm>
+\setplotarea x from 0 to 7, y from 0 to 4
+\arrow <4pt> [0.35, 1] from 0 0 to 3 4
+\arrow <4pt> [0.35, 1] from 0 0 to 3.98 1.71
+\setdashes
+\arrow <4pt> [0.35, 1] from 0 0 to 7 3
+\plot 3 4 3.98 1.71 /
+\put {\bf A} [b] <0pt,3pt> at 3 4
+\put {\bf B} [l] <3pt,0pt> at 7 3
+\put {\bf V} [tl] <3pt,-3pt> at 3.98 1.71
+\put {$\theta$} [bl] <11pt,8pt> at 0 0
+\endpicture}
+\figrdef{fig:vector projection}
+\endfigure{$\bf V$ is the projection of {\bf A} onto {\bf B}.}
+
+Using a little trigonometry, we see that 
+$$
+  |{\bf V}|=|{\bf A}|\cos\theta= 
+  |{\bf A}|{{\bf A}\cdot{\bf B}\over|{\bf A}||{\bf B}|}=
+  {{\bf A}\cdot{\bf B}\over|{\bf B}|};
+$$
+this is sometimes called the 
+{\dfont scalar projection of $\bf A$ onto $\bf B$}. To get $\bf V$
+itself, we multiply this length by a vector of length one parallel to
+$\bf B$: 
+$$
+  {\bf V}= {{\bf A}\cdot{\bf B}\over|{\bf B}|}{{\bf B}\over|{\bf B}|}=
+  {{\bf A}\cdot{\bf B}\over|{\bf B}|^2}{\bf B}.
+$$
+Be sure that you understand why ${\bf B}/|{\bf B}|$ is a vector of
+length one (also called a 
+{\dfont unit vector\index{unit vector}\index{vector!unit}\/}) 
+parallel to $\bf B$.
+
+The discussion so far implicitly assumed that $0\le\theta\le\pi/2$.
+If $\pi/2<\theta\le\pi$, the picture is like 
+figure~\xrefn{fig:obtuse vector projection}.
+In this case ${\bf A}\cdot {\bf B}$ is negative, so the vector
+$${{\bf A}\cdot{\bf B}\over|{\bf B}|^2}{\bf B}$$
+is anti-parallel to $\bf B$, and its length is 
+$$\left|{{\bf A}\cdot{\bf B}\over|{\bf B}|}\right|.$$
+So in general, the scalar projection of $\bf A$ onto $\bf B$
+may be positive or negative. If
+it is negative, it means that the projection vector is anti-parallel
+to $\bf B$ and that the length of the projection vector is the
+absolute value of the scalar projection. Of course, you can also
+compute the length of the projection vector as usual, by applying the
+distance formula to the vector.
+
+\figure
+\vbox{\beginpicture
+\normalgraphs
+\ninepoint
+\setcoordinatesystem units <6truemm,6truemm>
+\setplotarea x from -4 to 7, y from -2 to 4
+\arrow <4pt> [0.35, 1] from 0 0 to -4.966 0.586
+\arrow <4pt> [0.35, 1] from 0 0 to -3.98 -1.71
+\setdashes
+\arrow <4pt> [0.35, 1] from 0 0 to 7 3
+\plot -4.966 0.586 -3.98 -1.71 /
+\put {\bf A} [b] <0pt,3pt> at -4.966 0.586
+\put {\bf B} [l] <3pt,0pt> at 7 3
+\put {\bf V} [tl] <3pt,-3pt> at -3.98 -1.71
+\put {$\theta$} [b] <0pt,3pt> at 0 0
+\endpicture}
+\figrdef{fig:obtuse vector projection}
+\endfigure{$\bf V$ is the projection of {\bf A} onto {\bf B}.}
+
+Note that the phrase ``projection onto {\bf B}'' is a bit misleading
+if taken literally; all that $\bf B$ provides is a direction; the
+length of $\bf B$ has no impact on the final vector. In
+figure~\xrefn{fig:short projection}, for example, $\bf B$ is shorter than
+the projection vector, but this is perfectly acceptable.
+
+\figure
+\vbox{\beginpicture
+\normalgraphs
+\ninepoint
+\setcoordinatesystem units <6truemm,6truemm>
+\setplotarea x from 0 to 7, y from 0 to 4
+\arrow <4pt> [0.35, 1] from 0 0 to 3 4
+\setdashes
+\arrow <4pt> [0.35, 1] from 0 0 to 2.3333 1
+\put {\bf A} [b] <0pt,3pt> at 3 4
+\put {\bf B} [t] <0pt,-5pt> at 2.3333 1
+\put {$\theta$} [bl] <11pt,8pt> at 0 0
+\setcoordinatesystem units <6truemm,6truemm> point at -9 0
+\setplotarea x from 0 to 7, y from 0 to 4
+\setsolid
+\arrow <4pt> [0.35, 1] from 0 0 to 3 4
+\arrow <4pt> [0.35, 1] from 0 0 to 3.98 1.71
+\setdashes
+\arrow <4pt> [0.35, 1] from 0 0 to 2.3333 1
+\plot 3 4 3.98 1.71 /
+\put {\bf A} [b] <0pt,3pt> at 3 4
+\put {\bf B} [t] <0pt,-5pt> at 2.3333 1
+\put {\bf V} [tl] <3pt,-3pt> at 3.98 1.71
+\put {$\theta$} [bl] <11pt,8pt> at 0 0
+\endpicture}
+\figrdef{fig:short projection}
+\endfigure{$\bf V$ is the projection of {\bf A} onto {\bf B}.}
+
+\begin{example}\relax
+\label{example:components of force vector}
+Physical force is a vector quantity. It is often necessary to compute
+the ``component'' of a force acting in a different direction than the
+force is being applied. For example, suppose a ten pound weight is
+resting on an inclined plane---a pitched roof, for example. Gravity
+exerts a force of ten pounds on the object, directed straight down. It
+is useful to think of the component of this force directed down and
+parallel to the roof, and the component down and directly into the
+roof. These forces are the projections of the force vector onto
+vectors parallel and perpendicular to the roof. Suppose the roof is
+tilted at a $\ds 30^\circ$ angle, as in figure~\xrefn{fig:components
+of force}. A vector parallel to the roof is $\ds
+\langle-\sqrt3,-1\rangle$, and a vector perpendicular to the roof is
+$\ds \langle 1,-\sqrt3\rangle$.  The force vector is ${\bf F}=\langle
+0,-10\rangle$. The component of the force directed down the roof is
+then
+$$\eqalign{
+  {\bf F}_1&={{\bf F}\cdot
+  \langle-\sqrt3,-1\rangle\over|\langle-\sqrt3,-1\rangle|^2}
+  \langle-\sqrt3,-1\rangle
+  ={10\over 2}{\langle-\sqrt3,-1\rangle\over2}=
+  \langle -5\sqrt3/2,-5/2\rangle \\
+}$$
+with length 5.  The component of the force directed into the roof is
+$$\eqalign{
+  {\bf F}_2&={{\bf F}\cdot
+  \langle1,-\sqrt3\rangle\over|\langle1,-\sqrt3\rangle|^2}
+  \langle1,-\sqrt3\rangle
+={10\sqrt3\over 2}{\langle1,-\sqrt3\rangle\over2}=
+\langle 5\sqrt3/2,-15/2\rangle \\
+}$$
+with length $\ds 5\sqrt3$. Thus, a force of 5 pounds is pulling the object
+down the roof, while a force of $\ds 5\sqrt3$ pounds is pulling the object
+into the roof.
+\end{example}
+
+\figure
+\vbox{\beginpicture
+\normalgraphs
+\ninepoint
+\setcoordinatesystem units <2truecm,2truecm>
+\setplotarea x from 0 to 3.5, y from 0 to 2
+\plot 0 0 3.464 2 /
+\setplotsymbol ({\twelvepoint.})
+\arrow <4pt> [0.35, 1] from 2.5 1.443 to 2.067 1.193
+\arrow <4pt> [0.35, 1] from 2.5 1.443 to 2.5 0.443
+\arrow <4pt> [0.35, 1] from 2.5 1.443 to 2.933 0.683
+\put {${\bf F}$} [t] <0pt,-5pt> at 2.5 0.443
+\put {${\bf F}_2$} [tl] <3pt,-3pt> at 2.933 0.683
+\put {${\bf F}_1$} [br] <-3pt,3pt> at 2.067 1.193
+\endpicture}
+\figrdef{fig:components of force}
+\endfigure{Components of a force.}
+
+The dot product has some familiar-looking properties that will be
+useful later, so we list them here. These may be proved by writing the
+vectors in coordinate form and then performing the indicated
+calculations; subsequently it can be easier to use the properties
+instead of calculating with coordinates.
+
+\begin{theorem}
+If ${\bf u}$, ${\bf v}$, and ${\bf w}$ are vectors and $a$ is a real
+number, then
+\label{thm:dot product properties}
+
+\begin{itemize} % BADBAD
+\item{1.} $\ds {\bf u}\cdot{\bf u} = |{\bf u}|^2$
+\item{2.} ${\bf u}\cdot{\bf v} = {\bf v}\cdot{\bf u}$
+\item{3.} ${\bf u}\cdot({\bf v}+{\bf w}) = 
+{\bf u}\cdot{\bf v}+{\bf u}\cdot{\bf w}$
+\item{4.} $(a{\bf u})\cdot{\bf v}=a({\bf u}\cdot{\bf v})
+={\bf u}\cdot(a{\bf v})$
+\end{proof}
+
+\end{itemize}
+
+\begin{exercises}
+
+\exercise Find $\langle 1,1,1\rangle\cdot\langle 2,-3,4\rangle$.
+\begin{answer} $3$
+\end{answer}
+
+\exercise Find $\langle 1,2,0\rangle\cdot\langle 0,0,57\rangle$.
+\begin{answer} $0$
+\end{answer}
+
+\exercise Find $\langle 3,2,1\rangle\cdot\langle 0,1,0\rangle$.
+\begin{answer} $2$
+\end{answer}
+
+\exercise Find $\langle -1,-2,5\rangle\cdot\langle 1,0,-1 \rangle$.
+\begin{answer} $-6$
+\end{answer}
+
+\exercise Find $\langle 3,4,6\rangle\cdot\langle 2,3,4\rangle$.
+\begin{answer} $42$
+\end{answer}
+
+\exercise Find the cosine of the angle between $\langle 1,2,3\rangle$
+and $\langle 1,1,1\rangle$; use a calculator if necessary to find the angle.
+\begin{answer} $\ds \sqrt6/\sqrt7$, $\approx 0.39$
+\end{answer}
+
+\exercise Find the cosine of the angle between $\langle -1, -2,-3\rangle$
+and $\langle 5,0,2\rangle$; use a calculator if necessary to find the angle.
+\begin{answer} $\ds -11\sqrt{14}\sqrt{29}/406$, $\approx 2.15$
+\end{answer}
+
+\exercise Find the cosine of the angle between $\langle 47,100,0\rangle$
+and $\langle 0,0,5\rangle$; use a calculator if necessary to find the angle.
+\begin{answer} $0$, $\pi/2$
+\end{answer}
+
+\exercise Find the cosine of the angle between $\langle 1,0,1 \rangle$
+and $\langle 0,1,1\rangle$; use a calculator if necessary to find the angle.
+\begin{answer} $1/2$, $\pi/3$
+\end{answer}
+
+\exercise Find the cosine of the angle between $\langle 2,0,0\rangle$
+and $\langle -1,1,-1\rangle$; use a calculator if necessary to find the angle.
+\begin{answer} $\ds -1/\sqrt3$, $\approx 2.19$
+\end{answer}
+
+\exercise Find the angle between the diagonal of a cube and one of the
+edges adjacent to the diagonal.
+\begin{answer} $\ds \arccos(1/\sqrt3)\approx 0.96$
+\end{answer}
+
+\exercise Find the scalar and vector projections of $\langle 1,2,3\rangle$
+onto $\langle 1,2,0\rangle$.
+\begin{answer} $\ds \sqrt{5}$, $\langle 1,2,0\rangle$.
+\end{answer}
+
+\exercise Find the scalar and vector projections of $\langle 1,1,1\rangle$
+onto $\langle 3,2,1\rangle$.
+\begin{answer} $\ds 3\sqrt{14}/7$, $\langle 9/7,6/7,3/7\rangle$.
+\end{answer}
+
+\exercise A force of 10 pounds is applied to a wagon, directed at an
+angle of $\ds 30^\circ$. Find the component of this force pulling the
+wagon straight up, and the component pulling it horizontally along
+the ground.
+\begin{answer} $\langle 0,5\rangle$, $\ds \langle 5\sqrt3,0\rangle$
+\end{answer}
+
+\figure
+\vbox{\beginpicture
+\normalgraphs
+\ninepoint
+\setcoordinatesystem units <5truemm,5truemm>
+\setplotarea x from 0 to 11, y from 0 to 4
+\putrule from 0 0 to 11 0
+\putrule from 6 0.5 to 6 2
+\putrule from 6 2 to 2 2
+\putrule from 2 2 to 2 0.5
+\putrule from 2 0.5 to 6 0.5
+\circulararc 360 degrees from 3.5 0.5 center at 3 0.5
+\circulararc 360 degrees from 5.5 0.5 center at 5 0.5
+\plot 6 1.5 8 2.655 /
+\setplotsymbol ({\twelvepoint.})
+\arrow <4pt> [0.35, 1] from 8.5 2.943 to 10 3.81
+\put {${\bf F}$} [bl] <3pt,3pt> at 10 3.81
+\endpicture}
+\figrdef{fig:pulling a wagon}
+\endfigure{Pulling a wagon.}
+
+\exercise A force of 15 pounds is applied to a wagon, directed at an
+angle of $\ds 45^\circ$. Find the component of this force pulling the
+wagon straight up, and the component pulling it horizontally along
+the ground.
+\begin{answer} $\ds \langle 0,15\sqrt2/2\rangle$,$\langle 15\sqrt2/2,0\rangle$
+\end{answer}
+
+\exercise Use the dot product to find a non-zero vector ${\bf w}$
+perpendicular to both ${\bf u}=\langle 1,2,-3\rangle$ and 
+${\bf v}=\langle 2,0,1\rangle$.
+\begin{answer} Any vector of the form $\langle a, -7a/2, -2a\rangle$
+\end{answer}
+
+\exercise Let ${\bf x}=\langle 1,1,0 \rangle$ and ${\bf y}=\langle
+2,4,2 \rangle$.  Find a unit vector that is perpendicular to both $\bf
+x$ and $\bf y$.
+\begin{answer} $\ds \langle 1/\sqrt3,-1/\sqrt3,1/\sqrt3\rangle$
+\end{answer}
+
+\exercise Do the three points $(1,2,0)$, $(-2,1,1)$, and $(0,3,-1)$
+form a right triangle?
+\begin{answer} No.
+\end{answer}
+
+\exercise Do the three points $(1,1,1)$, $(2,3,2)$, and $(5,0,-1)$
+form a right triangle?
+\begin{answer} Yes.
+\end{answer}
+
+\exercise
+Show that $|{\bf A}\cdot{\bf B}|\le|{\bf A}||{\bf B}|$
+
+\exercise Let $\bf x$ and $\bf y$ be perpendicular vectors.  Use
+Theorem~\xrefn{thm:dot product properties} to prove that $\ds |{\bf
+  x}|^2+|{\bf y}|^2=|{\bf x}+{\bf y}|^2$.  What is this result better
+known as?
+
+\exercise Prove that the diagonals of a rhombus intersect at right angles. 
+
+\exercise Suppose that ${\bf z}=|{\bf x}| {\bf y} + |{\bf y}| {\bf x}$
+where $\bf x$, $\bf y$, and $\bf z$ are all nonzero vectors.  Prove
+that $\bf z$ bisects the angle between $\bf x$ and $\bf y$.
+
+\exercise
+Prove Theorem~\xrefn{thm:dot product properties}.
+
+\end{exercises}
+

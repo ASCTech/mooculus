@@ -1,0 +1,382 @@
+\section{Limits revisited}{}{}
+\nobreak
+We have defined and used the concept of limit, primarily in our
+development of the derivative. Recall that $\ds \lim_{x\to a}f(x)=L$ is
+true if, in a precise sense, $f(x)$ gets closer and closer to $L$ as
+$x$ gets closer and closer to $a$. While some limits are easy to see,
+others take some ingenuity; in particular, the limits that define
+derivatives are always difficult on their face, since in 
+$$\lim_{\Delta x\to 0} {f(x+\Delta x)-f(x)\over \Delta x}$$
+both the numerator and denominator approach zero. Typically this
+difficulty can be resolved when $f$ is a ``nice'' function and we are
+trying to compute a derivative. Occasionally such limits are
+interesting for other reasons, and the limit of a fraction in which
+both numerator and denominator approach zero can be difficult to
+analyze. Now that we have the derivative available, there is another
+technique that can sometimes be helpful in such circumstances.
+
+Before we introduce the technique, we will also expand our concept of
+limit. We will occasionally want to know what happens to some quantity
+when a variable gets very large or ``goes to infinity''.
+
+\begin{example}
+What happens to the function $\ds \cos(1/x)$ as $x$ goes to infinity? It
+seems clear that as $x$ gets larger and larger, $1/x$ gets closer and
+closer to zero, so $\cos(1/x)$ should be getting closer and closer to 
+$\cos(0)=1$.
+\end{example}
+
+As with ordinary limits, this concept of ``limit at infinity'' can be
+made precise. Roughly, we want $\ds \lim_{x\to \infty}f(x)=L$ to mean that
+we can make $f(x)$ as close as we want to $L$ by making $x$ large
+enough. Compare this definition to the definition of limit in 
+section~\xrefn{sec:limits}.
+
+\begin{definition} (Limit at infinity) If $f$ is a function, we say that $\ds \lim_{x\to
+  \infty}f(x)=L$ if for every $\epsilon>0$ there is an $N > 0$ so that
+  whenever $x>N$, $|f(x)-L|<\epsilon$.
+We may similarly define $\ds \lim_{x\to-\infty}f(x)=L$.
+\index{limit at infinity}\label{defn:limit at infinity}
+\end{definition}
+
+We include this definition for completeness, but we will not explore it in
+detail. Suffice it to say that such limits behave in much the same way
+that ordinary limits do; in particular there is a direct analog of 
+theorem~\xrefn{thm:properties of limits}.
+
+Now consider this limit:
+$$\lim_{x\to \pi}{x^2-\pi^2\over \sin x}.$$
+As $x$ approaches $\pi$, both the numerator and denominator approach
+zero, so it is not obvious what, if anything, the quotient
+approaches. We can often compute such limits by application of the
+following theorem.
+
+\begin{theorem} (L'H\^opital's Rule) For ``sufficiently nice'' functions $f(x)$
+and $g(x)$, if $\ds\lim_{x\to a} f(x)= 0 = \lim_{x\to a}
+g(x)$ or $\ds\lim_{x\to a} f(x)= \pm\infty = \lim_{x\to a}
+g(x)$, and if $\ds\lim_{x\to a}{f'(x)\over g'(x)}$ exists,
+then $\ds\lim_{x\to a}{f(x)\over g(x)}=\lim_{x\to
+a}{f'(x)\over g'(x)}$.  This remains true if ``$x\to a$'' is replaced
+by ``$x\to \infty$'' or ``$x\to -\infty$''.
+\end{theorem}
+\index{L'H\^opital's Rule}
+
+This theorem is somewhat difficult to prove, in part because it
+incorporates so many different possibilities, so we will not prove it
+here. We also will not need to worry about the precise definition of 
+``sufficiently nice'', as the functions we encounter will be
+suitable. 
+
+%% fixme: do plausibility argument with tan lines at x=a?
+
+\begin{example}
+Compute $\ds\lim_{x\to \pi}{x^2-\pi^2\over \sin x}$ in two ways.
+\msk
+First we use L'H\^opital's Rule: Since the numerator and denominator
+both approach zero,
+$$\lim_{x\to \pi}{x^2-\pi^2\over \sin x}=
+\lim_{x\to \pi}{2x \over \cos x},$$
+provided the latter exists. But in fact this is an easy limit, since
+the denominator now approaches $-1$, so 
+$$\lim_{x\to \pi}{x^2-\pi^2\over \sin x}={2\pi\over -1} = -2\pi.$$
+
+We don't really need L'H\^opital's Rule to do this limit. Rewrite it
+as 
+$$\lim_{x\to \pi}(x+\pi){x-\pi\over \sin x}$$
+and note that 
+$$\lim_{x\to \pi}{x-\pi\over \sin x}=
+\lim_{x\to \pi}{x-\pi\over -\sin (x-\pi)}=
+\lim_{x\to 0}-{x\over \sin x}$$
+since $x-\pi$ approaches zero as $x$ approaches $\pi$.
+Now
+$$\lim_{x\to \pi}(x+\pi){x-\pi\over \sin x}=
+\lim_{x\to \pi}(x+\pi)\lim_{x\to 0}-{x\over \sin x}=
+2\pi(-1)=-2\pi$$
+as before.
+\end{example}
+
+\begin{example} Compute $\ds\lim_{x\to \infty}{2x^2-3x+7\over
+x^2+47x+1}$ in two ways.
+\msk
+As $x$ goes to infinity both the numerator and denominator go to
+infinity, so we may apply L'H\^opital's Rule:
+$$\lim_{x\to \infty}{2x^2-3x+7\over x^2+47x+1}=
+\lim_{x\to \infty}{4x-3\over 2x+47}.$$
+In the second quotient, it is still the case that the numerator and
+denominator both go to infinity, so we are allowed to use
+L'H\^opital's Rule again:
+$$\lim_{x\to \infty}{4x-3\over 2x+47}=\lim_{x\to \infty}{4\over 2}=2.$$
+So the original limit is 2 as well.
+
+Again, we don't really need L'H\^opital's Rule, and in fact a more
+elementary approach is easier---we divide the numerator and
+denominator by $\ds x^2$:
+$$\lim_{x\to \infty}{2x^2-3x+7\over x^2+47x+1}=
+\lim_{x\to \infty}{2x^2-3x+7\over x^2+47x+1}{{1\over x^2}\over {1\over
+    x^2}}=
+\lim_{x\to \infty}{2-{3\over x}+{7\over x^2}\over
+1+{47\over x}+{1\over x^2}}.$$
+Now as $x$ approaches infinity, all the quotients with some power of
+$x$ in the denominator approach zero, leaving 2 in the numerator and 1
+in the denominator, so the limit again is 2.
+\end{example}
+
+\begin{example} Compute $\ds\lim_{x\to 0}{\sec x - 1\over \sin x}$.
+\msk
+Both the numerator and denominator approach zero, so applying 
+L'H\^opital's Rule:
+$$\lim_{x\to 0}{\sec x - 1\over \sin x}=
+\lim_{x\to 0}{\sec x\tan x\over \cos x}={1\cdot 0\over 1}=0.$$
+\vskip -16pt
+\end{example}
+
+\begin{example} Compute $\ds\lim_{x\to 0^+} x\ln x$.
+
+This doesn't appear to be suitable for L'H\^opital's Rule, but it also
+is not ``obvious''. As $x$ approaches zero, $\ln x$ goes to $-\infty$,
+so the product looks like $(\hbox{something very small})\cdot 
+(\hbox{something very large and negative})$. But this could be
+anything: it depends on {\it how small\/} and {\it how large}. 
+For example, consider $\ds (x^2)(1/x)$, $(x)(1/x)$, and $\ds (x)(1/x^2)$. As
+$x$ approaches zero, each of these is $(\hbox{something very small})\cdot 
+(\hbox{something very large})$, yet the limits are respectively 
+zero, $1$, and $\infty$.
+
+We can
+in fact turn this into a L'H\^opital's Rule problem:
+$$x\ln x = {\ln x\over 1/x}={\ln x\over x^{-1}}.$$
+Now as $x$ approaches zero, both the numerator and denominator
+approach infinity (one $-\infty$ and one $+\infty$, but only the size
+is important). Using  L'H\^opital's Rule:
+$$\lim_{x\to 0^+} {\ln x\over x^{-1}}=
+\lim_{x\to 0^+} {1/x\over -x^{-2}} =\lim_{x\to 0^+} {1\over x}(-x^2)=
+\lim_{x\to 0^+} -x = 0.$$
+One way to interpret this is that since $\ds\lim_{x\to
+  0^+}x\ln x = 0$, the $x$ approaches zero much faster than the $\ln x$
+approaches $-\infty$.
+\end{example}
+
+% Most from Keisler
+\begin{exercises}
+
+Compute the limits.
+
+\twocol
+
+\exercise $\ds\lim_{x\to 0} {\cos x -1\over \sin x}$
+\begin{answer} $0$
+\end{answer}
+
+\exercise $\ds\lim_{x\to \infty} {e^x\over x^3}$
+\begin{answer} $\infty$
+\end{answer}
+
+\exercise $\ds\lim_{x\to \infty} \sqrt{x^2+x}-\sqrt{x^2-x}$
+\begin{answer} $1$
+\end{answer}
+
+\exercise $\ds\lim_{x\to \infty} {\ln x\over x}$
+\begin{answer} $0$
+\end{answer}
+
+\exercise $\ds\lim_{x\to \infty} {\ln x\over \sqrt{x}}$
+\begin{answer} $0$
+\end{answer}
+
+\exercise $\ds\lim_{x\to\infty} {e^x + e^{-x}\over e^x -e^{-x}}$
+\begin{answer} 1
+\end{answer}
+
+\exercise $\ds\lim_{x\to0}{\sqrt{9+x}-3\over x}$
+\begin{answer} $1/6$
+\end{answer}
+
+\exercise $\ds\lim_{t\to1^+}{(1/t)-1\over t^2-2t+1}$
+\begin{answer} $-\infty$
+\end{answer}
+
+\exercise $\ds\lim_{x\to2}{2-\sqrt{x+2}\over 4-x^2}$
+\begin{answer} $1/16$
+\end{answer}
+
+\exercise $\ds\lim_{t\to\infty}{t+5-2/t-1/t^3\over 3t+12-1/t^2}$
+\begin{answer} $1/3$
+\end{answer}
+
+\exercise $\ds\lim_{y\to\infty}{\sqrt{y+1}+\sqrt{y-1}\over y}$
+\begin{answer} $0$
+\end{answer}
+
+\exercise $\ds\lim_{x\to1}{\sqrt{x}-1\over \root 1/3\of{x}-1}$
+\begin{answer} $3/2$
+\end{answer}
+
+\exercise $\ds\lim_{x\to0}{(1-x)^{1/4}-1\over x}$
+\begin{answer} $-1/4$
+\end{answer}
+
+\exercise $\ds\lim_{t\to 0}{\left(t+{1\over t}\right)((4-t)^{3/2}-8)}$
+\begin{answer} $-3$
+\end{answer}
+
+\exercise $\ds\lim_{t\to 0^+}\left({1\over t}+{1\over\sqrt{t}}\right)
+(\sqrt{t+1}-1)$
+\begin{answer} $1/2$
+\end{answer}
+
+\exercise $\ds\lim_{x\to 0}{x^2\over\sqrt{2x+1}-1}$
+\begin{answer} $0$
+\end{answer}
+
+\exercise $\ds\lim_{u\to 1}{(u-1)^3\over (1/u)-u^2+3/u-3}$
+\begin{answer} $-1$
+\end{answer}
+
+\exercise $\ds\lim_{x\to 0}{2+(1/x)\over 3-(2/x)}$
+\begin{answer} $-1/2$
+\end{answer}
+
+\exercise $\ds\lim_{x\to 0^+}{1+5/\sqrt{x}\over 2+1/\sqrt{x}}$
+\begin{answer} $5$
+\end{answer}
+
+\exercise $\ds\lim_{x\to 0^+}{3+x^{-1/2}+x^{-1}\over 2+4x^{-1/2}}$
+\begin{answer} $\infty$
+\end{answer}
+
+\exercise $\ds\lim_{x\to\infty}{x+x^{1/2}+x^{1/3}\over x^{2/3}+x^{1/4}}$
+\begin{answer} $\infty$
+\end{answer}
+
+\exercise $\ds\lim_{t\to\infty}
+{1-\sqrt{t\over t+1}\over 2-\sqrt{4t+1\over t+2}}$
+\begin{answer} $2/7$
+\end{answer}
+
+\exercise $\ds\lim_{t\to\infty}{1-{t\over t-1}\over 1-\sqrt{t\over t-1}}$
+\begin{answer} $2$
+\end{answer}
+
+\exercise $\ds\lim_{x\to-\infty}{x+x^{-1}\over 1+\sqrt{1-x}}$
+\begin{answer} $-\infty$
+\end{answer}
+
+\exercise $\ds\lim_{x\to1}{\int_1^x 1/t\,dt\over\int_1^x 1/(2t+1)\,dt}$
+\begin{answer} $3$
+\end{answer}
+
+\exercise $\ds\lim_{x\to\infty}{\int_1^x\sqrt{t+(1/t)}\,dt\over x\sqrt{x}}$
+\begin{answer} $2/3$
+\end{answer}
+
+\exercise $\ds\lim_{x\to\pi/2}{\cos x\over (\pi/2)-x}$
+\begin{answer} $1$
+\end{answer}
+
+\exercise $\ds\lim_{x\to0}{e^x-1\over x}$
+\begin{answer} $1$
+\end{answer}
+
+\exercise $\ds\lim_{x\to0}{x^2\over e^x-x-1}$
+\begin{answer} $2$
+\end{answer}
+
+\exercise $\ds\lim_{x\to1}{\ln x\over x-1}$
+\begin{answer} $1$
+\end{answer}
+
+\exercise $\ds\lim_{x\to0}{\ln(x^2+1)\over x}$
+\begin{answer} $0$
+\end{answer}
+
+\exercise $\ds\lim_{x\to1}{x\ln x\over x^2-1}$
+\begin{answer} $1/2$
+\end{answer}
+
+\exercise $\ds\lim_{x\to0}{\sin(2x)\over\ln(x+1)}$
+\begin{answer} $2$
+\end{answer}
+
+\exercise $\ds\lim_{x\to1}{x^{1/4}-1\over x}$
+\begin{answer} $0$
+\end{answer}
+
+\exercise $\ds\lim_{x\to1^+}{\sqrt{x}\over x-1}$
+\begin{answer} $\infty$
+\end{answer}
+
+\exercise $\ds\lim_{x\to1}{\sqrt{x}-1\over x-1}$
+\begin{answer} $1/2$
+\end{answer}
+
+\exercise $\ds\lim_{x\to\infty}{x^{-1}+x^{-1/2}\over x+x^{-1/2}}$
+\begin{answer} $0$
+\end{answer}
+
+\exercise $\ds\lim_{x\to\infty}{x+x^{-2}\over 2x+x^{-2}}$
+\begin{answer} $1/2$
+\end{answer}
+
+\exercise $\ds\lim_{x\to\infty}{5+x^{-1}\over 1+2x^{-1}}$
+\begin{answer} $5$
+\end{answer}
+
+\exercise $\ds\lim_{x\to\infty}{4x\over\sqrt{2x^2+1}}$
+\begin{answer} $\ds 2\sqrt2$
+\end{answer}
+
+\exercise $\ds\lim_{x\to0}{3x^2+x+2\over x-4}$
+\begin{answer} $-1/2$
+\end{answer}
+
+\exercise $\ds\lim_{x\to0}{\sqrt{x+1}-1\over \sqrt{x+4}-2}$
+\begin{answer} $2$
+\end{answer}
+
+\exercise $\ds\lim_{x\to0}{\sqrt{x+1}-1\over \sqrt{x+2}-2}$
+\begin{answer} $0$
+\end{answer}
+
+\exercise $\ds\lim_{x\to0^+}{\sqrt{x+1}+1\over\sqrt{x+1}-1}$
+\begin{answer} $\infty$
+\end{answer}
+
+\exercise $\ds\lim_{x\to0}{\sqrt{x^2+1}-1\over\sqrt{x+1}-1}$
+\begin{answer} $0$
+\end{answer}
+
+\exercise $\ds\lim_{x\to\infty}{(x+5)\left({1\over 2x}+{1\over x+2}\right)}$
+\begin{answer} $3/2$
+\end{answer}
+
+\exercise $\ds\lim_{x\to0^+}{(x+5)\left({1\over 2x}+{1\over x+2}\right)}$
+\begin{answer} $\infty$
+\end{answer}
+
+\exercise $\ds\lim_{x\to1}{(x+5)\left({1\over 2x}+{1\over x+2}\right)}$
+\begin{answer} $5$
+\end{answer}
+
+\exercise $\ds\lim_{x\to2}{x^3-6x-2\over x^3+4}$
+\begin{answer} $-1/2$
+\end{answer}
+
+\exercise $\ds\lim_{x\to2}{x^3-6x-2\over x^3-4x}$
+\begin{answer} does not exist
+\end{answer}
+
+\exercise $\ds\lim_{x\to1+}{x^3+4x+8\over 2x^3-2}$
+\begin{answer} $\infty$
+\end{answer}
+
+\endtwocol
+
+\msk
+\exercise The function $\ds f(x) = {x\over\sqrt{x^2+1}}$ has two horizontal
+ asymptotes.  Find them and give a rough sketch of $f$ with its horizontal
+ asymptotes. 
+\begin{answer} $y=1$ and $y=-1$
+\end{answer}
+
+\end{exercises}
+

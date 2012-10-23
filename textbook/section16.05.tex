@@ -1,0 +1,216 @@
+\section{Divergence and Curl}{}{}
+
+Divergence and curl are two measurements of vector fields that are
+very useful in a variety of applications. Both are most easily
+understood by thinking of the vector field as representing a flow of a
+liquid or gas;
+that is, each vector in the vector field should be interpreted as a
+velocity vector. 
+Roughly speaking, divergence
+measures the tendency of 
+the fluid to collect or disperse at a point, and curl measures the
+tendency of the fluid to swirl around the point. Divergence is a
+scalar, that is, a single number, while curl is itself a vector. The
+magnitude of the curl measures how much the fluid is swirling, the
+direction indicates the axis around which it tends to swirl. These
+ideas are somewhat subtle in practice, and are beyond the scope of
+this course. You can find additional information on the web, for
+example at 
+\url{http://mathinsight.org/curl_idea}%
+\vb|http://mathinsight.org/curl_idea|\endurl\ 
+and 
+\url{http://mathinsight.org/divergence_idea}%
+\vb|http://mathinsight.org/divergence_idea|\endurl\ 
+and in
+many books including {\it
+Div, Grad, Curl, and All That: An Informal Text on Vector Calculus},
+by H. M. Schey.
+
+Recall that if $f$ is a function, the gradient of $f$
+is given by 
+$$\nabla f=\left\langle {\partial f\over\partial x},{\partial
+  f\over\partial y},{\partial f\over\partial z}\right\rangle.$$
+A useful mnemonic for this (and for the divergence and curl, as it
+turns out) is to let
+$$\nabla = \left\langle{\partial \over\partial x},{\partial
+  \over\partial y},{\partial \over\partial z}\right\rangle,$$
+that is, we pretend that $\nabla$ is a vector with rather odd looking
+entries. Recalling that $\langle u,v,w\rangle a=\langle ua,va,wa\rangle$,
+we can then think of the gradient as
+$$\nabla f=\left\langle{\partial \over\partial x},{\partial
+  \over\partial y},{\partial \over\partial z}\right\rangle f = 
+\left\langle {\partial f\over\partial x},{\partial
+  f\over\partial y},{\partial f\over\partial z}\right\rangle,$$
+that is, we simply multiply the $f$ into the vector.
+
+The divergence and curl can now be defined in terms of this same odd
+vector $\nabla$ by using the cross product and dot product.
+The divergence of a vector field ${\bf F}=\langle f,g,h\rangle$ is
+$$\nabla \cdot {\bf F} =
+\left\langle{\partial \over\partial x},{\partial
+  \over\partial y},{\partial \over\partial z}\right\rangle\cdot
+\langle f,g,h\rangle
+= {\partial f\over\partial x}+{\partial
+  g\over\partial y}+{\partial h\over\partial z}.$$
+The curl of $\bf F$ is
+$$\nabla\times{\bf F} = \left|\matrix{{\bf i}&{\bf j}&{\bf k} \\
+{\partial \over\partial x}&{\partial
+  \over\partial y}&{\partial \over\partial z} \\
+f&g&h \\}\right| = 
+\left\langle {\partial h\over\partial y}-{\partial g\over\partial z},
+{\partial f\over\partial z}-{\partial h\over\partial x},
+{\partial g\over\partial x}-{\partial f\over\partial y}\right\rangle.$$
+
+Here are two simple but useful facts about divergence and curl.
+
+\begin{theorem} \relax
+\label{thm:div of curl is zero}
+$\nabla\cdot(\nabla\times{\bf F})=0$.
+\end{theorem}
+
+In words, this says that the divergence of the curl is zero.
+
+\begin{theorem} \relax
+\label{thm:curl of gradient is zero}
+$\nabla\times(\nabla f) = {\bf 0}$.
+\end{theorem}
+
+That is, the curl of a gradient is the zero vector. Recalling that
+gradients are conservative vector fields, this says that the curl of a
+conservative vector field is the zero vector. Under suitable
+conditions, it is also true that if the curl of $\bf F$ is $\bf 0$
+then $\bf F$ is conservative. (Note that this is exactly the same test
+that we discussed on page~\xrefn{page:test for conservative vector field}.)
+
+\begin{example} Let ${\bf F} = \langle e^z,1,xe^z\rangle$. Then 
+$\nabla\times{\bf F} = \langle 0,e^z-e^z,0\rangle = {\bf 0}$.
+Thus, $\bf F$ is conservative, and we can exhibit this directly by
+finding the corresponding $f$.
+
+Since $f_x=e^z$, $f=xe^z+g(y,z)$. Since $f_y=1$, it must be that
+$g_y=1$, so $g(y,z)=y+h(z)$. Thus $f=xe^z+y+h(z)$ and
+$$xe^z = f_z xe^z + 0 + h'(z),$$
+so $h'(z)=0$, i.e., $h(z)=C$, and $f=xe^z+y+C$.
+\end{example}
+
+We can rewrite Green's Theorem using these new ideas; these rewritten
+versions in turn are closer to some later theorems we will see.
+
+Suppose we write a two dimensional vector field in the
+form ${\bf F}=\langle P,Q,0\rangle$, where $P$ and $Q$ are functions
+of $x$ and $y$. Then 
+$$\nabla\times {\bf F} =
+\left|\matrix{{\bf i}&{\bf j}&{\bf k} \\
+{\partial \over\partial x}&{\partial
+  \over\partial y}&{\partial \over\partial z} \\
+P&Q&0 \\}\right|=
+\langle 0,0,Q_x-P_y\rangle,$$
+and so $(\nabla\times {\bf F})\cdot{\bf k}=\langle 0,0,Q_x-P_y\rangle\cdot
+\langle 0,0,1\rangle = Q_x-P_y$. So Green's Theorem says
+$$\int_{\partial D} {\bf F}\cdot d{\bf r}=
+\int_{\partial D} P\,dx +Q\,dy = \dint{D} Q_x-P_y \,dA
+=\dint{D}(\nabla\times {\bf F})\cdot{\bf k}\,dA.
+\eqrdef{eq:greens theorem second form}
+\eqno{(\xrefn{eq:greens theorem second form})}
+$$
+Roughly speaking, the right-most integral adds up the curl (tendency
+to swirl) at each point in the region; the left-most integral adds up
+the tangential components of the vector field around the entire
+boundary. Green's Theorem says these are equal, or roughly, that the
+sum of the ``microscopic'' swirls over the region is the same as the
+``macroscopic'' swirl around the boundary.
+
+Next, suppose that the boundary $\partial D$ has a vector form
+${\bf r}(t)$, so that ${\bf r}'(t)$ is tangent to the boundary, and
+${\bf T}={\bf r}'(t)/|{\bf r}'(t)|$ is the usual unit tangent vector.
+Writing ${\bf r}=\langle x(t),y(t)\rangle$ we get
+$${\bf T}={\langle x',y'\rangle\over|{\bf r}'(t)|}$$
+and then
+$${\bf N}={\langle y',-x'\rangle\over|{\bf r}'(t)|}$$
+is a unit vector perpendicular to $\bf T$, that is, a unit normal to
+the boundary. 
+Now
+$$\eqalign{
+\int_{\partial D} {\bf F}\cdot{\bf N}\,ds&=
+\int_{\partial D} \langle P,Q\rangle\cdot{\langle
+  y',-x'\rangle\over|{\bf r}'(t)|} |{\bf r}'(t)|dt=
+\int_{\partial D} Py'\,dt - Qx'\,dt \\
+&=\int_{\partial D} P\,dy - Q\,dx
+=\int_{\partial D} - Q\,dx+P\,dy. \\
+}$$
+So far, we've just rewritten the original integral using alternate
+notation. The last integral looks just like the left side of Green's
+Theorem (\xrefn{thm:greens theorem}) except that $P$ and $Q$ have
+traded places and $Q$ has acquired a negative sign. Then applying
+Green's Theorem we get 
+$$
+\int_{\partial D} - Q\,dx+P\,dy=\dint{D} P_x+Q_y\,dA=
+\dint{D} \nabla\cdot{\bf F}\,dA.$$
+Summarizing the long string of equalities, 
+$$\int_{\partial D} {\bf F}\cdot{\bf N}\,ds=\dint{D} \nabla\cdot{\bf
+  F}\,dA.
+\eqrdef{eq:greens theorem third form}
+\eqno{(\xrefn{eq:greens theorem third form})}
+$$ 
+Roughly speaking, the first integral adds up the flow across the
+boundary of the region, from inside to out, and the second sums the
+divergence (tendency to spread) at each point in the interior. The
+theorem roughly says that the sum of the ``microscopic'' spreads is
+the same as the total spread across the boundary and out of the region.
+
+\begin{exercises}
+
+\exercise Let ${\bf F}=\langle xy,-xy\rangle$ and 
+let $D$ be given by $0\le x\le 1$, $0\le y\le 1$.
+Compute $\ds\int_{\partial D} {\bf F}\cdot d{\bf r}$ and
+$\ds\int_{\partial D} {\bf F}\cdot{\bf N}\,ds$.
+\begin{answer} $-1$, $0$
+\end{answer}
+
+\exercise Let ${\bf F}=\langle ax^2,by^2\rangle$ and 
+let $D$ be given by $0\le x\le 1$, $0\le y\le 1$.
+Compute $\ds\int_{\partial D} {\bf F}\cdot d{\bf r}$ and
+$\ds\int_{\partial D} {\bf F}\cdot{\bf N}\,ds$.
+\begin{answer} $0$, $a+b$
+\end{answer}
+
+\exercise Let ${\bf F}=\langle ay^2,bx^2\rangle$ and 
+let $D$ be given by $0\le x\le 1$, $0\le y\le x$.
+Compute $\ds\int_{\partial D} {\bf F}\cdot d{\bf r}$ and
+$\ds\int_{\partial D} {\bf F}\cdot{\bf N}\,ds$.
+\begin{answer} $(2b-a)/3$, $0$
+\end{answer}
+
+\exercise Let ${\bf F}=\langle \sin x\cos y,\cos x\sin y\rangle$ and 
+let $D$ be given by $0\le x\le \pi/2$, $0\le y\le x$.
+Compute $\ds\int_{\partial D} {\bf F}\cdot d{\bf r}$ and
+$\ds\int_{\partial D} {\bf F}\cdot{\bf N}\,ds$.
+\begin{answer} $0$, $1$
+\end{answer}
+
+\exercise Let ${\bf F}=\langle y,-x\rangle$ and 
+let $D$ be given by $x^2+y^2\le 1$.
+Compute $\ds\int_{\partial D} {\bf F}\cdot d{\bf r}$ and
+$\ds\int_{\partial D} {\bf F}\cdot{\bf N}\,ds$.
+\begin{answer} $-2\pi$, $0$
+\end{answer}
+
+\exercise Let ${\bf F}=\langle x,y\rangle$ and 
+let $D$ be given by $x^2+y^2\le 1$.
+Compute $\ds\int_{\partial D} {\bf F}\cdot d{\bf r}$ and
+$\ds\int_{\partial D} {\bf F}\cdot{\bf N}\,ds$.
+\begin{answer} $0$, $2\pi$
+\end{answer}
+
+\exercise Prove theorem~\xrefn{thm:div of curl is zero}.
+
+\exercise Prove theorem~\xrefn{thm:curl of gradient is zero}.
+
+\exercise If $\nabla \cdot F=0$, $F$ is said to be {\dfont
+incompressible\index{incompressible}}.  Show that any vector field
+of the form $F(x,y,z) = \langle f(y,z),g(x,z),h(x,y\rangle$ is
+incompressible.  Give a non-trivial example.
+
+\end{exercises}
+
+

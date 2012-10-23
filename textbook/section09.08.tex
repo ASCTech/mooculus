@@ -1,0 +1,635 @@
+%% Adapted from material by Mike Wills
+\section{Probability}{}{}
+\label{sec:probability}
+\nobreak
+You perhaps have at least a rudimentary understanding of
+{\dfont discrete probability\index{discrete probability}}, which
+measures the likelihood of an ``event'' when there are a finite number
+of possibilities. For example, when an ordinary six-sided die is
+rolled, the probability of getting any particular number is $1/6$. In
+general, the probability of an event is the number of ways the event
+can happen divided by the number of ways that ``anything'' can happen.
+
+For a slightly more complicated example, consider the case of two
+six-sided dice. The dice are physically distinct, which means that
+rolling a 2--5 is different than rolling a 5--2; each is an equally
+likely event out of a total of 36 ways the dice can land, so each has
+a probability of $1/36$.
+
+Most interesting events are not so simple. More interesting is the
+probability of rolling a certain sum out of the possibilities 2
+through 12. It is clearly not true that all sums are equally likely:
+the only way to roll a 2 is to roll 1--1, while there are many ways to
+roll a 7. Because the number of possibilities is quite small, and
+because a pattern quickly becomes evident, it is easy to see that the
+probabilities of the various sums are:
+$$\eqalign{
+  P(2) =P(12)  &=1/36 \\  
+  P(3) = P(11) &= 2/36 \\
+  P(4) =P(10)  &= 3/36 \\
+  P(5) =P(9)   &= 4/36 \\
+  P(6) =P(8)   &= 5/36 \\
+  P(7)         &=6/36 \\
+}$$
+Here we use $P(n)$ to mean ``the probability of rolling an $n$.''
+Since we have correctly accounted for all possibilities, the sum of
+all these probabilities is $36/36=1$; the probability that the sum is
+one of 2 through 12 is 1, because there are no other possibilities.
+
+The study of probability is concerned with more difficult questions as
+well; for example, suppose the two dice are rolled many times. On the
+average, what sum will come up? In the language of probability, this
+average is called the {\dfont expected value\index{expected value}\/}
+of the sum. This is at first a little misleading, as it does not tell
+us what to ``expect'' when the two dice are rolled, but what we expect
+the long term average will be.
+
+Suppose that two dice are rolled 36 million times. Based on the
+probabilities, we would expect about 1 million rolls to be 2, about 2
+million to be 3, and so on, with a roll of 7 topping the list at about
+6 million. The sum of all rolls would be 1 million times 2 plus 2
+million times 3, and so on, and dividing by 36
+million we would get the average:
+$$\eqalign{
+  \bar x&=
+  (2\cdot 10^6+3(2\cdot 10^6) +\cdots+7(6\cdot 10^6)+\cdots+12\cdot10^6)
+  {1\over 36\cdot 10^6} \\
+  &=2{10^6\over 36\cdot 10^6}+3{2\cdot 10^6\over 36\cdot 10^6}+\cdots+
+  7{6\cdot 10^6\over 36\cdot 10^6}+\cdots+12{10^6\over 36\cdot 10^6} \\
+  &=2P(2)+3P(3)+\cdots+7P(7)+\cdots+12P(12) \\
+  &=\sum_{i=2}^{12} iP(i)=7.}
+$$
+There is nothing special about the 36 million in
+this calculation. No matter what the number of rolls, once we simplify
+the average, we get the same $\ds\sum_{i=2}^{12} iP(i)$. While the
+actual average value of a large number of rolls will not be exactly 7,
+the average should be close to 7 when the number of rolls is
+large. Turning this around, if the average is not close to 7, we
+should suspect that the dice are not fair.
+
+A variable, say $X$, that can take certain values, each with a
+corresponding probability, is called a {\dfont random
+variable\index{random variable}}; in the example above, the random
+variable was the sum of the two dice. If the possible values for $X$
+are $\ds x_1$, $\ds x_2$,\dots,$\ds x_n$, then 
+the expected value of the random
+variable is $\ds E(X)=\sum_{i=1}^n x_iP(x_i)$. The expected value is
+also called the {\dfont mean\index{mean}}.
+
+When the number of possible values for $X$ is finite, we say that $X$
+is a discrete random variable.  In many applications of probability,
+the number of possible values of a random variable is very large,
+perhaps even infinite. To deal with the infinite case we need a
+different approach, and since there is a sum involved, it should not
+be wholly surprising that integration turns out to be a useful
+tool. It then turns out that even when the number of possibilities is
+large but finite, it is frequently easier to pretend that the number
+is infinite. Suppose, for example, that a dart is thrown at a dart
+board. Since the dart board consists of a finite number of atoms,
+there are in some sense only a finite number of places for the dart to
+land, but it is easier to explore the probabilities involved by
+pretending that the dart can land on any point in the usual $x$-$y$
+plane.
+
+\begin{definition} Let $f:\R \to \R$ be a
+function. If $f(x) \geq 0$ for every $x$ and $\ds\int_{-\infty }
+^\infty f(x)\,dx = 1$ then $f$ is a {\dfont probability density
+function\index{probability density function}}.
+\end{definition}
+
+We associate a probability density
+function with a random variable $X$ by stipulating that the
+probability that $X$ is between $a$ and $b$ is 
+$\ds\int_a^b f(x)\,dx$. Because of the requirement that the integral
+from $-\infty$ to $\infty$ be 1, all probabilities are less than or
+equal to 1, and 
+the probability that $X$ takes on some value
+between $-\infty$ and $\infty$ is 1, as it should be.
+
+\begin{example} Consider again the two dice example; we can view it in a way
+that more resembles the probability density function
+approach. Consider a random variable $X$ that takes on any real value
+with probabilities given by the probability density function in
+figure~\xrefn{fig:two dice}. The function $f$ consists of just the top
+edges of the rectangles, with vertical sides drawn for clarity; the
+function is zero below $1.5$ and above $12.5$.
+The area of each rectangle is the probability of rolling the sum in
+the middle of the bottom of the rectangle, or
+$$P(n) = \int_{n-1/2}^{n+1/2} f(x)\,dx.$$
+The probability of rolling a 4, 5, or 6 is
+$$P(n) = \int_{7/2}^{13/2} f(x)\,dx.$$
+Of course, we could also compute probabilities that don't make sense
+in the context of the dice, such as the probability that 
+$X$ is between 4 and $5.8$.
+\end{example}
+
+\figure
+\vbox{\beginpicture
+\normalgraphs
+\ninepoint
+\setcoordinatesystem units <1truecm,1truecm>
+\setplotarea x from 0 to 13, y from 0 to 6.5
+\axis bottom ticks short numbered from 1 to 12 by 1 /
+\axis left ticks short numbered from 1 to 6 by 1 /
+\putrule from 1.5 1 to 2.5 1
+\putrule from 2.5 2 to 3.5 2
+\putrule from 3.5 3 to 4.5 3
+\putrule from 4.5 4 to 5.5 4
+\putrule from 5.5 5 to 6.5 5
+\putrule from 6.5 6 to 7.5 6
+\putrule from 7.5 5 to 8.5 5
+\putrule from 8.5 4 to 9.5 4
+\putrule from 9.5 3 to 10.5 3
+\putrule from 10.5 2 to 11.5 2
+\putrule from 11.5 1 to 12.5 1
+\putrule from 1.5   0 to 1.5  1
+\putrule from 2.5   0 to 2.5  2
+\putrule from 3.5   0 to 3.5  3
+\putrule from 4.5   0 to 4.5  4
+\putrule from 5.5   0 to 5.5  5
+\putrule from 6.5   0 to 6.5  6
+\putrule from 7.5   0 to 7.5  6
+\putrule from 8.5   0 to 8.5  5
+\putrule from 9.5   0 to 9.5  4
+\putrule from 10.5  0 to 10.5 3
+\putrule from 11.5  0 to 11.5 2
+\putrule from 12.5  0 to 12.5 1
+\endpicture}
+\figrdef{fig:two dice}
+\endfigure{A probability density function for two dice.}
+
+% As this example illustrates, we do not require that $f$ be continuous.
+% If $f$ has only a finite number of discontinuities
+% (possibly zero), and the discontinuities are either jump
+% discontinuities or removable (a ``hole'' in the function). This
+% guarantees that the {\dfont cumulative distribution
+%   function\index{cumulative distribution function}},
+% $$F(x) = P(X\leq x) = \int_{-\infty }^x f(t) dt,$$ is
+% continuous. Hence, we say that $X$ is a continuous random variable.
+% Note that because the area does not decrease as $x$ increases, the function 
+% $F(x)$ is non-decreasing. 
+% The entire collection of probabilities for a
+% random variable $X$, namely $P(X\leq x)$ for all $x$, is called a 
+% {\dfont probability distribution\index{probability distribution}}.
+
+The function
+$$F(x) = P(X\leq x) = \int_{-\infty }^x f(t) dt$$
+is called the {\dfont cumulative distribution
+function\index{cumulative distribution function}} or simply
+(probability) distribution. 
+
+\begin{example} \relax
+\label{exam:uniform distribution}
+Suppose that $a<b$ and 
+$$
+  f(x)=\cases{\ds{1\over b-a}& if $a\leq x \leq b$ \\
+  0&otherwise. \\}
+$$
+Then $f(x)$ is the
+{\dfont uniform probability density 
+function\index{uniform probability density function}} on $[a,b]$.
+ and the corresponding distribution is
+the {\dfont uniform distribution\index{uniform distribution}\/} on $[a,b]$.
+\end{example}
+
+% The next theorem is not hard to prove; if $I$ is an interval $[a,b]$,
+% we write $\ds\int_I f(x)\,dx$ for $\ds\int_a^b f(x)\,dx$.
+% 
+% \begin{theorem} Let $I$ be an interval.
+% If $\ds 0\leq f(x) \leq g(x)$ for $x\in I$ and $f$ and $g$ are
+% integrable on $I$ then
+% $\ds 0 \leq \int_I f(x)\,dx \leq \int_I g(x)\,dx \leq
+% \infty$. In particular, if $\ds\int_I f(x)\,dx$
+% diverges, then so does $\ds\int_I g(x)\,dx$ while if $\ds\int_I g(x)\,dx
+% $ converges, then so does $\ds\int_I f(x)\,dx$.
+% \end{theorem}
+% 
+% Note that the theorem applies to infinite intervals, in which case the
+% integrals are improper integrals.
+
+\begin{example} \relax
+\label{exam:normal distribution}
+Consider the function $\ds f(x) = e^{-x^2/2}$. What can we say about 
+$$\int_{-\infty }^\infty e^{-x^2/2}\,dx?$$ 
+We cannot find an antiderivative of $f$, but we can see that this
+integral is some finite number.
+Notice that $\ds 0< f(x) = e^{-x^2/2} \leq e^{-x/2}$ for
+$|x| > 1$. This implies that the area under $\ds e^{-x^2/2}$ is less
+than the area under $\ds e^{-x/2}$, over the interval $[1,\infty)$.
+It is easy to compute the latter area, namely
+$$\int_1^\infty e^{-x/2}\,dx = {2\over\sqrt{e}},$$
+so 
+$$\int_1^\infty e^{-x^2/2}\,dx$$
+is some finite number smaller than $\ds 2/\sqrt{e}$.
+Because $f$ is symmetric around the $y$-axis,
+$$\int_{-\infty }^{-1} e^{-x^2/2}\,dx=\int_1^\infty e^{-x^2/2}\,dx.$$
+This means that 
+$$
+  \int_{-\infty }^\infty e^{-x^2/2}\,dx
+  =\int_{-\infty}^{-1}
+  e^{-x^2/2}\,dx + \int_{-1}^1 e^{-x^2/2}\,dx + \int_1^\infty
+  e^{-x^2/2}\,dx = A
+$$
+for some finite positive number $A$.
+Now if we let $g(x) = f(x)/A$,
+$$
+  \int_{-\infty }^\infty g(x)\,dx =
+  {1\over A}\int_{-\infty }^\infty e^{-x^2/2}\,dx = 
+  {1\over A} A = 1,
+$$
+so $g$ is a probability density function. It turns out to be very
+useful, and is called the {\dfont standard normal probability density
+function\index{standard normal probability density function}\/} or
+more informally the {\dfont bell curve\index{bell curve}}, giving rise
+to the {\dfont standard normal distribution\index{standard normal
+distribution}}.  See figure~\xrefn{fig:bell curve} for the graph
+of the bell curve.
+\end{example}
+
+\figure
+\vbox{\beginpicture
+\normalgraphs
+\ninepoint
+\setcoordinatesystem units <1truecm,2truecm>
+\setplotarea x from -4.5 to 4.5, y from 0 to 0.5
+\axis bottom ticks short numbered from -4 to 4 by 1 /
+\axis left shiftedto x=0 ticks short numbered from 0.5 to 0.5 by 1.0 /
+\setquadratic
+\plot -4.000 0.000 -3.800 0.000 -3.600 0.001 -3.400 0.001 -3.200 0.002 
+-3.000 0.004 -2.800 0.008 -2.600 0.014 -2.400 0.022 -2.200 0.035 
+-2.000 0.054 -1.800 0.079 -1.600 0.111 -1.400 0.150 -1.200 0.194 
+-1.000 0.242 -0.800 0.290 -0.600 0.333 -0.400 0.368 -0.200 0.391 
+0.000 0.399 0.200 0.391 0.400 0.368 0.600 0.333 0.800 0.290 
+1.000 0.242 1.200 0.194 1.400 0.150 1.600 0.111 1.800 0.079 
+2.000 0.054 2.200 0.035 2.400 0.022 2.600 0.014 2.800 0.008 
+3.000 0.004 3.200 0.002 3.400 0.001 3.600 0.001 3.800 0.000 
+4.000 0.000 /
+\endpicture}
+\figrdef{fig:bell curve}
+\endfigure{The bell curve.}
+
+We have shown that $A$ is some finite number without computing it; we
+cannot compute it with the techniques we have available. By using some
+techniques from multivariable calculus, it can be shown that
+$\ds A=\sqrt{2\pi}$. 
+
+\begin{example} \relax
+\label{exam:exponential distribution}
+The {\dfont exponential distribution\index{exponential
+    distribution}} has probability density function 
+$$f(x) =\cases{ 0 & $x< 0$ \\
+ce^{-cx } & $x\geq 0$ \\}$$
+where $c$ is a positive
+constant.
+\end{example}
+
+% \begin{definition} Let $f$ be a probability density function. Since we are
+% assuming that the function $\ds F(x) =\int_{-\infty }^x
+% f(t)\,dt$ is continuous and ranges from $0$ to $1$ it follows by the
+% intermediate value theorem that there is at least one number $m$ such that $F(m)
+% =1/2$; $m$ is called a {\dfont median\index{median}\/} of the random
+% variable $X$. Note that
+% $P(X \leq m) = P(X\geq m) =1/2$.
+% \end{definition}
+% 
+% \begin{example} The median of the uniform distribution on $[a,b]$ is
+% $(a+b)/2$.
+% \end{example}
+% 
+% \begin{example} \relax
+% \label{exam:multimedian}
+% Let
+% $$f(x) =\cases{
+% 0 & $x<0$ \\
+% 1 & $0\leq x \leq 1/2$ \\
+% 0 & $1/2 < x < 1$ \\
+% 1 & $1\leq x \leq 3/2$ \\
+% 0 & $3/2 < x$. \\}$$
+% Any value in the interval $[1/2,1]$
+% qualifies as a median, although convention would usually take `the'
+% median to be $3/4$.
+% \end{example}
+
+% An {\dfont even\index{even function}\index{function!even}\/} function
+% is one that is symmetric around the $y$ axis.
+% 
+% \begin{example} If $f$ is an even probability density function then one
+% of the medians is $0$. If $f(x)>0$ on $[-\delta , \delta]$ for
+% some $\delta >0$, then 0 is the only median. In particular, the
+% median of the standard normal distribution is $0$.
+% \end{example}
+% 
+%  \begin{definition} If a probability density function $f$ has a global
+%  maximum at $x=c$ then $c$ is a {\dfont mode\index{mode}} 
+% of the random variable $X$.
+% \end{definition}
+% 
+% There need not be a single mode; for example, in the uniform
+% distribution every number between $a$ and $b$ is a
+% mode. The mode may not even exist, though it is a bit tricky to come
+% up with an example.
+
+% \begin{example}\relax
+% \label{exam:no mode}
+% It is somewhat difficult to devise a continuous probability density
+% function for which there is no mode, but easy if we give up
+% continuity. Consider
+% $$
+%   f(x) =\cases{
+%   0 & $x<-1$ \\
+%   x+1  & $-1 \leq x < 0$ \\
+%   0 & $x=0$ \\
+%   -x+1 & $0< x\leq 1$ \\
+%   0 & $1<x$. \\}
+% $$
+% Sketch this graph; it is then apparent that $f$ has no
+% global maximum and hence no
+% mode. 
+% \end{example}
+
+% In practice, both the mode and the median are useful, but the expected
+% value, also called the mean, is generally most useful. Following our
+% discussion of discrete probability, the definition should not be
+% surprising. 
+
+The mean or expected value of a random variable is quite useful, as
+hinted at in our discussion of dice. Recall that the mean for a 
+discrete random variable is $\ds E(X)=\sum_{i=1}^n x_iP(x_i)$. In the
+more general context we use an integral in place of the sum.
+
+\begin{definition} The {\dfont mean\index{mean}\/} 
+of a random variable $X$ with probability density function $f$ is
+$\ds \mu = E(X)=\int_{-\infty }^\infty xf(x)\,dx$,
+provided the integral converges.
+\end{definition}
+
+When the mean exists it is unique, since it is the result of an
+explicit calculation. The mean does not always exist.
+
+The mean might look familiar; it is
+essentially identical to the center of mass of a
+one-dimensional beam, as discussed in section~\xrefn{sec:center of mass}.
+The probability density function $f$ plays the role of the physical
+density function, but now the ``beam'' has infinite length.
+If we consider only a finite portion of the beam, say between $a$ and
+$b$, then the center of mass is
+$$\bar x = {\ds\int_a^b xf(x)\,dx\over\ds\int_a^b f(x)\,dx}.$$
+If we extend the beam to infinity, we get
+$$
+  \bar x = {\ds\int_{-\infty}^\infty xf(x)\,dx\over
+  \ds\int_{-\infty}^\infty f(x)\,dx} = \int_{-\infty}^\infty
+  xf(x)\,dx = E(X),
+$$
+because $\ds \int_{-\infty}^\infty f(x)\,dx=1$. In the center of mass
+interpretation, this integral is the total mass of the beam, which is
+always 1 when $f$ is a probability density function.
+
+\begin{example}
+The mean of the standard normal distribution is 
+$$\int_{-\infty}^\infty x {e^{-x^2/2}\over\sqrt{2\pi}}\,dx.$$
+We compute the two halves:
+$$
+  \int_{-\infty}^0 x{e^{-x^2/2}\over\sqrt{2\pi}}\,dx=
+  \lim_{D\to-\infty}\left.-{e^{-x^2/2}\over\sqrt{2\pi}}\right|_D^0=
+  -{1\over\sqrt{2\pi}}
+$$
+and 
+$$
+  \int_0^\infty x{e^{-x^2/2}\over\sqrt{2\pi}}\,dx=
+  \lim_{D\to\infty}\left.-{e^{-x^2/2}\over\sqrt{2\pi}}\right|_0^D=
+  {1\over\sqrt{2\pi}}.
+$$
+The sum of these is 0, which is the mean.
+\end{example}
+
+While the mean is very useful, it typically is not enough information
+to properly evaluate a situation. For example, suppose we could
+manufacture an 11-sided die, with the faces numbered 2 through 12 so
+that each face is equally likely to be down when the die is
+rolled. The value of a roll is the value on this lower face.  Rolling
+the die gives the same range of values as rolling two ordinary dice,
+but now each value occurs with probability $1/11$. The expected value
+of a roll is
+$$ {2\over 11} + {3\over 11} + \cdots + {12\over 11} = 7.$$
+The mean does not distinguish the two cases, though of course they are
+quite different.
+
+If $f$ is a probability density function for a random variable $X$,
+with mean $\mu$, we would like to measure how far a ``typical'' value
+of $X$ is from $\mu$. One way to measure this distance is
+$\ds(X-\mu)^2$; we square the difference so as to measure all
+distances as positive. To get the typical such squared distance, we
+compute the mean. For two dice, for example, we get
+$$
+  (2-7)^2{1\over 36} + (3-7)^2{2\over 36} + \cdots + (7-7)^2{6\over 36}
+  +\cdots (11-7)^2{2\over36} + (12-7)^2{1\over36} = {35\over36}.
+$$
+Because we squared the differences this does not directly measure the
+typical distance we seek; if we take the square root of this we do get
+such a measure, $\ds\sqrt{35/36}\approx 2.42$. Doing the computation
+for the strange 11-sided die we get
+$$
+  (2-7)^2{1\over 11} + (3-7)^2{1\over 11} + \cdots + (7-7)^2{1\over 11}
+  +\cdots (11-7)^2{1\over11} + (12-7)^2{1\over11} = 10,
+$$
+with square root approximately 3.16. Comparing 2.42 to 3.16 tells us
+that the two-dice rolls clump somewhat more closely near 7
+than the rolls of the weird die, which of course we
+already knew because these examples are quite simple.
+
+To perform the same computation for a probability density function the
+sum is replaced by an integral, just as in the computation of the
+mean. The expected value of the squared distances is
+$$V(X)= \int_{-\infty }^\infty (x-\mu)^2 f(x)\,dx,$$
+called the {\dfont variance\index{variance}\/}. The square root of the
+variance is the {\dfont standard deviation\index{standard
+deviation}\/}, denoted $\sigma$.
+
+\begin{example} We compute the standard deviation of the standard normal
+distrubution. The variance is
+$${1\over\sqrt{2\pi}}\int_{-\infty}^\infty x^2 e^{-x^2/2}\,dx.$$
+To compute the antiderivative, use integration by parts, with
+$u=x$ and $\ds dv=xe^{-x^2/2}\,dx$. This gives
+$$\int x^2 e^{-x^2/2}\,dx = -x e^{-x^2/2}+\int e^{-x^2/2}\,dx.$$
+We cannot do the new integral, but we know its value when the limits
+are $-\infty$ to $\infty$, from our discussion of the 
+standard normal distribution. Thus
+$$
+  {1\over\sqrt{2\pi}}\int_{-\infty}^\infty x^2 e^{-x^2/2}\,dx=
+  \left.-{1\over\sqrt{2\pi}}x e^{-x^2/2}\right|_{-\infty}^\infty + 
+  {1\over\sqrt{2\pi}}\int_{-\infty}^\infty e^{-x^2/2}\,dx=
+  0+{1\over\sqrt{2\pi}}\sqrt{2\pi}=1.
+$$
+The standard deviation is then $\ds \sqrt{1}=1$.
+\end{example}
+ 
+Here is a simple example showing how these ideas can be
+useful. Suppose it is known that, in the long run, 1 out of every 100
+computer memory chips produced by a certain manufacturing plant is
+defective when the manufacturing process is running correctly. Suppose
+1000 chips are selected at random and 15 of them are defective. This
+is more than the `expected' number (10), but is it so many that we
+should suspect that something has gone wrong in the manufacturing
+process? We are interested in the probability that various numbers of
+defective chips arise; the probability distribution is discrete: there
+can only be a whole number of defective chips. But (under reasonable
+assumptions) the distribution is very close to a normal
+distribution, namely this one:
+$$
+  f(x)={1\over\sqrt{2\pi}\sqrt{1000(.01)(.99)}}
+   \exp\left({-(x-10)^2\over 2(1000)(.01)(.99)}\right),
+$$
+which is pictured in figure~\xrefn{fig:chip model} 
+(recall that $\ds \exp(x)=e^x$). 
+
+\figure
+\vbox{\beginpicture
+\normalgraphs
+\ninepoint
+\setcoordinatesystem units <3truemm,10truecm>
+\setplotarea x from 0 to 25, y from 0 to 0.15
+\axis bottom ticks short numbered from 0 to 25 by 5 /
+\axis left ticks short numbered from 0.05 to 0.15 by 0.05 /
+\setquadratic
+\plot 0.000 0.001 0.625 0.001 1.250 0.003 1.875 0.005 2.500 0.007 
+3.125 0.012 3.750 0.018 4.375 0.026 5.000 0.036 5.625 0.048 
+6.250 0.062 6.875 0.077 7.500 0.092 8.125 0.106 8.750 0.117 
+9.375 0.124 10.000 0.127 10.625 0.124 11.250 0.117 11.875 0.106 
+12.500 0.092 13.125 0.077 13.750 0.062 14.375 0.048 15.000 0.036 
+15.625 0.026 16.250 0.018 16.875 0.012 17.500 0.007 18.125 0.005 
+18.750 0.003 19.375 0.001 20.000 0.001 20.625 0.000 21.250 0.000 
+21.875 0.000 22.500 0.000 23.125 0.000 23.750 0.000 24.375 0.000 
+25.000 0.000 /
+\endpicture}
+\figrdef{fig:chip model}
+\endfigure{Normal density function for the defective chips example.}
+
+Now how do we measure how unlikely it is that under normal
+circumstances we would see 15 defective chips? We can't compute the
+probability of exactly 15 defective chips, as this would be
+$\ds\int_{15}^{15} f(x)\,dx = 0$. We could compute
+$\ds\int_{14.5}^{15.5} f(x)\,dx \approx 0.036$; this means there is
+only a $3.6\%$ chance that the number of defective chips is 15. (We
+cannot compute these integrals exactly; computer software has been
+used to approximate the integral values in this discussion.)
+But
+this is misleading:
+$\ds\int_{9.5}^{10.5} f(x)\,dx \approx 0.126$, which is larger,
+certainly, but still small, even for the ``most likely'' outcome. The
+most useful question, in most circumstances, is this: how likely is it that
+the number of defective chips is ``far from'' the mean? For example,
+how likely, or unlikely, is it that the number of defective chips is
+different by 5 or more from the expected value of 10? This is the
+probability that the number of defective chips is less than 5 or
+larger than 15, namely
+$$
+  \int_{-\infty}^{5} f(x)\,dx + \int_{15}^{\infty} f(x)\,dx \approx 0.11.
+$$ 
+So there is an $11\%$ chance that this happens---not large, but not
+tiny. Hence the 15 defective chips does not appear to be cause for
+alarm: about one time in nine we would expect to see the number of
+defective chips 5 or more away from the expected 10. How about 20?
+Here we compute
+$$
+  \int_{-\infty}^{0} f(x)\,dx + \int_{20}^{\infty} f(x)\,dx \approx 0.0015.
+$$
+So there is only a $0.15\%$ chance that the number of defective chips
+is more than 10 away from the mean; this would typically be
+interpreted as too suspicious to ignore---it shouldn't happen if the
+process is running normally. 
+
+The big question, of course, is what level of improbability should
+trigger concern? It depends to some degree on the application, and in
+particular on the consequences of getting it wrong in one direction or
+the other. If we're wrong, do we lose a little money? A lot of money?
+Do people die? In general, the standard choices are 5\% and 1\%. So
+what we should do is find the number of defective chips that has only,
+let us say, a 1\% chance of occurring under normal circumstances, and
+use that as the relevant number. In other words, we want to know when
+$$
+  \int_{-\infty}^{10-r} f(x)\,dx + \int_{10+r}^{\infty} f(x)\,dx < 0.01.
+$$ 
+A bit of trial and error shows that with $r=8$ the value is about
+$0.011$, and with $r=9$ it is about $0.004$, so if the number of
+defective chips is 19 or more, or 1 or fewer, we should look for
+problems. If the number is high, we worry that the manufacturing
+process has a problem, or conceivably that the process that tests for
+defective chips is not working correctly and is flagging good chips as
+defective. If the number is too low, we suspect that the testing
+procedure is broken, and is not detecting defective chips.
+
+\begin{exercises}
+
+\exercise Verify that $\ds \int_1^\infty e^{-x/2}\,dx=2/\sqrt{e}$.
+
+\exercise Show that the function in example~\xrefn{exam:exponential
+distribution} is a probability density function. Compute the mean
+and standard deviation.
+\begin{answer} $\mu=1/c$, $\sigma=1/c$
+\end{answer}
+
+\exercise Compute the mean and standard deviation of the uniform distribution
+on $[a,b]$. (See example~\xrefn{exam:uniform distribution}.)
+\begin{answer} $\mu=(a+b)/2$, $\ds\sigma=(a-b)^2/12$
+\end{answer}
+
+\exercise What is the expected value of one roll of a fair
+six-sided die?
+\begin{answer} $7/2$
+\end{answer}
+
+\exercise What is the expected sum of one roll of three fair
+six-sided dice? 
+\begin{answer} $21/2$
+\end{answer}
+
+% \exercise Find the mode of the standard normal distribution. 
+
+\exercise Let $\mu$ and $\sigma$ be real numbers with $\sigma
+>0$. Show that
+$$N(x) = {1\over\sqrt{2\pi} \sigma} e^{-{(x-\mu)^2\over 2\sigma^2}}$$
+is a probability density function.  You will not be able to compute
+this integral directly; use a substitution to convert the integral
+into the one from example~\xrefn{exam:normal distribution}.
+The function $N$ is the probability density function of the
+{\dfont normal distribution\index{normal distribution}\/} 
+with mean $\mu$ and standard deviation
+$\sigma$. Show that the mean of the normal distribution is $\mu$ and
+the standard deviation is $\sigma$.
+
+\exercise
+Let
+$$
+  f(x) = \cases{
+  \ds{1\over x^2 } & $|x| \geq 1$ \\
+  0 & $|x| < 1$ \\}
+$$
+Show that $f$ is a probability density function, and that
+the distribution has no mean.
+
+\exercise Let
+$$
+  f(x) = \cases{
+  x & $-1\leq x \leq 1$ \\
+  1 & $1<x \leq 2$ \\
+  0 & otherwise. \\}
+$$
+Show that $\ds \int_{-\infty }^\infty f(x)\,dx = 1$. Is $f$ a
+probability density function? Justify your answer.
+
+% \exercise Find all the modes and the mean for 
+% the distribution in example~\xrefn{exam:multimedian}.
+
+% \exercise Compute the mean of the distribution from
+% example~\xrefn{exam:no mode}.
+
+\exercise If you have access to appropriate software, find $r$ so that
+$$
+  \int_{-\infty}^{10+r} f(x)\,dx + \int_{10+r}^{\infty} f(x)\,dx \approx0.05.
+$$
+Discuss the impact of using this new value of $r$ to decide whether to 
+investigate the chip manufacturing process.
+\begin{answer} $r=6$
+\end{answer}
+
+\end{exercises}

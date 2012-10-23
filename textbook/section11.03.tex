@@ -1,0 +1,307 @@
+\section{The Integral Test}{}{}
+\nobreak
+It is generally quite difficult, often impossible, to determine
+the value of a series exactly. In many cases it is possible at least
+to determine whether or not the series converges, and so we will spend
+most of our time on this problem.
+
+If all of the terms $\ds a_n$ in a series are non-negative, then clearly 
+the sequence of partial sums $\ds s_n$ is non-decreasing. This means that
+if we can show that the sequence of partial sums is bounded, the
+series must converge. We know that if the series converges, the terms
+$\ds a_n$ approach zero, but this does not mean that $\ds a_n\ge a_{n+1}$ for
+every $n$. Many useful and interesting series do have this property,
+however, and they are among the easiest to understand. Let's look at
+an example.
+
+\begin{example} Show that $\ds\sum_{n=1}^\infty {1\over n^2}$ converges.
+\par\nobreak\ssk\noindent
+The terms $\ds 1/n^2$ are  positive and decreasing, and since 
+$\ds\lim_{x\to\infty} 1/x^2=0$, the terms $\ds 1/n^2$ approach zero. We
+seek an upper bound for all the partial sums, that is, we want to find
+a number $N$ so that $s_n\le N$ for every $n$. The upper bound is
+provided courtesy of integration, and is inherent in
+figure~\xrefn{fig:integral test for one over n squared}.
+
+\figure
+\vbox{\beginpicture
+\normalgraphs
+\ninepoint
+\setcoordinatesystem units <2truecm,2truecm>
+\setplotarea x from 0 to 5, y from 0 to 2
+\axis left ticks numbered from 0 to 2 by 1 /
+\axis bottom  ticks numbered from 0 to 5 by 1 /
+\setquadratic
+\plot 0.750 1.778 0.892 1.258 1.033 0.937 1.175 0.724 1.317 0.577 
+1.458 0.470 1.600 0.391 1.742 0.330 1.883 0.282 2.025 0.244 
+2.167 0.213 2.308 0.188 2.450 0.167 2.592 0.149 2.733 0.134 
+2.875 0.121 3.017 0.110 3.158 0.100 3.300 0.092 3.442 0.084 
+3.583 0.078 3.725 0.072 3.867 0.067 4.008 0.062 4.150 0.058 
+4.292 0.054 4.433 0.051 4.575 0.048 4.717 0.045 4.858 0.042 
+5.000 0.040 /
+\putrule from 1 0 to 1 1 
+\putrule from 2 0 to 2 0.25
+\putrule from 3 0 to 3 0.1111
+\putrule from 0 1 to 1 1 
+\putrule from 1 0.25 to 2 0.25
+\putrule from 2 0.1111 to 3 0.1111
+\sevenpoint
+\put {$A=1$} at 0.5 0.5
+\put {$A=1/4$} at 1.5 0.125
+\endpicture}
+\figrdef{fig:integral test for one over n squared}
+\endfigure{Graph of $\ds y=1/x^2$ with rectangles.}
+
+The figure shows the graph of $\ds y=1/x^2$ together with some rectangles
+that lie completely below the curve and that all have base length
+one. Because the heights of the rectangles are determined by the
+height of the curve, the areas of the rectangles are $\ds 1/1^2$, $\ds 1/2^2$,
+$\ds 1/3^2$, and so on---in other words, exactly the terms of the
+series. The partial sum $\ds s_n$ is simply the sum of the areas of the
+first $n$ rectangles. Because the rectangles all lie between the curve
+and the $x$-axis, any sum of rectangle areas is less than the
+corresponding area under the curve, and so of course any sum of
+rectangle areas is less than the area under the entire curve, that is,
+all the way to infinity.
+There is a bit of trouble at the
+left end, where there is an asymptote, but we can work around that
+easily. Here it is:
+$$
+  s_n={1\over 1^2}+{1\over 2^2}+{1\over 3^2}+\cdots+{1\over n^2}
+  < 1 + \int_1^n {1\over x^2}\,dx < 1+\int_1^\infty {1\over x^2}\,dx 
+  =1+1=2,
+$$
+recalling that we computed this improper integral in 
+section~\xrefn{sec:improper integrals}. Since the sequence of partial
+sums $\ds s_n$ is increasing and bounded above by 2, we know that 
+$\ds\lim_{n\to\infty}s_n=L<2$, and so the series converges to some
+number less than 2. In fact, it is possible, though difficult, to show
+that $\ds L=\pi^2/6\approx 1.6$.
+\end{example}
+
+We already know that $\sum 1/n$ diverges. What goes wrong if we try to
+apply this technique to it? Here's the calculation:
+$$
+  s_n={1\over 1}+{1\over 2}+{1\over 3}+\cdots+{1\over n}
+  < 1 + \int_1^n {1\over x}\,dx < 1+\int_1^\infty {1\over x}\,dx 
+  =1+\infty.
+$$
+The problem is that the improper integral doesn't converge. Note well
+that this does {\em not\/} prove that $\sum 1/n$ diverges, just that
+this particular calculation fails to prove that it converges. A slight
+modification, however, allows us to prove in a second way that $\sum
+1/n$ diverges. 
+
+\begin{example} Consider a slightly altered version of figure~\xrefn{fig:integral
+test for one over n squared}, shown in figure~\xrefn{fig:integral test
+for one over n}.
+\figure
+\vbox{\beginpicture
+\normalgraphs
+\ninepoint
+\setcoordinatesystem units <2truecm,2truecm>
+\setplotarea x from 0 to 5, y from 0 to 2
+\axis left ticks numbered from 0 to 2 by 1 /
+\axis bottom  ticks numbered from 0 to 5 by 1 /
+\setquadratic
+\plot 0.500 2.000 0.650 1.538 0.800 1.250 0.950 1.053 1.100 0.909 
+1.250 0.800 1.400 0.714 1.550 0.645 1.700 0.588 1.850 0.541 
+2.000 0.500 2.150 0.465 2.300 0.435 2.450 0.408 2.600 0.385 
+2.750 0.364 2.900 0.345 3.050 0.328 3.200 0.312 3.350 0.298 
+3.500 0.286 3.650 0.274 3.800 0.263 3.950 0.253 4.100 0.244 
+4.250 0.235 4.400 0.227 4.550 0.220 4.700 0.213 4.850 0.206 
+5.000 0.200 /
+\putrule from 1 0 to 1 1 
+\putrule from 2 0 to 2 1
+\putrule from 3 0 to 3 0.5
+\putrule from 4 0 to 4 0.3333
+\putrule from 1 1 to 2 1
+\putrule from 2 0.5 to 3 0.5
+\putrule from 3 0.3333 to 4 0.3333
+\sevenpoint
+\put {$A=1$} at 1.5 0.5
+\put {$A=1/2$} at 2.5 0.25
+\put {$A=1/3$} at 3.5 0.1666
+\endpicture}
+\figrdef{fig:integral test for one over n}
+\endfigure{Graph of $y=1/x$ with rectangles.}
+
+The rectangles this time are above the curve, that is, each rectangle
+completely contains the corresponding area under the curve. This means
+that 
+$$s_n = {1\over 1}+{1\over 2}+{1\over 3}+\cdots+{1\over n}
+> \int_1^{n+1} {1\over x}\,dx = \ln x\Big|_1^{n+1}=\ln(n+1).$$
+As $n$ gets bigger, $\ln(n+1)$ goes to infinity, so the sequence of
+partial sums $\ds s_n$ must also go to infinity, so the harmonic series
+diverges. 
+\end{example}
+
+The important fact that clinches this example is that
+$$\lim_{n\to\infty} \int_1^{n+1} {1\over x}\,dx = \infty,$$
+which we can rewrite as
+$$\int_1^\infty {1\over x}\,dx = \infty.$$
+So these two examples taken together indicate that we can prove that a
+series converges or prove that it diverges with a single calculation
+of an improper integral. This is known as the {\dfont integral
+  test\index{integral test}\index{series!integral test}\/}, 
+which we state as a theorem.
+
+\begin{theorem} Suppose that $f(x)>0$ and is decreasing on the infinite interval
+$[k,\infty)$ (for some $k\ge1$)
+and that $\ds a_n=f(n)$. Then the series
+$\ds\sum_{n=1}^\infty a_n$ converges if and only if the improper
+integral $\ds\int_{1}^\infty f(x)\,dx$ converges.
+\end{proof}
+
+The two examples we have seen are called
+$p$-series\index{p@$p$-series}\index{series!$p$-series}; a $p$-series is
+any series of the form $\ds \sum 1/n^p$. If $p\le0$, $\ds\lim_{n\to\infty}
+1/n^p\not=0$, so the series diverges. For positive values of $p$ we
+can determine precisely which series converge.
+
+\begin{theorem} A $p$-series with $p>0$ converges if and only if $p>1$.
+\begin{proof}
+We use the integral test; we have already done $p=1$, so assume that
+$p\not=1$.
+$$
+  \int_1^{\infty} {1\over x^p}\,dx=\lim_{D\to\infty} \left.{x^{1-p}\over
+  1-p}\right|_{1}^D=\lim_{D\to\infty} {D^{1-p}\over 1-p}-{1\over 1-p}.
+$$
+If $p>1$ then $1-p<0$ and $\ds\lim_{D\to\infty}D^{1-p}=0$, so the
+  integral converges. If $0<p<1$ then $1-p>0$ and 
+$\ds\lim_{D\to\infty}D^{1-p}=\infty$, so the integral diverges.
+\end{proof}
+
+\begin{example} Show that $\ds\sum_{n=1}^\infty {1\over {n^3}}$ converges. 
+\par\nobreak\ssk\noindent
+We could of course use
+the integral test, but now that we have the theorem we may simply note
+that this is a $p$-series with $p>1$.
+\end{example}
+
+\begin{example} Show that $\ds\sum_{n=1}^\infty {5\over n^4}$ converges. 
+\par\nobreak\ssk\noindent
+We know that if
+$\ds \sum_{n=1}^\infty 1/n^4$ converges then $\ds \sum_{n=1}^\infty 5/n^4$
+also converges, by theorem~\xrefn{thm:series are linear}. Since 
+$\ds \sum_{n=1}^\infty 1/n^4$ is a convergent $p$-series, 
+ $\ds \sum_{n=1}^\infty 5/n^4$ converges also.
+\end{example}
+
+\begin{example} Show that $\ds\sum_{n=1}^\infty {5\over \sqrt{n}}$ diverges.
+\par\nobreak\ssk\noindent This also follows from
+theorem~\xrefn{thm:series are linear}: Since $\ds\sum_{n=1}^\infty
+{1\over \sqrt{n}}$ is a $p$-series with $p=1/2<1$, it diverges, and so
+does $\ds\sum_{n=1}^\infty {5\over \sqrt{n}}$.  
+\end{example}
+
+Since it is typically difficult to compute the value of a series
+exactly, a good approximation is frequently required. In a real sense,
+a good approximation is only as good as we know it is, that is, while
+an approximation may in fact be good, it is only valuable in practice
+if we can guarantee its accuracy to some degree. This guarantee is
+usually easy to come by for series with decreasing positive terms.
+
+\begin{example} Approximate $\ds \sum 1/n^2$ to two decimal places.
+
+Referring to figure~\xrefn{fig:integral test for one over n squared},
+if we approximate the sum by $\ds \sum_{n=1}^N 1/n^2$, the error we make is the
+total area of the remaining rectangles, all of which lie under the
+curve $\ds 1/x^2$ from $x=N$ out to infinity. So we know the true value of
+the series is larger than the approximation, and no bigger than the
+approximation plus the area under the curve from $N$ to
+infinity. Roughly, then, we need to find $N$ so that 
+$$\int_N^\infty {1\over x^2}\,dx < 1/100.$$
+We can compute the integral:
+$$\int_N^\infty {1\over x^2}\,dx = {1\over N},$$ 
+so $N=100$ is a good starting point.  Adding up the first 100 terms
+gives approximately $1.634983900$, and that plus $1/100$ is
+$1.644983900$, so approximating the series by the value halfway
+between these will be at most $1/200=0.005$ in error.  The midpoint is
+$1.639983900$, but while this is correct to $\pm0.005$, we can't tell
+if the correct two-decimal approximation is $1.63$ or $1.64$. We need
+to make $N$ big enough to reduce the guaranteed error, perhaps to
+around $0.004$ to be safe, so we would need $1/N\approx 0.008$, or
+$N=125$. Now the sum of the first 125 terms is approximately
+$1.636965982$, and that plus $0.008$ is $1.644965982$ and the point
+halfway between them is $1.640965982$. The true value is then
+$1.640965982\pm 0.004$, and all numbers in this range round to $1.64$,
+so $1.64$ is correct to two decimal places. We have mentioned that
+the true value of this series can be shown to be $\ds
+\pi^2/6\approx1.644934068$ which rounds down to $1.64$ (just barely)
+and is indeed below the upper bound of $1.644965982$, again just
+barely. Frequently approximations will be even better than the
+``guaranteed'' accuracy, but not always, as this example demonstrates.
+\end{example}
+
+\begin{exercises}
+
+Determine whether each series converges or diverges.
+
+\twocol
+
+\exercise $\ds\sum_{n=1}^\infty {1\over n^{\pi/4}}$
+\begin{answer} diverges
+\end{answer}
+
+\exercise $\ds\sum_{n=1}^\infty {n\over n^2+1}$
+\begin{answer} diverges
+\end{answer}
+
+\exercise $\ds\sum_{n=1}^\infty {\ln n\over n^2}$
+\begin{answer} converges
+\end{answer}
+
+\exercise $\ds\sum_{n=1}^\infty {1\over n^2+1}$
+\begin{answer} converges
+\end{answer}
+
+\exercise $\ds\sum_{n=1}^\infty {1\over e^n}$
+\begin{answer} converges
+\end{answer}
+
+\exercise $\ds\sum_{n=1}^\infty {n\over e^n}$
+\begin{answer} converges
+\end{answer}
+
+\exercise $\ds\sum_{n=2}^\infty {1\over n\ln n}$
+\begin{answer} diverges
+\end{answer}
+
+\exercise $\ds\sum_{n=2}^\infty {1\over n(\ln n)^2}$
+\begin{answer} converges
+\end{answer}
+
+\endtwocol
+
+\msk
+\exercise Find an $N$ so that
+$\ds\sum_{n=1}^\infty {1\over n^4}$ is between
+$\ds\sum_{n=1}^N {1\over n^4}$ and
+$\ds\sum_{n=1}^N {1\over n^4} + 0.005$.
+\begin{answer} $N=5$
+\end{answer}
+
+\exercise Find an $N$ so that
+$\ds\sum_{n=0}^\infty {1\over e^n}$ is between
+$\ds\sum_{n=0}^N {1\over e^n}$ and
+$\ds\sum_{n=0}^N {1\over e^n} + 10^{-4}$.
+\begin{answer} $N=10$
+\end{answer}
+
+\exercise Find an $N$ so that
+$\ds\sum_{n=1}^\infty {\ln n\over n^2}$ is between
+$\ds\sum_{n=1}^N {\ln n\over n^2}$ and
+$\ds\sum_{n=1}^N {\ln n\over n^2} + 0.005$.
+\begin{answer} $N=1687$
+\end{answer}
+
+\exercise Find an $N$ so that
+$\ds\sum_{n=2}^\infty {1\over n(\ln n)^2}$ is between
+$\ds\sum_{n=2}^N {1\over n(\ln n)^2}$ and
+$\ds\sum_{n=2}^N {1\over n(\ln n)^2} + 0.005$.
+\begin{answer} any integer greater than $\ds e^{200}$
+\end{answer}
+
+\end{exercises}
+

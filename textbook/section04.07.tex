@@ -1,0 +1,343 @@
+\section{Derivatives of the exponential and logarithmic functions}
+%{Derivatives of the exponential and logarithmic functions}{}
+%\nobreak
+
+As with the sine, we don't know anything about derivatives that allows
+us to compute the derivatives of the exponential and logarithmic
+functions without going back to basics. Let's do a little work with
+the definition again:
+\begin{align*}
+{d\over dx}a^x&=\lim_{\Delta x\to 0} {a^{x+\Delta x}-a^x\over \Delta x} \\
+&=\lim_{\Delta x\to 0} {a^xa^{\Delta x}-a^x\over \Delta x} \\
+&=\lim_{\Delta x\to 0} a^x{a^{\Delta x}-1\over \Delta x} \\
+&=a^x\lim_{\Delta x\to 0} {a^{\Delta x}-1\over \Delta x} \\
+\end{align*}
+There are two interesting things to note here: As in the case of the
+sine function we are left with a limit that involves $\Delta x$ but
+not $x$, which means that whatever $\ds \lim_{\Delta x\to 0} (a^{\Delta
+    x}-1)/\Delta x$ is, we know that it is a number, that is, a
+constant. This means that $\ds a^x$ has a remarkable property: its
+derivative is a constant times itself.
+
+We earlier remarked that the hardest limit we would compute is
+$\ds \lim_{x\to0}\sin x/x=1$; we now have a limit that is just a bit too
+hard to include here. In fact the hard part is to see that
+$\ds \lim_{\Delta x\to 0} (a^{\Delta
+    x}-1)/\Delta x$ even exists---does this fraction really get closer
+and closer to some fixed value? Yes it does, but we will not prove
+this fact.
+
+We can look at some examples. Consider $\ds (2^x-1)/x$ for some small
+values of $x$: 1, $0.828427124$, $0.756828460$, $0.724061864$,
+$0.70838051$, $0.70070877$ when $x$ is 1, $1/2$, $1/4$, $1/8$, $1/16$,
+$1/32$, respectively. It looks like this is settling in around $0.7$,
+which turns out to be true (but the limit is not exactly $0.7$).
+Consider next $\ds (3^x-1)/x$: $2$,  $1.464101616$,
+$1.264296052$, $1.177621520$, $1.13720773$, $1.11768854$, at the same
+values of $x$. It turns out to be true that in the limit this
+is about $1.1$. Two examples don't establish a pattern, but if you do
+more examples you will find that the limit varies directly with the
+value of $a$: bigger $a$, bigger limit; smaller $a$, smaller limit. As
+we can already see, some of these limits will be less than 1 and some
+larger than 1. Somewhere between $a=2$ and $a=3$ the limit will be
+exactly 1; the value at which this happens is called $e$, so that
+$$\lim_{\Delta x\to 0} {e^{\Delta x}-1\over \Delta x}=1.$$ As you
+might guess from our two examples, $e$ is closer to 3 than to 2, and
+in fact $e\approx 2.718$.
+
+Now we see that the function $\ds e^x$ has a truly remarkable property:
+\begin{align*}
+{d\over dx}e^x&=\lim_{\Delta x\to 0} {e^{x+\Delta x}-e^x\over \Delta x} \\
+&=\lim_{\Delta x\to 0} {e^xe^{\Delta x}-e^x\over \Delta x} \\
+&=\lim_{\Delta x\to 0} e^x{e^{\Delta x}-1\over \Delta x} \\
+&=e^x\lim_{\Delta x\to 0} {e^{\Delta x}-1\over \Delta x} \\
+&=e^x \\
+\end{align*}
+That is, $\ds e^x$ is its own derivative, or in other words the
+slope of $\ds e^x$ is the same as its height, or the same as its second
+coordinate: The function $\ds f(x)=e^x$ goes through the point $\ds (z,e^z)$
+and has slope $\ds e^z$ there, no matter what $z$ is. It is sometimes
+convenient to express the function $\ds e^x$ without an exponent, since
+complicated exponents can be hard to read. In such cases we use
+$\exp(x)$, e.g., $\ds \exp(1+x^2)$ instead of 
+$\ds e^{1+x^2}$.\index{exp function}
+
+What about the logarithm function? This too is hard, but as the
+cosine function was easier to do once the sine was done, so the
+logarithm is easier to do now that we know the derivative of the
+exponential function. Let's start with $\ds \log_e x$, which as you
+probably know is often abbreviated $\ln x$ and called the ``natural
+logarithm'' function.
+
+Consider the relationship between the two functions,
+namely, that they are inverses, that one ``undoes'' the
+other. Graphically this means that they have the same graph except
+that one is ``flipped'' or ``reflected'' through the line $y=x$:
+
+% BADBAD
+% \figure
+% \vbox{\beginpicture
+% \normalgraphs
+% \ninepoint
+% \setcoordinatesystem units <1truecm,1truecm> point at 0 0
+% \setplotarea x from -2 to 2, y from 0 to 4
+% \axis left shiftedto x=0 /
+% \axis bottom shiftedto y=0 /
+% \setquadratic
+% \plot  -2.000 0.250 -1.867 0.274 -1.733 0.301 -1.600 0.330 -1.467 0.362 
+% -1.333 0.397 -1.200 0.435 -1.067 0.477 -0.933 0.524 -0.800 0.574 
+% -0.667 0.630 -0.533 0.691 -0.400 0.758 -0.267 0.831 -0.133 0.912 
+% 0.000 1.000 0.133 1.097 0.267 1.203 0.400 1.320 0.533 1.447 
+% 0.667 1.587 0.800 1.741 0.933 1.910 1.067 2.095 1.200 2.297 
+% 1.333 2.520 1.467 2.764 1.600 3.031 1.733 3.325 1.867 3.647 
+% 2.000 4.000 /
+% \setcoordinatesystem units <1truecm,1truecm> point at -5 -2
+% \setplotarea x from 0 to 4, y from -2 to 2
+% \axis left shiftedto x=0 /
+% \axis bottom shiftedto y=0 /
+% \setquadratic
+% \plot 0.250 -2.000 0.375 -1.415 0.500 -1.000 0.625 -0.678 0.750 -0.415 
+% 0.875 -0.193 1.000 0.000 1.125 0.170 1.250 0.322 1.375 0.459 
+% 1.500 0.585 1.625 0.700 1.750 0.807 1.875 0.907 2.000 1.000 
+% 2.125 1.087 2.250 1.170 2.375 1.248 2.500 1.322 2.625 1.392 
+% 2.750 1.459 2.875 1.524 3.000 1.585 3.125 1.644 3.250 1.700 
+% 3.375 1.755 3.500 1.807 3.625 1.858 3.750 1.907 3.875 1.954 
+% 4.000 2.000 /
+% \endpicture}
+% \figrdef{fig:exponential and log functions}
+% \endfigure{The exponential and logarithmic functions.}
+
+\noindent 
+This means that the slopes of these two functions are closely related
+as well: For example, the slope of $\ds e^x$ is $e$ at $x=1$; at the
+corresponding point on the $\ln(x)$ curve, the slope must be $1/e$,
+because the ``rise'' and the ``run'' have been interchanged. Since the
+slope of $\ds e^x$ is $e$ at the point $(1,e)$, the slope of $\ln(x)$ is
+$1/e$ at the point $(e,1)$.
+
+% BADBAD
+% \figure
+% \vbox{\beginpicture
+% \normalgraphs
+% \ninepoint
+% \setcoordinatesystem units <1truecm,1truecm> point at 0 0
+% \setplotarea x from -2 to 2, y from 0 to 4
+% \axis left shiftedto x=0 /
+% \axis bottom shiftedto y=0 /
+% \setquadratic
+% \plot  -2.000 0.250 -1.867 0.274 -1.733 0.301 -1.600 0.330 -1.467 0.362 
+% -1.333 0.397 -1.200 0.435 -1.067 0.477 -0.933 0.524 -0.800 0.574 
+% -0.667 0.630 -0.533 0.691 -0.400 0.758 -0.267 0.831 -0.133 0.912 
+% 0.000 1.000 0.133 1.097 0.267 1.203 0.400 1.320 0.533 1.447 
+% 0.667 1.587 0.800 1.741 0.933 1.910 1.067 2.095 1.200 2.297 
+% 1.333 2.520 1.467 2.764 1.600 3.031 1.733 3.325 1.867 3.647 
+% 2.000 4.000 /
+% \setlinear
+% \plot -0.443 0 2 3.386 /
+% \setcoordinatesystem units <1truecm,1truecm> point at -5 -2
+% \setplotarea x from 0 to 4, y from -2 to 2
+% \axis left shiftedto x=0 /
+% \axis bottom shiftedto y=0 /
+% \setquadratic
+% \plot 0.250 -2.000 0.375 -1.415 0.500 -1.000 0.625 -0.678 0.750 -0.415 
+% 0.875 -0.193 1.000 0.000 1.125 0.170 1.250 0.322 1.375 0.459 
+% 1.500 0.585 1.625 0.700 1.750 0.807 1.875 0.907 2.000 1.000 
+% 2.125 1.087 2.250 1.170 2.375 1.248 2.500 1.322 2.625 1.392 
+% 2.750 1.459 2.875 1.524 3.000 1.585 3.125 1.644 3.250 1.700 
+% 3.375 1.755 3.500 1.807 3.625 1.858 3.750 1.907 3.875 1.954 
+% 4.000 2.000 /
+% \setlinear
+% \plot 0 -0.443 3.386 2 /
+% \endpicture}
+% \figrdef{fig:slope of exponential and log functions}
+% \endfigure{The exponential and logarithmic functions.}
+
+More generally, we know that the slope of $\ds e^x$ is $\ds e^z$ at the point
+$\ds (z,e^z)$, so the slope of $\ln(x)$ is $\ds 1/e^z$ at $\ds (e^z,z)$.
+In other words, the slope of $\ln x$ is the reciprocal of the first
+coordinate at any point; this means that the slope of $\ln x$ at
+$(x,\ln x)$ is $1/x$. The upshot is:
+$${d\over dx}\ln x = {1\over x}.$$
+We have discussed this from the point of view of the graphs, which is
+easy to understand but is not normally considered a rigorous
+proof---it is too easy to be led astray by pictures that seem
+reasonable but that miss some hard point. It is possible to do this
+derivation without resorting to pictures, and indeed we will see an
+alternate approach soon.
+
+Note that $\ln x$ is defined only for $x>0$. It is sometimes useful to
+consider the function $\ln |x|$, a function defined for
+$x\not=0$. When $x<0$, $\ln |x|=\ln(-x)$ and 
+$${d\over dx}\ln |x|={d\over dx}\ln (-x)={1\over -x}(-1)={1\over x}.$$
+Thus whether $x$ is positive or negative, the derivative is the same.
+
+What about the functions $\ds a^x$ and $\ds \log_a x$? We know that the
+derivative of $\ds a^x$ is some constant times $\ds a^x$ itself, but what
+constant? Remember that ``the logarithm is the exponent'' and you will
+see that $\ds a=e^{\ln a}$. Then
+$$a^x = (e^{\ln a})^x = e^{x\ln a},$$
+and we can compute the derivative using the chain rule:
+$${d\over dx} a^x = {d\over dx}(e^{\ln a})^x = {d\over dx}e^{x\ln a} = 
+(\ln a)e^{x\ln a} =(\ln a)a^x.$$
+The constant is simply $\ln a$. Likewise we can compute the derivative
+of the logarithm function $\ds \log_a x$. Since
+$$x=e^{\ln x}$$
+we can take the logarithm base $a$ of both sides to get
+$$
+\log_a(x)=\log_a(e^{\ln x})=\ln x \log_a e.
+$$
+Then
+$${d\over dx}\log_a x = {1\over x}\log_a e.$$
+This is a perfectly good answer, but we can improve it slightly.
+Since 
+\begin{align*}
+a&=e^{\ln a} \\
+\log_a(a) &= \log_a(e^{\ln a}) = \ln a\log_a e \\
+1&=\ln a\log_a e \\
+{1\over \ln a}&=\log_a e, \\
+\end{align*}
+we can replace $\ds \log_a e$ to get
+$${d\over dx}\log_a x = {1\over x\ln a}.$$
+
+You may if you wish memorize the formulas
+$${d\over dx}a^x = (\ln a)a^x \quad \hbox{and}\quad
+{d\over dx}\log_a x = {1\over x\ln a}.$$
+Because the ``trick'' $\ds a=e^{\ln a}$ is often useful, and sometimes
+essential, it may be better to remember the trick, not the formula.
+
+\begin{example}
+Compute the derivative of $\ds f(x)=2^x$.
+\begin{align*}
+{d\over dx}2^{x} &= {d\over dx}(e^{\ln 2})^x \\
+&= {d\over dx}e^{x\ln 2} \\
+&= \left({d\over dx} x\ln 2\right) e^{x\ln 2} \\
+&= (\ln 2)  e^{x\ln 2}=2^x\ln2 \\
+\end{align*}
+\vskip-10pt
+\end{example}
+
+\begin{example}
+Compute the derivative of $\ds f(x)=2^{x^2}=2^{(x^2)}$.
+\begin{align*}
+{d\over dx}2^{x^2} &= {d\over dx}e^{x^2\ln 2} \\
+&= \left({d\over dx} x^2\ln 2\right) e^{x^2\ln 2} \\
+&= (2\ln 2) x  e^{x^2\ln 2} \\
+&=  (2\ln 2) x 2^{x^2} \\
+\end{align*}
+\vskip-10pt
+\end{example}
+
+\begin{example}
+Compute the derivative of $\ds f(x)=x^x$. At first this appears to be a
+new kind of function: it is not a constant power of $x$, and it does
+not seem to be an exponential function, since the base is not
+constant. But in fact it is no harder than the previous example.
+\begin{align*}
+{d\over dx}x^x&={d\over dx}e^{x\ln x} \\
+&=\left({d\over dx}x\ln x\right)e^{x\ln x} \\
+&=(x{1\over x}+\ln x)x^x \\
+&=(1+\ln x)x^x \\
+\end{align*}
+\vskip-10pt
+\end{example}
+
+\begin{example} Recall that we have not justified the power\index{power rule}
+rule except when the exponent is a positive or negative integer. We
+can use the exponential function to take care of other exponents.
+\begin{align*}
+{d\over dx}x^r&={d\over dx}e^{r\ln x} \\
+&=\left({d\over dx}r\ln x\right)e^{r\ln x} \\
+&=(r{1\over x})x^r \\
+&=rx^{r-1} \\
+\end{align*}
+\vskip-10pt
+\end{example}
+
+\begin{exercises}
+In 1--19, find the derivatives of the functions.
+
+\twocol
+
+\exercise $\ds 3^{x^2}$
+\begin{answer} $\ds 2\ln(3)x3^{x^2}$
+\end{answer}
+
+\exercise $\ds {\sin x \over e^x}$
+\begin{answer} $\ds {\cos x-\sin x \over e^x}$
+\end{answer}
+
+\exercise $\ds (e^x)^2$
+\begin{answer} $\ds 2e^{2x}$
+\end{answer}
+
+\exercise $\ds \sin(e^x)$
+\begin{answer} $\ds e^x\cos(e^x)$
+\end{answer}
+
+\exercise $\ds e^{\sin x}$
+\begin{answer} $\ds  \cos (x) e^{\sin x}$
+\end{answer}
+
+\exercise $\ds x^{\sin x}$
+\begin{answer} $\ds x^{\sin x}\left(\cos x\ln x+{\sin x\over x}\right)$
+\end{answer}
+
+\exercise  $\ds x^3e^x$
+\begin{answer} $\ds 3x^2e^x+x^3e^x$
+\end{answer}
+
+\exercise  $\ds x+2^x$
+\begin{answer} $\ds 1+2^x\ln(2)$
+\end{answer}
+
+\exercise  $\ds (1/3)^{x^2}$
+\begin{answer} $\ds -2x\ln(3)(1/3)^{x^2}$
+\end{answer}
+
+\exercise  $\ds e^{4x}/x$
+\begin{answer} $\ds e^{4x}(4x-1)/x^2$
+\end{answer}
+
+\exercise  $\ds \ln(x^3+3x)$
+\begin{answer} $\ds (3x^2+3)/(x^3+3x)$
+\end{answer}
+
+\exercise  $\ds \ln(\cos(x))$
+\begin{answer} $\ds -\tan(x)$
+\end{answer}
+
+\exercise  $\ds\sqrt{\ln(x^2)}/x$
+\begin{answer} $\ds (1-\ln(x^2))/(x^2\sqrt{\ln(x^2)})$
+\end{answer}
+
+\exercise  $\ds \ln(\sec(x) + \tan(x))$
+\begin{answer} $\ds \sec(x)$
+\end{answer}
+
+\exercise  $\ds x^{\cos(x)}$
+\begin{answer} $\ds x^{\cos(x)}(\cos(x)/x-\cos(x)\ln(x))$
+\end{answer}
+
+\exercise $\ds x\ln x$
+
+\exercise $\ln (\ln (3x) )$
+
+\exercise $\ds {1+\ln (3x^2 )\over 1+ \ln(4x)}$
+
+\exercise $\ds {x^8 (x-23)^{1/2}\over 27 x^6(4x-6)^8 }$
+
+\endtwocol
+\bsk
+\exercise Find the value of $a$ so that the tangent line to
+$y=\ln(x)$ at $x=a$ is a line through the origin.  Sketch the
+ resulting situation.
+\begin{answer} $e$
+\end{answer}
+
+\exercise If $\ds f(x) = \ln(x^3 + 2)$ compute $\ds f'(e^{1/3})$.
+
+\exercise If $\ds y=\log_a x$ then $\ds a^y=x$. Use implicit
+differentiation to find $\ds y'$.
+
+\end{exercises}
+

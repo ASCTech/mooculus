@@ -1,0 +1,262 @@
+\section{Two examples}{}{}
+\nobreak
+Up to now we have been concerned with extracting information about how
+a function changes from the function itself. Given knowledge about an
+object's position, for example, we want to know the object's
+speed. Given information about the height of a curve we want to know
+its slope. We now consider problems that are, whether obviously or
+not, the reverse of such problems.
+
+\begin{example}
+An object moves in a straight line so that
+its speed at time $t$ is given by $v(t)=3t$ in, say, cm/sec. If the
+object is at position $10$ on the straight line when $t=0$, where is
+the object at any time $t$? 
+
+There are two reasonable ways to approach this problem. If $s(t)$ is
+the position of the object at time $t$, we know that
+$s'(t)=v(t)$. Because of our knowledge of derivatives, we know
+therefore that $\ds s(t)=3t^2/2+k$, and because $s(0)=10$ we easily
+discover that $k=10$, so $\ds s(t)=3t^2/2+10$. For example, at $t=1$ the
+object is at position $3/2+10=11.5$.
+This is certainly the easiest way to deal with this problem. Not all
+similar problems are so easy, as we will see; the second approach to
+the problem is more difficult but also more general.
+
+We start by considering how we might approximate a solution. We know
+that at $t=0$ the object is at position 10. How might we approximate
+its position at, say, $t=1$? We know that the speed of the object at
+time $t=0$ is $0$; if its speed were constant then in the first second
+the object would not move and its position would still be 10 when
+$t=1$. In fact, the object will not be too far from 10 at $t=1$, but
+certainly we can do better. Let's look at the times $0.1$, $0.2$,
+$0.3$, \dots, $1.0$, and try approximating the location of the object
+at each, by supposing that during each tenth of a second the object is
+going at a constant speed. Since the object initially has speed 0, we
+again suppose it maintains this speed, but only for a tenth of second;
+during that time the object would not move. During the tenth of a
+second from $t=0.1$ to $t=0.2$, we suppose that the object is
+traveling at $0.3$ cm/sec, namely, its actual speed at $t=0.1$. In
+this case the object would travel $(0.3)(0.1)=0.03$ centimeters: $0.3$
+cm/sec times $0.1$ seconds. Similarly, between $t=0.2$ and $t=0.3$ the
+object would travel $(0.6)(0.1)=0.06$ centimeters.  Continuing, we get
+as an approximation that the object travels
+$$
+  (0.0)(0.1)+(0.3)(0.1)+(0.6)(0.1)+\cdots+(2.7)(0.1)=1.35
+$$ 
+centimeters, ending up at position 11.35. This is a better
+approximation than 10, certainly, but is still just an
+approximation. (We know in fact that the object ends up at position
+$11.5$, because we've already done the problem using the first
+approach.) Presumably, we will get a better approximation if we divide
+the time into one hundred intervals of a hundredth of a second each,
+and repeat the process:
+$$
+  (0.0)(0.01)+(0.03)(0.01)+(0.06)(0.01)+\cdots+(2.97)(0.01)=1.485.
+$$
+We thus approximate the position as $11.485$. Since we know the exact
+answer, we can see that this is much closer, but if we did not already
+know the answer, we wouldn't really know how close.
+
+We can keep this up, but we'll never really know the exact answer if
+we simply compute more and more examples. Let's instead look at a
+``typical'' approximation. Suppose we divide the time into $n$ equal
+intervals, and imagine that on each of these the object travels at a
+constant speed. Over the first time interval we approximate the
+distance traveled as $(0.0)(1/n)=0$, as before. During the second time
+interval, from $t=1/n$ to $t=2/n$, the object travels approximately
+$\ds 3(1/n)(1/n)=3/n^2$ centimeters. During time interval number $i$, the
+object travels approximately $\ds (3(i-1)/n)(1/n)=3(i-1)/n^2$
+centimeters, that is, its speed at time $(i-1)/n$, $3(i-1)/n$, times
+the length of time interval number $i$, $1/n$.
+Adding these up as before, we approximate the distance traveled as
+$$
+  (0){1\over n}+3{1\over n^2}+3(2){1\over n^2}+
+  3(3){1\over n^2}+\cdots+3(n-1){1\over n^2}
+$$
+centimeters. What can we say about this? At first it looks rather less
+useful than the concrete calculations we've already done. But in fact
+a bit of algebra reveals it to be much more useful. We can factor out
+a 3 and $\ds 1/n^2$ to get
+$$
+  {3\over n^2}(0+1+2+3+\cdots+(n-1)),
+$$
+that is, $\ds 3/n^2$ times the sum of the first $n-1$ positive
+integers. Now we make use of a fact you may have run across before:
+$$
+  1+2+3+\cdots+k={k(k+1)\over2}.
+$$
+In our case we're interested in $k=n-1$, so
+$$
+  1+2+3+\cdots+(n-1)={(n-1)(n)\over2}={n^2-n\over2}.
+$$
+This simplifies the approximate distance traveled to 
+$$
+  {3\over n^2}{n^2-n\over2}={3\over2}{n^2-n\over n^2}=
+  {3\over2}\left({n^2\over n^2}-{n\over n^2}\right)=
+  {3\over2}\left(1-{1\over n}\right).
+$$
+Now this is quite easy to understand: as $n$ gets larger and larger
+this approximation gets closer and closer to $(3/2)(1-0)=3/2$, so that
+$3/2$ is the exact distance traveled during one second, and the final
+position is $11.5$.
+
+So for $t=1$, at least, this rather cumbersome approach gives the same
+answer as the first approach. But really there's nothing special about
+$t=1$; let's just call it $t$ instead. In this case the approximate
+distance traveled during time interval number $i$ is $\ds
+3(i-1)(t/n)(t/n)=3(i-1)t^2/n^2$, that is, speed $3(i-1)(t/n)$ times
+time $t/n$, and the total distance traveled is approximately
+$$
+  (0){t\over n}+3(1){t^2\over n^2}+3(2){t^2\over n^2}+
+  3(3){t^2\over n^2}+\cdots+3(n-1){t^2\over n^2}.
+$$
+As before we can simplify this to
+$$
+  {3t^2\over n^2}(0+1+2+\cdots+(n-1))={3t^2\over n^2}{n^2-n\over2}=
+  {3\over2}t^2\left(1-{1\over n}\right).
+$$ 
+In the limit, as $n$ gets larger, this gets closer and closer to $\ds
+(3/2)t^2$ and the approximated position of the object gets closer and
+closer to $\ds (3/2)t^2+10$, so the actual position is $\ds
+(3/2)t^2+10$, exactly the answer given by the first approach to the
+problem.
+\end{example}
+
+\exam\relax \label{example:area under line} Find the area under the
+curve $y=3x$ between $x=0$ and any positive value $x$. There is here
+no obvious analogue to the first approach in the previous example, but
+the second approach works fine. (Because the function $y=3x$ is so
+simple, there is another approach that works here, but it is even more
+limited in potential application than is approach number one.)  How
+might we approximate the desired area? We know how to compute areas of
+rectangles, so we approximate the area by rectangles. Jumping straight
+to the general case, suppose we divide the interval between 0 and $x$
+into $n$ equal subintervals, and use a rectangle above each
+subinterval to approximate the area under the curve. There are many
+ways we might do this, but let's use the height of the curve at the
+left endpoint of the subinterval as the height of the rectangle, as in
+figure~\xrefn{fig:approximating area by rectangles}. The height of
+rectangle number $i$ is then $3(i-1)(x/n)$, the width is $x/n$, and
+the area is $\ds 3(i-1)(x^2/n^2)$. The total area of the rectangles is
+$$
+  (0){x\over n}+3(1){x^2\over n^2}+3(2){x^2\over n^2}+
+  3(3){x^2\over n^2}+\cdots+3(n-1){x^2\over n^2}.
+$$
+By factoring out $\ds 3x^2/n^2$ this simplifies to 
+$$
+  {3x^2\over n^2}(0+1+2+\cdots+(n-1))={3x^2\over n^2}{n^2-n\over2}=
+  {3\over2}x^2\left(1-{1\over n}\right).
+$$
+As $n$ gets larger this gets closer and closer to $\ds 3x^2/2$, which must
+therefore be the true area under the curve.
+\end{example}
+
+\figure
+\vbox{\beginpicture
+\normalgraphs
+\ninepoint
+\setcoordinatesystem units <0.5truecm,0.2truecm>
+\setplotarea x from 0 to 10, y from 0 to 30
+\axis left shiftedto x=0 /
+\axis bottom shiftedto y=0 /
+\put {$\ldots$} at 6.5 8
+\setlinear
+\plot 0 0 10 30 /
+\setdashes <2pt>
+\putrule from 1 0 to 1 3
+\putrule from 2 0 to 2 6
+\putrule from 3 0 to 3 9
+\putrule from 4 0 to 4 9
+\putrule from 9 0 to 9 27
+\putrule from 10 0 to 10 27
+\putrule from 1 3 to 2 3
+\putrule from 2 6 to 3 6
+\putrule from 3 9 to 4 9
+\putrule from 9 27 to 10 27
+\endpicture}
+\figrdef{fig:approximating area by rectangles}
+\endfigure{Approximating the area under $y=3x$ with rectangles.}
+
+What you will have noticed, of course, is that while the problem in
+the second example appears to be much different than the problem in
+the first example, and while the easy approach to problem one does not
+appear to apply to problem two, the ``approximation'' approach works
+in both, and moreover the {\it calculations are identical.} As we will
+see, there are many, many problems that appear much different on the
+surface but that turn out to be the same as these problems, in the
+sense that when we try to approximate solutions we end up with
+mathematics that looks like the two examples, though of course the
+function involved will not always be so simple.
+
+Even better, we now see that while the second problem did not appear
+to be amenable to approach one, it can in fact be solved in the same
+way. The reasoning is this: we know that problem one can be solved
+easily by finding a function whose derivative is $3t$. We also know
+that mathematically the two problems are the same, because both can be
+solved by taking a limit of a sum, and the sums are
+identical. Therefore, we don't really need to compute the limit of
+either sum because we know that we will get the same answer by
+computing a function with the derivative $3t$ or, which is the same
+thing, $3x$.
+
+It's true that the first problem had the added complication of the
+``10'', and we certainly need to be able to deal with such minor
+variations, but that turns out to be quite simple. The lesson then is
+this: whenever we can solve a problem by taking the limit of a sum of
+a certain form, we can instead of computing the (often nasty) limit
+find a new function with a certain derivative.
+
+\begin{exercises}
+
+\exercise Suppose an object moves in a straight line so that its speed at
+time $t$ is given by $v(t)=2t+2$, and that at $t=1$ the object is at
+position 5. Find the position of the object at $t=2$.
+\begin{answer} 10
+\end{answer}
+
+\exercise Suppose an object moves in a straight line so that its speed at
+time $t$ is given by $\ds v(t)=t^2+2$, and that at $t=0$ the object is at
+position 5. Find the position of the object at $t=2$.
+\begin{answer} $35/3$
+\end{answer}
+
+\exercise By a method similar to that in example~\xrefn{example:area
+  under line}, find the area under $y=2x$ between $x=0$ and any
+  positive value for $x$.
+\begin{answer} $\ds x^2$
+\end{answer}
+
+\exercise By a method similar to that in example~\xrefn{example:area
+  under line}, find the area under $y=4x$ between $x=0$ and any
+  positive value for $x$.
+\begin{answer} $\ds 2x^2$
+\end{answer}
+
+\exercise By a method similar to that in example~\xrefn{example:area
+  under line}, find the area under $y=4x$ between $x=2$ and any
+  positive value for $x$ bigger than 2.
+\begin{answer} $\ds 2x^2-8$
+\end{answer}
+
+\exercise By a method similar to that in example~\xrefn{example:area
+  under line}, find the area under $y=4x$ between any two positive
+  values for $x$, say $a<b$.
+\begin{answer} $\ds 2b^2-2a^2$
+\end{answer}
+
+\exercise Let $\ds f(x)=x^2+3x+2$. Approximate the area under the curve
+between $x=0$ and $x=2$ using 4 rectangles and also using 8
+rectangles. 
+\begin{answer} 4 rectangles: $41/4=10.25$,\hfill\break 
+8 rectangles: $183/16= 11.4375$
+\end{answer}
+
+\exercise Let $\ds f(x)=x^2-2x+3$. Approximate the area under the curve
+between $x=1$ and $x=3$ using 4 rectangles. 
+\begin{answer} $ 23/4$
+\end{answer}
+
+\end{exercises}
+
+

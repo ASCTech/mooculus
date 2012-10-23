@@ -1,0 +1,322 @@
+\section{First Order Differential Equations}{}{}
+%% Originally Mike Wills
+\label{sec:first order differential equations}
+\nobreak
+We start by considering equations in which only the first derivative
+of the function appears. 
+
+\begin{definition} A {\dfont first order differential 
+equation\index{differential equation!first order}\/} is an equation of
+the form
+$F(t, y, \dot{y})=0$.
+A solution of a first order differential equation is a
+function $f(t)$ that makes $\ds F(t,f(t),f'(t))=0$ for every value of $t$.
+\end{definition}
+
+Here, $F$ is a function of three
+variables which we label $t$, $y$, and $\dot{y}$. It is understood
+that $\dot{y} $ will explicitly appear in the equation although $t$
+and $y$ need not. The term ``first order'' means that the first
+derivative of $y$ appears, but no higher order derivatives do.
+
+\begin{example} The equation from Newton's law of cooling,
+$\dot{y}=k(M-y)$ is a first order
+differential equation; $F(t,y,\dot y)=k(M-y)-\dot y$.
+\end{example}
+
+\begin{example} $\ds\dot{y}=t^2+1$ is a first order differential
+equation; $\ds F(t,y,\dot y)= \dot y-t^2-1$. All solutions to this
+equation are of the form $\ds t^3/3+t+C$. 
+\end{example}
+
+\begin{definition} A {\dfont first order initial value 
+problem\index{initial value problem!first order}\/} is a system of
+equations of the form
+$F(t, y, \dot{y})=0$, $y(t_0)=y_0$. Here $t_0 $ is a fixed time
+and $y_0$ is a number.
+A solution of an initial value problem is a solution $f(t)$ of
+the differential equation that also satisfies the 
+{\dfont initial condition\index{initial condition}\/}
+$f(t_0) = y_0$.
+\end{definition}
+
+\begin{example} The initial value problem $\ds\dot{y}=t^2+1$, $y(1)=4$
+has solution $\ds f(t)=t^3/3+t+8/3$.
+\end{example}
+
+The general first order equation is rather too general, that is, 
+we can't describe methods that will work on them all, or even a large
+portion of them. We can make progress with specific kinds of
+first order differential equations.
+For example, much can be said about equations of the form
+$\ds \dot{y} = \phi (t, y)$ where $\phi $
+is a function of the two variables $t$ and $y$.
+Under reasonable conditions on $\phi$, such an
+equation has a solution and the corresponding 
+initial value problem has a unique solution.
+However, in general, these equations can be very difficult or
+impossible to solve explicitly.
+
+%% \footnote{Named after the 19th French
+%% mathematician rather than the 24th century French U.S.S. Enterprise
+%% captain despite the tea reference.}.
+
+\begin{example} Consider this specific example of an initial value problem
+for Newton's law of cooling: $\dot y = 2(25-y)$, $y(0)=40$. We first
+note that if $y(t_0) = 25$, the right hand side of the differential
+equation is zero, and so the constant function $y(t)=25$ is a solution
+to the differential equation. It is not a solution to the initial
+value problem, since $y(0)\not=40$.  (The physical interpretation of
+this constant solution is that if a liquid is at the same temperature
+as its surroundings, then the liquid will stay at that temperature.)
+So long as $y$ is not 25, we can rewrite the differential equation as
+$$\eqalign{{dy\over dt}{1\over 25-y}&=2 \\
+{1\over 25-y}\,dy&=2\,dt, \\}
+$$
+so 
+$$\int {1\over 25-y}\,dy = \int 2\,dt,$$
+that is, the two anti-derivatives must be the same except for a
+constant difference. We can calculate these anti-derivatives and 
+rearrange the results:
+$$\eqalign{
+\int {1\over 25-y}\,dy &= \int 2\,dt \\
+(-1)\ln|25-y| &= 2t+C_0 \\
+\ln|25-y| &= -2t - C_0 = -2t + C \\
+|25-y| &= e^{-2t+C}=e^{-2t} e^C \\
+y-25 & = \pm\, e^C e^{-2t}  \\
+y &= 25 \pm e^C e^{-2t} =25+Ae^{-2t}. \\}$$
+Here $\ds A = \pm\, e^C = \pm\, e^{-C_0}$ 
+is some non-zero constant. Since we want
+$y(0)=40$, we substitute and solve for $A$:
+$$\eqalign{
+40&=25+Ae^0 \\
+15&=A, \\}$$
+and so $\ds y=25+15 e^{-2t}$ is a solution to the initial value
+problem. Note that $y$ is never 25, so this makes sense for all values
+of $t$. However, if we allow $A=0$ we get the solution
+$y=25$ to the differential equation, which would be the solution to
+the initial value problem if we were to require $y(0)=25$. Thus, 
+$\ds y=25+Ae^{-2t}$ describes all solutions to the differential
+equation $\ds\dot y = 2(25-y)$, and all solutions to the associated
+initial value problems. 
+\end{example}
+
+Why could we solve this problem? Our solution depended on rewriting
+the equation so that all instances of $y$ were on one side of the
+equation and all instances of $t$ were on the other; of course, in
+this case the only $t$ was originally hidden, since we didn't write
+$dy/dt$ in the original equation. This is not required, however.
+
+\begin{example} Solve the differential equation $\ds\dot y = 2t(25-y)$.
+This is almost identical to the previous example. As before, $y(t)=25$
+is a solution. If $y\not=25$,
+$$\eqalign{
+\int {1\over 25-y}\,dy &= \int 2t\,dt \\
+(-1)\ln|25-y| &= t^2+C_0 \\
+\ln|25-y| &= -t^2 - C_0 = -t^2 + C \\
+|25-y| &= e^{-t^2+C}=e^{-t^2} e^C \\
+y-25 & = \pm\, e^C e^{-t^2}  \\
+y &= 25 \pm e^C e^{-t^2} =25+Ae^{-t^2}. \\}$$
+As before, all solutions are represented by $\ds y=25+Ae^{-t^2}$,
+allowing $A$ to be zero.
+\end{example}
+
+
+\begin{definition} A first order differential equation is 
+{\dfont separable\index{differential equation!separable}\/} if it
+can be written in the form
+$\dot{y} = f(t) g(y)$.
+\end{definition}
+
+As in the examples, we can attempt to solve a separable equation by
+converting to the form
+$$\int {1\over g(y)}\,dy=\int f(t)\,dt.$$
+This technique is called {\dfont separation of
+  variables\index{separation of variables}}. The simplest (in
+principle) sort of separable equation is one in which $g(y)=1$, in
+which case we attempt to solve
+$$\int 1\,dy=\int f(t)\,dt.$$
+We can do this if we can find an anti-derivative of $f(t)$.
+
+Also as we have seen so far, a differential equation
+typically has an infinite number of solutions. Ideally, but certainly
+not always, a corresponding initial value problem will have just one
+solution. A solution in which there are no unknown constants remaining
+is called a {\dfont particular 
+solution\index{particular solution}\index{differential equation!particular solution}}.
+
+The general approach to separable equations is this:
+Suppose we wish to solve $\dot{y} =
+f(t) g(y) $ where $f$ and $g$ are continuous functions. If $g(a)=0$
+for some $a$ then $y(t)=a$ is a constant solution of the equation,
+since in this case $\dot y = 0 = f(t)g(a)$.  For example, $\dot{y}
+=y^2 -1$ has constant solutions $y(t)=1$ and $y(t)=-1$.
+
+To find the nonconstant solutions, we note that the function
+$1/g(y)$ is continuous where $g\not=0$, so
+$1/g$ has an antiderivative $G$. Let $F$ be an
+antiderivative of $f$.  
+Now we write 
+$$G(y) = \int {1\over g(y)}\,dy = \int f(t)\,dt=F(t)+C,$$
+so $G(y)=F(t)+C$. Now we solve this equation for $y$. 
+
+Of course, there are a few places this ideal description could go
+wrong: we need to be able to find the antiderivatives $G$ and $F$, and
+we need to solve the final equation for $y$.
+The upshot is that the solutions to the original differential equation
+are the constant solutions, if any, and all functions $y$ that satisfy
+$G(y)=F(t)+C$.
+
+
+\begin{example} Consider the differential equation $\dot y=ky$.
+\label{exer:first simple linear homogeneous}
+When $k>0$, this describes certain simple cases of population growth:
+it says that the change in the population $y$ is proportional to the
+population. The underlying assumption is that each organism in the
+current population reproduces at a fixed rate, so the larger the
+population the more new organisms are produced. While this is too
+simple to model most real populations, it is useful in some cases over
+a limited time. When $k<0$, the differential equation describes a
+quantity that decreases in proportion to the current value; this can
+be used to model radioactive decay.
+
+The constant solution is $y(t)=0$; of course this will not be the
+solution to any interesting initial value problem. 
+For the non-constant solutions, we proceed much as before:
+$$\eqalign{
+\int {1\over y}\,dy&=\int k\,dt \\
+\ln|y| &= kt+C \\
+|y| &= e^{kt} e^C \\
+y &= \pm \,e^C e^{kt}  \\
+y&= Ae^{kt}. \\}$$
+Again, if we allow $A=0$ this includes the constant solution, and we
+can simply say that $\ds y=Ae^{kt}$ is the general solution. With an
+initial value we can easily solve for $A$ to get the solution of the
+initial value problem. In particular, if the initial value is
+given for time $t=0$, $y(0)=y_0$, then $A=y_0$ and the solution
+is $\ds y= y_0 e^{kt}$.
+\end{example}
+
+\begin{exercises}
+
+\exercise Which of the following equations are separable?
+
+\begin{itemize} % BADBAD
+\item{a.} $\ds \dot{y} = \sin (ty)$
+\item{b.} $\ds \dot{y} = e^t e^y $
+\item{c.} $\ds y\dot{y} = t $
+\item{d.} $\ds \dot{y} = (t^3 -t) \arcsin(y)$
+\item{e.} $\ds \dot{y} = t^2 \ln y + 4t^3 \ln y $
+
+\end{itemize}
+
+\exercise Solve $\ds\dot{y} = 1/(1+t^2)$.
+\begin{answer} $\ds y=\arctan t + C$
+\end{answer}
+
+\exercise Solve the initial value problem $\dot{y} = t^n$ with
+$y(0)=1$ and $n\ge 0$.
+\begin{answer} $\ds y={t^{n+1}\over n+1}+1$
+\end{answer}
+
+\exercise Solve $\dot{y} = \ln t$. 
+\begin{answer} $\ds y=t\ln t-t+C$
+\end{answer}
+
+\exercise Identify the constant solutions (if any) of $\dot{y} =t\sin y$.
+\begin{answer} $y=n\pi$, for any integer $n$.
+\end{answer}
+
+\exercise Identify the constant solutions (if any) of $\ds\dot{y}=te^y$.
+\begin{answer} none
+\end{answer}
+
+\exercise Solve $\dot{y} = t/y$.
+\begin{answer} $\ds y=\pm\sqrt{t^2+C}$
+\end{answer}
+
+\exercise Solve $\ds\dot{y} = y^2 -1$.
+\begin{answer} $\ds y=\pm 1$, $\ds y=(1+Ae^{2t})/(1-Ae^{2t})$
+\end{answer}
+
+\exercise Solve $\ds\dot{y} = t/(y^3 - 5)$. You may leave
+your solution in implicit form: that is, you may stop once you have
+done the integration, without solving for $y$.
+\begin{answer} $\ds y^4/4-5y=t^2/2+C$
+\end{answer}
+
+\exercise Find a non-constant solution of the initial value problem 
+$\dot{y} = y^{1/3}$, $y(0)=0$, using
+ separation of variables. Note that the constant function $y(t)=0 $
+ also solves the initial value problem. This shows that an initial value
+ problem can have more than one solution.
+\begin{answer} $\ds y=(2t/3)^{3/2}$
+\end{answer}
+
+\exercise Solve the equation for Newton's law of cooling leaving $M$
+and $k$ unknown.
+\begin{answer} $\ds y=M+Ae^{-kt}$
+\end{answer}
+
+\exercise After 10 minutes in Jean-Luc's room, his tea has
+cooled to $40^\circ $ Celsius from $100^\circ$ Celsius. 
+The room temperature is $25^\circ$
+Celsius. How much longer will it take to cool to $35^\circ$?
+\begin{answer} $\ds {10\ln(15/2)\over\ln 5}\approx 2.52$ minutes
+\end{answer} 
+
+\exercise Solve \label{exer:logistic equation}
+the {\dfont logistic equation\index{logistic
+equation}\/} $\dot{y} = ky(M-y)$. (This is a somewhat more
+reasonable population model in most cases than the simpler
+$\dot y=ky$.) Sketch the
+graph of the solution to this equation when 
+$M=1000$, $k=0.002$, $y(0)=1$.
+\begin{answer} $\ds y={M\over 1+Ae^{-Mkt}}$
+\end{answer}
+
+\exercise Suppose that $\dot{y} = ky$, $y(0)=2$, and $\dot{y}(0)=3$. 
+What is $y$?
+\begin{answer} $\ds y=2e^{3t/2}$
+\end{answer}
+
+\exercise A radioactive substance obeys the equation
+$\dot{y} =ky$ where $k< 0 $ and $y$ is the mass of the
+substance at time $t$. Suppose that initially, the mass of the
+substance is $y(0)=M>0$. At what time does half of the mass remain?
+(This is known as the half life. Note that the half life depends on
+$k$ but not on $M$.)
+\begin{answer} $\ds t=-{\ln 2\over k}$
+\end{answer}
+
+\exercise Bismuth-210 has a half life of five days. If there is
+initially 600 milligrams, how much is left after 6 days? When will
+there be only 2 milligrams left?
+\begin{answer} $\ds 600e^{-6\ln 2/5}\approx 261$ mg; $\ds {5\ln
+  300\over\ln2}\approx 41$ days
+\end{answer}
+
+\exercise The half life of carbon-14 is 5730 years. If one starts
+with 100 milligrams of carbon-14, how much is left after 6000
+years? How long do we have to wait before there is less than 2
+milligrams?
+\begin{answer} $\ds 100e^{-200\ln 2/191}\approx 48$ mg; $\ds {5730\ln
+  50\over\ln2}\approx 32339$ years
+\end{answer}
+
+\exercise A certain species of bacteria doubles its population
+(or its mass)
+every hour in the lab. 
+The differential equation that models this phenomenon
+is $\dot{y} =ky$, where $k>0 $ and $y$
+is the population of bacteria at time $t$. What is $y$?
+\begin{answer} $\ds y=y_0e^{t\ln 2}$
+\end{answer}
+
+\exercise If a certain microbe doubles its population every 4
+hours and after 5 hours the total population has mass 500 grams,
+what was the initial mass?
+\begin{answer} $\ds 500e^{-5\ln2/4}\approx 210$ g
+\end{answer}
+
+\end{exercises}

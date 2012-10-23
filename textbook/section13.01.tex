@@ -1,0 +1,195 @@
+\section{Space Curves}{}{}
+
+We have already seen that a convenient way to describe a line in three
+dimensions is to provide a vector that ``points to'' every point on
+the line as a parameter $t$ varies, like
+$$\langle 1,2,3\rangle+t\langle 1,-2,2\rangle
+=\langle 1+t,2-2t,3+2t\rangle.$$
+Except that this gives a particularly simple geometric object, there
+is nothing special about the individual functions of $t$ that make up
+the coordinates of this vector---any vector with a parameter, like
+$\langle f(t),g(t),h(t)\rangle$, will describe some curve in three
+dimensions as $t$ varies through all possible values. 
+
+\begin{example} Describe the curves
+$\langle \cos t,\sin t,0\rangle$,
+$\langle \cos t,\sin t,t\rangle$, and
+$\langle \cos t,\sin t,2t\rangle$.
+\label{exam:helixes}
+
+As $t$ varies, the first two coordinates in all three functions
+trace out the points on the unit circle, starting
+with $(1,0)$ when $t=0$ and proceeding counter-clockwise around the
+circle as $t$ increases. In the first case, the $z$ coordinate is
+always 0, so this describes precisely the unit circle in the $x$-$y$
+plane. In the second case, the $x$ and $y$ coordinates still describe
+a circle, but now 
+the $z$ coordinate varies, so that the
+height of the curve matches the value of $t$. When $t=\pi$, for
+example, the resulting vector is $\langle -1,0,\pi\rangle$. A bit of
+thought should convince you that the result is a helix. In the third
+vector, the $z$ coordinate varies twice as fast as the parameter $t$,
+so we get a stretched out helix. Both are shown in
+figure~\xrefn{fig:helixes}. On the left is the first helix, shown for
+$t$ between 0 and $4\pi$; on the right is the second helix, shown for
+$t$ between 0 and $2\pi$. Both start and end at the same point, but
+the first helix takes two full ``turns'' to get there, because its $z$
+coordinate grows more slowly.
+\end{example}
+
+\figure
+\vbox{\beginpicture
+\normalgraphs
+\ninepoint
+\setcoordinatesystem units <3truecm,3truecm>
+\setplotarea x from 0 to 1.1, y from 0 to 1.1
+\put {\hbox{\epsfxsize5cm\epsfbox{helix1.eps}}} at 0 0
+\put {\hbox{\epsfxsize5cm\epsfbox{helix2.eps}}} at 2 0
+\endpicture}
+\figrdef{fig:helixes}
+\endfigure{Two helixes.
+(\expandafter\url\expandafter{\liveurl helixes.html}%
+AP\endurl)}
+
+A vector expression of the form $\langle f(t),g(t),h(t)\rangle$ is called
+a {\dfont vector function\index{vector!function}}; it is a function from
+the real numbers $\R$ to the set of all three-dimensional vectors.
+We can alternately think of it as three separate functions, 
+$x=f(t)$, $y=g(t)$, and $z=h(t)$, that describe points in space. In
+this case we usually refer to the set of equations as {\dfont
+parametric equations\index{parametric equations}} for the curve, just
+as for a line. While the parameter $t$ in a vector function might
+represent any one of a number of physical quantities, or be simply a
+``pure number'', it is often convenient and useful to think of $t$ as
+representing time. The vector function then tells you where in space
+a particular object is at any time.
+
+Vector functions can be difficult to understand, that is, difficult to
+picture. When available, computer software can be very helpful. When
+working by hand, one useful approach is to consider the
+``projections'' of the curve onto the three standard coordinate
+planes. We have already done this in part: in
+example~\xrefn{exam:helixes} we noted that all three curves project to
+a circle in the $x$-$y$ plane, since $\langle \cos t,\sin t\rangle$ is
+a two dimensional vector function for the unit circle.
+
+\begin{example} Graph the projections of $\langle \cos t,\sin
+t,2t\rangle$ onto the $x$-$z$ plane and the $y$-$z$ plane.
+The two dimensional vector function for the
+projection onto the $x$-$z$ plane is $\langle \cos t, 2t\rangle$, or in
+parametric form, $x=\cos t$, $z=2t$. By eliminating $t$ we get the
+equation $x=\cos(z/2)$, the familiar curve shown on the left in
+figure~\xrefn{fig:helix projections}. For the projection onto the $y$-$z$ plane, we start
+with the vector function $\langle \sin t, 2t\rangle$, which is the
+same as $y=\sin t$, $z=2t$. Eliminating $t$ gives $y=\sin(z/2)$, as
+shown on the right in figure~\xrefn{fig:helix projections}.
+\end{example}
+
+
+\figure
+\vbox{\beginpicture
+\normalgraphs
+\ninepoint
+\setcoordinatesystem units <15truemm,4truemm>
+\setplotarea x from -1.25 to 1.25, y from 0 to 14
+\axis left shiftedto x=0 ticks length <2pt> withvalues {$2\pi$} {$4\pi$} /
+  at 6.28 12.57 / /
+\axis bottom ticks length <2pt> numbered from -1 to 1 by 1 /
+\arrow <4pt> [0.35, 1] from 0 14 to 0 14.05
+\arrow <4pt> [0.35, 1] from 1.25 0 to 1.3 0
+\put {$x$} [tl] <3pt,0pt> at 1.3 0 
+\put {$z$} [br] <0pt,3pt> at 0 14.05 
+\plot 
+1.000 0.000 0.995 0.209 0.978 0.419 0.951 0.628 0.914 0.838 0.866
+1.047 0.809 1.257 0.743 1.466 0.669 1.676 0.588 1.885 0.500 2.094
+0.407 2.304 0.309 2.513 0.208 2.723 0.105 2.932 0.000 3.142 -0.105
+3.351 -0.208 3.560 -0.309 3.770 -0.407 3.979 -0.500 4.189 -0.588 4.398
+-0.669 4.608 -0.743 4.817 -0.809 5.027 -0.866 5.236 -0.914 5.445
+-0.951 5.655 -0.978 5.864 -0.995 6.074 -1.000 6.283 -0.995 6.493
+-0.978 6.702 -0.951 6.912 -0.914 7.121 -0.866 7.330 -0.809 7.540
+-0.743 7.749 -0.669 7.959 -0.588 8.168 -0.500 8.378 -0.407 8.587
+-0.309 8.796 -0.208 9.006 -0.105 9.215 0.000 9.425 0.105 9.634 0.208
+9.844 0.309 10.053 0.407 10.263 0.500 10.472 0.588 10.681 0.669 10.891
+0.743 11.100 0.809 11.310 0.866 11.519 0.914 11.729 0.951 11.938 0.978
+12.147 0.995 12.357 1.000 12.566 /
+\setcoordinatesystem units <15truemm,4truemm> point at -4 0
+\setplotarea x from -1.25 to 1.25, y from 0 to 14
+\axis left shiftedto x=0 ticks length <2pt>  withvalues {$2\pi$} {$4\pi$} /
+  at 6.28 12.57 / /
+\axis bottom ticks length <2pt> numbered from -1 to 1 by 1 /
+\arrow <4pt> [0.35, 1] from 0 14 to 0 14.05
+\arrow <4pt> [0.35, 1] from 1.25 0 to 1.3 0
+\put {$y$} [tl] <3pt,0pt> at 1.3 0 
+\put {$z$} [br] <0pt,3pt> at 0 14.05 
+\plot 0.000 0.000 0.105 0.209 0.208 0.419 0.309 0.628 0.407 0.838 0.500
+ 1.047 0.588 1.257 0.669 1.466 0.743 1.676 0.809 1.885 0.866 2.094
+ 0.914 2.304 0.951 2.513 0.978 2.723 0.995 2.932 1.000 3.142 0.995
+ 3.351 0.978 3.560 0.951 3.770 0.914 3.979 0.866 4.189 0.809 4.398
+ 0.743 4.608 0.669 4.817 0.588 5.027 0.500 5.236 0.407 5.445 0.309
+ 5.655 0.208 5.864 0.105 6.074 0.000 6.283 -0.105 6.493 -0.208 6.702
+ -0.309 6.912 -0.407 7.121 -0.500 7.330 -0.588 7.540 -0.669 7.749
+ -0.743 7.959 -0.809 8.168 -0.866 8.378 -0.914 8.587 -0.951 8.796
+ -0.978 9.006 -0.995 9.215 -1.000 9.425 -0.995 9.634 -0.978 9.844
+ -0.951 10.053 -0.914 10.263 -0.866 10.472 -0.809 10.681 -0.743 10.891
+ -0.669 11.100 -0.588 11.310 -0.500 11.519 -0.407 11.729 -0.309 11.938
+ -0.208 12.147 -0.105 12.357 0.000 12.566 /
+\endpicture}
+\figrdef{fig:helix projections}
+\endfigure{The projections of $\langle \cos t,\sin
+t,2t\rangle$ onto the $x$-$z$ and $y$-$z$ planes.}
+
+\begin{exercises}
+
+\exercise Investigate the curve ${\bf r}=\langle \sin t,\cos t,\cos
+8t\rangle$.
+
+\exercise Investigate the curve 
+${\bf r}=\langle t\cos t,t\sin t,t\rangle$.
+
+\exercise Investigate the curve 
+${\bf r}=\langle t,t^2,\cos t\rangle$.
+
+\exercise Investigate the curve 
+${\bf r}=\langle \cos(20t)\sqrt{1-t^2},\sin(20t)\sqrt{1-t^2},t\rangle$
+
+\exercise Find a vector function for the curve of intersection of
+$x^2+y^2=9$ and $y+z=2$.
+\begin{answer} $\langle 3\cos t, 3\sin t, 2-3\sin t\rangle$
+\end{answer}
+
+\exercise A bug is crawling outward along the spoke of a wheel that lies along
+a radius of the wheel. The bug is crawling at 1 unit per second and
+the wheel is rotating at 1 radian per second. Suppose the wheel lies
+in the $y$-$z$ plane with center at the origin, and at time $t=0$ the
+spoke lies along the positive $y$ axis and the bug is at the origin.
+Find a vector function ${\bf r}(t)$
+for the position of the bug at time $t$.
+\begin{answer} $\langle 0,t\cos t,t\sin t\rangle$
+\end{answer}
+
+\exercise What is the difference between the parametric curves
+$f(t)=\langle t, t, t^2 \rangle$, $g(t)=\langle t^2, t^2, t^4
+\rangle$, and $h(t)=\langle \sin(t), \sin(t), \sin^2(t) \rangle$as $t$
+runs over all real numbers?
+
+\exercise Plot each of the curves below in 2 dimensions, projected
+onto each of the three standard planes (the $x$-$y$, $x$-$z$, and
+$y$-$z$ planes).
+
+\begin{itemize} % BADBAD
+\item{a.} $f(t)=\langle t, t^3, t^2 \rangle$, $t$ ranges over all real numbers
+\item{b.} $f(t)=\langle t^2, t-1, t^2+5 \rangle$  for $0\leq t \leq 3$
+\end{itemize}
+
+\exercise Given points $A=(a_1, a_2, a_3)$ and $B=(b_1, b_2, b_3)$, give
+parametric equations for the line {\em segment} connecting $A$ and
+$B$. Be sure to give appropriate $t$ values.
+
+\exercise With a parametric plot and a set of $t$ values, we can associate
+a `direction'.  For example, the curve $\langle \cos t, \sin t
+\rangle$ is the unit circle traced counterclockwise.  How can we amend
+a set of given parametric equations and $t$ values to get the same
+curve, only traced backwards?
+
+\end{exercises}
+

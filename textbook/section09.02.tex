@@ -1,0 +1,193 @@
+\section{Distance, Velocity, Acceleration}{}{}
+\nobreak
+We next recall a general principle that will later be applied to
+distance-velocity-acceleration problems, among other things.  If $F(u)$ is
+an anti-derivative of $f(u)$, then $\ds \int_a^bf(u)\,du=F(b)-F(a)$.  Suppose
+that we want to let the upper limit of integration vary, i.e., we replace
+$b$ by some variable $x$.  We think of $a$ as a fixed starting value $x_0$.
+In this new notation the last equation (after adding $F(a)$ to both sides)
+becomes: 
+$$
+  F(x)=F(x_0)+\int_{x_0}^xf(u)\,du.
+$$ 
+(Here $u$ is the variable of
+integration, called a ``dummy variable,'' since it is not the variable in
+the function $F(x)$.  In general, it is not a good idea to use the same
+letter as a variable of integration and as a limit of integration.  That
+is, $\ds \int_{x_0}^xf(x)dx$ is bad notation, and can lead to errors and
+confusion.)
+
+An important application of this principle occurs when we are
+interested in the position of an object at time $t$ (say, on the
+$x$-axis) and we know its position at time $\ds t_0$.  Let $s(t)$ denote
+the position of the object at time $t$ (its distance from a reference
+point, such as the origin on the $x$-axis).  Then the net change in
+position between $\ds t_0$ and $t$ is $\ds s(t)-s(t_0)$.  Since $s(t)$ is an
+anti-derivative of the velocity function $v(t)$, we can write
+$$
+  s(t)=s(t_0)+\int_{t_0}^tv(u)du.
+$$
+Similarly, since the velocity is an anti-derivative of the acceleration
+function $a(t)$, we have 
+$$
+  v(t)=v(t_0)+\int_{t_0}^ta(u)du.
+$$
+
+\begin{example}
+Suppose an object is acted upon by a constant
+force $F$.  Find $v(t)$ and $s(t)$.
+By Newton's law $F=ma$, so the acceleration is
+$F/m$, where $m$ is the mass of the object.  Then we first have
+$$
+  v(t)=v(t_0)+\int_{t_0}^t{F\over m}\,du=v_0+
+  \left.{F\over m}u\right|_{t_0}^t=v_0+{F\over m}(t-t_0),
+$$
+using the usual convention $\ds v_0=v(t_0)$.
+Then
+$$\eqalign{
+  s(t)&=s(t_0)+\int_{t_0}^t\left(v_0+{F\over m}(u-t_0)\right)du=s_0+
+  \left.(v_0u+{F\over2m}(u-t_0)^2)\right|_{t_0}^t \\
+      &=s_0+v_0(t-t_0)+{F\over2m}(t-t_0)^2. \\
+  }$$
+For instance, when $F/m=-g$ is the constant of gravitational acceleration,
+then this is the falling body formula (if we neglect air resistance)
+familiar from elementary physics:
+$$s_0+v_0(t-t_0)-{g\over2}(t-t_0)^2,$$
+or in the common case that $\ds t_0=0$,
+$$s_0+v_0t-{g\over2}t^2.$$
+\vskip-10pt\end{example}
+
+Recall that 
+the integral of the velocity function gives the {\it net\/} distance
+traveled. If you want to know the {\it
+total\/} distance traveled, you must find out where the velocity function
+crosses the $t$-axis, integrate separately over the time intervals when
+$v(t)$ is positive and when $v(t)$ is negative, and add up the absolute
+values of the different integrals.  For example, if an object is thrown
+straight upward at 19.6 m/sec, its velocity function is
+$v(t)=-9.8t+19.6$, using $g=9.8$ m/sec for the force of gravity.
+This is a straight line which is positive for $t<2$ and negative for $t>2$.
+The net distance traveled in the first 4 seconds is thus
+$$\int_0^4(-9.8t+19.6)dt=0,$$
+ while the total distance traveled in the first
+4 seconds is
+$$
+  \int_0^2(-9.8t+19.6)dt+\left|\int_2^4(-9.8t+19.6)dt\right|=19.6+|-19.6|=39.2
+$$ 
+meters, $19.6$ meters up and $19.6$ meters down.
+
+\begin{example}
+The acceleration of an object is given by $a(t)=\cos(\pi
+t)$, and its velocity at time $t=0$ is $1/(2\pi)$.  Find both the net and the
+total distance traveled in the first 1.5 seconds.
+
+We compute 
+$$
+  v(t)=v(0)+\int_0^t\cos(\pi u)du={1\over 2\pi}+\left.{1\over\pi}
+  \sin(\pi u)\right|_0^t={1\over\pi}\bigl({1\over2}+\sin(\pi t)\bigr).
+$$
+The {\it net} distance traveled is then
+$$\eqalign{
+  s(3/2)-s(0)&=\int_0^{3/2}{1\over\pi}\left({1\over2}+\sin(\pi t)\right)\,dt \\
+  &=\left.{1\over\pi}\left({t\over2}-{1\over\pi}\cos(\pi t)\right)
+  \right|_0^{3/2}={3\over4\pi}+{1\over\pi^2}\approx 0.340 \hbox{ meters.} \\
+}$$
+To find the {\it total} distance traveled, we need to know when
+$(0.5+\sin(\pi t))$ is positive and when it is negative.  This
+function is 0 when $\sin(\pi t)$ is $-0.5$, i.e., when $\pi t=7\pi/6$,
+$11\pi/6$, etc.  The value $\pi t=7\pi/6$, i.e., $t=7/6$, is the only
+value in the range $0\le t\le 1.5$.  Since $v(t)>0$ for $t<7/6$ and
+$v(t)<0$ for $t>7/6$, the total distance traveled is
+$$\eqalign{
+  \int_0^{7/6}&{1\over \pi}\left({1\over2}+\sin(\pi t)\right)\,dt+
+  \Bigl|\int_{7/6}^{3/2} 
+  {1\over \pi}\left({1\over2}+\sin(\pi t)\right)\,dt\Bigr| \\
+  &={1\over \pi}\left( {7\over 12}+{1\over \pi}\cos(7\pi/6)+{1\over
+    \pi}\right)+
+  {1\over \pi}\Bigl|{3\over 4}-{7\over 12}
+  +{1\over \pi}\cos(7\pi/6)\Bigr| \\
+  &={1\over \pi}\left( {7\over 12}+{1\over \pi}{\sqrt3\over2}+{1\over
+    \pi}\right)+
+  {1\over \pi}\Bigl|{3\over 4}-{7\over 12}
+  +{1\over \pi}{\sqrt3\over2}.\Bigr|
+  \approx 0.409 \hbox{ meters.} \\
+}$$
+\vskip-10pt\end{example}
+
+\begin{exercises}
+
+For each velocity function find both the net distance and the total
+distance traveled during the indicated time interval (graph $v(t)$ to
+determine when it's positive and when it's negative): 
+
+\exercise $v=\cos(\pi t)$, $0\le t\le 2.5$
+\begin{answer} $1/\pi$, $5/\pi$
+\end{answer}
+
+\exercise $v=-9.8t+49$, $0\le t\le 10$
+\begin{answer} $0$, $245$
+\end{answer}
+
+\exercise $v=3(t-3)(t-1)$, $0\le t\le 5$
+\begin{answer} $20$, $28$
+\end{answer}
+
+\exercise $v=\sin(\pi t/3)-t$, $0\le t\le 1$
+\begin{answer} $(3-\pi)/(2\pi)$, $\ds (18-12\sqrt3+\pi)/(4\pi)$
+\end{answer}
+
+\exercise An object is shot upwards from ground level with an initial
+velocity of 2 meters per second; it is subject only to the force of
+gravity (no air resistance). Find its maximum altitude and the time at
+which it hits the ground.
+\begin{answer} $10/49$ meters, $20/49$ seconds
+\end{answer}
+
+\exercise An object is shot upwards from ground level with an initial
+velocity of 3 meters per second; it is subject only to the force of
+gravity (no air resistance). Find its maximum altitude and the time at
+which it hits the ground.
+\begin{answer} $45/98$ meters, $30/49$ seconds
+\end{answer}
+
+\exercise An object is shot upwards from ground level with an initial
+velocity of 100 meters per second; it is subject only to the force of
+gravity (no air resistance). Find its maximum altitude and the time at
+which it hits the ground.
+\begin{answer} $25000/49$ meters, $1000/49$ seconds
+\end{answer}
+
+\exercise An object moves along a straight line with acceleration given by
+$a(t) = -\cos(t)$, and $s(0)=1$ and
+$v(0)=0$. Find the maximum distance the object travels from zero, and
+find its maximum speed. Describe the motion of the object.
+\begin{answer} $s(t)=\cos t$, $v(t)=-\sin t$,\hfill\break
+maximum distance is 1,\hfill\break 
+maximum speed is 1
+\end{answer}
+
+\exercise An object moves along a straight line with acceleration given by
+$a(t) = \sin(\pi t)$. Assume that when $t=0$, $s(t)=v(t)=0$. Find
+$s(t)$, $v(t)$, and the maximum speed of the object. Describe the
+motion of the object.
+\begin{answer} $\ds s(t)=-\sin(\pi t)/\pi^2+t/\pi$,\hfill\break
+ $v(t)=-\cos(\pi t)/\pi+1/\pi$,\hfill\break
+maximum speed is $2/\pi$
+\end{answer}
+
+\exercise An object moves along a straight line with acceleration given by
+$a(t) = 1+\sin(\pi t)$. Assume that when $t=0$, $s(t)=v(t)=0$. Find
+$s(t)$ and $v(t)$.
+\begin{answer} $\ds s(t)=t^2/2-\sin(\pi t)/\pi^2+t/\pi$,\hfill\break
+ $v(t)=t-\cos(\pi t)/\pi+1/\pi$
+\end{answer}
+
+\exercise An object moves along a straight line with acceleration given by
+$a(t) = 1-\sin(\pi t)$. Assume that when $t=0$, $s(t)=v(t)=0$. Find
+$s(t)$ and $v(t)$.
+\begin{answer} $\ds s(t)=t^2/2+\sin(\pi t)/\pi^2-t/\pi$,\hfill\break
+ $v(t)=t+\cos(\pi t)/\pi-1/\pi$
+\end{answer}
+
+\end{exercises}
+

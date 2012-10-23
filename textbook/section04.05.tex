@@ -1,0 +1,117 @@
+\section{Derivatives of the Trigonometric Functions}{}{}
+\nobreak
+All of the other trigonometric functions can be
+expressed in terms of the sine, and so their derivatives can easily be
+calculated using the rules we already have. For the cosine we need to
+use two identities,
+\begin{align*}
+\cos x &= \sin(x+{\pi\over2}), \\
+\sin x &= -\cos(x+{\pi\over2}). \\
+\end{align*}
+Now:
+\begin{align*}
+{d\over dx}\cos x &= {d\over dx}\sin(x+{\pi\over2}) =
+\cos(x+{\pi\over2})\cdot 1 = -\sin x \\
+{d\over dx}\tan x &= {d\over dx}{\sin x\over \cos x}=
+{\cos^2 x + \sin^2 x\over \cos^2 x}={1\over \cos^2 x}=\sec^2 x \\
+{d\over dx}\sec x &= {d\over dx}(\cos x)^{-1}=
+-1(\cos x)^{-2}(-\sin x) = {\sin x \over \cos^2 x} = \sec x\tan x \\
+\end{align*}
+The derivatives of the cotangent and cosecant are similar and left as
+exercises. 
+
+\begin{exercises}
+Find the derivatives of the following functions.
+
+\twocol
+
+\exercise $\ds \sin x\cos x$
+\begin{answer} $\ds \cos^2 x-\sin^2 x$
+\end{answer}
+
+\exercise $\ds \sin(\cos x)$
+\begin{answer} $\ds -\sin x\cos(\cos x)$
+\end{answer}
+
+\exercise $\ds \sqrt{x\tan x\ }$
+\begin{answer} $\ds{\tan x+x\sec^2 x\over2\sqrt{x\tan x\ }}$
+\end{answer}
+
+\exercise $\ds \tan x/(1+\sin x)$
+\begin{answer} $\ds {\sec^2 x(1+\sin x)-\tan x \cos x\over (1+\sin x)^2}$
+\end{answer}
+
+\exercise $\ds \cot x$
+\begin{answer} $\ds  -\csc^2 x$
+\end{answer}
+
+\exercise $\ds \csc x$
+\begin{answer} $\ds  -\csc x\cot x$
+\end{answer}
+
+\exercise $\ds x^3 \sin (23x^2 )$
+\begin{answer} $\ds 3x^2\sin(23x^2)+46x^4\cos(23x^2)$
+\end{answer}
+
+\exercise $\ds \sin ^2 x + \cos ^2 x$
+ \begin{answer} $0$
+\end{answer}
+
+\exercise  $\ds \sin (\cos (6x) )$
+ \begin{answer} $\ds -6\cos(\cos(6x))\sin(6x)$
+\end{answer}
+
+\endtwocol
+
+\exercise Compute $\ds{d\over d\theta}{\sec \theta\over 1+\sec \theta}$.
+ \begin{answer} $\ds \sin\theta/(\cos\theta+1)^2$
+\end{answer}
+
+\exercise Compute $\ds{d\over dt}t^5 \cos (6t)$.
+\begin{answer} $\ds 5t^4\cos(6t)-6t^5\sin(6t)$
+\end{answer}
+
+\exercise Compute $\ds{d\over dt}{t^3 \sin (3t)\over\cos (2t)}$.
+\begin{answer} $\ds 3t^2(\sin(3t)+t\cos(3t))/\cos(2t)+2t^3\sin(3t)\sin(2t)/\cos^2(2t)$
+\end{answer}
+
+\exercise Find all points on the graph of
+$\ds f(x)=\sin^2(x)$ at which the tangent line is horizontal.
+\begin{answer} $n\pi/2$, any integer $n$
+\end{answer}
+
+\exercise Find all points on the graph of $\ds f(x) = 2\sin(x) -
+\sin^2(x)$ at which the tangent line is horizontal.
+\begin{answer} $\pi/2+n\pi$, any integer $n$
+\end{answer}
+
+\exercise Find an
+ equation for the tangent line to $\ds \sin^2(x)$ at 
+$x=\pi/3$.
+\begin{answer} $\sqrt3x/2+3/4-\sqrt3\pi/6$
+\end{answer}
+
+\exercise Find an equation for the tangent line to $\ds \sec ^2 x$
+at $x=\pi/3$.
+\begin{answer} $\ds 8\sqrt3x+4-8\sqrt3\pi/3$
+\end{answer}
+
+\exercise Find an equation for the tangent line to $\ds \cos ^2 x -
+\sin ^2 (4x)$ at $x=\pi/6$.
+\begin{answer} $\ds 3\sqrt3x/2-\sqrt3\pi/4$
+\end{answer}
+
+\exercise Find the points on the curve $\ds y= x+ 2\cos x$ that have a
+horizontal tangent line.
+\begin{answer} $\ds \pi/6+2n\pi$, $5\pi/6+2n\pi$, any integer $n$
+\end{answer}
+
+\exercise Let $C$ be a circle of radius $r$. Let $A$ be an arc on $C$
+subtending a central angle $\theta$. Let $B$ be the chord of
+$C$ whose endpoints are the endpoints of $A$. (Hence, $B$ also
+subtends $\theta$.) Let $s$ be the length of $A$
+and let $d$ be the length of $B$. Sketch a diagram of the situation
+and compute $\ds \lim_{\theta \to 0^+ } s/d$.
+
+\end{exercises}
+

@@ -1,0 +1,188 @@
+\section{The first derivative test} {}{}
+\nobreak
+The method of the previous section for deciding whether there is a
+local maximum or minimum at a critical value is not always
+convenient. We can instead use information about the derivative
+$f'(x)$ to decide; since we have already had to compute the derivative
+to find the critical values, there is often relatively little extra
+work involved in this method.
+
+How can the derivative tell us whether there is a maximum, minimum, or
+neither at a point? Suppose that $f'(a)=0$. If there is a local
+maximum when $x=a$, the function must be lower near $x=a$ than it is
+right at $x=a$. If the derivative exists near $x=a$, this means
+$f'(x)>0$ when $x$ is near $a$ and $x<a$, because the function must
+``slope up'' just to the left of $a$. Similarly, $f'(x)<0$ when $x$ is
+near $a$ and $x>a$, because $f$ slopes down from the local maximum as
+we move to the right. Using the same reasoning, if there is a local
+minimum at $x=a$, the derivative of $f$ must be negative just to the
+left of $a$ and positive just to the right. If the derivative exists
+near $a$ but does not change from positive to negative or negative to
+positive, that is, it is positive on both sides or negative on both
+sides, then there is neither a maximum nor minimum when $x=a$.
+See the first graph in figure~\xrefn{fig:max and min points}
+and the graph in figure~\xrefn{fig:non extremum}
+for examples.
+
+\begin{example} Find all local maximum and minimum points for $f(x)=\sin x+\cos
+x$ using the first derivative test.  The derivative is $f'(x)=\cos
+x-\sin x$ and from example~\xrefn{example:max and min} the critical
+values we need to consider are $\pi/4$ and $5\pi/4$.
+
+The graphs of $\sin x$ and $\cos x$ are shown in figure~\xrefn{fig:sin
+  and cos}. Just to the left of $\pi/4$ the cosine is larger than the
+  sine, so $f'(x)$ is positive; just to the right the cosine is
+  smaller than the sine, so $f'(x)$ is negative. This means there is a
+  local maximum at $\pi/4$. Just to the left of $5\pi/4$ the cosine is
+  smaller than the sine, and to the right the cosine is larger than
+  the sine. This means that the derivative $f'(x)$ is negative to the
+  left and positive to the right, so $f$ has a local minimum at
+  $5\pi/4$.
+\end{example}
+
+% BADBAD
+% \figure
+% \vbox{\beginpicture
+% \normalgraphs
+% \ninepoint
+% \setcoordinatesystem units <1.5truecm,1.5truecm>
+% \setplotarea x from 0 to 6.28, y from -1 to 1
+% \axis left shiftedto x=0 /
+% \axis bottom shiftedto y=0 ticks withvalues {${\pi\over4}$}
+%       {$5\pi\over4$} / at 0.7853981635 3.926990818 / /
+% \setquadratic
+% \plot
+% 0.000 0.000 
+% 0.063 0.063 0.126 0.125 0.188 0.187 0.251 0.249 
+% 0.314 0.309 0.377 0.368 0.440 0.426 0.503 0.482 0.565 0.536 
+% 0.628 0.588 0.691 0.637 0.754 0.685 0.817 0.729 0.880 0.771 
+% 0.942 0.809 1.005 0.844 1.068 0.876 1.131 0.905 1.194 0.930 
+% 1.257 0.951 1.319 0.969 1.382 0.982 1.445 0.992 1.508 0.998 
+% 1.571 1.000 1.634 0.998 1.696 0.992 1.759 0.982 1.822 0.969 
+% 1.885 0.951 1.948 0.930 2.011 0.905 2.073 0.876 2.136 0.844 
+% 2.199 0.809 2.262 0.771 2.325 0.729 2.388 0.685 2.450 0.637 
+% 2.513 0.588 2.576 0.536 2.639 0.482 2.702 0.426 2.765 0.368 
+% 2.827 0.309 2.890 0.249 2.953 0.187 3.016 0.125 3.079 0.063 
+% 3.142 0.000 3.204 -0.063 3.267 -0.125 3.330 -0.187 3.393 -0.249 
+% 3.456 -0.309 3.519 -0.368 3.581 -0.426 3.644 -0.482 3.707 -0.536 
+% 3.770 -0.588 3.833 -0.637 3.896 -0.685 3.958 -0.729 4.021 -0.771 
+% 4.084 -0.809 4.147 -0.844 4.210 -0.876 4.273 -0.905 4.335 -0.930 
+% 4.398 -0.951 4.461 -0.969 4.524 -0.982 4.587 -0.992 4.650 -0.998 
+% 4.712 -1.000 4.775 -0.998 4.838 -0.992 4.901 -0.982 4.964 -0.969 
+% 5.027 -0.951 5.089 -0.930 5.152 -0.905 5.215 -0.876 5.278 -0.844 
+% 5.341 -0.809 5.404 -0.771 5.466 -0.729 5.529 -0.685 5.592 -0.637 
+% 5.655 -0.588 5.718 -0.536 5.781 -0.482 5.843 -0.426 5.906 -0.368 
+% 5.969 -0.309 6.032 -0.249 6.095 -0.187 6.158 -0.125 6.220 -0.063 
+% 6.283 0.000 /
+% \plot
+% 0.000 1.000 0.063 0.998 0.126 0.992 0.188 0.982 0.251 0.969 
+% 0.314 0.951 0.377 0.930 0.440 0.905 0.503 0.876 0.565 0.844 
+% 0.628 0.809 0.691 0.771 0.754 0.729 0.817 0.685 0.880 0.637 
+% 0.942 0.588 1.005 0.536 1.068 0.482 1.131 0.426 1.194 0.368 
+% 1.257 0.309 1.319 0.249 1.382 0.187 1.445 0.125 1.508 0.063 
+% 1.571 0.000 1.634 -0.063 1.696 -0.125 1.759 -0.187 1.822 -0.249 
+% 1.885 -0.309 1.948 -0.368 2.011 -0.426 2.073 -0.482 2.136 -0.536 
+% 2.199 -0.588 2.262 -0.637 2.325 -0.685 2.388 -0.729 2.450 -0.771 
+% 2.513 -0.809 2.576 -0.844 2.639 -0.876 2.702 -0.905 2.765 -0.930 
+% 2.827 -0.951 2.890 -0.969 2.953 -0.982 3.016 -0.992 3.079 -0.998 
+% 3.142 -1.000 3.204 -0.998 3.267 -0.992 3.330 -0.982 3.393 -0.969 
+% 3.456 -0.951 3.519 -0.930 3.581 -0.905 3.644 -0.876 3.707 -0.844 
+% 3.770 -0.809 3.833 -0.771 3.896 -0.729 3.958 -0.685 4.021 -0.637 
+% 4.084 -0.588 4.147 -0.536 4.210 -0.482 4.273 -0.426 4.335 -0.368 
+% 4.398 -0.309 4.461 -0.249 4.524 -0.187 4.587 -0.125 4.650 -0.063 
+% 4.712 0.000 4.775 0.063 4.838 0.125 4.901 0.187 4.964 0.249 
+% 5.027 0.309 5.089 0.368 5.152 0.426 5.215 0.482 5.278 0.536 
+% 5.341 0.588 5.404 0.637 5.466 0.685 5.529 0.729 5.592 0.771 
+% 5.655 0.809 5.718 0.844 5.781 0.876 5.843 0.905 5.906 0.930 
+% 5.969 0.951 6.032 0.969 6.095 0.982 6.158 0.992 6.220 0.998 
+% 6.283 1.000 /
+% \endpicture}
+% \figrdef{fig:sin and cos}
+% \endfigure{The sine and cosine.}
+
+\begin{exercises}
+In 1--13,
+find all critical points and identify them as
+local maximum points, local minimum points, or neither.
+
+\twocol
+
+\exercise $\ds y=x^2-x$ 
+\begin{answer} min at $x=1/2$
+\end{answer}
+
+\exercise $\ds y=2+3x-x^3$ 
+\begin{answer} min at $x=-1$, max at $x=1$
+\end{answer}
+
+\exercise $\ds y=x^3-9x^2+24x$
+\begin{answer} max at $x=2$, min at $x=4$
+\end{answer}
+
+\exercise $\ds y=x^4-2x^2+3$ 
+\begin{answer} min at $x=\pm 1$, max at $x=0$.
+\end{answer}
+
+\exercise $\ds y=3x^4-4x^3$
+\begin{answer} min at $x=1$
+\end{answer}
+
+\exercise $\ds y=(x^2-1)/x$
+\begin{answer} none
+\end{answer}
+
+\exercise $\ds y=3x^2-(1/x^2)$ 
+\begin{answer} none
+\end{answer}
+
+\exercise $y=\cos(2x)-x$ 
+\begin{answer} min at $x=7\pi/12+k\pi$, max at $x=-\pi/12+k\pi$, for integer $k$.
+\end{answer}
+
+\exercise
+$\ds f(x) = (5-x)/(x+2)$
+\begin{answer} none
+\end{answer}
+
+\exercise $\ds f(x) = |x^2 - 121|$
+\begin{answer} max at $x=0$, min at $x=\pm 11$
+\end{answer}
+
+\exercise $\ds f(x) = x^3/(x+1)$
+\begin{answer} min at $x=-3/2$, neither at $x=0$
+\end{answer}
+
+\exercise $\ds f(x)= \begin{cases}
+x^2 \sin(1/x)  & x\neq 0  \\
+ 0  & x=0 \end{cases}$
+
+\exercise $\ds f(x) = \sin ^2 x$
+\begin{answer} min at $n\pi$, max at $\pi/2+n\pi$
+\end{answer}
+
+\endtwocol
+\bsk
+\exercise Find the maxima and minima of $f(x)=\sec x$.
+\begin{answer} min at $2n\pi$, max at $(2n+1)\pi$
+\end{answer}
+
+\exercise  Let $\ds f(\theta) = \cos^2(\theta) -
+ 2\sin(\theta)$.  Find the intervals where $f$ is increasing and the
+ intervals where $f$ is decreasing in $[0,2\pi]$.  Use this
+ information to classify the critical points of $f$ as either local
+ maximums, local minimums, or neither.
+\begin{answer} min at $\pi/2+2n\pi$, max at $3\pi/2+2n\pi$
+\end{answer}
+
+\exercise Let $r>0$. Find the local
+maxima and minima of the function $\ds f(x)
+=\sqrt{r^2 -x^2 }$ on its domain $[-r,r]$.
+
+\exercise Let $\ds f(x) =a x^2 + bx + c$ with $a\neq 0$. Show that $f$
+has exactly one critical point using the first derivative test. Give
+conditions on $a$ and $b$ which guarantee that the critical point will
+be a maximum. It is possible to see this without using calculus at
+all; explain.
+
+\end{exercises}
+

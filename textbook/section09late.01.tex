@@ -1,0 +1,455 @@
+\section{Inverse functions}{}{}
+\label{sec:inverse functions}
+
+Informally, two functions $f$ and $g$ are {\dfont inverses\/} if
+each reverses, or undoes, the other. More precisely:
+
+\begin{definition} Two functions $f$ and $g$ are inverses if for all $x$ in the
+domain of $g$,
+$f(g(x))=x$, and for all $x$ in the domain of $f$, $g(f(x))=x$.
+\end{definition}
+
+\begin{example} $f=x^3$ and $g=x^{1/3}$ are inverses, since
+$\ds (x^3)^{1/3}=x$ and $(x^{1/3})^3=x$.
+\end{example}
+
+\begin{example} $f=x^2$ and $g=x^{1/2}$ are not inverses. While
+$(x^{1/2})^2=x$, it is not true that $(x^2)^{1/2}=x$. For example,
+with $x=-2$, $((-2)^2)^{1/2}=4^{1/2}=2$.
+\end{example}
+
+The problem in the previous example can be traced to the fact that
+there are two different numbers with square equal to 4. This turns out
+to be precisely descriptive of functions without inverses.
+
+\begin{definition}
+Let $A$ and  $B$  be sets and let $f:A\to B$ be a
+function. We say that $f$ is {\dfont injective\/} or
+{\dfont one-to-one\/} if $f(x)=f(y)$ implies that $x=y$.
+
+We say that $f$ is {\dfont surjective\/} or {\dfont onto\/} if for
+ every $b\in B$ there is an $a\in A$ such that $f(a)=b$. 
+
+ If $f$ is both injective and surjective, then $f$ is
+ {\dfont bijective\/} or {\dfont one-to-one and onto}. 
+
+\end{definition}
+
+
+
+We are interested only in the case that $A$ and $B$ are sets of real
+numbers, and in this case there is a nice geometric interpretation of
+injectivity. It is often easy to use this interpretation to decide
+whether a function is or is not 1-1.
+
+\begin{theorem} (Horizontal line test) If $f$ is a function defined on some
+subset of the real numbers, then $f$ is injective if and only if 
+every horizontal line intersects the graph of $f$ at most once.
+\end{theorem}
+
+\begin{example} The function $f=x^2$ fails this test: horizontal lines $y=k$
+for $k>0$ intersect the graph of $f$ twice. (The horizontal line $y=0$
+does intersect it only once, and lines $y=k$, $k<0$, do not intersect the
+graph at all.)
+\end{example}
+
+
+\begin{example} In each of these cases, we assume that $f\colon A\to \R$,
+where
+$A$ is the set of all real numbers for which $f$ makes sense.
+
+The function $f(x)=x $ is bijective.
+
+The function $f(x) = x^2 $ is neither injective nor
+surjective. If we think of $f$ as a function from $\R$ to the
+non-negative real numbers, then $f$ is surjective; in other words, if
+a function is not surjective this is not a major stumbling block. 
+
+The function $f(x) =1/x$ is injective but not
+surjective since there is no value of $x$
+such that $f(x)=0$.
+
+The function $f(x) = x(x-1)(x+1) $ is surjective but
+not injective; $f(x) =0 $ for three different values of
+$x$. On the other hand $\ds\lim_{x\to \infty}
+f(x)=\infty$ and $\ds\lim _{x\to -\infty}
+f(x)=-\infty$. Since $f$ is continuous on $\R$, the
+intermediate value theorem (\xrefn{thm:intermediate value theorem})
+guarantees that $f$ takes all values
+between $-\infty $ and $\infty$.
+\end{example}
+
+
+The derivative furnishes us with a convenient criterion
+for injectivity without explicitly looking for points where
+injectivity may fail.
+
+\begin{theorem} If $f$ is differentiable and
+$f'(x) >0 $ then $f$ is
+injective.
+\label{thm:differentiable criterion}
+\begin{proof}
+Suppose that $f(a) =f(b) $ for some $a< b$. By
+Rolle's theorem (\xrefn{thm:rolle}) there exists $c\in (a,b) $ such that
+$f'(c) =(f(b) -f(a))/(b-a)=0$,
+which contradicts the hypothesis that $f'(x) >0 $.
+Hence, if $f(a)=f(b)$ then $a=b$.
+\end{proof}
+
+In the same way, we can see that if $f'(x)<0$ then $f$ is injective.
+
+\begin{example} Let $f(x) =x^5 + x $. Since $f'(x) = 5x^4 + 1 >0$,
+$f$ is injective.
+\end{example}
+
+\begin{example} Let $f(x) =2x+\sin x $. Then $f'(x) = 2+\cos x \geq 1$
+for every $x$. Hence, $f$ is injective. 
+\end{example}
+
+\begin{example} Let $f(x) =x^3 $. This $f$ is injective although the
+above theorem does not apply, since $f'(0)=0$. 
+Therefore, the conditions in the theorem
+are sufficient but not necessary.
+\end{example}
+
+Our knowledge of derivatives can also lead us to conclude that a
+function is not injective.
+
+\begin{theorem} If $f$ is continuous and has a local maximum or minimum then $f$
+is not injective.  
+\label{thm:continuity criterion}
+\begin{proof} Suppose that $f$ has a local maximum at
+$x=c$. Then in some interval $(c-h, c+h)$, $f(x)\le f(c)$.  Let $a\in
+(c-h, c)$.  If $f(a) =f(c)$ then $f$ is not injective; otherwise,
+$f(a) < f(c)$.
+
+Let $b\in (c,c+h)$. If $f(b) = f(c)$ or $f(b) =f(a) $ then $f$
+is not injective. Otherwise, either $f(b) < f(a)<f(c) $ or $f(a)
+<f(b)<f(c) $. If $f(b) < f(a) $ then by the intermediate value
+theorem, there is a number $d\in (c, b) $ such that $f(d) =f(a)$ and
+so $f$ is not injective.
+ Likewise, if $f(a) < f(b) $ then there is a number $d$ in $(a,c) $
+ such that $f(d) = f(b)$ and so $f$ is not injective. 
+
+In every case, we see that $f$ is not injective.
+\end{proof}
+
+To return to our principal interest, inverse functions, we now connect
+bijections and inverses.
+
+\begin{theorem} Suppose $f\colon A\to B$ is a bijection. Then $f$ has an inverse
+function $g\colon B\to A$. 
+\begin{proof}
+Suppose $b\in B$. Since $f$ is onto, there is an $a\in A$ such that 
+$f(a)=b$. Since $f$ is 1--1, $a$ is the only element of $A$ with this
+property. We let $g(b)=a$. Now it is easy to see that
+for all $a\in A$, $g(f(a))=a$ and for all $b\in B$, $f(g(b))=b$. 
+\end{proof}
+
+We really don't have any choice about how to define $g$ in this proof;
+if $f$ is a bijection, its inverse is completely determined. Thus,
+instead of using a new symbol $g$, we normally refer to the inverse of
+$f$ as $f^{-1}$.
+
+Unfortunately, it is often difficult to find an explicit formula
+for the inverse of a given function, $f$, even if it is known that $f$
+is bijective. Generally, we attempt to find an inverse in this way:
+
+\begin{itemize} % BADBAD
+\item{1.} Write $y=f(x)$.
+\item{2.} Interchange $x$ and $y$.
+\item{3.} Solve for $y$.
+\item{4.} Replace $y$ with $f^{-1}(x)$.
+\end{itemize}
+
+Step 3 is the hard part; indeed it is
+sometimes   impossible to perform using algebraic operations.
+
+\begin{example} Find the inverse of $f(x) =(2x-6)/(3x+7)$.
+First we write $x=(2y-6)/(3y+7)$.
+Now we solve for $y$:
+$$\eqalign{
+x&= {2y-6\over3y+7} \\
+x(3y+7) &= 2y-6 \\
+3xy+7x &= 2y - 6 \\
+7x+6 &= 2y-3xy \\
+7x+6 &= y(2-3x) \\
+{7x+6\over 2-3x} &= y \\
+}$$
+Finally, we say $f^{-1} (x) =(7x+6)/(2-3x)$
+\end{example}
+
+
+\begin{example} Find the inverse function of $f(x) =x^2 - 4x + 8 $
+where $x \geq 2 $. What are the domain and range of the inverse
+function?
+
+First, $y =x^2 - 4x + 8$ becomes $x=y^2-4y+8$.
+Now we complete the square: $x=(y-2)^2 +4$ and
+rearrange to get $x-4=(y-2)^2$. Since in the original function
+$x-2\ge 0$, and we have switched $x$ and $y$, we know that
+$y-2\ge 0$. Thus taking the square root, we know
+$y-2=\sqrt{x-4}$, {\bf not} $y-2=-\sqrt{x-4}$.
+Finally we write $y=f^{-1}(x)=2+\sqrt{x-4}$.
+The domain of $f$ is $x\geq 4$ and the range is $y\geq 2$. 
+
+\end{example}
+
+While simple in principle, this method is sometimes difficult or
+impossible to apply. For example, consider
+$f(x)=x^3 + x $. Since $f'(x) = 3x^2 +1 >0 $ for every $x$,
+$f$ is injective. (In fact it is bijective.) To find the inverse as
+above, we would need to solve $x=y^3+y$ for $y$; while possible, this
+is considerably more difficult than solving the quadratic of the
+previous example. Some simple looking equations are impossible to
+solve using algebraic manipulation. 
+
+For example,
+consider $f(x) =x^5 + x^3 + x +1$ a ``quintic'' polynomial (i.e., a
+fifth degree polynomial). Since
+$f'(x)= 5x^4 + 3x^2 + 1>0$, $f$ is injective
+(and indeed $f$ is bijective). If there were a
+quintic formula, analogous to the quadratic formula,
+we could use that to compute $f^{-1}$. Unfortunately, no
+such formula exists---fifth degree equations cannot in general be
+solved. (There are exceptions; $x^5=1$ can be solved, for example.)
+
+Fortunately, it is often more important to know that a function has
+an inverse then to be able to come up with an explicit formula. Once
+an inverse is known to exist, numerical techniques can often be
+employed to obtain approximations of the inverse function. Thus,
+theorem~\xrefn{thm:differentiable criterion}
+and proposition~\xrefn{thm:continuity criterion} provide useful
+criteria for deciding whether a function is invertible.
+
+%\begin{exmp} The function $f(x) = \sqrt{x-4} + x^3 $ is increasing
+%and hence has an inverse for $x\geq 4 $. \end{exmp}
+
+We now turn to the calculus of inverse functions.
+
+\begin{theorem} Let $A$ be an open interval and let $f:A\to \R$ be injective and
+continuous. Then $f^{-1}$ is continuous on $f(A)$.  
+
+\begin{proof} Since $A$ is an open interval and $f$ is injective and
+continuous it follows by proposition~\xrefn{thm:continuity criterion}
+that $f$ has no local maxima or minima. Hence, $f$ is either strictly
+increasing or strictly decreasing. Without loss of generality, $f$ is
+strictly increasing.
+
+Fix $b\in f(A)$ . Then there exists a unique $a\in A$ such that
+$f(a) = b $. Let $\epsilon > 0 $ and we may assume that $(a-\epsilon
+, a+\epsilon ) \subseteq A $. Let $\delta =\min \{ b-
+f(a-\epsilon ) , f(a+\epsilon ) -b \}$ and note that
+$\delta
+>0 $ since $f$ is increasing.  Then the interval $(b-\delta ,
+b+\delta ) $ is mapped by $f^{-1} $ into $(a-\epsilon , a+\epsilon )
+$. Since $\epsilon $ was arbitrary, it follows that $f^{-1 }$ is
+continuous at $b$.
+\end{proof}
+
+Our principal interest in inverses is the simple relationship between
+the derivative of a function and its inverse.
+
+\begin{theorem} (Inverse function theorem) Let $A$ be an open interval and let $f:A\to
+\label{thm:inverse function theorem}
+\R$ be injective and differentiable.   If $f'(x) \neq 0 $
+for every $x\in A $ then $f^{-1}$ is differentiable on $f(A)$ and
+$(f^{-1})'(x) = 1/f'(f^{-1}(x))$.
+
+\begin{proof} Fix $b\in f(A)$. Then there exists a unique $a\in A$ such
+that $f(a)=b$. For $y\neq b $, let $x=f^{-1} (y) $. Since $f$ is
+differentiable, it follows that $f$ and hence $f^{-1}$ are
+continuous.
+
+Then
+$$\lim_{y\to b}{f^{-1} (b) - f^{-1} (y)\over b-y}
+   = \lim_{x\to a}{a-x\over f(a) -f(x)} ={1\over f'(a)}.$$
+\end{proof}
+
+In Leibniz notation, this can be written as
+$\ds{dx\over dy} ={1\over dy/dx}$, which is easy to remember since it looks
+like ordinary fractional algebra.
+
+\begin{example} Let $f(x) = 3x^3 + 5x - 7$. Since $f(0)=-7$, 
+$f^{-1} (-7) =0$. Since $f'(x) = 9x^2 + 5$, $f'(0)=5$ and
+so $(f^{-1})' (-7)=1/f'(0)=1/5$.
+\end{example}
+
+\begin{exercises}
+
+\exercise Which of the following functions are injective? Which
+are surjective? Which are bijective? Sketch the graph of each
+function to illustrate your answers.
+
+\begin{itemize} % BADBAD
+
+\item{a.} $f\colon \R\to\R$, $f(x)=x^2$.
+\item{b.} $f\colon [0, \infty )\to\R$, $f(x)=x^2$.
+\item{c.} $f\colon \R\to[0, \infty )$, $f(x)=x^2$.
+\item{d.} $f\colon (-\infty,0]\to[0, \infty )$, $f(x)=x^2$.
+
+\end{itemize}
+
+\exercise Which of the following functions are injective? Which
+are surjective? Which are bijective? Sketch the graph of each
+function to illustrate your answers.
+
+\begin{itemize} % BADBAD
+
+\item{a.} $f\colon \R\to\R$, $f(x)=x^3$.
+\item{b.} $f\colon [0, \infty )\to\R$, $f(x)=\sqrt{x}$.
+\item{c.} $f\colon \R\to[-1, 1]$, $f(x)=\sin x$.
+\item{d.} $f\colon [0,\pi]\to[-1, 1]$, $f(x)=\cos x$.
+
+\end{itemize}
+
+\exercise Define $$f(x)=\cases{
+\ds-{1\over x}&$x\neq 0$ \\
+\ds 1&$x=0$ \\}$$
+
+\item{}
+Show that $f$ is not injective on $\R$. Show that $f'(x) >0
+$ for $x\neq 0 $. Why does this not contradict 
+theorem~\xrefn{thm:differentiable criterion}?
+
+
+\exercise Define $$f(x)=\cases{
+\ds 1-x&$-2\leq x<0$ \\
+\ds 0&$x=0$ \\
+\ds 10+x&$0< x \leq 2$ \\}$$
+
+\item{} Show that
+$f$ is injective and has a local minimum. Why does this not
+contradict theorem~\xrefn{thm:continuity criterion}? 
+
+\exercise If $A=\R$ sketch the graph of the identity
+function on $A$.
+
+\exercise Find the inverse function of $f(x) =(4x-6)/(7x+ 5)$. What
+are the domain and range of $f^{-1}$?
+
+
+\exercise Find the inverse function of $f(x) = 11x/(13x-6)$. What are
+the domain and range of $f^{-1}$?
+
+
+\exercise Find the inverse function of $f(x)=ax+b $ when $a\neq
+0$. What are the domain and range of $f^{-1}$?
+
+\exercise Find the inverse function of $f(x) = 1/(cx+d)$
+when $c\neq 0$. What are the domain and range of $f^{-1}$?
+
+\exercise Suppose that $ad-bc \neq 0$. Find the inverse function
+of $f(x) = (ax+b)/(cx+d)$. What are the domain and range of
+$f^{-1}$? (The domain and range will depend on which if any of
+$a,b,c$, and $d$ are zero.)
+
+\item{}
+Note: The condition $ad-bc \neq 0 $ is a technical condition which
+ensures that both the domain of $f$  will be all real numbers with
+perhaps one exception and that that the range of $f$ will be all
+real numbers with perhaps one exception.
+
+\exercise Find the inverse function of $f(x) =|x-4|$ for
+$x\leq4$. What are the domain and range of $f^{-1}$?
+
+\exercise Find the inverse function of $f(x) = \sqrt{x-5}$. 
+What are the domain and range of $f^{-1}$?
+
+\exercise Find the inverse function of $f(x) = x^3 - 5$.  What are the
+domain and range of $f^{-1}$?
+
+\exercise Find the inverse function of $f(x) =x^7 - 2$. What are the
+domain and range of $f^{-1}$?
+
+\exercise Find the inverse function of $f(x) =2x^2 +8x - 4 $ for
+$x\geq -2 $. What are the domain and range of $f^{-1 } $? 
+
+\exercise Find the inverse function of $f(x) =x^2 -9x + 10 $ for
+$x\leq 3 $.  What are the domain and range of $f^{-1 } $?  
+
+\exercise Find the inverse function of $f(x)= x^2 +bx+ c$ for $x\geq
+-b/2$. What are the domain and range of $f^{-1 } $?
+
+\exercise Find the inverse function of $f(x)= x^2 +bx+ c$ for
+$x\leq -b/2$. What are the domain and range of $f^{-1}$?
+
+\exercise Find the inverse function of $f(x) =
+(1+\sqrt{x})/(1-\sqrt{x})$. What are the domain and range of $f^{-1 }$?
+
+\exercise Show that $f(x) =x^7 + 3x $ has an inverse
+function on $\R$.
+
+\exercise Show that $f(x) =x^{19/9} +x^5 $ has an inverse
+function on $\R$. 
+
+\exercise\label{exer:reflection} 
+Let $A\subset \R$ and let $f: A\to\R$ be
+injective.  Then $f^{-1}$ exists on $f(A)$.
+
+\item{}
+Note that the point $P(a, f(a)) $ is on the graph of $f$ and that
+$Q(f(a), a) $ is the corresponding point on the graph of $f^{-1} $.
+\label{exer:inverse is reflection}
+\begin{itemize} % BADBAD
+
+\item{a.} Show that if $a\neq f(a)$ then the slope of the line segment
+$PQ$ is $-1 $.
+
+\item{b.} Conclude that if $a\neq f(a)$ the line segment $PQ$ is
+perpendicular to the graph, $L$,  of the identity function on
+$\R$.
+
+\item{c.} Show that the midpoint of $PQ$ is on $L$.
+
+\item{d.} Conclude that the graph of $f^{-1}$ is the graph of $f$
+reflected through $L$.
+ 
+\end{itemize}
+
+\exercise Let $f(x) =x^3 +x $. Sketch the graph of $f$ and
+ $f^{-1} $ on the same diagram.
+
+\exercise Let $f(x) =x^5 + x^3 +1 $. Sketch the graph of $f$ and
+ $f^{-1} $ on the same diagram. 
+
+\exercise 
+\begin{itemize} % BADBAD
+
+\item{a.} Suppose that $f$ is an increasing function on $\R$. What can
+ you say about $f^{-1}$?
+
+ \item{b.} Suppose that $f$ is a concave up function on $\R$.
+ What can you say about $f^{-1} $?
+
+ \item{}
+In both parts, use exercise~\xrefn{exer:reflection} to illustrate your
+ claim.
+
+\end{itemize}
+
+\exercise Let $f(x) = 3x^3 + 9x + 4$. Compute $(f^{-1})'(4)$.
+ 
+
+\exercise Let $f(x) = 2x^2 + 11$. Show that $f$ is increasing at
+$x=0$. Thus, there is an interval $I$ containing $0$ such that $f$ is
+injective on $I$. Compute $(f^{-1})'(11)$.
+ 
+
+\exercise Let $f(x) = ax+b$ with $a\neq 0$. Compute
+$(f^{-1})'(b)$. Why do we need the condition $a\neq 0$?
+ 
+
+\exercise Let $f(x) =ax^2 +bx + c $ with $b\neq 0$.  Compute
+$(f^{-1})'(c)$. Why do we need the condition $b\neq 0$?
+
+\exercise Let
+ $f(x) =a_n x^n + a_{n-1} x^{n-1 } + \cdots + a_1 x
+ +a_0 =\sum_{k=0}^n a_k x^k$ with $a_1 \neq 0$. Compute
+ $(f^{-1} )'(a_0)$. Why do we need the condition $a_1 \neq 0$? 
+
+
+\exercise Suppose that $f$ is injective on some interval containing $3$.
+  If $f(3)=4$ and $f'(3)=6$ what is $(f^{-1})'(4)$?
+  
+\end{exercises}

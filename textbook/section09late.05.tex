@@ -1,0 +1,332 @@
+\section{Hyperbolic Functions}{}{}
+
+The hyperbolic functions appear with some frequency in applications,
+and are quite similar in many respects to the trigonometric
+functions. This is a bit surprising given our initial definitions.
+
+\begin{definition}
+The {\dfont hyperbolic cosine\index{hyperbolic cosine}} is the function
+$$\cosh x ={e^x +e^{-x }\over2},$$
+and the {\dfont hyperbolic sine\index{hyperbolic sine}} is the function
+$$\sinh x ={e^x -e^{-x}\over 2}.$$
+\end{definition}
+
+Notice that $\cosh$ is even while $\sinh$ is odd, and
+$\ds\cosh x + \sinh x = e^x$. Also, for all $x$,
+$\cosh x >0$, while $\sinh x=0$ if and only if $e^x -e^{-x }=0$,
+which is true precisely when $x=0$.
+
+\lem The range of $\cosh x$ is $[1,\infty)$.
+\begin{proof}
+Let $y= \cosh x$. We solve for $x$:
+$$\eqalign{y&={e^x +e^{-x }\over 2} \\
+2y &= e^x + e^{-x } \\
+2ye^x &= e^{2x} + 1 \\
+ 0 &= e^{2x}-2ye^x +1 \\
+ e^{x} &= {2y \pm \sqrt{4y^2 -4}\over 2} \\
+ e^{x} &= y\pm \sqrt{y^2 -1} \\}
+$$
+From the last equation, we see $y^2 \geq 1 $, and since
+ $y\geq 0$, it follows that $y\geq 1$.
+
+Now
+$\ds x = \ln(y\pm \sqrt{y^2 -1})$. Since $\ds y\pm \sqrt{y^2 -1}>0$
+when $y\ge1$, $\ds\ln(y\pm \sqrt{y^2 -1})$ is a real number, and 
+$y =\cosh x$.
+\end{proof}
+
+\begin{definition} The other hyperbolic functions are
+$$\eqalign{\tanh x &= {\sinh x\over\cosh x} \\
+\coth x &= {\cosh x\over\sinh x} \\
+\sech x &= {1\over\cosh x} \\
+\csch x &= {1\over\sinh x} \\}
+$$ 
+The domain  of $\coth$ and $\csch$  is $x\neq 0$ while the domain of
+the other hyperbolic functions is all real numbers. Graphs are shown
+in figure~\xrefn{fig:hyperbolic functions}
+\end{definition}
+
+\figure
+\vbox{\beginpicture
+\normalgraphs
+\eightpoint
+\setcoordinatesystem units <0.6truecm,0.6truecm>
+\setplotarea x from -2 to 2, y from 0 to 4
+\axis left shiftedto x=0 ticks short numbered from 1 to 4 by 1 /
+\axis bottom ticks numbered from -2 to 2 by 1 /
+\plot -2.000 3.762 -1.900 3.418 -1.800 3.107 -1.700 2.828 -1.600 2.577 
+-1.500 2.352 -1.400 2.151 -1.300 1.971 -1.200 1.811 -1.100 1.669 
+-1.000 1.543 -0.900 1.433 -0.800 1.337 -0.700 1.255 -0.600 1.185 
+-0.500 1.128 -0.400 1.081 -0.300 1.045 -0.200 1.020 -0.100 1.005 
+0.000 1.000 0.100 1.005 0.200 1.020 0.300 1.045 0.400 1.081 
+0.500 1.128 0.600 1.185 0.700 1.255 0.800 1.337 0.900 1.433 
+1.000 1.543 1.100 1.669 1.200 1.811 1.300 1.971 1.400 2.151 
+1.500 2.352 1.600 2.577 1.700 2.828 1.800 3.107 1.900 3.418 
+2.000 3.762 /
+\setcoordinatesystem units <0.6truecm,0.6truecm> point at -5 0
+\setplotarea x from -2 to 2, y from -4 to 4
+\axis left shiftedto x=0 ticks withvalues {$-4$} {$-2$}
+{$4$} {$2$} / at -4  -2  4 2 / /
+\axis left shiftedto x=0 ticks from -4 to 4 by 1 /
+\axis bottom shiftedto y=0 ticks from -2 to 2 by 1 /
+\axis bottom shiftedto y=0 ticks withvalues {$-2$} {$2$} / at -2 2 / /
+\plot -2.000 -3.627 -1.900 -3.268 -1.800 -2.942 -1.700 -2.646 -1.600 -2.376 
+-1.500 -2.129 -1.400 -1.904 -1.300 -1.698 -1.200 -1.509 -1.100 -1.336 
+-1.000 -1.175 -0.900 -1.027 -0.800 -0.888 -0.700 -0.759 -0.600 -0.637 
+-0.500 -0.521 -0.400 -0.411 -0.300 -0.305 -0.200 -0.201 -0.100 -0.100 
+0.000 0.000 0.100 0.100 0.200 0.201 0.300 0.305 0.400 0.411 
+0.500 0.521 0.600 0.637 0.700 0.759 0.800 0.888 0.900 1.027 
+1.000 1.175 1.100 1.336 1.200 1.509 1.300 1.698 1.400 1.904 
+1.500 2.129 1.600 2.376 1.700 2.646 1.800 2.942 1.900 3.268 
+2.000 3.627 /
+\setcoordinatesystem units <0.6truecm,0.6truecm> point at -10 0
+\setplotarea x from -2 to 2, y from -1 to 1
+\axis left shiftedto x=0 ticks withvalues {$-1$} {$1$} / at -1 1 / /
+\axis bottom shiftedto y=0 ticks from -2 to 2 by 1 /
+\axis bottom shiftedto y=0 ticks withvalues {$2$} / at 2 / /
+\plot -2.000 -0.964 -1.900 -0.956 -1.800 -0.947 -1.700 -0.935 -1.600 -0.922 
+-1.500 -0.905 -1.400 -0.885 -1.300 -0.862 -1.200 -0.834 -1.100 -0.800 
+-1.000 -0.762 -0.900 -0.716 -0.800 -0.664 -0.700 -0.604 -0.600 -0.537 
+-0.500 -0.462 -0.400 -0.380 -0.300 -0.291 -0.200 -0.197 -0.100 -0.100 
+0.000 0.000 0.100 0.100 0.200 0.197 0.300 0.291 0.400 0.380 
+0.500 0.462 0.600 0.537 0.700 0.604 0.800 0.664 0.900 0.716 
+1.000 0.762 1.100 0.800 1.200 0.834 1.300 0.862 1.400 0.885 
+1.500 0.905 1.600 0.922 1.700 0.935 1.800 0.947 1.900 0.956 
+2.000 0.964 /
+\setcoordinatesystem units <0.6truecm,0.6truecm> point at -15 0
+\setplotarea x from -2 to 2, y from 0 to 1
+\axis left shiftedto x=0 ticks withvalues {$1$} / at 1 / /
+\axis bottom shiftedto y=0 ticks from -2 to 2 by 1 /
+\axis bottom shiftedto y=0 ticks withvalues {$-2$} {$2$} / at -2 2 / /
+\plot -2.000 0.266 -1.900 0.293 -1.800 0.322 -1.700 0.354 -1.600 0.388 
+-1.500 0.425 -1.400 0.465 -1.300 0.507 -1.200 0.552 -1.100 0.599 
+-1.000 0.648 -0.900 0.698 -0.800 0.748 -0.700 0.797 -0.600 0.844 
+-0.500 0.887 -0.400 0.925 -0.300 0.957 -0.200 0.980 -0.100 0.995 
+0.000 1.000 0.100 0.995 0.200 0.980 0.300 0.957 0.400 0.925 
+0.500 0.887 0.600 0.844 0.700 0.797 0.800 0.748 0.900 0.698 
+1.000 0.648 1.100 0.599 1.200 0.552 1.300 0.507 1.400 0.465 
+1.500 0.425 1.600 0.388 1.700 0.354 1.800 0.322 1.900 0.293 
+2.000 0.266 /
+\setcoordinatesystem units <0.6truecm,0.6truecm> point at -20 0
+\setplotarea x from -2 to 2, y from -4 to 4
+\axis left shiftedto x=0 ticks withvalues {$-4$} {$-2$}
+{$4$} {$2$} / at -4  -2  4 2 / /
+\axis left shiftedto x=0 ticks from -4 to 4 by 1 /
+\axis bottom shiftedto y=0 ticks from -2 to 2 by 1 /
+\axis bottom shiftedto y=0 ticks withvalues {$-2$} {$2$} / at -2 2 / /
+\plot -2.000 -0.276 -1.912 -0.302 -1.825 -0.331 -1.738 -0.363 -1.650 -0.399 
+-1.562 -0.438 -1.475 -0.483 -1.388 -0.533 -1.300 -0.589 -1.212 -0.653 
+-1.125 -0.726 -1.038 -0.810 -0.950 -0.910 -0.862 -1.027 -0.775 -1.170 
+-0.688 -1.346 -0.600 -1.571 -0.512 -1.868 -0.425 -2.284 -0.338 -2.907 
+-0.250 -3.959 /
+\plot 0.250 3.959 0.338 2.907 0.425 2.284 0.512 1.868 0.600 1.571 
+0.688 1.346 0.775 1.170 0.862 1.027 0.950 0.910 1.038 0.810 
+1.125 0.726 1.212 0.653 1.300 0.589 1.388 0.533 1.475 0.483 
+1.562 0.438 1.650 0.399 1.738 0.363 1.825 0.331 1.912 0.302 
+2.000 0.276 /
+\setcoordinatesystem units <0.6truecm,0.6truecm> point at -25 0
+\setplotarea x from -2 to 2, y from -4 to 4
+\axis left shiftedto x=0 ticks withvalues {$-4$} {$-2$}
+{$4$} {$2$} / at -4  -2  4 2 / /
+\axis left shiftedto x=0 ticks from -4 to 4 by 1 /
+\axis bottom shiftedto y=0 ticks from -2 to 2 by 1 /
+\axis bottom shiftedto y=0 ticks withvalues {$-2$} {$2$} / at -2 2 / /
+\plot -2.000 -1.037 -1.912 -1.045 -1.825 -1.053 -1.738 -1.064 -1.650 -1.077 
+-1.562 -1.092 -1.475 -1.110 -1.388 -1.133 -1.300 -1.160 -1.212 -1.194 
+-1.125 -1.236 -1.038 -1.287 -0.950 -1.352 -0.862 -1.434 -0.775 -1.539 
+-0.688 -1.677 -0.600 -1.862 -0.512 -2.119 -0.425 -2.493 -0.338 -3.075 
+-0.250 -4.083 /
+\plot 0.250 4.083 0.338 3.075 0.425 2.493 0.512 2.119 0.600 1.862 
+0.688 1.677 0.775 1.539 0.862 1.434 0.950 1.352 1.038 1.287 
+1.125 1.236 1.212 1.194 1.300 1.160 1.388 1.133 1.475 1.110 
+1.562 1.092 1.650 1.077 1.738 1.064 1.825 1.053 1.912 1.045 
+2.000 1.037 /
+\endpicture}
+\figrdef{fig:hyperbolic functions}
+\endfigure{The hyperbolic functions: cosh, sinh, tanh, sech, csch, coth.}
+
+% \footnote{The notation here may seem a bit strange. At first
+% glance, it is not at all obvious that the hyperbolic functions have
+% anything to do with the trigonometric functions. The connection
+% becomes clearest in the context of the theory of complex variables
+% which is a bit beyond the scope of our main discussion. It turns out
+% that
+% \begin{equation} \cos x +i\sin x = e^{ix } \end{equation}
+% where $i^2 =-1 $ and $x$ is any complex number. (Of course, the
+% expressions $\cos x $, $\sin x$, and $e^{ix} $ have to be defined
+% properly when $x$ is a nonreal number.)
+% 
+% From there it can be shown that $\cos x =\frac{e^{ix } + e^{-ix}
+% }{2} $ and hence $\cos x = \cosh (ix) $. Similarly, $i\sin x = \sinh
+% (ix) $.} 
+
+Certainly the hyperbolic functions do not closely resemble the
+trigonometric functions graphically. But they do have analogous
+properties, beginning with the following identity.
+
+
+\begin{theorem} For all $x$ in $\R$, $\cosh ^2 x -\sinh ^2 x = 1$.
+\begin{proof} The proof is a straightforward computation:
+$$\cosh ^2 x -\sinh ^2 x =
+ {(e^x +e^{-x} )^2\over 4} -{(e^x -e^{-x} )^2\over 4}=
+ {e^{2x} + 2 + e^{-2x } - e^{2x } + 2 - e^{-2x}\over 4}=
+ {4\over 4} = 1.
+$$
+\end{proof}
+
+This immediately gives two additional identities:
+$$1-\tanh^2 x =\sech^2 x\qquad\hbox{and}\qquad
+\coth^2 x - 1  =\csch^2 x.$$
+
+The identity of the theorem also helps to provide a geometric
+motivation. Recall that the graph of $x^2 -y^2 =1 $ is a hyperbola
+with asymptotes $x=\pm y $ whose $x$-intercepts are $\pm 1 $. If
+$(x,y)$ is a point on the on the right half of the hyperbola, and if
+we let $x=\cosh t$, then
+$y=\pm\sqrt{x^2-1}=\pm\sqrt{\cosh^2x-1}=\pm\sinh t$. So for some
+suitable $t$, $\cosh t$ and $\sinh t$ are the coordinates of a typical
+point on the hyperbola. In fact, it turns out that $t$ is twice the
+area shown in the first graph of 
+figure~\xrefn{fig:geometric def trigh}.  Even
+this is analogous to trigonometry; $\cos t$ and $\sin t$ are the
+coordinates of a typical point on the unit circle, and $t$ is twice
+the area shown in the second graph of figure~\xrefn{fig:geometric def
+trigh}. 
+
+\figure
+\hbox to \hsize{\hfill
+\tikzpicture[domain=0:3,x=6mm,y=6mm,baseline=0]
+\draw[->] (0,0) -- (3,0) ;
+\draw[->] (0,-3) -- (0,3) ;
+\foreach \x in {1,2,3} \draw (\x,0) -- (\x,-2pt) node[anchor=north] {\eightpoint
+ $\x$};
+\foreach \y in {-3,-2,-1,0,1,2,3} \draw (0,\y) -- (-2pt,\y) node[anchor=east]
+{\eightpoint $\y$};
+\node[anchor=west] at (2,1.3) {$(\cosh t,\sinh t)$};
+\global\advance\gpnum by 1
+\draw[color=black] plot[parametric,id=\the\gpnum,domain=-1:1] 
+function{1+2*t**2,2*t*sqrt(t**2+1)};
+\draw (0,0) -- (2,1.732); 
+\gpad
+\fill[opacity=0.5,fill=red!20] 
+(0,0) -- (1,0) 
+plot[parametric,id=\the\gpnum,domain=0:.707]
+function{1+2*t**2,2*t*sqrt(t**2+1);} -- (0,0);
+\endtikzpicture
+\hskip2cm
+\tikzpicture[domain=-1.2:1.2,baseline=0]
+\draw[->] (-1.2,0) -- (1.2,0) ;
+\draw[->] (0,-1.2) -- (0,1.2) ;
+\foreach \x in {1} \draw (\x,0) -- (\x,-2pt) node[anchor=north west] {\ninepoint
+ $\x$};
+\draw[color=black] (0,0) circle (1);
+\draw (0,0) -- (0.5,0.886); 
+\fill[opacity=0.5,fill=red!20] 
+(0,0) -- (1,0) arc (0:60:1) -- (0,0);
+\endtikzpicture\hfill}
+\figrdef{fig:geometric def trigh}
+\endfigure{Geometric definitions of sin, cos, sinh, cosh.}
+
+Given the definitions of the hyperbolic functions, finding their
+derivatives is straightforward. Here again we see similarities to the
+trigonometric functions.
+
+\begin{theorem} $\ds{d\over dx}\cosh x=\sinh x $ and 
+\label{thm:hyperbolic derivatives}
+$\ds{d\over dx}\sinh x = \cosh x $.
+\begin{proof}
+$\ds{d\over dx}\cosh x= {d\over dx}{e^x +e^{-x}\over 2} = 
+{e^x- e^{-x}\over 2} =\sinh x$, and 
+$\ds\ds{d\over dx}\sinh x = {d\over dx}{e^x -e^{-x}\over 2} = 
+{e^x +e^{-x }\over 2} =\cosh x$.
+\end{proof}
+
+Of course, this immediately gives us two anti-derivatives as well.
+
+Since $\cosh x > 0$, $\sinh x$ is increasing and hence injective, so
+$\sinh x$ has an inverse, $\arcsinh x$. Also, $\sinh x > 0$ when
+$x>0$, so $\cosh x$ is injective on $[0,\infty)$ and has a (partial)
+inverse, $\arccosh x$. The other hyperbolic functions have inverses
+as well, though $\arcsech x$ is only a partial inverse. 
+We may compute the derivatives of these functions as we have other
+inverse functions.
+
+\begin{theorem} $\ds{d\over dx}\arcsinh x = {1\over\sqrt{1+x^2}}$.
+\begin{proof}
+Let $y=\arcsinh x$, so $\sinh y=x$. Then 
+$\ds{d\over dx}\sinh y = \cosh(y)\cdot y'  = 1$, and
+so $\ds y' ={1\over\cosh y} ={1\over\sqrt{1 +\sinh^2 y}} =
+{1\over\sqrt{1+x^2}}$.
+\end{proof}
+
+The other derivatives are left to the exercises.
+
+
+\begin{exercises}
+
+\exercise Show that the range of $\sinh x$ is all real
+numbers. (Hint: show that if $y=\sinh x $ then 
+$x =\ln (x+\sqrt{x^2+1})$.) 
+
+\exercise Compute the following limits:
+\begin{itemize} % BADBAD
+
+\item{a.} $ \lim_{x\to \infty } \cosh x$
+\item{b.} $ \lim_{x\to \infty } \sinh x$
+\item{c.} $ \lim_{x\rightarrow \infty } \tanh x$
+\item{d.} $ \lim_{x\rightarrow \infty } (\cosh x -\sinh x)$
+
+\end{itemize}
+
+\exercise Show that the range of $\tanh x$ is $(-1,1) $. What
+are the ranges of $\coth$, $\sech$, and $\csch$? 
+(Use the fact that they are reciprocal functions.) 
+
+\exercise
+\label{exer:sinhid} 
+Prove that for every $x,y\in\R$, $\sinh (x+y)
+=\sinh x \cosh y + \cosh x \sinh y$. Obtain a similar identity for
+$\sinh(x-y)$.
+
+\exercise
+\label{exer:coshid} 
+Prove that for every $x,y\in\R$, $\cosh (x+y) =\cosh x \cosh y + \sinh x
+  \sinh y$. Obtain a similar identity for $\cosh(x-y)$.
+
+\exercise Show that $\ds {d\over dx} (\tanh x) =\sech^2 x$. Compute
+  the derivatives of the remaining hyperbolic functions as well.
+
+\exercise Sketch the graphs of all six hyperbolic functions.
+  You will likely find the discussion following 
+theorem~\xrefn{thm:hyperbolic derivatives} helpful. 
+
+\exercise What are the domains of the six inverse hyperbolic
+functions?
+
+\exercise Sketch the graphs of all six inverse hyperbolic
+  functions. 
+
+\noindent
+The following four exercises expand on the geometric interpretation
+of the hyperbolic functions. Refer to figure~\xrefn{fig:geometric def trigh}.
+
+
+\exercise Use exercises~\xrefn{exer:sinhid} and~\xrefn{exer:coshid} to
+show that $\sinh(2x)=2\sinh x \cosh x$ and $\cosh(2x)=\cosh^2 x
++\sinh^2 x$ for every $x$.  Conclude that $(\cosh (2x) -1)/2 = \sinh
+^2 x$ $x$.
+
+\exercise
+Compute $\int \sqrt{x^2 -1}\,dx $. (Hint: make the substitution
+$u=\arccosh x$ and then use the preceding exercise.)
+
+\exercise  Fix $t>0$.
+  Sketch the region $R$ in the right half plane bounded by the curves 
+$y=\tanh t$, $y=-\tanh t$,  and $y^2-x^2 =1$. Note well: $t$ is fixed,
+the plane is the $x$-$y$ plane.
+
+\exercise Prove that the area of $R$ is $t$.
+
+
+\end{exercises}
+\endinput

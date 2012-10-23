@@ -1,0 +1,148 @@
+\section{The Power Rule}{}{}
+\index{power rule}
+
+We start with the derivative of a power function\index{power
+function}, $\ds f(x)=x^n$. Here $n$ is a number of any kind: integer,
+rational, positive, negative, even irrational, as in $\ds x^\pi$. We have
+already computed some simple examples, so the formula should not be a
+complete surprise:
+$${d\over dx}x^n = nx^{n-1}.$$
+It is not easy to show this is true for any $n$. We will do some of
+the easier cases now, and discuss the rest later.
+
+The easiest, and most common, is the case that $n$ is a positive
+integer. To compute the derivative we need to compute the following
+limit:
+$${d\over dx}x^n = \lim_{\Delta x\to0} {(x+\Delta x)^n-x^n\over \Delta
+  x}.
+$$
+For a specific, fairly small value of $n$, we could do this by
+straightforward algebra.
+
+\begin{example}
+Find the derivative of $\ds f(x)=x^3$.
+\begin{align*}
+{d\over dx}x^3 &= \lim_{\Delta x\to0} {(x+\Delta x)^3-x^3\over \Delta
+  x}. \\
+&=\lim_{\Delta x\to0} {x^3+3x^2\Delta x+3x\Delta x^2 + \Delta x^3
+-x^3\over \Delta x}. \\
+&=\lim_{\Delta x\to0}{3x^2\Delta x+3x\Delta x^2 + \Delta x^3\over \Delta x}. \\
+&=\lim_{\Delta x\to0}3x^2+3x\Delta x + \Delta x^2 = 3x^2. \\
+\end{align*}
+\vskip-10pt
+\end{example}
+
+The general case is really not much harder as long as we don't try to
+do too much. The key is understanding what happens when $\ds (x+\Delta x)^n$
+is multiplied out:
+$$(x+\Delta x)^n=x^n + nx^{n-1}\Delta x + a_2x^{n-2}\Delta x^2+\cdots+
++a_{n-1}x\Delta x^{n-1} + \Delta x^n.$$
+We know that multiplying out will give a large number of terms all of
+the form $\ds x^i\Delta x^j$, and in fact that $i+j=n$ in every term. One
+way to see this is to understand that one method for multiplying out 
+$\ds (x+\Delta x)^n$ is the following: In every $(x+\Delta x)$ factor,
+pick either the $x$ or the $\Delta x$, then multiply the $n$ choices
+together; do this in all possible ways. For example, for 
+$\ds (x+\Delta x)^3$, there are eight possible ways to do this:
+\begin{align*}
+(x+\Delta x)(x+\Delta x)(x+\Delta x)&=xxx + xx\Delta x + x\Delta x x
++ x\Delta x \Delta x \\
+&\qquad+ \Delta x xx + \Delta xx\Delta x + \Delta x\Delta x x
++ \Delta x\Delta x \Delta x \\
+&= x^3 + x^2\Delta x +x^2\Delta x +x\Delta x^2 \\
+&\quad+x^2\Delta x +x\Delta x^2 +x\Delta x^2 +\Delta x^3 \\
+&=x^3 + 3x^2\Delta x + 3x\Delta x^2+\Delta x^3 \\
+\end{align*}
+No matter what $n$ is, there are $n$ ways to pick $\Delta x$ in one
+factor and $x$ in the remaining $n-1$ factors; this means one term is
+$\ds nx^{n-1}\Delta x$. The other coefficients are somewhat harder to
+understand, but we don't really need them, so in the formula above
+they have simply been called $\ds a_2$, $\ds a_3$, and so on. We know that every
+one of these terms contains $\Delta x$ to at least the power 2. Now
+let's look at the limit:
+\begin{align*}
+{d\over dx}x^n &= \lim_{\Delta x\to0} {(x+\Delta x)^n-x^n\over \Delta
+  x} \\
+&=\lim_{\Delta x\to0} {x^n + nx^{n-1}\Delta x + a_2x^{n-2}\Delta x^2+\cdots+
+a_{n-1}x\Delta x^{n-1} + \Delta x^n-x^n\over \Delta x} \\
+&=\lim_{\Delta x\to0} {nx^{n-1}\Delta x + a_2x^{n-2}\Delta x^2+\cdots+
+a_{n-1}x\Delta x^{n-1} + \Delta x^n\over \Delta x} \\
+&=\lim_{\Delta x\to0} nx^{n-1} + a_2x^{n-2}\Delta x+\cdots+
+a_{n-1}x\Delta x^{n-2} + \Delta x^{n-1} = nx^{n-1}. \\
+\end{align*}
+
+Now without much trouble we can verify the formula for negative
+integers. First let's look at an example:
+
+\begin{example} Find the derivative of $\ds y=x^{-3}$. Using the formula,
+$\ds y'=-3x^{-3-1}=-3x^{-4}$. 
+\end{example}
+
+Here is the general computation. Suppose $n$ is a negative integer;
+the algebra is easier to follow if we use $n=-m$ in the computation,
+where $m$ is a positive integer.
+\begin{align*}
+{d\over dx}x^n &= {d\over dx}x^{-m} =
+\lim_{\Delta x\to0} {(x+\Delta x)^{-m}-x^{-m}\over \Delta
+  x} \\
+&=\lim_{\Delta x\to0} { {1\over (x+\Delta x)^m} - {1\over x^m} \over
+  \Delta x}  \\
+&=\lim_{\Delta x\to0} { x^m - (x+\Delta x)^m \over
+(x+\Delta x)^m x^m \Delta x}  \\
+&=\lim_{\Delta x\to0} { x^m - (x^m + mx^{m-1}\Delta x + a_2x^{m-2}\Delta x^2+\cdots+
+a_{m-1}x\Delta x^{m-1} + \Delta x^m)\over
+(x+\Delta x)^m x^m \Delta x}  \\
+&=\lim_{\Delta x\to0} { -mx^{m-1} - a_2x^{m-2}\Delta x-\cdots-
+a_{m-1}x\Delta x^{m-2} - \Delta x^{m-1})\over
+(x+\Delta x)^m x^m}  \\
+&={ -mx^{m-1} \over x^mx^m}=
+{ -mx^{m-1} \over x^{2m}}=
+-mx^{m-1-2m}= nx^{-m-1} = nx^{n-1}. \\
+\end{align*}
+
+We will later see why the other cases of the power rule work, but from
+now on we will use the power rule whenever $n$ is any real number.
+Let's note here a simple case in which the power rule applies, or
+almost applies, but is not really needed. Suppose that $f(x)=1$;
+remember that this ``1'' is a function, not ``merely'' a number, and
+that $f(x)=1$ has a graph that is a horizontal line, with slope zero
+everywhere. So we know that $f'(x)=0$. We might also write $\ds f(x)=x^0$,
+though there is some question about just what this means at $x=0$. If
+we apply the power rule, we get $\ds f'(x)=0x^{-1}=0/x=0$, again noting
+that there is a problem at $x=0$. So the power rule ``works'' in this
+case, but it's really best to just remember that the derivative of any
+constant function is zero.
+
+\begin{exercises}
+
+Find the derivatives of the given functions.
+
+\twocol
+
+\exercise $\ds x^{100}$
+\begin{answer} $\ds 100x^{99}$
+\end{answer}
+
+\exercise $\ds x^{-100}$
+\begin{answer} $\ds -100x^{-101}$
+\end{answer}
+
+\exercise $\displaystyle {1\over x^5}$
+\begin{answer} $\ds -5x^{-6}$
+\end{answer}
+
+\exercise $\ds x^\pi$
+\begin{answer} $\ds \pi x^{\pi-1}$
+\end{answer}
+
+\exercise $\ds x^{3/4}$
+\begin{answer} $\ds (3/4)x^{-1/4}$
+\end{answer}
+
+\exercise $\ds x^{-9/7}$
+\begin{answer} $\ds -(9/7)x^{-16/7}$
+\end{answer}
+
+\endtwocol
+
+\end{exercises}

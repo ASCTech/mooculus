@@ -1,0 +1,227 @@
+\section{Some Properties of Integrals}{}{}
+\nobreak
+Suppose an object moves so that its speed, or more properly velocity,
+is given by $\ds v(t)=-t^2+5t$, as shown in figure~\xrefn{fig:speed can be
+negative}. Let's examine the motion of this object carefully. We know
+that the velocity is the derivative of position, so position is 
+given by $\ds s(t)=-t^3/3+5t^2/2+C$. Let's suppose that at time $t=0$ the
+object is at position 0, so $\ds s(t)=-t^3/3+5t^2/2$; this function is
+also pictured in figure~\xrefn{fig:speed can be
+negative}.
+
+\figure
+\vbox{\beginpicture
+\normalgraphs
+\ninepoint
+\setcoordinatesystem units <1truecm,0.4truecm>
+\setplotarea x from 0 to 6, y from -6 to 6.4
+\axis left shiftedto x=0 ticks length <2pt> numbered from -6 to 6 by 2 /
+\axis bottom shiftedto y=0 ticks length <2pt> numbered from 1 to 6 by 1 /
+\setquadratic
+\plot 0.000 0.000 0.150 0.728 0.300 1.410 0.450 2.048 0.600 2.640 
+0.750 3.188 0.900 3.690 1.050 4.148 1.200 4.560 1.350 4.928 
+1.500 5.250 1.650 5.528 1.800 5.760 1.950 5.948 2.100 6.090 
+2.250 6.188 2.400 6.240 2.550 6.248 2.700 6.210 2.850 6.128 
+3.000 6.000 3.150 5.828 3.300 5.610 3.450 5.348 3.600 5.040 
+3.750 4.688 3.900 4.290 4.050 3.848 4.200 3.360 4.350 2.828 
+4.500 2.250 4.650 1.628 4.800 0.960 4.950 0.248 5.100 -0.510 
+5.250 -1.312 5.400 -2.160 5.550 -3.052 5.700 -3.990 5.850 -4.972 
+6.000 -6.000  /
+\setcoordinatesystem units <1truecm,0.2truecm> point at -8 12
+\setplotarea x from 0 to 6, y from 0 to 22
+\axis left shiftedto x=0 ticks length <2pt> numbered from 0 to 22 by 5 /
+\axis bottom shiftedto y=0 ticks length <2pt> numbered from 1 to 6 by 1 /
+\setquadratic
+\plot 0.000 0.000 0.150 0.055 0.300 0.216 0.450 0.476 0.600 0.828 
+0.750 1.266 0.900 1.782 1.050 2.370 1.200 3.024 1.350 3.736 
+1.500 4.500 1.650 5.309 1.800 6.156 1.950 7.035 2.100 7.938 
+2.250 8.859 2.400 9.792 2.550 10.729 2.700 11.664 2.850 12.590 
+3.000 13.500 3.150 14.388 3.300 15.246 3.450 16.068 3.600 16.848 
+3.750 17.578 3.900 18.252 4.050 18.863 4.200 19.404 4.350 19.869 
+4.500 20.250 4.650 20.541 4.800 20.736 4.950 20.827 5.100 20.808 
+5.250 20.672 5.400 20.412 5.550 20.022 5.700 19.494 5.850 18.822 
+6.000 18.000  /
+\endpicture}
+\figrdef{fig:speed can be negative}
+\endfigure{The velocity of an object and its position.}
+
+Between $t=0$ and $t=5$ the velocity is positive, so the object moves
+away from the starting point, until it is a bit past position 20. Then
+the velocity becomes negative and the object moves back toward its
+starting point. The position of the object at $t=5$ is exactly 
+$s(5)=125/6$, and at $t=6$ it is $s(6)=18$. The total distance
+traveled by the object is therefore $125/6 + (125/6 - 18) =
+71/3\approx 23.7$. 
+
+As we have seen, we can also compute distance traveled with an
+integral; let's try it.
+$$
+  \int_0^6 v(t)\,dt = \int_0^6 -t^2+5t\,dt = 
+\left.{-t^3\over 3}+{5\over2}t^2\right|_0^6  = 
+18.
+$$
+What went wrong? Well, nothing really, except that it's not really
+true after all that ``we can also compute distance traveled with an
+integral''. Instead, as you might guess from this example, the
+integral actually computes the {\it net\/} distance traveled, that is,
+the difference between the starting and ending point.
+
+As we have already seen,
+$$
+  \int_0^6 v(t)\,dt=\int_0^5 v(t)\,dt+\int_5^6 v(t)\,dt.
+$$
+Computing the two integrals on the right (do it!) gives
+$125/6$ and $-17/6$, and the sum of these is indeed 18. But what does
+that negative sign mean? It means precisely what you might think: it
+means that the object moves backwards. To get the total distance
+traveled we can add $125/6+17/6=71/3$, the same answer we got before.
+
+Remember that we can also interpret an integral as measuring an area,
+but now we see that this too is a little more complicated that we have
+suspected. The area under the curve $v(t)$ from 0 to 5 is given by 
+$$
+  \int_0^5 v(t)\,dt={125\over6},
+$$
+and the ``area'' from 5 to 6 is 
+$$
+  \int_5^6 v(t)\,dt=-{17\over 6}.
+$$
+In other words, the area between the $x$-axis and the curve, but under
+the $x$-axis, ``counts as negative area''. So the integral
+$$
+  \int_0^6 v(t)\,dt=18
+$$ 
+measures ``net area'', the area above the axis minus the (positive)
+area below the axis.
+
+If we recall that the integral is the limit of a certain kind of sum,
+this behavior is not surprising. Recall the sort of sum involved:
+$$
+  \sum_{i=0}^{n-1} v(t_i)\Delta t.
+$$
+In each term $v(t)\Delta t$ the $\Delta t$ is positive, but if
+$\ds v(t_i)$ is negative then the term is negative. If over an entire
+interval, like 5 to 6, the function is always negative, then the
+entire sum is negative. In terms of area, $v(t)\Delta t$ is then a
+negative height times a positive width, giving a negative rectangle
+``area''. 
+
+So now we see that when evaluating $$\ds\int_5^6 v(t)\,dt=-{17\over 6}$$
+by finding an antiderivative, substituting, and subtracting, we get a
+surprising answer, but one that turns out to make sense.
+
+Let's now try something a bit different:
+$$
+  \int_6^5 v(t)\,dt=\left.{-t^3\over 3}+{5\over2}t^2\right|_6^5 =
+  {-5^3\over 3}+{5\over2}5^2-{-6^3\over 3}-{5\over2}6^2 ={17\over 6}.
+$$
+Here we simply interchanged the limits 5 and 6, so of course when we
+substitute and subtract we're subtracting in the opposite order and we
+end up multiplying the answer by $-1$. This too makes sense in terms
+of the underlying sum, though it takes a bit more thought. Recall that
+in the sum
+$$
+  \sum_{i=0}^{n-1} v(t_i)\Delta t,
+$$
+the $\Delta t$ is the ``length'' of each little subinterval, but more
+precisely we could say that $\ds \Delta t = t_{i+1}-t_i$, the difference
+between two endpoints of a subinterval. We have until now assumed that
+we were working left to right, but could as well number the
+subintervals from right to left, so that $\ds t_0=b$ and $\ds t_n=a$.
+Then $\ds \Delta t=t_{i+1}-t_i$ is negative and
+in 
+$$
+  \int_6^5 v(t)\,dt=\sum_{i=0}^{n-1} v(t_i)\Delta t,
+$$
+the values $\ds v(t_i)$ are negative but also $\Delta t$ is negative, so all
+terms are positive again. On the other hand, in
+$$
+  \int_5^0 v(t)\,dt=\sum_{i=0}^{n-1} v(t_i)\Delta t,
+$$
+the values $\ds v(t_i)$ are positive but $\Delta t$ is negative,and we get
+a negative result:
+$$
+  \int_5^0 v(t)\,dt=\left.{-t^3\over 3}+{5\over2}t^2\right|_5^0 =
+  0-{-5^3\over 3}-{5\over2}5^2 = -{125\over6}.
+$$
+
+Finally we note one simple property of integrals:
+$$
+  \int_a^b f(x)+g(x)\,dx=\int_a^b f(x)\,dx+\int_a^b g(x)\,dx.
+$$
+This is easy to understand once you recall that
+$(F(x)+G(x))'=F'(x)+G'(x)$. Hence, if $F'(x)=f(x)$ and $G'(x)=g(x)$,
+then
+$$
+  \eqalign{
+  \int_a^b f(x)+g(x)\,dx&=\left.(F(x)+G(x))\right|_a^b \\
+  &=F(b)+G(b)-F(a)-G(a) \\
+  &=F(b)-F(a)+G(b)-G(a) \\
+  &=\left.F(x)\right|_a^b+\left.G(x)\right|_a^b \\
+  &=\int_a^b f(x)\,dx+\int_a^b g(x)\,dx. \\
+  }
+$$
+
+In summary, we will frequently use these properties of 
+\index{properties of integrals}\index{integral!properties of}integrals:
+$$\displaylines{
+  \int_a^b f(x)\,dx = \int_a^c f(x)\,dx + \int_c^b f(x)\,dx \\
+  \int_a^b f(x)+g(x)\,dx=\int_a^b f(x)\,dx+\int_a^b g(x)\,dx \\
+  \int_a^b f(x)\,dx=-\int_b^a f(x)\,dx \\
+}$$
+and if $a<b$ and $f(x)\le 0$ on $[a,b]$ then
+$$
+  \int_a^b f(x)\,dx\le 0$$
+and in fact
+$$
+  \int_a^b f(x)\,dx=-\int_a^b |f(x)|\,dx.
+$$
+
+\begin{exercises}
+
+\exercise An object moves so that its velocity at time $t$ is
+$v(t)=-9.8t+20$ m/s. Describe the motion of the object between $t=0$ and
+$t=5$, find the total distance traveled by the object during that
+time, and find the net distance traveled.
+\begin{answer} It rises until $t=100/49$, then falls. The position of the
+object at time $t$ is $\ds s(t)=-4.9t^2+20t+k$. The net distance traveled
+is $-45/2$, that is, it ends up $45/2$ meters below where it started.
+The total distance traveled is $6205/98$ meters. 
+\end{answer}
+
+\exercise An object moves so that its velocity at time $t$ is $v(t)=\sin t$.
+Set up and evaluate a single definite integral to compute the
+net distance traveled between $t=0$ and $t=2\pi$.
+\begin{answer} $\ds\int_0^{2\pi}\sin t\,dt=0$
+\end{answer}
+
+\exercise An object moves so that its velocity at time $t$ is
+$v(t)=1+2\sin t$ m/s. Find the net distance traveled by the object
+between $t=0$ and $t=2\pi$, and find the total distance traveled
+during the same period.
+\begin{answer} net: $2\pi$, total: $\ds 2\pi/3+4\sqrt3$ 
+\end{answer}
+
+\exercise Consider the function $f(x)=(x+2)(x+1)(x-1)(x-2)$ on
+$[-2,2]$. Find the total area between the curve and the $x$-axis
+(measuring all area as positive).
+\begin{answer} $8$
+\end{answer}
+
+\exercise Consider the function $\ds f(x)=x^2-3x+2$ on
+$[0,4]$. Find the total area between the curve and the $x$-axis
+(measuring all area as positive).
+\begin{answer} $17/3$
+\end{answer}
+
+\exercise Evaluate the three integrals:
+$$
+  A=\int_0^3 (-x^2+9)\,dx\qquad B=\int_0^{4} (-x^2+9)\,dx\qquad 
+  C=\int_{4}^3 (-x^2+9)\,dx,
+$$
+and verify that $A=B+C$.
+\begin{answer} $A=18$, $B=44/3$, $C=10/3$
+\end{answer}
+
+\end{exercises}
+

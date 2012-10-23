@@ -1,0 +1,177 @@
+\section{The exponential function}{}{}
+
+In this section, we define what is arguably the single most
+important function in all of mathematics.
+ We have already noted that the
+function $\ln x $ is injective, and therefore it has an inverse.
+
+\begin{definition} The inverse function
+of $\ln(x) $ is
+$y=\exp(x)$, called the {\dfont natural exponential function}.
+\end{definition}
+
+The domain of $\exp(x) $ is all real numbers and the range is $(0,
+\infty)$.  Note that because $\exp(x)$ is the inverse of $\ln(x)$,
+$\exp (\ln x) =x$ for $x>0$, and 
+$\ln (\exp x) = x$ for all $x$.
+Also, our knowledge of $\ln(x)$ tells us immediately that
+$\exp(1) = e$, $\exp(0) = 1$, $\ds\lim _{x\to\infty} \exp x =\infty$, and
+$\ds\lim_{x\to -\infty } \exp x = 0$.
+
+\begin{theorem} $\ds {d\over dx}\exp(x) = \exp(x)$.
+\begin{proof} By the Inverse Function Theorem (\xrefn{thm:inverse function
+theorem}), $\exp(x)$ has a derivative everywhere. The theorem also
+tells us what the derivative is. Alternately, we may compute the
+derivative using implicit differentiation:
+Let $y=\exp x $, so $\ln y =x $. Differentiating
+with respect to $x$ we get
+$\ds {1\over y} {dy\over dx} =1$.
+Hence, ${dy\over dx} = y =\exp x$.
+\end{proof}
+
+\cor Since $\exp x >0 $, $\exp x $ is an
+increasing function whose graph is concave up.
+\end{proof}
+
+The graph of the natural exponential function is indicated in
+figure~\xrefn{fig:graph of exponential function}.
+Compare this to the graph of $\ln x$, 
+figure~\xrefn{fig:graph of natural logarithm}.
+
+\figure
+\vbox{\beginpicture
+\normalgraphs
+\ninepoint
+\setcoordinatesystem units <1.2truecm,1.2truecm>
+\setplotarea x from -2.5 to 2, y from 0 to 6.1
+\axis bottom ticks numbered from -2 to 2 by 1 /
+\axis left shiftedto x=0 ticks numbered from 1 to 6 by 1 /
+\axis left shiftedto x=0 ticks numbered withvalues {$e$} / at 2.718 / /
+\put {$\bullet$} at 1 2.718
+\plot -2.300 0.100 -2.164 0.115 -2.027 0.132 -1.891 0.151 -1.755 0.173 
+-1.618 0.198 -1.482 0.227 -1.346 0.260 -1.209 0.298 -1.073 0.342 
+-0.937 0.392 -0.800 0.449 -0.664 0.515 -0.528 0.590 -0.391 0.676 
+-0.255 0.775 -0.119 0.888 0.018 1.018 0.154 1.166 0.290 1.337 
+0.427 1.532 0.563 1.756 0.699 2.012 0.836 2.306 0.972 2.643 
+1.108 3.029 1.245 3.472 1.381 3.979 1.517 4.560 1.654 5.226 
+1.790 5.989 /
+\endpicture}
+\figrdef{fig:graph of exponential function}
+\endfigure{The graph of $\exp(x)$.}
+
+\cor The general antiderivative of $\exp x $ is $\exp x + C
+$.
+\end{proof}
+
+Of course, the word ``exponential'' already has a mathematical
+meaning, and this meaning extends in a natural way to the exponential
+function $\exp(x)$.
+
+\lem For any rational number
+$q$, $\exp(q) = e^q$.
+
+\begin{proof} Let $y=e^q $. Then
+$\ln y = \ln (e^q ) = q \ln e = q$, and so
+$y= \exp(q)$.
+\end{proof}
+
+In view of this lemma, we usually write $\exp(x)$ as $\ds e^x$
+ for any real number $x$.
+Conveniently, it turns out that the usual
+laws of exponents apply to $\ds e^x$.
+
+\begin{theorem} For every $x,y \in \R$ and
+$q\in\Q$:
+\label{thm:exp rules}
+\begin{itemize} % BADBAD
+
+\item{(a)} $\ds e^{x+y} = e^x e^y $
+
+\item{(b)} $\ds e^{x-y} = e^x/e^y$
+
+\item{(c)} $\ds (e^x )^q = e^{xq} $
+
+\end{itemize}
+
+\begin{proof} Parts (b) and (c) are left as exercises. For part
+(a),
+$\ln (e^x e^y) =\ln e^x + \ln e^y = x +y$, so
+$e^x e^y = e^{x+y }$.
+\end{proof}
+
+\begin{example} Solve $\ds e^{4x+5} - 3 =0$
+for $x$.
+
+If  $\ds e^{4x+5} - 3 =0$ then $\ds 4x+5 =\ln 3$ and
+so $\ds x={\ln 3 -5\over 4}$.
+\end{example}
+
+\begin{example} Find the derivative of $f(x) =e^{x^3 } \sin (4x)$.
+
+By the product and chain rules,
+$f'(x) =3x^2 e^{x^3 } \sin (4x) + 4 e^{x^3 } \cos(4x)$.
+\end{example}
+
+\begin{example} Evaluate $\int x e^{x^2 } dx $.
+
+Let $u=x^2$, so $du = 2x\,dx$. Then
+$$\int x e^{x^2}\,dx={1\over2}\int e^u\,du= {1\over2}e^u=
+{1\over2}e^{x^2}+C.$$
+\vskip-20pt
+\end{example}
+
+\begin{exercises}
+
+\exer Prove parts (b) and (c) of theorem~\xrefn{thm:exp rules}.
+
+
+\exer Solve $\ln (1+ \sqrt{x} ) = 6 $ for  $x$.
+
+
+\exer Solve $\ds e^{x^2} = 8$ for $x$.
+
+
+\exer Solve $\ln (\ln (x) ) = 1 $ for $x$.
+
+\exer Sketch the graph of $\ds f(x) = e^{4x-5 }+ 6 $.
+
+\exer Sketch the graph of $f(x) =3e^{x+6} -4 $.
+
+\exer Find the equation of the tangent line to $f(x) =e^x $
+at $x= a $.
+
+\exer Compute the derivative of $f(x) = 3x^2 e^{5x-6} $.
+
+\exer Compute the derivative of 
+$\ds f(x)= e^x -\left( 1+ x +
+{x^2\over 2} + {x^3\over3!} + \cdots + {x^n\over n!}\right)$.
+
+\exer Prove that $e^x > 1 $ for $x\geq 0$. Then prove that
+$e^x > 1+ x $ for $x\geq 0 $. 
+
+\exer Using the previous two exercises, prove (using mathematical
+induction) that  $\ds e^x > 1+ x +
+{x^2\over 2} + {x^3\over3!} + \cdots + {x^n\over n!}
+=\sum_{k=0 }^n {x^k\over k!}$ for $x\geq 0 $.
+
+\exer Use the preceding exercise to show that $e> 2.7$.
+
+\exer Differentiate $\ds {e^{kx}+ e^{-kx}\over 2} $ with
+respect to $x$.
+
+\exer Compute $\ds\lim_{x\to\infty} {e^x + e^{-x}\over e^x -e^{-x}}$. 
+
+\exer Integrate $5x^4 e^{x^5}$ with respect to
+$x$.
+
+\exer Compute
+$\ds \int_0^{\pi/3} \cos (2x) e^{\sin 2x}\,dx$.
+
+\exer Compute $\ds \int {e^{1/x^2}\over x^3}\,dx$.
+
+\exer Let $\ds F(x) = \int_0^{e^x} e^{t^4}\,dt$. Compute
+$F'(0)$.
+
+\exer If $f(x) =e^{kx}$ what is $f^{(940)}(x)$?
+
+\end{exercises}
