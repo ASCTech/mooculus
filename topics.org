@@ -2,45 +2,102 @@ This is the 1151 schedule; I should be moving the MOOC somewhat faster than it d
 
 * Week 1: Limits, conceptually
 ** 1.4 Review of functions
+*** VIDEO introduction to course format
+*** VIDEO what is a function?
+Physically "build" a function
+*** y = f(x-3) shifts the graph?  
+*** KHAN graph transformations
+*** KHAN lines and slope
+*** VIDEO review trig functions and identities (Direct to khan academy)
 ** 2.1 Idea of limits
-* Week 2: Limits, precisely
+*** VIDEO what is a limit?  plug in nearby values
+*** VIDEO reading limits from a graph
+*** KHAN evaluating limits from a graph, piecewise functions, discontinuous
 ** 2.2 Definition of limits
+*** KHAN start with function square root(X^2+2)/|X| 
+- ask about evaluating this at various points to suggest continuity 
+*** VIDEO one-sided limits
+*** VIDEO relationship between one and two sided limits
+*** VIDEO a limit may not exist
+* Week 2: Limits, precisely
+** 2.7 PRECISE Definition of limits can be avoided
+*** VIDEO epsilon and delta definition
 ** 2.3 Limit laws
+*** VIDEO limit of a sum is the sum of the limits
+ask three different people to do three different multiplication
+problems, all slightly different but with answers nearby each
+other---how do their answers compare?
+I can do this by printing the problem out in giant letters on the
+paper and giving it to them.
+*** VIDEO limit of a product is the product of the limits
+ask three different people to do three different multiplication
+problems, all slightly different but with answers nearby each
+other---how do their answers compare?
+*** VIDEO squeeze theorem
 ** 2.4 Infinite limits
+*** VIDEO definition of limits involving infinity
+*** VIDEO vertical asymptotes
+*** VIDEO limits involving infinity analytically
 * Week 3: Infinity and Continuity
 ** 2.5 Limits at infinity
 ** 2.6 Continuity
+*** VIDEO statement of the intermediate value theorem
+*** DEMO string dropping onto string, find fixed point; map dropping onto floor
+*** VIDEO root finding via bisection; approximate sqrt(2)
 * Week 4: The Derivative
 ** 3.1 Derivative
-** 3.1 More derivativesxs
+*** KHAN line up tangent line with graph
+*** VIDEO what derivatives tell us?  positive derivatives increasing?
+*** VIDEO what is concavity?
+*** KHAN where is this function concave up?  concave down?
+** 3.1 More derivatives
 ** 3.2 Rules of differentiation
 * Week 5: Techniques of Differentiation
 ** MIDTERM
 ** 3.3 Product and quotient rules
+*** KHAN generate a bunch of random problems
 ** 3.4 Derivatives of trig functions
+*** KHAN generate a bunch of random problems
 * Week 6: Chain rule
+*** DEMO physically connect together (lopsided!) gears
 ** 3.5 Derivatives as rates of change
+*** DEMO bouncing ball showing velocity & acceleration
 ** 3.6 Chain rule
+*** KHAN numerical chain rule examples
 ** 3.7 Implicit differentiation
 * Week 7: Derivatives of Transcendental Functions
 ** 3.8 Derivatives of exp and log
+*** KHAN generate a bunch of random problems
 ** 3.9 Derivatives of inverse trig functions
 ** 3.10 Related rates
+*** DEMO lego figure shadow length
 * Week 8: Applications
 ** 3.10 Related rates again
-** 4.1 Maxima and minima
 ** 4.2 What derivatives tell us
-* Week 9: Optimization
-** MIDTERM
+*** KHAN given a function, find an interval where the function is increasing
 ** 4.3 Graphing functions
+*** KHAN which of these graphs is the graph of the derivative?
+*** KHAN click to place critical points; drag four basic pieces into interval?
+*** KHAN antiderivatives of functions defined on disconnected intervals?
+* Week 9: Optimization
+*** VIDEO extreme value theorem (optimal beauty of a statue)
+** MIDTERM
+** 4.1 Maxima and minima
+** 4.4 Optimization problems
 ** 4.4 Optimization problems
 * Week 10: Linear approximation
-** 4.4 Optimization problems
 ** 4.5 Linear approximation and differentials
+*** DEMO volume of orange rind
+*** KHAN numerical integration
 ** 4.6 Mean value theorem
 * Week 11: Antidifferentiation
 ** 4.7 L'hopital's rule
+*** VIDEO intermediate forms
+*** KHAN random exercises: random function, taylor series, subtract off, rewrite rational function
 ** 4.8 Newton's method
+*** VIDEO newton's method
+*** VIDEO newton's method failure ("hope" as one of the steps)
+*** KHAN estimate square roots using newton's method to desired accuracy
 ** 4.9 Antiderivatives
 * Week 12: Integration
 ** 5.1 Approximation area under curve
