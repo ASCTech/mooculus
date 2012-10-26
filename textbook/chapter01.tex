@@ -4,6 +4,44 @@ Much of the mathematics in this chapter will be review for you.  However, the
 examples will be oriented toward applications and so 
 will take some thought.
 
+\begin{marginfigure}
+  \centering
+  \begin{tikzpicture}[x=0.2\marginparwidth,y=0.005\marginparwidth]
+
+  \def\xmin{0}
+  \def\xmax{4.25}
+  \def\ymin{0}
+  \def\ymax{95.0}
+
+  % grid
+  \draw[style=help lines, ystep=10, xstep=1] (\xmin,\ymin) grid (\xmax,\ymax);
+
+  % axes
+  \draw[->] (\xmin,\ymin) -- (\xmax,\ymin) node[right] {$t$};
+  \draw[->] (\xmin,\ymin) -- (\xmin,\ymax) node[above] {$h$};
+
+  % xticks and yticks
+  \foreach \x in {1,2,...,4}
+    \node at (\x, \ymin) [below] {\x};
+  \foreach \y in {10,20,...,90}
+    \node at (\xmin,\y) [left] {\y};
+
+  \draw[color=black] plot[smooth,mark=*,mark size=1pt] (0,80.0);
+  \draw[color=black] plot[smooth,mark=*,mark size=1pt] (1,75.1);
+  \draw[color=black] plot[smooth,mark=*,mark size=1pt] (2,60.4);
+  \draw[color=black] plot[smooth,mark=*,mark size=1pt] (3,35.9);
+  \draw[color=black] plot[smooth,mark=*,mark size=1pt] (4,1.6);
+
+  % generate and plot another a curve y = 0.1 x^2 + 2.5
+  % this generates the files figure.parabola.gnuplot and figure.parabola.table 
+%  \draw[color=red, domain=\xmin:\xmax] plot[id=parabola]
+%  function{0.1*x**2 + 2.5} node [right] {$y=0.1\,x^2 + 2.5$};
+
+\end{tikzpicture}
+  \caption{Height versus time.}
+  \label{fig:data plot}
+\end{marginfigure}
+
 In the $(x,y)$ coordinate system we normally write the $x$-axis
 horizontally, with positive numbers to the right of the origin, and
 the $y$-axis vertically, with positive numbers above the origin.  That
@@ -14,6 +52,23 @@ the $x$- and $y$-axes.  For example, the line joining the origin to
 the point $(a,a)$ makes an angle of 45${}^\circ$ with the $x$-axis
 (and also with the $y$-axis).
 
+\begin{margintable}
+  \centering
+  \begin{tabular}{lr}
+    \toprule
+    $t~\text{(sec)}$ & $s~\text{(meters)}$ \\
+    \midrule
+    0 &80.0 \\
+    1 &75.1 \\
+    2 &60.4 \\
+    3 & 35.9 \\
+    4 & 1.6 \\
+    \bottomrule \\
+  \end{tabular}
+  \caption{A data table.}
+  \label{table:data table}
+\end{margintable}
+
 In applications, often letters other than $x$ and $y$ are used, and
 often different scales are chosen in the horizontal and vertical
 directions.  For example, suppose you drop something from a window,
@@ -23,56 +78,28 @@ second to second.  It is natural to let the letter $t$ denote the time
 letter $h$ denote the height.  For each $t$ (say, at one-second
 intervals) you have a corresponding height $h$.  This information can
 be tabulated, and then plotted on the $(t,h)$ coordinate plane, as
-shown in figure~\xrefn{fig:data plot}.
+shown in Figure~\ref{fig:data plot}.
 
-% BADBAD
-% \figure
-% \vbox{
-% \begintable
-% seconds\| 0 \| 1 \| 2 \| 3\| 4\elt
-% meters\| 80 \| 75.1 \| 60.4 \| 35.9 \| 1.6 \endtable
-% \bsk
-% %\centerline{\epsfysize150pt\epsfbox{124.figAA.ps}}
-% \centerline{\vbox{\beginpicture
-% \normalgraphs
-% \ninepoint
-% \setcoordinatesystem units <2truecm,0.5truemm>
-% \setplotarea x from 0 to 4.2, y from 0 to 90
-% \axis left shiftedto x=0 ticks numbered from 20 to 80 by 20 /
-% \axis bottom shiftedto y=0 ticks numbered from 0 to 4 by 1 /
-% \put {$t$} [l] <3pt,0pt> at 4.2 0
-% \put {$h$} [l] <3pt,0pt> at 0 90
-% \setquadratic
-% \plot 0 80 1 75.1 2 60.4 3 35.9 4 1.6 /
-% \multiput {$\bullet$} at 0 80 1 75.1 2 60.4 3 35.9 4 1.6 /
-% \endpicture}}}
-% \figrdef{fig:data plot}
-% \endfigure{A data plot, height versus time.}
+We use the word ``quadrant''\index{quadrant} for each of the four
+regions into which the plane is divided by the axes: the first
+quadrant is where points have both coordinates positive, or the
+``northeast'' portion of the plot, and the second, third, and fourth
+quadrants are counted off counterclockwise, so the second quadrant is
+the northwest, the third is the southwest, and the fourth is the
+southeast.
 
-
-%----------------------------
-%\begin{center}
-%
-%\begin{minipage}[c]{2in}
-%\begin{tabular}{rr}
-%  \underline{$t~\text{(sec)}$} & \underline{$s~\text{(meters)}$}\\ 
-%              0 &80.0~\\ 1 &75.1~\\ 2 &60.4~\\ 3 & 35.9~\\ 4 & 1.6~
-%\end{tabular}
-%\end{minipage}
-%\begin{minipage}[c]{3in}
-%\begin{psfigure}{3in}{1.5in}{124.figAA.ps}
-%\end{psfigure}
-%\end{minipage}\\
-%
-%\end{center}
-%---------------------------
-
-We use the word ``quadrant'' for each of the four regions into which
-the plane is divided by the axes: the first quadrant is where points
-have both coordinates positive, or the ``northeast'' portion of the
-plot, and the second, third, and fourth quadrants are counted off
-counterclockwise, so the second quadrant is the northwest, the third
-is the southwest, and the fourth is the southeast.
+\begin{marginfigure}
+  \begin{tikzpicture}[x=0.5\marginparwidth,y=0.5\marginparwidth]
+    \draw[->] (0,-1) -- (0,1);
+    \draw[->] (-1,0) -- (1,0);
+    \node at (0.5,0.5) {\large I};
+    \node at (-0.5,0.5) {\large II};
+    \node at (-0.5,-0.5) {\large III};
+    \node at (0.5,-0.5) {\large IV};
+  \end{tikzpicture}
+  \caption{The four quadrants.}
+  \label{figure:quadrants}
+\end{marginfigure}
 
 Suppose we have two points $A$ and $B$ in the $(x,y)$-plane.
 We often want to know the change in $x$-coordinate (also called the

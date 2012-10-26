@@ -92,63 +92,63 @@ Finally, $\ds\bar x = \bar y = {8\over5\pi}$.
 
 \begin{exercises}
 
-\exercise Find the center of mass of a two-dimensional plate 
+\begin{exercise} Find the center of mass of a two-dimensional plate 
 that occupies the square $[0,1]\times[0,1]$
 and has density
 function $xy$.
 \begin{answer} $\bar x=\bar y=2/3$
-\end{answer}
+\end{answer}\end{exercise}
 
-\exercise Find the center of mass of a two-dimensional plate 
+\begin{exercise} Find the center of mass of a two-dimensional plate 
 that occupies the triangle $0\le x\le1$, $0\le y\le x$,
 and has density
 function $xy$.
 \begin{answer} $\bar x=4/5$, $\bar y=8/15$
-\end{answer}
+\end{answer}\end{exercise}
 
-\exercise Find the center of mass of a two-dimensional plate 
+\begin{exercise} Find the center of mass of a two-dimensional plate 
 that occupies the upper unit semicircle centered at $(0,0)$
 and has density
 function $y$.
 \begin{answer} $\bar x=0$, $\bar y=3\pi/16$
-\end{answer}
+\end{answer}\end{exercise}
 
-\exercise Find the center of mass of a two-dimensional plate 
+\begin{exercise} Find the center of mass of a two-dimensional plate 
 that occupies the upper unit semicircle centered at $(0,0)$
 and has density
 function $x^2$.
 \begin{answer} $\bar x=0$, $\bar y=16/(15\pi)$
-\end{answer}
+\end{answer}\end{exercise}
 
 % Albert
-\exercise Find the center of mass of a two-dimensional plate 
+\begin{exercise} Find the center of mass of a two-dimensional plate 
 that occupies the triangle formed by $x=2$, $y=x$, and $y=2x$
 and has density
 function $2x$.
 \begin{answer} $\bar x=3/2$, $\bar y=9/4$
-\end{answer}
+\end{answer}\end{exercise}
 
-\exercise Find the center of mass of a two-dimensional plate 
+\begin{exercise} Find the center of mass of a two-dimensional plate 
 that occupies the triangle formed by $x=0$, $y=x$, and $2x+y=6$
 and has density
 function $\ds x^2$.
 \begin{answer} $\bar x=6/5$, $\bar y=12/5$
-\end{answer}
+\end{answer}\end{exercise}
 
-\exercise Find the center of mass of a two-dimensional plate 
+\begin{exercise} Find the center of mass of a two-dimensional plate 
 that occupies the region enclosed by the parabolas $x=y^2$, $y=x^2$
 and has density
 function $\ds\sqrt{x}$.
 \begin{answer} $\bar x=14/27$, $\bar y=28/55$
-\end{answer}
+\end{answer}\end{exercise}
 
-\exercise Find the centroid of the area in the first quadrant bounded by
+\begin{exercise} Find the centroid of the area in the first quadrant bounded by
  $x^2-8y+4=0$, $x^2=4y$, and $x=0$. (Recall that the centroid\index{centroid}
 is the center of mass when the density is 1 everywhere.)
 \begin{answer} $(3/4,2/5)$
-\end{answer}
+\end{answer}\end{exercise}
 
-\exercise Find the centroid of one loop of the three-leaf rose
+\begin{exercise} Find the centroid of one loop of the three-leaf rose
 $r=\cos(3\theta)$.  (Recall that the centroid\index{centroid} is the
 center of mass when the density is 1 everywhere, and that the mass in
 this case is the same as the area, which was the subject of
@@ -157,17 +157,17 @@ section~\xrefn{sec:Double Integrals in Cylindrical Coordinates}.)  The
 computations of the integrals for the moments $M_x$ and $M_y$ are
 elementary but quite long; Sage can help.
 \begin{answer} $\ds\left({81\sqrt3\over80\pi},0\right)$
-\end{answer}
+\end{answer}\end{exercise}
 
 %/Albert
 
-\exercise Find the center of mass of a two dimensional
+\begin{exercise} Find the center of mass of a two dimensional
 object that occupies the region $0\le x\le \pi$, $0\le y\le \sin x$,
 with density $\sigma=1$.
 \begin{answer} $\bar x=\pi/2$, $\bar y=\pi/8$ 
-\end{answer}
+\end{answer}\end{exercise}
 
-\exercise A two-dimensional object has shape given by 
+\begin{exercise} A two-dimensional object has shape given by 
 $r=1+\cos\theta$ and density $\sigma(r,\theta)=2+\cos\theta$. Set up
 the three integrals required to compute the center of mass.
 \begin{answer} $\ds M=\int_0^{2\pi} \int_0^{1+\cos\theta} (2+\cos\theta)r\,dr\,d\theta$,
@@ -175,9 +175,9 @@ the three integrals required to compute the center of mass.
 $\ds M_x=\int_0^{2\pi} \int_0^{1+\cos\theta} \sin\theta(2+\cos\theta)r^2\,dr\,d\theta$,
 \hfill\break
 $\ds M_y=\int_0^{2\pi} \int_0^{1+\cos\theta} \cos\theta(2+\cos\theta)r^2\,dr\,d\theta$.
-\end{answer}
+\end{answer}\end{exercise}
 
-\exercise A two-dimensional object has shape given by 
+\begin{exercise} A two-dimensional object has shape given by 
 $r=\cos\theta$ and density $\sigma(r,\theta)=r+1$. Set up
 the three integrals required to compute the center of mass.
 \begin{answer} $\ds M=\int_{-\pi/2}^{\pi/2} \int_0^{\cos\theta} (r+1)r\,dr\,d\theta$,
@@ -185,9 +185,9 @@ the three integrals required to compute the center of mass.
 $\ds M_x=\int_{-\pi/2}^{\pi/2} \int_0^{\cos\theta} \sin\theta(r+1)r^2\,dr\,d\theta$,
 \hfill\break
 $\ds M_y=\int_{-\pi/2}^{\pi/2} \int_0^{\cos\theta} \cos\theta(r+1)r^2\,dr\,d\theta$.
-\end{answer}
+\end{answer}\end{exercise}
 
-\exercise A two-dimensional object sits inside $r=1+\cos\theta$
+\begin{exercise} A two-dimensional object sits inside $r=1+\cos\theta$
 and outside $r=\cos\theta$, and has density $1$ everywhere.
 Set up
 the integrals required to compute the center of mass.
@@ -199,6 +199,6 @@ r^2\sin\theta\,dr\,d\theta + \int_{\pi/2}^{3\pi/2}\int_0^{1+\cos\theta}r^2\sin\t
 \hfill\break
 $\ds M_y=\int_{-\pi/2}^{\pi/2}\int_{\cos\theta}^{1+\cos\theta}
 r^2\cos\theta\,dr\,d\theta + \int_{\pi/2}^{3\pi/2}\int_0^{1+\cos\theta}r^2\cos\theta\,dr\,d\theta$.
-\end{answer}
+\end{answer}\end{exercise}
 
 \end{exercises}

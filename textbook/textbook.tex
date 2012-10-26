@@ -10,6 +10,8 @@
 
 \setcounter{secnumdepth}{2}
 
+\usepackage{tikz}
+
 \DeclareMathOperator{\arccot}{arccot}
 \DeclareMathOperator{\sech}{sech}
 \DeclareMathOperator{\csch}{csch}
@@ -38,13 +40,41 @@
 
 \newcommand{\xrefn}[1]{\ref{#1}}
 
-\newenvironment{exercises}{\subsection*{Exercises}}{}
-\newcommand{\exercise}{}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\makeatletter
+\newwrite\answer@stream
+\immediate\openout\answer@stream=\jobname.ans
+
+\def\dumpanswer[#1]{\immediate\write\answer@stream{#1}}
+
+\newtoks{\answercontent}
+\usepackage{environ}
+ \NewEnviron{answer}{%
+   \answercontent=\expandafter{\BODY}
+   \dumpanswer[\arabic{exercise}. \the\answercontent]
+ }
+\makeatother
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcounter{exercise}
+\newenvironment{exercises}{%
+\subsection*{Exercises for \textsection\arabic{chapter}.\arabic{section}}
+\setcounter{exercise}{0}
+\dumpanswer[\noexpand\subsection*{Answers for \arabic{chapter}.\arabic{section}}]
+}%
+{}
+\newenvironment{exercise}{
+\begin{enumerate}
+  \setcounter{enumi}{\value{exercise}}
+  \item \addtocounter{exercise}{1}
+}
+{\end{enumerate}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \newenvironment{example}{\subsection*{Example}}{}
 \newenvironment{lemma}{\subsection*{Lemma}}{}
 \newenvironment{remark}[1]{\subsection*{Remark: #1}}{}
-
-\newenvironment{answer}{}{}
 
 \def\beginpicture{\null}
 
@@ -233,6 +263,8 @@ What is calculus?
 %\bibliography{sample-handout}
 %\bibliographystyle{plainnat}
 
+\chapter*{Answers to selected exercises}
+\input{\jobname.ans}
 
 \printindex
 
