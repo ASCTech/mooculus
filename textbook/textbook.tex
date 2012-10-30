@@ -1,4 +1,14 @@
-\documentclass[symmetric,justified,marginals=raggedouter]{tufte-book}
+\documentclass[justified,marginals=raggedouter]{tufte-book}
+\usepackage{mooculus}
+ 
+\geometry{landscape,
+  left=1in,
+  top=1in,
+  textheight=6.5in,
+  textwidth=5in,
+  marginparsep=0.5in,
+  marginparwidth=2.5in}
+
 
 \hypersetup{colorlinks}
 
@@ -19,9 +29,13 @@
 \DeclareMathOperator{\arcsech}{arcsech}
 \DeclareMathOperator{\arccosh}{arccosh}
 
-\usepackage{tgpagella}
+
+
+
+%\usepackage{tgpagella}
+\usepackage[notextcomp]{kpfonts}
 \usepackage[T1]{fontenc}
-\usepackage{mathpazo} 
+%\usepackage{mathpazo} 
 \usepackage{microtype}
 
 % For nicely typeset tabular material
@@ -56,15 +70,21 @@
 \makeatother
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\usepackage{multicol} % Use letters for lists
+\renewcommand{\theenumi}{$(\mathrm{\alph{enumi}})$}
+\renewcommand{\labelenumi}{\theenumi}
+
+\usepackage{enumerate}
+
 \newcounter{exercise}
 \newenvironment{exercises}{%
-\subsection*{Exercises for \textsection\arabic{chapter}.\arabic{section}}
+\subsection*{Exercises for \textsection\arabic{chapter}.\arabic{section}\hrule}
 \setcounter{exercise}{0}
 \dumpanswer[\noexpand\subsection*{Answers for \arabic{chapter}.\arabic{section}}]
 }%
 {}
 \newenvironment{exercise}{
-\begin{enumerate}
+\begin{enumerate}[(1)]
   \setcounter{enumi}{\value{exercise}}
   \item \addtocounter{exercise}{1}
 }
@@ -72,16 +92,16 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\newenvironment{example}{\subsection*{Example}}{}
+%\newenvironment{example}{\subsection*{Example}}{}
 \newenvironment{lemma}{\subsection*{Lemma}}{}
 \newenvironment{remark}[1]{\subsection*{Remark: #1}}{}
 
 \def\beginpicture{\null}
 
-\usepackage{amsthm}
-\newtheorem{theorem}{Theorem}[section]
-\theoremstyle{definition}
-\newtheorem{definition}[theorem]{Definition}
+%\usepackage{amsthm}
+%\newtheorem{theorem}{Theorem}[section]
+%\theoremstyle{definition}
+%\newtheorem{definition}[theorem]{Definition}
 
 
 \def\exam{\null}
@@ -101,7 +121,7 @@
 \def\endtwocol{\end{multicols}}
 
 \title{Calculus}
-\author{David Guichard}
+\author{Mooculus}
 
 \newcommand{\blankpage}{\newpage\hbox{}\thispagestyle{empty}\newpage}
 
