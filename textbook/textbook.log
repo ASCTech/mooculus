@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.8.6)  30 OCT 2012 17:10
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.8.6)  31 OCT 2012 19:17
 entering extended mode
  %&-line parsing enabled.
 **textbook.tex
@@ -1170,18 +1170,16 @@ Package microtype Info: No adjustment of character kerning.
 \MPscratchDim=\dimen207
 \MPnumerator=\count157
 \everyMPtoPDFconversion=\toks45
-) ABD: EveryShipout initializing macros [1
-
-
-] [2
-
-]
+) ABD: EveryShipout initializing macros
 LaTeX Font Info:    Try loading font information for T1+jkpss on input line 174
 .
 
 (/usr/share/texmf-texlive/tex/latex/kpfonts/t1jkpss.fd
 File: t1jkpss.fd 2007/07/16 Fontinst v1.928 font definitions for T1/jkpss.
-) [3{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
+) [1
+
+
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
 LaTeX Font Info:    Try loading font information for TS1+jkp on input line 186.
 
 
@@ -1229,75 +1227,73 @@ LaTeX Font Info:    Try loading font information for U+jkpsyc on input line 191
 
 (/usr/share/texmf-texlive/tex/latex/kpfonts/ujkpsyc.fd
 File: ujkpsyc.fd 2006/08/15 v1.0
-) [4
+) [2
 
 ] (./textbook.toc)
 \tf@toc=\write7
 \openout7 = `textbook.toc'.
 
 
-[5
+[3
 
-] [6
+] [4
 
 ] (./textbook.lof)
 \tf@lof=\write8
 \openout8 = `textbook.lof'.
 
- [7] [8
+ [5] [6
 
 ] (./textbook.lot)
 \tf@lot=\write9
 \openout9 = `textbook.lot'.
 
- [9] [10
+ [7] [8
 
-] [11] [12
+] [9
 
-] [13
+] [10
 
 ]
-[14
-
-] (./chapter01.tex
+(./chapter01.tex
 Chapter 1.
 
-LaTeX Warning: Marginpar on page 15 moved.
+LaTeX Warning: Marginpar on page 11 moved.
 
 
 Underfull \vbox (badness 8113) has occurred while \output is active []
 
- [15
+ [11
 
 ]
 
-LaTeX Warning: Marginpar on page 16 moved.
+LaTeX Warning: Marginpar on page 12 moved.
 
 (./section01.01.tex
 
-LaTeX Warning: Reference `fig:irs' on page 16 undefined on input line 36.
+LaTeX Warning: Reference `fig:irs' on page 12 undefined on input line 36.
 
 Package microtype Info: Character `029' is missing
 (microtype)             in font `T1/jkp/m/sc/10'.
 (microtype)             Ignoring protrusion settings for this character.
-[16]
+[12]
 
 Package amsmath Warning: Foreign command \over;
 (amsmath)                \frac or \genfrac should be used instead
 (amsmath)                 on input line 91.
 
 
-LaTeX Warning: Reference `fig:graphs of lines' on page 17 undefined on input li
+LaTeX Warning: Reference `fig:graphs of lines' on page 13 undefined on input li
 ne 106.
 
-[17] [18] [19]
+[13] [14] [15]
 
-LaTeX Warning: Reference `fig:tax schedule' on page 20 undefined on input line 
+LaTeX Warning: Reference `fig:tax schedule' on page 16 undefined on input line 
 354.
 
-[20]) (./section01.02.tex
+[16]) (./section01.02.tex
 
-LaTeX Warning: Reference `fig:distance between points' on page 21 undefined on 
+LaTeX Warning: Reference `fig:distance between points' on page 17 undefined on 
 input line 11.
 
 
@@ -1308,9 +1304,9 @@ p/m/n/10 (-20) and $\OML/jkp/m/it/10 B \OT1/zplm/m/n/10 = (\OT1/jkp/m/n/10 (-20
 ) 3, 3\OT1/zplm/m/n/10 )$ \T1/jkp/m/n/10 (-20) is $[] \OT1/zplm/m/n/10 =
  []
 
-[21] [22]) (./section01.03.tex
+[17] [18]) (./section01.03.tex
 
-LaTeX Warning: Reference `fig:some graphs' on page 23 undefined on input line 2
+LaTeX Warning: Reference `fig:some graphs' on page 19 undefined on input line 2
 9.
 
 LaTeX Font Info:    Try loading font information for U+fplmbb on input line 89.
@@ -1319,87 +1315,87 @@ LaTeX Font Info:    Try loading font information for U+fplmbb on input line 89.
 File: ufplmbb.fd 2003/10/30 Fontinst v1.914 font definitions for U/fplmbb.
 )
 
-LaTeX Warning: Reference `fig:some graphs' on page 23 undefined on input line 9
+LaTeX Warning: Reference `fig:some graphs' on page 19 undefined on input line 9
 4.
 
-[23]
+[19]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [24]
+ [20]
 
-LaTeX Warning: Reference `fig:upper semicircle' on page 25 undefined on input l
+LaTeX Warning: Reference `fig:upper semicircle' on page 21 undefined on input l
 ine 186.
 
-[25]
+[21]
 
-LaTeX Warning: Reference `fig:piecewise velocity' on page 26 undefined on input
+LaTeX Warning: Reference `fig:piecewise velocity' on page 22 undefined on input
  line 250.
 
-[26] [27]) (./section01.04.tex [28] [29] [30]
+[22] [23]) (./section01.04.tex [24] [25] [26]
 
-LaTeX Warning: Reference `fig:ellipses' on page 31 undefined on input line 121.
+LaTeX Warning: Reference `fig:ellipses' on page 27 undefined on input line 121.
 
 
-)) (./chapter02.tex [31] [32
+)) (./chapter02.tex [27] [28
 
 ]
 Chapter 2.
-(./section02.01.tex [33]
+(./section02.01.tex [29]
 
-LaTeX Warning: Reference `fig:chords' on page 34 undefined on input line 55.
+LaTeX Warning: Reference `fig:chords' on page 30 undefined on input line 55.
 
-[34]
+[30]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [31]
+[32] [33]) (./section02.02.tex [34]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [35]
-[36] [37]) (./section02.02.tex [38]
+[36] [37]) (./section02.03.tex [38]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [39]
-[40] [41]) (./section02.03.tex [42]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [43]
-[44] [45]
+[40] [41]
 Underfull \vbox (badness 8056) detected at line 232
  []
 
 
 Underfull \vbox (badness 2913) has occurred while \output is active []
 
- [46]
-[47] [48]
+ [42]
+[43] [44]
 Underfull \vbox (badness 1028) has occurred while \output is active []
 
- [49]
-[50] [51] [52]
+ [45]
+[46] [47] [48]
 Underfull \hbox (badness 10000) in paragraph at lines 536--537
 
  []
 
-) (./section02.04.tex [53] [54] [55]
+) (./section02.04.tex [49] [50] [51]
 
-LaTeX Warning: Reference `fig:cusp' on page 56 undefined on input line 136.
+LaTeX Warning: Reference `fig:cusp' on page 52 undefined on input line 136.
 
-[56] [57]) (./section02.05.tex
+[52] [53]) (./section02.05.tex
 
-LaTeX Warning: Reference `fig:function types' on page 58 undefined on input lin
+LaTeX Warning: Reference `fig:function types' on page 54 undefined on input lin
 e 9.
 
 
-LaTeX Warning: Reference `fig:function types' on page 58 undefined on input lin
+LaTeX Warning: Reference `fig:function types' on page 54 undefined on input lin
 e 114.
 
-[58] [59]
+[54] [55]
 
-LaTeX Warning: Reference `fig:function types' on page 60 undefined on input lin
+LaTeX Warning: Reference `fig:function types' on page 56 undefined on input lin
 e 219.
 
-[60])) (./chapter03.tex [61] [62
+[56])) (./chapter03.tex [57] [58
 
 ]
 Chapter 3.
-(./section03.01.tex [63] [64] [65]) (./section03.02.tex [66]
+(./section03.01.tex [59] [60] [61]) (./section03.02.tex [62]
 Overfull \hbox (14.87491pt too wide) detected at line 59
 \OML/jkp/m/it/10 f[]\OT1/zplm/m/n/10 (\OML/jkp/m/it/10 x\OT1/zplm/m/n/10 ) = []
 (\OML/jkp/m/it/10 x[] \OT1/zplm/m/n/10 + \OT1/jkp/m/n/10 5\OML/jkp/m/it/10 x[]\
@@ -1412,7 +1408,7 @@ OT1/jkp/m/n/10 5 \OMS/jkp/m/n/10 ^^A \OT1/jkp/m/n/10 2\OML/jkp/m/it/10 x[] \OT1
 p/m/n/10 10\OML/jkp/m/it/10 x\OT1/jkp/m/n/10 .
  []
 
-[67] [68]) (./section03.03.tex
+[63] [64]) (./section03.03.tex
 Overfull \hbox (3.14566pt too wide) in paragraph at lines 32--32
 [] 
  []
@@ -1420,23 +1416,23 @@ Overfull \hbox (3.14566pt too wide) in paragraph at lines 32--32
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [69]
-[70] [71]) (./section03.04.tex [72]
+ [65]
+[66] [67]) (./section03.04.tex [68]
 Overfull \hbox (21.46898pt too wide) detected at line 26
 [][] \OT1/zplm/m/n/10 = \OML/jkp/m/it/10 f\OT1/zplm/m/n/10 (\OML/jkp/m/it/10 x\
 OT1/zplm/m/n/10 )[] + \OML/jkp/m/it/10 f[]\OT1/zplm/m/n/10 (\OML/jkp/m/it/10 x\
 OT1/zplm/m/n/10 )[] = [] = []\OT1/jkp/m/n/10 .
  []
 
-[73] [74]) (./section03.05.tex [75] [76] [77] [78]
+[69] [70]) (./section03.05.tex [71] [72] [73] [74]
 Underfull \vbox (badness 10000) detected at line 180
  []
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [79]
-[80]
+ [75]
+[76]
 Overfull \hbox (22.39006pt too wide) in paragraph at lines 357--362
 []\T1/jkp/m/n/10 (-20) Find an equa-tion for the tan-gent line to $[]$ at $\OT1
 /zplm/m/n/10 (\OT1/jkp/m/n/10 (-20) 1, []\OT1/zplm/m/n/10 )$\T1/jkp/m/n/10 (-20
@@ -1448,19 +1444,19 @@ Underfull \hbox (badness 10000) in paragraph at lines 357--362
 
  []
 
-[81])) (./chapter04.tex [82]
+[77])) (./chapter04.tex [78]
 Chapter 4.
-(./section04.01.tex [83
+(./section04.01.tex [79
 
 ]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [84]
+ [80]
 
-LaTeX Warning: Reference `chap:formulas' on page 85 undefined on input line 197
+LaTeX Warning: Reference `chap:formulas' on page 81 undefined on input line 197
 .
 
-[85]) (./section04.02.tex
+[81]) (./section04.02.tex
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `math shift' on input line 1.
@@ -1485,15 +1481,15 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `math shift' on input line 1.
 
-) (./section04.03.tex [86]
+) (./section04.03.tex [82]
 
-LaTeX Warning: Reference `fig:squeeze' on page 87 undefined on input line 28.
+LaTeX Warning: Reference `fig:squeeze' on page 83 undefined on input line 28.
 
 
-LaTeX Warning: Reference `fig:hard limit' on page 87 undefined on input line 80
+LaTeX Warning: Reference `fig:hard limit' on page 83 undefined on input line 80
 .
 
-[87] [88]) (./section04.04.tex
+[83] [84]) (./section04.04.tex
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `math shift' on input line 1.
@@ -1518,57 +1514,57 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `math shift' on input line 1.
 
-[89]) (./section04.05.tex
+[85]) (./section04.05.tex
 Underfull \vbox (badness 1472) has occurred while \output is active []
 
- [90]
-[91]) (./section04.06.tex [92] [93]) (./section04.07.tex [94] [95] [96]
-[97] [98]
+ [86]
+[87]) (./section04.06.tex [88] [89]) (./section04.07.tex [90] [91] [92]
+[93] [94]
 Underfull \vbox (badness 10000) detected at line 254
  []
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [99]
-[100]) (./section04.08.tex [101]
+ [95]
+[96]) (./section04.08.tex [97]
 Underfull \vbox (badness 5119) detected at line 91
  []
 
 
 Underfull \vbox (badness 3525) has occurred while \output is active []
 
- [102]
+ [98]
 Underfull \vbox (badness 10000) detected at line 110
  []
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [103]
-[104] [105] [106]) (./section04.09.tex
+ [99]
+[100] [101] [102]) (./section04.09.tex
 
-LaTeX Warning: Reference `fig:truncated sine' on page 107 undefined on input li
+LaTeX Warning: Reference `fig:truncated sine' on page 103 undefined on input li
 ne 19.
 
-[107]
+[103]
 
-LaTeX Warning: Reference `fig:truncated sine' on page 108 undefined on input li
+LaTeX Warning: Reference `fig:truncated sine' on page 104 undefined on input li
 ne 135.
 
 
-LaTeX Warning: Reference `fig:truncated cosine' on page 108 undefined on input 
+LaTeX Warning: Reference `fig:truncated cosine' on page 104 undefined on input 
 line 140.
 
 
-LaTeX Warning: Reference `fig:truncated tangent' on page 108 undefined on input
+LaTeX Warning: Reference `fig:truncated tangent' on page 104 undefined on input
  line 190.
 
-[108]) (./section04.10.tex [109] [110] [111]
+[104]) (./section04.10.tex [105] [106] [107]
 Overfull \vbox (0.52174pt too high) detected at line 157
  []
 
-[112] [113] [114]) (./section04.11.tex
+[108] [109] [110]) (./section04.11.tex
 Overfull \hbox (8.93512pt too wide) in paragraph at lines 15--20
 []\T1/jkp/m/n/10 (-20) Notice that $[]$ is even (that is, $[]\OT1/zplm/m/n/10 (
 \OMS/jkp/m/n/10 ^^@\OML/jkp/m/it/10 x\OT1/zplm/m/n/10 ) = [](\OML/jkp/m/it/10 x
@@ -1576,12 +1572,12 @@ Overfull \hbox (8.93512pt too wide) in paragraph at lines 15--20
 0 (\OMS/jkp/m/n/10 ^^@\OML/jkp/m/it/10 x\OT1/zplm/m/n/10 ) =
  []
 
-[115]
+[111]
 
-LaTeX Warning: Reference `fig:hyperbolic functions' on page 116 undefined on in
+LaTeX Warning: Reference `fig:hyperbolic functions' on page 112 undefined on in
 put line 52.
 
-[116]
+[112]
 Overfull \hbox (4.6354pt too wide) detected at line 181
 [][] \OML/jkp/m/it/10 x \OMS/jkp/m/n/10 ^^@ [][] \OML/jkp/m/it/10 x \OT1/zplm/m
 /n/10 = [] \OMS/jkp/m/n/10 ^^@ [] \OT1/zplm/m/n/10 = [] = [] = \OT1/jkp/m/n/10 
@@ -1589,218 +1585,667 @@ Overfull \hbox (4.6354pt too wide) detected at line 181
  []
 
 
-LaTeX Warning: Reference `fig:geometric def trigh' on page 117 undefined on inp
+LaTeX Warning: Reference `fig:geometric def trigh' on page 113 undefined on inp
 ut line 197.
 
 
-LaTeX Warning: Reference `fig:geometric def trigh' on page 117 undefined on inp
+LaTeX Warning: Reference `fig:geometric def trigh' on page 113 undefined on inp
 ut line 201.
 
-[117] [118])) (./chapter05.tex [119] [120
+[113] [114])) (./chapter05.tex [115] [116
 
 ]
 Chapter 5.
 (./section05.01.tex
 
-LaTeX Warning: Reference `fig:max and min points' on page 121 undefined on inpu
+LaTeX Warning: Reference `fig:max and min points' on page 117 undefined on inpu
 t line 23.
 
-[121]
+[117]
 
-LaTeX Warning: Reference `fig:max and min points' on page 122 undefined on inpu
+LaTeX Warning: Reference `fig:max and min points' on page 118 undefined on inpu
 t line 74.
 
 
-LaTeX Warning: Reference `fig:non extremum' on page 122 undefined on input line
+LaTeX Warning: Reference `fig:non extremum' on page 118 undefined on input line
  85.
 
 
-LaTeX Warning: Reference `fig:testing for max and min' on page 122 undefined on
+LaTeX Warning: Reference `fig:testing for max and min' on page 118 undefined on
  input line 126.
 
+[118] [119] [120]) (./section05.02.tex
 
-LaTeX Warning: Reference `thm:evt' on page 122 undefined on input line 132.
-
-[122] [123] [124]) (./section05.02.tex
-
-LaTeX Warning: Reference `fig:max and min points' on page 125 undefined on inpu
+LaTeX Warning: Reference `fig:max and min points' on page 121 undefined on inpu
 t line 23.
 
 
-LaTeX Warning: Reference `fig:non extremum' on page 125 undefined on input line
+LaTeX Warning: Reference `fig:non extremum' on page 121 undefined on input line
  24.
 
-[125]
+[121]
 
-LaTeX Warning: Reference `fig:sin and cos' on page 126 undefined on input line 
+LaTeX Warning: Reference `fig:sin and cos' on page 122 undefined on input line 
 33.
 
-[126]) (./section05.03.tex [127]) (./section05.04.tex
+[122]) (./section05.03.tex [123]) (./section05.04.tex
 
-LaTeX Warning: Reference `fig:concave up' on page 128 undefined on input line 1
+LaTeX Warning: Reference `fig:concave up' on page 124 undefined on input line 1
 7.
 
-[128]
+[124]
 
-LaTeX Warning: Reference `fig:concave down' on page 129 undefined on input line
+LaTeX Warning: Reference `fig:concave down' on page 125 undefined on input line
  46.
 
-[129]) (./section05.05.tex [130] [131])) [132] (./textbook.ans [133
+[125]) (./section05.05.tex [126] [127])) (./chapter06.tex [128]
+Chapter 6.
+(./section06.01.tex
+Underfull \vbox (badness 2478) has occurred while \output is active []
+
+ [129
+
+]
+
+LaTeX Warning: Reference `fig:easy max min' on page 130 undefined on input line
+ 66.
 
 
-] [134]
-Overfull \hbox (49.10059pt too wide) in paragraph at lines 107--115
-\T1/jkp/m/n/10 (-20) 1. $[] \OMS/jkp/m/n/10 ^^@ []$ \T1/jkp/m/n/10 (-20) 2. $[]
- \OMS/jkp/m/n/10 ^^@ []$
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [130]
+[131]
+
+LaTeX Warning: Reference `fig:no global extrema' on page 132 undefined on input
+ line 221.
+
+[132] [133]
+
+LaTeX Warning: Reference `fig:rectangle optimization' on page 134 undefined on 
+input line 316.
+
+
+LaTeX Warning: Reference `fig:cone in sphere' on page 134 undefined on input li
+ne 370.
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [134]
+[135] [136]
+
+LaTeX Warning: Reference `fig:minimize travel time' on page 137 undefined on in
+put line 473.
+
+
+Overfull \hbox (69.913pt too wide) detected at line 502
+$ \OT1/jkp/m/n/10 0 \OT1/zplm/m/n/10 = \OML/jkp/m/it/10 f[]\OT1/zplm/m/n/10 (\O
+ML/jkp/m/it/10 x\OT1/zplm/m/n/10 ) = \OMS/jkp/m/n/10 ^^@[] \OT1/zplm/m/n/10 + [
+][] \OML/jkp/m/it/10 w[] \OT1/zplm/m/n/10 = \OML/jkp/m/it/10 vx[] w[]\OT1/zplm/
+m/n/10 (\OML/jkp/m/it/10 x[] \OT1/zplm/m/n/10 + \OML/jkp/m/it/10 b[]\OT1/zplm/m
+/n/10 ) = \OML/jkp/m/it/10 v[]x[][] w[]b[] \OT1/zplm/m/n/10 = (\OML/jkp/m/it/10
+ v[] \OMS/jkp/m/n/10 ^^@ \OML/jkp/m/it/10 w[]\OT1/zplm/m/n/10 )\OML/jkp/m/it/10
+ x[][] x \OT1/zplm/m/n/10 = [] $
  []
 
 
-Overfull \hbox (51.37598pt too wide) in paragraph at lines 116--156
-\T1/jkp/m/n/10 (-20) 13. $[]$ 14. $[]$ 15. $[]$ 16. $[] []$
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [137]
+[138] [139] [140] [141] [142]) (./section06.02.tex [143]
+
+LaTeX Warning: Reference `fig:airplane' on page 144 undefined on input line 65.
+
+
+[144]
+! Too many }'s.
+\endMakeFramed ...eight \z@ \penalty -100 \egroup 
+                                                  \begingroup \fb@put@frame ...
+l.98 \end{example}
+                  
+? 
+! You can't use `\prevdepth' in horizontal mode.
+\nointerlineskip ->\prevdepth 
+                              -\@m \p@ 
+l.98 \end{example}
+                  
+? 
+! Missing $ inserted.
+<inserted text> 
+                $
+l.98 \end{example}
+                  
+? 
+! Missing number, treated as zero.
+<to be read again> 
+                   \hbox 
+l.98 \end{example}
+                  
+? 
+! Illegal unit of measure (pt inserted).
+<to be read again> 
+                   \hbox 
+l.98 \end{example}
+                  
+? 
+! Missing $ inserted.
+<inserted text> 
+                $
+l.98 \end{example}
+                  
+? 
+Missing character: There is no è in font jkpex!
+
+! LaTeX Error: \begin{document} ended by \end{leftbar}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.98 \end{example}
+                  
+? 
+! Extra \endgroup.
+<recently read> \endgroup 
+                          
+l.98 \end{example}
+                  
+? 
+
+! LaTeX Error: \begin{document} ended by \end{example}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.98 \end{example}
+                  
+? 
+! Extra \endgroup.
+<recently read> \endgroup 
+                          
+l.98 \end{example}
+                  
+? 
+
+LaTeX Warning: Reference `fig:cone tank' on page 145 undefined on input line 11
+4.
+
+[145]
+Underfull \vbox (badness 10000) detected at line 253
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 116--156
+Underfull \vbox (badness 6978) has occurred while \output is active []
 
+ [146]
+[147] [148]
+
+LaTeX Warning: Reference `fig:sunrise sunset' on page 149 undefined on input li
+ne 412.
+
+
+LaTeX Warning: Reference `fig:sunrise sunset' on page 149 undefined on input li
+ne 420.
+
+
+LaTeX Warning: Reference `fig:trough' on page 149 undefined on input line 448.
+
+[149]
+
+LaTeX Warning: Reference `fig:falling ball' on page 150 undefined on input line
+ 525.
+
+
+LaTeX Warning: Reference `exam:departing cars' on page 150 undefined on input l
+ine 552.
+
+
+LaTeX Warning: Reference `exam:departing cars' on page 150 undefined on input l
+ine 561.
+
+
+LaTeX Warning: Reference `exam:departing cars' on page 150 undefined on input l
+ine 569.
+
+
+LaTeX Warning: Reference `exam:departing cars' on page 150 undefined on input l
+ine 576.
+
+
+LaTeX Warning: Reference `fig:car and airplane' on page 150 undefined on input 
+line 579.
+
+
+LaTeX Warning: Reference `exam:departing cars' on page 150 undefined on input l
+ine 608.
+
+[150]
+
+LaTeX Warning: Reference `fig:scissors' on page 151 undefined on input line 627
+.
+
+! Undefined control sequence.
+l.638 \itemitem
+               {\bf a.} Express $x$ in terms of $a$, $\theta$, and $\beta$.
+? 
+! Undefined control sequence.
+l.640 \itemitem
+               {\bf b.} Express $dx/dt$ in terms of $a$,
+? 
+! Undefined control sequence.
+l.643 \itemitem
+               {\bf c.} Suppose that the distance $a$ is 20 cm, and the
+? 
+) (./section06.03.tex [151]
+
+LaTeX Warning: Reference `fig:newtons method' on page 152 undefined on input li
+ne 21.
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [152]
+
+LaTeX Warning: Reference `fig:tanx vs x' on page 153 undefined on input line 11
+2.
+
+[153]) (./section06.04.tex
+
+LaTeX Warning: Reference `fig:linear approximation' on page 154 undefined on in
+put line 16.
+
+[154]
+! Undefined control sequence.
+l.46 \endexam
+             
+? 
+! Undefined control sequence.
+l.63 \endexam
+             
+? 
+
+LaTeX Warning: Reference `fig:differentials' on page 155 undefined on input lin
+e 82.
+
+
+! LaTeX Error: \begin{enumerate} on input line 140 ended by \end{exercises}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.144 \end{exercises}
+                     
+? 
+) (./section06.05.tex
+! Extra \else.
+\theorem ...checkend {#2}\Addto@Envbody {#1}\else 
+                                                  \Addto@Envbody {#1\end {#2...
+l.180 \end{example}
+                   
+? 
+! Argument of \answer has an extra }.
+<inserted text> 
+                \par 
+l.189 \end{answer}
+                  \end{exercise}
+? 
+Runaway argument?
+ $c=1/2$ 
+! Paragraph ended before \answer was complete.
+<to be read again> 
+                   \par 
+l.189 \end{answer}
+                  \end{exercise}
+? 
+! Extra }, or forgotten \endgroup.
+<recently read> }
+                 
+l.189 \end{answer}
+                  \end{exercise}
+? 
+! Extra \else.
+\theorem ...checkend {#2}\Addto@Envbody {#1}\else 
+                                                  \Addto@Envbody {#1\end {#2...
+l.189 \end{answer}
+                  \end{exercise}
+? 
+! Extra \fi.
+\theorem ...\else \Addto@Envbody {#1\end {#2}}\fi 
+                                                  \process@envbody 
+l.189 \end{answer}
+                  \end{exercise}
+? 
+
+! LaTeX Error: \begin{answer} on input line 189 ended by \end{exercise}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.189 \end{answer}\end{exercise}
+                                
+? 
+
+! LaTeX Error: Too deeply nested.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.210 \begin{exercise}
+                       Describe all functions with derivative $\ds x^2+47x-5$.
+? 
+! Undefined control sequence.
+l.214 \iflatetranscendentals
+                            \else
+? 
+! Extra \else.
+l.214 \iflatetranscendentals\else
+                                 
+? 
+
+! LaTeX Error: Too deeply nested.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.215 \begin{exercise}
+                       Describe all functions with derivative $\ds {1\over 1...
+
+? 
+
+! LaTeX Error: Too deeply nested.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.219 \begin{exercise}
+                       Describe all functions with derivative $\ds x^3-{1\ov...
+
+? 
+! Extra \fi.
+l.222 \fi
+         
+? 
+
+! LaTeX Error: Too deeply nested.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.224 \begin{exercise}
+                       Describe all functions with derivative $\sin(2x)$.
+? 
+
+! LaTeX Error: Too deeply nested.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.228 \begin{exercise}
+                       Show that the equation $\ds 6x^4 -7x+1 =0$ does not h...
+
+? 
+
+! LaTeX Error: Too deeply nested.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.231 \begin{exercise}
+                       Let $f$ be differentiable on $\R$. Suppose that $f'(x...
+
+? 
+
+! LaTeX Error: Too deeply nested.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.231 \begin{exercise}
+                       Let $f$ be differentiable on $\R$. Suppose that $f'(x...
+
+? 
+
+! LaTeX Error: Too deeply nested.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.234 \begin{exercise}
+                       Prove that for all real $x$ and $y$
+? 
+
+! LaTeX Error: Too deeply nested.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.234 \begin{exercise}
+                       Prove that for all real $x$ and $y$
+? 
+
+! LaTeX Error: Too deeply nested.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.238 \begin{exercise}
+                      
+? 
+
+! LaTeX Error: Too deeply nested.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.238 \begin{exercise}
+                      
+? 
+
+! LaTeX Error: \begin{enumerate} on input line 238 ended by \end{exercises}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.242 \end{exercises}
+                     
+? 
+))
+
+! LaTeX Error: Too deeply nested.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.286 \chapter*{Answers to selected exercises}
+                                              
+? 
+(./textbook.ans
+Underfull \hbox (badness 1281) in paragraph at lines 43--49
+\T1/jkp/m/n/10 (+20) 1. $\OMS/jkp/m/n/10 ^^@\OT1/jkp/m/n/10 (+20) 5$\T1/jkp/m/n
+/10 (+20) , $\OMS/jkp/m/n/10 ^^@\OT1/jkp/m/n/10 (+20) 2.47106145$\T1/jkp/m/n/10
+ (+20) , $\OMS/jkp/m/n/10 ^^@\OT1/jkp/m/n/10 (+20) 2.4067927$\T1/jkp/m/n/10 (+2
+0) , $\OMS/jkp/m/n/10 ^^@\OT1/jkp/m/n/10 (+20) 2.400676$\T1/jkp/m/n/10 (+20) , 
+$\OMS/jkp/m/n/10 ^^@\OT1/jkp/m/n/10 (+20) 2.4$ \T1/jkp/m/n/10 (+20) 2.
  []
 
-[135]
-Overfull \hbox (0.15524pt too wide) in paragraph at lines 171--176
-\T1/jkp/m/n/10 (-20) 1. $[]\OT1/zplm/m/n/10 ([]) []([])/[]$ \T1/jkp/m/n/10 (-20
-) 2. $[] \OT1/zplm/m/n/10 + [] [] \OML/jkp/m/it/10 x$ \T1/jkp/m/n/10 (-20) 3. $
-\OMS/jkp/m/n/10 ^^@[]$ \T1/jkp/m/n/10 (-20) 4. $[]$
+
+Underfull \hbox (badness 7238) in paragraph at lines 107--115
+[]$ \T1/jkp/m/n/10 (+20) 3. $[] \OT1/zplm/m/n/10 +
  []
 
 
-Overfull \hbox (2.96472pt too wide) in paragraph at lines 177--195
-\T1/jkp/m/n/10 (-20) 1. $[][] \OML/jkp/m/it/10 x \OMS/jkp/m/n/10 ^^@ [][] \OML/
-jkp/m/it/10 x$ \T1/jkp/m/n/10 (-20) 2. $\OMS/jkp/m/n/10 ^^@ [] \OML/jkp/m/it/10
- x []\OT1/zplm/m/n/10 ([] \OML/jkp/m/it/10 x\OT1/zplm/m/n/10 )$ \T1/jkp/m/n/10 
-(-20) 3. $[]$ 4. $[]$
+Underfull \hbox (badness 10000) in paragraph at lines 177--195
+\T1/jkp/m/n/10 (+20) 4. $[]$ 5. $\OMS/jkp/m/n/10 ^^@ [][] \OML/jkp/m/it/10 x$ \
+T1/jkp/m/n/10 (+20) 6.
  []
 
 
-Overfull \hbox (17.90953pt too wide) in paragraph at lines 177--195
-\T1/jkp/m/n/10 (-20) 5. $\OMS/jkp/m/n/10 ^^@ [][] \OML/jkp/m/it/10 x$ \T1/jkp/m
-/n/10 (-20) 6. $\OMS/jkp/m/n/10 ^^@ [] \OML/jkp/m/it/10 x [] x$ \T1/jkp/m/n/10 
-(-20) 7. $\OT1/jkp/m/n/10 (-20) 3\OML/jkp/m/it/10 x[] []\OT1/zplm/m/n/10 (\OT1/
-jkp/m/n/10 (-20) 23\OML/jkp/m/it/10 x[]\OT1/zplm/m/n/10 ) + \OT1/jkp/m/n/10 (-2
-0) 46\OML/jkp/m/it/10 x[] []\OT1/zplm/m/n/10 (\OT1/jkp/m/n/10 (-20) 23\OML/jkp/
-m/it/10 x[]\OT1/zplm/m/n/10 )$ \T1/jkp/m/n/10 (-20) 8. $\OT1/jkp/m/n/10 (-20) 0
-$ \T1/jkp/m/n/10 (-20) 9. $\OMS/jkp/m/n/10 ^^@\OT1/jkp/m/n/10 (-20) 6 []\OT1/zp
-lm/m/n/10 ([](\OT1/jkp/m/n/10 (-20) 6\OML/jkp/m/it/10 x\OT1/zplm/m/n/10 )) [](\
-OT1/jkp/m/n/10 (-20) 6\OML/jkp/m/it/10 x\OT1/zplm/m/n/10 )$
+Underfull \hbox (badness 3724) in paragraph at lines 177--195
+\OMS/jkp/m/n/10 ^^@ [] \OML/jkp/m/it/10 x [] x$ \T1/jkp/m/n/10 (+20) 7. $\OT1/j
+kp/m/n/10 (+20) 3\OML/jkp/m/it/10 x[] []\OT1/zplm/m/n/10 (\OT1/jkp/m/n/10 (+20)
+ 23\OML/jkp/m/it/10 x[]\OT1/zplm/m/n/10 ) + \OT1/jkp/m/n/10 (+20) 46\OML/jkp/m/
+it/10 x[] []\OT1/zplm/m/n/10 (\OT1/jkp/m/n/10 (+20) 23\OML/jkp/m/it/10 x[]\OT1/
+zplm/m/n/10 )$ \T1/jkp/m/n/10 (+20) 8. $\OT1/jkp/m/n/10 (+20) 0$
  []
 
 
-Overfull \hbox (8.4926pt too wide) in paragraph at lines 177--195
-\T1/jkp/m/n/10 (-20) 10. $[] \OML/jkp/m/it/10 ^^R\OT1/zplm/m/n/10 /([] \OML/jkp
-/m/it/10 ^^R \OT1/zplm/m/n/10 + \OT1/jkp/m/n/10 (-20) 1\OT1/zplm/m/n/10 )[]$ \T
-1/jkp/m/n/10 (-20) 11. $\OT1/jkp/m/n/10 (-20) 5\OML/jkp/m/it/10 t[] []\OT1/zplm
-/m/n/10 (\OT1/jkp/m/n/10 (-20) 6\OML/jkp/m/it/10 t\OT1/zplm/m/n/10 ) \OMS/jkp/m
-/n/10 ^^@ \OT1/jkp/m/n/10 (-20) 6\OML/jkp/m/it/10 t[] []\OT1/zplm/m/n/10 (\OT1/
-jkp/m/n/10 (-20) 6\OML/jkp/m/it/10 t\OT1/zplm/m/n/10 )$ \T1/jkp/m/n/10 (-20) 12
-. $\OT1/jkp/m/n/10 (-20) 3\OML/jkp/m/it/10 t[]\OT1/zplm/m/n/10 ([](\OT1/jkp/m/n
-/10 (-20) 3\OML/jkp/m/it/10 t\OT1/zplm/m/n/10 ) + \OML/jkp/m/it/10 t []\OT1/zpl
-m/m/n/10 (\OT1/jkp/m/n/10 (-20) 3\OML/jkp/m/it/10 t\OT1/zplm/m/n/10 ))/ [](\OT1
-/jkp/m/n/10 (-20) 2\OML/jkp/m/it/10 t\OT1/zplm/m/n/10 ) +
+Underfull \hbox (badness 1997) in paragraph at lines 177--195
+\T1/jkp/m/n/10 (+20) 9. $\OMS/jkp/m/n/10 ^^@\OT1/jkp/m/n/10 (+20) 6 []\OT1/zplm
+/m/n/10 ([](\OT1/jkp/m/n/10 (+20) 6\OML/jkp/m/it/10 x\OT1/zplm/m/n/10 )) [](\OT
+1/jkp/m/n/10 (+20) 6\OML/jkp/m/it/10 x\OT1/zplm/m/n/10 )$ \T1/jkp/m/n/10 (+20) 
+10. $[] \OML/jkp/m/it/10 ^^R\OT1/zplm/m/n/10 /([] \OML/jkp/m/it/10 ^^R \OT1/zpl
+m/m/n/10 + \OT1/jkp/m/n/10 (+20) 1\OT1/zplm/m/n/10 )[]$ \T1/jkp/m/n/10 (+20) 11
+.
  []
 
 
-Overfull \hbox (20.86348pt too wide) in paragraph at lines 197--213
-\T1/jkp/m/n/10 (-20) 1. $\OT1/jkp/m/n/10 (-20) 2 []\OT1/zplm/m/n/10 (\OT1/jkp/m
-/n/10 (-20) 3\OT1/zplm/m/n/10 )\OML/jkp/m/it/10 x\OT1/jkp/m/n/10 (-20) 3[]$ \T1
-/jkp/m/n/10 (-20) 2. $[]$ 3. $\OT1/jkp/m/n/10 (-20) 2\OML/jkp/m/it/10 e[]$ \T1/
-jkp/m/n/10 (-20) 4. $\OML/jkp/m/it/10 e[] []\OT1/zplm/m/n/10 (\OML/jkp/m/it/10 
-e[]\OT1/zplm/m/n/10 )$ \T1/jkp/m/n/10 (-20) 5. $[]\OT1/zplm/m/n/10 (\OML/jkp/m/
-it/10 x\OT1/zplm/m/n/10 )\OML/jkp/m/it/10 e[]$ \T1/jkp/m/n/10 (-20) 6. $\OML/jk
-p/m/it/10 x[] []$
+Underfull \hbox (badness 10000) in paragraph at lines 230--238
+\T1/jkp/m/n/10 (+20) 3. $[]$ 5. $[]$ 6. $[]$ 7.
  []
 
 
-Overfull \hbox (12.82884pt too wide) in paragraph at lines 197--213
-\OT1/jkp/m/n/10 (-20) 3\OT1/zplm/m/n/10 )/(\OML/jkp/m/it/10 x[] \OT1/zplm/m/n/1
-0 + \OT1/jkp/m/n/10 (-20) 3\OML/jkp/m/it/10 x\OT1/zplm/m/n/10 )$ \T1/jkp/m/n/10
- (-20) 12. $\OMS/jkp/m/n/10 ^^@ []\OT1/zplm/m/n/10 (\OML/jkp/m/it/10 x\OT1/zplm
-/m/n/10 )$ \T1/jkp/m/n/10 (-20) 13. $\OT1/zplm/m/n/10 (\OT1/jkp/m/n/10 (-20) 1 
-\OMS/jkp/m/n/10 ^^@ []\OT1/zplm/m/n/10 (\OML/jkp/m/it/10 x[]\OT1/zplm/m/n/10 ))
-/(\OML/jkp/m/it/10 x[][]\OT1/zplm/m/n/10 )$ \T1/jkp/m/n/10 (-20) 14. $[]\OT1/zp
-lm/m/n/10 (\OML/jkp/m/it/10 x\OT1/zplm/m/n/10 )$ \T1/jkp/m/n/10 (-20) 15. $\OML
-/jkp/m/it/10 x[]\OT1/zplm/m/n/10 ([](\OML/jkp/m/it/10 x\OT1/zplm/m/n/10 )/\OML/
-jkp/m/it/10 x \OMS/jkp/m/n/10 ^^@
- []
-
-
-Underfull \vbox (badness 2922) has occurred while \output is active []
-
- [136]
-Overfull \hbox (40.21797pt too wide) in paragraph at lines 214--229
-\T1/jkp/m/n/10 (-20) 1. $\OML/jkp/m/it/10 x\OT1/zplm/m/n/10 /\OML/jkp/m/it/10 y
-$ \T1/jkp/m/n/10 (-20) 2. $\OMS/jkp/m/n/10 ^^@\OT1/zplm/m/n/10 (\OT1/jkp/m/n/10
- (-20) 2\OML/jkp/m/it/10 x \OT1/zplm/m/n/10 + \OML/jkp/m/it/10 y\OT1/zplm/m/n/1
-0 )/(\OML/jkp/m/it/10 x \OT1/zplm/m/n/10 + \OT1/jkp/m/n/10 (-20) 2\OML/jkp/m/it
-/10 y\OT1/zplm/m/n/10 )$ \T1/jkp/m/n/10 (-20) 3. $\OT1/zplm/m/n/10 (\OT1/jkp/m/
-n/10 (-20) 2\OML/jkp/m/it/10 xy \OMS/jkp/m/n/10 ^^@ \OT1/jkp/m/n/10 (-20) 3\OML
-/jkp/m/it/10 x[] \OMS/jkp/m/n/10 ^^@ \OML/jkp/m/it/10 y[]\OT1/zplm/m/n/10 )/(\O
-T1/jkp/m/n/10 (-20) 2\OML/jkp/m/it/10 xy \OMS/jkp/m/n/10 ^^@ \OT1/jkp/m/n/10 (-
-20) 3\OML/jkp/m/it/10 y[] \OMS/jkp/m/n/10 ^^@ \OML/jkp/m/it/10 x[]\OT1/zplm/m/n
-/10 )$ \T1/jkp/m/n/10 (-20) 4. $[]\OT1/zplm/m/n/10 (\OML/jkp/m/it/10 x\OT1/zplm
-/m/n/10 ) [](\OML/jkp/m/it/10 y\OT1/zplm/m/n/10 )/([](\OML/jkp/m/it/10 x\OT1/zp
-lm/m/n/10 ) [](\OML/jkp/m/it/10 y\OT1/zplm/m/n/10 ))$
- []
-
-
-Overfull \hbox (12.91577pt too wide) in paragraph at lines 214--229
-\OT1/zplm/m/n/10 (\OT1/jkp/m/n/10 (-20) 2[], []\OT1/zplm/m/n/10 )$\T1/jkp/m/n/1
-0 (-20) , $\OT1/zplm/m/n/10 (\OMS/jkp/m/n/10 ^^@\OT1/jkp/m/n/10 (-20) 2[], \OMS
-/jkp/m/n/10 ^^@[]\OT1/zplm/m/n/10 )$ \T1/jkp/m/n/10 (-20) 14. $\OML/jkp/m/it/10
- y \OT1/zplm/m/n/10 = \OT1/jkp/m/n/10 (-20) 7\OML/jkp/m/it/10 x\OT1/zplm/m/n/10
- /[] \OMS/jkp/m/n/10 ^^@ \OT1/jkp/m/n/10 (-20) 8\OT1/zplm/m/n/10 /[]$ \T1/jkp/m
-/n/10 (-20) 15. $\OML/jkp/m/it/10 y \OT1/zplm/m/n/10 = (\OMS/jkp/m/n/10 ^^@\OML
-/jkp/m/it/10 y[]x \OT1/zplm/m/n/10 + \OML/jkp/m/it/10 y[]x[] \OT1/zplm/m/n/10 +
- \OML/jkp/m/it/10 x[]y[]\OT1/zplm/m/n/10 )/\OML/jkp/m/it/10 x[]$
+Underfull \hbox (badness 10000) in paragraph at lines 230--238
+\OMS/jkp/m/n/10 ^^@\OT1/jkp/m/n/10 (+20) 3\OML/jkp/m/it/10 x[] []\OT1/zplm/m/n/
+10 (\OML/jkp/m/it/10 x[]\OT1/zplm/m/n/10 )/[]$ \T1/jkp/m/n/10 (+20) 8. $[]$ 9.
  []
 
 )
+! Missing $ inserted.
+<inserted text> 
+                $
+l.288 
+      
+? 
+! Missing } inserted.
+<inserted text> 
+                }
+l.288 
+      
+? 
+! Missing } inserted.
+<inserted text> 
+                }
+l.288 
+      
+? 
+! Extra }, or forgotten \endgroup.
+\par ...m \@noitemerr {\@@par }\fi \else {\@@par }
+                                                  \fi 
+l.288 
+      
+? 
 No file textbook.ind.
-[137]
 
 Package bibentry Warning: You have used \nobibliography* 
 (bibentry)                without a following \bibliography.
 (bibentry)                You may not be able to run BibTeX.
 
+
+! LaTeX Error: \begin{exercise} on input line 238 ended by \end{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.292 \end{document}
+                    
+? 
 (./textbook.aux)
 
 LaTeX Warning: There were undefined references.
 
- ) 
-Here is how much of TeX's memory you used:
- 22302 strings out of 493848
- 394033 string characters out of 1152824
- 552761 words of memory out of 3000000
- 23760 multiletter control sequences out of 15000+50000
- 218095 words of font info for 508 fonts, out of 3000000 for 9000
- 714 hyphenation exceptions out of 8191
- 63i,13n,71p,423b,732s stack positions out of 5000i,500n,10000p,200000b,50000s
-{/usr/share/texmf-texlive/fonts/enc/dvips/kpfonts/kpfonts-expert.enc}{/usr/sh
-are/texmf-texlive/fonts/enc/dvips/base/8r.enc}</usr/share/texmf-texlive/fonts/t
-ype1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-texlive/fonts/type1/public/
-mathpazo/fplmbb.pfb></usr/share/texmf-texlive/fonts/type1/public/kpfonts/jkpbn8
-a.pfb></usr/share/texmf-texlive/fonts/type1/public/kpfonts/jkpbne.pfb></usr/sha
-re/texmf-texlive/fonts/type1/public/kpfonts/jkpex.pfb></usr/share/texmf-texlive
-/fonts/type1/public/kpfonts/jkpmi.pfb></usr/share/texmf-texlive/fonts/type1/pub
-lic/kpfonts/jkpmia.pfb></usr/share/texmf-texlive/fonts/type1/public/kpfonts/jkp
-mit8a.pfb></usr/share/texmf-texlive/fonts/type1/public/kpfonts/jkpmite.pfb></us
-r/share/texmf-texlive/fonts/type1/public/kpfonts/jkpmn8a.pfb></usr/share/texmf-
-texlive/fonts/type1/public/kpfonts/jkpmne.pfb></usr/share/texmf-texlive/fonts/t
-ype1/public/kpfonts/jkpmsc8a.pfb></usr/share/texmf-texlive/fonts/type1/public/k
-pfonts/jkpssmn8a.pfb></usr/share/texmf-texlive/fonts/type1/public/kpfonts/jkpsy
-.pfb></usr/share/texmf-texlive/fonts/type1/public/kpfonts/jkpsyc.pfb></usr/shar
-e/texmf-texlive/fonts/type1/public/kpfonts/jkpttmn8a.pfb></usr/share/texmf-texl
-ive/fonts/type1/urw/palatino/uplr8a.pfb>
-Output written on textbook.pdf (137 pages, 635505 bytes).
-PDF statistics:
- 1437 PDF objects out of 1440 (max. 8388607)
- 638 named destinations out of 1000 (max. 500000)
- 63877 words of extra memory for PDF output out of 74296 (max. 10000000)
 
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+! You can't use `\end' in internal vertical mode.
+\enddocument ... \endgroup \deadcycles \z@ \@@end 
+                                                  
+l.292 \end{document}
+                    
+? 
+
+! LaTeX Error: \begin{exercise} on input line 238 ended by \end{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.292 \end{document}
+                    
+? 
+)
+*
+(Please type a command or say `\end')
+*
+(Please type a command or say `\end')
+*
+(Please type a command or say `\end')
+*
+(Please type a command or say `\end')
+*
+(Please type a command or say `\end')
+*
+(Please type a command or say `\end')
+*
+(Please type a command or say `\end')
+*
+(Please type a command or say `\end')
+*
+(Please type a command or say `\end')
+*
+(Please type a command or say `\end')
+*
+(Please type a command or say `\end')
+*
+(Please type a command or say `\end')
+*
+(Please type a command or say `\end')
+*
+(Please type a command or say `\end')
+*
+(Please type a command or say `\end')
+*
+(Please type a command or say `\end')
+*
+(Please type a command or say `\end')
+*
+(Please type a command or say `\end')
+*
+(Please type a command or say `\end')
+*\end
+
+*\end
+! TeX capacity exceeded, sorry [input stack size=5000].
+\end #1->\csname end#1
+                      \endcsname \@checkend {#1}\expandafter \endgroup \if@e...
+<*> \end
+        
+If you really absolutely need more capacity,
+you can ask a wizard to enlarge me.
+
+ 
+Here is how much of TeX's memory you used:
+ 22422 strings out of 493848
+ 395370 string characters out of 1152824
+ 600819 words of memory out of 3000000
+ 23782 multiletter control sequences out of 15000+50000
+ 201488 words of font info for 499 fonts, out of 3000000 for 9000
+ 714 hyphenation exceptions out of 8191
+ 5000i,13n,5000p,423b,1122s stack positions out of 5000i,500n,10000p,200000b,50000s
+!  ==> Fatal error occurred, no output PDF file produced!
