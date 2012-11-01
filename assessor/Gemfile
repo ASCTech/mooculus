@@ -23,6 +23,9 @@ end
 
 gem 'jquery-rails'
 
+# To use OAuth login
+gem "oauth-plugin", "~> 0.4.0"
+
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
@@ -37,3 +40,7 @@ gem 'jquery-rails'
 
 # To use debugger
 # gem 'ruby-debug'
+
+# use bootstrap
+gem 'anjlab-bootstrap-rails', :require => 'bootstrap-rails',
+                              :git => 'git://github.com/anjlab/bootstrap-rails.git'

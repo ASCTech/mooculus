@@ -8,7 +8,38 @@
 </head>
 <body>
 
-<%= yield %>
 
+  <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </a>
+	<a class="brand" href="#"><span style="font-weight: bold">MOOC</span>ulus</a>
+        <div class="nav-collapse">
+          <ul class="nav">
+            <li class="active"><a href="/">Home</a></li>
+            <li class="active"><a href="/">Home</a></li>
+            <li class="active"><a href="/">Home</a></li>
+            <li class="active"><a href="/">Home</a></li>
+	  </ul>
+	</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <%= yield %>
+
+    <hr>
+
+    <footer>
+      <p>&copy; <%= Date.today.strftime( '%Y' ) %>, <a href="http://www.math.osu.edu/~fowler/">Jim Fowler</a>.</p>
+    </footer>
+    
+  </div> <!-- /container -->
+  
 </body>
 </html>
