@@ -358,3 +358,81 @@
 18. inflection points at $n\pi $, $\ds \pm \arcsin (\sqrt {2/3})+n\pi $
 19. up/incr: $(3,\infty )$, up/decr: $(-\infty ,0)$, $(2,3)$, down/decr: $(0,2)$
 \subsection *{Answers for 5.5}
+\subsection *{Answers for 6.1}
+1. max at $(2,5)$, min at $(0,1)$
+2. $25\times 25$
+3. $P/4\times P/4$
+4. $\ds w=l=2\cdot 5^{2/3}$, $\ds h=5^{2/3}$, $\ds h/w=1/2$
+5. $\ds \root 3\of {100}\times \root 3\of {100}\times 2\root 3\of {100}$, $h/s=2$
+6. $\ds w=l=2^{1/3}V^{1/3}$, $\ds h=V^{1/3}/2^{2/3}$, $h/w=1/2$
+7. $1250$ square feet
+8. $\ds l^2/8$ square feet
+9. \$5000
+10. $100$
+11. $\ds r^2$
+12. $h/r=2$
+13. $h/r=2$
+14. $r=5$, $h=40/\pi $, $h/r=8/\pi $
+15. $8/\pi $
+16. $4/27$
+17. Go direct from $A$ to $D$.
+18. (a) 2, (b) $7/2$
+19. $\ds {\sqrt 3\over 6}\times {\sqrt 3\over 6}+{1\over 2}\times {1\over 4}-{\sqrt 3\over 12}$
+20. (a) $a/6$, (b) $\ds (a+b-\sqrt {a^2-ab+b^2})/6$
+21. $1.5$ meters wide by $1.25$ meters tall
+22. If $k\le 2/\pi $ the ratio is $(2-k\pi )/4$; if $k\ge 2/\pi $, the ratio is zero: the window should be semicircular with no rectangular part.
+23. $a/b$
+24. $\ds w=2r/\sqrt 3$, $\ds h=2\sqrt 2r/\sqrt 3$
+25. $\ds 1/\sqrt 3\approx 58\%$
+26. $18\times 18\times 36$
+27. $\ds r=5/(2\pi )^{1/3}\approx 2.7\hbox { cm}$,\hfill \break $\ds h=5\cdot 2^{5/3}/\pi ^{1/3}=4r\approx 10.8 \hbox { cm}$
+28. $\ds h={750\over \pi }\left ({2\pi ^2\over 750^2}\right )^{1/3}$, $\ds r=\left ({750^2\over 2\pi ^2}\right )^{1/6}$
+29. $\ds h/r=\sqrt 2$
+30. The ratio of the volume of the sphere to the volume of the cone is $\ds 1033/4096+33/4096\sqrt {17}\approx 0.2854$, so the cone occupies approximately $28.54\%$ of the sphere.
+31. $P$ should be at distance $\ds c\root 3\of {a} / (\root 3\of {a} + \root 3\of {b})$ from charge $A$.
+32. $1/2$
+33. \$7000
+34. There is a critical point when $\ds \sin \theta _1/v_1=\sin \theta _2/v_2$, and the second derivative is positive, so there is a minimum at the critical point.
+\subsection *{Answers for 6.2}
+1. $1/(16\pi )$ cm/s
+2. $3/(1000\pi )$ meters/second
+3. $1/4$ m/s
+4. $-6/25$ m/s
+5. $80\pi $ mi/min
+6. $\ds 3\sqrt 5$ ft/s
+7. $20/(3\pi )$ cm/s
+8. $13/20$ ft/s
+9. $\ds 5\sqrt {10}/2$ m/s
+10. $75/64$ m/min
+11. $145\pi /72$ m/s
+12. $25\pi /144$ m/min
+13. $\ds \pi \sqrt 2/36$ ft$^3$/s
+14. tip: 6 ft/s, length: $5/2$ ft/s
+15. tip: $20/11$ m/s, length: $9/11$ m/s
+16. $\ds 380/\sqrt 3-150\approx 69.4$ mph
+17. $\ds 500/\sqrt 3-200\approx 88.7$ km/hr
+18. 18 m/s
+19. $\ds 136\sqrt {475}/19\approx 156$ km/hr
+20. $-50$ m/s
+21. $68$ m/s
+22. $\ds 3800/\sqrt {329}\approx 210$ km/hr
+23. \hbox {$\ds 820/\sqrt {329}+150\sqrt {57}/\sqrt {47}\approx 210$ km/hr}
+24. $4000/49$ m/s
+25. (a) $x=a\cos \theta -a\sin \theta \cot (\theta +\beta )= \hbox {$a\sin \beta /\sin (\theta +\beta $), (c) $\ds \dot x\approx 3.79$ cm/s}$
+\subsection *{Answers for 6.3}
+1. $\ds x_3=1.475773162$
+2. $2.15$
+3. $3.36$
+4. $2.19$ or $1.26$
+\subsection *{Answers for 6.4}
+1. $\Delta y=65/16$, $dy=2$
+2. $\ds \Delta y=\sqrt {11/10}-1$, $dy=0.05$
+3. $\ds \Delta y=\sin (\pi /50)$, $dy=\pi /50$
+4. $dV=8\pi /25$
+\subsection *{Answers for 6.5}
+1. \fi \par \begin {exercises} \par \begin {exercise} Let $\ds f(x) = x^2$. Find a value $c\in (-1,2)$ so that $f'(c)$ equals the slope between the endpoints of $f(x)$ on $[-1,2]$. \begin {answer} $c=1/2$ \end {answer}
+2. $\ds c=\sqrt {18}-2$
+6. $\ds x^3/3+47x^2/2-5x+k$
+7. $\arctan x + k$
+8. $\ds x^4/4 -\ln x +k$
+9. $-\cos (2x)/2 +k$

@@ -53,6 +53,7 @@ To summarize, here are the steps in doing a related rates problem:
 
 \end{itemize}
 
+
 \exam\relax
 \label{exam:receding airplane}
 A plane is flying directly away from you at 500 mph at an altitude of
@@ -63,24 +64,25 @@ from you?
 To see what's going on, we first draw a schematic representation of
 the situation, as in figure~\xrefn{fig:airplane}.
 
-\figure
-\vbox{\beginpicture
-\normalgraphs
-\ninepoint
-\setcoordinatesystem units <.75truecm,.75truecm>
-\setplotarea x from 0 to 6, y from 0 to 3
-\axis bottom shiftedto y=0 /
-\setlinear
-\setdashes
-\plot 0 0 5 3 /
-\putrule from 5 0 to 5 3
-\put {$\longrightarrow$} [l] at 5 3
-\put {$x$} [t] <0pt,-4pt> at 2.5 0
-\put {$y$} [br] <-2pt,2pt> at 2.5 1.5
-\put {$3$} [l] <4pt,0pt> at 5 1.5
-\endpicture}
-\figrdef{fig:airplane}
-\endfigure{Receding airplane.}
+%%BADBAD
+%% \figure
+%% \vbox{\beginpicture
+%% \normalgraphs
+%% \ninepoint
+%% \setcoordinatesystem units <.75truecm,.75truecm>
+%% \setplotarea x from 0 to 6, y from 0 to 3
+%% \axis bottom shiftedto y=0 /
+%% \setlinear
+%% \setdashes
+%% \plot 0 0 5 3 /
+%% \putrule from 5 0 to 5 3
+%% \put {$\longrightarrow$} [l] at 5 3
+%% \put {$x$} [t] <0pt,-4pt> at 2.5 0
+%% \put {$y$} [br] <-2pt,2pt> at 2.5 1.5
+%% \put {$3$} [l] <4pt,0pt> at 5 1.5
+%% \endpicture}
+%% \figrdef{fig:airplane}
+%% \endfigure{Receding airplane.}
 
 Because the plane is in level flight directly away from you, the rate
 at which $x$ changes is the speed of the plane, $dx/dt=500$. The
@@ -132,27 +134,28 @@ we don't know.
 %\puttext{40, 0}{\Tiny$30$}
 %\end{psfigure}
 %%------------------------------
-\figure
-\vbox{\beginpicture
-\normalgraphs
-\sevenpoint
-\setcoordinatesystem units <1truecm,1truecm>
-\setplotarea x from -1.5 to 1.5, y from -5 to 1
-\ellipticalarc  axes ratio 3:1  360 degrees from 1.5 0 center at 0 0
-\ellipticalarc  axes ratio 3:1  360 degrees from 0.75 -2.5 center at 0 -2.5
-\betweenarrows {10} from 0 0.75 to 1.5 0.75
-\betweenarrows {30} from 1.7 -5 to 1.7 0
-\betweenarrows {$h$} from -1 -5 to -1 -2.5
-\put {$r$} at 0.385 -2.1
-\setlinear
-\plot 1.5 0 0 -5 -1.5 0 /
-\setplotsymbol ({\teeny.})
-\plotsymbolspacing=.2pt
-\arrow <2pt> [0.7, 2] from 0.25 -2.1 to 0 -2.1
-\arrow <2pt> [0.7, 2] from 0.50 -2.1 to 0.75 -2.1
-\endpicture}
-\figrdef{fig:cone tank}
-\endfigure{Conical water tank.}
+%%BADBAD
+%% \figure
+%% \vbox{\beginpicture
+%% \normalgraphs
+%% \sevenpoint
+%% \setcoordinatesystem units <1truecm,1truecm>
+%% \setplotarea x from -1.5 to 1.5, y from -5 to 1
+%% \ellipticalarc  axes ratio 3:1  360 degrees from 1.5 0 center at 0 0
+%% \ellipticalarc  axes ratio 3:1  360 degrees from 0.75 -2.5 center at 0 -2.5
+%% \betweenarrows {10} from 0 0.75 to 1.5 0.75
+%% \betweenarrows {30} from 1.7 -5 to 1.7 0
+%% \betweenarrows {$h$} from -1 -5 to -1 -2.5
+%% \put {$r$} at 0.385 -2.1
+%% \setlinear
+%% \plot 1.5 0 0 -5 -1.5 0 /
+%% \setplotsymbol ({\teeny.})
+%% \plotsymbolspacing=.2pt
+%% \arrow <2pt> [0.7, 2] from 0.25 -2.1 to 0 -2.1
+%% \arrow <2pt> [0.7, 2] from 0.50 -2.1 to 0.75 -2.1
+%% \endpicture}
+%% \figrdef{fig:cone tank}
+%% \endfigure{Conical water tank.}
 
 But the dimensions of the cone of water must have the same
 proportions as those of the container.  
@@ -197,32 +200,33 @@ $d\theta/dt$ from rad/sec by multiplying by $180/\pi$.)
 %\puttext{33.3, 0.}{\Small$10$}
 %\end{psfigure}
 %%------------------------------
-\figure
-\vbox{\beginpicture
-\normalgraphs
-\sevenpoint
-\setcoordinatesystem units <0.5truecm,0.5truecm>
-\setplotarea x from -6 to 6, y from 0 to 10
-\circulararc  73.74 degrees from -6 2 center at 0 10
-\circulararc  36.87 degrees from 0 8 center at 0 10
-%\betweenarrows {10} from 0 0.75 to 1.5 0.75
-%\betweenarrows {30} from 1.7 0 to 1.7 -5
-%\betweenarrows {$h$} from -1 -2.5 to -1 -5
-%\put {$r$} at 0.385 -2.1
-\setlinear
-\plot 0 10 6 2 /
-\setdashes
-\putrule from 0 0 to 0 10
-\putrule from 0 2 to 6 2
-\multiput {$\bullet$} at 0 10 6 2 /
-\put {$P$} [l] <4pt,0pt> at 6 2
-\put {$Q$} [b] <0pt,4pt> at 0 10
-\put {$x$} [b] <0pt,4pt> at 3 2
-\put {$y$} [r] <-4pt,0pt> at 0 1
-\put {$\theta$} [tl] at 0.6 7.7
-\endpicture}
-\figrdef{fig:swing}
-\endfigure{Swing.}
+%%BADBAD
+%% \figure
+%% \vbox{\beginpicture
+%% \normalgraphs
+%% \sevenpoint
+%% \setcoordinatesystem units <0.5truecm,0.5truecm>
+%% \setplotarea x from -6 to 6, y from 0 to 10
+%% \circulararc  73.74 degrees from -6 2 center at 0 10
+%% \circulararc  36.87 degrees from 0 8 center at 0 10
+%% %\betweenarrows {10} from 0 0.75 to 1.5 0.75
+%% %\betweenarrows {30} from 1.7 0 to 1.7 -5
+%% %\betweenarrows {$h$} from -1 -2.5 to -1 -5
+%% %\put {$r$} at 0.385 -2.1
+%% \setlinear
+%% \plot 0 10 6 2 /
+%% \setdashes
+%% \putrule from 0 0 to 0 10
+%% \putrule from 0 2 to 6 2
+%% \multiput {$\bullet$} at 0 10 6 2 /
+%% \put {$P$} [l] <4pt,0pt> at 6 2
+%% \put {$Q$} [b] <0pt,4pt> at 0 10
+%% \put {$x$} [b] <0pt,4pt> at 3 2
+%% \put {$y$} [r] <-4pt,0pt> at 0 1
+%% \put {$\theta$} [tl] at 0.6 7.7
+%% \endpicture}
+%% \figrdef{fig:swing}
+%% \endfigure{Swing.}
 
 \noindent
 (a)~From the diagram we see that we have a right triangle whose legs
@@ -266,29 +270,29 @@ kilometers to the north of $P$ and traveling at 80 km/hr, while car B
 is 15 kilometers to the east of $P$ and traveling at 100 km/hr.
 How fast is the distance between the two cars
 changing?
-
-\figure
-\vbox{\beginpicture
-\normalgraphs
-\sevenpoint
-\setcoordinatesystem units <0.5truecm,0.5truecm>
-\setplotarea x from 0 to 10, y from 0 to 6
-\axis left shiftedto x=0 /
-\axis bottom shiftedto y=0 /
-\multiput {$\bullet$} at 0 0 0 4 7 0 /
-\setdashes\setlinear
-\plot 0 4 7 0 /
-\put {$(0,a(t))$} [r] <-4pt,0pt> at 0 4
-\put {$(b(t),0)$} [t] <0pt,-6pt> at 7 0
-\put {$c(t)$} [bl] <2pt,2pt> at 3.5 2
-\put {$P$} [tr] <-2pt,-2pt> at 0 0
-\setsolid
-\setplotsymbol ({\tenrm.}) 
-\arrow <5pt> [.25, 1] from 0 4 to 0 5
-\arrow <5pt> [.25, 1] from 7 0 to 8 0
-\endpicture}
-\figrdef{fig:departing cars}
-\endfigure{Cars moving apart.}
+%%BADBAD
+%% \figure
+%% \vbox{\beginpicture
+%% \normalgraphs
+%% \sevenpoint
+%% \setcoordinatesystem units <0.5truecm,0.5truecm>
+%% \setplotarea x from 0 to 10, y from 0 to 6
+%% \axis left shiftedto x=0 /
+%% \axis bottom shiftedto y=0 /
+%% \multiput {$\bullet$} at 0 0 0 4 7 0 /
+%% \setdashes\setlinear
+%% \plot 0 4 7 0 /
+%% \put {$(0,a(t))$} [r] <-4pt,0pt> at 0 4
+%% \put {$(b(t),0)$} [t] <0pt,-6pt> at 7 0
+%% \put {$c(t)$} [bl] <2pt,2pt> at 3.5 2
+%% \put {$P$} [tr] <-2pt,-2pt> at 0 0
+%% \setsolid
+%% \setplotsymbol ({\tenrm.}) 
+%% \arrow <5pt> [.25, 1] from 0 4 to 0 5
+%% \arrow <5pt> [.25, 1] from 7 0 to 8 0
+%% \endpicture}
+%% \figrdef{fig:departing cars}
+%% \endfigure{Cars moving apart.}
 
 Let $a(t)$ be the distance of car A north of $P$ at time $t$, and
 $b(t)$ the distance of car B east of $P$ at time $t$, and let $c(t)$
@@ -418,24 +422,25 @@ meter wall lengthening at the moment when the shadow is 50 meters long?
 \begin{answer} $25\pi/144$ m/min
 \end{answer}\end{exercise}
 
-\font\miscsymbols miscsymbols10 scaled 2000
-%\begin{psfigure}{2.45in}{1.25in}{124.figME.ps}
-\figure
-\vbox{\beginpicture
-\normalgraphs
-\sevenpoint
-\setcoordinatesystem units <0.3truecm,0.3truecm>
-\setplotarea x from -10 to 10, y from 0 to 8
-\axis bottom shiftedto y=0 /
-\setdashes\setlinear
-\plot 5 0 -8 8 /
-\setsolid
-\setplotsymbol ({\tenrm.}) 
-\plot 0 0 0 3 /
-\put {\miscsymbols k} at -9 8.6
-\endpicture}
-\figrdef{fig:sunrise sunset}
-\endfigure{Sunrise or sunset.}
+%% BADBAD
+%% \font\miscsymbols miscsymbols10 scaled 2000
+%% %\begin{psfigure}{2.45in}{1.25in}{124.figME.ps}
+%% \figure
+%% \vbox{\beginpicture
+%% \normalgraphs
+%% \sevenpoint
+%% \setcoordinatesystem units <0.3truecm,0.3truecm>
+%% \setplotarea x from -10 to 10, y from 0 to 8
+%% \axis bottom shiftedto y=0 /
+%% \setdashes\setlinear
+%% \plot 5 0 -8 8 /
+%% \setsolid
+%% \setplotsymbol ({\tenrm.}) 
+%% \plot 0 0 0 3 /
+%% \put {\miscsymbols k} at -9 8.6
+%% \endpicture}
+%% \figrdef{fig:sunrise sunset}
+%% \endfigure{Sunrise or sunset.}
 
 
 
@@ -453,33 +458,34 @@ collapsing at the rate of $\ds 1^\circ$ per second?
 \begin{answer} $\ds \pi\sqrt2/36$ ft$^3$/s
 \end{answer}\end{exercise}
 
+%%BADBAD
 %\begin{psfigure}{2.5in}{1.5in}{124.figMF.ps}
-\figure
-\vbox{\beginpicture
-\normalgraphs
-\sevenpoint
-\setcoordinatesystem units <0.9truecm,0.9truecm>
-\setplotarea x from -1 to 12, y from 0 to 4
-\setlinear
-\plot -0.5 0.866 0 0 1 0 1.5 0.866 -0.5 0.866 /
-\plot 1 0 10.4 3.42 10.9 4.29 8.9 4.29 -0.5 0.866 /
-\plot 10.9 4.29 1.5 0.866 /
-\put {$\theta$} [b] <0pt,3pt> at -0.15 0.3
-\put {$\theta$} [b] <0pt,3pt> at 1.15 0.3
-\put {$1$} [t] <0pt,-4pt> at 0.5 0
-\put {$1$} [tr] <-2pt,-2pt> at -0.25 0.433
-\put {$1$} [tl] <2pt,-2pt> at 10.65 3.853
-\put {$10$} [tl] <2pt,-2pt> at 5.7 1.71
-\circulararc 30 degrees from 0 0.3 center at 0 0
-\circulararc -30 degrees from 1 0.3 center at 1 0
-\setdashes <2pt>
-\plot 0 0 9.4 3.42 10.4 3.42 / 
-\plot 9.4 3.42 8.9 4.29 / 
-\plot 0 0 0 0.866 /
-\plot 1 0 1 0.866 /
-\endpicture}
-\figrdef{fig:trough}
-\endfigure{Trough.}
+%% \figure
+%% \vbox{\beginpicture
+%% \normalgraphs
+%% \sevenpoint
+%% \setcoordinatesystem units <0.9truecm,0.9truecm>
+%% \setplotarea x from -1 to 12, y from 0 to 4
+%% \setlinear
+%% \plot -0.5 0.866 0 0 1 0 1.5 0.866 -0.5 0.866 /
+%% \plot 1 0 10.4 3.42 10.9 4.29 8.9 4.29 -0.5 0.866 /
+%% \plot 10.9 4.29 1.5 0.866 /
+%% \put {$\theta$} [b] <0pt,3pt> at -0.15 0.3
+%% \put {$\theta$} [b] <0pt,3pt> at 1.15 0.3
+%% \put {$1$} [t] <0pt,-4pt> at 0.5 0
+%% \put {$1$} [tr] <-2pt,-2pt> at -0.25 0.433
+%% \put {$1$} [tl] <2pt,-2pt> at 10.65 3.853
+%% \put {$10$} [tl] <2pt,-2pt> at 5.7 1.71
+%% \circulararc 30 degrees from 0 0.3 center at 0 0
+%% \circulararc -30 degrees from 1 0.3 center at 1 0
+%% \setdashes <2pt>
+%% \plot 0 0 9.4 3.42 10.4 3.42 / 
+%% \plot 9.4 3.42 8.9 4.29 / 
+%% \plot 0 0 0 0.866 /
+%% \plot 1 0 1 0.866 /
+%% \endpicture}
+%% \figrdef{fig:trough}
+%% \endfigure{Trough.}
 
 \begin{exercise}
 A woman 5 ft tall walks at the rate of 3.5 ft/sec away from a streetlight
@@ -511,7 +517,8 @@ kph.  Find the speed of the car.
 \begin{answer} $\ds 500/\sqrt3-200\approx 88.7$ km/hr
 \end{answer}\end{exercise}
 
-\font\miscsymbols miscsymbols10 scaled 2000
+%BADBAD
+%\font\miscsymbols miscsymbols10 scaled 2000
 \begin{exercise}
 A light shines from the top of a pole 20 m high. A ball is falling 10
 meters from the pole, casting a shadow on a building 30 meters away,
@@ -521,25 +528,26 @@ per second. How fast is its shadow moving?
 \begin{answer} 18 m/s
 \end{answer}\end{exercise}
 
-\figure
-\vbox{\beginpicture
-\normalgraphs
-\ninepoint
-\setcoordinatesystem units <.7truecm,.7truecm>
-\setplotarea x from 0 to 4.5, y from 0 to 4
-\axis bottom /
-\setlinear
-\linethickness1pt
-\putrule from 0 0 to 0 2
-\put {$\bullet$} at 1 2.5
-\put {\miscsymbols k} at 0.05 2
-\putrule from 3 0 to 3 4
-\putrule from 3 4 to 4.5 4
-\setdashes <2pt>
-\plot 0 2 3 3.5 /
-\endpicture}
-\figrdef{fig:falling ball}
-\endfigure{Falling ball.}
+%% BADBAD
+%% \figure
+%% \vbox{\beginpicture
+%% \normalgraphs
+%% \ninepoint
+%% \setcoordinatesystem units <.7truecm,.7truecm>
+%% \setplotarea x from 0 to 4.5, y from 0 to 4
+%% \axis bottom /
+%% \setlinear
+%% \linethickness1pt
+%% \putrule from 0 0 to 0 2
+%% \put {$\bullet$} at 1 2.5
+%% \put {\miscsymbols k} at 0.05 2
+%% \putrule from 3 0 to 3 4
+%% \putrule from 3 4 to 4.5 4
+%% \setdashes <2pt>
+%% \plot 0 2 3 3.5 /
+%% \endpicture}
+%% \figrdef{fig:falling ball}
+%% \endfigure{Falling ball.}
 
 \begin{exercise} Do example~\xrefn{exam:departing cars} assuming that the angle
 between the two roads is 120${}^\circ$ instead of 90${}^\circ$ (that
@@ -573,28 +581,29 @@ car and airplane changing?
 \begin{answer} $\ds 3800/\sqrt{329}\approx 210$ km/hr 
 \end{answer}\end{exercise}
 
-\figure
-\vbox{\beginpicture
-\normalgraphs
-\sevenpoint
-\setcoordinatesystem units <0.3truecm,0.3truecm>
-\setplotarea x from 0 to 8, y from -2 to 10
-\setlinear
-\plot 6 3 0 0 8 -2 /
-\setdashes <2pt>
-\plot 2.5 1.25 5 8.75 /
-\plot 5 -1.25 5 8.75 /
-\multiput {$\bullet$} at 2.5 1.25 5 8.75 /
-\put {$A$} [br] <-2pt,2pt> at 2.5 1.25
-\put {$B$} [b] <0pt,3pt> at 5 8.75
-\put {$c(t)$} [br] <-2pt,2pt> at 3.75 5
-\setplotsymbol ({\tenrm.}) 
-\setsolid
-\arrow <5pt> [.25, 1] from 2.5 1.25 to 4 2
-\arrow <5pt> [.25, 1] from 5 8.75 to 7 8.25
-\endpicture}
-\figrdef{fig:car and airplane}
-\endfigure{Car and airplane.}
+%%BADBAD
+%% \figure
+%% \vbox{\beginpicture
+%% \normalgraphs
+%% \sevenpoint
+%% \setcoordinatesystem units <0.3truecm,0.3truecm>
+%% \setplotarea x from 0 to 8, y from -2 to 10
+%% \setlinear
+%% \plot 6 3 0 0 8 -2 /
+%% \setdashes <2pt>
+%% \plot 2.5 1.25 5 8.75 /
+%% \plot 5 -1.25 5 8.75 /
+%% \multiput {$\bullet$} at 2.5 1.25 5 8.75 /
+%% \put {$A$} [br] <-2pt,2pt> at 2.5 1.25
+%% \put {$B$} [b] <0pt,3pt> at 5 8.75
+%% \put {$c(t)$} [br] <-2pt,2pt> at 3.75 5
+%% \setplotsymbol ({\tenrm.}) 
+%% \setsolid
+%% \arrow <5pt> [.25, 1] from 2.5 1.25 to 4 2
+%% \arrow <5pt> [.25, 1] from 5 8.75 to 7 8.25
+%% \endpicture}
+%% \figrdef{fig:car and airplane}
+%% \endfigure{Car and airplane.}
 
 \begin{exercise} Referring again to example~\xrefn{exam:departing cars}, suppose
 that instead of car B an airplane is flying at speed $200$
@@ -640,50 +649,52 @@ cm/sec) at which the paper is being cut.
 \hbox{$a\sin\beta/\sin(\theta+\beta$), (c) $\ds \dot x\approx 3.79$ cm/s}$
 \end{answer}\end{exercise}
 
-\figure
-\vbox{\beginpicture
-\normalgraphs
-\sevenpoint
-\setcoordinatesystem units <0.7truecm,0.7truecm>
-\setplotarea x from -3 to 6, y from -3.5 to 3.5
-\setlinear
-\plot 0.3 0 6 3.5 2 0 0.3 0 /
-\setdashes <2pt>
-\put {\beginpicture
-\setplotarea x from -1 to 1, y from -0.33 to 0.33
-\startrotation by 0.866 -0.5 about 0 0
-\ellipticalarc  axes ratio 3:1  360 degrees from 1 0 center at 0 0
-\stoprotation\endpicture} at -1 1
-\put {\beginpicture
-\setplotarea x from -1 to 1, y from -0.33 to 0.33
-\startrotation by 0.866 0.5 about 0 0
-\ellipticalarc  axes ratio 3:1  360 degrees from 1 0 center at 0 0
-\stoprotation\endpicture} at -1 -1
-\put {\beginpicture
-\setplotarea x from -1 to 1, y from -0.33 to 0.33
-\startrotation by 0.866 0.5 about 0 0
-\ellipticalarc  axes ratio 3:1  245 degrees from 1 0.58 center at 0 0
-\stoprotation\endpicture} at -1 -1
-\put {\beginpicture
-\setplotarea x from -1 to 1, y from -0.33 to 0.33
-\startrotation by 0.866 -0.5 about 0 0
-\ellipticalarc  axes ratio 3:1  -245 degrees from 1 -0.58 center at 0 0
-\stoprotation\endpicture} at -1 1
-%\multiput {$+$} at 0 0 0.27 0.9 -1 -1 /
-\setquadratic
-\plot 0.27 0.9 3 2.5 6 3.5 /
-\plot 0.27 -0.9 3 -2.5 6 -3.5 /
-\setlinear
-\plot 0.3 0 6 -3.5 2 0 /
-\plot 6 -3.5 6 3.5 /
-\plot 2 0 6 0 /
-\put {$B$} [l] <4pt,0pt> at 6 3.5
-\put {$A$} [r] <-3pt,0pt> at 0.3 0
-\put {$C$} [br] <0pt,3pt> at 2 0
-\put {$\theta$} at 1 0.2
-\endpicture}
-\figrdef{fig:scissors}
-\endfigure{Scissors.}
+
+%%BADBAD
+%% \figure
+%% \vbox{\beginpicture
+%% \normalgraphs
+%% \sevenpoint
+%% \setcoordinatesystem units <0.7truecm,0.7truecm>
+%% \setplotarea x from -3 to 6, y from -3.5 to 3.5
+%% \setlinear
+%% \plot 0.3 0 6 3.5 2 0 0.3 0 /
+%% \setdashes <2pt>
+%% \put {\beginpicture
+%% \setplotarea x from -1 to 1, y from -0.33 to 0.33
+%% \startrotation by 0.866 -0.5 about 0 0
+%% \ellipticalarc  axes ratio 3:1  360 degrees from 1 0 center at 0 0
+%% \stoprotation\endpicture} at -1 1
+%% \put {\beginpicture
+%% \setplotarea x from -1 to 1, y from -0.33 to 0.33
+%% \startrotation by 0.866 0.5 about 0 0
+%% \ellipticalarc  axes ratio 3:1  360 degrees from 1 0 center at 0 0
+%% \stoprotation\endpicture} at -1 -1
+%% \put {\beginpicture
+%% \setplotarea x from -1 to 1, y from -0.33 to 0.33
+%% \startrotation by 0.866 0.5 about 0 0
+%% \ellipticalarc  axes ratio 3:1  245 degrees from 1 0.58 center at 0 0
+%% \stoprotation\endpicture} at -1 -1
+%% \put {\beginpicture
+%% \setplotarea x from -1 to 1, y from -0.33 to 0.33
+%% \startrotation by 0.866 -0.5 about 0 0
+%% \ellipticalarc  axes ratio 3:1  -245 degrees from 1 -0.58 center at 0 0
+%% \stoprotation\endpicture} at -1 1
+%% %\multiput {$+$} at 0 0 0.27 0.9 -1 -1 /
+%% \setquadratic
+%% \plot 0.27 0.9 3 2.5 6 3.5 /
+%% \plot 0.27 -0.9 3 -2.5 6 -3.5 /
+%% \setlinear
+%% \plot 0.3 0 6 -3.5 2 0 /
+%% \plot 6 -3.5 6 3.5 /
+%% \plot 2 0 6 0 /
+%% \put {$B$} [l] <4pt,0pt> at 6 3.5
+%% \put {$A$} [r] <-3pt,0pt> at 0.3 0
+%% \put {$C$} [br] <0pt,3pt> at 2 0
+%% \put {$\theta$} at 1 0.2
+%% \endpicture}
+%% \figrdef{fig:scissors}
+%% \endfigure{Scissors.}
 
 %\epsfbox{124.figMG.ps}
 
