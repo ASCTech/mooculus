@@ -44,3 +44,9 @@ gem "oauth-plugin", "~> 0.4.0"
 # use bootstrap
 gem 'anjlab-bootstrap-rails', :require => 'bootstrap-rails',
                               :git => 'git://github.com/anjlab/bootstrap-rails.git'
+
+# use Devise for login
+gem 'devise'
+gem 'omniauth'
+gem 'oauth2'
+gem 'omniauth-google-oauth2'
