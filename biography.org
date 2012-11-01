@@ -1,0 +1,14 @@
+* biographys
+** Jim Fowler
+Jim Fowler teaches mathematics at The Ohio State University.  His
+research interests broadly include geometry and topology, and more
+specifically, his interests focus on the topology of high-dimensional
+manifolds and geometric group theory, which means he gets to think
+about highly symmetric (and therefore very beautiful) geometric
+objects.  He's particularly fond of using computational techniques to
+attack problems in pure mathematics.
+
+Prior to OSU, he received an undergraduate degree from Harvard
+University and received a Ph.D. from the University of Chicago.
+** Steve Gubkin
+** Bart Snapp
