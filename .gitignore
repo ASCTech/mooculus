@@ -1,3 +1,4 @@
+*~
 *.ans
 *.aux
 *.idx
@@ -6,3 +7,4 @@
 *.out
 *.toc
 *.log
+*.pdf
