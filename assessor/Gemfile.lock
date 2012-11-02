@@ -153,11 +153,8 @@ PLATFORMS
 DEPENDENCIES
   anjlab-bootstrap-rails!
   coffee-rails (~> 3.2.1)
-<<<<<<< HEAD
   devise
-=======
   execjs
->>>>>>> d1634900cfc198ae52d323edc0fe2f1651fcad7b
   jquery-rails
   json
   oauth-plugin (~> 0.4.0)
