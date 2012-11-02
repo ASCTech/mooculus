@@ -37,7 +37,25 @@ arc (5:90:0.35in) % top ear
 \begin{preview}
   \begin{tikzpicture}[line width=2pt]
     % draw body
-    \draw[line width=2pt] (0,0) circle (0.5in);
+    \begin{scope}
+      \draw[line width=2pt] (0,0) circle (0.5in);
+      
+      \clip (0,0) circle (0.5in);
+      \begin{scope}[color=black!85!white]
+        
+    \fill[xshift=0.2in,yshift=0.1in] plot [smooth cycle, tension=2] coordinates { (0,0) (0.6,0.6) (-0.6,0.6) };
+
+    \fill[xshift=0.4in,yshift=-0.4in] plot [smooth cycle, tension=2] coordinates { (0,0) (0.6,0.6) (-0.6,0.6) };
+
+    \fill[xshift=-0.4in,yshift=-0.6in] plot [smooth cycle, tension=2] coordinates { (0,0) (0.6,0.6) (-0.6,0.6) };
+
+    \fill[xshift=-0.2in,yshift=0.1in] plot [smooth cycle, tension=2] coordinates { (0,0) (-0.2,-0.6) (0.6,-0.6) };
+
+    \fill[xshift=-0.2in,yshift=0.5in] plot [smooth cycle, tension=2] coordinates { (0.35,0.35) (-0.9,-0.8) (0.2,-0.2) };
+
+      \end{scope}
+
+    \end{scope}
 
     \begin{scope}
       \clip (0,0) circle (0.5in);
@@ -62,8 +80,10 @@ arc (5:90:0.35in) % top ear
     \begin{scope}[yshift=0.6in,xshift=-.15in]
     \draw[fill=white] \headpath;
 
-    % draw nose
     \clip \headpath;
+    \fill[color=black!85!white,xshift=0.65in,yshift=0.2in] plot [smooth cycle, tension=2] coordinates { (0,0) (-1,-1) (-0.5,0.5) };
+
+    % draw nose
     \begin{scope}[xshift=.15in,xscale=1.5,yshift=-0.6in,color=pink!50!black]
       \draw[fill=pink] (0in,0) circle (0.09in);
       \draw (0.1,0.1) -- (0.1,0);
@@ -93,12 +113,16 @@ arc (5:90:0.35in) % top ear
       \end{scope}
     \end{scope}
 
+    % draw title MOOCulus
     \node[anchor=west] at (0.5in,0.2) {\scalebox{3.2}{\sffamily\Huge\textbf{M}}};
     \node[anchor=west] at (1.5in,0.2) {\scalebox{3.2}{\sffamily\Huge\textbf{O}}};
     \node[anchor=west] at (2.3in,0.2) {\scalebox{3.2}{\sffamily\Huge\textbf{O}}};
     \node[anchor=west] at (3.1in,0.2) {\scalebox{3.2}{\sffamily\Huge\textbf{C}}};
     \node[anchor=west] at (3.8in,0.2) {\scalebox{3.2}{\sffamily\Huge ulus}};
+
+    % draw subtitle
     \node[anchor=north west] at (0.6in,-0.30in) {\sffamily\scalebox{2.1}{\footnotesize massive open online calculus}};
+
     
   \end{tikzpicture}
 \end{preview}
