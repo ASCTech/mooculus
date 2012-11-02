@@ -16,7 +16,8 @@ group :assets do
   gem 'coffee-rails', '~> 3.2.1'
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
-  # gem 'therubyracer', :platforms => :ruby
+  gem 'therubyracer', :platforms => :ruby
+  gem 'execjs'
 
   gem 'uglifier', '>= 1.0.3'
 end
@@ -44,7 +45,6 @@ gem "oauth-plugin", "~> 0.4.0"
 # use bootstrap
 gem 'anjlab-bootstrap-rails', :require => 'bootstrap-rails',
                               :git => 'git://github.com/anjlab/bootstrap-rails.git'
-
 # use Devise for login
 gem 'devise'
 gem 'omniauth'

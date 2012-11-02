@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.8.6)  31 OCT 2012 19:17
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.8.6)  1 NOV 2012 17:00
 entering extended mode
  %&-line parsing enabled.
 **textbook.tex
@@ -803,6 +803,97 @@ Package microtype Info: Loading configuration file microtype.cfg.
 (/usr/share/texmf-texlive/tex/latex/microtype/microtype.cfg
 File: microtype.cfg 2009/03/27 v2.3d microtype main configuration file (RS)
 ))
+(/usr/share/texmf-texlive/tex/latex/kpfonts/kpfonts.sty
+Package: kpfonts  2009/05/20 v3.1
+LaTeX Font Info:    Redeclaring symbol font `operators' on input line 276.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
+(Font)                  OT1/pplx/m/n --> OT1/jkp/m/n on input line 276.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
+(Font)                  OT1/pplx/b/n --> OT1/jkp/m/n on input line 276.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
+(Font)                  OT1/jkp/m/n --> OT1/jkp/b/n on input line 277.
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 281.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
+(Font)                  OT1/zplm/b/n --> OT1/jkp/b/n on input line 281.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
+(Font)                  OT1/zplm/b/n --> OT1/jkp/b/n on input line 281.
+LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 282.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
+(Font)                  OT1/pplx/m/it --> OT1/jkp/m/it on input line 282.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
+(Font)                  OT1/pplx/b/it --> OT1/jkp/m/it on input line 282.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
+(Font)                  OT1/jkp/m/it --> OT1/jkp/b/it on input line 283.
+LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 288.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
+(Font)                  OT1/cmss/m/n --> OT1/jkpss/m/n on input line 288.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
+(Font)                  OT1/cmss/bx/n --> OT1/jkpss/m/n on input line 288.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
+(Font)                  OT1/jkpss/m/n --> OT1/jkpss/b/n on input line 289.
+LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 293.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
+(Font)                  OT1/cmtt/m/n --> OT1/jkptt/m/n on input line 293.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
+(Font)                  OT1/cmtt/m/n --> OT1/jkptt/m/n on input line 293.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
+(Font)                  OT1/jkptt/m/n --> OT1/jkptt/b/n on input line 294.
+LaTeX Font Info:    Redeclaring symbol font `letters' on input line 306.
+LaTeX Font Info:    Overwriting symbol font `letters' in version `normal'
+(Font)                  OML/zplm/m/it --> OML/jkp/m/it on input line 306.
+LaTeX Font Info:    Overwriting symbol font `letters' in version `bold'
+(Font)                  OML/zplm/b/it --> OML/jkp/m/it on input line 306.
+LaTeX Font Info:    Overwriting symbol font `letters' in version `bold'
+(Font)                  OML/jkp/m/it --> OML/jkp/bx/it on input line 307.
+\symlettersA=\mathgroup7
+LaTeX Font Info:    Overwriting symbol font `lettersA' in version `bold'
+(Font)                  U/jkpmia/m/it --> U/jkpmia/bx/it on input line 313.
+LaTeX Font Info:    Redeclaring math alphabet \mathfrak on input line 316.
+LaTeX Font Info:    Redeclaring symbol font `symbols' on input line 321.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `normal'
+(Font)                  OMS/zplm/m/n --> OMS/jkp/m/n on input line 321.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `bold'
+(Font)                  OMS/zplm/b/n --> OMS/jkp/m/n on input line 321.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `bold'
+(Font)                  OMS/jkp/m/n --> OMS/jkp/bx/n on input line 322.
+LaTeX Font Info:    Redeclaring symbol font `AMSa' on input line 335.
+LaTeX Font Info:    Overwriting symbol font `AMSa' in version `normal'
+(Font)                  U/msa/m/n --> U/jkpsya/m/n on input line 335.
+LaTeX Font Info:    Overwriting symbol font `AMSa' in version `bold'
+(Font)                  U/msa/m/n --> U/jkpsya/m/n on input line 335.
+LaTeX Font Info:    Overwriting symbol font `AMSa' in version `bold'
+(Font)                  U/jkpsya/m/n --> U/jkpsya/bx/n on input line 336.
+LaTeX Font Info:    Redeclaring symbol font `AMSb' on input line 342.
+LaTeX Font Info:    Overwriting symbol font `AMSb' in version `normal'
+(Font)                  U/msb/m/n --> U/jkpsyb/m/n on input line 342.
+LaTeX Font Info:    Overwriting symbol font `AMSb' in version `bold'
+(Font)                  U/msb/m/n --> U/jkpsyb/m/n on input line 342.
+LaTeX Font Info:    Overwriting symbol font `AMSb' in version `bold'
+(Font)                  U/jkpsyb/m/n --> U/jkpsyb/bx/n on input line 343.
+\symsymbolsC=\mathgroup8
+LaTeX Font Info:    Overwriting symbol font `symbolsC' in version `bold'
+(Font)                  U/jkpsyc/m/n --> U/jkpsyc/bx/n on input line 352.
+LaTeX Font Info:    Overwriting math alphabet `\mathscr' in version `bold'
+(Font)                  U/jkpsyd/m/n --> U/jkpsyd/bx/n on input line 368.
+LaTeX Font Info:    Redeclaring symbol font `largesymbols' on input line 374.
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `normal'
+(Font)                  OMX/zplm/m/n --> OMX/jkp/m/n on input line 374.
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
+(Font)                  OMX/zplm/m/n --> OMX/jkp/m/n on input line 374.
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
+(Font)                  OMX/jkp/m/n --> OMX/jkp/bx/n on input line 375.
+\symlargesymbolsA=\mathgroup9
+LaTeX Font Info:    Overwriting symbol font `largesymbolsA' in version `bold'
+(Font)                  U/jkpexa/m/n --> U/jkpexa/bx/n on input line 382.
+LaTeX Info: Redefining \not on input line 1342.
+)
+(/usr/share/texmf-texlive/tex/latex/base/fontenc.sty
+Package: fontenc 2005/09/27 v1.99g Standard LaTeX package
+
+(/usr/share/texmf-texlive/tex/latex/base/t1enc.def
+File: t1enc.def 2005/09/27 v1.99g Standard LaTeX file
+LaTeX Font Info:    Redeclaring font encoding T1 on input line 43.
+))
 (/usr/share/texmf/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshado
 ws.code.tex
 File: tikzlibraryshadows.code.tex 2008/01/13 v2.10 (rcs-revision 1.3)
@@ -903,99 +994,11 @@ Package: framed 2007/10/04 v 0.95: framed or shaded text with page breaks
 \FrameRule=\dimen191
 \FrameSep=\dimen192
 ))
-Package hyperref Info: Option `colorlinks' set `true' on input line 13.
+Package hyperref Info: Option `colorlinks' set `true' on input line 4.
 
-(/usr/share/texmf-texlive/tex/latex/kpfonts/kpfonts.sty
-Package: kpfonts  2009/05/20 v3.1
-LaTeX Font Info:    Redeclaring symbol font `operators' on input line 276.
-LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  OT1/pplx/m/n --> OT1/jkp/m/n on input line 276.
-LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  OT1/pplx/b/n --> OT1/jkp/m/n on input line 276.
-LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  OT1/jkp/m/n --> OT1/jkp/b/n on input line 277.
-LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 281.
-LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
-(Font)                  OT1/zplm/b/n --> OT1/jkp/b/n on input line 281.
-LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
-(Font)                  OT1/zplm/b/n --> OT1/jkp/b/n on input line 281.
-LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 282.
-LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
-(Font)                  OT1/pplx/m/it --> OT1/jkp/m/it on input line 282.
-LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  OT1/pplx/b/it --> OT1/jkp/m/it on input line 282.
-LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  OT1/jkp/m/it --> OT1/jkp/b/it on input line 283.
-LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 288.
-LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
-(Font)                  OT1/cmss/m/n --> OT1/jkpss/m/n on input line 288.
-LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/cmss/bx/n --> OT1/jkpss/m/n on input line 288.
-LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/jkpss/m/n --> OT1/jkpss/b/n on input line 289.
-LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 293.
-LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/cmtt/m/n --> OT1/jkptt/m/n on input line 293.
-LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/cmtt/m/n --> OT1/jkptt/m/n on input line 293.
-LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/jkptt/m/n --> OT1/jkptt/b/n on input line 294.
-LaTeX Font Info:    Redeclaring symbol font `letters' on input line 306.
-LaTeX Font Info:    Overwriting symbol font `letters' in version `normal'
-(Font)                  OML/zplm/m/it --> OML/jkp/m/it on input line 306.
-LaTeX Font Info:    Overwriting symbol font `letters' in version `bold'
-(Font)                  OML/zplm/b/it --> OML/jkp/m/it on input line 306.
-LaTeX Font Info:    Overwriting symbol font `letters' in version `bold'
-(Font)                  OML/jkp/m/it --> OML/jkp/bx/it on input line 307.
-\symlettersA=\mathgroup7
-LaTeX Font Info:    Overwriting symbol font `lettersA' in version `bold'
-(Font)                  U/jkpmia/m/it --> U/jkpmia/bx/it on input line 313.
-LaTeX Font Info:    Redeclaring math alphabet \mathfrak on input line 316.
-LaTeX Font Info:    Redeclaring symbol font `symbols' on input line 321.
-LaTeX Font Info:    Overwriting symbol font `symbols' in version `normal'
-(Font)                  OMS/zplm/m/n --> OMS/jkp/m/n on input line 321.
-LaTeX Font Info:    Overwriting symbol font `symbols' in version `bold'
-(Font)                  OMS/zplm/b/n --> OMS/jkp/m/n on input line 321.
-LaTeX Font Info:    Overwriting symbol font `symbols' in version `bold'
-(Font)                  OMS/jkp/m/n --> OMS/jkp/bx/n on input line 322.
-LaTeX Font Info:    Redeclaring symbol font `AMSa' on input line 335.
-LaTeX Font Info:    Overwriting symbol font `AMSa' in version `normal'
-(Font)                  U/msa/m/n --> U/jkpsya/m/n on input line 335.
-LaTeX Font Info:    Overwriting symbol font `AMSa' in version `bold'
-(Font)                  U/msa/m/n --> U/jkpsya/m/n on input line 335.
-LaTeX Font Info:    Overwriting symbol font `AMSa' in version `bold'
-(Font)                  U/jkpsya/m/n --> U/jkpsya/bx/n on input line 336.
-LaTeX Font Info:    Redeclaring symbol font `AMSb' on input line 342.
-LaTeX Font Info:    Overwriting symbol font `AMSb' in version `normal'
-(Font)                  U/msb/m/n --> U/jkpsyb/m/n on input line 342.
-LaTeX Font Info:    Overwriting symbol font `AMSb' in version `bold'
-(Font)                  U/msb/m/n --> U/jkpsyb/m/n on input line 342.
-LaTeX Font Info:    Overwriting symbol font `AMSb' in version `bold'
-(Font)                  U/jkpsyb/m/n --> U/jkpsyb/bx/n on input line 343.
-\symsymbolsC=\mathgroup8
-LaTeX Font Info:    Overwriting symbol font `symbolsC' in version `bold'
-(Font)                  U/jkpsyc/m/n --> U/jkpsyc/bx/n on input line 352.
-LaTeX Font Info:    Overwriting math alphabet `\mathscr' in version `bold'
-(Font)                  U/jkpsyd/m/n --> U/jkpsyd/bx/n on input line 368.
-LaTeX Font Info:    Redeclaring symbol font `largesymbols' on input line 374.
-LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `normal'
-(Font)                  OMX/zplm/m/n --> OMX/jkp/m/n on input line 374.
-LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
-(Font)                  OMX/zplm/m/n --> OMX/jkp/m/n on input line 374.
-LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
-(Font)                  OMX/jkp/m/n --> OMX/jkp/bx/n on input line 375.
-\symlargesymbolsA=\mathgroup9
-LaTeX Font Info:    Overwriting symbol font `largesymbolsA' in version `bold'
-(Font)                  U/jkpexa/m/n --> U/jkpexa/bx/n on input line 382.
-LaTeX Info: Redefining \not on input line 1342.
-)
-(/usr/share/texmf-texlive/tex/latex/base/fontenc.sty
-Package: fontenc 2005/09/27 v1.99g Standard LaTeX package
 
-(/usr/share/texmf-texlive/tex/latex/base/t1enc.def
-File: t1enc.def 2005/09/27 v1.99g Standard LaTeX file
-LaTeX Font Info:    Redeclaring font encoding T1 on input line 43.
-))
+Package hyperref Warning: Option `pagecolor' is not available anymore.
+
 (/usr/share/texmf-texlive/tex/latex/booktabs/booktabs.sty
 Package: booktabs 2005/04/14 v1.61803 publication quality tables
 \heavyrulewidth=\dimen193
@@ -1036,58 +1039,58 @@ Package: enumerate 1999/03/05 v3.00 enumerate extensions (DPC)
  (./textbook.aux)
 \openout1 = `textbook.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/jkp/m/it on input line 140.
-LaTeX Font Info:    Try loading font information for OML+jkp on input line 140.
+LaTeX Font Info:    Checking defaults for OML/jkp/m/it on input line 131.
+LaTeX Font Info:    Try loading font information for OML+jkp on input line 131.
 
 
 (/usr/share/texmf-texlive/tex/latex/kpfonts/omljkp.fd
 File: omljkp.fd 2006/08/15 v1.0
 )
-LaTeX Font Info:    ... okay on input line 140.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 140.
-LaTeX Font Info:    ... okay on input line 140.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 140.
-LaTeX Font Info:    ... okay on input line 140.
-LaTeX Font Info:    Checking defaults for OMS/jkp/m/n on input line 140.
-LaTeX Font Info:    Try loading font information for OMS+jkp on input line 140.
+LaTeX Font Info:    ... okay on input line 131.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 131.
+LaTeX Font Info:    ... okay on input line 131.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 131.
+LaTeX Font Info:    ... okay on input line 131.
+LaTeX Font Info:    Checking defaults for OMS/jkp/m/n on input line 131.
+LaTeX Font Info:    Try loading font information for OMS+jkp on input line 131.
 
 
 (/usr/share/texmf-texlive/tex/latex/kpfonts/omsjkp.fd
 File: omsjkp.fd 2006/08/15 v1.0
 )
-LaTeX Font Info:    ... okay on input line 140.
-LaTeX Font Info:    Checking defaults for OMX/jkp/m/n on input line 140.
-LaTeX Font Info:    Try loading font information for OMX+jkp on input line 140.
+LaTeX Font Info:    ... okay on input line 131.
+LaTeX Font Info:    Checking defaults for OMX/jkp/m/n on input line 131.
+LaTeX Font Info:    Try loading font information for OMX+jkp on input line 131.
 
 
 (/usr/share/texmf-texlive/tex/latex/kpfonts/omxjkp.fd
 File: omxjkp.fd 2006/08/15 v1.0
 )
-LaTeX Font Info:    ... okay on input line 140.
-LaTeX Font Info:    Checking defaults for U/jkpexa/m/n on input line 140.
-LaTeX Font Info:    Try loading font information for U+jkpexa on input line 140
+LaTeX Font Info:    ... okay on input line 131.
+LaTeX Font Info:    Checking defaults for U/jkpexa/m/n on input line 131.
+LaTeX Font Info:    Try loading font information for U+jkpexa on input line 131
 .
 
 (/usr/share/texmf-texlive/tex/latex/kpfonts/ujkpexa.fd
 File: ujkpexa.fd 2006/08/15 v1.0
 )
-LaTeX Font Info:    ... okay on input line 140.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 140.
-LaTeX Font Info:    ... okay on input line 140.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 140.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 140.
+LaTeX Font Info:    ... okay on input line 131.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 131.
+LaTeX Font Info:    ... okay on input line 131.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 131.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 131.
 
 
 (/usr/share/texmf-texlive/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 140.
-LaTeX Font Info:    Try loading font information for T1+jkp on input line 140.
+LaTeX Font Info:    ... okay on input line 131.
+LaTeX Font Info:    Try loading font information for T1+jkp on input line 131.
 
 (/usr/share/texmf-texlive/tex/latex/kpfonts/t1jkp.fd
 File: t1jkp.fd 2007/01/24 Fontinst v1.928 font definitions for T1/jkp.
 )
-Package hyperref Info: Link coloring ON on input line 140.
+Package hyperref Info: Link coloring ON on input line 131.
 
 (/usr/share/texmf-texlive/tex/latex/hyperref/nameref.sty
 Package: nameref 2007/05/29 v2.31 Cross-referencing by name of section
@@ -1097,15 +1100,15 @@ Package: refcount 2008/08/11 v3.1 Data extraction from references (HO)
 )
 \c@section@level=\count152
 )
-LaTeX Info: Redefining \ref on input line 140.
-LaTeX Info: Redefining \pageref on input line 140.
+LaTeX Info: Redefining \ref on input line 131.
+LaTeX Info: Redefining \pageref on input line 131.
  (./textbook.out)
 (./textbook.out)
 \@outlinefile=\write6
 \openout6 = `textbook.out'.
 
 \AtBeginShipoutBox=\box88
-LaTeX Info: Redefining \selectfont on input line 140.
+LaTeX Info: Redefining \selectfont on input line 131.
 
 *geometry auto-detecting driver*
 *geometry detected driver: pdftex*
@@ -1148,7 +1151,7 @@ driver: pdftex
 \@twosidetrue 
 (1in=72.27pt, 1cm=28.45pt)
 -----------------------
-LaTeX Info: Redefining \microtypecontext on input line 140.
+LaTeX Info: Redefining \microtypecontext on input line 131.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
@@ -1171,7 +1174,7 @@ Package microtype Info: No adjustment of character kerning.
 \MPnumerator=\count157
 \everyMPtoPDFconversion=\toks45
 ) ABD: EveryShipout initializing macros
-LaTeX Font Info:    Try loading font information for T1+jkpss on input line 174
+LaTeX Font Info:    Try loading font information for T1+jkpss on input line 165
 .
 
 (/usr/share/texmf-texlive/tex/latex/kpfonts/t1jkpss.fd
@@ -1180,56 +1183,63 @@ File: t1jkpss.fd 2007/07/16 Fontinst v1.928 font definitions for T1/jkpss.
 
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-LaTeX Font Info:    Try loading font information for TS1+jkp on input line 186.
+LaTeX Font Info:    Try loading font information for TS1+jkp on input line 177.
 
 
 (/usr/share/texmf-texlive/tex/latex/kpfonts/ts1jkp.fd
 File: ts1jkp.fd 2007/08/30 Fontinst v1.928 font definitions for TS1/jkp.
 )
-LaTeX Font Info:    Try loading font information for T1+jkptt on input line 191
+LaTeX Font Info:    Try loading font information for T1+jkptt on input line 182
 .
 
 (/usr/share/texmf-texlive/tex/latex/kpfonts/t1jkptt.fd
 File: t1jkptt.fd 2007/01/26 Fontinst v1.928 font definitions for T1/jkptt.
 )
-LaTeX Font Info:    Try loading font information for OT1+jkp on input line 191.
+LaTeX Font Info:    Try loading font information for OT1+jkp on input line 182.
 
 
 (/usr/share/texmf-texlive/tex/latex/kpfonts/ot1jkp.fd
 File: ot1jkp.fd 2007/08/30 Fontinst v1.928 font definitions for OT1/jkp.
 )
-LaTeX Font Info:    Try loading font information for OT1+zplm on input line 191
+LaTeX Font Info:    Try loading font information for OT1+zplm on input line 182
 .
 
 (/usr/share/texmf-texlive/tex/latex/psnfss/ot1zplm.fd
 File: ot1zplm.fd 2002/09/08 Fontinst v1.914 font definitions for OT1/zplm.
 )
-LaTeX Font Info:    Try loading font information for U+jkpsya on input line 191
+LaTeX Font Info:    Try loading font information for U+jkpsya on input line 182
 .
 
 (/usr/share/texmf-texlive/tex/latex/kpfonts/ujkpsya.fd
 File: ujkpsya.fd 2006/08/15 v1.0
 )
-LaTeX Font Info:    Try loading font information for U+jkpsyb on input line 191
+LaTeX Font Info:    Try loading font information for U+jkpsyb on input line 182
 .
 
 (/usr/share/texmf-texlive/tex/latex/kpfonts/ujkpsyb.fd
 File: ujkpsyb.fd 2006/08/15 v1.0
 )
-LaTeX Font Info:    Try loading font information for U+jkpmia on input line 191
+LaTeX Font Info:    Try loading font information for U+jkpmia on input line 182
 .
 
 (/usr/share/texmf-texlive/tex/latex/kpfonts/ujkpmia.fd
 File: ujkpmia.fd 2006/08/15 v1.0
 )
-LaTeX Font Info:    Try loading font information for U+jkpsyc on input line 191
+LaTeX Font Info:    Try loading font information for U+jkpsyc on input line 182
 .
 
 (/usr/share/texmf-texlive/tex/latex/kpfonts/ujkpsyc.fd
 File: ujkpsyc.fd 2006/08/15 v1.0
 ) [2
 
-] (./textbook.toc)
+]
+Package microtype Info: Character `029' is missing
+(microtype)             in font `T1/jkp/m/sc/20.74'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `029' is missing
+(microtype)             in font `T1/jkpss/m/sc/20.74'.
+(microtype)             Ignoring protrusion settings for this character.
+ (./textbook.toc)
 \tf@toc=\write7
 \openout7 = `textbook.toc'.
 
@@ -1250,9 +1260,7 @@ File: ujkpsyc.fd 2006/08/15 v1.0
 
  [7] [8
 
-] [9
-
-] [10
+] [9] [10
 
 ]
 (./chapter01.tex
@@ -1260,10 +1268,7 @@ Chapter 1.
 
 LaTeX Warning: Marginpar on page 11 moved.
 
-
-Underfull \vbox (badness 8113) has occurred while \output is active []
-
- [11
+[11
 
 ]
 
@@ -1340,7 +1345,11 @@ LaTeX Warning: Reference `fig:ellipses' on page 27 undefined on input line 121.
 
 ]
 Chapter 2.
-(./section02.01.tex [29]
+(./section02.01.tex
+Overfull \vbox (2.18425pt too high) detected at line 37
+ []
+
+[29]
 
 LaTeX Warning: Reference `fig:chords' on page 30 undefined on input line 55.
 
@@ -1395,7 +1404,15 @@ e 219.
 
 ]
 Chapter 3.
-(./section03.01.tex [59] [60] [61]) (./section03.02.tex [62]
+(./section03.01.tex
+Underfull \vbox (badness 1221) has occurred while \output is active []
+
+ [59]
+[60]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [61]
+[62]) (./section03.02.tex [63]
 Overfull \hbox (14.87491pt too wide) detected at line 59
 \OML/jkp/m/it/10 f[]\OT1/zplm/m/n/10 (\OML/jkp/m/it/10 x\OT1/zplm/m/n/10 ) = []
 (\OML/jkp/m/it/10 x[] \OT1/zplm/m/n/10 + \OT1/jkp/m/n/10 5\OML/jkp/m/it/10 x[]\
@@ -1408,7 +1425,7 @@ OT1/jkp/m/n/10 5 \OMS/jkp/m/n/10 ^^A \OT1/jkp/m/n/10 2\OML/jkp/m/it/10 x[] \OT1
 p/m/n/10 10\OML/jkp/m/it/10 x\OT1/jkp/m/n/10 .
  []
 
-[63] [64]) (./section03.03.tex
+[64]) (./section03.03.tex [65]
 Overfull \hbox (3.14566pt too wide) in paragraph at lines 32--32
 [] 
  []
@@ -1416,23 +1433,23 @@ Overfull \hbox (3.14566pt too wide) in paragraph at lines 32--32
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [65]
-[66] [67]) (./section03.04.tex [68]
+ [66]
+[67] [68]) (./section03.04.tex
 Overfull \hbox (21.46898pt too wide) detected at line 26
 [][] \OT1/zplm/m/n/10 = \OML/jkp/m/it/10 f\OT1/zplm/m/n/10 (\OML/jkp/m/it/10 x\
 OT1/zplm/m/n/10 )[] + \OML/jkp/m/it/10 f[]\OT1/zplm/m/n/10 (\OML/jkp/m/it/10 x\
 OT1/zplm/m/n/10 )[] = [] = []\OT1/jkp/m/n/10 .
  []
 
-[69] [70]) (./section03.05.tex [71] [72] [73] [74]
-Underfull \vbox (badness 10000) detected at line 180
- []
-
-
+[69] [70] [71]) (./section03.05.tex
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [75]
-[76]
+ [72]
+[73] [74]
+Underfull \vbox (badness 3713) detected at line 160
+ []
+
+[75] [76] [77]
 Overfull \hbox (22.39006pt too wide) in paragraph at lines 357--362
 []\T1/jkp/m/n/10 (-20) Find an equa-tion for the tan-gent line to $[]$ at $\OT1
 /zplm/m/n/10 (\OT1/jkp/m/n/10 (-20) 1, []\OT1/zplm/m/n/10 )$\T1/jkp/m/n/10 (-20
@@ -1444,7 +1461,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 357--362
 
  []
 
-[77])) (./chapter04.tex [78]
+)) (./chapter04.tex [78]
 Chapter 4.
 (./section04.01.tex [79
 
@@ -1614,6 +1631,9 @@ LaTeX Warning: Reference `fig:non extremum' on page 118 undefined on input line
 LaTeX Warning: Reference `fig:testing for max and min' on page 118 undefined on
  input line 126.
 
+
+LaTeX Warning: Reference `thm:evt' on page 118 undefined on input line 132.
+
 [118] [119] [120]) (./section05.02.tex
 
 LaTeX Warning: Reference `fig:max and min points' on page 121 undefined on inpu
@@ -1640,10 +1660,7 @@ LaTeX Warning: Reference `fig:concave down' on page 125 undefined on input line
 
 [125]) (./section05.05.tex [126] [127])) (./chapter06.tex [128]
 Chapter 6.
-(./section06.01.tex
-Underfull \vbox (badness 2478) has occurred while \output is active []
-
- [129
+(./section06.01.tex [129
 
 ]
 
@@ -1692,7 +1709,17 @@ m/n/10 (\OML/jkp/m/it/10 x[] \OT1/zplm/m/n/10 + \OML/jkp/m/it/10 b[]\OT1/zplm/m
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [137]
-[138] [139] [140] [141] [142]) (./section06.02.tex [143]
+[138] [139]
+
+LaTeX Warning: Reference `exam:sand and road' on page 140 undefined on input li
+ne 693.
+
+[140] [141] [142]
+
+LaTeX Warning: Reference `ex:manufacturing' on page 143 undefined on input line
+ 857.
+
+) (./section06.02.tex [143]
 
 LaTeX Warning: Reference `fig:airplane' on page 144 undefined on input line 65.
 
@@ -1779,6 +1806,14 @@ Underfull \vbox (badness 10000) detected at line 253
 Underfull \vbox (badness 6978) has occurred while \output is active []
 
  [146]
+
+LaTeX Warning: Reference `exam:receding airplane' on page 147 undefined on inpu
+t line 317.
+
+
+LaTeX Warning: Reference `exam:receding airplane' on page 147 undefined on inpu
+t line 319.
+
 [147] [148]
 
 LaTeX Warning: Reference `fig:sunrise sunset' on page 149 undefined on input li
@@ -1850,7 +1885,16 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 LaTeX Warning: Reference `fig:tanx vs x' on page 153 undefined on input line 11
 2.
 
-[153]) (./section06.04.tex
+[153]
+
+LaTeX Warning: Reference `sec:optimization' on page 154 undefined on input line
+ 187.
+
+
+LaTeX Warning: Reference `exercise: cardboard box' on page 154 undefined on inp
+ut line 187.
+
+) (./section06.04.tex
 
 LaTeX Warning: Reference `fig:linear approximation' on page 154 undefined on in
 put line 16.
@@ -2072,7 +2116,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.286 \chapter*{Answers to selected exercises}
+l.271 \chapter*{Answers to selected exercises}
                                               
 ? 
 (./textbook.ans
@@ -2129,25 +2173,25 @@ Underfull \hbox (badness 10000) in paragraph at lines 230--238
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.288 
+l.273 
       
 ? 
 ! Missing } inserted.
 <inserted text> 
                 }
-l.288 
+l.273 
       
 ? 
 ! Missing } inserted.
 <inserted text> 
                 }
-l.288 
+l.273 
       
 ? 
 ! Extra }, or forgotten \endgroup.
 \par ...m \@noitemerr {\@@par }\fi \else {\@@par }
                                                   \fi 
-l.288 
+l.273 
       
 ? 
 No file textbook.ind.
@@ -2163,7 +2207,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.292 \end{document}
+l.277 \end{document}
                     
 ? 
 (./textbook.aux)
@@ -2176,7 +2220,7 @@ LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 ! You can't use `\end' in internal vertical mode.
 \enddocument ... \endgroup \deadcycles \z@ \@@end 
                                                   
-l.292 \end{document}
+l.277 \end{document}
                     
 ? 
 
@@ -2186,12 +2230,10 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.292 \end{document}
+l.277 \end{document}
                     
 ? 
 )
-*
-(Please type a command or say `\end')
 *
 (Please type a command or say `\end')
 *
@@ -2241,11 +2283,11 @@ you can ask a wizard to enlarge me.
 
  
 Here is how much of TeX's memory you used:
- 22422 strings out of 493848
- 395370 string characters out of 1152824
- 600819 words of memory out of 3000000
- 23782 multiletter control sequences out of 15000+50000
- 201488 words of font info for 499 fonts, out of 3000000 for 9000
+ 22440 strings out of 493848
+ 395663 string characters out of 1152824
+ 600864 words of memory out of 3000000
+ 23797 multiletter control sequences out of 15000+50000
+ 216101 words of font info for 504 fonts, out of 3000000 for 9000
  714 hyphenation exceptions out of 8191
- 5000i,13n,5000p,423b,1122s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 5000i,13n,5000p,423b,1118s stack positions out of 5000i,500n,10000p,200000b,50000s
 !  ==> Fatal error occurred, no output PDF file produced!

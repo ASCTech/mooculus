@@ -1,16 +1,16 @@
 \documentclass[justified,marginals=raggedouter]{tufte-book}
 \usepackage{mooculus}
- 
-\geometry{landscape,
-  left=1in,
-  top=1in,
-  textheight=6.5in,
-  textwidth=5in,
-  marginparsep=0.5in,
-  marginparwidth=2.5in}
 
-
-\hypersetup{colorlinks}
+\hypersetup{colorlinks=true}
+\hypersetup{%
+    pdfborder = {0 0 0},
+    bookmarksdepth = section,
+    citecolor = DarkGreen,
+    linkcolor = DarkBlue,
+    pagecolor = DarkBlue,
+    urlcolor = DarkGreen,
+  }%
+%\usepackage[colorlinks=false, linktocpage=true]{hyperref}
 
 \usepackage{amsmath}
 \usepackage{amssymb}
@@ -20,7 +20,6 @@
 
 \setcounter{secnumdepth}{2}
 
-\usepackage{tikz}
 
 \DeclareMathOperator{\arccot}{arccot}
 \DeclareMathOperator{\sech}{sech}
@@ -29,14 +28,6 @@
 \DeclareMathOperator{\arcsech}{arcsech}
 \DeclareMathOperator{\arccosh}{arccosh}
 
-
-
-
-%\usepackage{tgpagella}
-\usepackage[notextcomp]{kpfonts}
-\usepackage[T1]{fontenc}
-%\usepackage{mathpazo} 
-\usepackage{microtype}
 
 % For nicely typeset tabular material
 \usepackage{booktabs}
@@ -78,7 +69,7 @@
 
 \newcounter{exercise}
 \newenvironment{exercises}{%
-\subsection*{Exercises for \textsection\arabic{chapter}.\arabic{section}\hrule}
+\subsection*{Exercises for Section \arabic{chapter}.\arabic{section}\hrule}
 \setcounter{exercise}{0}
 \dumpanswer[\noexpand\subsection*{Answers for \arabic{chapter}.\arabic{section}}]
 }%
@@ -112,9 +103,7 @@
 
 \let\ds\displaystyle
 
-\let\ssk\smallskip
-\let\msk\medskip
-\let\bsk\bigskip
+\let\ssk\smallskip \let\msk\medskip \let\bsk\bigskip
 
 \usepackage{multicol}
 \def\twocol{\begin{multicols}{2}}
@@ -188,9 +177,7 @@ Copyright \copyright\ \the\year\ David Guichard
 This work is licensed under the Creative Commons
 Attribution-NonCommercial-ShareAlike License. To view a copy of this
 license, visit 
-\url{http://creativecommons.org/licenses/by-nc-sa/3.0/} 
-%{\tt http://creativecommons.org/licenses/by-nc-sa/3.0/}\endurl\ 
-or
+\url{http://creativecommons.org/licenses/by-nc-sa/3.0/}~or
 send a letter to Creative Commons, 543 Howard Street, 5th Floor, San
 Francisco, California, 94105, USA. If you distribute this work or a
 derivative, include the history of the document. 
@@ -203,18 +190,14 @@ generously gave permission to use, modify, and distribute his
 work. New material has been added, and old material has been modified,
 so some portions now bear little resemblance to the original.
 
-\msk\noindent
-The book includes some exercises and examples from {\it Elementary
-Calculus: An Approach Using Infinitesimals}, by H.~Jerome Keisler, 
-available at  
-\url{http://www.math.wisc.edu/~keisler/calc.html}%
-%\vb|http://www.math.wisc.edu/~keisler/calc.html|\endurl\ 
-under a Creative Commons license. In addition, the chapter on
-differential equations and the section on numerical integration
-are largely derived from the corresponding portions of
-Keisler's book.
-Albert Schueller, Barry Balof, and Mike Wills have contributed
-additional material.
+\msk\noindent The book includes some exercises and examples from {\it
+  Elementary Calculus: An Approach Using Infinitesimals}, by H.~Jerome
+Keisler, available at
+\url{http://www.math.wisc.edu/~keisler/calc.html}~under a Creative
+Commons license. In addition, the chapter on differential equations
+and the section on numerical integration are largely derived from the
+corresponding portions of Keisler's book.  Albert Schueller, Barry
+Balof, and Mike Wills have contributed additional material.
 
 % BADBAD
 %\msk\noindent
@@ -251,7 +234,7 @@ suggestions for improvement at {\tt guichard@whitman.edu}.
 %\vfill
 
 % r.9 introduction
-\cleardoublepage
+%\cleardoublepage
 
 \chapter*{Introduction}
 

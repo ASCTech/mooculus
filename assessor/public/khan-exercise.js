@@ -157,7 +157,7 @@ var Khan = (function() {
 
     // The main server we're connecting to for saving data
     server = typeof apiServer !== "undefined" ? apiServer :
-        testMode ? "http://localhost:8080" : "",
+        testMode ? "http://localhost:3000" : "",
 
     // The ID, filename, and name of the exercise -- these will only be set here in testMode
     exerciseId = ((/([^\/.]+)(?:\.html)?$/.exec(window.location.pathname) || [])[1]) || "",
