@@ -19,8 +19,8 @@ not have an inverse.
 *** KHAN evaluating limits from a graph, piecewise functions, discontinuous
 *** VIDEO why do we care about limits?  any time we have approximations we can improve
 *** Motivating Example: 
-(x^2 - 4x + 4)/(x-2), plot for integer values of x from -2 to 4,
-excluding x=2. Explain how this is *not* equal to x-2, and that a
+(x^2 - 3x + 2)/(x-2), plot for integer values of x from -1 to 2,
+excluding x=2. Explain how this is *not* equal to x-1, and that a
 limit is needed.
 ** 2.2 Definition of limits
 *** KHAN start with function square root(X^2+2)/|X| 

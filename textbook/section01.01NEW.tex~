@@ -1,0 +1,16 @@
+\section{The Basic Idea of Limits}{}{}
+
+
+Consider the function:
+\[
+f(x) = \frac{x^2 - 3x + 2}{x-2}
+\]
+The domain of this function is $(-\infty, 2)\cup(2,\infty)$. The
+notion of \textit{limits} will help us answer the following question:
+Does there exist a continuous function on $\R$ that is equal to $f(x)$
+on $(-\infty, 2)\cup(2,\infty)$?
+\begin{tikzpicture}
+	\begin{axis}[width=190pt,axis x line=middle, axis y line=center, tick align=outside]
+	  \addplot+[mark=none,smooth] {(\x^2-3\x+2)/(\x-2)};
+	\end{axis}
+\end{tikzpicture}

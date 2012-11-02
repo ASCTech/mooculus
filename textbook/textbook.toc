@@ -1,8 +1,9 @@
 \contentsline {chapter}{\numberline {1}Analytic Geometry}{11}{chapter.1}
-\contentsline {section}{\numberline {1.1}Lines}{12}{section.1.1}
-\contentsline {section}{\numberline {1.2}Distance Between Two Points; Circles}{17}{section.1.2}
-\contentsline {section}{\numberline {1.3}Functions}{19}{section.1.3}
-\contentsline {section}{\numberline {1.4}Shifts and Dilations}{24}{section.1.4}
+\contentsline {section}{\numberline {1.1}The Basic Ideas of Limits}{11}{section.1.1}
+\contentsline {section}{\numberline {1.2}Lines}{12}{section.1.2}
+\contentsline {section}{\numberline {1.3}Distance Between Two Points; Circles}{17}{section.1.3}
+\contentsline {section}{\numberline {1.4}Functions}{19}{section.1.4}
+\contentsline {section}{\numberline {1.5}Shifts and Dilations}{25}{section.1.5}
 \contentsline {chapter}{\numberline {2}Instantaneous Rate of Change: The Derivative}{29}{chapter.2}
 \contentsline {section}{\numberline {2.1}The slope of a function}{29}{section.2.1}
 \contentsline {section}{\numberline {2.2}An example}{35}{section.2.2}
@@ -33,9 +34,4 @@
 \contentsline {section}{\numberline {5.3}The second derivative test}{123}{section.5.3}
 \contentsline {section}{\numberline {5.4}Concavity and inflection points}{124}{section.5.4}
 \contentsline {section}{\numberline {5.5}Asymptotes and Other Things to Look For}{126}{section.5.5}
-\contentsline {chapter}{\numberline {6}Applications of the Derivative}{129}{chapter.6}
-\contentsline {section}{\numberline {6.1}Optimization}{129}{section.6.1}
-\contentsline {section}{\numberline {6.2}Related Rates}{143}{section.6.2}
-\contentsline {section}{\numberline {6.3}Newton's Method}{151}{section.6.3}
-\contentsline {section}{\numberline {6.4}Linear Approximations}{154}{section.6.4}
 \contentsfinish 

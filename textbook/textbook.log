@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.8.6)  1 NOV 2012 17:00
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.8.6)  2 NOV 2012 16:43
 entering extended mode
  %&-line parsing enabled.
 **textbook.tex
@@ -994,103 +994,177 @@ Package: framed 2007/10/04 v 0.95: framed or shaded text with page breaks
 \FrameRule=\dimen191
 \FrameSep=\dimen192
 ))
-Package hyperref Info: Option `colorlinks' set `true' on input line 4.
+(/usr/share/texmf-texlive/tex/latex/pgfplots/pgfplots.sty
+Package: pgfplots 2009/02/14 Version 1.2.2
+
+(/usr/share/texmf-texlive/tex/generic/pgfplots/pgfplots.code.tex
+(/usr/share/texmf-texlive/tex/generic/pgfplots/pgfplotscore.code.tex
+\t@pgfplots@toka=\toks42
+\t@pgfplots@tokb=\toks43
+\t@pgfplots@tokc=\toks44
+\pgfplots@tmpa=\dimen193
+)
+(/usr/share/texmf-texlive/tex/generic/pgfplots/oldpgfcompatib/pgfplotsoldpgfsup
+p_loader.code.tex
+Package pgfplots: loading complementary code for your PGF version...
+
+(/usr/share/texmf-texlive/tex/generic/pgfplots/oldpgfcompatib/pgfplotsoldpgfsup
+p_misc.code.tex)
+(/usr/share/texmf-texlive/tex/generic/pgfplots/oldpgfcompatib/pgfplotsoldpgfsup
+p_pgfkeysfiltered.code.tex
+\pgfkeys@tmptoks=\toks45
+)
+(/usr/share/texmf-texlive/tex/generic/pgfplots/oldpgfcompatib/pgfplotsoldpgfsup
+p_pgfmathfloat.code.tex
+\c@pgfmathroundto@lastzeros=\count147
+)
+(/usr/share/texmf-texlive/tex/generic/pgfplots/oldpgfcompatib/pgfplotsoldpgfsup
+p_pgflibraryplothandlers.code.tex
+File: pgfplotsoldpgfsupp_pgflibraryplothandlers.code.tex 2009/02/13 v2.10 (rcs-
+revision 1.7)
+\pgf@plot@mark@count=\count148
+\pgfplotmarksize=\dimen194
+)
+(/usr/share/texmf/tex/generic/pgf/libraries/pgflibraryfpu.code.tex))
+(/usr/share/texmf-texlive/tex/generic/pgfplots/util/pgfplotsutil.code.tex
+(/usr/share/texmf-texlive/tex/generic/pgfplots/liststructure/pgfplotsliststruct
+ure.code.tex)
+(/usr/share/texmf-texlive/tex/generic/pgfplots/liststructure/pgfplotsliststruct
+ureext.code.tex)
+(/usr/share/texmf-texlive/tex/generic/pgfplots/liststructure/pgfplotsarray.code
+.tex
+\c@pgfplotsarray@tmp=\count149
+)
+(/usr/share/texmf-texlive/tex/generic/pgfplots/numtable/pgfplotstable.code.tex
+\c@pgfplotstable@counta=\count150
+\pgfplotstable@outfile=\write4
+
+(/usr/share/texmf-texlive/tex/generic/pgfplots/numtable/pgfplotstable.coltype.c
+ode.tex)))
+(/usr/share/texmf-texlive/tex/generic/pgfplots/util/pgfplotscolormap.code.tex)
+(/usr/share/texmf-texlive/tex/generic/pgfplots/pgfplots.stackedplots.code.tex)
+(/usr/share/texmf-texlive/tex/generic/pgfplots/pgfplotscoordprocessing.code.tex
+) (/usr/share/texmf-texlive/tex/generic/pgfplots/pgfplotsticks.code.tex)
+(/usr/share/texmf/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarydecor
+ations.pathmorphing.code.tex
+(/usr/share/texmf/tex/generic/pgf/libraries/decorations/pgflibrarydecorations.p
+athmorphing.code.tex))
+(/usr/share/texmf/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarydecor
+ations.pathreplacing.code.tex
+(/usr/share/texmf/tex/generic/pgf/libraries/decorations/pgflibrarydecorations.p
+athreplacing.code.tex))
+\pgfplots@numplots=\count151
+\pgfplots@xmin@reg=\dimen195
+\pgfplots@xmax@reg=\dimen196
+\pgfplots@ymin@reg=\dimen197
+\pgfplots@ymax@reg=\dimen198
+\pgfplots@zmin@reg=\dimen199
+\pgfplots@zmax@reg=\dimen200
+)
+(/usr/share/texmf/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryplotm
+arks.code.tex
+File: tikzlibraryplotmarks.code.tex 2008/01/09 v2.10 (rcs-revision 1.1)
+
+(/usr/share/texmf/tex/generic/pgf/libraries/pgflibraryplotmarks.code.tex
+File: pgflibraryplotmarks.code.tex 2010/10/15 v2.10 (rcs-revision 1.12)
+)))
+Package hyperref Info: Option `colorlinks' set `true' on input line 5.
 
 
 Package hyperref Warning: Option `pagecolor' is not available anymore.
 
 (/usr/share/texmf-texlive/tex/latex/booktabs/booktabs.sty
 Package: booktabs 2005/04/14 v1.61803 publication quality tables
-\heavyrulewidth=\dimen193
-\lightrulewidth=\dimen194
-\cmidrulewidth=\dimen195
-\belowrulesep=\dimen196
-\belowbottomsep=\dimen197
-\aboverulesep=\dimen198
-\abovetopsep=\dimen199
-\cmidrulesep=\dimen200
-\cmidrulekern=\dimen201
-\defaultaddspace=\dimen202
-\@cmidla=\count147
-\@cmidlb=\count148
-\@aboverulesep=\dimen203
-\@belowrulesep=\dimen204
-\@thisruleclass=\count149
-\@lastruleclass=\count150
-\@thisrulewidth=\dimen205
+\heavyrulewidth=\dimen201
+\lightrulewidth=\dimen202
+\cmidrulewidth=\dimen203
+\belowrulesep=\dimen204
+\belowbottomsep=\dimen205
+\aboverulesep=\dimen206
+\abovetopsep=\dimen207
+\cmidrulesep=\dimen208
+\cmidrulekern=\dimen209
+\defaultaddspace=\dimen210
+\@cmidla=\count152
+\@cmidlb=\count153
+\@aboverulesep=\dimen211
+\@belowrulesep=\dimen212
+\@thisruleclass=\count154
+\@lastruleclass=\count155
+\@thisrulewidth=\dimen213
 )
 (/usr/share/texmf-texlive/tex/latex/base/makeidx.sty
 Package: makeidx 2000/03/29 v1.0m Standard LaTeX package
 )
-\@indexfile=\write4
-\openout4 = `textbook.idx'.
+\@indexfile=\write5
+\openout5 = `textbook.idx'.
 
 
 Writing index file textbook.idx
-\answer@stream=\write5
-\openout5 = `textbook.ans'.
+\answer@stream=\write6
+\openout6 = `textbook.ans'.
 
-\answercontent=\toks42
+\answercontent=\toks46
 (/usr/share/texmf-texlive/tex/latex/tools/enumerate.sty
 Package: enumerate 1999/03/05 v3.00 enumerate extensions (DPC)
-\@enLab=\toks43
+\@enLab=\toks47
 )
-\c@exercise=\count151
+\c@exercise=\count156
  (./textbook.aux)
 \openout1 = `textbook.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/jkp/m/it on input line 131.
-LaTeX Font Info:    Try loading font information for OML+jkp on input line 131.
+LaTeX Font Info:    Checking defaults for OML/jkp/m/it on input line 130.
+LaTeX Font Info:    Try loading font information for OML+jkp on input line 130.
 
 
 (/usr/share/texmf-texlive/tex/latex/kpfonts/omljkp.fd
 File: omljkp.fd 2006/08/15 v1.0
 )
-LaTeX Font Info:    ... okay on input line 131.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 131.
-LaTeX Font Info:    ... okay on input line 131.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 131.
-LaTeX Font Info:    ... okay on input line 131.
-LaTeX Font Info:    Checking defaults for OMS/jkp/m/n on input line 131.
-LaTeX Font Info:    Try loading font information for OMS+jkp on input line 131.
+LaTeX Font Info:    ... okay on input line 130.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 130.
+LaTeX Font Info:    ... okay on input line 130.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 130.
+LaTeX Font Info:    ... okay on input line 130.
+LaTeX Font Info:    Checking defaults for OMS/jkp/m/n on input line 130.
+LaTeX Font Info:    Try loading font information for OMS+jkp on input line 130.
 
 
 (/usr/share/texmf-texlive/tex/latex/kpfonts/omsjkp.fd
 File: omsjkp.fd 2006/08/15 v1.0
 )
-LaTeX Font Info:    ... okay on input line 131.
-LaTeX Font Info:    Checking defaults for OMX/jkp/m/n on input line 131.
-LaTeX Font Info:    Try loading font information for OMX+jkp on input line 131.
+LaTeX Font Info:    ... okay on input line 130.
+LaTeX Font Info:    Checking defaults for OMX/jkp/m/n on input line 130.
+LaTeX Font Info:    Try loading font information for OMX+jkp on input line 130.
 
 
 (/usr/share/texmf-texlive/tex/latex/kpfonts/omxjkp.fd
 File: omxjkp.fd 2006/08/15 v1.0
 )
-LaTeX Font Info:    ... okay on input line 131.
-LaTeX Font Info:    Checking defaults for U/jkpexa/m/n on input line 131.
-LaTeX Font Info:    Try loading font information for U+jkpexa on input line 131
+LaTeX Font Info:    ... okay on input line 130.
+LaTeX Font Info:    Checking defaults for U/jkpexa/m/n on input line 130.
+LaTeX Font Info:    Try loading font information for U+jkpexa on input line 130
 .
 
 (/usr/share/texmf-texlive/tex/latex/kpfonts/ujkpexa.fd
 File: ujkpexa.fd 2006/08/15 v1.0
 )
-LaTeX Font Info:    ... okay on input line 131.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 131.
-LaTeX Font Info:    ... okay on input line 131.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 131.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 131.
+LaTeX Font Info:    ... okay on input line 130.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 130.
+LaTeX Font Info:    ... okay on input line 130.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 130.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 130.
 
 
 (/usr/share/texmf-texlive/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 131.
-LaTeX Font Info:    Try loading font information for T1+jkp on input line 131.
+LaTeX Font Info:    ... okay on input line 130.
+LaTeX Font Info:    Try loading font information for T1+jkp on input line 130.
 
 (/usr/share/texmf-texlive/tex/latex/kpfonts/t1jkp.fd
 File: t1jkp.fd 2007/01/24 Fontinst v1.928 font definitions for T1/jkp.
 )
-Package hyperref Info: Link coloring ON on input line 131.
+Package hyperref Info: Link coloring ON on input line 130.
 
 (/usr/share/texmf-texlive/tex/latex/hyperref/nameref.sty
 Package: nameref 2007/05/29 v2.31 Cross-referencing by name of section
@@ -1098,17 +1172,17 @@ Package: nameref 2007/05/29 v2.31 Cross-referencing by name of section
 (/usr/share/texmf-texlive/tex/latex/oberdiek/refcount.sty
 Package: refcount 2008/08/11 v3.1 Data extraction from references (HO)
 )
-\c@section@level=\count152
+\c@section@level=\count157
 )
-LaTeX Info: Redefining \ref on input line 131.
-LaTeX Info: Redefining \pageref on input line 131.
+LaTeX Info: Redefining \ref on input line 130.
+LaTeX Info: Redefining \pageref on input line 130.
  (./textbook.out)
 (./textbook.out)
-\@outlinefile=\write6
-\openout6 = `textbook.out'.
+\@outlinefile=\write7
+\openout7 = `textbook.out'.
 
 \AtBeginShipoutBox=\box88
-LaTeX Info: Redefining \selectfont on input line 131.
+LaTeX Info: Redefining \selectfont on input line 130.
 
 *geometry auto-detecting driver*
 *geometry detected driver: pdftex*
@@ -1151,7 +1225,7 @@ driver: pdftex
 \@twosidetrue 
 (1in=72.27pt, 1cm=28.45pt)
 -----------------------
-LaTeX Info: Redefining \microtypecontext on input line 131.
+LaTeX Info: Redefining \microtypecontext on input line 130.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
@@ -1163,18 +1237,18 @@ Package microtype Info: No adjustment of interword spacing.
 Package microtype Info: No adjustment of character kerning.
 (/usr/share/texmf-texlive/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count153
-\scratchdimen=\dimen206
+\scratchcounter=\count158
+\scratchdimen=\dimen214
 \scratchbox=\box89
-\nofMPsegments=\count154
-\nofMParguments=\count155
-\everyMPshowfont=\toks44
-\MPscratchCnt=\count156
-\MPscratchDim=\dimen207
-\MPnumerator=\count157
-\everyMPtoPDFconversion=\toks45
+\nofMPsegments=\count159
+\nofMParguments=\count160
+\everyMPshowfont=\toks48
+\MPscratchCnt=\count161
+\MPscratchDim=\dimen215
+\MPnumerator=\count162
+\everyMPtoPDFconversion=\toks49
 ) ABD: EveryShipout initializing macros
-LaTeX Font Info:    Try loading font information for T1+jkpss on input line 165
+LaTeX Font Info:    Try loading font information for T1+jkpss on input line 164
 .
 
 (/usr/share/texmf-texlive/tex/latex/kpfonts/t1jkpss.fd
@@ -1183,49 +1257,49 @@ File: t1jkpss.fd 2007/07/16 Fontinst v1.928 font definitions for T1/jkpss.
 
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-LaTeX Font Info:    Try loading font information for TS1+jkp on input line 177.
+LaTeX Font Info:    Try loading font information for TS1+jkp on input line 176.
 
 
 (/usr/share/texmf-texlive/tex/latex/kpfonts/ts1jkp.fd
 File: ts1jkp.fd 2007/08/30 Fontinst v1.928 font definitions for TS1/jkp.
 )
-LaTeX Font Info:    Try loading font information for T1+jkptt on input line 182
+LaTeX Font Info:    Try loading font information for T1+jkptt on input line 181
 .
 
 (/usr/share/texmf-texlive/tex/latex/kpfonts/t1jkptt.fd
 File: t1jkptt.fd 2007/01/26 Fontinst v1.928 font definitions for T1/jkptt.
 )
-LaTeX Font Info:    Try loading font information for OT1+jkp on input line 182.
+LaTeX Font Info:    Try loading font information for OT1+jkp on input line 181.
 
 
 (/usr/share/texmf-texlive/tex/latex/kpfonts/ot1jkp.fd
 File: ot1jkp.fd 2007/08/30 Fontinst v1.928 font definitions for OT1/jkp.
 )
-LaTeX Font Info:    Try loading font information for OT1+zplm on input line 182
+LaTeX Font Info:    Try loading font information for OT1+zplm on input line 181
 .
 
 (/usr/share/texmf-texlive/tex/latex/psnfss/ot1zplm.fd
 File: ot1zplm.fd 2002/09/08 Fontinst v1.914 font definitions for OT1/zplm.
 )
-LaTeX Font Info:    Try loading font information for U+jkpsya on input line 182
+LaTeX Font Info:    Try loading font information for U+jkpsya on input line 181
 .
 
 (/usr/share/texmf-texlive/tex/latex/kpfonts/ujkpsya.fd
 File: ujkpsya.fd 2006/08/15 v1.0
 )
-LaTeX Font Info:    Try loading font information for U+jkpsyb on input line 182
+LaTeX Font Info:    Try loading font information for U+jkpsyb on input line 181
 .
 
 (/usr/share/texmf-texlive/tex/latex/kpfonts/ujkpsyb.fd
 File: ujkpsyb.fd 2006/08/15 v1.0
 )
-LaTeX Font Info:    Try loading font information for U+jkpmia on input line 182
+LaTeX Font Info:    Try loading font information for U+jkpmia on input line 181
 .
 
 (/usr/share/texmf-texlive/tex/latex/kpfonts/ujkpmia.fd
 File: ujkpmia.fd 2006/08/15 v1.0
 )
-LaTeX Font Info:    Try loading font information for U+jkpsyc on input line 182
+LaTeX Font Info:    Try loading font information for U+jkpsyc on input line 181
 .
 
 (/usr/share/texmf-texlive/tex/latex/kpfonts/ujkpsyc.fd
@@ -1240,8 +1314,8 @@ Package microtype Info: Character `029' is missing
 (microtype)             in font `T1/jkpss/m/sc/20.74'.
 (microtype)             Ignoring protrusion settings for this character.
  (./textbook.toc)
-\tf@toc=\write7
-\openout7 = `textbook.toc'.
+\tf@toc=\write8
+\openout8 = `textbook.toc'.
 
 
 [3
@@ -1249,14 +1323,14 @@ Package microtype Info: Character `029' is missing
 ] [4
 
 ] (./textbook.lof)
-\tf@lof=\write8
-\openout8 = `textbook.lof'.
+\tf@lof=\write9
+\openout9 = `textbook.lof'.
 
  [5] [6
 
 ] (./textbook.lot)
-\tf@lot=\write9
-\openout9 = `textbook.lot'.
+\tf@lot=\write10
+\openout10 = `textbook.lot'.
 
  [7] [8
 
@@ -1265,16 +1339,16 @@ Package microtype Info: Character `029' is missing
 ]
 (./chapter01.tex
 Chapter 1.
+(./section01.01NEW.tex)
+
+LaTeX Warning: Marginpar on page 11 moved.
+
 
 LaTeX Warning: Marginpar on page 11 moved.
 
 [11
 
-]
-
-LaTeX Warning: Marginpar on page 12 moved.
-
-(./section01.01.tex
+] (./section01.01.tex
 
 LaTeX Warning: Reference `fig:irs' on page 12 undefined on input line 36.
 
@@ -1287,21 +1361,30 @@ Package amsmath Warning: Foreign command \over;
 (amsmath)                \frac or \genfrac should be used instead
 (amsmath)                 on input line 91.
 
+[13]
 
-LaTeX Warning: Reference `fig:graphs of lines' on page 13 undefined on input li
+LaTeX Warning: Reference `fig:graphs of lines' on page 14 undefined on input li
 ne 106.
 
-[13] [14] [15]
 
-LaTeX Warning: Reference `fig:tax schedule' on page 16 undefined on input line 
+Underfull \vbox (badness 10000) detected at line 234
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [14]
+[15] [16]
+
+LaTeX Warning: Reference `fig:tax schedule' on page 17 undefined on input line 
 354.
 
-[16]) (./section01.02.tex
+) (./section01.02.tex
 
 LaTeX Warning: Reference `fig:distance between points' on page 17 undefined on 
 input line 11.
 
-
+[17]
 Overfull \hbox (30.41508pt too wide) in paragraph at lines 17--20
 \T1/jkp/m/n/10 (-20) For ex-am-ple, the dis-tance be-tween points $\OML/jkp/m/i
 t/10 A \OT1/zplm/m/n/10 = (\OT1/jkp/m/n/10 (-20) 2, 1\OT1/zplm/m/n/10 )$ \T1/jk
@@ -1309,9 +1392,9 @@ p/m/n/10 (-20) and $\OML/jkp/m/it/10 B \OT1/zplm/m/n/10 = (\OT1/jkp/m/n/10 (-20
 ) 3, 3\OT1/zplm/m/n/10 )$ \T1/jkp/m/n/10 (-20) is $[] \OT1/zplm/m/n/10 =
  []
 
-[17] [18]) (./section01.03.tex
+[18]) (./section01.03.tex [19]
 
-LaTeX Warning: Reference `fig:some graphs' on page 19 undefined on input line 2
+LaTeX Warning: Reference `fig:some graphs' on page 20 undefined on input line 2
 9.
 
 LaTeX Font Info:    Try loading font information for U+fplmbb on input line 89.
@@ -1320,36 +1403,37 @@ LaTeX Font Info:    Try loading font information for U+fplmbb on input line 89.
 File: ufplmbb.fd 2003/10/30 Fontinst v1.914 font definitions for U/fplmbb.
 )
 
-LaTeX Warning: Reference `fig:some graphs' on page 19 undefined on input line 9
+LaTeX Warning: Reference `fig:some graphs' on page 20 undefined on input line 9
 4.
 
-[19]
+
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [20]
-
-LaTeX Warning: Reference `fig:upper semicircle' on page 21 undefined on input l
-ine 186.
-
 [21]
 
-LaTeX Warning: Reference `fig:piecewise velocity' on page 22 undefined on input
+LaTeX Warning: Reference `fig:upper semicircle' on page 22 undefined on input l
+ine 186.
+
+[22]
+
+LaTeX Warning: Reference `fig:piecewise velocity' on page 23 undefined on input
  line 250.
 
-[22] [23]) (./section01.04.tex [24] [25] [26]
+[23]) (./section01.04.tex [24] [25] [26]
 
 LaTeX Warning: Reference `fig:ellipses' on page 27 undefined on input line 121.
 
 
-)) (./chapter02.tex [27] [28
-
-]
+[27])) (./chapter02.tex [28]
 Chapter 2.
 (./section02.01.tex
 Overfull \vbox (2.18425pt too high) detected at line 37
  []
 
-[29]
+[29
+
+]
 
 LaTeX Warning: Reference `fig:chords' on page 30 undefined on input line 55.
 
@@ -1658,558 +1742,130 @@ LaTeX Warning: Reference `fig:concave up' on page 124 undefined on input line 1
 LaTeX Warning: Reference `fig:concave down' on page 125 undefined on input line
  46.
 
-[125]) (./section05.05.tex [126] [127])) (./chapter06.tex [128]
-Chapter 6.
-(./section06.01.tex [129
-
-]
-
-LaTeX Warning: Reference `fig:easy max min' on page 130 undefined on input line
- 66.
+[125]) (./section05.05.tex [126] [127])) [128] (./textbook.ans [129
 
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
+] [130]
+Overfull \hbox (49.10059pt too wide) in paragraph at lines 107--115
+\T1/jkp/m/n/10 (-20) 1. $[] \OMS/jkp/m/n/10 ^^@ []$ \T1/jkp/m/n/10 (-20) 2. $[]
+ \OMS/jkp/m/n/10 ^^@ []$
+ []
 
- [130]
+
+Overfull \hbox (51.37598pt too wide) in paragraph at lines 116--156
+\T1/jkp/m/n/10 (-20) 13. $[]$ 14. $[]$ 15. $[]$ 16. $[] []$
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 116--156
+
+ []
+
 [131]
-
-LaTeX Warning: Reference `fig:no global extrema' on page 132 undefined on input
- line 221.
-
-[132] [133]
-
-LaTeX Warning: Reference `fig:rectangle optimization' on page 134 undefined on 
-input line 316.
-
-
-LaTeX Warning: Reference `fig:cone in sphere' on page 134 undefined on input li
-ne 370.
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [134]
-[135] [136]
-
-LaTeX Warning: Reference `fig:minimize travel time' on page 137 undefined on in
-put line 473.
-
-
-Overfull \hbox (69.913pt too wide) detected at line 502
-$ \OT1/jkp/m/n/10 0 \OT1/zplm/m/n/10 = \OML/jkp/m/it/10 f[]\OT1/zplm/m/n/10 (\O
-ML/jkp/m/it/10 x\OT1/zplm/m/n/10 ) = \OMS/jkp/m/n/10 ^^@[] \OT1/zplm/m/n/10 + [
-][] \OML/jkp/m/it/10 w[] \OT1/zplm/m/n/10 = \OML/jkp/m/it/10 vx[] w[]\OT1/zplm/
-m/n/10 (\OML/jkp/m/it/10 x[] \OT1/zplm/m/n/10 + \OML/jkp/m/it/10 b[]\OT1/zplm/m
-/n/10 ) = \OML/jkp/m/it/10 v[]x[][] w[]b[] \OT1/zplm/m/n/10 = (\OML/jkp/m/it/10
- v[] \OMS/jkp/m/n/10 ^^@ \OML/jkp/m/it/10 w[]\OT1/zplm/m/n/10 )\OML/jkp/m/it/10
- x[][] x \OT1/zplm/m/n/10 = [] $
+Overfull \hbox (0.15524pt too wide) in paragraph at lines 171--176
+\T1/jkp/m/n/10 (-20) 1. $[]\OT1/zplm/m/n/10 ([]) []([])/[]$ \T1/jkp/m/n/10 (-20
+) 2. $[] \OT1/zplm/m/n/10 + [] [] \OML/jkp/m/it/10 x$ \T1/jkp/m/n/10 (-20) 3. $
+\OMS/jkp/m/n/10 ^^@[]$ \T1/jkp/m/n/10 (-20) 4. $[]$
  []
 
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [137]
-[138] [139]
-
-LaTeX Warning: Reference `exam:sand and road' on page 140 undefined on input li
-ne 693.
-
-[140] [141] [142]
-
-LaTeX Warning: Reference `ex:manufacturing' on page 143 undefined on input line
- 857.
-
-) (./section06.02.tex [143]
-
-LaTeX Warning: Reference `fig:airplane' on page 144 undefined on input line 65.
-
-
-[144]
-! Too many }'s.
-\endMakeFramed ...eight \z@ \penalty -100 \egroup 
-                                                  \begingroup \fb@put@frame ...
-l.98 \end{example}
-                  
-? 
-! You can't use `\prevdepth' in horizontal mode.
-\nointerlineskip ->\prevdepth 
-                              -\@m \p@ 
-l.98 \end{example}
-                  
-? 
-! Missing $ inserted.
-<inserted text> 
-                $
-l.98 \end{example}
-                  
-? 
-! Missing number, treated as zero.
-<to be read again> 
-                   \hbox 
-l.98 \end{example}
-                  
-? 
-! Illegal unit of measure (pt inserted).
-<to be read again> 
-                   \hbox 
-l.98 \end{example}
-                  
-? 
-! Missing $ inserted.
-<inserted text> 
-                $
-l.98 \end{example}
-                  
-? 
-Missing character: There is no è in font jkpex!
-
-! LaTeX Error: \begin{document} ended by \end{leftbar}.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.98 \end{example}
-                  
-? 
-! Extra \endgroup.
-<recently read> \endgroup 
-                          
-l.98 \end{example}
-                  
-? 
-
-! LaTeX Error: \begin{document} ended by \end{example}.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.98 \end{example}
-                  
-? 
-! Extra \endgroup.
-<recently read> \endgroup 
-                          
-l.98 \end{example}
-                  
-? 
-
-LaTeX Warning: Reference `fig:cone tank' on page 145 undefined on input line 11
-4.
-
-[145]
-Underfull \vbox (badness 10000) detected at line 253
+Overfull \hbox (2.96472pt too wide) in paragraph at lines 177--195
+\T1/jkp/m/n/10 (-20) 1. $[][] \OML/jkp/m/it/10 x \OMS/jkp/m/n/10 ^^@ [][] \OML/
+jkp/m/it/10 x$ \T1/jkp/m/n/10 (-20) 2. $\OMS/jkp/m/n/10 ^^@ [] \OML/jkp/m/it/10
+ x []\OT1/zplm/m/n/10 ([] \OML/jkp/m/it/10 x\OT1/zplm/m/n/10 )$ \T1/jkp/m/n/10 
+(-20) 3. $[]$ 4. $[]$
  []
 
 
-Underfull \vbox (badness 6978) has occurred while \output is active []
-
- [146]
-
-LaTeX Warning: Reference `exam:receding airplane' on page 147 undefined on inpu
-t line 317.
-
-
-LaTeX Warning: Reference `exam:receding airplane' on page 147 undefined on inpu
-t line 319.
-
-[147] [148]
-
-LaTeX Warning: Reference `fig:sunrise sunset' on page 149 undefined on input li
-ne 412.
-
-
-LaTeX Warning: Reference `fig:sunrise sunset' on page 149 undefined on input li
-ne 420.
-
-
-LaTeX Warning: Reference `fig:trough' on page 149 undefined on input line 448.
-
-[149]
-
-LaTeX Warning: Reference `fig:falling ball' on page 150 undefined on input line
- 525.
-
-
-LaTeX Warning: Reference `exam:departing cars' on page 150 undefined on input l
-ine 552.
-
-
-LaTeX Warning: Reference `exam:departing cars' on page 150 undefined on input l
-ine 561.
-
-
-LaTeX Warning: Reference `exam:departing cars' on page 150 undefined on input l
-ine 569.
-
-
-LaTeX Warning: Reference `exam:departing cars' on page 150 undefined on input l
-ine 576.
-
-
-LaTeX Warning: Reference `fig:car and airplane' on page 150 undefined on input 
-line 579.
-
-
-LaTeX Warning: Reference `exam:departing cars' on page 150 undefined on input l
-ine 608.
-
-[150]
-
-LaTeX Warning: Reference `fig:scissors' on page 151 undefined on input line 627
-.
-
-! Undefined control sequence.
-l.638 \itemitem
-               {\bf a.} Express $x$ in terms of $a$, $\theta$, and $\beta$.
-? 
-! Undefined control sequence.
-l.640 \itemitem
-               {\bf b.} Express $dx/dt$ in terms of $a$,
-? 
-! Undefined control sequence.
-l.643 \itemitem
-               {\bf c.} Suppose that the distance $a$ is 20 cm, and the
-? 
-) (./section06.03.tex [151]
-
-LaTeX Warning: Reference `fig:newtons method' on page 152 undefined on input li
-ne 21.
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [152]
-
-LaTeX Warning: Reference `fig:tanx vs x' on page 153 undefined on input line 11
-2.
-
-[153]
-
-LaTeX Warning: Reference `sec:optimization' on page 154 undefined on input line
- 187.
-
-
-LaTeX Warning: Reference `exercise: cardboard box' on page 154 undefined on inp
-ut line 187.
-
-) (./section06.04.tex
-
-LaTeX Warning: Reference `fig:linear approximation' on page 154 undefined on in
-put line 16.
-
-[154]
-! Undefined control sequence.
-l.46 \endexam
-             
-? 
-! Undefined control sequence.
-l.63 \endexam
-             
-? 
-
-LaTeX Warning: Reference `fig:differentials' on page 155 undefined on input lin
-e 82.
-
-
-! LaTeX Error: \begin{enumerate} on input line 140 ended by \end{exercises}.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.144 \end{exercises}
-                     
-? 
-) (./section06.05.tex
-! Extra \else.
-\theorem ...checkend {#2}\Addto@Envbody {#1}\else 
-                                                  \Addto@Envbody {#1\end {#2...
-l.180 \end{example}
-                   
-? 
-! Argument of \answer has an extra }.
-<inserted text> 
-                \par 
-l.189 \end{answer}
-                  \end{exercise}
-? 
-Runaway argument?
- $c=1/2$ 
-! Paragraph ended before \answer was complete.
-<to be read again> 
-                   \par 
-l.189 \end{answer}
-                  \end{exercise}
-? 
-! Extra }, or forgotten \endgroup.
-<recently read> }
-                 
-l.189 \end{answer}
-                  \end{exercise}
-? 
-! Extra \else.
-\theorem ...checkend {#2}\Addto@Envbody {#1}\else 
-                                                  \Addto@Envbody {#1\end {#2...
-l.189 \end{answer}
-                  \end{exercise}
-? 
-! Extra \fi.
-\theorem ...\else \Addto@Envbody {#1\end {#2}}\fi 
-                                                  \process@envbody 
-l.189 \end{answer}
-                  \end{exercise}
-? 
-
-! LaTeX Error: \begin{answer} on input line 189 ended by \end{exercise}.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.189 \end{answer}\end{exercise}
-                                
-? 
-
-! LaTeX Error: Too deeply nested.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.210 \begin{exercise}
-                       Describe all functions with derivative $\ds x^2+47x-5$.
-? 
-! Undefined control sequence.
-l.214 \iflatetranscendentals
-                            \else
-? 
-! Extra \else.
-l.214 \iflatetranscendentals\else
-                                 
-? 
-
-! LaTeX Error: Too deeply nested.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.215 \begin{exercise}
-                       Describe all functions with derivative $\ds {1\over 1...
-
-? 
-
-! LaTeX Error: Too deeply nested.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.219 \begin{exercise}
-                       Describe all functions with derivative $\ds x^3-{1\ov...
-
-? 
-! Extra \fi.
-l.222 \fi
-         
-? 
-
-! LaTeX Error: Too deeply nested.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.224 \begin{exercise}
-                       Describe all functions with derivative $\sin(2x)$.
-? 
-
-! LaTeX Error: Too deeply nested.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.228 \begin{exercise}
-                       Show that the equation $\ds 6x^4 -7x+1 =0$ does not h...
-
-? 
-
-! LaTeX Error: Too deeply nested.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.231 \begin{exercise}
-                       Let $f$ be differentiable on $\R$. Suppose that $f'(x...
-
-? 
-
-! LaTeX Error: Too deeply nested.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.231 \begin{exercise}
-                       Let $f$ be differentiable on $\R$. Suppose that $f'(x...
-
-? 
-
-! LaTeX Error: Too deeply nested.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.234 \begin{exercise}
-                       Prove that for all real $x$ and $y$
-? 
-
-! LaTeX Error: Too deeply nested.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.234 \begin{exercise}
-                       Prove that for all real $x$ and $y$
-? 
-
-! LaTeX Error: Too deeply nested.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.238 \begin{exercise}
-                      
-? 
-
-! LaTeX Error: Too deeply nested.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.238 \begin{exercise}
-                      
-? 
-
-! LaTeX Error: \begin{enumerate} on input line 238 ended by \end{exercises}.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.242 \end{exercises}
-                     
-? 
-))
-
-! LaTeX Error: Too deeply nested.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.271 \chapter*{Answers to selected exercises}
-                                              
-? 
-(./textbook.ans
-Underfull \hbox (badness 1281) in paragraph at lines 43--49
-\T1/jkp/m/n/10 (+20) 1. $\OMS/jkp/m/n/10 ^^@\OT1/jkp/m/n/10 (+20) 5$\T1/jkp/m/n
-/10 (+20) , $\OMS/jkp/m/n/10 ^^@\OT1/jkp/m/n/10 (+20) 2.47106145$\T1/jkp/m/n/10
- (+20) , $\OMS/jkp/m/n/10 ^^@\OT1/jkp/m/n/10 (+20) 2.4067927$\T1/jkp/m/n/10 (+2
-0) , $\OMS/jkp/m/n/10 ^^@\OT1/jkp/m/n/10 (+20) 2.400676$\T1/jkp/m/n/10 (+20) , 
-$\OMS/jkp/m/n/10 ^^@\OT1/jkp/m/n/10 (+20) 2.4$ \T1/jkp/m/n/10 (+20) 2.
+Overfull \hbox (17.90953pt too wide) in paragraph at lines 177--195
+\T1/jkp/m/n/10 (-20) 5. $\OMS/jkp/m/n/10 ^^@ [][] \OML/jkp/m/it/10 x$ \T1/jkp/m
+/n/10 (-20) 6. $\OMS/jkp/m/n/10 ^^@ [] \OML/jkp/m/it/10 x [] x$ \T1/jkp/m/n/10 
+(-20) 7. $\OT1/jkp/m/n/10 (-20) 3\OML/jkp/m/it/10 x[] []\OT1/zplm/m/n/10 (\OT1/
+jkp/m/n/10 (-20) 23\OML/jkp/m/it/10 x[]\OT1/zplm/m/n/10 ) + \OT1/jkp/m/n/10 (-2
+0) 46\OML/jkp/m/it/10 x[] []\OT1/zplm/m/n/10 (\OT1/jkp/m/n/10 (-20) 23\OML/jkp/
+m/it/10 x[]\OT1/zplm/m/n/10 )$ \T1/jkp/m/n/10 (-20) 8. $\OT1/jkp/m/n/10 (-20) 0
+$ \T1/jkp/m/n/10 (-20) 9. $\OMS/jkp/m/n/10 ^^@\OT1/jkp/m/n/10 (-20) 6 []\OT1/zp
+lm/m/n/10 ([](\OT1/jkp/m/n/10 (-20) 6\OML/jkp/m/it/10 x\OT1/zplm/m/n/10 )) [](\
+OT1/jkp/m/n/10 (-20) 6\OML/jkp/m/it/10 x\OT1/zplm/m/n/10 )$
  []
 
 
-Underfull \hbox (badness 7238) in paragraph at lines 107--115
-[]$ \T1/jkp/m/n/10 (+20) 3. $[] \OT1/zplm/m/n/10 +
+Overfull \hbox (8.4926pt too wide) in paragraph at lines 177--195
+\T1/jkp/m/n/10 (-20) 10. $[] \OML/jkp/m/it/10 ^^R\OT1/zplm/m/n/10 /([] \OML/jkp
+/m/it/10 ^^R \OT1/zplm/m/n/10 + \OT1/jkp/m/n/10 (-20) 1\OT1/zplm/m/n/10 )[]$ \T
+1/jkp/m/n/10 (-20) 11. $\OT1/jkp/m/n/10 (-20) 5\OML/jkp/m/it/10 t[] []\OT1/zplm
+/m/n/10 (\OT1/jkp/m/n/10 (-20) 6\OML/jkp/m/it/10 t\OT1/zplm/m/n/10 ) \OMS/jkp/m
+/n/10 ^^@ \OT1/jkp/m/n/10 (-20) 6\OML/jkp/m/it/10 t[] []\OT1/zplm/m/n/10 (\OT1/
+jkp/m/n/10 (-20) 6\OML/jkp/m/it/10 t\OT1/zplm/m/n/10 )$ \T1/jkp/m/n/10 (-20) 12
+. $\OT1/jkp/m/n/10 (-20) 3\OML/jkp/m/it/10 t[]\OT1/zplm/m/n/10 ([](\OT1/jkp/m/n
+/10 (-20) 3\OML/jkp/m/it/10 t\OT1/zplm/m/n/10 ) + \OML/jkp/m/it/10 t []\OT1/zpl
+m/m/n/10 (\OT1/jkp/m/n/10 (-20) 3\OML/jkp/m/it/10 t\OT1/zplm/m/n/10 ))/ [](\OT1
+/jkp/m/n/10 (-20) 2\OML/jkp/m/it/10 t\OT1/zplm/m/n/10 ) +
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 177--195
-\T1/jkp/m/n/10 (+20) 4. $[]$ 5. $\OMS/jkp/m/n/10 ^^@ [][] \OML/jkp/m/it/10 x$ \
-T1/jkp/m/n/10 (+20) 6.
+Overfull \hbox (20.86348pt too wide) in paragraph at lines 197--213
+\T1/jkp/m/n/10 (-20) 1. $\OT1/jkp/m/n/10 (-20) 2 []\OT1/zplm/m/n/10 (\OT1/jkp/m
+/n/10 (-20) 3\OT1/zplm/m/n/10 )\OML/jkp/m/it/10 x\OT1/jkp/m/n/10 (-20) 3[]$ \T1
+/jkp/m/n/10 (-20) 2. $[]$ 3. $\OT1/jkp/m/n/10 (-20) 2\OML/jkp/m/it/10 e[]$ \T1/
+jkp/m/n/10 (-20) 4. $\OML/jkp/m/it/10 e[] []\OT1/zplm/m/n/10 (\OML/jkp/m/it/10 
+e[]\OT1/zplm/m/n/10 )$ \T1/jkp/m/n/10 (-20) 5. $[]\OT1/zplm/m/n/10 (\OML/jkp/m/
+it/10 x\OT1/zplm/m/n/10 )\OML/jkp/m/it/10 e[]$ \T1/jkp/m/n/10 (-20) 6. $\OML/jk
+p/m/it/10 x[] []$
  []
 
 
-Underfull \hbox (badness 3724) in paragraph at lines 177--195
-\OMS/jkp/m/n/10 ^^@ [] \OML/jkp/m/it/10 x [] x$ \T1/jkp/m/n/10 (+20) 7. $\OT1/j
-kp/m/n/10 (+20) 3\OML/jkp/m/it/10 x[] []\OT1/zplm/m/n/10 (\OT1/jkp/m/n/10 (+20)
- 23\OML/jkp/m/it/10 x[]\OT1/zplm/m/n/10 ) + \OT1/jkp/m/n/10 (+20) 46\OML/jkp/m/
-it/10 x[] []\OT1/zplm/m/n/10 (\OT1/jkp/m/n/10 (+20) 23\OML/jkp/m/it/10 x[]\OT1/
-zplm/m/n/10 )$ \T1/jkp/m/n/10 (+20) 8. $\OT1/jkp/m/n/10 (+20) 0$
+Overfull \hbox (12.82884pt too wide) in paragraph at lines 197--213
+\OT1/jkp/m/n/10 (-20) 3\OT1/zplm/m/n/10 )/(\OML/jkp/m/it/10 x[] \OT1/zplm/m/n/1
+0 + \OT1/jkp/m/n/10 (-20) 3\OML/jkp/m/it/10 x\OT1/zplm/m/n/10 )$ \T1/jkp/m/n/10
+ (-20) 12. $\OMS/jkp/m/n/10 ^^@ []\OT1/zplm/m/n/10 (\OML/jkp/m/it/10 x\OT1/zplm
+/m/n/10 )$ \T1/jkp/m/n/10 (-20) 13. $\OT1/zplm/m/n/10 (\OT1/jkp/m/n/10 (-20) 1 
+\OMS/jkp/m/n/10 ^^@ []\OT1/zplm/m/n/10 (\OML/jkp/m/it/10 x[]\OT1/zplm/m/n/10 ))
+/(\OML/jkp/m/it/10 x[][]\OT1/zplm/m/n/10 )$ \T1/jkp/m/n/10 (-20) 14. $[]\OT1/zp
+lm/m/n/10 (\OML/jkp/m/it/10 x\OT1/zplm/m/n/10 )$ \T1/jkp/m/n/10 (-20) 15. $\OML
+/jkp/m/it/10 x[]\OT1/zplm/m/n/10 ([](\OML/jkp/m/it/10 x\OT1/zplm/m/n/10 )/\OML/
+jkp/m/it/10 x \OMS/jkp/m/n/10 ^^@
  []
 
 
-Underfull \hbox (badness 1997) in paragraph at lines 177--195
-\T1/jkp/m/n/10 (+20) 9. $\OMS/jkp/m/n/10 ^^@\OT1/jkp/m/n/10 (+20) 6 []\OT1/zplm
-/m/n/10 ([](\OT1/jkp/m/n/10 (+20) 6\OML/jkp/m/it/10 x\OT1/zplm/m/n/10 )) [](\OT
-1/jkp/m/n/10 (+20) 6\OML/jkp/m/it/10 x\OT1/zplm/m/n/10 )$ \T1/jkp/m/n/10 (+20) 
-10. $[] \OML/jkp/m/it/10 ^^R\OT1/zplm/m/n/10 /([] \OML/jkp/m/it/10 ^^R \OT1/zpl
-m/m/n/10 + \OT1/jkp/m/n/10 (+20) 1\OT1/zplm/m/n/10 )[]$ \T1/jkp/m/n/10 (+20) 11
-.
+Underfull \vbox (badness 2922) has occurred while \output is active []
+
+ [132]
+Overfull \hbox (40.21797pt too wide) in paragraph at lines 214--229
+\T1/jkp/m/n/10 (-20) 1. $\OML/jkp/m/it/10 x\OT1/zplm/m/n/10 /\OML/jkp/m/it/10 y
+$ \T1/jkp/m/n/10 (-20) 2. $\OMS/jkp/m/n/10 ^^@\OT1/zplm/m/n/10 (\OT1/jkp/m/n/10
+ (-20) 2\OML/jkp/m/it/10 x \OT1/zplm/m/n/10 + \OML/jkp/m/it/10 y\OT1/zplm/m/n/1
+0 )/(\OML/jkp/m/it/10 x \OT1/zplm/m/n/10 + \OT1/jkp/m/n/10 (-20) 2\OML/jkp/m/it
+/10 y\OT1/zplm/m/n/10 )$ \T1/jkp/m/n/10 (-20) 3. $\OT1/zplm/m/n/10 (\OT1/jkp/m/
+n/10 (-20) 2\OML/jkp/m/it/10 xy \OMS/jkp/m/n/10 ^^@ \OT1/jkp/m/n/10 (-20) 3\OML
+/jkp/m/it/10 x[] \OMS/jkp/m/n/10 ^^@ \OML/jkp/m/it/10 y[]\OT1/zplm/m/n/10 )/(\O
+T1/jkp/m/n/10 (-20) 2\OML/jkp/m/it/10 xy \OMS/jkp/m/n/10 ^^@ \OT1/jkp/m/n/10 (-
+20) 3\OML/jkp/m/it/10 y[] \OMS/jkp/m/n/10 ^^@ \OML/jkp/m/it/10 x[]\OT1/zplm/m/n
+/10 )$ \T1/jkp/m/n/10 (-20) 4. $[]\OT1/zplm/m/n/10 (\OML/jkp/m/it/10 x\OT1/zplm
+/m/n/10 ) [](\OML/jkp/m/it/10 y\OT1/zplm/m/n/10 )/([](\OML/jkp/m/it/10 x\OT1/zp
+lm/m/n/10 ) [](\OML/jkp/m/it/10 y\OT1/zplm/m/n/10 ))$
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 230--238
-\T1/jkp/m/n/10 (+20) 3. $[]$ 5. $[]$ 6. $[]$ 7.
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 230--238
-\OMS/jkp/m/n/10 ^^@\OT1/jkp/m/n/10 (+20) 3\OML/jkp/m/it/10 x[] []\OT1/zplm/m/n/
-10 (\OML/jkp/m/it/10 x[]\OT1/zplm/m/n/10 )/[]$ \T1/jkp/m/n/10 (+20) 8. $[]$ 9.
+Overfull \hbox (12.91577pt too wide) in paragraph at lines 214--229
+\OT1/zplm/m/n/10 (\OT1/jkp/m/n/10 (-20) 2[], []\OT1/zplm/m/n/10 )$\T1/jkp/m/n/1
+0 (-20) , $\OT1/zplm/m/n/10 (\OMS/jkp/m/n/10 ^^@\OT1/jkp/m/n/10 (-20) 2[], \OMS
+/jkp/m/n/10 ^^@[]\OT1/zplm/m/n/10 )$ \T1/jkp/m/n/10 (-20) 14. $\OML/jkp/m/it/10
+ y \OT1/zplm/m/n/10 = \OT1/jkp/m/n/10 (-20) 7\OML/jkp/m/it/10 x\OT1/zplm/m/n/10
+ /[] \OMS/jkp/m/n/10 ^^@ \OT1/jkp/m/n/10 (-20) 8\OT1/zplm/m/n/10 /[]$ \T1/jkp/m
+/n/10 (-20) 15. $\OML/jkp/m/it/10 y \OT1/zplm/m/n/10 = (\OMS/jkp/m/n/10 ^^@\OML
+/jkp/m/it/10 y[]x \OT1/zplm/m/n/10 + \OML/jkp/m/it/10 y[]x[] \OT1/zplm/m/n/10 +
+ \OML/jkp/m/it/10 x[]y[]\OT1/zplm/m/n/10 )/\OML/jkp/m/it/10 x[]$
  []
 
 )
-! Missing $ inserted.
-<inserted text> 
-                $
-l.273 
-      
-? 
-! Missing } inserted.
-<inserted text> 
-                }
-l.273 
-      
-? 
-! Missing } inserted.
-<inserted text> 
-                }
-l.273 
-      
-? 
-! Extra }, or forgotten \endgroup.
-\par ...m \@noitemerr {\@@par }\fi \else {\@@par }
-                                                  \fi 
-l.273 
-      
-? 
 No file textbook.ind.
+[133]
 
 Package bibentry Warning: You have used \nobibliography* 
 (bibentry)                without a following \bibliography.
 (bibentry)                You may not be able to run BibTeX.
 
-
-! LaTeX Error: \begin{exercise} on input line 238 ended by \end{document}.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.277 \end{document}
-                    
-? 
 (./textbook.aux)
 
 LaTeX Warning: There were undefined references.
@@ -2217,77 +1873,36 @@ LaTeX Warning: There were undefined references.
 
 LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
-! You can't use `\end' in internal vertical mode.
-\enddocument ... \endgroup \deadcycles \z@ \@@end 
-                                                  
-l.277 \end{document}
-                    
-? 
-
-! LaTeX Error: \begin{exercise} on input line 238 ended by \end{document}.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.277 \end{document}
-                    
-? 
-)
-*
-(Please type a command or say `\end')
-*
-(Please type a command or say `\end')
-*
-(Please type a command or say `\end')
-*
-(Please type a command or say `\end')
-*
-(Please type a command or say `\end')
-*
-(Please type a command or say `\end')
-*
-(Please type a command or say `\end')
-*
-(Please type a command or say `\end')
-*
-(Please type a command or say `\end')
-*
-(Please type a command or say `\end')
-*
-(Please type a command or say `\end')
-*
-(Please type a command or say `\end')
-*
-(Please type a command or say `\end')
-*
-(Please type a command or say `\end')
-*
-(Please type a command or say `\end')
-*
-(Please type a command or say `\end')
-*
-(Please type a command or say `\end')
-*
-(Please type a command or say `\end')
-*\end
-
-*\end
-! TeX capacity exceeded, sorry [input stack size=5000].
-\end #1->\csname end#1
-                      \endcsname \@checkend {#1}\expandafter \endgroup \if@e...
-<*> \end
-        
-If you really absolutely need more capacity,
-you can ask a wizard to enlarge me.
-
- 
+ ) 
 Here is how much of TeX's memory you used:
- 22440 strings out of 493848
- 395663 string characters out of 1152824
- 600864 words of memory out of 3000000
- 23797 multiletter control sequences out of 15000+50000
- 216101 words of font info for 504 fonts, out of 3000000 for 9000
+ 25834 strings out of 493848
+ 503669 string characters out of 1152824
+ 679515 words of memory out of 3000000
+ 27204 multiletter control sequences out of 15000+50000
+ 214250 words of font info for 511 fonts, out of 3000000 for 9000
  714 hyphenation exceptions out of 8191
- 5000i,13n,5000p,423b,1118s stack positions out of 5000i,500n,10000p,200000b,50000s
-!  ==> Fatal error occurred, no output PDF file produced!
+ 63i,13n,74p,444b,1580s stack positions out of 5000i,500n,10000p,200000b,50000s
+{/usr/share/texmf-texlive/fonts/enc/dvips/kpfonts/kpfonts-expert.enc}{/usr/sh
+are/texmf-texlive/fonts/enc/dvips/base/8r.enc}</usr/share/texmf-texlive/fonts/t
+ype1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-texlive/fonts/type1/public/
+mathpazo/fplmbb.pfb></usr/share/texmf-texlive/fonts/type1/public/kpfonts/jkpbn8
+a.pfb></usr/share/texmf-texlive/fonts/type1/public/kpfonts/jkpbne.pfb></usr/sha
+re/texmf-texlive/fonts/type1/public/kpfonts/jkpex.pfb></usr/share/texmf-texlive
+/fonts/type1/public/kpfonts/jkpmi.pfb></usr/share/texmf-texlive/fonts/type1/pub
+lic/kpfonts/jkpmia.pfb></usr/share/texmf-texlive/fonts/type1/public/kpfonts/jkp
+mit8a.pfb></usr/share/texmf-texlive/fonts/type1/public/kpfonts/jkpmite.pfb></us
+r/share/texmf-texlive/fonts/type1/public/kpfonts/jkpmn8a.pfb></usr/share/texmf-
+texlive/fonts/type1/public/kpfonts/jkpmne.pfb></usr/share/texmf-texlive/fonts/t
+ype1/public/kpfonts/jkpmsc8a.pfb></usr/share/texmf-texlive/fonts/type1/public/k
+pfonts/jkpssmn8a.pfb></usr/share/texmf-texlive/fonts/type1/public/kpfonts/jkpss
+mne.pfb></usr/share/texmf-texlive/fonts/type1/public/kpfonts/jkpssmsc8a.pfb></u
+sr/share/texmf-texlive/fonts/type1/public/kpfonts/jkpsy.pfb></usr/share/texmf-t
+exlive/fonts/type1/public/kpfonts/jkpsyc.pfb></usr/share/texmf-texlive/fonts/ty
+pe1/public/kpfonts/jkpttmn8a.pfb></usr/share/texmf-texlive/fonts/type1/urw/pala
+tino/uplr8a.pfb>
+Output written on textbook.pdf (133 pages, 648430 bytes).
+PDF statistics:
+ 1432 PDF objects out of 1440 (max. 8388607)
+ 635 named destinations out of 1000 (max. 500000)
+ 63373 words of extra memory for PDF output out of 74296 (max. 10000000)
+

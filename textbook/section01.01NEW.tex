@@ -1,0 +1,21 @@
+\section{The Basic Ideas of Limits}{}{}
+
+
+Consider the function:
+\[
+f(x) = \frac{x^2 - 3x + 2}{x-2}
+\]
+The domain of this function is $(-\infty, 2)\cup(2,\infty)$. While
+$f(x)$ is undefined at $x=2$, examining the plot shows us ...
+
+\begin{marginfigure}
+\begin{tikzpicture}
+	\begin{axis}[width=190pt,axis x line=middle, axis y line=center, tick align=outside]
+	  \addplot+[mark=none,smooth] {(x^2-3*x+2)/(x-2)};
+	\end{axis}
+\end{tikzpicture}
+  \caption{A plot of $f(x)=\protect\frac{x^2 - 3x + 2}{x-2}$.}
+  \label{plot:(x^2 - 3x + 2)/(x-2)}
+\end{marginfigure}
+
+Use pgfplotstabledata
