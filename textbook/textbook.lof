@@ -1,6 +1,6 @@
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {1.1}{\ignorespaces A plot of $f(x)=\frac {x^2 - 3x + 2}{x-2}$.}}{11}{section.1.2}
-\contentsline {figure}{\numberline {1.2}{\ignorespaces A geometric interpertation of the $\epsilon -\delta $ definition of a limit.}}{12}{section.1.2}
+\contentsline {figure}{\numberline {1.2}{\ignorespaces A geometric interpertation of the $\epsilon $-$\delta $ criterion for limits. When $x \in (a-\delta ,a+\delta )$, $f(x)\in (L-\epsilon , L+\epsilon )$.}}{12}{section.1.2}
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {2.1}{\ignorespaces Height versus time.}}{17}{chapter.2}
 \contentsline {figure}{\numberline {2.2}{\ignorespaces The four quadrants.}}{18}{chapter.2}

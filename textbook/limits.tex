@@ -30,8 +30,8 @@ This leads us to the definition of a \textit{limit}.
             xlabel=$x$, xlabel style={at={(1,.5)}, anchor=west},
             ylabel=$y$, ylabel style={at={(.3,1)}, anchor=south}
           ]
-	  \addplot [very thick, red!70!black, smooth] {x-1};
-          \addplot[color=red!70!black,fill=white,only marks,mark=*] coordinates{(2,1)}; 
+	  \addplot [very thick, green!50!black, smooth] {x-1};
+          \addplot[color=green!50!black,fill=white,only marks,mark=*] coordinates{(2,1)}; 
         \end{axis}
 \end{tikzpicture}
 \caption{A plot of $f(x)=\protect\frac{x^2 - 3x + 2}{x-2}$.}
@@ -42,19 +42,19 @@ This leads us to the definition of a \textit{limit}.
 \[
 \begin{array}{c|c}
  x & f(x) \\ \hline
- 1.5 &  0.5 \\
  1.7 &  0.7 \\
  1.9 &  0.9 \\
  1.99 &  0.99 \\
  1.999 &  0.999 \\
+  2 &  \text{undefined}
 \end{array}\qquad
 \begin{array}{c|c}
  x & f(x) \\ \hline
+  2 & \text{undefined}\\
  2.001&  1.001\\
  2.01&  1.01\\
  2.1 &  1.1 \\
  2.3 &  1.3 \\
- 2.5 &  1.5 \\
 \end{array}
 \]
 \caption{Values of $f(x)=\protect\frac{x^2 - 3x + 2}{x-2}$.}
@@ -90,22 +90,26 @@ interperatation of this defintion.
             xlabel=$x$, xlabel style={at={(1,0)}, anchor=west},
             ylabel=$y$, ylabel style={at={(0,1)}, anchor=south}
           ]          
-          \addplot [fill=black!10, smooth, domain=(0:1.570)] {5} \closedcycle;
+          \addplot [fill=blue!10, smooth, domain=(0:1.570)] {5} \closedcycle;
           \addplot [black, smooth, domain=(0:1.570)] {5};
-          \addplot [black, dashed, smooth, domain=(0:1.570)] {3.283};
+          \addplot [fill=cyan!20, dashed, smooth, domain=(0:1.3)] {4.537} \closedcycle;
+          \addplot [fill=blue!10, dashed, domain=(0:.7)] {3.283} \closedcycle;       
           \addplot [black, dashed, smooth, domain=(0:1.570)] {4.537};
+          \addplot [black, dashed, smooth, domain=(0:1.570)] {3.283};
           \addplot [black, very thick, smooth, domain=(0:1)] {4};
           \addplot [fill=white, smooth, domain=(0:0.607)] {3} \closedcycle;
           \addplot [black, smooth, domain=(0:0.607)] {3};
 	  \addplot [fill=white, smooth,domain=(0:3)] {x*(x-2)^2+3*x} \closedcycle;
-          \addplot [fill=black!10, draw=none, domain=.7:1.3] {x*(x-2)^2+3*x} \closedcycle;
+          \addplot [fill=cyan!20, draw=none, domain=.7:1.3] {x*(x-2)^2+3*x} \closedcycle;
           \addplot [black, very thick] plot coordinates {(1,0) (1,4)};
           \addplot [black] plot coordinates {(.7,0) (.7,3.283)};
           \addplot [black] plot coordinates {(1.3,0) (1.3,4.537)};
-	  \addplot [very thick,red!70!black, smooth] {x*(x-2)^2+3*x};
+	  \addplot [very thick,green!50!black, smooth] {x*(x-2)^2+3*x};
         \end{axis}
 \end{tikzpicture}
-\caption{A geometric interpertation of the $\epsilon-\delta$ definition of a limit.}
+\caption{A geometric interpertation of the $\epsilon$-$\delta$ criterion
+  for limits.  When $x \in (a-\delta,a+\delta)$, $f(x)\in (L-\epsilon,
+  L+\epsilon)$.}
 \label{figure:epsilon-delta}
 \end{figure}
 

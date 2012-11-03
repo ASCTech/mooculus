@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.8.6)  3 NOV 2012 18:34
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.8.6)  3 NOV 2012 19:15
 entering extended mode
  %&-line parsing enabled.
 **textbook.tex
@@ -1395,18 +1395,18 @@ Overfull \hbox (31.3863pt too wide) in paragraph at lines 22--37
 LaTeX Warning: Marginpar on page 11 moved.
 
 
-Overfull \hbox (48.80998pt too wide) in paragraph at lines 110--110
+Overfull \hbox (48.80998pt too wide) in paragraph at lines 114--114
 [][] [] 
  []
 
 [11
 
 ]
-Underfull \vbox (badness 10000) detected at line 153
+Underfull \vbox (badness 10000) detected at line 157
  []
 
 
-Underfull \vbox (badness 10000) detected at line 153
+Underfull \vbox (badness 10000) detected at line 157
  []
 
 Package microtype Info: Character `029' is missing
@@ -1416,10 +1416,10 @@ Package microtype Info: Character `029' is missing
 
 Package amsmath Warning: Foreign command \over;
 (amsmath)                \frac or \genfrac should be used instead
-(amsmath)                 on input line 275.
+(amsmath)                 on input line 279.
 
 [13] [14]
-Underfull \hbox (badness 10000) in paragraph at lines 287--287
+Underfull \hbox (badness 10000) in paragraph at lines 291--291
 []\T1/jkp/b/n/10 Theorem []\T1/jkp/m/n/10 (+20) Sup-pose $[] \OML/jkp/m/it/10 f
 \OT1/zplm/m/n/10 (\OML/jkp/m/it/10 x\OT1/zplm/m/n/10 ) = \OML/jkp/m/it/10 L$ \T
 1/jkp/m/n/10 (+20) and $[] \OML/jkp/m/it/10 g\OT1/zplm/m/n/10 (\OML/jkp/m/it/10
@@ -1965,11 +1965,11 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 29540 strings out of 493848
- 617205 string characters out of 1152824
- 845785 words of memory out of 3000000
- 30805 multiletter control sequences out of 15000+50000
- 238969 words of font info for 567 fonts, out of 3000000 for 9000
+ 29545 strings out of 493848
+ 617280 string characters out of 1152824
+ 854222 words of memory out of 3000000
+ 30808 multiletter control sequences out of 15000+50000
+ 239161 words of font info for 569 fonts, out of 3000000 for 9000
  714 hyphenation exceptions out of 8191
  69i,13n,90p,704b,1893s stack positions out of 5000i,500n,10000p,200000b,50000s
 {/usr/share/texmf-texlive/fonts/enc/dvips/kpfonts/kpfonts-expert.enc}{/usr/sh
@@ -1992,7 +1992,7 @@ ype1/public/kpfonts/jkpssmsc8a.pfb></usr/share/texmf-texlive/fonts/type1/public
 /kpfonts/jkpsy.pfb></usr/share/texmf-texlive/fonts/type1/public/kpfonts/jkpsyc.
 pfb></usr/share/texmf-texlive/fonts/type1/public/kpfonts/jkpttmn8a.pfb></usr/sh
 are/texmf-texlive/fonts/type1/urw/palatino/uplr8a.pfb>
-Output written on textbook.pdf (151 pages, 707627 bytes).
+Output written on textbook.pdf (151 pages, 708431 bytes).
 PDF statistics:
  1567 PDF objects out of 1728 (max. 8388607)
  676 named destinations out of 1000 (max. 500000)
