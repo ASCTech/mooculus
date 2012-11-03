@@ -1,36 +1,38 @@
-\BOOKMARK [0][-]{chapter.1}{Analytic Geometry}{}
-\BOOKMARK [1][-]{section.1.1}{The Basic Ideas of Limits}{chapter.1}
-\BOOKMARK [1][-]{section.1.2}{Lines}{chapter.1}
-\BOOKMARK [1][-]{section.1.3}{Distance Between Two Points; Circles}{chapter.1}
-\BOOKMARK [1][-]{section.1.4}{Functions}{chapter.1}
-\BOOKMARK [1][-]{section.1.5}{Shifts and Dilations}{chapter.1}
-\BOOKMARK [0][-]{chapter.2}{Instantaneous Rate of Change: The Derivative}{}
-\BOOKMARK [1][-]{section.2.1}{The slope of a function}{chapter.2}
-\BOOKMARK [1][-]{section.2.2}{An example}{chapter.2}
-\BOOKMARK [1][-]{section.2.3}{Limits}{chapter.2}
-\BOOKMARK [1][-]{section.2.4}{The Derivative Function}{chapter.2}
-\BOOKMARK [1][-]{section.2.5}{Adjectives For Functions}{chapter.2}
-\BOOKMARK [0][-]{chapter.3}{Rules for Finding Derivatives}{}
-\BOOKMARK [1][-]{section.3.1}{The Power Rule}{chapter.3}
-\BOOKMARK [1][-]{section.3.2}{Linearity of the Derivative}{chapter.3}
-\BOOKMARK [1][-]{section.3.3}{The Product Rule}{chapter.3}
-\BOOKMARK [1][-]{section.3.4}{The Quotient Rule}{chapter.3}
-\BOOKMARK [1][-]{section.3.5}{The Chain Rule}{chapter.3}
-\BOOKMARK [0][-]{chapter.4}{Transcendental Functions}{}
-\BOOKMARK [1][-]{section.4.1}{Trigonometric Functions}{chapter.4}
-\BOOKMARK [1][-]{section.4.2}{The Derivative of sinx}{chapter.4}
-\BOOKMARK [1][-]{section.4.3}{A hard limit}{chapter.4}
-\BOOKMARK [1][-]{section.4.4}{The Derivative of sinx, continued}{chapter.4}
-\BOOKMARK [1][-]{section.4.5}{Derivatives of the Trigonometric Functions}{chapter.4}
-\BOOKMARK [1][-]{section.4.6}{Exponential and Logarithmic functions}{chapter.4}
-\BOOKMARK [1][-]{section.4.7}{Derivatives of the exponential and logarithmic functions}{chapter.4}
-\BOOKMARK [1][-]{section.4.8}{Implicit Differentiation}{chapter.4}
-\BOOKMARK [1][-]{section.4.9}{Inverse Trigonometric Functions}{chapter.4}
-\BOOKMARK [1][-]{section.4.10}{Limits revisited}{chapter.4}
-\BOOKMARK [1][-]{section.4.11}{Hyperbolic Functions}{chapter.4}
-\BOOKMARK [0][-]{chapter.5}{Curve Sketching}{}
-\BOOKMARK [1][-]{section.5.1}{Maxima and Minima}{chapter.5}
-\BOOKMARK [1][-]{section.5.2}{The first derivative test}{chapter.5}
-\BOOKMARK [1][-]{section.5.3}{The second derivative test}{chapter.5}
-\BOOKMARK [1][-]{section.5.4}{Concavity and inflection points}{chapter.5}
-\BOOKMARK [1][-]{section.5.5}{Asymptotes and Other Things to Look For}{chapter.5}
+\BOOKMARK [0][-]{chapter.1}{Limits}{}
+\BOOKMARK [1][-]{section.1.1}{Functions}{chapter.1}
+\BOOKMARK [1][-]{section.1.2}{The Basic Ideas of Limits}{chapter.1}
+\BOOKMARK [0][-]{chapter.2}{Analytic Geometry}{}
+\BOOKMARK [1][-]{section.2.1}{Lines}{chapter.2}
+\BOOKMARK [1][-]{section.2.2}{Distance Between Two Points; Circles}{chapter.2}
+\BOOKMARK [1][-]{section.2.3}{Functions}{chapter.2}
+\BOOKMARK [1][-]{section.2.4}{Shifts and Dilations}{chapter.2}
+\BOOKMARK [0][-]{chapter.3}{Instantaneous Rate of Change: The Derivative}{}
+\BOOKMARK [1][-]{section.3.1}{The slope of a function}{chapter.3}
+\BOOKMARK [1][-]{section.3.2}{An example}{chapter.3}
+\BOOKMARK [1][-]{section.3.3}{Limits}{chapter.3}
+\BOOKMARK [1][-]{section.3.4}{The Derivative Function}{chapter.3}
+\BOOKMARK [1][-]{section.3.5}{Adjectives For Functions}{chapter.3}
+\BOOKMARK [0][-]{chapter.4}{Rules for Finding Derivatives}{}
+\BOOKMARK [1][-]{section.4.1}{The Power Rule}{chapter.4}
+\BOOKMARK [1][-]{section.4.2}{Linearity of the Derivative}{chapter.4}
+\BOOKMARK [1][-]{section.4.3}{The Product Rule}{chapter.4}
+\BOOKMARK [1][-]{section.4.4}{The Quotient Rule}{chapter.4}
+\BOOKMARK [1][-]{section.4.5}{The Chain Rule}{chapter.4}
+\BOOKMARK [0][-]{chapter.5}{Transcendental Functions}{}
+\BOOKMARK [1][-]{section.5.1}{Trigonometric Functions}{chapter.5}
+\BOOKMARK [1][-]{section.5.2}{The Derivative of sinx}{chapter.5}
+\BOOKMARK [1][-]{section.5.3}{A hard limit}{chapter.5}
+\BOOKMARK [1][-]{section.5.4}{The Derivative of sinx, continued}{chapter.5}
+\BOOKMARK [1][-]{section.5.5}{Derivatives of the Trigonometric Functions}{chapter.5}
+\BOOKMARK [1][-]{section.5.6}{Exponential and Logarithmic functions}{chapter.5}
+\BOOKMARK [1][-]{section.5.7}{Derivatives of the exponential and logarithmic functions}{chapter.5}
+\BOOKMARK [1][-]{section.5.8}{Implicit Differentiation}{chapter.5}
+\BOOKMARK [1][-]{section.5.9}{Inverse Trigonometric Functions}{chapter.5}
+\BOOKMARK [1][-]{section.5.10}{Limits revisited}{chapter.5}
+\BOOKMARK [1][-]{section.5.11}{Hyperbolic Functions}{chapter.5}
+\BOOKMARK [0][-]{chapter.6}{Curve Sketching}{}
+\BOOKMARK [1][-]{section.6.1}{Maxima and Minima}{chapter.6}
+\BOOKMARK [1][-]{section.6.2}{The first derivative test}{chapter.6}
+\BOOKMARK [1][-]{section.6.3}{The second derivative test}{chapter.6}
+\BOOKMARK [1][-]{section.6.4}{Concavity and inflection points}{chapter.6}
+\BOOKMARK [1][-]{section.6.5}{Asymptotes and Other Things to Look For}{chapter.6}
