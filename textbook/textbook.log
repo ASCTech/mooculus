@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.8.6)  3 NOV 2012 13:59
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.8.6)  3 NOV 2012 18:34
 entering extended mode
  %&-line parsing enabled.
 **textbook.tex
@@ -1000,57 +1000,103 @@ Package: framed 2007/10/04 v 0.95: framed or shaded text with page breaks
 )
 \c@exercise=\count147
 )
-(/usr/share/texmf-texlive/tex/latex/pgfplots/pgfplots.sty
-Package: pgfplots 2009/02/14 Version 1.2.2
+(/home/snapp/texmf/tex/latex/tex/latex/pgfplots/pgfplots.sty
+(/home/snapp/texmf/tex/latex/tex/generic/pgfplots/pgfplots.revision.tex)
+Package: pgfplots 2012/10/26 v1.7 Data Visualization (1.7-2-ge24fff4)
 
-(/usr/share/texmf-texlive/tex/generic/pgfplots/pgfplots.code.tex
-(/usr/share/texmf-texlive/tex/generic/pgfplots/pgfplotscore.code.tex
+(/home/snapp/texmf/tex/latex/tex/generic/pgfplots/pgfplots.code.tex
+(/home/snapp/texmf/tex/latex/tex/generic/pgfplots/pgfplotscore.code.tex
 \t@pgfplots@toka=\toks43
 \t@pgfplots@tokb=\toks44
 \t@pgfplots@tokc=\toks45
 \pgfplots@tmpa=\dimen193
+\c@pgfplots@coordindex=\count148
+\c@pgfplots@scanlineindex=\count149
+
+(/home/snapp/texmf/tex/latex/tex/generic/pgfplots/sys/pgfplotssysgeneric.code.t
+ex))
+(/home/snapp/texmf/tex/latex/tex/generic/pgfplots/libs/pgfplotslibrary.code.tex
 )
-(/usr/share/texmf-texlive/tex/generic/pgfplots/oldpgfcompatib/pgfplotsoldpgfsup
-p_loader.code.tex
+(/home/snapp/texmf/tex/latex/tex/generic/pgfplots/oldpgfcompatib/pgfplotsoldpgf
+supp_loader.code.tex
 Package pgfplots: loading complementary code for your PGF version...
 
-(/usr/share/texmf-texlive/tex/generic/pgfplots/oldpgfcompatib/pgfplotsoldpgfsup
-p_misc.code.tex)
-(/usr/share/texmf-texlive/tex/generic/pgfplots/oldpgfcompatib/pgfplotsoldpgfsup
-p_pgfkeysfiltered.code.tex
-\pgfkeys@tmptoks=\toks46
+(/home/snapp/texmf/tex/latex/tex/generic/pgfplots/oldpgfcompatib/pgfplotsoldpgf
+supp_misc.code.tex)
+(/home/snapp/texmf/tex/latex/tex/generic/pgfplots/oldpgfcompatib/pgfplotsoldpgf
+supp_pgfkeys.code.tex
+\pgfkeys@pathtoks=\toks46
+\pgfkeys@temptoks=\toks47
+
+(/home/snapp/texmf/tex/latex/tex/generic/pgfplots/oldpgfcompatib/pgfplotsoldpgf
+supp_pgfkeysfiltered.code.tex
+\pgfkeys@tmptoks=\toks48
+))
+(/home/snapp/texmf/tex/latex/tex/generic/pgfplots/oldpgfcompatib/pgfplotsoldpgf
+supp_pgfmathfloat.code.tex
+\c@pgfmathroundto@lastzeros=\count150
 )
-(/usr/share/texmf-texlive/tex/generic/pgfplots/oldpgfcompatib/pgfplotsoldpgfsup
-p_pgfmathfloat.code.tex
-\c@pgfmathroundto@lastzeros=\count148
-)
-(/usr/share/texmf-texlive/tex/generic/pgfplots/oldpgfcompatib/pgfplotsoldpgfsup
-p_pgflibraryplothandlers.code.tex
-File: pgfplotsoldpgfsupp_pgflibraryplothandlers.code.tex 2009/02/13 v2.10 (rcs-
-revision 1.7)
-\pgf@plot@mark@count=\count149
+(/home/snapp/texmf/tex/latex/tex/generic/pgfplots/oldpgfcompatib/pgfplotsoldpgf
+supp_pgflibraryplothandlers.code.tex
+File: pgflibraryplothandlers.code.tex 2012/09/11 v2.10 (rcs-revision 1.17)
+\pgf@plot@mark@count=\count151
 \pgfplotmarksize=\dimen194
 )
-(/usr/share/texmf/tex/generic/pgf/libraries/pgflibraryfpu.code.tex))
-(/usr/share/texmf-texlive/tex/generic/pgfplots/util/pgfplotsutil.code.tex
-(/usr/share/texmf-texlive/tex/generic/pgfplots/liststructure/pgfplotsliststruct
-ure.code.tex)
-(/usr/share/texmf-texlive/tex/generic/pgfplots/liststructure/pgfplotsliststruct
-ureext.code.tex)
-(/usr/share/texmf-texlive/tex/generic/pgfplots/liststructure/pgfplotsarray.code
-.tex
-\c@pgfplotsarray@tmp=\count150
+(/home/snapp/texmf/tex/latex/tex/generic/pgfplots/oldpgfcompatib/pgfplotsoldpgf
+supp_pgflibraryfpu.code.tex)
+(/home/snapp/texmf/tex/latex/tex/generic/pgfplots/oldpgfcompatib/pgfplotsoldpgf
+supp_pgfcorescopes.code.tex
+File: pgfcorescopes.code.tex 2011/10/01  (rcs-revision 1.37)
+\pgfpic=\box88
+\pgf@hbox=\box89
+\pgf@layerbox@main=\box90
+\pgf@picture@serial@count=\count152
 )
-(/usr/share/texmf-texlive/tex/generic/pgfplots/numtable/pgfplotstable.code.tex
-\c@pgfplotstable@counta=\count151
-\pgfplotstable@outfile=\write4
+(/home/snapp/texmf/tex/latex/tex/generic/pgfplots/oldpgfcompatib/pgfplotsoldpgf
+supp_pgfcorelayers.code.tex
+File: pgfcorelayers.code.tex 2011/10/02  (rcs-revision 1.4)
+))
+(/home/snapp/texmf/tex/latex/tex/generic/pgfplots/util/pgfplotsutil.code.tex
+(/home/snapp/texmf/tex/latex/tex/generic/pgfplots/liststructure/pgfplotsliststr
+ucture.code.tex)
+(/home/snapp/texmf/tex/latex/tex/generic/pgfplots/liststructure/pgfplotsliststr
+uctureext.code.tex)
+(/home/snapp/texmf/tex/latex/tex/generic/pgfplots/liststructure/pgfplotsarray.c
+ode.tex
+\c@pgfplotsarray@tmp=\count153
+)
+(/home/snapp/texmf/tex/latex/tex/generic/pgfplots/liststructure/pgfplotsmatrix.
+code.tex)
+(/home/snapp/texmf/tex/latex/tex/generic/pgfplots/numtable/pgfplotstableshared.
+code.tex
+\c@pgfplotstable@counta=\count154
+\t@pgfplotstable@a=\toks49
+)
+(/home/snapp/texmf/tex/latex/tex/generic/pgfplots/liststructure/pgfplotsdeque.c
+ode.tex)
+(/home/snapp/texmf/tex/latex/tex/generic/pgfplots/util/pgfplotsbinary.code.tex
+(/home/snapp/texmf/tex/latex/tex/generic/pgfplots/util/pgfplotsbinary.data.code
+.tex))
+(/home/snapp/texmf/tex/latex/tex/generic/pgfplots/util/pgfplotsutil.verb.code.t
+ex)
+(/home/snapp/texmf/tex/latex/tex/generic/pgfplots/libs/pgflibrarypgfplots.surfs
+hading.code.tex
+\c@pgfplotslibrarysurf@no=\count155
 
-(/usr/share/texmf-texlive/tex/generic/pgfplots/numtable/pgfplotstable.coltype.c
-ode.tex)))
-(/usr/share/texmf-texlive/tex/generic/pgfplots/util/pgfplotscolormap.code.tex)
-(/usr/share/texmf-texlive/tex/generic/pgfplots/pgfplots.stackedplots.code.tex)
-(/usr/share/texmf-texlive/tex/generic/pgfplots/pgfplotscoordprocessing.code.tex
-) (/usr/share/texmf-texlive/tex/generic/pgfplots/pgfplotsticks.code.tex)
+(/home/snapp/texmf/tex/latex/tex/generic/pgfplots/sys/pgflibrarypgfplots.surfsh
+ading.pgfsys-pdftex.def)))
+(/home/snapp/texmf/tex/latex/tex/generic/pgfplots/util/pgfplotscolormap.code.te
+x)
+(/home/snapp/texmf/tex/latex/tex/generic/pgfplots/pgfplotsstackedplots.code.tex
+)
+(/home/snapp/texmf/tex/latex/tex/generic/pgfplots/pgfplotsplothandlers.code.tex
+
+(/home/snapp/texmf/tex/latex/tex/generic/pgfplots/pgfplotsmeshplothandler.code.
+tex))
+(/home/snapp/texmf/tex/latex/tex/generic/pgfplots/pgfplots.scaling.code.tex)
+(/home/snapp/texmf/tex/latex/tex/generic/pgfplots/pgfplotscoordprocessing.code.
+tex) (/home/snapp/texmf/tex/latex/tex/generic/pgfplots/pgfplotsticks.code.tex)
+(/home/snapp/texmf/tex/latex/tex/generic/pgfplots/pgfplots.paths.code.tex)
 (/usr/share/texmf/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarydecor
 ations.pathmorphing.code.tex
 (/usr/share/texmf/tex/generic/pgf/libraries/decorations/pgflibrarydecorations.p
@@ -1059,7 +1105,7 @@ athmorphing.code.tex))
 ations.pathreplacing.code.tex
 (/usr/share/texmf/tex/generic/pgf/libraries/decorations/pgflibrarydecorations.p
 athreplacing.code.tex))
-\pgfplots@numplots=\count152
+\pgfplots@numplots=\count156
 \pgfplots@xmin@reg=\dimen195
 \pgfplots@xmax@reg=\dimen196
 \pgfplots@ymin@reg=\dimen197
@@ -1086,27 +1132,30 @@ Package: booktabs 2005/04/14 v1.61803 publication quality tables
 \cmidrulesep=\dimen208
 \cmidrulekern=\dimen209
 \defaultaddspace=\dimen210
-\@cmidla=\count153
-\@cmidlb=\count154
+\@cmidla=\count157
+\@cmidlb=\count158
 \@aboverulesep=\dimen211
 \@belowrulesep=\dimen212
-\@thisruleclass=\count155
-\@lastruleclass=\count156
+\@thisruleclass=\count159
+\@lastruleclass=\count160
 \@thisrulewidth=\dimen213
 )
 (/usr/share/texmf-texlive/tex/latex/base/makeidx.sty
 Package: makeidx 2000/03/29 v1.0m Standard LaTeX package
 )
-\@indexfile=\write5
-\openout5 = `textbook.idx'.
+\@indexfile=\write4
+\openout4 = `textbook.idx'.
 
 
 Writing index file textbook.idx
-\answer@stream=\write6
-\openout6 = `textbook.ans'.
+\answer@stream=\write5
+\openout5 = `textbook.ans'.
 
-\answercontent=\toks47
+\answercontent=\toks50
 (./textbook.aux
+
+LaTeX Warning: Label `figure:epsilon-delta' multiply defined.
+
 
 LaTeX Warning: Label `def:limit' multiply defined.
 
@@ -1167,16 +1216,16 @@ Package: nameref 2007/05/29 v2.31 Cross-referencing by name of section
 (/usr/share/texmf-texlive/tex/latex/oberdiek/refcount.sty
 Package: refcount 2008/08/11 v3.1 Data extraction from references (HO)
 )
-\c@section@level=\count157
+\c@section@level=\count161
 )
 LaTeX Info: Redefining \ref on input line 98.
 LaTeX Info: Redefining \pageref on input line 98.
  (./textbook.out)
 (./textbook.out)
-\@outlinefile=\write7
-\openout7 = `textbook.out'.
+\@outlinefile=\write6
+\openout6 = `textbook.out'.
 
-\AtBeginShipoutBox=\box88
+\AtBeginShipoutBox=\box91
 LaTeX Info: Redefining \selectfont on input line 98.
 
 *geometry auto-detecting driver*
@@ -1232,20 +1281,23 @@ Package microtype Info: No adjustment of interword spacing.
 Package microtype Info: No adjustment of character kerning.
 (/usr/share/texmf-texlive/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count158
+\scratchcounter=\count162
 \scratchdimen=\dimen214
-\scratchbox=\box89
-\nofMPsegments=\count159
-\nofMParguments=\count160
-\everyMPshowfont=\toks48
-\MPscratchCnt=\count161
+\scratchbox=\box92
+\nofMPsegments=\count163
+\nofMParguments=\count164
+\everyMPshowfont=\toks51
+\MPscratchCnt=\count165
 \MPscratchDim=\dimen215
-\MPnumerator=\count162
-\everyMPtoPDFconversion=\toks49
+\MPnumerator=\count166
+\everyMPtoPDFconversion=\toks52
 ) ABD: EveryShipout initializing macros
+! Package pgfplots Warning: running in backwards compatibility mode (unsuitable
+ tick labels; missing features). Consider writing \pgfplotsset{compat=1.7} into
+ your preamble.
+
 LaTeX Font Info:    Try loading font information for T1+jkpss on input line 132
 .
-
 (/usr/share/texmf-texlive/tex/latex/kpfonts/t1jkpss.fd
 File: t1jkpss.fd 2007/07/16 Fontinst v1.928 font definitions for T1/jkpss.
 ) [1
@@ -1309,8 +1361,8 @@ Package microtype Info: Character `029' is missing
 (microtype)             in font `T1/jkpss/m/sc/20.74'.
 (microtype)             Ignoring protrusion settings for this character.
  (./textbook.toc)
-\tf@toc=\write8
-\openout8 = `textbook.toc'.
+\tf@toc=\write7
+\openout7 = `textbook.toc'.
 
 
 [3
@@ -1318,14 +1370,14 @@ Package microtype Info: Character `029' is missing
 ] [4
 
 ] (./textbook.lof)
-\tf@lof=\write9
-\openout9 = `textbook.lof'.
+\tf@lof=\write8
+\openout8 = `textbook.lof'.
 
  [5] [6
 
 ] (./textbook.lot)
-\tf@lot=\write10
-\openout10 = `textbook.lot'.
+\tf@lot=\write9
+\openout9 = `textbook.lot'.
 
  [7] [8
 
@@ -1335,35 +1387,53 @@ Package microtype Info: Character `029' is missing
 (./limits.tex
 Chapter 1.
 
+Overfull \hbox (31.3863pt too wide) in paragraph at lines 22--37
+[] 
+ []
+
+
 LaTeX Warning: Marginpar on page 11 moved.
+
+
+Overfull \hbox (48.80998pt too wide) in paragraph at lines 110--110
+[][] [] 
+ []
 
 [11
 
 ]
+Underfull \vbox (badness 10000) detected at line 153
+ []
 
-Package amsmath Warning: Foreign command \over;
-(amsmath)                \frac or \genfrac should be used instead
-(amsmath)                 on input line 216.
+
+Underfull \vbox (badness 10000) detected at line 153
+ []
 
 Package microtype Info: Character `029' is missing
 (microtype)             in font `T1/jkp/m/sc/10'.
 (microtype)             Ignoring protrusion settings for this character.
-[12] [13]
-Underfull \hbox (badness 10000) in paragraph at lines 228--228
+[12]
+
+Package amsmath Warning: Foreign command \over;
+(amsmath)                \frac or \genfrac should be used instead
+(amsmath)                 on input line 275.
+
+[13] [14]
+Underfull \hbox (badness 10000) in paragraph at lines 287--287
 []\T1/jkp/b/n/10 Theorem []\T1/jkp/m/n/10 (+20) Sup-pose $[] \OML/jkp/m/it/10 f
 \OT1/zplm/m/n/10 (\OML/jkp/m/it/10 x\OT1/zplm/m/n/10 ) = \OML/jkp/m/it/10 L$ \T
 1/jkp/m/n/10 (+20) and $[] \OML/jkp/m/it/10 g\OT1/zplm/m/n/10 (\OML/jkp/m/it/10
  x\OT1/zplm/m/n/10 ) = \OML/jkp/m/it/10 M$\T1/jkp/m/n/10 (+20) . Then
  []
 
-[14]) (./chapter01.tex [15] [16
-
-]
+[15]) (./chapter01.tex [16]
 Chapter 2.
 
 LaTeX Warning: Marginpar on page 17 moved.
 
-[17]
+[17
+
+]
 
 LaTeX Warning: Marginpar on page 18 moved.
 
@@ -1895,13 +1965,13 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 25997 strings out of 493848
- 506426 string characters out of 1152824
- 701545 words of memory out of 3000000
- 27315 multiletter control sequences out of 15000+50000
- 238777 words of font info for 565 fonts, out of 3000000 for 9000
+ 29540 strings out of 493848
+ 617205 string characters out of 1152824
+ 845785 words of memory out of 3000000
+ 30805 multiletter control sequences out of 15000+50000
+ 238969 words of font info for 567 fonts, out of 3000000 for 9000
  714 hyphenation exceptions out of 8191
- 63i,13n,74p,444b,1578s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 69i,13n,90p,704b,1893s stack positions out of 5000i,500n,10000p,200000b,50000s
 {/usr/share/texmf-texlive/fonts/enc/dvips/kpfonts/kpfonts-expert.enc}{/usr/sh
 are/texmf-texlive/fonts/enc/dvips/base/8r.enc}</usr/share/texmf-texlive/fonts/t
 ype1/public/amsfonts/cm/cmbx10.pfb></usr/share/texmf-texlive/fonts/type1/public
@@ -1922,9 +1992,9 @@ ype1/public/kpfonts/jkpssmsc8a.pfb></usr/share/texmf-texlive/fonts/type1/public
 /kpfonts/jkpsy.pfb></usr/share/texmf-texlive/fonts/type1/public/kpfonts/jkpsyc.
 pfb></usr/share/texmf-texlive/fonts/type1/public/kpfonts/jkpttmn8a.pfb></usr/sh
 are/texmf-texlive/fonts/type1/urw/palatino/uplr8a.pfb>
-Output written on textbook.pdf (151 pages, 701624 bytes).
+Output written on textbook.pdf (151 pages, 707627 bytes).
 PDF statistics:
- 1566 PDF objects out of 1728 (max. 8388607)
+ 1567 PDF objects out of 1728 (max. 8388607)
  676 named destinations out of 1000 (max. 500000)
  69029 words of extra memory for PDF output out of 74296 (max. 10000000)
 
