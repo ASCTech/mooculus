@@ -3,6 +3,8 @@ Assessor::Application.routes.draw do
 
   get "home/index"
 
+  get "score/index"
+
   get "course" => "course#index"
 
   # The priority is based upon order of creation:
@@ -58,6 +60,12 @@ Assessor::Application.routes.draw do
 
   # After user authenticates with provider, user needs to go to omniauth call
   match '/auth/:provider/callback' => 'authentications#create'
+
+  match '/api/v1/user/exercises/:exercise/problems/:problem/attempt' => 'score#attempt',
+    :constraints => { :problem => /\d+/ }, :via => :post
+
+  match '/api/v1/user/exercises/:exercise/problems/:problem/hint' => 'score#hint',
+    :constraints => { :problem => /\d+/ }, :via => :post
 
   # See how all your routes lay out with "rake routes"
 
