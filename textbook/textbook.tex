@@ -52,28 +52,6 @@
 \makeatother
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\usepackage{multicol} % Use letters for lists
-\renewcommand{\theenumi}{$(\mathrm{\alph{enumi}})$}
-\renewcommand{\labelenumi}{\theenumi}
-
-\usepackage{enumerate}
-
-\newcounter{exercise}
-\newenvironment{exercises}{%
-\subsection*{Exercises for Section \arabic{chapter}.\arabic{section}\hrule}
-\setcounter{exercise}{0}
-\dumpanswer[\noexpand\subsection*{Answers for \arabic{chapter}.\arabic{section}}]
-}%
-{}
-\newenvironment{exercise}{
-\begin{enumerate}[(1)]
-  \setcounter{enumi}{\value{exercise}}
-  \item \addtocounter{exercise}{1}
-}
-{\end{enumerate}}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 %\newenvironment{example}{\subsection*{Example}}{}
 \newenvironment{lemma}{\subsection*{Lemma}}{}
 \newenvironment{remark}[1]{\subsection*{Remark: #1}}{}

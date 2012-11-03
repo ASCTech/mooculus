@@ -213,5 +213,91 @@ BADBAD
 \begin{exercise} Use a calculator to estimate $\ds\lim_{x\to 0}
 {\tan(3x)\over\tan(5x)}$.
 \end{exercise}
-
 \end{exercises}
+
+
+
+
+
+
+\section{Limit Laws}
+
+\begin{theorem} 
+Suppose $\ds \lim_{x\to a} f(x)=L$ and $\ds \lim_{x\to a}g(x)=M$. Then
+$\lim_{x\to a} f(x)g(x) = LM$.
+\end{theorem}
+
+\begin{proof} 
+Given any $\epsilon$ we need to find a $\delta$ so that
+$0<|x-a|<\delta$ implies $|f(x)g(x)-LM|<\epsilon$. What do we have to
+work with? We know that we can make $f(x)$ close to $L$ and $g(x)$
+close to $M$, and we have to somehow connect these facts to make
+$f(x)g(x)$ close to $LM$.
+
+We use, as is so often the case, a little algebraic
+trick: 
+\begin{align*}
+|f(x)g(x)-LM| &= |f(x)g(x)\boldsymbol{-f(x)M+f(x)M}-LM| \\
+&=|f(x)(g(x)-M)+(f(x)-L)M| \\
+&\le |f(x)(g(x)-M)|+|(f(x)-L)M| \\
+&=|f(x)||g(x)-M|+|f(x)-L||M|.
+\end{align*}
+
+This is all straightforward except perhaps for the ``$\le$''. That is
+an example of the {\dfont triangle inequality%
+\index{triangle inequality}\pagerdef{page:triangle inequality}}, 
+which says that if $a$ and $b$ are any real
+numbers then $|a+b|\le |a|+|b|$. If you look at a few examples, using
+positive and negative numbers in various combinations for $a$ and $b$,
+you should quickly understand why this is true; we will not prove it
+formally. 
+
+Since $\ds \lim_{x\to a}f(x) =L$, there is a value $\ds \delta_1$ so that
+$0<|x-a|<\delta_1$ implies $|f(x)-L|<|\epsilon/(2M)|$, 
+This means that $0<|x-a|<\delta_1$ implies
+$|f(x)-L||M|< \epsilon/2$. You can see where this is going: if we can
+make $|f(x)||g(x)-M|<\epsilon/2$ also, then we'll be done.
+
+We can make $|g(x)-M|$ smaller than any fixed number by making $x$
+close enough to $a$; unfortunately, $\epsilon/(2f(x))$ is not a fixed
+number, since $x$ is a variable. Here we need another little trick,
+just like the one we used in analyzing $x^2$. We can find a $\delta_2$
+so that $|x-a|<\delta_2$ implies that $|f(x)-L|<1$, meaning that $L-1
+< f(x) < L+1$. This means that $|f(x)|<N$, where $N$ is either $|L-1|$
+or $|L+1|$, depending on whether $L$ is negative or positive. The
+important point is that $N$ doesn't depend on $x$. Finally, we know that
+there is a $\delta_3$ so that $0<|x-a|<\delta_3$ implies
+$|g(x)-M|<\epsilon/(2N)$. Now we're ready to put everything
+together. Let $\delta$ be the smallest of $\delta_1$, $\delta_2$, and
+$\delta_3$. Then $|x-a|<\delta$ implies that
+$|f(x)-L|<|\epsilon/(2M)|$, $|f(x)|<N$, and
+$|g(x)-M|<\epsilon/(2N)$. Then 
+\begin{align*}
+|f(x)g(x)-LM|&\le|f(x)||g(x)-M|+|f(x)-L||M| \\
+&<N{\epsilon\over 2N}+\left|{\epsilon\over 2M}\right||M| \\
+&={\epsilon\over 2}+{\epsilon\over 2}=\epsilon.
+\end{align*}
+This is just what we needed, so by the official definition,
+$\ds \lim_{x\to a}f(x)g(x)=LM$.
+\end{proof}
+
+A handful of such theorems give us the tools to compute many limits
+without explicitly working with the definition of limit.
+
+\begin{theorem}[Limit Laws] Suppose that $\ds \lim_{x\to a}f(x)=L$ and $\ds \lim_{x\to a}g(x)=M$ and
+$k$ is some constant. Then
+\begin{itemize}
+\item $\ds\lim_{x\to a} kf(x) = k\lim_{x\to a}f(x)=kL$ 
+\item $\ds\lim_{x\to a} (f(x)+g(x)) = \lim_{x\to a}f(x)+\lim_{x\to a}g(x)=L+M$  
+\item $\ds\lim_{x\to a} (f(x)g(x)) = \lim_{x\to a}f(x)\cdot\lim_{x\to a}g(x)=LM$ 
+\item $\ds\lim_{x\to a} \frac{f(x)}{g(x)} = \frac{\ds\lim_{x\to a}f(x)}{\ds\lim_{x\to
+    a}g(x)}=\frac{L}{M},\text{ if $M$ is not 0}$
+\end{itemize}
+\label{thm:limit laws}
+\end{theorem}
+
+Roughly speaking, these rules say that to compute the limit of an
+algebraic expression, it is enough to compute the limits of the
+``innermost bits'' and then combine these limits. This often means
+that it is possible to simply plug in a value for the variable, since
+$\ds \lim_{x\to a} x =a$.

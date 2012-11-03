@@ -1,76 +1,77 @@
-\indexentry{quadrant|hyperpage}{15}
-\indexentry{circle!equation of|hyperpage}{21}
-\indexentry{unit circle|hyperpage}{21}
-\indexentry{circle!unit|hyperpage}{21}
-\indexentry{circle!equation of|hyperpage}{22}
-\indexentry{function|hyperpage}{23}
-\indexentry{function!linear|hyperpage}{23}
-\indexentry{domain|hyperpage}{23}
-\indexentry{asymptote|hyperpage}{24}
-\indexentry{dependent variable|hyperpage}{25}
-\indexentry{independent variable|hyperpage}{25}
-\indexentry{function composition|hyperpage}{28}
-\indexentry{composition of functions|hyperpage}{28}
-\indexentry{chord|hyperpage}{34}
-\indexentry{difference quotient|hyperpage}{34}
-\indexentry{tangent     line|hyperpage}{34}
-\indexentry{derivative|hyperpage}{36}
-\indexentry{velocity|hyperpage}{40}
-\indexentry{limit|hyperpage}{45}
-\indexentry{triangle inequality|hyperpage}{48}
-\indexentry{composition of functions|hyperpage}{50}
-\indexentry{one sided limit|hyperpage}{52}
-\indexentry{Leibniz notation|hyperpage}{54}
-\indexentry{derivative!Leibniz notation|hyperpage}{54}
-\indexentry{function!bounded|hyperpage}{58}
-\indexentry{bounded function|hyperpage}{58}
-\indexentry{function!unbounded|hyperpage}{58}
-\indexentry{unbounded function|hyperpage}{58}
-\indexentry{continuous|hyperpage}{59}
-\indexentry{differentiable|hyperpage}{59}
-\indexentry{function!differentiable|hyperpage}{59}
-\indexentry{Intermediate Value Theorem|hyperpage}{60}
-\indexentry{power rule|hyperpage}{63}
-\indexentry{power function|hyperpage}{63}
-\indexentry{linearity of the derivative|hyperpage}{67}
-\indexentry{sum rule|hyperpage}{68}
-\indexentry{product rule|hyperpage}{70}
-\indexentry{product rule|hyperpage}{71}
-\indexentry{product rule!generalized|hyperpage}{73}
-\indexentry{quotient rule|hyperpage}{73}
-\indexentry{rational function|hyperpage}{75}
-\indexentry{witch of Agnesi|hyperpage}{76}
-\indexentry{chain rule|hyperpage}{76}
-\indexentry{composition of functions|hyperpage}{76}
-\indexentry{transcendental function|hyperpage}{83}
-\indexentry{radian measure|hyperpage}{83}
-\indexentry{subtend|hyperpage}{83}
-\indexentry{squeeze theorem|hyperpage}{87}
-\indexentry{exponential function|hyperpage}{92}
-\indexentry{logarithmic function|hyperpage}{92}
-\indexentry{logarithm|hyperpage}{92}
-\indexentry{inverse function|hyperpage}{92}
-\indexentry{exp function|hyperpage}{96}
-\indexentry{power rule|hyperpage}{99}
-\indexentry{implicit differentiation|hyperpage}{101}
-\indexentry{implicit function|hyperpage}{101}
-\indexentry{function!implicit|hyperpage}{101}
-\indexentry{power rule|hyperpage}{105}
-\indexentry{inverse sine|hyperpage}{107}
-\indexentry{arcsine|hyperpage}{107}
-\indexentry{arccosine|hyperpage}{108}
-\indexentry{limit at infinity|hyperpage}{110}
-\indexentry{L'H\^opital's Rule|hyperpage}{111}
-\indexentry{hyperbolic cosine|hyperpage}{115}
-\indexentry{hyperbolic sine|hyperpage}{115}
-\indexentry{local maximum|hyperpage}{121}
-\indexentry{local minimum|hyperpage}{121}
-\indexentry{local extremum|hyperpage}{121}
-\indexentry{Fermat's Theorem|hyperpage}{122}
-\indexentry{critical value|hyperpage}{122}
-\indexentry{greatest integer|hyperpage}{124}
-\indexentry{Fundamental Theorem of Algebra|hyperpage}{125}
-\indexentry{concave up|hyperpage}{129}
-\indexentry{concave down|hyperpage}{129}
-\indexentry{inflection point|hyperpage}{129}
-\indexentry{asymptote|hyperpage}{130}
+\indexentry{triangle inequality|hyperpage}{14}
+\indexentry{quadrant|hyperpage}{17}
+\indexentry{circle!equation of|hyperpage}{24}
+\indexentry{unit circle|hyperpage}{24}
+\indexentry{circle!unit|hyperpage}{24}
+\indexentry{circle!equation of|hyperpage}{24}
+\indexentry{function|hyperpage}{26}
+\indexentry{function!linear|hyperpage}{26}
+\indexentry{domain|hyperpage}{26}
+\indexentry{asymptote|hyperpage}{27}
+\indexentry{dependent variable|hyperpage}{27}
+\indexentry{independent variable|hyperpage}{27}
+\indexentry{function composition|hyperpage}{30}
+\indexentry{composition of functions|hyperpage}{30}
+\indexentry{chord|hyperpage}{38}
+\indexentry{difference quotient|hyperpage}{38}
+\indexentry{tangent     line|hyperpage}{38}
+\indexentry{derivative|hyperpage}{40}
+\indexentry{velocity|hyperpage}{44}
+\indexentry{limit|hyperpage}{49}
+\indexentry{triangle inequality|hyperpage}{52}
+\indexentry{composition of functions|hyperpage}{55}
+\indexentry{one sided limit|hyperpage}{56}
+\indexentry{Leibniz notation|hyperpage}{60}
+\indexentry{derivative!Leibniz notation|hyperpage}{60}
+\indexentry{function!bounded|hyperpage}{64}
+\indexentry{bounded function|hyperpage}{64}
+\indexentry{function!unbounded|hyperpage}{64}
+\indexentry{unbounded function|hyperpage}{64}
+\indexentry{continuous|hyperpage}{65}
+\indexentry{differentiable|hyperpage}{65}
+\indexentry{function!differentiable|hyperpage}{65}
+\indexentry{Intermediate Value Theorem|hyperpage}{66}
+\indexentry{power rule|hyperpage}{69}
+\indexentry{power function|hyperpage}{69}
+\indexentry{linearity of the derivative|hyperpage}{74}
+\indexentry{sum rule|hyperpage}{75}
+\indexentry{product rule|hyperpage}{77}
+\indexentry{product rule|hyperpage}{78}
+\indexentry{product rule!generalized|hyperpage}{80}
+\indexentry{quotient rule|hyperpage}{81}
+\indexentry{rational function|hyperpage}{83}
+\indexentry{witch of Agnesi|hyperpage}{83}
+\indexentry{chain rule|hyperpage}{84}
+\indexentry{composition of functions|hyperpage}{84}
+\indexentry{transcendental function|hyperpage}{91}
+\indexentry{radian measure|hyperpage}{91}
+\indexentry{subtend|hyperpage}{91}
+\indexentry{squeeze theorem|hyperpage}{96}
+\indexentry{exponential function|hyperpage}{102}
+\indexentry{logarithmic function|hyperpage}{102}
+\indexentry{logarithm|hyperpage}{102}
+\indexentry{inverse function|hyperpage}{102}
+\indexentry{exp function|hyperpage}{106}
+\indexentry{power rule|hyperpage}{109}
+\indexentry{implicit differentiation|hyperpage}{112}
+\indexentry{implicit function|hyperpage}{112}
+\indexentry{function!implicit|hyperpage}{112}
+\indexentry{power rule|hyperpage}{115}
+\indexentry{inverse sine|hyperpage}{119}
+\indexentry{arcsine|hyperpage}{119}
+\indexentry{arccosine|hyperpage}{120}
+\indexentry{limit at infinity|hyperpage}{122}
+\indexentry{L'H\^opital's Rule|hyperpage}{123}
+\indexentry{hyperbolic cosine|hyperpage}{128}
+\indexentry{hyperbolic sine|hyperpage}{128}
+\indexentry{local maximum|hyperpage}{133}
+\indexentry{local minimum|hyperpage}{133}
+\indexentry{local extremum|hyperpage}{133}
+\indexentry{Fermat's Theorem|hyperpage}{134}
+\indexentry{critical value|hyperpage}{134}
+\indexentry{greatest integer|hyperpage}{136}
+\indexentry{Fundamental Theorem of Algebra|hyperpage}{137}
+\indexentry{concave up|hyperpage}{142}
+\indexentry{concave down|hyperpage}{142}
+\indexentry{inflection point|hyperpage}{142}
+\indexentry{asymptote|hyperpage}{144}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.8.6)  3 NOV 2012 12:04
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.8.6)  3 NOV 2012 13:59
 entering extended mode
  %&-line parsing enabled.
 **textbook.tex
@@ -803,6 +803,10 @@ Package microtype Info: Loading configuration file microtype.cfg.
 (/usr/share/texmf-texlive/tex/latex/microtype/microtype.cfg
 File: microtype.cfg 2009/03/27 v2.3d microtype main configuration file (RS)
 ))
+(/usr/share/texmf-texlive/tex/latex/tools/enumerate.sty
+Package: enumerate 1999/03/05 v3.00 enumerate extensions (DPC)
+\@enLab=\toks42
+)
 (/usr/share/texmf-texlive/tex/latex/kpfonts/kpfonts.sty
 Package: kpfonts  2009/05/20 v3.1
 LaTeX Font Info:    Redeclaring symbol font `operators' on input line 276.
@@ -993,15 +997,17 @@ Package: framed 2007/10/04 v 0.95: framed or shaded text with page breaks
 \fb@frh=\dimen190
 \FrameRule=\dimen191
 \FrameSep=\dimen192
-))
+)
+\c@exercise=\count147
+)
 (/usr/share/texmf-texlive/tex/latex/pgfplots/pgfplots.sty
 Package: pgfplots 2009/02/14 Version 1.2.2
 
 (/usr/share/texmf-texlive/tex/generic/pgfplots/pgfplots.code.tex
 (/usr/share/texmf-texlive/tex/generic/pgfplots/pgfplotscore.code.tex
-\t@pgfplots@toka=\toks42
-\t@pgfplots@tokb=\toks43
-\t@pgfplots@tokc=\toks44
+\t@pgfplots@toka=\toks43
+\t@pgfplots@tokb=\toks44
+\t@pgfplots@tokc=\toks45
 \pgfplots@tmpa=\dimen193
 )
 (/usr/share/texmf-texlive/tex/generic/pgfplots/oldpgfcompatib/pgfplotsoldpgfsup
@@ -1012,17 +1018,17 @@ Package pgfplots: loading complementary code for your PGF version...
 p_misc.code.tex)
 (/usr/share/texmf-texlive/tex/generic/pgfplots/oldpgfcompatib/pgfplotsoldpgfsup
 p_pgfkeysfiltered.code.tex
-\pgfkeys@tmptoks=\toks45
+\pgfkeys@tmptoks=\toks46
 )
 (/usr/share/texmf-texlive/tex/generic/pgfplots/oldpgfcompatib/pgfplotsoldpgfsup
 p_pgfmathfloat.code.tex
-\c@pgfmathroundto@lastzeros=\count147
+\c@pgfmathroundto@lastzeros=\count148
 )
 (/usr/share/texmf-texlive/tex/generic/pgfplots/oldpgfcompatib/pgfplotsoldpgfsup
 p_pgflibraryplothandlers.code.tex
 File: pgfplotsoldpgfsupp_pgflibraryplothandlers.code.tex 2009/02/13 v2.10 (rcs-
 revision 1.7)
-\pgf@plot@mark@count=\count148
+\pgf@plot@mark@count=\count149
 \pgfplotmarksize=\dimen194
 )
 (/usr/share/texmf/tex/generic/pgf/libraries/pgflibraryfpu.code.tex))
@@ -1033,10 +1039,10 @@ ure.code.tex)
 ureext.code.tex)
 (/usr/share/texmf-texlive/tex/generic/pgfplots/liststructure/pgfplotsarray.code
 .tex
-\c@pgfplotsarray@tmp=\count149
+\c@pgfplotsarray@tmp=\count150
 )
 (/usr/share/texmf-texlive/tex/generic/pgfplots/numtable/pgfplotstable.code.tex
-\c@pgfplotstable@counta=\count150
+\c@pgfplotstable@counta=\count151
 \pgfplotstable@outfile=\write4
 
 (/usr/share/texmf-texlive/tex/generic/pgfplots/numtable/pgfplotstable.coltype.c
@@ -1053,7 +1059,7 @@ athmorphing.code.tex))
 ations.pathreplacing.code.tex
 (/usr/share/texmf/tex/generic/pgf/libraries/decorations/pgflibrarydecorations.p
 athreplacing.code.tex))
-\pgfplots@numplots=\count151
+\pgfplots@numplots=\count152
 \pgfplots@xmin@reg=\dimen195
 \pgfplots@xmax@reg=\dimen196
 \pgfplots@ymin@reg=\dimen197
@@ -1080,12 +1086,12 @@ Package: booktabs 2005/04/14 v1.61803 publication quality tables
 \cmidrulesep=\dimen208
 \cmidrulekern=\dimen209
 \defaultaddspace=\dimen210
-\@cmidla=\count152
-\@cmidlb=\count153
+\@cmidla=\count153
+\@cmidlb=\count154
 \@aboverulesep=\dimen211
 \@belowrulesep=\dimen212
-\@thisruleclass=\count154
-\@lastruleclass=\count155
+\@thisruleclass=\count155
+\@lastruleclass=\count156
 \@thisrulewidth=\dimen213
 )
 (/usr/share/texmf-texlive/tex/latex/base/makeidx.sty
@@ -1099,70 +1105,61 @@ Writing index file textbook.idx
 \answer@stream=\write6
 \openout6 = `textbook.ans'.
 
-\answercontent=\toks46
-(/usr/share/texmf-texlive/tex/latex/tools/enumerate.sty
-Package: enumerate 1999/03/05 v3.00 enumerate extensions (DPC)
-\@enLab=\toks47
-)
-\c@exercise=\count156
- (./textbook.aux
+\answercontent=\toks47
+(./textbook.aux
 
 LaTeX Warning: Label `def:limit' multiply defined.
 
 )
 \openout1 = `textbook.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/jkp/m/it on input line 120.
-LaTeX Font Info:    Try loading font information for OML+jkp on input line 120.
-
+LaTeX Font Info:    Checking defaults for OML/jkp/m/it on input line 98.
+LaTeX Font Info:    Try loading font information for OML+jkp on input line 98.
  (/usr/share/texmf-texlive/tex/latex/kpfonts/omljkp.fd
 File: omljkp.fd 2006/08/15 v1.0
 )
-LaTeX Font Info:    ... okay on input line 120.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 120.
-LaTeX Font Info:    ... okay on input line 120.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 120.
-LaTeX Font Info:    ... okay on input line 120.
-LaTeX Font Info:    Checking defaults for OMS/jkp/m/n on input line 120.
-LaTeX Font Info:    Try loading font information for OMS+jkp on input line 120.
-
+LaTeX Font Info:    ... okay on input line 98.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 98.
+LaTeX Font Info:    ... okay on input line 98.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 98.
+LaTeX Font Info:    ... okay on input line 98.
+LaTeX Font Info:    Checking defaults for OMS/jkp/m/n on input line 98.
+LaTeX Font Info:    Try loading font information for OMS+jkp on input line 98.
 
 (/usr/share/texmf-texlive/tex/latex/kpfonts/omsjkp.fd
 File: omsjkp.fd 2006/08/15 v1.0
 )
-LaTeX Font Info:    ... okay on input line 120.
-LaTeX Font Info:    Checking defaults for OMX/jkp/m/n on input line 120.
-LaTeX Font Info:    Try loading font information for OMX+jkp on input line 120.
-
+LaTeX Font Info:    ... okay on input line 98.
+LaTeX Font Info:    Checking defaults for OMX/jkp/m/n on input line 98.
+LaTeX Font Info:    Try loading font information for OMX+jkp on input line 98.
 
 (/usr/share/texmf-texlive/tex/latex/kpfonts/omxjkp.fd
 File: omxjkp.fd 2006/08/15 v1.0
 )
-LaTeX Font Info:    ... okay on input line 120.
-LaTeX Font Info:    Checking defaults for U/jkpexa/m/n on input line 120.
-LaTeX Font Info:    Try loading font information for U+jkpexa on input line 120
-.
+LaTeX Font Info:    ... okay on input line 98.
+LaTeX Font Info:    Checking defaults for U/jkpexa/m/n on input line 98.
+LaTeX Font Info:    Try loading font information for U+jkpexa on input line 98.
+
 
 (/usr/share/texmf-texlive/tex/latex/kpfonts/ujkpexa.fd
 File: ujkpexa.fd 2006/08/15 v1.0
 )
-LaTeX Font Info:    ... okay on input line 120.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 120.
-LaTeX Font Info:    ... okay on input line 120.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 120.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 120.
-
+LaTeX Font Info:    ... okay on input line 98.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 98.
+LaTeX Font Info:    ... okay on input line 98.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 98.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 98.
 
 (/usr/share/texmf-texlive/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 120.
-LaTeX Font Info:    Try loading font information for T1+jkp on input line 120.
+LaTeX Font Info:    ... okay on input line 98.
+LaTeX Font Info:    Try loading font information for T1+jkp on input line 98.
 
 (/usr/share/texmf-texlive/tex/latex/kpfonts/t1jkp.fd
 File: t1jkp.fd 2007/01/24 Fontinst v1.928 font definitions for T1/jkp.
 )
-Package hyperref Info: Link coloring OFF on input line 120.
+Package hyperref Info: Link coloring OFF on input line 98.
 
 (/usr/share/texmf-texlive/tex/latex/hyperref/nameref.sty
 Package: nameref 2007/05/29 v2.31 Cross-referencing by name of section
@@ -1172,15 +1169,15 @@ Package: refcount 2008/08/11 v3.1 Data extraction from references (HO)
 )
 \c@section@level=\count157
 )
-LaTeX Info: Redefining \ref on input line 120.
-LaTeX Info: Redefining \pageref on input line 120.
+LaTeX Info: Redefining \ref on input line 98.
+LaTeX Info: Redefining \pageref on input line 98.
  (./textbook.out)
 (./textbook.out)
 \@outlinefile=\write7
 \openout7 = `textbook.out'.
 
 \AtBeginShipoutBox=\box88
-LaTeX Info: Redefining \selectfont on input line 120.
+LaTeX Info: Redefining \selectfont on input line 98.
 
 *geometry auto-detecting driver*
 *geometry detected driver: pdftex*
@@ -1223,7 +1220,7 @@ driver: pdftex
 \@twosidetrue 
 (1in=72.27pt, 1cm=28.45pt)
 -----------------------
-LaTeX Info: Redefining \microtypecontext on input line 120.
+LaTeX Info: Redefining \microtypecontext on input line 98.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
@@ -1246,7 +1243,7 @@ Package microtype Info: No adjustment of character kerning.
 \MPnumerator=\count162
 \everyMPtoPDFconversion=\toks49
 ) ABD: EveryShipout initializing macros
-LaTeX Font Info:    Try loading font information for T1+jkpss on input line 154
+LaTeX Font Info:    Try loading font information for T1+jkpss on input line 132
 .
 
 (/usr/share/texmf-texlive/tex/latex/kpfonts/t1jkpss.fd
@@ -1255,49 +1252,49 @@ File: t1jkpss.fd 2007/07/16 Fontinst v1.928 font definitions for T1/jkpss.
 
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-LaTeX Font Info:    Try loading font information for TS1+jkp on input line 166.
+LaTeX Font Info:    Try loading font information for TS1+jkp on input line 144.
 
 
 (/usr/share/texmf-texlive/tex/latex/kpfonts/ts1jkp.fd
 File: ts1jkp.fd 2007/08/30 Fontinst v1.928 font definitions for TS1/jkp.
 )
-LaTeX Font Info:    Try loading font information for T1+jkptt on input line 171
+LaTeX Font Info:    Try loading font information for T1+jkptt on input line 149
 .
 
 (/usr/share/texmf-texlive/tex/latex/kpfonts/t1jkptt.fd
 File: t1jkptt.fd 2007/01/26 Fontinst v1.928 font definitions for T1/jkptt.
 )
-LaTeX Font Info:    Try loading font information for OT1+jkp on input line 171.
+LaTeX Font Info:    Try loading font information for OT1+jkp on input line 149.
 
 
 (/usr/share/texmf-texlive/tex/latex/kpfonts/ot1jkp.fd
 File: ot1jkp.fd 2007/08/30 Fontinst v1.928 font definitions for OT1/jkp.
 )
-LaTeX Font Info:    Try loading font information for OT1+zplm on input line 171
+LaTeX Font Info:    Try loading font information for OT1+zplm on input line 149
 .
 
 (/usr/share/texmf-texlive/tex/latex/psnfss/ot1zplm.fd
 File: ot1zplm.fd 2002/09/08 Fontinst v1.914 font definitions for OT1/zplm.
 )
-LaTeX Font Info:    Try loading font information for U+jkpsya on input line 171
+LaTeX Font Info:    Try loading font information for U+jkpsya on input line 149
 .
 
 (/usr/share/texmf-texlive/tex/latex/kpfonts/ujkpsya.fd
 File: ujkpsya.fd 2006/08/15 v1.0
 )
-LaTeX Font Info:    Try loading font information for U+jkpsyb on input line 171
+LaTeX Font Info:    Try loading font information for U+jkpsyb on input line 149
 .
 
 (/usr/share/texmf-texlive/tex/latex/kpfonts/ujkpsyb.fd
 File: ujkpsyb.fd 2006/08/15 v1.0
 )
-LaTeX Font Info:    Try loading font information for U+jkpmia on input line 171
+LaTeX Font Info:    Try loading font information for U+jkpmia on input line 149
 .
 
 (/usr/share/texmf-texlive/tex/latex/kpfonts/ujkpmia.fd
 File: ujkpmia.fd 2006/08/15 v1.0
 )
-LaTeX Font Info:    Try loading font information for U+jkpsyc on input line 171
+LaTeX Font Info:    Try loading font information for U+jkpsyc on input line 149
 .
 
 (/usr/share/texmf-texlive/tex/latex/kpfonts/ujkpsyc.fd
@@ -1346,39 +1343,47 @@ LaTeX Warning: Marginpar on page 11 moved.
 
 Package amsmath Warning: Foreign command \over;
 (amsmath)                \frac or \genfrac should be used instead
-(amsmath)                 on input line 108.
+(amsmath)                 on input line 216.
 
 Package microtype Info: Character `029' is missing
 (microtype)             in font `T1/jkp/m/sc/10'.
 (microtype)             Ignoring protrusion settings for this character.
-[12]) (./chapter01.tex [13] [14
+[12] [13]
+Underfull \hbox (badness 10000) in paragraph at lines 228--228
+[]\T1/jkp/b/n/10 Theorem []\T1/jkp/m/n/10 (+20) Sup-pose $[] \OML/jkp/m/it/10 f
+\OT1/zplm/m/n/10 (\OML/jkp/m/it/10 x\OT1/zplm/m/n/10 ) = \OML/jkp/m/it/10 L$ \T
+1/jkp/m/n/10 (+20) and $[] \OML/jkp/m/it/10 g\OT1/zplm/m/n/10 (\OML/jkp/m/it/10
+ x\OT1/zplm/m/n/10 ) = \OML/jkp/m/it/10 M$\T1/jkp/m/n/10 (+20) . Then
+ []
+
+[14]) (./chapter01.tex [15] [16
 
 ]
 Chapter 2.
 
-LaTeX Warning: Marginpar on page 15 moved.
+LaTeX Warning: Marginpar on page 17 moved.
 
-[15]
+[17]
 
-LaTeX Warning: Marginpar on page 16 moved.
+LaTeX Warning: Marginpar on page 18 moved.
 
 (./section01.01.tex
 
-LaTeX Warning: Reference `fig:irs' on page 16 undefined on input line 36.
+LaTeX Warning: Reference `fig:irs' on page 18 undefined on input line 36.
 
-[16]
+[18]
 
-LaTeX Warning: Reference `fig:graphs of lines' on page 17 undefined on input li
+LaTeX Warning: Reference `fig:graphs of lines' on page 19 undefined on input li
 ne 106.
 
-[17] [18] [19]
+[19] [20] [21]
 
-LaTeX Warning: Reference `fig:tax schedule' on page 20 undefined on input line 
-354.
+LaTeX Warning: Reference `fig:tax schedule' on page 22 undefined on input line 
+440.
 
-[20]) (./section01.02.tex
+[22] [23]) (./section01.02.tex
 
-LaTeX Warning: Reference `fig:distance between points' on page 21 undefined on 
+LaTeX Warning: Reference `fig:distance between points' on page 24 undefined on 
 input line 11.
 
 
@@ -1389,9 +1394,9 @@ p/m/n/10 (-20) and $\OML/jkp/m/it/10 B \OT1/zplm/m/n/10 = (\OT1/jkp/m/n/10 (-20
 ) 3, 3\OT1/zplm/m/n/10 )$ \T1/jkp/m/n/10 (-20) is $[] \OT1/zplm/m/n/10 =
  []
 
-[21] [22]) (./section01.03.tex
+[24] [25]) (./section01.03.tex
 
-LaTeX Warning: Reference `fig:some graphs' on page 23 undefined on input line 2
+LaTeX Warning: Reference `fig:some graphs' on page 26 undefined on input line 2
 9.
 
 LaTeX Font Info:    Try loading font information for U+fplmbb on input line 89.
@@ -1400,28 +1405,32 @@ LaTeX Font Info:    Try loading font information for U+fplmbb on input line 89.
 File: ufplmbb.fd 2003/10/30 Fontinst v1.914 font definitions for U/fplmbb.
 )
 
-LaTeX Warning: Reference `fig:some graphs' on page 23 undefined on input line 9
+LaTeX Warning: Reference `fig:some graphs' on page 26 undefined on input line 9
 4.
 
-[23]
+[26]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [24]
+ [27]
 
-LaTeX Warning: Reference `fig:upper semicircle' on page 25 undefined on input l
+LaTeX Warning: Reference `fig:upper semicircle' on page 28 undefined on input l
 ine 186.
 
-[25]
+[28]
 
-LaTeX Warning: Reference `fig:piecewise velocity' on page 26 undefined on input
+LaTeX Warning: Reference `fig:piecewise velocity' on page 29 undefined on input
  line 250.
 
-[26] [27]) (./section01.04.tex [28] [29] [30]
 
-LaTeX Warning: Reference `fig:ellipses' on page 31 undefined on input line 121.
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [29]
+[30] [31]) (./section01.04.tex [32] [33]
+
+LaTeX Warning: Reference `fig:ellipses' on page 34 undefined on input line 121.
 
 
-)) (./chapter02.tex [31] [32
+[34] [35])) (./chapter02.tex [36
 
 ]
 Chapter 3.
@@ -1429,70 +1438,77 @@ Chapter 3.
 Overfull \vbox (2.18425pt too high) detected at line 37
  []
 
-[33]
+[37]
 
-LaTeX Warning: Reference `fig:chords' on page 34 undefined on input line 55.
+LaTeX Warning: Reference `fig:chords' on page 38 undefined on input line 55.
 
-[34]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [35]
-[36] [37]) (./section02.02.tex [38]
+[38]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [39]
-[40] [41]) (./section02.03.tex [42]
+[40] [41] [42]) (./section02.02.tex
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [43]
-[44] [45]
-Underfull \vbox (badness 8056) detected at line 232
+[44] [45] [46]) (./section02.03.tex [47] [48] [49] [50] [51] [52] [53] [54]
+Underfull \vbox (badness 10000) detected at line 413
  []
 
 
-Underfull \vbox (badness 2913) has occurred while \output is active []
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [46]
-[47] [48]
-Underfull \vbox (badness 1028) has occurred while \output is active []
-
- [49]
-[50] [51] [52]
-Underfull \hbox (badness 10000) in paragraph at lines 536--537
+ [55]
+[56] [57]
+Underfull \hbox (badness 10000) in paragraph at lines 567--567
 
  []
 
-) (./section02.04.tex [53] [54] [55]
+[58]) (./section02.04.tex [59]
+Underfull \vbox (badness 10000) detected at line 91
+ []
 
-LaTeX Warning: Reference `fig:cusp' on page 56 undefined on input line 136.
 
-[56] [57]) (./section02.05.tex
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-LaTeX Warning: Reference `fig:function types' on page 58 undefined on input lin
+ [60]
+[61]
+
+LaTeX Warning: Reference `fig:cusp' on page 62 undefined on input line 136.
+
+[62] [63]) (./section02.05.tex
+
+LaTeX Warning: Reference `fig:function types' on page 64 undefined on input lin
 e 9.
 
 
-LaTeX Warning: Reference `fig:function types' on page 58 undefined on input lin
+LaTeX Warning: Reference `fig:function types' on page 64 undefined on input lin
 e 114.
 
-[58] [59]
 
-LaTeX Warning: Reference `fig:function types' on page 60 undefined on input lin
-e 219.
+Underfull \vbox (badness 5970) has occurred while \output is active []
 
-[60])) (./chapter03.tex [61] [62
+ [64]
+[65]
+
+LaTeX Warning: Reference `fig:function types' on page 66 undefined on input lin
+e 262.
+
+[66] [67])) (./chapter03.tex [68
 
 ]
 Chapter 4.
 (./section03.01.tex
 Underfull \vbox (badness 1221) has occurred while \output is active []
 
- [63]
-[64]
+ [69]
+[70]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [65]
-[66]) (./section03.02.tex [67]
+ [71]
+[72] [73]) (./section03.02.tex
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [74]
 Overfull \hbox (14.87491pt too wide) detected at line 59
 \OML/jkp/m/it/10 f[]\OT1/zplm/m/n/10 (\OML/jkp/m/it/10 x\OT1/zplm/m/n/10 ) = []
 (\OML/jkp/m/it/10 x[] \OT1/zplm/m/n/10 + \OT1/jkp/m/n/10 5\OML/jkp/m/it/10 x[]\
@@ -1505,7 +1521,7 @@ OT1/jkp/m/n/10 5 \OMS/jkp/m/n/10 ^^A \OT1/jkp/m/n/10 2\OML/jkp/m/it/10 x[] \OT1
 p/m/n/10 10\OML/jkp/m/it/10 x\OT1/jkp/m/n/10 .
  []
 
-[68]) (./section03.03.tex [69]
+[75] [76]) (./section03.03.tex
 Overfull \hbox (3.14566pt too wide) in paragraph at lines 32--32
 [] 
  []
@@ -1513,47 +1529,39 @@ Overfull \hbox (3.14566pt too wide) in paragraph at lines 32--32
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [70]
-[71] [72]) (./section03.04.tex
+ [77]
+[78] [79] [80]) (./section03.04.tex
 Overfull \hbox (21.46898pt too wide) detected at line 26
 [][] \OT1/zplm/m/n/10 = \OML/jkp/m/it/10 f\OT1/zplm/m/n/10 (\OML/jkp/m/it/10 x\
 OT1/zplm/m/n/10 )[] + \OML/jkp/m/it/10 f[]\OT1/zplm/m/n/10 (\OML/jkp/m/it/10 x\
 OT1/zplm/m/n/10 )[] = [] = []\OT1/jkp/m/n/10 .
  []
 
-[73] [74] [75]) (./section03.05.tex
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [76]
-[77] [78]
-Underfull \vbox (badness 3713) detected at line 160
- []
-
-[79] [80] [81]
-Overfull \hbox (22.39006pt too wide) in paragraph at lines 357--362
+[81] [82] [83]) (./section03.05.tex [84] [85] [86] [87] [88] [89]
+Overfull \hbox (22.39006pt too wide) in paragraph at lines 364--364
 []\T1/jkp/m/n/10 (-20) Find an equa-tion for the tan-gent line to $[]$ at $\OT1
 /zplm/m/n/10 (\OT1/jkp/m/n/10 (-20) 1, []\OT1/zplm/m/n/10 )$\T1/jkp/m/n/10 (-20
 ) .
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 357--362
+Underfull \hbox (badness 10000) in paragraph at lines 364--364
 
  []
 
-)) (./chapter04.tex [82]
+[90])) (./chapter04.tex
 Chapter 5.
-(./section04.01.tex [83
+(./section04.01.tex [91
 
 ]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [84]
+ [92]
 
-LaTeX Warning: Reference `chap:formulas' on page 85 undefined on input line 197
+LaTeX Warning: Reference `chap:formulas' on page 93 undefined on input line 244
 .
 
-[85]) (./section04.02.tex
+[93] [94]) (./section04.02.tex
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `math shift' on input line 1.
@@ -1578,15 +1586,15 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `math shift' on input line 1.
 
-) (./section04.03.tex [86]
+) (./section04.03.tex [95]
 
-LaTeX Warning: Reference `fig:squeeze' on page 87 undefined on input line 28.
+LaTeX Warning: Reference `fig:squeeze' on page 96 undefined on input line 28.
 
 
-LaTeX Warning: Reference `fig:hard limit' on page 87 undefined on input line 80
+LaTeX Warning: Reference `fig:hard limit' on page 96 undefined on input line 80
 .
 
-[87] [88]) (./section04.04.tex
+[96] [97]) (./section04.04.tex
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `math shift' on input line 1.
@@ -1611,57 +1619,52 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `math shift' on input line 1.
 
-[89]) (./section04.05.tex
-Underfull \vbox (badness 1472) has occurred while \output is active []
+[98] [99]) (./section04.05.tex [100] [101]) (./section04.06.tex [102]
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [90]
-[91]) (./section04.06.tex [92] [93]) (./section04.07.tex [94] [95] [96]
-[97] [98]
+ [103]
+[104]) (./section04.07.tex [105] [106] [107] [108]
 Underfull \vbox (badness 10000) detected at line 254
  []
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [99]
-[100]) (./section04.08.tex [101]
-Underfull \vbox (badness 5119) detected at line 91
- []
-
-
-Underfull \vbox (badness 3525) has occurred while \output is active []
-
- [102]
-Underfull \vbox (badness 10000) detected at line 110
+ [109]
+[110] [111]) (./section04.08.tex [112] [113] [114]
+Underfull \vbox (badness 10000) detected at line 154
  []
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [103]
-[104] [105] [106]) (./section04.09.tex
+ [115]
+[116] [117] [118]) (./section04.09.tex
 
-LaTeX Warning: Reference `fig:truncated sine' on page 107 undefined on input li
+LaTeX Warning: Reference `fig:truncated sine' on page 119 undefined on input li
 ne 19.
 
-[107]
 
-LaTeX Warning: Reference `fig:truncated sine' on page 108 undefined on input li
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [119]
+
+LaTeX Warning: Reference `fig:truncated sine' on page 120 undefined on input li
 ne 135.
 
 
-LaTeX Warning: Reference `fig:truncated cosine' on page 108 undefined on input 
+LaTeX Warning: Reference `fig:truncated cosine' on page 120 undefined on input 
 line 140.
 
 
-LaTeX Warning: Reference `fig:truncated tangent' on page 108 undefined on input
+LaTeX Warning: Reference `fig:truncated tangent' on page 120 undefined on input
  line 190.
 
-[108]) (./section04.10.tex [109] [110] [111]
-Overfull \vbox (0.52174pt too high) detected at line 157
- []
+[120] [121]) (./section04.10.tex [122] [123]
+Underfull \vbox (badness 1694) has occurred while \output is active []
 
-[112] [113] [114]) (./section04.11.tex
+ [124]
+[125] [126] [127]) (./section04.11.tex
 Overfull \hbox (8.93512pt too wide) in paragraph at lines 15--20
 []\T1/jkp/m/n/10 (-20) Notice that $[]$ is even (that is, $[]\OT1/zplm/m/n/10 (
 \OMS/jkp/m/n/10 ^^@\OML/jkp/m/it/10 x\OT1/zplm/m/n/10 ) = [](\OML/jkp/m/it/10 x
@@ -1669,12 +1672,12 @@ Overfull \hbox (8.93512pt too wide) in paragraph at lines 15--20
 0 (\OMS/jkp/m/n/10 ^^@\OML/jkp/m/it/10 x\OT1/zplm/m/n/10 ) =
  []
 
-[115]
+[128]
 
-LaTeX Warning: Reference `fig:hyperbolic functions' on page 116 undefined on in
+LaTeX Warning: Reference `fig:hyperbolic functions' on page 129 undefined on in
 put line 52.
 
-[116]
+
 Overfull \hbox (4.6354pt too wide) detected at line 181
 [][] \OML/jkp/m/it/10 x \OMS/jkp/m/n/10 ^^@ [][] \OML/jkp/m/it/10 x \OT1/zplm/m
 /n/10 = [] \OMS/jkp/m/n/10 ^^@ [] \OT1/zplm/m/n/10 = [] = [] = \OT1/jkp/m/n/10 
@@ -1682,96 +1685,102 @@ Overfull \hbox (4.6354pt too wide) detected at line 181
  []
 
 
-LaTeX Warning: Reference `fig:geometric def trigh' on page 117 undefined on inp
+LaTeX Warning: Reference `fig:geometric def trigh' on page 129 undefined on inp
 ut line 197.
 
 
-LaTeX Warning: Reference `fig:geometric def trigh' on page 117 undefined on inp
+LaTeX Warning: Reference `fig:geometric def trigh' on page 129 undefined on inp
 ut line 201.
 
-[117] [118])) (./chapter05.tex [119] [120
+[129] [130] [131])) (./chapter05.tex [132
 
 ]
 Chapter 6.
 (./section05.01.tex
 
-LaTeX Warning: Reference `fig:max and min points' on page 121 undefined on inpu
+LaTeX Warning: Reference `fig:max and min points' on page 133 undefined on inpu
 t line 23.
 
-[121]
+[133]
 
-LaTeX Warning: Reference `fig:max and min points' on page 122 undefined on inpu
+LaTeX Warning: Reference `fig:max and min points' on page 134 undefined on inpu
 t line 74.
 
 
-LaTeX Warning: Reference `fig:non extremum' on page 122 undefined on input line
+LaTeX Warning: Reference `fig:non extremum' on page 134 undefined on input line
  85.
 
 
-LaTeX Warning: Reference `fig:testing for max and min' on page 122 undefined on
+LaTeX Warning: Reference `fig:testing for max and min' on page 134 undefined on
  input line 126.
 
 
-LaTeX Warning: Reference `thm:evt' on page 122 undefined on input line 132.
+LaTeX Warning: Reference `thm:evt' on page 134 undefined on input line 132.
 
-[122] [123] [124]) (./section05.02.tex
+[134] [135] [136] [137]) (./section05.02.tex
 
-LaTeX Warning: Reference `fig:max and min points' on page 125 undefined on inpu
+LaTeX Warning: Reference `fig:max and min points' on page 138 undefined on inpu
 t line 23.
 
 
-LaTeX Warning: Reference `fig:non extremum' on page 125 undefined on input line
+LaTeX Warning: Reference `fig:non extremum' on page 138 undefined on input line
  24.
 
-[125]
 
-LaTeX Warning: Reference `fig:sin and cos' on page 126 undefined on input line 
+LaTeX Warning: Reference `fig:sin and cos' on page 138 undefined on input line 
 33.
 
-[126]) (./section05.03.tex [127]) (./section05.04.tex
 
-LaTeX Warning: Reference `fig:concave up' on page 128 undefined on input line 1
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [138]
+[139]) (./section05.03.tex [140] [141]) (./section05.04.tex
+
+LaTeX Warning: Reference `fig:concave up' on page 142 undefined on input line 1
 7.
 
-[128]
 
-LaTeX Warning: Reference `fig:concave down' on page 129 undefined on input line
+LaTeX Warning: Reference `fig:concave down' on page 142 undefined on input line
  46.
 
-[129]) (./section05.05.tex [130] [131])) [132] (./textbook.ans
-Underfull \vbox (badness 1577) has occurred while \output is active []
+[142] [143]) (./section05.05.tex
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [133
+ [144]
+[145] [146])) (./textbook.ans
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [147
 
 
 ]
 Underfull \vbox (badness 1286) has occurred while \output is active []
 
- [134]
-Overfull \hbox (49.10059pt too wide) in paragraph at lines 124--132
+ [148]
+Overfull \hbox (49.10059pt too wide) in paragraph at lines 123--131
 \T1/jkp/m/n/10 (-20) 1. $[] \OMS/jkp/m/n/10 ^^@ []$ \T1/jkp/m/n/10 (-20) 2. $[]
  \OMS/jkp/m/n/10 ^^@ []$
  []
 
 
-Overfull \hbox (51.37598pt too wide) in paragraph at lines 133--173
+Overfull \hbox (51.37598pt too wide) in paragraph at lines 132--172
 \T1/jkp/m/n/10 (-20) 13. $[]$ 14. $[]$ 15. $[]$ 16. $[] []$
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 133--173
+Underfull \hbox (badness 10000) in paragraph at lines 132--172
 
  []
 
-[135]
-Overfull \hbox (0.15524pt too wide) in paragraph at lines 188--193
+[149]
+Overfull \hbox (0.15524pt too wide) in paragraph at lines 187--192
 \T1/jkp/m/n/10 (-20) 1. $[]\OT1/zplm/m/n/10 ([]) []([])/[]$ \T1/jkp/m/n/10 (-20
 ) 2. $[] \OT1/zplm/m/n/10 + [] [] \OML/jkp/m/it/10 x$ \T1/jkp/m/n/10 (-20) 3. $
 \OMS/jkp/m/n/10 ^^@[]$ \T1/jkp/m/n/10 (-20) 4. $[]$
  []
 
 
-Overfull \hbox (2.96472pt too wide) in paragraph at lines 194--212
+Overfull \hbox (2.96472pt too wide) in paragraph at lines 193--211
 \T1/jkp/m/n/10 (-20) 1. $[][] \OML/jkp/m/it/10 x \OMS/jkp/m/n/10 ^^@ [][] \OML/
 jkp/m/it/10 x$ \T1/jkp/m/n/10 (-20) 2. $\OMS/jkp/m/n/10 ^^@ [] \OML/jkp/m/it/10
  x []\OT1/zplm/m/n/10 ([] \OML/jkp/m/it/10 x\OT1/zplm/m/n/10 )$ \T1/jkp/m/n/10 
@@ -1779,7 +1788,7 @@ jkp/m/it/10 x$ \T1/jkp/m/n/10 (-20) 2. $\OMS/jkp/m/n/10 ^^@ [] \OML/jkp/m/it/10
  []
 
 
-Overfull \hbox (17.90953pt too wide) in paragraph at lines 194--212
+Overfull \hbox (17.90953pt too wide) in paragraph at lines 193--211
 \T1/jkp/m/n/10 (-20) 5. $\OMS/jkp/m/n/10 ^^@ [][] \OML/jkp/m/it/10 x$ \T1/jkp/m
 /n/10 (-20) 6. $\OMS/jkp/m/n/10 ^^@ [] \OML/jkp/m/it/10 x [] x$ \T1/jkp/m/n/10 
 (-20) 7. $\OT1/jkp/m/n/10 (-20) 3\OML/jkp/m/it/10 x[] []\OT1/zplm/m/n/10 (\OT1/
@@ -1792,7 +1801,7 @@ OT1/jkp/m/n/10 (-20) 6\OML/jkp/m/it/10 x\OT1/zplm/m/n/10 )$
  []
 
 
-Overfull \hbox (8.4926pt too wide) in paragraph at lines 194--212
+Overfull \hbox (8.4926pt too wide) in paragraph at lines 193--211
 \T1/jkp/m/n/10 (-20) 10. $[] \OML/jkp/m/it/10 ^^R\OT1/zplm/m/n/10 /([] \OML/jkp
 /m/it/10 ^^R \OT1/zplm/m/n/10 + \OT1/jkp/m/n/10 (-20) 1\OT1/zplm/m/n/10 )[]$ \T
 1/jkp/m/n/10 (-20) 11. $\OT1/jkp/m/n/10 (-20) 5\OML/jkp/m/it/10 t[] []\OT1/zplm
@@ -1805,8 +1814,8 @@ m/m/n/10 (\OT1/jkp/m/n/10 (-20) 3\OML/jkp/m/it/10 t\OT1/zplm/m/n/10 ))/ [](\OT1
 /jkp/m/n/10 (-20) 2\OML/jkp/m/it/10 t\OT1/zplm/m/n/10 ) +
  []
 
-[136]
-Overfull \hbox (20.86348pt too wide) in paragraph at lines 214--230
+[150]
+Overfull \hbox (20.86348pt too wide) in paragraph at lines 213--229
 \T1/jkp/m/n/10 (-20) 1. $\OT1/jkp/m/n/10 (-20) 2 []\OT1/zplm/m/n/10 (\OT1/jkp/m
 /n/10 (-20) 3\OT1/zplm/m/n/10 )\OML/jkp/m/it/10 x\OT1/jkp/m/n/10 (-20) 3[]$ \T1
 /jkp/m/n/10 (-20) 2. $[]$ 3. $\OT1/jkp/m/n/10 (-20) 2\OML/jkp/m/it/10 e[]$ \T1/
@@ -1817,7 +1826,7 @@ p/m/it/10 x[] []$
  []
 
 
-Overfull \hbox (12.82884pt too wide) in paragraph at lines 214--230
+Overfull \hbox (12.82884pt too wide) in paragraph at lines 213--229
 \OT1/jkp/m/n/10 (-20) 3\OT1/zplm/m/n/10 )/(\OML/jkp/m/it/10 x[] \OT1/zplm/m/n/1
 0 + \OT1/jkp/m/n/10 (-20) 3\OML/jkp/m/it/10 x\OT1/zplm/m/n/10 )$ \T1/jkp/m/n/10
  (-20) 12. $\OMS/jkp/m/n/10 ^^@ []\OT1/zplm/m/n/10 (\OML/jkp/m/it/10 x\OT1/zplm
@@ -1830,7 +1839,7 @@ jkp/m/it/10 x \OMS/jkp/m/n/10 ^^@
  []
 
 
-Overfull \hbox (40.21797pt too wide) in paragraph at lines 231--246
+Overfull \hbox (40.21797pt too wide) in paragraph at lines 230--245
 \T1/jkp/m/n/10 (-20) 1. $\OML/jkp/m/it/10 x\OT1/zplm/m/n/10 /\OML/jkp/m/it/10 y
 $ \T1/jkp/m/n/10 (-20) 2. $\OMS/jkp/m/n/10 ^^@\OT1/zplm/m/n/10 (\OT1/jkp/m/n/10
  (-20) 2\OML/jkp/m/it/10 x \OT1/zplm/m/n/10 + \OML/jkp/m/it/10 y\OT1/zplm/m/n/1
@@ -1846,7 +1855,7 @@ lm/m/n/10 ) [](\OML/jkp/m/it/10 y\OT1/zplm/m/n/10 ))$
  []
 
 
-Overfull \hbox (12.91577pt too wide) in paragraph at lines 231--246
+Overfull \hbox (12.91577pt too wide) in paragraph at lines 230--245
 \OT1/zplm/m/n/10 (\OT1/jkp/m/n/10 (-20) 2[], []\OT1/zplm/m/n/10 )$\T1/jkp/m/n/1
 0 (-20) , $\OT1/zplm/m/n/10 (\OMS/jkp/m/n/10 ^^@\OT1/jkp/m/n/10 (-20) 2[], \OMS
 /jkp/m/n/10 ^^@[]\OT1/zplm/m/n/10 )$ \T1/jkp/m/n/10 (-20) 14. $\OML/jkp/m/it/10
@@ -1861,17 +1870,17 @@ Overfull \hbox (12.91577pt too wide) in paragraph at lines 231--246
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.262 
+l.240 
       
 ? 
 ! Missing } inserted.
 <inserted text> 
                 }
-l.262 
+l.240 
       
 ? 
 No file textbook.ind.
-[137]
+[151]
 
 Package bibentry Warning: You have used \nobibliography* 
 (bibentry)                without a following \bibliography.
@@ -1886,34 +1895,36 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 25859 strings out of 493848
- 503867 string characters out of 1152824
- 680940 words of memory out of 3000000
- 27205 multiletter control sequences out of 15000+50000
- 214250 words of font info for 511 fonts, out of 3000000 for 9000
+ 25997 strings out of 493848
+ 506426 string characters out of 1152824
+ 701545 words of memory out of 3000000
+ 27315 multiletter control sequences out of 15000+50000
+ 238777 words of font info for 565 fonts, out of 3000000 for 9000
  714 hyphenation exceptions out of 8191
  63i,13n,74p,444b,1578s stack positions out of 5000i,500n,10000p,200000b,50000s
 {/usr/share/texmf-texlive/fonts/enc/dvips/kpfonts/kpfonts-expert.enc}{/usr/sh
 are/texmf-texlive/fonts/enc/dvips/base/8r.enc}</usr/share/texmf-texlive/fonts/t
-ype1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-texlive/fonts/type1/public/
-mathpazo/fplmbb.pfb></usr/share/texmf-texlive/fonts/type1/public/kpfonts/jkpbn8
-a.pfb></usr/share/texmf-texlive/fonts/type1/public/kpfonts/jkpbne.pfb></usr/sha
-re/texmf-texlive/fonts/type1/public/kpfonts/jkpex.pfb></usr/share/texmf-texlive
-/fonts/type1/public/kpfonts/jkpmi.pfb></usr/share/texmf-texlive/fonts/type1/pub
-lic/kpfonts/jkpmia.pfb></usr/share/texmf-texlive/fonts/type1/public/kpfonts/jkp
-mit8a.pfb></usr/share/texmf-texlive/fonts/type1/public/kpfonts/jkpmite.pfb></us
-r/share/texmf-texlive/fonts/type1/public/kpfonts/jkpmn8a.pfb></usr/share/texmf-
-texlive/fonts/type1/public/kpfonts/jkpmne.pfb></usr/share/texmf-texlive/fonts/t
-ype1/public/kpfonts/jkpmsc8a.pfb></usr/share/texmf-texlive/fonts/type1/public/k
-pfonts/jkpssmn8a.pfb></usr/share/texmf-texlive/fonts/type1/public/kpfonts/jkpss
-mne.pfb></usr/share/texmf-texlive/fonts/type1/public/kpfonts/jkpssmsc8a.pfb></u
-sr/share/texmf-texlive/fonts/type1/public/kpfonts/jkpsy.pfb></usr/share/texmf-t
-exlive/fonts/type1/public/kpfonts/jkpsyc.pfb></usr/share/texmf-texlive/fonts/ty
-pe1/public/kpfonts/jkpttmn8a.pfb></usr/share/texmf-texlive/fonts/type1/urw/pala
-tino/uplr8a.pfb>
-Output written on textbook.pdf (137 pages, 662253 bytes).
+ype1/public/amsfonts/cm/cmbx10.pfb></usr/share/texmf-texlive/fonts/type1/public
+/amsfonts/cm/cmr10.pfb></usr/share/texmf-texlive/fonts/type1/public/mathpazo/fp
+lmbb.pfb></usr/share/texmf-texlive/fonts/type1/public/kpfonts/jkpbmi.pfb></usr/
+share/texmf-texlive/fonts/type1/public/kpfonts/jkpbn8a.pfb></usr/share/texmf-te
+xlive/fonts/type1/public/kpfonts/jkpbne.pfb></usr/share/texmf-texlive/fonts/typ
+e1/public/kpfonts/jkpbsy.pfb></usr/share/texmf-texlive/fonts/type1/public/kpfon
+ts/jkpex.pfb></usr/share/texmf-texlive/fonts/type1/public/kpfonts/jkpmi.pfb></u
+sr/share/texmf-texlive/fonts/type1/public/kpfonts/jkpmia.pfb></usr/share/texmf-
+texlive/fonts/type1/public/kpfonts/jkpmit8a.pfb></usr/share/texmf-texlive/fonts
+/type1/public/kpfonts/jkpmite.pfb></usr/share/texmf-texlive/fonts/type1/public/
+kpfonts/jkpmn8a.pfb></usr/share/texmf-texlive/fonts/type1/public/kpfonts/jkpmne
+.pfb></usr/share/texmf-texlive/fonts/type1/public/kpfonts/jkpmsc8a.pfb></usr/sh
+are/texmf-texlive/fonts/type1/public/kpfonts/jkpssmn8a.pfb></usr/share/texmf-te
+xlive/fonts/type1/public/kpfonts/jkpssmne.pfb></usr/share/texmf-texlive/fonts/t
+ype1/public/kpfonts/jkpssmsc8a.pfb></usr/share/texmf-texlive/fonts/type1/public
+/kpfonts/jkpsy.pfb></usr/share/texmf-texlive/fonts/type1/public/kpfonts/jkpsyc.
+pfb></usr/share/texmf-texlive/fonts/type1/public/kpfonts/jkpttmn8a.pfb></usr/sh
+are/texmf-texlive/fonts/type1/urw/palatino/uplr8a.pfb>
+Output written on textbook.pdf (151 pages, 701624 bytes).
 PDF statistics:
- 1488 PDF objects out of 1728 (max. 8388607)
- 661 named destinations out of 1000 (max. 500000)
- 63389 words of extra memory for PDF output out of 74296 (max. 10000000)
+ 1566 PDF objects out of 1728 (max. 8388607)
+ 676 named destinations out of 1000 (max. 500000)
+ 69029 words of extra memory for PDF output out of 74296 (max. 10000000)
 
