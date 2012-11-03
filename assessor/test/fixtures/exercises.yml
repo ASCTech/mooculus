@@ -1,0 +1,6 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  title: Sample Excercise
+  description: This is a Sample Exercise
+  page: exercises/khan-exercise.html
