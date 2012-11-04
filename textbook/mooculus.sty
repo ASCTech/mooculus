@@ -3,6 +3,20 @@
 \ProvidesPackage{mooculus}[2012/01/30 v0.75]
 \ProcessOptions\relax
 
+
+%Colors
+\usepackage[usenames,dvipsnames]{xcolor}
+\colorlet{background}{Apricot!5} % Color of the page
+\colorlet{textcolor}{Sepia!30!black} % Color of the text
+\colorlet{pencolor}{green!50!black} % Color of a curve in a plot
+
+\pagecolor{background}
+\color{textcolor} 
+
+
+
+
+
 \RequirePackage{environ}
 %\RequirePackage{xkeyval}
 \RequirePackage{tikz}
@@ -29,6 +43,10 @@
   textwidth=5in,
   marginparsep=0.5in,
   marginparwidth=2.5in}
+
+
+
+
 
 
 \renewcommand{\epsilon}{\varepsilon}
