@@ -1,3 +1,19 @@
+1. 7
+2. 5
+3. 0
+4. undefined
+5. $1/6$
+6. 0
+7. 3
+8. 172
+9. 0
+10. 2
+11. does not exist
+12. $\ds \sqrt 2$
+13. $\ds 3a^2$
+14. 512
+15. $-4$
+16. $0$
 \subsection *{Answers for 1.2}
 1. $(2/3)x+(1/3)$
 2. $y=-2x$
@@ -17,11 +33,11 @@
 16. $\ds y=\begin {cases} 0.15x & 0\le x\le 19450 \\ 0.28x-2528.50& 19450<x\le 47050 \\ 0.33x-4881 & 47050<x\le 97620 \\ \end {cases}$
 17. (a) $P=-0.0001x+2$ (b) $x=-10000P+20000$
 18. $(2/25)x-(16/5)$
-\subsection *{Answers for 1.3}
+\subsection *{Answers for 2.1}
 1. (a) $x^2+y^2=9$ {} (b) $(x-5)^2+(y-6)^2=9$ {} (c) $(x+5)^2+(y+6)^2=9$
 2. (a) $\Delta x=2$, $\Delta y = 3$, $m=3/2$, $y=(3/2)x-3$, $\sqrt {13}$ \par {}(b) $\Delta x=-1$, $\Delta y = 3$, $m=-3$, $y=-3x+2$, $\sqrt {10}$ \par {}(c) $\Delta x=-2$, $\Delta y = -2$, $m=1$, $y=x$, $\sqrt {8}$
 6. $(x+2/7)^2+(y-41/7)^2=1300/49$
-\subsection *{Answers for 1.4}
+\subsection *{Answers for 2.2}
 1. $\ds \{x\mid x\ge 3/2\}$
 2. $\ds \{x\mid x\not =-1\}$
 3. $\ds \{x\mid x\not =1 \hbox { and } x\not =-1\}$
@@ -38,19 +54,19 @@
 14. $A=x(500-2x)$, $\ds \{x\mid 0\le x\le 250\}$
 15. $\ds V=r(50-\pi r^2)$, $\ds \{r\mid 0< r\le \sqrt {50/\pi }\}$
 16. $\ds A=2\pi r^2+2000/r$, $\ds \{r\mid 0<r<\infty \}$
-\subsection *{Answers for 1.5}
-\subsection *{Answers for 2.1}
+\subsection *{Answers for 2.3}
+\subsection *{Answers for 2.4}
 1. $-5$, $-2.47106145$, $-2.4067927$, $-2.400676$, $-2.4$
 2. $-4/3$, $-24/7$, $7/24$, $3/4$
 3. $-0.107526881$, $-0.11074197$, $-0.1110741$, $\ds {-1\over 3(3+\Delta x)}\rightarrow {-1\over 9}$
 4. $\ds {3+3\Delta x+\Delta x^2\over 1+\Delta x}\rightarrow 3$
 5. $3.31$, $3.003001$, $3.0000$,\hfill \break $3+3\Delta x+\Delta x^2\rightarrow 3$
 6. $m$
-\subsection *{Answers for 2.2}
+\subsection *{Answers for 3.1}
 1. $10$, $25/2$, $20$, $15$, $25$, $35$.
 2. $5$, $4.1$, $4.01$, $4.001$, $4+\Delta t\rightarrow 4$
 3. $-10.29$, $-9.849$, $-9.8049$, \hfill \break $-9.8-4.9\Delta t\rightarrow -9.8$
-\subsection *{Answers for 2.3}
+\subsection *{Answers for 3.2}
 1. 7
 2. 5
 3. 0
@@ -67,7 +83,7 @@
 14. 512
 15. $-4$
 16. $0$
-\subsection *{Answers for 2.4}
+\subsection *{Answers for 3.3}
 1. $\ds -x/\sqrt {169-x^2}$
 2. $-9.8t$
 3. $\ds 2x+1/x^2$
@@ -77,15 +93,15 @@
 9. $\ds 5/(t+2)^2$
 10. $y=-13x+17$
 11. $-8$
-\subsection *{Answers for 2.5}
-\subsection *{Answers for 3.1}
+\subsection *{Answers for 3.4}
+\subsection *{Answers for 3.5}
 1. $\ds 100x^{99}$
 2. $\ds -100x^{-101}$
 3. $\ds -5x^{-6}$
 4. $\ds \pi x^{\pi -1}$
 5. $\ds (3/4)x^{-1/4}$
 6. $\ds -(9/7)x^{-16/7}$
-\subsection *{Answers for 3.2}
+\subsection *{Answers for 4.1}
 1. $\ds 15x^2+24x$
 2. $\ds -20x^4+6x+10/x^3$
 3. $\ds -30x+25$
@@ -97,13 +113,13 @@
 9. $-49t/5+5$, $-49/5$
 11. $\ds \sum _{k=1}^n ka_kx^{k-1}$
 12. $\ds x^3/16-3x/4+4$
-\subsection *{Answers for 3.3}
+\subsection *{Answers for 4.2}
 1. $\ds 3x^2(x^3-5x+10)+x^3(3x^2-5)$
 2. $\ds (x^2+5x-3)(5x^4-18x^2+6x-7)+(2x+5)(x^5-6x^3+3x^2-7x+1)$
 3. $\ds \ds {\sqrt {625-x^2}\over 2\sqrt {x}}-{x\sqrt {x}\over \sqrt {625-x^2}}$
 4. $\ds {-1\over x^{19}\sqrt {625-x^2}}-{20\sqrt {625-x^2}\over x^{21}}$
 5. $f'=4(2x-3)$, $y=4x-7$
-\subsection *{Answers for 3.4}
+\subsection *{Answers for 4.3}
 1. $\ds {3x^2\over x^3-5x+10}-{x^3(3x^2-5)\over (x^3-5x+10)^2}$
 2. $\ds {2x+5\over x^5-6x^3+3x^2-7x+1}- {(x^2+5x-3)(5x^4-18x^2+6x-7)\over (x^5-6x^3+3x^2-7x+1)^2}$
 3. $\ds {1\over 2\sqrt {x}\sqrt {625-x^2}}+{x^{3/2}\over (625-x^2)^{3/2}}$
@@ -112,7 +128,7 @@
 6. $y=11x/16-15/16$
 8. $y=19/169-5x/338$
 9. $13/18$
-\subsection *{Answers for 3.5}
+\subsection *{Answers for 4.4}
 1. $\ds 4x^3-9x^2+x+7$
 2. $\ds 3x^2-4x+2/\sqrt {x}$
 3. $\ds 6(x^2+1)^2x$
@@ -153,13 +169,13 @@
 38. $y=13x/2-23/2$
 39. $y=2x-11$
 40. $\ds y= {20+2\sqrt 5\over 5\sqrt {4+\sqrt 5}}\,x+{3\sqrt 5\over 5\sqrt {4+\sqrt 5}}$
-\subsection *{Answers for 4.1}
+\subsection *{Answers for 4.5}
 1. $2n\pi -\pi /2$, any integer $n$
 2. $n\pi \pm \pi /6$, any integer $n$
 3. $(\sqrt 2+\sqrt 6)/4$
 4. $-(1+\sqrt 3)/(1-\sqrt 3)=2+\sqrt 3$
 11. $t=\pi /2$
-\subsection *{Answers for 4.3}
+\subsection *{Answers for 5.1}
 1. $5$
 2. $7/2$
 3. $3/4$
@@ -167,13 +183,13 @@
 5. $-\sqrt 2/2$
 6. $7$
 7. $2$
-\subsection *{Answers for 4.4}
+\subsection *{Answers for 5.3}
 1. $\ds \sin (\sqrt {x})\cos (\sqrt {x})/\sqrt {x}$
 2. $\ds {\sin x\over 2\sqrt x}+\sqrt {x}\cos x$
 3. $ \ds -{\cos x\over \sin ^2 x}$
 4. $\ds {(2x +1)\sin x - (x^2+x)\cos x\over \sin ^2 x}$
 5. $\ds {-\sin x\cos x\over \sqrt {1-\sin ^2x\ }}$
-\subsection *{Answers for 4.5}
+\subsection *{Answers for 5.4}
 1. $\ds \cos ^2 x-\sin ^2 x$
 2. $\ds -\sin x\cos (\cos x)$
 3. $\ds {\tan x+x\sec ^2 x\over 2\sqrt {x\tan x\ }}$
@@ -192,8 +208,8 @@
 16. $\ds 8\sqrt 3x+4-8\sqrt 3\pi /3$
 17. $\ds 3\sqrt 3x/2-\sqrt 3\pi /4$
 18. $\ds \pi /6+2n\pi $, $5\pi /6+2n\pi $, any integer $n$
-\subsection *{Answers for 4.6}
-\subsection *{Answers for 4.7}
+\subsection *{Answers for 5.5}
+\subsection *{Answers for 5.6}
 1. $\ds 2\ln (3)x3^{x^2}$
 2. $\ds {\cos x-\sin x \over e^x}$
 3. $\ds 2e^{2x}$
@@ -210,7 +226,7 @@
 14. $\ds \sec (x)$
 15. $\ds x^{\cos (x)}(\cos (x)/x-\cos (x)\ln (x))$
 20. $e$
-\subsection *{Answers for 4.8}
+\subsection *{Answers for 5.7}
 1. $\ds x/y$
 2. $\ds -(2x+y)/(x+2y)$
 3. $\ds (2xy-3x^2-y^2)/(2xy-3y^2-x^2)$
@@ -226,7 +242,7 @@
 14. $\ds y=7x/\sqrt 3-8/\sqrt 3$
 15. $\ds y=(-y_1^{1/3}x+y_1^{1/3}x_1+x_1^{1/3}y_1)/x_1^{1/3}$
 16. $\ds (y-y_1)/(x-x_1)=(2x_1^3+2x_1y_1^2-x_1)/(2y_1^3+2y_1x_1^2+y_1)$
-\subsection *{Answers for 4.9}
+\subsection *{Answers for 5.8}
 3. $\ds {-1\over 1+x^2}$
 5. $\ds {2x\over \sqrt {1-x^4}}$
 6. $\ds {e^x\over 1+e^{2x}}$
@@ -235,7 +251,7 @@
 9. $\ds -e^x/\sqrt {1-e^{2x}}$
 10. $0$
 11. $\ds {(1+\ln x)x^x\over \ln 5(1+x^{2x})\arctan (x^x)}$
-\subsection *{Answers for 4.10}
+\subsection *{Answers for 5.9}
 1. $0$
 2. $\infty $
 3. $1$
@@ -288,8 +304,8 @@
 50. does not exist
 51. $\infty $
 52. $y=1$ and $y=-1$
-\subsection *{Answers for 4.11}
-\subsection *{Answers for 5.1}
+\subsection *{Answers for 5.10}
+\subsection *{Answers for 5.11}
 1. min at $x=1/2$
 2. min at $x=-1$, max at $x=1$
 3. max at $x=2$, min at $x=4$
@@ -303,7 +319,7 @@
 11. local min at $x=49$
 12. local min at $x=0$
 15. one
-\subsection *{Answers for 5.2}
+\subsection *{Answers for 6.1}
 1. min at $x=1/2$
 2. min at $x=-1$, max at $x=1$
 3. max at $x=2$, min at $x=4$
@@ -318,7 +334,7 @@
 13. min at $n\pi $, max at $\pi /2+n\pi $
 14. min at $2n\pi $, max at $(2n+1)\pi $
 15. min at $\pi /2+2n\pi $, max at $3\pi /2+2n\pi $
-\subsection *{Answers for 5.3}
+\subsection *{Answers for 6.2}
 1. min at $x=1/2$
 2. min at $x=-1$, max at $x=1$
 3. max at $x=2$, min at $x=4$
@@ -337,7 +353,7 @@
 16. min at $n\pi $
 17. max at $n\pi $, min at $\pi /2+n\pi $
 18. max at $\pi /2+2n\pi $, min at $3\pi /2+2n\pi $
-\subsection *{Answers for 5.4}
+\subsection *{Answers for 6.3}
 1. concave up everywhere
 2. concave up when $x<0$, concave down when $x>0$
 3. concave down when $x<3$, concave up when $x>3$
@@ -357,4 +373,5 @@
 17. concave up on $(\pi /4+n\pi ,3\pi /4+n\pi )$
 18. inflection points at $n\pi $, $\ds \pm \arcsin (\sqrt {2/3})+n\pi $
 19. up/incr: $(3,\infty )$, up/decr: $(-\infty ,0)$, $(2,3)$, down/decr: $(0,2)$
-\subsection *{Answers for 5.5}
+\subsection *{Answers for 6.4}
+\subsection *{Answers for 6.5}

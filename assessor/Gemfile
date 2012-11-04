@@ -50,3 +50,6 @@ gem 'devise'
 gem 'omniauth'
 gem 'oauth2'
 gem 'omniauth-google-oauth2'
+
+# better timeouts
+gem "system_timer", "~> 1.2.4"

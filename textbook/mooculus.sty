@@ -14,6 +14,8 @@
 %\RequirePackage{nopageno}
 \RequirePackage{microtype}
 
+\RequirePackage{enumerate}
+
 \usepackage[notextcomp]{kpfonts}
 \RequirePackage[T1]{fontenc}
 
@@ -29,7 +31,7 @@
   marginparsep=0.5in,
   marginparwidth=2.5in}
 
-\NewEnviron{theorem}{%
+\NewEnviron{theorem}[1][Theorem]{%
   \begin{center}
     \begin{tikzpicture}
       \node[rectangle,rounded corners,inner sep=5pt,minimum width=\textwidth,
@@ -38,7 +40,7 @@
         fill=blue, fill opacity=.1] 
       (box){%
         \begin{minipage}{.95\textwidth}
-          \textbf{Theorem}\qquad\color{black}\BODY
+          \textbf{#1}\qquad\color{black}\BODY
       \end{minipage}};
     \end{tikzpicture}
   \end{center}
@@ -89,6 +91,29 @@
 
 \RequirePackage{framed}
 \newenvironment{example}{\begin{leftbar}\noindent\textbf{Example}\qquad}{\end{leftbar}}
+
+
+\usepackage{multicol} % Use letters for lists
+\renewcommand{\theenumi}{$(\mathrm{\alph{enumi}})$}
+\renewcommand{\labelenumi}{\theenumi}
+
+
+\newcounter{exercise}
+\NewEnviron{exercises}{%
+  \subsection*{Exercises for Section \arabic{chapter}.\arabic{section}\hrule}
+  \setcounter{exercise}{0}
+  \BODY
+  \dumpanswer[\noexpand\subsection*{Answers for \arabic{chapter}.\arabic{section}}]
+\newpage
+}%
+{}
+\newenvironment{exercise}{
+\begin{enumerate}[(1)]
+  \setcounter{enumi}{\value{exercise}}
+  \item \addtocounter{exercise}{1}
+}
+{\end{enumerate}}
+
 
 
 %\NewEnviron{example}{%

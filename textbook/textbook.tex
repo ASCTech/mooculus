@@ -1,17 +1,7 @@
 \documentclass[justified,marginals=raggedouter]{tufte-book}
 \usepackage{mooculus}
 \usepackage{pgfplots}
-
-\hypersetup{colorlinks=true}
-\hypersetup{%
-    pdfborder = {0 0 0},
-    bookmarksdepth = section,
-    citecolor = DarkGreen,
-    linkcolor = DarkBlue,
-    pagecolor = DarkBlue,
-    urlcolor = DarkGreen,
-  }%
-%\usepackage[colorlinks=false, linktocpage=true]{hyperref}
+\usepackage{morefloats}
 
 \usepackage{amsmath}
 \usepackage{amssymb}
@@ -60,28 +50,6 @@
    \dumpanswer[\arabic{exercise}. \the\answercontent]
  }
 \makeatother
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\usepackage{multicol} % Use letters for lists
-\renewcommand{\theenumi}{$(\mathrm{\alph{enumi}})$}
-\renewcommand{\labelenumi}{\theenumi}
-
-\usepackage{enumerate}
-
-\newcounter{exercise}
-\newenvironment{exercises}{%
-\subsection*{Exercises for Section \arabic{chapter}.\arabic{section}\hrule}
-\setcounter{exercise}{0}
-\dumpanswer[\noexpand\subsection*{Answers for \arabic{chapter}.\arabic{section}}]
-}%
-{}
-\newenvironment{exercise}{
-\begin{enumerate}[(1)]
-  \setcounter{enumi}{\value{exercise}}
-  \item \addtocounter{exercise}{1}
-}
-{\end{enumerate}}
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %\newenvironment{example}{\subsection*{Example}}{}
@@ -247,7 +215,7 @@ What is calculus?
 % Start the main matter (normal chapters)
 \mainmatter
 
-
+\input limits
 \input chapter01
 \input chapter02
 \input chapter03
