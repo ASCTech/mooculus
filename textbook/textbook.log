@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.8.6)  3 NOV 2012 19:15
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.8.6)  3 NOV 2012 22:06
 entering extended mode
  %&-line parsing enabled.
 **textbook.tex
@@ -1120,6 +1120,26 @@ File: tikzlibraryplotmarks.code.tex 2008/01/09 v2.10 (rcs-revision 1.1)
 (/usr/share/texmf/tex/generic/pgf/libraries/pgflibraryplotmarks.code.tex
 File: pgflibraryplotmarks.code.tex 2010/10/15 v2.10 (rcs-revision 1.12)
 )))
+(/usr/share/texmf-texlive/tex/latex/morefloats/morefloats.sty
+\bx@S=\insert233
+\bx@T=\insert232
+\bx@U=\insert231
+\bx@V=\insert230
+\bx@W=\insert229
+\bx@X=\insert228
+\bx@Y=\insert227
+\bx@Z=\insert226
+\bx@AA=\insert225
+\bx@BB=\insert224
+\bx@CC=\insert223
+\bx@DD=\insert222
+\bx@EE=\insert221
+\bx@FF=\insert220
+\bx@GG=\insert219
+\bx@HH=\insert218
+\bx@II=\insert217
+\bx@JJ=\insert216
+)
 (/usr/share/texmf-texlive/tex/latex/booktabs/booktabs.sty
 Package: booktabs 2005/04/14 v1.61803 publication quality tables
 \heavyrulewidth=\dimen201
@@ -1387,7 +1407,7 @@ Package microtype Info: Character `029' is missing
 (./limits.tex
 Chapter 1.
 
-Overfull \hbox (31.3863pt too wide) in paragraph at lines 22--37
+Overfull \hbox (26.45993pt too wide) in paragraph at lines 12--24
 [] 
  []
 
@@ -1395,18 +1415,13 @@ Overfull \hbox (31.3863pt too wide) in paragraph at lines 22--37
 LaTeX Warning: Marginpar on page 11 moved.
 
 
-Overfull \hbox (48.80998pt too wide) in paragraph at lines 114--114
-[][] [] 
- []
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[11
+ [11
 
 ]
-Underfull \vbox (badness 10000) detected at line 157
- []
-
-
-Underfull \vbox (badness 10000) detected at line 157
+Overfull \hbox (48.80998pt too wide) in paragraph at lines 113--113
+[][] [] 
  []
 
 Package microtype Info: Character `029' is missing
@@ -1965,13 +1980,13 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 29545 strings out of 493848
- 617280 string characters out of 1152824
- 854222 words of memory out of 3000000
- 30808 multiletter control sequences out of 15000+50000
+ 29568 strings out of 493848
+ 617561 string characters out of 1152824
+ 853615 words of memory out of 3000000
+ 30827 multiletter control sequences out of 15000+50000
  239161 words of font info for 569 fonts, out of 3000000 for 9000
  714 hyphenation exceptions out of 8191
- 69i,13n,90p,704b,1893s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 69i,13n,90p,727b,1913s stack positions out of 5000i,500n,10000p,200000b,50000s
 {/usr/share/texmf-texlive/fonts/enc/dvips/kpfonts/kpfonts-expert.enc}{/usr/sh
 are/texmf-texlive/fonts/enc/dvips/base/8r.enc}</usr/share/texmf-texlive/fonts/t
 ype1/public/amsfonts/cm/cmbx10.pfb></usr/share/texmf-texlive/fonts/type1/public
@@ -1992,7 +2007,7 @@ ype1/public/kpfonts/jkpssmsc8a.pfb></usr/share/texmf-texlive/fonts/type1/public
 /kpfonts/jkpsy.pfb></usr/share/texmf-texlive/fonts/type1/public/kpfonts/jkpsyc.
 pfb></usr/share/texmf-texlive/fonts/type1/public/kpfonts/jkpttmn8a.pfb></usr/sh
 are/texmf-texlive/fonts/type1/urw/palatino/uplr8a.pfb>
-Output written on textbook.pdf (151 pages, 708431 bytes).
+Output written on textbook.pdf (151 pages, 709159 bytes).
 PDF statistics:
  1567 PDF objects out of 1728 (max. 8388607)
  676 named destinations out of 1000 (max. 500000)
