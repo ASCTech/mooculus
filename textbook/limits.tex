@@ -11,14 +11,16 @@
 \begin{marginfigure}
 \begin{tikzpicture}
 	\begin{axis}[
-            domain=-2:4, xmax=4,
+            domain=-2:4,
             axis lines =middle, xlabel=$x$, ylabel=$f(x)$,
+            every axis y label/.style={at=(current axis.above origin),anchor=south},
+            every axis x label/.style={at=(current axis.right of origin),anchor=west},
             grid=both,
             xtick={-2,...,4},
             ytick={-3,...,3},
           ]
 	  \addplot [very thick, green!50!black, smooth] {x-1};
-          \addplot[color=green!50!black,fill=white,only marks,mark=*] coordinates{(2,1)}; 
+          \addplot[color=green!50!black,fill=white,only marks,mark=*] coordinates{(2,1)};  %% open hole
         \end{axis}
 \end{tikzpicture}
 \caption{A plot of $f(x)=\protect\frac{x^2 - 3x + 2}{x-2}$.}
@@ -79,7 +81,7 @@ interperatation of this defintion.
 \begin{figure}
 \begin{tikzpicture}
 	\begin{axis}[
-            domain=0:2, xmax=2,
+            domain=0:2, 
             axis lines =left, xlabel=$x$, ylabel=$f(x)$,
             every axis y label/.style={at=(current axis.above origin),anchor=south},
             every axis x label/.style={at=(current axis.right of origin),anchor=west},
@@ -88,16 +90,12 @@ interperatation of this defintion.
             axis on top,
             area style,
           ]          
-          \addplot [fill=blue!10, smooth, domain=(0:1.570)] {5} \closedcycle;
-          \addplot [black, smooth, domain=(0:1.570)] {5};
-          \addplot [fill=cyan!20, dashed, smooth, domain=(0:1.3)] {4.537} \closedcycle;
-          \addplot [fill=blue!10, dashed, domain=(0:.7)] {3.283} \closedcycle;       
-          \addplot [black, dashed, smooth, domain=(0:1.570)] {4.537};
-          \addplot [black, dashed, smooth, domain=(0:1.570)] {3.283};
+          \addplot [color=black, fill=blue!10, smooth, domain=(0:1.570)] {5} \closedcycle;
+          \addplot [color=black, dashed, fill=cyan!20, smooth, domain=(0:1.3)] {4.537} \closedcycle;
+          \addplot [color=black, dashed, fill=blue!10, domain=(0:.7)] {3.283} \closedcycle;       
           \addplot [black, very thick, smooth, domain=(0:1)] {4};
-          \addplot [fill=white, smooth, domain=(0:0.607)] {3} \closedcycle;
-          \addplot [black, smooth, domain=(0:0.607)] {3};
-	  \addplot [fill=white, smooth,domain=(0:3)] {x*(x-2)^2+3*x} \closedcycle;
+          \addplot [color=black, fill=white, smooth, domain=(0:0.607)] {3} \closedcycle;
+	  \addplot [draw=none, fill=white, smooth] {x*(x-2)^2+3*x} \closedcycle;
           \addplot [fill=cyan!20, draw=none, domain=.7:1.3] {x*(x-2)^2+3*x} \closedcycle;
           \addplot [black, very thick] plot coordinates {(1,0) (1,4)};
           \addplot [black] plot coordinates {(.7,0) (.7,3.283)};
@@ -105,15 +103,76 @@ interperatation of this defintion.
 	  \addplot [very thick,green!50!black, smooth] {x*(x-2)^2+3*x};
         \end{axis}
 \end{tikzpicture}
-\caption{A geometric interpertation of the $\epsilon$-$\delta$
-  criterion for limits.  Here we see that for every $x$ such that $a
-  -\delta < x < a+\delta$, we are sure to have $L - \epsilon< f(x) <
-  L+\epsilon$.}
+\caption{A geometric interpertation of the
+  $(\epsilon,\delta)$-criterion for limits.  Here we see that for
+  every $x$ such that $a -\delta < x < a+\delta$, we are sure to have
+  $L - \epsilon< f(x) < L+\epsilon$.}
 \label{figure:epsilon-delta}
 \end{figure}
 
 
 \fbox{Examples with numbers}
+
+\fbox{Examples where limits don't exist, $\lim_{x\to 0}
+  \sin(\frac{1}{x})$ and some step function (to show that limits are not the same as evaluation.}
+
+
+
+\begin{figure}
+\begin{tikzpicture}
+	\begin{axis}[
+            domain=-2:2,
+            samples=100,
+            axis lines =middle, xlabel=$x$, ylabel=$f(x)$,
+            every axis y label/.style={at=(current axis.above origin),anchor=south},
+            every axis x label/.style={at=(current axis.right of origin),anchor=west}
+          ]
+	  \addplot [very thick, green!50!black, smooth, domain=(-2:0)] {-1};
+          \addplot [very thick, green!50!black, smooth, domain=(0:2)] {1};
+          \addplot[color=green!50!black,fill=white,only marks,mark=*] coordinates{(0,-1)};  %% open hole
+          \addplot[color=green!50!black,fill=green!50!black,only marks,mark=*] coordinates{(0,1)};  %% closed hole
+        \end{axis}
+\end{tikzpicture}
+\caption{A plot of $f(x)=\protect??$.}
+\label{plot:??}
+\end{figure}
+
+
+\begin{figure}
+\begin{tikzpicture}
+	\begin{axis}[
+            domain=-2:2,
+            samples=100,
+            axis lines =middle, xlabel=$x$, ylabel=$f(x)$,
+            every axis y label/.style={at=(current axis.above origin),anchor=south},
+            every axis x label/.style={at=(current axis.right of origin),anchor=west}
+          ]
+	  \addplot [very thick, green!50!black, smooth, domain=(.1:2)] {1/x};
+          \addplot [very thick, green!50!black, smooth, domain=(-2:-.1)] {1/x};
+        \end{axis}
+\end{tikzpicture}
+\caption{A plot of $f(x)=\protect\frac{1}{x}$.}
+\label{plot:1/x}
+\end{figure}
+
+\begin{figure}
+\begin{tikzpicture}
+	\begin{axis}[
+            domain=-2:2,    
+            samples=500,
+            axis lines =middle, xlabel=$x$, ylabel=$f(x)$,
+            every axis y label/.style={at=(current axis.above origin),anchor=south},
+            every axis x label/.style={at=(current axis.right of origin),anchor=west}
+          ]
+	  \addplot [very thick, green!50!black, smooth, domain=(-2:2)] {sin(deg(1/x))};
+	  \addplot [fill=green!50!black, draw=none, smooth,domain=(-.07:.07)] {1} \closedcycle;
+          \addplot [fill=green!50!black, draw=none, smooth,domain=(-.07:.07)] {-1} \closedcycle;
+        \end{axis}
+\end{tikzpicture}
+\caption{A plot of $f(x)=\protect\sin(\frac{1}{x})$.}
+\label{plot:sin 1/x}
+\end{figure}
+
 
 
 \begin{example} Show that $\ds \lim_{x\to 2} x^2=4$.
