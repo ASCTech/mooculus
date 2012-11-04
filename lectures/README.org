@@ -1,0 +1,18 @@
+* An augmented reality lecture video system
+
+** Tools included
+
+find-markers locates the markers and prints them on stdout; a moving
+marker (especially in an interlaced video) might not be detected, so a
+cubic spline fills in data for those missing frames.
+
+** Dependencies
+
+This code uses [[http://www.uco.es/investiga/grupos/ava/node/26][ArUco]], a minimal library for Augmented Reality
+applications based on [[http://opencv.willowgarage.com/wiki/][OpenCV]].  It also depends on [[http://www.gnu.org/software/gsl/][The GNU Scientific
+Library (GSL)]] for the cubic spline algorithm.
+
+** Installing
+
+The Makefile assumes that ArUco is installed in /usr/local and
+pkg-config for everything else.
