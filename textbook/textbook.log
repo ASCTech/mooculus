@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.8.6)  4 NOV 2012 16:44
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.8.6)  4 NOV 2012 17:49
 entering extended mode
  %&-line parsing enabled.
 **textbook.tex
@@ -1657,10 +1657,10 @@ Underfull \vbox (badness 1221) has occurred while \output is active []
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [73]
-[74] [75]) (./section03.02.tex
+[74]) (./section03.02.tex
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [76]
+ [75]
 Overfull \hbox (14.87491pt too wide) detected at line 59
 \OML/jkp/m/it/10 f[]\OT1/zplm/m/n/10 (\OML/jkp/m/it/10 x\OT1/zplm/m/n/10 ) = []
 (\OML/jkp/m/it/10 x[] \OT1/zplm/m/n/10 + \OT1/jkp/m/n/10 5\OML/jkp/m/it/10 x[]\
@@ -1673,7 +1673,7 @@ OT1/jkp/m/n/10 5 \OMS/jkp/m/n/10 ^^A \OT1/jkp/m/n/10 2\OML/jkp/m/it/10 x[] \OT1
 p/m/n/10 10\OML/jkp/m/it/10 x\OT1/jkp/m/n/10 .
  []
 
-[77] [78]) (./section03.03.tex
+[76] [77]) (./section03.03.tex
 Overfull \hbox (3.14566pt too wide) in paragraph at lines 32--32
 [] 
  []
@@ -1681,15 +1681,15 @@ Overfull \hbox (3.14566pt too wide) in paragraph at lines 32--32
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [79]
-[80] [81] [82]) (./section03.04.tex
+ [78]
+[79] [80] [81]) (./section03.04.tex
 Overfull \hbox (21.46898pt too wide) detected at line 26
 [][] \OT1/zplm/m/n/10 = \OML/jkp/m/it/10 f\OT1/zplm/m/n/10 (\OML/jkp/m/it/10 x\
 OT1/zplm/m/n/10 )[] + \OML/jkp/m/it/10 f[]\OT1/zplm/m/n/10 (\OML/jkp/m/it/10 x\
 OT1/zplm/m/n/10 )[] = [] = []\OT1/jkp/m/n/10 .
  []
 
-[83] [84] [85]) (./section03.05.tex [86] [87] [88] [89] [90] [91]
+[82] [83] [84]) (./section03.05.tex [85] [86] [87] [88] [89] [90]
 Overfull \hbox (22.39006pt too wide) in paragraph at lines 364--364
 []\T1/jkp/m/n/10 (-20) Find an equa-tion for the tan-gent line to $[]$ at $\OT1
 /zplm/m/n/10 (\OT1/jkp/m/n/10 (-20) 1, []\OT1/zplm/m/n/10 )$\T1/jkp/m/n/10 (-20
@@ -1701,11 +1701,11 @@ Underfull \hbox (badness 10000) in paragraph at lines 364--364
 
  []
 
-[92])) (./chapter04.tex
-Chapter 5.
-(./section04.01.tex [93
+[91])) (./chapter04.tex [92
 
 ]
+Chapter 5.
+(./section04.01.tex [93]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [94]
@@ -1882,11 +1882,7 @@ LaTeX Warning: Reference `fig:non extremum' on page 140 undefined on input line
 LaTeX Warning: Reference `fig:sin and cos' on page 140 undefined on input line 
 33.
 
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [140]
-[141]) (./section05.03.tex [142] [143]) (./section05.04.tex
+[140] [141]) (./section05.03.tex [142] [143]) (./section05.04.tex
 
 LaTeX Warning: Reference `fig:concave up' on page 144 undefined on input line 1
 7.
@@ -2047,13 +2043,13 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 31097 strings out of 493848
- 636456 string characters out of 1152824
- 1196324 words of memory out of 3000000
- 32325 multiletter control sequences out of 15000+50000
+ 31099 strings out of 493848
+ 636507 string characters out of 1152824
+ 1196393 words of memory out of 3000000
+ 32327 multiletter control sequences out of 15000+50000
  245132 words of font info for 575 fonts, out of 3000000 for 9000
  714 hyphenation exceptions out of 8191
- 73i,13n,91p,727b,2039s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 73i,13n,91p,727b,2041s stack positions out of 5000i,500n,10000p,200000b,50000s
 {/usr/share/texmf-texlive/fonts/enc/dvips/kpfonts/kpfonts-expert.enc}{/usr/sh
 are/texmf-texlive/fonts/enc/dvips/base/8r.enc}</usr/share/texmf-texlive/fonts/t
 ype1/public/amsfonts/cm/cmbx10.pfb></usr/share/texmf-texlive/fonts/type1/public
@@ -2074,7 +2070,7 @@ ype1/public/kpfonts/jkpssmsc8a.pfb></usr/share/texmf-texlive/fonts/type1/public
 /kpfonts/jkpsy.pfb></usr/share/texmf-texlive/fonts/type1/public/kpfonts/jkpsyc.
 pfb></usr/share/texmf-texlive/fonts/type1/public/kpfonts/jkpttmn8a.pfb></usr/sh
 are/texmf-texlive/fonts/type1/urw/palatino/uplr8a.pfb>
-Output written on textbook.pdf (153 pages, 777855 bytes).
+Output written on textbook.pdf (153 pages, 777648 bytes).
 PDF statistics:
  1602 PDF objects out of 1728 (max. 8388607)
  690 named destinations out of 1000 (max. 500000)

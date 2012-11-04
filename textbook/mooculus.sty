@@ -7,8 +7,11 @@
 %Colors
 \usepackage[usenames,dvipsnames]{xcolor}
 \colorlet{background}{Apricot!5} % Color of the page
+%\colorlet{background}{Apricot!7} % Color of the page
 \colorlet{textcolor}{Sepia!30!black} % Color of the text
-\colorlet{pencolor}{green!50!black} % Color of a curve in a plot
+\colorlet{pencolor}{green!50!black} % Color of a curve in a plo
+\colorlet{definitionBackground}{Sepia} % Color of the background of a definition
+\colorlet{theoremBackground}{Sepia} % Color of the background of a theorem
 
 \pagecolor{background}
 \color{textcolor} 
@@ -58,7 +61,7 @@
       \node[rectangle,rounded corners,inner sep=5pt,minimum width=\textwidth,
         text=black, text opacity=1,
         %draw=gray, ultra thick, draw opacity=1,
-        fill=blue, fill opacity=.1] 
+        fill=theoremBackground, fill opacity=.1] 
       (box){%
         \begin{minipage}{.95\textwidth}
           \textbf{#1}\qquad\color{black}\BODY
@@ -72,7 +75,7 @@
     \begin{tikzpicture}
       \node[rectangle, rounded corners,inner sep=5pt,minimum width=\textwidth,
         text=black, text opacity=1,
-        fill=blue, fill opacity=.1] 
+        fill=definitionBackground, fill opacity=.1] 
       (box){%
         \begin{minipage}{.95\textwidth}
           \textbf{Definition}\qquad\color{black}\BODY
@@ -121,7 +124,12 @@
 
 \newcounter{exercise}
 \NewEnviron{exercises}{%
-  \subsection*{Exercises for Section \arabic{chapter}.\arabic{section}\hrule}
+  \subsection*{Exercises for Section \arabic{chapter}.\arabic{section}}
+\vspace{-14pt}
+
+\rule{\textwidth}{1pt}
+
+\vspace{-6pt}
   \setcounter{exercise}{0}
   \BODY
   \dumpanswer[\noexpand\subsection*{Answers for \arabic{chapter}.\arabic{section}}]

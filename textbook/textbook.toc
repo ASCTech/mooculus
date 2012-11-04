@@ -15,10 +15,10 @@
 \contentsline {section}{\numberline {3.5}Adjectives For Functions}{66}{section.3.5}
 \contentsline {chapter}{\numberline {4}Rules for Finding Derivatives}{71}{chapter.4}
 \contentsline {section}{\numberline {4.1}The Power Rule}{71}{section.4.1}
-\contentsline {section}{\numberline {4.2}Linearity of the Derivative}{76}{section.4.2}
-\contentsline {section}{\numberline {4.3}The Product Rule}{79}{section.4.3}
-\contentsline {section}{\numberline {4.4}The Quotient Rule}{83}{section.4.4}
-\contentsline {section}{\numberline {4.5}The Chain Rule}{86}{section.4.5}
+\contentsline {section}{\numberline {4.2}Linearity of the Derivative}{75}{section.4.2}
+\contentsline {section}{\numberline {4.3}The Product Rule}{78}{section.4.3}
+\contentsline {section}{\numberline {4.4}The Quotient Rule}{82}{section.4.4}
+\contentsline {section}{\numberline {4.5}The Chain Rule}{85}{section.4.5}
 \contentsline {chapter}{\numberline {5}Transcendental Functions}{93}{chapter.5}
 \contentsline {section}{\numberline {5.1}Trigonometric Functions}{93}{section.5.1}
 \contentsline {section}{\numberline {5.2}The Derivative of $\qopname \relax o{sin}x$}{97}{section.5.2}
