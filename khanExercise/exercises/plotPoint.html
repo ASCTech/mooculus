@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html data-require="math interactive graphie">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Graphing Points</title>
+    <script src="../khan-exercise.js"></script>
+</head>
+
+<body>
+    <div class="exercise">
+        <div class="problems">
+            <div>
+                <div class="vars">
+                    <var id="X">randRangeNonZero( -10, 10 )</var>
+                    <var id="Y">randRangeNonZero( -10, 10 )</var>
+                </div>
+                <p class="question">
+                    Plot <code>(<var>X</var>, <var>Y</var>)</code>
+                </p>
+                <div class="problem">
+                    <br />
+                    <div class="graphie" id="grid">
+                        graphInit({
+                            range: 11,
+                            scale: 20,
+                            axisArrows: "&lt;-&gt;",
+                            tickStep: 1,
+                            labelStep: 1,
+                            gridOpacity: 0.05,
+                            axisOpacity: 0.2,
+                            tickOpacity: 0.4,
+                            labelOpacity: 0.5
+                        });
+
+                        label( [ 0, 11 ], "y", "above" );
+                        label( [ 11, 0 ], "x", "right" );
+
+                        addMouseLayer();
+                        graph.movablePoint = addMovablePoint({ coord: [ 0, 0 ], snapY: 1, snapX: 1 });
+
+                        graph.movablePoint.onMove = function( x, y ) {
+                            return [ max( -10, min( x, 10 ) ), max( -10, min( y, 10 ) ) ];
+                        };
+                    </div>
+                </div>
+                <div class="solution" data-type="custom">
+
+                    <div class="guess">[ graph.movablePoint.coord, $( "#solutionarea" ).find( "input:checked" ).val() ]</div>
+                    <div class="validator-function">
+                        if ( guess[ 0 ][ 0 ] === 0 &amp;&amp; guess[ 0 ][ 1 ] === 0 &amp;&amp; guess[ 1 ] == null ) {
+                            return "";
+                        }
+                        return guess[ 0 ][ 0 ] === X &amp;&amp; guess[ 0 ][ 1 ] === Y
+                    </div>
+                    <div class="show-guess">
+                        graph.movablePoint.setCoord( guess[0] );
+                    </div>
+                    <div class="show-guess-solutionarea">
+                        $( "#solutionarea" ).find( "input" ).prop( 'checked', false );
+                        if ( guess[ 1 ] != null ) {
+                            $( "#solutionarea" ).find( "input[value=" + guess[ 1 ] + "]" ).prop( 'checked', true );
+                        }
+                    </div>
+                </div>
+
+                <div class="hints">
+                    
+            </div>
+        </div>
+    </div>
+</body>
+</html>

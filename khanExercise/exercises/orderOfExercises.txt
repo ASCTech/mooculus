@@ -1,0 +1,4 @@
+Review (points, graphing, lines)
+
+1. abscissaOrdinate
+2. plotPoint
