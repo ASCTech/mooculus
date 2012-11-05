@@ -96,16 +96,16 @@ interpretation of this definition.
             axis on top,
             area style,
           ]          
-          \addplot [color=black, fill=blue!10, smooth, domain=(0:1.570)] {5} \closedcycle;
-          \addplot [color=black, dashed, fill=cyan!20, smooth, domain=(0:1.3)] {4.537} \closedcycle;
-          \addplot [color=black, dashed, fill=blue!10, domain=(0:.7)] {3.283} \closedcycle;       
-          \addplot [black, very thick, smooth, domain=(0:1)] {4};
-          \addplot [color=black, fill=background, smooth, domain=(0:0.607)] {3} \closedcycle;
+          \addplot [color=textcolor, fill=blue!10, smooth, domain=(0:1.570)] {5} \closedcycle;
+          \addplot [color=textcolor, dashed, fill=cyan!20, smooth, domain=(0:1.3)] {4.537} \closedcycle;
+          \addplot [color=textcolor, dashed, fill=blue!10, domain=(0:.7)] {3.283} \closedcycle;       
+          \addplot [textcolor, very thick, smooth, domain=(0:1)] {4};
+          \addplot [color=textcolor, fill=background, smooth, domain=(0:0.607)] {3} \closedcycle;
 	  \addplot [draw=none, fill=background, smooth] {x*(x-2)^2+3*x} \closedcycle;
           \addplot [fill=cyan!20, draw=none, domain=.7:1.3] {x*(x-2)^2+3*x} \closedcycle;
-          \addplot [black, very thick] plot coordinates {(1,0) (1,4)};
-          \addplot [black] plot coordinates {(.7,0) (.7,3.283)};
-          \addplot [black] plot coordinates {(1.3,0) (1.3,4.537)};
+          \addplot [textcolor, very thick] plot coordinates {(1,0) (1,4)};
+          \addplot [textcolor] plot coordinates {(.7,0) (.7,3.283)};
+          \addplot [textcolor] plot coordinates {(1.3,0) (1.3,4.537)};
 	  \addplot [very thick,pencolor, smooth] {x*(x-2)^2+3*x};
         \end{axis}
 \end{tikzpicture}
@@ -117,31 +117,145 @@ interpretation of this definition.
 \end{figure}
 
 
-\fbox{Examples with numbers}
+From our plot and table above, it seems that 
+\[
+\lim_{x\to 2}\frac{x^2 - 3x + 2}{x-2} = 1.
+\]
+Let's see if we can find more evidence for this claim.
 
-\fbox{Examples where limits don't exist, $\lim_{x\to 0}
-  \sin(\frac{1}{x})$ and some step function (to show that limits are not the same as evaluation.}
+\begin{example}
+Let $f(x) = \dfrac{x^2 - 3x + 2}{x-2}$ and suppose that $\epsilon =
+.1$, can we find $\delta$ such that $2 -\delta < x < 2+\delta$ implies
+that $1 - .1< f(x) < 1+.1$? 
+
+This requires that 
+\[
+1 - .1< \frac{x^2 - 3x + 2}{x-2}  < 1+.1.
+\]
+Since we are taking the limit as $x$ goes to $2$, we can safely
+assume that $x\ne 2$.  Hence we may divide our fraction above giving
+us
+\[
+.9 < x-1 < 1.1.
+\]
+Adding $1$ to each inequality, we find
+\[
+1.9 < x < 2.1.
+\]
+Comparing this to $2 -\delta < x < 2+\delta$, we see that setting
+$\delta = .1$ will suffice.
+\end{example}\marginnote[-2in]{Limits allow us to examine functions near points where they are not defined, in this example $x=2$. Thus we may assume that $x\ne 2$.} 
+
+Limits need not exist, let's examine two cases of this.
 
 
+\begin{example}
+Consider $f(x) = \lfloor x\rfloor$. This is the function that returns
+the greatest integer less than or equal to $x$, see
+Figure~\ref{plot:greatist-integer}. Note, this function is defined for
+all real numbers, so one might be tempted to think that all limits exist.
+\end{example}
+\marginnote[-2in]{With the example of $f(x) = \lfloor x \rfloor$, we
+  see that taking limits is truly different from evaluating
+  functions.}
 
-\begin{figure}
+\begin{marginfigure}
 \begin{tikzpicture}
 	\begin{axis}[
-            domain=-2:2,
+            domain=-2:4,
             samples=100,
             axis lines =middle, xlabel=$x$, ylabel=$f(x)$,
             every axis y label/.style={at=(current axis.above origin),anchor=south},
             every axis x label/.style={at=(current axis.right of origin),anchor=west}
           ]
-	  \addplot [very thick, pencolor, smooth, domain=(-2:0)] {-1};
-          \addplot [very thick, pencolor, smooth, domain=(0:2)] {1};
+	  \addplot [very thick, pencolor, smooth, domain=(-2:-1)] {-2};
+          \addplot [very thick, pencolor, smooth, domain=(-1:0)] {-1};
+          \addplot [very thick, pencolor, smooth, domain=(0:1)] {0};
+          \addplot [very thick, pencolor, smooth, domain=(1:2)] {1};
+          \addplot [very thick, pencolor, smooth, domain=(2:3)] {2};
+          \addplot [very thick, pencolor, smooth, domain=(3:4)] {3};
+          \addplot[color=pencolor,fill=pencolor,only marks,mark=*] coordinates{(-2,-2)};  %% closed hole          
+          \addplot[color=pencolor,fill=pencolor,only marks,mark=*] coordinates{(-1,-1)};  %% closed hole          
+          \addplot[color=pencolor,fill=pencolor,only marks,mark=*] coordinates{(0,0)};  %% closed hole          
+          \addplot[color=pencolor,fill=pencolor,only marks,mark=*] coordinates{(1,1)};  %% closed hole          
+          \addplot[color=pencolor,fill=pencolor,only marks,mark=*] coordinates{(2,2)};  %% closed hole  
+          \addplot[color=pencolor,fill=pencolor,only marks,mark=*] coordinates{(3,3)};  %% closed hole                  
+          \addplot[color=pencolor,fill=background,only marks,mark=*] coordinates{(-1,-2)};  %% open hole
           \addplot[color=pencolor,fill=background,only marks,mark=*] coordinates{(0,-1)};  %% open hole
-          \addplot[color=pencolor,fill=pencolor,only marks,mark=*] coordinates{(0,1)};  %% closed hole
+          \addplot[color=pencolor,fill=background,only marks,mark=*] coordinates{(1,0)};  %% open hole
+          \addplot[color=pencolor,fill=background,only marks,mark=*] coordinates{(2,1)};  %% open hole
+          \addplot[color=pencolor,fill=background,only marks,mark=*] coordinates{(3,2)};  %% open hole
+          \addplot[color=pencolor,fill=background,only marks,mark=*] coordinates{(4,3)};  %% open hole
         \end{axis}
 \end{tikzpicture}
-\caption{A plot of $f(x)=\protect??$.}
-\label{plot:??}
-\end{figure}
+\caption{A plot of $f(x)=\lfloor x\rfloor$.}
+\label{plot:greatist-integer}
+\end{marginfigure}
+
+
+Limits may not exist even if the function looks innocent. 
+
+\begin{example}
+Consider $f(x) = \sin(\frac{1}{x})$
+\end{example}
+\begin{marginfigure}
+\begin{tikzpicture}
+	\begin{axis}[
+            domain=-.2:.2,    
+            samples=500,
+            axis lines =middle, xlabel=$x$, ylabel=$f(x)$,
+            yticklabels = {}, 
+            every axis y label/.style={at=(current axis.above origin),anchor=south},
+            every axis x label/.style={at=(current axis.right of origin),anchor=west}
+          ]
+	  \addplot [very thick, pencolor, smooth, domain=(-.2:.2)] {sin(deg(1/x))};
+	  \addplot [fill=pencolor, draw=none, smooth,domain=(-.02:.02)] {1} \closedcycle;
+          \addplot [fill=pencolor, draw=none, smooth,domain=(-.02:.02)] {-1} \closedcycle;
+        \end{axis}
+\end{tikzpicture}
+\caption{A plot of $f(x)=\protect\sin(\frac{1}{x})$.}
+\label{plot:sin 1/x}
+\end{marginfigure}
+
+Sometimes the limit of a function exists from one side or the other
+(or both) even though the limit does not exist. Since it is useful to
+be able to talk about this situation, we introduce the concept of
+\textit{one sided limit}\index{one sided limit}:
+
+\begin{definition} We say that the \textbf{limit} of $f(x)$ as $x$ goes to $a$ from the \textbf{left} is $L$,
+\[
+\lim_{x\to a^-}f(x)=L
+\]
+if for every $\epsilon>0$ there is a $\delta > 0$ so that whenever 
+\[
+a-\delta < x \qquad\text{we have}\qquad L-\epsilon< f(x)<L+\epsilon.
+\]
+
+We say that the \textbf{limit} of $f(x)$ as $x$ goes to $a$ from the \textbf{right} is $L$,
+\[
+\lim_{x\to a^+}f(x)=L
+\] 
+if for every $\epsilon>0$ there is a $\delta > 0$ so that whenever
+\[
+x<a+\delta \qquad\text{we have}\qquad L-\epsilon< f(x)<L+\epsilon.
+\]
+\end{definition}
+\marginnote[-2in]{Limits from the left, or from the right, are collectively called \textbf{one sided limits}.}
+
+\begin{example}
+Discuss $\ds\lim_{x\to 0}{x\over|x|}$, 
+$\ds\lim_{x\to 0^-}{x\over|x|}$,
+and $\ds\lim_{x\to 0^+}{x\over|x|}$.
+
+The function $f(x)=x/|x|$ is undefined at 0; when $x>0$, $|x|=x$ and
+so $f(x)=1$; when $x<0$, $|x|=-x$ and $f(x)=-1$. Thus
+$\ds \lim_{x\to 0^-}{x\over|x|}=\lim_{x\to 0^-}-1=-1$ while 
+$\ds \lim_{x\to 0^+}{x\over|x|}=\lim_{x\to 0^+}1=1$. The limit of $f(x)$
+must be equal to both the left and right limits; since they are
+different, the limit $\ds \lim_{x\to 0}{x\over|x|}$ does not exist.
+\end{example}
+
+
 
 
 \begin{figure}
@@ -161,24 +275,6 @@ interpretation of this definition.
 \label{plot:1/x}
 \end{figure}
 
-\begin{figure}
-\begin{tikzpicture}
-	\begin{axis}[
-            domain=-.2:.2,    
-            samples=500,
-            axis lines =middle, xlabel=$x$, ylabel=$f(x)$,
-            yticklabels = {}, 
-            every axis y label/.style={at=(current axis.above origin),anchor=south},
-            every axis x label/.style={at=(current axis.right of origin),anchor=west}
-          ]
-	  \addplot [very thick, pencolor, smooth, domain=(-.2:.2)] {sin(deg(1/x))};
-	  \addplot [fill=pencolor, draw=none, smooth,domain=(-.02:.02)] {1} \closedcycle;
-          \addplot [fill=pencolor, draw=none, smooth,domain=(-.02:.02)] {-1} \closedcycle;
-        \end{axis}
-\end{tikzpicture}
-\caption{A plot of $f(x)=\protect\sin(\frac{1}{x})$.}
-\label{plot:sin 1/x}
-\end{figure}
 
 
 
@@ -230,7 +326,7 @@ $|x-2|<\epsilon/5$. Hence $\ds |x^2-4|=|(x+2)(x-2)|<5(\epsilon/5) =
 
 \begin{exercises}
 
-Compute the limits. If a limit does not exist, explain why.
+\noindent Compute the limits. If a limit does not exist, explain why.
 
 \twocol
 
@@ -444,7 +540,7 @@ $\ds \lim_{x\to a}f(x)g(x)=LM$.
 A handful of such theorems give us the tools to compute many limits
 without explicitly working with the definition of limit.
 
-\begin{theorem}[Limit Laws] Suppose that $\ds \lim_{x\to a}f(x)=L$ and $\ds \lim_{x\to a}g(x)=M$ and
+\begin{mainTheorem}[Limit Laws] Suppose that $\ds \lim_{x\to a}f(x)=L$ and $\ds \lim_{x\to a}g(x)=M$ and
 $k$ is some constant. Then
 \begin{itemize}
 \item $\ds\lim_{x\to a} kf(x) = k\lim_{x\to a}f(x)=kL$ 
@@ -454,7 +550,7 @@ $k$ is some constant. Then
     a}g(x)}=\frac{L}{M},\text{ if $M$ is not 0}$
 \end{itemize}
 \label{thm:limit laws}
-\end{theorem}
+\end{mainTheorem}
 
 Roughly speaking, these rules say that to compute the limit of an
 algebraic expression, it is enough to compute the limits of the
