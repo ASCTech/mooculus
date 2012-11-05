@@ -1,9 +1,7 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
-one:
-  name: MyString
-  email: MyString
-
-two:
-  name: MyString
-  email: MyString
+<% (1..30).each do |i| %>
+sample<%= i %>:
+  name: User<%= i %>
+  email: user<%= i %>@example.com
+<% end %>

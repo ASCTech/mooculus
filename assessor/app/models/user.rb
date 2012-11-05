@@ -10,6 +10,7 @@ class User < ActiveRecord::Base
   attr_accessible :name
 
   has_many :authentications, :dependent => :delete_all
+  has_many :scores, :dependent => :destroy
 
   def apply_omniauth(auth)
     puts auth
