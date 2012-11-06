@@ -4,19 +4,25 @@
 \ProcessOptions\relax
 
 
+%% need to install mdframed!!! NEED TeXLive 2012! (Ubuntu comes with 2009)
+%% the tcolorbox package is interesting...
+
+
 %Colors
 \usepackage[usenames,dvipsnames]{xcolor}
-%\colorlet{background}{Apricot!5} % Color of the page
 \colorlet{background}{Apricot!7} % Color of the page
 \colorlet{textcolor}{Sepia!60!black} % Color of the text
-\colorlet{pencolor}{green!50!black} % Color of a curve in a plo
+\colorlet{pencolor}{green!50!black} % Color of a curve in a plot
+\colorlet{fill1}{cyan!20} % Color of fill in a plot
+\colorlet{fill1}{green!50!black!20} % Color of fill in a plot
+\colorlet{fill2}{blue!10} % Color of fill in a plot
 \colorlet{definitionBackground}{Sepia} % Color of the background of a definition
 \colorlet{theoremBackground}{Sepia} % Color of the background of a theorem
 
+
+
 \pagecolor{background}
 \color{textcolor} 
-
-
 
 
 
@@ -39,6 +45,10 @@
 \usetikzlibrary{shapes}
 \usetikzlibrary{decorations}
 
+
+
+\renewcommand{\epsilon}{\varepsilon}
+
 \geometry{landscape,
   left=1in,
   top=1in,
@@ -47,12 +57,17 @@
   marginparsep=0.5in,
   marginparwidth=2.5in}
 
+%% \usepackage[tikz]{mdframed}
+
+%% \newmdtheoremenv[outerlinewidth=2,leftmargin=40,%
+%%   rightmargin=40,backgroundcolor=yellow,%
+%%   outerlinecolor=blue,innertopmargin=\topskip,%
+%%   splittopskip=\topskip,skipbelow=\baselineskip,%
+%%   skipabove=\baselineskip,ntheorem]{theorem}%
+%%                 {Theorem}[section]
 
 
 
-
-
-\renewcommand{\epsilon}{\varepsilon}
 
  
 \NewEnviron{mainTheorem}[1][Theorem]{%
@@ -98,6 +113,21 @@
   \end{center}
 }
 
+%% \NewEnviron{solution}{%
+%%   \begin{center}
+%%     \begin{tikzpicture}
+%%       \node[rectangle, rounded corners,inner sep=5pt,minimum width=\textwidth,
+%%         text=textcolor, text opacity=1,
+%%         fill=definitionBackground, fill opacity=.1] 
+%%       (box){%
+%%         \begin{minipage}{.95\textwidth}
+%%           \textit{\textbf{Solution}}\qquad\color{textcolor}\BODY
+%%       \end{minipage}};
+%%     \end{tikzpicture}
+%%   \end{center}
+%% }
+
+
 \NewEnviron{warning}{%
   \begin{center}
     \begin{tikzpicture}
@@ -129,6 +159,10 @@
 
 \RequirePackage{framed}
 \newenvironment{example}{\begin{leftbar}\noindent\textbf{Example}\qquad}{\end{leftbar}}
+\newenvironment{solution}{\noindent\textit{\textbf{Solution}}\qquad} %% SHOULD BE REPLACED WITH MDFRAMED!
+
+
+
 
 
 \usepackage{multicol} % Use letters for lists
@@ -170,6 +204,25 @@
 %    \end{tikzpicture}
 %  \end{center}
 %}
+
+
+\renewcommand{\maketitlepage}[0]{%
+  \cleardoublepage%
+  {%
+  \sffamily%
+  \begin{fullwidth}%
+  \fontsize{18}{20}\selectfont\par\noindent\textcolor{textcolor}{\allcaps{\thanklessauthor}}%
+  \vspace{11.5pc}%
+  \fontsize{36}{40}\selectfont\par\noindent\textcolor{textcolor}{\allcaps{\thanklesstitle}}%
+  \vfill%
+  \fontsize{14}{16}\selectfont\par\noindent\allcaps{\thanklesspublisher}%
+  \end{fullwidth}%
+  }
+  \thispagestyle{empty}%
+  \clearpage%
+}
+
+
 
 
 \RequirePackage{titlesec}
