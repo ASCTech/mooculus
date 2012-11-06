@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.8.6)  4 NOV 2012 21:26
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.8.6)  5 NOV 2012 20:59
 entering extended mode
  %&-line parsing enabled.
 **textbook.tex
@@ -1446,12 +1446,12 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 ]
 [12]
-Overfull \hbox (31.41481pt too wide) in paragraph at lines 163--191
- []
+Overfull \hbox (33.4548pt too wide) in paragraph at lines 157--193
+  []
  []
 
 
-Underfull \hbox (badness 2726) in paragraph at lines 191--191
+Underfull \hbox (badness 2726) in paragraph at lines 193--193
  \T1/jkp/m/n/8 (+20) Figure 1.3: A plot of $\OML/jkp/m/it/8 f\OT1/zplm/m/n/8 (\
 OML/jkp/m/it/8 x\OT1/zplm/m/n/8 ) = \OMS/jkp/m/n/8 b\OML/jkp/m/it/8 x\OMS/jkp/m
 /n/8 c$\T1/jkp/m/n/8 (+20) .
@@ -1460,67 +1460,60 @@ OML/jkp/m/it/8 x\OT1/zplm/m/n/8 ) = \OMS/jkp/m/n/8 b\OML/jkp/m/it/8 x\OMS/jkp/m
 
 LaTeX Warning: Marginpar on page 13 moved.
 
-
-Overfull \hbox (34.64055pt too wide) in paragraph at lines 202--216
+[13]
+Overfull \hbox (36.68054pt too wide) in paragraph at lines 248--264
+  []
  []
- []
 
 
-Underfull \hbox (badness 1454) in paragraph at lines 216--216
+Underfull \hbox (badness 1424) in paragraph at lines 264--264
  \T1/jkp/m/n/8 (+20) Figure 1.4: A plot of $\OML/jkp/m/it/8 f\OT1/zplm/m/n/8 (\
-OML/jkp/m/it/8 x\OT1/zplm/m/n/8 ) = []([])$\T1/jkp/m/n/8 (+20) .
+OML/jkp/m/it/8 x\OT1/zplm/m/n/8 ) = [] []$\T1/jkp/m/n/8 (+20) .
  []
 
+[14]
+Underfull \hbox (badness 10000) in paragraph at lines 371--371
 
-LaTeX Warning: Marginpar on page 13 moved.
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [13]
-Underfull \hbox (badness 1077) in paragraph at lines 243--243
- \T1/jkp/m/n/8 (+20) Limits from the left, or from the right,
  []
 
 
 Package amsmath Warning: Foreign command \over;
 (amsmath)                \frac or \genfrac should be used instead
-(amsmath)                 on input line 246.
+(amsmath)                 on input line 371.
 
-
-Underfull \hbox (badness 3281) in paragraph at lines 276--276
- \T1/jkp/m/n/8 (+20) Figure 1.5: A plot of $\OML/jkp/m/it/8 f\OT1/zplm/m/n/8 (\
+[15]
+Underfull \hbox (badness 3281) in paragraph at lines 443--443
+ \T1/jkp/m/n/8 (+20) Figure 1.6: A plot of $\OML/jkp/m/it/8 f\OT1/zplm/m/n/8 (\
 OML/jkp/m/it/8 x\OT1/zplm/m/n/8 ) = []$\T1/jkp/m/n/8 (+20) .
  []
 
-[14]
-Underfull \hbox (badness 10000) in paragraph at lines 472--472
+
+Underfull \hbox (badness 10000) in paragraph at lines 460--460
 
  []
 
-[15]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [16]
-
-LaTeX Warning: Marginpar on page 17 moved.
-
-[17]
-Underfull \hbox (badness 10000) in paragraph at lines 484--484
+[16]
+Underfull \hbox (badness 10000) in paragraph at lines 468--468
 []\T1/jkp/b/n/10 Theorem []\T1/jkp/m/n/10 (+20) Sup-pose $[] \OML/jkp/m/it/10 f
 \OT1/zplm/m/n/10 (\OML/jkp/m/it/10 x\OT1/zplm/m/n/10 ) = \OML/jkp/m/it/10 L$ \T
 1/jkp/m/n/10 (+20) and $[] \OML/jkp/m/it/10 g\OT1/zplm/m/n/10 (\OML/jkp/m/it/10
  x\OT1/zplm/m/n/10 ) = \OML/jkp/m/it/10 M$\T1/jkp/m/n/10 (+20) . Then
  []
 
-[18]
-Overfull \hbox (1.59999pt too wide) in paragraph at lines 553--553
+[17]
+Overfull \hbox (1.59999pt too wide) in paragraph at lines 537--537
  [][] 
  []
 
-) (./chapter01.tex [19] [20
 
-]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [18]
+Underfull \hbox (badness 10000) in paragraph at lines 616--616
+
+ []
+
+[19] [20]) (./chapter01.tex
 Chapter 2.
 
 Underfull \hbox (badness 4403) in paragraph at lines 43--43
@@ -1540,7 +1533,9 @@ Underfull \hbox (badness 4120) in paragraph at lines 102--102
  \T1/jkp/m/n/8 (+20) Figure 2.2: The four quad-rants.
  []
 
-[21]
+[21
+
+]
 
 LaTeX Warning: Marginpar on page 22 moved.
 
@@ -2018,39 +2013,40 @@ Underfull \hbox (badness 10000) in paragraph at lines 145--145
  []
 
 [149] [150])) (./textbook.ans
-Underfull \vbox (badness 4156) has occurred while \output is active []
+Underfull \vbox (badness 2126) has occurred while \output is active []
 
  [151
 
 
 ]
-Underfull \vbox (badness 1286) has occurred while \output is active []
-
- [152]
-Overfull \hbox (49.10059pt too wide) in paragraph at lines 124--132
+[152]
+Overfull \hbox (49.10059pt too wide) in paragraph at lines 126--134
 \T1/jkp/m/n/10 (-20) 1. $[] \OMS/jkp/m/n/10 ^^@ []$ \T1/jkp/m/n/10 (-20) 2. $[]
  \OMS/jkp/m/n/10 ^^@ []$
  []
 
 
-Overfull \hbox (51.37598pt too wide) in paragraph at lines 133--173
+Overfull \hbox (51.37598pt too wide) in paragraph at lines 135--175
 \T1/jkp/m/n/10 (-20) 13. $[]$ 14. $[]$ 15. $[]$ 16. $[] []$
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 133--173
+Underfull \hbox (badness 10000) in paragraph at lines 135--175
 
  []
 
-[153]
-Overfull \hbox (0.15524pt too wide) in paragraph at lines 188--193
+
+Underfull \vbox (badness 1803) has occurred while \output is active []
+
+ [153]
+Overfull \hbox (0.15524pt too wide) in paragraph at lines 190--195
 \T1/jkp/m/n/10 (-20) 1. $[]\OT1/zplm/m/n/10 ([]) []([])/[]$ \T1/jkp/m/n/10 (-20
 ) 2. $[] \OT1/zplm/m/n/10 + [] [] \OML/jkp/m/it/10 x$ \T1/jkp/m/n/10 (-20) 3. $
 \OMS/jkp/m/n/10 ^^@[]$ \T1/jkp/m/n/10 (-20) 4. $[]$
  []
 
 
-Overfull \hbox (2.96472pt too wide) in paragraph at lines 194--212
+Overfull \hbox (2.96472pt too wide) in paragraph at lines 196--214
 \T1/jkp/m/n/10 (-20) 1. $[][] \OML/jkp/m/it/10 x \OMS/jkp/m/n/10 ^^@ [][] \OML/
 jkp/m/it/10 x$ \T1/jkp/m/n/10 (-20) 2. $\OMS/jkp/m/n/10 ^^@ [] \OML/jkp/m/it/10
  x []\OT1/zplm/m/n/10 ([] \OML/jkp/m/it/10 x\OT1/zplm/m/n/10 )$ \T1/jkp/m/n/10 
@@ -2058,7 +2054,7 @@ jkp/m/it/10 x$ \T1/jkp/m/n/10 (-20) 2. $\OMS/jkp/m/n/10 ^^@ [] \OML/jkp/m/it/10
  []
 
 
-Overfull \hbox (17.90953pt too wide) in paragraph at lines 194--212
+Overfull \hbox (17.90953pt too wide) in paragraph at lines 196--214
 \T1/jkp/m/n/10 (-20) 5. $\OMS/jkp/m/n/10 ^^@ [][] \OML/jkp/m/it/10 x$ \T1/jkp/m
 /n/10 (-20) 6. $\OMS/jkp/m/n/10 ^^@ [] \OML/jkp/m/it/10 x [] x$ \T1/jkp/m/n/10 
 (-20) 7. $\OT1/jkp/m/n/10 (-20) 3\OML/jkp/m/it/10 x[] []\OT1/zplm/m/n/10 (\OT1/
@@ -2071,7 +2067,7 @@ OT1/jkp/m/n/10 (-20) 6\OML/jkp/m/it/10 x\OT1/zplm/m/n/10 )$
  []
 
 
-Overfull \hbox (8.4926pt too wide) in paragraph at lines 194--212
+Overfull \hbox (8.4926pt too wide) in paragraph at lines 196--214
 \T1/jkp/m/n/10 (-20) 10. $[] \OML/jkp/m/it/10 ^^R\OT1/zplm/m/n/10 /([] \OML/jkp
 /m/it/10 ^^R \OT1/zplm/m/n/10 + \OT1/jkp/m/n/10 (-20) 1\OT1/zplm/m/n/10 )[]$ \T
 1/jkp/m/n/10 (-20) 11. $\OT1/jkp/m/n/10 (-20) 5\OML/jkp/m/it/10 t[] []\OT1/zplm
@@ -2085,7 +2081,7 @@ m/m/n/10 (\OT1/jkp/m/n/10 (-20) 3\OML/jkp/m/it/10 t\OT1/zplm/m/n/10 ))/ [](\OT1
  []
 
 [154]
-Overfull \hbox (20.86348pt too wide) in paragraph at lines 214--230
+Overfull \hbox (20.86348pt too wide) in paragraph at lines 216--232
 \T1/jkp/m/n/10 (-20) 1. $\OT1/jkp/m/n/10 (-20) 2 []\OT1/zplm/m/n/10 (\OT1/jkp/m
 /n/10 (-20) 3\OT1/zplm/m/n/10 )\OML/jkp/m/it/10 x\OT1/jkp/m/n/10 (-20) 3[]$ \T1
 /jkp/m/n/10 (-20) 2. $[]$ 3. $\OT1/jkp/m/n/10 (-20) 2\OML/jkp/m/it/10 e[]$ \T1/
@@ -2096,7 +2092,7 @@ p/m/it/10 x[] []$
  []
 
 
-Overfull \hbox (12.82884pt too wide) in paragraph at lines 214--230
+Overfull \hbox (12.82884pt too wide) in paragraph at lines 216--232
 \OT1/jkp/m/n/10 (-20) 3\OT1/zplm/m/n/10 )/(\OML/jkp/m/it/10 x[] \OT1/zplm/m/n/1
 0 + \OT1/jkp/m/n/10 (-20) 3\OML/jkp/m/it/10 x\OT1/zplm/m/n/10 )$ \T1/jkp/m/n/10
  (-20) 12. $\OMS/jkp/m/n/10 ^^@ []\OT1/zplm/m/n/10 (\OML/jkp/m/it/10 x\OT1/zplm
@@ -2109,7 +2105,7 @@ jkp/m/it/10 x \OMS/jkp/m/n/10 ^^@
  []
 
 
-Overfull \hbox (40.21797pt too wide) in paragraph at lines 231--246
+Overfull \hbox (40.21797pt too wide) in paragraph at lines 233--248
 \T1/jkp/m/n/10 (-20) 1. $\OML/jkp/m/it/10 x\OT1/zplm/m/n/10 /\OML/jkp/m/it/10 y
 $ \T1/jkp/m/n/10 (-20) 2. $\OMS/jkp/m/n/10 ^^@\OT1/zplm/m/n/10 (\OT1/jkp/m/n/10
  (-20) 2\OML/jkp/m/it/10 x \OT1/zplm/m/n/10 + \OML/jkp/m/it/10 y\OT1/zplm/m/n/1
@@ -2125,7 +2121,7 @@ lm/m/n/10 ) [](\OML/jkp/m/it/10 y\OT1/zplm/m/n/10 ))$
  []
 
 
-Overfull \hbox (12.91577pt too wide) in paragraph at lines 231--246
+Overfull \hbox (12.91577pt too wide) in paragraph at lines 233--248
 \OT1/zplm/m/n/10 (\OT1/jkp/m/n/10 (-20) 2[], []\OT1/zplm/m/n/10 )$\T1/jkp/m/n/1
 0 (-20) , $\OT1/zplm/m/n/10 (\OMS/jkp/m/n/10 ^^@\OT1/jkp/m/n/10 (-20) 2[], \OMS
 /jkp/m/n/10 ^^@[]\OT1/zplm/m/n/10 )$ \T1/jkp/m/n/10 (-20) 14. $\OML/jkp/m/it/10
@@ -2140,13 +2136,7 @@ Overfull \hbox (12.91577pt too wide) in paragraph at lines 231--246
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.240 
-      
-? 
-! Missing } inserted.
-<inserted text> 
-                }
-l.240 
+l.239 
       
 ? 
 No file textbook.ind.
@@ -2165,36 +2155,37 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 31122 strings out of 493848
- 636822 string characters out of 1152824
- 1227343 words of memory out of 3000000
- 32342 multiletter control sequences out of 15000+50000
- 251502 words of font info for 581 fonts, out of 3000000 for 9000
+ 31138 strings out of 493848
+ 637034 string characters out of 1152824
+ 1243397 words of memory out of 3000000
+ 32354 multiletter control sequences out of 15000+50000
+ 256747 words of font info for 584 fonts, out of 3000000 for 9000
  714 hyphenation exceptions out of 8191
- 73i,13n,91p,727b,2041s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 73i,13n,91p,727b,2035s stack positions out of 5000i,500n,10000p,200000b,50000s
 {/usr/share/texmf-texlive/fonts/enc/dvips/kpfonts/kpfonts-expert.enc}{/usr/sh
 are/texmf-texlive/fonts/enc/dvips/base/8r.enc}</usr/share/texmf-texlive/fonts/t
 ype1/public/amsfonts/cm/cmbx10.pfb></usr/share/texmf-texlive/fonts/type1/public
 /amsfonts/cm/cmr10.pfb></usr/share/texmf-texlive/fonts/type1/public/mathpazo/fp
-lmbb.pfb></usr/share/texmf-texlive/fonts/type1/public/kpfonts/jkpbmi.pfb></usr/
-share/texmf-texlive/fonts/type1/public/kpfonts/jkpbn8a.pfb></usr/share/texmf-te
-xlive/fonts/type1/public/kpfonts/jkpbne.pfb></usr/share/texmf-texlive/fonts/typ
-e1/public/kpfonts/jkpbsy.pfb></usr/share/texmf-texlive/fonts/type1/public/kpfon
-ts/jkpex.pfb></usr/share/texmf-texlive/fonts/type1/public/kpfonts/jkpmi.pfb></u
-sr/share/texmf-texlive/fonts/type1/public/kpfonts/jkpmia.pfb></usr/share/texmf-
-texlive/fonts/type1/public/kpfonts/jkpmit8a.pfb></usr/share/texmf-texlive/fonts
-/type1/public/kpfonts/jkpmite.pfb></usr/share/texmf-texlive/fonts/type1/public/
-kpfonts/jkpmn8a.pfb></usr/share/texmf-texlive/fonts/type1/public/kpfonts/jkpmne
-.pfb></usr/share/texmf-texlive/fonts/type1/public/kpfonts/jkpmsc8a.pfb></usr/sh
-are/texmf-texlive/fonts/type1/public/kpfonts/jkpssmn8a.pfb></usr/share/texmf-te
-xlive/fonts/type1/public/kpfonts/jkpssmne.pfb></usr/share/texmf-texlive/fonts/t
-ype1/public/kpfonts/jkpssmsc8a.pfb></usr/share/texmf-texlive/fonts/type1/public
-/kpfonts/jkpsy.pfb></usr/share/texmf-texlive/fonts/type1/public/kpfonts/jkpsyc.
-pfb></usr/share/texmf-texlive/fonts/type1/public/kpfonts/jkpttmn8a.pfb></usr/sh
-are/texmf-texlive/fonts/type1/urw/palatino/uplr8a.pfb>
-Output written on textbook.pdf (155 pages, 783643 bytes).
+lmbb.pfb></usr/share/texmf-texlive/fonts/type1/public/kpfonts/jkpbit8a.pfb></us
+r/share/texmf-texlive/fonts/type1/public/kpfonts/jkpbmi.pfb></usr/share/texmf-t
+exlive/fonts/type1/public/kpfonts/jkpbn8a.pfb></usr/share/texmf-texlive/fonts/t
+ype1/public/kpfonts/jkpbne.pfb></usr/share/texmf-texlive/fonts/type1/public/kpf
+onts/jkpbsy.pfb></usr/share/texmf-texlive/fonts/type1/public/kpfonts/jkpex.pfb>
+</usr/share/texmf-texlive/fonts/type1/public/kpfonts/jkpmi.pfb></usr/share/texm
+f-texlive/fonts/type1/public/kpfonts/jkpmia.pfb></usr/share/texmf-texlive/fonts
+/type1/public/kpfonts/jkpmit8a.pfb></usr/share/texmf-texlive/fonts/type1/public
+/kpfonts/jkpmite.pfb></usr/share/texmf-texlive/fonts/type1/public/kpfonts/jkpmn
+8a.pfb></usr/share/texmf-texlive/fonts/type1/public/kpfonts/jkpmne.pfb></usr/sh
+are/texmf-texlive/fonts/type1/public/kpfonts/jkpmsc8a.pfb></usr/share/texmf-tex
+live/fonts/type1/public/kpfonts/jkpssmn8a.pfb></usr/share/texmf-texlive/fonts/t
+ype1/public/kpfonts/jkpssmne.pfb></usr/share/texmf-texlive/fonts/type1/public/k
+pfonts/jkpssmsc8a.pfb></usr/share/texmf-texlive/fonts/type1/public/kpfonts/jkps
+y.pfb></usr/share/texmf-texlive/fonts/type1/public/kpfonts/jkpsyc.pfb></usr/sha
+re/texmf-texlive/fonts/type1/public/kpfonts/jkpttmn8a.pfb></usr/share/texmf-tex
+live/fonts/type1/urw/palatino/uplr8a.pfb>
+Output written on textbook.pdf (155 pages, 798006 bytes).
 PDF statistics:
- 1612 PDF objects out of 1728 (max. 8388607)
- 692 named destinations out of 1000 (max. 500000)
- 71589 words of extra memory for PDF output out of 74296 (max. 10000000)
+ 1621 PDF objects out of 1728 (max. 8388607)
+ 693 named destinations out of 1000 (max. 500000)
+ 72109 words of extra memory for PDF output out of 74296 (max. 10000000)
 

@@ -67,7 +67,8 @@ The \textbf{limit} of $f(x)$ as $x$ goes to $a$ is $L$,
 \[
 \lim_{x\to a}f(x)=L,
 \] 
-if for every $\epsilon>0$ there is a $\delta > 0$ so that whenever 
+if for every $\epsilon>0$ there is a $\delta > 0$ so that whenever
+$x\ne a$ and
 \[
 a- \delta < x < a+ \delta, \qquad\text{we have} \qquad L-\epsilon< f(x)<L+\epsilon.
 \] 
@@ -94,15 +95,14 @@ interpretation of this definition.
             xtick={0.7,1,1.3}, ytick={3,4,5},
             xticklabels={$a-\delta$,$a$,$a+\delta$}, yticklabels={$L-\epsilon$,$L$,$L+\epsilon$},
             axis on top,
-            area style,
           ]          
-          \addplot [color=textcolor, fill=blue!10, smooth, domain=(0:1.570)] {5} \closedcycle;
-          \addplot [color=textcolor, dashed, fill=cyan!20, smooth, domain=(0:1.3)] {4.537} \closedcycle;
-          \addplot [color=textcolor, dashed, fill=blue!10, domain=(0:.7)] {3.283} \closedcycle;       
+          \addplot [color=textcolor, fill=fill2, smooth, domain=(0:1.570)] {5} \closedcycle;
+          \addplot [color=textcolor, dashed, fill=fill1, smooth, domain=(0:1.3)] {4.537} \closedcycle;
+          \addplot [color=textcolor, dashed, fill=fill2, domain=(0:.7)] {3.283} \closedcycle;       
           \addplot [textcolor, very thick, smooth, domain=(0:1)] {4};
           \addplot [color=textcolor, fill=background, smooth, domain=(0:0.607)] {3} \closedcycle;
 	  \addplot [draw=none, fill=background, smooth] {x*(x-2)^2+3*x} \closedcycle;
-          \addplot [fill=cyan!20, draw=none, domain=.7:1.3] {x*(x-2)^2+3*x} \closedcycle;
+          \addplot [fill=fill1, draw=none, domain=.7:1.3] {x*(x-2)^2+3*x} \closedcycle;
           \addplot [textcolor, very thick] plot coordinates {(1,0) (1,4)};
           \addplot [textcolor] plot coordinates {(.7,0) (.7,3.283)};
           \addplot [textcolor] plot coordinates {(1.3,0) (1.3,4.537)};
@@ -124,11 +124,15 @@ From our plot and table above, it seems that
 Let's see if we can find more evidence for this claim.
 
 \begin{example}
-Let $f(x) = \dfrac{x^2 - 3x + 2}{x-2}$ and suppose that $\epsilon =
-.1$, can we find $\delta$ such that $2 -\delta < x < 2+\delta$ implies
-that $1 - .1< f(x) < 1+.1$? 
+Let $f(x) = \dfrac{x^2 - 3x + 2}{x-2}$. Suppose that 
+\[
+\lim_{x\to 2} f(x) = 1.
+\]
+Find $\delta$ such that $2 -\delta < x < 2+\delta$ implies that $1 -
+\epsilon< f(x) < 1+\epsilon$ where $\epsilon = .1$.
 
-This requires that 
+\begin{solution}
+This requires that
 \[
 1 - .1< \frac{x^2 - 3x + 2}{x-2}  < 1+.1.
 \]
@@ -144,30 +148,28 @@ Adding $1$ to each inequality, we find
 \]
 Comparing this to $2 -\delta < x < 2+\delta$, we see that setting
 $\delta = .1$ will suffice.
+\end{solution}
 \end{example}\marginnote[-2in]{Limits allow us to examine functions near points where they are not defined, in this example $x=2$. Thus we may assume that $x\ne 2$.} 
+
 
 Limits need not exist, let's examine two cases of this.
 
-
-\begin{example}
-Consider $f(x) = \lfloor x\rfloor$. This is the function that returns
-the greatest integer less than or equal to $x$, see
-Figure~\ref{plot:greatist-integer}. Note, this function is defined for
-all real numbers, so one might be tempted to think that all limits exist.
-\end{example}
-\marginnote[-2in]{With the example of $f(x) = \lfloor x \rfloor$, we
-  see that taking limits is truly different from evaluating
-  functions.}
-
-\begin{marginfigure}
+\begin{marginfigure}[0in]
 \begin{tikzpicture}
 	\begin{axis}[
             domain=-2:4,
             samples=100,
             axis lines =middle, xlabel=$x$, ylabel=$f(x)$,
             every axis y label/.style={at=(current axis.above origin),anchor=south},
-            every axis x label/.style={at=(current axis.right of origin),anchor=west}
+            every axis x label/.style={at=(current axis.right of origin),anchor=west},
+            clip=false,
           ]
+          \addplot [draw=none, fill=fill1, smooth, domain=(1.8:2)] {1} \closedcycle;
+          \addplot [draw=none, fill=fill2, smooth, domain=(2:2.2)] {2} \closedcycle;
+          \addplot [textcolor, very thick] plot coordinates {(2,0) (2,2)};
+          \addplot [textcolor] plot coordinates {(1.8,0) (1.8,1)};
+          \addplot [textcolor] plot coordinates {(2.2,0) (2.2,2)};
+          \addplot [textcolor, very thin, domain=(1.7:2.3)] {0}; % puts the axis back
 	  \addplot [very thick, pencolor, smooth, domain=(-2:-1)] {-2};
           \addplot [very thick, pencolor, smooth, domain=(-1:0)] {-1};
           \addplot [very thick, pencolor, smooth, domain=(0:1)] {0};
@@ -192,13 +194,58 @@ all real numbers, so one might be tempted to think that all limits exist.
 \label{plot:greatist-integer}
 \end{marginfigure}
 
+\begin{example}
+Let $f(x) = \lfloor x\rfloor$. Explain why the limit
+\[
+\lim_{x\to 2} f(x)
+\]
+does not exist.
+
+\begin{solution}
+This is the function that returns the greatest integer less than or
+equal to $x$. Since $f(x)$ is defined for all real numbers, one might
+be tempted to think that the limit above is simply $f(2) =
+2$. However, this is not the case.  If $x<2$, then $f(x) =1$. Hence if
+$\epsilon = .5$, we can \textbf{always} find a value for $x$ such that
+\[
+2- \delta < x < 2+ \delta, \qquad\text{where} \qquad f(x)< 2-\epsilon.
+\]
+On the other hand, $\lim_{x\to 2} f(x)\ne 1$, as in this case if $\epsilon=.5$, we can \textbf{always} find a value for $x$ such that
+\[
+2- \delta < x < 2+ \delta, \qquad\text{where} \qquad  1+\epsilon<f(x).
+\]
+We've illustrated this in
+Figure~\ref{plot:greatist-integer}. Moreover, no matter what value one
+chooses for $\ds \lim_{x\to 2} f(x)$, we will always have a similar
+issue.
+\end{solution}
+\end{example}
+\marginnote[-2in]{With the example of $f(x) = \lfloor x \rfloor$, we
+  see that taking limits is truly different from evaluating
+  functions.}
+
 
 Limits may not exist even if the function looks innocent. 
 
 \begin{example}
-Consider $f(x) = \sin(\frac{1}{x})$
+Let  $f(x) = \sin\left(\frac{1}{x}\right)$. Explain why the limit
+\[
+\lim_{x\to 0} f(x)
+\]
+does not exist.
+
+\begin{solution}
+In this case $f(x)$ oscillates ``wildly'' as $x$ approaches $0$, see
+Figure~\ref{plot:sin 1/x}. In fact, one can show that for any given
+  $\delta$, There is a value for $x$ in the interval
+\[
+0-\delta < x < 0+\delta
+\]
+such that $f(x)$ is any value in the interval $[-1,1]$. Hence the
+limit does not exist.
+\end{solution}
 \end{example}
-\begin{marginfigure}
+\begin{marginfigure}[-1in]
 \begin{tikzpicture}
 	\begin{axis}[
             domain=-.2:.2,    
@@ -206,76 +253,129 @@ Consider $f(x) = \sin(\frac{1}{x})$
             axis lines =middle, xlabel=$x$, ylabel=$f(x)$,
             yticklabels = {}, 
             every axis y label/.style={at=(current axis.above origin),anchor=south},
-            every axis x label/.style={at=(current axis.right of origin),anchor=west}
+            every axis x label/.style={at=(current axis.right of origin),anchor=west},
+            clip=false,
           ]
 	  \addplot [very thick, pencolor, smooth, domain=(-.2:.2)] {sin(deg(1/x))};
-	  \addplot [fill=pencolor, draw=none, smooth,domain=(-.02:.02)] {1} \closedcycle;
-          \addplot [fill=pencolor, draw=none, smooth,domain=(-.02:.02)] {-1} \closedcycle;
+	  \addplot [color=pencolor, fill=pencolor, very thick, smooth,domain=(-.02:.02)] {1} \closedcycle;
+          \addplot [color=pencolor, fill=pencolor, very thick, smooth,domain=(-.02:.02)] {-1} \closedcycle;
         \end{axis}
 \end{tikzpicture}
-\caption{A plot of $f(x)=\protect\sin(\frac{1}{x})$.}
+\caption{A plot of $f(x)=\protect\sin\left(\frac{1}{x}\right)$.}
 \label{plot:sin 1/x}
 \end{marginfigure}
 
 Sometimes the limit of a function exists from one side or the other
 (or both) even though the limit does not exist. Since it is useful to
 be able to talk about this situation, we introduce the concept of a
-\textit{one sided limit}\index{one sided limit}:
+\textit{one-sided limit}\index{one-sided limit}:
 
 \begin{definition} We say that the \textbf{limit} of $f(x)$ as $x$ goes to $a$ from the \textbf{left} is $L$,
 \[
-\lim_{x\to a^-}f(x)=L
+\lim_{x\to a-}f(x)=L
 \]
-if for every $\epsilon>0$ there is a $\delta > 0$ so that whenever 
+if for every $\epsilon>0$ there is a $\delta > 0$ so that whenever $x\ne a$ and 
 \[
 a-\delta < x \qquad\text{we have}\qquad L-\epsilon< f(x)<L+\epsilon.
 \]
 
 We say that the \textbf{limit} of $f(x)$ as $x$ goes to $a$ from the \textbf{right} is $L$,
 \[
-\lim_{x\to a^+}f(x)=L
+\lim_{x\to a+}f(x)=L
 \] 
-if for every $\epsilon>0$ there is a $\delta > 0$ so that whenever
+if for every $\epsilon>0$ there is a $\delta > 0$ so that whenever $x \ne a$ and 
 \[
 x<a+\delta \qquad\text{we have}\qquad L-\epsilon< f(x)<L+\epsilon.
 \]
 \end{definition}
-\marginnote[-2in]{Limits from the left, or from the right, are collectively called \textbf{one sided limits}.}
+\marginnote[-2in]{Limits from the left, or from the right, are collectively called \textbf{one-sided limits}.}
+
 
 \begin{example}
-Discuss $\ds\lim_{x\to 0}{x\over|x|}$, 
-$\ds\lim_{x\to 0^-}{x\over|x|}$,
-and $\ds\lim_{x\to 0^+}{x\over|x|}$.
-
-The function $f(x)=x/|x|$ is undefined at 0; when $x>0$, $|x|=x$ and
-so $f(x)=1$; when $x<0$, $|x|=-x$ and $f(x)=-1$. Thus
-$\ds \lim_{x\to 0^-}{x\over|x|}=\lim_{x\to 0^-}-1=-1$ while 
-$\ds \lim_{x\to 0^+}{x\over|x|}=\lim_{x\to 0^+}1=1$. The limit of $f(x)$
-must be equal to both the left and right limits; since they are
-different, the limit $\ds \lim_{x\to 0}{x\over|x|}$ does not exist.
+Let $f(x) = \lfloor x\rfloor$. We now have one sided limits 
+\[
+\lim_{x\to 2-} f(x) = 1 \qquad\text{and}\qquad \lim_{x\to 2+} f(x) = 2.
+\]
 \end{example}
 
 
 
 
-\begin{figure}
+\begin{exercises}
+
+
+
+
+
+\begin{exercise} Evaluate the expressions by reference to the plot in Figure~\ref{plot:piecewise-exercise}.
+\begin{marginfigure}
 \begin{tikzpicture}
 	\begin{axis}[
-            domain=-2:2,
-            samples=100,
+            domain=-4:6, xmin=-4, xmax=6, ymin=-3,ymax=10,    
+            unit vector ratio*=1 1 1,
             axis lines =middle, xlabel=$x$, ylabel=$f(x)$,
             every axis y label/.style={at=(current axis.above origin),anchor=south},
-            every axis x label/.style={at=(current axis.right of origin),anchor=west}
+            every axis x label/.style={at=(current axis.right of origin),anchor=west},
+            xtick={-4,...,6}, ytick={-3,...,10},
+            xticklabels={-4,,-2,,0,,2,,4,,6}, yticklabels={-2,,0,,2,,4,,6,,8,,10},
+            grid=major,
+            grid style={dashed, gray!30},
           ]
-	  \addplot [very thick, pencolor, smooth, domain=(.1:2)] {1/x};
-          \addplot [very thick, pencolor, smooth, domain=(-2:-.1)] {1/x};
+	  \addplot [very thick, pencolor, smooth, domain=(-4:-2)] {6};
+	  \addplot [very thick, pencolor, smooth, domain=(-2:0)] {x^2-2};
+          \addplot [very thick, pencolor, smooth, domain=(0:2)] {(x-1)^3+3*(x-1)+3};
+          \addplot [very thick, pencolor, smooth, domain=(2:6)] {(x-4)^3+8};
+          \addplot[color=pencolor,fill=background,only marks,mark=*] coordinates{(-2,6)};  %% open hole
+          \addplot[color=pencolor,fill=background,only marks,mark=*] coordinates{(-2,2)};  %% open hole
+          \addplot[color=pencolor,fill=background,only marks,mark=*] coordinates{(0,-2)};  %% open hole
+          \addplot[color=pencolor,fill=background,only marks,mark=*] coordinates{(0,-1)};  %% open hole
+          \addplot[color=pencolor,fill=background,only marks,mark=*] coordinates{(2,0)};  %% open hole
+          \addplot[color=pencolor,fill=pencolor,only marks,mark=*] coordinates{(-2,8)};  %% closed hole
+          \addplot[color=pencolor,fill=pencolor,only marks,mark=*] coordinates{(0,-1.5)};  %% closed hole
+          \addplot[color=pencolor,fill=pencolor,only marks,mark=*] coordinates{(2,7)};  %% closed hole
         \end{axis}
 \end{tikzpicture}
-\caption{A plot of $f(x)=\protect\frac{1}{x}$.}
-\label{plot:1/x}
-\end{figure}
+\caption{A piecewise defined function.}
+\label{plot:piecewise-exercise}
+\end{marginfigure}
+\begin{enumerate}
+\begin{multicols}{3}
+\item $\ds \lim_{x\to 4} f(x)$  
+\item $\ds \lim_{x\to -3} f(x)$  
+\item $\ds \lim_{x\to 0} f(x)$ 
+\item $\ds \lim_{x\to 0-} f(x)$  
+\item $\ds \lim_{x\to 0+} f(x)$  
+\item $\ds f(-2)$  
+\item $\ds \lim_{x\to 2-} f(x)$  
+\item $\ds \lim_{x\to -2-} f(x)$  
+\item $\ds \lim_{x\to 0} f(x+1)$  
+\item $\ds f(0)$ 
+\item $\ds \lim_{x\to 1-} f(x-4)$  
+\item $\ds \lim_{x\to 0+} f(x-2)$
+\end{multicols}  
+\end{enumerate}
+\begin{answer} (a) $8$, (b) $6$, (c) dne, (d) $-2$, (e) $-1$, (f) $8$,
+ (g) $7$, (h) $6$, (i) $3$, (j) $-3/2$, (k) $6$, (l) $2$
+\end{answer}
+\end{exercise}
 
 
+
+\begin{exercise} Use a calculator to estimate $\ds\lim_{x\to 0}
+{\sin x\over x}$.
+\end{exercise}
+
+\begin{exercise} Use a calculator to estimate $\ds\lim_{x\to 0}
+{\tan(3x)\over\tan(5x)}$.
+\end{exercise}
+\end{exercises}
+
+
+
+
+
+
+\section{Limits by the Definition}
 
 
 \begin{example} Show that $\ds \lim_{x\to 2} x^2=4$.
@@ -324,80 +424,31 @@ $|x-2|<\epsilon/5$. Hence $\ds |x^2-4|=|(x+2)(x-2)|<5(\epsilon/5) =
 
 
 
+
+\begin{figure}
+\begin{tikzpicture}
+	\begin{axis}[
+            domain=-2:2,
+            samples=100,
+            axis lines =middle, xlabel=$x$, ylabel=$f(x)$,
+            every axis y label/.style={at=(current axis.above origin),anchor=south},
+            every axis x label/.style={at=(current axis.right of origin),anchor=west}
+          ]
+	  \addplot [very thick, pencolor, smooth, domain=(.1:2)] {1/x};
+          \addplot [very thick, pencolor, smooth, domain=(-2:-.1)] {1/x};
+        \end{axis}
+\end{tikzpicture}
+\caption{A plot of $f(x)=\protect\frac{1}{x}$.}
+\label{plot:1/x}
+\end{figure}
+
+
+
 \begin{exercises}
-
-\noindent Compute the limits. If a limit does not exist, explain why.
-
-\twocol
-
-\begin{exercise} $\ds \lim_{x\to 3}{x^2+x-12\over x-3}$
-\begin{answer} 7
-\end{answer}\end{exercise}
-
-\begin{exercise} $\ds \lim_{x\to 1}{x^2+x-12\over x-3}$
-\begin{answer} 5
-\end{answer}\end{exercise}
-
-\begin{exercise} $\ds \lim_{x\to -4}{x^2+x-12\over x-3}$
-\begin{answer} 0
-\end{answer}\end{exercise}
-
-\begin{exercise} $\ds \lim_{x\to 2} {x^2+x-12\over x-2}$
-\begin{answer} undefined
-\end{answer}\end{exercise}
-
-\begin{exercise} $\ds \lim_{x\to 1} {\sqrt{x+8}-3\over x-1}$
-\begin{answer} $1/6$
-\end{answer}\end{exercise}
-
-\begin{exercise} $\ds \lim_{x\to 0^+} \sqrt{{1\over x}+2} - \sqrt{1\over x}$.
-\begin{answer} 0
-\end{answer}\end{exercise}
-
-\begin{exercise} $\ds\lim _{x\to 2} 3$
-\begin{answer} 3
-\end{answer}\end{exercise}
-
-\begin{exercise} $\ds\lim _{x\to 4 } 3x^3 - 5x $
-\begin{answer} 172
-\end{answer}\end{exercise}
-
-\begin{exercise} $\ds \lim _{x\to 0 } {4x - 5x^2\over x-1}$
-\begin{answer} 0
-\end{answer}\end{exercise}
-
-\begin{exercise} $\ds\lim _{x\to 1 } {x^2 -1 \over x-1 }$
-\begin{answer} 2
-\end{answer}\end{exercise}
-
-\begin{exercise} $\ds\lim _{x\to 0^ + } {\sqrt{2-x^2 }\over x}$
-\begin{answer} does not exist
-\end{answer}\end{exercise}
-
-\begin{exercise} $\ds\lim _{x\to 0^ + } {\sqrt{2-x^2}\over x+1}$
-\begin{answer} $\ds \sqrt2$
-\end{answer}\end{exercise}
-
-\begin{exercise} $\ds\lim _{x\to a } {x^3 -a^3\over x-a}$
-\begin{answer} $\ds 3a^2$
-\end{answer}\end{exercise}
-
-\begin{exercise} $\ds\lim _{x\to 2 } (x^2 +4)^3$
-\begin{answer} 512
-\end{answer}\end{exercise}
-
-\begin{exercise} $\ds\lim _{x\to 1 } \begin{cases}
-x-5 & x\neq 1, \\
-7 & x=1. \end{cases}$
-\begin{answer} $-4$
-\end{answer}\end{exercise}
-
-\endtwocol
 
 
 \begin{exercise} $\ds\lim _{x\to 0 } x\sin \left( {1\over x}\right)$
-(Hint: Use the fact that $|\sin a |< 1 $ for any real number $a$. You
-should probably use the definition of a limit here.)
+Hint: Use the fact that $|\sin a |< 1 $ for any real number $a$.
 \begin{answer} $0$
 \end{answer}\end{exercise}
 
@@ -406,74 +457,7 @@ example~\xrefn{exam:epsilon-delta proof},
 of the fact that 
 $\ds \lim_{x\to 4} (2x-5) = 3$. 
 \end{exercise}
-
-\break
-
-
-\begin{exercise} Evaluate the expressions by reference to the plot in Figure~\ref{plot:piecewise-exercise}.
-\begin{marginfigure}
-\begin{tikzpicture}
-	\begin{axis}[
-            domain=-4:6, xmin=-4, xmax=6, ymin=-3,ymax=10,    
-            unit vector ratio*=1 1 1,
-            axis lines =middle, xlabel=$x$, ylabel=$f(x)$,
-            every axis y label/.style={at=(current axis.above origin),anchor=south},
-            every axis x label/.style={at=(current axis.right of origin),anchor=west},
-            xtick={-4,...,6}, ytick={-3,...,10},
-            xticklabels={-4,,-2,,0,,2,,4,,6}, yticklabels={-2,,0,,2,,4,,6,,8,,10},
-            grid=major,
-            grid style={dashed, gray!30},
-          ]
-	  \addplot [very thick, pencolor, smooth, domain=(-4:-2)] {6};
-	  \addplot [very thick, pencolor, smooth, domain=(-2:0)] {x^2-2};
-          \addplot [very thick, pencolor, smooth, domain=(0:2)] {(x-1)^3+3*(x-1)+3};
-          \addplot [very thick, pencolor, smooth, domain=(2:6)] {(x-4)^3+8};
-          \addplot[color=pencolor,fill=background,only marks,mark=*] coordinates{(-2,6)};  %% open hole
-          \addplot[color=pencolor,fill=background,only marks,mark=*] coordinates{(-2,2)};  %% open hole
-          \addplot[color=pencolor,fill=background,only marks,mark=*] coordinates{(0,-2)};  %% open hole
-          \addplot[color=pencolor,fill=background,only marks,mark=*] coordinates{(0,-1)};  %% open hole
-          \addplot[color=pencolor,fill=background,only marks,mark=*] coordinates{(2,0)};  %% open hole
-          \addplot[color=pencolor,fill=pencolor,only marks,mark=*] coordinates{(-2,8)};  %% closed hole
-          \addplot[color=pencolor,fill=pencolor,only marks,mark=*] coordinates{(0,-1.5)};  %% closed hole
-          \addplot[color=pencolor,fill=pencolor,only marks,mark=*] coordinates{(2,7)};  %% closed hole
-        \end{axis}
-\end{tikzpicture}
-\caption{A piecewise defined function.}
-\label{plot:piecewise-exercise}
-\end{marginfigure}
-\begin{enumerate}
-\begin{multicols}{3}
-\item $\ds \lim_{x\to 4} f(x)$  
-\item $\ds \lim_{x\to -3} f(x)$  
-\item $\ds \lim_{x\to 0} f(x)$ 
-\item $\ds \lim_{x\to 0^-} f(x)$  
-\item $\ds \lim_{x\to 0^+} f(x)$  
-\item $\ds f(-2)$  
-\item $\ds \lim_{x\to 2^-} f(x)$  
-\item $\ds \lim_{x\to -2^-} f(x)$  
-\item $\ds \lim_{x\to 0} f(x+1)$  
-\item $\ds f(0)$ 
-\item $\ds \lim_{x\to 1^-} f(x-4)$  
-\item $\ds \lim_{x\to 0^+} f(x-2)$
-\end{multicols}  
-\end{enumerate}
-\begin{answer} (a) $8$, (b) $6$, (c) dne, (d) $-2$, (e) $-1$, (f) $8$,
- (g) $7$, (h) $6$, (i) $3$, (j) $-3/2$, (k) $6$, (l) $2$
-\end{answer}
-\end{exercise}
-
-\begin{exercise} Use a calculator to estimate $\ds\lim_{x\to 0}
-{\sin x\over x}$.
-\end{exercise}
-
-\begin{exercise} Use a calculator to estimate $\ds\lim_{x\to 0}
-{\tan(3x)\over\tan(5x)}$.
-\end{exercise}
 \end{exercises}
-
-
-
-
 
 
 \section{Limit Laws}
@@ -557,3 +541,76 @@ algebraic expression, it is enough to compute the limits of the
 ``innermost bits'' and then combine these limits. This often means
 that it is possible to simply plug in a value for the variable, since
 $\ds \lim_{x\to a} x =a$.
+
+
+\begin{exercises}
+
+\noindent Compute the limits. If a limit does not exist, explain why.
+
+\twocol
+
+\begin{exercise} $\ds \lim_{x\to 3}{x^2+x-12\over x-3}$
+\begin{answer} 7
+\end{answer}\end{exercise}
+
+\begin{exercise} $\ds \lim_{x\to 1}{x^2+x-12\over x-3}$
+\begin{answer} 5
+\end{answer}\end{exercise}
+
+\begin{exercise} $\ds \lim_{x\to -4}{x^2+x-12\over x-3}$
+\begin{answer} 0
+\end{answer}\end{exercise}
+
+\begin{exercise} $\ds \lim_{x\to 2} {x^2+x-12\over x-2}$
+\begin{answer} undefined
+\end{answer}\end{exercise}
+
+\begin{exercise} $\ds \lim_{x\to 1} {\sqrt{x+8}-3\over x-1}$
+\begin{answer} $1/6$
+\end{answer}\end{exercise}
+
+\begin{exercise} $\ds \lim_{x\to 0+} \sqrt{{1\over x}+2} - \sqrt{1\over x}$.
+\begin{answer} 0
+\end{answer}\end{exercise}
+
+\begin{exercise} $\ds\lim _{x\to 2} 3$
+\begin{answer} 3
+\end{answer}\end{exercise}
+
+\begin{exercise} $\ds\lim _{x\to 4 } 3x^3 - 5x $
+\begin{answer} 172
+\end{answer}\end{exercise}
+
+\begin{exercise} $\ds \lim _{x\to 0 } {4x - 5x^2\over x-1}$
+\begin{answer} 0
+\end{answer}\end{exercise}
+
+\begin{exercise} $\ds\lim _{x\to 1 } {x^2 -1 \over x-1 }$
+\begin{answer} 2
+\end{answer}\end{exercise}
+
+\begin{exercise} $\ds\lim _{x\to 0 + } {\sqrt{2-x^2 }\over x}$
+\begin{answer} does not exist
+\end{answer}\end{exercise}
+
+\begin{exercise} $\ds\lim _{x\to 0 + } {\sqrt{2-x^2}\over x+1}$
+\begin{answer} $\ds \sqrt2$
+\end{answer}\end{exercise}
+
+\begin{exercise} $\ds\lim _{x\to a } {x^3 -a^3\over x-a}$
+\begin{answer} $\ds 3a^2$
+\end{answer}\end{exercise}
+
+\begin{exercise} $\ds\lim _{x\to 2 } (x^2 +4)^3$
+\begin{answer} 512
+\end{answer}\end{exercise}
+
+\begin{exercise} $\ds\lim _{x\to 1 } \begin{cases}
+x-5 & x\neq 1, \\
+7 & x=1. \end{cases}$
+\begin{answer} $-4$
+\end{answer}\end{exercise}
+
+\endtwocol
+
+\end{exercises}
