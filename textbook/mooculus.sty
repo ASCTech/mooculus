@@ -12,18 +12,21 @@
 %Colors
 \usepackage[usenames,dvipsnames]{xcolor}
 \colorlet{background}{Apricot!7} % Color of the page
-\colorlet{textcolor}{Sepia!60!black} % Color of the text
-\colorlet{pencolor}{green!50!black} % Color of a curve in a plot
+\colorlet{textColor}{Sepia!60!black} % Color of the text
+%\colorlet{background}{white} % Color of the page
+%\colorlet{textColor}{black} % Color of the text
+\colorlet{penColor}{green!50!black} % Color of a curve in a plot
 \colorlet{fill1}{cyan!20} % Color of fill in a plot
 \colorlet{fill1}{green!50!black!20} % Color of fill in a plot
 \colorlet{fill2}{blue!10} % Color of fill in a plot
+\colorlet{gridColor}{gray!30} % Color of grid in a plot
 \colorlet{definitionBackground}{Sepia} % Color of the background of a definition
-\colorlet{theoremBackground}{Sepia} % Color of the background of a theorem
-
+\colorlet{theoremBackground}{BrickRed} % Color of the background of a theorem
+\colorlet{mainTheoremBorder}{Sepia} % Color of the border of a main theorem
 
 
 \pagecolor{background}
-\color{textcolor} 
+\color{textColor} 
 
 
 %\RequirePackage[tikz]{mdframed}
@@ -60,11 +63,11 @@
   \begin{center}
     \begin{tikzpicture}
       \node[rectangle,rounded corners,inner sep=5pt,minimum width=\textwidth,
-        text=textcolor, text opacity=1,draw=textcolor, ultra thick, draw opacity=1,
+        text=textColor, text opacity=1,draw=mainTheoremBorder, ultra thick, draw opacity=1,
         fill=theoremBackground, fill opacity=.1] 
       (box){%
         \begin{minipage}{.95\textwidth}
-          \textbf{#1}\qquad\color{textcolor}\BODY
+          \textbf{#1}\qquad\color{textColor}\BODY
       \end{minipage}};
     \end{tikzpicture}
   \end{center}
@@ -72,7 +75,7 @@
 
 %% \newmdtheoremenv[outerlinewidth=2pt,leftmargin=40pt,%  %%%% needs mdtheorem
 %%   rightmargin=40pt,backgroundcolor=theoremBackground,%
-%%   outerlinecolor=textcolor,innertopmargin=\topskip,%
+%%   outerlinecolor=textColor,innertopmargin=\topskip,%
 %%   splittopskip=\topskip,skipbelow=\baselineskip,%
 %%   skipabove=\baselineskip,ntheorem]{theorem}%
 %%                 {Theorem}[section]
@@ -81,12 +84,12 @@
   \begin{center}
     \begin{tikzpicture}
       \node[rectangle,rounded corners,inner sep=5pt,minimum width=\textwidth,
-        text=textcolor, text opacity=1,
+        text=textColor, text opacity=1,
         %draw=gray, ultra thick, draw opacity=1,
         fill=theoremBackground, fill opacity=.1] 
       (box){%
         \begin{minipage}{.95\textwidth}
-          \textbf{#1}\qquad\color{textcolor}\BODY
+          \textbf{#1}\qquad\color{textColor}\BODY
       \end{minipage}};
     \end{tikzpicture}
   \end{center}
@@ -96,11 +99,11 @@
   \begin{center}
     \begin{tikzpicture}
       \node[rectangle, rounded corners,inner sep=5pt,minimum width=\textwidth,
-        text=textcolor, text opacity=1,
+        text=textColor, text opacity=1,
         fill=definitionBackground, fill opacity=.1] 
       (box){%
         \begin{minipage}{.95\textwidth}
-          \textbf{Definition}\qquad\color{textcolor}\BODY
+          \textbf{Definition}\qquad\color{textColor}\BODY
       \end{minipage}};
     \end{tikzpicture}
   \end{center}
@@ -110,11 +113,11 @@
 %%   \begin{center}
 %%     \begin{tikzpicture}
 %%       \node[rectangle, rounded corners,inner sep=5pt,minimum width=\textwidth,
-%%         text=textcolor, text opacity=1,
+%%         text=textColor, text opacity=1,
 %%         fill=definitionBackground, fill opacity=.1] 
 %%       (box){%
 %%         \begin{minipage}{.95\textwidth}
-%%           \textit{\textbf{Solution}}\qquad\color{textcolor}\BODY
+%%           \textit{\textbf{Solution}}\qquad\color{textColor}\BODY
 %%       \end{minipage}};
 %%     \end{tikzpicture}
 %%   \end{center}
@@ -125,7 +128,7 @@
   \begin{center}
     \begin{tikzpicture}
       \node[rectangle, rounded corners, inner sep=5pt,minimum width=\textwidth,
-        text=textcolor, text opacity=1,
+        text=textColor, text opacity=1,
         fill=red, fill opacity=.1] 
       (box){%
         \begin{minipage}{.95\textwidth}
@@ -140,7 +143,7 @@
   \begin{center}
     \begin{tikzpicture}
       \node[rectangle, rounded corners, inner sep=5pt,minimum width=\textwidth,
-        text=textcolor, text opacity=1,
+        text=textColor, text opacity=1,
         fill=green!50!blue, fill opacity=.15] 
       (box){%
         \begin{minipage}{.95\textwidth}
@@ -198,9 +201,9 @@
 %  \end{center}
 %}
 
-\newcommand{\drawfoot}{% %% changed black -> textcolor, white -> background
-  \begin{scope}[xshift=0.06in,color=textcolor]
-    \draw[fill=textcolor!70!background] (0,0) arc (0:180:0.12in) -- (0,0) -- cycle;
+\newcommand{\drawfoot}{% %% changed black -> textColor, white -> background
+  \begin{scope}[xshift=0.06in,color=textColor]
+    \draw[fill=textColor!70!background] (0,0) arc (0:180:0.12in) -- (0,0) -- cycle;
     \draw (-0.1in,0) arc (0:30:0.12in);
   \end{scope}
 }
@@ -211,9 +214,9 @@
       arc (30:0:0.4in);
 }
 
-\newcommand{\draweye}{% %% changed black -> textcolor, white -> background
+\newcommand{\draweye}{% %% changed black -> textColor, white -> background
       \draw[fill=background] (0,0) circle (0.09in);
-      \draw[fill=textcolor] (0.02in,-0.02in) circle (0.02in);
+      \draw[fill=textColor] (0.02in,-0.02in) circle (0.02in);
 }
 
 \newcommand{\headpath}{%
@@ -245,7 +248,7 @@ arc (5:90:0.35in) % top ear
       \draw[] (0,0) circle (0.5in);
       
       \clip (0,0) circle (0.5in);
-      \begin{scope}[color=textcolor!85!background] %% changed black -> textcolor, white -> background
+      \begin{scope}[color=textColor!85!background] %% changed black -> textColor, white -> background
         
     \fill[xshift=0.2in,yshift=0.1in] plot [smooth cycle, tension=2] coordinates { (0,0) (0.6,0.6) (-0.6,0.6) };
 
@@ -285,7 +288,7 @@ arc (5:90:0.35in) % top ear
     \draw[fill=background] \headpath; %% changed white -> background
 
     \clip \headpath;
-    \fill[color=textcolor!85!background,xshift=0.65in,yshift=0.2in] plot [smooth cycle, tension=2] coordinates { (0,0) (-1,-1) (-0.5,0.5) }; %% changed black -> textcolor, white -> background
+    \fill[color=textColor!85!background,xshift=0.65in,yshift=0.2in] plot [smooth cycle, tension=2] coordinates { (0,0) (-1,-1) (-0.5,0.5) }; %% changed black -> textColor, white -> background
 
     % draw nose
     \begin{scope}[xshift=.15in,xscale=1.5,yshift=-0.6in,color=pink!50!black]
@@ -329,9 +332,9 @@ arc (5:90:0.35in) % top ear
 
     
   \end{tikzpicture}%%%% end cow
-  \fontsize{56}{60}\selectfont\par\noindent\textcolor{textcolor}{\bfseries\allcaps{\thanklesstitle}}%
+  \fontsize{56}{60}\selectfont\par\noindent\textcolor{textColor}{\bfseries\allcaps{\thanklesstitle}}%
   \vfill%
-  \fontsize{18}{20}\selectfont\par\noindent\textcolor{textcolor}{\allcaps{\thanklessauthor}}%
+  \fontsize{18}{20}\selectfont\par\noindent\textcolor{textColor}{\allcaps{\thanklessauthor}}%
   %\vspace{11.5pc}%
   \fontsize{14}{16}\selectfont\par\noindent\allcaps{\thanklesspublisher}%
   \end{fullwidth}%
@@ -347,9 +350,9 @@ arc (5:90:0.35in) % top ear
 \titleformat{\chapter}%
   [display]% shape
   {\relax\ifthenelse{\NOT\boolean{@tufte@symmetric}}{\begin{fullwidth}}{}}% format applied to label+text
-  {\huge\scshape\sffamily\textcolor{textcolor}\thechapter}% label
+  {\huge\scshape\sffamily\textcolor{textColor}\thechapter}% label
   {1em}% horizontal separation between label and title body
-  {\huge\scshape\sffamily\textcolor{textcolor}}% before the title body
+  {\huge\scshape\sffamily\textcolor{textColor}}% before the title body
   [\ifthenelse{\NOT\boolean{@tufte@symmetric}}{\end{fullwidth}}{}]% after the title body
 
 \titleformat{\section}%

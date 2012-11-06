@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012/Debian) (format=pdflatex 2012.11.6)  6 NOV 2012 11:39
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012/Debian) (format=pdflatex 2012.11.6)  6 NOV 2012 16:01
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1689,17 +1689,17 @@ Package microtype Info: Character `029' is missing
 ] (./limits.tex
 Chapter 1.
 
-Overfull \hbox (33.4548pt too wide) in paragraph at lines 11--27
+Overfull \hbox (33.4548pt too wide) in paragraph at lines 27--43
   []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 31--32
+Underfull \hbox (badness 10000) in paragraph at lines 47--48
  
  []
 
 
-Underfull \hbox (badness 1147) in paragraph at lines 50--50
+Underfull \hbox (badness 1147) in paragraph at lines 66--66
  \T1/jkp/m/n/8 (+20) Table 1.1: Val-ues of $\OML/jkp/m/it/8 f\OT1/zplm/m/n/8 (\
 OML/jkp/m/it/8 x\OT1/zplm/m/n/8 ) = []$\T1/jkp/m/n/8 (+20) .
  []
@@ -1708,18 +1708,18 @@ OML/jkp/m/it/8 x\OT1/zplm/m/n/8 ) = []$\T1/jkp/m/n/8 (+20) .
 LaTeX Warning: Marginpar on page 11 moved.
 
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Underfull \vbox (badness 2662) has occurred while \output is active []
 
  [11
 
 ]
 [12]
-Overfull \hbox (33.4548pt too wide) in paragraph at lines 157--193
+Overfull \hbox (33.4548pt too wide) in paragraph at lines 156--192
   []
  []
 
 
-Underfull \hbox (badness 2726) in paragraph at lines 193--193
+Underfull \hbox (badness 2726) in paragraph at lines 192--192
  \T1/jkp/m/n/8 (+20) Figure 1.3: A plot of $\OML/jkp/m/it/8 f\OT1/zplm/m/n/8 (\
 OML/jkp/m/it/8 x\OT1/zplm/m/n/8 ) = \OMS/jkp/m/n/8 b\OML/jkp/m/it/8 x\OMS/jkp/m
 /n/8 c$\T1/jkp/m/n/8 (+20) .
@@ -1729,111 +1729,94 @@ OML/jkp/m/it/8 x\OT1/zplm/m/n/8 ) = \OMS/jkp/m/n/8 b\OML/jkp/m/it/8 x\OMS/jkp/m
 LaTeX Warning: Marginpar on page 13 moved.
 
 [13]
-Overfull \hbox (36.68054pt too wide) in paragraph at lines 248--264
+Overfull \hbox (36.68054pt too wide) in paragraph at lines 247--263
   []
  []
 
 
-Underfull \hbox (badness 1424) in paragraph at lines 264--264
+Underfull \hbox (badness 1424) in paragraph at lines 263--263
  \T1/jkp/m/n/8 (+20) Figure 1.4: A plot of $\OML/jkp/m/it/8 f\OT1/zplm/m/n/8 (\
 OML/jkp/m/it/8 x\OT1/zplm/m/n/8 ) = [] []$\T1/jkp/m/n/8 (+20) .
  []
 
 [14]
-Underfull \hbox (badness 10000) in paragraph at lines 404--404
+Underfull \hbox (badness 10000) in paragraph at lines 403--403
 
  []
 
 
 Package amsmath Warning: Foreign command \over;
 (amsmath)                \frac or \genfrac should be used instead
-(amsmath)                 on input line 404.
+(amsmath)                 on input line 403.
 
 [15] [16]
-Underfull \hbox (badness 10000) in paragraph at lines 460--460
+
+LaTeX Warning: Marginpar on page 17 moved.
+
+[17]
+Underfull \hbox (badness 10000) in paragraph at lines 481--481
 []\T1/jkp/b/n/10 Theorem []\T1/jkp/m/n/10 (+20) Sup-pose $[] \OML/jkp/m/it/10 f
 \OT1/zplm/m/n/10 (\OML/jkp/m/it/10 x\OT1/zplm/m/n/10 ) = \OML/jkp/m/it/10 L$ \T
 1/jkp/m/n/10 (+20) and $[] \OML/jkp/m/it/10 g\OT1/zplm/m/n/10 (\OML/jkp/m/it/10
  x\OT1/zplm/m/n/10 ) = \OML/jkp/m/it/10 M$\T1/jkp/m/n/10 (+20) . Then
  []
 
-[17] [18]
-Underfull \hbox (badness 10000) in paragraph at lines 568--568
+[18]
+Underfull \hbox (badness 10000) in paragraph at lines 589--589
 
  []
 
-[19]
-Overfull \hbox (1.59999pt too wide) in paragraph at lines 587--587
+[19] [20]
+Overfull \hbox (1.59999pt too wide) in paragraph at lines 608--608
  [][] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 609
+Underfull \vbox (badness 10000) detected at line 630
  []
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [20]
-[21]
-Underfull \hbox (badness 10000) in paragraph at lines 724--724
+ [21]
+[22]
+Underfull \hbox (badness 10000) in paragraph at lines 745--745
 
  []
 
-[22] [23]
-Underfull \hbox (badness 3281) in paragraph at lines 745--745
- \T1/jkp/m/n/8 (+20) Figure 1.6: A plot of $\OML/jkp/m/it/8 f\OT1/zplm/m/n/8 (\
-OML/jkp/m/it/8 x\OT1/zplm/m/n/8 ) = []$\T1/jkp/m/n/8 (+20) .
- []
-
-) (./chapter01.tex [24]
-Chapter 2.
-
-Underfull \hbox (badness 4403) in paragraph at lines 43--43
- \T1/jkp/m/n/8 (+20) Figure 2.1: Height ver-sus time.
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 70--70
- \T1/jkp/m/n/8 (+20) Table 2.1: A data ta-ble.
- []
-
-
-LaTeX Warning: Marginpar on page 25 moved.
-
-
-Underfull \hbox (badness 4120) in paragraph at lines 102--102
- \T1/jkp/m/n/8 (+20) Figure 2.2: The four quad-rants.
- []
-
-[25
+[23] [24]) (./chapter01.tex [25] [26
 
 ]
+Chapter 2.
 
-LaTeX Warning: Marginpar on page 26 moved.
+LaTeX Warning: Marginpar on page 27 moved.
+
+[27]
+
+LaTeX Warning: Marginpar on page 28 moved.
 
 (./section01.01.tex
 
-LaTeX Warning: Reference `fig:irs' on page 26 undefined on input line 36.
+LaTeX Warning: Reference `fig:irs' on page 28 undefined on input line 36.
 
-[26]
+[28]
 
-LaTeX Warning: Reference `fig:graphs of lines' on page 27 undefined on input li
+LaTeX Warning: Reference `fig:graphs of lines' on page 29 undefined on input li
 ne 106.
 
-[27] [28]
+[29] [30]
 Underfull \hbox (badness 10000) in paragraph at lines 440--440
 
  []
 
-[29]
+[31]
 
-LaTeX Warning: Reference `fig:tax schedule' on page 30 undefined on input line 
+LaTeX Warning: Reference `fig:tax schedule' on page 32 undefined on input line 
 440.
 
-[30] [31]) (./section01.02.tex
+[32] [33]) (./section01.02.tex
 
-LaTeX Warning: Reference `fig:distance between points' on page 32 undefined on 
+LaTeX Warning: Reference `fig:distance between points' on page 34 undefined on 
 input line 11.
 
 
@@ -1849,9 +1832,9 @@ Underfull \hbox (badness 10000) in paragraph at lines 139--139
 
  []
 
-[32] [33]) (./section01.03.tex
+[34] [35]) (./section01.03.tex
 
-LaTeX Warning: Reference `fig:some graphs' on page 34 undefined on input line 2
+LaTeX Warning: Reference `fig:some graphs' on page 36 undefined on input line 2
 9.
 
 LaTeX Font Info:    Try loading font information for U+fplmbb on input line 89.
@@ -1860,33 +1843,33 @@ LaTeX Font Info:    Try loading font information for U+fplmbb on input line 89.
 File: ufplmbb.fd 2003/10/30 Fontinst v1.914 font definitions for U/fplmbb.
 )
 
-LaTeX Warning: Reference `fig:some graphs' on page 34 undefined on input line 9
+LaTeX Warning: Reference `fig:some graphs' on page 36 undefined on input line 9
 4.
 
-[34]
+[36]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [35]
+ [37]
 
-LaTeX Warning: Reference `fig:upper semicircle' on page 36 undefined on input l
+LaTeX Warning: Reference `fig:upper semicircle' on page 38 undefined on input l
 ine 186.
 
-[36]
+[38]
 
-LaTeX Warning: Reference `fig:piecewise velocity' on page 37 undefined on input
+LaTeX Warning: Reference `fig:piecewise velocity' on page 39 undefined on input
  line 250.
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [37]
+ [39]
 Underfull \hbox (badness 10000) in paragraph at lines 354--354
 
  []
 
-[38] [39]) (./section01.04.tex [40] [41]
+[40] [41]) (./section01.04.tex [42] [43]
 
-LaTeX Warning: Reference `fig:ellipses' on page 42 undefined on input line 121.
+LaTeX Warning: Reference `fig:ellipses' on page 44 undefined on input line 121.
 
 
 
@@ -1894,7 +1877,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 206--206
 
  []
 
-[42] [43])) (./chapter02.tex [44
+[44] [45])) (./chapter02.tex [46
 
 ]
 Chapter 3.
@@ -1902,105 +1885,105 @@ Chapter 3.
 Overfull \vbox (2.18425pt too high) detected at line 37
  []
 
-[45]
+[47]
 
-LaTeX Warning: Reference `fig:chords' on page 46 undefined on input line 55.
+LaTeX Warning: Reference `fig:chords' on page 48 undefined on input line 55.
 
-[46]
+[48]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [47]
-[48]
+ [49]
+[50]
 Underfull \hbox (badness 10000) in paragraph at lines 278--278
 
  []
 
-[49] [50]) (./section02.02.tex
+[51] [52]) (./section02.02.tex
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [51]
-[52]
+ [53]
+[54]
 Underfull \hbox (badness 10000) in paragraph at lines 143--143
 
  []
 
-[53] [54]) (./section02.03.tex [55] [56] [57] [58] [59] [60] [61] [62]
+[55] [56]) (./section02.03.tex [57] [58] [59] [60] [61] [62] [63] [64]
 Underfull \vbox (badness 10000) detected at line 413
  []
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [63]
-[64]
+ [65]
+[66]
 Underfull \hbox (badness 10000) in paragraph at lines 567--567
 
  []
 
-[65]
+[67]
 Underfull \hbox (badness 10000) in paragraph at lines 567--567
 
  []
 
-[66]) (./section02.04.tex [67]
+[68]) (./section02.04.tex [69]
 Underfull \vbox (badness 10000) detected at line 91
  []
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [68]
-[69]
+ [70]
+[71]
 
-LaTeX Warning: Reference `fig:cusp' on page 70 undefined on input line 136.
+LaTeX Warning: Reference `fig:cusp' on page 72 undefined on input line 136.
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 285--285
 
  []
 
-[70] [71]) (./section02.05.tex
+[72] [73]) (./section02.05.tex
 
-LaTeX Warning: Reference `fig:function types' on page 72 undefined on input lin
+LaTeX Warning: Reference `fig:function types' on page 74 undefined on input lin
 e 9.
 
 
-LaTeX Warning: Reference `fig:function types' on page 72 undefined on input lin
+LaTeX Warning: Reference `fig:function types' on page 74 undefined on input lin
 e 114.
 
 
 Underfull \vbox (badness 5970) has occurred while \output is active []
 
- [72]
-[73]
+ [74]
+[75]
 Underfull \hbox (badness 10000) in paragraph at lines 262--262
 
  []
 
 
-LaTeX Warning: Reference `fig:function types' on page 74 undefined on input lin
+LaTeX Warning: Reference `fig:function types' on page 76 undefined on input lin
 e 262.
 
-[74] [75])) (./chapter03.tex [76
+[76] [77])) (./chapter03.tex [78
 
 ]
 Chapter 4.
 (./section03.01.tex
 Underfull \vbox (badness 1221) has occurred while \output is active []
 
- [77]
-[78]
+ [79]
+[80]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [79]
+ [81]
 Underfull \hbox (badness 10000) in paragraph at lines 148--148
 
  []
 
-[80] [81]) (./section03.02.tex
+[82] [83]) (./section03.02.tex
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [82]
+ [84]
 Overfull \hbox (14.87491pt too wide) detected at line 59
 \OML/jkp/m/it/10 f[]\OT1/zplm/m/n/10 (\OML/jkp/m/it/10 x\OT1/zplm/m/n/10 ) = []
 (\OML/jkp/m/it/10 x[] \OT1/zplm/m/n/10 + \OT1/jkp/m/n/10 5\OML/jkp/m/it/10 x[]\
@@ -2018,7 +2001,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 144--144
 
  []
 
-[83] [84]) (./section03.03.tex
+[85] [86]) (./section03.03.tex
 Overfull \hbox (3.14566pt too wide) in paragraph at lines 32--32
 [] 
  []
@@ -2026,29 +2009,29 @@ Overfull \hbox (3.14566pt too wide) in paragraph at lines 32--32
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [85]
+ [87]
 Underfull \hbox (badness 10000) in paragraph at lines 178--178
 
  []
 
-[86] [87] [88]) (./section03.04.tex
+[88] [89] [90]) (./section03.04.tex
 Overfull \hbox (21.46898pt too wide) detected at line 26
 [][] \OT1/zplm/m/n/10 = \OML/jkp/m/it/10 f\OT1/zplm/m/n/10 (\OML/jkp/m/it/10 x\
 OT1/zplm/m/n/10 )[] + \OML/jkp/m/it/10 f[]\OT1/zplm/m/n/10 (\OML/jkp/m/it/10 x\
 OT1/zplm/m/n/10 )[] = [] = []\OT1/jkp/m/n/10 .
  []
 
-[89] [90]
+[91] [92]
 Underfull \hbox (badness 10000) in paragraph at lines 165--165
 
  []
 
-[91]) (./section03.05.tex [92] [93] [94] [95]
+[93]) (./section03.05.tex [94] [95] [96] [97]
 Underfull \hbox (badness 10000) in paragraph at lines 364--364
 
  []
 
-[96] [97]
+[98] [99]
 Overfull \hbox (22.39006pt too wide) in paragraph at lines 364--364
 []\T1/jkp/m/n/10 (-20) Find an equa-tion for the tan-gent line to $[]$ at $\OT1
 /zplm/m/n/10 (\OT1/jkp/m/n/10 (-20) 1, []\OT1/zplm/m/n/10 )$\T1/jkp/m/n/10 (-20
@@ -2060,19 +2043,19 @@ Underfull \hbox (badness 10000) in paragraph at lines 364--364
 
  []
 
-[98])) (./chapter04.tex
+[100])) (./chapter04.tex
 Chapter 5.
-(./section04.01.tex [99
+(./section04.01.tex [101
 
 ]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [100]
+ [102]
 
-LaTeX Warning: Reference `chap:formulas' on page 101 undefined on input line 24
+LaTeX Warning: Reference `chap:formulas' on page 103 undefined on input line 24
 4.
 
-[101] [102]) (./section04.02.tex
+[103] [104]) (./section04.02.tex
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 1.
@@ -2097,20 +2080,20 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 1.
 
-) (./section04.03.tex [103]
+) (./section04.03.tex [105]
 
-LaTeX Warning: Reference `fig:squeeze' on page 104 undefined on input line 28.
+LaTeX Warning: Reference `fig:squeeze' on page 106 undefined on input line 28.
 
 
-LaTeX Warning: Reference `fig:hard limit' on page 104 undefined on input line 8
+LaTeX Warning: Reference `fig:hard limit' on page 106 undefined on input line 8
 0.
 
-[104]
+[106]
 Underfull \hbox (badness 10000) in paragraph at lines 185--185
 
  []
 
-[105]) (./section04.04.tex
+[107]) (./section04.04.tex
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 1.
@@ -2135,53 +2118,53 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 1.
 
-[106] [107]) (./section04.05.tex [108] [109]) (./section04.06.tex [110]
+[108] [109]) (./section04.05.tex [110] [111]) (./section04.06.tex [112]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [111]
+ [113]
 Underfull \hbox (badness 10000) in paragraph at lines 157--157
 
  []
 
-[112]) (./section04.07.tex [113] [114] [115] [116]
+[114]) (./section04.07.tex [115] [116] [117] [118]
 Underfull \vbox (badness 10000) detected at line 254
  []
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [117]
-[118] [119]) (./section04.08.tex [120] [121] [122]
+ [119]
+[120] [121]) (./section04.08.tex [122] [123] [124]
 Underfull \vbox (badness 10000) detected at line 154
  []
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [123]
+ [125]
 Underfull \hbox (badness 10000) in paragraph at lines 286--286
 
  []
 
-[124] [125] [126]) (./section04.09.tex
+[126] [127] [128]) (./section04.09.tex
 
-LaTeX Warning: Reference `fig:truncated sine' on page 127 undefined on input li
+LaTeX Warning: Reference `fig:truncated sine' on page 129 undefined on input li
 ne 19.
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [127]
+ [129]
 
-LaTeX Warning: Reference `fig:truncated sine' on page 128 undefined on input li
+LaTeX Warning: Reference `fig:truncated sine' on page 130 undefined on input li
 ne 135.
 
 
-LaTeX Warning: Reference `fig:truncated cosine' on page 128 undefined on input 
+LaTeX Warning: Reference `fig:truncated cosine' on page 130 undefined on input 
 line 140.
 
 
-LaTeX Warning: Reference `fig:truncated tangent' on page 128 undefined on input
+LaTeX Warning: Reference `fig:truncated tangent' on page 130 undefined on input
  line 190.
 
 
@@ -2189,15 +2172,15 @@ Underfull \hbox (badness 10000) in paragraph at lines 315--315
 
  []
 
-[128] [129]) (./section04.10.tex [130] [131]
+[130] [131]) (./section04.10.tex [132] [133]
 Underfull \vbox (badness 1694) has occurred while \output is active []
 
- [132]
+ [134]
 Underfull \hbox (badness 10000) in paragraph at lines 381--381
 
  []
 
-[133] [134] [135]) (./section04.11.tex
+[135] [136] [137]) (./section04.11.tex
 Overfull \hbox (5.93512pt too wide) in paragraph at lines 15--20
 []\T1/jkp/m/n/10 (-20) Notice that $[]$ is even (that is, $[]\OT1/zplm/m/n/10 (
 \OMS/jkp/m/n/10 ^^@\OML/jkp/m/it/10 x\OT1/zplm/m/n/10 ) = [](\OML/jkp/m/it/10 x
@@ -2205,9 +2188,9 @@ Overfull \hbox (5.93512pt too wide) in paragraph at lines 15--20
 0 (\OMS/jkp/m/n/10 ^^@\OML/jkp/m/it/10 x\OT1/zplm/m/n/10 ) =
  []
 
-[136]
+[138]
 
-LaTeX Warning: Reference `fig:hyperbolic functions' on page 137 undefined on in
+LaTeX Warning: Reference `fig:hyperbolic functions' on page 139 undefined on in
 put line 52.
 
 
@@ -2218,81 +2201,81 @@ Overfull \hbox (4.6354pt too wide) detected at line 181
  []
 
 
-LaTeX Warning: Reference `fig:geometric def trigh' on page 137 undefined on inp
+LaTeX Warning: Reference `fig:geometric def trigh' on page 139 undefined on inp
 ut line 197.
 
 
-LaTeX Warning: Reference `fig:geometric def trigh' on page 137 undefined on inp
+LaTeX Warning: Reference `fig:geometric def trigh' on page 139 undefined on inp
 ut line 201.
 
-[137]
+[139]
 Underfull \hbox (badness 10000) in paragraph at lines 328--328
 
  []
 
-[138] [139])) (./chapter05.tex [140
+[140] [141])) (./chapter05.tex [142
 
 ]
 Chapter 6.
 (./section05.01.tex
 
-LaTeX Warning: Reference `fig:max and min points' on page 141 undefined on inpu
+LaTeX Warning: Reference `fig:max and min points' on page 143 undefined on inpu
 t line 23.
 
-[141]
+[143]
 
-LaTeX Warning: Reference `fig:max and min points' on page 142 undefined on inpu
+LaTeX Warning: Reference `fig:max and min points' on page 144 undefined on inpu
 t line 74.
 
 
-LaTeX Warning: Reference `fig:non extremum' on page 142 undefined on input line
+LaTeX Warning: Reference `fig:non extremum' on page 144 undefined on input line
  85.
 
 
-LaTeX Warning: Reference `fig:testing for max and min' on page 142 undefined on
+LaTeX Warning: Reference `fig:testing for max and min' on page 144 undefined on
  input line 126.
 
 
-LaTeX Warning: Reference `thm:evt' on page 142 undefined on input line 132.
+LaTeX Warning: Reference `thm:evt' on page 144 undefined on input line 132.
 
-[142] [143] [144] [145]) (./section05.02.tex
+[144] [145] [146] [147]) (./section05.02.tex
 
-LaTeX Warning: Reference `fig:max and min points' on page 146 undefined on inpu
+LaTeX Warning: Reference `fig:max and min points' on page 148 undefined on inpu
 t line 23.
 
 
-LaTeX Warning: Reference `fig:non extremum' on page 146 undefined on input line
+LaTeX Warning: Reference `fig:non extremum' on page 148 undefined on input line
  24.
 
 
-LaTeX Warning: Reference `fig:sin and cos' on page 146 undefined on input line 
+LaTeX Warning: Reference `fig:sin and cos' on page 148 undefined on input line 
 33.
 
-[146] [147]) (./section05.03.tex [148] [149]) (./section05.04.tex
+[148] [149]) (./section05.03.tex [150] [151]) (./section05.04.tex
 
-LaTeX Warning: Reference `fig:concave up' on page 150 undefined on input line 1
+LaTeX Warning: Reference `fig:concave up' on page 152 undefined on input line 1
 7.
 
 
-LaTeX Warning: Reference `fig:concave down' on page 150 undefined on input line
+LaTeX Warning: Reference `fig:concave down' on page 152 undefined on input line
  46.
 
-[150] [151]) (./section05.05.tex
+[152] [153]) (./section05.05.tex
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [152]
+ [154]
 Underfull \hbox (badness 10000) in paragraph at lines 145--145
 
  []
 
-[153] [154])) (./textbook.ans
+[155] [156])) (./textbook.ans
 Underfull \vbox (badness 2126) has occurred while \output is active []
 
- [155
+ [157
 
 
 ]
-[156]
+[158]
 Overfull \hbox (49.10059pt too wide) in paragraph at lines 126--134
 \T1/jkp/m/n/10 (-20) 1. $[] \OMS/jkp/m/n/10 ^^@ []$ \T1/jkp/m/n/10 (-20) 2. $[]
  \OMS/jkp/m/n/10 ^^@ []$
@@ -2311,7 +2294,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 135--175
 
 Underfull \vbox (badness 1803) has occurred while \output is active []
 
- [157]
+ [159]
 Overfull \hbox (0.15524pt too wide) in paragraph at lines 190--195
 \T1/jkp/m/n/10 (-20) 1. $[]\OT1/zplm/m/n/10 ([]) []([])/[]$ \T1/jkp/m/n/10 (-20
 ) 2. $[] \OT1/zplm/m/n/10 + [] [] \OML/jkp/m/it/10 x$ \T1/jkp/m/n/10 (-20) 3. $
@@ -2353,7 +2336,7 @@ m/m/n/10 (\OT1/jkp/m/n/10 (-20) 3\OML/jkp/m/it/10 t\OT1/zplm/m/n/10 ))/ [](\OT1
 /jkp/m/n/10 (-20) 2\OML/jkp/m/it/10 t\OT1/zplm/m/n/10 ) +
  []
 
-[158]
+[160]
 Overfull \hbox (20.86348pt too wide) in paragraph at lines 216--232
 \T1/jkp/m/n/10 (-20) 1. $\OT1/jkp/m/n/10 (-20) 2 []\OT1/zplm/m/n/10 (\OT1/jkp/m
 /n/10 (-20) 3\OT1/zplm/m/n/10 )\OML/jkp/m/it/10 x\OT1/jkp/m/n/10 (-20) 3[]$ \T1
@@ -2419,7 +2402,7 @@ Package bibentry Warning: You have used \nobibliography*
 (bibentry)                You may not be able to run BibTeX.
 
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 208.
-[159]
+[161]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 208.
  (./textbook.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 208.
@@ -2436,11 +2419,11 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 208.
  ) 
 Here is how much of TeX's memory you used:
- 32295 strings out of 493481
- 655867 string characters out of 3143393
- 1286665 words of memory out of 3000000
- 33528 multiletter control sequences out of 15000+200000
- 289701 words of font info for 602 fonts, out of 3000000 for 9000
+ 32302 strings out of 493481
+ 655938 string characters out of 3143393
+ 1287147 words of memory out of 3000000
+ 33531 multiletter control sequences out of 15000+200000
+ 290459 words of font info for 604 fonts, out of 3000000 for 9000
  965 hyphenation exceptions out of 8191
  73i,13n,91p,727b,2037s stack positions out of 5000i,500n,10000p,200000b,50000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/kpfonts/kpfonts-expert.enc}{/u
@@ -2467,10 +2450,10 @@ ype1/public/kpfonts/jkpsy.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
 /kpfonts/jkpsyc.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/kpfonts/j
 kpttmn8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb
 >
-Output written on textbook.pdf (159 pages, 653907 bytes).
+Output written on textbook.pdf (161 pages, 656280 bytes).
 PDF statistics:
- 1677 PDF objects out of 1728 (max. 8388607)
- 1455 compressed objects within 15 object streams
- 707 named destinations out of 1000 (max. 500000)
+ 1686 PDF objects out of 1728 (max. 8388607)
+ 1462 compressed objects within 15 object streams
+ 709 named destinations out of 1000 (max. 500000)
  82357 words of extra memory for PDF output out of 89155 (max. 10000000)
 
