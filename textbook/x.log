@@ -1,17 +1,21 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.8.6)  31 OCT 2012 10:04
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012/Debian) (format=pdflatex 2012.11.6)  6 NOV 2012 11:05
 entering extended mode
+ restricted \write18 enabled.
  %&-line parsing enabled.
-**x
-(/usr/share/texmf-texlive/tex/latex/tools/x.tex
-LaTeX2e <2009/09/24>
-Babel <v3.8l> and hyphenation patterns for english, usenglishmax, dumylang, noh
-yphenation, farsi, arabic, croatian, bulgarian, ukrainian, russian, czech, slov
-ak, danish, dutch, finnish, french, basque, ngerman, german, german-x-2009-06-1
-9, ngerman-x-2009-06-19, ibycus, monogreek, greek, ancientgreek, hungarian, san
-skrit, italian, latin, latvian, lithuanian, mongolian2a, mongolian, bokmal, nyn
-orsk, romanian, irish, coptic, serbian, turkish, welsh, esperanto, uppersorbian
-, estonian, indonesian, interlingua, icelandic, kurmanji, slovenian, polish, po
-rtuguese, spanish, galician, catalan, swedish, ukenglish, pinyin, loaded.
+**textbook.te
+(/usr/share/texlive/texmf-dist/tex/latex/tools/x.tex
+LaTeX2e <2011/06/27>
+Babel <v3.8m> and hyphenation patterns for english, dumylang, nohyphenation, et
+hiopic, farsi, arabic, pinyin, croatian, bulgarian, ukrainian, russian, slovak,
+ czech, danish, dutch, usenglishmax, ukenglish, finnish, french, basque, ngerma
+n, german, swissgerman, ngerman-x-2012-05-30, german-x-2012-05-30, monogreek, g
+reek, ibycus, ancientgreek, hungarian, bengali, tamil, hindi, telugu, gujarati,
+ sanskrit, malayalam, kannada, assamese, marathi, oriya, panjabi, italian, lati
+n, latvian, lithuanian, mongolian, mongolianlmc, nynorsk, bokmal, indonesian, e
+speranto, coptic, welsh, irish, interlingua, serbian, serbianc, slovenian, friu
+lan, romansh, estonian, romanian, armenian, uppersorbian, turkish, afrikaans, i
+celandic, kurmanji, polish, portuguese, galician, catalan, spanish, swedish, uk
+english, loaded.
 
 ! .
 l.34   \batchmode \errmessage{}
@@ -23,13 +27,13 @@ and deduce the truth by order and method.
 
  ) 
 Here is how much of TeX's memory you used:
- 6 strings out of 493848
- 230 string characters out of 1152824
- 47808 words of memory out of 3000000
- 3381 multiletter control sequences out of 15000+50000
+ 8 strings out of 493481
+ 256 string characters out of 3143393
+ 47818 words of memory out of 3000000
+ 3411 multiletter control sequences out of 15000+200000
  3640 words of font info for 14 fonts, out of 3000000 for 9000
- 714 hyphenation exceptions out of 8191
- 5i,0n,1p,81b,8s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 965 hyphenation exceptions out of 8191
+ 5i,0n,1p,91b,8s stack positions out of 5000i,500n,10000p,200000b,50000s
 
 No pages of output.
 PDF statistics:

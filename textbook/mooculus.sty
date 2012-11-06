@@ -8,6 +8,7 @@
 %% the tcolorbox package is interesting...
 
 
+
 %Colors
 \usepackage[usenames,dvipsnames]{xcolor}
 \colorlet{background}{Apricot!7} % Color of the page
@@ -25,16 +26,13 @@
 \color{textcolor} 
 
 
-
+%\RequirePackage[tikz]{mdframed}
 \RequirePackage{environ}
 %\RequirePackage{xkeyval}
 \RequirePackage{tikz}
 \RequirePackage{amssymb}
 \RequirePackage{amsmath}
 \RequirePackage{amsthm}
-%\RequirePackage{framed}
-%\RequirePackage[framed,amsthm,amsmath,thmmarks]{ntheorem}
-%\RequirePackage{nopageno}
 \RequirePackage{microtype}
 \RequirePackage{enumerate}
 
@@ -57,18 +55,6 @@
   marginparsep=0.5in,
   marginparwidth=2.5in}
 
-%% \usepackage[tikz]{mdframed}
-
-%% \newmdtheoremenv[outerlinewidth=2,leftmargin=40,%
-%%   rightmargin=40,backgroundcolor=yellow,%
-%%   outerlinecolor=blue,innertopmargin=\topskip,%
-%%   splittopskip=\topskip,skipbelow=\baselineskip,%
-%%   skipabove=\baselineskip,ntheorem]{theorem}%
-%%                 {Theorem}[section]
-
-
-
-
  
 \NewEnviron{mainTheorem}[1][Theorem]{%
   \begin{center}
@@ -83,6 +69,13 @@
     \end{tikzpicture}
   \end{center}
 }
+
+%% \newmdtheoremenv[outerlinewidth=2pt,leftmargin=40pt,%  %%%% needs mdtheorem
+%%   rightmargin=40pt,backgroundcolor=theoremBackground,%
+%%   outerlinecolor=textcolor,innertopmargin=\topskip,%
+%%   splittopskip=\topskip,skipbelow=\baselineskip,%
+%%   skipabove=\baselineskip,ntheorem]{theorem}%
+%%                 {Theorem}[section]
 
 \NewEnviron{theorem}[1][Theorem]{%
   \begin{center}
@@ -205,16 +198,141 @@
 %  \end{center}
 %}
 
+\newcommand{\drawfoot}{% %% changed black -> textcolor, white -> background
+  \begin{scope}[xshift=0.06in,color=textcolor]
+    \draw[fill=textcolor!70!background] (0,0) arc (0:180:0.12in) -- (0,0) -- cycle;
+    \draw (-0.1in,0) arc (0:30:0.12in);
+  \end{scope}
+}
+
+\newcommand{\drawhorn}{%
+      \draw[color=brown!80!black,fill=brown] (0,0)
+      arc (30:60:0.45in)
+      arc (30:0:0.4in);
+}
+
+\newcommand{\draweye}{% %% changed black -> textcolor, white -> background
+      \draw[fill=background] (0,0) circle (0.09in);
+      \draw[fill=textcolor] (0.02in,-0.02in) circle (0.02in);
+}
+
+\newcommand{\headpath}{%
+(0,0in)
+arc (90:175:0.35in) % top ear
+arc (250:300:0.25in) % bottom ear
+arc (170:270:0.30in) % chin
+arc (-90:10:0.30in) % chin
+arc (-120:-70:0.25in) % bottom ear
+arc (5:90:0.35in) % top ear
+-- cycle
+}
+
+
 
 \renewcommand{\maketitlepage}[0]{%
   \cleardoublepage%
   {%
   \sffamily%
   \begin{fullwidth}%
-  \fontsize{18}{20}\selectfont\par\noindent\textcolor{textcolor}{\allcaps{\thanklessauthor}}%
-  \vspace{11.5pc}%
-  \fontsize{36}{40}\selectfont\par\noindent\textcolor{textcolor}{\allcaps{\thanklesstitle}}%
+    %\vfill
+
+    \vspace*{1.75in}
+
+    \begin{tikzpicture}[line width=1pt,scale=0.5, every node/.style={transform shape}]]  %%%%%%%% begin cow
+    % draw body
+    \begin{scope}
+      %\draw[line width=2pt] (0,0) circle (0.5in);
+      \draw[] (0,0) circle (0.5in);
+      
+      \clip (0,0) circle (0.5in);
+      \begin{scope}[color=textcolor!85!background] %% changed black -> textcolor, white -> background
+        
+    \fill[xshift=0.2in,yshift=0.1in] plot [smooth cycle, tension=2] coordinates { (0,0) (0.6,0.6) (-0.6,0.6) };
+
+    \fill[xshift=0.4in,yshift=-0.4in] plot [smooth cycle, tension=2] coordinates { (0,0) (0.6,0.6) (-0.6,0.6) };
+
+    \fill[xshift=-0.4in,yshift=-0.6in] plot [smooth cycle, tension=2] coordinates { (0,0) (0.6,0.6) (-0.6,0.6) };
+
+    \fill[xshift=-0.2in,yshift=0.1in] plot [smooth cycle, tension=2] coordinates { (0,0) (-0.2,-0.6) (0.6,-0.6) };
+
+    \fill[xshift=-0.2in,yshift=0.5in] plot [smooth cycle, tension=2] coordinates { (0.35,0.35) (-0.9,-0.8) (0.2,-0.2) };
+
+      \end{scope}
+
+    \end{scope}
+
+    \begin{scope}
+      \clip (0,0) circle (0.5in);
+
+      \fill[color=black,join=round] (1.75,-1.75) -- (1.75,0.5) --
+        (3.75, 0.5) -- (3.75,-1.75);
+    \end{scope}
+
+    % draw right foot
+    \begin{scope}[yshift=-0.53in]
+      \begin{scope}[xshift=0.3in]
+        \drawfoot
+      \end{scope}
+
+      % draw left foot
+      \begin{scope}[xshift=-0.3in,xscale=-1]
+        \drawfoot
+      \end{scope}
+    \end{scope}
+
+    % draw head
+    \begin{scope}[yshift=0.6in,xshift=-.15in]
+    \draw[fill=background] \headpath; %% changed white -> background
+
+    \clip \headpath;
+    \fill[color=textcolor!85!background,xshift=0.65in,yshift=0.2in] plot [smooth cycle, tension=2] coordinates { (0,0) (-1,-1) (-0.5,0.5) }; %% changed black -> textcolor, white -> background
+
+    % draw nose
+    \begin{scope}[xshift=.15in,xscale=1.5,yshift=-0.6in,color=pink!50!black]
+      \draw[fill=pink] (0in,0) circle (0.09in);
+      \draw (0.1,0.1) -- (0.1,0);
+      \draw (-0.1,0.1) -- (-0.1,0);
+    \end{scope}
+
+    \draw[stroke=black,fill=none] \headpath;
+    \end{scope}
+
+    % draw horn
+    \begin{scope}[yshift=0.55in]
+      \begin{scope}[xshift=-.15in]
+        \drawhorn
+      \end{scope}
+      \begin{scope}[xshift=.15in,xscale=-1]
+        \drawhorn
+      \end{scope}
+    \end{scope}
+
+    % draw eyes
+    \begin{scope}[yshift=0.4in]
+      \begin{scope}[xshift=-.11in]
+        \draweye
+      \end{scope}
+      \begin{scope}[xshift=.11in,xscale=-1]
+        \draweye
+      \end{scope}
+    \end{scope}
+
+    % draw title MOOCulus
+    \node[anchor=west] at (0.5in,0.2) {\scalebox{3.2}{\sffamily\Huge\textbf{M}}};
+    \node[anchor=west] at (1.35in,0.2) {\scalebox{3.2}{\sffamily\Huge\textbf{O}}};
+    \node[anchor=west] at (2.16in,0.2) {\scalebox{3.2}{\sffamily\Huge\textbf{O}}};
+    \node[anchor=west] at (2.97in,0.2) {\scalebox{3.2}{\sffamily\Huge\textbf{C}}};
+    \node[anchor=west] at (3.7in,-0.08) {\scalebox{3.2}{\sffamily\scshape\Huge ulus}};
+
+    % draw subtitle
+    \node[anchor=north west] at (0.6in,-0.30in) {\sffamily\scalebox{2.1}{\footnotesize massive open online calculus}};
+
+    
+  \end{tikzpicture}%%%% end cow
+  \fontsize{56}{60}\selectfont\par\noindent\textcolor{textcolor}{\bfseries\allcaps{\thanklesstitle}}%
   \vfill%
+  \fontsize{18}{20}\selectfont\par\noindent\textcolor{textcolor}{\allcaps{\thanklessauthor}}%
+  %\vspace{11.5pc}%
   \fontsize{14}{16}\selectfont\par\noindent\allcaps{\thanklesspublisher}%
   \end{fullwidth}%
   }

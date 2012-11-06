@@ -302,11 +302,6 @@ Let $f(x) = \lfloor x\rfloor$. We now have one sided limits
 
 
 \begin{exercises}
-
-
-
-
-
 \begin{exercise} Evaluate the expressions by reference to the plot in Figure~\ref{plot:piecewise-exercise}.
 \begin{marginfigure}
 \begin{tikzpicture}
@@ -360,13 +355,51 @@ Let $f(x) = \lfloor x\rfloor$. We now have one sided limits
 \end{exercise}
 
 
-
-\begin{exercise} Use a calculator to estimate $\ds\lim_{x\to 0}
-{\sin x\over x}$.
+\begin{exercise} 
+Use a calculator to estimate $\ds\lim_{x\to 0} {\sin x\over x}$.
 \end{exercise}
 
-\begin{exercise} Use a calculator to estimate $\ds\lim_{x\to 0}
-{\tan(3x)\over\tan(5x)}$.
+\begin{exercise} 
+Use a calculator to estimate $\ds\lim_{x\to 0}\frac{\tan(3x)}{\tan(5x)}$.
+\end{exercise}
+
+
+\begin{exercise} 
+Sketch a plot of $f(x) = \dfrac{x}{|x|}$ and explain why $\ds
+\lim_{x\to 0} \frac{x}{|x|}$ does not exist.
+\end{exercise}
+
+
+\begin{exercise} 
+For each of the following limits, $\ds \lim_{x\to a} f(x) =L$, find
+$\delta$ such that $a -\delta < x < a+\delta$ implies that $L -
+\epsilon< f(x) < L+\epsilon$ where $\epsilon = .1$.
+\begin{enumerate}
+\begin{multicols}{3}
+\item $\ds \lim_{x\to 2}(3x+1) = 7$  
+\item $\ds \lim_{x\to 1} (x^2+2) = 3$  
+\item $\ds \lim_{x\to \pi} \sin(x) = 0$  
+\item $\ds \lim_{x\to 0} \tan(x) = 0$
+\item $\ds \lim_{x\to 1} \sqrt{3x+1} = 2$
+\item $\ds \lim_{x\to -2} \sqrt[3]{1-4x} = 3$
+\end{multicols}  
+\end{enumerate}
+\end{exercise}
+
+\begin{exercise} 
+Let $f(x) = \sin\left(\dfrac{\pi}{x}\right)$. Construct three tables
+of the following form
+\[
+\begin{array}{c|c}
+ x & f(x) \\ \hline
+ 0.d &   \\
+ 0.0d &  \\
+ 0.00d &   \\
+ 0.000d &  
+\end{array}
+\]
+where $d = 1,3,7$. What do you notice? How do you reconcile the
+entries in your tables with the value of $\ds\lim_{x\to 0} f(x)$?
 \end{exercise}
 \end{exercises}
 
@@ -420,47 +453,6 @@ $|x-2|<\epsilon/5$. Hence $\ds |x^2-4|=|(x+2)(x-2)|<5(\epsilon/5) =
 
 
 
-
-
-
-
-
-\begin{figure}
-\begin{tikzpicture}
-	\begin{axis}[
-            domain=-2:2,
-            samples=100,
-            axis lines =middle, xlabel=$x$, ylabel=$f(x)$,
-            every axis y label/.style={at=(current axis.above origin),anchor=south},
-            every axis x label/.style={at=(current axis.right of origin),anchor=west}
-          ]
-	  \addplot [very thick, pencolor, smooth, domain=(.1:2)] {1/x};
-          \addplot [very thick, pencolor, smooth, domain=(-2:-.1)] {1/x};
-        \end{axis}
-\end{tikzpicture}
-\caption{A plot of $f(x)=\protect\frac{1}{x}$.}
-\label{plot:1/x}
-\end{figure}
-
-
-
-\begin{exercises}
-
-
-\begin{exercise} $\ds\lim _{x\to 0 } x\sin \left( {1\over x}\right)$
-Hint: Use the fact that $|\sin a |< 1 $ for any real number $a$.
-\begin{answer} $0$
-\end{answer}\end{exercise}
-
-\begin{exercise} Give an $(\epsilon,\delta)$-proof, similar to
-example~\xrefn{exam:epsilon-delta proof},
-of the fact that 
-$\ds \lim_{x\to 4} (2x-5) = 3$. 
-\end{exercise}
-\end{exercises}
-
-
-\section{Limit Laws}
 
 \begin{theorem} 
 Suppose $\ds \lim_{x\to a} f(x)=L$ and $\ds \lim_{x\to a}g(x)=M$. Then
@@ -521,6 +513,64 @@ This is just what we needed, so by the official definition,
 $\ds \lim_{x\to a}f(x)g(x)=LM$.
 \end{proof}
 
+
+
+
+While theorem~\xrefn{thm:properties of limits} is very helpful, we
+need a bit more to work easily with limits. Since the theorem applies
+when some limits are already known, we need to know the behavior of
+some functions that cannot themselves be constructed from the simple
+arithmetic operations of the theorem, such as $\ds\sqrt{x}$. Also,
+there is one other extraordinarily useful way to put functions
+together: composition\index{composition of functions}. If $f(x)$ and
+$g(x)$ are functions, we can form two functions by composition:
+$f(g(x))$ and $g(f(x))$. For example, if $\ds f(x)=\sqrt{x}$ and $\ds
+\ds g(x)=x^2+5$, then $\ds f(g(x))=\sqrt{x^2+5}$ and $\ds
+g(f(x))=(\sqrt{x})^2+5=x+5$.  Here is a companion to
+theorem~\xrefn{thm:properties of limits} for composition:
+
+\begin{theorem} Suppose that $\ds \lim_{x\to a}g(x)=L$ and $\ds \lim_{x\to L}f(x)=f(L)$. Then
+$$\lim_{x\to a} f(g(x)) = f(L).$$
+\label{thm:limit of composition}
+\end{theorem}
+
+Note the special form of the condition on $f$: it is not enough to
+know that $\ds\lim_{x\to L}f(x) = M$, though it is a bit tricky to see
+why. Many of the most familiar functions do have this property, and
+this theorem can therefore be applied. For example:
+
+\begin{theorem} Suppose that $n$ is a positive integer. Then
+$$\lim_{x\to a}\root n\of{x} = \root n\of{a},$$
+provided that $a$ is positive if $n$ is even.
+\label{thm:continuity of roots}
+\end{theorem}
+
+This theorem is not too difficult to prove from the definition of limit.
+
+
+
+
+
+
+
+
+\begin{exercises}
+
+
+\begin{exercise} Use the definition of limits to explain why $\ds\lim _{x\to 0 } x\sin \left( {1\over x}\right) = 0$.
+Hint: Use the fact that $|\sin a |< 1 $ for any real number $a$.
+\begin{answer} $0$
+\end{answer}\end{exercise}
+
+\begin{exercise} Use the definition of limits to explain why
+$\ds \lim_{x\to 4} (2x-5) = 3$.
+\end{exercise}
+\end{exercises}
+
+
+\section{Limit Laws}
+
+limit
 A handful of such theorems give us the tools to compute many limits
 without explicitly working with the definition of limit.
 
@@ -541,6 +591,64 @@ algebraic expression, it is enough to compute the limits of the
 ``innermost bits'' and then combine these limits. This often means
 that it is possible to simply plug in a value for the variable, since
 $\ds \lim_{x\to a} x =a$.
+
+
+\begin{example}
+Compute $\ds
+\lim_{x\to 1}{x^2-3x+5\over x-2}$. If we apply the theorem
+in all its gory detail, we get
+\begin{align*}
+\lim_{x\to 1}{x^2-3x+5\over x-2}&=
+{\lim_{x\to 1}(x^2-3x+5)\over \lim_{x\to1}(x-2)} \\
+&={(\lim_{x\to 1}x^2)-(\lim_{x\to1}3x)+(\lim_{x\to1}5)\over 
+  (\lim_{x\to1}x)-(\lim_{x\to1}2)} \\
+&={(\lim_{x\to 1}x)^2-3(\lim_{x\to1}x)+5\over (\lim_{x\to1}x)-2} \\
+&={1^2-3\cdot1+5\over 1-2} \\
+&={1-3+5\over -1} = -3 \\
+\end{align*}
+\end{example}
+
+It is worth commenting on the trivial limit $\ds \lim_{x\to1}5$. From one
+point of view this might seem meaningless, as the number 5 can't
+``approach'' any value, since it is simply a fixed number. But 5 can,
+and should, be interpreted here as the function that has value 5
+everywhere, $f(x)=5$, with graph a horizontal line. From this point of
+view it makes sense to ask what happens to the height of the function
+as $x$ approaches 1.
+
+Of course, as we've already seen, we're primarily interested in limits
+that aren't so easy, namely, limits in which a denominator approaches
+zero. There are a handful of algebraic tricks that work on many of
+these limits.
+
+\begin{example}
+Compute $\ds\lim_{x\to1}{x^2+2x-3\over x-1}$. We can't
+simply plug in $x=1$ because that makes the denominator zero. 
+However:
+\begin{align*}
+\lim_{x\to1}{x^2+2x-3\over x-1}&=\lim_{x\to1}{(x-1)(x+3)\over x-1} \\
+&=\lim_{x\to1}(x+3)=4 \\
+\end{align*}
+\vskip-10pt
+\end{example}
+
+Another of the most common algebraic tricks was used in
+section~\xrefn{sec:slope of a function}. Here's another example:
+
+\begin{example}
+Compute $\ds\lim_{x\to-1} {\sqrt{x+5}-2\over x+1}$.
+\begin{align*}
+\lim_{x\to-1} {\sqrt{x+5}-2\over x+1}&=
+\lim_{x\to-1} {\sqrt{x+5}-2\over x+1}{\sqrt{x+5}+2\over \sqrt{x+5}+2} \\
+&=\lim_{x\to-1} {x+5-4\over (x+1)(\sqrt{x+5}+2)} \\
+&=\lim_{x\to-1} {x+1\over (x+1)(\sqrt{x+5}+2)} \\
+&=\lim_{x\to-1} {1\over \sqrt{x+5}+2}={1\over4} \\
+\end{align*}
+At the very last step we have used theorems~\xrefn{thm:limit of
+composition} and \xrefn{thm:continuity of roots}.
+\end{example}
+
+
 
 
 \begin{exercises}
@@ -614,3 +722,24 @@ x-5 & x\neq 1, \\
 \endtwocol
 
 \end{exercises}
+
+
+\section{Limits to and from Infinity}
+
+
+\begin{figure}
+\begin{tikzpicture}
+	\begin{axis}[
+            domain=-2:2,
+            samples=100,
+            axis lines =middle, xlabel=$x$, ylabel=$f(x)$,
+            every axis y label/.style={at=(current axis.above origin),anchor=south},
+            every axis x label/.style={at=(current axis.right of origin),anchor=west}
+          ]
+	  \addplot [very thick, pencolor, smooth, domain=(.1:2)] {1/x};
+          \addplot [very thick, pencolor, smooth, domain=(-2:-.1)] {1/x};
+        \end{axis}
+\end{tikzpicture}
+\caption{A plot of $f(x)=\protect\frac{1}{x}$.}
+\label{plot:1/x}
+\end{figure}
