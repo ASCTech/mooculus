@@ -5,6 +5,9 @@ course.
 
 Random Ideas
 * Ladder Problem
+* Balloon volume with bike pump
+* Coffee cup cooling
+* Ice cube melting
 * Space Balloon
 ** This could probably be used in several chapters.
 *** differentiation
