@@ -52,4 +52,4 @@ gem 'oauth2'
 gem 'omniauth-google-oauth2'
 
 # better timeouts
-gem "system_timer", "~> 1.2.4"
+# gem "system_timer", "~> 1.2.4"
