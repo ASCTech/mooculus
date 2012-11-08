@@ -1,42 +1,42 @@
 \contentsline {chapter}{\numberline {1}Limits}{11}{chapter.1}
 \contentsline {section}{\numberline {1.1}Functions}{11}{section.1.1}
 \contentsline {section}{\numberline {1.2}The Basic Ideas of Limits}{11}{section.1.2}
-\contentsline {section}{\numberline {1.3}Limits by the Definition}{17}{section.1.3}
-\contentsline {section}{\numberline {1.4}Limit Laws}{21}{section.1.4}
-\contentsline {section}{\numberline {1.5}Limits to and from Infinity}{25}{section.1.5}
-\contentsline {chapter}{\numberline {2}Analytic Geometry}{27}{chapter.2}
-\contentsline {section}{\numberline {2.1}Lines}{28}{section.2.1}
-\contentsline {section}{\numberline {2.2}Distance Between Two Points; Circles}{34}{section.2.2}
-\contentsline {section}{\numberline {2.3}Functions}{36}{section.2.3}
-\contentsline {section}{\numberline {2.4}Shifts and Dilations}{42}{section.2.4}
-\contentsline {chapter}{\numberline {3}Instantaneous Rate of Change: The Derivative}{47}{chapter.3}
-\contentsline {section}{\numberline {3.1}The slope of a function}{47}{section.3.1}
-\contentsline {section}{\numberline {3.2}An example}{53}{section.3.2}
-\contentsline {section}{\numberline {3.3}Limits}{57}{section.3.3}
-\contentsline {section}{\numberline {3.4}The Derivative Function}{69}{section.3.4}
-\contentsline {section}{\numberline {3.5}Adjectives For Functions}{74}{section.3.5}
-\contentsline {chapter}{\numberline {4}Rules for Finding Derivatives}{79}{chapter.4}
-\contentsline {section}{\numberline {4.1}The Power Rule}{79}{section.4.1}
-\contentsline {section}{\numberline {4.2}Linearity of the Derivative}{84}{section.4.2}
-\contentsline {section}{\numberline {4.3}The Product Rule}{87}{section.4.3}
-\contentsline {section}{\numberline {4.4}The Quotient Rule}{91}{section.4.4}
-\contentsline {section}{\numberline {4.5}The Chain Rule}{94}{section.4.5}
-\contentsline {chapter}{\numberline {5}Transcendental Functions}{101}{chapter.5}
-\contentsline {section}{\numberline {5.1}Trigonometric Functions}{101}{section.5.1}
-\contentsline {section}{\numberline {5.2}The Derivative of $\qopname \relax o{sin}x$}{105}{section.5.2}
-\contentsline {section}{\numberline {5.3}A hard limit}{105}{section.5.3}
-\contentsline {section}{\numberline {5.4}The Derivative of $\qopname \relax o{sin}x$, continued}{108}{section.5.4}
-\contentsline {section}{\numberline {5.5}Derivatives of the Trigonometric Functions}{110}{section.5.5}
-\contentsline {section}{\numberline {5.6}Exponential and Logarithmic functions}{112}{section.5.6}
-\contentsline {section}{\numberline {5.7}Derivatives of the exponential and logarithmic functions}{115}{section.5.7}
-\contentsline {section}{\numberline {5.8}Implicit Differentiation}{122}{section.5.8}
-\contentsline {section}{\numberline {5.9}Inverse Trigonometric Functions}{129}{section.5.9}
-\contentsline {section}{\numberline {5.10}Limits revisited}{132}{section.5.10}
-\contentsline {section}{\numberline {5.11}Hyperbolic Functions}{138}{section.5.11}
-\contentsline {chapter}{\numberline {6}Curve Sketching}{143}{chapter.6}
-\contentsline {section}{\numberline {6.1}Maxima and Minima}{143}{section.6.1}
-\contentsline {section}{\numberline {6.2}The first derivative test}{148}{section.6.2}
-\contentsline {section}{\numberline {6.3}The second derivative test}{150}{section.6.3}
-\contentsline {section}{\numberline {6.4}Concavity and inflection points}{152}{section.6.4}
-\contentsline {section}{\numberline {6.5}Asymptotes and Other Things to Look For}{154}{section.6.5}
+\contentsline {section}{\numberline {1.3}Limits by the Definition}{16}{section.1.3}
+\contentsline {section}{\numberline {1.4}Limit Laws}{20}{section.1.4}
+\contentsline {section}{\numberline {1.5}Limits to and from Infinity}{24}{section.1.5}
+\contentsline {chapter}{\numberline {2}Analytic Geometry}{25}{chapter.2}
+\contentsline {section}{\numberline {2.1}Lines}{26}{section.2.1}
+\contentsline {section}{\numberline {2.2}Distance Between Two Points; Circles}{32}{section.2.2}
+\contentsline {section}{\numberline {2.3}Functions}{34}{section.2.3}
+\contentsline {section}{\numberline {2.4}Shifts and Dilations}{40}{section.2.4}
+\contentsline {chapter}{\numberline {3}Instantaneous Rate of Change: The Derivative}{45}{chapter.3}
+\contentsline {section}{\numberline {3.1}The slope of a function}{45}{section.3.1}
+\contentsline {section}{\numberline {3.2}An example}{51}{section.3.2}
+\contentsline {section}{\numberline {3.3}Limits}{55}{section.3.3}
+\contentsline {section}{\numberline {3.4}The Derivative Function}{67}{section.3.4}
+\contentsline {section}{\numberline {3.5}Adjectives For Functions}{72}{section.3.5}
+\contentsline {chapter}{\numberline {4}Rules for Finding Derivatives}{77}{chapter.4}
+\contentsline {section}{\numberline {4.1}The Power Rule}{77}{section.4.1}
+\contentsline {section}{\numberline {4.2}Linearity of the Derivative}{82}{section.4.2}
+\contentsline {section}{\numberline {4.3}The Product Rule}{85}{section.4.3}
+\contentsline {section}{\numberline {4.4}The Quotient Rule}{89}{section.4.4}
+\contentsline {section}{\numberline {4.5}The Chain Rule}{92}{section.4.5}
+\contentsline {chapter}{\numberline {5}Transcendental Functions}{99}{chapter.5}
+\contentsline {section}{\numberline {5.1}Trigonometric Functions}{99}{section.5.1}
+\contentsline {section}{\numberline {5.2}The Derivative of $\qopname \relax o{sin}x$}{103}{section.5.2}
+\contentsline {section}{\numberline {5.3}A hard limit}{103}{section.5.3}
+\contentsline {section}{\numberline {5.4}The Derivative of $\qopname \relax o{sin}x$, continued}{106}{section.5.4}
+\contentsline {section}{\numberline {5.5}Derivatives of the Trigonometric Functions}{108}{section.5.5}
+\contentsline {section}{\numberline {5.6}Exponential and Logarithmic functions}{110}{section.5.6}
+\contentsline {section}{\numberline {5.7}Derivatives of the exponential and logarithmic functions}{113}{section.5.7}
+\contentsline {section}{\numberline {5.8}Implicit Differentiation}{120}{section.5.8}
+\contentsline {section}{\numberline {5.9}Inverse Trigonometric Functions}{127}{section.5.9}
+\contentsline {section}{\numberline {5.10}Limits revisited}{130}{section.5.10}
+\contentsline {section}{\numberline {5.11}Hyperbolic Functions}{136}{section.5.11}
+\contentsline {chapter}{\numberline {6}Curve Sketching}{141}{chapter.6}
+\contentsline {section}{\numberline {6.1}Maxima and Minima}{141}{section.6.1}
+\contentsline {section}{\numberline {6.2}The first derivative test}{146}{section.6.2}
+\contentsline {section}{\numberline {6.3}The second derivative test}{148}{section.6.3}
+\contentsline {section}{\numberline {6.4}Concavity and inflection points}{150}{section.6.4}
+\contentsline {section}{\numberline {6.5}Asymptotes and Other Things to Look For}{152}{section.6.5}
 \contentsfinish 

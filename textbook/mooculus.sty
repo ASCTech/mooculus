@@ -9,20 +9,65 @@
 
 
 
-%Colors
+%% Colors
 \usepackage[usenames,dvipsnames]{xcolor}
-\colorlet{background}{Apricot!7} % Color of the page
-\colorlet{textColor}{Sepia!60!black} % Color of the text
+
+%% For print out:
 %\colorlet{background}{white} % Color of the page
 %\colorlet{textColor}{black} % Color of the text
+
+
+%% Parchment Style
+\colorlet{background}{Apricot!7} % Color of the page
+\colorlet{textColor}{Sepia!60!black} % Color of the text
 \colorlet{penColor}{green!50!black} % Color of a curve in a plot
-\colorlet{fill1}{cyan!20} % Color of fill in a plot
 \colorlet{fill1}{green!50!black!20} % Color of fill in a plot
 \colorlet{fill2}{blue!10} % Color of fill in a plot
 \colorlet{gridColor}{gray!30} % Color of grid in a plot
 \colorlet{definitionBackground}{Sepia} % Color of the background of a definition
 \colorlet{theoremBackground}{BrickRed} % Color of the background of a theorem
 \colorlet{mainTheoremBorder}{Sepia} % Color of the border of a main theorem
+\colorlet{cowLight}{background} % the light colors of the cow --
+                                % usually the same as the background
+\colorlet{cowDark}{textColor} % the dark colors of the cow -- usually
+                              % the same as the text
+
+%% Parchment Dark
+\colorlet{background}{Sepia!50!black} % Color of the page
+\colorlet{textColor}{Apricot!7} % Color of the text
+\colorlet{penColor}{green!50!black} % Color of a curve in a plot
+\colorlet{fill1}{green!50!black!20} % Color of fill in a plot
+\colorlet{fill2}{blue!10} % Color of fill in a plot
+\colorlet{gridColor}{gray!30} % Color of grid in a plot
+\colorlet{definitionBackground}{Sepia} % Color of the background of a definition
+\colorlet{theoremBackground}{BrickRed} % Color of the background of a theorem
+\colorlet{mainTheoremBorder}{Sepia} % Color of the border of a main theorem
+\colorlet{cowLight}{textColor} % the light colors of the cow --
+                                % usually the same as the background
+\colorlet{cowDark}{background} % the dark colors of the cow -- usually
+                              % the same as the text
+
+
+
+%% %% Modern Style
+%% \colorlet{background}{Black!7} % Color of the page
+%% \colorlet{textColor}{Black!90} % Color of the text
+%% \colorlet{penColor}{red!50!black} % Color of a curve in a plot
+%% \colorlet{fill1}{purple!50!black!20} % Color of fill in a plot
+%% \colorlet{fill2}{blue!10} % Color of fill in a plot
+%% \colorlet{gridColor}{gray!30} % Color of grid in a plot
+%% \colorlet{definitionBackground}{black!20} % Color of the background of
+%%                                           % a definition
+%% \colorlet{theoremBackground}{BrickRed} % Color of the background of a theorem
+%% \colorlet{mainTheoremBorder}{Sepia} % Color of the border of a main theorem
+%% \colorlet{cowLight}{background} % the light colors of the cow --
+%%                                 % usually the same as the background
+%% \colorlet{cowDark}{textColor} % the dark colors of the cow -- usually
+%%                               % the same as the text
+
+
+
+
 
 
 \pagecolor{background}
@@ -169,7 +214,7 @@
 \newcounter{exercise}
 \NewEnviron{exercises}{%
   \subsection*{Exercises for Section \arabic{chapter}.\arabic{section}}
-\vspace{-14pt}
+\vspace{-15pt}
 
 \rule{\textwidth}{1pt}
   \setcounter{exercise}{0}
@@ -201,9 +246,9 @@
 %  \end{center}
 %}
 
-\newcommand{\drawfoot}{% %% changed black -> textColor, white -> background
-  \begin{scope}[xshift=0.06in,color=textColor]
-    \draw[fill=textColor!70!background] (0,0) arc (0:180:0.12in) -- (0,0) -- cycle;
+\newcommand{\drawfoot}{% %% changed black -> cowDark, white -> cowLight
+  \begin{scope}[xshift=0.06in,color=cowDark]
+    \draw[fill=cowDark!70!cowLight] (0,0) arc (0:180:0.12in) -- (0,0) -- cycle;
     \draw (-0.1in,0) arc (0:30:0.12in);
   \end{scope}
 }
@@ -214,9 +259,9 @@
       arc (30:0:0.4in);
 }
 
-\newcommand{\draweye}{% %% changed black -> textColor, white -> background
-      \draw[fill=background] (0,0) circle (0.09in);
-      \draw[fill=textColor] (0.02in,-0.02in) circle (0.02in);
+\newcommand{\draweye}{% %% changed black -> cowDark, white -> cowLight
+      \draw[fill=cowLight] (0,0) circle (0.09in);
+      \draw[fill=cowDark] (0.02in,-0.02in) circle (0.02in);
 }
 
 \newcommand{\headpath}{%
@@ -248,7 +293,7 @@ arc (5:90:0.35in) % top ear
       \draw[] (0,0) circle (0.5in);
       
       \clip (0,0) circle (0.5in);
-      \begin{scope}[color=textColor!85!background] %% changed black -> textColor, white -> background
+      \begin{scope}[color=cowDark!85!cowLight] %% changed black -> cowDark, white -> cowLight
         
     \fill[xshift=0.2in,yshift=0.1in] plot [smooth cycle, tension=2] coordinates { (0,0) (0.6,0.6) (-0.6,0.6) };
 
@@ -285,10 +330,10 @@ arc (5:90:0.35in) % top ear
 
     % draw head
     \begin{scope}[yshift=0.6in,xshift=-.15in]
-    \draw[fill=background] \headpath; %% changed white -> background
+    \draw[fill=cowLight] \headpath; %% changed white -> cowLight
 
     \clip \headpath;
-    \fill[color=textColor!85!background,xshift=0.65in,yshift=0.2in] plot [smooth cycle, tension=2] coordinates { (0,0) (-1,-1) (-0.5,0.5) }; %% changed black -> textColor, white -> background
+    \fill[color=cowDark!85!cowLight,xshift=0.65in,yshift=0.2in] plot [smooth cycle, tension=2] coordinates { (0,0) (-1,-1) (-0.5,0.5) }; %% changed black -> cowDark, white -> cowLight
 
     % draw nose
     \begin{scope}[xshift=.15in,xscale=1.5,yshift=-0.6in,color=pink!50!black]
@@ -357,7 +402,7 @@ arc (5:90:0.35in) % top ear
 
 \titleformat{\section}%
   [hang]% shape
-  {\normalfont\Large\sffamily}% format applied to label+text
+  {\normalfont\Large\sffamily\bfseries}% format applied to label+text
   {\thesection}% label
   {1em}% horizontal separation between label and title body
   {}% before the title body
@@ -365,7 +410,7 @@ arc (5:90:0.35in) % top ear
 
 \titleformat{\subsection}%
   [hang]% shape
-  {\normalfont\large\sffamily}% format applied to label+text
+  {\normalfont\large\sffamily\bfseries}% format applied to label+text
   {\thesubsection}% label
   {1em}% horizontal separation between label and title body
   {}% before the title body
