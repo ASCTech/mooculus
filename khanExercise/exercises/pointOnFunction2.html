@@ -2,7 +2,7 @@
 <html data-require="math interactive graphie">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>Graphing Points</title>
+    <title>pointsOnFunctions2</title>
     <script src="../khan-exercise.js"></script>
 </head>
 
@@ -15,7 +15,8 @@
                     <var id="Y">randRangeNonZero( -10, 10 )</var>
                 </div>
                 <p class="question">
-                    Plot <code>(<var>X</var>, <var>Y</var>)</code>
+                    If  <code>f(<var>X</var>)=<var>Y</var></code> what point do you know is on the graph of <code>f</code>? Move the orange point 
+                    to that location. 
                 </p>
                 <div class="problem">
                     <br />
@@ -44,7 +45,6 @@
                     </div>
                 </div>
                 <div class="solution" data-type="custom">
-
                     <div class="guess">[ graph.movablePoint.coord, $( "#solutionarea" ).find( "input:checked" ).val() ]</div>
                     <div class="validator-function">
                         if ( guess[ 0 ][ 0 ] === 0 &amp;&amp; guess[ 0 ][ 1 ] === 0 &amp;&amp; guess[ 1 ] == null ) {
@@ -64,6 +64,8 @@
                 </div>
 
 <div class="hints">
+                        <p>By definition, <code>f(\blue{<var>X</var>}) = \green{<var>Y</var>}</code> means 
+                            <code>(\blue{<var>X</var>},\green{<var>Y</var>})</code> is on the graph of <code>f</code>.</p>
                         <p>Coordinates are listed as <code>(\blue{abscissa},\green{ordinate})</code>. </p>
                         <p>
                             So, for <code>( \blue{<var>X</var>}, \green{<var>Y</var>} )</code> our
