@@ -753,22 +753,3 @@ x-5 & x\ne 1, \\
 \end{exercises}
 
 
-\section{Limits to and from Infinity}
-
-
-\begin{figure}
-\begin{tikzpicture}
-	\begin{axis}[
-            domain=-2:2,
-            samples=100,
-            axis lines =middle, xlabel=$x$, ylabel=$f(x)$,
-            every axis y label/.style={at=(current axis.above origin),anchor=south},
-            every axis x label/.style={at=(current axis.right of origin),anchor=west}
-          ]
-	  \addplot [very thick, penColor, smooth, domain=(.1:2)] {1/x};
-          \addplot [very thick, penColor, smooth, domain=(-2:-.1)] {1/x};
-        \end{axis}
-\end{tikzpicture}
-\caption{A plot of $f(x)=\protect\frac{1}{x}$.}
-\label{plot:1/x}
-\end{figure}
