@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012/Debian) (format=pdflatex 2012.11.6)  8 NOV 2012 23:36
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012/Debian) (format=pdflatex 2012.11.6)  9 NOV 2012 17:22
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -499,31 +499,18 @@ Package: multicol 2011/06/27 v1.7a multicolumn formatting (FMi)
 Package: mooculus 2012/01/30 v0.75
 \GPT@outputbox=\box56
 
-(/usr/share/texlive/texmf-dist/tex/latex/environ/environ.sty
-Package: environ 2008/06/18 v0.2 A new way to define environments
-\@emptytoks=\toks19
-\@envbody=\toks20
-)
-(/usr/share/texmf/tex/latex/pgf/frontendlayer/tikz.sty
-(/usr/share/texmf/tex/latex/pgf/basiclayer/pgf.sty
-(/usr/share/texmf/tex/latex/pgf/utilities/pgfrcs.sty
-(/usr/share/texmf/tex/generic/pgf/utilities/pgfutil-common.tex
-\pgfutil@everybye=\toks21
-)
-(/usr/share/texmf/tex/generic/pgf/utilities/pgfutil-latex.def
-\pgfutil@abb=\box57
+(/usr/share/texlive/texmf-dist/tex/latex/mdframed/mdframed.sty
+Package: mdframed 2012/04/08 v1.5: mdframed
 
-(/usr/share/texlive/texmf-dist/tex/latex/ms/everyshi.sty
-Package: everyshi 2001/05/15 v3.00 EveryShipout Package (MS)
-))
-(/usr/share/texmf/tex/generic/pgf/utilities/pgfrcs.code.tex
-Package: pgfrcs 2010/10/25 v2.10 (rcs-revision 1.24)
-))
-Package: pgf 2008/01/15 v2.10 (rcs-revision 1.12)
-
-(/usr/share/texmf/tex/latex/pgf/basiclayer/pgfcore.sty
-(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
-Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
+(/usr/share/texlive/texmf-dist/tex/latex/l3packages/xparse/xparse.sty
+(/usr/share/texlive/texmf-dist/tex/latex/l3kernel/expl3.sty
+(/usr/share/texlive/texmf-dist/tex/latex/l3kernel/l3names.sty
+(/usr/share/texlive/texmf-dist/tex/latex/l3kernel/l3bootstrap.sty
+Package: l3bootstrap 2011/12/29 v3110 L3 Experimental bootstrap code
+)
+Package: l3names 2012/03/04 v3494 L3 Experimental namespace for primitives
+)
+Package: expl3 2012/04/23 v3570 L3 Experimental code bundle wrapper
 
 (/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
 Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
@@ -536,34 +523,285 @@ File: graphics.cfg 2010/04/23 v1.9 graphics configuration of TeX Live
 )
 Package graphics Info: Driver file: pdftex.def on input line 91.
 )
-\Gin@req@height=\dimen131
-\Gin@req@width=\dimen132
+(/usr/share/texlive/texmf-dist/tex/latex/l3kernel/l3basics.sty
+Package: l3basics 2012/03/04 v3491 L3 Experimental basic definitions
+)
+(/usr/share/texlive/texmf-dist/tex/latex/l3kernel/l3expan.sty
+Package: l3expan 2012/02/26 v3460 L3 Experimental argument expansion
+)
+(/usr/share/texlive/texmf-dist/tex/latex/l3kernel/l3tl.sty
+Package: l3tl 2012/03/04 v3490 L3 Experimental token lists
+)
+(/usr/share/texlive/texmf-dist/tex/latex/l3kernel/l3seq.sty
+Package: l3seq 2012/03/04 v3490 L3 Experimental sequences and stacks
+)
+(/usr/share/texlive/texmf-dist/tex/latex/l3kernel/l3int.sty
+Package: l3int 2012/03/04 v3490 L3 Experimental integers
+\c_max_int=\count119
+\l_tmpa_int=\count120
+\l_tmpb_int=\count121
+\l_tmpc_int=\count122
+\g_tmpa_int=\count123
+\g_tmpb_int=\count124
+)
+(/usr/share/texlive/texmf-dist/tex/latex/l3kernel/l3quark.sty
+Package: l3quark 2012/02/12 v3384 L3 Experimental quarks
+)
+(/usr/share/texlive/texmf-dist/tex/latex/l3kernel/l3prg.sty
+Package: l3prg 2012/03/04 v3490 L3 Experimental control structures
+\g_prg_map_int=\count125
+)
+(/usr/share/texlive/texmf-dist/tex/latex/l3kernel/l3clist.sty
+Package: l3clist 2012/03/04 v3490 L3 Experimental comma separated lists
+)
+(/usr/share/texlive/texmf-dist/tex/latex/l3kernel/l3token.sty
+Package: l3token 2012/03/04 v3491 L3 Experimental token manipulation
+)
+(/usr/share/texlive/texmf-dist/tex/latex/l3kernel/l3prop.sty
+Package: l3prop 2012/03/04 v3490 L3 Experimental property lists
+)
+(/usr/share/texlive/texmf-dist/tex/latex/l3kernel/l3msg.sty
+Package: l3msg 2012/04/23 v3568 L3 Experimental messages
+)
+(/usr/share/texlive/texmf-dist/tex/latex/l3kernel/l3file.sty
+Package: l3file 2012/03/09 v3520 L3 Experimental file and I/O operations
+\l_iow_stream_int=\count126
+\l_iow_line_length_int=\count127
+\l_iow_target_length_int=\count128
+\l_iow_current_line_int=\count129
+\l_iow_current_word_int=\count130
+\l_iow_current_indentation_int=\count131
+)
+(/usr/share/texlive/texmf-dist/tex/latex/l3kernel/l3skip.sty
+Package: l3skip 2012/03/05 v3499 L3 Experimental dimensions and skips
+\l_tmpa_dim=\dimen131
+\l_tmpb_dim=\dimen132
+\l_tmpc_dim=\dimen133
+\g_tmpa_dim=\dimen134
+\g_tmpb_dim=\dimen135
+\l_tmpa_skip=\skip86
+\l_tmpb_skip=\skip87
+\l_tmpc_skip=\skip88
+\g_tmpa_skip=\skip89
+\g_tmpb_skip=\skip90
+)
+(/usr/share/texlive/texmf-dist/tex/latex/l3kernel/l3keys.sty
+Package: l3keys 2012/03/03 v3487 L3 Experimental key-value interfaces
+\g_keyval_level_int=\count132
+\l_keys_choice_int=\count133
+)
+(/usr/share/texlive/texmf-dist/tex/latex/l3kernel/l3fp.sty
+Package: l3fp 2012/03/04 v3490 L3 Experimental floating-point operations
+\c_one_million=\count134
+\c_one_hundred_million=\count135
+\c_five_hundred_million=\count136
+\c_one_thousand_million=\count137
+\c_fp_pi_by_four_decimal_int=\count138
+\c_fp_pi_by_four_extended_int=\count139
+\c_fp_pi_decimal_int=\count140
+\c_fp_pi_extended_int=\count141
+\c_fp_two_pi_decimal_int=\count142
+\c_fp_two_pi_extended_int=\count143
+\l_fp_count_int=\count144
+\l_fp_div_offset_int=\count145
+\l_fp_exp_integer_int=\count146
+\l_fp_exp_decimal_int=\count147
+\l_fp_exp_extended_int=\count148
+\l_fp_exp_exponent_int=\count149
+\l_fp_input_a_sign_int=\count150
+\l_fp_input_a_integer_int=\count151
+\l_fp_input_a_decimal_int=\count152
+\l_fp_input_a_exponent_int=\count153
+\l_fp_input_b_sign_int=\count154
+\l_fp_input_b_integer_int=\count155
+\l_fp_input_b_decimal_int=\count156
+\l_fp_input_b_exponent_int=\count157
+\l_fp_input_a_extended_int=\count158
+\l_fp_input_b_extended_int=\count159
+\l_fp_mul_a_i_int=\count160
+\l_fp_mul_a_ii_int=\count161
+\l_fp_mul_a_iii_int=\count162
+\l_fp_mul_a_iv_int=\count163
+\l_fp_mul_a_v_int=\count164
+\l_fp_mul_a_vi_int=\count165
+\l_fp_mul_b_i_int=\count166
+\l_fp_mul_b_ii_int=\count167
+\l_fp_mul_b_iii_int=\count168
+\l_fp_mul_b_iv_int=\count169
+\l_fp_mul_b_v_int=\count170
+\l_fp_mul_b_vi_int=\count171
+\l_fp_mul_output_int=\count172
+\l_fp_output_sign_int=\count173
+\l_fp_output_integer_int=\count174
+\l_fp_output_decimal_int=\count175
+\l_fp_output_exponent_int=\count176
+\l_fp_output_extended_int=\count177
+\l_fp_round_position_int=\count178
+\l_fp_round_target_int=\count179
+\l_fp_split_sign_int=\count180
+\l_fp_internal_int=\count181
+\l_fp_trig_octant_int=\count182
+\l_fp_trig_sign_int=\count183
+\l_fp_trig_decimal_int=\count184
+\l_fp_trig_extended_int=\count185
+\l_fp_internal_dim=\dimen136
+\l_fp_internal_skip=\skip91
+)
+(/usr/share/texlive/texmf-dist/tex/latex/l3kernel/l3box.sty
+Package: l3box 2012/03/04 v3490 L3 Experimental boxes
+\l_tmpb_box=\box57
+\l_box_top_dim=\dimen137
+\l_box_bottom_dim=\dimen138
+\l_box_left_dim=\dimen139
+\l_box_right_dim=\dimen140
+\l_box_top_new_dim=\dimen141
+\l_box_bottom_new_dim=\dimen142
+\l_box_left_new_dim=\dimen143
+\l_box_right_new_dim=\dimen144
+\l_box_internal_box=\box58
+)
+(/usr/share/texlive/texmf-dist/tex/latex/l3kernel/l3coffins.sty
+Package: l3coffins 2012/03/03 v3482 L3 Experimental coffin code layer
+\l_coffin_internal_box=\box59
+\l_coffin_internal_dim=\dimen145
+\l_coffin_offset_x_dim=\dimen146
+\l_coffin_offset_y_dim=\dimen147
+\l_coffin_x_dim=\dimen148
+\l_coffin_y_dim=\dimen149
+\l_coffin_x_prime_dim=\dimen150
+\l_coffin_y_prime_dim=\dimen151
+\l_coffin_Depth_dim=\dimen152
+\l_coffin_Height_dim=\dimen153
+\l_coffin_TotalHeight_dim=\dimen154
+\l_coffin_Width_dim=\dimen155
+\c_empty_coffin=\box60
+\l_coffin_aligned_coffin=\box61
+\l_coffin_aligned_internal_coffin=\box62
+\l_coffin_bounding_shift_dim=\dimen156
+\l_coffin_left_corner_dim=\dimen157
+\l_coffin_right_corner_dim=\dimen158
+\l_coffin_bottom_corner_dim=\dimen159
+\l_coffin_top_corner_dim=\dimen160
+\l_coffin_scaled_total_height_dim=\dimen161
+\l_coffin_scaled_width_dim=\dimen162
+\l_coffin_display_coffin=\box63
+\l_coffin_display_coord_coffin=\box64
+\l_coffin_display_pole_coffin=\box65
+\l_coffin_display_offset_dim=\dimen163
+\l_coffin_display_x_dim=\dimen164
+\l_coffin_display_y_dim=\dimen165
+)
+(/usr/share/texlive/texmf-dist/tex/latex/l3kernel/l3color.sty
+Package: l3color 2011/09/07 v2776 L3 Experimental colour support
+)
+(/usr/share/texlive/texmf-dist/tex/latex/l3kernel/l3luatex.sty
+Package: l3luatex 2012/02/09 v3355 L3 Experimental LuaTeX-specific functions
+\g_cctab_allocate_int=\count186
+\g_cctab_stack_int=\count187
+))
+Package: xparse 2012/04/23 v3570 L3 Experimental document command parser
+\l_xparse_current_arg_int=\count188
+\l_xparse_m_args_int=\count189
+\l_xparse_mandatory_args_int=\count190
+\l_xparse_processor_int=\count191
+\l_xparse_v_nesting_int=\count192
+)
+(/usr/share/texlive/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+Package: etoolbox 2011/01/03 v2.1 e-TeX tools for LaTeX
+\etb@tempcnta=\count193
+)
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/zref-abspage.sty
+Package: zref-abspage 2012/04/04 v2.24 Module abspage for zref (HO)
+
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/zref-base.sty
+Package: zref-base 2012/04/04 v2.24 Module base for zref (HO)
+
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/auxhook.sty
+Package: auxhook 2011/03/04 v1.3 Hooks for auxiliary files (HO)
+)
+Package zref Info: New property list: main on input line 759.
+Package zref Info: New property: default on input line 760.
+Package zref Info: New property: page on input line 761.
+)
+\c@abspage=\count194
+Package zref Info: New property: abspage on input line 62.
+)
+\mdf@templength=\skip92
+\c@mdf@globalstyle@cnt=\count195
+\mdf@skipabove@length=\skip93
+\mdf@skipbelow@length=\skip94
+\mdf@leftmargin@length=\skip95
+\mdf@rightmargin@length=\skip96
+\mdf@innerleftmargin@length=\skip97
+\mdf@innerrightmargin@length=\skip98
+\mdf@innertopmargin@length=\skip99
+\mdf@innerbottommargin@length=\skip100
+\mdf@splittopskip@length=\skip101
+\mdf@splitbottomskip@length=\skip102
+\mdf@outermargin@length=\skip103
+\mdf@innermargin@length=\skip104
+\mdf@linewidth@length=\skip105
+\mdf@innerlinewidth@length=\skip106
+\mdf@middlelinewidth@length=\skip107
+\mdf@outerlinewidth@length=\skip108
+\mdf@roundcorner@length=\skip109
+\mdf@footenotedistance@length=\skip110
+\mdf@userdefinedwidth@length=\skip111
+\mdf@frametitleaboveskip@length=\skip112
+\mdf@frametitlebelowskip@length=\skip113
+\mdf@frametitlerulewidth@length=\skip114
+\mdf@frametitleleftmargin@length=\skip115
+\mdf@frametitlerightmargin@length=\skip116
+\mdf@shadowsize@length=\skip117
+
+(/usr/share/texmf/tex/latex/pgf/frontendlayer/tikz.sty
+(/usr/share/texmf/tex/latex/pgf/basiclayer/pgf.sty
+(/usr/share/texmf/tex/latex/pgf/utilities/pgfrcs.sty
+(/usr/share/texmf/tex/generic/pgf/utilities/pgfutil-common.tex
+\pgfutil@everybye=\toks19
+)
+(/usr/share/texmf/tex/generic/pgf/utilities/pgfutil-latex.def
+\pgfutil@abb=\box66
+
+(/usr/share/texlive/texmf-dist/tex/latex/ms/everyshi.sty
+Package: everyshi 2001/05/15 v3.00 EveryShipout Package (MS)
+))
+(/usr/share/texmf/tex/generic/pgf/utilities/pgfrcs.code.tex
+Package: pgfrcs 2010/10/25 v2.10 (rcs-revision 1.24)
+))
+Package: pgf 2008/01/15 v2.10 (rcs-revision 1.12)
+
+(/usr/share/texmf/tex/latex/pgf/basiclayer/pgfcore.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
+\Gin@req@height=\dimen166
+\Gin@req@width=\dimen167
 )
 (/usr/share/texmf/tex/latex/pgf/systemlayer/pgfsys.sty
 (/usr/share/texmf/tex/generic/pgf/systemlayer/pgfsys.code.tex
 Package: pgfsys 2010/06/30 v2.10 (rcs-revision 1.37)
 
 (/usr/share/texmf/tex/generic/pgf/utilities/pgfkeys.code.tex
-\pgfkeys@pathtoks=\toks22
-\pgfkeys@temptoks=\toks23
+\pgfkeys@pathtoks=\toks20
+\pgfkeys@temptoks=\toks21
 
 (/usr/share/texmf/tex/generic/pgf/utilities/pgfkeysfiltered.code.tex
-\pgfkeys@tmptoks=\toks24
+\pgfkeys@tmptoks=\toks22
 ))
-\pgf@x=\dimen133
-\pgf@y=\dimen134
-\pgf@xa=\dimen135
-\pgf@ya=\dimen136
-\pgf@xb=\dimen137
-\pgf@yb=\dimen138
-\pgf@xc=\dimen139
-\pgf@yc=\dimen140
+\pgf@x=\dimen168
+\pgf@y=\dimen169
+\pgf@xa=\dimen170
+\pgf@ya=\dimen171
+\pgf@xb=\dimen172
+\pgf@yb=\dimen173
+\pgf@xc=\dimen174
+\pgf@yc=\dimen175
 \w@pgf@writea=\write3
 \r@pgf@reada=\read1
-\c@pgf@counta=\count119
-\c@pgf@countb=\count120
-\c@pgf@countc=\count121
-\c@pgf@countd=\count122
+\c@pgf@counta=\count196
+\c@pgf@countb=\count197
+\c@pgf@countc=\count198
+\c@pgf@countd=\count199
 
 (/usr/share/texmf/tex/generic/pgf/systemlayer/pgf.cfg
 File: pgf.cfg 2008/05/14  (rcs-revision 1.7)
@@ -578,8 +816,8 @@ File: pgfsys-common-pdf.def 2008/05/19  (rcs-revision 1.10)
 )))
 (/usr/share/texmf/tex/generic/pgf/systemlayer/pgfsyssoftpath.code.tex
 File: pgfsyssoftpath.code.tex 2008/07/18  (rcs-revision 1.7)
-\pgfsyssoftpath@smallbuffer@items=\count123
-\pgfsyssoftpath@bigbuffer@items=\count124
+\pgfsyssoftpath@smallbuffer@items=\count200
+\pgfsyssoftpath@bigbuffer@items=\count201
 )
 (/usr/share/texmf/tex/generic/pgf/systemlayer/pgfsysprotocol.code.tex
 File: pgfsysprotocol.code.tex 2006/10/16  (rcs-revision 1.4)
@@ -591,12 +829,13 @@ Package: pgfcore 2010/04/11 v2.10 (rcs-revision 1.7)
 (/usr/share/texmf/tex/generic/pgf/math/pgfmathcalc.code.tex
 (/usr/share/texmf/tex/generic/pgf/math/pgfmathutil.code.tex)
 (/usr/share/texmf/tex/generic/pgf/math/pgfmathparser.code.tex
-\pgfmath@dimen=\dimen141
-\pgfmath@count=\count125
-\pgfmath@box=\box58
-\pgfmath@toks=\toks25
-\pgfmath@stack@operand=\toks26
-\pgfmath@stack@operation=\toks27
+\pgfmath@dimen=\dimen176
+Normal \count register pool exhausted, switching to extended pool.
+\pgfmath@count=\count277
+\pgfmath@box=\box67
+\pgfmath@toks=\toks23
+\pgfmath@stack@operand=\toks24
+\pgfmath@stack@operation=\toks25
 )
 (/usr/share/texmf/tex/generic/pgf/math/pgfmathfunctions.code.tex
 (/usr/share/texmf/tex/generic/pgf/math/pgfmathfunctions.basic.code.tex)
@@ -607,51 +846,51 @@ Package: pgfcore 2010/04/11 v2.10 (rcs-revision 1.7)
 (/usr/share/texmf/tex/generic/pgf/math/pgfmathfunctions.round.code.tex)
 (/usr/share/texmf/tex/generic/pgf/math/pgfmathfunctions.misc.code.tex)))
 (/usr/share/texmf/tex/generic/pgf/math/pgfmathfloat.code.tex
-\c@pgfmathroundto@lastzeros=\count126
+\c@pgfmathroundto@lastzeros=\count278
 ))
 (/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcorepoints.code.tex
 File: pgfcorepoints.code.tex 2010/04/09  (rcs-revision 1.20)
-\pgf@picminx=\dimen142
-\pgf@picmaxx=\dimen143
-\pgf@picminy=\dimen144
-\pgf@picmaxy=\dimen145
-\pgf@pathminx=\dimen146
-\pgf@pathmaxx=\dimen147
-\pgf@pathminy=\dimen148
-\pgf@pathmaxy=\dimen149
-\pgf@xx=\dimen150
-\pgf@xy=\dimen151
-\pgf@yx=\dimen152
-\pgf@yy=\dimen153
-\pgf@zx=\dimen154
-\pgf@zy=\dimen155
+\pgf@picminx=\dimen177
+\pgf@picmaxx=\dimen178
+\pgf@picminy=\dimen179
+\pgf@picmaxy=\dimen180
+\pgf@pathminx=\dimen181
+\pgf@pathmaxx=\dimen182
+\pgf@pathminy=\dimen183
+\pgf@pathmaxy=\dimen184
+\pgf@xx=\dimen185
+\pgf@xy=\dimen186
+\pgf@yx=\dimen187
+\pgf@yy=\dimen188
+\pgf@zx=\dimen189
+\pgf@zy=\dimen190
 )
 (/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcorepathconstruct.code.tex
 File: pgfcorepathconstruct.code.tex 2010/08/03  (rcs-revision 1.24)
-\pgf@path@lastx=\dimen156
-\pgf@path@lasty=\dimen157
+\pgf@path@lastx=\dimen191
+\pgf@path@lasty=\dimen192
 )
 (/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcorepathusage.code.tex
 File: pgfcorepathusage.code.tex 2008/04/22  (rcs-revision 1.12)
-\pgf@shorten@end@additional=\dimen158
-\pgf@shorten@start@additional=\dimen159
+\pgf@shorten@end@additional=\dimen193
+\pgf@shorten@start@additional=\dimen194
 )
 (/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcorescopes.code.tex
 File: pgfcorescopes.code.tex 2010/09/08  (rcs-revision 1.34)
-\pgfpic=\box59
-\pgf@hbox=\box60
-\pgf@layerbox@main=\box61
-\pgf@picture@serial@count=\count127
+\pgfpic=\box68
+\pgf@hbox=\box69
+\pgf@layerbox@main=\box70
+\pgf@picture@serial@count=\count279
 )
 (/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcoregraphicstate.code.tex
 File: pgfcoregraphicstate.code.tex 2008/04/22  (rcs-revision 1.9)
-\pgflinewidth=\dimen160
+\pgflinewidth=\dimen195
 )
 (/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcoretransformations.code.tex
 File: pgfcoretransformations.code.tex 2009/06/10  (rcs-revision 1.11)
-\pgf@pt@x=\dimen161
-\pgf@pt@y=\dimen162
-\pgf@pt@temp=\dimen163
+\pgf@pt@x=\dimen196
+\pgf@pt@y=\dimen197
+\pgf@pt@temp=\dimen198
 )
 (/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcorequick.code.tex
 File: pgfcorequick.code.tex 2008/10/09  (rcs-revision 1.3)
@@ -667,15 +906,15 @@ File: pgfcorearrows.code.tex 2008/04/23  (rcs-revision 1.11)
 )
 (/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcoreshade.code.tex
 File: pgfcoreshade.code.tex 2008/11/23  (rcs-revision 1.13)
-\pgf@max=\dimen164
-\pgf@sys@shading@range@num=\count128
+\pgf@max=\dimen199
+\pgf@sys@shading@range@num=\count280
 )
 (/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcoreimage.code.tex
 File: pgfcoreimage.code.tex 2010/03/25  (rcs-revision 1.16)
 
 (/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcoreexternal.code.tex
 File: pgfcoreexternal.code.tex 2010/09/01  (rcs-revision 1.17)
-\pgfexternal@startupbox=\box62
+\pgfexternal@startupbox=\box71
 ))
 (/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcorelayers.code.tex
 File: pgfcorelayers.code.tex 2010/08/27  (rcs-revision 1.2)
@@ -688,15 +927,15 @@ File: pgfcorepatterns.code.tex 2009/07/02  (rcs-revision 1.3)
 )))
 (/usr/share/texmf/tex/generic/pgf/modules/pgfmoduleshapes.code.tex
 File: pgfmoduleshapes.code.tex 2010/09/09  (rcs-revision 1.13)
-\pgfnodeparttextbox=\box63
+\pgfnodeparttextbox=\box72
 )
 (/usr/share/texmf/tex/generic/pgf/modules/pgfmoduleplot.code.tex
 File: pgfmoduleplot.code.tex 2010/10/22  (rcs-revision 1.8)
 )
 (/usr/share/texmf/tex/latex/pgf/compatibility/pgfcomp-version-0-65.sty
 Package: pgfcomp-version-0-65 2007/07/03 v2.10 (rcs-revision 1.7)
-\pgf@nodesepstart=\dimen165
-\pgf@nodesepend=\dimen166
+\pgf@nodesepstart=\dimen200
+\pgf@nodesepend=\dimen201
 )
 (/usr/share/texmf/tex/latex/pgf/compatibility/pgfcomp-version-1-18.sty
 Package: pgfcomp-version-1-18 2007/07/23 v2.10 (rcs-revision 1.1)
@@ -706,44 +945,97 @@ Package: pgfcomp-version-1-18 2007/07/23 v2.10 (rcs-revision 1.1)
 (/usr/share/texmf/tex/generic/pgf/utilities/pgfkeys.code.tex))
 (/usr/share/texmf/tex/generic/pgf/utilities/pgffor.code.tex
 Package: pgffor 2010/03/23 v2.10 (rcs-revision 1.18)
-\pgffor@iter=\dimen167
-\pgffor@skip=\dimen168
-\pgffor@stack=\toks28
-\pgffor@toks=\toks29
+Normal \dimen register pool exhausted, switching to extended pool.
+\pgffor@iter=\dimen256
+\pgffor@skip=\dimen257
+\pgffor@stack=\toks26
+\pgffor@toks=\toks27
 ))
 (/usr/share/texmf/tex/generic/pgf/frontendlayer/tikz/tikz.code.tex
 Package: tikz 2010/10/13 v2.10 (rcs-revision 1.76)
 
 (/usr/share/texmf/tex/generic/pgf/libraries/pgflibraryplothandlers.code.tex
 File: pgflibraryplothandlers.code.tex 2010/05/31 v2.10 (rcs-revision 1.15)
-\pgf@plot@mark@count=\count129
-\pgfplotmarksize=\dimen169
+\pgf@plot@mark@count=\count281
+\pgfplotmarksize=\dimen258
 )
-\tikz@lastx=\dimen170
-\tikz@lasty=\dimen171
-\tikz@lastxsaved=\dimen172
-\tikz@lastysaved=\dimen173
-\tikzleveldistance=\dimen174
-\tikzsiblingdistance=\dimen175
-\tikz@figbox=\box64
-\tikz@tempbox=\box65
-\tikztreelevel=\count130
-\tikznumberofchildren=\count131
-\tikznumberofcurrentchild=\count132
-\tikz@fig@count=\count133
+\tikz@lastx=\dimen259
+\tikz@lasty=\dimen260
+\tikz@lastxsaved=\dimen261
+\tikz@lastysaved=\dimen262
+\tikzleveldistance=\dimen263
+\tikzsiblingdistance=\dimen264
+\tikz@figbox=\box73
+\tikz@tempbox=\box74
+\tikztreelevel=\count282
+\tikznumberofchildren=\count283
+\tikznumberofcurrentchild=\count284
+\tikz@fig@count=\count285
 
 (/usr/share/texmf/tex/generic/pgf/modules/pgfmodulematrix.code.tex
 File: pgfmodulematrix.code.tex 2010/08/24  (rcs-revision 1.4)
-\pgfmatrixcurrentrow=\count134
-\pgfmatrixcurrentcolumn=\count135
-\pgf@matrix@numberofcolumns=\count136
+\pgfmatrixcurrentrow=\count286
+\pgfmatrixcurrentcolumn=\count287
+\pgf@matrix@numberofcolumns=\count288
 )
-\tikz@expandcount=\count137
+\tikz@expandcount=\count289
 
 (/usr/share/texmf/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarytopat
 hs.code.tex
 File: tikzlibrarytopaths.code.tex 2008/06/17 v2.10 (rcs-revision 1.2)
-))) (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amssymb.sty
+)))
+\mdf@frametitlebox=\box75
+\mdf@footnotebox=\box76
+\mdf@splitbox@one=\box77
+\mdf@splitbox@two=\box78
+\mdfsplitboxwidth=\skip118
+\mdfsplitboxtotalwidth=\skip119
+\mdfsplitboxheight=\skip120
+\mdfsplitboxdepth=\skip121
+\mdfsplitboxtotalheight=\skip122
+\mdfframetitleboxwidth=\skip123
+\mdfframetitleboxtotalwidth=\skip124
+\mdfframetitleboxheight=\skip125
+\mdfframetitleboxdepth=\skip126
+\mdfframetitleboxtotalheight=\skip127
+\mdffootnoteboxwidth=\skip128
+\mdffootnoteboxtotalwidth=\skip129
+\mdffootnoteboxheight=\skip130
+\mdffootnoteboxdepth=\skip131
+\mdffootnoteboxtotalheight=\skip132
+\mdftotallinewidth=\skip133
+\mdfboundingboxwidth=\skip134
+\mdfboundingboxtotalwidth=\skip135
+\mdfboundingboxheight=\skip136
+\mdfboundingboxdepth=\skip137
+\mdfboundingboxtotalheight=\skip138
+\mdf@freevspace@length=\skip139
+\mdf@horizontalwidthofbox@length=\skip140
+\mdf@verticalmarginwhole@length=\skip141
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining document command \newmdtheoremenv with arg. spec. 'O{} m o m o ' on
+. line 501.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining document command \mdtheorem with arg. spec. ' O{} m o m o ' on line
+. 581.
+.................................................
+ (/usr/share/texlive/texmf-dist/tex/latex/mdframed/md-frame-1.mdf
+File: md-frame-1.mdf 2012/04/08  v1.5: md-frame-1
+)
+\c@mdf@zref@counter=\count290
+Package zref Info: New property: mdf@pagevalue on input line 782.
+\mdf@horizontalspaceofbox=\skip142
+) (/usr/share/texlive/texmf-dist/tex/latex/environ/environ.sty
+Package: environ 2008/06/18 v0.2 A new way to define environments
+\@emptytoks=\toks28
+\@envbody=\toks29
+)
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amssymb.sty
 Package: amssymb 2009/06/22 v3.00
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amsfonts.sty
@@ -755,7 +1047,7 @@ LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 ))
 (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
 Package: amsmath 2000/07/18 v2.13 AMS math features
-\@mathmargin=\skip86
+\@mathmargin=\skip143
 
 For additional information on amsmath, use the `?' option.
 (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amstext.sty
@@ -764,74 +1056,84 @@ Package: amstext 2000/06/29 v2.01
 (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0
 \@emptytoks=\toks30
-\ex@=\dimen176
+\ex@=\dimen265
 ))
 (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty
 Package: amsbsy 1999/11/29 v1.2d
-\pmbraise@=\dimen177
+\pmbraise@=\dimen266
 )
 (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty
 Package: amsopn 1999/12/14 v2.01 operator names
 )
-\inf@bad=\count138
+\inf@bad=\count291
 LaTeX Info: Redefining \frac on input line 211.
-\uproot@=\count139
-\leftroot@=\count140
+\uproot@=\count292
+\leftroot@=\count293
 LaTeX Info: Redefining \overline on input line 307.
-\classnum@=\count141
-\DOTSCASE@=\count142
+\classnum@=\count294
+\DOTSCASE@=\count295
 LaTeX Info: Redefining \ldots on input line 379.
 LaTeX Info: Redefining \dots on input line 382.
 LaTeX Info: Redefining \cdots on input line 467.
-\Mathstrutbox@=\box66
-\strutbox@=\box67
-\big@size=\dimen178
+\Mathstrutbox@=\box79
+\strutbox@=\box80
+\big@size=\dimen267
 LaTeX Font Info:    Redeclaring font encoding OML on input line 567.
 LaTeX Font Info:    Redeclaring font encoding OMS on input line 568.
-\macc@depth=\count143
-\c@MaxMatrixCols=\count144
+\macc@depth=\count296
+\c@MaxMatrixCols=\count297
 \dotsspace@=\muskip11
-\c@parentequation=\count145
-\dspbrk@lvl=\count146
+\c@parentequation=\count298
+\dspbrk@lvl=\count299
 \tag@help=\toks31
-\row@=\count147
-\column@=\count148
-\maxfields@=\count149
+\row@=\count300
+\column@=\count301
+\maxfields@=\count302
 \andhelp@=\toks32
-\eqnshift@=\dimen179
-\alignsep@=\dimen180
-\tagshift@=\dimen181
-\tagwidth@=\dimen182
-\totwidth@=\dimen183
-\lineht@=\dimen184
+\eqnshift@=\dimen268
+\alignsep@=\dimen269
+\tagshift@=\dimen270
+\tagwidth@=\dimen271
+\totwidth@=\dimen272
+\lineht@=\dimen273
 \@envbody=\toks33
-\multlinegap=\skip87
-\multlinetaggap=\skip88
+\multlinegap=\skip144
+\multlinetaggap=\skip145
 \mathdisplay@stack=\toks34
 LaTeX Info: Redefining \[ on input line 2666.
 LaTeX Info: Redefining \] on input line 2667.
 )
-(/usr/share/texlive/texmf-dist/tex/latex/amscls/amsthm.sty
-Package: amsthm 2009/07/02 v2.20.1
-\thm@style=\toks35
-\thm@bodyfont=\toks36
-\thm@headfont=\toks37
-\thm@notefont=\toks38
-\thm@headpunct=\toks39
-\thm@preskip=\skip89
-\thm@postskip=\skip90
-\thm@headsep=\skip91
-\dth@everypar=\toks40
-)
-(/usr/share/texlive/texmf-dist/tex/latex/microtype/microtype.sty
+(/usr/share/texlive/texmf-dist/tex/latex/ntheorem/ntheorem.sty
+Style `ntheorem', Version 1.31 <2011/02/16>
+Package: ntheorem 2011/02/16 1.31
+\theorem@style=\toks35
+\theorem@@style=\toks36
+\theorembodyfont=\toks37
+\theoremnumbering=\toks38
+\theorempreskipamount=\skip146
+\theorempostskipamount=\skip147
+\theoremframepreskipamount=\skip148
+\theoremframepostskipamount=\skip149
+\theoremindent=\dimen274
+\theorem@indent=\dimen275
+\theoremheaderfont=\toks39
+\theoremseparator=\toks40
+\theoremprework=\toks41
+\theorempostwork=\toks42
+\theoremsymbol=\toks43
+\qedsymbol=\toks44
+\theoremkeyword=\toks45
+\qedsymbol=\toks46
+\thm@topsepadd=\skip150
+) (/usr/share/texlive/texmf-dist/tex/latex/microtype/microtype.sty
 Package: microtype 2010/01/10 v2.4 Micro-typography with pdfTeX (RS)
-\MT@toks=\toks41
-\MT@count=\count150
+\MT@toks=\toks47
+\MT@count=\count303
 LaTeX Info: Redefining \lsstyle on input line 1597.
 LaTeX Info: Redefining \lslig on input line 1597.
-\MT@outer@space=\skip92
+\MT@outer@space=\skip151
 LaTeX Info: Redefining \textls on input line 1605.
-\MT@outer@kern=\dimen185
+\MT@outer@kern=\dimen276
 LaTeX Info: Redefining \textmicrotypecontext on input line 2156.
 Package microtype Info: Loading configuration file microtype.cfg.
 
@@ -840,14 +1142,14 @@ File: microtype.cfg 2010/01/10 v2.4 microtype main configuration file (RS)
 ))
 (/usr/share/texlive/texmf-dist/tex/latex/tools/enumerate.sty
 Package: enumerate 1999/03/05 v3.00 enumerate extensions (DPC)
-\@enLab=\toks42
+\@enLab=\toks48
 )
 (/usr/share/texlive/texmf-dist/tex/latex/kpfonts/kpfonts.sty
 Package: kpfonts  2010/08/20 v3.31
-\c@mv@rm=\count151
-\c@mv@boldrm=\count152
-\c@mv@sf=\count153
-\c@mv@boldsf=\count154
+\c@mv@rm=\count304
+\c@mv@boldrm=\count305
+\c@mv@sf=\count306
+\c@mv@boldsf=\count307
 LaTeX Font Info:    Redeclaring symbol font `operators' on input line 354.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
 (Font)                  OT1/pplx/m/n --> OT1/jkp/m/n on input line 354.
@@ -1202,50 +1504,49 @@ File: tikzlibraryshapes.multipart.code.tex 2008/01/09 v2.10 (rcs-revision 1.1)
 (/usr/share/texmf/tex/generic/pgf/libraries/shapes/pgflibraryshapes.multipart.c
 ode.tex
 File: pgflibraryshapes.multipart.code.tex 2010/01/07 v2.10 (rcs-revision 1.2)
-\pgfnodepartlowerbox=\box68
-\pgfnodeparttwobox=\box69
-\pgfnodepartthreebox=\box70
-\pgfnodepartfourbox=\box71
-\pgfnodeparttwentybox=\box72
-\pgfnodepartnineteenbox=\box73
-\pgfnodeparteighteenbox=\box74
-\pgfnodepartseventeenbox=\box75
-\pgfnodepartsixteenbox=\box76
-\pgfnodepartfifteenbox=\box77
-\pgfnodepartfourteenbox=\box78
-\pgfnodepartthirteenbox=\box79
-\pgfnodeparttwelvebox=\box80
-\pgfnodepartelevenbox=\box81
-\pgfnodeparttenbox=\box82
-\pgfnodepartninebox=\box83
-\pgfnodeparteightbox=\box84
-\pgfnodepartsevenbox=\box85
-\pgfnodepartsixbox=\box86
-\pgfnodepartfivebox=\box87
+\pgfnodepartlowerbox=\box81
+\pgfnodeparttwobox=\box82
+\pgfnodepartthreebox=\box83
+\pgfnodepartfourbox=\box84
+\pgfnodeparttwentybox=\box85
+\pgfnodepartnineteenbox=\box86
+\pgfnodeparteighteenbox=\box87
+\pgfnodepartseventeenbox=\box88
+\pgfnodepartsixteenbox=\box89
+\pgfnodepartfifteenbox=\box90
+\pgfnodepartfourteenbox=\box91
+\pgfnodepartthirteenbox=\box92
+\pgfnodeparttwelvebox=\box93
+\pgfnodepartelevenbox=\box94
+\pgfnodeparttenbox=\box95
+\pgfnodepartninebox=\box96
+\pgfnodeparteightbox=\box97
+\pgfnodepartsevenbox=\box98
+\pgfnodepartsixbox=\box99
+\pgfnodepartfivebox=\box100
 )))
 (/usr/share/texmf/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarydecor
 ations.code.tex
 (/usr/share/texmf/tex/generic/pgf/modules/pgfmoduledecorations.code.tex
-\pgfdecoratedcompleteddistance=\dimen186
-\pgfdecoratedremainingdistance=\dimen187
-\pgfdecoratedinputsegmentcompleteddistance=\dimen188
-\pgfdecoratedinputsegmentremainingdistance=\dimen189
-\pgf@decorate@distancetomove=\dimen190
-\pgf@decorate@repeatstate=\count155
-\pgfdecorationsegmentamplitude=\dimen191
-\pgfdecorationsegmentlength=\dimen192
+\pgfdecoratedcompleteddistance=\dimen277
+\pgfdecoratedremainingdistance=\dimen278
+\pgfdecoratedinputsegmentcompleteddistance=\dimen279
+\pgfdecoratedinputsegmentremainingdistance=\dimen280
+\pgf@decorate@distancetomove=\dimen281
+\pgf@decorate@repeatstate=\count308
+\pgfdecorationsegmentamplitude=\dimen282
+\pgfdecorationsegmentlength=\dimen283
 )
-\tikz@lib@dec@box=\box88
+\tikz@lib@dec@box=\box101
 )
-(/usr/share/texlive/texmf-dist/tex/latex/framed/framed.sty
-Package: framed 2011/10/22 v 0.96: framed or shaded text with page breaks
-\OuterFrameSep=\skip93
-\fb@frw=\dimen193
-\fb@frh=\dimen194
-\FrameRule=\dimen195
-\FrameSep=\dimen196
-)
-\c@exercise=\count156
+\c@mainTheorem=\count309
+\c@theorem=\count310
+\c@example=\count311
+\c@definition=\count312
+\c@solution=\count313
+\c@proof=\count314
+\c@warning=\count315
+\c@exercise=\count316
 
 (/usr/share/texlive/texmf-dist/tex/latex/titlesec/block.tss
 File: block.tss 2011/12/15
@@ -1256,12 +1557,12 @@ Package: pgfplots 2012/10/26 v1.7 Data Visualization (1.7-2-ge24fff4)
 
 (/home/snapp/texmf/tex/latex/tex/generic/pgfplots/pgfplots.code.tex
 (/home/snapp/texmf/tex/latex/tex/generic/pgfplots/pgfplotscore.code.tex
-\t@pgfplots@toka=\toks43
-\t@pgfplots@tokb=\toks44
-\t@pgfplots@tokc=\toks45
-\pgfplots@tmpa=\dimen197
-\c@pgfplots@coordindex=\count157
-\c@pgfplots@scanlineindex=\count158
+\t@pgfplots@toka=\toks49
+\t@pgfplots@tokb=\toks50
+\t@pgfplots@tokc=\toks51
+\pgfplots@tmpa=\dimen284
+\c@pgfplots@coordindex=\count317
+\c@pgfplots@scanlineindex=\count318
 
 (/home/snapp/texmf/tex/latex/tex/generic/pgfplots/sys/pgfplotssysgeneric.code.t
 ex))
@@ -1275,32 +1576,32 @@ Package pgfplots: loading complementary code for your PGF version...
 supp_misc.code.tex)
 (/home/snapp/texmf/tex/latex/tex/generic/pgfplots/oldpgfcompatib/pgfplotsoldpgf
 supp_pgfkeys.code.tex
-\pgfkeys@pathtoks=\toks46
-\pgfkeys@temptoks=\toks47
+\pgfkeys@pathtoks=\toks52
+\pgfkeys@temptoks=\toks53
 
 (/home/snapp/texmf/tex/latex/tex/generic/pgfplots/oldpgfcompatib/pgfplotsoldpgf
 supp_pgfkeysfiltered.code.tex
-\pgfkeys@tmptoks=\toks48
+\pgfkeys@tmptoks=\toks54
 ))
 (/home/snapp/texmf/tex/latex/tex/generic/pgfplots/oldpgfcompatib/pgfplotsoldpgf
 supp_pgfmathfloat.code.tex
-\c@pgfmathroundto@lastzeros=\count159
+\c@pgfmathroundto@lastzeros=\count319
 )
 (/home/snapp/texmf/tex/latex/tex/generic/pgfplots/oldpgfcompatib/pgfplotsoldpgf
 supp_pgflibraryplothandlers.code.tex
 File: pgflibraryplothandlers.code.tex 2012/09/11 v2.10 (rcs-revision 1.17)
-\pgf@plot@mark@count=\count160
-\pgfplotmarksize=\dimen198
+\pgf@plot@mark@count=\count320
+\pgfplotmarksize=\dimen285
 )
 (/home/snapp/texmf/tex/latex/tex/generic/pgfplots/oldpgfcompatib/pgfplotsoldpgf
 supp_pgflibraryfpu.code.tex)
 (/home/snapp/texmf/tex/latex/tex/generic/pgfplots/oldpgfcompatib/pgfplotsoldpgf
 supp_pgfcorescopes.code.tex
 File: pgfcorescopes.code.tex 2011/10/01  (rcs-revision 1.37)
-\pgfpic=\box89
-\pgf@hbox=\box90
-\pgf@layerbox@main=\box91
-\pgf@picture@serial@count=\count161
+\pgfpic=\box102
+\pgf@hbox=\box103
+\pgf@layerbox@main=\box104
+\pgf@picture@serial@count=\count321
 )
 (/home/snapp/texmf/tex/latex/tex/generic/pgfplots/oldpgfcompatib/pgfplotsoldpgf
 supp_pgfcorelayers.code.tex
@@ -1313,14 +1614,14 @@ ucture.code.tex)
 uctureext.code.tex)
 (/home/snapp/texmf/tex/latex/tex/generic/pgfplots/liststructure/pgfplotsarray.c
 ode.tex
-\c@pgfplotsarray@tmp=\count162
+\c@pgfplotsarray@tmp=\count322
 )
 (/home/snapp/texmf/tex/latex/tex/generic/pgfplots/liststructure/pgfplotsmatrix.
 code.tex)
 (/home/snapp/texmf/tex/latex/tex/generic/pgfplots/numtable/pgfplotstableshared.
 code.tex
-\c@pgfplotstable@counta=\count163
-\t@pgfplotstable@a=\toks49
+\c@pgfplotstable@counta=\count323
+\t@pgfplotstable@a=\toks55
 )
 (/home/snapp/texmf/tex/latex/tex/generic/pgfplots/liststructure/pgfplotsdeque.c
 ode.tex)
@@ -1331,7 +1632,7 @@ ode.tex)
 ex)
 (/home/snapp/texmf/tex/latex/tex/generic/pgfplots/libs/pgflibrarypgfplots.surfs
 hading.code.tex
-\c@pgfplotslibrarysurf@no=\count164
+\c@pgfplotslibrarysurf@no=\count324
 
 (/home/snapp/texmf/tex/latex/tex/generic/pgfplots/sys/pgflibrarypgfplots.surfsh
 ading.pgfsys-pdftex.def)))
@@ -1355,13 +1656,13 @@ athmorphing.code.tex))
 ations.pathreplacing.code.tex
 (/usr/share/texmf/tex/generic/pgf/libraries/decorations/pgflibrarydecorations.p
 athreplacing.code.tex))
-\pgfplots@numplots=\count165
-\pgfplots@xmin@reg=\dimen199
-\pgfplots@xmax@reg=\dimen200
-\pgfplots@ymin@reg=\dimen201
-\pgfplots@ymax@reg=\dimen202
-\pgfplots@zmin@reg=\dimen203
-\pgfplots@zmax@reg=\dimen204
+\pgfplots@numplots=\count325
+\pgfplots@xmin@reg=\dimen286
+\pgfplots@xmax@reg=\dimen287
+\pgfplots@ymin@reg=\dimen288
+\pgfplots@ymax@reg=\dimen289
+\pgfplots@zmin@reg=\dimen290
+\pgfplots@zmax@reg=\dimen291
 )
 (/usr/share/texmf/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryplotm
 arks.code.tex
@@ -1398,24 +1699,23 @@ Package morefloats Info: Maximum number of possible floats asked for: 36.
 )
 (/usr/share/texlive/texmf-dist/tex/latex/booktabs/booktabs.sty
 Package: booktabs 2005/04/14 v1.61803 publication quality tables
-\heavyrulewidth=\dimen205
-\lightrulewidth=\dimen206
-\cmidrulewidth=\dimen207
-\belowrulesep=\dimen208
-\belowbottomsep=\dimen209
-\aboverulesep=\dimen210
-\abovetopsep=\dimen211
-\cmidrulesep=\dimen212
-\cmidrulekern=\dimen213
-\defaultaddspace=\dimen214
-\@cmidla=\count166
-\@cmidlb=\count167
-\@aboverulesep=\dimen215
-Normal \dimen register pool exhausted, switching to extended pool.
-\@belowrulesep=\dimen256
-\@thisruleclass=\count168
-\@lastruleclass=\count169
-\@thisrulewidth=\dimen257
+\heavyrulewidth=\dimen292
+\lightrulewidth=\dimen293
+\cmidrulewidth=\dimen294
+\belowrulesep=\dimen295
+\belowbottomsep=\dimen296
+\aboverulesep=\dimen297
+\abovetopsep=\dimen298
+\cmidrulesep=\dimen299
+\cmidrulekern=\dimen300
+\defaultaddspace=\dimen301
+\@cmidla=\count326
+\@cmidlb=\count327
+\@aboverulesep=\dimen302
+\@belowrulesep=\dimen303
+\@thisruleclass=\count328
+\@lastruleclass=\count329
+\@thisrulewidth=\dimen304
 )
 (/usr/share/texlive/texmf-dist/tex/latex/base/makeidx.sty
 Package: makeidx 2000/03/29 v1.0m Standard LaTeX package
@@ -1428,7 +1728,7 @@ Writing index file textbook.idx
 \answer@stream=\write5
 \openout5 = `textbook.ans'.
 
-\answercontent=\toks50
+\answercontent=\toks56
 (./textbook.aux
 
 LaTeX Warning: Label `def:limit' multiply defined.
@@ -1442,56 +1742,56 @@ LaTeX Warning: Label `thm:continuity of roots' multiply defined.
 )
 \openout1 = `textbook.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/jkp/m/it on input line 98.
-LaTeX Font Info:    Try loading font information for OML+jkp on input line 98.
+LaTeX Font Info:    Checking defaults for OML/jkp/m/it on input line 91.
+LaTeX Font Info:    Try loading font information for OML+jkp on input line 91.
  (/usr/share/texlive/texmf-dist/tex/latex/kpfonts/omljkp.fd
 File: omljkp.fd 2006/08/15 v1.0
 )
-LaTeX Font Info:    ... okay on input line 98.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 98.
-LaTeX Font Info:    ... okay on input line 98.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 98.
-LaTeX Font Info:    ... okay on input line 98.
-LaTeX Font Info:    Checking defaults for OMS/jkp/m/n on input line 98.
-LaTeX Font Info:    Try loading font information for OMS+jkp on input line 98.
+LaTeX Font Info:    ... okay on input line 91.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 91.
+LaTeX Font Info:    ... okay on input line 91.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 91.
+LaTeX Font Info:    ... okay on input line 91.
+LaTeX Font Info:    Checking defaults for OMS/jkp/m/n on input line 91.
+LaTeX Font Info:    Try loading font information for OMS+jkp on input line 91.
 
 (/usr/share/texlive/texmf-dist/tex/latex/kpfonts/omsjkp.fd
 File: omsjkp.fd 2006/08/15 v1.0
 )
-LaTeX Font Info:    ... okay on input line 98.
-LaTeX Font Info:    Checking defaults for OMX/jkp/m/n on input line 98.
-LaTeX Font Info:    Try loading font information for OMX+jkp on input line 98.
+LaTeX Font Info:    ... okay on input line 91.
+LaTeX Font Info:    Checking defaults for OMX/jkp/m/n on input line 91.
+LaTeX Font Info:    Try loading font information for OMX+jkp on input line 91.
 
 (/usr/share/texlive/texmf-dist/tex/latex/kpfonts/omxjkp.fd
 File: omxjkp.fd 2006/08/15 v1.0
 )
-LaTeX Font Info:    ... okay on input line 98.
-LaTeX Font Info:    Checking defaults for U/jkpexa/m/n on input line 98.
-LaTeX Font Info:    Try loading font information for U+jkpexa on input line 98.
+LaTeX Font Info:    ... okay on input line 91.
+LaTeX Font Info:    Checking defaults for U/jkpexa/m/n on input line 91.
+LaTeX Font Info:    Try loading font information for U+jkpexa on input line 91.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/kpfonts/ujkpexa.fd
 File: ujkpexa.fd 2006/08/15 v1.0
 )
-LaTeX Font Info:    ... okay on input line 98.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 98.
-LaTeX Font Info:    ... okay on input line 98.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 98.
-LaTeX Font Info:    ... okay on input line 98.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 98.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 98.
+LaTeX Font Info:    ... okay on input line 91.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 91.
+LaTeX Font Info:    ... okay on input line 91.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 91.
+LaTeX Font Info:    ... okay on input line 91.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 91.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 91.
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 98.
-LaTeX Font Info:    Try loading font information for T1+jkp on input line 98.
+LaTeX Font Info:    ... okay on input line 91.
+LaTeX Font Info:    Try loading font information for T1+jkp on input line 91.
 
 (/usr/share/texlive/texmf-dist/tex/latex/kpfonts/t1jkp.fd
 File: t1jkp.fd 2007/01/24 Fontinst v1.928 font definitions for T1/jkp.
 )
-\AtBeginShipoutBox=\box92
-Package hyperref Info: Link coloring OFF on input line 98.
+\AtBeginShipoutBox=\box105
+Package hyperref Info: Link coloring OFF on input line 91.
 
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2010/04/30 v2.40 Cross-referencing by name of section
@@ -1499,18 +1799,18 @@ Package: nameref 2010/04/30 v2.40 Cross-referencing by name of section
 (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
-\c@section@level=\count170
+\c@section@level=\count330
 )
-LaTeX Info: Redefining \ref on input line 98.
-LaTeX Info: Redefining \pageref on input line 98.
-LaTeX Info: Redefining \nameref on input line 98.
+LaTeX Info: Redefining \ref on input line 91.
+LaTeX Info: Redefining \pageref on input line 91.
+LaTeX Info: Redefining \nameref on input line 91.
 
 (./textbook.out) (./textbook.out)
 \@outlinefile=\write6
 \openout6 = `textbook.out'.
 
  ABD: EverySelectfont initializing macros
-LaTeX Info: Redefining \selectfont on input line 98.
+LaTeX Info: Redefining \selectfont on input line 91.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -1546,7 +1846,7 @@ LaTeX Info: Redefining \selectfont on input line 98.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-LaTeX Info: Redefining \microtypecontext on input line 98.
+LaTeX Info: Redefining \microtypecontext on input line 91.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
@@ -1558,19 +1858,18 @@ Package microtype Info: No adjustment of interword spacing.
 Package microtype Info: No adjustment of character kerning.
 (/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count171
-\scratchdimen=\dimen258
-\scratchbox=\box93
-\nofMPsegments=\count172
-\nofMParguments=\count173
-\everyMPshowfont=\toks51
-\MPscratchCnt=\count174
-\MPscratchDim=\dimen259
-\MPnumerator=\count175
-\makeMPintoPDFobject=\count176
-\everyMPtoPDFconversion=\toks52
-) ABD: EveryShipout initializing macros
-(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
+\scratchcounter=\count331
+\scratchdimen=\dimen305
+\scratchbox=\box106
+\nofMPsegments=\count332
+\nofMParguments=\count333
+\everyMPshowfont=\toks57
+\MPscratchCnt=\count334
+\MPscratchDim=\dimen306
+\MPnumerator=\count335
+\makeMPintoPDFobject=\count336
+\everyMPtoPDFconversion=\toks58
+) (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
 
 (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/grfext.sty
@@ -1585,11 +1884,12 @@ G,.JBIG2,.JB2,.eps]
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
+ABD: EveryShipout initializing macros
 ! Package pgfplots Warning: running in backwards compatibility mode (unsuitable
  tick labels; missing features). Consider writing \pgfplotsset{compat=1.7} into
  your preamble.
 
-LaTeX Font Info:    Try loading font information for T1+jkpss on input line 99.
+LaTeX Font Info:    Try loading font information for T1+jkpss on input line 92.
 
 (/usr/share/texlive/texmf-dist/tex/latex/kpfonts/t1jkpss.fd
 File: t1jkpss.fd 2007/07/16 Fontinst v1.928 font definitions for T1/jkpss.
@@ -1605,49 +1905,49 @@ Package microtype Info: Character `029' is missing
 
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-LaTeX Font Info:    Try loading font information for TS1+jkp on input line 109.
+LaTeX Font Info:    Try loading font information for TS1+jkp on input line 102.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/kpfonts/ts1jkp.fd
 File: ts1jkp.fd 2007/08/30 Fontinst v1.928 font definitions for TS1/jkp.
 )
-LaTeX Font Info:    Try loading font information for T1+jkptt on input line 114
+LaTeX Font Info:    Try loading font information for T1+jkptt on input line 107
 .
 
 (/usr/share/texlive/texmf-dist/tex/latex/kpfonts/t1jkptt.fd
 File: t1jkptt.fd 2007/01/26 Fontinst v1.928 font definitions for T1/jkptt.
 )
-LaTeX Font Info:    Try loading font information for OT1+jkp on input line 114.
+LaTeX Font Info:    Try loading font information for OT1+jkp on input line 107.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/kpfonts/ot1jkp.fd
 File: ot1jkp.fd 2007/08/30 Fontinst v1.928 font definitions for OT1/jkp.
 )
-LaTeX Font Info:    Try loading font information for OT1+zplm on input line 114
+LaTeX Font Info:    Try loading font information for OT1+zplm on input line 107
 .
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1zplm.fd
 File: ot1zplm.fd 2002/09/08 Fontinst v1.914 font definitions for OT1/zplm.
 )
-LaTeX Font Info:    Try loading font information for U+jkpsya on input line 114
+LaTeX Font Info:    Try loading font information for U+jkpsya on input line 107
 .
 
 (/usr/share/texlive/texmf-dist/tex/latex/kpfonts/ujkpsya.fd
 File: ujkpsya.fd 2006/08/15 v1.0
 )
-LaTeX Font Info:    Try loading font information for U+jkpsyb on input line 114
+LaTeX Font Info:    Try loading font information for U+jkpsyb on input line 107
 .
 
 (/usr/share/texlive/texmf-dist/tex/latex/kpfonts/ujkpsyb.fd
 File: ujkpsyb.fd 2006/08/15 v1.0
 )
-LaTeX Font Info:    Try loading font information for U+jkpmia on input line 114
+LaTeX Font Info:    Try loading font information for U+jkpmia on input line 107
 .
 
 (/usr/share/texlive/texmf-dist/tex/latex/kpfonts/ujkpmia.fd
 File: ujkpmia.fd 2006/08/15 v1.0
 )
-LaTeX Font Info:    Try loading font information for U+jkpsyc on input line 114
+LaTeX Font Info:    Try loading font information for U+jkpsyc on input line 107
 .
 
 (/usr/share/texlive/texmf-dist/tex/latex/kpfonts/ujkpsyc.fd
@@ -1698,32 +1998,52 @@ Overfull \hbox (32.96681pt too wide) in paragraph at lines 26--42
 
 LaTeX Warning: Marginpar on page 11 moved.
 
+Package mdframed Info: mdframed works in twoside mode on input line 70.
+Package hyperref Info: bookmark level for unknown definition defaults to 0 on i
+nput line 70.
 [11
 
-] [12]
-Overfull \hbox (32.96681pt too wide) in paragraph at lines 124--159
+]
+Overfull \hbox (32.96681pt too wide) in paragraph at lines 127--162
  [] 
  []
 
 
-LaTeX Warning: Marginpar on page 13 moved.
+LaTeX Warning: Marginpar on page 12 moved.
 
+Package mdframed Info: mdframed works in twoside mode on input line 167.
+Package hyperref Info: bookmark level for unknown example defaults to 0 on inpu
+t line 168.
+Package mdframed Info: mdframed works in twoside mode on input line 174.
+Package hyperref Info: bookmark level for unknown solution defaults to 0 on inp
+ut line 175.
 
-Underfull \hbox (badness 10000) in paragraph at lines 179--184
+LaTeX Warning: Reference `plot:greatist-integer' on page 12 undefined on input 
+line 191.
 
- []
+Package mdframed Info: mdframed inside a box 
+ mdframed uses option nobreak mdframed on input line 194.
+[12]
+Package mdframed Info: mdframed works in twoside mode on input line 201.
+Package mdframed Info: mdframed works in twoside mode on input line 208.
+Package mdframed Info: mdframed inside a box 
+ mdframed uses option nobreak mdframed on input line 217.
 
-
-Overfull \hbox (36.19804pt too wide) in paragraph at lines 218--235
+Overfull \hbox (36.19804pt too wide) in paragraph at lines 219--236
  [] 
  []
 
-[13]
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [13]
 
 LaTeX Warning: Marginpar on page 14 moved.
 
+Package mdframed Info: mdframed works in twoside mode on input line 246.
+Package mdframed Info: mdframed works in twoside mode on input line 267.
 
-Underfull \hbox (badness 10000) in paragraph at lines 368--368
+Underfull \hbox (badness 10000) in paragraph at lines 369--369
 
  []
 
@@ -1731,80 +2051,176 @@ Underfull \hbox (badness 10000) in paragraph at lines 368--368
 
 Package amsmath Warning: Foreign command \over;
 (amsmath)                \frac or \genfrac should be used instead
-(amsmath)                 on input line 368.
+(amsmath)                 on input line 369.
 
 [15]
 
 LaTeX Warning: Marginpar on page 16 moved.
 
 
-Overfull \hbox (51.008pt too wide) in paragraph at lines 392--418
+Overfull \hbox (51.008pt too wide) in paragraph at lines 393--419
  []
  []
 
 
 LaTeX Warning: Marginpar on page 16 moved.
 
-[16] [17] [18]
-Underfull \hbox (badness 10000) in paragraph at lines 592--592
-
- []
-
-[19]
-Overfull \hbox (1.59999pt too wide) in paragraph at lines 616--616
- [][] 
- []
-
-
-Underfull \vbox (badness 10000) detected at line 637
- []
-
+Package mdframed Info: mdframed works in twoside mode on input line 421.
+Package mdframed Info: mdframed works in twoside mode on input line 423.
+Package mdframed Info: mdframed inside a box 
+ mdframed uses option nobreak mdframed on input line 445.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [20]
-Underfull \vbox (badness 10000) detected at line 662
- []
+ [16]
+Package mdframed Info: mdframed works in twoside mode on input line 464.
+Package hyperref Info: bookmark level for unknown theorem defaults to 0 on inpu
+t line 465.
+Package mdframed Info: mdframed works in twoside mode on input line 471.
+Package hyperref Info: bookmark level for unknown proof defaults to 0 on input 
+line 472.
 
+
+! LaTeX Error: Not in outer par mode.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.491 ...ny real numbers then $|a+b|\le |a|+|b|$.}
+                                                  
+? 
+
+! LaTeX Error: Not in outer par mode.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.491 ...ny real numbers then $|a+b|\le |a|+|b|$.}
+                                                  
+? 
+Package mdframed Info: Box was splittet wrong
+(mdframed)              on input line 524.
+[17]
+Package mdframed Info: mdframed works in twoside mode on input line 536.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [21]
-Underfull \hbox (badness 10000) in paragraph at lines 753--753
+ [18]
+Package mdframed Info: Not enough space on this page on input line 539.
+Package mdframed Info: mdframed works in twoside mode on input line 546.
+
+Underfull \hbox (badness 10000) in paragraph at lines 593--593
 
  []
 
-[22] [23]) (./infinityAndContinuity.tex [24
+[19] [20]
+Package mdframed Info: mdframed works in twoside mode on input line 602.
+Package hyperref Info: bookmark level for unknown mainTheorem defaults to 0 on 
+input line 602.
+Package mdframed Info: mdframed works in twoside mode on input line 626.
 
-]
+Overfull \vbox (163.71907pt too high) detected at line 638
+ []
+
+Package mdframed Info: Box was splittet wrong
+(mdframed)              on input line 638.
+
+Overfull \vbox (252.27864pt too high) detected at line 638
+ []
+
+
+Overfull \vbox (182.11916pt too high) detected at line 638
+ []
+
+Package mdframed Info: Box was splittet wrong
+(mdframed)              on input line 638.
+
+Overfull \vbox (279.87877pt too high) detected at line 638
+ []
+
+
+Overfull \vbox (200.51924pt too high) detected at line 638
+ []
+
+Package mdframed Info: Box was splittet wrong
+(mdframed)              on input line 638.
+
+Overfull \vbox (307.4789pt too high) detected at line 638
+ []
+
+
+Overfull \vbox (218.91933pt too high) detected at line 638
+ []
+
+Package mdframed Info: Box was splittet wrong
+(mdframed)              on input line 638.
+
+Overfull \vbox (335.07903pt too high) detected at line 638
+ []
+
+[21]
+Package mdframed Info: mdframed works in twoside mode on input line 654.
+
+Overfull \vbox (71.02074pt too high) detected at line 663
+ []
+
+Package mdframed Info: Box was splittet wrong
+(mdframed)              on input line 663.
+
+Overfull \vbox (113.23114pt too high) detected at line 663
+ []
+
+[22]
+Package mdframed Info: mdframed works in twoside mode on input line 668.
+
+Underfull \hbox (badness 10000) in paragraph at lines 754--754
+
+ []
+
+[23] [24]) (./infinityAndContinuity.tex
 Chapter 2.
 
 LaTeX Warning: Reference `fig:function types' on page 25 undefined on input lin
 e 33.
 
-[25]
+[25
+
+]
 
 LaTeX Warning: Reference `fig:function types' on page 26 undefined on input lin
 e 140.
 
-[26]
-Overfull \hbox (1.59999pt too wide) in paragraph at lines 196--196
- [] 
- []
+Package mdframed Info: mdframed works in twoside mode on input line 153.
+Package mdframed Info: mdframed works in twoside mode on input line 171.
+Package mdframed Info: mdframed works in twoside mode on input line 176.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [26]
+Package mdframed Info: Not enough space on this page on input line 178.
+Package mdframed Info: mdframed works in twoside mode on input line 192.
 
 
 LaTeX Warning: Marginpar on page 27 moved.
 
+Package mdframed Info: mdframed works in twoside mode on input line 207.
+Package mdframed Info: mdframed works in twoside mode on input line 218.
 
 Underfull \hbox (badness 10000) in paragraph at lines 275--275
 
  []
 
 
-LaTeX Warning: Reference `fig:function types' on page 27 undefined on input lin
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [27]
+
+LaTeX Warning: Reference `fig:function types' on page 28 undefined on input lin
 e 275.
 
-[27] [28]) (./chapter01.tex
+[28]) (./chapter01.tex
 Chapter 3.
 
 LaTeX Warning: Marginpar on page 29 moved.
@@ -1816,6 +2232,8 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 ]
 (./section01.01.tex
+Package mdframed Info: mdframed works in twoside mode on input line 15.
+
 
 LaTeX Warning: Reference `fig:irs' on page 30 undefined on input line 36.
 
@@ -1825,6 +2243,8 @@ LaTeX Warning: Reference `fig:graphs of lines' on page 31 undefined on input li
 ne 106.
 
 [31]
+Package mdframed Info: mdframed works in twoside mode on input line 203.
+
 Underfull \hbox (badness 10000) in paragraph at lines 440--440
 
  []
@@ -1851,12 +2271,19 @@ p/m/n/10 (-20) and $\OML/jkp/m/it/10 B \OT1/zplm/m/n/10 = (\OT1/jkp/m/n/10 (-20
 ) 3, 3\OT1/zplm/m/n/10 )$ \T1/jkp/m/n/10 (-20) is $[] \OT1/zplm/m/n/10 =
  []
 
+Package mdframed Info: mdframed works in twoside mode on input line 66.
 
+Package mdframed Warning: You got a bad break
+(mdframed)                you have to change it manually
+(mdframed)                by changing the text, the space
+(mdframed)                or something else on input line 70.
+
+[36]
 Underfull \hbox (badness 10000) in paragraph at lines 139--139
 
  []
 
-[36] [37]) (./section01.03.tex
+[37]) (./section01.03.tex
 
 LaTeX Warning: Reference `fig:some graphs' on page 38 undefined on input line 2
 9.
@@ -1871,14 +2298,25 @@ LaTeX Warning: Reference `fig:some graphs' on page 38 undefined on input line 9
 4.
 
 [38]
+Package mdframed Info: mdframed works in twoside mode on input line 147.
+
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [39]
+Package mdframed Info: Not enough space on this page on input line 175.
+Package mdframed Info: mdframed works in twoside mode on input line 177.
+
 
 LaTeX Warning: Reference `fig:upper semicircle' on page 40 undefined on input l
 ine 186.
 
-[40]
+Package mdframed Info: mdframed works in twoside mode on input line 208.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [40]
+Package mdframed Info: Not enough space on this page on input line 238.
+
 
 LaTeX Warning: Reference `fig:piecewise velocity' on page 41 undefined on input
  line 250.
@@ -1891,7 +2329,14 @@ Underfull \hbox (badness 10000) in paragraph at lines 354--354
 
  []
 
-[42] [43]) (./section01.04.tex [44] [45]
+[42] [43]) (./section01.04.tex
+Package mdframed Info: mdframed works in twoside mode on input line 33.
+Package hyperref Info: bookmark level for unknown warning defaults to 0 on inpu
+t line 34.
+Package mdframed Info: mdframed works in twoside mode on input line 39.
+ [44]
+Package mdframed Info: mdframed works in twoside mode on input line 86.
+ [45]
 
 LaTeX Warning: Reference `fig:ellipses' on page 46 undefined on input line 121.
 
@@ -1905,14 +2350,19 @@ Underfull \hbox (badness 10000) in paragraph at lines 206--206
 
 ]
 Chapter 4.
-(./section02.01.tex [49]
+(./section02.01.tex
+Package mdframed Info: mdframed works in twoside mode on input line 9.
+Package mdframed Info: Box was splittet wrong
+(mdframed)              on input line 37.
+Package mdframed Info: Box was splittet wrong
+(mdframed)              on input line 37.
+Package mdframed Info: Box was splittet wrong
+(mdframed)              on input line 37.
+ [49]
 
 LaTeX Warning: Reference `fig:chords' on page 50 undefined on input line 55.
 
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [50]
+[50]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [51]
@@ -1930,68 +2380,320 @@ Underfull \hbox (badness 10000) in paragraph at lines 143--143
 
  []
 
-[57] [58]) (./section02.03.tex [59] [60] [61] [62] [63] [64] [65] [66]
-Underfull \vbox (badness 10000) detected at line 413
+[57] [58]) (./section02.03.tex
+Package mdframed Info: mdframed works in twoside mode on input line 29.
+
+
+Package mdframed Warning: You got a bad break
+(mdframed)                you have to change it manually
+(mdframed)                by changing the text, the space
+(mdframed)                or something else on input line 50.
+
+[59] [60]
+Package mdframed Info: mdframed works in twoside mode on input line 130.
+Package mdframed Info: Not enough space on this page on input line 138.
+ [61]
+Package mdframed Info: Not enough space on this page on input line 138.
+
+! Undefined control sequence.
+l.171 \exam
+           \relax
+? 
+[62]
+Package mdframed Info: mdframed works in twoside mode on input line 192.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [63]
+Package mdframed Info: mdframed works in twoside mode on input line 248.
+Package mdframed Info: mdframed works in twoside mode on input line 253.
+
+! Undefined control sequence.
+l.271 \index{triangle inequality}\pagerdef
+                                          {page:triangle inequality}},
+? 
+Package mdframed Info: Box was splittet wrong
+(mdframed)              on input line 305.
+Package mdframed Info: Box was splittet wrong
+(mdframed)              on input line 305.
+Package mdframed Info: Box was splittet wrong
+(mdframed)              on input line 305.
+[64]
+Package mdframed Info: mdframed works in twoside mode on input line 310.
+
+Overfull \vbox (96.32204pt too high) detected at line 321
  []
 
+Package mdframed Info: Box was splittet wrong
+(mdframed)              on input line 321.
+
+Overfull \vbox (151.18309pt too high) detected at line 321
+ []
+
+
+Overfull \vbox (114.72212pt too high) detected at line 321
+ []
+
+Package mdframed Info: Box was splittet wrong
+(mdframed)              on input line 321.
+
+Overfull \vbox (178.78322pt too high) detected at line 321
+ []
+
+[65]
+Package mdframed Info: mdframed works in twoside mode on input line 329.
+
+Overfull \vbox (2.2196pt too high) detected at line 342
+ []
+
+Package mdframed Info: Box was splittet wrong
+(mdframed)              on input line 342.
+
+Overfull \vbox (10.02945pt too high) detected at line 342
+ []
+
+
+Overfull \vbox (20.61969pt too high) detected at line 342
+ []
+
+Package mdframed Info: Box was splittet wrong
+(mdframed)              on input line 342.
+
+Overfull \vbox (37.62958pt too high) detected at line 342
+ []
+
+
+Overfull \vbox (39.01978pt too high) detected at line 342
+ []
+
+Package mdframed Info: Box was splittet wrong
+(mdframed)              on input line 342.
+
+Overfull \vbox (65.2297pt too high) detected at line 342
+ []
+
+
+Overfull \vbox (57.41986pt too high) detected at line 342
+ []
+
+Package mdframed Info: Box was splittet wrong
+(mdframed)              on input line 342.
+
+Overfull \vbox (92.82983pt too high) detected at line 342
+ []
+
+
+Overfull \vbox (75.81995pt too high) detected at line 342
+ []
+
+Package mdframed Info: Box was splittet wrong
+(mdframed)              on input line 342.
+
+Overfull \vbox (120.42996pt too high) detected at line 342
+ []
+
+
+Overfull \vbox (94.22003pt too high) detected at line 342
+ []
+
+Package mdframed Info: Box was splittet wrong
+(mdframed)              on input line 342.
+
+Overfull \vbox (148.03009pt too high) detected at line 342
+ []
+
+
+Overfull \vbox (112.62012pt too high) detected at line 342
+ []
+
+Package mdframed Info: Box was splittet wrong
+(mdframed)              on input line 342.
+
+Overfull \vbox (175.63022pt too high) detected at line 342
+ []
+
+
+Overfull \vbox (131.0202pt too high) detected at line 342
+ []
+
+Package mdframed Info: Box was splittet wrong
+(mdframed)              on input line 342.
+
+Overfull \vbox (203.23035pt too high) detected at line 342
+ []
+
+
+Overfull \vbox (149.42029pt too high) detected at line 342
+ []
+
+Package mdframed Info: Box was splittet wrong
+(mdframed)              on input line 342.
+
+Overfull \vbox (230.83047pt too high) detected at line 342
+ []
+
+
+Overfull \vbox (167.82037pt too high) detected at line 342
+ []
+
+Package mdframed Info: Box was splittet wrong
+(mdframed)              on input line 342.
+
+Overfull \vbox (258.4306pt too high) detected at line 342
+ []
+
+
+Overfull \vbox (186.22046pt too high) detected at line 342
+ []
+
+Package mdframed Info: Box was splittet wrong
+(mdframed)              on input line 342.
+
+Overfull \vbox (286.03073pt too high) detected at line 342
+ []
+
+
+Overfull \vbox (204.62054pt too high) detected at line 342
+ []
+
+Package mdframed Info: Box was splittet wrong
+(mdframed)              on input line 342.
+
+Overfull \vbox (313.63086pt too high) detected at line 342
+ []
+
+
+Overfull \vbox (223.02063pt too high) detected at line 342
+ []
+
+Package mdframed Info: Box was splittet wrong
+(mdframed)              on input line 342.
+
+Overfull \vbox (341.23099pt too high) detected at line 342
+ []
+
+
+Overfull \vbox (241.42072pt too high) detected at line 342
+ []
+
+Package mdframed Info: Box was splittet wrong
+(mdframed)              on input line 342.
+
+Overfull \vbox (368.83112pt too high) detected at line 342
+ []
+
+
+Overfull \vbox (259.8208pt too high) detected at line 342
+ []
+
+Package mdframed Info: Box was splittet wrong
+(mdframed)              on input line 342.
+
+Overfull \vbox (396.43124pt too high) detected at line 342
+ []
+
+
+Overfull \vbox (278.22089pt too high) detected at line 342
+ []
+
+Package mdframed Info: Box was splittet wrong
+(mdframed)              on input line 342.
+
+Overfull \vbox (424.03137pt too high) detected at line 342
+ []
+
+[66]
+Package mdframed Info: mdframed works in twoside mode on input line 357.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [67]
-[68]
-Underfull \hbox (badness 10000) in paragraph at lines 567--567
-
- []
-
-[69]
-Underfull \hbox (badness 10000) in paragraph at lines 567--567
-
- []
-
-[70]) (./section02.04.tex [71]
-Underfull \vbox (badness 10000) detected at line 91
- []
-
+Package mdframed Info: mdframed works in twoside mode on input line 381.
+Package mdframed Info: mdframed works in twoside mode on input line 391.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [72]
-[73]
+ [68]
+Package mdframed Info: Not enough space on this page on input line 395.
+Package mdframed Info: mdframed works in twoside mode on input line 402.
 
-LaTeX Warning: Reference `fig:cusp' on page 74 undefined on input line 136.
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [69]
+Package mdframed Info: mdframed works in twoside mode on input line 429.
+Package mdframed Info: mdframed works in twoside mode on input line 440.
+
+Underfull \hbox (badness 10000) in paragraph at lines 567--567
+
+ []
+
+[70]
+Underfull \hbox (badness 10000) in paragraph at lines 567--567
+
+ []
+
+[71]) (./section02.04.tex [72]
+Package mdframed Info: mdframed works in twoside mode on input line 59.
+Package mdframed Info: mdframed works in twoside mode on input line 75.
+ [73]
+Package mdframed Info: mdframed works in twoside mode on input line 112.
+ [74]
+Package mdframed Info: mdframed works in twoside mode on input line 133.
+
+
+LaTeX Warning: Reference `fig:cusp' on page 75 undefined on input line 136.
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 285--285
 
  []
 
-[74] [75]) (./section02.05.tex
+[75] [76]) (./section02.05.tex
 
-LaTeX Warning: Reference `fig:function types' on page 76 undefined on input lin
+LaTeX Warning: Reference `fig:function types' on page 77 undefined on input lin
 e 9.
 
 
-LaTeX Warning: Reference `fig:function types' on page 76 undefined on input lin
+LaTeX Warning: Reference `fig:function types' on page 77 undefined on input lin
 e 114.
 
+Package mdframed Info: mdframed works in twoside mode on input line 127.
+Package mdframed Info: mdframed works in twoside mode on input line 145.
 
-Underfull \vbox (badness 5970) has occurred while \output is active []
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [76]
-[77]
+ [77]
+Package mdframed Info: Not enough space on this page on input line 147.
+Package mdframed Info: mdframed works in twoside mode on input line 150.
+Package mdframed Info: mdframed works in twoside mode on input line 168.
+Package mdframed Info: mdframed works in twoside mode on input line 172.
+Package mdframed Info: mdframed works in twoside mode on input line 186.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [78]
+Package mdframed Info: mdframed works in twoside mode on input line 195.
+Package mdframed Info: mdframed works in twoside mode on input line 206.
+
 Underfull \hbox (badness 10000) in paragraph at lines 262--262
 
  []
 
 
-LaTeX Warning: Reference `fig:function types' on page 78 undefined on input lin
+LaTeX Warning: Reference `fig:function types' on page 79 undefined on input lin
 e 262.
 
-[78] [79])) (./chapter03.tex [80
+[79] [80])) (./chapter03.tex
+Chapter 5.
+(./section03.01.tex
+Package mdframed Info: mdframed works in twoside mode on input line 22.
+ [81
 
 ]
-Chapter 5.
-(./section03.01.tex [81] [82] [83]
+Package mdframed Info: Not enough space on this page on input line 33.
+ [82]
+Package mdframed Info: mdframed works in twoside mode on input line 77.
+ [83]
 Underfull \hbox (badness 10000) in paragraph at lines 148--148
 
  []
@@ -2000,7 +2702,9 @@ Underfull \hbox (badness 10000) in paragraph at lines 148--148
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [85]
-Overfull \hbox (14.87491pt too wide) detected at line 59
+Package mdframed Info: mdframed works in twoside mode on input line 55.
+
+Overfull \hbox (24.2749pt too wide) detected at line 59
 \OML/jkp/m/it/10 f[]\OT1/zplm/m/n/10 (\OML/jkp/m/it/10 x\OT1/zplm/m/n/10 ) = []
 (\OML/jkp/m/it/10 x[] \OT1/zplm/m/n/10 + \OT1/jkp/m/n/10 5\OML/jkp/m/it/10 x[]\
 OT1/zplm/m/n/10 ) = []\OML/jkp/m/it/10 x[] \OT1/zplm/m/n/10 + [](\OT1/jkp/m/n/1
@@ -2012,12 +2716,17 @@ OT1/jkp/m/n/10 5 \OMS/jkp/m/n/10 ^^A \OT1/jkp/m/n/10 2\OML/jkp/m/it/10 x[] \OT1
 p/m/n/10 10\OML/jkp/m/it/10 x\OT1/jkp/m/n/10 .
  []
 
+Package mdframed Info: mdframed works in twoside mode on input line 66.
 
 Underfull \hbox (badness 10000) in paragraph at lines 144--144
 
  []
 
-[86] [87]) (./section03.03.tex
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [86]
+[87]) (./section03.03.tex
 Overfull \hbox (3.14566pt too wide) in paragraph at lines 32--32
 [] 
  []
@@ -2026,6 +2735,8 @@ Overfull \hbox (3.14566pt too wide) in paragraph at lines 32--32
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [88]
+Package mdframed Info: mdframed works in twoside mode on input line 93.
+
 Underfull \hbox (badness 10000) in paragraph at lines 178--178
 
  []
@@ -2037,17 +2748,41 @@ OT1/zplm/m/n/10 )[] + \OML/jkp/m/it/10 f[]\OT1/zplm/m/n/10 (\OML/jkp/m/it/10 x\
 OT1/zplm/m/n/10 )[] = [] = []\OT1/jkp/m/n/10 .
  []
 
+Package mdframed Info: mdframed works in twoside mode on input line 28.
+Package mdframed Info: mdframed works in twoside mode on input line 42.
 [92] [93]
 Underfull \hbox (badness 10000) in paragraph at lines 165--165
 
  []
 
-[94]) (./section03.05.tex [95] [96] [97] [98]
+[94]) (./section03.05.tex
+Package mdframed Info: mdframed works in twoside mode on input line 19.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [95]
+Package mdframed Info: mdframed works in twoside mode on input line 80.
+Package mdframed Info: Not enough space on this page on input line 92.
+
+[96]
+Package mdframed Info: Not enough space on this page on input line 92.
+Package mdframed Info: mdframed works in twoside mode on input line 94.
+Package mdframed Info: mdframed works in twoside mode on input line 109.
+ [97]
+Package mdframed Info: mdframed works in twoside mode on input line 137.
+Package mdframed Info: Box was splittet wrong
+(mdframed)              on input line 160.
+ [98]
+Package mdframed Info: mdframed works in twoside mode on input line 165.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [99]
 Underfull \hbox (badness 10000) in paragraph at lines 364--364
 
  []
 
-[99] [100]
+[100]
 Overfull \hbox (22.39006pt too wide) in paragraph at lines 364--364
 []\T1/jkp/m/n/10 (-20) Find an equa-tion for the tan-gent line to $[]$ at $\OT1
 /zplm/m/n/10 (\OT1/jkp/m/n/10 (-20) 1, []\OT1/zplm/m/n/10 )$\T1/jkp/m/n/10 (-20
@@ -2067,11 +2802,11 @@ Underfull \hbox (badness 10000) in paragraph at lines 364--364
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.205 
+l.198 
       
 ? 
 
-Overfull \hbox (49.10059pt too wide) in paragraph at lines 127--205
+Overfull \hbox (49.10059pt too wide) in paragraph at lines 127--198
 \T1/jkp/m/n/10 (-20) 1. $[] \OMS/jkp/m/n/10 ^^@ []$ \T1/jkp/m/n/10 (-20) 2. $[]
  \OMS/jkp/m/n/10 ^^@ []$
  []
@@ -2082,12 +2817,15 @@ Package bibentry Warning: You have used \nobibliography*
 (bibentry)                without a following \bibliography.
 (bibentry)                You may not be able to run BibTeX.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 209.
+\tf@thm=\write10
+\openout10 = `textbook.thm'.
+
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 202.
 [105]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 209.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 202.
  (./textbook.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 209.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 209.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 202.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 202.
 Package rerunfilecheck Info: File `textbook.out' has not changed.
 (rerunfilecheck)             Checksum: E2F825F056F7255B6A55A0ABD16E9789;3780.
 
@@ -2097,16 +2835,16 @@ LaTeX Warning: There were undefined references.
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 209.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 202.
  ) 
 Here is how much of TeX's memory you used:
- 31852 strings out of 493481
- 651275 string characters out of 3143393
- 1323494 words of memory out of 3000000
- 33429 multiletter control sequences out of 15000+200000
- 299315 words of font info for 599 fonts, out of 3000000 for 9000
+ 38024 strings out of 493481
+ 762611 string characters out of 3143393
+ 1429214 words of memory out of 3000000
+ 39361 multiletter control sequences out of 15000+200000
+ 317969 words of font info for 661 fonts, out of 3000000 for 9000
  965 hyphenation exceptions out of 8191
- 73i,13n,91p,727b,2019s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 80i,13n,91p,973b,2014s stack positions out of 5000i,500n,10000p,200000b,50000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/kpfonts/kpfonts-expert.enc}{/u
 sr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texlive/tex
 mf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dis
@@ -2131,10 +2869,10 @@ e1/public/kpfonts/jkpssmsc8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
 lic/kpfonts/jkpsy.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/kpfonts
 /jkpsyc.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/kpfonts/jkpttmn8a
 .pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb>
-Output written on textbook.pdf (105 pages, 513028 bytes).
+Output written on textbook.pdf (105 pages, 534186 bytes).
 PDF statistics:
- 1064 PDF objects out of 1200 (max. 8388607)
- 901 compressed objects within 10 object streams
- 385 named destinations out of 1000 (max. 500000)
- 81205 words of extra memory for PDF output out of 89155 (max. 10000000)
+ 1147 PDF objects out of 1200 (max. 8388607)
+ 984 compressed objects within 10 object streams
+ 456 named destinations out of 1000 (max. 500000)
+ 82741 words of extra memory for PDF output out of 89155 (max. 10000000)
 

@@ -52,25 +52,18 @@
 \makeatother
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%\newenvironment{example}{\subsection*{Example}}{}
 \newenvironment{lemma}{\subsection*{Lemma}}{}
 \newenvironment{remark}[1]{\subsection*{Remark: #1}}{}
 
-\def\beginpicture{\null}
+%\def\beginpicture{\null}
 
-%\usepackage{amsthm}
-%\newtheorem{theorem}{Theorem}[section]
-%\theoremstyle{definition}
-%\newtheorem{definition}[theorem]{Definition}
-
-
-\def\exam{\null}
-\def\pagerdef{\null}
+%\def\exam{\null}
+%\def\pagerdef{\null}
 
 \def\dfont{\bf}
 \def\em{\it}           % for emphasis
 
-\let\ds\displaystyle
+\newcommand{\ds}{\displaystyle}
 
 \let\ssk\smallskip \let\msk\medskip \let\bsk\bigskip
 
@@ -81,19 +74,19 @@
 \title{Calculus}
 \author{Jim Fowler and Bart Snapp}
 
-\newcommand{\blankpage}{\newpage\hbox{}\thispagestyle{empty}\newpage}
+%\newcommand{\blankpage}{\newpage\hbox{}\thispagestyle{empty}\newpage}
 
-% Prints an epigraph and speaker in sans serif, all-caps type.
-\newcommand{\openepigraph}[2]{%
-  %\sffamily\fontsize{14}{16}\selectfont
-  \begin{fullwidth}
-  \sffamily\large
-  \begin{doublespace}
-  \noindent\allcaps{#1}\\% epigraph
-  \noindent\allcaps{#2}% author
-  \end{doublespace}
-  \end{fullwidth}
-}
+%% % Prints an epigraph and speaker in sans serif, all-caps type.
+%% \newcommand{\openepigraph}[2]{%
+%%   %\sffamily\fontsize{14}{16}\selectfont
+%%   \begin{fullwidth}
+%%   \sffamily\large
+%%   \begin{doublespace}
+%%   \noindent\allcaps{#1}\\% epigraph
+%%   \noindent\allcaps{#2}% author
+%%   \end{doublespace}
+%%   \end{fullwidth}
+%% }
 
 \begin{document}
 \maketitle

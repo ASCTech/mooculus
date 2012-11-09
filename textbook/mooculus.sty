@@ -4,10 +4,6 @@
 \ProcessOptions\relax
 
 
-%% need to install mdframed!!! NEED TeXLive 2012! (Ubuntu comes with 2009)
-%% the tcolorbox package is interesting...
-
-
 
 %% Colors
 \usepackage[usenames,dvipsnames]{xcolor}
@@ -27,6 +23,7 @@
 \colorlet{definitionBackground}{Sepia} % Color of the background of a definition
 \colorlet{theoremBackground}{BrickRed} % Color of the background of a theorem
 \colorlet{mainTheoremBorder}{Sepia} % Color of the border of a main theorem
+\colorlet{warningBackground}{BrickRed} % Color of the background of a theorem
 \colorlet{cowLight}{background} % the light colors of the cow --
                                 % usually the same as the background
 \colorlet{cowDark}{textColor} % the dark colors of the cow -- usually
@@ -74,13 +71,13 @@
 \color{textColor} 
 
 
-%\RequirePackage[tikz]{mdframed}
+\RequirePackage[framemethod=TikZ]{mdframed}
 \RequirePackage{environ}
 %\RequirePackage{xkeyval}
 \RequirePackage{tikz}
 \RequirePackage{amssymb}
 \RequirePackage{amsmath}
-\RequirePackage{amsthm}
+\RequirePackage{ntheorem}
 \RequirePackage{microtype}
 \RequirePackage{enumerate}
 
@@ -95,7 +92,7 @@
 
 \renewcommand{\epsilon}{\varepsilon}
 
-\geometry{landscape,
+\geometry{landscape, 
   left=1in,
   top=1in,
   textheight=6.5in,
@@ -104,55 +101,106 @@
   marginparwidth=2.5in}
 
  
-\NewEnviron{mainTheorem}[1][Theorem]{%
-  \begin{center}
-    \begin{tikzpicture}
-      \node[rectangle,rounded corners,inner sep=5pt,minimum width=\textwidth,
-        text=textColor, text opacity=1,draw=mainTheoremBorder, ultra thick, draw opacity=1,
-        fill=theoremBackground, fill opacity=.1] 
-      (box){%
-        \begin{minipage}{.95\textwidth}
-          \textbf{#1}\qquad\color{textColor}\BODY
-      \end{minipage}};
-    \end{tikzpicture}
-  \end{center}
-}
+%% \NewEnviron{mainTheorem}[1][Theorem]{%
+%%   \begin{center}
+%%     \begin{tikzpicture}
+%%       \node[rectangle,rounded corners,inner sep=5pt,minimum width=\textwidth,
+%%         text=textColor, text opacity=1,draw=mainTheoremBorder, ultra thick, draw opacity=1,
+%%         fill=theoremBackground, fill opacity=.1] 
+%%       (box){%
+%%         \begin{minipage}{.95\textwidth}
+%%           \textbf{#1}\qquad\color{textColor}\BODY
+%%       \end{minipage}};
+%%     \end{tikzpicture}
+%%   \end{center}
+%% }
 
-%% \newmdtheoremenv[outerlinewidth=2pt,leftmargin=40pt,%  %%%% needs mdtheorem
-%%   rightmargin=40pt,backgroundcolor=theoremBackground,%
-%%   outerlinecolor=textColor,innertopmargin=\topskip,%
-%%   splittopskip=\topskip,skipbelow=\baselineskip,%
-%%   skipabove=\baselineskip,ntheorem]{theorem}%
-%%                 {Theorem}[section]
 
-\NewEnviron{theorem}[1][Theorem]{%
-  \begin{center}
-    \begin{tikzpicture}
-      \node[rectangle,rounded corners,inner sep=5pt,minimum width=\textwidth,
-        text=textColor, text opacity=1,
-        %draw=gray, ultra thick, draw opacity=1,
-        fill=theoremBackground, fill opacity=.1] 
-      (box){%
-        \begin{minipage}{.95\textwidth}
-          \textbf{#1}\qquad\color{textColor}\BODY
-      \end{minipage}};
-    \end{tikzpicture}
-  \end{center}
-}
+\newmdtheoremenv[outerlinewidth=2,leftmargin=40,%
+rightmargin=40,backgroundcolor=theoremBackground!10,fontcolor=textColor,%
+outerlinecolor=mainTheoremBorder,innertopmargin=\topskip,roundcorner=10pt,%
+splittopskip=\topskip,skipbelow=\baselineskip,%
+skipabove=\baselineskip,ntheorem]{mainTheorem}%
+{Theorem}[section]
 
-\NewEnviron{definition}{%
-  \begin{center}
-    \begin{tikzpicture}
-      \node[rectangle, rounded corners,inner sep=5pt,minimum width=\textwidth,
-        text=textColor, text opacity=1,
-        fill=definitionBackground, fill opacity=.1] 
-      (box){%
-        \begin{minipage}{.95\textwidth}
-          \textbf{Definition}\qquad\color{textColor}\BODY
-      \end{minipage}};
-    \end{tikzpicture}
-  \end{center}
-}
+
+\newmdtheoremenv[hidealllines=true,roundcorner=10pt,leftmargin=40,%
+rightmargin=40,backgroundcolor=theoremBackground!10,fontcolor=textColor,%%
+innertopmargin=\topskip,%
+splittopskip=\topskip,skipbelow=\baselineskip,%
+skipabove=\baselineskip,ntheorem]{theorem}%
+{Theorem}[section]
+
+
+\newmdtheoremenv[outerlinewidth=2,topline=false, bottomline=false, leftline=true, rightline=false, leftmargin=40,%
+rightmargin=40,fontcolor=textColor,backgroundcolor=background,%%
+outerlinecolor=textColor,innertopmargin=0pt, innerbottommargin=0pt,%
+skipbelow=\baselineskip,%
+skipabove=\baselineskip,ntheorem]{example}%
+{Example}[section]
+
+\theoremstyle{nonumberplain}
+\newmdtheoremenv[hidealllines=true,roundcorner=10pt,leftmargin=40,%
+rightmargin=40,backgroundcolor=definitionBackground!10,fontcolor=textColor,%%
+innertopmargin=\topskip,%
+splittopskip=\topskip,skipbelow=\baselineskip,%
+skipabove=\baselineskip,ntheorem]{definition}%
+{Defintion}
+
+\newmdtheoremenv[outerlinewidth=2,topline=false, bottomline=false, leftline=false, rightline=true, leftmargin=40,%
+outerlinecolor=textColor,innertopmargin=0pt,innerbottommargin=0pt,%
+fontcolor=textColor,ntheorem]{solution}%
+{Solution}
+
+
+\newmdtheoremenv[outerlinewidth=2,leftmargin=40,%
+rightmargin=40,backgroundcolor=yellow,fontcolor=textColor,%%
+outerlinecolor=blue,innertopmargin=\topskip,%
+splittopskip=\topskip,skipbelow=\baselineskip,%
+skipabove=\baselineskip]{proof}%
+{Proof}[section]
+
+
+
+\newmdtheoremenv[hidealllines=true,leftmargin=40,%
+rightmargin=40,backgroundcolor=red!10,%
+outerlinecolor=blue,innertopmargin=\topskip,%
+splittopskip=\topskip,skipbelow=\baselineskip,%
+skipabove=\baselineskip,ntheorem]{warning}%
+{Warning}
+
+
+
+
+
+%% \NewEnviron{theorem}[1][Theorem]{%
+%%   \begin{center}
+%%     \begin{tikzpicture}
+%%       \node[rectangle,rounded corners,inner sep=5pt,minimum width=\textwidth,
+%%         text=textColor, text opacity=1,
+%%         %draw=gray, ultra thick, draw opacity=1,
+%%         fill=theoremBackground, fill opacity=.1] 
+%%       (box){%
+%%         \begin{minipage}{.95\textwidth}
+%%           \textbf{#1}\qquad\color{textColor}\BODY
+%%       \end{minipage}};
+%%     \end{tikzpicture}
+%%   \end{center}
+%% }
+
+%% \NewEnviron{definition}{%
+%%   \begin{center}
+%%     \begin{tikzpicture}
+%%       \node[rectangle, rounded corners,inner sep=5pt,minimum width=\textwidth,
+%%         text=textColor, text opacity=1,
+%%         fill=definitionBackground, fill opacity=.1] 
+%%       (box){%
+%%         \begin{minipage}{.95\textwidth}
+%%           \textbf{Definition}\qquad\color{textColor}\BODY
+%%       \end{minipage}};
+%%     \end{tikzpicture}
+%%   \end{center}
+%% }
 
 %% \NewEnviron{solution}{%
 %%   \begin{center}
@@ -169,38 +217,38 @@
 %% }
 
 
-\NewEnviron{warning}{%
-  \begin{center}
-    \begin{tikzpicture}
-      \node[rectangle, rounded corners, inner sep=5pt,minimum width=\textwidth,
-        text=textColor, text opacity=1,
-        fill=red, fill opacity=.1] 
-      (box){%
-        \begin{minipage}{.95\textwidth}
-          \textbf{WARNING}\qquad\BODY
-      \end{minipage}};
-    \end{tikzpicture}
-  \end{center}
-}
+%% \NewEnviron{warning}{%
+%%   \begin{center}
+%%     \begin{tikzpicture}
+%%       \node[rectangle, rounded corners, inner sep=5pt,minimum width=\textwidth,
+%%         text=textColor, text opacity=1,
+%%         fill=red, fill opacity=.1] 
+%%       (box){%
+%%         \begin{minipage}{.95\textwidth}
+%%           \textbf{WARNING}\qquad\BODY
+%%       \end{minipage}};
+%%     \end{tikzpicture}
+%%   \end{center}
+%% }
 
 
-\NewEnviron{ques}{%
-  \begin{center}
-    \begin{tikzpicture}
-      \node[rectangle, rounded corners, inner sep=5pt,minimum width=\textwidth,
-        text=textColor, text opacity=1,
-        fill=green!50!blue, fill opacity=.15] 
-      (box){%
-        \begin{minipage}{.95\textwidth}
-          \textbf{Question}\qquad\BODY
-      \end{minipage}};
-    \end{tikzpicture}
-  \end{center}
-}
+%% \NewEnviron{ques}{%
+%%   \begin{center}
+%%     \begin{tikzpicture}
+%%       \node[rectangle, rounded corners, inner sep=5pt,minimum width=\textwidth,
+%%         text=textColor, text opacity=1,
+%%         fill=green!50!blue, fill opacity=.15] 
+%%       (box){%
+%%         \begin{minipage}{.95\textwidth}
+%%           \textbf{Question}\qquad\BODY
+%%       \end{minipage}};
+%%     \end{tikzpicture}
+%%   \end{center}
+%% }
 
-\RequirePackage{framed}
-\newenvironment{example}{\begin{leftbar}\noindent\textbf{Example}\qquad}{\end{leftbar}}
-\newenvironment{solution}{\noindent\textit{\textbf{Solution}}\qquad} %% SHOULD BE REPLACED WITH MDFRAMED!
+%% \RequirePackage{framed}
+%% \newenvironment{example}{\begin{leftbar}\noindent\textbf{Example}\qquad}{\end{leftbar}}
+%% \newenvironment{solution}{\noindent\textit{\textbf{Solution}}\qquad} %% SHOULD BE REPLACED WITH MDFRAMED!
 
 
 
