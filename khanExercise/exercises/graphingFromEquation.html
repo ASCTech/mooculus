@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html data-require="math interactive graphie">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>graphingFromEquation</title>
+    <script src="../khan-exercise.js"></script>
+</head>
+
+<body>
+    <div class="exercise">
+        <div class="problems">
+            <div>
+                <div class="vars">
+                    <var id="X">randRangeNonZero( -10, 10 )</var>
+                    <var id="Y">randRangeNonZero( -10, 10 )</var>
+                </div>
+                <p class="question">
+                    Plot <code>(<var>X</var>, <var>Y</var>)</code>
+                </p>
+                <div class="problem">
+                    <br />
+                    <div class="graphie" id="grid">
+                        graphInit({
+                            range: 11,
+                            scale: 20,
+                            axisArrows: "&lt;-&gt;",
+                            tickStep: 1,
+                            labelStep: 1,
+                            gridOpacity: 0.05,
+                            axisOpacity: 0.2,
+                            tickOpacity: 0.4,
+                            labelOpacity: 0.5
+                        });
+
+                        label( [ 0, 11 ], "y", "above" );
+                        label( [ 11, 0 ], "x", "right" );
+
+                        addMouseLayer();
+                        graph.movablePoint = addMovablePoint({ coord: [ 0, 0 ], snapY: 1, snapX: 1 });
+
+                        graph.movablePoint.onMove = function( x, y ) {
+                            return [ max( -10, min( x, 10 ) ), max( -10, min( y, 10 ) ) ];
+                        };
+                    </div>
+                </div>
+                <div class="solution" data-type="custom">
+
+                    <div class="guess">[ graph.movablePoint.coord, $( "#solutionarea" ).find( "input:checked" ).val() ]</div>
+                    <div class="validator-function">
+                        if ( guess[ 0 ][ 0 ] === 0 &amp;&amp; guess[ 0 ][ 1 ] === 0 &amp;&amp; guess[ 1 ] == null ) {
+                            return "";
+                        }
+                        return guess[ 0 ][ 0 ] === X &amp;&amp; guess[ 0 ][ 1 ] === Y
+                    </div>
+                    <div class="show-guess">
+                        graph.movablePoint.setCoord( guess[0] );
+                    </div>
+                    <div class="show-guess-solutionarea">
+                        $( "#solutionarea" ).find( "input" ).prop( 'checked', false );
+                        if ( guess[ 1 ] != null ) {
+                            $( "#solutionarea" ).find( "input[value=" + guess[ 1 ] + "]" ).prop( 'checked', true );
+                        }
+                    </div>
+                </div>
+
+<div class="hints">
+                        <p>Coordinates are listed as <code>(\blue{abscissa},\green{ordinate})</code>. </p>
+                        <p>
+                            So, for <code>( \blue{<var>X</var>}, \green{<var>Y</var>} )</code> our
+                            <span class="hint_blue"><code>abscissa</code></span> is <code class="hint_blue"><var>X</var></code> and our
+                            <span class="hint_green"><code>ordinate</code></span> is <code class="hint_green"><var>Y</var></code>.</p>
+
+                        <p>
+                            The <span class="hint_blue"><code>abscissa</code></span> tells us which vertical line the point is on and the
+                            <span class="hint_green"><code>ordinate</code></span> tells us which horizontal line the point is on.
+                        </p>
+
+                        <div>
+                            
+                                <p>
+                                    Since our <span class="hint_blue"><code>abscissa</code></span> is equal to <code class="hint_blue"><var>X</var></code>,
+                                    the point must be on the vertical line which goes through <code class="hint_blue"><var>X</var></code> on the horizontal axis.
+                                </p>
+                                <div class="graphie" data-update="grid">
+                                    style({
+                                        stroke: BLUE,
+                                        strokeWidth: 3,
+                                        //arrows: "-&gt;"
+                                    }, function() {
+                                        line( [ X, -12 ], [ X, 12 ]);
+                                    });
+                                    graph.movablePoint.toFront();
+                                
+                                </div>
+                        </div>
+
+                        <div>
+
+                                <p>
+                                    Since our <span class="hint_green"><code>ordinate</code></span> is equal to <code class="hint_green"><var>Y</var></code>,
+                                    our point must be on the horizontal line which passes through <code class="hint_green"><var>Y</var></code> on the vertical axis.
+                                </p>
+                                <div class="graphie" data-update="grid">
+                                    style({
+                                        stroke: GREEN,
+                                        strokeWidth: 3,
+                                        //arrows: "-&gt;"
+                                    }, function() {
+                                        line( [ -12, Y ], [ 12, Y ] );
+                                    });
+                                    graph.movablePoint.toFront();
+                                </div>
+                        </div>
+
+                        <div>
+                            <p class="final_answer">
+                                Move the point to <code>( \blue{<var>X</var>}, \green{<var>Y</var>} )</code> at the marked point above.
+                                <input type="button" value="Show me" onClick="javascript:KhanUtil.currentGraph.graph.movablePoint.moveTo( KhanUtil.tmpl.getVAR('X'), KhanUtil.tmpl.getVAR('Y') );" />
+                            </p>
+                            <div class="graphie" data-update="grid">
+                                style({
+                                    stroke: PINK,
+                                    strokeWidth: 3
+                                }, function() {
+                                    line( [ X - 0.25, Y - 0.25 ], [ X + 0.25, Y + 0.25 ] );
+                                    line( [ X + 0.25, Y - 0.25 ], [ X - 0.25, Y + 0.25 ] );
+                                });
+                                graph.movablePoint.toFront();
+                            </div>
+                        </div>
+        </div>
+    </div>
+</body>
+</html>

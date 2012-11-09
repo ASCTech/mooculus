@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+  <html data-require="math graphie interactive graphie-helpers steveMath8">
+      <head>
+          <title>Curve Sketching 1</title>
+          <script src="../khan-exercise.js"></script>
+      </head>
+      <body>
+          <div class="exercise">
+              <div class="vars">
+              	  
+    <var id = "n">randRange(2,4)</var>
+    <var id = "Xs">makeXList()</var>
+    <var id = "Ys">makeYList(-8,8,Xs.length)</var>
+    <var id = "points">makeCoordinates(Xs,Ys)</var>
+    <var id = "f">(function(x){return niceFunction(x,points)})</var>
+    <var id = "zeroXs">locateZeros(f,Xs)</var>
+    <var id = "zeroYs">(
+        function(n){ 
+            var list = []
+            for(var i=0; i&lt;n;i++){
+                list.push(0)
+            }
+          return list
+        })(zeroXs.length) </var>
+    <var id = "zeroPoints">makeCoordinates(zeroXs,zeroYs)</var>
+    <var id = "criticalXs">Xs.concat(zeroXs).sort(function(a,b){return a - b})</var>
+    <var id = "criticalPoints">points.concat(zeroPoints).sort(function(a,b){return a[0] - b[0]})</var>
+    <var id = "m">randRange(0,criticalPoints.length-2)</var>
+    <var id = "solution">(function(criticalPoints,m){
+        var solution = &quot;&quot;
+        if (criticalPoints[m][1]&gt;0 || criticalPoints[m+1][1]&gt;0){solution = solution.concat(&quot;Increasing &quot;)}
+        if (criticalPoints[m][1]&lt;0 || criticalPoints[m+1][1]&lt;0){solution =solution.concat(&quot;Decreasing &quot;)}
+        if (criticalPoints[m][1]&gt;criticalPoints[m+1][1]){solution =solution.concat(&quot;concave down&quot;)}
+        if (criticalPoints[m][1]&lt;criticalPoints[m+1][1]){solution =solution.concat(&quot;concave up&quot;)}
+        return solution
+        })(criticalPoints,m)</var>
+
+    <var id = "hintPosNegIncDec">(function(criticalPoints,m){
+        var solution = &quot;&quot;
+        if (criticalPoints[m][1]&gt;0 || criticalPoints[m+1][1]&gt;0){solution = solution.concat(&quot;positive &quot;)}
+        if (criticalPoints[m][1]&lt;0 || criticalPoints[m+1][1]&lt;0){solution =solution.concat(&quot;negative &quot;)}
+        if (criticalPoints[m][1]&gt;criticalPoints[m+1][1]){solution =solution.concat(&quot;and decreasing&quot;)}
+        if (criticalPoints[m][1]&lt;criticalPoints[m+1][1]){solution =solution.concat(&quot;and increasing&quot;)}
+        return solution
+        })(criticalPoints,m)</var>
+     
+     
+     
+      
+      
+		
+            
+            	
+              </div>
+
+              <div class="problems">
+              
+                  <div id="problem-type-or-description">
+                      <p class="problem">The graph below is of the derivative of an unknown function <code>f</code>, i.e. it is the graph of <code>f'</code>
+                      for some <code>f</code>.  An interval between two critical points of <code>f \hspace{1mm}</code> has been made green.
+                      </p>
+                      <p class="question">Which of the four choices reflects the behavior of the original function <code>f</code> on the indicated interval?
+                      Remember:  The pictured graph is the graph of <code>f'</code>, but the question is asking about the behavior of <code>f</code>.
+                      </p>
+                      
+                      <div class="graphie" id="grid">
+                    graphInit({
+                        range: 10,
+                        scale: 20,
+                        tickStep: 1,
+                        axisArrows: "<->"
+                    });
+                    
+                    plot(function( x ) {
+                                return ( f(x));
+                            }, [-10, 10], {
+                                stroke: RED
+                            });
+                   
+                    plot(function( x ) {
+                                return ( f(x));
+                            }, [criticalXs[m], criticalXs[m+1]], {
+                                stroke: GREEN
+                            });
+               
+                   circle( criticalPoints[m], 1/4, {
+                            stroke: "none",
+                            fill: GREEN
+                            });
+                   circle( criticalPoints[m+1], 1/4, {
+                            stroke: "none",
+                            fill: GREEN
+                            });
+                            
+
+               
+                </div>
+                
+                
+                     
+                      <p class="solution"><var>solution</var></p>
+                      <ul class="choices" data-category="true">
+                    <li>Increasing concave up</li>
+                    <li>Increasing concave down</li>
+                    <li>Decreasing concave up</li>
+                    <li>Decreasing concave down</li>
+                </ul>
+                  </div>
+                  
+                 
+                 
+              </div>
+
+              <div class="hints">
+                  <p> Is <code>f'</code> positive or negative?  What does this tell you about <code>f</code>?
+                      <br />Is <code>f'</code> increasing or decreasing?  What does this tell you about <code>f</code>?</p>
+                  <p> <code>f'</code> is <var>hintPosNegIncDec</p>
+                  <p> The function <code>f</code> is <var>solution</var></p>
+              </div>
+          </div>
+      </body>
+  </html>
