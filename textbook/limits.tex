@@ -1,8 +1,7 @@
 \chapter{Limits}
 
-\section{Functions}{}{}
-
-\fbox{This should be one of the last sections filled-in.}
+%\section{Functions}{}{}
+%\fbox{This should be one of the last sections filled-in.}
 
 
 \section{The Basic Ideas of Limits}{}{}
@@ -328,15 +327,18 @@ Let $f(x) = \lfloor x\rfloor$. We now have one sided limits
 
 
 \begin{exercise} 
-Use a calculator to estimate $\ds\lim_{x\to 0} {\sin x\over x}$.
+Use a table and a calculator to estimate $\ds\lim_{x\to 0} {\sin
+  x\over x}$.
 \end{exercise}
 
 \begin{exercise} 
-Use a calculator to estimate $\ds\lim_{x\to 0}\frac{\tan(3x)}{\tan(5x)}$.
+Use a table and a calculator to estimate $\ds\lim_{x\to
+  0}\frac{\tan(3x)}{\tan(5x)}$.
 \end{exercise}
 
 \begin{exercise} 
-Use a calculator to estimate $\ds\lim_{x\to 0} \frac{2^x-1}{x}$.
+Use a table and a calculator to estimate $\ds\lim_{x\to 0}
+\frac{2^x-1}{x}$.
 \end{exercise}
 
 
@@ -441,8 +443,22 @@ $|x-2|<1$. Hence we must set $\delta = \min\left(\dfrac{\epsilon}{5},1\right)$.
 \end{solution}
 \end{example}
 
-PROSE!!!
+When dealing with limits of polynomials, the general strategy is
+always the same. Let $p(x)$ be a polynomial. If showing
+\[
+\lim_{x\to a} p(x) = L
+\]
+one must first factor out $|x-a|$ from $|p(x) - L|$. Next, bound $x\in
+[a-1,a+1]$, and estimate the largest possible value of
+\[
+\left|\frac{p(x) -L}{x-a}\right|
+\]
+for $x\in[a-1,a+1]$. Call this estimation $M$. Finally, one must set
+$\delta = \min\left(\frac{\epsilon}{M}, 1\right)$.
 
+As you work with limits, you find that you need to do the same
+procedures again and again. The next theorems will expedite this
+process.
 \begin{theorem} 
 Suppose $\ds \lim_{x\to a} f(x)=L$ and $\ds \lim_{x\to a}g(x)=M$. Then
 \[
@@ -473,47 +489,46 @@ follows from the \textit{triangle inequality}\index{triangle
   $a$ and $b$ are any real numbers then $|a+b|\le |a|+|b|$.}
 
 Since $\ds \lim_{x\to a}f(x) =L$, there is a value $\delta_1$ so that
-$0<|x-a|<\delta_1$ implies $|f(x)-L|<|\epsilon/(2M)|$, 
-This means that $0<|x-a|<\delta_1$ implies
-$|f(x)-L||M|< \epsilon/2$. You can see where this is going: if we can
-make $|f(x)||g(x)-M|<\epsilon/2$ also, then we'll be done.
+$0<|x-a|<\delta_1$ implies $|f(x)-L|<|\epsilon/(2M)|$. This means that
+$0<|x-a|<\delta_1$ implies $|f(x)-L||M|< \epsilon/2$. 
+\[
+|f(x)g(x)-LM|\le|f(x)||g(x)-M|+\underbrace{|f(x)-L||M|}_{<\dfrac{\epsilon}{2}}.
+\]
+If we can make $|f(x)||g(x)-M|<\epsilon/2$, then we'll be done.
 
 We can make $|g(x)-M|$ smaller than any fixed number by making $x$
-close enough to $a$; unfortunately, $\epsilon/(2f(x))$ is not a fixed
-number, since $x$ is a variable. Here we need another little trick,
-just like the one we used in analyzing $x^2$. We can find a $\delta_2$
-so that $|x-a|<\delta_2$ implies that $|f(x)-L|<1$, meaning that $L-1
-< f(x) < L+1$. This means that $|f(x)|<N$, where $N$ is either $|L-1|$
-or $|L+1|$, depending on whether $L$ is negative or positive. The
-important point is that $N$ doesn't depend on $x$. Finally, we know that
-there is a $\delta_3$ so that $0<|x-a|<\delta_3$ implies
+close enough to $a$. Unfortunately, $\epsilon/(2f(x))$ is not a fixed
+number since $x$ is a variable. 
+
+Here we need another trick. We can find a $\delta_2$ so that
+$|x-a|<\delta_2$ implies that $|f(x)-L|<1$, meaning that $L-1 < f(x) <
+L+1$. This means that $|f(x)|<N$, where $N$ is either $|L-1|$ or
+$|L+1|$, depending on whether $L$ is negative or positive. The
+important point is that $N$ doesn't depend on $x$. Finally, we know
+that there is a $\delta_3$ so that $0<|x-a|<\delta_3$ implies
 $|g(x)-M|<\epsilon/(2N)$. Now we're ready to put everything
 together. Let $\delta$ be the smallest of $\delta_1$, $\delta_2$, and
 $\delta_3$. Then $|x-a|<\delta$ implies that
-$|f(x)-L|<|\epsilon/(2M)|$, $|f(x)|<N$, and
-$|g(x)-M|<\epsilon/(2N)$. Then 
+\[
+|f(x)g(x)-LM|\le\underbrace{|f(x)|}_N\underbrace{|g(x)-M|}_{<\dfrac{\epsilon}{2N}}+\underbrace{|f(x)-L||M|}_{<\dfrac{\epsilon}{2}}.
+\]
+so
 \begin{align*}
 |f(x)g(x)-LM|&\le|f(x)||g(x)-M|+|f(x)-L||M| \\
 &<N{\epsilon\over 2N}+\left|{\epsilon\over 2M}\right||M| \\
 &={\epsilon\over 2}+{\epsilon\over 2}=\epsilon.
 \end{align*}
-This is just what we needed, so by the official definition,
+This is just what we needed, so by the definition of a limit,
 $\ds \lim_{x\to a}f(x)g(x)=LM$.
 \end{proof}
 
 
 
-
-While theorem~\xrefn{thm:properties of limits} is very helpful, we
-need a bit more to work easily with limits. Since the theorem applies
-when some limits are already known, we need to know the behavior of
-some functions that cannot themselves be constructed from the simple
-arithmetic operations of the theorem, such as $\ds\sqrt{x}$. Also,
-there is one other extraordinarily useful way to put functions
-together: composition\index{composition of functions}. If $f(x)$ and
-$g(x)$ are functions, we can form two functions by composition:
-$f(g(x))$ and $g(f(x))$. For example, if $\ds f(x)=\sqrt{x}$ and $\ds
-\ds g(x)=x^2+5$, then $\ds f(g(x))=\sqrt{x^2+5}$ and $\ds
+Also, another extraordinarily useful way to put functions together is
+composition\index{composition of functions}. If $f(x)$ and $g(x)$ are
+functions, we can form two functions by composition: $f(g(x))$ and
+$g(f(x))$. For example, if $\ds f(x)=\sqrt{x}$ and $\ds \ds
+g(x)=x^2+5$, then $\ds f(g(x))=\sqrt{x^2+5}$ and $\ds
 g(f(x))=(\sqrt{x})^2+5=x+5$.  Here is a companion to
 theorem~\xrefn{thm:properties of limits} for composition:
 
@@ -545,20 +560,23 @@ This theorem is not too difficult to prove from the definition of limit.
 \begin{exercises}
 
 
-\begin{exercise} Use the definition of limits to explain why $\ds\lim _{x\to 0 } x\sin \left( {1\over x}\right) = 0$.
-Hint: Use the fact that $|\sin a |< 1 $ for any real number $a$.
+\begin{exercise} 
+Use the definition of limits to explain why $\ds\lim _{x\to 0 } x\sin
+\left( {1\over x}\right) = 0$.  Hint: Use the fact that $|\sin a |< 1
+$ for any real number $a$.
 \begin{answer} $0$
 \end{answer}\end{exercise}
 
-\begin{exercise} Use the definition of limits to explain why
-$\ds \lim_{x\to 4} (2x-5) = 3$.
+\begin{exercise} 
+Use the definition of limits to explain why $\ds \lim_{x\to 4} (2x-5)
+= 3$.
 \end{exercise}
 
 
 
 \begin{exercise} 
 For each of the following limits, $\ds \lim_{x\to a} f(x) =L$, use a
-graphing device to find $\delta$ such that $0<|x -a|\delta$ implies
+graphing device to find $\delta$ such that $0<|x -a|<\delta$ implies
 that $|f(x)-L|<\epsilon$ where $\epsilon = .1$.
 \begin{enumerate}
 \begin{multicols}{3}
@@ -576,12 +594,13 @@ that $|f(x)-L|<\epsilon$ where $\epsilon = .1$.
 
 \section{Limit Laws}
 
-limit
-A handful of such theorems give us the tools to compute many limits
-without explicitly working with the definition of limit.
+In this section, we present a handful of tools to compute many limits
+without explicitly working with the definition of limit. Each of these
+could be proved directly as we did in the previous section.
 
-\begin{mainTheorem}[Limit Laws] Suppose that $\ds \lim_{x\to a}f(x)=L$, $\ds \lim_{x\to a}g(x)=M$, 
-$k$ is some constant, and $n$ is a positive integer. Then
+\begin{mainTheorem}[Limit Laws]\index{limit laws}
+Suppose that $\ds \lim_{x\to a}f(x)=L$, $\ds \lim_{x\to a}g(x)=M$, $k$
+is some constant, and $n$ is a positive integer. Then
 \begin{itemize}
 \item $\ds\lim_{x\to a} kf(x) = k\lim_{x\to a}f(x)=kL$ 
 \item $\ds\lim_{x\to a} (f(x)+g(x)) = \lim_{x\to a}f(x)+\lim_{x\to a}g(x)=L+M$  
@@ -609,12 +628,11 @@ Compute $\ds
 in all its gory detail, we get
 \begin{align*}
 \lim_{x\to 1}{x^2-3x+5\over x-2}&=
-{\lim_{x\to 1}(x^2-3x+5)\over \lim_{x\to1}(x-2)} \\
-&={(\lim_{x\to 1}x^2)-(\lim_{x\to1}3x)+(\lim_{x\to1}5)\over 
-  (\lim_{x\to1}x)-(\lim_{x\to1}2)} \\
-&={(\lim_{x\to 1}x)^2-3(\lim_{x\to1}x)+5\over (\lim_{x\to1}x)-2} \\
-&={1^2-3\cdot1+5\over 1-2} \\
-&={1-3+5\over -1} = -3 \\
+\dfrac{\ds\lim_{x\to 1}x^2-3x+5}{\ds\lim_{x\to1}(x-2)} \\
+&=\dfrac{\ds\lim_{x\to 1}x^2-\ds\lim_{x\to1}3x+\lim_{x\to1}5}{\ds\lim_{x\to1}x-\ds\lim_{x\to1}2} \\
+&=\dfrac{\left(\ds\lim_{x\to 1}x\right)^2-3\ds\lim_{x\to1}x+5}{\ds\lim_{x\to1}x-2} \\
+&=\dfrac{1^2-3\cdot1+5}{1-2} \\
+&=\dfrac{1-3+5}{-1} = -3 \\
 \end{align*}
 \end{example}
 
@@ -631,17 +649,18 @@ that aren't so easy, namely, limits in which a denominator approaches
 zero. There are a handful of algebraic tricks that work on many of
 these limits.
 
+
 \begin{example}
-Compute $\ds\lim_{x\to1}{x^2+2x-3\over x-1}$. We can't
-simply plug in $x=1$ because that makes the denominator zero. 
-However:
+Compute $\ds\lim_{x\to1}{x^2+2x-3\over x-1}$. We can't simply plug in
+$x=1$ because that makes the denominator zero.  However, when taking
+limits we assume $x\ne 1$:
 \begin{align*}
 \lim_{x\to1}{x^2+2x-3\over x-1}&=\lim_{x\to1}{(x-1)(x+3)\over x-1} \\
 &=\lim_{x\to1}(x+3)=4 \\
 \end{align*}
 \vskip-10pt
 \end{example}
-
+\marginnote[-1in]{Limits allow us to examine functions where they are not definied.}
 Another of the most common algebraic tricks was used in
 section~\xrefn{sec:slope of a function}. Here's another example:
 
@@ -654,7 +673,7 @@ Compute $\ds\lim_{x\to-1} {\sqrt{x+5}-2\over x+1}$.
 &=\lim_{x\to-1} {x+1\over (x+1)(\sqrt{x+5}+2)} \\
 &=\lim_{x\to-1} {1\over \sqrt{x+5}+2}={1\over4} \\
 \end{align*}
-At the very last step we have used theorems~\xrefn{thm:limit of
+At the very last step we have used Theorems~\xrefn{thm:limit of
 composition} and \xrefn{thm:continuity of roots}.
 \end{example}
 
@@ -724,7 +743,7 @@ composition} and \xrefn{thm:continuity of roots}.
 \end{answer}\end{exercise}
 
 \begin{exercise} $\ds\lim _{x\to 1 } \begin{cases}
-x-5 & x\neq 1, \\
+x-5 & x\ne 1, \\
 7 & x=1. \end{cases}$
 \begin{answer} $-4$
 \end{answer}\end{exercise}

@@ -32,20 +32,20 @@
 \colorlet{cowDark}{textColor} % the dark colors of the cow -- usually
                               % the same as the text
 
-%% Parchment Dark
-\colorlet{background}{Sepia!50!black} % Color of the page
-\colorlet{textColor}{Apricot!7} % Color of the text
-\colorlet{penColor}{green!50!black} % Color of a curve in a plot
-\colorlet{fill1}{green!50!black!20} % Color of fill in a plot
-\colorlet{fill2}{blue!10} % Color of fill in a plot
-\colorlet{gridColor}{gray!30} % Color of grid in a plot
-\colorlet{definitionBackground}{Sepia} % Color of the background of a definition
-\colorlet{theoremBackground}{BrickRed} % Color of the background of a theorem
-\colorlet{mainTheoremBorder}{Sepia} % Color of the border of a main theorem
-\colorlet{cowLight}{textColor} % the light colors of the cow --
-                                % usually the same as the background
-\colorlet{cowDark}{background} % the dark colors of the cow -- usually
-                              % the same as the text
+%% %% Parchment Dark
+%% \colorlet{background}{Sepia!50!black} % Color of the page
+%% \colorlet{textColor}{Apricot!7} % Color of the text
+%% \colorlet{penColor}{green!50!black} % Color of a curve in a plot
+%% \colorlet{fill1}{green!50!black!20} % Color of fill in a plot
+%% \colorlet{fill2}{blue!10} % Color of fill in a plot
+%% \colorlet{gridColor}{gray!30} % Color of grid in a plot
+%% \colorlet{definitionBackground}{Sepia} % Color of the background of a definition
+%% \colorlet{theoremBackground}{BrickRed} % Color of the background of a theorem
+%% \colorlet{mainTheoremBorder}{Sepia} % Color of the border of a main theorem
+%% \colorlet{cowLight}{textColor} % the light colors of the cow --
+%%                                 % usually the same as the background
+%% \colorlet{cowDark}{background} % the dark colors of the cow -- usually
+%%                               % the same as the text
 
 
 
@@ -290,7 +290,7 @@ arc (5:90:0.35in) % top ear
     % draw body
     \begin{scope}
       %\draw[line width=2pt] (0,0) circle (0.5in);
-      \draw[] (0,0) circle (0.5in);
+      \draw[color=cowDark,fill=cowLight] (0,0) circle (0.5in);
       
       \clip (0,0) circle (0.5in);
       \begin{scope}[color=cowDark!85!cowLight] %% changed black -> cowDark, white -> cowLight
@@ -330,7 +330,7 @@ arc (5:90:0.35in) % top ear
 
     % draw head
     \begin{scope}[yshift=0.6in,xshift=-.15in]
-    \draw[fill=cowLight] \headpath; %% changed white -> cowLight
+    \draw[color=cowDark,fill=cowLight] \headpath; %% changed white -> cowLight
 
     \clip \headpath;
     \fill[color=cowDark!85!cowLight,xshift=0.65in,yshift=0.2in] plot [smooth cycle, tension=2] coordinates { (0,0) (-1,-1) (-0.5,0.5) }; %% changed black -> cowDark, white -> cowLight
@@ -357,10 +357,10 @@ arc (5:90:0.35in) % top ear
 
     % draw eyes
     \begin{scope}[yshift=0.4in]
-      \begin{scope}[xshift=-.11in]
+      \begin{scope}[xshift=-.11in,color=cowDark]
         \draweye
       \end{scope}
-      \begin{scope}[xshift=.11in,xscale=-1]
+      \begin{scope}[xshift=.11in,xscale=-1,color=cowDark]
         \draweye
       \end{scope}
     \end{scope}
