@@ -393,11 +393,11 @@ arc (5:90:0.35in) % top ear
 
 \RequirePackage{titlesec}
 \titleformat{\chapter}%
-  [display]% shape
+  [block]% shape
   {\relax\ifthenelse{\NOT\boolean{@tufte@symmetric}}{\begin{fullwidth}}{}}% format applied to label+text
-  {\huge\scshape\sffamily\textcolor{textColor}\thechapter}% label
+  {\huge\scshape\sffamily\bfseries\textcolor{textColor}\thechapter}% label
   {1em}% horizontal separation between label and title body
-  {\huge\scshape\sffamily\textcolor{textColor}}% before the title body
+  {\huge\scshape\sffamily\bfseries\textcolor{textColor}}% before the title body
   [\ifthenelse{\NOT\boolean{@tufte@symmetric}}{\end{fullwidth}}{}]% after the title body
 
 \titleformat{\section}%

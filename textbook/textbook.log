@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012/Debian) (format=pdflatex 2012.11.6)  8 NOV 2012 20:48
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012/Debian) (format=pdflatex 2012.11.6)  8 NOV 2012 23:36
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1246,7 +1246,10 @@ Package: framed 2011/10/22 v 0.96: framed or shaded text with page breaks
 \FrameSep=\dimen196
 )
 \c@exercise=\count156
-)
+
+(/usr/share/texlive/texmf-dist/tex/latex/titlesec/block.tss
+File: block.tss 2011/12/15
+))
 (/home/snapp/texmf/tex/latex/tex/latex/pgfplots/pgfplots.sty
 (/home/snapp/texmf/tex/latex/tex/generic/pgfplots/pgfplots.revision.tex)
 Package: pgfplots 2012/10/26 v1.7 Data Visualization (1.7-2-ge24fff4)
@@ -1658,6 +1661,9 @@ Package microtype Info: Character `029' is missing
 Package microtype Info: Character `029' is missing
 (microtype)             in font `T1/jkpss/m/sc/20.74'.
 (microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `029' is missing
+(microtype)             in font `T1/jkpss/b/sc/20.74'.
+(microtype)             Ignoring protrusion settings for this character.
 
 (./textbook.toc)
 \tf@toc=\write7
@@ -1692,46 +1698,47 @@ Overfull \hbox (32.96681pt too wide) in paragraph at lines 26--42
 
 LaTeX Warning: Marginpar on page 11 moved.
 
+[11
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [11
-
-]
+] [12]
 Overfull \hbox (32.96681pt too wide) in paragraph at lines 124--159
  [] 
  []
 
-[12]
-Overfull \hbox (36.19804pt too wide) in paragraph at lines 217--234
+
+LaTeX Warning: Marginpar on page 13 moved.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 179--184
+
+ []
+
+
+Overfull \hbox (36.19804pt too wide) in paragraph at lines 218--235
  [] 
  []
 
+[13]
 
-LaTeX Warning: Marginpar on page 13 moved.
-
-
-LaTeX Warning: Marginpar on page 13 moved.
+LaTeX Warning: Marginpar on page 14 moved.
 
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [13]
-Underfull \hbox (badness 10000) in paragraph at lines 367--367
+Underfull \hbox (badness 10000) in paragraph at lines 368--368
 
  []
 
+[14]
 
 Package amsmath Warning: Foreign command \over;
 (amsmath)                \frac or \genfrac should be used instead
-(amsmath)                 on input line 367.
+(amsmath)                 on input line 368.
 
-[14] [15]
+[15]
 
 LaTeX Warning: Marginpar on page 16 moved.
 
 
-Overfull \hbox (51.008pt too wide) in paragraph at lines 391--417
+Overfull \hbox (51.008pt too wide) in paragraph at lines 392--418
  []
  []
 
@@ -1771,39 +1778,69 @@ Underfull \hbox (badness 10000) in paragraph at lines 753--753
 
 ]
 Chapter 2.
-) (./chapter01.tex [25] [26
 
-]
-Chapter 3.
+LaTeX Warning: Reference `fig:function types' on page 25 undefined on input lin
+e 33.
+
+[25]
+
+LaTeX Warning: Reference `fig:function types' on page 26 undefined on input lin
+e 140.
+
+[26]
+Overfull \hbox (1.59999pt too wide) in paragraph at lines 196--196
+ [] 
+ []
+
 
 LaTeX Warning: Marginpar on page 27 moved.
 
-[27]
 
-LaTeX Warning: Marginpar on page 28 moved.
+Underfull \hbox (badness 10000) in paragraph at lines 275--275
 
+ []
+
+
+LaTeX Warning: Reference `fig:function types' on page 27 undefined on input lin
+e 275.
+
+[27] [28]) (./chapter01.tex
+Chapter 3.
+
+LaTeX Warning: Marginpar on page 29 moved.
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [29
+
+]
 (./section01.01.tex
 
-LaTeX Warning: Reference `fig:irs' on page 28 undefined on input line 36.
+LaTeX Warning: Reference `fig:irs' on page 30 undefined on input line 36.
 
-[28]
+[30]
 
-LaTeX Warning: Reference `fig:graphs of lines' on page 29 undefined on input li
+LaTeX Warning: Reference `fig:graphs of lines' on page 31 undefined on input li
 ne 106.
 
-[29] [30]
+[31]
 Underfull \hbox (badness 10000) in paragraph at lines 440--440
 
  []
 
-[31]
 
-LaTeX Warning: Reference `fig:tax schedule' on page 32 undefined on input line 
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [32]
+[33]
+
+LaTeX Warning: Reference `fig:tax schedule' on page 34 undefined on input line 
 440.
 
-[32] [33]) (./section01.02.tex
+[34] [35]) (./section01.02.tex
 
-LaTeX Warning: Reference `fig:distance between points' on page 34 undefined on 
+LaTeX Warning: Reference `fig:distance between points' on page 36 undefined on 
 input line 11.
 
 
@@ -1819,9 +1856,9 @@ Underfull \hbox (badness 10000) in paragraph at lines 139--139
 
  []
 
-[34] [35]) (./section01.03.tex
+[36] [37]) (./section01.03.tex
 
-LaTeX Warning: Reference `fig:some graphs' on page 36 undefined on input line 2
+LaTeX Warning: Reference `fig:some graphs' on page 38 undefined on input line 2
 9.
 
 LaTeX Font Info:    Try loading font information for U+fplmbb on input line 89.
@@ -1830,33 +1867,33 @@ LaTeX Font Info:    Try loading font information for U+fplmbb on input line 89.
 File: ufplmbb.fd 2003/10/30 Fontinst v1.914 font definitions for U/fplmbb.
 )
 
-LaTeX Warning: Reference `fig:some graphs' on page 36 undefined on input line 9
+LaTeX Warning: Reference `fig:some graphs' on page 38 undefined on input line 9
 4.
 
-[36]
+[38]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [37]
+ [39]
 
-LaTeX Warning: Reference `fig:upper semicircle' on page 38 undefined on input l
+LaTeX Warning: Reference `fig:upper semicircle' on page 40 undefined on input l
 ine 186.
 
-[38]
+[40]
 
-LaTeX Warning: Reference `fig:piecewise velocity' on page 39 undefined on input
+LaTeX Warning: Reference `fig:piecewise velocity' on page 41 undefined on input
  line 250.
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [39]
+ [41]
 Underfull \hbox (badness 10000) in paragraph at lines 354--354
 
  []
 
-[40] [41]) (./section01.04.tex [42] [43]
+[42] [43]) (./section01.04.tex [44] [45]
 
-LaTeX Warning: Reference `fig:ellipses' on page 44 undefined on input line 121.
+LaTeX Warning: Reference `fig:ellipses' on page 46 undefined on input line 121.
 
 
 
@@ -1864,113 +1901,105 @@ Underfull \hbox (badness 10000) in paragraph at lines 206--206
 
  []
 
-[44] [45])) (./chapter02.tex [46
+[46] [47])) (./chapter02.tex [48
 
 ]
 Chapter 4.
-(./section02.01.tex
-Overfull \vbox (2.18425pt too high) detected at line 37
- []
+(./section02.01.tex [49]
 
-[47]
+LaTeX Warning: Reference `fig:chords' on page 50 undefined on input line 55.
 
-LaTeX Warning: Reference `fig:chords' on page 48 undefined on input line 55.
 
-[48]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [49]
-[50]
+ [50]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [51]
+[52]
 Underfull \hbox (badness 10000) in paragraph at lines 278--278
 
  []
 
-[51] [52]) (./section02.02.tex
+[53] [54]) (./section02.02.tex
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [53]
-[54]
+ [55]
+[56]
 Underfull \hbox (badness 10000) in paragraph at lines 143--143
 
  []
 
-[55] [56]) (./section02.03.tex [57] [58] [59] [60] [61] [62] [63] [64]
+[57] [58]) (./section02.03.tex [59] [60] [61] [62] [63] [64] [65] [66]
 Underfull \vbox (badness 10000) detected at line 413
  []
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [65]
-[66]
+ [67]
+[68]
 Underfull \hbox (badness 10000) in paragraph at lines 567--567
 
  []
 
-[67]
+[69]
 Underfull \hbox (badness 10000) in paragraph at lines 567--567
 
  []
 
-[68]) (./section02.04.tex [69]
+[70]) (./section02.04.tex [71]
 Underfull \vbox (badness 10000) detected at line 91
  []
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [70]
-[71]
+ [72]
+[73]
 
-LaTeX Warning: Reference `fig:cusp' on page 72 undefined on input line 136.
+LaTeX Warning: Reference `fig:cusp' on page 74 undefined on input line 136.
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 285--285
 
  []
 
-[72] [73]) (./section02.05.tex
+[74] [75]) (./section02.05.tex
 
-LaTeX Warning: Reference `fig:function types' on page 74 undefined on input lin
+LaTeX Warning: Reference `fig:function types' on page 76 undefined on input lin
 e 9.
 
 
-LaTeX Warning: Reference `fig:function types' on page 74 undefined on input lin
+LaTeX Warning: Reference `fig:function types' on page 76 undefined on input lin
 e 114.
 
 
 Underfull \vbox (badness 5970) has occurred while \output is active []
 
- [74]
-[75]
+ [76]
+[77]
 Underfull \hbox (badness 10000) in paragraph at lines 262--262
 
  []
 
 
-LaTeX Warning: Reference `fig:function types' on page 76 undefined on input lin
+LaTeX Warning: Reference `fig:function types' on page 78 undefined on input lin
 e 262.
 
-[76] [77])) (./chapter03.tex [78
+[78] [79])) (./chapter03.tex [80
 
 ]
 Chapter 5.
-(./section03.01.tex
-Underfull \vbox (badness 1221) has occurred while \output is active []
-
- [79]
-[80]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [81]
+(./section03.01.tex [81] [82] [83]
 Underfull \hbox (badness 10000) in paragraph at lines 148--148
 
  []
 
-[82] [83]) (./section03.02.tex
+[84]) (./section03.02.tex
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [84]
+ [85]
 Overfull \hbox (14.87491pt too wide) detected at line 59
 \OML/jkp/m/it/10 f[]\OT1/zplm/m/n/10 (\OML/jkp/m/it/10 x\OT1/zplm/m/n/10 ) = []
 (\OML/jkp/m/it/10 x[] \OT1/zplm/m/n/10 + \OT1/jkp/m/n/10 5\OML/jkp/m/it/10 x[]\
@@ -1988,7 +2017,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 144--144
 
  []
 
-[85] [86]) (./section03.03.tex
+[86] [87]) (./section03.03.tex
 Overfull \hbox (3.14566pt too wide) in paragraph at lines 32--32
 [] 
  []
@@ -1996,74 +2025,116 @@ Overfull \hbox (3.14566pt too wide) in paragraph at lines 32--32
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [87]
+ [88]
 Underfull \hbox (badness 10000) in paragraph at lines 178--178
 
  []
 
-[88] [89] [90]) (./section03.04.tex
+[89] [90] [91]) (./section03.04.tex
 Overfull \hbox (21.46898pt too wide) detected at line 26
 [][] \OT1/zplm/m/n/10 = \OML/jkp/m/it/10 f\OT1/zplm/m/n/10 (\OML/jkp/m/it/10 x\
 OT1/zplm/m/n/10 )[] + \OML/jkp/m/it/10 f[]\OT1/zplm/m/n/10 (\OML/jkp/m/it/10 x\
 OT1/zplm/m/n/10 )[] = [] = []\OT1/jkp/m/n/10 .
  []
 
-[91] [92]
+[92] [93]
 Underfull \hbox (badness 10000) in paragraph at lines 165--165
 
  []
 
-[93])) [94
+[94]) (./section03.05.tex [95] [96] [97] [98]
+Underfull \hbox (badness 10000) in paragraph at lines 364--364
 
-] (./textbook.ans
-Underfull \vbox (badness 2126) has occurred while \output is active []
+ []
 
- [95
+[99] [100]
+Overfull \hbox (22.39006pt too wide) in paragraph at lines 364--364
+[]\T1/jkp/m/n/10 (-20) Find an equa-tion for the tan-gent line to $[]$ at $\OT1
+/zplm/m/n/10 (\OT1/jkp/m/n/10 (-20) 1, []\OT1/zplm/m/n/10 )$\T1/jkp/m/n/10 (-20
+) .
+ []
 
-]
-[96])
+
+Underfull \hbox (badness 10000) in paragraph at lines 364--364
+
+ []
+
+[101])) [102
+
+] (./textbook.ans [103
+
+] [104])
 ! Missing $ inserted.
 <inserted text> 
                 $
 l.205 
       
-? x
- 
+? 
+
+Overfull \hbox (49.10059pt too wide) in paragraph at lines 127--205
+\T1/jkp/m/n/10 (-20) 1. $[] \OMS/jkp/m/n/10 ^^@ []$ \T1/jkp/m/n/10 (-20) 2. $[]
+ \OMS/jkp/m/n/10 ^^@ []$
+ []
+
+No file textbook.ind.
+
+Package bibentry Warning: You have used \nobibliography* 
+(bibentry)                without a following \bibliography.
+(bibentry)                You may not be able to run BibTeX.
+
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 209.
+[105]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 209.
+ (./textbook.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 209.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 209.
+Package rerunfilecheck Info: File `textbook.out' has not changed.
+(rerunfilecheck)             Checksum: E2F825F056F7255B6A55A0ABD16E9789;3780.
+
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: There were multiply-defined labels.
+
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 209.
+ ) 
 Here is how much of TeX's memory you used:
- 31743 strings out of 493481
- 650172 string characters out of 3143393
- 1304290 words of memory out of 3000000
- 33422 multiletter control sequences out of 15000+200000
- 291668 words of font info for 577 fonts, out of 3000000 for 9000
+ 31852 strings out of 493481
+ 651275 string characters out of 3143393
+ 1323494 words of memory out of 3000000
+ 33429 multiletter control sequences out of 15000+200000
+ 299315 words of font info for 599 fonts, out of 3000000 for 9000
  965 hyphenation exceptions out of 8191
  73i,13n,91p,727b,2019s stack positions out of 5000i,500n,10000p,200000b,50000s
-{/usr/share/texlive/texmf-dist/fonts/enc/dvips/kpfonts/kpfonts-expert.enc}{/usr
-/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texlive/texmf
--dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/
-fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/t
-ype1/public/mathpazo/fplmbb.pfb></usr/share/texlive/texmf-dist/fonts/type1/publ
-ic/kpfonts/jkpbit8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/kpfon
-ts/jkpbmi.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/kpfonts/jkpbn8a
-.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/kpfonts/jkpbne.pfb></usr
-/share/texlive/texmf-dist/fonts/type1/public/kpfonts/jkpbsy.pfb></usr/share/tex
-live/texmf-dist/fonts/type1/public/kpfonts/jkpex.pfb></usr/share/texlive/texmf-
-dist/fonts/type1/public/kpfonts/jkpexa.pfb></usr/share/texlive/texmf-dist/fonts
-/type1/public/kpfonts/jkpmi.pfb></usr/share/texlive/texmf-dist/fonts/type1/publ
-ic/kpfonts/jkpmia.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/kpfonts
-/jkpmit8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/kpfonts/jkpmite
-.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/kpfonts/jkpmn8a.pfb></us
-r/share/texlive/texmf-dist/fonts/type1/public/kpfonts/jkpmne.pfb></usr/share/te
-xlive/texmf-dist/fonts/type1/public/kpfonts/jkpmsc8a.pfb></usr/share/texlive/te
-xmf-dist/fonts/type1/public/kpfonts/jkpssbn8a.pfb></usr/share/texlive/texmf-dis
-t/fonts/type1/public/kpfonts/jkpssmn8a.pfb></usr/share/texlive/texmf-dist/fonts
-/type1/public/kpfonts/jkpssmsc8a.pfb></usr/share/texlive/texmf-dist/fonts/type1
-/public/kpfonts/jkpsy.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/kpf
-onts/jkpsyc.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/kpfonts/jkptt
-mn8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb>
-Output written on textbook.pdf (96 pages, 477682 bytes).
+{/usr/share/texlive/texmf-dist/fonts/enc/dvips/kpfonts/kpfonts-expert.enc}{/u
+sr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texlive/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dis
+t/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts
+/type1/public/mathpazo/fplmbb.pfb></usr/share/texlive/texmf-dist/fonts/type1/pu
+blic/kpfonts/jkpbit8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/kpf
+onts/jkpbmi.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/kpfonts/jkpbn
+8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/kpfonts/jkpbne.pfb></u
+sr/share/texlive/texmf-dist/fonts/type1/public/kpfonts/jkpbsy.pfb></usr/share/t
+exlive/texmf-dist/fonts/type1/public/kpfonts/jkpex.pfb></usr/share/texlive/texm
+f-dist/fonts/type1/public/kpfonts/jkpexa.pfb></usr/share/texlive/texmf-dist/fon
+ts/type1/public/kpfonts/jkpmi.pfb></usr/share/texlive/texmf-dist/fonts/type1/pu
+blic/kpfonts/jkpmia.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/kpfon
+ts/jkpmit8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/kpfonts/jkpmi
+te.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/kpfonts/jkpmn8a.pfb></
+usr/share/texlive/texmf-dist/fonts/type1/public/kpfonts/jkpmne.pfb></usr/share/
+texlive/texmf-dist/fonts/type1/public/kpfonts/jkpmsc8a.pfb></usr/share/texlive/
+texmf-dist/fonts/type1/public/kpfonts/jkpssbn8a.pfb></usr/share/texlive/texmf-d
+ist/fonts/type1/public/kpfonts/jkpssbsc8a.pfb></usr/share/texlive/texmf-dist/fo
+nts/type1/public/kpfonts/jkpssmn8a.pfb></usr/share/texlive/texmf-dist/fonts/typ
+e1/public/kpfonts/jkpssmsc8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
+lic/kpfonts/jkpsy.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/kpfonts
+/jkpsyc.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/kpfonts/jkpttmn8a
+.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb>
+Output written on textbook.pdf (105 pages, 513028 bytes).
 PDF statistics:
- 941 PDF objects out of 1000 (max. 8388607)
- 787 compressed objects within 8 object streams
- 322 named destinations out of 1000 (max. 500000)
- 80657 words of extra memory for PDF output out of 89155 (max. 10000000)
+ 1064 PDF objects out of 1200 (max. 8388607)
+ 901 compressed objects within 10 object streams
+ 385 named destinations out of 1000 (max. 500000)
+ 81205 words of extra memory for PDF output out of 89155 (max. 10000000)
 

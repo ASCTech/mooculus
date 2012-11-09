@@ -446,10 +446,10 @@ $|x-2|<1$. Hence we must set $\delta = \min\left(\dfrac{\epsilon}{5},1\right)$.
 When dealing with limits of polynomials, the general strategy is
 always the same. Let $p(x)$ be a polynomial. If showing
 \[
-\lim_{x\to a} p(x) = L
+\lim_{x\to a} p(x) = L,
 \]
-one must first factor out $|x-a|$ from $|p(x) - L|$. Next, bound $x\in
-[a-1,a+1]$, and estimate the largest possible value of
+one must first factor out $|x-a|$ from $|p(x) - L|$. Next bound $x\in
+[a-1,a+1]$ and estimate the largest possible value of
 \[
 \left|\frac{p(x) -L}{x-a}\right|
 \]
@@ -494,11 +494,10 @@ $0<|x-a|<\delta_1$ implies $|f(x)-L||M|< \epsilon/2$.
 \[
 |f(x)g(x)-LM|\le|f(x)||g(x)-M|+\underbrace{|f(x)-L||M|}_{<\dfrac{\epsilon}{2}}.
 \]
-If we can make $|f(x)||g(x)-M|<\epsilon/2$, then we'll be done.
-
-We can make $|g(x)-M|$ smaller than any fixed number by making $x$
-close enough to $a$. Unfortunately, $\epsilon/(2f(x))$ is not a fixed
-number since $x$ is a variable. 
+If we can make $|f(x)||g(x)-M|<\epsilon/2$, then we'll be done. We can
+make $|g(x)-M|$ smaller than any fixed number by making $x$ close
+enough to $a$. Unfortunately, $\epsilon/(2f(x))$ is not a fixed number
+since $x$ is a variable.
 
 Here we need another trick. We can find a $\delta_2$ so that
 $|x-a|<\delta_2$ implies that $|f(x)-L|<1$, meaning that $L-1 < f(x) <
@@ -510,7 +509,7 @@ $|g(x)-M|<\epsilon/(2N)$. Now we're ready to put everything
 together. Let $\delta$ be the smallest of $\delta_1$, $\delta_2$, and
 $\delta_3$. Then $|x-a|<\delta$ implies that
 \[
-|f(x)g(x)-LM|\le\underbrace{|f(x)|}_N\underbrace{|g(x)-M|}_{<\dfrac{\epsilon}{2N}}+\underbrace{|f(x)-L||M|}_{<\dfrac{\epsilon}{2}}.
+|f(x)g(x)-LM|\le\underbrace{|f(x)|}_{<N}\underbrace{|g(x)-M|}_{<\dfrac{\epsilon}{2N}}+\underbrace{|f(x)-L||M|}_{<\dfrac{\epsilon}{2}}.
 \]
 so
 \begin{align*}
@@ -524,7 +523,7 @@ $\ds \lim_{x\to a}f(x)g(x)=LM$.
 
 
 
-Also, another extraordinarily useful way to put functions together is
+Another useful way to put functions together is
 composition\index{composition of functions}. If $f(x)$ and $g(x)$ are
 functions, we can form two functions by composition: $f(g(x))$ and
 $g(f(x))$. For example, if $\ds f(x)=\sqrt{x}$ and $\ds \ds

@@ -150,7 +150,7 @@ decreases without bound, we say that the function represented by the graph
 in (c) is a {\dfont bounded} 
 function\index{function!bounded}\index{bounded function}.  
 
-\begin{definition} (Bounded) A function $f$ is bounded if there is a
+\begin{definition} A function $f$ is \textbf{bounded} if there is a
 number $M$ such that $|f(x)| < M$ for every $x$ in the domain of $f$.
 \end{definition}
 
