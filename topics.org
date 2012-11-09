@@ -125,6 +125,5 @@ other---how do their answers compare?
 ** 6.2 Regions Between curves
 ** 6.3 Volume by slicing
 ** 6.4 Volume by shells
-* Week 16: Topics
 ** Other topics: Surface area, arc length, centers of mass
 ** Final exam
