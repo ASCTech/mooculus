@@ -7,6 +7,8 @@ Assessor::Application.routes.draw do
 
   get "course" => "course#index"
 
+  resources :exercises
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
