@@ -7,6 +7,10 @@ Random Ideas
 * Ladder Problem
 * Balloon volume with bike pump
 * Coffee cup cooling
+* Music
+** electric guitar and decibel scale
+** sin waves cos waves
+** square waves -- limts?
 * Ice cube melting
 * Space Balloon
 ** This could probably be used in several chapters.
@@ -25,6 +29,8 @@ Random Ideas
 
 
 Topics
+
+
 * Week 1: Limits
 ** 1.4 Review of functions
 *** VIDEO introduction to course format
