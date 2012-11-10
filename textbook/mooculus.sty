@@ -116,11 +116,15 @@
 %% }
 
 
-\newmdtheoremenv[outerlinewidth=2,leftmargin=40,%
-rightmargin=40,backgroundcolor=theoremBackground!10,fontcolor=textColor,%
-outerlinecolor=mainTheoremBorder,innertopmargin=\topskip,roundcorner=10pt,%
-splittopskip=\topskip,skipbelow=\baselineskip,%
-skipabove=\baselineskip,ntheorem]{mainTheorem}%
+
+\theorembodyfont{\slshape}
+\newmdtheoremenv[leftmargin=40,rightmargin=40,backgroundcolor=theoremBackground!10,fontcolor=textColor,%
+innerlinewidth=1,innerlinecolor=mainTheoremBorder!20!background,
+middlelinewidth=2,middlelinecolor=mainTheoremBorder,
+outerlinewidth=1,outerlinecolor=mainTheoremBorder!10!background,
+roundcorner=10pt,%
+innertopmargin=\topskip,splittopskip=\topskip,skipbelow=\baselineskip,skipabove=\baselineskip,
+ntheorem]{mainTheorem}%
 {Theorem}[section]
 
 
@@ -131,40 +135,52 @@ splittopskip=\topskip,skipbelow=\baselineskip,%
 skipabove=\baselineskip,ntheorem]{theorem}%
 {Theorem}[section]
 
-
+\theorembodyfont{\upshape}
 \newmdtheoremenv[outerlinewidth=2,topline=false, bottomline=false, leftline=true, rightline=false, leftmargin=40,%
-rightmargin=40,fontcolor=textColor,backgroundcolor=background,%%
-outerlinecolor=textColor,innertopmargin=0pt, innerbottommargin=0pt,%
-skipbelow=\baselineskip,%
-skipabove=\baselineskip,ntheorem]{example}%
+rightmargin=40,
+outerlinecolor=textColor,fontcolor=textColor,backgroundcolor=background,%%
+skipbelow=\baselineskip,skipabove=\baselineskip,innertopmargin=0pt, innerbottommargin=0pt,%
+ntheorem]{example}%
 {Example}[section]
 
-\theoremstyle{nonumberplain}
-\newmdtheoremenv[hidealllines=true,roundcorner=10pt,leftmargin=40,%
-rightmargin=40,backgroundcolor=definitionBackground!10,fontcolor=textColor,%%
-innertopmargin=\topskip,%
-splittopskip=\topskip,skipbelow=\baselineskip,%
-skipabove=\baselineskip,ntheorem]{definition}%
-{Defintion}
-
-\newmdtheoremenv[outerlinewidth=2,topline=false, bottomline=false, leftline=false, rightline=true, leftmargin=40,%
-outerlinecolor=textColor,innertopmargin=0pt,innerbottommargin=0pt,%
-fontcolor=textColor,ntheorem]{solution}%
+\theoremstyle{nonumberplain} %% All styles beyond this point are unnumbered.
+\theoremheaderfont{\normalfont\itshape\bfseries}
+\theorembodyfont{\itshape}
+\theoremseparator{}
+\newmdtheoremenv[outerlinewidth=2,topline=false, bottomline=false, leftline=true, rightline=false, 
+leftmargin=40,innertopmargin=0pt,innerbottommargin=0pt,skipbelow=\baselineskip,
+outerlinecolor=textColor,fontcolor=textColor,backgroundcolor=background,
+ntheorem]{solution}%
 {Solution}
 
 
-\newmdtheoremenv[outerlinewidth=2,leftmargin=40,%
-rightmargin=40,backgroundcolor=yellow,fontcolor=textColor,%%
-outerlinecolor=blue,innertopmargin=\topskip,%
-splittopskip=\topskip,skipbelow=\baselineskip,%
-skipabove=\baselineskip]{proof}%
-{Proof}[section]
+\theoremheaderfont{\normalfont\itshape\bfseries}
+\theorembodyfont{\itshape}
+\theoremseparator{}
+\newmdtheoremenv[outerlinewidth=2,topline=false, bottomline=true, leftline=false, rightline=true, 
+leftmargin=40,outerlinecolor=textColor,fontcolor=textColor,backgroundcolor=background,
+skipbelow=\baselineskip,
+ntheorem]{proof}%
+{Proof}
 
 
 
-\newmdtheoremenv[hidealllines=true,leftmargin=40,%
+
+\theoremheaderfont{\normalfont\bfseries}
+\theorembodyfont{\upshape}
+\newmdtheoremenv[hidealllines=true,roundcorner=10pt,leftmargin=40,%
+rightmargin=40,backgroundcolor=definitionBackground!10,fontcolor=textColor,%%
+innertopmargin=\topskip,%
+splittopskip=\topskip,skipbelow=\baselineskip,skipabove=\baselineskip,
+font=\upshape,
+ntheorem
+]{definition}%
+{Definition}
+
+
+\newmdtheoremenv[hidealllines=true,leftmargin=40,roundcorner=10pt%
 rightmargin=40,backgroundcolor=red!10,%
-outerlinecolor=blue,innertopmargin=\topskip,%
+innertopmargin=\topskip,%
 splittopskip=\topskip,skipbelow=\baselineskip,%
 skipabove=\baselineskip,ntheorem]{warning}%
 {Warning}

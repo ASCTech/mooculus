@@ -66,7 +66,10 @@ not equal to, $a$.  This leads us to the formal definition of a
 \label{table:(x^2 - 3x + 2)/(x-2)}
 \end{margintable}
 
-
+\marginnote[1in]{ Equivalently, $\ds \lim_{x\to a}f(x)=L$, if for
+  every $\epsilon>0$ there is a $\delta > 0$ so that whenever $x\ne a$
+  and $a- \delta < x < a+ \delta$, we have $L-\epsilon<
+  f(x)<L+\epsilon$.}
 \begin{definition}\label{def:limit}\index{limit!definition}
 The \textbf{limit} of $f(x)$ as $x$ goes to $a$ is $L$,
 \[
@@ -79,10 +82,6 @@ if for every $\epsilon>0$ there is a $\delta > 0$ so that whenever
 If no such value of $L$ can be
 found, then we say that $f(x)$ \textbf{does not exist} at $x=a$.
 \end{definition}
-\marginnote[-1in]{ Equivalently, $\ds \lim_{x\to a}f(x)=L$, if for
-  every $\epsilon>0$ there is a $\delta > 0$ so that whenever $x\ne a$
-  and $a- \delta < x < a+ \delta$, we have $L-\epsilon<
-  f(x)<L+\epsilon$.}
 
 In Figure~\ref{figure:epsilon-delta}, we see a geometric
 interpretation of this definition.
@@ -122,9 +121,7 @@ interpretation of this definition.
 Limits need not exist, let's examine two cases of this.
 
 
-\marginnote[-2in]{With the example of $f(x) = \lfloor x \rfloor$, we
-  see that taking limits is truly different from evaluating
-  functions.}\begin{marginfigure}[0in]
+\begin{marginfigure}[2in]
 \begin{tikzpicture}
 	\begin{axis}[
             domain=-2:4,
@@ -170,7 +167,7 @@ Let $f(x) = \lfloor x\rfloor$. Explain why the limit
 \lim_{x\to 2} f(x)
 \]
 does not exist.
-
+\end{example}
 \begin{solution}
 This is the function that returns the greatest integer less than or
 equal to $x$. Since $f(x)$ is defined for all real numbers, one might
@@ -192,7 +189,9 @@ Figure~\ref{plot:greatist-integer}. Moreover, no matter what value one
 chooses for $\ds \lim_{x\to 2} f(x)$, we will always have a similar
 issue.
 \end{solution}
-\end{example}
+\marginnote[-1in]{With the example of $f(x) = \lfloor x \rfloor$, we
+  see that taking limits is truly different from evaluating
+  functions.}
 
 
 
@@ -204,7 +203,7 @@ Let  $f(x) = \sin\left(\frac{1}{x}\right)$. Explain why the limit
 \lim_{x\to 0} f(x)
 \]
 does not exist.
-
+\end{example}
 \begin{solution}
 In this case $f(x)$ oscillates ``wildly'' as $x$ approaches $0$, see
 Figure~\ref{plot:sin 1/x}. In fact, one can show that for any given
@@ -215,7 +214,6 @@ Figure~\ref{plot:sin 1/x}. In fact, one can show that for any given
 such that $f(x)$ is \textbf{any} value in the interval $[-1,1]$. Hence
 the limit does not exist.
 \end{solution}
-\end{example}
 \begin{marginfigure}[-1in]
 \begin{tikzpicture}
 	\begin{axis}[
@@ -242,7 +240,6 @@ Sometimes the limit of a function exists from one side or the other
 be able to talk about this situation, we introduce the concept of a
 \textit{one-sided limit}\index{one-sided limit}:
 
-\marginnote[1in]{Limits from the left, or from the right, are collectively called \textbf{one-sided limits}.}
 \begin{definition} We say that the \textbf{limit} of $f(x)$ as $x$ goes to $a$ from the \textbf{left} is $L$,
 \[
 \lim_{x\to a-}f(x)=L
@@ -261,17 +258,24 @@ if for every $\epsilon>0$ there is a $\delta > 0$ so that whenever $x \ne a$ and
 x<a+\delta \qquad\text{we have}\qquad |f(x)-L|<\epsilon.
 \]
 \end{definition}
-
+\marginnote[-2in]{Limits from the left, or from the right, are collectively called \textbf{one-sided limits}.}
 
 
 \begin{example}
-Let $f(x) = \lfloor x\rfloor$. We now have one sided limits 
+Let $f(x) = \lfloor x\rfloor$. Discuss
 \[
-\lim_{x\to 2-} f(x) = 1 \qquad\text{and}\qquad \lim_{x\to 2+} f(x) = 2.
+\lim_{x\to 2-} f(x), \qquad \lim_{x\to 2+} f(x), \qquad\text{and}\qquad\lim_{x\to 2+} f(x).
 \]
 \end{example}
+\begin{solution}
+From the plot of $f(x)$, see Figure~\ref{plot:greatist-integer}, we see that 
+\[
+\lim_{x\to 2-} f(x)=1, \qquad\text{and}\quad \lim_{x\to 2+} f(x) = 2.
+\]
+Since these limits are different, $\ds\lim_{x\to 2} f(x)$ does not exist.
+\end{solution}
 
-
+\break
 
 
 \begin{exercises}
@@ -419,7 +423,7 @@ of a limit.\index{limit!definition}\marginnote{Recall, $\ds \lim_{x\to
   x^2=4$. Here $\delta= \min\left(\dfrac{\epsilon}{5},1\right)$.}
 \end{marginfigure}
 \begin{example} Show that $\ds \lim_{x\to 2} x^2=4$.
-
+\end{example}
 \begin{solution}
 We want to show that for any given $\epsilon>0$, we can find a
 $\delta>0$ such that
@@ -443,7 +447,7 @@ and so we want
 Recall, we assumed that $x\in[1,3]$, which is equivalent to
 $|x-2|<1$. Hence we must set $\delta = \min\left(\dfrac{\epsilon}{5},1\right)$.
 \end{solution}
-\end{example}
+
 
 When dealing with limits of polynomials, the general strategy is
 always the same. Let $p(x)$ be a polynomial. If showing
@@ -468,6 +472,10 @@ Suppose $\ds \lim_{x\to a} f(x)=L$ and $\ds \lim_{x\to a}g(x)=M$. Then
 \]
 \end{theorem}
 
+\marginnote[2in]{This is all straightforward except perhaps for the ``$\le$''. This
+follows from the \textit{Triangle Inequality}\index{triangle
+  inequality}. The \textbf{Triangle Inequality} states: If
+  $a$ and $b$ are any real numbers then $|a+b|\le |a|+|b|$.}
 \begin{proof} 
 Given any $\epsilon$ we need to find a $\delta$ such that
 \[
@@ -484,12 +492,6 @@ Here we use an algebraic trick, add $0 = -f(x)M+f(x)M$:
 &\le |f(x)(g(x)-M)|+|(f(x)-L)M| \\
 &=|f(x)||g(x)-M|+|f(x)-L||M|.
 \end{align*}
-
-\marginnote[-1in]{This is all straightforward except perhaps for the ``$\le$''. This
-follows from the \textit{triangle inequality}\index{triangle
-  inequality}. The \textbf{Triangle Inequality} states: If
-  $a$ and $b$ are any real numbers then $|a+b|\le |a|+|b|$.}
-
 Since $\ds \lim_{x\to a}f(x) =L$, there is a value $\delta_1$ so that
 $0<|x-a|<\delta_1$ implies $|f(x)-L|<|\epsilon/(2M)|$. This means that
 $0<|x-a|<\delta_1$ implies $|f(x)-L||M|< \epsilon/2$. 
@@ -624,18 +626,20 @@ $\ds \lim_{x\to a} x =a$.
 
 
 \begin{example}
-Compute $\ds
-\lim_{x\to 1}{x^2-3x+5\over x-2}$. If we apply the theorem
-in all its gory detail, we get
+Compute $\ds \lim_{x\to 1}{x^2-3x+5\over x-2}$. 
+\end{example}
+\begin{solution}
+Using limit laws, 
 \begin{align*}
 \lim_{x\to 1}{x^2-3x+5\over x-2}&=
 \dfrac{\ds\lim_{x\to 1}x^2-3x+5}{\ds\lim_{x\to1}(x-2)} \\
 &=\dfrac{\ds\lim_{x\to 1}x^2-\ds\lim_{x\to1}3x+\lim_{x\to1}5}{\ds\lim_{x\to1}x-\ds\lim_{x\to1}2} \\
 &=\dfrac{\left(\ds\lim_{x\to 1}x\right)^2-3\ds\lim_{x\to1}x+5}{\ds\lim_{x\to1}x-2} \\
 &=\dfrac{1^2-3\cdot1+5}{1-2} \\
-&=\dfrac{1-3+5}{-1} = -3 \\
+&=\dfrac{1-3+5}{-1} = -3.
 \end{align*}
-\end{example}
+\end{solution}
+
 
 It is worth commenting on the trivial limit $\ds \lim_{x\to1}5$. From one
 point of view this might seem meaningless, as the number 5 can't
@@ -650,34 +654,33 @@ that aren't so easy, namely, limits in which a denominator approaches
 zero. There are a handful of algebraic tricks that work on many of
 these limits.
 
-
+\marginnote[1in]{Limits allow us to examine functions where they are not definied.}
 \begin{example}
-Compute $\ds\lim_{x\to1}{x^2+2x-3\over x-1}$. We can't simply plug in
-$x=1$ because that makes the denominator zero.  However, when taking
-limits we assume $x\ne 1$:
+Compute $\ds\lim_{x\to1}{x^2+2x-3\over x-1}$. 
+\end{example}
+\begin{solution}
+We can't simply plug in $x=1$ because that makes the denominator zero.
+However, when taking limits we assume $x\ne 1$:
 \begin{align*}
 \lim_{x\to1}{x^2+2x-3\over x-1}&=\lim_{x\to1}{(x-1)(x+3)\over x-1} \\
-&=\lim_{x\to1}(x+3)=4 \\
+&=\lim_{x\to1}(x+3)=4
 \end{align*}
-\vskip-10pt
-\end{example}
-\marginnote[-1in]{Limits allow us to examine functions where they are not definied.}
-Another of the most common algebraic tricks was used in
-section~\xrefn{sec:slope of a function}. Here's another example:
+\end{solution}
+
 
 \begin{example}
 Compute $\ds\lim_{x\to-1} {\sqrt{x+5}-2\over x+1}$.
+\end{example}
+\begin{solution} 
+Using limit laws,
 \begin{align*}
 \lim_{x\to-1} {\sqrt{x+5}-2\over x+1}&=
 \lim_{x\to-1} {\sqrt{x+5}-2\over x+1}{\sqrt{x+5}+2\over \sqrt{x+5}+2} \\
 &=\lim_{x\to-1} {x+5-4\over (x+1)(\sqrt{x+5}+2)} \\
 &=\lim_{x\to-1} {x+1\over (x+1)(\sqrt{x+5}+2)} \\
-&=\lim_{x\to-1} {1\over \sqrt{x+5}+2}={1\over4} \\
+&=\lim_{x\to-1} {1\over \sqrt{x+5}+2}={1\over4}.
 \end{align*}
-At the very last step we have used Theorems~\xrefn{thm:limit of
-composition} and \xrefn{thm:continuity of roots}.
-\end{example}
-
+\end{solution}
 
 
 
