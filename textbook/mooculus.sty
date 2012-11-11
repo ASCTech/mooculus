@@ -3,6 +3,44 @@
 \ProvidesPackage{mooculus}[2012/01/30 v0.75]
 \ProcessOptions\relax
 
+\RequirePackage[framemethod=TikZ]{mdframed}
+\RequirePackage{environ}
+%\RequirePackage{xkeyval}
+\RequirePackage{tikz}
+\RequirePackage{amssymb}
+\RequirePackage{amsmath}
+\RequirePackage{ntheorem}
+\RequirePackage{thmtools}
+\RequirePackage{microtype}
+\RequirePackage{enumerate}
+\RequirePackage{pgfplots}
+\RequirePackage{morefloats}
+
+\usetikzlibrary{shadows}
+\usetikzlibrary{shapes}
+\usetikzlibrary{decorations}
+
+
+
+%% Font
+
+%% New Centuary Schoolbook
+%\RequirePackage{fouriernc}
+
+%% Bookman
+
+\let\iint\undefined 
+\let\iiint\undefined 
+\RequirePackage{kmath,kerkis} % The order of the packages matters; kmath changes the default text font
+
+
+%% Palatino Clone
+%\usepackage[notextcomp]{kpfonts} 
+
+\RequirePackage[T1]{fontenc}
+
+
+
 
 
 %% Colors
@@ -52,7 +90,7 @@
 \colorlet{penColor}{blue!50!black} % Color of a curve in a plot
 \colorlet{fill1}{blue!50!black!20} % Color of fill in a plot
 \colorlet{fill2}{blue!10} % Color of fill in a plot
-\colorlet{gridColor}{gray!30} % Color of grid in a plot
+\colorlet{gridColor}{gray!50} % Color of grid in a plot
 \colorlet{definitionBackground}{black} % Color of the background of
                                           % a definition
 \colorlet{theoremBackground}{blue!50!black} % Color of the background of a theorem
@@ -71,22 +109,6 @@
 \color{textColor} 
 
 
-\RequirePackage[framemethod=TikZ]{mdframed}
-\RequirePackage{environ}
-%\RequirePackage{xkeyval}
-\RequirePackage{tikz}
-\RequirePackage{amssymb}
-\RequirePackage{amsmath}
-\RequirePackage{ntheorem}
-\RequirePackage{microtype}
-\RequirePackage{enumerate}
-
-\usepackage[notextcomp]{kpfonts}
-\RequirePackage[T1]{fontenc}
-
-\usetikzlibrary{shadows}
-\usetikzlibrary{shapes}
-\usetikzlibrary{decorations}
 
 
 
@@ -117,31 +139,53 @@
 
 
 
-\theorembodyfont{\slshape}
-\newmdtheoremenv[leftmargin=40,rightmargin=40,backgroundcolor=theoremBackground!10,fontcolor=textColor,%
-innerlinewidth=1,innerlinecolor=mainTheoremBorder!20!background,
-middlelinewidth=2,middlelinecolor=mainTheoremBorder,
-outerlinewidth=1,outerlinecolor=mainTheoremBorder!10!background,
-roundcorner=10pt,%
-innertopmargin=\topskip,splittopskip=\topskip,skipbelow=\baselineskip,skipabove=\baselineskip,
-ntheorem]{mainTheorem}%
-{Theorem}[section]
+%% \theorembodyfont{\slshape}
+%% \newmdtheoremenv[leftmargin=40,rightmargin=40,backgroundcolor=theoremBackground!10,fontcolor=textColor,%
+%% innerlinewidth=1,innerlinecolor=mainTheoremBorder!20!background,
+%% middlelinewidth=2,middlelinecolor=mainTheoremBorder,
+%% outerlinewidth=1,outerlinecolor=mainTheoremBorder!10!background,
+%% roundcorner=10pt,%
+%% innertopmargin=\topskip,splittopskip=\topskip,skipbelow=\baselineskip,skipabove=\baselineskip,
+%% ntheorem]{mainTheorem}%
+%% {Theorem}[section]
+
+\declaretheoremstyle[ headfont=\normalfont\bfseries,
+  notefont=\mdseries, notebraces={(}{)}, bodyfont=\normalfont\slshape,
+  postheadspace=0.5em,
+  preheadhook={\begin{mdframed}[leftmargin=40,rightmargin=40,backgroundcolor=theoremBackground!10,fontcolor=textColor,%
+        innerlinewidth=1,innerlinecolor=mainTheoremBorder!20!background,
+        middlelinewidth=2,middlelinecolor=mainTheoremBorder,
+        outerlinewidth=1,outerlinecolor=mainTheoremBorder!10!background,
+        roundcorner=10pt,%
+        innertopmargin=\topskip,splittopskip=\topskip,skipbelow=\baselineskip,skipabove=\baselineskip]},
+  postfoothook=\end{mdframed} ]{mainThmStyle}
+\declaretheorem[style=mainThmStyle,name=Theorem,numberwithin=section]{mainTheorem}
 
 
-\newmdtheoremenv[hidealllines=true,roundcorner=10pt,leftmargin=40,%
+
+
+\declaretheoremstyle[ headfont=\normalfont\bfseries,
+  notefont=\mdseries, notebraces={(}{)}, bodyfont=\normalfont\slshape,
+  postheadspace=0.5em,
+  preheadhook={\begin{mdframed}[hidealllines=true,roundcorner=10pt,leftmargin=40,%
 rightmargin=40,backgroundcolor=theoremBackground!10,fontcolor=textColor,%%
 innertopmargin=\topskip,%
 splittopskip=\topskip,skipbelow=\baselineskip,%
-skipabove=\baselineskip,ntheorem]{theorem}%
-{Theorem}[section]
+skipabove=\baselineskip]},
+  postfoothook=\end{mdframed} ]{thmStyle}%
+\declaretheorem[style=thmStyle,name=Theorem,numberlike=mainTheorem]{theorem}
 
-\theorembodyfont{\upshape}
-\newmdtheoremenv[outerlinewidth=2,topline=false, bottomline=false, leftline=true, rightline=false, leftmargin=40,%
+
+\declaretheoremstyle[ headfont=\normalfont\bfseries,
+  notefont=\mdseries, notebraces={(}{)}, bodyfont=\normalfont\upshape,
+  postheadspace=0.5em,
+  preheadhook={\begin{mdframed}[outerlinewidth=2,topline=false, bottomline=false, leftline=true, rightline=false, leftmargin=40,%
 rightmargin=40,
 outerlinecolor=textColor,fontcolor=textColor,backgroundcolor=background,%%
-skipbelow=\baselineskip,skipabove=\baselineskip,innertopmargin=0pt, innerbottommargin=0pt,%
-ntheorem]{example}%
-{Example}[section]
+skipbelow=\baselineskip,skipabove=\baselineskip,innertopmargin=0pt, innerbottommargin=0pt]},
+postfoothook=\end{mdframed}]{egStyle}
+\declaretheorem[style=egStyle,name=Example,numberlike=theorem]{example}
+
 
 \theoremstyle{nonumberplain} %% All styles beyond this point are unnumbered.
 \theoremheaderfont{\normalfont\itshape\bfseries}
@@ -149,8 +193,7 @@ ntheorem]{example}%
 \theoremseparator{}
 \newmdtheoremenv[outerlinewidth=2,topline=false, bottomline=false, leftline=true, rightline=false, 
 leftmargin=40,innertopmargin=0pt,innerbottommargin=0pt,skipbelow=\baselineskip,
-outerlinecolor=textColor,fontcolor=textColor,backgroundcolor=background,
-ntheorem]{solution}%
+outerlinecolor=textColor,fontcolor=textColor,backgroundcolor=background]{solution}%
 {Solution}
 
 
@@ -159,8 +202,7 @@ ntheorem]{solution}%
 \theoremseparator{}
 \newmdtheoremenv[outerlinewidth=2,topline=false, bottomline=true, leftline=false, rightline=true, 
 leftmargin=40,outerlinecolor=textColor,fontcolor=textColor,backgroundcolor=background,
-skipbelow=\baselineskip,
-ntheorem]{proof}%
+skipbelow=\baselineskip]{proof}%
 {Proof}
 
 
@@ -172,8 +214,7 @@ ntheorem]{proof}%
 rightmargin=40,backgroundcolor=definitionBackground!10,fontcolor=textColor,%%
 innertopmargin=\topskip,%
 splittopskip=\topskip,skipbelow=\baselineskip,skipabove=\baselineskip,
-font=\upshape,
-ntheorem
+font=\upshape
 ]{definition}%
 {Definition}
 
@@ -182,7 +223,7 @@ ntheorem
 rightmargin=40,backgroundcolor=red!10,%
 innertopmargin=\topskip,%
 splittopskip=\topskip,skipbelow=\baselineskip,%
-skipabove=\baselineskip,ntheorem]{warning}%
+skipabove=\baselineskip]{warning}%
 {Warning}
 
 
