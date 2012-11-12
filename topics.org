@@ -1,4 +1,5 @@
-This is the 1151 schedule; I should be moving the MOOC somewhat faster than it does.
+This is the 1151 schedule; I should be moving the MOOC somewhat faster
+than it does.
 
 * Week 1: Limits
 ** 1.4 Review of functions

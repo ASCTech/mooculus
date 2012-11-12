@@ -20,7 +20,14 @@
 \label{plot:1/x}
 \end{figure}
 
-
+Another example of a function whose domain is not the entire $x$-axis
+is: $y=f(x)=1/x$, the reciprocal function.  We cannot substitute $x=0$
+in this formula.  The function makes sense, however, for any nonzero
+$x$, so we take the domain to be: $\{x\in\R\mid x\ne 0\}$.  The graph
+of this function does not have any point $(x,y)$ with $x=0$.  As $x$
+gets close to 0 from either side, the graph goes off toward infinity.
+We call the vertical line $x=0$ an {\dfont
+  asymptote\index{asymptote}}.
 
 \section{Limits at Infinity}
 
@@ -201,6 +208,43 @@ number $c$ in $[a, b]$ such that $f(c) = d$.
   M.\ \textit{The intermediate value theorem is NOT obvious---and I am
     going to prove it to you}. College Math. J. 42 (2011), no. 4,
   254--259.}
+In Figure~\ref{figure:intermediate-value}, we see a geometric
+interpretation of this theorem.
+
+\begin{figure}
+\begin{tikzpicture}
+	\begin{axis}[
+            domain=0:6, ymin=0, ymax=2.2,xmax=6,
+            axis lines =left, xlabel=$x$, ylabel=$y$,
+            every axis y label/.style={at=(current axis.above origin),anchor=south},
+            every axis x label/.style={at=(current axis.right of origin),anchor=west},
+            xtick={1,3.597,5}, ytick={.203,1,1.679},
+            xticklabels={$a$,$c$,$b$}, yticklabels={$f(a)$,$f(c)=d$,$f(b)$},
+            axis on top,
+          ]
+          \addplot [draw=none, fill=fill2, smooth, domain=(0:7)] {1.679} \closedcycle;
+          \addplot [draw=none, fill=background, smooth, domain=(0:7)] {.203} \closedcycle;
+          \addplot [textColor,dashed] plot coordinates {(0,1.679) (6,1.679)};
+          \addplot [textColor,dashed] plot coordinates {(0,.203) (6,.203)};
+          \addplot [textColor,dashed] plot coordinates {(5,0) (5,1.679)};
+          \addplot [textColor,dashed] plot coordinates {(1,0) (1,.203)};
+          \addplot [textColor,dashed] plot coordinates {(3.587,0) (3.597,1)};
+          \addplot [penColor2, smooth,domain=(0:6)] {1};
+          \addplot [very thick,penColor, smooth,domain=(0:2.5)] {sin(deg((x - 4)/2)) + 1.2};
+          \addplot [very thick,penColor, smooth,domain=(4:6)] {sin(deg((x - 4)/2)) + 1.2};
+          \addplot [very thick,dashed,penColor!50!background, smooth,domain=(2.5:4)] {sin(deg((x - 4)/2)) + 1.2}; 
+          \addplot [color=penColor!50!background,fill=penColor!50!background,only marks,mark=*] coordinates{(3.587,1)};  %% closed hole          
+          \addplot [color=penColor,fill=penColor,only marks,mark=*] coordinates{(1,.203)};  %% closed hole          
+          \addplot [color=penColor,fill=penColor,only marks,mark=*] coordinates{(5,1.679)};  %% closed hole          
+        \end{axis}
+\end{tikzpicture}
+\caption{A geometric interpertation of the Intermediate Value
+  Theorem. The function $f(x)$ is continuous on the interval
+  $[a,b]$. Since $d$ is in the interval $[f(a),f(b)]$, there exists a
+  value $c$ in $[a,b]$ such that $f(c) = d$.}
+\label{figure:intermediate-value}
+\end{figure}
+
 
 
 
@@ -217,7 +261,7 @@ This example also points the way to a simple method for approximating
 roots. 
 
 \begin{example} Approximate the root of the previous example  to one decimal
-place.
+place. THIS IS A GOOD EXAMPLE - CF WITH THE PAPER LIST ABOVE.
 
 If we compute $f(0.1)$, $f(0.2)$, and so on, we find that 
 $f(0.6)<0$ and $f(0.7)>0$, so by the Intermediate Value Theorem, $f$
