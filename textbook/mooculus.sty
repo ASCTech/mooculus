@@ -147,7 +147,7 @@
         middlelinewidth=2,middlelinecolor=mainTheoremBorder,
         outerlinewidth=1,outerlinecolor=mainTheoremBorder!10!background,
         roundcorner=10pt,%
-        innertopmargin=\topskip,splittopskip=\topskip,skipbelow=\baselineskip,skipabove=\baselineskip]},
+        innertopmargin=6pt,splittopskip=\topskip,skipbelow=\baselineskip,skipabove=\baselineskip]},
   postfoothook=\end{mdframed} ]{mainThmStyle}
 \declaretheorem[style=mainThmStyle,name=Theorem,numberwithin=section]{mainTheorem}
 
@@ -159,7 +159,7 @@
   postheadspace=0.5em,
   preheadhook={\begin{mdframed}[hidealllines=true,roundcorner=10pt,leftmargin=40,%
 rightmargin=40,backgroundcolor=theoremBackground!10,fontcolor=textColor,%%
-innertopmargin=\topskip,%
+innertopmargin=6pt,%
 splittopskip=\topskip,skipbelow=\baselineskip,%
 skipabove=\baselineskip]},
   postfoothook=\end{mdframed} ]{thmStyle}%
@@ -202,7 +202,7 @@ skipbelow=\baselineskip]{proof}%
 \theorembodyfont{\upshape}
 \newmdtheoremenv[hidealllines=true,roundcorner=10pt,leftmargin=40,%
 rightmargin=40,backgroundcolor=definitionBackground!10,fontcolor=textColor,%%
-innertopmargin=\topskip,%
+innertopmargin=6pt,%\topskip,%
 splittopskip=\topskip,skipbelow=\baselineskip,skipabove=\baselineskip,
 font=\upshape
 ]{definition}%
@@ -211,7 +211,7 @@ font=\upshape
 
 \newmdtheoremenv[hidealllines=true,leftmargin=40,roundcorner=10pt%
 rightmargin=40,backgroundcolor=red!10,%
-innertopmargin=\topskip,%
+innertopmargin=6pt,%
 splittopskip=\topskip,skipbelow=\baselineskip,%
 skipabove=\baselineskip]{warning}%
 {Warning}
@@ -558,6 +558,39 @@ arc (5:90:0.35in) % top ear
     {\sffamily\qquad\thecontentspage} % filler + page (leaders and page num)
     [\end{fullwidth}] % after
 }{}
+
+
+
+
+
+
+
+
+%% Header mods
+%
+% The main matter in Tufte's /Beautiful Evidence/ doesn't restart the page
+% numbering---it continues where it left off in the front matter.
+\renewcommand\mainmatter{%
+  \cleardoublepage%
+  \@mainmattertrue%
+  \fancyhf{}%
+  \ifthenelse{\boolean{@tufte@twoside}}%
+    {% two-side
+      \renewcommand{\chaptermark}[1]{\markboth{##1}{}}%
+      \fancyhead[LE]{\thepage\quad\smallcaps{\newlinetospace{\plaintitle}}}% book title
+      \fancyhead[RO]{\smallcaps{\newlinetospace{\leftmark}}\quad\thepage}% chapter title
+    }%
+    {% one-side
+      \fancyhead[RE,RO]{\smallcaps{\newlinetospace{\plaintitle}}\quad\thepage}% book title
+    }%
+}
+
+
+
+
+
+
+
 
 
 

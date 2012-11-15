@@ -11,14 +11,17 @@ attack problems in pure mathematics.
 Prior to OSU, he received an undergraduate degree from Harvard
 University and received a Ph.D. from the University of Chicago.
 ** Steve Gubkin
+
 ** Bart Snapp
 Bart Snapp teaches mathematics at The Ohio State University.  His
 research interests include commutative ring theory, number theory, and
 recreational mathematics.  He enjoys exploring connections between
-mathematics and the real-world problems, art, and music.
+mathematics and the real-world problems, art, and music. As an
+undergraduate, he was involved in distance teaching and learning
+though OSU's CROSU (Calculus Remote at Ohio State University) program.
 
-Prior to OSU, he received an undergraduate degree from OSU University
-and received a Ph.D. from the University Illinois.
+Prior to OSU, he worked at Coastal Carolina University. Bart earned
+his Ph.D. from the University Illinois at Urbana-Champaign. 
 ** Roman Holowinsky
 
 Roman Holowinsky has been a professor in the OSU math department since

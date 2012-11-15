@@ -30,6 +30,12 @@ Random Ideas
 
 Topics
 
+* Terminal Velocity
+** This should work into limits -- penny dropped kill someone?
+
+
+* sling shot (tangent line)
+* ball in a half plate, whole plate (tangent line)
 
 * Week 1: Limits
 ** 1.4 Review of functions
