@@ -3,14 +3,31 @@ Here we can list movie ideas.
 Also if we can, we could place them in the "right" location for the
 course.
 
+
+
 Random Ideas
 * Ladder Problem
+* Giving slightly different arithmetic problems to a few people to demonstrate continuity
 * Balloon volume with bike pump
 * Coffee cup cooling
+* Photocopier doubling, halving size
+* Hooke's law: actual springs
+* Kids toys: cars on tracks pulling each other for related rates
+* How fast is my shadow changing?
+* Fancy vase being filled with water---derivative of height?
+* Two mirrors pointed at each other
+* Laser refraction
+* Humans "refracting" when walking from clear to snow-covered ground
+* Balancing cones and spheres, a la Archimedes "method"
+* Bubble between two panes of glass, to demonstrate optimization
+* Mold growth
 * Music
 ** electric guitar and decibel scale
 ** sin waves cos waves
 ** square waves -- limts?
+** tone generator spinning or moving on a track, get doppler effect
+- lets them "hear" the second derivative
+- also find the speed of sound
 * Ice cube melting
 * Space Balloon
 ** This could probably be used in several chapters.
@@ -32,8 +49,6 @@ Topics
 
 * Terminal Velocity
 ** This should work into limits -- penny dropped kill someone?
-
-
 * sling shot (tangent line)
 * ball in a half plate, whole plate (tangent line)
 
