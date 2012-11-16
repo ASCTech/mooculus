@@ -3,9 +3,14 @@ Here we can list movie ideas.
 Also if we can, we could place them in the "right" location for the
 course.
 
-
-
-Random Ideas
+Movies to be made
+* Slope Sleuths
+** Finding examples of slope in the real world--we should probably extend this to "average rate of change"
+*** stairs
+*** Roof
+*** Prices
+*** Speed
+*** temperature change
 * Ladder Problem
 * Giving slightly different arithmetic problems to a few people to demonstrate continuity
 * Balloon volume with bike pump
