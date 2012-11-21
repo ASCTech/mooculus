@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012/Debian) (format=pdflatex 2012.11.6)  20 NOV 2012 14:24
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012/Debian) (format=pdflatex 2012.11.6)  20 NOV 2012 15:57
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1336,6 +1336,18 @@ Package morefloats Info: Maximum number of possible floats asked for: 36.
 \bx@AI=\insert217
 \bx@AJ=\insert216
 )
+(/usr/share/texlive/texmf-dist/tex/latex/soul/soul.sty
+Package: soul 2003/11/17 v2.4 letterspacing/underlining (mf)
+\SOUL@word=\toks58
+\SOUL@lasttoken=\toks59
+\SOUL@cmds=\toks60
+\SOUL@buffer=\toks61
+\SOUL@token=\toks62
+\SOUL@spaceskip=\skip152
+\SOUL@ttwidth=\dimen292
+\SOUL@uldp=\dimen293
+\SOUL@ulht=\dimen294
+)
 (/usr/share/texmf/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshado
 ws.code.tex
 File: tikzlibraryshadows.code.tex 2008/01/13 v2.10 (rcs-revision 1.3)
@@ -1543,11 +1555,11 @@ LaTeX Font Info:    Redeclaring font encoding T1 on input line 43.
 
 
 Package thmtools Warning: Key `notefont' not supported by ntheorem on input lin
-e 151.
+e 152.
 
 
 Package thmtools Warning: Key `notebraces' not supported by ntheorem on input l
-ine 151.
+ine 152.
 
 Package thmtools Info: Key `preheadhook' (with value `\begin {mdframed}[leftmar
 gin=40,rightmargin=40,backgroundcolor=theoremBackground!10,fontcolor=textColor,
@@ -1557,19 +1569,19 @@ remBorder!10!background, roundcorner=10pt,innertopmargin=6pt,splittopskip=\tops
 kip ,skipbelow=\baselineskip ,skipabove=\baselineskip ]')
 (thmtools)             is not a known style key.
 (thmtools)             Will pass this to every \declaretheorem
-(thmtools)             that uses `style=mainThmStyle' on input line 151.
+(thmtools)             that uses `style=mainThmStyle' on input line 152.
 Package thmtools Info: Key `postfoothook' (with value `\end {mdframed}')
 (thmtools)             is not a known style key.
 (thmtools)             Will pass this to every \declaretheorem
-(thmtools)             that uses `style=mainThmStyle' on input line 151.
+(thmtools)             that uses `style=mainThmStyle' on input line 152.
 \c@mainTheorem=\count315
 
 Package thmtools Warning: Key `notefont' not supported by ntheorem on input lin
-e 165.
+e 166.
 
 
 Package thmtools Warning: Key `notebraces' not supported by ntheorem on input l
-ine 165.
+ine 166.
 
 Package thmtools Info: Key `preheadhook' (with value `\begin {mdframed}[hideall
 lines=true,roundcorner=10pt,leftmargin=40,rightmargin=40,backgroundcolor=theore
@@ -1577,18 +1589,18 @@ mBackground!10,fontcolor=textColor,innertopmargin=6pt,splittopskip=\topskip ,sk
 ipbelow=\baselineskip ,skipabove=\baselineskip ]')
 (thmtools)             is not a known style key.
 (thmtools)             Will pass this to every \declaretheorem
-(thmtools)             that uses `style=thmStyle' on input line 165.
+(thmtools)             that uses `style=thmStyle' on input line 166.
 Package thmtools Info: Key `postfoothook' (with value `\end {mdframed}')
 (thmtools)             is not a known style key.
 (thmtools)             Will pass this to every \declaretheorem
-(thmtools)             that uses `style=thmStyle' on input line 165.
+(thmtools)             that uses `style=thmStyle' on input line 166.
 
 Package thmtools Warning: Key `notefont' not supported by ntheorem on input lin
-e 176.
+e 177.
 
 
 Package thmtools Warning: Key `notebraces' not supported by ntheorem on input l
-ine 176.
+ine 177.
 
 Package thmtools Info: Key `preheadhook' (with value `\begin {mdframed}[outerli
 newidth=2,topline=false, bottomline=false, leftline=true, rightline=false, left
@@ -1597,11 +1609,11 @@ ndcolor=background,skipbelow=\baselineskip ,skipabove=\baselineskip ,innertopma
 rgin=0pt, innerbottommargin=0pt]')
 (thmtools)             is not a known style key.
 (thmtools)             Will pass this to every \declaretheorem
-(thmtools)             that uses `style=egStyle' on input line 176.
+(thmtools)             that uses `style=egStyle' on input line 177.
 Package thmtools Info: Key `postfoothook' (with value `\end {mdframed}')
 (thmtools)             is not a known style key.
 (thmtools)             Will pass this to every \declaretheorem
-(thmtools)             that uses `style=egStyle' on input line 176.
+(thmtools)             that uses `style=egStyle' on input line 177.
 \c@solution=\count316
 \c@proof=\count317
 \c@definition=\count318
@@ -1612,23 +1624,23 @@ File: block.tss 2011/12/15
 ))
 (/usr/share/texlive/texmf-dist/tex/latex/booktabs/booktabs.sty
 Package: booktabs 2005/04/14 v1.61803 publication quality tables
-\heavyrulewidth=\dimen292
-\lightrulewidth=\dimen293
-\cmidrulewidth=\dimen294
-\belowrulesep=\dimen295
-\belowbottomsep=\dimen296
-\aboverulesep=\dimen297
-\abovetopsep=\dimen298
-\cmidrulesep=\dimen299
-\cmidrulekern=\dimen300
-\defaultaddspace=\dimen301
+\heavyrulewidth=\dimen295
+\lightrulewidth=\dimen296
+\cmidrulewidth=\dimen297
+\belowrulesep=\dimen298
+\belowbottomsep=\dimen299
+\aboverulesep=\dimen300
+\abovetopsep=\dimen301
+\cmidrulesep=\dimen302
+\cmidrulekern=\dimen303
+\defaultaddspace=\dimen304
 \@cmidla=\count321
 \@cmidlb=\count322
-\@aboverulesep=\dimen302
-\@belowrulesep=\dimen303
+\@aboverulesep=\dimen305
+\@belowrulesep=\dimen306
 \@thisruleclass=\count323
 \@lastruleclass=\count324
-\@thisrulewidth=\dimen304
+\@thisrulewidth=\dimen307
 )
 (/usr/share/texlive/texmf-dist/tex/latex/base/makeidx.sty
 Package: makeidx 2000/03/29 v1.0m Standard LaTeX package
@@ -1641,7 +1653,7 @@ Writing index file textbook.idx
 \answer@stream=\write5
 \openout5 = `textbook.ans'.
 
-\answercontent=\toks58
+\answercontent=\toks63
 (./textbook.aux
 
 LaTeX Warning: Label `figure:epsilon-delta' multiply defined.
@@ -1777,16 +1789,16 @@ Package microtype Info: No adjustment of character kerning.
 (/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count326
-\scratchdimen=\dimen305
+\scratchdimen=\dimen308
 \scratchbox=\box106
 \nofMPsegments=\count327
 \nofMParguments=\count328
-\everyMPshowfont=\toks59
+\everyMPshowfont=\toks64
 \MPscratchCnt=\count329
-\MPscratchDim=\dimen306
+\MPscratchDim=\dimen309
 \MPnumerator=\count330
 \makeMPintoPDFobject=\count331
-\everyMPtoPDFconversion=\toks60
+\everyMPtoPDFconversion=\toks65
 ) (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
 
@@ -2989,11 +3001,11 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 211.
  ) 
 Here is how much of TeX's memory you used:
- 37960 strings out of 493481
- 768097 string characters out of 3143393
- 1451190 words of memory out of 3000000
- 39673 multiletter control sequences out of 15000+200000
- 92971 words of font info for 382 fonts, out of 3000000 for 9000
+ 38125 strings out of 493481
+ 770154 string characters out of 3143393
+ 1453637 words of memory out of 3000000
+ 39833 multiletter control sequences out of 15000+200000
+ 93284 words of font info for 383 fonts, out of 3000000 for 9000
  965 hyphenation exceptions out of 8191
  80i,21n,91p,952b,2018s stack positions out of 5000i,500n,10000p,200000b,50000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}{/usr/share/texliv
@@ -3019,7 +3031,7 @@ ublic/txfonts/txsy.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/txfont
 s/txsyc.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb><
 /usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/share/t
 exlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb>
-Output written on textbook.pdf (81 pages, 450995 bytes).
+Output written on textbook.pdf (81 pages, 451004 bytes).
 PDF statistics:
  982 PDF objects out of 1000 (max. 8388607)
  849 compressed objects within 9 object streams
