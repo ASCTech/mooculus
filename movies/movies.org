@@ -5,47 +5,7 @@ course.
 
 Movies to be made
 * Slope Sleuths
-** Finding examples of slope in the real world
-** we should probably extend this to "average rate of change"
-
-We should show us at the board, writing down different definitions of slope.
-
-*** Rates
-"rate" of how fast the function is growing.
--treadmill
--track
--speedometer of a car
--inflation
--prices
-
-*** Change
-change in y over change in x
--slope of a roof
--stairs (maybe we could get into the stadium??)
--slope of a ramp, and treadmil
-(convert from angle?)
-
-
-change in distance over change in time (\delta d)/(\delta t)
--use an odometer and a stopwatch.
-
-change in price over change in time
-
-change in height over change in (horizontal) distance
--stairs
-
-change in temperature over change in time. 
-Over change in distance (north -> south)!
-
-*** (y2-y1)/(x2-x1)
-The proceed to (y2-y1)/(x2-x1), before we would be measuring the
-change directly, now we are taking two points and subtracting
-(conceptually different)
-
-*** Slope as the slope of a line
-This should get at the predicitive power of slope. 
-
-
+  see file
 * Ladder Problem
 * Giving slightly different arithmetic problems to a few people to demonstrate continuity
 * Balloon volume with bike pump
