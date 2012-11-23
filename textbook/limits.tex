@@ -773,15 +773,17 @@ x-5 & x\ne 1, \\
 \section{Infinite Limits}
 
 
-\begin{definition}
-$\ds \lim_{x->a} f(x) = \infty$
-\end{definition}
-
-
-\begin{figure}
+Consider the function
+\[
+f(x) = \frac{1}{(x+1)^2}
+\]
+While the $\ds \lim_{x\to -1} f(x)$ does not exist, see
+Figure~\ref{plot:1/(x+1)^2}, something can still be said.
+\begin{marginfigure}
 \begin{tikzpicture}
 	\begin{axis}[
             domain=-2:1,
+            ymax=100,
             samples=100,
             axis lines =middle, xlabel=$x$, ylabel=$f(x)$,
             every axis y label/.style={at=(current axis.above origin),anchor=south},
@@ -789,14 +791,114 @@ $\ds \lim_{x->a} f(x) = \infty$
           ]
 	  \addplot [very thick, penColor, smooth, domain=(-2:-1.1)] {1/(x+1)^2};
           \addplot [very thick, penColor, smooth, domain=(-.9:1)] {1/(x+1)^2};
+          \addplot [textColor, dashed] plot coordinates {(-1,0) (-1,100)};
         \end{axis}
 \end{tikzpicture}
 \caption{A plot of $f(x)=\protect\frac{1}{(x+1)^2}$.}
 \label{plot:1/(x+1)^2}
-\end{figure}
+\end{marginfigure}
 
 
+\begin{definition}\label{def:inflimit}\index{limit!infinite}\index{infinite limit}
+If $f(x)$ grows arbitrarily large as $x$ approaces $a$, we write
+\[
+\lim_{x\to a} f(x) = \infty
+\]
+and say that the limit of $f(x)$ \textbf{approaches infinity} as $x$
+goes to $a$.
 
+If $|f(x)|$ grows arbitrarily large as $x$ approaces $a$ and $f(x)$ is
+negative, we write
+\[
+\lim_{x\to a} f(x) = -\infty
+\]
+and say that the limit of $f(x)$ \textbf{approaches negative infinity}
+as $x$ goes to $a$.
+\end{definition}
+
+On the other hand, if we consider the function 
+\[
+f(x) = \frac{1}{(x-1)}
+\]
+While we have $\ds \lim_{x\to 1} f(x) \ne \pm\infty$, we do have
+one-sided limts, $\ds \lim_{x\to 1+} f(x) = \infty$ and $\ds
+\lim_{x\to 1-} f(x) = -\infty$, see Figure~\ref{plot:1/(x-1)}.
+\begin{marginfigure}
+\begin{tikzpicture}
+	\begin{axis}[
+            domain=-1:2,
+            ymax=50,
+            ymin=-50,
+            samples=100,
+            axis lines =middle, xlabel=$x$, ylabel=$f(x)$,
+            every axis y label/.style={at=(current axis.above origin),anchor=south},
+            every axis x label/.style={at=(current axis.right of origin),anchor=west}
+          ]
+	  \addplot [very thick, penColor, smooth, domain=(1.02:2)] {1/(x-1)};
+          \addplot [very thick, penColor, smooth, domain=(-1:.98)] {1/(x-1)};
+          \addplot [textColor, dashed] plot coordinates {(1,-50) (1,50)};
+        \end{axis}
+\end{tikzpicture}
+\caption{A plot of $f(x)=\protect\frac{1}{x-1}$.}
+\label{plot:1/(x-1)}
+\end{marginfigure}
+
+
+\begin{definition}\label{def:vert asymptote}\index{asymptote!vertical}\index{vertical asymptote}
+If 
+\[
+\lim_{x\to a} f(x) = \pm\infty, \qquad \lim_{x\to a+} f(x) = \pm\infty, \qquad\text{or}\qquad \lim_{x\to a-} f(x) = \pm\infty,
+\]
+then the line $x=a$ is a \textbf{vertical asymptote} of $f(x)$.
+\end{definition}
+
+
+\begin{example}
+Find the vertical asymptotes of 
+\[
+f(x) = \frac{x^2-9x+14}{x^2-5x+6}.
+\]
+\end{example}
+\begin{solution}
+Start by factoring both the numerator and the denominator:
+\[
+\frac{x^2-9x+14}{x^2-5x+6} = \frac{(x-2)(x-7)}{(x-2)(x-3)}
+\]
+Using limits, we must investigate when $x\to 2$ and $x\to 3$. Write
+\begin{align*}
+\lim_{x\to 2} \frac{(x-2)(x-7)}{(x-2)(x-3)} &= \lim_{x\to 2} \frac{(x-7)}{(x-3)}\\
+&= \frac{-5}{-1}\\
+&=5.
+\end{align*}
+Now write
+\begin{align*}
+\lim_{x\to 3} \frac{(x-2)(x-7)}{(x-2)(x-3)} &= \lim_{x\to 3} \frac{(x-7)}{(x-3)}\\
+&= \lim_{x\to 3}\frac{-4}{x-3}.
+\end{align*}
+Hence $\ds\lim_{x\to 3+} f(x) = -\infty$, $\ds\lim_{x\to 3-} f(x) =
+\infty$, and we have a vertical asymptote at $x=3$, see
+Figure~\ref{plot:(x^2-9x+14)/(x^2-5x+6)}.
+\end{solution}
+\begin{marginfigure}[-4in]
+\begin{tikzpicture}
+	\begin{axis}[
+            domain=1:4,
+            ymax=50,
+            ymin=-50,
+            samples=100,
+            axis lines =middle, xlabel=$x$, ylabel=$f(x)$,
+            every axis y label/.style={at=(current axis.above origin),anchor=south},
+            every axis x label/.style={at=(current axis.right of origin),anchor=west}
+          ]
+	  \addplot [very thick, penColor, smooth, domain=(3.02:4)] {(x-7)/(x-3)};
+          \addplot [very thick, penColor, smooth, domain=(1:2.98)] {(x-7)/(x-3)};
+          \addplot [textColor, dashed] plot coordinates {(3,-50) (3,50)};
+          \addplot[color=penColor,fill=background,only marks,mark=*] coordinates{(2,5)};  %% open hole
+        \end{axis}
+\end{tikzpicture}
+\caption{A plot of $f(x)=\protect\frac{x^2-9x+14}{x^2-5+6}$.}
+\label{plot:(x^2-9x+14)/(x^2-5x+6)}
+\end{marginfigure}
 
 
 
@@ -819,14 +921,7 @@ $\ds \lim_{x->a} f(x) = \infty$
 \label{plot:1/x}
 \end{figure}
 
-Another example of a function whose domain is not the entire $x$-axis
-is: $y=f(x)=1/x$, the reciprocal function.  We cannot substitute $x=0$
-in this formula.  The function makes sense, however, for any nonzero
-$x$, so we take the domain to be: $\{x\in\R\mid x\ne 0\}$.  The graph
-of this function does not have any point $(x,y)$ with $x=0$.  As $x$
-gets close to 0 from either side, the graph goes off toward infinity.
-We call the vertical line $x=0$ an {\dfont
-  asymptote\index{asymptote}}.
+
 
 \section{Limits to Infinity}
 
