@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012/Debian) (format=pdflatex 2012.11.6)  23 NOV 2012 15:04
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012/Debian) (format=pdflatex 2012.11.6)  23 NOV 2012 17:25
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1310,7 +1310,16 @@ File: tikzlibraryplotmarks.code.tex 2008/01/09 v2.10 (rcs-revision 1.1)
 (/usr/share/texmf/tex/generic/pgf/libraries/pgflibraryplotmarks.code.tex
 File: pgflibraryplotmarks.code.tex 2010/10/15 v2.10 (rcs-revision 1.12)
 )))
-(/usr/share/texlive/texmf-dist/tex/latex/morefloats/morefloats.sty
+(/home/snapp/texmf/tex/latex/tex/generic/pgfplots/libs/tikzlibrarypgfplots.grou
+pplots.code.tex
+\pgfplots@group@current@plot=\count315
+\pgfplots@group@current@row=\count316
+\pgfplots@group@current@column=\count317
+
+(/usr/share/texmf/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarycalc.
+code.tex
+File: tikzlibrarycalc.code.tex 2009/09/04 v2.10 (rcs-revision 1.6)
+)) (/usr/share/texlive/texmf-dist/tex/latex/morefloats/morefloats.sty
 Package: morefloats 2012/01/28 v1.0f Raise limit of unprocessed floats (HMM; DH
 )
 Package morefloats Info: Maximum number of possible floats asked for: 36.
@@ -1543,11 +1552,11 @@ LaTeX Font Info:    Redeclaring font encoding T1 on input line 43.
 
 
 Package thmtools Warning: Key `notefont' not supported by ntheorem on input lin
-e 151.
+e 152.
 
 
 Package thmtools Warning: Key `notebraces' not supported by ntheorem on input l
-ine 151.
+ine 152.
 
 Package thmtools Info: Key `preheadhook' (with value `\begin {mdframed}[leftmar
 gin=40,rightmargin=40,backgroundcolor=theoremBackground!10,fontcolor=textColor,
@@ -1557,19 +1566,19 @@ remBorder!10!background, roundcorner=10pt,innertopmargin=6pt,splittopskip=\tops
 kip ,skipbelow=\baselineskip ,skipabove=\baselineskip ]')
 (thmtools)             is not a known style key.
 (thmtools)             Will pass this to every \declaretheorem
-(thmtools)             that uses `style=mainThmStyle' on input line 151.
+(thmtools)             that uses `style=mainThmStyle' on input line 152.
 Package thmtools Info: Key `postfoothook' (with value `\end {mdframed}')
 (thmtools)             is not a known style key.
 (thmtools)             Will pass this to every \declaretheorem
-(thmtools)             that uses `style=mainThmStyle' on input line 151.
-\c@mainTheorem=\count315
+(thmtools)             that uses `style=mainThmStyle' on input line 152.
+\c@mainTheorem=\count318
 
 Package thmtools Warning: Key `notefont' not supported by ntheorem on input lin
-e 165.
+e 166.
 
 
 Package thmtools Warning: Key `notebraces' not supported by ntheorem on input l
-ine 165.
+ine 166.
 
 Package thmtools Info: Key `preheadhook' (with value `\begin {mdframed}[hideall
 lines=true,roundcorner=10pt,leftmargin=40,rightmargin=40,backgroundcolor=theore
@@ -1577,18 +1586,18 @@ mBackground!10,fontcolor=textColor,innertopmargin=6pt,splittopskip=\topskip ,sk
 ipbelow=\baselineskip ,skipabove=\baselineskip ]')
 (thmtools)             is not a known style key.
 (thmtools)             Will pass this to every \declaretheorem
-(thmtools)             that uses `style=thmStyle' on input line 165.
+(thmtools)             that uses `style=thmStyle' on input line 166.
 Package thmtools Info: Key `postfoothook' (with value `\end {mdframed}')
 (thmtools)             is not a known style key.
 (thmtools)             Will pass this to every \declaretheorem
-(thmtools)             that uses `style=thmStyle' on input line 165.
+(thmtools)             that uses `style=thmStyle' on input line 166.
 
 Package thmtools Warning: Key `notefont' not supported by ntheorem on input lin
-e 176.
+e 177.
 
 
 Package thmtools Warning: Key `notebraces' not supported by ntheorem on input l
-ine 176.
+ine 177.
 
 Package thmtools Info: Key `preheadhook' (with value `\begin {mdframed}[outerli
 newidth=2,topline=false, bottomline=false, leftline=true, rightline=false, left
@@ -1597,16 +1606,16 @@ ndcolor=background,skipbelow=\baselineskip ,skipabove=\baselineskip ,innertopma
 rgin=0pt, innerbottommargin=0pt]')
 (thmtools)             is not a known style key.
 (thmtools)             Will pass this to every \declaretheorem
-(thmtools)             that uses `style=egStyle' on input line 176.
+(thmtools)             that uses `style=egStyle' on input line 177.
 Package thmtools Info: Key `postfoothook' (with value `\end {mdframed}')
 (thmtools)             is not a known style key.
 (thmtools)             Will pass this to every \declaretheorem
-(thmtools)             that uses `style=egStyle' on input line 176.
-\c@solution=\count316
-\c@proof=\count317
-\c@definition=\count318
-\c@warning=\count319
-\c@exercise=\count320
+(thmtools)             that uses `style=egStyle' on input line 177.
+\c@solution=\count319
+\c@proof=\count320
+\c@definition=\count321
+\c@warning=\count322
+\c@exercise=\count323
 (/usr/share/texlive/texmf-dist/tex/latex/titlesec/block.tss
 File: block.tss 2011/12/15
 ))
@@ -1622,12 +1631,12 @@ Package: booktabs 2005/04/14 v1.61803 publication quality tables
 \cmidrulesep=\dimen299
 \cmidrulekern=\dimen300
 \defaultaddspace=\dimen301
-\@cmidla=\count321
-\@cmidlb=\count322
+\@cmidla=\count324
+\@cmidlb=\count325
 \@aboverulesep=\dimen302
 \@belowrulesep=\dimen303
-\@thisruleclass=\count323
-\@lastruleclass=\count324
+\@thisruleclass=\count326
+\@lastruleclass=\count327
 \@thisrulewidth=\dimen304
 )
 (/usr/share/texlive/texmf-dist/tex/latex/base/makeidx.sty
@@ -1717,7 +1726,7 @@ Package: nameref 2010/04/30 v2.40 Cross-referencing by name of section
 (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
-\c@section@level=\count325
+\c@section@level=\count328
 )
 LaTeX Info: Redefining \ref on input line 89.
 LaTeX Info: Redefining \pageref on input line 89.
@@ -1776,16 +1785,16 @@ Package microtype Info: No adjustment of interword spacing.
 Package microtype Info: No adjustment of character kerning.
 (/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count326
+\scratchcounter=\count329
 \scratchdimen=\dimen305
 \scratchbox=\box106
-\nofMPsegments=\count327
-\nofMParguments=\count328
+\nofMPsegments=\count330
+\nofMParguments=\count331
 \everyMPshowfont=\toks59
-\MPscratchCnt=\count329
+\MPscratchCnt=\count332
 \MPscratchDim=\dimen306
-\MPnumerator=\count330
-\makeMPintoPDFobject=\count331
+\MPnumerator=\count333
+\makeMPintoPDFobject=\count334
 \everyMPtoPDFconversion=\toks60
 ) (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
@@ -2325,29 +2334,49 @@ Overfull \hbox (46.5974pt too wide) in paragraph at lines 882--899
  [] 
  []
 
-Package mdframed Info: mdframed works in twoside mode on input line 942.
-[21]
-Package mdframed Info: mdframed works in twoside mode on input line 966.
-Package mdframed Info: mdframed works in twoside mode on input line 971.
- [22]
-Package mdframed Info: mdframed works in twoside mode on input line 1000.
 
-
-LaTeX Warning: Marginpar on page 23 moved.
-
-Package mdframed Info: mdframed works in twoside mode on input line 1052.
-Package mdframed Info: mdframed works in twoside mode on input line 1063.
-[23]
-Underfull \hbox (badness 10000) in paragraph at lines 1127--1127
+Underfull \hbox (badness 10000) in paragraph at lines 908--908
 
  []
 
-[24] [25]) (./derivatives.tex [26
+[21]
+Underfull \hbox (badness 10000) in paragraph at lines 925--925
 
-]
+ []
+
+[22]
+Package mdframed Info: mdframed works in twoside mode on input line 935.
+Package mdframed Info: mdframed works in twoside mode on input line 959.
+Package mdframed Info: mdframed works in twoside mode on input line 964.
+ [23]
+Package mdframed Info: mdframed works in twoside mode on input line 993.
+
+
+LaTeX Warning: Marginpar on page 24 moved.
+
+Package mdframed Info: mdframed works in twoside mode on input line 1045.
+Package mdframed Info: mdframed works in twoside mode on input line 1056.
+[24]
+Underfull \hbox (badness 10000) in paragraph at lines 1120--1120
+
+ []
+
+[25] [26]) (./derivatives.tex
 Chapter 2.
 Package mdframed Info: mdframed works in twoside mode on input line 25.
-) (./chapter02.tex [27] [28]
+
+Overfull \hbox (79.87129pt too wide) in paragraph at lines 42--44
+[][]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 42--44
+
+ []
+
+) (./chapter02.tex [27
+
+] [28]
 Chapter 3.
 (./section02.01.tex
 Package mdframed Info: mdframed works in twoside mode on input line 10.
@@ -2983,7 +3012,7 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 211.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 211.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 211.
 Package rerunfilecheck Info: File `textbook.out' has not changed.
-(rerunfilecheck)             Checksum: 6972E2E23081074438F1EC89B32E48E8;2994.
+(rerunfilecheck)             Checksum: CDA36C4A9C3487B1A4613C273C0E141F;2994.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
@@ -2997,13 +3026,13 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 211.
  ) 
 Here is how much of TeX's memory you used:
- 37980 strings out of 493481
- 768494 string characters out of 3143393
- 1453180 words of memory out of 3000000
- 39690 multiletter control sequences out of 15000+200000
+ 38146 strings out of 493481
+ 773717 string characters out of 3143393
+ 1458986 words of memory out of 3000000
+ 39850 multiletter control sequences out of 15000+200000
  92152 words of font info for 375 fonts, out of 3000000 for 9000
  965 hyphenation exceptions out of 8191
- 80i,21n,91p,952b,2018s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 80i,21n,91p,952b,2026s stack positions out of 5000i,500n,10000p,200000b,50000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}{/usr/share/texliv
 e/texmf-dist/fonts/enc/dvips/kerkis/kerkisec.enc}{/usr/share/texlive/texmf-dist
 /fonts/enc/dvips/kerkis/kerkisecsc.enc}{/usr/share/texlive/texmf-dist/fonts/enc
@@ -3026,7 +3055,7 @@ s/type1/public/txfonts/txsy.pfb></usr/share/texlive/texmf-dist/fonts/type1/publ
 ic/txfonts/txsyc.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/courier/ucr
 r8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb>
-Output written on textbook.pdf (83 pages, 462303 bytes).
+Output written on textbook.pdf (83 pages, 457832 bytes).
 PDF statistics:
  997 PDF objects out of 1000 (max. 8388607)
  863 compressed objects within 9 object streams
