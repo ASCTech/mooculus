@@ -26,6 +26,27 @@ direction of the curve that ``just touches'' the curve at that point.
 Given a function $f(x)$ a line $\l(x)$ is \textbf{tangent} FILL IN
 \end{definition}
 
+\begin{figure*}
+\begin{tikzpicture}
+  \begin{groupplot}[group style={group size=3 by 1}]
+    \nextgroupplot
+          \addplot [very thick,penColor, smooth,domain=(0:1.833)] {-1/(x-2)};
+          \addplot[color=penColor,fill=penColor,only marks,mark=*] coordinates{(1,1)};  %% closed hole          
+    \nextgroupplot
+          \addplot [very thick,penColor, smooth,domain=(0:1.833)] {-1/(x-2)};
+          \addplot[color=penColor,fill=penColor,only marks,mark=*] coordinates{(1,1)};  %% closed hole          
+    \nextgroupplot
+          \addplot [very thick,penColor, smooth,domain=(0:1.833)] {-1/(x-2)};
+          \addplot[color=penColor,fill=penColor,only marks,mark=*] coordinates{(1,1)};  %% closed hole          
+\end{groupplot}
+\end{tikzpicture}
+\caption{Tangent lines as zooming}
+\end{figure*}
+
+
+
+
+
 
 \begin{figure}
 \begin{tikzpicture}
