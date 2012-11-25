@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012/Debian) (format=pdflatex 2012.11.6)  25 NOV 2012 17:16
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012/Debian) (format=pdflatex 2012.11.6)  25 NOV 2012 18:53
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1552,11 +1552,11 @@ LaTeX Font Info:    Redeclaring font encoding T1 on input line 43.
 
 
 Package thmtools Warning: Key `notefont' not supported by ntheorem on input lin
-e 152.
+e 149.
 
 
 Package thmtools Warning: Key `notebraces' not supported by ntheorem on input l
-ine 152.
+ine 149.
 
 Package thmtools Info: Key `preheadhook' (with value `\begin {mdframed}[leftmar
 gin=40,rightmargin=40,backgroundcolor=theoremBackground!10,fontcolor=textColor,
@@ -1566,19 +1566,19 @@ remBorder!10!background, roundcorner=10pt,innertopmargin=6pt,splittopskip=\tops
 kip ,skipbelow=\baselineskip ,skipabove=\baselineskip ]')
 (thmtools)             is not a known style key.
 (thmtools)             Will pass this to every \declaretheorem
-(thmtools)             that uses `style=mainThmStyle' on input line 152.
+(thmtools)             that uses `style=mainThmStyle' on input line 149.
 Package thmtools Info: Key `postfoothook' (with value `\end {mdframed}')
 (thmtools)             is not a known style key.
 (thmtools)             Will pass this to every \declaretheorem
-(thmtools)             that uses `style=mainThmStyle' on input line 152.
+(thmtools)             that uses `style=mainThmStyle' on input line 149.
 \c@mainTheorem=\count318
 
 Package thmtools Warning: Key `notefont' not supported by ntheorem on input lin
-e 166.
+e 163.
 
 
 Package thmtools Warning: Key `notebraces' not supported by ntheorem on input l
-ine 166.
+ine 163.
 
 Package thmtools Info: Key `preheadhook' (with value `\begin {mdframed}[hideall
 lines=true,roundcorner=10pt,leftmargin=40,rightmargin=40,backgroundcolor=theore
@@ -1586,18 +1586,18 @@ mBackground!10,fontcolor=textColor,innertopmargin=6pt,splittopskip=\topskip ,sk
 ipbelow=\baselineskip ,skipabove=\baselineskip ]')
 (thmtools)             is not a known style key.
 (thmtools)             Will pass this to every \declaretheorem
-(thmtools)             that uses `style=thmStyle' on input line 166.
+(thmtools)             that uses `style=thmStyle' on input line 163.
 Package thmtools Info: Key `postfoothook' (with value `\end {mdframed}')
 (thmtools)             is not a known style key.
 (thmtools)             Will pass this to every \declaretheorem
-(thmtools)             that uses `style=thmStyle' on input line 166.
+(thmtools)             that uses `style=thmStyle' on input line 163.
 
 Package thmtools Warning: Key `notefont' not supported by ntheorem on input lin
-e 177.
+e 174.
 
 
 Package thmtools Warning: Key `notebraces' not supported by ntheorem on input l
-ine 177.
+ine 174.
 
 Package thmtools Info: Key `preheadhook' (with value `\begin {mdframed}[outerli
 newidth=2,topline=false, bottomline=false, leftline=true, rightline=false, left
@@ -1606,11 +1606,11 @@ ndcolor=background,skipbelow=\baselineskip ,skipabove=\baselineskip ,innertopma
 rgin=0pt, innerbottommargin=0pt]')
 (thmtools)             is not a known style key.
 (thmtools)             Will pass this to every \declaretheorem
-(thmtools)             that uses `style=egStyle' on input line 177.
+(thmtools)             that uses `style=egStyle' on input line 174.
 Package thmtools Info: Key `postfoothook' (with value `\end {mdframed}')
 (thmtools)             is not a known style key.
 (thmtools)             Will pass this to every \declaretheorem
-(thmtools)             that uses `style=egStyle' on input line 177.
+(thmtools)             that uses `style=egStyle' on input line 174.
 \c@solution=\count319
 \c@proof=\count320
 \c@definition=\count321
@@ -3050,7 +3050,7 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 211.
  ) 
 Here is how much of TeX's memory you used:
  38233 strings out of 493481
- 775022 string characters out of 3143393
+ 775023 string characters out of 3143393
  1458972 words of memory out of 3000000
  39918 multiletter control sequences out of 15000+200000
  103781 words of font info for 415 fonts, out of 3000000 for 9000
@@ -3078,7 +3078,7 @@ s/type1/public/txfonts/txsy.pfb></usr/share/texlive/texmf-dist/fonts/type1/publ
 ic/txfonts/txsyc.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/courier/ucr
 r8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb>
-Output written on textbook.pdf (83 pages, 459029 bytes).
+Output written on textbook.pdf (83 pages, 459073 bytes).
 PDF statistics:
  995 PDF objects out of 1000 (max. 8388607)
  861 compressed objects within 9 object streams

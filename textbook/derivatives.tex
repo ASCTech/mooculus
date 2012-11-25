@@ -19,7 +19,7 @@ a feeling why this is true, consider the following:
 
 The rate of change of a function is the slope of the tangent
 line. Part of our goal will be to give a formal definition of a
-tangent line. For now, we will use the following informal definition:
+tangent line. For now, consider the following informal definition:
 \begin{quote}\index{tangent line!informal definition}
 Given a function $f(x)$, if one can ``zoom in''
 on $f(x)$ sufficiently so that $f(x)$ seems to be a straight line,
@@ -27,8 +27,9 @@ then that line is the \textbf{tangent line} to $f(x)$ at the point
 determined by $x$.
 \end{quote}
 While this is merely an informal definition of a tangent line, it
-contains the essence of the formal definition. We illustrate this
-informal definition with Figure~\ref{figure:informal-tangent}.
+contains the essence of how the formal definition will be eventually
+constructed. We illustrate this informal definition with
+Figure~\ref{figure:informal-tangent}.
 \begin{figure*}
 \begin{tikzpicture}
 	\begin{axis}[
@@ -46,7 +47,7 @@ informal definition with Figure~\ref{figure:informal-tangent}.
 
           \addplot[very thick,penColor, smooth,domain=(0:1.833)] {-1/(x-2)};
           \addplot[very thick,penColor, smooth,domain=(2.834:4.166)] {3.333/(2.225-.3*x)+0.163}; %% 2.5 to 4.333
-          \addplot[very thick,penColor, smooth,domain=(5.334:6.666)] {11.11/(2.293-.09*x)-3.339}; %% 5 to 6.833
+          \addplot[very thick,penColor, smooth,domain=(5.334:6.666)] {11.11/(2.2453-.09*x)-3.515}; %% 5 to 6.833
           \addplot[color=penColor,fill=penColor,only marks,mark=*] coordinates{(1,1)};  %% point to be zoomed
 
           \addplot [->,textColor] plot coordinates {(0,0) (0,6)}; %% make longer later axis
