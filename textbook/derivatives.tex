@@ -7,41 +7,83 @@ a feeling why this is true, consider the following:
 \begin{itemize}
 \item If the change is zero, then $x$ gives a local maximal or minimal
   values for $f(x)$.
-\item If $p(t)$ determines the position of an object with resepct to
+\item If $p(t)$ determines the position of an object with respect to
   time, the change gives the velocity of the object.
-\item If $v(t)$ determines the velocity of an object with resepct to
-  time, the change gives the accelleration of the object.
+\item If $v(t)$ determines the velocity of an object with respect to
+  time, the change gives the acceleration of the object.
 \item The change can help us approximate a complicated function with a
   simple function.
 \item The change can be used to help us solve equations that we would
   not be able to solve via other methods.
 \end{itemize}
 
-The rate of change of a function is the slope of the tangent line.
-Informally, a tangent line to a curve is a line moving in the
-direction of the curve that ``just touches'' the curve at that point.
-
-
-\begin{definition}\index{tangent line}
-Given a function $f(x)$ a line $\l(x)$ is \textbf{tangent} FILL IN
-\end{definition}
-
+The rate of change of a function is the slope of the tangent
+line. Part of our goal will be to give a formal definition of a
+tangent line. For now, we will use the following informal definition:
+\begin{quote}\index{tangent line!informal definition}
+Given a function $f(x)$, if one can ``zoom in''
+on $f(x)$ sufficiently so that $f(x)$ seems to be a straight line,
+then that line is the \textbf{tangent line} to $f(x)$ at the point
+determined by $x$.
+\end{quote}
+We illustrate this informal definition with Figure~\ref{figure:informal-tangent}.
 \begin{figure*}
 \begin{tikzpicture}
-  \begin{groupplot}[group style={group size=3 by 1}]
-    \nextgroupplot
-          \addplot [very thick,penColor, smooth,domain=(0:1.833)] {-1/(x-2)};
-          \addplot[color=penColor,fill=penColor,only marks,mark=*] coordinates{(1,1)};  %% closed hole          
-    \nextgroupplot
-          \addplot [very thick,penColor, smooth,domain=(0:1.833)] {-1/(x-2)};
-          \addplot[color=penColor,fill=penColor,only marks,mark=*] coordinates{(1,1)};  %% closed hole          
-    \nextgroupplot
-          \addplot [very thick,penColor, smooth,domain=(0:1.833)] {-1/(x-2)};
-          \addplot[color=penColor,fill=penColor,only marks,mark=*] coordinates{(1,1)};  %% closed hole          
-\end{groupplot}
+	\begin{axis}[
+            domain=0:6, range=0:7,
+            ymin=-.2,ymax=7,
+            width=\textwidth,
+            height=7cm, %% Hard coded height! Moreover this effects the aspect ratio of the zoom--sort of BAD
+            axis lines=none,
+          ]   
+          \addplot [draw=none, fill=textColor!7!background] plot coordinates {(1.2,1.6) (2.834,5)} \closedcycle; %% zoom fill
+          \addplot [draw=none, fill=background] plot coordinates {(1.2,.4) (2.834,1)} \closedcycle; %% zoom fill
+
+          \addplot [draw=none, fill=textColor!7!background] plot coordinates {(3.7,3.6) (5.334,5)} \closedcycle; %% zoom fill
+          \addplot [draw=none, fill=background] plot coordinates {(3.7,2.4) (5.334,1)} \closedcycle; %% zoom fill
+
+          \addplot[very thick,penColor, smooth,domain=(0:1.833)] {-1/(x-2)};
+          \addplot[very thick,penColor, smooth,domain=(2.834:4.166)] {3.333/(2.225-.3*x)+0.163}; %% 2.5 to 4.333
+          \addplot[very thick,penColor, smooth,domain=(5.334:6.666)] {11.11/(2.293-.09*x)-3.339}; %% 5 to 6.833
+          \addplot[color=penColor,fill=penColor,only marks,mark=*] coordinates{(1,1)};  %% point to be zoomed
+
+          \addplot [->,textColor] plot coordinates {(0,0) (0,6)}; %% make longer later axis
+          \addplot [->,textColor] plot coordinates {(0,0) (2,0)}; %% make longer later axis
+          
+          \addplot [textColor] plot coordinates {(.8,.4) (.8,1.6)}; %% box around pt
+          \addplot [textColor] plot coordinates {(1.2,.4) (1.2,1.6)}; %% box around pt
+          \addplot [textColor] plot coordinates {(.8,1.6) (1.2,1.6)}; %% box around pt
+          \addplot [textColor] plot coordinates {(.8,.4) (1.2,.4)}; %% box around pt
+          
+          \addplot [textColor] plot coordinates {(2.834,1) (2.834,5)}; %% zoomed box 1
+          \addplot [textColor] plot coordinates {(4.166,1) (4.166,5)}; %% zoomed box 1
+          \addplot [textColor] plot coordinates {(2.834,1) (4.166,1)}; %% zoomed box 1
+          \addplot [textColor] plot coordinates {(2.834,5) (4.166,5)}; %% zoomed box 1
+
+          \addplot [textColor] plot coordinates {(3.3,2.4) (3.3,3.6)}; %% box around zoomed pt
+          \addplot [textColor] plot coordinates {(3.7,2.4) (3.7,3.6)}; %% box around zoomed pt
+          \addplot [textColor] plot coordinates {(3.3,3.6) (3.7,3.6)}; %% box around zoomed pt
+          \addplot [textColor] plot coordinates {(3.3,2.4) (3.7,2.4)}; %% box around zoomed pt
+
+          \addplot [textColor] plot coordinates {(5.334,1) (5.334,5)}; %% zoomed box 2
+          \addplot [textColor] plot coordinates {(6.666,1) (6.666,5)}; %% zoomed box 2
+          \addplot [textColor] plot coordinates {(5.334,1) (6.666,1)}; %% zoomed box 2
+          \addplot [textColor] plot coordinates {(5.334,5) (6.666,5)}; %% zoomed box 2
+
+          \addplot[color=penColor,fill=penColor,only marks,mark=*] coordinates{(3.5,3)};  %% zoomed pt 1
+          \addplot[color=penColor,fill=penColor,only marks,mark=*] coordinates{(6,3)};  %% zoomed pt 2
+
+          \node at (axis cs:2.2,0) [anchor=east] {$x$};
+          \node at (axis cs:0,6.6) [anchor=north] {$y$};
+        \end{axis}
 \end{tikzpicture}
-\caption{Tangent lines as zooming}
+\caption{Given a function $f(x)$, if one can ``zoom in''
+on $f(x)$ sufficiently so that $f(x)$ seems to be a straight line,
+then that line is the \textbf{tangent line} to $f(x)$ at the point
+determined by $x$.}
+\label{figure:informal-tangent}
 \end{figure*}
+
 
 
 
