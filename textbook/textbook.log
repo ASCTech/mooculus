@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012/Debian) (format=pdflatex 2012.11.6)  27 NOV 2012 15:26
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012/Debian) (format=pdflatex 2012.11.6)  29 NOV 2012 10:07
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1310,16 +1310,7 @@ File: tikzlibraryplotmarks.code.tex 2008/01/09 v2.10 (rcs-revision 1.1)
 (/usr/share/texmf/tex/generic/pgf/libraries/pgflibraryplotmarks.code.tex
 File: pgflibraryplotmarks.code.tex 2010/10/15 v2.10 (rcs-revision 1.12)
 )))
-(/home/snapp/texmf/tex/latex/tex/generic/pgfplots/libs/tikzlibrarypgfplots.grou
-pplots.code.tex
-\pgfplots@group@current@plot=\count315
-\pgfplots@group@current@row=\count316
-\pgfplots@group@current@column=\count317
-
-(/usr/share/texmf/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarycalc.
-code.tex
-File: tikzlibrarycalc.code.tex 2009/09/04 v2.10 (rcs-revision 1.6)
-)) (/usr/share/texlive/texmf-dist/tex/latex/morefloats/morefloats.sty
+(/usr/share/texlive/texmf-dist/tex/latex/morefloats/morefloats.sty
 Package: morefloats 2012/01/28 v1.0f Raise limit of unprocessed floats (HMM; DH
 )
 Package morefloats Info: Maximum number of possible floats asked for: 36.
@@ -1571,7 +1562,7 @@ Package thmtools Info: Key `postfoothook' (with value `\end {mdframed}')
 (thmtools)             is not a known style key.
 (thmtools)             Will pass this to every \declaretheorem
 (thmtools)             that uses `style=mainThmStyle' on input line 149.
-\c@mainTheorem=\count318
+\c@mainTheorem=\count315
 
 Package thmtools Warning: Key `notefont' not supported by ntheorem on input lin
 e 163.
@@ -1611,11 +1602,11 @@ Package thmtools Info: Key `postfoothook' (with value `\end {mdframed}')
 (thmtools)             is not a known style key.
 (thmtools)             Will pass this to every \declaretheorem
 (thmtools)             that uses `style=egStyle' on input line 174.
-\c@solution=\count319
-\c@proof=\count320
-\c@definition=\count321
-\c@warning=\count322
-\c@exercise=\count323
+\c@solution=\count316
+\c@proof=\count317
+\c@definition=\count318
+\c@warning=\count319
+\c@exercise=\count320
 (/usr/share/texlive/texmf-dist/tex/latex/titlesec/block.tss
 File: block.tss 2011/12/15
 ))
@@ -1631,12 +1622,12 @@ Package: booktabs 2005/04/14 v1.61803 publication quality tables
 \cmidrulesep=\dimen299
 \cmidrulekern=\dimen300
 \defaultaddspace=\dimen301
-\@cmidla=\count324
-\@cmidlb=\count325
+\@cmidla=\count321
+\@cmidlb=\count322
 \@aboverulesep=\dimen302
 \@belowrulesep=\dimen303
-\@thisruleclass=\count326
-\@lastruleclass=\count327
+\@thisruleclass=\count323
+\@lastruleclass=\count324
 \@thisrulewidth=\dimen304
 )
 (/usr/share/texlive/texmf-dist/tex/latex/base/makeidx.sty
@@ -1726,7 +1717,7 @@ Package: nameref 2010/04/30 v2.40 Cross-referencing by name of section
 (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
-\c@section@level=\count328
+\c@section@level=\count325
 )
 LaTeX Info: Redefining \ref on input line 89.
 LaTeX Info: Redefining \pageref on input line 89.
@@ -1785,16 +1776,16 @@ Package microtype Info: No adjustment of interword spacing.
 Package microtype Info: No adjustment of character kerning.
 (/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count329
+\scratchcounter=\count326
 \scratchdimen=\dimen305
 \scratchbox=\box106
-\nofMPsegments=\count330
-\nofMParguments=\count331
+\nofMPsegments=\count327
+\nofMParguments=\count328
 \everyMPshowfont=\toks59
-\MPscratchCnt=\count332
+\MPscratchCnt=\count329
 \MPscratchDim=\dimen306
-\MPnumerator=\count333
-\makeMPintoPDFobject=\count334
+\MPnumerator=\count330
+\makeMPintoPDFobject=\count331
 \everyMPtoPDFconversion=\toks60
 ) (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
@@ -3049,13 +3040,13 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 211.
  ) 
 Here is how much of TeX's memory you used:
- 38229 strings out of 493481
- 774956 string characters out of 3143393
- 1458972 words of memory out of 3000000
- 39914 multiletter control sequences out of 15000+200000
+ 38092 strings out of 493481
+ 770597 string characters out of 3143393
+ 1453502 words of memory out of 3000000
+ 39783 multiletter control sequences out of 15000+200000
  103781 words of font info for 415 fonts, out of 3000000 for 9000
  965 hyphenation exceptions out of 8191
- 80i,21n,91p,952b,2020s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 80i,21n,91p,952b,2017s stack positions out of 5000i,500n,10000p,200000b,50000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}{/usr/share/texliv
 e/texmf-dist/fonts/enc/dvips/kerkis/kerkisec.enc}{/usr/share/texlive/texmf-dist
 /fonts/enc/dvips/kerkis/kerkisecsc.enc}{/usr/share/texlive/texmf-dist/fonts/enc
@@ -3078,7 +3069,7 @@ s/type1/public/txfonts/txsy.pfb></usr/share/texlive/texmf-dist/fonts/type1/publ
 ic/txfonts/txsyc.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/courier/ucr
 r8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb>
-Output written on textbook.pdf (83 pages, 459286 bytes).
+Output written on textbook.pdf (83 pages, 459216 bytes).
 PDF statistics:
  995 PDF objects out of 1000 (max. 8388607)
  861 compressed objects within 9 object streams
