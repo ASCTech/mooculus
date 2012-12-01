@@ -609,7 +609,7 @@ In this section, we present a handful of tools to compute many limits
 without explicitly working with the definition of limit. Each of these
 could be proved directly as we did in the previous section.
 
-\begin{mainTheorem}[Limit Laws]\index{limit laws}
+\begin{mainTheorem}[Limit Laws]\index{limit laws}\label{theorem:limit-laws}
 Suppose that $\ds \lim_{x\to a}f(x)=L$, $\ds \lim_{x\to a}g(x)=M$, $k$
 is some constant, and $n$ is a positive integer. Then
 \begin{itemize}
@@ -930,41 +930,19 @@ FILL IN
 \section{Continuity}
 
 
-At this point, we will discuss a few features of functions. 
-
-\begin{definition}
-A function $f$ is \textbf{bounded} if there is a number $M$ such that
-$|f(x)| < M$ for every $x$ in the domain of $f$.
-\end{definition}
-
-
-\noindent{\bf Bounded.} The graph in (c) appears to approach zero as $x$ goes
-to both positive and negative infinity.  It also never exceeds the value
-$1$ or drops below the value $0$.  Because the graph never increases or
-decreases without bound, we say that the function represented by the graph
-in (c) is a {\dfont bounded} 
-function\index{function!bounded}\index{bounded function}.  
-
-
-For the function in (c), one such choice for $M$ would be $10$.  However,
-the smallest (optimal) choice would be $M=1$.  In either case, simply
-finding an $M$ is enough to establish boundedness.  No such $M$ exists for
-the hyperbola in (d) and hence we can say that it is 
-\textbf{unbounded}\index{function!unbounded}\index{unbounded function}.  
-
-PICTURES
-
-
+Informally, a function is continuous if you can ``draw it'' without
+``lifting your pencil.'' We need a formal definiton.
 
 \begin{definition} A function $f$ is \textbf{continuous
 at a point} $a$ if $\ds \lim_{x\to a} f(x) = f(a)$.  
 \end{definition}
 \index{continuous}
 
+Building from this definition, we can now define what it means for a function to be \textit{continuous} on its domain.
+
 \begin{definition} A function $f$ is \textbf{continuous} if it is
 continuous at every point in its domain.
 \end{definition}
-
 
 
 \noindent{\bf Continuity.}  The graphs shown in (b) and (c) both represent
@@ -976,17 +954,12 @@ is not true for function values near $x=-1$ on the graph in (a) which is
 not continuous at that location.  
 
 
-
-
 Strangely, we can also say that (d) is continuous even though there is a
 vertical asymptote.  A careful reading of the definition of continuous
 reveals the phrase ``\textit{at every point in its domain.}''  Because the
 location of the asymptote, $x=0$, is not in the domain of the function, and
 because the rest of the function is \textbf{well-behaved}, we can say that (d)
 is continuous.
-
-We now have a collection of adjectives to describe the very rich and
-complex set of objects known as functions.
 
 We close with a useful theorem about continuous functions:
 
@@ -1042,60 +1015,38 @@ interpretation of this theorem.
 
 
 
-\begin{example} Explain why the function $\ds f=x^3 + 3x^2+x-2$ has a root between 0
+\begin{example} 
+Explain why the function $f(x) =x^3 + 3x^2+x-2$ has a root between 0
 and 1.
-
-By theorem~\xrefn{thm:properties of limits}, $f$ is continuous.
-Since $f(0)=-2$ and $f(1)=3$, and $0$ is between $-2$ and $3$, there
-is a $c\in[0,1]$ such that $f(c)=0$.
 \end{example}
+
+\begin{solution}
+By Theorem~\ref{theorem:limit-laws}, $\ds \lim_{x\to a} f(x) =
+f(a)$, for all real values of $a$, and hence $f$ is continuous.  Since
+$f(0)=-2$ and $f(1)=3$, and $0$ is between $-2$ and $3$, there is a
+$c\in[0,1]$ such that $f(c)=0$.
+\end{solution}
 
 This example also points the way to a simple method for approximating
 roots. 
 
-\begin{example} Approximate the root of the previous example  to one decimal
-place. THIS IS A GOOD EXAMPLE - CF WITH THE PAPER LIST ABOVE.
-
-If we compute $f(0.1)$, $f(0.2)$, and so on, we find that 
-$f(0.6)<0$ and $f(0.7)>0$, so by the Intermediate Value Theorem, $f$
-has a root between $0.6$ and $0.7$. Repeating the process with
-$f(0.61)$, $f(0.62)$, and so on, we find that
-$f(0.61)<0$ and $f(0.62)>0$, so $f$ has a root between
-$0.61$ and $0.62$, and the root is $0.6$ rounded to one decimal place.
+\begin{example} 
+Approximate a root of $f(x) =x^3 + 3x^2+x-2$ to one decimal place.
 \end{example}
+\begin{solution}
+If we compute $f(0.1)$, $f(0.2)$, and so on, we find that $f(0.6)<0$
+and $f(0.7)>0$, so by the Intermediate Value Theorem, $f$ has a root
+between $0.6$ and $0.7$. Repeating the process with $f(0.61)$,
+$f(0.62)$, and so on, we find that $f(0.61)<0$ and $f(0.62)>0$, so $f$
+has a root between $0.61$ and $0.62$, and the root is $0.6$ rounded to
+one decimal place.
+\end{solution}
 
 
 
 
 
 \begin{exercises}
-
-\begin{exercise} For each part below sketch the graph of a function that is:
-
-\begin{enumerate}
-  \item Bounded, but not continuous.
-  \item Differentiable and unbounded.
-  \item Continuous at $x=0$, not continuous at $x=1$, and bounded.
-  \item Differentiable everywhere except at $x=-1$, continuous, and
-    unbounded.
- \end{enumerate}
-\end{exercise}
-
-\begin{exercise} 
-Is $f(x)=\sin(x)$ a bounded function?  If so, find the bound---the
-smallest $M$ as described in the definition of \textit{bounded}.
-\end{exercise}
-
-\begin{exercise} 
-Is $\ds s(t) = 1/(1+t^2)$ a bounded function?  If so, find the
-bound---the smallest $M$ as described in the definition of
-\textit{bounded}.
-\end{exercise}
-
- \begin{exercise} 
-Is $v(u) = 2\ln|u|$ a bounded function?  If so, find the bound---the
-smallest $M$ as described in the definition of \textit{bounded}.
-\end{exercise}
 
  \begin{exercise} 
 Consider the function

@@ -14,13 +14,13 @@
 \RequirePackage{microtype}
 \RequirePackage{enumerate}
 \RequirePackage{pgfplots}\pgfplotsset{compat=1.7}
-\usepgfplotslibrary{groupplots}
+%\usepgfplotslibrary{groupplots}
 \RequirePackage{morefloats}
 
 \usetikzlibrary{shadows}
 \usetikzlibrary{shapes}
 \usetikzlibrary{decorations}
-
+\tikzset{>=stealth} %% makes all arrows the same
 
 
 %% Font
@@ -60,9 +60,9 @@
 \colorlet{fill2}{blue!10} % Color of fill in a plot
 \colorlet{gridColor}{gray!30} % Color of grid in a plot
 \colorlet{definitionBackground}{Sepia} % Color of the background of a definition
-\colorlet{theoremBackground}{BrickRed} % Color of the background of a theorem
+\colorlet{theoremBackground}{BrickRed!10!background} % Color of the background of a theorem
 \colorlet{mainTheoremBorder}{Sepia} % Color of the border of a main theorem
-\colorlet{warningBackground}{BrickRed} % Color of the background of a theorem
+\colorlet{warningBackground}{BrickRed!10!background} % Color of the background of a theorem
 \colorlet{cowLight}{background} % the light colors of the cow --
                                 % usually the same as the background
 \colorlet{cowDark}{textColor} % the dark colors of the cow -- usually
@@ -77,14 +77,22 @@
 \colorlet{fill1}{blue!50!black!20} % Color of fill in a plot
 \colorlet{fill2}{blue!10} % Color of fill in a plot
 \colorlet{gridColor}{gray!50} % Color of grid in a plot
-\colorlet{definitionBackground}{black} % Color of the background of
+\colorlet{definitionBackground}{black!10!background} % Color of the background of
                                           % a definition
-\colorlet{theoremBackground}{blue!50!black} % Color of the background of a theorem
+\colorlet{theoremBackground}{blue!50!black!10!background} % Color of the background of a theorem
 \colorlet{mainTheoremBorder}{blue!50!black} % Color of the border of a main theorem
 \colorlet{cowLight}{background} % the light colors of the cow --
                                 % usually the same as the background
 \colorlet{cowDark}{textColor} % the dark colors of the cow -- usually
                               % the same as the text
+
+
+
+
+
+
+
+
 
 
 
@@ -140,7 +148,7 @@
 \declaretheoremstyle[ headfont=\normalfont\bfseries,
   notefont=\mdseries, notebraces={(}{)}, bodyfont=\normalfont\slshape,
   postheadspace=0.5em,
-  preheadhook={\begin{mdframed}[leftmargin=40,rightmargin=40,backgroundcolor=theoremBackground!10,fontcolor=textColor,%
+  preheadhook={\begin{mdframed}[leftmargin=40,rightmargin=40,backgroundcolor=theoremBackground,fontcolor=textColor,%
         innerlinewidth=1,innerlinecolor=mainTheoremBorder!20!background,
         middlelinewidth=2,middlelinecolor=mainTheoremBorder,
         outerlinewidth=1,outerlinecolor=mainTheoremBorder!10!background,
@@ -156,7 +164,7 @@
   notefont=\mdseries, notebraces={(}{)}, bodyfont=\normalfont\slshape,
   postheadspace=0.5em,
   preheadhook={\begin{mdframed}[hidealllines=true,roundcorner=10pt,leftmargin=40,%
-rightmargin=40,backgroundcolor=theoremBackground!10,fontcolor=textColor,%%
+rightmargin=40,backgroundcolor=theoremBackground,fontcolor=textColor,%%
 innertopmargin=6pt,%
 splittopskip=\topskip,skipbelow=\baselineskip,%
 skipabove=\baselineskip]},
@@ -199,7 +207,7 @@ skipbelow=\baselineskip]{proof}%
 \theoremheaderfont{\normalfont\bfseries}
 \theorembodyfont{\upshape}
 \newmdtheoremenv[hidealllines=true,roundcorner=10pt,leftmargin=40,%
-rightmargin=40,backgroundcolor=definitionBackground!10,fontcolor=textColor,%%
+rightmargin=40,backgroundcolor=definitionBackground,fontcolor=textColor,%%
 innertopmargin=6pt,%\topskip,%
 splittopskip=\topskip,skipbelow=\baselineskip,skipabove=\baselineskip,
 font=\upshape
