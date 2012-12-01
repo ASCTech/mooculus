@@ -937,12 +937,62 @@ Informally, a function is continuous if you can ``draw it'' without
 at a point} $a$ if $\ds \lim_{x\to a} f(x) = f(a)$.  
 \end{definition}
 \index{continuous}
+\begin{marginfigure}[0in]
+\begin{tikzpicture}
+	\begin{axis}[
+            domain=0:10,
+            ymax=5,
+            ymin=0,
+            samples=100,
+            axis lines =middle, xlabel=$x$, ylabel=$f(x)$,
+            every axis y label/.style={at=(current axis.above origin),anchor=south},
+            every axis x label/.style={at=(current axis.right of origin),anchor=west}
+          ]
+	  \addplot [very thick, penColor, smooth, domain=(4:10)] {3 + sin(deg(x*2))/(x-1)};
+          \addplot [very thick, penColor, smooth, domain=(0:4)] {1};
+          \addplot[color=penColor,fill=background,only marks,mark=*] coordinates{(4,3.30)};  %% open hole
+          \addplot[color=penColor,fill=background,only marks,mark=*] coordinates{(6,2.893)};  %% open hole
+          \addplot[color=penColor,fill=penColor,only marks,mark=*] coordinates{(4,1)};  %% closed hole
+          \addplot[color=penColor,fill=penColor,only marks,mark=*] coordinates{(6,2)};  %% closed hole
+        \end{axis}
+\end{tikzpicture}
+\caption{A plot of a function with discontinuties at $x=4$ and $x=6$.}
+\label{plot:discontinuous-function}
+\end{marginfigure}
 
-Building from this definition, we can now define what it means for a function to be \textit{continuous} on its domain.
+\begin{example}
+Find the discontinuties (the values for $x$ where a function is not
+continuous) for the function given in Figure~\ref{plot:discontinuous-function}.
+\end{example}
+\begin{solution}
+From Figure~\ref{plot:discontinuous-function} we see that $\ds \lim_{x\to 4} f(x)$ does not exist as
+\[
+\lim_{x\to 4-}f(x) = 1\qquad\text{and}\qquad \lim_{x\to 4+}f(x) \approx 3.5
+\]
+Hence $\ds \lim_{x\to 4} f(x) \ne f(4)$, and so $f(x)$ is not
+continuous at $x=4$.
+
+We also see that $\ds \lim_{x\to 6} f(x) \approx 3$ while $f(6) =
+2$. Hence $\ds \lim_{x\to 6} f(x) \ne f(6)$, and so $f(x)$ is not
+continuous at $x=6$.
+\end{solution}
+
+Building from the definition of \textit{continous at a point}, we can
+now define what it means for a function to be \textit{continuous} on
+its domain.
 
 \begin{definition} A function $f$ is \textbf{continuous} if it is
 continuous at every point in its domain.
 \end{definition}
+
+
+\begin{example}
+\end{example}
+
+\begin{solution}
+\end{solution}
+
+
 
 
 \noindent{\bf Continuity.}  The graphs shown in (b) and (c) both represent

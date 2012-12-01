@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012/Debian) (format=pdflatex 2012.11.6)  30 NOV 2012 19:05
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012/Debian) (format=pdflatex 2012.11.6)  1 DEC 2012 16:08
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2337,23 +2337,34 @@ Underfull \hbox (badness 10000) in paragraph at lines 925--925
 
 [22]
 Package mdframed Info: mdframed works in twoside mode on input line 936.
-Package mdframed Info: mdframed works in twoside mode on input line 943.
-Package mdframed Info: mdframed works in twoside mode on input line 966.
+
+Overfull \hbox (37.04941pt too wide) in paragraph at lines 940--959
+ [] 
+ []
 
 
 LaTeX Warning: Marginpar on page 23 moved.
 
-Package mdframed Info: mdframed works in twoside mode on input line 1019.
+Package mdframed Info: mdframed works in twoside mode on input line 964.
+Package mdframed Info: mdframed works in twoside mode on input line 967.
+Package mdframed Info: mdframed works in twoside mode on input line 984.
+Package mdframed Info: mdframed works in twoside mode on input line 990.
+Package mdframed Info: mdframed works in twoside mode on input line 992.
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Underfull \vbox (badness 5862) has occurred while \output is active []
 
  [23]
-Package mdframed Info: Not enough space on this page on input line 1021.
-Package mdframed Info: mdframed works in twoside mode on input line 1023.
-Package mdframed Info: mdframed works in twoside mode on input line 1034.
-Package mdframed Info: mdframed works in twoside mode on input line 1036.
+Package mdframed Info: mdframed works in twoside mode on input line 1016.
 
-Underfull \hbox (badness 10000) in paragraph at lines 1098--1098
+
+LaTeX Warning: Marginpar on page 24 moved.
+
+Package mdframed Info: mdframed works in twoside mode on input line 1069.
+Package mdframed Info: mdframed works in twoside mode on input line 1073.
+Package mdframed Info: mdframed works in twoside mode on input line 1084.
+Package mdframed Info: mdframed works in twoside mode on input line 1086.
+
+Underfull \hbox (badness 10000) in paragraph at lines 1121--1121
 
  []
 
@@ -2361,9 +2372,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 1098--1098
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [24]
-[25]) (./derivatives.tex [26
-
-]
+[25] [26]) (./derivatives.tex
 Chapter 2.
 LaTeX Font Info:    Font shape `T1/mak/m/n' will be
 (Font)              scaled to size 8.09995pt on input line 23.
@@ -2399,7 +2408,14 @@ LaTeX Font Info:    Font shape `T1/mak/m/n' will be
 (Font)              scaled to size 6.29996pt on input line 24.
 LaTeX Font Info:    Font shape `T1/mak/bx/n' will be
 (Font)              scaled to size 8.09995pt on input line 26.
-) (./chapter02.tex [27] [28]
+
+LaTeX Warning: Float too large for page by 104.48268pt on input line 140.
+
+) (./chapter02.tex [27
+
+] [28] [29] [30
+
+]
 Chapter 3.
 (./section02.01.tex
 Package mdframed Info: mdframed works in twoside mode on input line 10.
@@ -2410,49 +2426,47 @@ Overfull \hbox (7.74611pt too wide) in paragraph at lines 28--28
 
 Package mdframed Info: Box was splittet wrong
 (mdframed)              on input line 37.
-[29
+[31]
 
-]
+LaTeX Warning: Reference `fig:chords' on page 32 undefined on input line 55.
 
-LaTeX Warning: Reference `fig:chords' on page 30 undefined on input line 55.
-
-[30]
+[32]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [31]
-[32]
+ [33]
+[34]
 Underfull \hbox (badness 10000) in paragraph at lines 278--278
 
  []
 
-[33] [34]) (./section02.02.tex
+[35] [36]) (./section02.02.tex
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [35]
-[36]
+ [37]
+[38]
 Underfull \hbox (badness 10000) in paragraph at lines 143--143
 
  []
 
 
-LaTeX Warning: Reference `fig:data plot' on page 37 undefined on input line 143
+LaTeX Warning: Reference `fig:data plot' on page 39 undefined on input line 143
 .
 
-[37] [38]) (./section02.03.tex
+[39] [40]) (./section02.03.tex
 Package mdframed Info: mdframed works in twoside mode on input line 30.
- [39] [40]
+ [41] [42]
 Package mdframed Info: mdframed works in twoside mode on input line 130.
 Package mdframed Info: Not enough space on this page on input line 138.
- [41]
-Package mdframed Info: Not enough space on this page on input line 138.
- [42]
-Package mdframed Info: mdframed works in twoside mode on input line 193.
  [43]
+Package mdframed Info: Not enough space on this page on input line 138.
+ [44]
+Package mdframed Info: mdframed works in twoside mode on input line 193.
+ [45]
 Package mdframed Info: mdframed works in twoside mode on input line 248.
 Package mdframed Info: mdframed works in twoside mode on input line 253.
 Package mdframed Info: Box was splittet wrong
 (mdframed)              on input line 305.
- [44]
+ [46]
 Package mdframed Info: mdframed works in twoside mode on input line 310.
 
 Overfull \vbox (43.74387pt too high) detected at line 321
@@ -2524,7 +2538,7 @@ Package mdframed Info: Box was splittet wrong
 Overfull \vbox (237.91661pt too high) detected at line 321
  []
 
-[45]
+[47]
 Package mdframed Info: mdframed works in twoside mode on input line 330.
 
 Overfull \vbox (35.63701pt too high) detected at line 342
@@ -2656,57 +2670,57 @@ Package mdframed Info: Box was splittet wrong
 Overfull \vbox (391.35709pt too high) detected at line 342
  []
 
-[46]
+[48]
 Package mdframed Info: mdframed works in twoside mode on input line 358.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [47]
+ [49]
 Package mdframed Info: Not enough space on this page on input line 366.
 Package mdframed Info: mdframed works in twoside mode on input line 381.
 Package mdframed Info: mdframed works in twoside mode on input line 391.
 
-[48]
+[50]
 Package mdframed Info: mdframed works in twoside mode on input line 403.
 Package mdframed Info: mdframed works in twoside mode on input line 429.
- [49]
+ [51]
 Package mdframed Info: mdframed works in twoside mode on input line 441.
 
 Underfull \hbox (badness 10000) in paragraph at lines 567--567
 
  []
 
-[50]
+[52]
 Underfull \hbox (badness 10000) in paragraph at lines 567--567
 
  []
 
-[51]) (./section02.04.tex [52]
+[53]) (./section02.04.tex [54]
 Package mdframed Info: mdframed works in twoside mode on input line 60.
 Package mdframed Info: mdframed works in twoside mode on input line 76.
- [53]
+ [55]
 Package mdframed Info: mdframed works in twoside mode on input line 113.
- [54]
+ [56]
 Package mdframed Info: mdframed works in twoside mode on input line 134.
 
 
-LaTeX Warning: Reference `fig:cusp' on page 55 undefined on input line 136.
+LaTeX Warning: Reference `fig:cusp' on page 57 undefined on input line 136.
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 285--285
 
  []
 
-[55] [56]) (./section02.05.tex
+[57] [58]) (./section02.05.tex
 
-LaTeX Warning: Reference `sec:functions' on page 57 undefined on input line 5.
+LaTeX Warning: Reference `sec:functions' on page 59 undefined on input line 5.
 
 
-LaTeX Warning: Reference `fig:function types' on page 57 undefined on input lin
+LaTeX Warning: Reference `fig:function types' on page 59 undefined on input lin
 e 9.
 
 
-LaTeX Warning: Reference `fig:function types' on page 57 undefined on input lin
+LaTeX Warning: Reference `fig:function types' on page 59 undefined on input lin
 e 114.
 
 Package mdframed Info: mdframed works in twoside mode on input line 127.
@@ -2714,7 +2728,7 @@ Package mdframed Info: mdframed works in twoside mode on input line 145.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [57]
+ [59]
 Package mdframed Info: Not enough space on this page on input line 147.
 Package mdframed Info: mdframed works in twoside mode on input line 150.
 Package mdframed Info: mdframed works in twoside mode on input line 168.
@@ -2723,7 +2737,7 @@ Package mdframed Info: mdframed works in twoside mode on input line 186.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [58]
+ [60]
 Package mdframed Info: Not enough space on this page on input line 189.
 Package mdframed Info: mdframed works in twoside mode on input line 195.
 Package mdframed Info: mdframed works in twoside mode on input line 206.
@@ -2733,28 +2747,28 @@ Underfull \hbox (badness 10000) in paragraph at lines 262--262
  []
 
 
-LaTeX Warning: Reference `fig:function types' on page 59 undefined on input lin
+LaTeX Warning: Reference `fig:function types' on page 61 undefined on input lin
 e 262.
 
-[59] [60])) (./chapter03.tex
+[61] [62])) (./chapter03.tex
 Chapter 4.
 (./section03.01.tex
 Package mdframed Info: mdframed works in twoside mode on input line 23.
- [61
+ [63
 
 ]
 Package mdframed Info: Not enough space on this page on input line 33.
- [62]
+ [64]
 Package mdframed Info: mdframed works in twoside mode on input line 77.
- [63]
+ [65]
 Underfull \hbox (badness 10000) in paragraph at lines 148--148
 
  []
 
-[64]) (./section03.02.tex
+[66]) (./section03.02.tex
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [65]
+ [67]
 Package mdframed Info: mdframed works in twoside mode on input line 56.
 
 Overfull \hbox (52.07771pt too wide) detected at line 59
@@ -2785,7 +2799,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 144--144
 
  []
 
-[66] [67]) (./section03.03.tex
+[68] [69]) (./section03.03.tex
 Overfull \hbox (8.0707pt too wide) in paragraph at lines 32--32
 [] 
  []
@@ -2793,7 +2807,7 @@ Overfull \hbox (8.0707pt too wide) in paragraph at lines 32--32
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [68]
+ [70]
 Package mdframed Info: mdframed works in twoside mode on input line 93.
 
 Overfull \hbox (8.30383pt too wide) detected at line 99
@@ -2807,7 +2821,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 178--178
 
  []
 
-[69] [70] [71]) (./section03.04.tex
+[71] [72] [73]) (./section03.04.tex
 Overfull \hbox (25.27937pt too wide) detected at line 26
 [][] \OT1/zplm/m/n/10 = \OML/mak/b/it/10 f\OT1/zplm/m/n/10 (\OML/mak/b/it/10 x\
 OT1/zplm/m/n/10 )[] + \OML/mak/b/it/10 f[]\OT1/zplm/m/n/10 (\OML/mak/b/it/10 x\
@@ -2816,26 +2830,30 @@ OT1/zplm/m/n/10 )[] = [] = []\OT1/txr/m/n/10 .
 
 Package mdframed Info: mdframed works in twoside mode on input line 29.
 Package mdframed Info: mdframed works in twoside mode on input line 43.
-[72] [73]
+[74] [75]
 Underfull \hbox (badness 10000) in paragraph at lines 165--165
 
  []
 
-[74]) (./section03.05.tex
+[76]) (./section03.05.tex
 Package mdframed Info: mdframed works in twoside mode on input line 19.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [75]
+ [77]
 Package mdframed Info: mdframed works in twoside mode on input line 81.
 
-[76]
+[78]
 Package mdframed Info: Not enough space on this page on input line 92.
 Package mdframed Info: mdframed works in twoside mode on input line 95.
 Package mdframed Info: mdframed works in twoside mode on input line 110.
- [77]
+ [79]
 Package mdframed Info: mdframed works in twoside mode on input line 138.
- [78]
+ [80]
+
+LaTeX Warning: Reference `mdf@pagelabel-86' on page 81 undefined on input line 
+160.
+
 Package mdframed Info: mdframed works in twoside mode on input line 166.
 
 Overfull \vbox (3.37129pt too high) detected at line 180
@@ -3007,12 +3025,17 @@ Package mdframed Info: Box was splittet wrong
 Overfull \vbox (453.35902pt too high) detected at line 180
  []
 
-[79]
+[81]
+
+LaTeX Warning: Reference `mdf@pagelabel-87' on page 82 undefined on input line 
+180.
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 364--364
 
  []
 
-[80] [81] [82])) (./textbook.ans)
+[82] [83] [84])) (./textbook.ans)
 No file textbook.ind.
 
 Package bibentry Warning: You have used \nobibliography* 
@@ -3026,7 +3049,7 @@ Package bibentry Warning: You have used \nobibliography*
 \openout9 = `textbook.loe'.
 
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 211.
-[83
+[85
 
 
 ]
@@ -3049,39 +3072,42 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 211.
  ) 
 Here is how much of TeX's memory you used:
- 38105 strings out of 493481
- 770788 string characters out of 3143393
- 1452805 words of memory out of 3000000
- 39788 multiletter control sequences out of 15000+200000
- 104235 words of font info for 419 fonts, out of 3000000 for 9000
+ 38135 strings out of 493481
+ 771445 string characters out of 3143393
+ 1453944 words of memory out of 3000000
+ 39812 multiletter control sequences out of 15000+200000
+ 104421 words of font info for 421 fonts, out of 3000000 for 9000
  965 hyphenation exceptions out of 8191
  80i,21n,91p,952b,2017s stack positions out of 5000i,500n,10000p,200000b,50000s
-{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}{/usr/share/texliv
-e/texmf-dist/fonts/enc/dvips/kerkis/kerkisec.enc}{/usr/share/texlive/texmf-dist
-/fonts/enc/dvips/kerkis/kerkisecsc.enc}{/usr/share/texlive/texmf-dist/fonts/enc
-/dvips/kerkis/kmath.enc}{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1
-.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/kerkis/Kerkis-Bold.pfb><
-/usr/share/texlive/texmf-dist/fonts/type1/public/kerkis/Kerkis-BoldItalic.pfb><
-/usr/share/texlive/texmf-dist/fonts/type1/public/kerkis/Kerkis-Italic.pfb></usr
-/share/texlive/texmf-dist/fonts/type1/public/kerkis/Kerkis-SmallCaps.pfb></usr/
-share/texlive/texmf-dist/fonts/type1/public/kerkis/Kerkis.pfb></usr/share/texli
-ve/texmf-dist/fonts/type1/public/kerkis/Kerkis.pfb></usr/share/texlive/texmf-di
-st/fonts/type1/public/kerkis/KerkisSans-Bold.pfb></usr/share/texlive/texmf-dist
-/fonts/type1/public/kerkis/KerkisSans.pfb></usr/share/texlive/texmf-dist/fonts/
-type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/
-public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/
-mathpazo/fplmr.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1000.pfb><
-/usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/txbsy.pfb></usr/share/
-texlive/texmf-dist/fonts/type1/public/txfonts/txex.pfb></usr/share/texlive/texm
-f-dist/fonts/type1/public/txfonts/txexa.pfb></usr/share/texlive/texmf-dist/font
-s/type1/public/txfonts/txsy.pfb></usr/share/texlive/texmf-dist/fonts/type1/publ
-ic/txfonts/txsyc.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/courier/ucr
-r8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></us
-r/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb>
-Output written on textbook.pdf (83 pages, 458687 bytes).
+pdfTeX warning (dest): name{mainTheorem.1.6.2} has been referenced but does n
+ot exist, replaced by a fixed one
+
+{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}{/usr/share/texlive/
+texmf-dist/fonts/enc/dvips/kerkis/kerkisec.enc}{/usr/share/texlive/texmf-dist/f
+onts/enc/dvips/kerkis/kerkisecsc.enc}{/usr/share/texlive/texmf-dist/fonts/enc/d
+vips/kerkis/kmath.enc}{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.e
+nc}</usr/share/texlive/texmf-dist/fonts/type1/public/kerkis/Kerkis-Bold.pfb></u
+sr/share/texlive/texmf-dist/fonts/type1/public/kerkis/Kerkis-BoldItalic.pfb></u
+sr/share/texlive/texmf-dist/fonts/type1/public/kerkis/Kerkis-Italic.pfb></usr/s
+hare/texlive/texmf-dist/fonts/type1/public/kerkis/Kerkis-SmallCaps.pfb></usr/sh
+are/texlive/texmf-dist/fonts/type1/public/kerkis/Kerkis.pfb></usr/share/texlive
+/texmf-dist/fonts/type1/public/kerkis/Kerkis.pfb></usr/share/texlive/texmf-dist
+/fonts/type1/public/kerkis/KerkisSans-Bold.pfb></usr/share/texlive/texmf-dist/f
+onts/type1/public/kerkis/KerkisSans.pfb></usr/share/texlive/texmf-dist/fonts/ty
+pe1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/pu
+blic/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ma
+thpazo/fplmr.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1000.pfb></u
+sr/share/texlive/texmf-dist/fonts/type1/public/txfonts/txbsy.pfb></usr/share/te
+xlive/texmf-dist/fonts/type1/public/txfonts/txex.pfb></usr/share/texlive/texmf-
+dist/fonts/type1/public/txfonts/txexa.pfb></usr/share/texlive/texmf-dist/fonts/
+type1/public/txfonts/txsy.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
+/txfonts/txsyc.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/courier/ucrr8
+a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/
+share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb>
+Output written on textbook.pdf (85 pages, 465653 bytes).
 PDF statistics:
- 998 PDF objects out of 1000 (max. 8388607)
- 864 compressed objects within 9 object streams
- 428 named destinations out of 1000 (max. 500000)
+ 1010 PDF objects out of 1200 (max. 8388607)
+ 874 compressed objects within 9 object streams
+ 431 named destinations out of 1000 (max. 500000)
  77581 words of extra memory for PDF output out of 89155 (max. 10000000)
 

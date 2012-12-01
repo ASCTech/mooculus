@@ -6,16 +6,16 @@
 \contentsline {section}{\numberline {1.5}Limits at Infinity}{22}{section.1.5}
 \contentsline {section}{\numberline {1.6}Continuity}{23}{section.1.6}
 \contentsline {chapter}{\numberline {2}Derivatives}{27}{chapter.2}
-\contentsline {chapter}{\numberline {3}Instantaneous Rate of Change: The Derivative}{29}{chapter.3}
-\contentsline {section}{\numberline {3.1}The slope of a function}{29}{section.3.1}
-\contentsline {section}{\numberline {3.2}An example}{35}{section.3.2}
-\contentsline {section}{\numberline {3.3}Limits}{39}{section.3.3}
-\contentsline {section}{\numberline {3.4}The Derivative Function}{52}{section.3.4}
-\contentsline {section}{\numberline {3.5}Adjectives For Functions}{57}{section.3.5}
-\contentsline {chapter}{\numberline {4}Rules for Finding Derivatives}{61}{chapter.4}
-\contentsline {section}{\numberline {4.1}The Power Rule}{61}{section.4.1}
-\contentsline {section}{\numberline {4.2}Linearity of the Derivative}{65}{section.4.2}
-\contentsline {section}{\numberline {4.3}The Product Rule}{68}{section.4.3}
-\contentsline {section}{\numberline {4.4}The Quotient Rule}{72}{section.4.4}
-\contentsline {section}{\numberline {4.5}The Chain Rule}{75}{section.4.5}
+\contentsline {chapter}{\numberline {3}Instantaneous Rate of Change: The Derivative}{31}{chapter.3}
+\contentsline {section}{\numberline {3.1}The slope of a function}{31}{section.3.1}
+\contentsline {section}{\numberline {3.2}An example}{37}{section.3.2}
+\contentsline {section}{\numberline {3.3}Limits}{41}{section.3.3}
+\contentsline {section}{\numberline {3.4}The Derivative Function}{54}{section.3.4}
+\contentsline {section}{\numberline {3.5}Adjectives For Functions}{59}{section.3.5}
+\contentsline {chapter}{\numberline {4}Rules for Finding Derivatives}{63}{chapter.4}
+\contentsline {section}{\numberline {4.1}The Power Rule}{63}{section.4.1}
+\contentsline {section}{\numberline {4.2}Linearity of the Derivative}{67}{section.4.2}
+\contentsline {section}{\numberline {4.3}The Product Rule}{70}{section.4.3}
+\contentsline {section}{\numberline {4.4}The Quotient Rule}{74}{section.4.4}
+\contentsline {section}{\numberline {4.5}The Chain Rule}{77}{section.4.5}
 \contentsfinish 
