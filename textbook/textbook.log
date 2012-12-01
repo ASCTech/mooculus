@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012/Debian) (format=pdflatex 2012.11.6)  29 NOV 2012 10:07
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012/Debian) (format=pdflatex 2012.11.6)  30 NOV 2012 19:05
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1543,52 +1543,52 @@ LaTeX Font Info:    Redeclaring font encoding T1 on input line 43.
 
 
 Package thmtools Warning: Key `notefont' not supported by ntheorem on input lin
-e 149.
+e 157.
 
 
 Package thmtools Warning: Key `notebraces' not supported by ntheorem on input l
-ine 149.
+ine 157.
 
 Package thmtools Info: Key `preheadhook' (with value `\begin {mdframed}[leftmar
-gin=40,rightmargin=40,backgroundcolor=theoremBackground!10,fontcolor=textColor,
-innerlinewidth=1,innerlinecolor=mainTheoremBorder!20!background, middlelinewidt
-h=2,middlelinecolor=mainTheoremBorder, outerlinewidth=1,outerlinecolor=mainTheo
-remBorder!10!background, roundcorner=10pt,innertopmargin=6pt,splittopskip=\tops
-kip ,skipbelow=\baselineskip ,skipabove=\baselineskip ]')
+gin=40,rightmargin=40,backgroundcolor=theoremBackground,fontcolor=textColor,inn
+erlinewidth=1,innerlinecolor=mainTheoremBorder!20!background, middlelinewidth=2
+,middlelinecolor=mainTheoremBorder, outerlinewidth=1,outerlinecolor=mainTheorem
+Border!10!background, roundcorner=10pt,innertopmargin=6pt,splittopskip=\topskip
+ ,skipbelow=\baselineskip ,skipabove=\baselineskip ]')
 (thmtools)             is not a known style key.
 (thmtools)             Will pass this to every \declaretheorem
-(thmtools)             that uses `style=mainThmStyle' on input line 149.
+(thmtools)             that uses `style=mainThmStyle' on input line 157.
 Package thmtools Info: Key `postfoothook' (with value `\end {mdframed}')
 (thmtools)             is not a known style key.
 (thmtools)             Will pass this to every \declaretheorem
-(thmtools)             that uses `style=mainThmStyle' on input line 149.
+(thmtools)             that uses `style=mainThmStyle' on input line 157.
 \c@mainTheorem=\count315
 
 Package thmtools Warning: Key `notefont' not supported by ntheorem on input lin
-e 163.
+e 171.
 
 
 Package thmtools Warning: Key `notebraces' not supported by ntheorem on input l
-ine 163.
+ine 171.
 
 Package thmtools Info: Key `preheadhook' (with value `\begin {mdframed}[hideall
 lines=true,roundcorner=10pt,leftmargin=40,rightmargin=40,backgroundcolor=theore
-mBackground!10,fontcolor=textColor,innertopmargin=6pt,splittopskip=\topskip ,sk
-ipbelow=\baselineskip ,skipabove=\baselineskip ]')
+mBackground,fontcolor=textColor,innertopmargin=6pt,splittopskip=\topskip ,skipb
+elow=\baselineskip ,skipabove=\baselineskip ]')
 (thmtools)             is not a known style key.
 (thmtools)             Will pass this to every \declaretheorem
-(thmtools)             that uses `style=thmStyle' on input line 163.
+(thmtools)             that uses `style=thmStyle' on input line 171.
 Package thmtools Info: Key `postfoothook' (with value `\end {mdframed}')
 (thmtools)             is not a known style key.
 (thmtools)             Will pass this to every \declaretheorem
-(thmtools)             that uses `style=thmStyle' on input line 163.
+(thmtools)             that uses `style=thmStyle' on input line 171.
 
 Package thmtools Warning: Key `notefont' not supported by ntheorem on input lin
-e 174.
+e 182.
 
 
 Package thmtools Warning: Key `notebraces' not supported by ntheorem on input l
-ine 174.
+ine 182.
 
 Package thmtools Info: Key `preheadhook' (with value `\begin {mdframed}[outerli
 newidth=2,topline=false, bottomline=false, leftline=true, rightline=false, left
@@ -1597,11 +1597,11 @@ ndcolor=background,skipbelow=\baselineskip ,skipabove=\baselineskip ,innertopma
 rgin=0pt, innerbottommargin=0pt]')
 (thmtools)             is not a known style key.
 (thmtools)             Will pass this to every \declaretheorem
-(thmtools)             that uses `style=egStyle' on input line 174.
+(thmtools)             that uses `style=egStyle' on input line 182.
 Package thmtools Info: Key `postfoothook' (with value `\end {mdframed}')
 (thmtools)             is not a known style key.
 (thmtools)             Will pass this to every \declaretheorem
-(thmtools)             that uses `style=egStyle' on input line 174.
+(thmtools)             that uses `style=egStyle' on input line 182.
 \c@solution=\count316
 \c@proof=\count317
 \c@definition=\count318
@@ -2336,23 +2336,34 @@ Underfull \hbox (badness 10000) in paragraph at lines 925--925
  []
 
 [22]
-Package mdframed Info: mdframed works in twoside mode on input line 935.
-Package mdframed Info: mdframed works in twoside mode on input line 959.
-Package mdframed Info: mdframed works in twoside mode on input line 964.
+Package mdframed Info: mdframed works in twoside mode on input line 936.
+Package mdframed Info: mdframed works in twoside mode on input line 943.
+Package mdframed Info: mdframed works in twoside mode on input line 966.
+
+
+LaTeX Warning: Marginpar on page 23 moved.
+
+Package mdframed Info: mdframed works in twoside mode on input line 1019.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
  [23]
-Package mdframed Info: mdframed works in twoside mode on input line 993.
+Package mdframed Info: Not enough space on this page on input line 1021.
+Package mdframed Info: mdframed works in twoside mode on input line 1023.
+Package mdframed Info: mdframed works in twoside mode on input line 1034.
+Package mdframed Info: mdframed works in twoside mode on input line 1036.
 
-
-LaTeX Warning: Marginpar on page 24 moved.
-
-Package mdframed Info: mdframed works in twoside mode on input line 1045.
-Package mdframed Info: mdframed works in twoside mode on input line 1056.
-[24]
-Underfull \hbox (badness 10000) in paragraph at lines 1120--1120
+Underfull \hbox (badness 10000) in paragraph at lines 1098--1098
 
  []
 
-[25] [26]) (./derivatives.tex
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [24]
+[25]) (./derivatives.tex [26
+
+]
 Chapter 2.
 LaTeX Font Info:    Font shape `T1/mak/m/n' will be
 (Font)              scaled to size 8.09995pt on input line 23.
@@ -2388,9 +2399,7 @@ LaTeX Font Info:    Font shape `T1/mak/m/n' will be
 (Font)              scaled to size 6.29996pt on input line 24.
 LaTeX Font Info:    Font shape `T1/mak/bx/n' will be
 (Font)              scaled to size 8.09995pt on input line 26.
-) (./chapter02.tex [27
-
-] [28]
+) (./chapter02.tex [27] [28]
 Chapter 3.
 (./section02.01.tex
 Package mdframed Info: mdframed works in twoside mode on input line 10.
@@ -3040,11 +3049,11 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 211.
  ) 
 Here is how much of TeX's memory you used:
- 38092 strings out of 493481
- 770597 string characters out of 3143393
- 1453502 words of memory out of 3000000
- 39783 multiletter control sequences out of 15000+200000
- 103781 words of font info for 415 fonts, out of 3000000 for 9000
+ 38105 strings out of 493481
+ 770788 string characters out of 3143393
+ 1452805 words of memory out of 3000000
+ 39788 multiletter control sequences out of 15000+200000
+ 104235 words of font info for 419 fonts, out of 3000000 for 9000
  965 hyphenation exceptions out of 8191
  80i,21n,91p,952b,2017s stack positions out of 5000i,500n,10000p,200000b,50000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}{/usr/share/texliv
@@ -3069,10 +3078,10 @@ s/type1/public/txfonts/txsy.pfb></usr/share/texlive/texmf-dist/fonts/type1/publ
 ic/txfonts/txsyc.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/courier/ucr
 r8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb>
-Output written on textbook.pdf (83 pages, 459216 bytes).
+Output written on textbook.pdf (83 pages, 458687 bytes).
 PDF statistics:
- 995 PDF objects out of 1000 (max. 8388607)
- 861 compressed objects within 9 object streams
- 426 named destinations out of 1000 (max. 500000)
+ 998 PDF objects out of 1000 (max. 8388607)
+ 864 compressed objects within 9 object streams
+ 428 named destinations out of 1000 (max. 500000)
  77581 words of extra memory for PDF output out of 89155 (max. 10000000)
 
