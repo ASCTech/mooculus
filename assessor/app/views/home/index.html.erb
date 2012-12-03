@@ -1,14 +1,14 @@
       <!-- Main hero unit for a primary marketing message or call to action -->
       <div class="row">
+        <div class="span3"></div>
         <div class="span6">
           <div class="hero-unit">
             <h1>Help with math?</h1>
             <p>Need help with a math course at Ohio State?  Looking for lecture videos?  Looking for practice exams?  This is the place. <%= @course %></p>
-            <p><%= link_to "Find your course »", course_path,
-              { :class => "btn btn-primary btn-large" }
-              %></p>
+            <p><%= link_to 'Login', user_omniauth_authorize_path(:google_oauth2),
+              { :class => "btn btn-primary btn-large" }%></p>
           </div>
         </div>
-        <div class="span6">
+        <div class="span3">
         </div>
       </div>
