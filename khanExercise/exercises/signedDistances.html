@@ -9,17 +9,19 @@
 <body>
     <div class="exercise">
         <div class="vars">
-             <var id="X1">randRangeNonZero( -10, 10 )</var>
-             <var id="Y1">randRangeNonZero( -10, 10 )</var>
-             <var id="X2">randRangeNonZero( -10, 10 )</var>
-             <var id="Y2">randRangeNonZero( -10, 10 )</var>
+             <var id="X1">randRange( -10, 7 )</var>
+             <var id="Y1">randRange( -10, 10 )</var>
+             <var id="X2">randRangeExclude( -10, 10, X1 )</var>
+             <var id="Y2">randRangeExclude( -10, 10, Y1 )</var>
         </div>
         <div class="problems">
             <div>
 
                 <p class="question">
+                    Adjust the line segment to point from <code class = "hint_orange">(<var>X1</var>,<var>Y1</var>)</code> to 
+                    <code class = "hint_green">(<var>X2</var>,<var>Y2</var>)</code> in the horizontal direction.
                     What is the signed horizontal distance from <code class = "hint_orange">(<var>X1</var>,<var>Y1</var>)</code> 
-                    to <code class = "hint_green">(<var>X2</var>,<var>Y2</var>)</code>?
+                    to <code class = "hint_green">(<var>X2</var>,<var>Y2</var>)</code>? 
                 </p>
                 <div class="problem">
                     <br />
@@ -47,6 +49,21 @@
                             stroke: "none",
                             fill: GREEN
                             });
+                        
+                        addMouseLayer();
+                        graph.movablePoint = addMovablePoint({ coord: [ X1+3, Y1 ], snapY: 1, snapX: 1 });
+
+                        graph.movablePoint.onMove = function( x, y ) {
+                            return [ max( -10, min( x, 10 ) ), Y1 ];
+                            };
+                    graph.line = addMovableLineSegment({
+                    pointA: graph.movablePoint,
+                    coordZ: [X1,Y1],
+                    fixed: true,
+                    extendedLine: true
+                  
+                    
+                    });
 
                     </div>
                 </div>
@@ -55,9 +72,94 @@
                 </div>
 
                 <div class="hints">
-                    <p>Testing</p>    
-                    <p>Two hints now?</p>
-                </div>
+                        <div>
+                        <p>Pictured above is a path from <code class = "hint_orange">(<var>X1</var>,<var>Y1</var>)</code> to the point 
+                           <code class = "hint_green">(<var>X2</var>,<var>Y2</var>)</code> which only moves horizontally and vertically. 
+                        </p>
+                        
+                                    <div class="graphie" data-update="grid">
+                                    style({
+                                        stroke: BLUE,
+                                        strokeWidth: 3,
+                                        arrows: "-&gt;"
+                                    }, function() {
+                                        line( [ 0, 0 ], [ X1, 0 ]);
+                                    });
+                                    
+                                </div>
+                        </div>
+                        <p>Coordinates are listed as <code>(\blue{x},\green{y})</code>. </p>
+                        <p>
+                            So, for <code>( \blue{<var>X1</var>}, \green{<var>Y1</var>} )</code> our
+                            <span class="hint_blue"><code>x</code>-coordinate</span> is <code class="hint_blue"><var>X</var></code> and our
+                            <span class="hint_green"><code>y</code>-coordinate</span> is <code class="hint_green"><var>Y</var></code>.</p>
+
+                        <p>
+                            The <span class="hint_blue"><code>x</code>-coordinate</span> tells how far we move to the right from the origin and the
+                            <span class="hint_green"><code>y</code>-coordinate</span> tells us how far we move up from the origin.
+                        </p>
+
+                        <div>
+                            <div data-if="X1 === 0">
+                                Since our <span class="hint_blue"><code>x</code>-coordinate</span> is equal to <code class="hint_blue">0</code>, we don't need to move to the right of the origin.
+                            </div>
+                            <div data-else>
+                                <p>
+                                    Since our <span class="hint_blue"><code>x</code>-coordinate</span> is equal to <code class="hint_blue"><var>X1</var></code>,
+                                    we move <code class="hint_blue"><var>X1</var></code> to the right of the origin.
+                                </p>
+                                <div class="graphie" data-update="grid">
+                                    style({
+                                        stroke: BLUE,
+                                        strokeWidth: 3,
+                                        arrows: "-&gt;"
+                                    }, function() {
+                                        line( [ 0, 0 ], [ X1, 0 ]);
+                                    });
+                                    graph.movablePoint.toFront();
+                                </div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div data-if="Y1 === 0">
+                                Since our <span class="hint_green"><code>y</code>-coordinate</span> is equal to <code class="hint_green">0</code>, we don't need to move up from the origin.
+                            </div>
+                            <div data-else>
+                                <p>
+                                    Since our <span class="hint_green"><code>y</code>-coordinate</span> is equal to <code class="hint_green"><var>Y</var></code>,
+                                    we move up <code class="hint_green"><var>Y</var></code> from the origin.
+                                </p>
+                                <div class="graphie" data-update="grid">
+                                    style({
+                                        stroke: GREEN,
+                                        strokeWidth: 3,
+                                        arrows: "-&gt;"
+                                    }, function() {
+                                        line( [ X1, 0 ], [ X1, Y1 ] );
+                                    });
+                                    graph.movablePoint.toFront();
+                                </div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <p class="final_answer">
+                                Move the point to <code>( \blue{<var>X1</var>}, \green{<var>Y1</var>} )</code> at the marked point above.
+                                <input type="button" value="Show me" onClick="javascript:KhanUtil.currentGraph.graph.movablePoint.moveTo( KhanUtil.tmpl.getVAR('X'), KhanUtil.tmpl.getVAR('Y') );" />
+                            </p>
+                            <div class="graphie" data-update="grid">
+                                style({
+                                    stroke: PINK,
+                                    strokeWidth: 3
+                                }, function() {
+                                    line( [ X1 - 0.25, Y1 - 0.25 ], [ X1 + 0.25, Y1 + 0.25 ] );
+                                    line( [ X1 + 0.25, Y1 - 0.25 ], [ X1 - 0.25, Y1 + 0.25 ] );
+                                });
+                                graph.movablePoint.toFront();
+                            </div>
+                        </div>
+                    </div>
         </div>
             <div>
 

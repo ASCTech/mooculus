@@ -1,10 +1,8 @@
-\documentclass[justified,marginals=raggedouter]{tufte-book}
+\documentclass[justified]{tufte-book}
 \usepackage{mooculus}
-\usepackage{pgfplots}
-\usepackage{morefloats}
 
-\usepackage{amsmath}
-\usepackage{amssymb}
+
+
 \newcommand{\R}{\mathbb{R}}
 % BADBAD should include cents symbol?
 \newcommand\cents{cents}
@@ -52,17 +50,10 @@
 \makeatother
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%\newenvironment{example}{\subsection*{Example}}{}
 \newenvironment{lemma}{\subsection*{Lemma}}{}
 \newenvironment{remark}[1]{\subsection*{Remark: #1}}{}
 
-\def\beginpicture{\null}
-
-%\usepackage{amsthm}
-%\newtheorem{theorem}{Theorem}[section]
-%\theoremstyle{definition}
-%\newtheorem{definition}[theorem]{Definition}
-
+%\def\beginpicture{\null}
 
 \def\exam{\null}
 \def\pagerdef{\null}
@@ -70,7 +61,7 @@
 \def\dfont{\bf}
 \def\em{\it}           % for emphasis
 
-\let\ds\displaystyle
+\newcommand{\ds}{\displaystyle}
 
 \let\ssk\smallskip \let\msk\medskip \let\bsk\bigskip
 
@@ -79,21 +70,21 @@
 \def\endtwocol{\end{multicols}}
 
 \title{Calculus}
-\author{Jim Fowler and Bart Snapp}
+%\author{Jim Fowler and Bart Snapp}
 
-\newcommand{\blankpage}{\newpage\hbox{}\thispagestyle{empty}\newpage}
+%\newcommand{\blankpage}{\newpage\hbox{}\thispagestyle{empty}\newpage}
 
-% Prints an epigraph and speaker in sans serif, all-caps type.
-\newcommand{\openepigraph}[2]{%
-  %\sffamily\fontsize{14}{16}\selectfont
-  \begin{fullwidth}
-  \sffamily\large
-  \begin{doublespace}
-  \noindent\allcaps{#1}\\% epigraph
-  \noindent\allcaps{#2}% author
-  \end{doublespace}
-  \end{fullwidth}
-}
+%% % Prints an epigraph and speaker in sans serif, all-caps type.
+%% \newcommand{\openepigraph}[2]{%
+%%   %\sffamily\fontsize{14}{16}\selectfont
+%%   \begin{fullwidth}
+%%   \sffamily\large
+%%   \begin{doublespace}
+%%   \noindent\allcaps{#1}\\% epigraph
+%%   \noindent\allcaps{#2}% author
+%%   \end{doublespace}
+%%   \end{fullwidth}
+%% }
 
 \begin{document}
 \maketitle
@@ -132,6 +123,8 @@ and the section on numerical integration are largely derived from the
 corresponding portions of Keisler's book.  Albert Schueller, Barry
 Balof, and Mike Wills have contributed additional material.
 
+\noindent This book is typeset in the Kerkis font, 
+Kerkis \copyright~Department of Mathematics, University of the Aegean.
 % BADBAD
 %\msk\noindent
 %This copy of the text was compiled from source at 
@@ -147,9 +140,17 @@ improvement at \texttt{fowler@math.osu.edu} or
 % r.5 contents
 \tableofcontents
 
-\listoffigures
 
-\listoftables
+%\listoftheorems[ignoreall,show={mainTheorem}]
+
+\renewcommand{\listtheoremname}{List of Main Theorems}
+\setcounter{tocdepth}{1}
+\listoftheorems[numwidth=3em,ignoreall,show={mainTheorem}]
+
+
+%\listoffigures
+
+%\listoftables
 
 % r.7 dedication
 %\cleardoublepage
@@ -169,22 +170,24 @@ improvement at \texttt{fowler@math.osu.edu} or
 % r.9 introduction
 %\cleardoublepage
 
-\chapter*{Introduction}
+%\chapter*{Introduction}
 
-BADBAD
+%BADBAD
 
-What is calculus?
+%What is calculus?
 
 %%
 % Start the main matter (normal chapters)
 \mainmatter
 
 \input limits
-\input chapter01
+%\input infinityAndContinuity
+\input derivatives
+%\input chapter01
 \input chapter02
 \input chapter03
-\input chapter04
-\input chapter05
+%\input chapter04
+%\input chapter05
 %\input chapter06
 
 %\input chapter07

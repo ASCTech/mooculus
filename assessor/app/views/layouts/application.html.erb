@@ -2,13 +2,13 @@
 <html>
 <head>
   <title>Assessor</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
-  <%= csrf_meta_tags %>
+    <%= stylesheet_link_tag    "application", :media => "all" %>
+    <%= javascript_include_tag "application" %>
+    <%= csrf_meta_tags %>
 </head>
 <body>
 
-
+  <% if user_signed_in? %>
   <div class="navbar navbar-inverse navbar-fixed-top">
     <div class="navbar-inner">
       <div class="container">
@@ -17,31 +17,30 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </a>
-	<a class="brand" href="#"><span style="font-weight: bold">MOOC</span>ulus</a>
+        <a class="brand" href="#"><span style="font-weight: bold">MOOC</span>ulus</a>
         <div class="nav-collapse">
           <ul class="nav">
-            <li class="active"><a href="/">Home</a></li>
-            <li class="active"><a href="/">Home</a></li>
-            <li class="active"><a href="/">Home</a></li>
-            <li class="active"><a href="/">Home</a></li>
-	    <% if user_signed_in? %>
-	    <li class="dropdown">
-		<a href="#" class="dropdown-toggle" data-toggle="dropdown">
-		  <%= current_user.name %>
-		  <b class="caret"></b>
-		</a>
-		<ul class="dropdown-menu">
-		  <li><%= link_to "Log out", destroy_user_session_path, :method => :delete %></li>
-		</ul>
-	    </li>
+            <li class="active"><a href="/">Lectures</a></li>
+            <li class="active"><%= link_to "Problems", :controller => "exercises", :action => "index" %></li>
+            <% if user_signed_in? %>
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                  <%= current_user.name %>
+                  <b class="caret"></b>
+                </a>
+                <ul class="dropdown-menu">
+                  <li><%= link_to "Log out", destroy_user_session_path, :method => :delete %></li>
+                </ul>
+              </li>
             <% else %>
-    	      <li class=""><%= link_to 'Login', '/auth/developer/' %></a>
+              <li class=""><%= link_to "Login", user_omniauth_authorize_path(:google_oauth2) %></a>
             <% end %>
-	  </ul>
-	</div>
+          </ul>
+        </div><!--/.nav-collapse -->
       </div>
     </div>
   </div>
+  <% end %>
 
   <div class="container">
     <%= yield %>
@@ -49,15 +48,11 @@
     <hr>
 
     <footer>
-      <div class="container">
-	<p>&copy; <%= Date.today.strftime( '%Y' ) %>, <a href="http://www.math.osu.edu/~fowler/" rel="external">Jim Fowler</a>, <a href="http://www.math.osu.edu/people/gubkin.1/view" rel="external">Steve Gubkin</a>, <a href="http://www.math.osu.edu/people/kowalick.1">Ryan Kowalick</a>, <a href="http://www.math.osu.edu/~snapp.14/">Bart Snapp</a>.  Uses <a href="http://twitter.github.com/bootstrap/" rel="external">Twitter&rsquo;s bootstrap</a> and <a href="https://github.com/Khan/khan-exercises/" rel="external">Khan Academy&rsquo;s exercise framework</a>.  Built on <a href="http://rubyonrails.org/">Rails</a>.</p>
-      </div>
+    <div class="container">
+      <p>&copy; <%= Date.today.strftime( '%Y' ) %>, <a href="http://www.math.osu.edu/~fowler/" rel="external">Jim Fowler</a>, <a href="http://www.math.osu.edu/people/gubkin.1/view" rel="external">Steve Gubkin</a>, <a href="http://www.math.osu.edu/people/kowalick.1">Ryan Kowalick</a>, <a href="http://www.math.osu.edu/~snapp.14/">Bart Snapp</a>.  Uses <a href="http://twitter.github.com/bootstrap/" rel="external">Twitter&rsquo;s bootstrap</a> and <a href="https://github.com/Khan/khan-exercises/" rel="external">Khan Academy&rsquo;s exercise framework</a>.  Built on <a href="http://rubyonrails.org/">Rails</a>.</p>
+    </div>
     </footer>
-
-
-    </footer>
-    
   </div> <!-- /container -->
-  
-</body>
+
+  </body>
 </html>

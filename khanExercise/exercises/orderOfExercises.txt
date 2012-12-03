@@ -1,4 +1,20 @@
-Review (points, graphing, lines)
+--Review (points, graphing, lines)--
 
-1. abscissaOrdinate
-2. plotPoint
+abscissaOrdinate
+plotPoint
+signedDistances 
+pointOnFunction
+pointOnFunction2
+graphingFromEquation
+
+
+--Limits and Continuity--
+
+
+--Differentiation--
+
+
+
+
+
+ 

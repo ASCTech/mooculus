@@ -1,8 +1,7 @@
 \chapter{Limits}
 
-\section{Functions}{}{}
-
-\fbox{This should be one of the last sections filled-in.}
+%\section{Functions}{}{}
+%\fbox{This should be one of the last sections filled-in.}
 
 
 \section{The Basic Ideas of Limits}{}{}
@@ -67,21 +66,22 @@ not equal to, $a$.  This leads us to the formal definition of a
 \label{table:(x^2 - 3x + 2)/(x-2)}
 \end{margintable}
 
-
+\marginnote[1in]{ Equivalently, $\ds \lim_{x\to a}f(x)=L$, if for
+  every $\epsilon>0$ there is a $\delta > 0$ so that whenever $x\ne a$
+  and $a- \delta < x < a+ \delta$, we have $L-\epsilon<
+  f(x)<L+\epsilon$.}
 \begin{definition}\label{def:limit}\index{limit!definition}
 The \textbf{limit} of $f(x)$ as $x$ goes to $a$ is $L$,
 \[
 \lim_{x\to a}f(x)=L,
 \] 
 if for every $\epsilon>0$ there is a $\delta > 0$ so that whenever
-$x\ne a$ and
 \[
-a- \delta < x < a+ \delta, \qquad\text{we have} \qquad L-\epsilon< f(x)<L+\epsilon.
+0 < |x-a| < \delta, \qquad\text{we have} \qquad |f(x)-L|<\epsilon.
 \] 
 If no such value of $L$ can be
 found, then we say that $f(x)$ \textbf{does not exist} at $x=a$.
-\end{definition}\marginnote[-1in]{ Equivalently, $\ds \lim_{x\to a}f(x)=L$, if for every $\epsilon>0$ there is a $\delta > 0$ so that whenever $0< |x-a
-  |< \delta$ we have $|f(x)-L|<\epsilon$.}
+\end{definition}
 
 In Figure~\ref{figure:epsilon-delta}, we see a geometric
 interpretation of this definition.
@@ -111,64 +111,37 @@ interpretation of this definition.
         \end{axis}
 \end{tikzpicture}
 \caption{A geometric interpretation of the
-  $(\epsilon,\delta)$-criterion for limits.  Here we see that for
-  every $x$ such that $a -\delta < x < a+\delta$, we are sure to have
-  $L - \epsilon< f(x) < L+\epsilon$.}
+  $(\epsilon,\delta)$-criterion for limits.  If $0<|x-a|<\delta$, then we have that $a
+  -\delta < x < a+\delta$. In our diagram, we see that for all such
+  $x$ we are sure to have $L - \epsilon< f(x) < L+\epsilon$, and hence
+  $|f(x) - L|<\epsilon$.}
 \label{figure:epsilon-delta}
 \end{figure}
-From our plot and table above, it seems that 
-\[
-\lim_{x\to 2}\frac{x^2 - 3x + 2}{x-2} = 1.
-\]
-Let's see if we can find more evidence for this claim.
-
-\begin{example}
-Let $f(x) = \dfrac{x^2 - 3x + 2}{x-2}$. Suppose that 
-\[
-\lim_{x\to 2} f(x) = 1.
-\]
-Find $\delta$ such that $2 -\delta < x < 2+\delta$ implies that $1 -
-\epsilon< f(x) < 1+\epsilon$ where $\epsilon = .1$.
-
-\begin{solution}
-This requires that
-\[
-1 - .1< \frac{x^2 - 3x + 2}{x-2}  < 1+.1.
-\]
-Since we are taking the limit as $x$ goes to $2$, we can safely
-assume that $x\ne 2$.  Hence we may divide our fraction above giving
-us
-\[
-.9 < x-1 < 1.1.
-\]
-Adding $1$ to each inequality, we find
-\[
-1.9 < x < 2.1.
-\]
-Comparing this to $2 -\delta < x < 2+\delta$, we see that setting
-$\delta = .1$ will suffice.
-\end{solution}
-\end{example}\marginnote[-2in]{Limits allow us to examine functions near points where they are not defined, in this example $x=2$. Thus we may assume that $x\ne 2$.} 
-
 
 Limits need not exist, let's examine two cases of this.
 
-\begin{marginfigure}[0in]
+
+\begin{marginfigure}[2in]
 \begin{tikzpicture}
 	\begin{axis}[
             domain=-2:4,
-            samples=100,
             axis lines =middle, xlabel=$x$, ylabel=$f(x)$,
             every axis y label/.style={at=(current axis.above origin),anchor=south},
             every axis x label/.style={at=(current axis.right of origin),anchor=west},
             clip=false,
+            %axis on top,
           ]
+          \addplot [draw=none,, fill=fill1, smooth, domain=(0:2)] {2} \closedcycle; %% fill for epsilon  
+          \addplot [color=textColor, dashed, smooth, domain=(0:2)] {2};  %% bndry for epsilon  
+          \addplot [draw=none, fill=background, smooth, domain=(0:1.8)] {1} \closedcycle;
+          \addplot [color=textColor, dashed, smooth, domain=(0:1)] {1};  %% bndry for epsilon  
           \addplot [draw=none, fill=fill1, smooth, domain=(1.8:2)] {1} \closedcycle;
-          \addplot [draw=none, fill=fill2, smooth, domain=(2:2.2)] {2} \closedcycle;
+          \addplot [draw=none, fill=fill1, smooth, domain=(2:2.2)] {2} \closedcycle;
           \addplot [textColor, very thick] plot coordinates {(2,0) (2,2)};
           \addplot [textColor] plot coordinates {(1.8,0) (1.8,1)};
           \addplot [textColor] plot coordinates {(2.2,0) (2.2,2)};
-          \addplot [textColor, very thin, domain=(1.7:2.3)] {0}; % puts the axis back
+          \addplot [textColor, very thin, domain=(0:2.3)] {0}; % puts the axis back, axis on top clobbers our open holes
+          \addplot [textColor, very thin] plot coordinates {(0,0) (0,2)}; % puts the axis back, axis on top clobbers our open holes
 	  \addplot [very thick, penColor, smooth, domain=(-2:-1)] {-2};
           \addplot [very thick, penColor, smooth, domain=(-1:0)] {-1};
           \addplot [very thick, penColor, smooth, domain=(0:1)] {0};
@@ -189,9 +162,12 @@ Limits need not exist, let's examine two cases of this.
           \addplot[color=penColor,fill=background,only marks,mark=*] coordinates{(4,3)};  %% open hole
         \end{axis}
 \end{tikzpicture}
-\caption{A plot of $f(x)=\lfloor x\rfloor$.}
+\caption{A plot of $f(x)=\lfloor x\rfloor$. Note, no matter which
+  $\delta>0$ is chosen, we can only at best bound $f(x)$ in the
+  interval $[1,2]$.}
 \label{plot:greatist-integer}
 \end{marginfigure}
+
 
 \begin{example}
 Let $f(x) = \lfloor x\rfloor$. Explain why the limit
@@ -199,29 +175,32 @@ Let $f(x) = \lfloor x\rfloor$. Explain why the limit
 \lim_{x\to 2} f(x)
 \]
 does not exist.
-
+\end{example}
 \begin{solution}
 This is the function that returns the greatest integer less than or
 equal to $x$. Since $f(x)$ is defined for all real numbers, one might
 be tempted to think that the limit above is simply $f(2) =
 2$. However, this is not the case.  If $x<2$, then $f(x) =1$. Hence if
-$\epsilon = .5$, we can \textbf{always} find a value for $x$ such that
+$\epsilon = .5$, we can \textbf{always} find a value for $x$ (just to
+the left of $2$) such that
 \[
-2- \delta < x < 2+ \delta, \qquad\text{where} \qquad f(x)< 2-\epsilon.
+0< |x -2|< \delta, \qquad\text{where} \qquad \epsilon < |f(x)-2|.
 \]
-On the other hand, $\lim_{x\to 2} f(x)\ne 1$, as in this case if $\epsilon=.5$, we can \textbf{always} find a value for $x$ such that
+On the other hand, $\lim_{x\to 2} f(x)\ne 1$, as in this case if
+$\epsilon=.5$, we can \textbf{always} find a value for $x$ (just to
+the right of $2$) such that
 \[
-2- \delta < x < 2+ \delta, \qquad\text{where} \qquad  1+\epsilon<f(x).
+0<|x- 2|<\delta, \qquad\text{where} \qquad  \epsilon<|f(x)-1|.
 \]
 We've illustrated this in
 Figure~\ref{plot:greatist-integer}. Moreover, no matter what value one
 chooses for $\ds \lim_{x\to 2} f(x)$, we will always have a similar
 issue.
 \end{solution}
-\end{example}
-\marginnote[-2in]{With the example of $f(x) = \lfloor x \rfloor$, we
+\marginnote[-1in]{With the example of $f(x) = \lfloor x \rfloor$, we
   see that taking limits is truly different from evaluating
   functions.}
+
 
 
 Limits may not exist even if the function looks innocent. 
@@ -232,7 +211,7 @@ Let  $f(x) = \sin\left(\frac{1}{x}\right)$. Explain why the limit
 \lim_{x\to 0} f(x)
 \]
 does not exist.
-
+\end{example}
 \begin{solution}
 In this case $f(x)$ oscillates ``wildly'' as $x$ approaches $0$, see
 Figure~\ref{plot:sin 1/x}. In fact, one can show that for any given
@@ -240,10 +219,9 @@ Figure~\ref{plot:sin 1/x}. In fact, one can show that for any given
 \[
 0-\delta < x < 0+\delta
 \]
-such that $f(x)$ is any value in the interval $[-1,1]$. Hence the
-limit does not exist.
+such that $f(x)$ is \textbf{any} value in the interval $[-1,1]$. Hence
+the limit does not exist.
 \end{solution}
-\end{example}
 \begin{marginfigure}[-1in]
 \begin{tikzpicture}
 	\begin{axis}[
@@ -255,7 +233,8 @@ limit does not exist.
             every axis x label/.style={at=(current axis.right of origin),anchor=west},
             clip=false,
           ]
-	  \addplot [very thick, penColor, smooth, domain=(-.2:.2)] {sin(deg(1/x))};
+	  \addplot [very thick, penColor, smooth, domain=(-.2:-.02)] {sin(deg(1/x))};
+          \addplot [very thick, penColor, smooth, domain=(.02:.2)] {sin(deg(1/x))};
 	  \addplot [color=penColor, fill=penColor, very thick, smooth,domain=(-.02:.02)] {1} \closedcycle;
           \addplot [color=penColor, fill=penColor, very thick, smooth,domain=(-.02:.02)] {-1} \closedcycle;
         \end{axis}
@@ -275,7 +254,7 @@ be able to talk about this situation, we introduce the concept of a
 \]
 if for every $\epsilon>0$ there is a $\delta > 0$ so that whenever $x\ne a$ and 
 \[
-a-\delta < x \qquad\text{we have}\qquad L-\epsilon< f(x)<L+\epsilon.
+a-\delta < x \qquad\text{we have}\qquad |f(x)-L|<\epsilon.
 \]
 
 We say that the \textbf{limit} of $f(x)$ as $x$ goes to $a$ from the \textbf{right} is $L$,
@@ -284,20 +263,27 @@ We say that the \textbf{limit} of $f(x)$ as $x$ goes to $a$ from the \textbf{rig
 \] 
 if for every $\epsilon>0$ there is a $\delta > 0$ so that whenever $x \ne a$ and 
 \[
-x<a+\delta \qquad\text{we have}\qquad L-\epsilon< f(x)<L+\epsilon.
+x<a+\delta \qquad\text{we have}\qquad |f(x)-L|<\epsilon.
 \]
 \end{definition}
-\marginnote[-2in]{Limits from the left, or from the right, are collectively called \textbf{one-sided limits}.}
+\marginnote[-1in]{Limits from the left, or from the right, are collectively called \textbf{one-sided limits}.}
 
 
 \begin{example}
-Let $f(x) = \lfloor x\rfloor$. We now have one sided limits 
+Let $f(x) = \lfloor x\rfloor$. Discuss
 \[
-\lim_{x\to 2-} f(x) = 1 \qquad\text{and}\qquad \lim_{x\to 2+} f(x) = 2.
+\lim_{x\to 2-} f(x), \qquad \lim_{x\to 2+} f(x), \qquad\text{and}\qquad\lim_{x\to 2+} f(x).
 \]
 \end{example}
+\begin{solution}
+From the plot of $f(x)$, see Figure~\ref{plot:greatist-integer}, we see that 
+\[
+\lim_{x\to 2-} f(x)=1, \qquad\text{and}\quad \lim_{x\to 2+} f(x) = 2.
+\]
+Since these limits are different, $\ds\lim_{x\to 2} f(x)$ does not exist.
+\end{solution}
 
-
+\break
 
 
 \begin{exercises}
@@ -355,11 +341,18 @@ Let $f(x) = \lfloor x\rfloor$. We now have one sided limits
 
 
 \begin{exercise} 
-Use a calculator to estimate $\ds\lim_{x\to 0} {\sin x\over x}$.
+Use a table and a calculator to estimate $\ds\lim_{x\to 0} {\sin
+  x\over x}$.
 \end{exercise}
 
 \begin{exercise} 
-Use a calculator to estimate $\ds\lim_{x\to 0}\frac{\tan(3x)}{\tan(5x)}$.
+Use a table and a calculator to estimate $\ds\lim_{x\to
+  0}\frac{\tan(3x)}{\tan(5x)}$.
+\end{exercise}
+
+\begin{exercise} 
+Use a table and a calculator to estimate $\ds\lim_{x\to 0}
+\frac{2^x-1}{x}$.
 \end{exercise}
 
 
@@ -369,21 +362,6 @@ Sketch a plot of $f(x) = \dfrac{x}{|x|}$ and explain why $\ds
 \end{exercise}
 
 
-\begin{exercise} 
-For each of the following limits, $\ds \lim_{x\to a} f(x) =L$, find
-$\delta$ such that $a -\delta < x < a+\delta$ implies that $L -
-\epsilon< f(x) < L+\epsilon$ where $\epsilon = .1$.
-\begin{enumerate}
-\begin{multicols}{3}
-\item $\ds \lim_{x\to 2}(3x+1) = 7$  
-\item $\ds \lim_{x\to 1} (x^2+2) = 3$  
-\item $\ds \lim_{x\to \pi} \sin(x) = 0$  
-\item $\ds \lim_{x\to 0} \tan(x) = 0$
-\item $\ds \lim_{x\to 1} \sqrt{3x+1} = 2$
-\item $\ds \lim_{x\to -2} \sqrt[3]{1-4x} = 3$
-\end{multicols}  
-\end{enumerate}
-\end{exercise}
 
 \begin{exercise} 
 Let $f(x) = \sin\left(\dfrac{\pi}{x}\right)$. Construct three tables
@@ -407,146 +385,161 @@ entries in your tables with the value of $\ds\lim_{x\to 0} f(x)$?
 
 
 
+
+
+
+
+
+
+
+
+
 \section{Limits by the Definition}
 
 
-Now we are going to get our hands dirty, and really use the definion
+Now we are going to get our hands dirty, and really use the definition
 of a limit.\index{limit!definition}\marginnote{Recall, $\ds \lim_{x\to
     a}f(x)=L$, if for every $\epsilon>0$ there is a $\delta > 0$ so
-  that whenever $x\ne a$ and $a- \delta < x < a+ \delta$, we have
-  $L-\epsilon< f(x)<L+\epsilon$.}
+  that whenever $0< |x -a|+ \delta$, we have $|f(x)- L|<\epsilon$.}
 
-
+\begin{marginfigure}[.5in]
+\begin{tikzpicture}
+	\begin{axis}[
+            domain=1:3, 
+            axis lines =left, xlabel=$x$, ylabel=$y$,
+            every axis y label/.style={at=(current axis.above origin),anchor=south},
+            every axis x label/.style={at=(current axis.right of origin),anchor=west},
+            xtick={1.8,2,2.2}, ytick={3,4,5},
+            xticklabels={$2-\delta$,$2$,$2+\delta$}, yticklabels={$4-\epsilon$,$4$,$4+\epsilon$},
+            axis on top,
+          ]          
+          \addplot [color=textColor, fill=fill2, smooth, domain=(1:2.236)] {5} \closedcycle;
+          \addplot [color=textColor, dashed, fill=fill1, domain=(1:2.2)] {4.84} \closedcycle;       
+          \addplot [color=textColor, dashed, fill=fill2, domain=(1:1.8)] {3.24} \closedcycle;       
+          \addplot [textColor, very thick, smooth, domain=(1:2)] {4};
+          \addplot [color=textColor, fill=background, smooth, domain=(1:1.8)] {3} \closedcycle;
+	  \addplot [draw=none, fill=background, smooth] {x^2} \closedcycle;
+          \addplot [fill=fill1, draw=none, domain=1.8:2.2] {x^2} \closedcycle;
+          \addplot [textColor, very thick] plot coordinates {(2,0) (2,4)};
+          \addplot [textColor] plot coordinates {(1.8,0) (1.8,3.24)};
+          \addplot [textColor] plot coordinates {(2.2,0) (2.2,4.84)};
+	  \addplot [very thick,penColor, smooth] {x^2};
+        \end{axis}
+\end{tikzpicture}
+\label{plot:x^2 lim dfn}
+\caption{The $(\epsilon,\delta)$-criterion for $\ds\lim_{x\to 2}
+  x^2=4$. Here $\delta= \min\left(\dfrac{\epsilon}{5},1\right)$.}
+\end{marginfigure}
 \begin{example} Show that $\ds \lim_{x\to 2} x^2=4$.
- 
+\end{example}
 \begin{solution}
 We want to show that for any given $\epsilon>0$, we can find a
 $\delta>0$ such that
 \[
-4-\epsilon< x^2 <4+\epsilon
+|x^2 -4|<\epsilon
 \]
-whenever $2- \delta < x < 2+ \delta$. Start by solving for $x$ in the
-inequality above. If $x$ is positive we find
+whenever $0<|x - 2|<\delta$. Start by factoring the LHS of the inequality above
 \[
-\sqrt{4-\epsilon}< x <\sqrt{4+\epsilon}.
+|x+2||x-2|<\epsilon.
 \]
-And so
-
-
+Since we are going to assume that $0<|x - 2|<\delta$, we will focus on
+the factor $|x+2|$. Since $x$ is assumed to be close to $2$, suppose that $x\in[1,3]$. In this case
+\[
+|x+2| \le 3+2 = 5,
+\]
+and so we want
+\begin{align*}
+5\cdot |x-2| &< \epsilon\\
+|x-2| &< \frac{\epsilon}{5}
+\end{align*}
+Recall, we assumed that $x\in[1,3]$, which is equivalent to
+$|x-2|<1$. Hence we must set $\delta = \min\left(\dfrac{\epsilon}{5},1\right)$.
 \end{solution}
-We want to show that for any given $\epsilon>0$, we can find a
-$\delta>0$ such that $\ds |x^2-4|<\epsilon$ whenever $0<|x-2|<\delta$.
-
-Write $\ds |x^2-4|=|(x+2)(x-2)|$. Now when $|x-2|$ is small, part of
-$|(x+2)(x-2)|$ is small, namely $(x-2)$. What about $(x+2)$? If $x$ is
-close to 2, $(x+2)$ certainly can't be too big, but we need to somehow
-be precise about it. Let's recall the ``game'' version of what is
-going on here. You get to pick an $\epsilon$ and I have to pick a
-$\delta$ that makes things work out. Presumably it is the really tiny
-values of $\epsilon$ I need to worry about, but I have to be prepared
-for anything, even an apparently ``bad'' move like $\epsilon=1000$.  I
-expect that $\epsilon$ is going to be small, and that the
-corresponding $\delta$ will be small, certainly less than 1.  If
-$\delta\le 1$ then $|x+2|<5$ when $|x-2|<\delta$ (because if $x$ is
-within 1 of 2, then $x$ is between 1 and 3 and $x+2$ is between 3 and
-5). So then I'd be trying to show that
-$|(x+2)(x-2)|<5|x-2|<\epsilon$. So now how can I pick $\delta$ so that
-$|x-2|<\delta$ implies $5|x-2|<\epsilon$? This is easy: use
-$\delta=\epsilon/5$, so $5|x-2|<5(\epsilon/5) = \epsilon$. But what if
-the $\epsilon$ you choose is not small? If you choose $\epsilon=1000$,
-should I pick $\delta=200$? No, to keep things ``sane'' I will never
-pick a $\delta$ bigger than 1. Here's the final ``game strategy:''
-When you pick a value for $\epsilon$ I will pick $\delta=\epsilon/5$
-or $\delta=1$, whichever is smaller. Now when $|x-2|<\delta$, I know
-both that $|x+2|<5$ and that $|x-2|<\epsilon/5$. Thus
-$|(x+2)(x-2)|<5(\epsilon/5) = \epsilon$.
-
-This has been a long discussion, but most of it was explanation and
-scratch work. If this were written down as a proof, it would be quite
-short, like this:
-
-Proof that $\ds \lim_{x\to 2}x^2=4$. Given any $\epsilon$, pick
-$\delta=\epsilon/5$ or $\delta=1$, whichever is smaller. Then when
-$|x-2|<\delta$, $|x+2|<5$ and
-$|x-2|<\epsilon/5$. Hence $\ds |x^2-4|=|(x+2)(x-2)|<5(\epsilon/5) =
-\epsilon$. 
-\end{example}
 
 
+When dealing with limits of polynomials, the general strategy is
+always the same. Let $p(x)$ be a polynomial. If showing
+\[
+\lim_{x\to a} p(x) = L,
+\]
+one must first factor out $|x-a|$ from $|p(x) - L|$. Next bound $x\in
+[a-1,a+1]$ and estimate the largest possible value of
+\[
+\left|\frac{p(x) -L}{x-a}\right|
+\]
+for $x\in[a-1,a+1]$. Call this estimation $M$. Finally, one must set
+$\delta = \min\left(\frac{\epsilon}{M}, 1\right)$.
 
-
+As you work with limits, you find that you need to do the same
+procedures again and again. The next theorems will expedite this
+process.
 \begin{theorem} 
 Suppose $\ds \lim_{x\to a} f(x)=L$ and $\ds \lim_{x\to a}g(x)=M$. Then
-$\lim_{x\to a} f(x)g(x) = LM$.
+\[
+\lim_{x\to a} f(x)g(x) = LM.
+\]
 \end{theorem}
 
+\marginnote[2in]{This is all straightforward except perhaps for the ``$\le$''. This
+follows from the \textit{Triangle Inequality}\index{triangle
+  inequality}. The \textbf{Triangle Inequality} states: If
+  $a$ and $b$ are any real numbers then $|a+b|\le |a|+|b|$.}
 \begin{proof} 
-Given any $\epsilon$ we need to find a $\delta$ so that
-$0<|x-a|<\delta$ implies $|f(x)g(x)-LM|<\epsilon$. What do we have to
-work with? We know that we can make $f(x)$ close to $L$ and $g(x)$
-close to $M$, and we have to somehow connect these facts to make
-$f(x)g(x)$ close to $LM$.
-
-We use, as is so often the case, a little algebraic
-trick: 
+Given any $\epsilon$ we need to find a $\delta$ such that
+\[
+0<|x< a|< \delta
+\]
+implies 
+\[
+|f(x)g(x)-LM|< \epsilon.  
+\]
+Here we use an algebraic trick, add $0 = -f(x)M+f(x)M$:
 \begin{align*}
 |f(x)g(x)-LM| &= |f(x)g(x)\boldsymbol{-f(x)M+f(x)M}-LM| \\
 &=|f(x)(g(x)-M)+(f(x)-L)M| \\
 &\le |f(x)(g(x)-M)|+|(f(x)-L)M| \\
 &=|f(x)||g(x)-M|+|f(x)-L||M|.
 \end{align*}
+Since $\ds \lim_{x\to a}f(x) =L$, there is a value $\delta_1$ so that
+$0<|x-a|<\delta_1$ implies $|f(x)-L|<|\epsilon/(2M)|$. This means that
+$0<|x-a|<\delta_1$ implies $|f(x)-L||M|< \epsilon/2$. 
+\[
+|f(x)g(x)-LM|\le|f(x)||g(x)-M|+\underbrace{|f(x)-L||M|}_{<\dfrac{\epsilon}{2}}.
+\]
+If we can make $|f(x)||g(x)-M|<\epsilon/2$, then we'll be done. We can
+make $|g(x)-M|$ smaller than any fixed number by making $x$ close
+enough to $a$. Unfortunately, $\epsilon/(2f(x))$ is not a fixed number
+since $x$ is a variable.
 
-This is all straightforward except perhaps for the ``$\le$''. That is
-an example of the {\dfont triangle inequality%
-\index{triangle inequality}\pagerdef{page:triangle inequality}}, 
-which says that if $a$ and $b$ are any real
-numbers then $|a+b|\le |a|+|b|$. If you look at a few examples, using
-positive and negative numbers in various combinations for $a$ and $b$,
-you should quickly understand why this is true; we will not prove it
-formally. 
-
-Since $\ds \lim_{x\to a}f(x) =L$, there is a value $\ds \delta_1$ so that
-$0<|x-a|<\delta_1$ implies $|f(x)-L|<|\epsilon/(2M)|$, 
-This means that $0<|x-a|<\delta_1$ implies
-$|f(x)-L||M|< \epsilon/2$. You can see where this is going: if we can
-make $|f(x)||g(x)-M|<\epsilon/2$ also, then we'll be done.
-
-We can make $|g(x)-M|$ smaller than any fixed number by making $x$
-close enough to $a$; unfortunately, $\epsilon/(2f(x))$ is not a fixed
-number, since $x$ is a variable. Here we need another little trick,
-just like the one we used in analyzing $x^2$. We can find a $\delta_2$
-so that $|x-a|<\delta_2$ implies that $|f(x)-L|<1$, meaning that $L-1
-< f(x) < L+1$. This means that $|f(x)|<N$, where $N$ is either $|L-1|$
-or $|L+1|$, depending on whether $L$ is negative or positive. The
-important point is that $N$ doesn't depend on $x$. Finally, we know that
-there is a $\delta_3$ so that $0<|x-a|<\delta_3$ implies
+Here we need another trick. We can find a $\delta_2$ so that
+$|x-a|<\delta_2$ implies that $|f(x)-L|<1$, meaning that $L-1 < f(x) <
+L+1$. This means that $|f(x)|<N$, where $N$ is either $|L-1|$ or
+$|L+1|$, depending on whether $L$ is negative or positive. The
+important point is that $N$ doesn't depend on $x$. Finally, we know
+that there is a $\delta_3$ so that $0<|x-a|<\delta_3$ implies
 $|g(x)-M|<\epsilon/(2N)$. Now we're ready to put everything
 together. Let $\delta$ be the smallest of $\delta_1$, $\delta_2$, and
 $\delta_3$. Then $|x-a|<\delta$ implies that
-$|f(x)-L|<|\epsilon/(2M)|$, $|f(x)|<N$, and
-$|g(x)-M|<\epsilon/(2N)$. Then 
+\[
+|f(x)g(x)-LM|\le\underbrace{|f(x)|}_{<N}\underbrace{|g(x)-M|}_{<\dfrac{\epsilon}{2N}}+\underbrace{|f(x)-L||M|}_{<\dfrac{\epsilon}{2}}.
+\]
+so
 \begin{align*}
 |f(x)g(x)-LM|&\le|f(x)||g(x)-M|+|f(x)-L||M| \\
 &<N{\epsilon\over 2N}+\left|{\epsilon\over 2M}\right||M| \\
 &={\epsilon\over 2}+{\epsilon\over 2}=\epsilon.
 \end{align*}
-This is just what we needed, so by the official definition,
+This is just what we needed, so by the definition of a limit,
 $\ds \lim_{x\to a}f(x)g(x)=LM$.
 \end{proof}
 
 
 
-
-While theorem~\xrefn{thm:properties of limits} is very helpful, we
-need a bit more to work easily with limits. Since the theorem applies
-when some limits are already known, we need to know the behavior of
-some functions that cannot themselves be constructed from the simple
-arithmetic operations of the theorem, such as $\ds\sqrt{x}$. Also,
-there is one other extraordinarily useful way to put functions
-together: composition\index{composition of functions}. If $f(x)$ and
-$g(x)$ are functions, we can form two functions by composition:
-$f(g(x))$ and $g(f(x))$. For example, if $\ds f(x)=\sqrt{x}$ and $\ds
-\ds g(x)=x^2+5$, then $\ds f(g(x))=\sqrt{x^2+5}$ and $\ds
+Another useful way to put functions together is
+composition\index{composition of functions}. If $f(x)$ and $g(x)$ are
+functions, we can form two functions by composition: $f(g(x))$ and
+$g(f(x))$. For example, if $\ds f(x)=\sqrt{x}$ and $\ds \ds
+g(x)=x^2+5$, then $\ds f(g(x))=\sqrt{x^2+5}$ and $\ds
 g(f(x))=(\sqrt{x})^2+5=x+5$.  Here is a companion to
 theorem~\xrefn{thm:properties of limits} for composition:
 
@@ -578,31 +571,57 @@ This theorem is not too difficult to prove from the definition of limit.
 \begin{exercises}
 
 
-\begin{exercise} Use the definition of limits to explain why $\ds\lim _{x\to 0 } x\sin \left( {1\over x}\right) = 0$.
-Hint: Use the fact that $|\sin a |< 1 $ for any real number $a$.
+\begin{exercise} 
+Use the definition of limits to explain why $\ds\lim _{x\to 0 } x\sin
+\left( {1\over x}\right) = 0$.  Hint: Use the fact that $|\sin a |< 1
+$ for any real number $a$.
 \begin{answer} $0$
 \end{answer}\end{exercise}
 
-\begin{exercise} Use the definition of limits to explain why
-$\ds \lim_{x\to 4} (2x-5) = 3$.
+\begin{exercise} 
+Use the definition of limits to explain why $\ds \lim_{x\to 4} (2x-5)
+= 3$.
+\end{exercise}
+
+
+
+\begin{exercise} 
+For each of the following limits, $\ds \lim_{x\to a} f(x) =L$, use a
+graphing device to find $\delta$ such that $0<|x -a|<\delta$ implies
+that $|f(x)-L|<\epsilon$ where $\epsilon = .1$.
+\begin{enumerate}
+\begin{multicols}{3}
+\item $\ds \lim_{x\to 2}(3x+1) = 7$  
+\item $\ds \lim_{x\to 1} (x^2+2) = 3$  
+\item $\ds \lim_{x\to \pi} \sin(x) = 0$  
+\item $\ds \lim_{x\to 0} \tan(x) = 0$
+\item $\ds \lim_{x\to 1} \sqrt{3x+1} = 2$
+\item $\ds \lim_{x\to -2} \sqrt[3]{1-4x} = 3$
+\end{multicols}  
+\end{enumerate}
 \end{exercise}
 \end{exercises}
 
 
 \section{Limit Laws}
 
-limit
-A handful of such theorems give us the tools to compute many limits
-without explicitly working with the definition of limit.
+In this section, we present a handful of tools to compute many limits
+without explicitly working with the definition of limit. Each of these
+could be proved directly as we did in the previous section.
 
-\begin{mainTheorem}[Limit Laws] Suppose that $\ds \lim_{x\to a}f(x)=L$ and $\ds \lim_{x\to a}g(x)=M$ and
-$k$ is some constant. Then
+\begin{mainTheorem}[Limit Laws]\index{limit laws}\label{theorem:limit-laws}
+Suppose that $\ds \lim_{x\to a}f(x)=L$, $\ds \lim_{x\to a}g(x)=M$, $k$
+is some constant, and $n$ is a positive integer. Then
 \begin{itemize}
 \item $\ds\lim_{x\to a} kf(x) = k\lim_{x\to a}f(x)=kL$ 
 \item $\ds\lim_{x\to a} (f(x)+g(x)) = \lim_{x\to a}f(x)+\lim_{x\to a}g(x)=L+M$  
 \item $\ds\lim_{x\to a} (f(x)g(x)) = \lim_{x\to a}f(x)\cdot\lim_{x\to a}g(x)=LM$ 
 \item $\ds\lim_{x\to a} \frac{f(x)}{g(x)} = \frac{\ds\lim_{x\to a}f(x)}{\ds\lim_{x\to
-    a}g(x)}=\frac{L}{M},\text{ if $M$ is not 0}$
+    a}g(x)}=\frac{L}{M},\text{ if $M\ne0$}$
+\item $\ds\lim_{x\to a} f(x)^n = \left(\ds\lim_{x\to a}f(x)\right)^n=L^n$
+\item $\ds\lim_{x\to a} \sqrt[n]{f(x)} = \sqrt[n]{\ds\lim_{x\to
+    a}f(x)}=\sqrt[n]{L}$ provided if $n$ is even, then $f(x)\ge 0$
+  near $a$.
 \end{itemize}
 \label{thm:limit laws}
 \end{mainTheorem}
@@ -615,19 +634,20 @@ $\ds \lim_{x\to a} x =a$.
 
 
 \begin{example}
-Compute $\ds
-\lim_{x\to 1}{x^2-3x+5\over x-2}$. If we apply the theorem
-in all its gory detail, we get
+Compute $\ds \lim_{x\to 1}{x^2-3x+5\over x-2}$. 
+\end{example}
+\begin{solution}
+Using limit laws, 
 \begin{align*}
 \lim_{x\to 1}{x^2-3x+5\over x-2}&=
-{\lim_{x\to 1}(x^2-3x+5)\over \lim_{x\to1}(x-2)} \\
-&={(\lim_{x\to 1}x^2)-(\lim_{x\to1}3x)+(\lim_{x\to1}5)\over 
-  (\lim_{x\to1}x)-(\lim_{x\to1}2)} \\
-&={(\lim_{x\to 1}x)^2-3(\lim_{x\to1}x)+5\over (\lim_{x\to1}x)-2} \\
-&={1^2-3\cdot1+5\over 1-2} \\
-&={1-3+5\over -1} = -3 \\
+\dfrac{\ds\lim_{x\to 1}x^2-3x+5}{\ds\lim_{x\to1}(x-2)} \\
+&=\dfrac{\ds\lim_{x\to 1}x^2-\ds\lim_{x\to1}3x+\lim_{x\to1}5}{\ds\lim_{x\to1}x-\ds\lim_{x\to1}2} \\
+&=\dfrac{\left(\ds\lim_{x\to 1}x\right)^2-3\ds\lim_{x\to1}x+5}{\ds\lim_{x\to1}x-2} \\
+&=\dfrac{1^2-3\cdot1+5}{1-2} \\
+&=\dfrac{1-3+5}{-1} = -3.
 \end{align*}
-\end{example}
+\end{solution}
+
 
 It is worth commenting on the trivial limit $\ds \lim_{x\to1}5$. From one
 point of view this might seem meaningless, as the number 5 can't
@@ -637,39 +657,40 @@ everywhere, $f(x)=5$, with graph a horizontal line. From this point of
 view it makes sense to ask what happens to the height of the function
 as $x$ approaches 1.
 
-Of course, as we've already seen, we're primarily interested in limits
-that aren't so easy, namely, limits in which a denominator approaches
-zero. There are a handful of algebraic tricks that work on many of
-these limits.
+We're primarily interested in limits that aren't so easy, namely
+limits in which a denominator approaches zero. The basic idea is to
+``divide out'' by the offending factor. This is often easier said than
+done---here we give two examples of algebraic tricks that work on many
+of these limits.
+
 
 \begin{example}
-Compute $\ds\lim_{x\to1}{x^2+2x-3\over x-1}$. We can't
-simply plug in $x=1$ because that makes the denominator zero. 
-However:
+Compute $\ds\lim_{x\to1}{x^2+2x-3\over x-1}$. 
+\end{example}
+\begin{solution}
+We can't simply plug in $x=1$ because that makes the denominator zero.
+However, when taking limits we assume $x\ne 1$:
 \begin{align*}
 \lim_{x\to1}{x^2+2x-3\over x-1}&=\lim_{x\to1}{(x-1)(x+3)\over x-1} \\
-&=\lim_{x\to1}(x+3)=4 \\
+&=\lim_{x\to1}(x+3)=4
 \end{align*}
-\vskip-10pt
-\end{example}
-
-Another of the most common algebraic tricks was used in
-section~\xrefn{sec:slope of a function}. Here's another example:
+\end{solution}
+\marginnote[-1in]{Limits allow us to examine functions where they are not defined.}
 
 \begin{example}
 Compute $\ds\lim_{x\to-1} {\sqrt{x+5}-2\over x+1}$.
+\end{example}
+\begin{solution} 
+Using limit laws,
 \begin{align*}
 \lim_{x\to-1} {\sqrt{x+5}-2\over x+1}&=
 \lim_{x\to-1} {\sqrt{x+5}-2\over x+1}{\sqrt{x+5}+2\over \sqrt{x+5}+2} \\
 &=\lim_{x\to-1} {x+5-4\over (x+1)(\sqrt{x+5}+2)} \\
 &=\lim_{x\to-1} {x+1\over (x+1)(\sqrt{x+5}+2)} \\
-&=\lim_{x\to-1} {1\over \sqrt{x+5}+2}={1\over4} \\
+&=\lim_{x\to-1} {1\over \sqrt{x+5}+2}={1\over4}.
 \end{align*}
-At the very last step we have used theorems~\xrefn{thm:limit of
-composition} and \xrefn{thm:continuity of roots}.
-\end{example}
-
-
+\end{solution}
+\marginnote[-1.5in]{Here we are rationalizing the numerator by multiplying by the conjugate.}
 
 
 \begin{exercises}
@@ -735,7 +756,7 @@ composition} and \xrefn{thm:continuity of roots}.
 \end{answer}\end{exercise}
 
 \begin{exercise} $\ds\lim _{x\to 1 } \begin{cases}
-x-5 & x\neq 1, \\
+x-5 & x\ne 1, \\
 7 & x=1. \end{cases}$
 \begin{answer} $-4$
 \end{answer}\end{exercise}
@@ -745,22 +766,356 @@ x-5 & x\neq 1, \\
 \end{exercises}
 
 
-\section{Limits to and from Infinity}
 
 
-\begin{figure}
+
+
+\section{Infinite Limits}
+
+
+Consider the function
+\[
+f(x) = \frac{1}{(x+1)^2}
+\]
+While the $\ds \lim_{x\to -1} f(x)$ does not exist, see
+Figure~\ref{plot:1/(x+1)^2}, something can still be said.
+\begin{marginfigure}
 \begin{tikzpicture}
 	\begin{axis}[
-            domain=-2:2,
+            domain=-2:1,
+            ymax=100,
             samples=100,
             axis lines =middle, xlabel=$x$, ylabel=$f(x)$,
             every axis y label/.style={at=(current axis.above origin),anchor=south},
             every axis x label/.style={at=(current axis.right of origin),anchor=west}
           ]
-	  \addplot [very thick, penColor, smooth, domain=(.1:2)] {1/x};
-          \addplot [very thick, penColor, smooth, domain=(-2:-.1)] {1/x};
+	  \addplot [very thick, penColor, smooth, domain=(-2:-1.1)] {1/(x+1)^2};
+          \addplot [very thick, penColor, smooth, domain=(-.9:1)] {1/(x+1)^2};
+          \addplot [textColor, dashed] plot coordinates {(-1,0) (-1,100)};
         \end{axis}
 \end{tikzpicture}
-\caption{A plot of $f(x)=\protect\frac{1}{x}$.}
-\label{plot:1/x}
+\caption{A plot of $f(x)=\protect\frac{1}{(x+1)^2}$.}
+\label{plot:1/(x+1)^2}
+\end{marginfigure}
+
+
+\begin{definition}\label{def:inflimit}\index{limit!infinite}\index{infinite limit}
+If $f(x)$ grows arbitrarily large as $x$ approaces $a$, we write
+\[
+\lim_{x\to a} f(x) = \infty
+\]
+and say that the limit of $f(x)$ \textbf{approaches infinity} as $x$
+goes to $a$.
+
+If $|f(x)|$ grows arbitrarily large as $x$ approaces $a$ and $f(x)$ is
+negative, we write
+\[
+\lim_{x\to a} f(x) = -\infty
+\]
+and say that the limit of $f(x)$ \textbf{approaches negative infinity}
+as $x$ goes to $a$.
+\end{definition}
+
+On the other hand, if we consider the function 
+\[
+f(x) = \frac{1}{(x-1)}
+\]
+While we have $\ds \lim_{x\to 1} f(x) \ne \pm\infty$, we do have
+one-sided limts, $\ds \lim_{x\to 1+} f(x) = \infty$ and $\ds
+\lim_{x\to 1-} f(x) = -\infty$, see Figure~\ref{plot:1/(x-1)}.
+\begin{marginfigure}
+\begin{tikzpicture}
+	\begin{axis}[
+            domain=-1:2,
+            ymax=50,
+            ymin=-50,
+            samples=100,
+            axis lines =middle, xlabel=$x$, ylabel=$f(x)$,
+            every axis y label/.style={at=(current axis.above origin),anchor=south},
+            every axis x label/.style={at=(current axis.right of origin),anchor=west}
+          ]
+	  \addplot [very thick, penColor, smooth, domain=(1.02:2)] {1/(x-1)};
+          \addplot [very thick, penColor, smooth, domain=(-1:.98)] {1/(x-1)};
+          \addplot [textColor, dashed] plot coordinates {(1,-50) (1,50)};
+        \end{axis}
+\end{tikzpicture}
+\caption{A plot of $f(x)=\protect\frac{1}{x-1}$.}
+\label{plot:1/(x-1)}
+\end{marginfigure}
+
+
+\begin{definition}\label{def:vert asymptote}\index{asymptote!vertical}\index{vertical asymptote}
+If 
+\[
+\lim_{x\to a} f(x) = \pm\infty, \qquad \lim_{x\to a+} f(x) = \pm\infty, \qquad\text{or}\qquad \lim_{x\to a-} f(x) = \pm\infty,
+\]
+then the line $x=a$ is a \textbf{vertical asymptote} of $f(x)$.
+\end{definition}
+
+
+\begin{example}
+Find the vertical asymptotes of 
+\[
+f(x) = \frac{x^2-9x+14}{x^2-5x+6}.
+\]
+\end{example}
+\begin{solution}
+Start by factoring both the numerator and the denominator:
+\[
+\frac{x^2-9x+14}{x^2-5x+6} = \frac{(x-2)(x-7)}{(x-2)(x-3)}
+\]
+Using limits, we must investigate when $x\to 2$ and $x\to 3$. Write
+\begin{align*}
+\lim_{x\to 2} \frac{(x-2)(x-7)}{(x-2)(x-3)} &= \lim_{x\to 2} \frac{(x-7)}{(x-3)}\\
+&= \frac{-5}{-1}\\
+&=5.
+\end{align*}
+Now write
+\begin{align*}
+\lim_{x\to 3} \frac{(x-2)(x-7)}{(x-2)(x-3)} &= \lim_{x\to 3} \frac{(x-7)}{(x-3)}\\
+&= \lim_{x\to 3}\frac{-4}{x-3}.
+\end{align*}
+Hence $\ds\lim_{x\to 3+} f(x) = -\infty$, $\ds\lim_{x\to 3-} f(x) =
+\infty$, and we have a vertical asymptote at $x=3$, see
+Figure~\ref{plot:(x^2-9x+14)/(x^2-5x+6)}.
+\end{solution}
+\begin{marginfigure}[-4in]
+\begin{tikzpicture}
+	\begin{axis}[
+            domain=1:4,
+            ymax=50,
+            ymin=-50,
+            samples=100,
+            axis lines =middle, xlabel=$x$, ylabel=$f(x)$,
+            every axis y label/.style={at=(current axis.above origin),anchor=south},
+            every axis x label/.style={at=(current axis.right of origin),anchor=west}
+          ]
+	  \addplot [very thick, penColor, smooth, domain=(3.02:4)] {(x-7)/(x-3)};
+          \addplot [very thick, penColor, smooth, domain=(1:2.98)] {(x-7)/(x-3)};
+          \addplot [textColor, dashed] plot coordinates {(3,-50) (3,50)};
+          \addplot[color=penColor,fill=background,only marks,mark=*] coordinates{(2,5)};  %% open hole
+        \end{axis}
+\end{tikzpicture}
+\caption{A plot of $f(x)=\protect\frac{x^2-9x+14}{x^2-5+6}$.}
+\label{plot:(x^2-9x+14)/(x^2-5x+6)}
+\end{marginfigure}
+
+
+\begin{exercises}
+
+FILL IN
+
+\end{exercises}
+
+
+
+
+
+
+\section{Limits at Infinity}
+
+
+
+
+
+\begin{exercises}
+
+FILL IN
+
+\end{exercises}
+
+
+
+
+\section{Continuity}
+
+
+Informally, a function is continuous if you can ``draw it'' without
+``lifting your pencil.'' We need a formal definiton.
+
+\begin{definition} A function $f$ is \textbf{continuous
+at a point} $a$ if $\ds \lim_{x\to a} f(x) = f(a)$.  
+\end{definition}
+\index{continuous}
+\begin{marginfigure}[0in]
+\begin{tikzpicture}
+	\begin{axis}[
+            domain=0:10,
+            ymax=5,
+            ymin=0,
+            samples=100,
+            axis lines =middle, xlabel=$x$, ylabel=$f(x)$,
+            every axis y label/.style={at=(current axis.above origin),anchor=south},
+            every axis x label/.style={at=(current axis.right of origin),anchor=west}
+          ]
+	  \addplot [very thick, penColor, smooth, domain=(4:10)] {3 + sin(deg(x*2))/(x-1)};
+          \addplot [very thick, penColor, smooth, domain=(0:4)] {1};
+          \addplot[color=penColor,fill=background,only marks,mark=*] coordinates{(4,3.30)};  %% open hole
+          \addplot[color=penColor,fill=background,only marks,mark=*] coordinates{(6,2.893)};  %% open hole
+          \addplot[color=penColor,fill=penColor,only marks,mark=*] coordinates{(4,1)};  %% closed hole
+          \addplot[color=penColor,fill=penColor,only marks,mark=*] coordinates{(6,2)};  %% closed hole
+        \end{axis}
+\end{tikzpicture}
+\caption{A plot of a function with discontinuties at $x=4$ and $x=6$.}
+\label{plot:discontinuous-function}
+\end{marginfigure}
+
+\begin{example}
+Find the discontinuties (the values for $x$ where a function is not
+continuous) for the function given in Figure~\ref{plot:discontinuous-function}.
+\end{example}
+\begin{solution}
+From Figure~\ref{plot:discontinuous-function} we see that $\ds \lim_{x\to 4} f(x)$ does not exist as
+\[
+\lim_{x\to 4-}f(x) = 1\qquad\text{and}\qquad \lim_{x\to 4+}f(x) \approx 3.5
+\]
+Hence $\ds \lim_{x\to 4} f(x) \ne f(4)$, and so $f(x)$ is not
+continuous at $x=4$.
+
+We also see that $\ds \lim_{x\to 6} f(x) \approx 3$ while $f(6) =
+2$. Hence $\ds \lim_{x\to 6} f(x) \ne f(6)$, and so $f(x)$ is not
+continuous at $x=6$.
+\end{solution}
+
+Building from the definition of \textit{continous at a point}, we can
+now define what it means for a function to be \textit{continuous} on
+its domain.
+
+\begin{definition} A function $f$ is \textbf{continuous} if it is
+continuous at every point in its domain.
+\end{definition}
+
+
+\begin{example}
+\end{example}
+
+\begin{solution}
+\end{solution}
+
+
+
+
+\noindent{\bf Continuity.}  The graphs shown in (b) and (c) both represent
+{\bf continuous} functions.  Geometrically, this is because there are no
+jumps in the graphs.  That is, if you pick a point on the graph and
+approach it from the left and right, the values of the function approach
+the value of the function at that point.  For example, we can see that this
+is not true for function values near $x=-1$ on the graph in (a) which is
+not continuous at that location.  
+
+
+Strangely, we can also say that (d) is continuous even though there is a
+vertical asymptote.  A careful reading of the definition of continuous
+reveals the phrase ``\textit{at every point in its domain.}''  Because the
+location of the asymptote, $x=0$, is not in the domain of the function, and
+because the rest of the function is \textbf{well-behaved}, we can say that (d)
+is continuous.
+
+We close with a useful theorem about continuous functions:
+
+\begin{mainTheorem}[Intermediate Value Theorem]
+If $f(x)$ is a function that is continuous for all $x$ in the closed
+interval $[a,b]$ and $d$ is between $f(a)$ and $f(b)$, then there is a
+number $c$ in $[a, b]$ such that $f(c) = d$.
+\end{mainTheorem}
+\marginnote[-.7in]{The Intermediate Value Theorem is most frequently
+  used when $d=0$.}  
+\marginnote[-.2in]{For a nice proof of this theorem, see: Walk, Stephen
+  M.\ \textit{The intermediate value theorem is NOT obvious---and I am
+    going to prove it to you}. College Math. J. 42 (2011), no. 4,
+  254--259.}
+In Figure~\ref{figure:intermediate-value}, we see a geometric
+interpretation of this theorem.
+
+\begin{figure}
+\begin{tikzpicture}
+	\begin{axis}[
+            domain=0:6, ymin=0, ymax=2.2,xmax=6,
+            axis lines =left, xlabel=$x$, ylabel=$y$,
+            every axis y label/.style={at=(current axis.above origin),anchor=south},
+            every axis x label/.style={at=(current axis.right of origin),anchor=west},
+            xtick={1,3.597,5}, ytick={.203,1,1.679},
+            xticklabels={$a$,$c$,$b$}, yticklabels={$f(a)$,$f(c)=d$,$f(b)$},
+            axis on top,
+          ]
+          \addplot [draw=none, fill=fill2, smooth, domain=(0:7)] {1.679} \closedcycle;
+          \addplot [draw=none, fill=background, smooth, domain=(0:7)] {.203} \closedcycle;
+          \addplot [textColor,dashed] plot coordinates {(0,1.679) (6,1.679)};
+          \addplot [textColor,dashed] plot coordinates {(0,.203) (6,.203)};
+          \addplot [textColor,dashed] plot coordinates {(5,0) (5,1.679)};
+          \addplot [textColor,dashed] plot coordinates {(1,0) (1,.203)};
+          \addplot [textColor,dashed] plot coordinates {(3.587,0) (3.597,1)};
+          \addplot [penColor2, smooth,domain=(0:6)] {1};
+          \addplot [very thick,penColor, smooth,domain=(0:2.5)] {sin(deg((x - 4)/2)) + 1.2};
+          \addplot [very thick,penColor, smooth,domain=(4:6)] {sin(deg((x - 4)/2)) + 1.2};
+          \addplot [very thick,dashed,penColor!50!background, smooth,domain=(2.5:4)] {sin(deg((x - 4)/2)) + 1.2}; 
+          \addplot [color=penColor!50!background,fill=penColor!50!background,only marks,mark=*] coordinates{(3.587,1)};  %% closed hole          
+          \addplot [color=penColor,fill=penColor,only marks,mark=*] coordinates{(1,.203)};  %% closed hole          
+          \addplot [color=penColor,fill=penColor,only marks,mark=*] coordinates{(5,1.679)};  %% closed hole          
+        \end{axis}
+\end{tikzpicture}
+\caption{A geometric interpretation of the Intermediate Value
+  Theorem. The function $f(x)$ is continuous on the interval
+  $[a,b]$. Since $d$ is in the interval $[f(a),f(b)]$, there exists a
+  value $c$ in $[a,b]$ such that $f(c) = d$.}
+\label{figure:intermediate-value}
 \end{figure}
+
+
+
+
+
+\begin{example} 
+Explain why the function $f(x) =x^3 + 3x^2+x-2$ has a root between 0
+and 1.
+\end{example}
+
+\begin{solution}
+By Theorem~\ref{theorem:limit-laws}, $\ds \lim_{x\to a} f(x) =
+f(a)$, for all real values of $a$, and hence $f$ is continuous.  Since
+$f(0)=-2$ and $f(1)=3$, and $0$ is between $-2$ and $3$, there is a
+$c\in[0,1]$ such that $f(c)=0$.
+\end{solution}
+
+This example also points the way to a simple method for approximating
+roots. 
+
+\begin{example} 
+Approximate a root of $f(x) =x^3 + 3x^2+x-2$ to one decimal place.
+\end{example}
+\begin{solution}
+If we compute $f(0.1)$, $f(0.2)$, and so on, we find that $f(0.6)<0$
+and $f(0.7)>0$, so by the Intermediate Value Theorem, $f$ has a root
+between $0.6$ and $0.7$. Repeating the process with $f(0.61)$,
+$f(0.62)$, and so on, we find that $f(0.61)<0$ and $f(0.62)>0$, so $f$
+has a root between $0.61$ and $0.62$, and the root is $0.6$ rounded to
+one decimal place.
+\end{solution}
+
+
+
+
+
+\begin{exercises}
+
+ \begin{exercise} 
+Consider the function
+\[
+h(x) = 
+\begin{cases} 
+2x - 3, & \text{if $x<1$,} \\ 
+0,      & \text{if $x\geq 1$.}
+\end{cases}
+\]
+Show that it is continuous at the point $x=0$.  Is $h$ a continuous function?
+\end{exercise}
+
+\begin{exercise}
+Approximate a root of $\ds f=x^3-4x^2+2x+2$ to one decimal place.
+\end{exercise}
+
+\begin{exercise}
+Approximate a root of $\ds f=x^4+x^3-5x+1$ to one decimal place.
+\end{exercise}
+
+\end{exercises}

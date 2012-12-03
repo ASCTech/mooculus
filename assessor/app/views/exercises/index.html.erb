@@ -1,0 +1,19 @@
+  <h2>Exercise List</h2>
+
+  <div class="row">
+    <div class="span2">
+      <!-- Sidebar Content -->
+    </div>
+    <div class="span10">
+      <% @exercises.each do |exercise| %>
+        <%= exercise.title %></br>
+        <%= exercise.description %></br>
+        <%= link_to 'Show', exercise %></br>
+        <%= link_to 'Edit', edit_exercise_path(exercise) %></br>
+          <%= link_to 'Destroy', exercise, method: :delete, 
+            data: { confirm: 'Are you sure?' } %></br>
+      <% end %>
+    </div>
+  </div>
+
+<%= link_to 'New Exercise', new_exercise_path %>

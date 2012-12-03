@@ -1,0 +1,140 @@
+Slope Sleuths
+=============
+
+Here we'll give a number of examples involving slope. In each case we
+will discuss the slope as a:
+** rate
+** change
+** (y2-y1)/(x2-x1)
+** slope of a line, used for predicting something unknown
+
+
+EXAMPLES
+--------
+
+
+
+* Stairs
+** rate
+   It really makes most sense to do this "per-step" The slope measures
+   how many steps it takes to move up. The greater the slope, the
+   steeper the staircase. We'd want some different examples.
+** change
+   After 1 step, we've gone up how much?
+** (y2-y1)/(x2-x1)
+   Similar to above
+** slope of a line, used for predicting something unknown
+   Maybe predit how high you are after n steps? We could model the
+   point slope formula by *not* starting at the bottom.
+
+
+
+
+
+* Slope of a roof
+** rate
+   The slope basically measures the "steepness" of the roof. The
+   greater the slope, (positive or negative), the steeper the roof.
+** change
+   Make some measurements via a tripod?
+** (y2-y1)/(x2-x1)
+   Similar to above.
+** slope of a line, used for predicting something unknown
+   Maybe predit how much taller the bottom of a roof is than the top?
+
+
+* Ramp
+** rate
+   Perhaps it makes most sense here to measure rise over distance on
+   the ramp. This is a bit odd, but to me it kind of makes sense, and
+   it would then be totally different from the previous examples.
+** change
+   After moving forward x, how much higher are we?
+** (y2-y1)/(x2-x1)
+   Similar to above
+** slope of a line, used for predicting something unknown
+   Maybe predit how high you are after n feet? We could model the
+   point slope formula by *not* starting at the bottom.
+
+   
+* Filling a container with water
+** rate
+   Now time, a nonphysical unit, is on the horizontal axis
+** change
+   Start the stopwatch, fill, stop.
+** (y2-y1)/(x2-x1)
+   Similar to above, but with stopwatch already running, or a wrist
+   watch
+** slope of a line, used for predicting something unknown
+   Maybe predit how much you've filled after some time... again try to
+   use point-slope
+
+
+* Cost per Coffee
+** rate
+   Coffee's on the horizontal axis, cost on the vertical. Maybe the
+   cost of the mug should be in there too.
+** change
+   1 cup costs....
+** (y2-y1)/(x2-x1)
+   Similar to above.
+** slope of a line, used for predicting something unknown
+   Maybe predit how much this costs after 365 coffees. Again try to
+   use point slope.
+
+
+
+
+
+Some of these ideas can be easily modified for nonlinear growth... eg
+coffee, I drink 1 coffee on day 1, 2 on day 2, 3 on day 3 etc...
+
+
+
+
+
+We should show us at the board, writing down different definitions of slope.
+
+
+* Rates
+"rate" of how fast the function is growing.
+-treadmill
+-track
+-speedometer of a car
+-inflation
+-price (1 apple cost x, 2 apples cost 3x)
+-wages (minimum wage)
+-dripping water example
+-filling something
+-height per stair
+
+
+
+
+* Other ideas
+change in y over change in x
+-slope of a roof
+-stairs (maybe we could get into the stadium??)
+-slope of a ramp, and treadmil
+(convert from angle?)
+
+
+change in distance over change in time (\delta d)/(\delta t)
+-use an odometer and a stopwatch.
+
+change in price over change in time
+
+change in height over change in (horizontal) distance
+-stairs
+
+change in temperature over change in time. 
+Over change in distance (north -> south)!
+
+*** (y2-y1)/(x2-x1)
+The proceed to (y2-y1)/(x2-x1), before we would be measuring the
+change directly, now we are taking two points and subtracting
+(conceptually different)
+
+*** Slope as the slope of a line
+This should get at the predicitive power of slope. 
+
