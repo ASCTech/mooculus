@@ -979,19 +979,49 @@ continuous at $x=6$.
 
 Building from the definition of \textit{continous at a point}, we can
 now define what it means for a function to be \textit{continuous} on
-its domain.
+an interval.
 
-\begin{definition} A function $f$ is \textbf{continuous} if it is
-continuous at every point in its domain.
+\begin{definition} A function $f$ is \textbf{continuous on an interval} if it is
+continuous at every point in the interval.
 \end{definition}
+
+CHECK WITH BRIGGS!!!!!
 
 
 \begin{example}
+Consider the function
+\[
+f(x) = 
+\begin{cases}
+\sqrt[5]{x}\sin\left(\frac{1}{x}\right) & \text{if $x \ne 0$,}\\
+0 & \text{if $x = 0$,}
+\end{cases}
+\]
+see Figure~\ref{plot:sqrt[5]{x}sin 1/x}. 
 \end{example}
 
 \begin{solution}
 \end{solution}
-
+\begin{marginfigure}[-4in]
+\begin{tikzpicture}
+	\begin{axis}[
+            domain=-.2:.2,    
+            samples=500,
+            axis lines =middle, xlabel=$x$, ylabel=$f(x)$,
+            yticklabels = {}, 
+            every axis y label/.style={at=(current axis.above origin),anchor=south},
+            every axis x label/.style={at=(current axis.right of origin),anchor=west},
+            clip=false,
+          ]
+	  \addplot [very thick, penColor, smooth, domain=(-.2:-.02)] {abs(x)^(1/5)*sin(deg(1/x))};
+          \addplot [very thick, penColor, smooth, domain=(.02:.2)] {x^(1/5)*sin(deg(1/x))};
+	  \addplot [color=penColor, fill=penColor, very thick, smooth,domain=(-.02:.02)] {abs(x)^(1/5)} \closedcycle;
+          \addplot [color=penColor, fill=penColor, very thick, smooth,domain=(-.02:.02)] {-abs(x)^(1/5)} \closedcycle;
+        \end{axis}
+\end{tikzpicture}
+\caption{A plot of $f(x)=\protect\sqrt[5]{x}\sin\left(\frac{1}{x}\right)$.}
+\label{plot:sqrt[5]{x}sin 1/x}
+\end{marginfigure}
 
 
 
