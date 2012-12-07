@@ -1,4 +1,4 @@
-\documentclass[draft,justified]{tufte-book}
+\documentclass[justified]{tufte-book}
 \usepackage{mooculus}
 
 

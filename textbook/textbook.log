@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012/Debian) (format=pdflatex 2012.11.6)  7 DEC 2012 13:38
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012/Debian) (format=pdflatex 2012.11.6)  7 DEC 2012 17:03
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -58,6 +58,7 @@ Package: ifthen 2001/05/26 v1.1c Standard LaTeX ifthen package (DPC)
 (/usr/share/texlive/texmf-dist/tex/latex/ifmtarg/ifmtarg.sty
 Package: ifmtarg 2009/09/02 v1.2a check for an empty argument
 ))
+Class tufte-book Info: Passing draft to the `book' class..
 Class tufte-book Info: Loading the base class `book'.
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/book.cls
@@ -163,6 +164,7 @@ File: pd1enc.def 2012/05/13 v6.82q Hyperref: PDFDocEncoding definition (HO)
 (/usr/share/texlive/texmf-dist/tex/latex/latexconfig/hyperref.cfg
 File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive
 )
+Package hyperref Info: Option `draft' set `true' on input line 3941.
 Package hyperref Info: Option `unicode' set `true' on input line 3941.
 
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/puenc.def
@@ -1559,11 +1561,11 @@ LaTeX Font Info:    Redeclaring font encoding T1 on input line 43.
 
 
 Package thmtools Warning: Key `notefont' not supported by ntheorem on input lin
-e 162.
+e 163.
 
 
 Package thmtools Warning: Key `notebraces' not supported by ntheorem on input l
-ine 162.
+ine 163.
 
 Package thmtools Info: Key `preheadhook' (with value `\begin {mdframed}[nobreak
 =true,leftmargin=40,rightmargin=40,backgroundcolor=theoremBackground,fontcolor=
@@ -1573,19 +1575,19 @@ r=mainTheoremBorder!10!background, roundcorner=10pt,innertopmargin=6pt,splittop
 skip=\topskip ,skipbelow=\baselineskip ,skipabove=\baselineskip ]')
 (thmtools)             is not a known style key.
 (thmtools)             Will pass this to every \declaretheorem
-(thmtools)             that uses `style=mainThmStyle' on input line 162.
+(thmtools)             that uses `style=mainThmStyle' on input line 163.
 Package thmtools Info: Key `postfoothook' (with value `\end {mdframed}')
 (thmtools)             is not a known style key.
 (thmtools)             Will pass this to every \declaretheorem
-(thmtools)             that uses `style=mainThmStyle' on input line 162.
+(thmtools)             that uses `style=mainThmStyle' on input line 163.
 \c@mainTheorem=\count316
 
 Package thmtools Warning: Key `notefont' not supported by ntheorem on input lin
-e 176.
+e 177.
 
 
 Package thmtools Warning: Key `notebraces' not supported by ntheorem on input l
-ine 176.
+ine 177.
 
 Package thmtools Info: Key `preheadhook' (with value `\begin {mdframed}[hideall
 lines=true,roundcorner=10pt,leftmargin=40,rightmargin=40,backgroundcolor=theore
@@ -1593,18 +1595,18 @@ mBackground,fontcolor=textColor,innertopmargin=6pt,splittopskip=\topskip ,skipb
 elow=\baselineskip ,skipabove=\baselineskip ]')
 (thmtools)             is not a known style key.
 (thmtools)             Will pass this to every \declaretheorem
-(thmtools)             that uses `style=thmStyle' on input line 176.
+(thmtools)             that uses `style=thmStyle' on input line 177.
 Package thmtools Info: Key `postfoothook' (with value `\end {mdframed}')
 (thmtools)             is not a known style key.
 (thmtools)             Will pass this to every \declaretheorem
-(thmtools)             that uses `style=thmStyle' on input line 176.
+(thmtools)             that uses `style=thmStyle' on input line 177.
 
 Package thmtools Warning: Key `notefont' not supported by ntheorem on input lin
-e 187.
+e 188.
 
 
 Package thmtools Warning: Key `notebraces' not supported by ntheorem on input l
-ine 187.
+ine 188.
 
 Package thmtools Info: Key `preheadhook' (with value `\begin {mdframed}[outerli
 newidth=2,topline=false, bottomline=false, leftline=true, rightline=false, left
@@ -1613,11 +1615,11 @@ ndcolor=background,skipbelow=\baselineskip ,skipabove=\baselineskip ,innertopma
 rgin=0pt, innerbottommargin=0pt]')
 (thmtools)             is not a known style key.
 (thmtools)             Will pass this to every \declaretheorem
-(thmtools)             that uses `style=egStyle' on input line 187.
+(thmtools)             that uses `style=egStyle' on input line 188.
 Package thmtools Info: Key `postfoothook' (with value `\end {mdframed}')
 (thmtools)             is not a known style key.
 (thmtools)             Will pass this to every \declaretheorem
-(thmtools)             that uses `style=egStyle' on input line 187.
+(thmtools)             that uses `style=egStyle' on input line 188.
 \c@solution=\count317
 \c@proof=\count318
 \c@definition=\count319
@@ -1662,62 +1664,77 @@ Writing index file textbook.idx
 
 LaTeX Warning: Label `plot:(x^2-9x+14)/(x^2-5x+6)' multiply defined.
 
+
+LaTeX Warning: Label `figure:epsilon-delta' multiply defined.
+
+
+LaTeX Warning: Label `def:limit' multiply defined.
+
+
+LaTeX Warning: Label `thm:limit of composition' multiply defined.
+
+
+LaTeX Warning: Label `thm:continuity of roots' multiply defined.
+
 )
 \openout1 = `textbook.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/txmi/m/it on input line 89.
-LaTeX Font Info:    Try loading font information for OML+txmi on input line 89.
+LaTeX Font Info:    Checking defaults for OML/txmi/m/it on input line 88.
+LaTeX Font Info:    Try loading font information for OML+txmi on input line 88.
 
  (/usr/share/texlive/texmf-dist/tex/latex/txfonts/omltxmi.fd
 File: omltxmi.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    ... okay on input line 89.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 89.
-LaTeX Font Info:    ... okay on input line 89.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 89.
-LaTeX Font Info:    ... okay on input line 89.
-LaTeX Font Info:    Checking defaults for OMS/txsy/m/n on input line 89.
-LaTeX Font Info:    Try loading font information for OMS+txsy on input line 89.
+LaTeX Font Info:    ... okay on input line 88.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 88.
+LaTeX Font Info:    ... okay on input line 88.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 88.
+LaTeX Font Info:    ... okay on input line 88.
+LaTeX Font Info:    Checking defaults for OMS/txsy/m/n on input line 88.
+LaTeX Font Info:    Try loading font information for OMS+txsy on input line 88.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/txfonts/omstxsy.fd
 File: omstxsy.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    ... okay on input line 89.
-LaTeX Font Info:    Checking defaults for OMX/txex/m/n on input line 89.
-LaTeX Font Info:    Try loading font information for OMX+txex on input line 89.
+LaTeX Font Info:    ... okay on input line 88.
+LaTeX Font Info:    Checking defaults for OMX/txex/m/n on input line 88.
+LaTeX Font Info:    Try loading font information for OMX+txex on input line 88.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/txfonts/omxtxex.fd
 File: omxtxex.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    ... okay on input line 89.
-LaTeX Font Info:    Checking defaults for U/txexa/m/n on input line 89.
-LaTeX Font Info:    Try loading font information for U+txexa on input line 89.
+LaTeX Font Info:    ... okay on input line 88.
+LaTeX Font Info:    Checking defaults for U/txexa/m/n on input line 88.
+LaTeX Font Info:    Try loading font information for U+txexa on input line 88.
 
 (/usr/share/texlive/texmf-dist/tex/latex/txfonts/utxexa.fd
 File: utxexa.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    ... okay on input line 89.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 89.
-LaTeX Font Info:    ... okay on input line 89.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 89.
-LaTeX Font Info:    ... okay on input line 89.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 89.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 89.
+LaTeX Font Info:    ... okay on input line 88.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 88.
+LaTeX Font Info:    ... okay on input line 88.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 88.
+LaTeX Font Info:    ... okay on input line 88.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 88.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 88.
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 89.
-LaTeX Font Info:    Try loading font information for T1+mak on input line 89.
+LaTeX Font Info:    ... okay on input line 88.
+LaTeX Font Info:    Try loading font information for T1+mak on input line 88.
 
 (/usr/share/texlive/texmf-dist/tex/latex/kerkis/t1mak.fd)
 LaTeX Font Info:    Font shape `T1/mak/m/n' will be
-(Font)              scaled to size 8.99994pt on input line 89.
+(Font)              scaled to size 8.99994pt on input line 88.
 \AtBeginShipoutBox=\box105
-Package hyperref Info: Link coloring OFF on input line 89.
 
+
+Package hyperref Warning: Draft mode on.
+
+Package hyperref Info: Link coloring OFF on input line 88.
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2010/04/30 v2.40 Cross-referencing by name of section
 
@@ -1726,16 +1743,12 @@ Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
 \c@section@level=\count326
 )
-LaTeX Info: Redefining \ref on input line 89.
-LaTeX Info: Redefining \pageref on input line 89.
-LaTeX Info: Redefining \nameref on input line 89.
+LaTeX Info: Redefining \ref on input line 88.
+LaTeX Info: Redefining \pageref on input line 88.
+LaTeX Info: Redefining \nameref on input line 88.
 
-(./textbook.out) (./textbook.out)
-\@outlinefile=\write6
-\openout6 = `textbook.out'.
-
- ABD: EverySelectfont initializing macros
-LaTeX Info: Redefining \selectfont on input line 89.
+ABD: EverySelectfont initializing macros
+LaTeX Info: Redefining \selectfont on input line 88.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -1771,16 +1784,12 @@ LaTeX Info: Redefining \selectfont on input line 89.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-LaTeX Info: Redefining \microtypecontext on input line 89.
-Package microtype Info: Generating PDF output.
-Package microtype Info: Character protrusion enabled (level 2).
-Package microtype Info: Using default protrusion set `alltext'.
-Package microtype Info: Automatic font expansion enabled (level 2),
-(microtype)             stretch: 20, shrink: 20, step: 1, non-selected.
-Package microtype Info: Using default expansion set `basictext'.
-Package microtype Info: No tracking.
-Package microtype Info: No adjustment of interword spacing.
-Package microtype Info: No adjustment of character kerning.
+LaTeX Info: Redefining \microtypecontext on input line 88.
+
+Package microtype Warning: `draft' option active.
+(microtype)                Disabling all micro-typographic extensions.
+(microtype)                This might lead to different line and page breaks.
+
 (/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count327
@@ -1813,218 +1822,118 @@ ABD: EveryShipout initializing macros
 Package pgfplots notification 'compat/show suggested version=true': document ha
 s been generated with the most recent feature set (\pgfplotsset{compat=1.7}).
 
-LaTeX Font Info:    Try loading font information for T1+maksf on input line 90.
+LaTeX Font Info:    Try loading font information for T1+maksf on input line 89.
 
 (/usr/share/texlive/texmf-dist/tex/latex/kerkis/t1maksf.fd)
 LaTeX Font Info:    Font shape `T1/maksf/m/n' will be
-(Font)              scaled to size 8.99994pt on input line 90.
+(Font)              scaled to size 8.99994pt on input line 89.
 Missing character: There is no ] in font nullfont!
 LaTeX Font Info:    Font shape `T1/maksf/m/n' will be
-(Font)              scaled to size 21.59985pt on input line 90.
+(Font)              scaled to size 21.59985pt on input line 89.
 LaTeX Font Info:    Font shape `T1/maksf/bx/n' will be
-(Font)              scaled to size 21.59985pt on input line 90.
+(Font)              scaled to size 21.59985pt on input line 89.
 LaTeX Font Info:    Font shape `T1/maksf/m/n' will be
-(Font)              scaled to size 7.19995pt on input line 90.
+(Font)              scaled to size 7.19995pt on input line 89.
 LaTeX Font Info:    Font shape `T1/maksf/m/n' will be
-(Font)              scaled to size 50.39966pt on input line 90.
+(Font)              scaled to size 50.39966pt on input line 89.
 LaTeX Font Info:    Font shape `T1/maksf/bx/n' will be
-(Font)              scaled to size 50.39966pt on input line 90.
+(Font)              scaled to size 50.39966pt on input line 89.
 LaTeX Font Info:    Font shape `T1/maksf/m/n' will be
-(Font)              scaled to size 16.19989pt on input line 90.
+(Font)              scaled to size 16.19989pt on input line 89.
 LaTeX Font Info:    Font shape `T1/maksf/m/n' will be
-(Font)              scaled to size 12.59991pt on input line 90.
+(Font)              scaled to size 12.59991pt on input line 89.
  [1
 
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-LaTeX Font Info:    Try loading font information for TS1+mak on input line 100.
-
-LaTeX Font Info:    No file TS1mak.fd. on input line 100.
+LaTeX Font Info:    Try loading font information for TS1+mak on input line 99.
+LaTeX Font Info:    No file TS1mak.fd. on input line 99.
 
 
 LaTeX Font Warning: Font shape `TS1/mak/m/n' undefined
 (Font)              using `TS1/cmr/m/n' instead
-(Font)              for symbol `textcopyright' on input line 100.
+(Font)              for symbol `textcopyright' on input line 99.
 
-(/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-cmr.cfg
-File: mt-cmr.cfg 2009/11/09 v2.0 microtype config. file: Computer Modern Roman 
-(RS)
-)
-LaTeX Font Info:    Try loading font information for T1+pcr on input line 105.
-
+LaTeX Font Info:    Try loading font information for T1+pcr on input line 104.
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1pcr.fd
 File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
 )
-LaTeX Font Info:    Try loading font information for OT1+txr on input line 105.
+LaTeX Font Info:    Try loading font information for OT1+txr on input line 104.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/txfonts/ot1txr.fd
 File: ot1txr.fd 2000/12/15 v3.1
 )
-(/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-ptm.cfg
-File: mt-ptm.cfg 2006/04/20 v1.7 microtype config. file: Times (RS)
-)
-Package microtype Info: Character `AE ' is missing
-(microtype)             in font `OT1/txr/m/n/10'.
-(microtype)             Ignoring protrusion settings for this character.
-Package microtype Info: Character `AE ' is missing
-(microtype)             in font `OT1/txr/m/n/7.6'.
-(microtype)             Ignoring protrusion settings for this character.
-Package microtype Info: Character `AE ' is missing
-(microtype)             in font `OT1/txr/m/n/6'.
-(microtype)             Ignoring protrusion settings for this character.
-LaTeX Font Info:    Try loading font information for OML+mak on input line 105.
+LaTeX Font Info:    Try loading font information for OML+mak on input line 104.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/kerkis/omlmak.fd)
 LaTeX Font Info:    Font shape `OML/mak/m/it' will be
-(Font)              scaled to size 8.99994pt on input line 105.
+(Font)              scaled to size 8.99994pt on input line 104.
 LaTeX Font Info:    Font shape `OML/mak/m/it' will be
-(Font)              scaled to size 6.83995pt on input line 105.
+(Font)              scaled to size 6.83995pt on input line 104.
 LaTeX Font Info:    Font shape `OML/mak/m/it' will be
-(Font)              scaled to size 5.39996pt on input line 105.
-LaTeX Font Info:    Try loading font information for OT1+zplm on input line 105
+(Font)              scaled to size 5.39996pt on input line 104.
+LaTeX Font Info:    Try loading font information for OT1+zplm on input line 104
 .
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1zplm.fd
 File: ot1zplm.fd 2002/09/08 Fontinst v1.914 font definitions for OT1/zplm.
 )
-Package microtype Info: Character `AE ' is missing
-(microtype)             in font `OT1/zplm/m/n/10'.
-(microtype)             Ignoring protrusion settings for this character.
-Package microtype Info: Character `AE ' is missing
-(microtype)             in font `OT1/zplm/m/n/7.6'.
-(microtype)             Ignoring protrusion settings for this character.
-Package microtype Info: Character `AE ' is missing
-(microtype)             in font `OT1/zplm/m/n/6'.
-(microtype)             Ignoring protrusion settings for this character.
-LaTeX Font Info:    Try loading font information for U+txsya on input line 105.
+LaTeX Font Info:    Try loading font information for U+txsya on input line 104.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/txfonts/utxsya.fd
 File: utxsya.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    Try loading font information for U+txsyb on input line 105.
+LaTeX Font Info:    Try loading font information for U+txsyb on input line 104.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/txfonts/utxsyb.fd
 File: utxsyb.fd 2000/12/15 v3.1
 )
-Package microtype Info: Character `AE ' is missing
-(microtype)             in font `OT1/txr/m/it/10'.
-(microtype)             Ignoring protrusion settings for this character.
-Package microtype Info: Character `OE ' is missing
-(microtype)             in font `OT1/txr/m/it/10'.
-(microtype)             Ignoring protrusion settings for this character.
-Package microtype Info: Character `AE ' is missing
-(microtype)             in font `OT1/txr/m/it/7.6'.
-(microtype)             Ignoring protrusion settings for this character.
-Package microtype Info: Character `OE ' is missing
-(microtype)             in font `OT1/txr/m/it/7.6'.
-(microtype)             Ignoring protrusion settings for this character.
-Package microtype Info: Character `AE ' is missing
-(microtype)             in font `OT1/txr/m/it/6'.
-(microtype)             Ignoring protrusion settings for this character.
-Package microtype Info: Character `OE ' is missing
-(microtype)             in font `OT1/txr/m/it/6'.
-(microtype)             Ignoring protrusion settings for this character.
-LaTeX Font Info:    Try loading font information for U+txmia on input line 105.
+LaTeX Font Info:    Try loading font information for U+txmia on input line 104.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/txfonts/utxmia.fd
 File: utxmia.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    Try loading font information for U+txsyc on input line 105.
+LaTeX Font Info:    Try loading font information for U+txsyc on input line 104.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/txfonts/utxsyc.fd
 File: utxsyc.fd 2000/12/15 v3.1
 )
 LaTeX Font Info:    Font shape `T1/mak/m/n' will be
-(Font)              scaled to size 6.83995pt on input line 105.
+(Font)              scaled to size 6.83995pt on input line 104.
 LaTeX Font Info:    Font shape `T1/mak/m/n' will be
-(Font)              scaled to size 5.39996pt on input line 105.
+(Font)              scaled to size 5.39996pt on input line 104.
 LaTeX Font Info:    Font shape `T1/mak/m/it' will be
-(Font)              scaled to size 8.99994pt on input line 117.
+(Font)              scaled to size 8.99994pt on input line 116.
  [2
 
 ]
 LaTeX Font Info:    Font shape `T1/mak/m/n' will be
-(Font)              scaled to size 18.66588pt on input line 141.
+(Font)              scaled to size 18.66588pt on input line 140.
 LaTeX Font Info:    Font shape `T1/mak/m/sc' will be
-(Font)              scaled to size 18.66588pt on input line 141.
-Package microtype Info: Character `029' is missing
-(microtype)             in font `T1/mak/m/sc/20.74'.
-(microtype)             Ignoring protrusion settings for this character.
+(Font)              scaled to size 18.66588pt on input line 140.
 LaTeX Font Info:    Font shape `T1/maksf/m/sc' will be
-(Font)              scaled to size 18.66588pt on input line 141.
-Package microtype Info: Character `~' is missing
-(microtype)             in font `T1/maksf/m/sc/20.74'.
-(microtype)             Ignoring protrusion settings for this character.
-Package microtype Info: Character `textendash ' is missing
-(microtype)             in font `T1/maksf/m/sc/20.74'.
-(microtype)             Ignoring protrusion settings for this character.
-Package microtype Info: Character `textemdash ' is missing
-(microtype)             in font `T1/maksf/m/sc/20.74'.
-(microtype)             Ignoring protrusion settings for this character.
-Package microtype Info: Character `textquoteleft ' is missing
-(microtype)             in font `T1/maksf/m/sc/20.74'.
-(microtype)             Ignoring protrusion settings for this character.
-Package microtype Info: Character `textquoteright ' is missing
-(microtype)             in font `T1/maksf/m/sc/20.74'.
-(microtype)             Ignoring protrusion settings for this character.
-Package microtype Info: Character `textquotedblleft ' is missing
-(microtype)             in font `T1/maksf/m/sc/20.74'.
-(microtype)             Ignoring protrusion settings for this character.
-Package microtype Info: Character `textquotedblright ' is missing
-(microtype)             in font `T1/maksf/m/sc/20.74'.
-(microtype)             Ignoring protrusion settings for this character.
-Package microtype Info: Character `AE ' is missing
-(microtype)             in font `T1/maksf/m/sc/20.74'.
-(microtype)             Ignoring protrusion settings for this character.
-Package microtype Info: Character `quotesinglbase ' is missing
-(microtype)             in font `T1/maksf/m/sc/20.74'.
-(microtype)             Ignoring protrusion settings for this character.
-Package microtype Info: Character `quotedblbase ' is missing
-(microtype)             in font `T1/maksf/m/sc/20.74'.
-(microtype)             Ignoring protrusion settings for this character.
-Package microtype Info: Character `guilsinglleft ' is missing
-(microtype)             in font `T1/maksf/m/sc/20.74'.
-(microtype)             Ignoring protrusion settings for this character.
-Package microtype Info: Character `guilsinglright ' is missing
-(microtype)             in font `T1/maksf/m/sc/20.74'.
-(microtype)             Ignoring protrusion settings for this character.
-Package microtype Info: Character `guillemotleft ' is missing
-(microtype)             in font `T1/maksf/m/sc/20.74'.
-(microtype)             Ignoring protrusion settings for this character.
-Package microtype Info: Character `guillemotright ' is missing
-(microtype)             in font `T1/maksf/m/sc/20.74'.
-(microtype)             Ignoring protrusion settings for this character.
-Package microtype Info: Character `textexclamdown ' is missing
-(microtype)             in font `T1/maksf/m/sc/20.74'.
-(microtype)             Ignoring protrusion settings for this character.
-Package microtype Info: Character `textquestiondown ' is missing
-(microtype)             in font `T1/maksf/m/sc/20.74'.
-(microtype)             Ignoring protrusion settings for this character.
-Package microtype Info: Character `textbraceleft ' is missing
-(microtype)             in font `T1/maksf/m/sc/20.74'.
-(microtype)             Ignoring protrusion settings for this character.
-Package microtype Info: Character `textbraceright ' is missing
-(microtype)             in font `T1/maksf/m/sc/20.74'.
-(microtype)             Ignoring protrusion settings for this character.
-Package microtype Info: Character `029' is missing
-(microtype)             in font `T1/maksf/m/sc/20.74'.
-(microtype)             Ignoring protrusion settings for this character.
+(Font)              scaled to size 18.66588pt on input line 140.
 
 
 LaTeX Font Warning: Font shape `T1/maksf/bx/sc' undefined
-(Font)              using `T1/maksf/bx/n' instead on input line 141.
+(Font)              using `T1/maksf/bx/n' instead on input line 140.
 
 LaTeX Font Info:    Font shape `T1/maksf/bx/n' will be
-(Font)              scaled to size 18.66588pt on input line 141.
-(./textbook.toc)
-\tf@toc=\write7
-\openout7 = `textbook.toc'.
+(Font)              scaled to size 18.66588pt on input line 140.
+(./textbook.toc
+LaTeX Font Info:    Font shape `T1/mak/m/n' will be
+(Font)              scaled to size 12.9599pt on input line 1.
+LaTeX Font Info:    Font shape `T1/maksf/m/n' will be
+(Font)              scaled to size 12.9599pt on input line 1.
+)
+\tf@toc=\write6
+\openout6 = `textbook.toc'.
 
 
 showing mainTheorem
@@ -2034,7 +1943,7 @@ showing mainTheorem
 
 ]
 LaTeX Font Info:    Font shape `T1/maksf/bx/sc' will be
-(Font)              scaled to size 18.66588pt on input line 148.
+(Font)              scaled to size 18.66588pt on input line 147.
  (./textbook.loe) [5] [6
 
 ] (./limits.tex
@@ -2047,23 +1956,11 @@ LaTeX Font Info:    Font shape `T1/maksf/bx/n' will be
 (Font)              scaled to size 10.79993pt on input line 7.
 LaTeX Font Info:    Font shape `T1/mak/m/n' will be
 (Font)              scaled to size 7.19995pt on input line 26.
-Package microtype Info: Character `AE ' is missing
-(microtype)             in font `OT1/txr/m/n/8'.
-(microtype)             Ignoring protrusion settings for this character.
 LaTeX Font Info:    Font shape `OML/mak/m/it' will be
 (Font)              scaled to size 7.19995pt on input line 40.
-Package microtype Info: Character `AE ' is missing
-(microtype)             in font `OT1/zplm/m/n/8'.
-(microtype)             Ignoring protrusion settings for this character.
-Package microtype Info: Character `AE ' is missing
-(microtype)             in font `OT1/txr/m/it/8'.
-(microtype)             Ignoring protrusion settings for this character.
-Package microtype Info: Character `OE ' is missing
-(microtype)             in font `OT1/txr/m/it/8'.
-(microtype)             Ignoring protrusion settings for this character.
 
 Overfull \hbox (32.61794pt too wide) in paragraph at lines 26--42
- [] 
+ [] |
  []
 
 
@@ -2084,7 +1981,7 @@ nput line 73.
 
 ]
 Overfull \hbox (32.61794pt too wide) in paragraph at lines 124--167
- [] 
+ [] |
  []
 
 Package mdframed Info: mdframed works in twoside mode on input line 173.
@@ -2108,12 +2005,10 @@ Package mdframed Info: mdframed works in twoside mode on input line 210.
 Package mdframed Info: mdframed works in twoside mode on input line 216.
 
 Overfull \hbox (35.86115pt too wide) in paragraph at lines 226--243
- [] 
+ [] |
  []
 
 Package mdframed Info: mdframed works in twoside mode on input line 252.
-Package mdframed Info: Box was splittet wrong
-(mdframed)              on input line 269.
 Package mdframed Info: Box was splittet wrong
 (mdframed)              on input line 269.
 [9]
@@ -2150,7 +2045,7 @@ LaTeX Warning: Marginpar on page 12 moved.
 
 
 Overfull \hbox (50.42242pt too wide) in paragraph at lines 406--432
- []
+ []|
  []
 
 
@@ -2173,15 +2068,6 @@ LaTeX Warning: Marginpar on page 13 moved.
 Package mdframed Info: mdframed works in twoside mode on input line 488.
 Package hyperref Info: bookmark level for unknown proof defaults to 0 on input 
 line 489.
-Package microtype Info: Character `AE ' is missing
-(microtype)             in font `OT1/txr/bx/n/10'.
-(microtype)             Ignoring protrusion settings for this character.
-Package microtype Info: Character `AE ' is missing
-(microtype)             in font `OT1/txr/bx/n/7.6'.
-(microtype)             Ignoring protrusion settings for this character.
-Package microtype Info: Character `AE ' is missing
-(microtype)             in font `OT1/txr/bx/n/6'.
-(microtype)             Ignoring protrusion settings for this character.
 
 LaTeX Font Warning: Font shape `OML/mak/b/it' undefined
 (Font)              using `OML/mak/m/it' instead on input line 503.
@@ -2190,33 +2076,6 @@ LaTeX Font Info:    Font shape `OML/mak/b/it' will be
 (Font)              scaled to size 6.83995pt on input line 503.
 LaTeX Font Info:    Font shape `OML/mak/b/it' will be
 (Font)              scaled to size 5.39996pt on input line 503.
-Package microtype Info: Character `AE ' is missing
-(microtype)             in font `OT1/zplm/b/n/10'.
-(microtype)             Ignoring protrusion settings for this character.
-Package microtype Info: Character `AE ' is missing
-(microtype)             in font `OT1/zplm/b/n/7.6'.
-(microtype)             Ignoring protrusion settings for this character.
-Package microtype Info: Character `AE ' is missing
-(microtype)             in font `OT1/zplm/b/n/6'.
-(microtype)             Ignoring protrusion settings for this character.
-Package microtype Info: Character `AE ' is missing
-(microtype)             in font `OT1/txr/bx/it/10'.
-(microtype)             Ignoring protrusion settings for this character.
-Package microtype Info: Character `OE ' is missing
-(microtype)             in font `OT1/txr/bx/it/10'.
-(microtype)             Ignoring protrusion settings for this character.
-Package microtype Info: Character `AE ' is missing
-(microtype)             in font `OT1/txr/bx/it/7.6'.
-(microtype)             Ignoring protrusion settings for this character.
-Package microtype Info: Character `OE ' is missing
-(microtype)             in font `OT1/txr/bx/it/7.6'.
-(microtype)             Ignoring protrusion settings for this character.
-Package microtype Info: Character `AE ' is missing
-(microtype)             in font `OT1/txr/bx/it/6'.
-(microtype)             Ignoring protrusion settings for this character.
-Package microtype Info: Character `OE ' is missing
-(microtype)             in font `OT1/txr/bx/it/6'.
-(microtype)             Ignoring protrusion settings for this character.
 LaTeX Font Info:    Font shape `OML/mak/b/it' will be
 (Font)              scaled to size 8.99994pt on input line 503.
 Package mdframed Info: Box was splittet wrong
@@ -2224,833 +2083,542 @@ Package mdframed Info: Box was splittet wrong
 Package mdframed Info: Box was splittet wrong
 (mdframed)              on input line 535.
 [13]
-
-LaTeX Warning: Reference `thm:properties of limits' on page 14 undefined on inp
-ut line 545.
-
-Package mdframed Info: mdframed works in twoside mode on input line 547.
+Package mdframed Info: mdframed works in twoside mode on input line 546.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [14]
-Package mdframed Info: mdframed works in twoside mode on input line 557.
+Package mdframed Info: mdframed works in twoside mode on input line 556.
 
-Underfull \hbox (badness 10000) in paragraph at lines 604--604
+[15]
+Underfull \hbox (badness 10000) in paragraph at lines 603--603
 
  []
 
-[15]
-Package mdframed Info: mdframed works in twoside mode on input line 613.
+[16]
+Package mdframed Info: mdframed works in twoside mode on input line 612.
 Package hyperref Info: bookmark level for unknown mainTheorem defaults to 0 on 
-input line 613.
+input line 612.
 
 
 LaTeX Font Warning: Font shape `TS1/mak/m/sl' undefined
 (Font)              using `TS1/mak/m/n' instead
-(Font)              for symbol `textbullet' on input line 617.
+(Font)              for symbol `textbullet' on input line 616.
 
 LaTeX Font Info:    Font shape `T1/mak/m/sl' will be
-(Font)              scaled to size 6.83995pt on input line 621.
+(Font)              scaled to size 6.83995pt on input line 620.
 LaTeX Font Info:    Font shape `T1/mak/m/sl' will be
-(Font)              scaled to size 5.39996pt on input line 621.
-Package mdframed Info: mdframed works in twoside mode on input line 638.
-Package mdframed Info: mdframed works in twoside mode on input line 640.
-[16]
-Package mdframed Info: mdframed works in twoside mode on input line 669.
-Package mdframed Info: mdframed works in twoside mode on input line 671.
-Package mdframed Info: Box was splittet wrong
-(mdframed)              on input line 678.
+(Font)              scaled to size 5.39996pt on input line 620.
+Package mdframed Info: mdframed works in twoside mode on input line 637.
+Package mdframed Info: mdframed works in twoside mode on input line 639.
 
-Overfull \vbox (11.51674pt too high) detected at line 678
+Overfull \vbox (108.411pt too high) detected at line 649
  []
 
 Package mdframed Info: Box was splittet wrong
-(mdframed)              on input line 678.
+(mdframed)              on input line 649.
 
-Overfull \vbox (23.97514pt too high) detected at line 678
- []
-
-
-Overfull \vbox (29.91682pt too high) detected at line 678
- []
-
-Package mdframed Info: Box was splittet wrong
-(mdframed)              on input line 678.
-
-Overfull \vbox (51.57527pt too high) detected at line 678
- []
-
-
-Overfull \vbox (48.31691pt too high) detected at line 678
- []
-
-Package mdframed Info: Box was splittet wrong
-(mdframed)              on input line 678.
-
-Overfull \vbox (79.1754pt too high) detected at line 678
- []
-
-
-Overfull \vbox (66.717pt too high) detected at line 678
- []
-
-Package mdframed Info: Box was splittet wrong
-(mdframed)              on input line 678.
-
-Overfull \vbox (106.77553pt too high) detected at line 678
+Overfull \vbox (169.31653pt too high) detected at line 649
  []
 
 [17]
-Package mdframed Info: mdframed works in twoside mode on input line 682.
-Package mdframed Info: mdframed works in twoside mode on input line 684.
-Package mdframed Info: mdframed works in twoside mode on input line 700.
+Package mdframed Info: mdframed works in twoside mode on input line 668.
+Package mdframed Info: mdframed works in twoside mode on input line 670.
+Package mdframed Info: mdframed works in twoside mode on input line 681.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [18]
+Package mdframed Info: Not enough space on this page on input line 682.
+Package mdframed Info: mdframed works in twoside mode on input line 683.
+Package mdframed Info: mdframed works in twoside mode on input line 699.
+
 
 LaTeX Warning: Marginpar on page 19 moved.
 
-Package mdframed Info: mdframed works in twoside mode on input line 713.
-Package mdframed Info: mdframed works in twoside mode on input line 719.
+Package mdframed Info: mdframed works in twoside mode on input line 712.
+Package mdframed Info: mdframed works in twoside mode on input line 718.
 
-Overfull \hbox (11.19186pt too wide) in paragraph at lines 725--794
-[][] 
+Overfull \hbox (11.19186pt too wide) in paragraph at lines 724--793
+[][] |
  []
 
 [19]
-Underfull \hbox (badness 10000) in paragraph at lines 895--895
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
- []
-
-[20] [21]
-Overfull \hbox (31.04605pt too wide) in paragraph at lines 912--926
-[] 
- []
+ [20]
+Overfull \vbox (28.20369pt too high) has occurred while \output is active []
 
 
-LaTeX Warning: Marginpar on page 22 moved.
-
-Package mdframed Info: mdframed works in twoside mode on input line 931.
-
-Overfull \hbox (31.03813pt too wide) in paragraph at lines 956--971
-[] 
- []
-
-Package mdframed Info: mdframed works in twoside mode on input line 976.
-Package mdframed Info: mdframed works in twoside mode on input line 986.
-Package mdframed Info: Not enough space on this page on input line 990.
-[22]
-Package mdframed Info: Not enough space on this page on input line 990.
-Package mdframed Info: mdframed works in twoside mode on input line 991.
-
-Overfull \hbox (46.5974pt too wide) in paragraph at lines 1011--1028
- [] 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1037--1037
+[21] [22]
+Underfull \hbox (badness 10000) in paragraph at lines 894--894
 
  []
 
 [23]
-Overfull \hbox (46.60362pt too wide) in paragraph at lines 1051--1067
- [] 
+Overfull \hbox (31.04605pt too wide) in paragraph at lines 911--925
+[] |
  []
 
 
 LaTeX Warning: Marginpar on page 24 moved.
 
-Package mdframed Info: mdframed works in twoside mode on input line 1073.
+Package mdframed Info: mdframed works in twoside mode on input line 930.
 
-Overfull \hbox (43.51015pt too wide) in paragraph at lines 1091--1105
- [] 
+Overfull \hbox (31.03813pt too wide) in paragraph at lines 955--970
+[] |
  []
 
-
-LaTeX Warning: Marginpar on page 24 moved.
-
+Package mdframed Info: mdframed works in twoside mode on input line 975.
+Package mdframed Info: mdframed works in twoside mode on input line 985.
+Package mdframed Info: Not enough space on this page on input line 989.
 [24]
-NOTE: coordinate (0Y0.0e0],3Y0.0e0]) has been dropped because it is unbounded (
-in y). 
+Package mdframed Info: Not enough space on this page on input line 989.
+Package mdframed Info: mdframed works in twoside mode on input line 990.
 
-Overfull \hbox (42.12804pt too wide) in paragraph at lines 1113--1127
- [] 
- []
-
-
-LaTeX Warning: Marginpar on page 25 moved.
-
-Package mdframed Info: mdframed works in twoside mode on input line 1132.
-Package mdframed Info: mdframed works in twoside mode on input line 1141.
-Package mdframed Info: mdframed works in twoside mode on input line 1143.
-
-Underfull \hbox (badness 10000) in paragraph at lines 1152--1152
-
+Overfull \hbox (46.5974pt too wide) in paragraph at lines 1010--1027
+ [] |
  []
 
 [25]
-Package mdframed Info: mdframed works in twoside mode on input line 1163.
+Underfull \hbox (badness 10000) in paragraph at lines 1036--1036
 
-Overfull \hbox (37.04941pt too wide) in paragraph at lines 1167--1186
- [] 
  []
-
-
-LaTeX Warning: Marginpar on page 26 moved.
-
-Package mdframed Info: mdframed works in twoside mode on input line 1191.
-Package mdframed Info: mdframed works in twoside mode on input line 1194.
-Package mdframed Info: mdframed works in twoside mode on input line 1211.
-
-LaTeX Warning: Reference `mdf@pagelabel-38' on page 26 undefined on input line 
-1213.
-
-Package mdframed Info: mdframed works in twoside mode on input line 1219.
-
-LaTeX Warning: Reference `plot:sqrt[5]{x}sin 1/x' on page 26 undefined on input
- line 1227.
-
-Package mdframed Info: Box was splittet wrong
-(mdframed)              on input line 1228.
-
-LaTeX Warning: Reference `mdf@pagelabel-39' on page 26 undefined on input line 
-1228.
 
 [26]
-
-LaTeX Warning: Reference `mdf@pagelabel-40' on page 27 undefined on input line 
-1228.
-
-
-Overfull \hbox (35.87027pt too wide) in paragraph at lines 1229--1254
- [] 
+Overfull \hbox (46.60362pt too wide) in paragraph at lines 1050--1066
+ [] |
  []
 
 
 LaTeX Warning: Marginpar on page 27 moved.
 
-Package mdframed Info: mdframed works in twoside mode on input line 1258.
+Package mdframed Info: mdframed works in twoside mode on input line 1072.
 
-LaTeX Warning: Reference `mdf@pagelabel-41' on page 27 undefined on input line 
-1267.
+Overfull \hbox (43.51015pt too wide) in paragraph at lines 1090--1104
+ [] |
+ []
 
-Package mdframed Info: mdframed works in twoside mode on input line 1290.
 
 LaTeX Warning: Marginpar on page 27 moved.
-
-
-LaTeX Warning: Reference `figure:intermediate-value' on page 27 undefined on in
-put line 1301.
-
-Package mdframed Info: mdframed works in twoside mode on input line 1343.
-
-LaTeX Warning: Reference `mdf@pagelabel-42' on page 27 undefined on input line 
-1345.
-
-Package mdframed Info: mdframed works in twoside mode on input line 1347.
-
-LaTeX Warning: Reference `mdf@pagelabel-43' on page 27 undefined on input line 
-1352.
 
 [27]
+NOTE: coordinate (0Y0.0e0],3Y0.0e0]) has been dropped because it is unbounded (
+in y). 
 
-LaTeX Warning: Reference `mdf@pagelabel-44' on page 28 undefined on input line 
-1352.
-
-Package mdframed Info: mdframed works in twoside mode on input line 1358.
-
-LaTeX Warning: Reference `mdf@pagelabel-45' on page 28 undefined on input line 
-1359.
-
-Package mdframed Info: mdframed works in twoside mode on input line 1360.
-
-LaTeX Warning: Reference `mdf@pagelabel-46' on page 28 undefined on input line 
-1367.
+Overfull \hbox (42.12804pt too wide) in paragraph at lines 1112--1126
+ [] |
+ []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1395--1395
+LaTeX Warning: Marginpar on page 28 moved.
+
+Package mdframed Info: mdframed works in twoside mode on input line 1131.
+Package mdframed Info: mdframed works in twoside mode on input line 1140.
+Package mdframed Info: mdframed works in twoside mode on input line 1142.
+[28]
+Underfull \hbox (badness 10000) in paragraph at lines 1151--1151
 
  []
 
+[29]
+Package mdframed Info: mdframed works in twoside mode on input line 1162.
+
+Overfull \hbox (37.04941pt too wide) in paragraph at lines 1166--1185
+ [] |
+ []
+
+
+LaTeX Warning: Marginpar on page 30 moved.
+
+Package mdframed Info: mdframed works in twoside mode on input line 1190.
+Package mdframed Info: mdframed works in twoside mode on input line 1193.
+Package mdframed Info: mdframed works in twoside mode on input line 1210.
+Package mdframed Info: mdframed works in twoside mode on input line 1218.
+Package mdframed Info: Box was splittet wrong
+(mdframed)              on input line 1227.
+[30]
+Overfull \hbox (35.87027pt too wide) in paragraph at lines 1228--1253
+ [] |
+ []
+
+
+LaTeX Warning: Marginpar on page 31 moved.
+
+Package mdframed Info: mdframed works in twoside mode on input line 1257.
+Package mdframed Info: mdframed works in twoside mode on input line 1289.
+
+LaTeX Warning: Marginpar on page 31 moved.
+
+Package mdframed Info: mdframed works in twoside mode on input line 1342.
+Package mdframed Info: mdframed works in twoside mode on input line 1346.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [28]
-[29]) (./derivatives.tex [30
+ [31]
+Package mdframed Info: mdframed works in twoside mode on input line 1357.
+Package mdframed Info: mdframed works in twoside mode on input line 1359.
+
+[32]
+Underfull \hbox (badness 10000) in paragraph at lines 1394--1394
+
+ []
+
+[33]) (./derivatives.tex [34
 
 ]
 Chapter 2.
 LaTeX Font Info:    Font shape `T1/mak/m/n' will be
 (Font)              scaled to size 8.09995pt on input line 23.
-Package microtype Info: Character `AE ' is missing
-(microtype)             in font `OT1/txr/m/n/9'.
-(microtype)             Ignoring protrusion settings for this character.
-Package microtype Info: Character `AE ' is missing
-(microtype)             in font `OT1/txr/m/n/7'.
-(microtype)             Ignoring protrusion settings for this character.
 LaTeX Font Info:    Font shape `OML/mak/m/it' will be
 (Font)              scaled to size 8.09995pt on input line 24.
 LaTeX Font Info:    Font shape `OML/mak/m/it' will be
 (Font)              scaled to size 6.29996pt on input line 24.
-Package microtype Info: Character `AE ' is missing
-(microtype)             in font `OT1/zplm/m/n/9'.
-(microtype)             Ignoring protrusion settings for this character.
-Package microtype Info: Character `AE ' is missing
-(microtype)             in font `OT1/zplm/m/n/7'.
-(microtype)             Ignoring protrusion settings for this character.
-Package microtype Info: Character `AE ' is missing
-(microtype)             in font `OT1/txr/m/it/9'.
-(microtype)             Ignoring protrusion settings for this character.
-Package microtype Info: Character `OE ' is missing
-(microtype)             in font `OT1/txr/m/it/9'.
-(microtype)             Ignoring protrusion settings for this character.
-Package microtype Info: Character `AE ' is missing
-(microtype)             in font `OT1/txr/m/it/7'.
-(microtype)             Ignoring protrusion settings for this character.
-Package microtype Info: Character `OE ' is missing
-(microtype)             in font `OT1/txr/m/it/7'.
-(microtype)             Ignoring protrusion settings for this character.
 LaTeX Font Info:    Font shape `T1/mak/m/n' will be
 (Font)              scaled to size 6.29996pt on input line 24.
 LaTeX Font Info:    Font shape `T1/mak/bx/n' will be
 (Font)              scaled to size 8.09995pt on input line 26.
+[35]) (./chapter02.tex [36] [37] [38
 
-LaTeX Warning: Reference `figure:informal-tangent' on page 31 undefined on inpu
-t line 32.
-
-) (./chapter02.tex [31] [32]
+]
 Chapter 3.
 (./section02.01.tex
 Package mdframed Info: mdframed works in twoside mode on input line 10.
 
 Overfull \hbox (7.74611pt too wide) in paragraph at lines 28--28
-[] 
+[] |
  []
 
 Package mdframed Info: Box was splittet wrong
 (mdframed)              on input line 37.
+[39]
 
-LaTeX Warning: Reference `mdf@pagelabel-47' on page 33 undefined on input line 
-37.
+LaTeX Warning: Reference `fig:chords' on page 40 undefined on input line 55.
 
-[33
-
-]
-
-LaTeX Warning: Reference `mdf@pagelabel-48' on page 34 undefined on input line 
-37.
-
-
-LaTeX Warning: Reference `fig:chords' on page 34 undefined on input line 55.
-
-[34]
+[40]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [35]
-[36]
-
-LaTeX Warning: Reference `ex:derivative of a line' on page 37 undefined on inpu
-t line 199.
-
-
+ [41]
+[42] [43]
 Underfull \hbox (badness 10000) in paragraph at lines 278--278
 
  []
 
-[37] [38]) (./section02.02.tex
+[44] [45]) (./section02.02.tex
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [39]
-[40]
+ [46]
+[47] [48]
 Underfull \hbox (badness 10000) in paragraph at lines 143--143
 
  []
 
 
-LaTeX Warning: Reference `fig:data plot' on page 41 undefined on input line 143
+LaTeX Warning: Reference `fig:data plot' on page 49 undefined on input line 143
 .
 
-[41] [42]) (./section02.03.tex
+[49]) (./section02.03.tex
 Package mdframed Info: mdframed works in twoside mode on input line 30.
-
-
-LaTeX Warning: Reference `mdf@pagelabel-49' on page 43 undefined on input line 
-50.
-
-[43]
-
-LaTeX Warning: Reference `mdf@pagelabel-50' on page 44 undefined on input line 
-50.
-
-[44]
+ [50] [51]
 Package mdframed Info: mdframed works in twoside mode on input line 130.
 Package mdframed Info: Not enough space on this page on input line 138.
- [45]
+ [52]
 Package mdframed Info: Not enough space on this page on input line 138.
-
-
-LaTeX Warning: Reference `mdf@pagelabel-51' on page 46 undefined on input line 
-138.
-
-[46]
+ [53]
 Package mdframed Info: mdframed works in twoside mode on input line 193.
-
-
-LaTeX Warning: Reference `mdf@pagelabel-52' on page 47 undefined on input line 
-232.
-
-[47]
-
-LaTeX Warning: Reference `mdf@pagelabel-53' on page 48 undefined on input line 
-232.
-
+ [54]
 Package mdframed Info: mdframed works in twoside mode on input line 248.
-
-LaTeX Warning: Reference `mdf@pagelabel-54' on page 48 undefined on input line 
-251.
-
 Package mdframed Info: mdframed works in twoside mode on input line 253.
 Package mdframed Info: Box was splittet wrong
 (mdframed)              on input line 305.
-
-LaTeX Warning: Reference `mdf@pagelabel-55' on page 48 undefined on input line 
-305.
-
-[48]
-
-LaTeX Warning: Reference `mdf@pagelabel-56' on page 49 undefined on input line 
-305.
-
+Package mdframed Info: Box was splittet wrong
+(mdframed)              on input line 305.
+Package mdframed Info: Box was splittet wrong
+(mdframed)              on input line 305.
+ [55]
 Package mdframed Info: mdframed works in twoside mode on input line 310.
 
-Overfull \vbox (43.74387pt too high) detected at line 321
+Overfull \vbox (77.86545pt too high) detected at line 321
  []
 
 Package mdframed Info: Box was splittet wrong
 (mdframed)              on input line 321.
 
-Overfull \vbox (72.31584pt too high) detected at line 321
+Overfull \vbox (123.49821pt too high) detected at line 321
  []
 
 
-Overfull \vbox (62.14395pt too high) detected at line 321
- []
-
-Package mdframed Info: Box was splittet wrong
-(mdframed)              on input line 321.
-
-Overfull \vbox (99.91597pt too high) detected at line 321
- []
-
-
-Overfull \vbox (80.54404pt too high) detected at line 321
+Overfull \vbox (96.26553pt too high) detected at line 321
  []
 
 Package mdframed Info: Box was splittet wrong
 (mdframed)              on input line 321.
 
-Overfull \vbox (127.5161pt too high) detected at line 321
+Overfull \vbox (151.09834pt too high) detected at line 321
  []
 
 
-Overfull \vbox (98.94412pt too high) detected at line 321
- []
-
-Package mdframed Info: Box was splittet wrong
-(mdframed)              on input line 321.
-
-Overfull \vbox (155.11623pt too high) detected at line 321
- []
-
-
-Overfull \vbox (117.34421pt too high) detected at line 321
+Overfull \vbox (114.66562pt too high) detected at line 321
  []
 
 Package mdframed Info: Box was splittet wrong
 (mdframed)              on input line 321.
 
-Overfull \vbox (182.71635pt too high) detected at line 321
+Overfull \vbox (178.69847pt too high) detected at line 321
  []
 
 
-Overfull \vbox (135.7443pt too high) detected at line 321
- []
-
-Package mdframed Info: Box was splittet wrong
-(mdframed)              on input line 321.
-
-Overfull \vbox (210.31648pt too high) detected at line 321
- []
-
-
-Overfull \vbox (154.14438pt too high) detected at line 321
+Overfull \vbox (133.0657pt too high) detected at line 321
  []
 
 Package mdframed Info: Box was splittet wrong
 (mdframed)              on input line 321.
 
-Overfull \vbox (237.91661pt too high) detected at line 321
+Overfull \vbox (206.2986pt too high) detected at line 321
  []
 
-[49]
-
-LaTeX Warning: Reference `mdf@pagelabel-57' on page 50 undefined on input line 
-321.
-
+[56]
 Package mdframed Info: mdframed works in twoside mode on input line 330.
 
-Overfull \vbox (35.63701pt too high) detected at line 342
+Overfull \vbox (20.43675pt too high) detected at line 342
  []
 
 Package mdframed Info: Box was splittet wrong
 (mdframed)              on input line 342.
 
-Overfull \vbox (60.15555pt too high) detected at line 342
+Overfull \vbox (37.35516pt too high) detected at line 342
  []
 
 
-Overfull \vbox (54.0371pt too high) detected at line 342
- []
-
-Package mdframed Info: Box was splittet wrong
-(mdframed)              on input line 342.
-
-Overfull \vbox (87.75568pt too high) detected at line 342
- []
-
-
-Overfull \vbox (72.43718pt too high) detected at line 342
+Overfull \vbox (38.83684pt too high) detected at line 342
  []
 
 Package mdframed Info: Box was splittet wrong
 (mdframed)              on input line 342.
 
-Overfull \vbox (115.3558pt too high) detected at line 342
+Overfull \vbox (64.95529pt too high) detected at line 342
  []
 
 
-Overfull \vbox (90.83727pt too high) detected at line 342
- []
-
-Package mdframed Info: Box was splittet wrong
-(mdframed)              on input line 342.
-
-Overfull \vbox (142.95593pt too high) detected at line 342
- []
-
-
-Overfull \vbox (109.23735pt too high) detected at line 342
+Overfull \vbox (57.23692pt too high) detected at line 342
  []
 
 Package mdframed Info: Box was splittet wrong
 (mdframed)              on input line 342.
 
-Overfull \vbox (170.55606pt too high) detected at line 342
+Overfull \vbox (92.55542pt too high) detected at line 342
  []
 
 
-Overfull \vbox (127.63744pt too high) detected at line 342
- []
-
-Package mdframed Info: Box was splittet wrong
-(mdframed)              on input line 342.
-
-Overfull \vbox (198.15619pt too high) detected at line 342
- []
-
-
-Overfull \vbox (146.03752pt too high) detected at line 342
+Overfull \vbox (75.63701pt too high) detected at line 342
  []
 
 Package mdframed Info: Box was splittet wrong
 (mdframed)              on input line 342.
 
-Overfull \vbox (225.75632pt too high) detected at line 342
+Overfull \vbox (120.15555pt too high) detected at line 342
  []
 
 
-Overfull \vbox (164.4376pt too high) detected at line 342
- []
-
-Package mdframed Info: Box was splittet wrong
-(mdframed)              on input line 342.
-
-Overfull \vbox (253.35645pt too high) detected at line 342
- []
-
-
-Overfull \vbox (182.83769pt too high) detected at line 342
+Overfull \vbox (94.0371pt too high) detected at line 342
  []
 
 Package mdframed Info: Box was splittet wrong
 (mdframed)              on input line 342.
 
-Overfull \vbox (280.95657pt too high) detected at line 342
+Overfull \vbox (147.75568pt too high) detected at line 342
  []
 
 
-Overfull \vbox (201.23778pt too high) detected at line 342
- []
-
-Package mdframed Info: Box was splittet wrong
-(mdframed)              on input line 342.
-
-Overfull \vbox (308.5567pt too high) detected at line 342
- []
-
-
-Overfull \vbox (219.63786pt too high) detected at line 342
+Overfull \vbox (112.43718pt too high) detected at line 342
  []
 
 Package mdframed Info: Box was splittet wrong
 (mdframed)              on input line 342.
 
-Overfull \vbox (336.15683pt too high) detected at line 342
+Overfull \vbox (175.3558pt too high) detected at line 342
  []
 
 
-Overfull \vbox (238.03795pt too high) detected at line 342
- []
-
-Package mdframed Info: Box was splittet wrong
-(mdframed)              on input line 342.
-
-Overfull \vbox (363.75696pt too high) detected at line 342
- []
-
-
-Overfull \vbox (256.43803pt too high) detected at line 342
+Overfull \vbox (130.83727pt too high) detected at line 342
  []
 
 Package mdframed Info: Box was splittet wrong
 (mdframed)              on input line 342.
 
-Overfull \vbox (391.35709pt too high) detected at line 342
+Overfull \vbox (202.95593pt too high) detected at line 342
  []
 
-[50]
 
-LaTeX Warning: Reference `mdf@pagelabel-58' on page 51 undefined on input line 
-342.
+Overfull \vbox (149.23735pt too high) detected at line 342
+ []
 
+Package mdframed Info: Box was splittet wrong
+(mdframed)              on input line 342.
+
+Overfull \vbox (230.55606pt too high) detected at line 342
+ []
+
+
+Overfull \vbox (167.63744pt too high) detected at line 342
+ []
+
+Package mdframed Info: Box was splittet wrong
+(mdframed)              on input line 342.
+
+Overfull \vbox (258.15619pt too high) detected at line 342
+ []
+
+
+Overfull \vbox (186.03752pt too high) detected at line 342
+ []
+
+Package mdframed Info: Box was splittet wrong
+(mdframed)              on input line 342.
+
+Overfull \vbox (285.75632pt too high) detected at line 342
+ []
+
+
+Overfull \vbox (204.4376pt too high) detected at line 342
+ []
+
+Package mdframed Info: Box was splittet wrong
+(mdframed)              on input line 342.
+
+Overfull \vbox (313.35645pt too high) detected at line 342
+ []
+
+
+Overfull \vbox (222.83769pt too high) detected at line 342
+ []
+
+Package mdframed Info: Box was splittet wrong
+(mdframed)              on input line 342.
+
+Overfull \vbox (340.95657pt too high) detected at line 342
+ []
+
+
+Overfull \vbox (241.23778pt too high) detected at line 342
+ []
+
+Package mdframed Info: Box was splittet wrong
+(mdframed)              on input line 342.
+
+Overfull \vbox (368.5567pt too high) detected at line 342
+ []
+
+
+Overfull \vbox (259.63786pt too high) detected at line 342
+ []
+
+Package mdframed Info: Box was splittet wrong
+(mdframed)              on input line 342.
+
+Overfull \vbox (396.15683pt too high) detected at line 342
+ []
+
+[57]
 Package mdframed Info: mdframed works in twoside mode on input line 358.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [51]
+ [58]
 Package mdframed Info: Not enough space on this page on input line 366.
-
-
-LaTeX Warning: Reference `mdf@pagelabel-59' on page 52 undefined on input line 
-366.
-
-
-LaTeX Warning: Reference `thm:properties of limits' on page 52 undefined on inp
-ut line 368.
-
-
-LaTeX Warning: Reference `thm:properties of limits' on page 52 undefined on inp
-ut line 379.
-
 Package mdframed Info: mdframed works in twoside mode on input line 381.
-
-LaTeX Warning: Reference `mdf@pagelabel-60' on page 52 undefined on input line 
-384.
-
 Package mdframed Info: mdframed works in twoside mode on input line 391.
-Package mdframed Info: Box was splittet wrong
-(mdframed)              on input line 395.
-
-LaTeX Warning: Reference `mdf@pagelabel-61' on page 52 undefined on input line 
-395.
-
-[52] [53]
-
-LaTeX Warning: Reference `mdf@pagelabel-62' on page 54 undefined on input line 
-395.
-
-
-LaTeX Warning: Reference `sec:slope of a function' on page 54 undefined on inpu
-t line 400.
-
-Package mdframed Info: mdframed works in twoside mode on input line 403.
-
-LaTeX Warning: Reference `mdf@pagelabel-63' on page 54 undefined on input line 
-413.
-
-Package mdframed Info: mdframed works in twoside mode on input line 429.
-[54]
-
-LaTeX Warning: Reference `mdf@pagelabel-64' on page 55 undefined on input line 
-434.
-
-Package mdframed Info: mdframed works in twoside mode on input line 441.
-
-LaTeX Warning: Reference `mdf@pagelabel-65' on page 55 undefined on input line 
-451.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 567--567
-
- []
-
-[55]
-
-LaTeX Warning: Reference `exam:epsilon-delta proof' on page 56 undefined on inp
-ut line 567.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 567--567
-
- []
-
-[56]) (./section02.04.tex [57]
-Package mdframed Info: mdframed works in twoside mode on input line 60.
-
-
-LaTeX Warning: Reference `mdf@pagelabel-66' on page 58 undefined on input line 
-73.
-
-Package mdframed Info: mdframed works in twoside mode on input line 76.
-
-LaTeX Warning: Reference `mdf@pagelabel-67' on page 58 undefined on input line 
-91.
-
-[58]
-
-LaTeX Warning: Reference `mdf@pagelabel-68' on page 59 undefined on input line 
-91.
-
-Package mdframed Info: mdframed works in twoside mode on input line 113.
-
-LaTeX Warning: Reference `mdf@pagelabel-69' on page 59 undefined on input line 
-131.
 
 [59]
+Package mdframed Info: mdframed works in twoside mode on input line 403.
+Package mdframed Info: mdframed works in twoside mode on input line 429.
+ [60]
+Package mdframed Info: mdframed works in twoside mode on input line 441.
+ [61]
+Underfull \hbox (badness 10000) in paragraph at lines 567--567
 
-LaTeX Warning: Reference `mdf@pagelabel-70' on page 60 undefined on input line 
-131.
+ []
 
+
+Underfull \hbox (badness 10000) in paragraph at lines 567--567
+
+ []
+
+[62]) (./section02.04.tex [63]
+Package mdframed Info: mdframed works in twoside mode on input line 60.
+Package mdframed Info: mdframed works in twoside mode on input line 76.
+ [64]
+Package mdframed Info: mdframed works in twoside mode on input line 113.
+ [65]
 Package mdframed Info: mdframed works in twoside mode on input line 134.
 
-LaTeX Warning: Reference `fig:cusp' on page 60 undefined on input line 136.
 
+LaTeX Warning: Reference `fig:cusp' on page 66 undefined on input line 136.
 
-LaTeX Warning: Reference `mdf@pagelabel-71' on page 60 undefined on input line 
-148.
-
-
+[66]
 Underfull \hbox (badness 10000) in paragraph at lines 285--285
 
  []
 
-[60] [61]) (./section02.05.tex
+[67]) (./section02.05.tex
 
-LaTeX Warning: Reference `sec:functions' on page 62 undefined on input line 5.
+LaTeX Warning: Reference `sec:functions' on page 68 undefined on input line 5.
 
 
-LaTeX Warning: Reference `fig:function types' on page 62 undefined on input lin
+LaTeX Warning: Reference `fig:function types' on page 68 undefined on input lin
 e 9.
 
 
-LaTeX Warning: Reference `fig:function types' on page 62 undefined on input lin
+LaTeX Warning: Reference `fig:function types' on page 68 undefined on input lin
 e 114.
 
 Package mdframed Info: mdframed works in twoside mode on input line 127.
-
-LaTeX Warning: Reference `mdf@pagelabel-72' on page 62 undefined on input line 
-129.
-
 Package mdframed Info: mdframed works in twoside mode on input line 145.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [62]
+ [68]
 Package mdframed Info: Not enough space on this page on input line 147.
-
-
-LaTeX Warning: Reference `mdf@pagelabel-73' on page 63 undefined on input line 
-147.
-
 Package mdframed Info: mdframed works in twoside mode on input line 150.
-
-LaTeX Warning: Reference `mdf@pagelabel-74' on page 63 undefined on input line 
-152.
-
 Package mdframed Info: mdframed works in twoside mode on input line 168.
-
-LaTeX Warning: Reference `mdf@pagelabel-75' on page 63 undefined on input line 
-170.
-
 Package mdframed Info: mdframed works in twoside mode on input line 172.
-
-LaTeX Warning: Reference `mdf@pagelabel-76' on page 63 undefined on input line 
-175.
-
 Package mdframed Info: mdframed works in twoside mode on input line 186.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [63]
+ [69]
 Package mdframed Info: Not enough space on this page on input line 189.
-
-
-LaTeX Warning: Reference `mdf@pagelabel-77' on page 64 undefined on input line 
-189.
-
 Package mdframed Info: mdframed works in twoside mode on input line 195.
-
-LaTeX Warning: Reference `thm:properties of limits' on page 64 undefined on inp
-ut line 198.
-
-
-LaTeX Warning: Reference `mdf@pagelabel-78' on page 64 undefined on input line 
-201.
-
 Package mdframed Info: mdframed works in twoside mode on input line 206.
 
-LaTeX Warning: Reference `mdf@pagelabel-79' on page 64 undefined on input line 
-215.
-
-
+[70]
 Underfull \hbox (badness 10000) in paragraph at lines 262--262
 
  []
 
 
-LaTeX Warning: Reference `fig:function types' on page 64 undefined on input lin
+LaTeX Warning: Reference `fig:function types' on page 71 undefined on input lin
 e 262.
 
-[64] [65])) (./chapter03.tex [66
+[71])) (./chapter03.tex [72
 
 ]
 Chapter 4.
 (./section03.01.tex
 Package mdframed Info: mdframed works in twoside mode on input line 23.
- [67]
+ [73]
 Package mdframed Info: Not enough space on this page on input line 33.
-
-
-LaTeX Warning: Reference `mdf@pagelabel-80' on page 68 undefined on input line 
-33.
-
-[68]
+ [74]
 Package mdframed Info: mdframed works in twoside mode on input line 77.
-
-
-LaTeX Warning: Reference `mdf@pagelabel-81' on page 69 undefined on input line 
-79.
-
-[69]
+ [75] [76]
 Underfull \hbox (badness 10000) in paragraph at lines 148--148
 
  []
 
-[70]) (./section03.02.tex
+[77]) (./section03.02.tex
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [71]
+ [78]
 Package mdframed Info: mdframed works in twoside mode on input line 56.
 
 Overfull \hbox (52.07771pt too wide) detected at line 59
@@ -3062,12 +2630,8 @@ T1/zplm/m/n/10 ) = []\OML/mak/b/it/10 x[] \OT1/zplm/m/n/10 + [](\T1/mak/m/n/10
 /zplm/m/n/10 ) = \T1/mak/m/n/10 5\OML/mak/b/it/10 x[] \OT1/zplm/m/n/10 + \T1/ma
 k/m/n/10 5 \OMS/txsy/m/n/10 ^^A \T1/mak/m/n/10 2\OML/mak/b/it/10 x[] \OT1/zplm/
 m/n/10 = \T1/mak/m/n/10 5\OML/mak/b/it/10 x[] \OT1/zplm/m/n/10 + \T1/mak/m/n/10
- 10\OML/mak/b/it/10 x\OT1/txr/m/n/10 .
+ 10\OML/mak/b/it/10 x\OT1/txr/m/n/10 .|
  []
-
-
-LaTeX Warning: Reference `mdf@pagelabel-82' on page 72 undefined on input line 
-60.
 
 Package mdframed Info: mdframed works in twoside mode on input line 67.
 
@@ -3077,123 +2641,65 @@ Overfull \hbox (3.83095pt too wide) detected at line 70
 10 2\OML/mak/b/it/10 x[] \OT1/zplm/m/n/10 + \T1/mak/m/n/10 6\OML/mak/b/it/10 x 
 \OMS/txsy/m/n/10 ^^@ \T1/mak/m/n/10 7\OT1/zplm/m/n/10 ) = \OMS/txsy/m/n/10 ^^@\
 T1/mak/m/n/10 12\OML/mak/b/it/10 x[] \OMS/txsy/m/n/10 ^^@ \T1/mak/m/n/10 4\OML/
-mak/b/it/10 x \OT1/zplm/m/n/10 + \T1/mak/m/n/10 6\OT1/txr/m/n/10 .
+mak/b/it/10 x \OT1/zplm/m/n/10 + \T1/mak/m/n/10 6\OT1/txr/m/n/10 .|
  []
 
-
-LaTeX Warning: Reference `mdf@pagelabel-83' on page 72 undefined on input line 
-71.
-
-
+[79]
 Underfull \hbox (badness 10000) in paragraph at lines 144--144
 
  []
 
-[72]
-
-LaTeX Warning: Reference `sec:slope of a function' on page 73 undefined on inpu
-t line 144.
-
-[73]) (./section03.03.tex
+[80]) (./section03.03.tex
 Overfull \hbox (8.0707pt too wide) in paragraph at lines 32--32
-[] 
+[] |
  []
-
-
-LaTeX Warning: Reference `sec:adjectives for functions' on page 74 undefined on
- input line 43.
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [74]
-Package mdframed Info: mdframed works in twoside mode on input line 93.
-
-Overfull \hbox (8.30383pt too wide) detected at line 99
-\OML/mak/b/it/10 f[]\OT1/zplm/m/n/10 (\OML/mak/b/it/10 x\OT1/zplm/m/n/10 ) = \O
-ML/mak/b/it/10 x[][] \OT1/zplm/m/n/10 + \T1/mak/m/n/10 2\OML/mak/b/it/10 x[] \O
-T1/zplm/m/n/10 = [] = []\OT1/txr/m/n/10 .
- []
-
-
-LaTeX Warning: Reference `mdf@pagelabel-84' on page 75 undefined on input line 
-100.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 178--178
-
- []
-
-[75] [76] [77]) (./section03.04.tex
-Overfull \hbox (25.27937pt too wide) detected at line 26
-[][] \OT1/zplm/m/n/10 = \OML/mak/b/it/10 f\OT1/zplm/m/n/10 (\OML/mak/b/it/10 x\
-OT1/zplm/m/n/10 )[] + \OML/mak/b/it/10 f[]\OT1/zplm/m/n/10 (\OML/mak/b/it/10 x\
-OT1/zplm/m/n/10 )[] = [] = []\OT1/txr/m/n/10 .
- []
-
-Package mdframed Info: mdframed works in twoside mode on input line 29.
-
-LaTeX Warning: Reference `mdf@pagelabel-85' on page 78 undefined on input line 
-35.
-
-Package mdframed Info: mdframed works in twoside mode on input line 43.
-[78]
-
-LaTeX Warning: Reference `mdf@pagelabel-86' on page 79 undefined on input line 
-61.
-
-[79]
-Underfull \hbox (badness 10000) in paragraph at lines 165--165
-
- []
-
-[80]) (./section03.05.tex
-
-LaTeX Warning: Reference `sec:limits' on page 81 undefined on input line 9.
-
-Package mdframed Info: mdframed works in twoside mode on input line 19.
-
-LaTeX Warning: Reference `mdf@pagelabel-87' on page 81 undefined on input line 
-26.
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [81]
-Package mdframed Info: mdframed works in twoside mode on input line 81.
+Package mdframed Info: mdframed works in twoside mode on input line 93.
+
+Overfull \hbox (8.30383pt too wide) detected at line 99
+\OML/mak/b/it/10 f[]\OT1/zplm/m/n/10 (\OML/mak/b/it/10 x\OT1/zplm/m/n/10 ) = \O
+ML/mak/b/it/10 x[][] \OT1/zplm/m/n/10 + \T1/mak/m/n/10 2\OML/mak/b/it/10 x[] \O
+T1/zplm/m/n/10 = [] = []\OT1/txr/m/n/10 .|
+ []
 
 [82]
+Underfull \hbox (badness 10000) in paragraph at lines 178--178
+
+ []
+
+[83] [84]) (./section03.04.tex
+Overfull \hbox (25.27937pt too wide) detected at line 26
+[][] \OT1/zplm/m/n/10 = \OML/mak/b/it/10 f\OT1/zplm/m/n/10 (\OML/mak/b/it/10 x\
+OT1/zplm/m/n/10 )[] + \OML/mak/b/it/10 f[]\OT1/zplm/m/n/10 (\OML/mak/b/it/10 x\
+OT1/zplm/m/n/10 )[] = [] = []\OT1/txr/m/n/10 .|
+ []
+
+Package mdframed Info: mdframed works in twoside mode on input line 29.
+Package mdframed Info: mdframed works in twoside mode on input line 43.
+[85] [86] [87]
+Underfull \hbox (badness 10000) in paragraph at lines 165--165
+
+ []
+
+[88]) (./section03.05.tex
+Package mdframed Info: mdframed works in twoside mode on input line 19.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [89]
+Package mdframed Info: mdframed works in twoside mode on input line 81.
+
+[90]
 Package mdframed Info: Not enough space on this page on input line 92.
-
-
-LaTeX Warning: Reference `mdf@pagelabel-88' on page 83 undefined on input line 
-92.
-
 Package mdframed Info: mdframed works in twoside mode on input line 95.
-
-LaTeX Warning: Reference `mdf@pagelabel-89' on page 83 undefined on input line 
-103.
-
 Package mdframed Info: mdframed works in twoside mode on input line 110.
-
-LaTeX Warning: Reference `mdf@pagelabel-90' on page 83 undefined on input line 
-135.
-
-[83]
-
-LaTeX Warning: Reference `mdf@pagelabel-91' on page 84 undefined on input line 
-135.
-
+ [91]
 Package mdframed Info: mdframed works in twoside mode on input line 138.
-
-LaTeX Warning: Reference `mdf@pagelabel-92' on page 84 undefined on input line 
-160.
-
-[84]
-
-LaTeX Warning: Reference `mdf@pagelabel-93' on page 85 undefined on input line 
-160.
-
+ [92]
 Package mdframed Info: mdframed works in twoside mode on input line 166.
 
 Overfull \vbox (3.37129pt too high) detected at line 180
@@ -3365,47 +2871,46 @@ Package mdframed Info: Box was splittet wrong
 Overfull \vbox (453.35902pt too high) detected at line 180
  []
 
-[85]
+[93] [94]
+Underfull \hbox (badness 10000) in paragraph at lines 364--364
 
-LaTeX Warning: Reference `mdf@pagelabel-94' on page 86 undefined on input line 
-180.
+ []
+
+[95]
+Overfull \hbox (34.75555pt too wide) in paragraph at lines 364--364
+[]\T1/mak/m/n/10 Find an equa-tion for the tan-gent line to $[]$ at $\OT1/zplm/
+m/n/10 (\T1/mak/m/n/10 1\OT1/txr/m/n/10 , []\OT1/zplm/m/n/10 )$\T1/mak/m/n/10 .
+|
+ []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 364--364
 
  []
 
-[86] [87] [88])) (./textbook.ans)
+[96])) (./textbook.ans)
 No file textbook.ind.
 
 Package bibentry Warning: You have used \nobibliography* 
 (bibentry)                without a following \bibliography.
 (bibentry)                You may not be able to run BibTeX.
 
-\tf@thm=\write8
-\openout8 = `textbook.thm'.
+\tf@thm=\write7
+\openout7 = `textbook.thm'.
 
-\tf@loe=\write9
-\openout9 = `textbook.loe'.
+\tf@loe=\write8
+\openout8 = `textbook.loe'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 211.
-[89
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 210.
+[97
 
 
 ]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 211.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 210.
  (./textbook.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 211.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 211.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 210.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 210.
 
-
-Package rerunfilecheck Warning: File `textbook.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `textbook.out':
-(rerunfilecheck)             Before: 219B51D9534ECB9701C81F2839C3F0A7;940
-(rerunfilecheck)             After:  CDA36C4A9C3487B1A4613C273C0E141F;2994.
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
@@ -3415,16 +2920,16 @@ LaTeX Warning: There were undefined references.
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 211.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 210.
  ) 
 Here is how much of TeX's memory you used:
- 38682 strings out of 493481
- 781694 string characters out of 3143393
- 1609880 words of memory out of 3000000
- 40335 multiletter control sequences out of 15000+200000
- 103566 words of font info for 419 fonts, out of 3000000 for 9000
+ 37727 strings out of 493481
+ 769849 string characters out of 3143393
+ 1600111 words of memory out of 3000000
+ 40150 multiletter control sequences out of 15000+200000
+ 83636 words of font info for 231 fonts, out of 3000000 for 9000
  965 hyphenation exceptions out of 8191
- 80i,21n,91p,952b,2138s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 80i,21n,91p,952b,2128s stack positions out of 5000i,500n,10000p,200000b,50000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}{/usr/share/texliv
 e/texmf-dist/fonts/enc/dvips/kerkis/kerkisec.enc}{/usr/share/texlive/texmf-dist
 /fonts/enc/dvips/kerkis/kerkisecsc.enc}{/usr/share/texlive/texmf-dist/fonts/enc
@@ -3447,10 +2952,10 @@ s/type1/public/txfonts/txsy.pfb></usr/share/texlive/texmf-dist/fonts/type1/publ
 ic/txfonts/txsyc.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/courier/ucr
 r8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb>
-Output written on textbook.pdf (89 pages, 539741 bytes).
+Output written on textbook.pdf (97 pages, 514922 bytes).
 PDF statistics:
- 990 PDF objects out of 1000 (max. 8388607)
- 854 compressed objects within 9 object streams
- 448 named destinations out of 1000 (max. 500000)
- 76453 words of extra memory for PDF output out of 89155 (max. 10000000)
+ 424 PDF objects out of 1000 (max. 8388607)
+ 286 compressed objects within 3 object streams
+ 0 named destinations out of 1000 (max. 500000)
+ 109 words of extra memory for PDF output out of 10000 (max. 10000000)
 

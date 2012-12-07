@@ -110,7 +110,8 @@
 \renewcommand{\epsilon}{\varepsilon}
 \renewcommand{\l}{\ell}
 \newcommand{\ddx}{\dfrac{d}{dx}}
-
+\everymath{\displaystyle}
+\newcommand{\R}{\mathbb{R}}
 
 
 
@@ -319,6 +320,7 @@ skipabove=\baselineskip]{warning}%
 
 \newcounter{exercise}
 \NewEnviron{exercises}{%
+  \newpage
   \subsection*{Exercises for Section \arabic{chapter}.\arabic{section}}
 \vspace{-15pt}
 

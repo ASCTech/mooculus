@@ -19,7 +19,7 @@ $2$, $f(x)$ approaches $1$. We write this:
 \[
 \text{As $x \to 2$, $f(x) \to 1$}\qquad\text{or}\qquad \lim_{x\to 2} f(x) = 1.
 \]
-Intuitively, $\ds\lim_{x\to a} f(x) = L$ when the value of $f(x)$ can
+Intuitively, $\lim_{x\to a} f(x) = L$ when the value of $f(x)$ can
 be made arbitrarily close to $L$ by making $x$ sufficiently close, but
 not equal to, $a$.  This leads us to the formal definition of a
 \textit{limit}.
@@ -66,7 +66,7 @@ not equal to, $a$.  This leads us to the formal definition of a
 \label{table:(x^2 - 3x + 2)/(x-2)}
 \end{margintable}
 
-\marginnote[1in]{ Equivalently, $\ds \lim_{x\to a}f(x)=L$, if for
+\marginnote[1in]{ Equivalently, $\lim_{x\to a}f(x)=L$, if for
   every $\epsilon>0$ there is a $\delta > 0$ so that whenever $x\ne a$
   and $a- \delta < x < a+ \delta$, we have $L-\epsilon<
   f(x)<L+\epsilon$.}
@@ -194,7 +194,7 @@ the right of $2$) such that
 \]
 We've illustrated this in
 Figure~\ref{plot:greatist-integer}. Moreover, no matter what value one
-chooses for $\ds \lim_{x\to 2} f(x)$, we will always have a similar
+chooses for $\lim_{x\to 2} f(x)$, we will always have a similar
 issue.
 \end{solution}
 \marginnote[-1in]{With the example of $f(x) = \lfloor x \rfloor$, we
@@ -281,7 +281,7 @@ From the plot of $f(x)$, see Figure~\ref{plot:greatist-integer}, we see that
 \[
 \lim_{x\to 2-} f(x)=1, \qquad\text{and}\quad \lim_{x\to 2+} f(x) = 2.
 \]
-Since these limits are different, $\ds\lim_{x\to 2} f(x)$ does not exist.
+Since these limits are different, $\lim_{x\to 2} f(x)$ does not exist.
 \end{solution}
 
 \break
@@ -321,18 +321,18 @@ Since these limits are different, $\ds\lim_{x\to 2} f(x)$ does not exist.
 \end{marginfigure}
 \begin{enumerate}
 \begin{multicols}{3}
-\item $\ds \lim_{x\to 4} f(x)$  
-\item $\ds \lim_{x\to -3} f(x)$  
-\item $\ds \lim_{x\to 0} f(x)$ 
-\item $\ds \lim_{x\to 0-} f(x)$  
-\item $\ds \lim_{x\to 0+} f(x)$  
-\item $\ds f(-2)$  
-\item $\ds \lim_{x\to 2-} f(x)$  
-\item $\ds \lim_{x\to -2-} f(x)$  
-\item $\ds \lim_{x\to 0} f(x+1)$  
-\item $\ds f(0)$ 
-\item $\ds \lim_{x\to 1-} f(x-4)$  
-\item $\ds \lim_{x\to 0+} f(x-2)$
+\item $\lim_{x\to 4} f(x)$  
+\item $\lim_{x\to -3} f(x)$  
+\item $\lim_{x\to 0} f(x)$ 
+\item $\lim_{x\to 0-} f(x)$  
+\item $\lim_{x\to 0+} f(x)$  
+\item $f(-2)$  
+\item $\lim_{x\to 2-} f(x)$  
+\item $\lim_{x\to -2-} f(x)$  
+\item $\lim_{x\to 0} f(x+1)$  
+\item $f(0)$ 
+\item $\lim_{x\to 1-} f(x-4)$  
+\item $\lim_{x\to 0+} f(x-2)$
 \end{multicols}  
 \end{enumerate}
 \begin{answer} (a) $8$, (b) $6$, (c) dne, (d) $-2$, (e) $-1$, (f) $8$,
@@ -342,23 +342,23 @@ Since these limits are different, $\ds\lim_{x\to 2} f(x)$ does not exist.
 
 
 \begin{exercise} 
-Use a table and a calculator to estimate $\ds\lim_{x\to 0} {\sin
+Use a table and a calculator to estimate $\lim_{x\to 0} {\sin
   x\over x}$.
 \end{exercise}
 
 \begin{exercise} 
-Use a table and a calculator to estimate $\ds\lim_{x\to
+Use a table and a calculator to estimate $\lim_{x\to
   0}\frac{\tan(3x)}{\tan(5x)}$.
 \end{exercise}
 
 \begin{exercise} 
-Use a table and a calculator to estimate $\ds\lim_{x\to 0}
+Use a table and a calculator to estimate $\lim_{x\to 0}
 \frac{2^x-1}{x}$.
 \end{exercise}
 
 
 \begin{exercise} 
-Sketch a plot of $f(x) = \dfrac{x}{|x|}$ and explain why $\ds
+Sketch a plot of $f(x) = \dfrac{x}{|x|}$ and explain why $
 \lim_{x\to 0} \frac{x}{|x|}$ does not exist.
 \end{exercise}
 
@@ -377,7 +377,7 @@ of the following form
 \end{array}
 \]
 where $d = 1,3,7$. What do you notice? How do you reconcile the
-entries in your tables with the value of $\ds\lim_{x\to 0} f(x)$?
+entries in your tables with the value of $\lim_{x\to 0} f(x)$?
 \end{exercise}
 \end{exercises}
 
@@ -399,7 +399,7 @@ entries in your tables with the value of $\ds\lim_{x\to 0} f(x)$?
 
 
 Now we are going to get our hands dirty, and really use the definition
-of a limit.\index{limit!definition}\marginnote{Recall, $\ds \lim_{x\to
+of a limit.\index{limit!definition}\marginnote{Recall, $\lim_{x\to
     a}f(x)=L$, if for every $\epsilon>0$ there is a $\delta > 0$ so
   that whenever $0< |x -a|+ \delta$, we have $|f(x)- L|<\epsilon$.}
 
@@ -428,10 +428,10 @@ of a limit.\index{limit!definition}\marginnote{Recall, $\ds \lim_{x\to
         \end{axis}
 \end{tikzpicture}
 \label{plot:x^2 lim dfn}
-\caption{The $(\epsilon,\delta)$-criterion for $\ds\lim_{x\to 2}
+\caption{The $(\epsilon,\delta)$-criterion for $\lim_{x\to 2}
   x^2=4$. Here $\delta= \min\left(\dfrac{\epsilon}{5},1\right)$.}
 \end{marginfigure}
-\begin{example} Show that $\ds \lim_{x\to 2} x^2=4$.
+\begin{example} Show that $\lim_{x\to 2} x^2=4$.
 \end{example}
 \begin{solution}
 We want to show that for any given $\epsilon>0$, we can find a
@@ -475,7 +475,7 @@ As you work with limits, you find that you need to do the same
 procedures again and again. The next theorems will expedite this
 process.
 \begin{theorem} 
-Suppose $\ds \lim_{x\to a} f(x)=L$ and $\ds \lim_{x\to a}g(x)=M$. Then
+Suppose $\lim_{x\to a} f(x)=L$ and $\lim_{x\to a}g(x)=M$. Then
 \[
 \lim_{x\to a} f(x)g(x) = LM.
 \]
@@ -501,7 +501,7 @@ Here we use an algebraic trick, add $0 = -f(x)M+f(x)M$:
 &\le |f(x)(g(x)-M)|+|(f(x)-L)M| \\
 &=|f(x)||g(x)-M|+|f(x)-L||M|.
 \end{align*}
-Since $\ds \lim_{x\to a}f(x) =L$, there is a value $\delta_1$ so that
+Since $\lim_{x\to a}f(x) =L$, there is a value $\delta_1$ so that
 $0<|x-a|<\delta_1$ implies $|f(x)-L|<|\epsilon/(2M)|$. This means that
 $0<|x-a|<\delta_1$ implies $|f(x)-L||M|< \epsilon/2$. 
 \[
@@ -531,7 +531,7 @@ so
 &={\epsilon\over 2}+{\epsilon\over 2}=\epsilon.
 \end{align*}
 This is just what we needed, so by the definition of a limit,
-$\ds \lim_{x\to a}f(x)g(x)=LM$.
+$\lim_{x\to a}f(x)g(x)=LM$.
 \end{proof}
 
 
@@ -539,18 +539,17 @@ $\ds \lim_{x\to a}f(x)g(x)=LM$.
 Another useful way to put functions together is
 composition\index{composition of functions}. If $f(x)$ and $g(x)$ are
 functions, we can form two functions by composition: $f(g(x))$ and
-$g(f(x))$. For example, if $\ds f(x)=\sqrt{x}$ and $\ds \ds
-g(x)=x^2+5$, then $\ds f(g(x))=\sqrt{x^2+5}$ and $\ds
-g(f(x))=(\sqrt{x})^2+5=x+5$.  Here is a companion to
-theorem~\xrefn{thm:properties of limits} for composition:
+$g(f(x))$. For example, if $f(x)=\sqrt{x}$ and $g(x)=x^2+5$, then
+$f(g(x))=\sqrt{x^2+5}$ and $g(f(x))=(\sqrt{x})^2+5=x+5$.  Here is a
+companion to theorem~\xrefn{thm:properties of limits} for composition:
 
-\begin{theorem} Suppose that $\ds \lim_{x\to a}g(x)=L$ and $\ds \lim_{x\to L}f(x)=f(L)$. Then
+\begin{theorem} Suppose that $\lim_{x\to a}g(x)=L$ and $\lim_{x\to L}f(x)=f(L)$. Then
 $$\lim_{x\to a} f(g(x)) = f(L).$$
 \label{thm:limit of composition}
 \end{theorem}
 
 Note the special form of the condition on $f$: it is not enough to
-know that $\ds\lim_{x\to L}f(x) = M$, though it is a bit tricky to see
+know that $\lim_{x\to L}f(x) = M$, though it is a bit tricky to see
 why. Many of the most familiar functions do have this property, and
 this theorem can therefore be applied. For example:
 
@@ -573,31 +572,31 @@ This theorem is not too difficult to prove from the definition of limit.
 
 
 \begin{exercise} 
-Use the definition of limits to explain why $\ds\lim _{x\to 0 } x\sin
+Use the definition of limits to explain why $\lim _{x\to 0 } x\sin
 \left( {1\over x}\right) = 0$.  Hint: Use the fact that $|\sin a |< 1
 $ for any real number $a$.
 \begin{answer} $0$
 \end{answer}\end{exercise}
 
 \begin{exercise} 
-Use the definition of limits to explain why $\ds \lim_{x\to 4} (2x-5)
+Use the definition of limits to explain why $\lim_{x\to 4} (2x-5)
 = 3$.
 \end{exercise}
 
 
 
 \begin{exercise} 
-For each of the following limits, $\ds \lim_{x\to a} f(x) =L$, use a
+For each of the following limits, $\lim_{x\to a} f(x) =L$, use a
 graphing device to find $\delta$ such that $0<|x -a|<\delta$ implies
 that $|f(x)-L|<\epsilon$ where $\epsilon = .1$.
 \begin{enumerate}
 \begin{multicols}{3}
-\item $\ds \lim_{x\to 2}(3x+1) = 7$  
-\item $\ds \lim_{x\to 1} (x^2+2) = 3$  
-\item $\ds \lim_{x\to \pi} \sin(x) = 0$  
-\item $\ds \lim_{x\to 0} \tan(x) = 0$
-\item $\ds \lim_{x\to 1} \sqrt{3x+1} = 2$
-\item $\ds \lim_{x\to -2} \sqrt[3]{1-4x} = 3$
+\item $\lim_{x\to 2}(3x+1) = 7$  
+\item $\lim_{x\to 1} (x^2+2) = 3$  
+\item $\lim_{x\to \pi} \sin(x) = 0$  
+\item $\lim_{x\to 0} \tan(x) = 0$
+\item $\lim_{x\to 1} \sqrt{3x+1} = 2$
+\item $\lim_{x\to -2} \sqrt[3]{1-4x} = 3$
 \end{multicols}  
 \end{enumerate}
 \end{exercise}
@@ -611,16 +610,16 @@ without explicitly working with the definition of limit. Each of these
 could be proved directly as we did in the previous section.
 
 \begin{mainTheorem}[Limit Laws]\index{limit laws}\label{theorem:limit-laws}
-Suppose that $\ds \lim_{x\to a}f(x)=L$, $\ds \lim_{x\to a}g(x)=M$, $k$
+Suppose that $\lim_{x\to a}f(x)=L$, $\lim_{x\to a}g(x)=M$, $k$
 is some constant, and $n$ is a positive integer. Then
 \begin{itemize}
-\item $\ds\lim_{x\to a} kf(x) = k\lim_{x\to a}f(x)=kL$ 
-\item $\ds\lim_{x\to a} (f(x)+g(x)) = \lim_{x\to a}f(x)+\lim_{x\to a}g(x)=L+M$  
-\item $\ds\lim_{x\to a} (f(x)g(x)) = \lim_{x\to a}f(x)\cdot\lim_{x\to a}g(x)=LM$ 
-\item $\ds\lim_{x\to a} \frac{f(x)}{g(x)} = \frac{\ds\lim_{x\to a}f(x)}{\ds\lim_{x\to
+\item $\lim_{x\to a} kf(x) = k\lim_{x\to a}f(x)=kL$ 
+\item $\lim_{x\to a} (f(x)+g(x)) = \lim_{x\to a}f(x)+\lim_{x\to a}g(x)=L+M$  
+\item $\lim_{x\to a} (f(x)g(x)) = \lim_{x\to a}f(x)\cdot\lim_{x\to a}g(x)=LM$ 
+\item $\lim_{x\to a} \frac{f(x)}{g(x)} = \frac{\lim_{x\to a}f(x)}{\lim_{x\to
     a}g(x)}=\frac{L}{M},\text{ if $M\ne0$}$
-\item $\ds\lim_{x\to a} f(x)^n = \left(\ds\lim_{x\to a}f(x)\right)^n=L^n$
-\item $\ds\lim_{x\to a} \sqrt[n]{f(x)} = \sqrt[n]{\ds\lim_{x\to
+\item $\lim_{x\to a} f(x)^n = \left(\lim_{x\to a}f(x)\right)^n=L^n$
+\item $\lim_{x\to a} \sqrt[n]{f(x)} = \sqrt[n]{\lim_{x\to
     a}f(x)}=\sqrt[n]{L}$ provided if $n$ is even, then $f(x)\ge 0$
   near $a$.
 \end{itemize}
@@ -631,26 +630,26 @@ Roughly speaking, these rules say that to compute the limit of an
 algebraic expression, it is enough to compute the limits of the
 ``innermost bits'' and then combine these limits. This often means
 that it is possible to simply plug in a value for the variable, since
-$\ds \lim_{x\to a} x =a$.
+$\lim_{x\to a} x =a$.
 
 
 \begin{example}
-Compute $\ds \lim_{x\to 1}{x^2-3x+5\over x-2}$. 
+Compute $\lim_{x\to 1}{x^2-3x+5\over x-2}$. 
 \end{example}
 \begin{solution}
 Using limit laws, 
 \begin{align*}
 \lim_{x\to 1}{x^2-3x+5\over x-2}&=
-\dfrac{\ds\lim_{x\to 1}x^2-3x+5}{\ds\lim_{x\to1}(x-2)} \\
-&=\dfrac{\ds\lim_{x\to 1}x^2-\ds\lim_{x\to1}3x+\lim_{x\to1}5}{\ds\lim_{x\to1}x-\ds\lim_{x\to1}2} \\
-&=\dfrac{\left(\ds\lim_{x\to 1}x\right)^2-3\ds\lim_{x\to1}x+5}{\ds\lim_{x\to1}x-2} \\
+\dfrac{\lim_{x\to 1}x^2-3x+5}{\lim_{x\to1}(x-2)} \\
+&=\dfrac{\lim_{x\to 1}x^2-\lim_{x\to1}3x+\lim_{x\to1}5}{\lim_{x\to1}x-\lim_{x\to1}2} \\
+&=\dfrac{\left(\lim_{x\to 1}x\right)^2-3\lim_{x\to1}x+5}{\lim_{x\to1}x-2} \\
 &=\dfrac{1^2-3\cdot1+5}{1-2} \\
 &=\dfrac{1-3+5}{-1} = -3.
 \end{align*}
 \end{solution}
 
 
-It is worth commenting on the trivial limit $\ds \lim_{x\to1}5$. From one
+It is worth commenting on the trivial limit $\lim_{x\to1}5$. From one
 point of view this might seem meaningless, as the number 5 can't
 ``approach'' any value, since it is simply a fixed number. But 5 can,
 and should, be interpreted here as the function that has value 5
@@ -666,7 +665,7 @@ of these limits.
 
 
 \begin{example}
-Compute $\ds\lim_{x\to1}{x^2+2x-3\over x-1}$. 
+Compute $\lim_{x\to1}{x^2+2x-3\over x-1}$. 
 \end{example}
 \begin{solution}
 We can't simply plug in $x=1$ because that makes the denominator zero.
@@ -679,7 +678,7 @@ However, when taking limits we assume $x\ne 1$:
 \marginnote[-1in]{Limits allow us to examine functions where they are not defined.}
 
 \begin{example}
-Compute $\ds\lim_{x\to-1} {\sqrt{x+5}-2\over x+1}$.
+Compute $\lim_{x\to-1} {\sqrt{x+5}-2\over x+1}$.
 \end{example}
 \begin{solution} 
 Using limit laws,
@@ -703,7 +702,7 @@ close to $a$ but not necessarily equal to $a$. If
 \[
 \lim_{x\to a} g(x) = L = \lim_{x\to a} h(x),
 \] 
-then $\ds \lim_{x\to a} f(x) = L$.
+then $\lim_{x\to a} f(x) = L$.
 \end{mainTheorem}
 
 \marginnote[.2in]{For a nice discussion of this limit, see: Richman,
@@ -789,9 +788,11 @@ time, we'll assume that $x$ is positive---examine the diagrams below:
           \node at (axis cs:1,.42) [anchor=west] {$\tan(x)$};
         \end{axis}
 \end{tikzpicture}\\
-Triangle $A$ & Sector & Triangle $B$
+Triangle $A$ & Sector & Triangle $B$ \\
 \end{tabular}
 \end{fullwidth}
+
+
 From our diagrams above we see that
 \[
 \text{Area of Triangle $A$} \le \text{Area of Sector} \le \text{Area of Triangle $B$}
@@ -816,10 +817,8 @@ Note, $\cos(-x) = \cos(x)$ and $\frac{\sin(-x)}{-x} =
 \lim_{x \to 0}\cos(x) = 1 = \lim_{x\to 0}\frac{1}{\cos(x)},
 \]
 and so we conclude by the Squeeze Theorem,
-Theorem~\ref{theorem:squeeze}, $\ds\lim_{x \to 0}\frac{\sin(x)}{x} = 1$.
+Theorem~\ref{theorem:squeeze}, $\lim_{x \to 0}\frac{\sin(x)}{x} = 1$.
 \end{solution}
-
-
 
 
 \begin{exercises}
@@ -828,63 +827,63 @@ Theorem~\ref{theorem:squeeze}, $\ds\lim_{x \to 0}\frac{\sin(x)}{x} = 1$.
 
 \twocol
 
-\begin{exercise} $\ds \lim_{x\to 3}{x^2+x-12\over x-3}$
+\begin{exercise} $\lim_{x\to 3}{x^2+x-12\over x-3}$
 \begin{answer} 7
 \end{answer}\end{exercise}
 
-\begin{exercise} $\ds \lim_{x\to 1}{x^2+x-12\over x-3}$
+\begin{exercise} $\lim_{x\to 1}{x^2+x-12\over x-3}$
 \begin{answer} 5
 \end{answer}\end{exercise}
 
-\begin{exercise} $\ds \lim_{x\to -4}{x^2+x-12\over x-3}$
+\begin{exercise} $\lim_{x\to -4}{x^2+x-12\over x-3}$
 \begin{answer} 0
 \end{answer}\end{exercise}
 
-\begin{exercise} $\ds \lim_{x\to 2} {x^2+x-12\over x-2}$
+\begin{exercise} $\lim_{x\to 2} {x^2+x-12\over x-2}$
 \begin{answer} undefined
 \end{answer}\end{exercise}
 
-\begin{exercise} $\ds \lim_{x\to 1} {\sqrt{x+8}-3\over x-1}$
+\begin{exercise} $\lim_{x\to 1} {\sqrt{x+8}-3\over x-1}$
 \begin{answer} $1/6$
 \end{answer}\end{exercise}
 
-\begin{exercise} $\ds \lim_{x\to 0+} \sqrt{{1\over x}+2} - \sqrt{1\over x}$.
+\begin{exercise} $\lim_{x\to 0+} \sqrt{{1\over x}+2} - \sqrt{1\over x}$.
 \begin{answer} 0
 \end{answer}\end{exercise}
 
-\begin{exercise} $\ds\lim _{x\to 2} 3$
+\begin{exercise} $\lim _{x\to 2} 3$
 \begin{answer} 3
 \end{answer}\end{exercise}
 
-\begin{exercise} $\ds\lim _{x\to 4 } 3x^3 - 5x $
+\begin{exercise} $\lim _{x\to 4 } 3x^3 - 5x $
 \begin{answer} 172
 \end{answer}\end{exercise}
 
-\begin{exercise} $\ds \lim _{x\to 0 } {4x - 5x^2\over x-1}$
+\begin{exercise} $\lim _{x\to 0 } {4x - 5x^2\over x-1}$
 \begin{answer} 0
 \end{answer}\end{exercise}
 
-\begin{exercise} $\ds\lim _{x\to 1 } {x^2 -1 \over x-1 }$
+\begin{exercise} $\lim _{x\to 1 } {x^2 -1 \over x-1 }$
 \begin{answer} 2
 \end{answer}\end{exercise}
 
-\begin{exercise} $\ds\lim _{x\to 0 + } {\sqrt{2-x^2 }\over x}$
+\begin{exercise} $\lim _{x\to 0 + } {\sqrt{2-x^2 }\over x}$
 \begin{answer} does not exist
 \end{answer}\end{exercise}
 
-\begin{exercise} $\ds\lim _{x\to 0 + } {\sqrt{2-x^2}\over x+1}$
-\begin{answer} $\ds \sqrt2$
+\begin{exercise} $\lim _{x\to 0 + } {\sqrt{2-x^2}\over x+1}$
+\begin{answer} $\sqrt2$
 \end{answer}\end{exercise}
 
-\begin{exercise} $\ds\lim _{x\to a } {x^3 -a^3\over x-a}$
-\begin{answer} $\ds 3a^2$
+\begin{exercise} $\lim _{x\to a } {x^3 -a^3\over x-a}$
+\begin{answer} $3a^2$
 \end{answer}\end{exercise}
 
-\begin{exercise} $\ds\lim _{x\to 2 } (x^2 +4)^3$
+\begin{exercise} $\lim _{x\to 2 } (x^2 +4)^3$
 \begin{answer} 512
 \end{answer}\end{exercise}
 
-\begin{exercise} $\ds\lim _{x\to 1 } \begin{cases}
+\begin{exercise} $\lim _{x\to 1 } \begin{cases}
 x-5 & x\ne 1, \\
 7 & x=1. \end{cases}$
 \begin{answer} $-4$
@@ -906,7 +905,7 @@ Consider the function
 \[
 f(x) = \frac{1}{(x+1)^2}
 \]
-While the $\ds \lim_{x\to -1} f(x)$ does not exist, see
+While the $\lim_{x\to -1} f(x)$ does not exist, see
 Figure~\ref{plot:1/(x+1)^2}, something can still be said.
 \begin{marginfigure}
 \begin{tikzpicture}
@@ -949,9 +948,9 @@ On the other hand, if we consider the function
 \[
 f(x) = \frac{1}{(x-1)}
 \]
-While we have $\ds \lim_{x\to 1} f(x) \ne \pm\infty$, we do have
-one-sided limits, $\ds \lim_{x\to 1+} f(x) = \infty$ and $\ds
-\lim_{x\to 1-} f(x) = -\infty$, see Figure~\ref{plot:1/(x-1)}.
+While we have $\lim_{x\to 1} f(x) \ne \pm\infty$, we do have one-sided
+limits, $\lim_{x\to 1+} f(x) = \infty$ and $\lim_{x\to 1-} f(x) =
+-\infty$, see Figure~\ref{plot:1/(x-1)}.
 \begin{marginfigure}
 \begin{tikzpicture}
 	\begin{axis}[
@@ -1004,7 +1003,7 @@ Now write
 \lim_{x\to 3} \frac{(x-2)(x-7)}{(x-2)(x-3)} &= \lim_{x\to 3} \frac{(x-7)}{(x-3)}\\
 &= \lim_{x\to 3}\frac{-4}{x-3}.
 \end{align*}
-Hence $\ds\lim_{x\to 3+} f(x) = -\infty$, $\ds\lim_{x\to 3-} f(x) =
+Hence $\lim_{x\to 3+} f(x) = -\infty$, $\lim_{x\to 3-} f(x) =
 \infty$, and we have a vertical asymptote at $x=3$, see
 Figure~\ref{plot:(x^2-9x+14)/(x^2-5x+6)}.
 \end{solution}
@@ -1130,11 +1129,11 @@ and we say, the \textbf{limit at negative infinity} of $f(x)$ is $L$.
 
 
 \begin{definition}\label{def:horiz asymptote}\index{asymptote!horizontal}\index{horizontal asymptote}
-If  FIX FIX FIX
+If  
 \[
-\lim_{x\to a} f(x) = \pm\infty, \qquad \lim_{x\to a+} f(x) = \pm\infty, \qquad\text{or}\qquad \lim_{x\to a-} f(x) = \pm\infty,
+\lim_{x\to \infty} f(x) = L \qquad\text{or}\qquad \lim_{x\to -\infty} f(x) = L,
 \]
-then the line $x=a$ is a \textbf{horizontal asymptote} of $f(x)$.
+then the line $y=L$ is a \textbf{horizontal asymptote} of $f(x)$.
 \end{definition}
 
 \begin{example}
@@ -1161,7 +1160,7 @@ Informally, a function is continuous if you can ``draw it'' without
 ``lifting your pencil.'' We need a formal definition.
 
 \begin{definition} A function $f$ is \textbf{continuous
-at a point} $a$ if $\ds \lim_{x\to a} f(x) = f(a)$.  
+at a point} $a$ if $\lim_{x\to a} f(x) = f(a)$.  
 \end{definition}
 \index{continuous}
 \begin{marginfigure}[0in]
@@ -1192,15 +1191,15 @@ Find the discontinuities (the values for $x$ where a function is not
 continuous) for the function given in Figure~\ref{plot:discontinuous-function}.
 \end{example}
 \begin{solution}
-From Figure~\ref{plot:discontinuous-function} we see that $\ds \lim_{x\to 4} f(x)$ does not exist as
+From Figure~\ref{plot:discontinuous-function} we see that $\lim_{x\to 4} f(x)$ does not exist as
 \[
 \lim_{x\to 4-}f(x) = 1\qquad\text{and}\qquad \lim_{x\to 4+}f(x) \approx 3.5
 \]
-Hence $\ds \lim_{x\to 4} f(x) \ne f(4)$, and so $f(x)$ is not
+Hence $\lim_{x\to 4} f(x) \ne f(4)$, and so $f(x)$ is not
 continuous at $x=4$.
 
-We also see that $\ds \lim_{x\to 6} f(x) \approx 3$ while $f(6) =
-2$. Hence $\ds \lim_{x\to 6} f(x) \ne f(6)$, and so $f(x)$ is not
+We also see that $\lim_{x\to 6} f(x) \approx 3$ while $f(6) =
+2$. Hence $\lim_{x\to 6} f(x) \ne f(6)$, and so $f(x)$ is not
 continuous at $x=6$.
 \end{solution}
 
@@ -1257,7 +1256,7 @@ f(x)=
 
 \begin{solution}
 Considering $f(x)$, the only issue is when $x=0$. We must show that
-$\ds \lim_{x\to 0} f(x) = 0$.
+$\lim_{x\to 0} f(x) = 0$.
 
 
 
@@ -1345,7 +1344,7 @@ and 1.
 \end{example}
 
 \begin{solution}
-By Theorem~\ref{theorem:limit-laws}, $\ds \lim_{x\to a} f(x) =
+By Theorem~\ref{theorem:limit-laws}, $\lim_{x\to a} f(x) =
 f(a)$, for all real values of $a$, and hence $f$ is continuous.  Since
 $f(0)=-2$ and $f(1)=3$, and $0$ is between $-2$ and $3$, there is a
 $c\in[0,1]$ such that $f(c)=0$.
@@ -1385,11 +1384,11 @@ Show that it is continuous at the point $x=0$.  Is $h$ a continuous function?
 \end{exercise}
 
 \begin{exercise}
-Approximate a root of $\ds f=x^3-4x^2+2x+2$ to one decimal place.
+Approximate a root of $f=x^3-4x^2+2x+2$ to one decimal place.
 \end{exercise}
 
 \begin{exercise}
-Approximate a root of $\ds f=x^4+x^3-5x+1$ to one decimal place.
+Approximate a root of $f=x^4+x^3-5x+1$ to one decimal place.
 \end{exercise}
 
 \end{exercises}
