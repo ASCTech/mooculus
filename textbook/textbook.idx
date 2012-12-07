@@ -9,36 +9,39 @@
 \indexentry{infinite limit|hyperpage}{22}
 \indexentry{asymptote!vertical|hyperpage}{22}
 \indexentry{vertical asymptote|hyperpage}{22}
-\indexentry{continuous|hyperpage}{25}
-\indexentry{tangent line!informal definition|hyperpage}{29}
-\indexentry{chord|hyperpage}{32}
-\indexentry{difference quotient|hyperpage}{32}
-\indexentry{tangent     line|hyperpage}{32}
-\indexentry{derivative|hyperpage}{34}
-\indexentry{velocity|hyperpage}{38}
-\indexentry{limit|hyperpage}{43}
-\indexentry{triangle inequality|hyperpage}{46}
-\indexentry{composition of functions|hyperpage}{50}
-\indexentry{one sided limit|hyperpage}{51}
-\indexentry{Leibniz notation|hyperpage}{55}
-\indexentry{derivative!Leibniz notation|hyperpage}{55}
-\indexentry{function!bounded|hyperpage}{59}
-\indexentry{bounded function|hyperpage}{59}
-\indexentry{function!unbounded|hyperpage}{59}
-\indexentry{unbounded function|hyperpage}{59}
-\indexentry{continuous|hyperpage}{60}
-\indexentry{differentiable|hyperpage}{60}
-\indexentry{function!differentiable|hyperpage}{60}
-\indexentry{Intermediate Value Theorem|hyperpage}{61}
-\indexentry{power rule|hyperpage}{63}
-\indexentry{power function|hyperpage}{63}
-\indexentry{linearity of the derivative|hyperpage}{67}
-\indexentry{sum rule|hyperpage}{68}
-\indexentry{product rule|hyperpage}{70}
-\indexentry{product rule|hyperpage}{71}
-\indexentry{product rule!generalized|hyperpage}{73}
-\indexentry{quotient rule|hyperpage}{74}
-\indexentry{rational function|hyperpage}{76}
-\indexentry{witch of Agnesi|hyperpage}{76}
-\indexentry{chain rule|hyperpage}{77}
-\indexentry{composition of functions|hyperpage}{77}
+\indexentry{limit!at infinity|hyperpage}{24}
+\indexentry{asymptote!horizontal|hyperpage}{25}
+\indexentry{horizontal asymptote|hyperpage}{25}
+\indexentry{continuous|hyperpage}{26}
+\indexentry{tangent line!informal definition|hyperpage}{31}
+\indexentry{chord|hyperpage}{34}
+\indexentry{difference quotient|hyperpage}{34}
+\indexentry{tangent     line|hyperpage}{34}
+\indexentry{derivative|hyperpage}{36}
+\indexentry{velocity|hyperpage}{40}
+\indexentry{limit|hyperpage}{45}
+\indexentry{triangle inequality|hyperpage}{48}
+\indexentry{composition of functions|hyperpage}{52}
+\indexentry{one sided limit|hyperpage}{54}
+\indexentry{Leibniz notation|hyperpage}{58}
+\indexentry{derivative!Leibniz notation|hyperpage}{58}
+\indexentry{function!bounded|hyperpage}{62}
+\indexentry{bounded function|hyperpage}{62}
+\indexentry{function!unbounded|hyperpage}{62}
+\indexentry{unbounded function|hyperpage}{62}
+\indexentry{continuous|hyperpage}{63}
+\indexentry{differentiable|hyperpage}{63}
+\indexentry{function!differentiable|hyperpage}{63}
+\indexentry{Intermediate Value Theorem|hyperpage}{64}
+\indexentry{power rule|hyperpage}{67}
+\indexentry{power function|hyperpage}{67}
+\indexentry{linearity of the derivative|hyperpage}{71}
+\indexentry{sum rule|hyperpage}{72}
+\indexentry{product rule|hyperpage}{74}
+\indexentry{product rule|hyperpage}{75}
+\indexentry{product rule!generalized|hyperpage}{77}
+\indexentry{quotient rule|hyperpage}{78}
+\indexentry{rational function|hyperpage}{80}
+\indexentry{witch of Agnesi|hyperpage}{80}
+\indexentry{chain rule|hyperpage}{81}
+\indexentry{composition of functions|hyperpage}{81}

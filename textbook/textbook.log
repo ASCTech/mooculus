@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012/Debian) (format=pdflatex 2012.11.6)  5 DEC 2012 14:20
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012/Debian) (format=pdflatex 2012.11.6)  7 DEC 2012 13:38
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1660,16 +1660,7 @@ Writing index file textbook.idx
 \answercontent=\toks58
 (./textbook.aux
 
-LaTeX Warning: Label `figure:epsilon-delta' multiply defined.
-
-
-LaTeX Warning: Label `def:limit' multiply defined.
-
-
-LaTeX Warning: Label `thm:limit of composition' multiply defined.
-
-
-LaTeX Warning: Label `thm:continuity of roots' multiply defined.
+LaTeX Warning: Label `plot:(x^2-9x+14)/(x^2-5x+6)' multiply defined.
 
 )
 \openout1 = `textbook.aux'.
@@ -2031,12 +2022,7 @@ LaTeX Font Warning: Font shape `T1/maksf/bx/sc' undefined
 
 LaTeX Font Info:    Font shape `T1/maksf/bx/n' will be
 (Font)              scaled to size 18.66588pt on input line 141.
-(./textbook.toc
-LaTeX Font Info:    Font shape `T1/mak/m/n' will be
-(Font)              scaled to size 12.9599pt on input line 1.
-LaTeX Font Info:    Font shape `T1/maksf/m/n' will be
-(Font)              scaled to size 12.9599pt on input line 1.
-)
+(./textbook.toc)
 \tf@toc=\write7
 \openout7 = `textbook.toc'.
 
@@ -2238,6 +2224,10 @@ Package mdframed Info: Box was splittet wrong
 Package mdframed Info: Box was splittet wrong
 (mdframed)              on input line 535.
 [13]
+
+LaTeX Warning: Reference `thm:properties of limits' on page 14 undefined on inp
+ut line 545.
+
 Package mdframed Info: mdframed works in twoside mode on input line 547.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -2318,97 +2308,178 @@ Package mdframed Info: mdframed works in twoside mode on input line 700.
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [18]
-Package mdframed Info: mdframed works in twoside mode on input line 711.
-Package mdframed Info: mdframed works in twoside mode on input line 717.
 
-Overfull \hbox (11.19186pt too wide) in paragraph at lines 723--792
+LaTeX Warning: Marginpar on page 19 moved.
+
+Package mdframed Info: mdframed works in twoside mode on input line 713.
+Package mdframed Info: mdframed works in twoside mode on input line 719.
+
+Overfull \hbox (11.19186pt too wide) in paragraph at lines 725--794
 [][] 
  []
 
 [19]
-Underfull \hbox (badness 10000) in paragraph at lines 893--893
+Underfull \hbox (badness 10000) in paragraph at lines 895--895
 
  []
 
 [20] [21]
-Overfull \hbox (31.04605pt too wide) in paragraph at lines 910--924
+Overfull \hbox (31.04605pt too wide) in paragraph at lines 912--926
 [] 
  []
 
 
 LaTeX Warning: Marginpar on page 22 moved.
 
-Package mdframed Info: mdframed works in twoside mode on input line 929.
+Package mdframed Info: mdframed works in twoside mode on input line 931.
 
-Overfull \hbox (31.03813pt too wide) in paragraph at lines 954--969
+Overfull \hbox (31.03813pt too wide) in paragraph at lines 956--971
 [] 
  []
 
-Package mdframed Info: mdframed works in twoside mode on input line 974.
-Package mdframed Info: mdframed works in twoside mode on input line 984.
-Package mdframed Info: Not enough space on this page on input line 988.
+Package mdframed Info: mdframed works in twoside mode on input line 976.
+Package mdframed Info: mdframed works in twoside mode on input line 986.
+Package mdframed Info: Not enough space on this page on input line 990.
 [22]
-Package mdframed Info: Not enough space on this page on input line 988.
-Package mdframed Info: mdframed works in twoside mode on input line 989.
+Package mdframed Info: Not enough space on this page on input line 990.
+Package mdframed Info: mdframed works in twoside mode on input line 991.
 
-Overfull \hbox (46.5974pt too wide) in paragraph at lines 1009--1026
+Overfull \hbox (46.5974pt too wide) in paragraph at lines 1011--1028
  [] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1035--1035
+Underfull \hbox (badness 10000) in paragraph at lines 1037--1037
 
  []
 
 [23]
-Underfull \hbox (badness 10000) in paragraph at lines 1052--1052
-
+Overfull \hbox (46.60362pt too wide) in paragraph at lines 1051--1067
+ [] 
  []
 
-[24]
-Package mdframed Info: mdframed works in twoside mode on input line 1063.
 
-Overfull \hbox (37.04941pt too wide) in paragraph at lines 1067--1086
+LaTeX Warning: Marginpar on page 24 moved.
+
+Package mdframed Info: mdframed works in twoside mode on input line 1073.
+
+Overfull \hbox (43.51015pt too wide) in paragraph at lines 1091--1105
+ [] 
+ []
+
+
+LaTeX Warning: Marginpar on page 24 moved.
+
+[24]
+NOTE: coordinate (0Y0.0e0],3Y0.0e0]) has been dropped because it is unbounded (
+in y). 
+
+Overfull \hbox (42.12804pt too wide) in paragraph at lines 1113--1127
  [] 
  []
 
 
 LaTeX Warning: Marginpar on page 25 moved.
 
-Package mdframed Info: mdframed works in twoside mode on input line 1091.
-Package mdframed Info: mdframed works in twoside mode on input line 1094.
-Package mdframed Info: mdframed works in twoside mode on input line 1111.
-Package mdframed Info: mdframed works in twoside mode on input line 1119.
-Package mdframed Info: Box was splittet wrong
-(mdframed)              on input line 1128.
+Package mdframed Info: mdframed works in twoside mode on input line 1132.
+Package mdframed Info: mdframed works in twoside mode on input line 1141.
+Package mdframed Info: mdframed works in twoside mode on input line 1143.
+
+Underfull \hbox (badness 10000) in paragraph at lines 1152--1152
+
+ []
+
 [25]
-Overfull \hbox (35.87027pt too wide) in paragraph at lines 1129--1154
+Package mdframed Info: mdframed works in twoside mode on input line 1163.
+
+Overfull \hbox (37.04941pt too wide) in paragraph at lines 1167--1186
  [] 
  []
 
 
 LaTeX Warning: Marginpar on page 26 moved.
 
-Package mdframed Info: mdframed works in twoside mode on input line 1158.
-Package mdframed Info: mdframed works in twoside mode on input line 1190.
+Package mdframed Info: mdframed works in twoside mode on input line 1191.
+Package mdframed Info: mdframed works in twoside mode on input line 1194.
+Package mdframed Info: mdframed works in twoside mode on input line 1211.
 
-LaTeX Warning: Marginpar on page 26 moved.
+LaTeX Warning: Reference `mdf@pagelabel-38' on page 26 undefined on input line 
+1213.
 
-Package mdframed Info: mdframed works in twoside mode on input line 1243.
-Package mdframed Info: mdframed works in twoside mode on input line 1247.
+Package mdframed Info: mdframed works in twoside mode on input line 1219.
+
+LaTeX Warning: Reference `plot:sqrt[5]{x}sin 1/x' on page 26 undefined on input
+ line 1227.
+
+Package mdframed Info: Box was splittet wrong
+(mdframed)              on input line 1228.
+
+LaTeX Warning: Reference `mdf@pagelabel-39' on page 26 undefined on input line 
+1228.
+
 [26]
-Package mdframed Info: mdframed works in twoside mode on input line 1258.
-Package mdframed Info: mdframed works in twoside mode on input line 1260.
 
-Underfull \hbox (badness 10000) in paragraph at lines 1295--1295
+LaTeX Warning: Reference `mdf@pagelabel-40' on page 27 undefined on input line 
+1228.
+
+
+Overfull \hbox (35.87027pt too wide) in paragraph at lines 1229--1254
+ [] 
+ []
+
+
+LaTeX Warning: Marginpar on page 27 moved.
+
+Package mdframed Info: mdframed works in twoside mode on input line 1258.
+
+LaTeX Warning: Reference `mdf@pagelabel-41' on page 27 undefined on input line 
+1267.
+
+Package mdframed Info: mdframed works in twoside mode on input line 1290.
+
+LaTeX Warning: Marginpar on page 27 moved.
+
+
+LaTeX Warning: Reference `figure:intermediate-value' on page 27 undefined on in
+put line 1301.
+
+Package mdframed Info: mdframed works in twoside mode on input line 1343.
+
+LaTeX Warning: Reference `mdf@pagelabel-42' on page 27 undefined on input line 
+1345.
+
+Package mdframed Info: mdframed works in twoside mode on input line 1347.
+
+LaTeX Warning: Reference `mdf@pagelabel-43' on page 27 undefined on input line 
+1352.
+
+[27]
+
+LaTeX Warning: Reference `mdf@pagelabel-44' on page 28 undefined on input line 
+1352.
+
+Package mdframed Info: mdframed works in twoside mode on input line 1358.
+
+LaTeX Warning: Reference `mdf@pagelabel-45' on page 28 undefined on input line 
+1359.
+
+Package mdframed Info: mdframed works in twoside mode on input line 1360.
+
+LaTeX Warning: Reference `mdf@pagelabel-46' on page 28 undefined on input line 
+1367.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1395--1395
 
  []
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [27]
-[28]) (./derivatives.tex
+ [28]
+[29]) (./derivatives.tex [30
+
+]
 Chapter 2.
 LaTeX Font Info:    Font shape `T1/mak/m/n' will be
 (Font)              scaled to size 8.09995pt on input line 23.
@@ -2444,9 +2515,11 @@ LaTeX Font Info:    Font shape `T1/mak/m/n' will be
 (Font)              scaled to size 6.29996pt on input line 24.
 LaTeX Font Info:    Font shape `T1/mak/bx/n' will be
 (Font)              scaled to size 8.09995pt on input line 26.
-) (./chapter02.tex [29
 
-] [30]
+LaTeX Warning: Reference `figure:informal-tangent' on page 31 undefined on inpu
+t line 32.
+
+) (./chapter02.tex [31] [32]
 Chapter 3.
 (./section02.01.tex
 Package mdframed Info: mdframed works in twoside mode on input line 10.
@@ -2457,49 +2530,98 @@ Overfull \hbox (7.74611pt too wide) in paragraph at lines 28--28
 
 Package mdframed Info: Box was splittet wrong
 (mdframed)              on input line 37.
-[31
+
+LaTeX Warning: Reference `mdf@pagelabel-47' on page 33 undefined on input line 
+37.
+
+[33
 
 ]
 
-LaTeX Warning: Reference `fig:chords' on page 32 undefined on input line 55.
+LaTeX Warning: Reference `mdf@pagelabel-48' on page 34 undefined on input line 
+37.
 
-[32]
+
+LaTeX Warning: Reference `fig:chords' on page 34 undefined on input line 55.
+
+[34]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [33]
-[34]
+ [35]
+[36]
+
+LaTeX Warning: Reference `ex:derivative of a line' on page 37 undefined on inpu
+t line 199.
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 278--278
 
  []
 
-[35] [36]) (./section02.02.tex
+[37] [38]) (./section02.02.tex
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [37]
-[38]
+ [39]
+[40]
 Underfull \hbox (badness 10000) in paragraph at lines 143--143
 
  []
 
 
-LaTeX Warning: Reference `fig:data plot' on page 39 undefined on input line 143
+LaTeX Warning: Reference `fig:data plot' on page 41 undefined on input line 143
 .
 
-[39] [40]) (./section02.03.tex
+[41] [42]) (./section02.03.tex
 Package mdframed Info: mdframed works in twoside mode on input line 30.
- [41] [42]
+
+
+LaTeX Warning: Reference `mdf@pagelabel-49' on page 43 undefined on input line 
+50.
+
+[43]
+
+LaTeX Warning: Reference `mdf@pagelabel-50' on page 44 undefined on input line 
+50.
+
+[44]
 Package mdframed Info: mdframed works in twoside mode on input line 130.
 Package mdframed Info: Not enough space on this page on input line 138.
- [43]
-Package mdframed Info: Not enough space on this page on input line 138.
- [44]
-Package mdframed Info: mdframed works in twoside mode on input line 193.
  [45]
+Package mdframed Info: Not enough space on this page on input line 138.
+
+
+LaTeX Warning: Reference `mdf@pagelabel-51' on page 46 undefined on input line 
+138.
+
+[46]
+Package mdframed Info: mdframed works in twoside mode on input line 193.
+
+
+LaTeX Warning: Reference `mdf@pagelabel-52' on page 47 undefined on input line 
+232.
+
+[47]
+
+LaTeX Warning: Reference `mdf@pagelabel-53' on page 48 undefined on input line 
+232.
+
 Package mdframed Info: mdframed works in twoside mode on input line 248.
+
+LaTeX Warning: Reference `mdf@pagelabel-54' on page 48 undefined on input line 
+251.
+
 Package mdframed Info: mdframed works in twoside mode on input line 253.
 Package mdframed Info: Box was splittet wrong
 (mdframed)              on input line 305.
- [46]
+
+LaTeX Warning: Reference `mdf@pagelabel-55' on page 48 undefined on input line 
+305.
+
+[48]
+
+LaTeX Warning: Reference `mdf@pagelabel-56' on page 49 undefined on input line 
+305.
+
 Package mdframed Info: mdframed works in twoside mode on input line 310.
 
 Overfull \vbox (43.74387pt too high) detected at line 321
@@ -2571,7 +2693,11 @@ Package mdframed Info: Box was splittet wrong
 Overfull \vbox (237.91661pt too high) detected at line 321
  []
 
-[47]
+[49]
+
+LaTeX Warning: Reference `mdf@pagelabel-57' on page 50 undefined on input line 
+321.
+
 Package mdframed Info: mdframed works in twoside mode on input line 330.
 
 Overfull \vbox (35.63701pt too high) detected at line 342
@@ -2703,105 +2829,228 @@ Package mdframed Info: Box was splittet wrong
 Overfull \vbox (391.35709pt too high) detected at line 342
  []
 
-[48]
+[50]
+
+LaTeX Warning: Reference `mdf@pagelabel-58' on page 51 undefined on input line 
+342.
+
 Package mdframed Info: mdframed works in twoside mode on input line 358.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [49]
-Package mdframed Info: Not enough space on this page on input line 366.
-Package mdframed Info: mdframed works in twoside mode on input line 381.
-Package mdframed Info: mdframed works in twoside mode on input line 391.
-
-[50]
-Package mdframed Info: mdframed works in twoside mode on input line 403.
-Package mdframed Info: mdframed works in twoside mode on input line 429.
  [51]
+Package mdframed Info: Not enough space on this page on input line 366.
+
+
+LaTeX Warning: Reference `mdf@pagelabel-59' on page 52 undefined on input line 
+366.
+
+
+LaTeX Warning: Reference `thm:properties of limits' on page 52 undefined on inp
+ut line 368.
+
+
+LaTeX Warning: Reference `thm:properties of limits' on page 52 undefined on inp
+ut line 379.
+
+Package mdframed Info: mdframed works in twoside mode on input line 381.
+
+LaTeX Warning: Reference `mdf@pagelabel-60' on page 52 undefined on input line 
+384.
+
+Package mdframed Info: mdframed works in twoside mode on input line 391.
+Package mdframed Info: Box was splittet wrong
+(mdframed)              on input line 395.
+
+LaTeX Warning: Reference `mdf@pagelabel-61' on page 52 undefined on input line 
+395.
+
+[52] [53]
+
+LaTeX Warning: Reference `mdf@pagelabel-62' on page 54 undefined on input line 
+395.
+
+
+LaTeX Warning: Reference `sec:slope of a function' on page 54 undefined on inpu
+t line 400.
+
+Package mdframed Info: mdframed works in twoside mode on input line 403.
+
+LaTeX Warning: Reference `mdf@pagelabel-63' on page 54 undefined on input line 
+413.
+
+Package mdframed Info: mdframed works in twoside mode on input line 429.
+[54]
+
+LaTeX Warning: Reference `mdf@pagelabel-64' on page 55 undefined on input line 
+434.
+
 Package mdframed Info: mdframed works in twoside mode on input line 441.
 
+LaTeX Warning: Reference `mdf@pagelabel-65' on page 55 undefined on input line 
+451.
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 567--567
 
  []
 
-[52]
+[55]
+
+LaTeX Warning: Reference `exam:epsilon-delta proof' on page 56 undefined on inp
+ut line 567.
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 567--567
 
  []
 
-[53]) (./section02.04.tex [54]
+[56]) (./section02.04.tex [57]
 Package mdframed Info: mdframed works in twoside mode on input line 60.
+
+
+LaTeX Warning: Reference `mdf@pagelabel-66' on page 58 undefined on input line 
+73.
+
 Package mdframed Info: mdframed works in twoside mode on input line 76.
- [55]
+
+LaTeX Warning: Reference `mdf@pagelabel-67' on page 58 undefined on input line 
+91.
+
+[58]
+
+LaTeX Warning: Reference `mdf@pagelabel-68' on page 59 undefined on input line 
+91.
+
 Package mdframed Info: mdframed works in twoside mode on input line 113.
- [56]
+
+LaTeX Warning: Reference `mdf@pagelabel-69' on page 59 undefined on input line 
+131.
+
+[59]
+
+LaTeX Warning: Reference `mdf@pagelabel-70' on page 60 undefined on input line 
+131.
+
 Package mdframed Info: mdframed works in twoside mode on input line 134.
 
+LaTeX Warning: Reference `fig:cusp' on page 60 undefined on input line 136.
 
-LaTeX Warning: Reference `fig:cusp' on page 57 undefined on input line 136.
+
+LaTeX Warning: Reference `mdf@pagelabel-71' on page 60 undefined on input line 
+148.
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 285--285
 
  []
 
-[57] [58]) (./section02.05.tex
+[60] [61]) (./section02.05.tex
 
-LaTeX Warning: Reference `sec:functions' on page 59 undefined on input line 5.
+LaTeX Warning: Reference `sec:functions' on page 62 undefined on input line 5.
 
 
-LaTeX Warning: Reference `fig:function types' on page 59 undefined on input lin
+LaTeX Warning: Reference `fig:function types' on page 62 undefined on input lin
 e 9.
 
 
-LaTeX Warning: Reference `fig:function types' on page 59 undefined on input lin
+LaTeX Warning: Reference `fig:function types' on page 62 undefined on input lin
 e 114.
 
 Package mdframed Info: mdframed works in twoside mode on input line 127.
+
+LaTeX Warning: Reference `mdf@pagelabel-72' on page 62 undefined on input line 
+129.
+
 Package mdframed Info: mdframed works in twoside mode on input line 145.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [59]
+ [62]
 Package mdframed Info: Not enough space on this page on input line 147.
+
+
+LaTeX Warning: Reference `mdf@pagelabel-73' on page 63 undefined on input line 
+147.
+
 Package mdframed Info: mdframed works in twoside mode on input line 150.
+
+LaTeX Warning: Reference `mdf@pagelabel-74' on page 63 undefined on input line 
+152.
+
 Package mdframed Info: mdframed works in twoside mode on input line 168.
+
+LaTeX Warning: Reference `mdf@pagelabel-75' on page 63 undefined on input line 
+170.
+
 Package mdframed Info: mdframed works in twoside mode on input line 172.
+
+LaTeX Warning: Reference `mdf@pagelabel-76' on page 63 undefined on input line 
+175.
+
 Package mdframed Info: mdframed works in twoside mode on input line 186.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [60]
+ [63]
 Package mdframed Info: Not enough space on this page on input line 189.
+
+
+LaTeX Warning: Reference `mdf@pagelabel-77' on page 64 undefined on input line 
+189.
+
 Package mdframed Info: mdframed works in twoside mode on input line 195.
+
+LaTeX Warning: Reference `thm:properties of limits' on page 64 undefined on inp
+ut line 198.
+
+
+LaTeX Warning: Reference `mdf@pagelabel-78' on page 64 undefined on input line 
+201.
+
 Package mdframed Info: mdframed works in twoside mode on input line 206.
+
+LaTeX Warning: Reference `mdf@pagelabel-79' on page 64 undefined on input line 
+215.
+
 
 Underfull \hbox (badness 10000) in paragraph at lines 262--262
 
  []
 
 
-LaTeX Warning: Reference `fig:function types' on page 61 undefined on input lin
+LaTeX Warning: Reference `fig:function types' on page 64 undefined on input lin
 e 262.
 
-[61] [62])) (./chapter03.tex
+[64] [65])) (./chapter03.tex [66
+
+]
 Chapter 4.
 (./section03.01.tex
 Package mdframed Info: mdframed works in twoside mode on input line 23.
- [63
-
-]
+ [67]
 Package mdframed Info: Not enough space on this page on input line 33.
- [64]
+
+
+LaTeX Warning: Reference `mdf@pagelabel-80' on page 68 undefined on input line 
+33.
+
+[68]
 Package mdframed Info: mdframed works in twoside mode on input line 77.
- [65]
+
+
+LaTeX Warning: Reference `mdf@pagelabel-81' on page 69 undefined on input line 
+79.
+
+[69]
 Underfull \hbox (badness 10000) in paragraph at lines 148--148
 
  []
 
-[66]) (./section03.02.tex
+[70]) (./section03.02.tex
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [67]
+ [71]
 Package mdframed Info: mdframed works in twoside mode on input line 56.
 
 Overfull \hbox (52.07771pt too wide) detected at line 59
@@ -2816,6 +3065,10 @@ m/n/10 = \T1/mak/m/n/10 5\OML/mak/b/it/10 x[] \OT1/zplm/m/n/10 + \T1/mak/m/n/10
  10\OML/mak/b/it/10 x\OT1/txr/m/n/10 .
  []
 
+
+LaTeX Warning: Reference `mdf@pagelabel-82' on page 72 undefined on input line 
+60.
+
 Package mdframed Info: mdframed works in twoside mode on input line 67.
 
 Overfull \hbox (3.83095pt too wide) detected at line 70
@@ -2828,19 +3081,32 @@ mak/b/it/10 x \OT1/zplm/m/n/10 + \T1/mak/m/n/10 6\OT1/txr/m/n/10 .
  []
 
 
+LaTeX Warning: Reference `mdf@pagelabel-83' on page 72 undefined on input line 
+71.
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 144--144
 
  []
 
-[68] [69]) (./section03.03.tex
+[72]
+
+LaTeX Warning: Reference `sec:slope of a function' on page 73 undefined on inpu
+t line 144.
+
+[73]) (./section03.03.tex
 Overfull \hbox (8.0707pt too wide) in paragraph at lines 32--32
 [] 
  []
 
 
+LaTeX Warning: Reference `sec:adjectives for functions' on page 74 undefined on
+ input line 43.
+
+
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [70]
+ [74]
 Package mdframed Info: mdframed works in twoside mode on input line 93.
 
 Overfull \hbox (8.30383pt too wide) detected at line 99
@@ -2850,11 +3116,15 @@ T1/zplm/m/n/10 = [] = []\OT1/txr/m/n/10 .
  []
 
 
+LaTeX Warning: Reference `mdf@pagelabel-84' on page 75 undefined on input line 
+100.
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 178--178
 
  []
 
-[71] [72] [73]) (./section03.04.tex
+[75] [76] [77]) (./section03.04.tex
 Overfull \hbox (25.27937pt too wide) detected at line 26
 [][] \OT1/zplm/m/n/10 = \OML/mak/b/it/10 f\OT1/zplm/m/n/10 (\OML/mak/b/it/10 x\
 OT1/zplm/m/n/10 )[] + \OML/mak/b/it/10 f[]\OT1/zplm/m/n/10 (\OML/mak/b/it/10 x\
@@ -2862,27 +3132,68 @@ OT1/zplm/m/n/10 )[] = [] = []\OT1/txr/m/n/10 .
  []
 
 Package mdframed Info: mdframed works in twoside mode on input line 29.
+
+LaTeX Warning: Reference `mdf@pagelabel-85' on page 78 undefined on input line 
+35.
+
 Package mdframed Info: mdframed works in twoside mode on input line 43.
-[74] [75]
+[78]
+
+LaTeX Warning: Reference `mdf@pagelabel-86' on page 79 undefined on input line 
+61.
+
+[79]
 Underfull \hbox (badness 10000) in paragraph at lines 165--165
 
  []
 
-[76]) (./section03.05.tex
+[80]) (./section03.05.tex
+
+LaTeX Warning: Reference `sec:limits' on page 81 undefined on input line 9.
+
 Package mdframed Info: mdframed works in twoside mode on input line 19.
+
+LaTeX Warning: Reference `mdf@pagelabel-87' on page 81 undefined on input line 
+26.
+
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [77]
+ [81]
 Package mdframed Info: mdframed works in twoside mode on input line 81.
 
-[78]
+[82]
 Package mdframed Info: Not enough space on this page on input line 92.
+
+
+LaTeX Warning: Reference `mdf@pagelabel-88' on page 83 undefined on input line 
+92.
+
 Package mdframed Info: mdframed works in twoside mode on input line 95.
+
+LaTeX Warning: Reference `mdf@pagelabel-89' on page 83 undefined on input line 
+103.
+
 Package mdframed Info: mdframed works in twoside mode on input line 110.
- [79]
+
+LaTeX Warning: Reference `mdf@pagelabel-90' on page 83 undefined on input line 
+135.
+
+[83]
+
+LaTeX Warning: Reference `mdf@pagelabel-91' on page 84 undefined on input line 
+135.
+
 Package mdframed Info: mdframed works in twoside mode on input line 138.
- [80]
+
+LaTeX Warning: Reference `mdf@pagelabel-92' on page 84 undefined on input line 
+160.
+
+[84]
+
+LaTeX Warning: Reference `mdf@pagelabel-93' on page 85 undefined on input line 
+160.
+
 Package mdframed Info: mdframed works in twoside mode on input line 166.
 
 Overfull \vbox (3.37129pt too high) detected at line 180
@@ -3054,12 +3365,17 @@ Package mdframed Info: Box was splittet wrong
 Overfull \vbox (453.35902pt too high) detected at line 180
  []
 
-[81]
+[85]
+
+LaTeX Warning: Reference `mdf@pagelabel-94' on page 86 undefined on input line 
+180.
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 364--364
 
  []
 
-[82] [83] [84])) (./textbook.ans)
+[86] [87] [88])) (./textbook.ans)
 No file textbook.ind.
 
 Package bibentry Warning: You have used \nobibliography* 
@@ -3073,7 +3389,7 @@ Package bibentry Warning: You have used \nobibliography*
 \openout9 = `textbook.loe'.
 
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 211.
-[85
+[89
 
 
 ]
@@ -3081,9 +3397,15 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 211.
  (./textbook.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 211.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 211.
-Package rerunfilecheck Info: File `textbook.out' has not changed.
-(rerunfilecheck)             Checksum: CDA36C4A9C3487B1A4613C273C0E141F;2994.
 
+
+Package rerunfilecheck Warning: File `textbook.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `textbook.out':
+(rerunfilecheck)             Before: 219B51D9534ECB9701C81F2839C3F0A7;940
+(rerunfilecheck)             After:  CDA36C4A9C3487B1A4613C273C0E141F;2994.
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
@@ -3096,11 +3418,11 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 211.
  ) 
 Here is how much of TeX's memory you used:
- 38641 strings out of 493481
- 780817 string characters out of 3143393
- 1707230 words of memory out of 3000000
- 40306 multiletter control sequences out of 15000+200000
- 104462 words of font info for 421 fonts, out of 3000000 for 9000
+ 38682 strings out of 493481
+ 781694 string characters out of 3143393
+ 1609880 words of memory out of 3000000
+ 40335 multiletter control sequences out of 15000+200000
+ 103566 words of font info for 419 fonts, out of 3000000 for 9000
  965 hyphenation exceptions out of 8191
  80i,21n,91p,952b,2138s stack positions out of 5000i,500n,10000p,200000b,50000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}{/usr/share/texliv
@@ -3125,10 +3447,10 @@ s/type1/public/txfonts/txsy.pfb></usr/share/texlive/texmf-dist/fonts/type1/publ
 ic/txfonts/txsyc.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/courier/ucr
 r8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb>
-Output written on textbook.pdf (85 pages, 525592 bytes).
+Output written on textbook.pdf (89 pages, 539741 bytes).
 PDF statistics:
- 1024 PDF objects out of 1200 (max. 8388607)
- 888 compressed objects within 9 object streams
- 436 named destinations out of 1000 (max. 500000)
- 77581 words of extra memory for PDF output out of 89155 (max. 10000000)
+ 990 PDF objects out of 1000 (max. 8388607)
+ 854 compressed objects within 9 object streams
+ 448 named destinations out of 1000 (max. 500000)
+ 76453 words of extra memory for PDF output out of 89155 (max. 10000000)
 
