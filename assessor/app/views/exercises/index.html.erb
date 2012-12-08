@@ -1,19 +1,30 @@
-  <h2>Exercise List</h2>
-
-  <div class="row">
-    <div class="span2">
-      <!-- Sidebar Content -->
-    </div>
-    <div class="span10">
-      <% @exercises.each do |exercise| %>
-        <%= exercise.title %></br>
-        <%= exercise.description %></br>
-        <%= link_to 'Show', exercise %></br>
-        <%= link_to 'Edit', edit_exercise_path(exercise) %></br>
-          <%= link_to 'Destroy', exercise, method: :delete, 
-            data: { confirm: 'Are you sure?' } %></br>
-      <% end %>
-    </div>
+<div class="row-fluid">
+  <div class="span6">
+    Problem
   </div>
+  <div class="span2">
+    Your Score
+  </div>
+  <div class="span4">
+    Actions
+  </div>
+</div>
 
-<%= link_to 'New Exercise', new_exercise_path %>
+<% @exercises.each do |exercise| %>
+  <div class="row-fluid">
+    <div class="span6">
+      <%= exercise.title %>
+    </div>
+    <div class="span2">
+      <%= (current_user.scores & exercise.scores).count %>
+    </div>
+    <div class="span4">
+      <%= link_to 'Show', exercise %>
+      <%= link_to 'Edit', edit_exercise_path(exercise) %>
+      <%= link_to 'Destroy', exercise, method: :delete, 
+        data: { confirm: 'Are you sure?' } %>
+      </div>
+    </div>
+  <% end %>
+
+  <%= link_to 'New Exercise', new_exercise_path %>
