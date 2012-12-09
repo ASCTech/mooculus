@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       157,          7]
-NotebookDataLength[      7019,        245]
-NotebookOptionsPosition[      6561,        224]
-NotebookOutlinePosition[      6898,        239]
-CellTagsIndexPosition[      6855,        236]
+NotebookDataLength[      7444,        230]
+NotebookOptionsPosition[      6986,        209]
+NotebookOutlinePosition[      7322,        224]
+CellTagsIndexPosition[      7279,        221]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -71,10 +71,12 @@ Cell[BoxData[
    RowBox[{
     RowBox[{"{", 
      RowBox[{
-      RowBox[{"fxns", "[", 
-       RowBox[{"[", "i", "]"}], "]"}], ",", 
-      RowBox[{"deriv", "[", 
-       RowBox[{"[", "i", "]"}], "]"}]}], "}"}], ",", 
+      RowBox[{"TeXForm", "[", 
+       RowBox[{"fxns", "[", 
+        RowBox[{"[", "i", "]"}], "]"}], "]"}], ",", 
+      RowBox[{"TeXForm", "[", 
+       RowBox[{"deriv", "[", 
+        RowBox[{"[", "i", "]"}], "]"}], "]"}]}], "}"}], ",", 
     RowBox[{"{", 
      RowBox[{"i", ",", "1", ",", 
       RowBox[{"Length", "[", "fxns", "]"}]}], "}"}]}], "]"}]}]], "Input",
@@ -82,133 +84,116 @@ Cell[BoxData[
    3.564055623786251*^9, {3.56405568224494*^9, 3.564055711783175*^9}, {
    3.56405585336584*^9, 3.564055909810491*^9}, 3.5640559985528507`*^9, {
    3.564056067523479*^9, 3.564056093161701*^9}, {3.564056282746271*^9, 
-   3.564056297557559*^9}}],
+   3.564056297557559*^9}, {3.564056567608411*^9, 3.564056593166074*^9}}],
 
 Cell[BoxData[
  RowBox[{"{", 
   RowBox[{
    RowBox[{"{", 
     RowBox[{
-     RowBox[{"28", "-", 
-      RowBox[{"5", " ", 
-       SuperscriptBox["x", "6"]}], "-", 
-      RowBox[{"15", " ", 
-       SuperscriptBox["x", "8"]}]}], ",", 
-     RowBox[{
-      RowBox[{
-       RowBox[{"-", "30"}], " ", 
-       SuperscriptBox["x", "5"]}], "-", 
-      RowBox[{"120", " ", 
-       SuperscriptBox["x", "7"]}]}]}], "}"}], ",", 
+     InterpretationBox["\<\"-2 x^2\"\>",
+      TeXForm[(-2) $CellContext`x^2],
+      AutoDelete->True,
+      Editable->True], ",", 
+     InterpretationBox["\<\"-4 x\"\>",
+      TeXForm[(-4) $CellContext`x],
+      AutoDelete->True,
+      Editable->True]}], "}"}], ",", 
    RowBox[{"{", 
     RowBox[{
-     FractionBox["20", 
-      SuperscriptBox["x", "4"]], ",", 
-     RowBox[{"-", 
-      FractionBox["80", 
-       SuperscriptBox["x", "5"]]}]}], "}"}], ",", 
+     InterpretationBox["\<\"15 x^5\"\>",
+      TeXForm[15 $CellContext`x^5],
+      AutoDelete->True,
+      Editable->True], ",", 
+     InterpretationBox["\<\"75 x^4\"\>",
+      TeXForm[75 $CellContext`x^4],
+      AutoDelete->True,
+      Editable->True]}], "}"}], ",", 
    RowBox[{"{", 
     RowBox[{
-     RowBox[{
-      RowBox[{
-       RowBox[{"-", "19"}], " ", "x"}], "-", 
-      RowBox[{"17", " ", 
-       SuperscriptBox["x", "6"]}]}], ",", 
-     RowBox[{
-      RowBox[{"-", "19"}], "-", 
-      RowBox[{"102", " ", 
-       SuperscriptBox["x", "5"]}]}]}], "}"}], ",", 
+     InterpretationBox["\<\"-9 x^3-\\\\frac{22}{x^3}+\\\\frac{25}{x^2}\"\>",
+      TeXForm[(-22) $CellContext`x^(-3) + 25 $CellContext`x^(-2) - 
+       9 $CellContext`x^3],
+      AutoDelete->True,
+      Editable->True], ",", 
+     InterpretationBox["\<\"\\\\frac{66}{x^4}-\\\\frac{50}{x^3}-27 x^2\"\>",
+      TeXForm[
+      66 $CellContext`x^(-4) - 50 $CellContext`x^(-3) - 27 $CellContext`x^2],
+      AutoDelete->True,
+      Editable->True]}], "}"}], ",", 
    RowBox[{"{", 
     RowBox[{
-     RowBox[{
-      RowBox[{"-", 
-       FractionBox["20", 
-        SuperscriptBox["x", "5"]]}], "-", 
-      FractionBox["10", 
-       SuperscriptBox["x", "4"]]}], ",", 
-     RowBox[{
-      FractionBox["100", 
-       SuperscriptBox["x", "6"]], "+", 
-      FractionBox["40", 
-       SuperscriptBox["x", "5"]]}]}], "}"}], ",", 
+     InterpretationBox["\<\"\\\\frac{16}{x}\"\>",
+      TeXForm[16/$CellContext`x],
+      AutoDelete->True,
+      Editable->True], ",", 
+     InterpretationBox["\<\"-\\\\frac{16}{x^2}\"\>",
+      TeXForm[(-16) $CellContext`x^(-2)],
+      AutoDelete->True,
+      Editable->True]}], "}"}], ",", 
    RowBox[{"{", 
     RowBox[{
-     RowBox[{"23", " ", 
-      SuperscriptBox["x", "9"]}], ",", 
-     RowBox[{"207", " ", 
-      SuperscriptBox["x", "8"]}]}], "}"}], ",", 
+     InterpretationBox["\<\"7 x^5\"\>",
+      TeXForm[7 $CellContext`x^5],
+      AutoDelete->True,
+      Editable->True], ",", 
+     InterpretationBox["\<\"35 x^4\"\>",
+      TeXForm[35 $CellContext`x^4],
+      AutoDelete->True,
+      Editable->True]}], "}"}], ",", 
    RowBox[{"{", 
     RowBox[{
-     RowBox[{
-      FractionBox["20", 
-       SuperscriptBox["x", "3"]], "+", 
-      RowBox[{"28", " ", 
-       SuperscriptBox["x", "5"]}], "-", 
-      RowBox[{"28", " ", 
-       SuperscriptBox["x", "6"]}], "+", 
-      RowBox[{"7", " ", 
-       SuperscriptBox["x", "8"]}]}], ",", 
-     RowBox[{
-      RowBox[{"-", 
-       FractionBox["60", 
-        SuperscriptBox["x", "4"]]}], "+", 
-      RowBox[{"140", " ", 
-       SuperscriptBox["x", "4"]}], "-", 
-      RowBox[{"168", " ", 
-       SuperscriptBox["x", "5"]}], "+", 
-      RowBox[{"56", " ", 
-       SuperscriptBox["x", "7"]}]}]}], "}"}], ",", 
+     InterpretationBox["\<\"x^6-24 x^{10}\"\>",
+      TeXForm[$CellContext`x^6 - 24 $CellContext`x^10],
+      AutoDelete->True,
+      Editable->True], ",", 
+     InterpretationBox["\<\"6 x^5-240 x^9\"\>",
+      TeXForm[6 $CellContext`x^5 - 240 $CellContext`x^9],
+      AutoDelete->True,
+      Editable->True]}], "}"}], ",", 
    RowBox[{"{", 
     RowBox[{
-     RowBox[{
-      FractionBox["3", 
-       SuperscriptBox["x", "5"]], "-", 
-      RowBox[{"30", " ", 
-       SuperscriptBox["x", "10"]}]}], ",", 
-     RowBox[{
-      RowBox[{"-", 
-       FractionBox["15", 
-        SuperscriptBox["x", "6"]]}], "-", 
-      RowBox[{"300", " ", 
-       SuperscriptBox["x", "9"]}]}]}], "}"}], ",", 
+     InterpretationBox["\<\"-21 x^9-\\\\frac{7}{x^4}\"\>",
+      TeXForm[(-7) $CellContext`x^(-4) - 21 $CellContext`x^9],
+      AutoDelete->True,
+      Editable->True], ",", 
+     InterpretationBox["\<\"\\\\frac{28}{x^5}-189 x^8\"\>",
+      TeXForm[28 $CellContext`x^(-5) - 189 $CellContext`x^8],
+      AutoDelete->True,
+      Editable->True]}], "}"}], ",", 
    RowBox[{"{", 
     RowBox[{
-     RowBox[{
-      RowBox[{"-", "4"}], "+", 
-      FractionBox["3", 
-       SuperscriptBox["x", "5"]], "+", 
-      RowBox[{"18", " ", 
-       SuperscriptBox["x", "10"]}]}], ",", 
-     RowBox[{
-      RowBox[{"-", 
-       FractionBox["15", 
-        SuperscriptBox["x", "6"]]}], "+", 
-      RowBox[{"180", " ", 
-       SuperscriptBox["x", "9"]}]}]}], "}"}], ",", 
+     InterpretationBox["\<\"11 x^{10}-\\\\frac{2}{x^2}-22 x\"\>",
+      TeXForm[(-2) $CellContext`x^(-2) - 22 $CellContext`x + 
+       11 $CellContext`x^10],
+      AutoDelete->True,
+      Editable->True], ",", 
+     InterpretationBox["\<\"110 x^9+\\\\frac{4}{x^3}-22\"\>",
+      TeXForm[-22 + 4 $CellContext`x^(-3) + 110 $CellContext`x^9],
+      AutoDelete->True,
+      Editable->True]}], "}"}], ",", 
    RowBox[{"{", 
     RowBox[{
-     RowBox[{
-      RowBox[{
-       RowBox[{"-", "13"}], " ", 
-       SuperscriptBox["x", "4"]}], "-", 
-      RowBox[{"35", " ", 
-       SuperscriptBox["x", "9"]}]}], ",", 
-     RowBox[{
-      RowBox[{
-       RowBox[{"-", "52"}], " ", 
-       SuperscriptBox["x", "3"]}], "-", 
-      RowBox[{"315", " ", 
-       SuperscriptBox["x", "8"]}]}]}], "}"}], ",", 
+     InterpretationBox["\<\"27 x^7+9 x^4\"\>",
+      TeXForm[9 $CellContext`x^4 + 27 $CellContext`x^7],
+      AutoDelete->True,
+      Editable->True], ",", 
+     InterpretationBox["\<\"189 x^6+36 x^3\"\>",
+      TeXForm[36 $CellContext`x^3 + 189 $CellContext`x^6],
+      AutoDelete->True,
+      Editable->True]}], "}"}], ",", 
    RowBox[{"{", 
     RowBox[{
-     RowBox[{
-      RowBox[{"12", " ", "x"}], "-", 
-      RowBox[{"29", " ", 
-       SuperscriptBox["x", "6"]}]}], ",", 
-     RowBox[{"12", "-", 
-      RowBox[{"174", " ", 
-       SuperscriptBox["x", "5"]}]}]}], "}"}]}], "}"}]], "Output",
- CellChangeTimes->{{3.564056103092338*^9, 3.564056111433074*^9}}]
+     InterpretationBox["\<\"2 x^8+\\\\frac{19}{x^4}-1\"\>",
+      TeXForm[-1 + 19 $CellContext`x^(-4) + 2 $CellContext`x^8],
+      AutoDelete->True,
+      Editable->True], ",", 
+     InterpretationBox["\<\"16 x^7-\\\\frac{76}{x^5}\"\>",
+      TeXForm[(-76) $CellContext`x^(-5) + 16 $CellContext`x^7],
+      AutoDelete->True,
+      Editable->True]}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{{3.564056103092338*^9, 3.564056111433074*^9}, {
+  3.5640565954468927`*^9, 3.5640565991463737`*^9}}]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -219,11 +204,11 @@ Cell[BoxData[
  CellChangeTimes->{{3.564056190297125*^9, 3.564056210443729*^9}}],
 
 Cell[BoxData["\<\"poly.csv\"\>"], "Output",
- CellChangeTimes->{3.564056212685651*^9}]
+ CellChangeTimes->{3.564056212685651*^9, 3.56405660395724*^9}]
 }, Open  ]]
 },
 WindowSize->{740, 631},
-WindowMargins->{{142, Automatic}, {Automatic, 24}},
+WindowMargins->{{134, Automatic}, {Automatic, 0}},
 FrontEndVersion->"8.0 for Linux x86 (64-bit) (October 10, 2011)",
 StyleDefinitions->"Default.nb"
 ]
@@ -240,12 +225,12 @@ CellTagsIndex->{}
 Notebook[{
 Cell[557, 20, 1430, 43, 126, "Input"],
 Cell[CellGroupData[{
-Cell[2012, 67, 703, 17, 30, "Input"],
-Cell[2718, 86, 3527, 124, 188, "Output"]
+Cell[2012, 67, 829, 19, 50, "Input"],
+Cell[2844, 88, 3805, 107, 145, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[6282, 215, 175, 3, 30, "Input"],
-Cell[6460, 220, 85, 1, 30, "Output"]
+Cell[6686, 200, 175, 3, 30, "Input"],
+Cell[6864, 205, 106, 1, 30, "Output"]
 }, Open  ]]
 }
 ]
