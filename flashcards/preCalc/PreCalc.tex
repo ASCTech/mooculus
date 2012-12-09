@@ -1,0 +1,24 @@
+\documentclass[14pt]{extarticle}
+
+\usepackage{../flashCards}
+\usepackage{amstext}
+
+\DTLsetseparator{;}
+
+
+\begin{document}
+
+\pagenumbering{gobble}
+
+\DTLloaddb{study}{preCalc.csv}
+
+
+\DTLforeach{study}{%
+\problem=problem,\answer=answer}{%
+\newpage
+
+\vspace*{.1in} \noindent $\problem$  \vspace*{\fill} \newpage \vspace*{.1in} \noindent\color{textColor!50!background}$\problem\color{textColor} \answer$\vspace*{\fill}  }
+
+
+
+\end{document}
