@@ -19,6 +19,7 @@ problem; answer
 (f\circ g)(x); =f(g(x))
 (a+b)^2; =a^2 + 2ab + b^2
 a^2 - b^2; =(a+b)(a-b)
+\protect\text{Point Slope Formula}; \\ y = \frac{y_2-y_1}{x_2-x_1} (x-x_1) + y_1
 ax^2 + bx + c =0\\x; =\frac{-b\pm \sqrt{b^2 -4ac}}{2a} 
 \protect\sqrt{x^2}; =|x|
 
