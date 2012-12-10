@@ -719,7 +719,7 @@ Compute
 To compute this limit, use the Squeeze Theorem,
 Theorem~\ref{theorem:squeeze}. First note that we only need to examine
 $x\in \left(\frac{-\pi}{2}, \frac{\pi}{2}\right)$ and for the present
-time, we'll assume that $x$ is positive---examine the diagrams below:
+time, we'll assume that $x$ is positive---consider the diagrams below:
 \begin{fullwidth}
 \begin{tabular}{ccc}
 \begin{tikzpicture}
@@ -1070,7 +1070,7 @@ As $x$ approaches infinity, it seems like $f(x)$ approaches a specific
 value. This is a \textit{limit at infinity}.
 
 \begin{definition}\label{def:limitAtInfty}\index{limit!at infinity}
-If $f(x)$ becomes arbitrarly close to a specific value $L$ by making
+If $f(x)$ becomes arbitrarily close to a specific value $L$ by making
 $x$ sufficiently large, we write
 \[
 \lim_{x\to \infty} f(x) = L
@@ -1078,7 +1078,7 @@ $x$ sufficiently large, we write
 and we say, the \textbf{limit at infinity} of $f(x)$ is $L$.  
 
 If $f(x)$ becomes
-arbitrarly close to a specific value $L$ by making $x$ sufficiently
+arbitrarily close to a specific value $L$ by making $x$ sufficiently
 large and negative, we write
 \[
 \lim_{x\to -\infty} f(x) = L
@@ -1086,6 +1086,32 @@ large and negative, we write
 and we say, the \textbf{limit at negative infinity} of $f(x)$ is $L$.  
 \end{definition}
 
+\begin{example} Compute
+\[
+\lim_{x\to\infty} \frac{6x-9}{x-1}.
+\]
+\end{example}
+
+
+\begin{solution}
+Write
+\begin{align*}
+\lim_{x\to\infty}\frac{6x-9}{x-1} &= \lim_{x\to\infty}\frac{6x-9}{x-1} \frac{1/x}{1/x}\\
+&=\lim_{x\to\infty}\frac{\frac{6x}{x} - \frac{9}{x}}{\frac{x}{x} - \frac{1}{x}}\\
+&= \lim_{x\to\infty} \frac{6}{1}\\
+&= 6.
+\end{align*}
+\end{solution}
+
+
+Here is a somewhat different example of a limit at infinity.
+
+\begin{example}
+Compute
+\[
+\lim_{x\to \infty} \frac{\sin(7x)}{x}+4.
+\]
+\end{example}
 
 \begin{marginfigure}[0in]
 \begin{tikzpicture}
@@ -1101,14 +1127,75 @@ and we say, the \textbf{limit at negative infinity} of $f(x)$ is $L$.
 	  \addplot [very thick, penColor, smooth] {(1/x) * sin(deg(7*x))+4};
         \end{axis}
 \end{tikzpicture}
-\caption{A plot of $f(x)=LATER$.}
-\label{plot:LATER}
+\caption{A plot of $f(x)=\frac{\sin(7x)}{x}+4.$.}
+\label{plot:sin7x/x+4}
 \end{marginfigure}
 
- 
-\newpage %%%%%%%% REMOVE!
+\begin{solution}
+We can bound our function
+\[
+-1/x + 4 \le \frac{\sin(7x)}{x}+4 \le 1/x + 4.
+\]
+Since 
+\[
+\lim_{x\to \infty} -1/x + 4 = 4 = \lim_{x\to \infty}1/x + 4
+\] 
+we conclude by the Squeeze Theorem, Theorem~\ref{theorem:squeeze},
+$\lim_{x\to\infty}\frac{\sin(7x)}{x}+4 = 4$.
+\end{solution}
 
 
+
+
+
+
+\begin{definition}\label{def:horiz asymptote}\index{asymptote!horizontal}\index{horizontal asymptote}
+If  
+\[
+\lim_{x\to \infty} f(x) = L \qquad\text{or}\qquad \lim_{x\to -\infty} f(x) = L,
+\]
+then the line $y=L$ is a \textbf{horizontal asymptote} of $f(x)$.
+\end{definition}
+
+\begin{example} 
+Give the horizontal asymptotes of
+\[
+f(x) = \frac{6x-9}{x-1}
+\]
+\end{example}
+
+\begin{solution}
+From our previous work, we see that $\lim_{x\to \infty} f(x) = 6$, and
+upon further inspection, we see that $\lim_{x\to -\infty} f(x) =
+6$. Hence the horizontal asymptote of $f(x)$ is the line $y=6$.
+\end{solution}
+
+
+It is a common misconception that a function cannot cross an
+asymptote. As the next example shows, a function can cross an
+asymptote, and in this case this occurs an infinite number of times!
+
+\begin{example}
+Give a horizontal asymptote of
+\[
+f(x) = \frac{\sin(7x)}{x}+4.
+\]
+\end{example}
+
+\begin{solution}
+Again from previous work, we see that $\lim_{x\to \infty} f(x) =
+4$. Hence $y=4$ is a horizontal asymptote of $f(x)$.
+\end{solution}
+
+
+We conclude with an infinite limit at infinity.
+
+\begin{example}
+Compute
+\[
+\lim_{x\to \infty} \ln(x)
+\]
+\end{example}
 \begin{marginfigure}[0in]
 \begin{tikzpicture}
 	\begin{axis}[
@@ -1127,21 +1214,17 @@ and we say, the \textbf{limit at negative infinity} of $f(x)$ is $L$.
 \label{plot:lnx}
 \end{marginfigure}
 
-
-\begin{definition}\label{def:horiz asymptote}\index{asymptote!horizontal}\index{horizontal asymptote}
-If  
-\[
-\lim_{x\to \infty} f(x) = L \qquad\text{or}\qquad \lim_{x\to -\infty} f(x) = L,
-\]
-then the line $y=L$ is a \textbf{horizontal asymptote} of $f(x)$.
-\end{definition}
-
-\begin{example}
-\end{example}
-
 \begin{solution}
+The function $\ln(x)$ grows very slowly, and seems like it may have a
+horizontal asymptote, see Figure~\ref{plot:lnx}. However, if we
+consider the definition of the natural log
+\[
+\ln(x) = y \qquad \Leftrightarrow\qquad e^y =x
+\]
+Since we need to raise $e$ to higher and higher values to obtain
+larger numbers, we see that $\ln(x)$ is unbounded, and hence
+$\lim_{x\to\infty}\ln(x)=\infty$.
 \end{solution}
-
 
 
 \begin{exercises}
@@ -1213,18 +1296,6 @@ continuous at every point in the interval.
 
 In particular, we should note that if a function is not defined on an
 interval, then it \textbf{cannot} be continuous on that interval.
-
-\begin{example}
-Consider the function
-\[
-f(x) = 
-\begin{cases}
-\sqrt[5]{x}\sin\left(\frac{1}{x}\right) & \text{if $x \ne 0$,}\\
-0 & \text{if $x = 0$,}
-\end{cases}
-\]
-see Figure~\ref{plot:sqrt[5]{x}sin 1/x}. Is this function continuous?
-\end{example}
 \begin{marginfigure}[0in]
 \begin{tikzpicture}
 	\begin{axis}[
@@ -1254,35 +1325,30 @@ f(x)=
 \label{plot:sqrt[5]{x}sin 1/x}
 \end{marginfigure}
 
+\begin{example}
+Consider the function
+\[
+f(x) = 
+\begin{cases}
+\sqrt[5]{x}\sin\left(\frac{1}{x}\right) & \text{if $x \ne 0$,}\\
+0 & \text{if $x = 0$,}
+\end{cases}
+\]
+see Figure~\ref{plot:sqrt[5]{x}sin 1/x}. Is this function continuous?
+\end{example}
+
 \begin{solution}
 Considering $f(x)$, the only issue is when $x=0$. We must show that
 $\lim_{x\to 0} f(x) = 0$.
 
+
+PROOF
 
 
 This function is continuous. Here we see how the informal definition
 of continuity being that you can ``draw it'' without ``lifting your
 pencil'' differs from the formal definition. 
 \end{solution}
-
-
-
-
-\noindent{\bf Continuity.}  The graphs shown in (b) and (c) both represent
-{\bf continuous} functions.  Geometrically, this is because there are no
-jumps in the graphs.  That is, if you pick a point on the graph and
-approach it from the left and right, the values of the function approach
-the value of the function at that point.  For example, we can see that this
-is not true for function values near $x=-1$ on the graph in (a) which is
-not continuous at that location.  
-
-
-Strangely, we can also say that (d) is continuous even though there is a
-vertical asymptote.  A careful reading of the definition of continuous
-reveals the phrase ``\textit{at every point in its domain.}''  Because the
-location of the asymptote, $x=0$, is not in the domain of the function, and
-because the rest of the function is \textbf{well-behaved}, we can say that (d)
-is continuous.
 
 We close with a useful theorem about continuous functions:
 
