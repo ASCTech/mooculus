@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012/Debian) (format=pdflatex 2012.11.6)  10 DEC 2012 13:55
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012/Debian) (format=pdflatex 2012.11.6)  10 DEC 2012 17:06
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1559,11 +1559,11 @@ LaTeX Font Info:    Redeclaring font encoding T1 on input line 43.
 
 
 Package thmtools Warning: Key `notefont' not supported by ntheorem on input lin
-e 163.
+e 161.
 
 
 Package thmtools Warning: Key `notebraces' not supported by ntheorem on input l
-ine 163.
+ine 161.
 
 Package thmtools Info: Key `preheadhook' (with value `\begin {mdframed}[nobreak
 =true,leftmargin=40,rightmargin=40,backgroundcolor=theoremBackground,fontcolor=
@@ -1573,19 +1573,19 @@ r=mainTheoremBorder!10!background, roundcorner=10pt,innertopmargin=6pt,splittop
 skip=\topskip ,skipbelow=\baselineskip ,skipabove=\baselineskip ]')
 (thmtools)             is not a known style key.
 (thmtools)             Will pass this to every \declaretheorem
-(thmtools)             that uses `style=mainThmStyle' on input line 163.
+(thmtools)             that uses `style=mainThmStyle' on input line 161.
 Package thmtools Info: Key `postfoothook' (with value `\end {mdframed}')
 (thmtools)             is not a known style key.
 (thmtools)             Will pass this to every \declaretheorem
-(thmtools)             that uses `style=mainThmStyle' on input line 163.
+(thmtools)             that uses `style=mainThmStyle' on input line 161.
 \c@mainTheorem=\count316
 
 Package thmtools Warning: Key `notefont' not supported by ntheorem on input lin
-e 177.
+e 175.
 
 
 Package thmtools Warning: Key `notebraces' not supported by ntheorem on input l
-ine 177.
+ine 175.
 
 Package thmtools Info: Key `preheadhook' (with value `\begin {mdframed}[hideall
 lines=true,roundcorner=10pt,leftmargin=40,rightmargin=40,backgroundcolor=theore
@@ -1593,18 +1593,18 @@ mBackground,fontcolor=textColor,innertopmargin=6pt,splittopskip=\topskip ,skipb
 elow=\baselineskip ,skipabove=\baselineskip ]')
 (thmtools)             is not a known style key.
 (thmtools)             Will pass this to every \declaretheorem
-(thmtools)             that uses `style=thmStyle' on input line 177.
+(thmtools)             that uses `style=thmStyle' on input line 175.
 Package thmtools Info: Key `postfoothook' (with value `\end {mdframed}')
 (thmtools)             is not a known style key.
 (thmtools)             Will pass this to every \declaretheorem
-(thmtools)             that uses `style=thmStyle' on input line 177.
+(thmtools)             that uses `style=thmStyle' on input line 175.
 
 Package thmtools Warning: Key `notefont' not supported by ntheorem on input lin
-e 188.
+e 186.
 
 
 Package thmtools Warning: Key `notebraces' not supported by ntheorem on input l
-ine 188.
+ine 186.
 
 Package thmtools Info: Key `preheadhook' (with value `\begin {mdframed}[outerli
 newidth=2,topline=false, bottomline=false, leftline=true, rightline=false, left
@@ -1613,11 +1613,11 @@ ndcolor=background,skipbelow=\baselineskip ,skipabove=\baselineskip ,innertopma
 rgin=0pt, innerbottommargin=0pt]')
 (thmtools)             is not a known style key.
 (thmtools)             Will pass this to every \declaretheorem
-(thmtools)             that uses `style=egStyle' on input line 188.
+(thmtools)             that uses `style=egStyle' on input line 186.
 Package thmtools Info: Key `postfoothook' (with value `\end {mdframed}')
 (thmtools)             is not a known style key.
 (thmtools)             Will pass this to every \declaretheorem
-(thmtools)             that uses `style=egStyle' on input line 188.
+(thmtools)             that uses `style=egStyle' on input line 186.
 \c@solution=\count317
 \c@proof=\count318
 \c@definition=\count319

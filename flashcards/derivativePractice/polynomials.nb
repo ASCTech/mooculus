@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       157,          7]
-NotebookDataLength[      7444,        230]
-NotebookOptionsPosition[      6986,        209]
-NotebookOutlinePosition[      7322,        224]
-CellTagsIndexPosition[      7279,        221]
+NotebookDataLength[     17502,        573]
+NotebookOptionsPosition[     16774,        543]
+NotebookOutlinePosition[     17110,        558]
+CellTagsIndexPosition[     17067,        555]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -28,9 +28,342 @@ Cell[BoxData[{
   RowBox[{"Random", "[", 
    RowBox[{"Integer", ",", 
     RowBox[{"{", 
+     RowBox[{"0", ",", "1"}], "}"}]}], "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{"a", ":=", 
+  RowBox[{"Random", "[", 
+   RowBox[{"Integer", ",", 
+    RowBox[{"{", 
      RowBox[{
-      RowBox[{"-", "5"}], ",", "10"}], "}"}]}], 
+      RowBox[{"-", "30"}], ",", "30"}], "}"}]}], 
    "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"f", "[", "x_", "]"}], ":=", 
+  RowBox[{"Sum", "[", 
+   RowBox[{
+    RowBox[{"c", "*", "a", "*", 
+     RowBox[{"x", "^", "n"}]}], ",", 
+    RowBox[{"{", 
+     RowBox[{"j", ",", "1", ",", "5"}], "}"}]}], "]"}]}], "\n", 
+ RowBox[{
+  RowBox[{"fxns", "=", 
+   RowBox[{"Table", "[", 
+    RowBox[{
+     RowBox[{"f", "[", "x", "]"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"i", ",", "1", ",", "25"}], "}"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"deriv", "=", 
+   RowBox[{"D", "[", 
+    RowBox[{"fxns", ",", "x"}], "]"}]}], ";"}]}], "Input",
+ CellChangeTimes->{{3.564055259764009*^9, 3.5640555710137453`*^9}, 
+   3.564055623786251*^9, {3.56405568224494*^9, 3.564055711783175*^9}, {
+   3.56405585336584*^9, 3.564055909810491*^9}, 3.5640559985528507`*^9, 
+   3.564056067523479*^9, {3.564056105979628*^9, 3.564056106624051*^9}, {
+   3.56416535943927*^9, 3.5641653606313143`*^9}, {3.564165394044944*^9, 
+   3.564165395580246*^9}, {3.564165432444479*^9, 3.564165437979496*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"together", "=", 
+  RowBox[{"Table", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"TeXForm", "[", 
+       RowBox[{"fxns", "[", 
+        RowBox[{"[", "i", "]"}], "]"}], "]"}], ",", 
+      RowBox[{"TeXForm", "[", 
+       RowBox[{"deriv", "[", 
+        RowBox[{"[", "i", "]"}], "]"}], "]"}]}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"i", ",", "1", ",", 
+      RowBox[{"Length", "[", "fxns", "]"}]}], "}"}]}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.564055259764009*^9, 3.5640555710137453`*^9}, 
+   3.564055623786251*^9, {3.56405568224494*^9, 3.564055711783175*^9}, {
+   3.56405585336584*^9, 3.564055909810491*^9}, 3.5640559985528507`*^9, {
+   3.564056067523479*^9, 3.564056093161701*^9}, {3.564056282746271*^9, 
+   3.564056297557559*^9}, {3.564056567608411*^9, 3.564056593166074*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     InterpretationBox["\<\"19 x\"\>",
+      TeXForm[19 $CellContext`x],
+      AutoDelete->True,
+      Editable->True], ",", 
+     InterpretationBox["\<\"19\"\>",
+      TeXForm[19],
+      AutoDelete->True,
+      Editable->True]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     InterpretationBox["\<\"-4 x-10\"\>",
+      TeXForm[-10 - 4 $CellContext`x],
+      AutoDelete->True,
+      Editable->True], ",", 
+     InterpretationBox["\<\"-4\"\>",
+      TeXForm[-4],
+      AutoDelete->True,
+      Editable->True]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     InterpretationBox["\<\"-14 x-18\"\>",
+      TeXForm[-18 - 14 $CellContext`x],
+      AutoDelete->True,
+      Editable->True], ",", 
+     InterpretationBox["\<\"-14\"\>",
+      TeXForm[-14],
+      AutoDelete->True,
+      Editable->True]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     InterpretationBox["\<\"-4 x-6\"\>",
+      TeXForm[-6 - 4 $CellContext`x],
+      AutoDelete->True,
+      Editable->True], ",", 
+     InterpretationBox["\<\"-4\"\>",
+      TeXForm[-4],
+      AutoDelete->True,
+      Editable->True]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     InterpretationBox["\<\"17 x-22\"\>",
+      TeXForm[-22 + 17 $CellContext`x],
+      AutoDelete->True,
+      Editable->True], ",", 
+     InterpretationBox["\<\"17\"\>",
+      TeXForm[17],
+      AutoDelete->True,
+      Editable->True]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     InterpretationBox["\<\"15-51 x\"\>",
+      TeXForm[15 - 51 $CellContext`x],
+      AutoDelete->True,
+      Editable->True], ",", 
+     InterpretationBox["\<\"-51\"\>",
+      TeXForm[-51],
+      AutoDelete->True,
+      Editable->True]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     InterpretationBox["\<\"7 x\"\>",
+      TeXForm[7 $CellContext`x],
+      AutoDelete->True,
+      Editable->True], ",", 
+     InterpretationBox["\<\"7\"\>",
+      TeXForm[7],
+      AutoDelete->True,
+      Editable->True]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     InterpretationBox["\<\"-56 x-4\"\>",
+      TeXForm[-4 - 56 $CellContext`x],
+      AutoDelete->True,
+      Editable->True], ",", 
+     InterpretationBox["\<\"-56\"\>",
+      TeXForm[-56],
+      AutoDelete->True,
+      Editable->True]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     InterpretationBox["\<\"-27 x-34\"\>",
+      TeXForm[-34 - 27 $CellContext`x],
+      AutoDelete->True,
+      Editable->True], ",", 
+     InterpretationBox["\<\"-27\"\>",
+      TeXForm[-27],
+      AutoDelete->True,
+      Editable->True]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     InterpretationBox["\<\"-18\"\>",
+      TeXForm[-18],
+      AutoDelete->True,
+      Editable->True], ",", 
+     InterpretationBox["\<\"0\"\>",
+      TeXForm[0],
+      AutoDelete->True,
+      Editable->True]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     InterpretationBox["\<\"-56\"\>",
+      TeXForm[-56],
+      AutoDelete->True,
+      Editable->True], ",", 
+     InterpretationBox["\<\"0\"\>",
+      TeXForm[0],
+      AutoDelete->True,
+      Editable->True]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     InterpretationBox["\<\"37-28 x\"\>",
+      TeXForm[37 - 28 $CellContext`x],
+      AutoDelete->True,
+      Editable->True], ",", 
+     InterpretationBox["\<\"-28\"\>",
+      TeXForm[-28],
+      AutoDelete->True,
+      Editable->True]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     InterpretationBox["\<\"50 x\"\>",
+      TeXForm[50 $CellContext`x],
+      AutoDelete->True,
+      Editable->True], ",", 
+     InterpretationBox["\<\"50\"\>",
+      TeXForm[50],
+      AutoDelete->True,
+      Editable->True]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     InterpretationBox["\<\"38 x\"\>",
+      TeXForm[38 $CellContext`x],
+      AutoDelete->True,
+      Editable->True], ",", 
+     InterpretationBox["\<\"38\"\>",
+      TeXForm[38],
+      AutoDelete->True,
+      Editable->True]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     InterpretationBox["\<\"-29 x-19\"\>",
+      TeXForm[-19 - 29 $CellContext`x],
+      AutoDelete->True,
+      Editable->True], ",", 
+     InterpretationBox["\<\"-29\"\>",
+      TeXForm[-29],
+      AutoDelete->True,
+      Editable->True]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     InterpretationBox["\<\"4 x+5\"\>",
+      TeXForm[5 + 4 $CellContext`x],
+      AutoDelete->True,
+      Editable->True], ",", 
+     InterpretationBox["\<\"4\"\>",
+      TeXForm[4],
+      AutoDelete->True,
+      Editable->True]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     InterpretationBox["\<\"-27 x-1\"\>",
+      TeXForm[-1 - 27 $CellContext`x],
+      AutoDelete->True,
+      Editable->True], ",", 
+     InterpretationBox["\<\"-27\"\>",
+      TeXForm[-27],
+      AutoDelete->True,
+      Editable->True]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     InterpretationBox["\<\"-23\"\>",
+      TeXForm[-23],
+      AutoDelete->True,
+      Editable->True], ",", 
+     InterpretationBox["\<\"0\"\>",
+      TeXForm[0],
+      AutoDelete->True,
+      Editable->True]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     InterpretationBox["\<\"18 x\"\>",
+      TeXForm[18 $CellContext`x],
+      AutoDelete->True,
+      Editable->True], ",", 
+     InterpretationBox["\<\"18\"\>",
+      TeXForm[18],
+      AutoDelete->True,
+      Editable->True]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     InterpretationBox["\<\"-30\"\>",
+      TeXForm[-30],
+      AutoDelete->True,
+      Editable->True], ",", 
+     InterpretationBox["\<\"0\"\>",
+      TeXForm[0],
+      AutoDelete->True,
+      Editable->True]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     InterpretationBox["\<\"21 x+20\"\>",
+      TeXForm[20 + 21 $CellContext`x],
+      AutoDelete->True,
+      Editable->True], ",", 
+     InterpretationBox["\<\"21\"\>",
+      TeXForm[21],
+      AutoDelete->True,
+      Editable->True]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     InterpretationBox["\<\"-20 x\"\>",
+      TeXForm[(-20) $CellContext`x],
+      AutoDelete->True,
+      Editable->True], ",", 
+     InterpretationBox["\<\"-20\"\>",
+      TeXForm[-20],
+      AutoDelete->True,
+      Editable->True]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     InterpretationBox["\<\"-34 x\"\>",
+      TeXForm[(-34) $CellContext`x],
+      AutoDelete->True,
+      Editable->True], ",", 
+     InterpretationBox["\<\"-34\"\>",
+      TeXForm[-34],
+      AutoDelete->True,
+      Editable->True]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     InterpretationBox["\<\"24 x+1\"\>",
+      TeXForm[1 + 24 $CellContext`x],
+      AutoDelete->True,
+      Editable->True], ",", 
+     InterpretationBox["\<\"24\"\>",
+      TeXForm[24],
+      AutoDelete->True,
+      Editable->True]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     InterpretationBox["\<\"-11 x-16\"\>",
+      TeXForm[-16 - 11 $CellContext`x],
+      AutoDelete->True,
+      Editable->True], ",", 
+     InterpretationBox["\<\"-11\"\>",
+      TeXForm[-11],
+      AutoDelete->True,
+      Editable->True]}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{{3.5641654155191507`*^9, 3.564165440917172*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Export", "[", 
+  RowBox[{"\"\<level0.csv\>\"", ",", " ", "together"}], "]"}]], "Input",
+ CellChangeTimes->{{3.56416548115165*^9, 3.564165482606806*^9}}],
+
+Cell[BoxData["\<\"level0.csv\"\>"], "Output",
+ CellChangeTimes->{3.564165485795146*^9}]
+}, Open  ]],
+
+Cell[BoxData[{
+ RowBox[{"c", ":=", 
+  RowBox[{"Random", "[", 
+   RowBox[{"Integer", ",", 
+    RowBox[{"{", 
+     RowBox[{"0", ",", "1"}], "}"}]}], "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{"n", ":=", 
+  RowBox[{"Random", "[", 
+   RowBox[{"Integer", ",", 
+    RowBox[{"{", 
+     RowBox[{"1", ",", "10"}], "}"}]}], "]"}]}], "\[IndentingNewLine]", 
  RowBox[{"a", ":=", 
   RowBox[{"Random", "[", 
    RowBox[{"Integer", ",", 
@@ -61,7 +394,8 @@ Cell[BoxData[{
  CellChangeTimes->{{3.564055259764009*^9, 3.5640555710137453`*^9}, 
    3.564055623786251*^9, {3.56405568224494*^9, 3.564055711783175*^9}, {
    3.56405585336584*^9, 3.564055909810491*^9}, 3.5640559985528507`*^9, 
-   3.564056067523479*^9, {3.564056105979628*^9, 3.564056106624051*^9}}],
+   3.564056067523479*^9, {3.564056105979628*^9, 3.564056106624051*^9}, {
+   3.56416535943927*^9, 3.5641653606313143`*^9}}],
 
 Cell[CellGroupData[{
 
@@ -207,8 +541,8 @@ Cell[BoxData["\<\"poly.csv\"\>"], "Output",
  CellChangeTimes->{3.564056212685651*^9, 3.56405660395724*^9}]
 }, Open  ]]
 },
-WindowSize->{740, 631},
-WindowMargins->{{134, Automatic}, {Automatic, 0}},
+WindowSize->{1280, 1000},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
 FrontEndVersion->"8.0 for Linux x86 (64-bit) (October 10, 2011)",
 StyleDefinitions->"Default.nb"
 ]
@@ -223,14 +557,23 @@ CellTagsIndex->{}
 *)
 (*NotebookFileOutline
 Notebook[{
-Cell[557, 20, 1430, 43, 126, "Input"],
+Cell[557, 20, 1550, 43, 126, "Input"],
 Cell[CellGroupData[{
-Cell[2012, 67, 829, 19, 50, "Input"],
-Cell[2844, 88, 3805, 107, 145, "Output"]
+Cell[2132, 67, 829, 19, 30, "Input"],
+Cell[2964, 88, 7038, 253, 69, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[6686, 200, 175, 3, 30, "Input"],
-Cell[6864, 205, 106, 1, 30, "Output"]
+Cell[10039, 346, 176, 3, 30, "Input"],
+Cell[10218, 351, 87, 1, 30, "Output"]
+}, Open  ]],
+Cell[10320, 355, 1455, 42, 126, "Input"],
+Cell[CellGroupData[{
+Cell[11800, 401, 829, 19, 30, "Input"],
+Cell[12632, 422, 3805, 107, 88, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[16474, 534, 175, 3, 30, "Input"],
+Cell[16652, 539, 106, 1, 30, "Output"]
 }, Open  ]]
 }
 ]
