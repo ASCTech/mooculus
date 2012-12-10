@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012/Debian) (format=pdflatex 2012.11.6)  9 DEC 2012 16:58
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012/Debian) (format=pdflatex 2012.11.6)  10 DEC 2012 13:55
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1665,15 +1665,6 @@ LaTeX Warning: Label `plot:(x^2-9x+14)/(x^2-5x+6)' multiply defined.
 
 LaTeX Warning: Label `figure:epsilon-delta' multiply defined.
 
-
-LaTeX Warning: Label `def:limit' multiply defined.
-
-
-LaTeX Warning: Label `thm:limit of composition' multiply defined.
-
-
-LaTeX Warning: Label `thm:continuity of roots' multiply defined.
-
 )
 \openout1 = `textbook.aux'.
 
@@ -2234,6 +2225,10 @@ Package microtype Info: Character `OE ' is missing
 LaTeX Font Info:    Font shape `OML/mak/b/it' will be
 (Font)              scaled to size 8.99994pt on input line 503.
 [13]
+
+LaTeX Warning: Reference `thm:properties of limits' on page 14 undefined on inp
+ut line 544.
+
 Package mdframed Info: mdframed works in twoside mode on input line 546.
 Package mdframed Info: mdframed works in twoside mode on input line 556.
 
@@ -2291,142 +2286,137 @@ LaTeX Warning: Marginpar on page 19 moved.
 Package mdframed Info: mdframed works in twoside mode on input line 712.
 Package mdframed Info: mdframed works in twoside mode on input line 718.
 
-Overfull \hbox (11.19186pt too wide) in paragraph at lines 724--793
+Overfull \hbox (11.19186pt too wide) in paragraph at lines 727--796
 [][] 
  []
 
-[19]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [20]
-Overfull \vbox (28.20369pt too high) has occurred while \output is active []
-
-
-[21] [22]
-Underfull \hbox (badness 10000) in paragraph at lines 894--894
+[19] [20] [21]
+Underfull \hbox (badness 10000) in paragraph at lines 898--898
 
  []
 
+[22]
+Overfull \hbox (31.04605pt too wide) in paragraph at lines 915--929
+[] 
+ []
+
+
+LaTeX Warning: Marginpar on page 23 moved.
+
+Package mdframed Info: mdframed works in twoside mode on input line 934.
+
+Overfull \hbox (31.03813pt too wide) in paragraph at lines 959--974
+[] 
+ []
+
+Package mdframed Info: mdframed works in twoside mode on input line 979.
+Package mdframed Info: mdframed works in twoside mode on input line 989.
+Package mdframed Info: Not enough space on this page on input line 993.
 [23]
-Overfull \hbox (31.04605pt too wide) in paragraph at lines 911--925
-[] 
- []
+Package mdframed Info: Not enough space on this page on input line 993.
+Package mdframed Info: mdframed works in twoside mode on input line 994.
 
-
-LaTeX Warning: Marginpar on page 24 moved.
-
-Package mdframed Info: mdframed works in twoside mode on input line 930.
-
-Overfull \hbox (31.03813pt too wide) in paragraph at lines 955--970
-[] 
- []
-
-Package mdframed Info: mdframed works in twoside mode on input line 975.
-Package mdframed Info: mdframed works in twoside mode on input line 985.
-Package mdframed Info: Not enough space on this page on input line 989.
-[24]
-Package mdframed Info: Not enough space on this page on input line 989.
-Package mdframed Info: mdframed works in twoside mode on input line 990.
-
-Overfull \hbox (46.5974pt too wide) in paragraph at lines 1010--1027
+Overfull \hbox (46.5974pt too wide) in paragraph at lines 1014--1031
  [] 
  []
 
-[25]
-Underfull \hbox (badness 10000) in paragraph at lines 1036--1036
+[24]
+Underfull \hbox (badness 10000) in paragraph at lines 1040--1040
 
  []
 
+[25]
+Overfull \hbox (46.60362pt too wide) in paragraph at lines 1054--1070
+ [] 
+ []
+
+
+LaTeX Warning: Marginpar on page 26 moved.
+
+Package mdframed Info: mdframed works in twoside mode on input line 1076.
+Package mdframed Info: mdframed works in twoside mode on input line 1093.
+Package mdframed Info: mdframed works in twoside mode on input line 1100.
+Package mdframed Info: mdframed works in twoside mode on input line 1114.
 [26]
-Overfull \hbox (46.60362pt too wide) in paragraph at lines 1050--1066
+Package mdframed Info: Not enough space on this page on input line 1118.
+
+Overfull \hbox (43.51015pt too wide) in paragraph at lines 1120--1134
  [] 
  []
 
 
 LaTeX Warning: Marginpar on page 27 moved.
 
-Package mdframed Info: mdframed works in twoside mode on input line 1072.
-Package mdframed Info: mdframed works in twoside mode on input line 1089.
-Package mdframed Info: mdframed works in twoside mode on input line 1096.
-Package mdframed Info: mdframed works in twoside mode on input line 1110.
-[27]
-Package mdframed Info: Not enough space on this page on input line 1114.
-
-Overfull \hbox (43.51015pt too wide) in paragraph at lines 1116--1130
- [] 
- []
-
-
-LaTeX Warning: Marginpar on page 28 moved.
-
-Package mdframed Info: mdframed works in twoside mode on input line 1134.
-Package mdframed Info: mdframed works in twoside mode on input line 1152.
-Package mdframed Info: mdframed works in twoside mode on input line 1161.
-Package mdframed Info: mdframed works in twoside mode on input line 1167.
-Package mdframed Info: mdframed works in twoside mode on input line 1179.
+Package mdframed Info: mdframed works in twoside mode on input line 1138.
+Package mdframed Info: mdframed works in twoside mode on input line 1156.
+Package mdframed Info: mdframed works in twoside mode on input line 1165.
+Package mdframed Info: mdframed works in twoside mode on input line 1171.
+Package mdframed Info: mdframed works in twoside mode on input line 1183.
 Package mdframed Info: Box was splittet wrong
-(mdframed)              on input line 1183.
-[28]
-Package mdframed Info: mdframed works in twoside mode on input line 1185.
-Package mdframed Info: mdframed works in twoside mode on input line 1194.
+(mdframed)              on input line 1187.
+[27]
+Package mdframed Info: mdframed works in twoside mode on input line 1189.
+Package mdframed Info: mdframed works in twoside mode on input line 1198.
 
 NOTE: coordinate (0Y0.0e0],3Y0.0e0]) has been dropped because it is unbounded (
 in y). 
 
-Overfull \hbox (42.12804pt too wide) in paragraph at lines 1199--1213
+Overfull \hbox (42.12804pt too wide) in paragraph at lines 1203--1217
  [] 
  []
 
-Package mdframed Info: mdframed works in twoside mode on input line 1217.
+Package mdframed Info: mdframed works in twoside mode on input line 1221.
+[28]
+Underfull \hbox (badness 10000) in paragraph at lines 1238--1238
+
+ []
+
 [29]
-Underfull \hbox (badness 10000) in paragraph at lines 1234--1234
+Package mdframed Info: mdframed works in twoside mode on input line 1249.
 
- []
-
-[30]
-Package mdframed Info: mdframed works in twoside mode on input line 1245.
-
-Overfull \hbox (37.04941pt too wide) in paragraph at lines 1249--1268
+Overfull \hbox (37.04941pt too wide) in paragraph at lines 1253--1272
  [] 
  []
+
+
+LaTeX Warning: Marginpar on page 30 moved.
+
+Package mdframed Info: mdframed works in twoside mode on input line 1277.
+Package mdframed Info: mdframed works in twoside mode on input line 1280.
+Package mdframed Info: mdframed works in twoside mode on input line 1297.
+
+Overfull \hbox (35.87027pt too wide) in paragraph at lines 1303--1328
+ [] 
+ []
+
+Package mdframed Info: mdframed works in twoside mode on input line 1333.
+Package mdframed Info: Box was splittet wrong
+(mdframed)              on input line 1342.
+[30]
+Package mdframed Info: mdframed works in twoside mode on input line 1344.
+Package mdframed Info: mdframed works in twoside mode on input line 1359.
 
 
 LaTeX Warning: Marginpar on page 31 moved.
 
-Package mdframed Info: mdframed works in twoside mode on input line 1273.
-Package mdframed Info: mdframed works in twoside mode on input line 1276.
-Package mdframed Info: mdframed works in twoside mode on input line 1293.
-
-Overfull \hbox (35.87027pt too wide) in paragraph at lines 1299--1324
- [] 
- []
-
-Package mdframed Info: mdframed works in twoside mode on input line 1329.
-Package mdframed Info: Box was splittet wrong
-(mdframed)              on input line 1338.
-[31]
-Package mdframed Info: mdframed works in twoside mode on input line 1340.
-Package mdframed Info: mdframed works in twoside mode on input line 1355.
-
-
-LaTeX Warning: Marginpar on page 32 moved.
-
-Package mdframed Info: mdframed works in twoside mode on input line 1408.
+Package mdframed Info: mdframed works in twoside mode on input line 1412.
 
 Underfull \vbox (badness 4634) has occurred while \output is active []
 
- [32]
-Package mdframed Info: Not enough space on this page on input line 1410.
-Package mdframed Info: mdframed works in twoside mode on input line 1412.
-Package mdframed Info: mdframed works in twoside mode on input line 1423.
-Package mdframed Info: mdframed works in twoside mode on input line 1425.
+ [31]
+Package mdframed Info: Not enough space on this page on input line 1414.
+Package mdframed Info: mdframed works in twoside mode on input line 1416.
+Package mdframed Info: mdframed works in twoside mode on input line 1427.
+Package mdframed Info: mdframed works in twoside mode on input line 1429.
 
-[33]
-Underfull \hbox (badness 10000) in paragraph at lines 1460--1460
+[32]
+Underfull \hbox (badness 10000) in paragraph at lines 1464--1464
 
  []
 
-[34]) (./derivatives.tex
+[33]) (./derivatives.tex [34
+
+]
 Chapter 2.
 LaTeX Font Info:    Font shape `T1/mak/m/n' will be
 (Font)              scaled to size 8.09995pt on input line 25.
@@ -2462,358 +2452,32 @@ LaTeX Font Info:    Font shape `T1/mak/m/n' will be
 (Font)              scaled to size 6.29996pt on input line 26.
 LaTeX Font Info:    Font shape `T1/mak/bx/n' will be
 (Font)              scaled to size 8.09995pt on input line 28.
-[35
-
-]
+[35]
 Package mdframed Info: mdframed works in twoside mode on input line 109.
-) (./chapter02.tex
-Underfull \vbox (badness 3312) has occurred while \output is active []
+Package mdframed Info: mdframed works in twoside mode on input line 114.
 
- [36]
-[37] [38
 
-]
-Chapter 3.
-(./section02.01.tex
-Package mdframed Info: mdframed works in twoside mode on input line 10.
+LaTeX Warning: Reference `fig:cusp' on page 36 undefined on input line 115.
 
-Overfull \hbox (7.74611pt too wide) in paragraph at lines 28--28
-[] 
- []
+[36]
+Package mdframed Info: mdframed works in twoside mode on input line 177.
+Package mdframed Info: mdframed works in twoside mode on input line 190.
+ [37]
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-Package mdframed Info: Box was splittet wrong
-(mdframed)              on input line 37.
+ [38]
 [39]
 
-LaTeX Warning: Reference `fig:chords' on page 40 undefined on input line 55.
+LaTeX Warning: Reference `ex:derivative of a line' on page 40 undefined on inpu
+t line 296.
 
-[40]
-Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [41]
-[42] [43]
-Underfull \hbox (badness 10000) in paragraph at lines 278--278
+Underfull \vbox (badness 1102) has occurred while \output is active []
 
- []
+ [40]
+Package mdframed Info: mdframed works in twoside mode on input line 332.
 
-[44] [45]) (./section02.02.tex
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [46]
-[47] [48]
-Underfull \hbox (badness 10000) in paragraph at lines 143--143
-
- []
-
-
-LaTeX Warning: Reference `fig:data plot' on page 49 undefined on input line 143
-.
-
-[49]) (./section02.03.tex
-Package mdframed Info: mdframed works in twoside mode on input line 30.
- [50] [51]
-Package mdframed Info: mdframed works in twoside mode on input line 130.
-Package mdframed Info: Not enough space on this page on input line 138.
- [52]
-Package mdframed Info: Not enough space on this page on input line 138.
- [53]
-Package mdframed Info: mdframed works in twoside mode on input line 193.
- [54]
-Package mdframed Info: mdframed works in twoside mode on input line 248.
-Package mdframed Info: mdframed works in twoside mode on input line 253.
-Package mdframed Info: Box was splittet wrong
-(mdframed)              on input line 305.
-Package mdframed Info: Box was splittet wrong
-(mdframed)              on input line 305.
-Package mdframed Info: Box was splittet wrong
-(mdframed)              on input line 305.
- [55]
-Package mdframed Info: mdframed works in twoside mode on input line 310.
-
-Overfull \vbox (77.86545pt too high) detected at line 321
- []
-
-Package mdframed Info: Box was splittet wrong
-(mdframed)              on input line 321.
-
-Overfull \vbox (123.49821pt too high) detected at line 321
- []
-
-
-Overfull \vbox (96.26553pt too high) detected at line 321
- []
-
-Package mdframed Info: Box was splittet wrong
-(mdframed)              on input line 321.
-
-Overfull \vbox (151.09834pt too high) detected at line 321
- []
-
-
-Overfull \vbox (114.66562pt too high) detected at line 321
- []
-
-Package mdframed Info: Box was splittet wrong
-(mdframed)              on input line 321.
-
-Overfull \vbox (178.69847pt too high) detected at line 321
- []
-
-
-Overfull \vbox (133.0657pt too high) detected at line 321
- []
-
-Package mdframed Info: Box was splittet wrong
-(mdframed)              on input line 321.
-
-Overfull \vbox (206.2986pt too high) detected at line 321
- []
-
-[56]
-Package mdframed Info: mdframed works in twoside mode on input line 330.
-
-Overfull \vbox (20.43675pt too high) detected at line 342
- []
-
-Package mdframed Info: Box was splittet wrong
-(mdframed)              on input line 342.
-
-Overfull \vbox (37.35516pt too high) detected at line 342
- []
-
-
-Overfull \vbox (38.83684pt too high) detected at line 342
- []
-
-Package mdframed Info: Box was splittet wrong
-(mdframed)              on input line 342.
-
-Overfull \vbox (64.95529pt too high) detected at line 342
- []
-
-
-Overfull \vbox (57.23692pt too high) detected at line 342
- []
-
-Package mdframed Info: Box was splittet wrong
-(mdframed)              on input line 342.
-
-Overfull \vbox (92.55542pt too high) detected at line 342
- []
-
-
-Overfull \vbox (75.63701pt too high) detected at line 342
- []
-
-Package mdframed Info: Box was splittet wrong
-(mdframed)              on input line 342.
-
-Overfull \vbox (120.15555pt too high) detected at line 342
- []
-
-
-Overfull \vbox (94.0371pt too high) detected at line 342
- []
-
-Package mdframed Info: Box was splittet wrong
-(mdframed)              on input line 342.
-
-Overfull \vbox (147.75568pt too high) detected at line 342
- []
-
-
-Overfull \vbox (112.43718pt too high) detected at line 342
- []
-
-Package mdframed Info: Box was splittet wrong
-(mdframed)              on input line 342.
-
-Overfull \vbox (175.3558pt too high) detected at line 342
- []
-
-
-Overfull \vbox (130.83727pt too high) detected at line 342
- []
-
-Package mdframed Info: Box was splittet wrong
-(mdframed)              on input line 342.
-
-Overfull \vbox (202.95593pt too high) detected at line 342
- []
-
-
-Overfull \vbox (149.23735pt too high) detected at line 342
- []
-
-Package mdframed Info: Box was splittet wrong
-(mdframed)              on input line 342.
-
-Overfull \vbox (230.55606pt too high) detected at line 342
- []
-
-
-Overfull \vbox (167.63744pt too high) detected at line 342
- []
-
-Package mdframed Info: Box was splittet wrong
-(mdframed)              on input line 342.
-
-Overfull \vbox (258.15619pt too high) detected at line 342
- []
-
-
-Overfull \vbox (186.03752pt too high) detected at line 342
- []
-
-Package mdframed Info: Box was splittet wrong
-(mdframed)              on input line 342.
-
-Overfull \vbox (285.75632pt too high) detected at line 342
- []
-
-
-Overfull \vbox (204.4376pt too high) detected at line 342
- []
-
-Package mdframed Info: Box was splittet wrong
-(mdframed)              on input line 342.
-
-Overfull \vbox (313.35645pt too high) detected at line 342
- []
-
-
-Overfull \vbox (222.83769pt too high) detected at line 342
- []
-
-Package mdframed Info: Box was splittet wrong
-(mdframed)              on input line 342.
-
-Overfull \vbox (340.95657pt too high) detected at line 342
- []
-
-
-Overfull \vbox (241.23778pt too high) detected at line 342
- []
-
-Package mdframed Info: Box was splittet wrong
-(mdframed)              on input line 342.
-
-Overfull \vbox (368.5567pt too high) detected at line 342
- []
-
-
-Overfull \vbox (259.63786pt too high) detected at line 342
- []
-
-Package mdframed Info: Box was splittet wrong
-(mdframed)              on input line 342.
-
-Overfull \vbox (396.15683pt too high) detected at line 342
- []
-
-[57]
-Package mdframed Info: mdframed works in twoside mode on input line 358.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [58]
-Package mdframed Info: Not enough space on this page on input line 366.
-Package mdframed Info: mdframed works in twoside mode on input line 381.
-Package mdframed Info: mdframed works in twoside mode on input line 391.
-
-[59]
-Package mdframed Info: mdframed works in twoside mode on input line 403.
-Package mdframed Info: mdframed works in twoside mode on input line 429.
- [60]
-Package mdframed Info: mdframed works in twoside mode on input line 441.
- [61]
-Underfull \hbox (badness 10000) in paragraph at lines 567--567
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 567--567
-
- []
-
-[62]) (./section02.04.tex [63]
-Package mdframed Info: mdframed works in twoside mode on input line 60.
-Package mdframed Info: mdframed works in twoside mode on input line 76.
- [64]
-Package mdframed Info: mdframed works in twoside mode on input line 113.
- [65]
-Package mdframed Info: mdframed works in twoside mode on input line 134.
-
-
-LaTeX Warning: Reference `fig:cusp' on page 66 undefined on input line 136.
-
-[66]
-Underfull \hbox (badness 10000) in paragraph at lines 285--285
-
- []
-
-[67]) (./section02.05.tex
-
-LaTeX Warning: Reference `sec:functions' on page 68 undefined on input line 5.
-
-
-LaTeX Warning: Reference `fig:function types' on page 68 undefined on input lin
-e 9.
-
-
-LaTeX Warning: Reference `fig:function types' on page 68 undefined on input lin
-e 114.
-
-Package mdframed Info: mdframed works in twoside mode on input line 127.
-Package mdframed Info: mdframed works in twoside mode on input line 145.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [68]
-Package mdframed Info: Not enough space on this page on input line 147.
-Package mdframed Info: mdframed works in twoside mode on input line 150.
-Package mdframed Info: mdframed works in twoside mode on input line 168.
-Package mdframed Info: mdframed works in twoside mode on input line 172.
-Package mdframed Info: mdframed works in twoside mode on input line 186.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [69]
-Package mdframed Info: Not enough space on this page on input line 189.
-Package mdframed Info: mdframed works in twoside mode on input line 195.
-Package mdframed Info: mdframed works in twoside mode on input line 206.
-
-[70]
-Underfull \hbox (badness 10000) in paragraph at lines 262--262
-
- []
-
-
-LaTeX Warning: Reference `fig:function types' on page 71 undefined on input lin
-e 262.
-
-[71])) (./chapter03.tex [72
-
-]
-Chapter 4.
-(./section03.01.tex
-Package mdframed Info: mdframed works in twoside mode on input line 23.
- [73]
-Package mdframed Info: Not enough space on this page on input line 33.
- [74]
-Package mdframed Info: mdframed works in twoside mode on input line 77.
- [75] [76]
-Underfull \hbox (badness 10000) in paragraph at lines 148--148
-
- []
-
-[77]) (./section03.02.tex
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [78]
-Package mdframed Info: mdframed works in twoside mode on input line 56.
-
-Overfull \hbox (52.07771pt too wide) detected at line 59
+Overfull \hbox (52.07771pt too wide) detected at line 337
 \OML/mak/b/it/10 f[]\OT1/zplm/m/n/10 (\OML/mak/b/it/10 x\OT1/zplm/m/n/10 ) = []
 (\OML/mak/b/it/10 x[] \OT1/zplm/m/n/10 + \T1/mak/m/n/10 5\OML/mak/b/it/10 x[]\O
 T1/zplm/m/n/10 ) = []\OML/mak/b/it/10 x[] \OT1/zplm/m/n/10 + [](\T1/mak/m/n/10 
@@ -2825,9 +2489,9 @@ m/n/10 = \T1/mak/m/n/10 5\OML/mak/b/it/10 x[] \OT1/zplm/m/n/10 + \T1/mak/m/n/10
  10\OML/mak/b/it/10 x\OT1/txr/m/n/10 .
  []
 
-Package mdframed Info: mdframed works in twoside mode on input line 67.
+Package mdframed Info: mdframed works in twoside mode on input line 341.
 
-Overfull \hbox (3.83095pt too wide) detected at line 70
+Overfull \hbox (3.83095pt too wide) detected at line 344
 \OML/mak/b/it/10 f[]\OT1/zplm/m/n/10 (\OML/mak/b/it/10 x\OT1/zplm/m/n/10 ) = []
  [] = [](\T1/mak/m/n/10 3\OML/mak/b/it/10 x[] \OMS/txsy/m/n/10 ^^@ \T1/mak/m/n/
 10 2\OML/mak/b/it/10 x[] \OT1/zplm/m/n/10 + \T1/mak/m/n/10 6\OML/mak/b/it/10 x 
@@ -2836,239 +2500,22 @@ T1/mak/m/n/10 12\OML/mak/b/it/10 x[] \OMS/txsy/m/n/10 ^^@ \T1/mak/m/n/10 4\OML/
 mak/b/it/10 x \OT1/zplm/m/n/10 + \T1/mak/m/n/10 6\OT1/txr/m/n/10 .
  []
 
-[79]
-Underfull \hbox (badness 10000) in paragraph at lines 144--144
-
- []
-
-[80]) (./section03.03.tex
-Overfull \hbox (8.0707pt too wide) in paragraph at lines 32--32
-[] 
- []
-
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [81]
-Package mdframed Info: mdframed works in twoside mode on input line 93.
+ [41]
+Package mdframed Info: mdframed works in twoside mode on input line 368.
 
-Overfull \hbox (8.30383pt too wide) detected at line 99
-\OML/mak/b/it/10 f[]\OT1/zplm/m/n/10 (\OML/mak/b/it/10 x\OT1/zplm/m/n/10 ) = \O
-ML/mak/b/it/10 x[][] \OT1/zplm/m/n/10 + \T1/mak/m/n/10 2\OML/mak/b/it/10 x[] \O
-T1/zplm/m/n/10 = [] = []\OT1/txr/m/n/10 .
- []
-
-[82]
-Underfull \hbox (badness 10000) in paragraph at lines 178--178
+[42] [43]
+Underfull \hbox (badness 10000) in paragraph at lines 517--517
 
  []
 
-[83] [84]) (./section03.04.tex
-Overfull \hbox (25.27937pt too wide) detected at line 26
-[][] \OT1/zplm/m/n/10 = \OML/mak/b/it/10 f\OT1/zplm/m/n/10 (\OML/mak/b/it/10 x\
-OT1/zplm/m/n/10 )[] + \OML/mak/b/it/10 f[]\OT1/zplm/m/n/10 (\OML/mak/b/it/10 x\
-OT1/zplm/m/n/10 )[] = [] = []\OT1/txr/m/n/10 .
- []
 
-Package mdframed Info: mdframed works in twoside mode on input line 29.
-Package mdframed Info: mdframed works in twoside mode on input line 43.
-[85] [86] [87]
-Underfull \hbox (badness 10000) in paragraph at lines 165--165
+LaTeX Warning: Reference `sec:slope of a function' on page 44 undefined on inpu
+t line 517.
 
- []
-
-[88]) (./section03.05.tex
-Package mdframed Info: mdframed works in twoside mode on input line 19.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [89]
-Package mdframed Info: mdframed works in twoside mode on input line 81.
-
-[90]
-Package mdframed Info: Not enough space on this page on input line 92.
-Package mdframed Info: mdframed works in twoside mode on input line 95.
-Package mdframed Info: mdframed works in twoside mode on input line 110.
- [91]
-Package mdframed Info: mdframed works in twoside mode on input line 138.
- [92]
-Package mdframed Info: mdframed works in twoside mode on input line 166.
-
-Overfull \vbox (3.37129pt too high) detected at line 180
- []
-
-Package mdframed Info: Box was splittet wrong
-(mdframed)              on input line 180.
-
-Overfull \vbox (11.75697pt too high) detected at line 180
- []
-
-
-Overfull \vbox (21.77138pt too high) detected at line 180
- []
-
-Package mdframed Info: Box was splittet wrong
-(mdframed)              on input line 180.
-
-Overfull \vbox (39.3571pt too high) detected at line 180
- []
-
-
-Overfull \vbox (40.17146pt too high) detected at line 180
- []
-
-Package mdframed Info: Box was splittet wrong
-(mdframed)              on input line 180.
-
-Overfull \vbox (66.95723pt too high) detected at line 180
- []
-
-
-Overfull \vbox (58.57155pt too high) detected at line 180
- []
-
-Package mdframed Info: Box was splittet wrong
-(mdframed)              on input line 180.
-
-Overfull \vbox (94.55736pt too high) detected at line 180
- []
-
-
-Overfull \vbox (76.97163pt too high) detected at line 180
- []
-
-Package mdframed Info: Box was splittet wrong
-(mdframed)              on input line 180.
-
-Overfull \vbox (122.15749pt too high) detected at line 180
- []
-
-
-Overfull \vbox (95.37172pt too high) detected at line 180
- []
-
-Package mdframed Info: Box was splittet wrong
-(mdframed)              on input line 180.
-
-Overfull \vbox (149.75761pt too high) detected at line 180
- []
-
-
-Overfull \vbox (113.7718pt too high) detected at line 180
- []
-
-Package mdframed Info: Box was splittet wrong
-(mdframed)              on input line 180.
-
-Overfull \vbox (177.35774pt too high) detected at line 180
- []
-
-
-Overfull \vbox (132.17189pt too high) detected at line 180
- []
-
-Package mdframed Info: Box was splittet wrong
-(mdframed)              on input line 180.
-
-Overfull \vbox (204.95787pt too high) detected at line 180
- []
-
-
-Overfull \vbox (150.57198pt too high) detected at line 180
- []
-
-Package mdframed Info: Box was splittet wrong
-(mdframed)              on input line 180.
-
-Overfull \vbox (232.558pt too high) detected at line 180
- []
-
-
-Overfull \vbox (168.97206pt too high) detected at line 180
- []
-
-Package mdframed Info: Box was splittet wrong
-(mdframed)              on input line 180.
-
-Overfull \vbox (260.15813pt too high) detected at line 180
- []
-
-
-Overfull \vbox (187.37215pt too high) detected at line 180
- []
-
-Package mdframed Info: Box was splittet wrong
-(mdframed)              on input line 180.
-
-Overfull \vbox (287.75826pt too high) detected at line 180
- []
-
-
-Overfull \vbox (205.77223pt too high) detected at line 180
- []
-
-Package mdframed Info: Box was splittet wrong
-(mdframed)              on input line 180.
-
-Overfull \vbox (315.35838pt too high) detected at line 180
- []
-
-
-Overfull \vbox (224.17232pt too high) detected at line 180
- []
-
-Package mdframed Info: Box was splittet wrong
-(mdframed)              on input line 180.
-
-Overfull \vbox (342.95851pt too high) detected at line 180
- []
-
-
-Overfull \vbox (242.5724pt too high) detected at line 180
- []
-
-Package mdframed Info: Box was splittet wrong
-(mdframed)              on input line 180.
-
-Overfull \vbox (370.55864pt too high) detected at line 180
- []
-
-
-Overfull \vbox (260.97249pt too high) detected at line 180
- []
-
-Package mdframed Info: Box was splittet wrong
-(mdframed)              on input line 180.
-
-Overfull \vbox (398.15877pt too high) detected at line 180
- []
-
-
-Overfull \vbox (279.37257pt too high) detected at line 180
- []
-
-Package mdframed Info: Box was splittet wrong
-(mdframed)              on input line 180.
-
-Overfull \vbox (425.7589pt too high) detected at line 180
- []
-
-
-Overfull \vbox (297.77266pt too high) detected at line 180
- []
-
-Package mdframed Info: Box was splittet wrong
-(mdframed)              on input line 180.
-
-Overfull \vbox (453.35902pt too high) detected at line 180
- []
-
-[93] [94]
-Underfull \hbox (badness 10000) in paragraph at lines 364--364
-
- []
-
-[95] [96])) (./textbook.ans)
+[44] [45]) [46] (./textbook.ans)
 No file textbook.ind.
 
 Package bibentry Warning: You have used \nobibliography* 
@@ -3082,7 +2529,7 @@ Package bibentry Warning: You have used \nobibliography*
 \openout9 = `textbook.loe'.
 
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 210.
-[97
+[47
 
 
 ]
@@ -3091,7 +2538,7 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 210.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 210.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 210.
 Package rerunfilecheck Info: File `textbook.out' has not changed.
-(rerunfilecheck)             Checksum: 50320FC775BFF300BC1E156CE9C103F0;3821.
+(rerunfilecheck)             Checksum: 2BC70D6F4A812FB2866989C5C23F0041;2540.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
@@ -3105,13 +2552,13 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 210.
  ) 
 Here is how much of TeX's memory you used:
- 38773 strings out of 493481
- 783097 string characters out of 3143393
- 1623155 words of memory out of 3000000
- 40378 multiletter control sequences out of 15000+200000
- 105370 words of font info for 429 fonts, out of 3000000 for 9000
+ 38353 strings out of 493481
+ 777500 string characters out of 3143393
+ 1620895 words of memory out of 3000000
+ 40278 multiletter control sequences out of 15000+200000
+ 100176 words of font info for 398 fonts, out of 3000000 for 9000
  965 hyphenation exceptions out of 8191
- 80i,21n,91p,952b,2138s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 80i,17n,91p,952b,2138s stack positions out of 5000i,500n,10000p,200000b,50000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}{/usr/share/texliv
 e/texmf-dist/fonts/enc/dvips/kerkis/kerkisec.enc}{/usr/share/texlive/texmf-dist
 /fonts/enc/dvips/kerkis/kerkisecsc.enc}{/usr/share/texlive/texmf-dist/fonts/enc
@@ -3134,10 +2581,10 @@ s/type1/public/txfonts/txsy.pfb></usr/share/texlive/texmf-dist/fonts/type1/publ
 ic/txfonts/txsyc.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/courier/ucr
 r8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb>
-Output written on textbook.pdf (97 pages, 550016 bytes).
+Output written on textbook.pdf (47 pages, 407082 bytes).
 PDF statistics:
- 1137 PDF objects out of 1200 (max. 8388607)
- 988 compressed objects within 10 object streams
- 484 named destinations out of 1000 (max. 500000)
- 77621 words of extra memory for PDF output out of 89155 (max. 10000000)
+ 650 PDF objects out of 1000 (max. 8388607)
+ 557 compressed objects within 6 object streams
+ 251 named destinations out of 1000 (max. 500000)
+ 77549 words of extra memory for PDF output out of 89155 (max. 10000000)
 
