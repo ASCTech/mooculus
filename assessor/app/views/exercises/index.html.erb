@@ -21,8 +21,8 @@
     <div class="span4">
       <%= link_to 'Show', exercise %>
       <%= link_to 'Edit', edit_exercise_path(exercise) %>
-      <%= link_to 'Destroy', exercise, method: :delete, 
-        data: { confirm: 'Are you sure?' } %>
+      <%= link_to 'Destroy', exercise, :method => :delete, 
+        :data => { :confirm => 'Are you sure?' } %>
       </div>
     </div>
   <% end %>
