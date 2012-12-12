@@ -1,5 +1,11 @@
 class ExercisesController < ApplicationController
 
+  def khan_site
+  end
+
+  def khan_exercise
+  end
+
   def index
     @exercises = Exercise.all
   end
