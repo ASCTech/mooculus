@@ -1,0 +1,5 @@
+problem; function; xmin; xmax; ymin; ymax
+x^2; x^2; -4; 4; -1; 10
+x^3; x^3; -4; 4; -5; 5
+\sin(x); sin(deg(x)); -10; 10; -1.5; 1.5
+\ln(x); ln(x); .1; 10; -6; 1.5
