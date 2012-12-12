@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html data-require="math interactive graphie">
+<html data-require="math interactive polynomials graphie">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>graphingFromEquation</title>
@@ -13,9 +13,12 @@
                 <div class="vars">
                     <var id="X">randRangeNonZero( -10, 10 )</var>
                     <var id="Y">randRangeNonZero( -10, 10 )</var>
+                    <var id="poly">new Polynomial(randRange(0, 3), randRange(2, 4))</var>
+                    <var id="f">function (x) { return poly.evalOf(x); }</var>
+                    <var id="test">f(3)</var>
                 </div>
                 <p class="question">
-                    Plot <code>(<var>X</var>, <var>Y</var>)</code>
+                    Plot 3 points on the graph of 
                 </p>
                 <div class="problem">
                     <br />
@@ -31,7 +34,13 @@
                             tickOpacity: 0.4,
                             labelOpacity: 0.5
                         });
-
+                        
+                        plot(function( x ) {
+                                return ( f(x));
+                            }, [-10, 10], {
+                                stroke: RED
+                            });
+                        
                         label( [ 0, 11 ], "y", "above" );
                         label( [ 11, 0 ], "x", "right" );
 
