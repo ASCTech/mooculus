@@ -1,0 +1,5 @@
+problem; answer
+$\ddx x^3$; $3x^2$
+$\ddx \sin(x)$; $\cos(x)$
+$\ddx e^x$; $e^x$
+$\ddx \ln(x)$; $\frac{1}{x}$

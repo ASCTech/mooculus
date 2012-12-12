@@ -1,0 +1,32 @@
+\NeedsTeXFormat{LaTeX2e}% LaTeX 2.09 can't be used (nor non-LaTeX)
+\ProvidesPackage{flashCards}[2012/01/30 v0.75]
+\ProcessOptions\relax
+
+\RequirePackage{microtype}
+\RequirePackage[paperwidth=2.875in,paperheight=1.875in,top=.25in, bottom=.5in]{geometry}
+\RequirePackage{datatool}
+
+%% Colors
+\usepackage[usenames,dvipsnames]{xcolor}
+
+\colorlet{background}{Sepia!60!black} % Color of the page
+\colorlet{textColor}{white!92!background} % Color of the text
+
+\pagecolor{background}
+\color{textColor} 
+
+\let\iint\undefined 
+\let\iiint\undefined 
+\RequirePackage{kmath,kerkis} % The order of the packages matters; kmath changes the default text font
+
+
+%% Palatino Clone
+%\usepackage[notextcomp]{kpfonts} 
+
+\RequirePackage[T1]{fontenc}
+
+\newcommand{\ddx}{\frac{d}{dx}}
+\everymath{\displaystyle}
+
+
+\endinput

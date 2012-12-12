@@ -1,0 +1,25 @@
+problem; answer
+\sin(0); =0
+\cos(0); =1
+\sin(\pi/2); =1
+\cos(\pi/2); =0
+\sin(\pi); =0
+\cos(\pi); =-1
+\sin(3\pi/2); =-1
+\cos(3\pi/2); =0
+\tan(x); =\frac{\sin(x)}{\cos(x)}
+\sec(x); =\frac{1}{\cos(x)}
+\csc(x); =\frac{1}{\sin(x)}
+\cot(x); =\frac{\cos(x)}{\sin(x)}
+\sin(2x); =2\sin(x)\cos(x)
+\cos(2x); =\cos(x)^2 - \sin(x)^2 
+\sin\left(\frac{x}{2}\right); =\pm \sqrt{\frac{1-\cos(x)}{2}}
+\cos\left(\frac{x}{2}\right); =\pm \sqrt{\frac{1+\cos(x)}{2}}
+\protect\text{Pythagorean Identity}; \\ \sin(x)^2 + \cos(x)^2 = 1
+(f\circ g)(x); =f(g(x))
+(a+b)^2; =a^2 + 2ab + b^2
+a^2 - b^2; =(a+b)(a-b)
+\protect\text{Point Slope Formula}; \\ y = \frac{y_2-y_1}{x_2-x_1} (x-x_1) + y_1
+ax^2 + bx + c =0\\x; =\frac{-b\pm \sqrt{b^2 -4ac}}{2a} 
+\protect\sqrt{x^2}; =|x|
+

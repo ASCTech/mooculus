@@ -1,0 +1,29 @@
+\documentclass[12pt]{extarticle}
+
+\usepackage{../flashCards}
+\usepackage{amstext}
+
+\DTLsetseparator{,} %% Sometimes is a ;
+
+\colorlet{background}{blue!20!black} % Color of the page
+\colorlet{textColor}{white!92!background} % Color of the text
+
+\pagecolor{background}
+\color{textColor} 
+
+\begin{document}
+
+\pagenumbering{gobble}
+
+\DTLloaddb{study}{level0.csv}
+
+
+\DTLforeach{study}{%
+\problem=problem,\answer=answer}{%
+\newpage
+
+\vspace*{.05in} \noindent \color{textColor}$\ddx \left(\problem\right)$  \vspace*{\fill} \newpage \vspace*{.1in} \noindent\color{textColor!50!background}$\ddx \left(\problem\right)\color{textColor}\\ \\= \answer$\vspace*{\fill}  }
+
+
+
+\end{document}

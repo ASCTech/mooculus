@@ -183,8 +183,8 @@ improvement at \texttt{fowler@math.osu.edu} or
 %\input infinityAndContinuity
 \input derivatives
 %\input chapter01
-%\input chapter02
-%\input chapter03
+\input chapter02
+\input chapter03
 %\input chapter04
 %\input chapter05
 %\input chapter06

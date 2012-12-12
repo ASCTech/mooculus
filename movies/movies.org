@@ -6,6 +6,8 @@ course.
 Movies to be made
 * Slope Sleuths
   see file
+* Limits
+** artisian diver, secent lines -> velocity
 * Ladder Problem
 * Giving slightly different arithmetic problems to a few people to demonstrate continuity
 * Balloon volume with bike pump
