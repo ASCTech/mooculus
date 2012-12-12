@@ -9,8 +9,8 @@ Assessor::Application.routes.draw do
 
   resources :exercises
 
-  get "khan-exercise/exercises/khan-site.html" => "exercise#khan_site"
-  get "khan-exercise/exercises/khan-exercise.html" => "exercise#khan_exercise"
+  get "khan-exercise/exercises/khan-site.html" => "exercises#khan_site"
+  get "khan-exercise/exercises/khan-exercise.html" => "exercises#khan_exercise"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
