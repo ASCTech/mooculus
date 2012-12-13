@@ -3,7 +3,9 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>Approximating Limits Numerically</title>
-    <script src="../khan-exercise.js"></script>
+   
+
+ 
 </head>
 <body>
     <div class="exercise">
@@ -11,7 +13,7 @@
             <var id="LIMITX">randRange(-10,10)</var>
 	    <var id="POLY">new Polynomial(1,randRange(1,3))</var>
 	    <var id="answer">POLY.evalOf(LIMITX)</var>
-
+	    
         </div>
 
         <div class="problems">
@@ -27,7 +29,7 @@
                     by evaluating <code>f(x)</code> at various values,
                     or state that the limit does not exist (DNE).
                     </p>
-		    <p> NOW WE NEED SOME WAY OF EVALUATING f(x), x = LIMITX, the result should be ?		      
+		    <p> <input type='text' id='nameField'> <span id='nameDisplay'>??</span></center>		      
 		    </p>
                 </div>
 
@@ -44,4 +46,18 @@
         </div>
     </div>
 </body>
+<script src="../khan-exercise.js"></script>
+ <script>
+      window.onload = function() {
+
+  var nameField = document.getElementById('nameField');
+  nameField.onkeydown = updateNameDisplay;
+  nameField.onkeyup = updateNameDisplay;
+  nameField.onkeypress = updateNameDisplay;
+  function updateNameDisplay() {
+      document.getElementById('nameDisplay').innerHTML = this.value || "??";
+  }
+  
+};
+      </script>
 </html>
