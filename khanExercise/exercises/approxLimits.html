@@ -1,63 +1,59 @@
 <!DOCTYPE html>
-<html data-require="math word-problems polynomials">
+<html data-require="math polynomials word-problems">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>Approximating Limits Numerically</title>
-   
-
- 
+    <title>AppoxLim2</title>
+    <script src="../khan-exercise.js"></script>
 </head>
 <body>
     <div class="exercise">
         <div class="vars">
-            <var id="LIMITX">randRange(-10,10)</var>
+		<var id="LIMITX">randRange(-10,10)</var>
 	    <var id="POLY">new Polynomial(1,randRange(1,3))</var>
-	    <var id="answer">POLY.evalOf(LIMITX)</var>
-	    
+	    <var id="ANSWER">POLY.evalOf(LIMITX)</var>
+	   <var id="CODE">(function(){
+
+  updateNameDisplay = function() {
+  	  var input = parseFloat(this.value) 	
+      $('#nameDisplay').text( POLY.evalOf(input)*(input-LIMITX)/(input-LIMITX) || "?" );
+  };
+  $('#nameField').keydown( updateNameDisplay );
+  $('#nameField').keyup( updateNameDisplay );
+  $('#nameField').keypress( updateNameDisplay );
+  })()</var>
         </div>
 
         <div class="problems">
             <div>
+            
                 <div class="question">
                     <p>Consider a function <code>f(x)</code>. While
                     you don't know the formula for <code>f(x)</code>
                     you can nevertheless still evaluate it for given
                     values of <code>x</code>, provided that <code>x
-                    \ne <var>LIMITX</var></code>. Find the value
-                    of 
-		      <p><center><code>\displaystyle\lim_{x\to <var>LIMITX</var>}f(x)</code></p></center>
+                    \ne <var>LIMITX</var></code>. Find<code>{}^*</code> the value
+                    of</p> 
+		      <p><center><code>\displaystyle\lim_{x \to <var>LIMITX</var>}f(x)</code></center>
                     by evaluating <code>f(x)</code> at various values,
                     or state that the limit does not exist (DNE).
                     </p>
-		    <p> <input type='text' id='nameField'> <span id='nameDisplay'>??</span></center>		      
+		    <p> <center><code>f(</code><input type='text' id='nameField' size=3><code>)=</code> <span id='nameDisplay'>?</span></center>		      
 		    </p>
+		    <p><font size="1"><code>{}^*</code>You can't really be sure whether you are finding the limit from 
+		    only a finite amount of data, but the function is "reasonable" enough that your experimental data will not lead you astray.</font></p>
+                
                 </div>
 
-                <p class="solution" data-forms="decimal"><var>answer</var></p>
-            </div>
+                <p class="solution" data-forms="decimal"><var>ANSWER</var></p>
+                <div class="hints">
+                <p>this is a hint</p>
+                </div>
+                </div>
+                
+     
         </div>
 
-        <div class="hints">
-           <p>We should check values near, but not equal to <code><var>LIMITX</var></code>.</p> 
-	   <p>Try <code>x = <var>LIMITX</var>-.1</code>.</p> 
-	   <p>Try <code>x = <var>LIMITX</var>+.1</code>.</p> 
-	   <p>Remember for the limit to exist, the limit from the left must equal the limit from the right. </p> 
-	   <p>The limit is <code><var>answer</var></code>.</p>
-        </div>
+
     </div>
 </body>
-<script src="../khan-exercise.js"></script>
- <script>
-      window.onload = function() {
-
-  var nameField = document.getElementById('nameField');
-  nameField.onkeydown = updateNameDisplay;
-  nameField.onkeyup = updateNameDisplay;
-  nameField.onkeypress = updateNameDisplay;
-  function updateNameDisplay() {
-      document.getElementById('nameDisplay').innerHTML = this.value || "??";
-  }
-  
-};
-      </script>
 </html>
