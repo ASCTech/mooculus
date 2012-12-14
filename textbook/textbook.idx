@@ -3,41 +3,16 @@
 \indexentry{limit!definition|hyperpage}{12}
 \indexentry{triangle inequality|hyperpage}{13}
 \indexentry{composition of functions|hyperpage}{14}
-\indexentry{limit laws|hyperpage}{16}
-\indexentry{limit!infinite|hyperpage}{20}
-\indexentry{infinite limit|hyperpage}{20}
-\indexentry{asymptote!vertical|hyperpage}{20}
-\indexentry{vertical asymptote|hyperpage}{20}
-\indexentry{continuous|hyperpage}{23}
-\indexentry{tangent line!informal definition|hyperpage}{27}
-\indexentry{chord|hyperpage}{30}
-\indexentry{difference quotient|hyperpage}{30}
-\indexentry{tangent     line|hyperpage}{30}
-\indexentry{derivative|hyperpage}{32}
-\indexentry{velocity|hyperpage}{36}
-\indexentry{limit|hyperpage}{41}
-\indexentry{triangle inequality|hyperpage}{44}
-\indexentry{composition of functions|hyperpage}{48}
-\indexentry{one sided limit|hyperpage}{49}
-\indexentry{Leibniz notation|hyperpage}{53}
-\indexentry{derivative!Leibniz notation|hyperpage}{53}
-\indexentry{function!bounded|hyperpage}{57}
-\indexentry{bounded function|hyperpage}{57}
-\indexentry{function!unbounded|hyperpage}{57}
-\indexentry{unbounded function|hyperpage}{57}
-\indexentry{continuous|hyperpage}{58}
-\indexentry{differentiable|hyperpage}{58}
-\indexentry{function!differentiable|hyperpage}{58}
-\indexentry{Intermediate Value Theorem|hyperpage}{59}
-\indexentry{power rule|hyperpage}{61}
-\indexentry{power function|hyperpage}{61}
-\indexentry{linearity of the derivative|hyperpage}{65}
-\indexentry{sum rule|hyperpage}{66}
-\indexentry{product rule|hyperpage}{68}
-\indexentry{product rule|hyperpage}{69}
-\indexentry{product rule!generalized|hyperpage}{71}
-\indexentry{quotient rule|hyperpage}{72}
-\indexentry{rational function|hyperpage}{74}
-\indexentry{witch of Agnesi|hyperpage}{74}
-\indexentry{chain rule|hyperpage}{75}
-\indexentry{composition of functions|hyperpage}{75}
+\indexentry{limit laws|hyperpage}{17}
+\indexentry{Squeeze Theorem|hyperpage}{20}
+\indexentry{limit!infinite|hyperpage}{23}
+\indexentry{infinite limit|hyperpage}{23}
+\indexentry{asymptote!vertical|hyperpage}{23}
+\indexentry{vertical asymptote|hyperpage}{23}
+\indexentry{limit!at infinity|hyperpage}{26}
+\indexentry{asymptote!horizontal|hyperpage}{27}
+\indexentry{horizontal asymptote|hyperpage}{27}
+\indexentry{continuous|hyperpage}{30}
+\indexentry{tangent line!informal definition|hyperpage}{35}
+\indexentry{derivative|hyperpage}{39}
+\indexentry{sum rule|hyperpage}{41}

@@ -1,0 +1,212 @@
+\documentclass[justified]{tufte-book}
+\usepackage{mooculus}
+
+
+
+% BADBAD should include cents symbol?
+\newcommand\cents{cents}
+
+\setcounter{secnumdepth}{2}
+
+
+\DeclareMathOperator{\arccot}{arccot}
+\DeclareMathOperator{\sech}{sech}
+\DeclareMathOperator{\csch}{csch}
+\DeclareMathOperator{\arcsinh}{arcsinh}
+\DeclareMathOperator{\arcsech}{arcsech}
+\DeclareMathOperator{\arccosh}{arccosh}
+
+
+% For nicely typeset tabular material
+\usepackage{booktabs}
+
+% Prints the month name (e.g., January) and the year (e.g., 2008)
+\newcommand{\monthyear}{%
+  \ifcase\month\or January\or February\or March\or April\or May\or June\or
+  July\or August\or September\or October\or November\or
+  December\fi\space\number\year
+}
+
+% Generates the index
+\usepackage{makeidx}
+\makeindex
+
+\newcommand{\xrefn}[1]{\ref{#1}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\makeatletter
+\newwrite\answer@stream
+\immediate\openout\answer@stream=\jobname.ans
+
+\def\dumpanswer[#1]{\immediate\write\answer@stream{#1}}
+
+\newtoks{\answercontent}
+\usepackage{environ}
+ \NewEnviron{answer}{%
+   \answercontent=\expandafter{\BODY}
+   \dumpanswer[\arabic{exercise}. \the\answercontent]
+ }
+\makeatother
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newenvironment{lemma}{\subsection*{Lemma}}{}
+\newenvironment{remark}[1]{\subsection*{Remark: #1}}{}
+
+%\def\beginpicture{\null}
+
+\def\exam{\null}
+\def\pagerdef{\null}
+
+\def\dfont{\bf}
+\def\em{\it}           % for emphasis
+
+\newcommand{\ds}{\displaystyle}
+
+\let\ssk\smallskip \let\msk\medskip \let\bsk\bigskip
+
+\usepackage{multicol}
+\def\twocol{\begin{multicols}{2}}
+\def\endtwocol{\end{multicols}}
+
+\title{Calculus}
+%\author{Jim Fowler and Bart Snapp}
+
+%\newcommand{\blankpage}{\newpage\hbox{}\thispagestyle{empty}\newpage}
+
+%% % Prints an epigraph and speaker in sans serif, all-caps type.
+%% \newcommand{\openepigraph}[2]{%
+%%   %\sffamily\fontsize{14}{16}\selectfont
+%%   \begin{fullwidth}
+%%   \sffamily\large
+%%   \begin{doublespace}
+%%   \noindent\allcaps{#1}\\% epigraph
+%%   \noindent\allcaps{#2}% author
+%%   \end{doublespace}
+%%   \end{fullwidth}
+%% }
+
+\begin{document}
+\maketitle
+
+% v.4 copyright page
+
+
+\begin{fullwidth}
+~\vfill
+\thispagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{\baselineskip}
+Copyright \copyright\ \the\year\ Jim Fowler and Bart Snapp
+
+This work is licensed under the Creative Commons
+Attribution-NonCommercial-ShareAlike License. To view a copy of this
+license, visit
+\url{http://creativecommons.org/licenses/by-nc-sa/3.0/}~or send a
+letter to Creative Commons, 543 Howard Street, 5th Floor, San
+Francisco, California, 94105, USA. If you distribute this work or a
+derivative, include the history of the document.
+
+\noindent
+This text is based on David Guichard's open-source calculus text which
+in turn is a modification and expansion of notes written by Neal
+Koblitz at the University of Washington. New material has been added,
+and old material has been modified, so some portions now bear little
+resemblance to the original.
+
+\noindent The book includes some exercises and examples from {\it
+  Elementary Calculus: An Approach Using Infinitesimals}, by H.~Jerome
+Keisler, available at
+\url{http://www.math.wisc.edu/~keisler/calc.html}~under a Creative
+Commons license. In addition, the chapter on differential equations
+and the section on numerical integration are largely derived from the
+corresponding portions of Keisler's book.  Albert Schueller, Barry
+Balof, and Mike Wills have contributed additional material.
+
+\noindent This book is typeset in the Kerkis font, 
+Kerkis \copyright~Department of Mathematics, University of the Aegean.
+% BADBAD
+%\msk\noindent
+%This copy of the text was compiled from source at 
+%\the\bighand:\ifnum\littlehand<10{0}\fi
+%        \the\littlehand\ on \the\month/\the\day/\the\year.
+
+\noindent We will be glad to receive corrections and suggestions for
+improvement at \texttt{fowler@math.osu.edu} or
+\texttt{snapp@math.osu.edu}.
+
+\end{fullwidth}
+
+% r.5 contents
+\tableofcontents
+
+
+%\listoftheorems[ignoreall,show={mainTheorem}]
+
+\renewcommand{\listtheoremname}{List of Main Theorems}
+\setcounter{tocdepth}{1}
+\listoftheorems[numwidth=3em,ignoreall,show={mainTheorem}]
+
+
+%\listoffigures
+
+%\listoftables
+
+% r.7 dedication
+%\cleardoublepage
+%~\vfill
+%\begin{doublespace}
+%\thispagestyle{empty}
+%\noindent\fontsize{18}{22}\selectfont\itshape
+%\nohyphenation
+%\centerline{\it For Kathleen,\/}
+%\centerline{\it without whose encouragement\/}
+%\centerline{\it this book would not have\/}
+%\centerline{\it been written.\/}
+%\end{doublespace}
+%\vfill
+%\vfill
+
+% r.9 introduction
+%\cleardoublepage
+
+%\chapter*{Introduction}
+
+%BADBAD
+
+%What is calculus?
+
+%%
+% Start the main matter (normal chapters)
+\mainmatter
+
+\input limits
+%\input infinityAndContinuity
+\input derivatives
+%\input chapter01
+\input chapter02
+\input chapter03
+%\input chapter04
+%\input chapter05
+%\input chapter06
+
+%\input chapter07
+%\input chapter08
+%\input chapter09
+%\input chapter10
+%\input chapter11
+
+
+\backmatter
+
+%\bibliography{sample-handout}
+%\bibliographystyle{plainnat}
+
+\chapter*{Answers to selected exercises}
+\input{\jobname.ans}
+
+\printindex
+
+
+\end{document}
+
+

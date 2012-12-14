@@ -1,0 +1,28 @@
+\documentclass[14pt]{extarticle}
+
+\usepackage{../flashCards}
+\usepackage{amstext}
+
+\DTLsetseparator{;}
+\colorlet{background}{blue!20!black} % Color of the page
+\colorlet{textColor}{white!92!background} % Color of the text
+
+\pagecolor{background}
+\color{textColor} 
+
+\begin{document}
+
+\pagenumbering{gobble}
+
+\DTLloaddb{study}{preCalc.csv}
+
+
+\DTLforeach{study}{%
+\problem=problem,\answer=answer}{%
+\newpage
+
+\vspace*{.1in} \noindent \color{textColor}$\problem$ \newpage \vspace*{.1in} \noindent\color{textColor!50!background}$\problem\color{textColor} \answer$}
+
+
+
+\end{document}

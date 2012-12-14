@@ -1,5 +1,7 @@
-\chapter{Derivatives}
+\chapter{Differentiation}
 
+
+\section{Slopes of Tangent Lines via Limits}
 
 Suppose that $f(x)$ is a function.  It is often useful to know how
 sensitive the value of $f(x)$ is to small changes in $x$. To give you
@@ -103,8 +105,27 @@ determined by $x$.}
 \label{figure:informal-tangent}
 \end{figure*}
 
+\begin{example}
+$|x|$
+\end{example}
 
-EXAMPLE OF $|x|$
+
+\begin{example}
+Discuss the derivative of the function $y=x^{2/3}$, shown in
+figure~\ref{fig:cusp}. We will later see how to compute this
+derivative; for now we use the fact that $
+y'=(2/3)x^{-1/3}$. Visually this looks much like the absolute value
+function, but it technically has a cusp, not a corner. The absolute
+value function has no tangent line at 0 because there are (at least)
+two obvious contenders---the tangent line of the left side of the
+curve and the tangent line of the right side.  The function $
+y=x^{2/3}$ does not have a tangent line at 0, but unlike the absolute
+value function it can be said to have a single direction: as we
+approach 0 from either side the tangent line becomes closer and closer
+to a vertical line; the curve is vertical at 0. But as before, if you
+imagine traveling along the curve, an abrupt change in direction is
+required at 0: a full 180 degree turn.
+\end{example}
 
 
 
@@ -135,6 +156,395 @@ EXAMPLE OF $|x|$
         \end{axis}
 \end{tikzpicture}
 \caption{Tangent lines can be found as the limit of secant lines. The slope of the tangent line is given by
-$\ds \lim_{h\to 0} \frac{f(x+h) - f(x)}{h}.$}
+$\lim_{h\to 0} \frac{f(x+h) - f(x)}{h}.$}
 \label{figure:epsilon-delta}
 \end{figure}
+
+
+
+
+differentialble => continuous
+
+not continuous => not diff
+
+
+Now some examples of of computing derivatives via limits. 
+
+
+
+
+\begin{example}
+Find the derivative of $y=f(t)=t^2$.
+
+We compute 
+\begin{align*}
+y' = \lim_{ h\to0}{\Delta y\over h}&=
+\lim_{ h\to0}{(t+ h)^2-t^2\over h} \\
+&=\lim_{ h\to0}{t^2+2t h+ h^2-t^2\over h} \\
+&=\lim_{ h\to0}{2t h+ h^2\over h} \\
+&=\lim_{ h\to0} 2t+ h=2t.
+\end{align*}
+\end{example}
+
+\begin{example}
+
+Find the derivative of $y=f(x)=1/x$.
+
+The computation:
+\begin{align*}
+y' = \lim_{h\to0}{\Delta y\over h}&=
+\lim_{ h\to0}{ {1\over x+ h} - {1\over x}\over \Delta
+  x} \\
+&=\lim_{ h\to0}{ {x\over x(x+ h)} - 
+{x+ h\over x(x+ h)}\over  h} \\
+&=\lim_{ h\to0}{ {x-(x+ h)\over x(x+ h)}\over  h} \\
+&=\lim_{ h\to0} {x-x- h\over x(x+ h) h} \\
+&=\lim_{ h\to0} {- h\over x(x+ h) h} \\
+&=\lim_{ h\to0} {-1\over x(x+ h)}={-1\over x^2} \\
+\end{align*}
+\vskip-10pt
+\end{example}
+
+
+
+
+
+
+
+
+
+Take, for example, $y=f(x)=\sqrt{625-x^2}$ (the upper semicircle of radius
+25 centered at the origin).  When $x=7$, we find that $y=\sqrt{625-49}=24$.
+Suppose we want to know how much $y$ changes when $x$ increases a little,
+say to 7.1 or 7.01.
+
+
+What if we try to do all the algebra without using a specific
+value for $x$? Let's copy from above, replacing 7 by  $x$. We'll have
+to do a bit more than that---for example, 
+the ``24'' in the calculation came from 
+$\sqrt{625-7^2}$, so we'll need to fix that too.
+\begin{align*}
+&{\sqrt{625-(x+ h)^2} - \sqrt{625-x^2}\over  h}= \\
+\qquad&={\sqrt{625-(x+ h)^2} - \sqrt{625-x^2}\over  h}{\sqrt{625-(x+\Delta
+    x)^2}+\sqrt{625-x^2}\over \sqrt{625-(x+ h)^2}+\sqrt{625-x^2}} \\
+&={625-(x+ h)^2-625+x^2\over  h(\sqrt{625-(x+ h)^2}+\sqrt{625-x^2})} \\
+&={625-x^2-2x h- h^2-625+x^2\over   h(\sqrt{625-(x+\Delta
+    x)^2}+\sqrt{625-x^2})} \\
+&={ h(-2x- h)\over  h(\sqrt{625-(x+\Delta
+    x)^2}+\sqrt{625-x^2})} \\
+&= {-2x- h\over\sqrt{625-(x+\Delta
+    x)^2}+\sqrt{625-x^2}} \\
+\end{align*}
+Now what happens when $h$ is very close to zero? Again it seems
+apparent that the quotient will be very close to
+$${-2x\over \sqrt{625-x^2}+\sqrt{625-x^2}}
+={-2x\over 2\sqrt{625-x^2}}={-x\over \sqrt{625-x^2}}.
+$$
+Replacing $x$ by 7 gives $-7/24$, as before, and now we can easily do
+the computation for 12  or any other value of
+$x$ between $-25$ and 25.
+
+So now we have a single, simple formula, ${-x/ \sqrt{625-x^2}}$,
+that tells us the slope of the tangent line for any value of
+$x$. This slope, in turn, tells us how sensitive the value of $y$ is
+to changes in the value of $x$. 
+
+What do we call such a formula? That is, a formula with one variable,
+so that substituting an ``input'' value for the variable produces a
+new ``output'' value? This is a function. Starting with one function,
+$\sqrt{625-x^2}$, we have derived, by means of some slightly nasty
+algebra, a new function, ${-x/ \sqrt{625-x^2}}$, that gives us
+important information about the original function. This new function
+in fact is called the {\dfont derivative\index{derivative}} of the
+original function. If the original is referred to as $f$ or $y$ then
+the derivative is often written $f'$ or $y'$ and pronounced ``f
+prime'' or ``y prime'', so in this case we might write $f'(x)=-x/
+\sqrt{625-x^2}$. At a particular point, say $x=7$, we say that
+$f'(7)=-7/24$ or ``$f$ prime of 7 is $-7/24$'' or ``the derivative of
+$f$ at 7 is $-7/24$.''
+
+To summarize, we compute the derivative of $f(x)$ by forming the
+difference quotient
+$$
+{f(x+ h)-f(x)\over  h},
+$$
+which is the slope of a line, then we figure out what happens when
+$h$ gets very close to 0. 
+
+
+We should note that in 
+the particular case of a circle, there's a simple way to find the
+derivative.  Since the tangent to a circle at a point is perpendicular to
+the radius drawn to the point of contact, its slope is the negative
+reciprocal of the slope of the radius.  The radius joining $(0,0)$ to
+$(7,24)$ has slope 24/7.  Hence, the tangent line has slope
+$-7/24$. In general, a radius to the point $(x,\sqrt{625-x^2})$ has
+slope $\sqrt{625-x^2}/x$, so the slope of the tangent line is
+${-x/ \sqrt{625-x^2}}$, as before. It is {\bf NOT} always true that a
+tangent line is perpendicular to a line from the origin---don't use
+this shortcut in any other circumstance. 
+
+As above, and as you might expect, for different values of $x$ we
+generally get different values of the derivative $f'(x)$. Could it be
+that the derivative always has the same value? This would mean that
+the slope of $f$, or the slope of its tangent line, is the same
+everywhere. One curve that always has the same slope is a line; it
+seems odd to talk about the tangent line to a line, but if it makes
+sense at all the tangent line must be the line itself. It is not hard
+to see that the derivative of $f(x)=mx+b$ is $f'(x)=m$; see
+exercise~\xrefn{ex:derivative of a line} .
+
+
+
+
+
+
+
+
+\section{Basic Derivative Rules}
+
+constant rule
+
+
+\subsection{The Sum Rule}
+
+We don't want to rely on some more-or-less obvious physical
+interpretation to determine what is true mathematically, so let's see
+how to verify these rules by computation. We'll do one and leave the
+other for the exercises.
+\begin{align*}
+\ddx(f(x)+g(x)) &= \lim_{ h\to 0} {f(x+\Delta
+  x)+g(x+ h) - (f(x)+g(x))\over  h}  \\
+&= \lim_{ h\to 0} {f(x+\Delta
+  x)+g(x+ h) - f(x)-g(x)\over  h}  \\
+&= \lim_{ h\to 0} {f(x+\Delta
+  x)-f(x) +g(x+ h) -g(x)\over  h}  \\
+&= \lim_{ h\to 0} \left({f(x+\Delta
+  x)-f(x)\over  h}  +{g(x+ h) -g(x)\over  h}\right)  \\
+&= \lim_{ h\to 0} {f(x+\Delta
+  x)-f(x)\over  h}  +
+\lim_{ h\to 0} {g(x+ h) -g(x)\over  h}  \\
+&=f'(x)+g'(x) \\
+\end{align*}
+This is sometimes called the {\dfont sum rule\index{sum rule}} for derivatives.
+\begin{example}
+Find the derivative of $f(x)=x^5+5x^2$. We have to invoke linearity
+twice here: 
+\[
+f'(x) = \ddx(x^5+5x^2) = \ddx x^5 + \ddx(5x^2) =
+5x^4+5\ddx(x^2) = 5x^4+5\cdot 2x^1 = 5x^4+10x.
+\]
+\vskip-10pt\end{example}
+
+\begin{example}
+Find the derivative of $f(x)=3/x^4-2x^2+6x-7$.
+$$f'(x) = \ddx\left( {3\over x^4}-2x^2+6x-7\right)
+= \ddx(3x^{-4}-2x^2+6x-7) 
+= -12x^{-5}-4x+6.$$
+\vskip-10pt\end{example}
+
+
+
+
+\subsection{The Power Rule}
+
+ Now
+let's look at the limit:
+\begin{align*}
+\ddx x^n &= \lim_{ h\to0} {(x+ h)^n-x^n\over \Delta
+  x} \\
+&=\lim_{ h\to0} {x^n + nx^{n-1} h + a_2x^{n-2} h^2+\cdots+
+a_{n-1}x h^{n-1} +  h^n-x^n\over  h} \\
+&=\lim_{ h\to0} {nx^{n-1} h + a_2x^{n-2} h^2+\cdots+
+a_{n-1}x h^{n-1} +  h^n\over  h} \\
+&=\lim_{ h\to0} nx^{n-1} + a_2x^{n-2} h+\cdots+
+a_{n-1}x h^{n-2} +  h^{n-1} = nx^{n-1}. \\
+\end{align*}
+
+Now without much trouble we can verify the formula for negative
+integers. First let's look at an example:
+
+\begin{example} Find the derivative of $y=x^{-3}$. Using the formula,
+$y'=-3x^{-3-1}=-3x^{-4}$. 
+\end{example}
+
+Here is the general computation. Suppose $n$ is a negative integer;
+the algebra is easier to follow if we use $n=-m$ in the computation,
+where $m$ is a positive integer.
+\begin{align*}
+\ddx x^n &= \ddx x^{-m} =
+\lim_{ h\to0} {(x+ h)^{-m}-x^{-m}\over \Delta
+  x} \\
+&=\lim_{ h\to0} { {1\over (x+ h)^m} - {1\over x^m} \over
+   h}  \\
+&=\lim_{ h\to0} { x^m - (x+ h)^m \over
+(x+ h)^m x^m  h}  \\
+&=\lim_{ h\to0} { x^m - (x^m + mx^{m-1} h + a_2x^{m-2} h^2+\cdots+
+a_{m-1}x h^{m-1} +  h^m)\over
+(x+ h)^m x^m  h}  \\
+&=\lim_{ h\to0} { -mx^{m-1} - a_2x^{m-2} h-\cdots-
+a_{m-1}x h^{m-2} -  h^{m-1})\over
+(x+ h)^m x^m}  \\
+&={ -mx^{m-1} \over x^mx^m}=
+{ -mx^{m-1} \over x^{2m}}=
+-mx^{m-1-2m}= nx^{-m-1} = nx^{n-1}. \\
+\end{align*}
+
+We will later see why the other cases of the power rule work, but from
+now on we will use the power rule whenever $n$ is any real number.
+Let's note here a simple case in which the power rule applies, or
+almost applies, but is not really needed. Suppose that $f(x)=1$;
+remember that this ``1'' is a function, not ``merely'' a number, and
+that $f(x)=1$ has a graph that is a horizontal line, with slope zero
+everywhere. So we know that $f'(x)=0$. We might also write $f(x)=x^0$,
+though there is some question about just what this means at $x=0$. If
+we apply the power rule, we get $f'(x)=0x^{-1}=0/x=0$, again noting
+that there is a problem at $x=0$. So the power rule ``works'' in this
+case, but it's really best to just remember that the derivative of any
+constant function is zero.
+
+
+
+exponent rule
+
+dfn $e^x$
+
+
+
+
+\begin{exercises}
+
+Find the derivatives of the given functions.
+
+\twocol
+
+\begin{exercise} $x^{100}$
+\begin{answer} $100x^{99}$
+\end{answer}\end{exercise}
+
+\begin{exercise} $x^{-100}$
+\begin{answer} $-100x^{-101}$
+\end{answer}\end{exercise}
+
+\begin{exercise} $\displaystyle {1\over x^5}$
+\begin{answer} $-5x^{-6}$
+\end{answer}\end{exercise}
+
+\begin{exercise} $x^\pi$
+\begin{answer} $\pi x^{\pi-1}$
+\end{answer}\end{exercise}
+
+\begin{exercise} $x^{3/4}$
+\begin{answer} $(3/4)x^{-1/4}$
+\end{answer}\end{exercise}
+
+\begin{exercise} $x^{-9/7}$
+\begin{answer} $-(9/7)x^{-16/7}$
+\end{answer}\end{exercise}
+
+\endtwocol
+
+Find the derivatives of the functions in 1--6.
+
+\begin{exercise} $5x^3+12x^2-15$
+\begin{answer} $15x^2+24x$
+\end{answer}\end{exercise}
+
+\begin{exercise} $-4x^5 + 3x^2 - 5/x^2$
+\begin{answer} $-20x^4+6x+10/x^3$
+\end{answer}\end{exercise}
+
+\begin{exercise} $5(-3x^2 + 5x + 1)$
+\begin{answer} $-30x+25$
+\end{answer}\end{exercise}
+
+\begin{exercise} $f(x)+g(x)$, where $f(x)=x^2-3x+2$ and $g(x)=2x^3-5x$
+\begin{answer} $6x^2+2x-8$
+\end{answer}\end{exercise}
+
+\begin{exercise} $(x+1)(x^2+2x-3)$
+\begin{answer} $3x^2+6x-1$
+\end{answer}\end{exercise}
+
+\begin{exercise} $\sqrt{625-x^2}+3x^3+12$ (See section \xrefn{sec:slope of a function}.)
+\begin{answer} $9x^2-x/\sqrt{625-x^2}$
+\end{answer}\end{exercise}
+
+\begin{exercise}
+ Find an equation for the tangent line to $f(x) = x^3/4 - 1/x$ at $x=-2$.
+\begin{answer} $y=13x/4+5$
+\end{answer}\end{exercise}
+
+\begin{exercise} Find an equation for 
+the tangent line to $f(x)= 3x^2 - \pi ^3$ at $x= 4$.
+\begin{answer} $y=24x-48-\pi^3$
+\end{answer}\end{exercise}
+
+\begin{exercise} Suppose the position of an object at time $t$ is  given by
+$f(t)=-49 t^2/10+5t+10$. Find a function giving the speed of the object
+at time $t$. The acceleration of an object is the rate at which its
+speed is changing, which means it is given by the derivative of the
+speed function. Find the acceleration of the object at time $t$.
+\begin{answer} $-49t/5+5$, $-49/5$
+\end{answer}\end{exercise}
+
+\begin{exercise} Let $f(x) =x^3$ and $c= 3$. Sketch the graphs of $f$,
+$cf$, $f'$, and $(cf)'$ on the same diagram.
+\end{exercise}
+
+\begin{exercise} The general polynomial $P$ of degree $n$ in the variable $x$
+has the form $P(x)= \sum _{k=0 } ^n a_k x^k = a_0 + a_1 x + \ldots
++ a_n x^n$. What is the derivative (with respect to $x$)
+of $P$?
+\begin{answer} $\sum_{k=1}^n ka_kx^{k-1}$
+\end{answer}\end{exercise}
+
+\begin{exercise} Find a cubic polynomial whose graph has horizontal tangents at
+$(-2 , 5)$ and $(2, 3)$.
+\begin{answer} $x^3/16-3x/4+4$
+\end{answer}\end{exercise}
+ 
+\begin{exercise} Prove that $\ddx(cf(x))= cf'(x)$ using the
+definition of the derivative.
+\end{exercise}
+
+\begin{exercise} Suppose that $f$ and $g$ are differentiable at $x$. Show
+that $f-g$ is differentiable at $x$ using the two linearity
+properties from this section.
+\end{exercise}
+
+\end{exercises}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\section{The Product Rule and Quotient Rule}
+
+\section{The Derivative of Trigonometric Functions}
+
+\section{The Chain Rule}
+
+
+\section{Rates of Change}
+
+\section{Implicit Differentiation}
+
+\section{Applications}
+
+\subsection{Related Rates}

@@ -1,0 +1,31 @@
+TODO List
+
+* Events 
+** 9am Thurs Dec 13 ASC Web development
+
+* Movies
+
+* Textbook
+** Limits section
+*** Infinite Limits
+*** Limits at Infinity
+*** Exercises
+** Derivatives section
+*** Need at lease basic rules down. 
+** Add College Math Journal 
+
+* Server
+** Text for the homepage
+
+* Assessor
+** Coding Party
+** Analytic Stuff
+*** The platform needs to be able to respond to student progress
+*** If a student has trouble with one problem, we want to know what other problems they need to do.
+*** We have "fancy" linear algebra techniques to do this.
+*** Through this, we should be able to isolate the *KEY* components for *knowing* calculus
+
+* Buy Stuff
+** Tennis Balls
+** SDHC Cards
+** Chalk

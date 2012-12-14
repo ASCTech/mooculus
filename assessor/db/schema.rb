@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121105014518) do
+ActiveRecord::Schema.define(:version => 20121107030459) do
 
   create_table "authentications", :force => true do |t|
     t.integer  "user_id"
@@ -32,11 +32,16 @@ ActiveRecord::Schema.define(:version => 20121105014518) do
   end
 
   create_table "scores", :force => true do |t|
-    t.integer  "points"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
     t.integer  "exercise_id"
     t.integer  "user_id"
+    t.time     "time_taken"
+    t.integer  "attempt_number"
+    t.boolean  "complete"
+    t.integer  "count_hints"
+    t.boolean  "attempt_content"
+    t.integer  "seed"
   end
 
   create_table "users", :force => true do |t|

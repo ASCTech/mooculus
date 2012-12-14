@@ -3,7 +3,6 @@
 
 
 
-\newcommand{\R}{\mathbb{R}}
 % BADBAD should include cents symbol?
 \newcommand\cents{cents}
 
@@ -86,6 +85,9 @@
 %%   \end{fullwidth}
 %% }
 
+
+
+
 \begin{document}
 \maketitle
 
@@ -143,9 +145,9 @@ improvement at \texttt{fowler@math.osu.edu} or
 
 %\listoftheorems[ignoreall,show={mainTheorem}]
 
-\listoftheorems
-
-%\listtheorems{opt}
+\renewcommand{\listtheoremname}{List of Main Theorems}
+\setcounter{tocdepth}{1}
+\listoftheorems[numwidth=3em,ignoreall,show={mainTheorem}]
 
 
 %\listoffigures
@@ -184,8 +186,8 @@ improvement at \texttt{fowler@math.osu.edu} or
 %\input infinityAndContinuity
 \input derivatives
 %\input chapter01
-\input chapter02
-\input chapter03
+%\input chapter02
+%\input chapter03
 %\input chapter04
 %\input chapter05
 %\input chapter06

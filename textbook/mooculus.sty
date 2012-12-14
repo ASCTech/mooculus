@@ -8,7 +8,8 @@
 %\RequirePackage{xkeyval}
 \RequirePackage{tikz}
 \RequirePackage{amssymb}
-\RequirePackage{amsmath}
+%\RequirePackage{amsmath}
+\RequirePackage{mathtools} %% trying to get cases to work in caption
 \RequirePackage{ntheorem}
 \RequirePackage{thmtools}
 \RequirePackage{microtype}
@@ -51,6 +52,7 @@
 %\colorlet{background}{white} % Color of the page
 %\colorlet{textColor}{black} % Color of the text
 
+
 %% Parchment Style
 \colorlet{background}{Apricot!7} % Color of the page
 \colorlet{textColor}{Sepia!60!black} % Color of the text
@@ -59,15 +61,13 @@
 \colorlet{fill1}{green!50!black!20} % Color of fill in a plot
 \colorlet{fill2}{blue!10} % Color of fill in a plot
 \colorlet{gridColor}{gray!30} % Color of grid in a plot
-\colorlet{definitionBackground}{Sepia} % Color of the background of a definition
+\colorlet{definitionBackground}{Sepia!10!background} % Color of the background of a definition
 \colorlet{theoremBackground}{BrickRed!10!background} % Color of the background of a theorem
 \colorlet{mainTheoremBorder}{Sepia} % Color of the border of a main theorem
 \colorlet{warningBackground}{BrickRed!10!background} % Color of the background of a theorem
 \colorlet{cowLight}{background} % the light colors of the cow --
                                 % usually the same as the background
 \colorlet{cowDark}{textColor} % the dark colors of the cow -- usually
-
-
 
 %% Modern Style
 \colorlet{background}{Black!7} % Color of the page
@@ -96,6 +96,9 @@
 
 
 
+
+
+
 \pagecolor{background}
 \color{textColor} 
 
@@ -104,7 +107,11 @@
 %% User defined commands
 \renewcommand{\epsilon}{\varepsilon}
 \renewcommand{\l}{\ell}
-\newcommand{\ddx}{\dfrac{d}{dx}}
+\newcommand{\ddx}{\frac{d}{dx}}
+\newcommand{\R}{\mathbb{R}}
+%\DeclareMathOperator*\plim{lim}
+%\renewcommand{\lim}{\displaystyle\plim} if we really want all limits display style
+\everymath{\displaystyle}
 
 
 
@@ -145,17 +152,17 @@
 %% ntheorem]{mainTheorem}%
 %% {Theorem}[section]
 
-\declaretheoremstyle[ headfont=\normalfont\bfseries,
+\declaretheoremstyle[ headfont=\normalfont\bfseries, 
   notefont=\mdseries, notebraces={(}{)}, bodyfont=\normalfont\slshape,
   postheadspace=0.5em,
-  preheadhook={\begin{mdframed}[leftmargin=40,rightmargin=40,backgroundcolor=theoremBackground,fontcolor=textColor,%
+  preheadhook={\begin{mdframed}[nobreak=true,leftmargin=40,rightmargin=40,backgroundcolor=theoremBackground,fontcolor=textColor,%
         innerlinewidth=1,innerlinecolor=mainTheoremBorder!20!background,
         middlelinewidth=2,middlelinecolor=mainTheoremBorder,
         outerlinewidth=1,outerlinecolor=mainTheoremBorder!10!background,
         roundcorner=10pt,%
         innertopmargin=6pt,splittopskip=\topskip,skipbelow=\baselineskip,skipabove=\baselineskip]},
   postfoothook=\end{mdframed} ]{mainThmStyle}
-\declaretheorem[style=mainThmStyle,name=Theorem,numberwithin=section]{mainTheorem}
+\declaretheorem[style=mainThmStyle,name=Theorem,numberwithin=section,]{mainTheorem}
 
 
 
@@ -314,6 +321,7 @@ skipabove=\baselineskip]{warning}%
 
 \newcounter{exercise}
 \NewEnviron{exercises}{%
+  \newpage
   \subsection*{Exercises for Section \arabic{chapter}.\arabic{section}}
 \vspace{-15pt}
 

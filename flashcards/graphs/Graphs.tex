@@ -1,0 +1,53 @@
+\documentclass[8pt]{extarticle}
+
+\usepackage{../flashCards}
+\RequirePackage{pgfplots}\pgfplotsset{compat=1.7}
+\usepackage[usenames,dvipsnames]{xcolor}
+
+\colorlet{penColor}{green!50!black} % Color of a curve in a plot
+\colorlet{penColor2}{blue!50!black} % Color of a curve in a plot
+\colorlet{fill1}{green!50!black!20} % Color of fill in a plot
+\colorlet{fill2}{blue!10} % Color of fill in a plot
+\colorlet{gridColor}{gray!30} % Color of grid in a plot
+
+\colorlet{background}{blue!10!black} % Color of the page
+\colorlet{textColor}{white!92!background} % Color of the text
+
+\pagecolor{background}
+\color{textColor} 
+
+
+
+\DTLsetseparator{;}
+
+
+\begin{document}
+
+\pagenumbering{gobble}
+
+\DTLloaddb{study}{example.csv}
+
+
+\DTLforeach{study}{%
+\problem=problem,\function=function,\xmin=xmin,\xmax=xmax,\ymin=ymin,\ymax=ymax}{%
+\vspace*{.1in} \noindent \Huge$\problem$\normalsize  
+\newpage 
+\vspace*{.1in} \noindent 
+\begin{tikzpicture}
+	\begin{axis}[
+            domain=\xmin:\xmax,
+            ymin=\ymin,ymax=\ymax,
+            samples=500,
+            width=2.5in, %% CHANGE
+            height=1.5in, %% CHANGE
+            axis lines =middle, xlabel=$x$, ylabel=$\problem$,
+            every axis y label/.style={at=(current axis.above origin),anchor=south},
+            every axis x label/.style={at=(current axis.right of origin),anchor=west}
+          ]
+	  \addplot [thick, penColor, smooth] {\function};
+        \end{axis}
+\end{tikzpicture}\newpage}
+
+
+
+\end{document}
