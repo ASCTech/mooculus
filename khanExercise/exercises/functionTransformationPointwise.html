@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html data-require="math math-format graphie interactive parabola-intuition">
+<html data-require="math math-format">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>Basic relationships between functions</title>
@@ -14,8 +14,8 @@
 <body>
     <div class="exercise">
         <div class="vars">
-       	    <var id="x">randRange(-9,9)</var>
-            <var id="y">randRange(-9,9)</var>
+       	    <var id="x">randRangeNonZero(-9,9)</var>
+            <var id="y">randRangeNonZero(-9,9)</var>
             <var id="c">randRangeExclude(-9,9,[0,1])</var>
         </div>
 
@@ -454,7 +454,7 @@
                 	
                 	<p>
                 		Substituting <code>f(<var>x</var>) = <var>y</var></code> we have 
-                		<code><var>y</var> = g(\frac{<var>x</var>}{<var>c</var>})
+                		<code><var>y</var> = g(\frac{<var>x</var>}{<var>c</var>})</code>
                 	</p>
                 	
                 	<p>
