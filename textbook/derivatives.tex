@@ -29,7 +29,7 @@ then that line is the \textbf{tangent line} to $f(x)$ at the point
 determined by $x$.
 \end{quote}
 While this is merely an informal definition of a tangent line, it
-contains the essence of how the formal definition will be eventually
+contains the essence of how the formal definition will be
 constructed. We illustrate this informal definition with
 Figure~\ref{figure:informal-tangent}.
 \begin{figure*}
@@ -105,31 +105,26 @@ determined by $x$.}
 \label{figure:informal-tangent}
 \end{figure*}
 
-\begin{example}
-$|x|$
-\end{example}
 
+The \textit{derivative} of a function $f(x)$ at $x$, is the slope of
+the tangent line at $x$. To find the slope of this line, we consider
+\textit{secant} lines, lines that locally intersect the curve at two
+points.  The slope of any secant line that passes through the points
+$(x,f(x))$ and $(x+h, f(x+h))$ is given by
+\[
+\frac{\Delta y}{\Delta x}=\frac{f(x+h) -f(x)}{(x+h)-x} = \frac{f(x+h)-f(x)}{h},
+\]
+see Figure~\ref{figure:limit-dfn}. This leads to the \textit{Limit Definition of the Derivative}:
 
-\begin{example}
-Discuss the derivative of the function $y=x^{2/3}$, shown in
-figure~\ref{fig:cusp}. We will later see how to compute this
-derivative; for now we use the fact that $
-y'=(2/3)x^{-1/3}$. Visually this looks much like the absolute value
-function, but it technically has a cusp, not a corner. The absolute
-value function has no tangent line at 0 because there are (at least)
-two obvious contenders---the tangent line of the left side of the
-curve and the tangent line of the right side.  The function $
-y=x^{2/3}$ does not have a tangent line at 0, but unlike the absolute
-value function it can be said to have a single direction: as we
-approach 0 from either side the tangent line becomes closer and closer
-to a vertical line; the curve is vertical at 0. But as before, if you
-imagine traveling along the curve, an abrupt change in direction is
-required at 0: a full 180 degree turn.
-\end{example}
-
-
-
-\begin{figure}
+\begin{mainDefinition}\index{limit!definition of the derivative}\index{derivative!limit definition}
+The \textbf{derivative} of $f(x)$ is the function
+\[
+\ddx f(x) = \lim_{h\to 0} \frac{f(x+h) - f(x)}{h}.
+\]
+If this limit does not exist for a given value of $x$, then $f(x)$ is
+not \textbf{differentiable} at $x$.
+\end{mainDefinition}
+\begin{marginfigure}[-1.75in]
 \begin{tikzpicture}
 	\begin{axis}[
             domain=0:2, range=0:6,ymax=6,ymin=0,
@@ -157,13 +152,172 @@ required at 0: a full 180 degree turn.
 \end{tikzpicture}
 \caption{Tangent lines can be found as the limit of secant lines. The slope of the tangent line is given by
 $\lim_{h\to 0} \frac{f(x+h) - f(x)}{h}.$}
-\label{figure:epsilon-delta}
-\end{figure}
+\label{figure:limit-dfn}
+\end{marginfigure}
+
+\begin{definition}\index{derivative!notation}
+There are several different notations for the derivative, we'll mainly
+use
+\[
+\ddx f(x) = f'(x).
+\]
+If one is working with a function of a variable other than $x$, say $t$ we write
+\[
+\dd{t} f(t) = f'(t).
+\]
+However, if $y = f(x)$, $\frac{dy}{dx}$, $\dot{y}$, and $D_x f(x)$ are
+also used.
+\end{definition}
+
+\begin{example}
+Compute 
+\[
+\ddx (x^3 + 1).
+\] 
+\end{example}
+
+\begin{solution}
+Using the definition of the derivative,
+\begin{align*}
+\ddx f(x) &= \lim_{h\to 0}\frac{(x+h)^3 + 1 - (x^3 +1)}{h}\\
+&= \lim_{h\to 0}\frac{x^3+3x^2h+3xh^2 + h^3 + 1 - x^3 -1}{h}\\
+&= \lim_{h\to 0}\frac{3x^2h+3xh^2 + h^3}{h}\\
+&= \lim_{h\to 0}(3x^2+3xh + h^2)\\
+&= 3x^2.
+\end{align*}
+\end{solution}
+
+
+
+\begin{example}
+Compute
+\[
+\dd t \frac{1}{t}.
+\]
+\end{example}
+\begin{marginfigure}
+\begin{tikzpicture}
+	\begin{axis}[
+            domain=-3:3,
+            ymax=4,
+            ymin=-4,
+            samples=100,
+            axis lines =middle, xlabel=$t$, ylabel=$f(t)$,
+            every axis y label/.style={at=(current axis.above origin),anchor=south},
+            every axis x label/.style={at=(current axis.right of origin),anchor=west}
+          ]
+	  \addplot [very thick, penColor, smooth,domain=(-3:-.1)] {1/x};
+          \addplot [very thick, penColor, smooth,domain=(.1:3)] {1/x};
+        \end{axis}
+\end{tikzpicture}
+\caption{A plot of $f(t) = \frac{1}{t}$.}
+\label{figure:plot1/x}
+\end{marginfigure}
+\begin{solution}
+Using the definition of the derivative,
+\begin{align*}
+\dd{t}\frac{1}{t}&=\lim_{ h\to0}\frac{\frac{1}{t+ h} - \frac{1}{t}}{h} \\
+&=\lim_{h\to0}\frac{\frac{t}{t(t+ h)} - \frac{t+ h}{t(t+ h)}}{h} \\
+&=\lim_{h\to0}\frac{\frac{t-(t+ h)}{t(t+ h)}}{h} \\
+&=\lim_{h\to0}\frac{t-t- h}{t(t+ h) h} \\
+&=\lim_{h\to0}\frac{- h}{t(t+ h) h} \\
+&=\lim_{h\to0}\frac{-1}{t(t+ h)}\\
+&=\frac{-1}{t^2}.
+\end{align*}
+This function is differentiable at all real numbers except for $t=0$, see Figure~\ref{figure:plot1/x}.
+\end{solution}
+
+
+\begin{example}
+Compute 
+\[
+\ddx |x|.
+\]
+\end{example}
+\begin{marginfigure}
+\begin{tikzpicture}
+	\begin{axis}[
+            domain=-3:3,
+            ymax=4,
+            ymin=-1,
+            samples=100,
+            axis lines =middle, xlabel=$x$, ylabel=$f(x)$,
+            every axis y label/.style={at=(current axis.above origin),anchor=south},
+            every axis x label/.style={at=(current axis.right of origin),anchor=west}
+          ]
+	  \addplot [very thick, penColor, smooth] {abs(x)};
+        \end{axis}
+\end{tikzpicture}
+\caption{A plot of $f(x) = |x|$.}
+\label{figure:plot-abs}
+\end{marginfigure}
+\begin{solution}
+Using the definition of the derivative,
+\[
+\ddx |x| = \lim_{h\to0}\frac{|x+h| -|x|}{h}.
+\]
+If $x$ is positive we may assume that $x$ is larger than $h$, as we are
+taking the limit as $h$ goes to $0$,
+\begin{align*}
+\lim_{h\to0}\frac{|x+h| -|x|}{h} &= \lim_{h\to0}\frac{x+h -x}{h}\\
+&= \lim_{h\to0}\frac{h}{h}\\
+&= 1.
+\end{align*}
+If $x$ is negative we may assume that $|x|$ is larger than $h$, as we are taking
+the limit as $h$ goes to $0$,
+\begin{align*}
+\lim_{h\to0}\frac{|x+h| -|x|}{h} &= \lim_{h\to0}\frac{x-h -x}{h}\\
+&= \lim_{h\to0+}\frac{-h}{h}\\
+&= -1.
+\end{align*}
+However we still have one case left, when $x=0$. In this situation, we
+must consider the one-sided limits:
+\[
+\lim_{h\to0+}\frac{|x+h| -|x|}{h}\qquad\text{and}\qquad \lim_{h\to0-}\frac{|x+h| -|x|}{h}.
+\]
+In the first case, 
+\begin{align*}
+\lim_{h\to0+}\frac{|x+h| -|x|}{h} &= \lim_{h\to 0+}\frac{0+h - 0}{h}\\
+&= \lim_{h\to 0+}\frac{h}{h}\\
+&=1.
+\end{align*}
+On the other hand
+\begin{align*}
+\lim_{h\to0-}\frac{|x+h| -|x|}{h} &= \lim_{h\to 0-}\frac{|0+h| - 0}{h}\\
+&= \lim_{h\to 0-}\frac{|h|}{h}\\
+&=-1.
+\end{align*}
+Hence we see that the derivative does not exist at $0$, see Figure~\ref{figure:plot-abs}. 
+\end{solution}
 
 
 
 
-differentialble => continuous
+
+\begin{example}
+Discuss the derivative of the function $y=x^{2/3}$, shown in
+figure~\ref{fig:cusp}. We will later see how to compute this
+derivative; for now we use the fact that $
+y'=(2/3)x^{-1/3}$. Visually this looks much like the absolute value
+function, but it technically has a cusp, not a corner. The absolute
+value function has no tangent line at 0 because there are (at least)
+two obvious contenders---the tangent line of the left side of the
+curve and the tangent line of the right side.  The function $
+y=x^{2/3}$ does not have a tangent line at 0, but unlike the absolute
+value function it can be said to have a single direction: as we
+approach 0 from either side the tangent line becomes closer and closer
+to a vertical line; the curve is vertical at 0. But as before, if you
+imagine traveling along the curve, an abrupt change in direction is
+required at 0: a full 180 degree turn.
+\end{example}
+
+
+
+
+
+
+
+differentiable => continuous
 
 not continuous => not diff
 
@@ -173,37 +327,7 @@ Now some examples of of computing derivatives via limits.
 
 
 
-\begin{example}
-Find the derivative of $y=f(t)=t^2$.
 
-We compute 
-\begin{align*}
-y' = \lim_{ h\to0}{\Delta y\over h}&=
-\lim_{ h\to0}{(t+ h)^2-t^2\over h} \\
-&=\lim_{ h\to0}{t^2+2t h+ h^2-t^2\over h} \\
-&=\lim_{ h\to0}{2t h+ h^2\over h} \\
-&=\lim_{ h\to0} 2t+ h=2t.
-\end{align*}
-\end{example}
-
-\begin{example}
-
-Find the derivative of $y=f(x)=1/x$.
-
-The computation:
-\begin{align*}
-y' = \lim_{h\to0}{\Delta y\over h}&=
-\lim_{ h\to0}{ {1\over x+ h} - {1\over x}\over \Delta
-  x} \\
-&=\lim_{ h\to0}{ {x\over x(x+ h)} - 
-{x+ h\over x(x+ h)}\over  h} \\
-&=\lim_{ h\to0}{ {x-(x+ h)\over x(x+ h)}\over  h} \\
-&=\lim_{ h\to0} {x-x- h\over x(x+ h) h} \\
-&=\lim_{ h\to0} {- h\over x(x+ h) h} \\
-&=\lim_{ h\to0} {-1\over x(x+ h)}={-1\over x^2} \\
-\end{align*}
-\vskip-10pt
-\end{example}
 
 
 

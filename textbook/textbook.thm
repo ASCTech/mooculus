@@ -16,12 +16,12 @@
 \contentsline {example}{{Example}{1.3.{2}}{}}{17}{example.1.3.2}
 \contentsline {solution}{{Solution}{5}{}}{18}{solution.5}
 \contentsline {example}{{Example}{1.3.{3}}{}}{18}{example.1.3.3}
-\contentsline {solution}{{Solution}{6}{}}{19}{solution.6}
+\contentsline {solution}{{Solution}{6}{}}{18}{solution.6}
 \contentsline {example}{{Example}{1.3.{4}}{}}{19}{example.1.3.4}
 \contentsline {solution}{{Solution}{7}{}}{19}{solution.7}
-\contentsline {mainTheorem}{{Theorem}{1.3.{5}}{Squeeze Theorem}}{20}{mainTheorem.1.3.5}
-\contentsline {example}{{Example}{1.3.{6}}{}}{20}{example.1.3.6}
-\contentsline {solution}{{Solution}{8}{}}{20}{solution.8}
+\contentsline {mainTheorem}{{Theorem}{1.3.{5}}{Squeeze Theorem}}{19}{mainTheorem.1.3.5}
+\contentsline {example}{{Example}{1.3.{6}}{}}{19}{example.1.3.6}
+\contentsline {solution}{{Solution}{8}{}}{19}{solution.8}
 \contentsline {definition}{{Definition}{3}{}}{23}{definition.3}
 \contentsline {definition}{{Definition}{4}{}}{23}{definition.4}
 \contentsline {example}{{Example}{1.4.{1}}{}}{24}{example.1.4.1}
@@ -49,10 +49,15 @@
 \contentsline {solution}{{Solution}{17}{}}{32}{solution.17}
 \contentsline {example}{{Example}{1.6.{5}}{}}{32}{example.1.6.5}
 \contentsline {solution}{{Solution}{18}{}}{32}{solution.18}
-\contentsline {example}{{Example}{2.1.{1}}{}}{36}{example.2.1.1}
-\contentsline {example}{{Example}{2.1.{2}}{}}{36}{example.2.1.2}
-\contentsline {example}{{Example}{2.1.{3}}{}}{37}{example.2.1.3}
-\contentsline {example}{{Example}{2.1.{4}}{}}{37}{example.2.1.4}
-\contentsline {example}{{Example}{2.2.{1}}{}}{41}{example.2.2.1}
-\contentsline {example}{{Example}{2.2.{2}}{}}{41}{example.2.2.2}
-\contentsline {example}{{Example}{2.2.{3}}{}}{42}{example.2.2.3}
+\contentsline {mainDefinition}{{Definition}{1}{}}{36}{mainDefinition.1}
+\contentsline {definition}{{Definition}{9}{}}{37}{definition.9}
+\contentsline {example}{{Example}{2.1.{1}}{}}{37}{example.2.1.1}
+\contentsline {solution}{{Solution}{19}{}}{37}{solution.19}
+\contentsline {example}{{Example}{2.1.{2}}{}}{37}{example.2.1.2}
+\contentsline {solution}{{Solution}{20}{}}{38}{solution.20}
+\contentsline {example}{{Example}{2.1.{3}}{}}{38}{example.2.1.3}
+\contentsline {solution}{{Solution}{21}{}}{38}{solution.21}
+\contentsline {example}{{Example}{2.1.{4}}{}}{41}{example.2.1.4}
+\contentsline {example}{{Example}{2.2.{1}}{}}{44}{example.2.2.1}
+\contentsline {example}{{Example}{2.2.{2}}{}}{44}{example.2.2.2}
+\contentsline {example}{{Example}{2.2.{3}}{}}{45}{example.2.2.3}
