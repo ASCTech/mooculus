@@ -108,6 +108,7 @@
 \renewcommand{\epsilon}{\varepsilon}
 \renewcommand{\l}{\ell}
 \newcommand{\ddx}{\frac{d}{dx}}
+\newcommand{\dd}[1]{\frac{d}{d #1}}
 \newcommand{\R}{\mathbb{R}}
 %\DeclareMathOperator*\plim{lim}
 %\renewcommand{\lim}{\displaystyle\plim} if we really want all limits display style
@@ -220,6 +221,30 @@ splittopskip=\topskip,skipbelow=\baselineskip,skipabove=\baselineskip,
 font=\upshape
 ]{definition}%
 {Definition}
+
+\theoremheaderfont{\normalfont\bfseries} \theorembodyfont{\upshape}
+\newmdtheoremenv[leftmargin=40,%
+  rightmargin=40,backgroundcolor=definitionBackground,fontcolor=textColor,%%
+  innertopmargin=6pt,innerlinewidth=1,innerlinecolor=mainTheoremBorder!20!background,
+  middlelinewidth=2,middlelinecolor=mainTheoremBorder,
+  outerlinewidth=1,outerlinecolor=mainTheoremBorder!10!background,
+  roundcorner=10pt,
+  splittopskip=\topskip,skipbelow=\baselineskip,skipabove=\baselineskip,
+  font=\upshape ]{mainDefinition}% 
+{Definition}
+
+%% \declaretheoremstyle[ headfont=\normalfont\bfseries, 
+%%   notefont=\mdseries, notebraces={(}{)}, bodyfont=\normalfont,
+%%   postheadspace=0.5em,
+%%   preheadhook={\begin{mdframed}[nobreak=true,leftmargin=40,rightmargin=40,backgroundcolor=definitionBackground,fontcolor=textColor,%
+%%         innerlinewidth=1,innerlinecolor=mainTheoremBorder!20!background,
+%%         middlelinewidth=2,middlelinecolor=mainTheoremBorder,
+%%         outerlinewidth=1,outerlinecolor=mainTheoremBorder!10!background,
+%%         roundcorner=10pt,%
+%%         innertopmargin=6pt,splittopskip=\topskip,skipbelow=\baselineskip,skipabove=\baselineskip]},
+%%   postfoothook=\end{mdframed} ]{mainDfnStyle}
+%% \declaretheorem[style=mainDfnStyle,name=Definition]{mainDefinition}
+
 
 
 \newmdtheoremenv[hidealllines=true,leftmargin=40,roundcorner=10pt%

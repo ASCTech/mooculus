@@ -7,14 +7,14 @@
 \contentsline {section}{\numberline {1.6}Continuity}{30}{section.1.6}
 \contentsline {chapter}{\numberline {2}Differentiation}{35}{chapter.2}
 \contentsline {section}{\numberline {2.1}Slopes of Tangent Lines via Limits}{35}{section.2.1}
-\contentsline {section}{\numberline {2.2}Basic Derivative Rules}{40}{section.2.2}
-\contentsline {subsection}{\numberline {2.2.1}The Sum Rule}{40}{subsection.2.2.1}
-\contentsline {subsection}{\numberline {2.2.2}The Power Rule}{42}{subsection.2.2.2}
-\contentsline {section}{\numberline {2.3}The Product Rule and Quotient Rule}{46}{section.2.3}
-\contentsline {section}{\numberline {2.4}The Derivative of Trigonometric Functions}{46}{section.2.4}
-\contentsline {section}{\numberline {2.5}The Chain Rule}{46}{section.2.5}
-\contentsline {section}{\numberline {2.6}Rates of Change}{46}{section.2.6}
-\contentsline {section}{\numberline {2.7}Implicit Differentiation}{46}{section.2.7}
-\contentsline {section}{\numberline {2.8}Applications}{46}{section.2.8}
-\contentsline {subsection}{\numberline {2.8.1}Related Rates}{46}{subsection.2.8.1}
+\contentsline {section}{\numberline {2.2}Basic Derivative Rules}{43}{section.2.2}
+\contentsline {subsection}{\numberline {2.2.1}The Sum Rule}{43}{subsection.2.2.1}
+\contentsline {subsection}{\numberline {2.2.2}The Power Rule}{45}{subsection.2.2.2}
+\contentsline {section}{\numberline {2.3}The Product Rule and Quotient Rule}{49}{section.2.3}
+\contentsline {section}{\numberline {2.4}The Derivative of Trigonometric Functions}{49}{section.2.4}
+\contentsline {section}{\numberline {2.5}The Chain Rule}{49}{section.2.5}
+\contentsline {section}{\numberline {2.6}Rates of Change}{49}{section.2.6}
+\contentsline {section}{\numberline {2.7}Implicit Differentiation}{49}{section.2.7}
+\contentsline {section}{\numberline {2.8}Applications}{49}{section.2.8}
+\contentsline {subsection}{\numberline {2.8.1}Related Rates}{49}{subsection.2.8.1}
 \contentsfinish 
