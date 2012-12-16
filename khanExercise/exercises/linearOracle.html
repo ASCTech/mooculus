@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html data-require="math graphie word-problems">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Finding the equation of a line</title>
+    <script src="../khan-exercise.js"></script>
+    <style type="text/css">
+        #answer_area input[type=text] {
+            width: 30px;
+            margin: 0px 0px 0px 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="exercise">
+        <div class="vars">
+            <var id="SLOPE">randRange(-10, 10 )</var>
+            <var id="YINTERCEPT">randRange(-10,10)</var>
+            <var id="X1">randRange(-10,10)</var>
+            <var id="Y1">SLOPE*X1+YINTERCEPT</var>
+            <var id="X2">randRangeExclude(-10,10,[X1])</var>
+            <var id="Y2">SLOPE*X2+YINTERCEPT</var>
+            <var id="XL">randRange(1,4)</var>
+            <var id="YL">SLOPE*XL+YINTERCEPT</var>
+            <var id="XR">randRange(5,10)</var>
+            <var id="YR">SLOPE*XR+YINTERCEPT</var>
+        </div>
+
+        <div class="problems">
+            <div id=" unrestricted domain" data-weight="2">
+            
+                <div class="question">
+                	
+                    <p>
+                    	Consider a <em>linear function</em> <code>f(x)</code>. While
+                    	you don't know the formula for <code>f(x)</code>
+                    	you can nevertheless still evaluate it for given
+                    	values of <code>x</code>.  Find the slope-intercept form of <code>f</code>.
+                    </p>
+		   		    <p> 
+		   		    	<center><code>f(</code><input type='text' id='nameField' size=3><code>)=</code> <span id='nameDisplay'>?</span></center>		      
+		    		</p>
+		    		
+                	<div class = graphie>
+                	(function(){
+  					updateNameDisplay = function() {
+  	 		   	    var input = parseFloat(this.value) 	
+      				$('#nameDisplay').text( SLOPE*input+YINTERCEPT );
+  					};
+  					$('#nameField').keydown( updateNameDisplay );
+  					$('#nameField').keyup( updateNameDisplay );
+  					$('#nameField').keypress( updateNameDisplay );
+  					})()
+                	</div>
+                </div>
+                
+
+				<div class="solution" data-type="multiple">
+
+                    <p>
+                        <code>f(x) = </code><span class="sol"><var>SLOPE</var></span> <code>\cdot x+</code>
+                        <span class="sol"><var>YINTERCEPT</var></span>
+
+                    </p>
+
+                </div>
+                
+                <div class = "hints">
+            		<p>The slope intercept form is <code>f(x) = slope \cdot x + y_{intercept}</code></p>
+            		<p>The y intercept of a function is where the graph of <code>f</code> hits the y axis, i.e. <code>y_{intercept} = f(0)</code></p>
+            		<p>so <code>y_{intercept}=<var>YINTERCEPT</var></code></p>
+            		<p>The slope of a line is the factor by which you multiply the change in abscissas to get the change in ordinates</p>
+            		<p><code>f(<var>X1</var>) = <var>Y1</var></code> and <code>f(<var>X2</var>) = <var>Y2</var></code></p>
+            		<p>so the change in abscissas from <code><var>X1</var></code> to <code><var>X2</var></code> is 
+            		<code><var>X2-X1</var></code> and the corresponding change in ordinates is 
+            		<code><var>Y2</var> - <var>Y1</var> = <var>Y2-Y1</var></code>
+            		</p>
+            		<p>Thus the slope of <code>f</code> is <code>\frac{<var>Y2-Y1</var>}{<var>X2-X1</var>} = <var>SLOPE</var></code></p>
+            		<p>Thus the equation of the line is <code>f(x)= <var>SLOPE</var> \cdot x + <var>YINTERCEPT</var></code></p>
+            	</div>            	
+            </div>
+            
+            <div id="restricted domain" data-weight="1">
+            
+                <div class="question">
+                	
+                    <p>
+                    	Consider a <em>linear function</em> <code>f(x)</code>. While
+                    	you don't know the formula for <code>f(x)</code>
+                    	you can nevertheless still evaluate it for given
+                    	values of <code>x</code>.  The domain of this function has been 
+                    	restricted to the interval <code>[<var>XL</var>,<var>XR</var>]</code>.
+                    	Find the slope-intercept form of <code>f</code>.
+                    </p>
+		   		    <p> 
+		   		    	<center><code>f(</code><input type='text' id='nameField' size=3><code>)=</code> <span id='nameDisplay'>?</span></center>		      
+		    		</p>
+		    		
+                	<div class = graphie>
+                	(function(){
+  					updateNameDisplay = function() {
+  	 		   	    	var input = parseFloat(this.value)
+  	 		   	    	if (input &gt;=XL &amp;&amp; input &lt;=XR){
+  	 		   	    	$('#nameDisplay').text( SLOPE*input+YINTERCEPT );
+  	 		   	    	}
+  	 		   	    	else{
+  	 		   	    	$('#nameDisplay').text( "?" );
+  	 		   	    	}
+  						};
+  					$('#nameField').keydown( updateNameDisplay );
+  					$('#nameField').keyup( updateNameDisplay );
+  					$('#nameField').keypress( updateNameDisplay );
+  					})()
+                	</div>
+                </div>
+                
+
+				<div class="solution" data-type="multiple">
+
+                    <p>
+                        <code>f(x) = </code><span class="sol"><var>SLOPE</var></span> <code>\cdot x+</code>
+                        <span class="sol"><var>YINTERCEPT</var></span>
+
+                    </p>
+
+                </div>
+                
+                <div class = "hints">
+            		<p>The slope intercept form is <code>f(x) = slope \cdot x + y_{intercept}</code></p>
+            		<p>Since we cannot evaluate <code>f</code> at <code>0</code>, our general strategy
+            		 will be to first find the slope, and then use the slope to work backwards from a 
+            		 point we know to the y intercept.</p>
+            		 <p>The slope of a line is the factor by which you multiply the change in abscissas to get the change in ordinates</p>
+            		<p><code>f(<var>XL</var>) = <var>YL</var></code> and <code>f(<var>XR</var>) = <var>YR</var></code></p>
+            		<p>so the change in abscissas from <code><var>XL</var></code> to <code><var>XR</var></code> is 
+            		<code><var>XR-XL</var></code> and the corresponding change in ordinates is 
+            		<code><var>YR</var> - <var>YL</var> = <var>YR-YL</var></code>
+            		</p>
+            		<p>Thus the slope of <code>f</code> is <code>\frac{<var>YR-YL</var>}{<var>XR-XL</var>} = <var>SLOPE</var></code></p>
+            		<p>Now since you have the slope, you should be able to figure out how much <code>f</code> changed from 
+            		 <code>x=0</code> to <code>x=<var>XL</var></code>.  Combining this with the fact that 
+            		 <code>f(<var>XL</var>) = <var>YL</var></code> should let us figure out <code>f(0) = y_{intercept}</code>
+            		 </p>
+            		 <p><code>f</code> changed by <code>slope*(<var>XL</var>-0)=<var>SLOPE</var> \cdot <var>XL</var> = 
+            		 <var>SLOPE*XL</var></code> from <code>0</code> to <code><var>XL</var></code></p>
+            		 <p>Thus <code>f(0) = <var>YL</var> - <var>SLOPE*XL</var> = <var>YINTERCEPT</var> </code></p>
+            		 <p>Thus the equation of the line is <code>f(x)= <var>SLOPE</var> \cdot x + <var>YINTERCEPT</var></code></p>
+            	</div>            	
+            </div>
+            
+            
+            
+            
+            
+            
+        </div>
+     </div>
+        
+</body>
+</html>
