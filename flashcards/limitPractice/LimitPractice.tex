@@ -15,14 +15,14 @@
 
 \pagenumbering{gobble}
 
-\DTLloaddb{study}{level0.csv}
+\DTLloaddb{study}{limitPractice.csv}
 
 
 \DTLforeach{study}{%
 \problem=problem,\answer=answer}{%
 \newpage
 
-\vspace*{.05in} \noindent \color{textColor}$\ddx \left(\problem\right)$  \vspace*{\fill} \newpage \vspace*{.1in} \noindent\color{textColor!50!background}$\ddx \left(\problem\right)\color{textColor}\\ \\= \answer$\vspace*{\fill}  }
+\vspace*{.05in} \noindent \color{textColor}$\problem$  \vspace*{\fill} \newpage \vspace*{.1in} \noindent\color{textColor!50!background}$\ddx \left(\problem\right)\color{textColor}\\ \\= \answer$\vspace*{\fill}  }
 
 
 
