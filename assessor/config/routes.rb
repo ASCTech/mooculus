@@ -9,8 +9,8 @@ Assessor::Application.routes.draw do
 
   resources :exercises
 
-  get "khan-exercise/exercises/khan-site.html" => "exercises#khan_site"
-  get "khan-exercise/exercises/khan-exercise.html" => "exercises#khan_exercise"
+  get "khan-exercises/exercises/khan-site.html" => "exercises#khan_site"
+  get "khan-exercises/exercises/khan-exercise.html" => "exercises#khan_exercise"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -65,7 +65,6 @@ Assessor::Application.routes.draw do
 
   # After user authenticates with provider, user needs to go to omniauth call
   match '/auth/:provider/callback' => 'authentications#create'
-
 
   match '/api/v1/user/exercises/:exercise/problems/:problem/attempt' => 'score#attempt',
     :constraints => { :problem => /\d+/ }, :via => :post

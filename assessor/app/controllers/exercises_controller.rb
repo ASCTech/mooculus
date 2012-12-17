@@ -34,7 +34,7 @@ class ExercisesController < ApplicationController
   def show
     @exercise = Exercise.find(params[:id])
 
-    render :layout => false
+#    render :layout => false
 
 #    respond_to do |format|
 #      format.html # show.html.erb

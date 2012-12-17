@@ -2,6 +2,11 @@ class ScoreController < ApplicationController
   respond_to :json
 
   def create
+    puts "****************************************************************"
+    puts "NOT SAVING ANY DATA IN THIS VERSION"
+    puts "****************************************************************"
+    return 
+
     @exercise = Exercise.find_by_page(params[:exercise] + ".html")
     @user = current_user
     @score = Score.new(:time_taken => params[:time_taken],
@@ -15,11 +20,11 @@ class ScoreController < ApplicationController
 
     respond_to do |format|
       if @score.save
-        format.html { redirect_to @user, notice: 'Score was successfully created.' }
-        format.json { render json: @score, status: :created, location: @score }
+        format.html { redirect_to @user, :notice => 'Score was successfully created.' }
+        format.json { render :json => @score, :status => :created, :location => @score }
       else
-        format.html { render action: "new" }
-        format.json { render json: @score.errors, status: :unprocessable_entity }
+        format.html { render :action => "new" }
+        format.json { render :json => @score.errors, :status => :unprocessable_entity }
       end
     end
   end
