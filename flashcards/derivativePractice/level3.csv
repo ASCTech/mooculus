@@ -1,11 +1,11 @@
 problem,answer
-e^{2cos(x)}, -2sin(x)e^{2cos(x)}
-\frac{{sin^3(x)}}{cos(x)}, sin(x)+tan(x)sec(x)
-tan(sin(x)), cos(x)sec^2(sin(x))
-7sec(3x), 21tan(3x)sec(3x)
+e^{2\cos(x)}, -2\sin(x)e^{2\cos(x)}
+\frac{{\sin^3(x)}}{\cos(x)}, \sin(x)+\tan(x)\sec(x)
+\tan(\sin(x)), \cos(x)\sec^2(\sin(x))
+7\sec(3x), 21\tan(3x)\sec(3x)
 (1-x^3)^9, -27x^2(x^3-1)^8
 \sqrt{{13+2x}}, \frac{1}{2x+13}
 (x^3-2)^4(x^7+1)^2, 2x^2(x^3-2)^3(x^7+1)(13x^7-14x^4+6)
 \frac{x}{{\sqrt{x^3+1}}}, \frac{2-x^3}{{2(x^3+1)^{2/3}}}
 \sqrt{{x-\sqrt{x}}}, \frac{1-\frac{1}{2\sqrt{X}}}{2\sqrt{x-\sqrt{x}}}
-xsin\left(\frac{1}{x}\right), sin\left(\frac{1}{x}\right)-\frac{{cos\left(\frac{1}{x}\right)}}{x}
+x\sin\left(\frac{1}{x}\right), \sin\left(\frac{1}{x}\right)-\frac{{\cos\left(\frac{1}{x}\right)}}{x}
