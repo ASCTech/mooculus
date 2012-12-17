@@ -3,3 +3,9 @@ $\ddx x^3$; $3x^2$
 $\ddx \sin(x)$; $\cos(x)$
 $\ddx e^x$; $e^x$
 $\ddx \ln(x)$; $\frac{1}{x}$
+\protect\text{quotient rule}\\\\$\ddx \left[\frac{f(x)}{g(x)}\right]$; $\frac{f'(x)g(x)-f(x)g'(x)}{g(x)^2}$
+\protect\text{product rule}\\\\$\ddx [f(x)g(x)]$; $f'(x)g(x)+f(x)g'(x)$
+\protect\text{chain rule}\\\\$\ddx f(g(x)$; $f'(g(x))g'(x)$
+\protect\text{power rule}\\\\$\ddx (x^n)$; $nx^{n-1}$
+
+

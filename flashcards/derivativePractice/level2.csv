@@ -1,0 +1,16 @@
+problem,answer
+sin(2x), 2cos(2x)
+4x^{\frac{3}{4}}, 3x^{-{\frac{1}{4}}}
+3cos(x), -3sin(x)
+cos(-x),  -sin(x)
+\frac{1}{x^2}, -\frac{2}{x^{-3}}
+\sqrt[3]{x}, \frac{x^{-{\frac{2}{3}}}}{3}
+e^{2x-1}, 2e^{2x-1}
+e^{-6x}, -6e^{-6x}
+x^2-\frac{1}{\sqrt[3]{x}}
+4x^{-11}, -44x^{-12}
+6e^x+\frac{10}{x}-\frac{2}{x^2}, 6e^x-\frac{10}{x^2}+\frac{4}{x^3}
+x^{-\frac{4}{7}}, -\frac{4}{7}x^{-\frac{11}{7}
+
+
+

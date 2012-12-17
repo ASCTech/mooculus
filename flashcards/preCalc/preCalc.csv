@@ -22,4 +22,12 @@ a^2 - b^2; =(a+b)(a-b)
 \protect\text{Point Slope Formula}; \\ y = \frac{y_2-y_1}{x_2-x_1} (x-x_1) + y_1
 ax^2 + bx + c =0\\x; =\frac{-b\pm \sqrt{b^2 -4ac}}{2a} 
 \protect\sqrt{x^2}; =|x|
+(a+b)^3;\\=a^3+3a^2b+3ab^2+b^3
+(x^a)^b; =x^{ab}
+log(1); =0
+\protect\sqrt{\frac{a}{b}}; =\protect\frac{\sqrt{a}}{\sqrt{b}}
+\left(\frac{a}{b}\right)^{-n}; =\frac{b^n}{a^n}
+a^{\frac{1}{n}}; =\sqrt[n]{a}
+\log_bb^x; =x
+\protect\text{Change of Base}\\log_ax; =\frac{\log_bx}{\log_ba}
 
