@@ -1,5 +1,11 @@
 class ExercisesController < ApplicationController
 
+  def khan_site
+  end
+
+  def khan_exercise
+  end
+
   def index
     @exercises = Exercise.all
   end
@@ -9,11 +15,11 @@ class ExercisesController < ApplicationController
 
     respond_to do |format|
       if @exercise.save
-        format.html { redirect_to @exercise, notice: 'Exercise was successfully created.' }
-        format.json { render json: @exercise, status: :created, location: @exercise }
+        format.html { redirect_to @exercise, :notice => 'Exercise was successfully created.' }
+        format.json { render :json => @exercise, :status => :created, :location => @exercise }
       else
-        format.html { render action: "new" }
-        format.json { render json: @exercise.errors, status: :unprocessable_entity }
+        format.html { render :action => "new" }
+        format.json { render :json => @exercise.errors, :status => :unprocessable_entity }
       end
     end
   end
@@ -28,10 +34,12 @@ class ExercisesController < ApplicationController
   def show
     @exercise = Exercise.find(params[:id])
 
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @exercise }
-    end
+#    render :layout => false
+
+#    respond_to do |format|
+#      format.html # show.html.erb
+#      format.json { render :json => @exercise }
+#    end
   end
 
   def update

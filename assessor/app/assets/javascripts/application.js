@@ -12,6 +12,10 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery-ui
+//= require underscore
+//= require setup-khan
+//= require khan-exercise
 //= require_tree .
 
 //= require twitter/bootstrap

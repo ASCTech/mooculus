@@ -1,12 +1,12 @@
-This is the 1151 schedule; I should be moving the MOOC somewhat faster
-than it does.
+This is the 1151 schedule; I should be moving the MOOC somewhat faster than it does.
 
 * Week 1: Limits
 ** 1.4 Review of functions
 *** VIDEO introduction to course format
-*** VIDEO what is a function?
+*** VIDEO What is a function? :what-is-a-function:
 Physically "build" a function
 What is is *not* a function
+<<<<<<< HEAD
 **** We should probably limit our definition as a function from R -> R.
 A function from R -> R is a paring where every element in R is mapped
 to some element in R.  Moreover, we can discuss how Functions might
@@ -20,6 +20,16 @@ stand by some stairs, look at some roofs
 *** VIDEO what is a limit?
 plug in nearby values
 *** VIDEO limit of (x^2 - 3x + 2)/(x-2)
+=======
+*** y = f(x-3) shifts the graph?  
+*** KHAN graph transformations
+*** KHAN lines and slope
+** 2.1 Idea of limits
+*** VIDEO What is a limit?  plug in nearby values :what-is-a-limit:
+*** VIDEO How do I find a limit from a graph? :limits-and-graphs:
+*** KHAN evaluating limits from a graph, piecewise functions, discontinuous
+*** VIDEO Why do I care about limits? :why-care-about-limits:
+**** Motivating Example: 
 (x^2 - 3x + 2)/(x-2), plot for integer values of x from -1 to 2,
 excluding x=2. Explain how this is *not* equal to x-1, and that a
 limit is needed.
@@ -32,20 +42,25 @@ any time we have approximations we can improve
 ** 2.2 Definition of limits
 *** KHAN start with function square root(X^2+2)/|X| 
 - ask about evaluating this at various points to suggest continuity 
+<<<<<<< HEAD
 *** VIDEO what is a one-sided limit?
 *** VIDEO relationship between one and two sided limits
+=======
+*** VIDEO How do I find a one-sided limit? :one-sided-limit:
+*** VIDEO How do one- and two-sided limits relate to each other? :one-and-two-sided-limits:
+*** VIDEO When does a limit not exist? :nonexistent-limits:
 ** 2.3 Limit laws
-*** VIDEO limit of a sum is the sum of the limits
+*** VIDEO Why does the limit of a sum equal the sum of the limits? :limit-of-sum:
 ask three different people to do three different multiplication
 problems, all slightly different but with answers nearby each
 other---how do their answers compare?
 I can do this by printing the problem out in giant letters on the
 paper and giving it to them.
-*** VIDEO limit of a product is the product of the limits
+*** VIDEO Why does limit of a product equal the product of the limits? :limit-of-product:
 ask three different people to do three different multiplication
 problems, all slightly different but with answers nearby each
 other---how do their answers compare?
-*** VIDEO squeeze theorem
+*** VIDEO What is the squeeze theorem? :squeeze-theorem:
 * Week 2: Infinity and Continuity
 ** 2.4 Infinite limits
 *** VIDEO What does it mean to say $\lim_{x \to a} f(x) = \infty$?
@@ -180,5 +195,6 @@ failure ("hope" as one of the steps)
 ** 6.2 Regions Between curves
 ** 6.3 Volume by slicing
 ** 6.4 Volume by shells
+* Week 16: Topics
 ** Other topics: Surface area, arc length, centers of mass
 ** Final exam
