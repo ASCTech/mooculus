@@ -1,0 +1,20 @@
+When you start working:
+
+  git checkout master
+  git pull
+  git checkout -b this-is-what-im-working-on
+
+As you work:
+
+  git status
+  git add list-of-files-i-changed
+  git commit -m "here is what I did"
+
+When you want to contribute what you've done
+
+  git checkout master
+  git merge this-is-what-im-working-on
+  git push
+
+The this-is-what-im-working-on might be "assessor" or "textbook" or
+"lectures" or whatever.
