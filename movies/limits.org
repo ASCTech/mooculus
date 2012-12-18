@@ -6,3 +6,9 @@
 ** Cooling - limit to infinity
 ** Guitar string settles down 
 ** Auger dish 
+* Drop a ball
+** Use R = D/T to comptute the speed. 
+*** Start with the average velocity over the total amount of time
+*** Next point out that the ball is moving a different rates at different times
+*** We could plot the position over time. 
+*** Next we could compute tangent lines on the plot and compare this with the actual footage.
