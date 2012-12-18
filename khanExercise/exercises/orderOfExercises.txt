@@ -1,17 +1,96 @@
 --Review (points, graphing, lines)--
 
-abscissaOrdinate
-plotPoint
-signedDistances 
-pointOnFunction
-pointOnFunction2
-graphingFromEquation
+*POINTS*
+
+C abscissaOrdinate
+C plotPoint
+I signedDistances 
+
+*FUNCTIONS*
+C pointOnFunction
+C pointOnFunction2
+C isThisAFunctionPoints
+I isThisAFunctionGraph
+C evaluatingFunctions
+I graphingFromEquation
+
+
+I arithmeticFunctionsPointwise
+I arithmeticFunctionsGraphically
+I arithmeticFunctionsSymbolically
+
+I composingFunctionsPointwise
+I composingFunctionsSymbolically
+
+C functionTransformationPointwise
+I graphingTransformationPointwise
+I writeAsTransformation
+I graphingTransformation
+
+I multistepTransformationPointwise
+I multistepGraphingTransformationPointwise
+I multistepWriteAsTransformation
+I multistepGraphingTransformation
+
+C identifyPosNeg
+C identifyIncreaseDecrease
+C identifyMaxMin
+I identifyConcavity
+
+*LINES*
+
+C lineOracle
+I lineGraphFromEquation
+I lineSimilarTrianglesNumbers
+I lineSimilarTrianglesVariables
+I lineEquationFromGraph
+I lineEquationFromWordProblem
 
 
 --Limits and Continuity--
 
+I Oracle with points plotting as transition from graphical to oracle
+
+C limitsOracle
+I coolLimitsOracle
+I limitsGraphical
+	I limitsSymbolic
+	I identifyingLimitLaws
+
+I limitComposeRationalOracle
+	
+I estimateLargeSmall
+
+I infinteLimitOracle
+I coolInfinityLimitOracle
+I infiniteLimitGraphical
+I infiniteLimitSymbolic
+
+I limitsAtInfinityOracle
+I coolLimitsAtInfinityOracle
+I limitsAtInfinityGraphical
+I limitsAtInfinitySymbolic
+
+I continuityOracle
+I continuityGraphical
+I continuitySymbolic
+
+I bisectionOracle
+
 
 --Differentiation--
+
+-basic concepts-
+
+approxDeriv
+linearApprox
+repeatedLinApprox
+derivativeOracle
+intuitiveCurveSketch
+
+
+-formal rules-
+numChainRule
 
 
 

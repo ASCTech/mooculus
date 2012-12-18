@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html data-require="math word-problems">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Continuity of functions</title>
+    <script src="../khan-exercise.js"></script>
+</head>
+<body>
+<!--Use random function generation from approxLimits, but allow user to evaluate f at the given X value.  
+	Give multiple choice answers, ex:
+		f is continous at x=2
+		f is discontinuous at x=2 with a point discontinuity
+		f is discontinuous at x=2 with a jump discontinuity
+		f is discontinuous at x=2 because lim_{x \to 2^+} fails to exist
+		f is discontinuous at x=2 because lim_{x \to 2^-} fails to exist
+		f is discontinuous at x=2 because the limits from the left and right both fail to exist
+		-->
+
+    <div class="exercise">
+        <div class="vars">
+            <var id="X">randRange(-10,10)</var>
+        </div>
+
+        <div class="problems">
+            <div>
+                <div class="question">
+                    Consider a function <code>f(x)</code>. While
+                    you don't know the formula for <code>f(x)</code>
+                    you can nevertheless still evaluate it for given
+                    values of <code>x</code>.  Does <code>f</code> appear to be continuous at
+                    <code>x = <var>X</var></code>?    If not, why?
+                    	
+                </div>
+
+                <p class="solution" data-forms="decimal"></p>
+            </div>
+        </div>
+
+        <div class="hints">
+             
+        </div>
+    </div>
+</body>
+</html>
