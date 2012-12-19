@@ -43,12 +43,10 @@
                 	(function(){
   					updateNameDisplay = function() {
   	 		   	    var input = parseFloat(this.value)
-  	 		   	    if (input!==LIMITX){ 	
+  	 		   	    if (input !== LIMITX && !isNaN(input)){
       					$('#nameDisplay').text( POLY.evalOf(input));
-  						};
-  					else {
-  						$('#nameDisplay').text("?")
-  						};
+  						}
+  					else {$('#nameDisplay').text("?")};
   					};
   					$('#nameField').keydown( updateNameDisplay );
   					$('#nameField').keyup( updateNameDisplay );
@@ -206,10 +204,10 @@
   					updateNameDisplay = function() {
   	 		   	    var input = parseFloat(this.value) 
   	 		   	    if (input &lt; LIMITX){	
-      					$('#nameDisplay').text( POLY.evalOf(input)*(input-LIMITX) );
+      					$('#nameDisplay').text( POLY.evalOf(input));
       					};
       				if (input &gt; LIMITX) {
-      					 $('#nameDisplay').text( ANSWER+FACTOR*Math.sin(1/(input-LIMITX))*(input-LIMITX)/(input-LIMITX) );
+      					 $('#nameDisplay').text( ANSWER+FACTOR*Math.sin(1/(input-LIMITX)) );
       					 }	;
       				if (input == LIMITX){
       					$('#nameDisplay').text("?")
@@ -292,10 +290,10 @@
   					updateNameDisplay = function() {
   	 		   	    var input = parseFloat(this.value) 
   	 		   	    if (input &lt; LIMITX){	
-      					$('#nameDisplay').text( ANSWER+FACTOR*Math.sin(1/(input-LIMITX))*(input-LIMITX)/(input-LIMITX));
+      					$('#nameDisplay').text( ANSWER+FACTOR*Math.sin(1/(input-LIMITX)));
       					}
       				if (input &gt; LIMITX) {
-      					 $('#nameDisplay').text( POLY.evalOf(input)*(input-LIMITX)/(input-LIMITX) );
+      					 $('#nameDisplay').text( POLY.evalOf(input) );
       					 }	
       				if (input == LIMITX ){
       					$('#nameDisplay').text("?")
@@ -376,9 +374,9 @@
                 	(function(){
   					updateNameDisplay = function() {
   	 		   	   		var input = parseFloat(this.value) 
-  	 		   	   		if (input !== LIMITX){
-  	 		   	    		$('#nameDisplay').text( ANSWER+FACTOR*Math.sin(1/(input-LIMITX))*(input-LIMITX)/(input-LIMITX) || "?" );
-  	 		   	    		};
+  	 		   	   		if (input !== LIMITX && !isNaN(input)){
+  	 		   	    		$('#nameDisplay').text( ANSWER+FACTOR*Math.sin(1/(input-LIMITX)) );
+  	 		   	    		}
   	 		   	    	else {
   	 		   	    		$('#nameDisplay').text("?")
   	 		   	    		};
