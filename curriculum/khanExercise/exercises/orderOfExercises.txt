@@ -35,7 +35,7 @@ I multistepGraphingTransformation
 C identifyPosNeg
 C identifyIncreaseDecrease
 C identifyMaxMin
-I identifyConcavity
+C identifyConcavity
 
 *LINES*
 

@@ -8,7 +8,7 @@
 <body>
     <div class="exercise">
         <div class="vars">
-			<var id="LIMITX">randRange(-10,10)</var>
+			<var id="LIMITX">randRangeNonZero(-10,10)</var>
 	    	<var id="POLY">new Polynomial(1,randRange(1,3))</var>
 	    	<var id="ANSWER">POLY.evalOf(LIMITX)</var>
 	    	<var id="JUMP">randRangeNonZero(-10,10)</var>
@@ -42,8 +42,13 @@
                 	<div class = graphie>
                 	(function(){
   					updateNameDisplay = function() {
-  	 		   	    var input = parseFloat(this.value) 	
-      				$('#nameDisplay').text( POLY.evalOf(input)*(input-LIMITX)/(input-LIMITX) || "?" );
+  	 		   	    var input = parseFloat(this.value)
+  	 		   	    if (input!==LIMITX){ 	
+      					$('#nameDisplay').text( POLY.evalOf(input));
+  						};
+  					else {
+  						$('#nameDisplay').text("?")
+  						};
   					};
   					$('#nameField').keydown( updateNameDisplay );
   					$('#nameField').keyup( updateNameDisplay );
@@ -61,7 +66,7 @@
                         <code>\displaystyle\lim_{x \to <var>LIMITX</var>^{+}}f(x)</code>: 
                         <span class="sol" data-type="decimal"><var>ANSWER</var></span>
 						<br>
-						<code>\displaystyle\lim_{x \to <var>LIMITX</var>^{\pm}}f(x)</code>: 
+						<code>\displaystyle\lim_{x \to <var>LIMITX</var>}f(x)</code>: 
                         <span class="sol" data-type="text"><var>ANSWER</var></span>
                     </p>
 
@@ -86,7 +91,7 @@
                 	</p>
                 	<p>so <code>\displaystyle\lim_{x \to <var>LIMITX</var>^{+}}f(x) = <var>ANSWER</var></code></p>
                 	<p>Since the limits from both the right and the left exist and are equal, 
-                		<code>\displaystyle\lim_{x \to <var>LIMITX</var>^{\pm}}f(x) = <var>ANSWER</var></code>
+                		<code>\displaystyle\lim_{x \to <var>LIMITX</var>}f(x) = <var>ANSWER</var></code>
                 	</p>
                 	
                 </div>
@@ -119,11 +124,14 @@
   					updateNameDisplay = function() {
   	 		   	    var input = parseFloat(this.value) 
   	 		   	    if (input &lt; LIMITX){	
-      					$('#nameDisplay').text( POLY.evalOf(input)*(input-LIMITX)/(input-LIMITX) || "?" );
+      					$('#nameDisplay').text( POLY.evalOf(input));
       					}
-      				else {
-      					 $('#nameDisplay').text( JUMP+POLY.evalOf(input)*(input-LIMITX)/(input-LIMITX) || "?" );
-      					 }	
+      				if (input &gt; LIMITX) {
+      					 $('#nameDisplay').text( JUMP+POLY.evalOf(input));
+      					 }
+      				if (input == LIMITX){
+      					$('#nameDisplay').text("?")
+      					}	
   					};
   					$('#nameField').keydown( updateNameDisplay );
   					$('#nameField').keyup( updateNameDisplay );
@@ -141,7 +149,7 @@
                         <code>\displaystyle\lim_{x \to <var>LIMITX</var>^{+}}f(x)</code>: 
                         <span class="sol" data-type="decimal"><var>ANSWER+JUMP</var></span>
 						<br>
-						<code>\displaystyle\lim_{x \to <var>LIMITX</var>^{\pm}}f(x)</code>: 
+						<code>\displaystyle\lim_{x \to <var>LIMITX</var>}f(x)</code>: 
                         <span class="sol" data-type="text">DNE</span>
                     </p>
 
@@ -166,7 +174,7 @@
                 	</p>
                 	<p>so <code>\displaystyle\lim_{x \to <var>LIMITX</var>^{+}}f(x) = <var>JUMP+ANSWER</var></code></p>
                 	<p>The limits from both the right and the left exist, but they are not equal, so 
-                		<code>\displaystyle\lim_{x \to <var>LIMITX</var>^{\pm}}f(x)</code> does not exist (DNE).
+                		<code>\displaystyle\lim_{x \to <var>LIMITX</var>}f(x)</code> does not exist (DNE).
                 	</p>
                 </div>
             </div>
@@ -198,11 +206,14 @@
   					updateNameDisplay = function() {
   	 		   	    var input = parseFloat(this.value) 
   	 		   	    if (input &lt; LIMITX){	
-      					$('#nameDisplay').text( POLY.evalOf(input)*(input-LIMITX)/(input-LIMITX) || "?" );
-      					}
-      				else {
-      					 $('#nameDisplay').text( ANSWER+FACTOR*Math.sin(1/(input-LIMITX))*(input-LIMITX)/(input-LIMITX) || "?" );
-      					 }	
+      					$('#nameDisplay').text( POLY.evalOf(input)*(input-LIMITX) );
+      					};
+      				if (input &gt; LIMITX) {
+      					 $('#nameDisplay').text( ANSWER+FACTOR*Math.sin(1/(input-LIMITX))*(input-LIMITX)/(input-LIMITX) );
+      					 }	;
+      				if (input == LIMITX){
+      					$('#nameDisplay').text("?")
+      					};
   					};
   					$('#nameField').keydown( updateNameDisplay );
   					$('#nameField').keyup( updateNameDisplay );
@@ -220,7 +231,7 @@
                         <code>\displaystyle\lim_{x \to <var>LIMITX</var>^{+}}f(x)</code>: 
                         <span class="sol" data-type="text">DNE</span>
 						<br>
-						<code>\displaystyle\lim_{x \to <var>LIMITX</var>^{\pm}}f(x)</code>: 
+						<code>\displaystyle\lim_{x \to <var>LIMITX</var>}f(x)</code>: 
                         <span class="sol" data-type="text">DNE</span>
                     </p>
 
@@ -249,7 +260,7 @@
                 	<p>so <code>\displaystyle\lim_{x \to <var>LIMITX</var>^{+}}f(x)</code> does not exist (DNE)</p>
                 	<p>Even though the limit exists as <code>x</code> approaches <var>LIMITX</var> from the left, 
                 		 the limit from the right does not exist, so the two sided limit 
-                		<code>\displaystyle\lim_{x \to <var>LIMITX</var>^{\pm}}f(x)</code> also does not exist (DNE).
+                		<code>\displaystyle\lim_{x \to <var>LIMITX</var>}f(x)</code> also does not exist (DNE).
                 	</p>
                 </div>
             </div>
@@ -281,11 +292,14 @@
   					updateNameDisplay = function() {
   	 		   	    var input = parseFloat(this.value) 
   	 		   	    if (input &lt; LIMITX){	
-      					$('#nameDisplay').text( ANSWER+FACTOR*Math.sin(1/(input-LIMITX))*(input-LIMITX)/(input-LIMITX) || "?" );
+      					$('#nameDisplay').text( ANSWER+FACTOR*Math.sin(1/(input-LIMITX))*(input-LIMITX)/(input-LIMITX));
       					}
-      				else {
-      					 $('#nameDisplay').text( POLY.evalOf(input)*(input-LIMITX)/(input-LIMITX) || "?" );
+      				if (input &gt; LIMITX) {
+      					 $('#nameDisplay').text( POLY.evalOf(input)*(input-LIMITX)/(input-LIMITX) );
       					 }	
+      				if (input == LIMITX ){
+      					$('#nameDisplay').text("?")
+      					}
   					};
   					$('#nameField').keydown( updateNameDisplay );
   					$('#nameField').keyup( updateNameDisplay );
@@ -303,7 +317,7 @@
                         <code>\displaystyle\lim_{x \to <var>LIMITX</var>^{+}}f(x)</code>: 
                         <span class="sol" data-type="decimal"><var>ANSWER</var></span>
 						<br>
-						<code>\displaystyle\lim_{x \to <var>LIMITX</var>^{\pm}}f(x)</code>: 
+						<code>\displaystyle\lim_{x \to <var>LIMITX</var>}f(x)</code>: 
                         <span class="sol" data-type="text">DNE</span>
                     </p>
 
@@ -331,7 +345,7 @@
                 	<p>so <code>\displaystyle\lim_{x \to <var>LIMITX</var>^{+}}f(x) = <var>ANSWER</var></code></p>
                 	<p>Even though the limit exists as <code>x</code> approaches <var>LIMITX</var> from the right, 
                 		 the limit from the left does not exist, so the two sided limit 
-                		<code>\displaystyle\lim_{x \to <var>LIMITX</var>^{\pm}}f(x)</code> also does not exist (DNE).
+                		<code>\displaystyle\lim_{x \to <var>LIMITX</var>}f(x)</code> also does not exist (DNE).
                 	</p>
                 </div>
             </div>
@@ -362,7 +376,12 @@
                 	(function(){
   					updateNameDisplay = function() {
   	 		   	   		var input = parseFloat(this.value) 
-  	 		   	    	$('#nameDisplay').text( ANSWER+FACTOR*Math.sin(1/(input-LIMITX))*(input-LIMITX)/(input-LIMITX) || "?" );
+  	 		   	   		if (input !== LIMITX){
+  	 		   	    		$('#nameDisplay').text( ANSWER+FACTOR*Math.sin(1/(input-LIMITX))*(input-LIMITX)/(input-LIMITX) || "?" );
+  	 		   	    		};
+  	 		   	    	else {
+  	 		   	    		$('#nameDisplay').text("?")
+  	 		   	    		};
       				};
   					$('#nameField').keydown( updateNameDisplay );
   					$('#nameField').keyup( updateNameDisplay );
@@ -380,7 +399,7 @@
                         <code>\displaystyle\lim_{x \to <var>LIMITX</var>^{+}}f(x)</code>: 
                         <span class="sol" data-type="text">DNE</span>
 						<br>
-						<code>\displaystyle\lim_{x \to <var>LIMITX</var>^{\pm}}f(x)</code>: 
+						<code>\displaystyle\lim_{x \to <var>LIMITX</var>}f(x)</code>: 
                         <span class="sol" data-type="text">DNE</span>
                     </p>
 
@@ -409,7 +428,7 @@
                 	</p>
                 	<p>so <code>\displaystyle\lim_{x \to <var>LIMITX</var>^{+}}f(x)</code> does not exist (DNE)</p>
                 	<p>Both the limit from the left and the right fail to exist, so the two sided limit 
-                		<code>\displaystyle\lim_{x \to <var>LIMITX</var>^{\pm}}f(x)</code> also does not exist (DNE).
+                		<code>\displaystyle\lim_{x \to <var>LIMITX</var>}f(x)</code> also does not exist (DNE).
                 	</p>
                 </div>
             </div>
