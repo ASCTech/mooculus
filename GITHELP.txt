@@ -1,8 +1,17 @@
-When you start working:
+When you initially start working:
 
   git checkout master
   git pull
   git checkout -b this-is-what-im-working-on
+
+For example
+
+  git checkout master
+  git pull
+  git checkout -b snapp
+
+Here "snapp" is my branch
+	
 
 As you work:
 
