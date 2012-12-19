@@ -12,9 +12,6 @@
  *= require_tree .
  */
 
-/*
- *= require twitter/bootstrap
- */
 body {
-  padding-top :60px;
+  padding-top: 60px;
 }

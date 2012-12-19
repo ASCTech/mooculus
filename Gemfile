@@ -11,8 +11,9 @@ gem 'json'
 # To use OAuth login
 gem "oauth-plugin", "~> 0.4.0"
 
-gem 'anjlab-bootstrap-rails', :require => 'bootstrap-rails',
-                              :git => 'git@github.com:anjlab/bootstrap-rails'
+gem 'twitter-bootstrap-rails'
+gem 'less-rails'
+
 # use Devise for login
 gem 'devise'
 gem 'omniauth'
