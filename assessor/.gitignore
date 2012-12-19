@@ -7,6 +7,9 @@
 # Ignore bundler config
 /.bundle
 
+# Don't put the db creds in the repo
+/config/*.yml
+
 # Ignore the default SQLite database.
 /db/*.sqlite3
 
