@@ -12,7 +12,7 @@ gem 'json'
 gem "oauth-plugin", "~> 0.4.0"
 
 gem 'anjlab-bootstrap-rails', :require => 'bootstrap-rails',
-                              :git => 'git://github.com/anjlab/bootstrap-rails.git'
+                              :git => 'git@github.com:anjlab/bootstrap-rails'
 # use Devise for login
 gem 'devise'
 gem 'omniauth'
