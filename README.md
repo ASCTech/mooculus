@@ -1,4 +1,0 @@
-mooculus
-========
-
-Mooculus
