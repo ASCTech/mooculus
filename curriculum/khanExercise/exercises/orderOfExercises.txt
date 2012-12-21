@@ -49,11 +49,10 @@ I lineEquationFromWordProblem
 
 --Limits and Continuity--
 
-I Oracle with points plotting as transition from graphical to oracle
-
 C limitsOracle
 I coolLimitsOracle
-I limitsGraphical
+C limitsGraphical
+C limitsOracleGraphical
 	I limitsSymbolic
 	I identifyingLimitLaws
 
