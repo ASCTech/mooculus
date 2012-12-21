@@ -1203,7 +1203,7 @@ button.ui-button::-moz-focus-inner { border: 0; padding: 0; } /* reset extra pad
    License: none (public domain)
 */
 
-html, body, div, span, applet, object, iframe,
+html,  div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
 del, dfn, em, img, ins, kbd, q, s, samp,
@@ -1510,13 +1510,11 @@ ul.ui-autocomplete .ui-menu-item .autocomplete-empty {
 header, footer {
     display: block;
     width: 100%;
-    font-family: "MuseoSans300", sans-serif;
+    font-family: inherit;
 }
 
 footer {
-    height: 208px;
     clear: both;
-    background: url(http://www.khanacademy.org//images/footer-bg.png) repeat-x 0 0; /*! data-uri(/images/footer-bg.png) */
     min-width: 970px;
     position: relative;
 }
@@ -1526,14 +1524,12 @@ footer {
     }
 
     footer.short {
-        color: #555;
         background: url(http://www.khanacademy.org//images/light-page-bg.png) repeat-x 0 -30px;
         border-top: 1px solid #C6D1AD;
         z-index: 10;
     }
 
     footer #leaves {
-        background-image: url(http://www.khanacademy.org//images/non-repeating-sprites.4.png);
         background-position: 319px -908px;
         height: 188px;
     }
@@ -1578,7 +1574,6 @@ footer {
     }
 
     footer #creative-commons-link {
-        background-image: url(http://www.khanacademy.org//images/non-repeating-sprites.4.png);
         background-position: -144px -67px;
         display: inline-block;
         height: 15px;
@@ -1620,17 +1615,14 @@ footer {
     }
 
     footer.short .small-social-links .youtube {
-        background-image: url(http://www.khanacademy.org//images/non-repeating-sprites.4.png);
         background-position: -10px -67px;
     }
 
     footer.short .small-social-links .twitter {
-        background-image: url(http://www.khanacademy.org//images/non-repeating-sprites.4.png);
         background-position: -10px -111px;
     }
 
     footer.short .small-social-links .facebook {
-        background-image: url(http://www.khanacademy.org//images/non-repeating-sprites.4.png);
         background-position: -10px -155px;
     }
 
@@ -2638,8 +2630,6 @@ ul.topic-browser-menu > li > ul > li > a {
     /* End review stuff to move outta here */
 .info-box {
     background: #eee;
-    border: 1px solid #ccc;
-    border-bottom: 1px solid #aaa;
     color: #333;
     margin-bottom: 10px;
     overflow-x: auto;
@@ -2647,9 +2637,6 @@ ul.topic-browser-menu > li > ul > li > a {
     position: relative;
     z-index: 10;
 
-    -moz-box-shadow: 0 1px 2px #ccc;
-    -webkit-box-shadow: 0 1px 2px #ccc;
-    box-shadow: 0 1px 2px #ccc;
 }
 .info-box table {
     border-collapse: collapse;
@@ -4447,7 +4434,6 @@ button.close {
 .dropdown.open .dropdown-toggle {
   color: #ffffff;
   background-color: #89b908;
-  border-color: #76a005;
   -webkit-border-top-right-radius: 5px;
   -webkit-border-bottom-right-radius: 0;
   -webkit-border-bottom-left-radius: 0;

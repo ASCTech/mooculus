@@ -41,9 +41,12 @@
                 <div id="solutionarea" class="fancy-scrollbar"></div>
                 <ul id="examples" style="display: none"></ul>
                 <div class="answer-buttons">
-                <input type="button" class="simple-button green" id="check-answer-button" value="Check Answer"/>
-                <input type="button" class="simple-button green" id="next-question-button" style="display:none;" name="correctnextbutton" value="Correct! Next Question..."/>
-                <div id="positive-reinforcement"><img src="/images/face-smiley.gif" /></div>
+                  <center>
+                <input type="button" class="btn btn-primary" id="check-answer-button" value="Check Answer"/>
+              </center>
+              <center>
+                <input type="button" class="btn btn-success" id="next-question-button" style="display:none;" name="correctnextbutton" value="Correct! Next Question..."/>
+              </center>
                 <span id="show-solution-button-container"></span>
                 <div id="check-answer-results"><p class="check-answer-message info-box-sub-description"></p></div>
                 </div>
@@ -56,7 +59,7 @@
             <div class="info-box hint-box">
                 <span class="info-box-header">Need help?</span>
                 <div id="get-hint-button-container">
-                    <input id="hint" type="button" class="simple-button orange full-width" value="I'd like a hint" name="hint"/>
+                    <input id="hint" type="button" class="btn btn-warning" value="I'd like a hint" name="hint"/>
                 </div>
                 <span id="hint-remainder"></span>
             </div>

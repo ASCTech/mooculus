@@ -197,7 +197,6 @@ body.debug .graphie { outline: 1px dashed #fdd; }
     min-height: 35px;
     padding: 10px;
     margin: 0 -10px;
-    border-bottom: 1px solid #c3c3c3;
     overflow-x: auto;
 }
 

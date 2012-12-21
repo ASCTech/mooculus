@@ -13,5 +13,9 @@
  */
 
 body {
-  padding-top: 60px;
+  padding-top: 80px;
+}
+
+#get-hint-button-container {
+  text-align:  center;
 }
