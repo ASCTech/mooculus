@@ -17,20 +17,20 @@
         </div>
 
         <div class="problems">
-            <div id="Finding limits with an oracle: Limit exists" data-weight="3">
-            
-                <div class="question">
-                	
-                    <p>
-                    	Consider a function <code>f(x)</code>. While
+            <div id="limit-exists" data-weight="3">
+                <p class="problem">   
+                		Consider a function <code>f(x)</code>. While
                     	you don't know the formula for <code>f(x)</code>
                     	you can nevertheless still evaluate it for given
                     	values of <code>x</code>, provided that <code>x
-                    	\ne <var>LIMITX</var></code>. Find<code>{}^*</code> 
+                    	\ne <var>LIMITX</var></code>. 
+                </p>        
+                <p class="question">
+                
+                    	Find<code>{}^*</code> 
                     	the value of each of the indicated limits
                     	by evaluating <code>f(x)</code> at various values,
                     	or state that the limit does not exist (DNE).
-                    </p>
 		   		    <p> 
 		   		    	<center><code>f(</code><input type='text' id='nameField' size=3><code>)=</code> <span id='nameDisplay'>?</span></center>		      
 		    		</p>
@@ -53,9 +53,9 @@
   					$('#nameField').keypress( updateNameDisplay );
   					})()
                 	</div>
-                </div>
+                </p>
 
-                <div class="solution" data-type="multiple" >
+                <div class="solution" data-type="multiple">
 
                     <p>
                         <code>\displaystyle\lim_{x \to <var>LIMITX</var>^{-}}f(x)</code>: 
@@ -72,22 +72,22 @@
 
                 
                 <div class="hints">
-                	<p>Try values of <code>x</code> close to <var>LIMITX</var> but not equal to <var>LIMITX</var></p>
+                	<p>Try values of <code>x</code> close to <var>LIMITX</var> but not equal to <var>LIMITX</var>.</p>
                 	<p><code>f(<var>LIMITX-.1</var>) = <var>POLY.evalOf(LIMITX-.1)</var></code></p>
                 	<p><code>f(<var>LIMITX-.001</var>) = <var>POLY.evalOf(LIMITX-.001)</var></code></p>
                 	<p><code>f(<var>LIMITX-.000001</var>) = <var>POLY.evalOf(LIMITX-.000001)</var></code></p>
                 	<p>It looks like <code>f(x)</code> is approaching <var>ANSWER</var> as <code>x</code> approaches <var>LIMITX</var> 
                 	   from the left.
                 	</p>
-                	<p>so <code>\displaystyle\lim_{x \to <var>LIMITX</var>^{-}}f(x) = <var>ANSWER</var></code></p>
-                	<p>Now repeat the process for values of <code>x</code> which are greater than <var>LIMITX</var></p>
+                	<p>so <code>\displaystyle\lim_{x \to <var>LIMITX</var>^{-}}f(x) = <var>ANSWER</var></code>.</p>
+                	<p>Now repeat the process for values of <code>x</code> which are greater than <var>LIMITX</var>.</p>
                 	<p><code>f(<var>LIMITX+.1</var>) = <var>POLY.evalOf(LIMITX+.1)</var></code></p>
                 	<p><code>f(<var>LIMITX+.001</var>) = <var>POLY.evalOf(LIMITX+.001)</var></code></p>
                 	<p><code>f(<var>LIMITX+.000001</var>) = <var>POLY.evalOf(LIMITX+.000001)</var></code></p>
                 	<p>It looks like <code>f(x)</code> is approaching <var>ANSWER</var> as <code>x</code> approaches <var>LIMITX</var> 
                 	   from the right.
                 	</p>
-                	<p>so <code>\displaystyle\lim_{x \to <var>LIMITX</var>^{+}}f(x) = <var>ANSWER</var></code></p>
+                	<p>so <code>\displaystyle\lim_{x \to <var>LIMITX</var>^{+}}f(x) = <var>ANSWER</var></code>.</p>
                 	<p>Since the limits from both the right and the left exist and are equal, 
                 		<code>\displaystyle\lim_{x \to <var>LIMITX</var>}f(x) = <var>ANSWER</var></code>
                 	</p>
@@ -95,20 +95,18 @@
                 </div>
             </div>
             
-            <div id="Finding limits with an oracle: Limit DNE due to a jump discontinuity" data-weight="2">
-            
-                <div class="question">
-                	
-                    <p>
-                    	Consider a function <code>f(x)</code>. While
+            <div id="limit-DNE-jump-discontinuity" data-weight="2">
+            	<p class="problem"> Consider a function <code>f(x)</code>. While
                     	you don't know the formula for <code>f(x)</code>
                     	you can nevertheless still evaluate it for given
                     	values of <code>x</code>, provided that <code>x
-                    	\ne <var>LIMITX</var></code>. Find<code>{}^*</code> 
+                    	\ne <var>LIMITX</var></code>.
+                </p>
+                <p class="question"> Find<code>{}^*</code> 
                     	the value of each of the indicated limits
                     	by evaluating <code>f(x)</code> at various values,
                     	or state that the limit does not exist (DNE).
-                    </p>
+                
 		   		    <p> 
 		   		    	<center><code>f(</code><input type='text' id='nameField' size=3><code>)=</code> <span id='nameDisplay'>?</span></center>		      
 		    		</p>
@@ -136,7 +134,7 @@
   					$('#nameField').keypress( updateNameDisplay );
   					})()
                 	</div>
-                </div>
+                </p>
 
                 <div class="solution" data-type="multiple">
 
@@ -155,42 +153,42 @@
 
                 
                 <div class="hints">
-                	<p>Try values of <code>x</code> close to <var>LIMITX</var> but not equal to <var>LIMITX</var></p>
+                	<p>Try values of <code>x</code> close to <var>LIMITX</var> but not equal to <var>LIMITX</var>.</p>
                 	<p><code>f(<var>LIMITX-.1</var>) = <var>POLY.evalOf(LIMITX-.1)</var></code></p>
                 	<p><code>f(<var>LIMITX-.001</var>) = <var>POLY.evalOf(LIMITX-.001)</var></code></p>
                 	<p><code>f(<var>LIMITX-.000001</var>) = <var>POLY.evalOf(LIMITX-.000001)</var></code></p>
                 	<p>It looks like <code>f(x)</code> is approaching <var>ANSWER</var> as <code>x</code> approaches <var>LIMITX</var> 
                 	   from the left.
                 	</p>
-                	<p>so <code>\displaystyle\lim_{x \to <var>LIMITX</var>^{-}}f(x) = <var>ANSWER</var></code></p>
-                	<p>Now repeat the process for values of <code>x</code> which are greater than <var>LIMITX</var></p>
+                	<p>so <code>\displaystyle\lim_{x \to <var>LIMITX</var>^{-}}f(x) = <var>ANSWER</var></code>.</p>
+                	<p>Now repeat the process for values of <code>x</code> which are greater than <var>LIMITX</var>.</p>
                 	<p><code>f(<var>LIMITX+.1</var>) = <var>JUMP+POLY.evalOf(LIMITX+.1)</var></code></p>
                 	<p><code>f(<var>LIMITX+.001</var>) = <var>JUMP+POLY.evalOf(LIMITX+.001)</var></code></p>
                 	<p><code>f(<var>LIMITX+.000001</var>) = <var>JUMP+POLY.evalOf(LIMITX+.000001)</var></code></p>
                 	<p>It looks like <code>f(x)</code> is approaching <var>JUMP+ANSWER</var> as <code>x</code> approaches <var>LIMITX</var> 
                 	   from the right.
                 	</p>
-                	<p>so <code>\displaystyle\lim_{x \to <var>LIMITX</var>^{+}}f(x) = <var>JUMP+ANSWER</var></code></p>
+                	<p>so <code>\displaystyle\lim_{x \to <var>LIMITX</var>^{+}}f(x) = <var>JUMP+ANSWER</var></code>.</p>
                 	<p>The limits from both the right and the left exist, but they are not equal, so 
                 		<code>\displaystyle\lim_{x \to <var>LIMITX</var>}f(x)</code> does not exist (DNE).
                 	</p>
                 </div>
             </div>
             
-            <div id="Finding limits with an oracle: limit from the left exists, limit from the right does not exist" data-weight="1">
-            
-                <div class="question">
-                	
-                    <p>
-                    	Consider a function <code>f(x)</code>. While
+            <div id="left-exists-right-doesnt" data-weight="1">
+            	<p class="problem"> 
+            			Consider a function <code>f(x)</code>. While
                     	you don't know the formula for <code>f(x)</code>
                     	you can nevertheless still evaluate it for given
                     	values of <code>x</code>, provided that <code>x
-                    	\ne <var>LIMITX</var></code>. Find<code>{}^*</code> 
+                    	\ne <var>LIMITX</var></code>.
+                </p>
+                <p class="question"> 
+                		Find<code>{}^*</code> 
                     	the value of each of the indicated limits
                     	by evaluating <code>f(x)</code> at various values,
                     	or state that the limit does not exist (DNE).
-                    </p>
+                    
 		   		    <p> 
 		   		    	<center><code>f(</code><input type='text' id='nameField' size=3><code>)=</code> <span id='nameDisplay'>?</span></center>		      
 		    		</p>
@@ -218,7 +216,7 @@
   					$('#nameField').keypress( updateNameDisplay );
   					})()
                 	</div>
-                </div>
+                </p>
 
                 <div class="solution" data-type="multiple">
 
@@ -237,15 +235,15 @@
 
                 
                 <div class="hints">
-                	<p>Try values of <code>x</code> close to <var>LIMITX</var> but not equal to <var>LIMITX</var></p>
+                	<p>Try values of <code>x</code> close to <var>LIMITX</var> but not equal to <var>LIMITX</var>.</p>
                 	<p><code>f(<var>LIMITX-.1</var>) = <var>POLY.evalOf(LIMITX-.1)</var></code></p>
                 	<p><code>f(<var>LIMITX-.001</var>) = <var>POLY.evalOf(LIMITX-.001)</var></code></p>
                 	<p><code>f(<var>LIMITX-.000001</var>) = <var>POLY.evalOf(LIMITX-.000001)</var></code></p>
                 	<p>It looks like <code>f(x)</code> is approaching <var>ANSWER</var> as <code>x</code> approaches <var>LIMITX</var> 
                 	   from the left.
                 	</p>
-                	<p>so <code>\displaystyle\lim_{x \to <var>LIMITX</var>^{-}}f(x) = <var>ANSWER</var></code></p>
-                	<p>Now repeat the process for values of <code>x</code> which are greater than <var>LIMITX</var></p>
+                	<p>so <code>\displaystyle\lim_{x \to <var>LIMITX</var>^{-}}f(x) = <var>ANSWER</var></code>.</p>
+                	<p>Now repeat the process for values of <code>x</code> which are greater than <var>LIMITX</var>.</p>
                 	
                 	<p><code>f(<var>LIMITX+.1</var>) = <var>ANSWER+FACTOR*Math.sin(1/(.1))</var></code>
                 	   <br><br><code>f(<var>LIMITX+.01</var>) = <var>ANSWER+FACTOR*Math.sin(1/(.01))</var></code></p>
@@ -255,7 +253,7 @@
                 	   <br><br><code>f(<var>LIMITX+.000001</var>) = <var>ANSWER+FACTOR*Math.sin(1/(.000001))</var></code></p>
                 	<p> It appears that <code>f(x)</code> is not settling down to any one value as <code>x</code> approaches <var>LIMITX</var> from the right.
                 	</p>
-                	<p>so <code>\displaystyle\lim_{x \to <var>LIMITX</var>^{+}}f(x)</code> does not exist (DNE)</p>
+                	<p>so <code>\displaystyle\lim_{x \to <var>LIMITX</var>^{+}}f(x)</code> does not exist (DNE).</p>
                 	<p>Even though the limit exists as <code>x</code> approaches <var>LIMITX</var> from the left, 
                 		 the limit from the right does not exist, so the two sided limit 
                 		<code>\displaystyle\lim_{x \to <var>LIMITX</var>}f(x)</code> also does not exist (DNE).
@@ -263,20 +261,20 @@
                 </div>
             </div>
             
-            <div id="Finding limits with an oracle: limit from the right exists, limit from the left does not exist" data-weight="1">
-            
-                <div class="question">
-                	
-                    <p>
-                    	Consider a function <code>f(x)</code>. While
+            <div id="right-exists-left-doesnt" data-weight="1">
+                <p class="problem">           
+                 		Consider a function <code>f(x)</code>. While
                     	you don't know the formula for <code>f(x)</code>
                     	you can nevertheless still evaluate it for given
                     	values of <code>x</code>, provided that <code>x
-                    	\ne <var>LIMITX</var></code>. Find<code>{}^*</code> 
+                    	\ne <var>LIMITX</var></code>. 
+                </p>
+                <p class="question">
+                    	Find<code>{}^*</code> 
                     	the value of each of the indicated limits
                     	by evaluating <code>f(x)</code> at various values,
                     	or state that the limit does not exist (DNE).
-                    </p>
+           
 		   		    <p> 
 		   		    	<center><code>f(</code><input type='text' id='nameField' size=3><code>)=</code> <span id='nameDisplay'>?</span></center>		      
 		    		</p>
@@ -304,7 +302,7 @@
   					$('#nameField').keypress( updateNameDisplay );
   					})()
                 	</div>
-                </div>
+                </p>
 
                 <div class="solution" data-type="multiple">
 
@@ -323,7 +321,7 @@
 
                 
                 <div class="hints">
-					<p>Try values of <code>x</code> close to <var>LIMITX</var> but not equal to <var>LIMITX</var></p>
+					<p>Try values of <code>x</code> close to <var>LIMITX</var> but not equal to <var>LIMITX</var>.</p>
                 	<p><code>f(<var>LIMITX-.1</var>) = <var>ANSWER+FACTOR*Math.sin(-1/(0.1))</var></code>
                 	   <br><br><code>f(<var>LIMITX-.01</var>) = <var>ANSWER+FACTOR*Math.sin(-1/(.01))</var></code></p>
                 	<p><code>f(<var>LIMITX-.001</var>) = <var>ANSWER+FACTOR*Math.sin(-1/(.001))</var></code>
@@ -332,36 +330,36 @@
                 	   <br><br><code>f(<var>LIMITX-.000001</var>) = <var>ANSWER+FACTOR*Math.sin(-1/(.000001))</var></code></p>
                 	<p> It appears that <code>f(x)</code> is not settling down to any one value as <code>x</code> approaches <var>LIMITX</var> from the left.
                 	</p>
-                	<p>so <code>\displaystyle\lim_{x \to <var>LIMITX</var>^{-}}f(x)</code> does not exist (DNE)</p>
-                	<p>Now repeat the process for values of <code>x</code> which are greater than <var>LIMITX</var></p>
+                	<p>so <code>\displaystyle\lim_{x \to <var>LIMITX</var>^{-}}f(x)</code> does not exist (DNE).</p>
+                	<p>Now repeat the process for values of <code>x</code> which are greater than <var>LIMITX</var>.</p>
                 	<p><code>f(<var>LIMITX+.1</var>) = <var>POLY.evalOf(LIMITX+.1)</var></code></p>
                 	<p><code>f(<var>LIMITX+.001</var>) = <var>POLY.evalOf(LIMITX+.001)</var></code></p>
                 	<p><code>f(<var>LIMITX+.000001</var>) = <var>POLY.evalOf(LIMITX+.000001)</var></code></p>
                 	<p>It looks like <code>f(x)</code> is approaching <var>ANSWER</var> as <code>x</code> approaches <var>LIMITX</var> 
                 	   from the right.
                 	</p>
-                	<p>so <code>\displaystyle\lim_{x \to <var>LIMITX</var>^{+}}f(x) = <var>ANSWER</var></code></p>
+                	<p>so <code>\displaystyle\lim_{x \to <var>LIMITX</var>^{+}}f(x) = <var>ANSWER</var></code>.</p>
                 	<p>Even though the limit exists as <code>x</code> approaches <var>LIMITX</var> from the right, 
                 		 the limit from the left does not exist, so the two sided limit 
-                		<code>\displaystyle\lim_{x \to <var>LIMITX</var>}f(x)</code> also does not exist (DNE).
-                	</p>
+                		<code>\displaystyle\lim_{x \to <var>LIMITX</var>}f(x)</code> also does not exist (DNE).</p>
                 </div>
             </div>
             
-            <div id="Finding limits with an oracle: Both the left and righthand limits fail to exist" data-weight="1">
-            
-                <div class="question">
-                	
-                    <p>
-                    	Consider a function <code>f(x)</code>. While
+            <div id="both-left-and-righthand-DNE" data-weight="1">
+                <p class="problem">
+                		Consider a function <code>f(x)</code>. While
                     	you don't know the formula for <code>f(x)</code>
                     	you can nevertheless still evaluate it for given
                     	values of <code>x</code>, provided that <code>x
-                    	\ne <var>LIMITX</var></code>. Find<code>{}^*</code> 
+                    	\ne <var>LIMITX</var></code>.
+                </p>          	
+                <p class="question">
+                	
+                    	Find<code>{}^*</code> 
                     	the value of each of the indicated limits
                     	by evaluating <code>f(x)</code> at various values,
                     	or state that the limit does not exist (DNE).
-                    </p>
+     
 		   		    <p> 
 		   		    	<center><code>f(</code><input type='text' id='nameField' size=3><code>)=</code> <span id='nameDisplay'>?</span></center>		      
 		    		</p>
@@ -386,7 +384,7 @@
   					$('#nameField').keypress( updateNameDisplay );
   					})()
                 	</div>
-                </div>
+                </p>
 
                 <div class="solution" data-type="multiple">
 
@@ -405,7 +403,7 @@
 
                 
                 <div class="hints">
-					<p>Try values of <code>x</code> close to <var>LIMITX</var> but not equal to <var>LIMITX</var></p>
+					<p>Try values of <code>x</code> close to <var>LIMITX</var> but not equal to <var>LIMITX</var>.</p>
                 	<p><code>f(<var>LIMITX-.1</var>) = <var>ANSWER+FACTOR*Math.sin(-1/(0.1))</var></code>
                 	   <br><br><code>f(<var>LIMITX-.01</var>) = <var>ANSWER+FACTOR*Math.sin(-1/(.01))</var></code></p>
                 	<p><code>f(<var>LIMITX-.001</var>) = <var>ANSWER+FACTOR*Math.sin(-1/(.001))</var></code>
@@ -414,8 +412,8 @@
                 	   <br><br><code>f(<var>LIMITX-.000001</var>) = <var>ANSWER+FACTOR*Math.sin(-1/(.000001))</var></code></p>
                 	<p> It appears that <code>f(x)</code> is not settling down to any one value as <code>x</code> approaches <var>LIMITX</var> from the left.
                 	</p>
-                	<p>so <code>\displaystyle\lim_{x \to <var>LIMITX</var>^{-}}f(x)</code> does not exist (DNE)</p>
-                	<p>Now repeat the process for values of <code>x</code> which are greater than <var>LIMITX</var></p>
+                	<p>so <code>\displaystyle\lim_{x \to <var>LIMITX</var>^{-}}f(x)</code> does not exist (DNE).</p>
+                	<p>Now repeat the process for values of <code>x</code> which are greater than <var>LIMITX</var>.</p>
                 	<p><code>f(<var>LIMITX+.1</var>) = <var>ANSWER+FACTOR*Math.sin(1/(.1))</var></code>
                 	   <br><br><code>f(<var>LIMITX+.01</var>) = <var>ANSWER+FACTOR*Math.sin(1/(.01))</var></code></p>
                 	<p><code>f(<var>LIMITX+.001</var>) = <var>ANSWER+FACTOR*Math.sin(1/(.001))</var></code>
@@ -424,7 +422,7 @@
                 	   <br><br><code>f(<var>LIMITX+.000001</var>) = <var>ANSWER+FACTOR*Math.sin(1/(.000001))</var></code></p>
                 	<p> It appears that <code>f(x)</code> is not settling down to any one value as <code>x</code> approaches <var>LIMITX</var> from the right.
                 	</p>
-                	<p>so <code>\displaystyle\lim_{x \to <var>LIMITX</var>^{+}}f(x)</code> does not exist (DNE)</p>
+                	<p>so <code>\displaystyle\lim_{x \to <var>LIMITX</var>^{+}}f(x)</code> does not exist (DNE).</p>
                 	<p>Both the limit from the left and the right fail to exist, so the two sided limit 
                 		<code>\displaystyle\lim_{x \to <var>LIMITX</var>}f(x)</code> also does not exist (DNE).
                 	</p>
