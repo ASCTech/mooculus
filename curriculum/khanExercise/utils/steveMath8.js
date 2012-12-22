@@ -19,6 +19,21 @@ $.extend(KhanUtil, {
         return z
     },
     
+    steveBisectionList: function(f,xmin,xmax){
+        var l = xmin
+        var r = xmax
+        var z = 0
+        var list = []
+        for (var i=0;i<10;i++){
+            z = (l + r)/2
+            list.push(z)
+            if (KhanUtil.steveSign(f(l)) == KhanUtil.steveSign(f(z))){ l = z}
+            else{r = z}   
+          
+        }
+        return list
+    },
+    
     goober: function(n,f){
     	var list = []
         for (var i=0;i<10;i++){
@@ -46,7 +61,7 @@ $.extend(KhanUtil, {
            
            if (KhanUtil.steveSign(y0) !== KhanUtil.steveSign(y1)){
                z = KhanUtil.steveRoot(f,x0,x1)
-               list.push(KhanUtil.roundTo(1,z))
+               list.push(z)
            }
          
         }
