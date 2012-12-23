@@ -49,6 +49,7 @@ end
 before "deploy:assets:precompile" do
   run [
     "ln -nfs #{shared_path}/config/database.yml #{release_path}/config/database.yml",
+    "ln -nfs #{shared_path}/config/mongoid.yml #{release_path}/config/mongoid.yml",
     "ln -nfs #{shared_path}/config/secret_token.rb #{release_path}/config/initializers/secret_token.rb",
     "ln -fs #{shared_path}/uploads #{release_path}/uploads",
     "ln -fs #{shared_path}/tmp/pids #{release_path}/tmp/pids",
