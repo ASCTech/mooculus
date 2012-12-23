@@ -24,7 +24,8 @@ class User < ActiveRecord::Base
     authentications.build(:provider => auth['provider'], :uid => auth['uid'], :token => auth['credentials']['token'])
   end
 
-  def self.find_for_google_oauth2(access_token, signed_in_resource=nil)
+  def self.find_for_coursera(access_token, signed_in_resource=nil)
+    # FIXME this needs to grab the realname from the raw_info in omniauth-coursera
     data = access_token.info
     user = User.where(:email => data["email"]).first
 

@@ -64,7 +64,9 @@ Assessor::Application.routes.draw do
   root :to => 'home#index'
 
   # After user authenticates with provider, user needs to go to omniauth call
-  match '/auth/:provider/callback' => 'authentications#create'
+  # match '/auth/:provider/callback' => 'authentications#create'
+
+  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
 
   match '/api/v1/user/exercises/:exercise/problems/:problem/attempt' => 'score#attempt',
     :constraints => { :problem => /\d+/ }, :via => :post
