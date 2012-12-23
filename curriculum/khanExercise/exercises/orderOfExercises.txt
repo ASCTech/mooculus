@@ -1,14 +1,19 @@
 --Review (points, graphing, lines)--
 
+C = complete with or without hints
+H = has hints
+I = Incomplete
+P = complete, with hints, and throughly checked over.
+
 *POINTS*
 
-C abscissaOrdinate
-C plotPoint
+CH abscissaOrdinate
+CH plotPoint
 I signedDistances 
 
 *FUNCTIONS*
-C pointOnFunction
-C pointOnFunction2
+CH pointOnFunction
+CH pointOnFunction2
 C isThisAFunctionPoints
 I isThisAFunctionGraph
 C evaluatingFunctions
@@ -65,16 +70,18 @@ I coolInfinityLimitOracle
 I infiniteLimitGraphical
 I infiniteLimitSymbolic
 
-I limitsAtInfinityOracle
+C limitsAtInfinityOracle
 I coolLimitsAtInfinityOracle
-I limitsAtInfinityGraphical
+C limitsAtInfinityGraphical
+C limitsAtInfinityOracleGraphical
 I limitsAtInfinitySymbolic
 
-I continuityOracle
-I continuityGraphical
+C continuityOracle
+C continuityOracleGraphical
+C continuityGraphical
 I continuitySymbolic
 
-I bisectionOracle
+C bisectionOracle
 
 
 --Differentiation--
