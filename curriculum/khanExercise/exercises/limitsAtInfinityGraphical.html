@@ -81,34 +81,28 @@
                 <div class="question">
                 	
                     <p>
-                    	Consider the function <code>f(x)</code>. Find
+                    	Consider the function <code>f(x)</code> graphed below. Find
                     	the value of each of the indicated limits with an error of at most <code>\frac{1}{2}</code>.
                     	If one of the limits appears to be <code>\infty</code> or <code>-\infty</code>, just type "infinity"
                     	or "-infinity".	
                     </p>
-                    
-                  	<p> 
-		   		    	<center><code>f(</code><input type='text' id='nameField' size=3><code>)=</code> <span id='nameDisplay'>?</span></center>		      
-		    		</p>
+		   		   
 		    		
                 	<div class = graphie id="grid">
-                	
+                	graphInit({
+                        range: [20,10],
+                        scale: [12,20],
+                        labelStep: [2,1],
+                        gridOpacity: 0,
+                        axisArrows: "<->"
+                    });
                     
-                    
-                            
-                    (function(){
-  					updateNameDisplay = function() {
-  	 		   	    var input = parseFloat(this.value)
-  	 		   	    if (!isNaN(input)){
-      					$('#nameDisplay').text( f(input));
-  						
-  						}
-  					else {$('#nameDisplay').text("?")};
-  					};
-  					$('#nameField').keydown( updateNameDisplay );
-  					$('#nameField').keyup( updateNameDisplay );
-  					$('#nameField').keypress( updateNameDisplay );
-  					})()
+                     plot(function( x ) {
+                                return ( f(x));
+                            }, [-20, 20], {
+                                stroke: RED,
+                                strokeWidth: 1
+                            });	
                 	</div>
                 	
                 </div>
@@ -142,27 +136,23 @@
                     	If one of the limits appears to be <code>\infty</code> or <code>-\infty</code>, just type "infinity"
                     	or "-infinity".	
                     </p>
-		   		   <p> 
-		   		    	<center><code>f(</code><input type='text' id='nameField' size=3><code>)=</code> <span id='nameDisplay'>?</span></center>		      
-		    		</p>
+		   		   
 		    		
                 	<div class = graphie id="grid">
-                	
+                	graphInit({
+                        range: [20,10],
+                        scale: [12,20],
+                        labelStep: [2,1],
+                        gridOpacity: 0,
+                        axisArrows: "<->"
+                    });
                     
-                    
-                    (function(){
-  					updateNameDisplay = function() {
-  	 		   	    var input = parseFloat(this.value)
-  	 		   	    if (!isNaN(input)){
-      					$('#nameDisplay').text( g(input));
-  						
-  						}
-  					else {$('#nameDisplay').text("?")};
-  					};
-  					$('#nameField').keydown( updateNameDisplay );
-  					$('#nameField').keyup( updateNameDisplay );
-  					$('#nameField').keypress( updateNameDisplay );
-  					})()
+                     plot(function( x ) {
+                                return ( g(x));
+                            }, [-20, 20], {
+                                stroke: RED,
+                                strokeWidth: 1
+                            });	
                 	</div>
                 	
                 </div>
@@ -197,26 +187,22 @@
                     	or "-infinity".	
                     </p>
 		   		   
-		   		   <p> 
-		   		    	<center><code>f(</code><input type='text' id='nameField' size=3><code>)=</code> <span id='nameDisplay'>?</span></center>		      
-		    		</p>
 		    		
                 	<div class = graphie id="grid">
-                	
-                            
-                    (function(){
-  					updateNameDisplay = function() {
-  	 		   	    var input = parseFloat(this.value)
-  	 		   	    if (!isNaN(input)){
-      					$('#nameDisplay').text( h(input));
-  						
-  						}
-  					else {$('#nameDisplay').text("?")};
-  					};
-  					$('#nameField').keydown( updateNameDisplay );
-  					$('#nameField').keyup( updateNameDisplay );
-  					$('#nameField').keypress( updateNameDisplay );
-  					})()
+                	graphInit({
+                        range: [20,10],
+                        scale: [12,20],
+                        labelStep: [2,1],
+                        gridOpacity: 0,
+                        axisArrows: "<->"
+                    });
+                    
+                     plot(function( x ) {
+                                return ( h(x));
+                            }, [-20, 20], {
+                                stroke: RED,
+                                strokeWidth: 1
+                            });	
                 	</div>
                 	
                 </div>
@@ -251,26 +237,22 @@
                     	or "-infinity".	
                     </p>
 		   		   
-		   		   <p> 
-		   		    	<center><code>f(</code><input type='text' id='nameField' size=3><code>)=</code> <span id='nameDisplay'>?</span></center>		      
-		    		</p>
 		    		
                 	<div class = graphie id="grid">
-                	
+                	graphInit({
+                        range: [20,10],
+                        scale: [12,20],
+                        labelStep: [2,1],
+                        gridOpacity: 0,
+                        axisArrows: "<->"
+                    });
                     
-                    (function(){
-  					updateNameDisplay = function() {
-  	 		   	    var input = parseFloat(this.value)
-  	 		   	    if (!isNaN(input)){
-      					$('#nameDisplay').text( k(input));
-  						 
-  						}
-  					else {$('#nameDisplay').text("?")};
-  					};
-  					$('#nameField').keydown( updateNameDisplay );
-  					$('#nameField').keyup( updateNameDisplay );
-  					$('#nameField').keypress( updateNameDisplay );
-  					})()
+                     plot(function( x ) {
+                                return ( k(x));
+                            }, [-20, 20], {
+                                stroke: RED,
+                                strokeWidth: 1
+                            });	
                 	</div>
                 	
                 </div>

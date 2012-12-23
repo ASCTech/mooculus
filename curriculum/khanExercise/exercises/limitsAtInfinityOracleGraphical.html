@@ -81,7 +81,7 @@
                 <div class="question">
                 	
                     <p>
-                    	Consider the function <code>f(x)</code>. Find
+                    	Consider the function <code>f(x)</code> graphed below. Find
                     	the value of each of the indicated limits with an error of at most <code>\frac{1}{2}</code>.
                     	If one of the limits appears to be <code>\infty</code> or <code>-\infty</code>, just type "infinity"
                     	or "-infinity".	
@@ -92,16 +92,32 @@
 		    		</p>
 		    		
                 	<div class = graphie id="grid">
-                	
+                	graphInit({
+                        range: [20,10],
+                        scale: [12,20],
+                        labelStep: [2,1],
+                        gridOpacity: 0,
+                        axisArrows: "<->"
+                    });
                     
-                    
+                     plot(function( x ) {
+                                return ( f(x));
+                            }, [-20, 20], {
+                                stroke: RED,
+                                strokeWidth: 2
+                            });	
                             
                     (function(){
   					updateNameDisplay = function() {
   	 		   	    var input = parseFloat(this.value)
   	 		   	    if (!isNaN(input)){
       					$('#nameDisplay').text( f(input));
-  						
+  						<div class="graphie" data-update="grid">
+                            ellipse( [input,f(input)], 1/4, {
+                            stroke: "none",
+                            fill: GREEN
+                            });
+                		</div> 
   						}
   					else {$('#nameDisplay').text("?")};
   					};
@@ -147,15 +163,32 @@
 		    		</p>
 		    		
                 	<div class = graphie id="grid">
-                	
+                	graphInit({
+                        range: [20,10],
+                        scale: [12,20],
+                        labelStep: [2,1],
+                        gridOpacity: 0,
+                        axisArrows: "<->"
+                    });
                     
-                    
+                     plot(function( x ) {
+                                return ( g(x));
+                            }, [-20, 20], {
+                                stroke: RED,
+                                strokeWidth: 1
+                            });	
+                            
                     (function(){
   					updateNameDisplay = function() {
   	 		   	    var input = parseFloat(this.value)
   	 		   	    if (!isNaN(input)){
       					$('#nameDisplay').text( g(input));
-  						
+  						<div class="graphie" data-update="grid">
+                            ellipse( [input,g(input)], 1/4, {
+                            stroke: "none",
+                            fill: GREEN
+                            });
+                		</div> 
   						}
   					else {$('#nameDisplay').text("?")};
   					};
@@ -202,14 +235,32 @@
 		    		</p>
 		    		
                 	<div class = graphie id="grid">
-                	
+                	graphInit({
+                        range: [20,10],
+                        scale: [12,20],
+                        labelStep: [2,1],
+                        gridOpacity: 0,
+                        axisArrows: "<->"
+                    });
+                    
+                     plot(function( x ) {
+                                return ( h(x));
+                            }, [-20, 20], {
+                                stroke: RED,
+                                strokeWidth: 1
+                            });	
                             
                     (function(){
   					updateNameDisplay = function() {
   	 		   	    var input = parseFloat(this.value)
   	 		   	    if (!isNaN(input)){
       					$('#nameDisplay').text( h(input));
-  						
+  						<div class="graphie" data-update="grid">
+                            ellipse( [input,h(input)], 1/4, {
+                            stroke: "none",
+                            fill: GREEN
+                            });
+                		</div> 
   						}
   					else {$('#nameDisplay').text("?")};
   					};
@@ -256,14 +307,32 @@
 		    		</p>
 		    		
                 	<div class = graphie id="grid">
-                	
+                	graphInit({
+                        range: [20,10],
+                        scale: [12,20],
+                        labelStep: [2,1],
+                        gridOpacity: 0,
+                        axisArrows: "<->"
+                    });
+                    
+                     plot(function( x ) {
+                                return ( k(x));
+                            }, [-20, 20], {
+                                stroke: RED,
+                                strokeWidth: 1
+                            });	
                     
                     (function(){
   					updateNameDisplay = function() {
   	 		   	    var input = parseFloat(this.value)
   	 		   	    if (!isNaN(input)){
       					$('#nameDisplay').text( k(input));
-  						 
+  						<div class="graphie" data-update="grid">
+                            ellipse( [input,k(input)], 1/4, {
+                            stroke: "none",
+                            fill: GREEN
+                            });
+                		</div> 
   						}
   					else {$('#nameDisplay').text("?")};
   					};
