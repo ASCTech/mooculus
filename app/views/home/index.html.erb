@@ -5,7 +5,7 @@
           <div class="hero-unit">
             <h1>Help with math?</h1>
             <p>Need help with a math course at Ohio State?  Looking for lecture videos?  Looking for practice exams?  This is the place. <%= @course %></p>
-            <p><%= link_to 'Login', user_omniauth_authorize_path(:google_oauth2),
+            <p><%= link_to 'Login', user_omniauth_authorize_path(:coursera),
               { :class => "btn btn-primary btn-large" }%></p>
           </div>
         </div>
