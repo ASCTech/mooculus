@@ -1,11 +1,8 @@
 class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
 
   def coursera
-    # FIXME: this needs to be worked out
-
-    # You need to implement the method below in your model (e.g. app/models/user.rb)
     @user = User.find_for_coursera(request.env["omniauth.auth"], current_user)
-    
+
     if @user.persisted?
       flash[:notice] = I18n.t "devise.omniauth_callbacks.success", :kind => "Coursera"
       sign_in_and_redirect @user, :event => :authentication
