@@ -1,0 +1,79 @@
+require 'rake'
+require 'rake/clean'
+require 'rubygems'
+require 'erb'
+require 'date'
+require 'time'
+
+def float(x)
+  return '%0.5f' % x
+end
+
+frame_count = 150
+
+################################################################
+parameter_filename = 'animation.params'
+
+parameters = Array.new
+
+puts "Loading parameters..."
+File.open( parameter_filename ).readlines.each{ |line|
+  line = line.split(' ')
+  frame_index = line[0].to_i
+  parameters[frame_index] = line[1..-1].collect{ |x| x.to_f }
+}
+
+################################################################
+# rasterize a PDF into a PNG
+rule( /.*\.png$/ => [proc {|task_name| task_name.sub(/\.png$/, '.pdf')}] ) do |t|
+  sh "./pdfdraw -r 240 -o #{t.name} #{t.source}"
+end    
+
+CLEAN.include('*.png')
+
+################################################################
+# run pdflatex on a tex file to get a pdf
+rule( /.*\.pdf$/ => [proc {|task_name| task_name.sub(/\.pdf$/, '.tex')}] ) do |t|
+  sh "pdflatex #{t.source} > /dev/null"
+  sh "pdflatex #{t.source} > /dev/null"
+end    
+
+CLEAN.include('*.pdf')
+CLEAN.include('*.log')
+CLEAN.include('*.aux')
+
+title = 'How fast does water drip from a faucet?'
+
+################################################################
+# produce a single frame as a tex file
+template = ERB.new(File.open("title.tex.erb").read)
+
+rule( /frame[0-9]+\.tex$/ => 'title.tex.erb' ) do |t|
+  i = t.name.gsub( /[^0-9]/, '' ).to_i
+  puts i
+  f0 = parameters[i][0]
+  f1 = parameters[i][1]
+  f2 = parameters[i][2]
+  f3 = parameters[i][3]
+  f4 = parameters[i][4]
+  f5 = parameters[i][5]
+  f6 = parameters[i][6]
+  f7 = parameters[i][7]
+  
+  f = File.open( t.name, "w")
+  f.puts template.result(binding)
+  f.close
+end
+
+CLEAN.include('*.tex')
+
+################################################################
+# combine all the frames into a single video
+frames = ((0...frame_count).collect{ |i| "frame#{'%04d' % (i+1)}.png" })
+multitask "title.mp4" => frames do
+  sh "ffmpeg -f image2 -r 30 -i frame%04d.png -vcodec libx264 -b 8000k -y title.mp4"
+end
+
+CLOBBER.include('*.mp4')
+
+task :default => "title.mp4"
