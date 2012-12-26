@@ -6,6 +6,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
   devise :omniauthable
 
+  # Coursera doesn't provide us with an email address
   def email_required?
     false
   end
