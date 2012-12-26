@@ -1,0 +1,27 @@
+<div class="row-fluid">
+  <div class="span12">
+    <h1>People</h1>
+    <p><%=raw html_logo %> was produced by a bunch of people.  Here are some of them.</p>
+  </div>
+</div>
+<% people_per_row = 2 %>
+
+<% for i in 0..(@people.length / people_per_row) do %>
+<div class="row-fluid">
+  <% for j in 0...people_per_row do %>
+  <% @person = @people[people_per_row*i + j] %>
+  <div class="span<%= 12/people_per_row %>">
+    <% unless @person.nil? %>
+    <%= render :partial => "person" %>
+    <% end %>
+  </div>
+  <% end %>
+</div>
+<% end %>
+
+<div class="row-fluid">
+  <div class="span12">
+    <h1>Acknowledgments</h1>
+    <p><%=raw html_logo %> could not have been produced without the generous support of the <a href="http://www.math.osu.edu/">mathematics department</a> at <a href="http://www.osu.edu/">The Ohio State University</a>.</p>
+  </div>
+</div>
