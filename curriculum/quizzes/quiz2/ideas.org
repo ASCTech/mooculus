@@ -1,0 +1,6 @@
+Ideas for Quiz2
+
+* 3 questions basic limits
+* 2 questions infinite limits
+* 2 questions limits at infinity
+* 3 question continutity
