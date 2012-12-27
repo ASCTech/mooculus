@@ -1,0 +1,31 @@
+\documentclass[11pt]{article}
+\newcommand{\bigtitle}{<%= title %>}
+\everymath=\expandafter{\the\everymath\displaystyle}
+\newcommand{\category}{category}
+\usepackage{nopageno}
+\usepackage{geometry}
+\geometry{paperwidth=5.333333333333333333in,paperheight=3in,margin=0.1in}
+\setlength{\parindent}{0in}
+%\usepackage{fontspec}
+\usepackage{tikz}
+\usepackage{xcolor}
+\usepackage{graphicx}
+
+\begin{document}
+%\sffamily
+
+\begin{tikzpicture}[remember picture,overlay]
+  \draw [fill=black] (current page.north west) rectangle (current page.south east);
+
+%  \shade[shading=axis,bottom color=white,top color=white,middle color=black!13!white,shading angle=<%= float(f5) %>] (current page.north west) rectangle (current page.south east);
+
+%  \node [shift={(<%= float(f1/3.0) %>em,0em)},color=gray!70!blue,opacity=<%= float(f2) %>,anchor=north east,rotate=0] at (current page.north east) {\sffamily \scalebox{2.2}{\Huge\textbf{MOOC}ulus}};%
+
+%  \node [shift={(<%= float(f3/3.0) %>em,0em)},color=gray!70!blue,opacity=<%= float(f4) %>,anchor=south west,rotate=0] at (current page.south west) {\sffamily \scalebox{2.2}{\Huge Calculus One}};%
+
+
+  \node [shift={(0em,<%= float(f0+5.0) %>em)}] (copyright) at (current page.south) {\textsf{\textcolor{white}{mooculus}\textcolor{gray}{.osu.edu}}};
+\end{tikzpicture}
+
+\end{document}
+

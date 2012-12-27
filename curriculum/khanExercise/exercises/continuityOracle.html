@@ -51,17 +51,19 @@
         </div>
 
         <div class="problems">
-            <div id="limitExistsContinuous" data-weight="3">
-            
-                <div class="question">
-                	
-                   <p>
-                    	Consider a function <code>f(x)</code>. While
+            <div id="limit-Exists-Continuous" data-weight="3">
+                <p class="problem">         
+						Consider a function <code>f(x)</code>. While
                     	you don't know the formula for <code>f(x)</code>
                     	you can nevertheless still evaluate it for given
-                    	values of <code>x</code>.  Does <code>f</code> appear to be continuous or discontinuous at 
+                    	values of <code>x</code>.  
+                </p>
+                <p class="question">
+                	
+                  
+                    	Does <code>f</code> appear to be continuous or discontinuous at 
                     	<code>x=<var>LIMITX</var></code>, and why?
-                    </p>
+            
 		   		  
 		   		  <p> 
 		   		    	<center><code>f(</code><input type='text' id='nameField' size=3><code>)=</code> <span id='nameDisplay'>?</span></center>		      
@@ -86,7 +88,7 @@
   					})()
                 	</div>
                 	
-                </div>
+                </p>
 
                  <p class="solution">Continuous</p>
                       <ul class="choices" data-category="true">
@@ -99,43 +101,45 @@
 
                 
                 <div class="hints">
-                	<p>We need to see if <code>\displaystyle \lim_{x \to <var>LIMITX</var>} f(x) = f(<var>LIMITX</var>)</code></p>
+                	<p>We need to see if <code>\displaystyle \lim_{x \to <var>LIMITX</var>} f(x) = f(<var>LIMITX</var>)</code>.</p>
                 	<p><code>f(<var>LIMITX</var>)= <var>ANSWER</var></code></p>
-                	<p>Now we need to see if <code>\displaystyle \lim_{x \to <var>LIMITX</var>} f(x)</code> exists and is equal to <code>f(<var>LIMITX</var>)</code></p>
-                	<p>Try values of <code>x</code> close to <code><var>LIMITX</var></code> but not equal to <code><var>LIMITX</var></code></p>
+                	<p>Now we need to see if <code>\displaystyle \lim_{x \to <var>LIMITX</var>} f(x)</code> exists and is equal to <code>f(<var>LIMITX</var>)</code>.</p>
+                	<p>Try values of <code>x</code> close to <code><var>LIMITX</var></code> but not equal to <code><var>LIMITX</var></code>.</p>
                 	<p><code>f(<var>LIMITX-.1</var>) = <var>f(LIMITX-.1)</var></code></p>
                 	<p><code>f(<var>LIMITX-.001</var>) = <var>f(LIMITX-.001)</var></code></p>
                 	<p><code>f(<var>LIMITX-.000001</var>) = <var>f(LIMITX-.000001)</var></code></p>
                 	<p>It looks like <code>f(x)</code> is approaching <var>ANSWER</var> as <code>x</code> approaches <var>LIMITX</var> 
                 	   from the left.
                 	</p>
-                	<p>so <code>\displaystyle\lim_{x \to <var>LIMITX</var>^{-}}f(x) = <var>ANSWER</var></code></p>
-                	<p>Now repeat the process for values of <code>x</code> which are greater than <var>LIMITX</var></p>
+                	<p>Hense <code>\displaystyle\lim_{x \to <var>LIMITX</var>^{-}}f(x) = <var>ANSWER</var></code>.</p>
+                	<p>Now repeat the process for values of <code>x</code> which are greater than <var>LIMITX</var>.</p>
                 	<p><code>f(<var>LIMITX+.1</var>) = <var>f(LIMITX+.1)</var></code></p>
                 	<p><code>f(<var>LIMITX+.001</var>) = <var>f(LIMITX+.001)</var></code></p>
                 	<p><code>f(<var>LIMITX+.000001</var>) = <var>f(LIMITX+.000001)</var></code></p>
                 	<p>It looks like <code>f(x)</code> is approaching <code><var>ANSWER</var></code> as <code>x</code> approaches <var>LIMITX</var> 
                 	   from the right.
                 	</p>
-                	<p>so <code>\displaystyle\lim_{x \to <var>LIMITX</var>^{+}}f(x) = <var>ANSWER</var></code></p>
+                	<p>Hense <code>\displaystyle\lim_{x \to <var>LIMITX</var>^{+}}f(x) = <var>ANSWER</var></code>.</p>
                 	<p>Since the limits from both the right and the left exist and are equal, 
-                		<code>\displaystyle\lim_{x \to <var>LIMITX</var>}f(x) = <var>ANSWER</var></code>
+                		<code>\displaystyle\lim_{x \to <var>LIMITX</var>}f(x) = <var>ANSWER</var></code>.
                 	</p>
                 	<><>
                 </div>
             </div>
             
-            <div id="limitExistsDiscontinuous" data-weight="3">
-            
-                <div class="question">
-                	
-                   <p>
-                    	Consider a function <code>f(x)</code>. While
+            <div id="limit-Exists-Discontinuous" data-weight="3">
+            	<p class="problem">
+            			Consider a function <code>f(x)</code>. While
                     	you don't know the formula for <code>f(x)</code>
                     	you can nevertheless still evaluate it for given
-                    	values of <code>x</code>.  Does <code>f</code> appear to be continuous or discontinuous at 
+                    	values of <code>x</code>.  
+                    	</p>
+                <p class="question">
+                	
+          
+                    	Does <code>f</code> appear to be continuous or discontinuous at 
                     	<code>x=<var>LIMITX</var></code>, and why?
-                    </p>
+               
 		   		  
 		   		  <p> 
 		   		    	<center><code>f(</code><input type='text' id='nameField' size=3><code>)=</code> <span id='nameDisplay'>?</span></center>		      
@@ -163,7 +167,7 @@
   					})()
                 	</div>
                 	
-                </div>
+                </p>
 
                  <p class="solution">Discontinuous, because <code>\displaystyle \lim_{x \to <var>LIMITX</var>} f(x) \neq f(<var>LIMITX</var>)</code></p>
                       <ul class="choices" data-category="true">
@@ -176,39 +180,41 @@
 
                 
                 <div class="hints">
-                	<p>Try values of <code>x</code> close to <var>LIMITX</var> but not equal to <var>LIMITX</var></p>
+                	<p>Try values of <code>x</code> close to <var>LIMITX</var> but not equal to <var>LIMITX</var>.</p>
                 	<p><code>f(<var>LIMITX-.1</var>) = <var>f(LIMITX-.1)</var></code></p>
                 	<p><code>f(<var>LIMITX-.001</var>) = <var>f(LIMITX-.001)</var></code></p>
                 	<p><code>f(<var>LIMITX-.000001</var>) = <var>f(LIMITX-.000001)</var></code></p>
                 	<p>It looks like <code>f(x)</code> is approaching <var>ANSWER</var> as <code>x</code> approaches <var>LIMITX</var> 
                 	   from the left.
                 	</p>
-                	<p>so <code>\displaystyle\lim_{x \to <var>LIMITX</var>^{-}}f(x) = <var>ANSWER</var></code></p>
-                	<p>Now repeat the process for values of <code>x</code> which are greater than <var>LIMITX</var></p>
+                	<p>Hense <code>\displaystyle\lim_{x \to <var>LIMITX</var>^{-}}f(x) = <var>ANSWER</var></code>.</p>
+                	<p>Now repeat the process for values of <code>x</code> which are greater than <var>LIMITX</var>.</p>
                 	<p><code>f(<var>LIMITX+.1</var>) = <var>f(LIMITX+.1)</var></code></p>
                 	<p><code>f(<var>LIMITX+.001</var>) = <var>f(LIMITX+.001)</var></code></p>
                 	<p><code>f(<var>LIMITX+.000001</var>) = <var>f(LIMITX+.000001)</var></code></p>
                 	<p>It looks like <code>f(x)</code> is approaching <var>ANSWER</var> as <code>x</code> approaches <var>LIMITX</var> 
                 	   from the right.
                 	</p>
-                	<p>so <code>\displaystyle\lim_{x \to <var>LIMITX</var>^{+}}f(x) = <var>ANSWER</var></code></p>
+                	<p>Hense <code>\displaystyle\lim_{x \to <var>LIMITX</var>^{+}}f(x) = <var>ANSWER</var></code>.</p>
                 	<p>Since the limits from both the right and the left exist and are equal, 
-                		<code>\displaystyle\lim_{x \to <var>LIMITX</var>}f(x) = <var>ANSWER</var></code>
+                		<code>\displaystyle\lim_{x \to <var>LIMITX</var>}f(x) = <var>ANSWER</var></code>.
                 	</p>
                 	
                 </div>
             </div>
             
-            <div id="jumpDiscontinuity" data-weight="2">
-            
-                <div class="question">
-                	 <p>
-                    	Consider a function <code>f(x)</code>. While
+            <div id="jump-discontinuity" data-weight="2">
+                <p class="problem">  
+                        Consider a function <code>f(x)</code>. While
                     	you don't know the formula for <code>f(x)</code>
                     	you can nevertheless still evaluate it for given
-                    	values of <code>x</code>.  Does <code>f</code> appear to be continuous or discontinuous at 
+                    	values of <code>x</code>.  
+                </p>  
+                <p class="question">
+           
+                    	Does <code>f</code> appear to be continuous or discontinuous at 
                     	<code>x=<var>LIMITX</var></code>, and why?
-                    </p>
+            
 		   		    <p> 
 		   		    	<center><code>f(</code><input type='text' id='nameField' size=3><code>)=</code> <span id='nameDisplay'>?</span></center>		      
 		    		</p>
@@ -229,7 +235,7 @@
                 	</div>
                 	
                 
-                </div>
+                </p>
 
                  <p class="solution">Discontinuous, because <code>\displaystyle \lim_{x \to <var>LIMITX</var>} f(x)</code>  does not exist </p>
                       <ul class="choices" data-category="true">
@@ -242,39 +248,41 @@
 
                 
                 <div class="hints">
-                	<p>Try values of <code>x</code> close to <var>LIMITX</var> but not equal to <var>LIMITX</var></p>
+                	<p>Try values of <code>x</code> close to <var>LIMITX</var> but not equal to <var>LIMITX</var>.</p>
                 	<p><code>f(<var>LIMITX-.1</var>) = <var>F1(LIMITX-.1)</var></code></p>
                 	<p><code>f(<var>LIMITX-.001</var>) = <var>F1(LIMITX-.001)</var></code></p>
                 	<p><code>f(<var>LIMITX-.000001</var>) = <var>F1(LIMITX-.000001)</var></code></p>
                 	<p>It looks like <code>f(x)</code> is approaching <var>ANSWER</var> as <code>x</code> approaches <var>LIMITX</var> 
                 	   from the left.
                 	</p>
-                	<p>so <code>\displaystyle\lim_{x \to <var>LIMITX</var>^{-}}f(x) = <var>ANSWER</var></code></p>
-                	<p>Now repeat the process for values of <code>x</code> which are greater than <var>LIMITX</var></p>
+                	<p>Hense <code>\displaystyle\lim_{x \to <var>LIMITX</var>^{-}}f(x) = <var>ANSWER</var></code>.</p>
+                	<p>Now repeat the process for values of <code>x</code> which are greater than <var>LIMITX</var>.</p>
                 	<p><code>f(<var>LIMITX+.1</var>) = <var>F1(LIMITX+.1)</var></code></p>
                 	<p><code>f(<var>LIMITX+.001</var>) = <var>F1(LIMITX+.001)</var></code></p>
                 	<p><code>f(<var>LIMITX+.000001</var>) = <var>F1(LIMITX+.000001)</var></code></p>
                 	<p>It looks like <code>f(x)</code> is approaching <var>JUMP+ANSWER</var> as <code>x</code> approaches <var>LIMITX</var> 
                 	   from the right.
                 	</p>
-                	<p>so <code>\displaystyle\lim_{x \to <var>LIMITX</var>^{+}}f(x) = <var>JUMP+ANSWER</var></code></p>
+                	<p>Hense <code>\displaystyle\lim_{x \to <var>LIMITX</var>^{+}}f(x) = <var>JUMP+ANSWER</var></code>.</p>
                 	<p>Even though the limits from the left and right both exist, they are not equal.</p>
                 	<p> 
-                		<code>\displaystyle\lim_{x \to <var>LIMITX</var>}f(x) </code> Does Not Exist (DNE)
+                		<code>\displaystyle\lim_{x \to <var>LIMITX</var>}f(x) </code> Does Not Exist (DNE).
                 	</p>
                 </div>
             </div>
             
-            <div id="rightFails" data-weight="1">
-            
-                <div class="question">
-                	 <p>
-                    	Consider a function <code>f(x)</code>. While
+            <div id="right-fails" data-weight="1">
+            	<p class="problem">
+            			Consider a function <code>f(x)</code>. While
                     	you don't know the formula for <code>f(x)</code>
                     	you can nevertheless still evaluate it for given
-                    	values of <code>x</code>.  Does <code>f</code> appear to be continuous or discontinuous at 
+                    	values of <code>x</code>.  
+                </p>
+                <p class="question">
+          
+                    	Does <code>f</code> appear to be continuous or discontinuous at 
                     	<code>x=<var>LIMITX</var></code>, and why?
-                    </p>
+
 		   		    <p> 
 		   		    	<center><code>f(</code><input type='text' id='nameField' size=3><code>)=</code> <span id='nameDisplay'>?</span></center>		      
 		    		</p>
@@ -295,7 +303,7 @@
                 	</div>
                 	
                 
-                </div>
+                </p>
 
                 <p class="solution">Discontinuous, because <code>\displaystyle \lim_{x \to <var>LIMITX</var>} f(x)</code>  does not exist </p>
                       <ul class="choices" data-category="true">
@@ -308,40 +316,42 @@
 
                 
                 <div class="hints">
-                	<p>Try values of <code>x</code> close to <var>LIMITX</var> but not equal to <var>LIMITX</var></p>
+                	<p>Try values of <code>x</code> close to <var>LIMITX</var> but not equal to <var>LIMITX</var>.</p>
                 	<p><code>f(<var>LIMITX-.1</var>) = <var>F2(LIMITX-.1)</var></code></p>
                 	<p><code>f(<var>LIMITX-.001</var>) = <var>F2(LIMITX-.001)</var></code></p>
                 	<p><code>f(<var>LIMITX-.000001</var>) = <var>F2(LIMITX-.000001)</var></code></p>
                 	<p>It looks like <code>f(x)</code> is approaching <var>ANSWER</var> as <code>x</code> approaches <var>LIMITX</var> 
                 	   from the left.
                 	</p>
-                	<p>so <code>\displaystyle\lim_{x \to <var>LIMITX</var>^{-}}f(x) = <var>ANSWER</var></code></p>
-                	<p>Now repeat the process for values of <code>x</code> which are greater than <var>LIMITX</var></p>
+                	<p>Hense <code>\displaystyle\lim_{x \to <var>LIMITX</var>^{-}}f(x) = <var>ANSWER</var></code>.</p>
+                	<p>Now repeat the process for values of <code>x</code> which are greater than <var>LIMITX</var>.</p>
                 	<p><code>f(<var>LIMITX+.1</var>) = <var>F2(LIMITX+.1)</var></code></p>
                 	<p><code>f(<var>LIMITX+.001</var>) = <var>F2(LIMITX+.001)</var></code></p>
                 	<p><code>f(<var>LIMITX+.000001</var>) = <var>F2(LIMITX+.000001)</var></code></p>
                 	<p><code>f(x)</code> does not appear to be approaching any one value as <code>x</code> 
                 	approaches <code><var>LIMITX</var></code> from the right. (try other values even closer to <code><var>LIMITX</var></code>)
                 	</p>
-                	<p>so <code>\displaystyle\lim_{x \to <var>LIMITX</var>^{+}}f(x)</code> does not exist. (DNE)</p>
+                	<p>Hense <code>\displaystyle\lim_{x \to <var>LIMITX</var>^{+}}f(x)</code> does not exist (DNE).</p>
                 	<p>If either of the one sided limits do not exist, the limit does not exist.</p>
                 	<p> 
-                		<code>\displaystyle\lim_{x \to <var>LIMITX</var>}f(x) </code> Does Not Exist (DNE)
+                		<code>\displaystyle\lim_{x \to <var>LIMITX</var>}f(x) </code> Does Not Exist (DNE).
                 	</p>
                 </div>
             </div>
             
-            <div id="leftFails" data-weight="1">
-            
-                <div class="question">
-                	
-                    <p>
-                    	Consider a function <code>f(x)</code>. While
+            <div id="left-fails" data-weight="1">
+                <p class="problem"> 
+                		Consider a function <code>f(x)</code>. While
                     	you don't know the formula for <code>f(x)</code>
                     	you can nevertheless still evaluate it for given
-                    	values of <code>x</code>.  Does <code>f</code> appear to be continuous or discontinuous at 
+                    	values of <code>x</code>.  
+                </p>          
+                <p class="question">
+                	
+               
+                    	Does <code>f</code> appear to be continuous or discontinuous at 
                     	<code>x=<var>LIMITX</var></code>, and why?
-                    </p>
+             
 		   		    <p> 
 		   		    	<center><code>f(</code><input type='text' id='nameField' size=3><code>)=</code> <span id='nameDisplay'>?</span></center>		      
 		    		</p>
@@ -365,7 +375,7 @@
                 	</div>
                 	
                 
-                </div>
+                </p>
 
                 <p class="solution">Discontinuous, because <code>\displaystyle \lim_{x \to <var>LIMITX</var>} f(x)</code>  does not exist </p>
                       <ul class="choices" data-category="true">
@@ -378,40 +388,42 @@
 
                 
                 <div class="hints">
-                	<p>Try values of <code>x</code> close to <var>LIMITX</var> but not equal to <var>LIMITX</var></p>
+                	<p>Try values of <code>x</code> close to <var>LIMITX</var> but not equal to <var>LIMITX</var>.</p>
                 	<p><code>f(<var>LIMITX-.1</var>) = <var>F3(LIMITX-.1)</var></code></p>
                 	<p><code>f(<var>LIMITX-.001</var>) = <var>F3(LIMITX-.001)</var></code></p>
                 	<p><code>f(<var>LIMITX-.000001</var>) = <var>F3(LIMITX-.000001)</var></code></p>
                 	<p><code>f(x)</code> does not appear to be approaching any one value as <code>x</code> 
                 	approaches <code><var>LIMITX</var></code> from the left. (try other values even closer to <code><var>LIMITX</var></code>)
                 	</p>
-                	<p>so <code>\displaystyle\lim_{x \to <var>LIMITX</var>^{-}}f(x)</code> does not exist. (DNE)</p>
-                	<p>Now repeat the process for values of <code>x</code> which are greater than <var>LIMITX</var></p>
+                	<p>Hense <code>\displaystyle\lim_{x \to <var>LIMITX</var>^{-}}f(x)</code> does not exist (DNE).</p>
+                	<p>Now repeat the process for values of <code>x</code> which are greater than <var>LIMITX</var>.</p>
                 	<p><code>f(<var>LIMITX+.1</var>) = <var>F3(LIMITX+.1)</var></code></p>
                 	<p><code>f(<var>LIMITX+.001</var>) = <var>F3(LIMITX+.001)</var></code></p>
                 	<p><code>f(<var>LIMITX+.000001</var>) = <var>F3(LIMITX+.000001)</var></code></p>
                 	<p>It looks like <code>f(x)</code> is approaching <var>ANSWER</var> as <code>x</code> approaches <var>LIMITX</var> 
                 	   from the right.
                 	</p>
-                	<p>so <code>\displaystyle\lim_{x \to <var>LIMITX</var>^{+}}f(x) = <var>ANSWER</var></code></p>
+                	<p>Hense <code>\displaystyle\lim_{x \to <var>LIMITX</var>^{+}}f(x) = <var>ANSWER</var></code>.</p>
                 	<p>If either of the one sided limits do not exist, the limit does not exist.</p>
                 	<p> 
-                		<code>\displaystyle\lim_{x \to <var>LIMITX</var>}f(x) </code> Does Not Exist (DNE)
+                		<code>\displaystyle\lim_{x \to <var>LIMITX</var>}f(x) </code> Does Not Exist (DNE).
                 	</p>
                 </div>
             </div>
             
-            <div id="bothFail" data-weight="1">
-            
-                <div class="question">
-                	
-                     <p>
-                    	Consider a function <code>f(x)</code>. While
+            <div id="both-fail" data-weight="1">
+            	<p class="problem">
+            	 		Consider a function <code>f(x)</code>. While
                     	you don't know the formula for <code>f(x)</code>
                     	you can nevertheless still evaluate it for given
-                    	values of <code>x</code>.  Does <code>f</code> appear to be continuous or discontinuous at 
+                    	values of <code>x</code>. 
+                </p>
+                <p class="question">
+                	
+                   
+                    	Does <code>f</code> appear to be continuous or discontinuous at 
                     	<code>x=<var>LIMITX</var></code>, and why?
-                    </p>
+
 		   		    <p> 
 		   		    	<center><code>f(</code><input type='text' id='nameField' size=3><code>)=</code> <span id='nameDisplay'>?</span></center>		      
 		    		</p>
@@ -438,7 +450,7 @@
                 	</div>
                 	
                 
-                </div>
+                </p>
 
                 <p class="solution">Discontinuous, because <code>\displaystyle \lim_{x \to <var>LIMITX</var>} f(x)</code>  does not exist </p>
                       <ul class="choices" data-category="true">
@@ -451,25 +463,25 @@
 
                 
                 <div class="hints">
-                	<p>Try values of <code>x</code> close to <var>LIMITX</var> but not equal to <var>LIMITX</var></p>
+                	<p>Try values of <code>x</code> close to <var>LIMITX</var> but not equal to <var>LIMITX</var>.</p>
                 	<p><code>f(<var>LIMITX-.1</var>) = <var>F3(LIMITX-.1)</var></code></p>
                 	<p><code>f(<var>LIMITX-.001</var>) = <var>F3(LIMITX-.001)</var></code></p>
                 	<p><code>f(<var>LIMITX-.000001</var>) = <var>F3(LIMITX-.000001)</var></code></p>
                 	<p><code>f(x)</code> does not appear to be approaching any one value as <code>x</code> 
                 	approaches <code><var>LIMITX</var></code> from the left. (try other values even closer to <code><var>LIMITX</var></code>)
                 	</p>
-                	<p>so <code>\displaystyle\lim_{x \to <var>LIMITX</var>^{-}}f(x)</code> does not exist. (DNE)</p>
-                	<p>Now repeat the process for values of <code>x</code> which are greater than <var>LIMITX</var></p>
+                	<p>Hense <code>\displaystyle\lim_{x \to <var>LIMITX</var>^{-}}f(x)</code> does not exist (DNE).</p>
+                	<p>Now repeat the process for values of <code>x</code> which are greater than <var>LIMITX</var>.</p>
                 	<p><code>f(<var>LIMITX+.1</var>) = <var>F2(LIMITX+.1)</var></code></p>
                 	<p><code>f(<var>LIMITX+.001</var>) = <var>F2(LIMITX+.001)</var></code></p>
                 	<p><code>f(<var>LIMITX+.000001</var>) = <var>F2(LIMITX+.000001)</var></code></p>
                 	<p><code>f(x)</code> does not appear to be approaching any one value as <code>x</code> 
                 	approaches <code><var>LIMITX</var></code> from the right. (try other values even closer to <code><var>LIMITX</var></code>)
                 	</p>
-                	<p>so <code>\displaystyle\lim_{x \to <var>LIMITX</var>^{+}}f(x)</code> does not exist. (DNE)</p>
+                	<p>so <code>\displaystyle\lim_{x \to <var>LIMITX</var>^{+}}f(x)</code> does not exist (DNE).</p>
                 	<p>If either of the one sided limits do not exist, the limit does not exist.</p>
                 	<p> 
-                		<code>\displaystyle\lim_{x \to <var>LIMITX</var>}f(x) </code> Does Not Exist (DNE)
+                		<code>\displaystyle\lim_{x \to <var>LIMITX</var>}f(x) </code> Does Not Exist (DNE).
                 	</p>
                 </div>
             </div>          

@@ -24,23 +24,23 @@
         </div>
 
         <div class="problems">
-            <div id=" unrestricted domain" data-weight="2">
-            
-                <div class="question">
-                	
-                    <p>
-                    	Consider a function <code>f(x)</code>. While
+            <div id="unrestricted-domain" data-weight="2">
+	            <p class="problem">
+	            		Consider a function <code>f(x)</code>. While
                     	you don't know the formula for <code>f(x)</code>
                     	you can nevertheless still evaluate it for given
-                    	values of <code>x</code>. Given that <code>f'(X)</code> is an integer, 
+                    	values of <code>x</code>. 
+                </p>
+                <p class="question">
+                	
+                    	Given that <code>f'(<var>X</var>)</code> is an integer, 
                     	approximate <code>f'(<var>X</var>)</code>.
                     	<br><br>
-                    	<font size="1">A calculator may be necessary</font>
-                    </p>
+                    	
 		   		    <p> 
 		   		    	<center><code>f(</code><input type='text' id='nameField' size=3><code>)=</code> <span id='nameDisplay'>?</span></center>		      
 		    		</p>
-		    		
+		    		<font size="1">A calculator may be necessary</font>
                 	<div class = graphie>
                 	(function(){
   					updateNameDisplay = function() {
@@ -52,14 +52,14 @@
   					$('#nameField').keypress( updateNameDisplay );
   					})()
                 	</div>
-                </div>
+                </p>
                 
 
 				<p class="solution" data-forms="decimal"><var>ANS</var></p>
                 
                 <div class = "hints">
             		<p>The definition of <code>f'(<var>X</var>)</code> is 
-            		<code>\displaystyle\lim_{h \to 0} \frac{f(<var>X</var> + h)-f(<var>X</var>)}{h}</code></p>
+            		<code>\displaystyle\lim_{h \to 0} \frac{f(<var>X</var> + h)-f(<var>X</var>)}{h}</code>.</p>
             		<p>Try values of <code>h</code> which are close to, but not equal to zero.</p>
             		<p>
             			<code>

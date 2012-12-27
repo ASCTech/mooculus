@@ -18,8 +18,7 @@ gem 'less-rails'
 # use Devise for login
 gem 'devise'
 gem 'omniauth'
-gem 'oauth2'
-gem 'omniauth-google-oauth2'
+gem 'omniauth-oauth'
 
 group :development do
   gem 'capistrano'

@@ -1,7 +1,11 @@
 Assessor::Application.routes.draw do
-  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
+  # You can have the root of your site routed with "root"
+  # just remember to delete public/index.html.
+  root :to => 'home#index'
 
   get "home/index"
+  get "people" => "home#people"
+  get "about" => "home#about"
 
   get "score/index"
 
@@ -59,12 +63,10 @@ Assessor::Application.routes.draw do
   #     resources :products
   #   end
 
-  # You can have the root of your site routed with "root"
-  # just remember to delete public/index.html.
-  root :to => 'home#index'
-
   # After user authenticates with provider, user needs to go to omniauth call
-  match '/auth/:provider/callback' => 'authentications#create'
+  # match '/auth/:provider/callback' => 'authentications#create'
+
+  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
 
   match '/api/v1/user/exercises/:exercise/problems/:problem/attempt' => 'score#attempt',
     :constraints => { :problem => /\d+/ }, :via => :post
