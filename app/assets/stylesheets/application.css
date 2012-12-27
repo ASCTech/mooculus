@@ -14,8 +14,10 @@
 
 body {
   padding-top: 80px;
+  font-family: 'Open Sans', sans-serif;
 }
 
 #get-hint-button-container {
   text-align:  center;
 }
+
