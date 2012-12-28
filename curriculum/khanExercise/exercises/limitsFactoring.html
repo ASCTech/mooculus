@@ -7,99 +7,48 @@
 </head>
 <body>
     <div class="exercise">
-        <div class="problems">
-            <div>
                 <div class="vars">
-                    <var id="a">randRange(2, 10)</var>
-                    <var id="b_sign">randFromArray([-1, 1])</var>
-                    <var id="b_abs">randFromArrayExclude([2, 3, 4, 5, 6, 7, 8, 9, 10], [a])</var>
-                    <var id="b">b_sign*b_abs</var>
-                    <var id="A">randFromArrayExclude(getFactors(a * b_abs), [1])</var>
-                    <var id="B">a + b</var>
-                    <var id="C">a * b / A</var>
-                    <var id="F1">getGCD(A, a)</var>
-                    <var id="F2">b_sign * getGCD(b_abs, C)</var>
-                    <var id="LIMITX">fractionReduce( - F2, F1 )</var>
-                    <var id="LIMITXSOL">- F2 / F1 </var>
-                    <var id="SOLUTION2">b_abs * ( - F2 / F1 ) + a</var>
-                    <var id="PROBLEM">simplify(polynomial([A, B, C], "x"), simplifyOptions.basic)</var>
-                    <var id="PROBLEM2">simplify(polynomial([F1, F2], "x"), simplifyOptions.basic)</var>
-                    <!-- use parse so that the ast matches the parsed user input -->
-                    <var id="SOLUTION">parse("(" + F1 + "x+" + F2 + ")(" + A / F1 + "x+" + a / F1 + ")")</var>
-                    <var id="HINT1">parse(F1 + "x(" + A / F1 + "x+" + a / F1 + ")+" + F2 + "(" + b / F2 + "x+" + C / F2 + ")}")</var>
-                    <var id="GROUP1">[parse("#{ab} &=& #{A}*#{C} &=& " + (A*C), [GREEN, BLUE, ORANGE]),
-                        parse("#{a}+#{b} &=& #{B} &=& #{" + B, [GREEN, GREEN, PINK])]</var>
-                    <var id="SOL">((A / F1) * LIMITXSOL ) + ( a / F1 )</var>
-
-                </div>
-                <div>
+                    <div data-ensure="abs(A) !== abs(B)">
+                    	<var id="A">randRangeNonZero( -10, 10 )</var>
+                    	<var id="B">randRangeNonZero( -10, 10 )</var>
+                	</div>
+                <var id="SQUARE">1</var>
+                <var id="CONSTANT">SQUARE*A*B</var>
+                <var id="SIMPLECONSTANT">A*B</var>
+                <var id="LINEAR">SQUARE*(-A-B)</var>
+                <var id="SIMPLELINEAR">-A-B</var>
+				</div>
+				
+				<div class="problems">
+					<div id="limit-at-value-prototype"
+                	<p class="problem">
+                	Let <code>f(x) = \dfrac{x^2 +<var>SIMPLELINEAR</var>x + <var>SIMPLECONSTANT</var>}{{x <var>A &lt; 0 ? "+" : ""</var>}{<var>-A</var>}}</code> and consider the following
+						limit:
+						<div style="text-align: center;"><code>\displaystyle
+						\lim_{x\to <var>A </var>} f(x)</code></div>
+	Note that <code> f(x) </code> is undefined at <code>x=<var>A</var></code>. However, since
+	limits allow us to investigate functions when <code>x \ne <var>A</var></code>, we can
+	use algebra to convert <code>f(x)</code> into a function <code>g(x)</code> that is defined
+	at <code>x=<var>A</var></code>.
+                	<p/>
                     <p class="question">
-                        Find
+                    	
+Find the function <code>g(x)</code> that is equal to <code>f(x)</code> when <code>x\ne <var>A</var></code> such that 
+<code>
+g(<var>A</var>) = \displaystyle\lim_{x\to <var>A</var>} f(x).
+</code>                       
+                       
                     </p>
-                    <p>
-                        <code>\displaystyle\lim_{x\to<var>LIMITX</var>}\frac{<var>format(PROBLEM, "large")</var>}{<var><var>format(PROBLEM2, "large")</var>}</code>
-                    </p>
-                </div>
-                  <div class="solution" data-type="multiple">
-
-                    <p>
-                        <code>\displaystyle\lim_{x\to<var>LIMITX</var>}f(x)</code>: 
-                        <span class="sol" data-type="decimal"><var>roundTo(2, SOL)</var></span>
+            
+                  <p class="solution" data-type="regex">^\(? *x *\+\ *<var>B</var> *\)?$</p>
                         
                     </p>
-                </div>
+             	</div>
+             	</div>
                 <div class="hints">
-                    <div>
-                        <p>The expression is of the form
-                        <code><var>parseFormat("#{A}x^2+#{B}x+#{C}}", [BLUE, PINK, ORANGE])</var></code>.
-                        You can factor this trinomial by grouping. In this case,
-                        <code>\blue{A}=\blue{<var>A</var>}</code>, <code>\pink{B}=\pink{<var>B</var>}</code>,
-                        <code>\orange{C}=\orange{<var>C</var>}</code>
-                        </p>
-                    </div>
-                    <div>
-                        <p>To do this, the first step is to find two values
-                        <code>\green{a}</code> and
-                        <code>\green{b}</code>, such that:</p>
-                        <p><code><var>parseFormat("#{ab} = #{A}*#{C}", [GREEN, BLUE, ORANGE])</var></code></p>
-                        <p><code><var>parseFormat("#{a}+#{b} = #{B}", [GREEN, GREEN, PINK])</var></code></p>
-                        <p>The next step is to rewrite the
-                        expression as <code><var>parseFormat("#{A}x^2 + #{a}x + #{b}x + #{C}", [BLUE, GREEN, GREEN, ORANGE])</var></code> or 
-                        <code><var>parseFormat("(#{A}x^2 + #{a}x) + (#{b}x + #{C})", [BLUE, GREEN, GREEN, ORANGE])</var></code>, and factor each term, to
-                        find a common factor.</p>
-                    </div>
-                    <div>
-                        <p>To apply the first step, you need to find 
-                        <code>\green{a}</code> and <code>\green{b}</code> such that:</p>
-                        <p><code><var>formatGroup(GROUP1, [0,1])</var></code></p>
-                    </div>
-                    <div>
-                        <p>The following values can be used:</p>
-                        <p><code><var>parseFormat("#{a}=#{" + a + "}", [GREEN, GREEN])</var></code><br>
-                        <code><var>parseFormat("#{b}=#{" + b + "}", [GREEN, GREEN])</var></code></p>
-                    </div>
-                    <div>
-                        <p>For the second step, rewrite the expression as:</p>
-                        <p><code><var>parseFormat("#{" + A + "}x^2+#{" + a + "}x+#{" + b + "}x+#{" + C + "}}", [BLUE, GREEN, GREEN, ORANGE])</var></code></p>
-                        <p>or</p><p><code><var>parseFormat("(#{" + A + "}x^2+#{" + a + "}x)+(#{" + b + "}x+#{" + C + "})", [BLUE, GREEN, GREEN, ORANGE])</var></code></p>
-                        <p>The next step is to factor both terms of the above expression:</p>
-                    </div>
-                    <div>
-                        <p>
-                            <code><var>format(HINT1, {del1factors:true, evalBasicNumOps:true})</var></code>
-                        </p>
-                    </div>
-                    <div class="final_answer">
-                        <p>
-                            Redistribute the common term to get the answer:
-                        </p>
-                        <p>
-                            <code><var>format(, simplifyOptions.basic, false, "large")</var></code>
-                        </p>
-                    </div>
                 </div>
-            </div>
         </div>
     </div>
+           
 </body>
 </html>
