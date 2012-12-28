@@ -1,5 +1,5 @@
 module ApplicationHelper
   def html_logo
-    return '<span style="font-family: sans-serif;"><span style="font-weight: bold;">mooc</span><span style="font-weight: lighter">ulus</span></span>'
+    return '<span style="font-family: \'Open Sans\', sans-serif;"><span style="font-weight: 800;">mooc</span><span style="font-weight: 300;">ulus</span></span>'
   end
 end
