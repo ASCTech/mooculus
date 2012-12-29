@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html data-require="math word-problems graphie polynomials steveMath8">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Identifying indeterminate forms</title>
+    <script src="../khan-exercise.js"></script>
+</head>
+<body>
+    <div class="exercise">
+       
+
+        <div class="problems">
+            
+            <div id="rational-continuous" data-ensure="(poly2.evalOf(A) !== 0)">
+            
+            	 <div class="vars">
+        			<var id = "poly1">new Polynomial(0,randRange(1,3)) </var>
+        			<var id = "poly2">new Polynomial(0,randRange(1,3)) </var>
+        			<var id = "A">randRange(-9,9)</var>
+       		    </div>
+                
+                <p class="problem">
+                
+                	Which of the options best represents the behavior of the limit?  
+                
+                	<br><br>
+                
+                	<code>	
+                		\displaystyle\lim_{x \to <var>A</var>}\frac{<var>poly1.text()</var>}{<var>poly2.text()</var>}
+                		
+                	</code>
+                	
+                	
+					
+					
+					
+					
+				</p>
+   
+                <p class="solution">Can be evaluated by direct substitution, because the function is continuous at the limit point</p>
+                      <ul class="choices" data-category="true">
+                    <li>Can be evaluated by direct substitution, because the function is continuous at the limit point</li>
+                    <li>The indeterminate form <code>\frac{0}{0}</code></li>
+                    <li>The indeterminate form <code>\frac{\infty}{\infty}</code></li>
+                    <li>The indeterminate form <code>\infty-\infty</code></li>
+                    <li>The indeterminate form <code>0^0</code></li>
+                    <li>The indeterminate form <code>\infty^0</code></li>
+                    <li>The indeterminate form <code>1^\infty</code></li>
+                    <li>The indeterminate form <code>0 \cdot \infty</code></li>
+                </ul>
+                
+            </div>
+     
+            
+            
+            
+            <div id="infinity-minus-infinity-rational">
+            
+            	 <div class="vars">
+        			<var id = "poly1">new Polynomial(0,randRange(1,2)) </var>
+        			<var id = "poly2">new Polynomial(0,randRange(1,2)) </var>
+        			<var id = "A">randRange(-9,9)</var>
+        			<var id = "lin">new Polynomial(0,1,[-A,1])</var>
+        			<var id = "denom1">lin.multiply(poly1)</var>
+        			<var id = "denom2">lin.multiply(poly2)</var>
+        			<var id = "num1">new Polynomial(0,1)</var>
+        			<var id = "num2">new Polynomial(0,1)</var>
+        			<var id = "denom1Sign">steveSign(denom1.evalOf(A+.001))</var>
+        			<var id = "denom2Sign">steveSign(denom2.evalOf(A+.001))</var>
+        			<var id = "num1Sign">steveSign(num1.evalOf(A+.001))</var>
+        			<var id = "num2Sign">steveSign(num2.evalOf(A+.001))</var>
+        			<var id = "trueNum1">num1.multiply(num1Sign*denom1Sign)</var>
+        			<var id = "trueNum2">num2.multiply(num2Sign*denom2Sign)</var>
+       		    </div>
+                
+                <p class="problem">
+                
+                	Which of the options best represents the behavior of the limit?  
+                
+                	<br><br>
+                
+                	<code>	
+                		\displaystyle\lim_{x \to <var>A</var>^+}(\frac{<var>trueNum1.text()</var>}{<var>denom1.text()</var>} - \frac{<var>trueNum2.text()</var>}{<var>denom2.text()</var>})
+                		
+                	</code>
+                	
+                	
+					
+					
+					
+					
+				</p>
+   
+                <p class="solution">The indeterminate form <code>\frac{0}{0}</code></p>
+                      <ul class="choices" data-category="true">
+                    <li>Can be evaluated by direct substitution, because the function is continuous at the limit point</li>
+                    <li>The indeterminate form <code>\frac{0}{0}</code></li>
+                    <li>The indeterminate form <code>\frac{\infty}{\infty}</code></li>
+                    <li>The indeterminate form <code>\infty-\infty</code></li>
+                    <li>The indeterminate form <code>0^0</code></li>
+                    <li>The indeterminate form <code>\infty^0</code></li>
+                    <li>The indeterminate form <code>1^\infty</code></li>
+                    <li>The indeterminate form <code>0 \cdot \infty</code></li>
+                </ul>
+                
+            </div>
+            
+            
+            
+            <div id="rational-minus-rational-both-infinite">
+            
+            	 <div class="vars">
+        			<var id = "poly1">new Polynomial(0,randRange(1,2)) </var>
+        			<var id = "poly2">new Polynomial(0,randRange(1,2)) </var>
+        			<var id = "A">randRange(-9,9)</var>
+        			<var id = "lin">new Polynomial(0,1,[-A,1])</var>
+        			<var id = "num">lin.multiply(poly1)</var>
+        			<var id = "denom">lin.multiply(poly2)</var>
+       		    </div>
+                
+                <p class="problem">
+                
+                	Which of the options best represents the behavior of the limit?  
+                
+                	<br><br>
+                
+                	<code>	
+                		\displaystyle\lim_{x \to <var>A</var>}\frac{<var>poly1.text()</var>}{<var>poly2.text()</var>}
+                		
+                	</code>
+                	
+                	
+					
+					
+					
+					
+				</p>
+   
+                <p class="solution">Can be evaluated by direct substitution, because the function is continuous at the limit point</p>
+                      <ul class="choices" data-category="true">
+                    <li>Can be evaluated by direct substitution, because the function is continuous at the limit point</li>
+                    <li>The indeterminate form <code>\frac{0}{0}</code></li>
+                    <li>The indeterminate form <code>\frac{\infty}{\infty}</code></li>
+                    <li>The indeterminate form <code>\infty-\infty</code></li>
+                    <li>The indeterminate form <code>0^0</code></li>
+                    <li>The indeterminate form <code>\infty^0</code></li>
+                    <li>The indeterminate form <code>1^\infty</code></li>
+                    <li>The indeterminate form <code>0 \cdot \infty</code></li>
+                </ul>
+                
+            </div>
+     
+            
+            
+    
+     
+    
+	</div>
+</body>
+</html>
