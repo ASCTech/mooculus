@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html data-require="math polynomials graphie word-problems steveMath8">
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>Approximating Limits Graphically</title>
-    <script src="../khan-exercise.js"></script>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+   	<title>Approximating Limits Graphically</title>
+   	<script src="../khan-exercise.js"></script>
 </head>
 <body>
     <div class="exercise">
@@ -33,18 +33,9 @@
         </div>
 
         <div class="problems">
-            <div id="Finding limits with an oracle: Limit exists" data-weight="3">
-            
-                <div class="question">
-                	
-                    <p>
-                    	Consider the function <code>f(x)</code> graphed below. Find
-                    	the value of each of the indicated limits with an error of at most <code>\frac{1}{2}</code>.
-                    	
-                    </p>
-		   		   
-		    		
-                	<div class = graphie id="grid">
+            <div id="limit-exists" data-weight="3">
+            	<p class="problem">Consider the function <code>f(x)</code> graphed below.
+            	                	<div class = graphie id="grid">
                 	graphInit({
                         range: 10,
                         scale: 20,
@@ -87,42 +78,38 @@
   					$('#nameField').keyup( updateNameDisplay );
   					$('#nameField').keypress( updateNameDisplay );
   					})()
-                	</div>
-                	
-                </div>
+                	</div> 		
+		</p>
+                <p class="question"> Find the value of each of the indicated limits with an error of at most <code>\frac{1}{2}</code>.
+		</p>
+		   		   
+		    		
 
-                <div class="solution" data-type="multiple" >
-
-                    <p>
+       
+                <p class="solution" data-type="multiple">
                         <code>\displaystyle\lim_{x \to <var>LIMITX</var>^{-}}f(x)</code>: 
                         <span class="sol" data-inexact data-max-error="0.5" data-type="decimal"><var>ANSWER</var></span>
+                        <br>
                         <br>
                         <code>\displaystyle\lim_{x \to <var>LIMITX</var>^{+}}f(x)</code>: 
                         <span class="sol" data-inexact data-max-error="0.5" data-type="decimal"><var>ANSWER</var></span>
 						<br>
+						<br>
 						<code>\displaystyle\lim_{x \to <var>LIMITX</var>}f(x)</code>: 
                         <span class="sol" data-inexact data-max-error="0.5" data-type="decimal"><var>ANSWER</var></span>
-                    </p>
-
-                </div>
+    		
+                </p>
 
                 
-                <div class="hints">
+            <div class="hints">
                 	
                 	
                 </div>
             </div>
             
-            <div id="Finding limits with an oracle: Limit DNE due to a jump discontinuity" data-weight="2">
-            
-                <div class="question">
-                	
-                    <p>
-                    	Consider the function <code>f(x)</code> graphed below. Find
-                    	the value of each of the indicated limits with an error of at most <code>\frac{1}{2}</code>.
-                    	
-                    </p>
-		   		    
+            <div id="jump-discontinuity" data-weight="2">
+                <p class="problem">Consider the function <code>f(x)</code> graphed below. 
+             
                 	<div class = graphie id="grid">
                 	graphInit({
                         range: 10,
@@ -169,8 +156,10 @@
   					})()
                 	</div>
                 	
-                
-                </div>
+        
+                </p>
+                 <p class="question"> Find the value of each of the indicated limits with an error of at most <code>\frac{1}{2}</code>.
+                </p>  	
 
                 <div class="solution" data-type="multiple">
 
@@ -178,9 +167,11 @@
                         <code>\displaystyle\lim_{x \to <var>LIMITX</var>^{-}}f(x)</code>: 
                         <span class="sol" data-inexact data-max-error="0.5" data-type="decimal"><var>ANSWER</var></span>
                         <br>
+                        <br>
                         <code>\displaystyle\lim_{x \to <var>LIMITX</var>^{+}}f(x)</code>: 
                         <span class="sol" data-inexact data-max-error="0.5" data-type="decimal"><var>ANSWER+JUMP</var></span>
 						<br>
+					    <br>
 						<code>\displaystyle\lim_{x \to <var>LIMITX</var>}f(x)</code>: 
                         <span class="sol"  data-type="text">DNE</span>
                     </p>
@@ -188,9 +179,9 @@
                 </div>
 
                 
-                <div class="hints">
+                	<div class="hints">
                 	
-                </div>
+            	</div>
             </div>
             
             
@@ -201,6 +192,6 @@
         </div>
 
 
-    </div>
+
 </body>
 </html>

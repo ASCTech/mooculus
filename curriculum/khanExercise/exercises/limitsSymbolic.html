@@ -1443,7 +1443,7 @@
             <div id="needs-conjugate">
             
             	 <div class="vars">
-        			<var id = "A">randRangeNonZero(-9,9)</var>
+        			<var id = "A">randRangeNonZero(1,9)</var>
           			
        		    </div>
                 
@@ -1736,12 +1736,14 @@
                <div class="solution" data-type="custom">
 
                     <div class="guess">
-                    	[$('#0 :selected').val(),$('#1 :selected').val(),$('#2 :selected').val(),$('#3 :selected').val(),$('#4 :selected').val(),$('#5 :selected').val() ]
+                    	[$('#0 :selected').val(),$('#1 :selected').val(),$('#2 :selected').val(),$('#3 :selected').val(),$('#4 :selected').val(),$('#5 :selected').val(),$('#6 :selected').val(),$('#7 :selected').val(),$('#8 :selected').val(),$('#9 :selected').val() ]
                     </div>
                     <div class="validator-function">
-                       return guess[0]=="equivalent" &amp;&amp; guess[1]=="product" 
-                       &amp;&amp; guess[2]=="constant" &amp;&amp; guess[3]=="composition"
-                       &amp;&amp; guess[4]=="special" &amp;&amp; guess[5]=="arithmetic"
+                       return guess[0]=="equivalent" &amp;&amp; guess[1]=="equivalent" 
+                       &amp;&amp; guess[2]=="equivalent" &amp;&amp; guess[3]=="equivalent"
+                       &amp;&amp; guess[4]=="sum" &amp;&amp; guess[5]=="power"
+                       &amp;&amp; guess[6]=="identity" &amp;&amp; guess[7]=="constant"
+                       &amp;&amp; guess[8]=="arithmetic" &amp;&amp; guess[9]=="arithmetic"
                     </div>
                     
                 </div>
