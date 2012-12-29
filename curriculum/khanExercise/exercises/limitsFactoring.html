@@ -25,23 +25,14 @@
     <div class="problems">
       <div id="limit-by-factoring-prototype"
            <p class="problem">
-             Let <code>f(x) = \dfrac{<var>format(PROBLEM, "large")</var>}{x + <var>b</var>}</code> 
-	     and consider the following limit:
-	     <div style="text-align: center;">
-	       <code>\displaystyle\lim_{x\to <var>-b</var>} f(x)</code>
-	     </div>
+             Let <code>f(x) = \dfrac{<var>format(PROBLEM, "large")</var>}{x + <var>b</var>}</code>.
+             
 	     Note that <code> f(x) </code> is undefined at <code>x=<var>-b</var></code>. 
-	     However, since limits allow us to investigate functions when 
-	     <code>x \ne <var>-b</var></code>, we can use algebra to convert 
-	     <code>f(x)</code> into a function <code>g(x)</code> that is defined
-	     at <code>x=<var>-b</var></code>.
+	     However, in this case, we can find a <em>continuous</em> function <code>g(x)</code> defined at <code>x=<var>-b</var></code> which agrees
+	     with <code>f(x)</code> near <code>x=<var>-b</var></code>.
            </p>
            <p class="question">         	
-	     Find the function <code>g(x)</code> that is equal to <code>f(x)</code> 
-	     when <code>x\ne <var>-b</var></code> such that 
-	     <code>
-	       g(<var>-b</var>) = \displaystyle\lim_{x\to <var>-b</var>} f(x).
-	     </code>                                        
+	    Find the function <code>g</code>, and use it to find the value of <code>\displaystyle\lim_{x\to <var>-b</var>} f(x)</code>.                      
            </p> 
       <div class="solution" data-type="custom">
         <div class="instruction">
