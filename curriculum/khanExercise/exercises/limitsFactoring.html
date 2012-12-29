@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html data-require="math math-format graphie math-model simplify">
+<!-- not under MIT license -->
+<html data-require="math math-model simplify">
 <head>
     <meta charset="UTF-8" />
     <title>Limits by factoring</title>
@@ -26,28 +27,33 @@
       <div id="limit-by-factoring-prototype"
            <p class="problem">
              Let <code>f(x) = \dfrac{<var>format(PROBLEM, "large")</var>}{x + <var>b</var>}</code>.
-             
-	     Note that <code> f(x) </code> is undefined at <code>x=<var>-b</var></code>. 
+             Note that <code> f(x) </code> is undefined at <code>x=<var>-b</var></code>. 
 	     However, in this case, we can find a <em>continuous</em> function <code>g(x)</code> defined at <code>x=<var>-b</var></code> which agrees
 	     with <code>f(x)</code> near <code>x=<var>-b</var></code>.
            </p>
-           <p class="question">         	
-	    Find the function <code>g</code>, and use it to find the value of <code>\displaystyle\lim_{x\to <var>-b</var>} f(x)</code>.                      
-           </p> 
-      <div class="solution" data-type="custom">
-        <div class="instruction">
-          <input name="response" type="text">
-        </div>
-        <div class="guess">jQuery("div.instruction input").val()</div>
-        <div class="validator-function">
-          return isEqual(parse(guess), SOLUTION);
-        </div>
-        <div class="show-guess">
-        </div>
-        <div class="show-guess-solutionarea">
-          jQuery("div.instruction input").val(guess);
-        </div>
-        <div class="example">a linear polynomial expression, like <b>(x+2)</b></div>
+      <p class="question">         	
+	Find the function <code>g(x)</code>, and use it to find the value of <code>\displaystyle\lim_{x\to <var>-b</var>} f(x)</code>.                  
+      </p> 
+      <div class="solution" data-type="multiple">
+	<code>g(x)=</code><span class="sol" data-type="custom">
+          <div class="instruction">
+            <input name="response" type="text">
+          </div>
+          <div class="guess">jQuery("div.instruction input").val()</div>
+          <div class="validator-function">
+            return isEqual(parse(guess), SOLUTION);
+          </div>
+          <div class="show-guess">
+          </div>
+          <div class="show-guess-solutionarea">
+            jQuery("div.instruction input").val(guess);
+          </div>
+          <div class="example">a linear polynomial expression, like <b>(x+2)</b></div>
+	</span>
+	<br>
+        <br>
+        <code>\displaystyle\lim_{x \to <var>-b</var>}f(x)=</code> 
+        <span class="sol" data-type="decimal"><var>-b+a</var></span>
       </div>
     </div>
   </div>
