@@ -57,8 +57,8 @@
             <div id="infinity-minus-infinity-rational">
             
             	 <div class="vars">
-        			<var id = "poly1">new Polynomial(0,randRange(1,2)) </var>
-        			<var id = "poly2">new Polynomial(0,randRange(1,2)) </var>
+        			<var id = "poly1">new Polynomial(0,1) </var>
+        			<var id = "poly2">new Polynomial(0,1) </var>
         			<var id = "A">randRange(-9,9)</var>
         			<var id = "lin">new Polynomial(0,1,[-A,1])</var>
         			<var id = "denom1">lin.multiply(poly1)</var>
@@ -107,11 +107,11 @@
             
             
             
-            <div id="rational-minus-rational-both-infinite">
+            <div id="rational-0-over-0">
             
             	 <div class="vars">
-        			<var id = "poly1">new Polynomial(0,randRange(1,2)) </var>
-        			<var id = "poly2">new Polynomial(0,randRange(1,2)) </var>
+        			<var id = "poly1">new Polynomial(0,1) </var>
+        			<var id = "poly2">new Polynomial(0,1) </var>
         			<var id = "A">randRange(-9,9)</var>
         			<var id = "lin">new Polynomial(0,1,[-A,1])</var>
         			<var id = "num">lin.multiply(poly1)</var>
@@ -125,7 +125,7 @@
                 	<br><br>
                 
                 	<code>	
-                		\displaystyle\lim_{x \to <var>A</var>}\frac{<var>poly1.text()</var>}{<var>poly2.text()</var>}
+                		\displaystyle\lim_{x \to <var>A</var>}\frac{<var>num.text()</var>}{<var>denom.text()</var>}
                 		
                 	</code>
                 	
@@ -136,7 +136,7 @@
 					
 				</p>
    
-                <p class="solution">Can be evaluated by direct substitution, because the function is continuous at the limit point</p>
+                <p class="solution">The indeterminate form <code>\frac{0}{0}</code></p>
                       <ul class="choices" data-category="true">
                     <li>Can be evaluated by direct substitution, because the function is continuous at the limit point</li>
                     <li>The indeterminate form <code>\frac{0}{0}</code></li>
