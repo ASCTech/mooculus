@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html data-require="math polynomials graphie word-problems steveMath8">
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>Approximating Limits Graphically</title>
-    <script src="../khan-exercise.js"></script>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+   	<title>Approximating Limits Graphically</title>
+   	<script src="../khan-exercise.js"></script>
 </head>
 <body>
     <div class="exercise">
         <div class="vars" data-ensure="JUMP+f(LIMITX)<10">
 	
 	    	
-	    	<var id="JUMP">randRangeNonZero(0,3)</var>
+	    	<var id="JUMP">randRangeNonZero(0,5)</var>
 	    	<var id="FACTOR">randRangeNonZero(-1,1)*randRange(40,67)/7</var>
 			<var id="LIMITX">randRangeNonZero(-8,8)</var>
 	    	<var id = "n">randRange(2,4)</var>
@@ -33,18 +33,9 @@
         </div>
 
         <div class="problems">
-            <div id="Finding limits with an oracle: Limit exists" data-weight="3">
-            
-                <div class="question">
-                	
-                    <p>
-                    	Consider the function <code>f(x)</code> graphed below. Find
-                    	the value of each of the indicated limits with an error of at most <code>\frac{1}{2}</code>.
-                    	
-                    </p>
-		   		   
-		    		
-                	<div class = graphie id="grid">
+            <div id="limit-exists" data-weight="3">
+            	<p class="problem">Consider the function <code>f(x)</code> graphed below.
+            	                	<div class = graphie id="grid">
                 	graphInit({
                         range: 10,
                         scale: 20,
@@ -56,13 +47,13 @@
                                 return ( f(x));
                             }, [-10, LIMITX-.0001], {
                                 stroke: RED,
-                                strokeWidth: 1
+                                strokeWidth: 3
                             });
                     plot(function( x ) {
                                 return ( f(x));
                             }, [ LIMITX+.0001,10], {
                                 stroke: RED,
-                                strokeWidth: 1
+                                strokeWidth: 3
                             });
                             
                     circle( [LIMITX, f(LIMITX)], 4 / 20, { fill: "white" } );
@@ -87,42 +78,151 @@
   					$('#nameField').keyup( updateNameDisplay );
   					$('#nameField').keypress( updateNameDisplay );
   					})()
-                	</div>
-                	
-                </div>
+                	</div> 		
+		</p>
+                <p class="question"> Find the value of each of the indicated limits with an error of at most <code>\frac{1}{2}</code>.
+		</p>
+		   		   
+		    		
 
-                <div class="solution" data-type="multiple" >
-
-                    <p>
+       
+                <p class="solution" data-type="multiple">
                         <code>\displaystyle\lim_{x \to <var>LIMITX</var>^{-}}f(x)</code>: 
                         <span class="sol" data-inexact data-max-error="0.5" data-type="decimal"><var>ANSWER</var></span>
+                        <br>
                         <br>
                         <code>\displaystyle\lim_{x \to <var>LIMITX</var>^{+}}f(x)</code>: 
                         <span class="sol" data-inexact data-max-error="0.5" data-type="decimal"><var>ANSWER</var></span>
 						<br>
+						<br>
 						<code>\displaystyle\lim_{x \to <var>LIMITX</var>}f(x)</code>: 
                         <span class="sol" data-inexact data-max-error="0.5" data-type="decimal"><var>ANSWER</var></span>
-                    </p>
-
-                </div>
+    		
+                </p>
 
                 
-                <div class="hints">
-                	
+           	    <div class="hints">
+                		
+                		<p>
+                			<code>\displaystyle\lim_{x \to <var>LIMITX</var>^{-}}f(x)</code>
+                			is the value that <code>f(x)</code> approaches as <code>x</code> 
+                			gets close to <code><var>LIMITX</var></code> from the left.
+                		</p>
+                		<p>
+                			So lets graphically choose some abscissas getting closer and closer to 
+                			<code><var>LIMITX</var></code> and see what happens to their ordinates.
+                		</p>
+                		<div>
+                			Here's <code> x \approx <var>LIMITX-1</var></code>
+                			 <div class="graphie" data-update="grid">
+                            circle( [LIMITX-1,f(LIMITX-1)], 1/6, {
+                            stroke: "none",
+                            fill: GREEN
+                            });
+                			</div> 
+                		</div>
+                		
+                		<div>
+                			Here's <code> x \approx <var>LIMITX-.5</var></code>
+                			 <div class="graphie" data-update="grid">
+                            circle( [LIMITX-.5,f(LIMITX-.5)], 1/6, {
+                            stroke: "none",
+                            fill: GREEN
+                            });
+                			</div> 
+                		</div>
+                		
+                		<div>
+                			Here's <code> x \approx <var>LIMITX-.1</var></code>
+                			 <div class="graphie" data-update="grid">
+                            circle( [LIMITX-.1,f(LIMITX-.1)], 1/6, {
+                            stroke: "none",
+                            fill: GREEN
+                            });
+                			</div> 
+                		</div>
+                		
+                		<div>
+                			It looks like <code>f(x)</code> is approaching about <code><var>roundTo(1,f(LIMITX))</var></code>
+                			as <code>x</code> approaches <code><var>LIMITX</var></code> from the left.
+                		</div>
+                		
+                		<p>
+                			<code>\displaystyle\lim_{x \to <var>LIMITX</var>^{+}}f(x)</code>
+                			is the value that <code>f(x)</code> approaches as <code>x</code> 
+                			gets close to <code><var>LIMITX</var></code> from the right.
+                		</p>
+                		
+                		<div>
+                			Here's <code> x \approx <var>LIMITX+1</var></code>
+                			 <div class="graphie" data-update="grid">
+                            circle( [LIMITX+1,f(LIMITX+1)], 1/6, {
+                            stroke: "none",
+                            fill: BLUE
+                            });
+                			</div> 
+                		</div>
+                		
+                		<div>
+                			Here's <code> x \approx <var>LIMITX+.5</var></code>
+                			 <div class="graphie" data-update="grid">
+                            circle( [LIMITX+.5,f(LIMITX+.5)], 1/6, {
+                            stroke: "none",
+                            fill: BLUE
+                            });
+                			</div> 
+                		</div>
+                		
+                		<div>
+                			Here's <code> x \approx <var>LIMITX+.1</var></code>
+                			 <div class="graphie" data-update="grid">
+                            circle( [LIMITX+.1,f(LIMITX+.1)], 1/6, {
+                            stroke: "none",
+                            fill: BLUE
+                            });
+                			</div> 
+                		</div>
+                		
+                		<div>
+                			It looks like <code>f(x)</code> is approaching about <code><var>roundTo(1,f(LIMITX))</var></code>
+                			as <code>x</code> approaches <code><var>LIMITX</var></code> from the right.
+                			 
+                		</div>
+                		<div>
+                			Since both limits exist and are equal, <code>\displaystyle\lim_{x \to <var>LIMITX</var>}f(x)</code>
+                			 exists and has value about <code><var>roundTo(1,f(LIMITX))</var></code>
+                			
+                			
+                			<div class="graphie" data-update="grid">
+                                    style({
+                                        stroke: BLUE,
+                                        strokeWidth: 2,
+                                        arrows: "-&gt;"
+                                    }, function() {
+                                        line( [ LIMITX, 0 ], [ LIMITX, f(LIMITX) ]);
+                                    });
+                                    
+                                    style({
+                                        stroke: BLUE,
+                                        strokeWidth: 2,
+                                        arrows: "-&gt;"
+                                    }, function() {
+                                        line( [ LIMITX, f(LIMITX) ], [ 0, f(LIMITX) ]);
+                                    });
+                                    
+                                
+                                </div>
+                		</div>
+                		<div>
+                			Note that graphically, the value of the limit is the ordinate of the "hole" in the graph of <code>f</code>.
+                		</div>
                 	
                 </div>
             </div>
             
-            <div id="Finding limits with an oracle: Limit DNE due to a jump discontinuity" data-weight="2">
-            
-                <div class="question">
-                	
-                    <p>
-                    	Consider the function <code>f(x)</code> graphed below. Find
-                    	the value of each of the indicated limits with an error of at most <code>\frac{1}{2}</code>.
-                    	
-                    </p>
-		   		    
+            <div id="jump-discontinuity" data-weight="2">
+                <p class="problem">Consider the function <code>f(x)</code> graphed below. 
+             
                 	<div class = graphie id="grid">
                 	graphInit({
                         range: 10,
@@ -169,8 +269,10 @@
   					})()
                 	</div>
                 	
-                
-                </div>
+        
+                </p>
+                 <p class="question"> Find the value of each of the indicated limits with an error of at most <code>\frac{1}{2}</code>.
+                </p>  	
 
                 <div class="solution" data-type="multiple">
 
@@ -178,9 +280,11 @@
                         <code>\displaystyle\lim_{x \to <var>LIMITX</var>^{-}}f(x)</code>: 
                         <span class="sol" data-inexact data-max-error="0.5" data-type="decimal"><var>ANSWER</var></span>
                         <br>
+                        <br>
                         <code>\displaystyle\lim_{x \to <var>LIMITX</var>^{+}}f(x)</code>: 
                         <span class="sol" data-inexact data-max-error="0.5" data-type="decimal"><var>ANSWER+JUMP</var></span>
 						<br>
+					    <br>
 						<code>\displaystyle\lim_{x \to <var>LIMITX</var>}f(x)</code>: 
                         <span class="sol"  data-type="text">DNE</span>
                     </p>
@@ -188,9 +292,149 @@
                 </div>
 
                 
-                <div class="hints">
+                	<div class="hints">
+                		<p>
+                			<code>\displaystyle\lim_{x \to <var>LIMITX</var>^{-}}f(x)</code>
+                			is the value that <code>f(x)</code> approaches as <code>x</code> 
+                			gets close to <code><var>LIMITX</var></code> from the left.
+                		</p>
+                		<p>
+                			So lets graphically choose some abscissas getting closer and closer to 
+                			<code><var>LIMITX</var></code> and see what happens to their ordinates.
+                		</p>
+                		<div>
+                			Here's <code> x \approx <var>LIMITX-1</var></code>
+                			 <div class="graphie" data-update="grid">
+                            circle( [LIMITX-1,f(LIMITX-1)], 1/6, {
+                            stroke: "none",
+                            fill: GREEN
+                            });
+                			</div> 
+                		</div>
+                		
+                		<div>
+                			Here's <code> x \approx <var>LIMITX-.5</var></code>
+                			 <div class="graphie" data-update="grid">
+                            circle( [LIMITX-.5,f(LIMITX-.5)], 1/6, {
+                            stroke: "none",
+                            fill: GREEN
+                            });
+                			</div> 
+                		</div>
+                		
+                		<div>
+                			Here's <code> x \approx <var>LIMITX-.1</var></code>
+                			 <div class="graphie" data-update="grid">
+                            circle( [LIMITX-.1,f(LIMITX-.1)], 1/6, {
+                            stroke: "none",
+                            fill: GREEN
+                            });
+                			</div> 
+                		</div>
+                		
+                		<div>
+                			It looks like <code>f(x)</code> is approaching about <code><var>roundTo(1,f(LIMITX))</var></code>
+                			as <code>x</code> approaches <code><var>LIMITX</var></code> from the left.
+                			
+                			<div class="graphie" data-update="grid">
+                                    style({
+                                        stroke: GREEN,
+                                        opacity: .4,
+                                        strokeWidth: 2,
+                                        
+                                    }, function() {
+                                        line( [ LIMITX, 0 ], [ LIMITX, f(LIMITX) ]);
+                                    });
+                                    
+                                    style({
+                                        stroke: GREEN,
+                                        strokeWidth: 2,
+                                        opacity: .4,
+                                        arrows: "-&gt;"
+                                    }, function() {
+                                        line( [ LIMITX, f(LIMITX-.01) ], [ 0, f(LIMITX) ]);
+                                    });
+                                    
+                                
+                                </div>
+                		</div>
+                		
+                		<p>
+                			<code>\displaystyle\lim_{x \to <var>LIMITX</var>^{+}}f(x)</code>
+                			is the value that <code>f(x)</code> approaches as <code>x</code> 
+                			gets close to <code><var>LIMITX</var></code> from the right.
+                		</p>
+                		
+                		<div>
+                			Here's <code> x \approx <var>LIMITX+1</var></code>
+                			 <div class="graphie" data-update="grid">
+                            circle( [LIMITX+1,f(LIMITX+1)+JUMP], 1/6, {
+                            stroke: "none",
+                            fill: BLUE
+                            });
+                			</div> 
+                		</div>
+                		
+                		<div>
+                			Here's <code> x \approx <var>LIMITX+.5</var></code>
+                			 <div class="graphie" data-update="grid">
+                            circle( [LIMITX+.5,f(LIMITX+.5)+JUMP], 1/6, {
+                            stroke: "none",
+                            fill: BLUE
+                            });
+                			</div> 
+                		</div>
+                		
+                		<div>
+                			Here's <code> x \approx <var>LIMITX+.1</var></code>
+                			 <div class="graphie" data-update="grid">
+                            circle( [LIMITX+.1,f(LIMITX+.1)+JUMP], 1/6, {
+                            stroke: "none",
+                            fill: BLUE
+                            });
+                			</div> 
+                		</div>
+                		
+                		<div>
+                			It looks like <code>f(x)</code> is approaching about <code><var>roundTo(1,f(LIMITX)+JUMP)</var></code>
+                			as <code>x</code> approaches <code><var>LIMITX</var></code> from the right.
+                			
+                			<div class="graphie" data-update="grid">
+                                    style({
+                                        stroke: BLUE,
+                                        opacity: .5,
+                                        strokeWidth: 2,
+                                        
+                                    }, function() {
+                                        line( [ LIMITX+.01, 0 ], [ LIMITX, f(LIMITX)+JUMP ]);
+                                    });
+                                    
+                                    style({
+                                        stroke: BLUE,
+                                        strokeWidth: 2,
+                                        opacity: .5,
+                                        arrows: "-&gt;"
+                                    }, function() {
+                                        line( [ LIMITX, f(LIMITX)+JUMP ], [ 0, f(LIMITX)+JUMP ]);
+                                    });
+                                    
+                                
+                                </div>
+                			 
+                		</div>
+                		<div>
+                			Since both limits exist and but are not equal, <code>\displaystyle\lim_{x \to <var>LIMITX</var>}f(x)</code>
+                			 does not exist
+                			
+                			
+                			
+                		</div>
+                		<div>
+                			Note that graphically, the value of the limit is the ordinate of the "hole" in the graph of <code>f</code>.
+                		</div>
                 	
-                </div>
+                	
+            		</div>
             </div>
             
             
@@ -201,6 +445,6 @@
         </div>
 
 
-    </div>
+
 </body>
 </html>

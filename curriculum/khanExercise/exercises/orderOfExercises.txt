@@ -65,9 +65,9 @@ I limitComposeRationalOracle
 	
 I estimateLargeSmall
 
-I infinteLimitOracle
+C infinteLimitOracle
 I coolInfinityLimitOracle
-I infiniteLimitGraphical
+C infiniteLimitGraphical
 I infiniteLimitSymbolic
 
 C limitsAtInfinityOracle

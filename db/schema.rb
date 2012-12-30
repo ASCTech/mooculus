@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121107030459) do
+ActiveRecord::Schema.define(:version => 20121229151404) do
 
   create_table "authentications", :force => true do |t|
     t.integer  "user_id"
@@ -26,15 +26,23 @@ ActiveRecord::Schema.define(:version => 20121107030459) do
     t.string   "title"
     t.text     "description"
     t.string   "page"
-    t.datetime "created_at",     :null => false
-    t.datetime "updated_at",     :null => false
-    t.integer  "problem_number"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
+
+  create_table "problems", :force => true do |t|
+    t.string   "name"
+    t.integer  "exercise_id"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+    t.integer  "weight"
+  end
+
+  add_index "problems", ["exercise_id"], :name => "index_problems_on_exercise_id"
 
   create_table "scores", :force => true do |t|
     t.datetime "created_at",      :null => false
     t.datetime "updated_at",      :null => false
-    t.integer  "exercise_id"
     t.integer  "user_id"
     t.time     "time_taken"
     t.integer  "attempt_number"
@@ -42,6 +50,7 @@ ActiveRecord::Schema.define(:version => 20121107030459) do
     t.integer  "count_hints"
     t.boolean  "attempt_content"
     t.integer  "seed"
+    t.integer  "problem_id"
   end
 
   create_table "users", :force => true do |t|
@@ -58,6 +67,7 @@ ActiveRecord::Schema.define(:version => 20121107030459) do
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
+    t.string   "coursera_id"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

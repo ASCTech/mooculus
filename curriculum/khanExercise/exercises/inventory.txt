@@ -1,6 +1,6 @@
 Functions - Conceptual
 
-	abscissaOrdinate.html				(define the abscissa and ordinate)
+	abscissaOrdinate.html				(done)
 	graphingFromEquation.html		--->	[needs better directions]
 	identifyConcavity.html				(graph concave up or dawn)
 	identifyIncreaseDecrease.html			(graph increasing or dec on interval)

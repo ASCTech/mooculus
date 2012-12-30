@@ -160,6 +160,42 @@ $.extend(KhanUtil, {
 		if (a>b){return -KhanUtil.numInt(f,b,a)}
 		},
     
+    minDistanceToSet: function(a,list){
+    	
+    	if (list.length == 0){
+    		return 1000;
+    		}
+    	var dist = Math.abs(list[0] - a)
+    	if (list.length !== 0) {
+    		for (var i=0;i<list.length;i++){
+    			if (Math.abs(list[i]-a) < dist){
+    				dist = Math.abs(list[i]-a)
+    				}
+    				
+    			}
+    		return dist
+    		}
+    	
+    	},
+    
+    minDistanceBetweenSets: function(list, array){
+    	
+    	if (list.length ==0 || array.length ==0){
+    		return 1000;
+    		}
+    	var dist = KhanUtil.minDistanceToSet(list[0],array)
+    	if (list.length !== 0 && array.length !==0) {
+    		for (var j=0;j<list.length;j++){
+    			if (KhanUtil.minDistanceToSet(list[j],array) < dist){
+    					dist = KhanUtil.minDistanceToSet(list[j],array);
+    				}
+    			}	
+    		return dist;
+    		}
+    		
+    	},
+    	
+    	
     
     //////////////////////////
 
