@@ -4,7 +4,7 @@ gem 'rails'
 
 gem 'sqlite3', :group => [:test, :development]
 gem 'mysql2',  :group => [:production, :staging]
-gem 'mongoid'
+#gem 'mongoid'
 
 gem 'jquery-rails'
 gem 'json'
