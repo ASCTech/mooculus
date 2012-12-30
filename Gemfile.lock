@@ -116,11 +116,8 @@ GEM
     omniauth (1.1.1)
       hashie (~> 1.2)
       rack
-    omniauth-google-oauth2 (0.1.13)
-      omniauth (~> 1.0)
-      omniauth-oauth2
-    omniauth-oauth2 (1.1.1)
-      oauth2 (~> 0.8.0)
+    omniauth-oauth (1.0.1)
+      oauth
       omniauth (~> 1.0)
     origin (1.0.11)
     orm_adapter (0.4.0)
@@ -203,9 +200,8 @@ DEPENDENCIES
   mongoid
   mysql2
   oauth-plugin (~> 0.4.0)
-  oauth2
   omniauth
-  omniauth-google-oauth2
+  omniauth-oauth
   rails
   rvm-capistrano
   sass-rails (~> 3.2.3)
