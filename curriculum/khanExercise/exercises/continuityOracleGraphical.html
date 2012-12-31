@@ -38,24 +38,19 @@
             
                 <div class="question">
                 	
-                    <p>
-                    	Consider a function <code>f(x)</code>. While
-                    	you don't know the formula for <code>f(x)</code>
-                    	you can nevertheless still evaluate it for given
-                    	values of <code>x</code>, provided that <code>x
-                    	\ne <var>LIMITX</var></code>. Find<code>{}^*</code> 
-                    	the value of each of the indicated limits to at least 3 digits of accuracy
-                    	by evaluating <code>f(x)</code> at various values,
-                    	or state that the limit does not exist (DNE).
-                    </p>
+                     <p>
+                    	The function <code>f</code> is graphed below, and you have been given a way
+                    	to evaluate <code>f</code> at any point in its domain. Is <code>f</code> continuous at 
+                    	<code>x=<var>LIMITX</var></code>?  If not, why not?     
+		    		</p>
+		    		<p>
+		    			Play with understanding this both graphically and numerically. 
+		    			Try to understand how the two perspectives relate to each other
+		    		</p>
 		   		    <p> 
 		   		    	<center><code>f(</code><input type='text' id='nameField' size=3><code>)=</code> <span id='nameDisplay'>?</span></center>		      
 		    		</p>
-		    		<p>
-		    			<font size="1"><code>{}^*</code>You can't really be sure whether you are finding the limit from 
-		    			only a finite amount of data, but the function is "reasonable" enough that your experimental data 
-		    			will not lead you astray.</font>
-		    		</p>
+		    		
                 	<div class = graphie id="grid">
                 	graphInit({
                         range: 10,
@@ -68,13 +63,13 @@
                                 return ( f(x));
                             }, [-10, LIMITX-.0001], {
                                 stroke: RED,
-                                strokeWidth: 1
+                                strokeWidth: 3
                             });
                     plot(function( x ) {
                                 return ( f(x));
                             }, [ LIMITX+.0001,10], {
                                 stroke: RED,
-                                strokeWidth: 1
+                                strokeWidth: 3
                             });
                             
                     circle( [LIMITX, f(LIMITX)], 4 / 20, { fill: "RED" } );
@@ -87,7 +82,7 @@
   	 		   	    if (!isNaN(input)){
       					$('#nameDisplay').text( f(input));
   						<div class="graphie" data-update="grid">
-                            circle( [input,f(input)], 1/8, {
+                            circle( [input,f(input)], 1/6, {
                             stroke: "none",
                             fill: GREEN
                             });
@@ -113,6 +108,10 @@
 
                 
                 <div class="hints">
+                	<p>
+                		Remember what it means for <code>f</code> to be continuous at <code>x = <var>LIMITX</var></code>:
+                		The limit of <code>f(x)</code> as <code>x \to <var>LIMITX</var></code> should exist and be equal to <code>f(<var>LIMITX</var>)</code>.
+                	</p>
                 	<p>Try values of <code>x</code> close to <var>LIMITX</var> but not equal to <var>LIMITX</var></p>
                 	<p><code>f(<var>LIMITX-.1</var>) = <var>f(LIMITX-.1)</var></code></p>
                 	<p><code>f(<var>LIMITX-.001</var>) = <var>f(LIMITX-.001)</var></code></p>
@@ -132,6 +131,10 @@
                 	<p>Since the limits from both the right and the left exist and are equal, 
                 		<code>\displaystyle\lim_{x \to <var>LIMITX</var>}f(x) = <var>ANSWER</var></code>
                 	</p>
+                	<p>
+                	<code>f(<var>LIMITX</var>) = <var>ANSWER</var>  = \displaystyle\lim_{x \to <var>LIMITX</var>}f(x) </code> so
+                	<code>f</code> is  continuous at <code><var>LIMITX</var></code>
+                	</p>
                 	
                 </div>
             </div>
@@ -141,23 +144,18 @@
                 <div class="question">
                 	
                     <p>
-                    	Consider a function <code>f(x)</code>. While
-                    	you don't know the formula for <code>f(x)</code>
-                    	you can nevertheless still evaluate it for given
-                    	values of <code>x</code>, provided that <code>x
-                    	\ne <var>LIMITX</var></code>. Find<code>{}^*</code> 
-                    	the value of each of the indicated limits to at least 3 digits of accuracy
-                    	by evaluating <code>f(x)</code> at various values,
-                    	or state that the limit does not exist (DNE).
-                    </p>
+                    	The function <code>f</code> is graphed below, and you have been given a way
+                    	to evaluate <code>f</code> at any point in its domain. Is <code>f</code> continuous at 
+                    	<code>x=<var>LIMITX</var></code>?  If not, why not?     
+		    		</p>
+		    		<p>
+		    			Play with understanding this both graphically and numerically. 
+		    			Try to understand how the two perspectives relate to each other
+		    		</p>
 		   		    <p> 
 		   		    	<center><code>f(</code><input type='text' id='nameField' size=3><code>)=</code> <span id='nameDisplay'>?</span></center>		      
 		    		</p>
-		    		<p>
-		    			<font size="1"><code>{}^*</code>You can't really be sure whether you are finding the limit from 
-		    			only a finite amount of data, but the function is "reasonable" enough that your experimental data 
-		    			will not lead you astray.</font>
-		    		</p>
+		    		
                 	<div class = graphie id="grid">
                 	graphInit({
                         range: 10,
@@ -170,13 +168,13 @@
                                 return ( f(x));
                             }, [-10, LIMITX-.0001], {
                                 stroke: RED,
-                                strokeWidth: 1
+                                strokeWidth: 3
                             });
                     plot(function( x ) {
                                 return ( f(x));
                             }, [ LIMITX+.0001,10], {
                                 stroke: RED,
-                                strokeWidth: 1
+                                strokeWidth: 3
                             });
                             
                     circle( [LIMITX, f(LIMITX)], 4 / 20, { fill: "WHITE" } );
@@ -191,7 +189,7 @@
   	 		   	    if (input !== LIMITX &amp;&amp; !isNaN(input)){
       					$('#nameDisplay').text( f(input));
   						<div class="graphie" data-update="grid">
-                            circle( [input,f(input)], 1/8, {
+                            circle( [input,f(input)], 1/6, {
                             stroke: "none",
                             fill: GREEN
                             });
@@ -200,7 +198,7 @@
   					else if (input == LIMITX){
   						$('#nameDisplay').text( notANSWER);
   						<div class="graphie" data-update="grid">
-                            circle( [input,notANSWER], 1/8, {
+                            circle( [input,notANSWER], 1/6, {
                             stroke: "none",
                             fill: GREEN
                             });
@@ -226,24 +224,79 @@
 
                 
                 <div class="hints">
-                	<p>Try values of <code>x</code> close to <var>LIMITX</var> but not equal to <var>LIMITX</var></p>
-                	<p><code>f(<var>LIMITX-.1</var>) = <var>f(LIMITX-.1)</var></code></p>
-                	<p><code>f(<var>LIMITX-.001</var>) = <var>f(LIMITX-.001)</var></code></p>
-                	<p><code>f(<var>LIMITX-.000001</var>) = <var>f(LIMITX-.000001)</var></code></p>
+                	<p>
+                		Remember what it means for <code>f</code> to be continuous at <code>x = <var>LIMITX</var></code>:
+                		The limit of <code>f(x)</code> as <code>x \to <var>LIMITX</var></code> should exist and be equal to <code>f(<var>LIMITX</var>)</code>.
+                	</p>
+                	
+                	<p>First we will investigate <code>\displaystyle \lim_{x \to <var>LIMITX</var>^-} f(x)</code></p>
+                	<div>
+                	<code>f(<var>LIMITX-.1</var>) = <var>f(LIMITX-.1)</var></code>
+                	
+                	<div class="graphie" data-update="grid">
+                            circle( [LIMITX-.1,f(LIMITX-.1)], 1/6, {
+                            stroke: "none",
+                            fill: GREEN
+                            });
+                		</div> 
+                	</div>
+                	<div>
+                	
+                	<code>f(<var>LIMITX-.001</var>) = <var>f(LIMITX-.001)</var></code>
+                	<div class="graphie" data-update="grid">
+                            circle( [LIMITX-.001,f(LIMITX-.001)], 1/6, {
+                            stroke: "none",
+                            fill: GREEN
+                            });
+                		</div> 
+                	</div>
+                	<div><code>f(<var>LIMITX-.000001</var>) = <var>f(LIMITX-.000001)</var></code>
+                	<div class="graphie" data-update="grid">
+                            circle( [LIMITX-.000001,f(LIMITX-.000001)], 1/6, {
+                            stroke: "none",
+                            fill: GREEN
+                            });
+                		</div> 
+                	</div>
                 	<p>It looks like <code>f(x)</code> is approaching <var>ANSWER</var> as <code>x</code> approaches <var>LIMITX</var> 
                 	   from the left.
                 	</p>
                 	<p>so <code>\displaystyle\lim_{x \to <var>LIMITX</var>^{-}}f(x) = <var>ANSWER</var></code></p>
                 	<p>Now repeat the process for values of <code>x</code> which are greater than <var>LIMITX</var></p>
-                	<p><code>f(<var>LIMITX+.1</var>) = <var>f(LIMITX+.1)</var></code></p>
-                	<p><code>f(<var>LIMITX+.001</var>) = <var>f(LIMITX+.001)</var></code></p>
-                	<p><code>f(<var>LIMITX+.000001</var>) = <var>f(LIMITX+.000001)</var></code></p>
+                	<div><code>f(<var>LIMITX+.1</var>) = <var>f(LIMITX+.1)</var></code>
+                	<div class="graphie" data-update="grid">
+                            circle( [LIMITX+.1,f(LIMITX+.1)], 1/6, {
+                            stroke: "none",
+                            fill: GREEN
+                            });
+                		</div> 
+                	</div>
+                	<div><code>f(<var>LIMITX+.001</var>) = <var>f(LIMITX+.001)</var></code>
+                	<div class="graphie" data-update="grid">
+                            circle( [LIMITX+.001,f(LIMITX+.001)], 1/6, {
+                            stroke: "none",
+                            fill: GREEN
+                            });
+                		</div> 
+                	</div>
+                	<div><code>f(<var>LIMITX+.000001</var>) = <var>f(LIMITX+.000001)</var></code>
+                		<div class="graphie" data-update="grid">
+                            circle( [LIMITX+.000001,f(LIMITX+.000001)], 1/6, {
+                            stroke: "none",
+                            fill: GREEN
+                            });
+                		</div> 
+                	</div>
                 	<p>It looks like <code>f(x)</code> is approaching <var>ANSWER</var> as <code>x</code> approaches <var>LIMITX</var> 
                 	   from the right.
                 	</p>
                 	<p>so <code>\displaystyle\lim_{x \to <var>LIMITX</var>^{+}}f(x) = <var>ANSWER</var></code></p>
                 	<p>Since the limits from both the right and the left exist and are equal, 
                 		<code>\displaystyle\lim_{x \to <var>LIMITX</var>}f(x) = <var>ANSWER</var></code>
+                	</p>
+                	<p>
+                	<code>f(<var>LIMITX</var>) = <var>notANSWER</var>  \neq \displaystyle\lim_{x \to <var>LIMITX</var>}f(x) </code> so
+                	<code>f</code> is  not continuous at <code><var>LIMITX</var></code>
                 	</p>
                 	
                 </div>
@@ -253,24 +306,19 @@
             
                 <div class="question">
                 	
-                    <p>
-                    	Consider a function <code>f(x)</code>. While
-                    	you don't know the formula for <code>f(x)</code>
-                    	you can nevertheless still evaluate it for given
-                    	values of <code>x</code>, provided that <code>x
-                    	\ne <var>LIMITX</var></code>. Find<code>{}^*</code> 
-                    	the value of each of the indicated limits to at least 3 digits of accuracy
-                    	by evaluating <code>f(x)</code> at various values,
-                    	or state that the limit does not exist (DNE).
-                    </p>
+                   <p>
+                    	The function <code>f</code> is graphed below, and you have been given a way
+                    	to evaluate <code>f</code> at any point in its domain. Is <code>f</code> continuous at 
+                    	<code>x=<var>LIMITX</var></code>?  If not, why not?     
+		    		</p>
+		    		<p>
+		    			Play with understanding this both graphically and numerically. 
+		    			Try to understand how the two perspectives relate to each other
+		    		</p>
 		   		    <p> 
 		   		    	<center><code>f(</code><input type='text' id='nameField' size=3><code>)=</code> <span id='nameDisplay'>?</span></center>		      
 		    		</p>
-		    		<p>
-		    			<font size="1"><code>{}^*</code>You can't really be sure whether you are finding the limit from 
-		    			only a finite amount of data, but the function is "reasonable" enough that your experimental data 
-		    			will not lead you astray.</font>
-		    		</p>
+		    		
                 	<div class = graphie id="grid">
                 	graphInit({
                         range: 10,
@@ -283,13 +331,13 @@
                                 return ( F1(x));
                             }, [-10, LIMITX-.0001], {
                                 stroke: RED,
-                                strokeWidth: 1
+                                strokeWidth: 3
                             });
                     plot(function( x ) {
                                 return ( F1(x));
                             }, [ LIMITX+.0001,10], {
                                 stroke: RED,
-                                strokeWidth: 1
+                                strokeWidth: 3
                             });
                             
                     circle( [LIMITX, F1(LIMITX-.0001)], 4 / 20, { fill: "white" } );
@@ -305,7 +353,7 @@
   	 		   	    if (input !== LIMITX &amp;&amp; !isNaN(input)){
       					$('#nameDisplay').text( F1(input));
   						<div class="graphie" data-update="grid">
-                            circle( [input,F1(input)], 1/8, {
+                            circle( [input,F1(input)], 1/6, {
                             stroke: "none",
                             fill: GREEN
                             });
@@ -314,7 +362,7 @@
   					else if (input == LIMITX){
   						$('#nameDisplay').text( notANSWER);
   						<div class="graphie" data-update="grid">
-                            circle( [input,notANSWER], 1/8, {
+                            circle( [input,notANSWER], 1/6, {
                             stroke: "none",
                             fill: GREEN
                             });
@@ -341,24 +389,72 @@
 
                 
                 <div class="hints">
-                	<p>Try values of <code>x</code> close to <var>LIMITX</var> but not equal to <var>LIMITX</var></p>
-                	<p><code>f(<var>LIMITX-.1</var>) = <var>f(LIMITX-.1)</var></code></p>
-                	<p><code>f(<var>LIMITX-.001</var>) = <var>f(LIMITX-.001)</var></code></p>
-                	<p><code>f(<var>LIMITX-.000001</var>) = <var>f(LIMITX-.000001)</var></code></p>
+                	<p>
+                		Remember what it means for <code>f</code> to be continuous at <code>x = <var>LIMITX</var></code>:
+                		The limit of <code>f(x)</code> as <code>x \to <var>LIMITX</var></code> should exist and be equal to <code>f(<var>LIMITX</var>)</code>.
+                	</p>
+                	<div><code>f(<var>LIMITX-.1</var>) = <var>f(LIMITX-.1)</var></code>
+                	<div class="graphie" data-update="grid">
+                            circle( [LIMITX-.1,f(LIMITX-.1)], 1/6, {
+                            stroke: "none",
+                            fill: GREEN
+                            });
+                		</div> 
+                	</div>
+                	<div><code>f(<var>LIMITX-.001</var>) = <var>f(LIMITX-.001)</var></code>
+                	<div class="graphie" data-update="grid">
+                            circle( [LIMITX-.001,f(LIMITX-.001)], 1/6, {
+                            stroke: "none",
+                            fill: GREEN
+                            });
+                		</div> 
+                	</div>
+                	<div><code>f(<var>LIMITX-.000001</var>) = <var>f(LIMITX-.000001)</var></code>
+                	<div class="graphie" data-update="grid">
+                            circle( [LIMITX-.000001,f(LIMITX-.000001)], 1/6, {
+                            stroke: "none",
+                            fill: GREEN
+                            });
+                		</div> 
+                	</div>
                 	<p>It looks like <code>f(x)</code> is approaching <var>ANSWER</var> as <code>x</code> approaches <var>LIMITX</var> 
                 	   from the left.
                 	</p>
                 	<p>so <code>\displaystyle\lim_{x \to <var>LIMITX</var>^{-}}f(x) = <var>ANSWER</var></code></p>
                 	<p>Now repeat the process for values of <code>x</code> which are greater than <var>LIMITX</var></p>
-                	<p><code>f(<var>LIMITX+.1</var>) = <var>JUMP+f(LIMITX+.1)</var></code></p>
-                	<p><code>f(<var>LIMITX+.001</var>) = <var>JUMP+f(LIMITX+.001)</var></code></p>
-                	<p><code>f(<var>LIMITX+.000001</var>) = <var>JUMP+f(LIMITX+.000001)</var></code></p>
+                	<div><code>f(<var>LIMITX+.1</var>) = <var>JUMP+f(LIMITX+.1)</var></code>
+                	<div class="graphie" data-update="grid">
+                            circle( [LIMITX+.1,JUMP+f(LIMITX+.1)], 1/6, {
+                            stroke: "none",
+                            fill: GREEN
+                            });
+                		</div> 
+                	</div>
+                	<div><code>f(<var>LIMITX+.001</var>) = <var>JUMP+f(LIMITX+.001)</var></code>
+                	<div class="graphie" data-update="grid">
+                            circle( [LIMITX+.001,JUMP+f(LIMITX+.001)], 1/6, {
+                            stroke: "none",
+                            fill: GREEN
+                            });
+                		</div> 
+                	</div>
+                	<div><code>f(<var>LIMITX+.000001</var>) = <var>JUMP+f(LIMITX+.000001)</var></code>
+                	<div class="graphie" data-update="grid">
+                            circle( [LIMITX+.000001,JUMP+f(LIMITX+.000001)], 1/6, {
+                            stroke: "none",
+                            fill: GREEN
+                            });
+                		</div> 
+                	</div>
                 	<p>It looks like <code>f(x)</code> is approaching <var>JUMP+ANSWER</var> as <code>x</code> approaches <var>LIMITX</var> 
                 	   from the right.
                 	</p>
                 	<p>so <code>\displaystyle\lim_{x \to <var>LIMITX</var>^{+}}f(x) = <var>JUMP+ANSWER</var></code></p>
                 	<p>The limits from both the right and the left exist, but they are not equal, so 
                 		<code>\displaystyle\lim_{x \to <var>LIMITX</var>}f(x)</code> does not exist (DNE).
+                	</p>
+                	<p>Since <code>\displaystyle\lim_{x \to <var>LIMITX</var>}f(x)</code> does not exist, <code>f</code>
+                	is not continuous there.
                 	</p>
                 </div>
             </div>
