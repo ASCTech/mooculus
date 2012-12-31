@@ -55,6 +55,31 @@
     		
     		<var id = "leftSol">sol(-L)</var>
     		<var id = "rightSol">sol(R)</var>
+    		<var id = "hintIncDec">(function(A){
+    								if (A &gt; 0){
+    									return "increasing"
+    									}
+    								else {
+    									return "decreasing"
+    									}	
+    								})
+    		
+    		</var>
+    		<var id = "leftHint">hintIncDec(-L)</var>
+    		<var id = "rightHint">hintIncDec(R)</var>
+    		<var id = "infinityNice">(function(A){
+    								if (A &gt; 0){
+    									return "\\infty"
+    									}
+    								else {
+    									return "-\\infty"
+    									}	
+    								})
+    		
+    		</var>
+    		<var id = "leftNiceInfinity">infinityNice(-L)</var>
+    		<var id = "rightNiceInfinity">infinityNice(R)</var>
+    		
 	    	
     		
 	    	
@@ -87,7 +112,7 @@
                                 return ( f1(x));
                             }, [-12, 12], {
                                 stroke: RED,
-                                strokeWidth: 2
+                                stokeWidth: 3
                             });	
                      
                    
@@ -112,7 +137,29 @@
                 
                 <div class="hints">
                 	
-                	<p>hint</p>
+                	<p>
+                		First, lets investigate <code>\displaystyle\lim_{x \to <var>LIMITX</var>^{-}}f(x)</code>.  
+                		Are the values of <code>f</code> approaching some finite value as <code>x</code> gets closer and closer to
+                		<code><var>LIMITX</var></code> from the left?  Are they growing without bound?  Are they decreasing without bound?
+                	</p>
+                	<p>
+                		It looks like <code>f(x)</code> is <var>leftHint</var> without bound as <code>x \to <var>LIMITX</var></code>.
+                	</p>
+                	<p>
+                		Thus <code>\displaystyle\lim_{x \to <var>LIMITX</var>^{-}}f(x) = <var>leftNiceInfinity</var></code>
+                	</p>
+                	<p>
+                		Now lets investigate <code>\displaystyle\lim_{x \to <var>LIMITX</var>^{+}}f(x)</code>.  
+                		Are the values of <code>f</code> approaching some finite value as <code>x</code> gets closer and closer to
+                		<code><var>LIMITX</var></code> from the right?  Are they increasing without bound?  Are they decreasing without bound?
+                	</p>
+                	<p>
+                		It looks like <code>f(x)</code> is <var>rightHint</var> without bound as <code>x \to <var>LIMITX</var></code>.
+                	</p>
+                	<p>
+                		Thus <code>\displaystyle\lim_{x \to <var>LIMITX</var>^{+}}f(x) = <var>rightNiceInfinity</var></code>
+                	</p>
+                	
                 </div>
             </div>
             
@@ -142,7 +189,7 @@
                                 return ( f2(x));
                             }, [-12, 12], {
                                 stroke: RED,
-                                strokeWidth: 2
+                                stokeWidth: 3
                             });	
                      
                     circle( [LIMITX, g(LIMITX)], 4 / 20, { fill: "white" } );
@@ -167,7 +214,27 @@
                 
                 <div class="hints">
                 	
-                	<p>hint</p>
+                	<p>
+                		First, lets investigate <code>\displaystyle\lim_{x \to <var>LIMITX</var>^{-}}f(x)</code>.  
+                		Are the values of <code>f</code> approaching some finite value as <code>x</code> gets closer and closer to
+                		<code><var>LIMITX</var></code> from the left?  Are they growing without bound?  Are they decreasing without bound?
+                	</p>
+                	<p>
+                		It looks like <code>f(x)</code> is <var>leftHint</var> without bound as <code>x \to <var>LIMITX</var></code>.
+                	</p>
+                	<p>
+                		Thus <code>\displaystyle\lim_{x \to <var>LIMITX</var>^{-}}f(x) = <var>leftNiceInfinity</var></code>
+                	</p>
+                	<p>
+                		Now lets investigate <code>\displaystyle\lim_{x \to <var>LIMITX</var>^{+}}f(x)</code>.  
+                		Are the values of <code>f</code> approaching some finite value as <code>x</code> gets closer and closer to
+                		<code><var>LIMITX</var></code> from the right?  Are they increasing without bound?  Are they decreasing without bound?
+                	</p>
+                	<p>
+                		It looks like <code>f(x)</code> is approaching about <code><var>roundTo(1,g(LIMITX))</var></code> as <code>x \to <var>LIMITX</var></code>, so
+                		<code>\displaystyle\lim_{x \to <var>LIMITX</var>^{-}}f(x) = <var>roundTo(1,g(LIMITX))</var></code>
+                	</p>
+                		
                 </div>
             </div>
             
@@ -197,13 +264,13 @@
                                 return ( f3(x));
                             }, [-12, LIMITX-.01], {
                                 stroke: RED,
-                                strokeWidth: 2
+                                stokeWidth: 3
                             });
                     plot(function( x ) {
                                 return ( f3(x));
                             }, [LIMITX+.01, 12], {
                                 stroke: RED,
-                                strokeWidth: 2
+                                stokeWidth: 3
                             });		
                      
                     circle( [LIMITX, g(LIMITX)], 4 / 20, { fill: "white" } );
@@ -228,7 +295,27 @@
                 
                 <div class="hints">
                 	
-                	<p>hint</p>
+                	<p>
+                		First, lets investigate <code>\displaystyle\lim_{x \to <var>LIMITX</var>^{-}}f(x)</code>.  
+                		Are the values of <code>f</code> approaching some finite value as <code>x</code> gets closer and closer to
+                		<code><var>LIMITX</var></code> from the left?  Are they growing without bound?  Are they decreasing without bound?
+                	</p>
+                	<p>
+                		It looks like <code>f(x)</code> is approaching about <code><var>roundTo(1,g(LIMITX))</var></code> as <code>x \to <var>LIMITX</var></code>, so
+                		<code>\displaystyle\lim_{x \to <var>LIMITX</var>^{-}}f(x) = <var>roundTo(1,g(LIMITX))</var></code>
+                	</p>
+                		
+                	<p>
+                		Now lets investigate <code>\displaystyle\lim_{x \to <var>LIMITX</var>^{+}}f(x)</code>.  
+                		Are the values of <code>f</code> approaching some finite value as <code>x</code> gets closer and closer to
+                		<code><var>LIMITX</var></code> from the right?  Are they increasing without bound?  Are they decreasing without bound?
+                	</p>
+                	<p>
+                		It looks like <code>f(x)</code> is <var>rightHint</var> without bound as <code>x \to <var>LIMITX</var></code>.
+                	</p>
+                	<p>
+                		Thus <code>\displaystyle\lim_{x \to <var>LIMITX</var>^{+}}f(x) = <var>rightNiceInfinity</var></code>
+                	</p>
                 </div>
             </div>
             
