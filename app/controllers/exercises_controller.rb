@@ -8,6 +8,7 @@ class ExercisesController < ApplicationController
 
   def index
     @exercises = Exercise.all
+    @competencies = current_user.competencies if user_signed_in?
   end
 
   def create
