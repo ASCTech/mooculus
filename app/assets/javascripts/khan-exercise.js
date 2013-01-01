@@ -2338,8 +2338,12 @@ var Khan = (function() {
 
                 var problem = $(hint).parent();
 
+		// I prefer seeing the hints fade in
+		$(hint).hide();
                 // Append first so MathJax can sense the surrounding CSS context properly
-                $(hint).appendTo("#hintsarea").runModules(problem);
+                var appended = $(hint).appendTo("#hintsarea");
+		appended.fadeIn(400);
+		appended.runModules(problem);
 
                 // Grow the scratchpad to cover the new hint
                 Khan.scratchpad.resize();
