@@ -21,8 +21,9 @@
         <a class="brand" href="#"><%=raw html_logo %></a>
         <div class="nav-collapse">
           <ul class="nav">
-            <li class="active"><a href="/">lectures</a></li>
-            <li class="active"><%= link_to "problems", :controller => "exercises", :action => "index" %></li>
+            <li class="<%= 'active' if params[:controller] == 'lectures' %>"><%= link_to "lectures", :controller => "videos", :action => "index" %></li>
+            <li class="<%= 'active' if params[:controller] == 'textbook' %>"><%= link_to "textbook", :controller => "handouts", :action => "index" %></li>
+            <li class="<%= 'active' if params[:controller] == 'exercises' %>"><%= link_to "problems", :controller => "exercises", :action => "index" %></li>
             <% if user_signed_in? %>
               <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">

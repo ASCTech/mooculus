@@ -1,0 +1,29 @@
+<h1>Listing handouts</h1>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Url</th>
+    <th>Order</th>
+    <th>Week</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @handouts.each do |handout| %>
+  <tr>
+    <td><%= handout.title %></td>
+    <td><%= handout.url %></td>
+    <td><%= handout.order %></td>
+    <td><%= handout.week %></td>
+    <td><%= link_to 'Show', handout %></td>
+    <td><%= link_to 'Edit', edit_handout_path(handout) %></td>
+    <td><%= link_to 'Destroy', handout, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Handout', new_handout_path %>
