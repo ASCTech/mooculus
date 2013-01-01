@@ -1,3 +1,5 @@
+require 'nokogiri'
+
 namespace :gen do
   EXERCISES_PATH = "/curriculum/khanExercise/exercises"
 

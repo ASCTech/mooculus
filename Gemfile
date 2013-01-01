@@ -20,6 +20,9 @@ gem 'devise'
 gem 'omniauth'
 gem 'omniauth-oauth'
 
+# use Nokogiri to parse the exercise files
+gem 'nokogiri'
+
 group :development do
   gem 'capistrano'
   gem 'rvm-capistrano'
