@@ -1,10 +1,10 @@
     <script>
       userExercise = {
-        problemType: "firstthing",
+        problemType: "<%= @problem.name %>",
         exerciseModel: {
-          name: "abscissaordinate",
-          displayName: "here it is beign displayd",
-          fileName: "abscissaOrdinate.html",
+          name: "<%= @exercise.page.gsub('.html','') %>",
+          displayName: "<%= @exercise.title %>",
+          fileName: "<%= @exercise.page %>",
         }
       };
       console.log(userExercise);

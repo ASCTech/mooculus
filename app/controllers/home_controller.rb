@@ -50,15 +50,22 @@ class HomeController < ApplicationController
 
     @people << {
       :name => 'Sean Corey', 
-      :photo => 'sean-corey',
+#      :photo => 'sean-corey',
       :description => 'Sean Corey',
       :email => 'corey.osumath@gmail.com',
     }
 
     @people << {
+      :name => 'Sean Collins', 
+      :photo => 'sean-collins',
+      :description => 'Originally from Cincinnati, Sean Collins is a senior at Ohio State majoring in  engineering physics; he\'s a big fan of chess and cards.  Sean is a teaching assistant for Calculus One.',
+      :email => 'collins.999@osu.edu',
+    }
+
+    @people << {
       :name => 'Isaac Smith', 
 #      :photo => 'isaac-smith',
-      :description => 'Isaac is an undergraduate at Ohio State; he is a teaching assistant in this course.',
+      :description => 'Isaac is an undergraduate at Ohio State; he is a teaching assistant for Calculus One.',
       :email => 'smith.7914@osu.edu',
     }
 

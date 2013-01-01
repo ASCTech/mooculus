@@ -35,13 +35,6 @@ class ExercisesController < ApplicationController
   def show
     @exercise = Exercise.find(params[:id])
     @problem = @exercise.problem_from_bag
-    puts @problem.inspect
-#    render :layout => false
-
-#    respond_to do |format|
-#      format.html # show.html.erb
-#      format.json { render :json => @exercise }
-#    end
   end
 
   def update
