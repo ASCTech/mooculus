@@ -145,9 +145,9 @@ improvement at \texttt{fowler@math.osu.edu} or
 
 %\listoftheorems[ignoreall,show={mainTheorem}]
 
-\renewcommand{\listtheoremname}{List of Main Definitions and Theorems}
+\renewcommand{\listtheoremname}{List of Main Theorems}
 \setcounter{tocdepth}{1}
-\listoftheorems[numwidth=3em,ignoreall,show={mainDefinition,mainTheorem}]
+\listoftheorems[numwidth=3em,ignoreall,show={mainTheorem}]
 
 
 %\listoffigures
@@ -180,11 +180,12 @@ improvement at \texttt{fowler@math.osu.edu} or
 
 %%
 % Start the main matter (normal chapters)
-\mainmatter
+%\mainmatter
 
 \input limits
-%\input infinityAndContinuity
-\input derivatives
+
+%\input derivatives
+
 %\input chapter01
 %\input chapter02
 %\input chapter03
@@ -199,14 +200,15 @@ improvement at \texttt{fowler@math.osu.edu} or
 %\input chapter11
 
 
-\backmatter
+
 
 %\bibliography{sample-handout}
 %\bibliographystyle{plainnat}
 
-\chapter*{Answers to selected exercises}
-\input{\jobname.ans}
-
+%\chapter*{Answers to selected exercises}
+%\input{\jobname.ans}
+\backmatter
+%\addcontentsline{toc}{chapter}{Index}
 \printindex
 
 
