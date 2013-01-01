@@ -1,14 +1,21 @@
       <!-- Main hero unit for a primary marketing message or call to action -->
       <div class="row">
-        <div class="span3"></div>
         <div class="span6">
           <div class="hero-unit">
-            <h1>Help with math?</h1>
-            <p>Need help with a math course at Ohio State?  Looking for lecture videos?  Looking for practice exams?  This is the place. <%= @course %></p>
-            <p><%= link_to 'Login', user_omniauth_authorize_path(:coursera),
-              { :class => "btn btn-primary btn-large" }%></p>
+            <h1>Calculus One</h1>
+	    <p>Calculus is about the very large, the very small, and how things change&mdash;the surprise is that something seemingly so abstract ends up explaining the real world.</p>
+	    <p>This course is a first and friendly introduction to calculus, suitable for someone who has never seen the subject before, or for someone who has seen some calculus but wants to review the concepts and practice applying those concepts to solve problems.  One learns calculus by doing calculus, and so this course is based around <a href="/exercises">doing practice problems</a>.
           </div>
         </div>
-        <div class="span3">
+        <div class="span6">
+          <% if not user_signed_in? %>
+            <div class="bigverb"><a href="https://www.coursera.org/course/calc1">Enroll <span class="bignoun">in the course</span></a></div>
+          <% end %>
+	  <div class="bigverb"><a href="/videos">Watch <span class="bignoun">the lectures</span></a></div>
+	  <div class="bigverb"><a href="/handouts">Read <span class="bignoun">the textbook</span></a></div>
+	  <div class="bigverb"><a href="/exercises">Do <span class="bignoun">the problems</span></a></div>
+          <% if user_signed_in? %>
+            <div class="bigverb"><a href="https://class.coursera.org/calc1-001/forum/index">Discuss <span class="bignoun">the material</span></a></div>
+          <% end %>
         </div>
       </div>

@@ -4,6 +4,10 @@ class Exercise < ActiveRecord::Base
   has_many :problems, :dependent => :destroy
   has_many :competencies, :dependent => :destroy
 
+  def name
+    self.page.gsub( /.html$/, '' )
+  end
+
   def total_weight
     problems.sum(:weight)
   end

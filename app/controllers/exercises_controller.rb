@@ -41,6 +41,8 @@ class ExercisesController < ApplicationController
       @exercise = Exercise.find(params[:id])
     end
     @problem = @exercise.problem_from_bag
+
+    flash[:notice] = "#{@exercise.inspect}, #{@problem.inspect}"
   end
 
   def update

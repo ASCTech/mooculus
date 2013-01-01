@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Assessor</title>
+  <title>mooculus</title>
     <%= stylesheet_link_tag    "application", :media => "all" %>
     <%= javascript_include_tag "application" %>
     <%= favicon_link_tag '/favicon.ico' %>
     <%= csrf_meta_tags %>
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,600,300,800,700' rel='stylesheet' type='text/css'>
 </head>
-<body>
+<body class="<%= @splash ? 'splash' : ''%>">
 <%= bootstrap_flash %>
 
   <div class="navbar navbar-inverse navbar-fixed-top">
@@ -22,9 +22,12 @@
         <a class="brand" href="/"><%=raw html_logo %></a>
         <div class="nav-collapse">
           <ul class="nav">
-            <li class="<%= 'active' if params[:controller] == 'lectures' %>"><%= link_to "Lectures", :controller => "videos", :action => "index" %></li>
-            <li class="<%= 'active' if params[:controller] == 'textbook' %>"><%= link_to "Textbook", :controller => "handouts", :action => "index" %></li>
-            <li class="<%= 'active' if params[:controller] == 'exercises' %>"><%= link_to "Exercises", :controller => "exercises", :action => "index" %></li>
+            <li class="<%= 'active' if params[:controller] == 'lectures' %>"><%= link_to raw("<i class='icon-film'></i> Lectures"), :controller => "videos", :action => "index" %></li>
+            <li class="<%= 'active' if params[:controller] == 'textbook' %>"><%= link_to raw("<i class='icon-book'></i> Textbook"), :controller => "handouts", :action => "index" %></li>
+            <li class="<%= 'active' if params[:controller] == 'exercises' %>"><%= link_to raw("<i class='icon-pencil'></i> Exercises"), :controller => "exercises", :action => "index" %></li>
+            <% if user_signed_in? %>
+              <li><a href="https://class.coursera.org/calc1-001/forum/index"><i class="icon-comments"></i> Forum</a></li>
+            <% end %>
 	  </ul>
 	  <ul class="nav pull-right">
             <% if user_signed_in? %>
@@ -34,12 +37,12 @@
                   <b class="caret"></b>
                 </a>
                 <ul class="dropdown-menu">
-                  <li><%= link_to "View progress", :controller => "exercises", :action => "index" %></li>
-                  <li><%= link_to "Log out", destroy_user_session_path, :method => :delete %></li>
+                  <li><%= link_to raw("<i class='icon-tasks'></i> View progress"), :controller => "exercises", :action => "index" %></li>
+                  <li><%= link_to raw("<i class='icon-signout'></i> Log out"), destroy_user_session_path, :method => :delete %></li>
                 </ul>
               </li>
             <% else %>
-              <li class=""><i class="icon-user"></i> <%= link_to "Login", user_omniauth_authorize_path(:coursera) %></a>
+              <li class=""><%= link_to raw("<i class='icon-signin'></i> Login"), user_omniauth_authorize_path(:coursera) %></li>
             <% end %>
           </ul>
         </div><!--/.nav-collapse -->

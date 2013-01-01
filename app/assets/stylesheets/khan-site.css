@@ -2629,7 +2629,7 @@ ul.topic-browser-menu > li > ul > li > a {
     }
     /* End review stuff to move outta here */
 .info-box {
-    background: #eee;
+/*    background: #eee; */
     color: #333;
     margin-bottom: 10px;
     overflow-x: auto;
