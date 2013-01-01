@@ -17,6 +17,7 @@ class User < ActiveRecord::Base
 
   has_many :authentications, :dependent => :delete_all
   has_many :scores, :dependent => :destroy
+  has_many :competencies, :dependent => :destroy
 
   def apply_omniauth(auth)
     puts "Apply omniauth!"
