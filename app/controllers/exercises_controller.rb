@@ -33,7 +33,13 @@ class ExercisesController < ApplicationController
   end
 
   def show
-    @exercise = Exercise.find(params[:id])
+    if /[a-z]/i =~ params[:id]
+      page = "#{params[:id]}.html".downcase
+      @exercise = Exercise.find(:first, 
+                                :conditions => ["lower(page) = ?", page])
+    else
+      @exercise = Exercise.find(params[:id])
+    end
     @problem = @exercise.problem_from_bag
   end
 
@@ -42,4 +48,5 @@ class ExercisesController < ApplicationController
 
   def destroy
   end
+
 end
