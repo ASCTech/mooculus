@@ -9,6 +9,7 @@
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,600,300,800,700' rel='stylesheet' type='text/css'>
 </head>
 <body>
+<%= bootstrap_flash %>
 
   <div class="navbar navbar-inverse navbar-fixed-top">
     <div class="navbar-inner">
@@ -18,25 +19,27 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </a>
-        <a class="brand" href="#"><%=raw html_logo %></a>
+        <a class="brand" href="/"><%=raw html_logo %></a>
         <div class="nav-collapse">
           <ul class="nav">
-            <li class="<%= 'active' if params[:controller] == 'lectures' %>"><%= link_to "lectures", :controller => "videos", :action => "index" %></li>
-            <li class="<%= 'active' if params[:controller] == 'textbook' %>"><%= link_to "textbook", :controller => "handouts", :action => "index" %></li>
-            <li class="<%= 'active' if params[:controller] == 'exercises' %>"><%= link_to "problems", :controller => "exercises", :action => "index" %></li>
+            <li class="<%= 'active' if params[:controller] == 'lectures' %>"><%= link_to "Lectures", :controller => "videos", :action => "index" %></li>
+            <li class="<%= 'active' if params[:controller] == 'textbook' %>"><%= link_to "Textbook", :controller => "handouts", :action => "index" %></li>
+            <li class="<%= 'active' if params[:controller] == 'exercises' %>"><%= link_to "Exercises", :controller => "exercises", :action => "index" %></li>
+	  </ul>
+	  <ul class="nav pull-right">
             <% if user_signed_in? %>
-              <li class="dropdown">
+              <li class="dropdown-right">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                  <%= current_user.name %>
+                  <i class="icon-user"></i> <%= current_user.name %>
                   <b class="caret"></b>
                 </a>
                 <ul class="dropdown-menu">
-                  <li><%= link_to "log out", destroy_user_session_path, :method => :delete %></li>
+                  <li><%= link_to "View progress", :controller => "exercises", :action => "index" %></li>
+                  <li><%= link_to "Log out", destroy_user_session_path, :method => :delete %></li>
                 </ul>
               </li>
             <% else %>
-              <li class=""><%= link_to "login", user_omniauth_authorize_path(:coursera) %></a>
-
+              <li class=""><i class="icon-user"></i> <%= link_to "Login", user_omniauth_authorize_path(:coursera) %></a>
             <% end %>
           </ul>
         </div><!--/.nav-collapse -->
@@ -50,9 +53,7 @@
     <hr>
 
     <footer>
-    <div class="container">
       <p>&copy; <%= Date.today.strftime( '%Y' ) %>, <a href="/people"><%=raw html_logo %> team</a>.
-    </div>
     </footer>
   </div> <!-- /container -->
 

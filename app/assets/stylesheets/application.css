@@ -13,8 +13,10 @@
  */
 
 body {
-  padding-top: 80px;
-  font-family: 'Open Sans', sans-serif;
+    padding-top: 60px;
+    padding-bottom: 40px;
+
+/*  font-family: 'Open Sans', sans-serif; */
 }
 
 #get-hint-button-container {
