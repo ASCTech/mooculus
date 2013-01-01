@@ -8,7 +8,7 @@ Assessor::Application.routes.draw do
   root :to => 'home#index'
 
   get "home/index"
-  get "people" => "home#people"
+  get "developers" => "home#developers"
   get "about" => "home#about"
 
   get "score/index"
