@@ -95,6 +95,7 @@ GEM
     net-ssh (2.6.2)
     net-ssh-gateway (1.1.0)
       net-ssh (>= 1.99.1)
+    nokogiri (1.5.6)
     oauth (0.4.7)
     oauth-plugin (0.4.1)
       multi_json
@@ -191,6 +192,7 @@ DEPENDENCIES
   less-rails
   libv8
   mysql2
+  nokogiri
   oauth-plugin (~> 0.4.0)
   omniauth
   omniauth-oauth

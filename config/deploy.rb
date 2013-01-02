@@ -17,10 +17,10 @@ set :branch, $1 if `git branch` =~ /\* (\S+)\s/m
 set :deploy_via, :remote_cache
 
 set :user, 'deploy'
-set :ssh_options, { :forward_agent => true, :port => 2200 }
 
 task :staging do
   set :rails_env, "staging"
+  set :ssh_options, { :forward_agent => true, :port => 2200 }
   role :app, "ruby-test.asc.ohio-state.edu"
   role :web, "ruby-test.asc.ohio-state.edu"
   role :db,  "ruby-test.asc.ohio-state.edu", :primary => true
@@ -46,10 +46,10 @@ namespace :deploy do
   end
 end
 
-before "deploy:assets:precompile" do
+#before "deploy:assets:precompile" do
+before "deploy:create_symlink" do
   run [
     "ln -nfs #{shared_path}/config/database.yml #{release_path}/config/database.yml",
-    "ln -nfs #{shared_path}/config/mongoid.yml #{release_path}/config/mongoid.yml",
     "ln -nfs #{shared_path}/config/secret_token.rb #{release_path}/config/initializers/secret_token.rb",
     "ln -fs #{shared_path}/uploads #{release_path}/uploads",
     "ln -fs #{shared_path}/tmp/pids #{release_path}/tmp/pids",
