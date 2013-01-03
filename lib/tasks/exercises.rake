@@ -6,6 +6,8 @@ namespace :gen do
   desc "Generates exercises from location #{EXERCISES_PATH}"
   task :exercises => :environment do
 
+    missing_problem_exercises = []
+
     Dir.glob("#{Rails.root}#{EXERCISES_PATH}/*.html") do |file_name|
       page = File.basename(file_name)
       next if page == "khan-exercise.html" || page == "khan-site.html"
@@ -22,6 +24,11 @@ namespace :gen do
 
         doc.css(".problems > div").each do |div|
           id = div['id']
+          if id.nil?
+            missing_problem_exercises << page
+            next
+          end
+
           weight = div['data-weight'] || 1
 
           if exercise.problems.where(name: id).empty?
@@ -42,5 +49,14 @@ namespace :gen do
         end
       end
     end
+
+    unless missing_problem_exercises.empty?
+      missing_problem_exercises.uniq.each do |page|
+        STDERR.puts("ERROR: A problem in #{EXERCISES_PATH}/#{page} does not have a div id")
+      end
+      STDERR.puts("ERROR: Not all exercises and problems were created")
+      exit 1
+    end
+
   end
 end
