@@ -30,7 +30,7 @@ Limits at points - Conceptual
 	
 Limits at points - Computational
 
-	limitsFactoring.html			--->	(needs hint and re-posing of the task)
+	limitsFactoring.html			--->	[DONE]
 
 Limit Laws
 
