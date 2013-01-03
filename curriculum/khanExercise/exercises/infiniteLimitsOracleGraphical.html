@@ -55,6 +55,30 @@
     		
     		<var id = "leftSol">sol(-L)</var>
     		<var id = "rightSol">sol(R)</var>
+    		<var id = "hintIncDec">(function(A){
+    								if (A &gt; 0){
+    									return "increasing"
+    									}
+    								else {
+    									return "decreasing"
+    									}	
+    								})
+    		
+    		</var>
+    		<var id = "leftHint">hintIncDec(-L)</var>
+    		<var id = "rightHint">hintIncDec(R)</var>
+    		<var id = "infinityNice">(function(A){
+    								if (A &gt; 0){
+    									return "\\infty"
+    									}
+    								else {
+    									return "-\\infty"
+    									}	
+    								})
+    		
+    		</var>
+    		<var id = "leftNiceInfinity">infinityNice(-L)</var>
+    		<var id = "rightNiceInfinity">infinityNice(R)</var>
 	    	
     		
 	    	
@@ -131,7 +155,48 @@
                 
                 <div class="hints">
                 	
-                	<p>hint</p>
+                	<p>
+                		First, lets investigate <code>\displaystyle\lim_{x \to <var>LIMITX</var>^{-}}f(x)</code>.  
+                		Are the values of <code>f</code> approaching some finite value as <code>x</code> gets closer and closer to
+                		<code><var>LIMITX</var></code> from the left?  Are they growing without bound?  Are they decreasing without bound?
+                	</p>
+                	<p>
+                		It looks like <code>f(x)</code> is <var>leftHint</var> without bound as <code>x \to <var>LIMITX</var></code>.
+                	</p>
+                	<p>
+                		We can confirm this numerically by evaluating <code>f</code> at inputs close to <code><var>LIMITX</var></code> but slightly 
+                		less than <code><var>LIMITX</var></code>.
+                	</p>
+                	<div>
+                		For instance:
+                			<p><code>f(<var>LIMITX-1</var>) = <var>f1(LIMITX-1)</var></code></p>
+                			<p><code>f(<var>LIMITX-.001</var>) = <var>f1(LIMITX-.001)</var></code></p>
+                			<p><code>f(<var>LIMITX-.000001</var>) = <var>f1(LIMITX-.000001)</var></code></p>
+                	</div>
+                	<p>
+                		Thus <code>\displaystyle\lim_{x \to <var>LIMITX</var>^{-}}f(x) = <var>leftNiceInfinity</var></code>
+                	</p>
+                	<p>
+                		Now lets investigate <code>\displaystyle\lim_{x \to <var>LIMITX</var>^{+}}f(x)</code>.  
+                		Are the values of <code>f</code> approaching some finite value as <code>x</code> gets closer and closer to
+                		<code><var>LIMITX</var></code> from the right?  Are they increasing without bound?  Are they decreasing without bound?
+                	</p>
+                	<p>
+                		It looks like <code>f(x)</code> is <var>rightHint</var> without bound as <code>x \to <var>LIMITX</var></code>.
+                	</p>
+                	<p>
+                		We can confirm this numerically by evaluating <code>f</code> at inputs close to <code><var>LIMITX</var></code> but slightly 
+                		more than <code><var>LIMITX</var></code>.
+                	</p>
+                	<div>
+                		For instance:
+                			<p><code>f(<var>LIMITX+1</var>) = <var>f1(LIMITX+1)</var></code></p>
+                			<p><code>f(<var>LIMITX+.001</var>) = <var>f1(LIMITX+.001)</var></code></p>
+                			<p><code>f(<var>LIMITX+.000001</var>) = <var>f1(LIMITX+.000001)</var></code></p>
+                	</div>
+                	<p>
+                		Thus <code>\displaystyle\lim_{x \to <var>LIMITX</var>^{+}}f(x) = <var>rightNiceInfinity</var></code>
+                	</p>
                 </div>
             </div>
             
@@ -141,7 +206,7 @@
                 	
                     <p>
                     	Consider the function <code>f(x)</code> graphed below. Find
-                    	the value of each of the indicated limits with an error of at most <code>\frac{1}{2}</code>.
+                    	the value of each of the indicated limits to three decimal places of accuracy.
                     	If one of the limits appears to be <code>\infty</code> or <code>-\infty</code>, just type "infinity"
                     	or "-infinity".	
                     </p>
@@ -205,7 +270,47 @@
                 
                 <div class="hints">
                 	
-                	<p>hint</p>
+                	<p>
+                		First, lets investigate <code>\displaystyle\lim_{x \to <var>LIMITX</var>^{-}}f(x)</code>.  
+                		Are the values of <code>f</code> approaching some finite value as <code>x</code> gets closer and closer to
+                		<code><var>LIMITX</var></code> from the left?  Are they growing without bound?  Are they decreasing without bound?
+                	</p>
+                	<p>
+                		It looks like <code>f(x)</code> is <var>leftHint</var> without bound as <code>x \to <var>LIMITX</var></code>.
+                	</p>
+                	<p>
+                		We can confirm this numerically by evaluating <code>f</code> at inputs close to <code><var>LIMITX</var></code> but slightly 
+                		less than <code><var>LIMITX</var></code>.
+                	</p>
+                	<div>
+                		For instance:
+                			<p><code>f(<var>LIMITX-1</var>) = <var>f2(LIMITX-1)</var></code></p>
+                			<p><code>f(<var>LIMITX-.001</var>) = <var>f2(LIMITX-.001)</var></code></p>
+                			<p><code>f(<var>LIMITX-.000001</var>) = <var>f2(LIMITX-.000001)</var></code></p>
+                	</div>
+                	<p>
+                		Thus <code>\displaystyle\lim_{x \to <var>LIMITX</var>^{-}}f(x) = <var>leftNiceInfinity</var></code>
+                	</p>
+                	<p>
+                		Now lets investigate <code>\displaystyle\lim_{x \to <var>LIMITX</var>^{+}}f(x)</code>.  
+                		Are the values of <code>f</code> approaching some finite value as <code>x</code> gets closer and closer to
+                		<code><var>LIMITX</var></code> from the right?  Are they increasing without bound?  Are they decreasing without bound?
+                	</p>
+                	<p>
+                		It looks like <code>f(x)</code> is approaching about <code><var>roundTo(1,g(LIMITX))</var></code> as <code>x \to <var>LIMITX</var></code>, so
+                		<code>\displaystyle\lim_{x \to <var>LIMITX</var>^{-}}f(x) = <var>roundTo(1,g(LIMITX))</var></code>
+                	</p>
+                	<p>
+                		We can confirm this numerically by evaluating <code>f</code> at inputs close to <code><var>LIMITX</var></code> but slightly 
+                		more than <code><var>LIMITX</var></code>.
+                	</p>
+                	<div>
+                		For instance:
+                			<p><code>f(<var>LIMITX+1</var>) = <var>f2(LIMITX+1)</var></code></p>
+                			<p><code>f(<var>LIMITX+.001</var>) = <var>f2(LIMITX+.001)</var></code></p>
+                			<p><code>f(<var>LIMITX+.000001</var>) = <var>f2(LIMITX+.000001)</var></code></p>
+                	</div>
+                		
                 </div>
             </div>
             
@@ -213,9 +318,9 @@
             
                 <div class="question">
                 	
-                    <p>
+                      <p>
                     	Consider the function <code>f(x)</code> graphed below. Find
-                    	the value of each of the indicated limits with an error of at most <code>\frac{1}{2}</code>.
+                    	the value of each of the indicated limits to three decimal places of accuracy.
                     	If one of the limits appears to be <code>\infty</code> or <code>-\infty</code>, just type "infinity"
                     	or "-infinity".	
                     </p>
@@ -285,7 +390,46 @@
                 
                 <div class="hints">
                 	
-                	<p>hint</p>
+                	<p>
+                		First, lets investigate <code>\displaystyle\lim_{x \to <var>LIMITX</var>^{-}}f(x)</code>.  
+                		Are the values of <code>f</code> approaching some finite value as <code>x</code> gets closer and closer to
+                		<code><var>LIMITX</var></code> from the left?  Are they growing without bound?  Are they decreasing without bound?
+                	</p>
+                	<p>
+                		It looks like <code>f(x)</code> is approaching about <code><var>roundTo(1,g(LIMITX))</var></code> as <code>x \to <var>LIMITX</var></code>, so
+                		<code>\displaystyle\lim_{x \to <var>LIMITX</var>^{-}}f(x) = <var>roundTo(1,g(LIMITX))</var></code>
+                	</p>
+                		<p>
+                		We can confirm this numerically by evaluating <code>f</code> at inputs close to <code><var>LIMITX</var></code> but slightly 
+                		less than <code><var>LIMITX</var></code>.
+                	</p>
+                	<div>
+                		For instance:
+                			<p><code>f(<var>LIMITX-1</var>) = <var>f3(LIMITX-1)</var></code></p>
+                			<p><code>f(<var>LIMITX-.001</var>) = <var>f3(LIMITX-.001)</var></code></p>
+                			<p><code>f(<var>LIMITX-.000001</var>) = <var>f3(LIMITX-.000001)</var></code></p>
+                	</div>
+                	<p>
+                		Now lets investigate <code>\displaystyle\lim_{x \to <var>LIMITX</var>^{+}}f(x)</code>.  
+                		Are the values of <code>f</code> approaching some finite value as <code>x</code> gets closer and closer to
+                		<code><var>LIMITX</var></code> from the right?  Are they increasing without bound?  Are they decreasing without bound?
+                	</p>
+                	<p>
+                		It looks like <code>f(x)</code> is <var>rightHint</var> without bound as <code>x \to <var>LIMITX</var></code>.
+                	</p>
+                	<p>
+                		We can confirm this numerically by evaluating <code>f</code> at inputs close to <code><var>LIMITX</var></code> but slightly 
+                		less than <code><var>LIMITX</var></code>.
+                	</p>
+                	<div>
+                		For instance:
+                			<p><code>f(<var>LIMITX+1</var>) = <var>f3(LIMITX+1)</var></code></p>
+                			<p><code>f(<var>LIMITX+.001</var>) = <var>f3(LIMITX+.001)</var></code></p>
+                			<p><code>f(<var>LIMITX+.000001</var>) = <var>f3(LIMITX+.000001)</var></code></p>
+                	</div>
+                	<p>
+                		Thus <code>\displaystyle\lim_{x \to <var>LIMITX</var>^{+}}f(x) = <var>rightNiceInfinity</var></code>
+                	</p>
                 </div>
             </div>
             

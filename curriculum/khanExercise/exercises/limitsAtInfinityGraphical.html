@@ -2,7 +2,7 @@
 <html data-require="math polynomials graphie word-problems steveMath8">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>Approximating Limits at Infinity Numerically with Graphical Assistance</title>
+    <title>Understanding Limits at Infinity Graphically</title>
     <script src="../khan-exercise.js"></script>
 </head>
 <body>
@@ -71,6 +71,18 @@
     		
     		<var id = "negSol">sol(E)</var>
     		<var id = "posSol">sol(D)</var>
+    		<var id = "infinityNice">(function(A){
+    								if (A &gt; 0){
+    									return "\\infty"
+    									}
+    								else {
+    									return "-\\infty"
+    									}	
+    								})
+    		
+    		</var>
+    		<var id = "leftNiceInfinity">infinityNice(E)</var>
+    		<var id = "rightNiceInfinity">infinityNice(D)</var>
     		
 	    	
         </div>
@@ -101,7 +113,7 @@
                                 return ( f(x));
                             }, [-20, 20], {
                                 stroke: RED,
-                                strokeWidth: 1
+                                strokeWidth: 3
                             });	
                 	</div>
                 	
@@ -122,7 +134,49 @@
                 
                 <div class="hints">
                 	
-                	<p>hint</p>
+                	<p>
+                		First, lets consider <code>\displaystyle\lim_{x \to +\infty}f(x)</code>.  This is the value that 
+                		<code>f(x)</code> approaches as <code>x</code> increases without bound.
+                	</p>
+                	<div>
+                		It looks like <code>f(x)</code> is approaching <code><var>p.coefs[4]</var></code> as <code>x</code>
+                		gets larger and larger without bound.
+                		
+                		 <div class="graphie" data-update="grid">
+                                    style({
+                                        stroke: BLUE,
+                                        strokeWidth: 2,
+                                        arrows: "-&gt;"
+                                    }, function() {
+                                        line( [ 20, p.coefs[4] ], [ 0, p.coefs[4] ]);
+                                    });
+                                    graph.movablePoint.toFront();
+                                
+                                </div>
+                		
+                	</div>
+                		<p>
+                		Now lets consider <code>\displaystyle\lim_{x \to -\infty}f(x)</code>.  This is the value that 
+                		<code>f(x)</code> approaches as <code>x</code> decreases without bound.
+                	</p>
+                	<div>
+                		It looks like <code>f(x)</code> is approaching <code><var>C</var></code> as <code>x</code>
+                		decreases without bound
+                		
+                		 <div class="graphie" data-update="grid">
+                                    style({
+                                        stroke: BLUE,
+                                        strokeWidth: 2,
+                                        arrows: "-&gt;"
+                                    }, function() {
+                                        line( [ -20, C ], [ 0, C ]);
+                                    });
+                              
+                                
+                                </div>
+                		
+                	</div>
+                
                 </div>
             </div>
             
@@ -151,7 +205,7 @@
                                 return ( g(x));
                             }, [-20, 20], {
                                 stroke: RED,
-                                strokeWidth: 1
+                                strokeWidth: 3
                             });	
                 	</div>
                 	
@@ -172,7 +226,24 @@
                 
                 <div class="hints">
                 	
-                	<p>hint</p>
+                	<p>
+                		First, lets consider <code>\displaystyle\lim_{x \to +\infty}f(x)</code>.  This is the value that 
+                		<code>f(x)</code> approaches as <code>x</code> gets larger and larger without bound.
+                	</p>
+                	<div>
+                		It looks like <code>f(x)</code> is approaching <code><var>rightNiceInfinity</var></code> as <code>x</code>
+                		gets larger and larger without bound.
+                		
+                	</div>
+                	<p>
+                		Now lets consider <code>\displaystyle\lim_{x \to -\infty}f(x)</code>.  This is the value that 
+                		<code>f(x)</code> approaches as <code>x</code> decreases without bound.
+                	</p>
+                	<div>
+                		It looks like <code>f(x)</code> is approaching <code><var>leftNiceInfinity</var></code> as <code>x</code>
+                		decreases without bound.
+                		
+                	</div>
                 </div>
             </div>
             
@@ -201,7 +272,7 @@
                                 return ( h(x));
                             }, [-20, 20], {
                                 stroke: RED,
-                                strokeWidth: 1
+                                strokeWidth: 3
                             });	
                 	</div>
                 	
@@ -221,8 +292,36 @@
 
                 
                 <div class="hints">
-                	
-                	<p>hint</p>
+                	<p>
+                		First, lets consider <code>\displaystyle\lim_{x \to +\infty}f(x)</code>.  This is the value that 
+                		<code>f(x)</code> approaches as <code>x</code> gets larger and larger without bound.
+                	</p>
+                	<div>
+                		It looks like <code>f(x)</code> is approaching <code><var>p.coefs[4]</var></code> as <code>x</code>
+                		gets larger and larger without bound.
+                		
+                		 <div class="graphie" data-update="grid">
+                                    style({
+                                        stroke: BLUE,
+                                        strokeWidth: 2,
+                                        arrows: "-&gt;"
+                                    }, function() {
+                                        line( [ 20, p.coefs[4] ], [ 0, p.coefs[4] ]);
+                                    });
+                                    graph.movablePoint.toFront();
+                                
+                                </div>
+                		
+                	</div>
+                	<p>
+                		Now lets consider <code>\displaystyle\lim_{x \to -\infty}f(x)</code>.  This is the value that 
+                		<code>f(x)</code> approaches as <code>x</code> decreases without bound.
+                	</p>
+                	<div>
+                		It looks like <code>f(x)</code> is approaching <code><var>leftNiceInfinity</var></code> as <code>x</code>
+                		decreases without bound.
+                		
+                	</div>
                 </div>
             </div>
             
@@ -251,7 +350,7 @@
                                 return ( k(x));
                             }, [-20, 20], {
                                 stroke: RED,
-                                strokeWidth: 1
+                                strokeWidth: 3
                             });	
                 	</div>
                 	
@@ -271,9 +370,35 @@
 
                 
                 <div class="hints">
-                	
-                	<p>hint</p>
-                </div>
+                <p>
+                		First, lets consider <code>\displaystyle\lim_{x \to +\infty}f(x)</code>.  This is the value that 
+                		<code>f(x)</code> approaches as <code>x</code> gets larger and larger without bound.
+                	</p>
+                	<div>
+                		It looks like <code>f(x)</code> is approaching <code><var>rightNiceInfinity</var></code> as <code>x</code>
+                		gets larger and larger without bound.
+               	 </div>
+               	 <p>
+                		Now lets consider <code>\displaystyle\lim_{x \to -\infty}f(x)</code>.  This is the value that 
+                		<code>f(x)</code> approaches as <code>x</code> decreases without bound.
+                	</p>
+                	<div>
+                		It looks like <code>f(x)</code> is approaching <code><var>p.coefs[4]</var></code> as <code>x</code>
+                		decreases without bound
+                		
+                		 <div class="graphie" data-update="grid">
+                                    style({
+                                        stroke: BLUE,
+                                        strokeWidth: 2,
+                                        arrows: "-&gt;"
+                                    }, function() {
+                                        line( [ -20, p.coefs[4] ], [ 0, p.coefs[4] ]);
+                                    });
+                              
+                                
+                                </div>
+                		
+                	</div>
             </div>
             
            

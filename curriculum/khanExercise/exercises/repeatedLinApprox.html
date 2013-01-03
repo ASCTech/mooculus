@@ -60,30 +60,26 @@
     <div class="hints">
       <p>Carefully draw a picture.</p>
       
-      <p>Use graph paper to draw your picture.</p>
-      
-      <p><code>f'(<var>X1</var>)</code> gives the slope of the
-      approximation over the first subinterval.</p>
-      
-
       <p><code>f(<var>X2</var>)\approx f(<var>X1</var>)
-      + f'(<var>X1</var>)\cdot<var>DELTAX</var></code> </p>
-      
-      <p><code>f(<var>X2</var>)\approx <var>INITIALY</var>
+      + f'(<var>X1</var>)\cdot<var>DELTAX</var> =<var>INITIALY</var>
       + <var>SLOPE1</var>\cdot<var>DELTAX</var> = <var>
       roundTo(2,INITIALY + SLOPE1*DELTAX)</var></code> </p>
       
-      <p><code>f(<var>X3</var>)\approx <var>roundTo(2,INITIALY+SLOPE1*DELTAX)</var>
+     
+      <p><code>f(<var>X3</var>)\approx f(<var>X2</var>)
+      + f'(<var>X2</var>)\cdot<var>DELTAX</var> =<var>roundTo(2,INITIALY+SLOPE1*DELTAX)</var>
       + <var>SLOPE2</var>\cdot<var>DELTAX</var> = <var>
       roundTo(2,INITIALY + SLOPE1*DELTAX +
       SLOPE2*DELTAX)</var></code> </p>
       
-      <p><code>f(<var>X4</var>)\approx <var>roundTo(2,INITIALY+SLOPE1*DELTAX
+      <p><code>f(<var>X4</var>)\approx f(<var>X3</var>)
+      + f'(<var>X3</var>)\cdot<var>DELTAX</var> =<var>roundTo(2,INITIALY+SLOPE1*DELTAX
       + SLOPE2*DELTAX)</var>+ <var>SLOPE3</var>\cdot<var>DELTAX</var>
       =<var> roundTo(2,INITIALY + SLOPE1*DELTAX +
       SLOPE2*DELTAX+SLOPE3*DELTAX)</var></code> </p>
       
-      <p><code>f(<var>X5</var>)\approx <var>roundTo(2,INITIALY+SLOPE1*DELTAX
+      <p><code>f(<var>X5</var>)\approx f(<var>X4</var>)
+      + f'(<var>X4</var>)\cdot<var>DELTAX</var> =<var>roundTo(2,INITIALY+SLOPE1*DELTAX
       + SLOPE2*DELTAX+SLOPE3*DELTAX)</var>
       + <var>SLOPE4</var>\cdot<var>DELTAX</var> =<var>
       roundTo(2,INITIALY + SLOPE1*DELTAX +

@@ -20,7 +20,7 @@
         </div>
 
         <div class="problems">
-            <div id="limitExists" data-weight="3">
+            <div id="bisectionMethod" data-weight="3">
             	
             	<p class = "problem"> <code>f</code> is a <em>continuous</em> function. While you don't have
             	a formula for <code>f</code>, you can evaluate <code>f</code> for various values below. 
@@ -79,7 +79,48 @@
 
                 
                 <div class="hints">
-                	<p>hint</p>
+                	<p>
+                		The first approximation is <code><var>ANSWERS[0]</var></code> because it is halfway 
+                		between <code><var>leftBound</var></code> and <code><var>rightBound</var></code>
+                	</p>
+                	<p>
+                		Now compare <code>f(<var>ANSWERS[0]</var>)</code> with
+                		<code>f(<var>leftBound</var>)</code> and <code>f(<var>rightBound</var>)</code>:
+                		does <code>f</code> change sign between <code><var>leftBound</var></code> and 
+                		<code><var>ANSWERS[0]</var></code>, or between <code><var>ANSWERS[0]</var></code> 
+                		and <code><var>rightBound</var></code>?
+                	</p> 
+                	<p>
+                		Since <code>f(<var>ANSWERS[1]-.5</var>) \approx <var>roundTo(3,f(ANSWERS[1]-.5))</var></code> and  
+                		<code>f(<var>ANSWERS[1]+.5</var>) \approx <var>roundTo(3,f(ANSWERS[1]+.5))</var></code>, they are of opposite sign,
+                		and so there is a zero between these two abscissas by the intermediate value theorem.
+                	</p>
+                	<p>
+                		Thus we choose our second approximation to be <code><var>ANSWERS[1]</var></code>.
+                	</p>
+                	<p>
+                		Now compare <code>f(<var>ANSWERS[1]</var>)</code> with
+                		<code>f(<var>ANSWERS[1] - .5</var>)</code> and <code>f(<var>ANSWERS[1] + .5</var>)</code>:
+                		does <code>f</code> change sign between <code><var>ANSWERS[1] - .5</var></code> and 
+                		<code><var>ANSWERS[1]</var></code>, or between <code><var>ANSWERS[1]</var></code> 
+                		and <code><var>ANSWERS[1] + .5</var></code>?
+                	</p> 
+                	<p>
+                		Since <code>f(<var>ANSWERS[2]-.25</var>) \approx <var>roundTo(3,f(ANSWERS[2]-.25))</var></code> and  
+                		<code>f(<var>ANSWERS[2]+.25</var>) \approx <var>roundTo(3,f(ANSWERS[2]+.25))</var></code>, they are of opposite sign,
+                		and so there is a zero between these two abscissas by the intermediate value theorem.
+                	</p>
+                	<p>
+                		Thus we choose our third approximation to be <code><var>ANSWERS[2]</var></code>.
+                	</p>
+                	<p>
+                		<br>
+                		First Approximation: <code><var>ANSWERS[0]</var></code>
+                		<br>
+                		Second Approximation: <code><var>ANSWERS[1]</var></code>
+                		<br>
+                		Third Approximation: <code><var>ANSWERS[2]</var></code>
+                	</p>
                 	
                 </div>
             </div>
