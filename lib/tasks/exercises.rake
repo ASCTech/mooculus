@@ -55,6 +55,7 @@ namespace :gen do
         STDERR.puts("ERROR: A problem in #{EXERCISES_PATH}/#{page} does not have a div id")
       end
       STDERR.puts("ERROR: Not all exercises and problems were created")
+      STDERR.puts("ERROR: Please fix problem div tags and run task again")
       exit 1
     end
 
