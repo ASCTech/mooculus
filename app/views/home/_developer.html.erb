@@ -11,4 +11,4 @@
 <% unless @developer.link.nil? %>
   <span class="url"><a href="<%= @developer.link %>" rel="external"><%= @developer.link %></a></span>
 <% end %>
-<p><%= @developer.description %></p>
+<p><%=raw @developer.description %></p>
