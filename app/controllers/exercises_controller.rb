@@ -8,6 +8,7 @@ class ExercisesController < ApplicationController
 
   def index
     @exercises = Exercise.all
+    @competencies = current_user.competencies if user_signed_in?
   end
 
   def create
@@ -32,14 +33,16 @@ class ExercisesController < ApplicationController
   end
 
   def show
-    @exercise = Exercise.find(params[:id])
+    if /[a-z]/i =~ params[:id]
+      page = "#{params[:id]}.html".downcase
+      @exercise = Exercise.find(:first, 
+                                :conditions => ["lower(page) = ?", page])
+    else
+      @exercise = Exercise.find(params[:id])
+    end
+    @problem = @exercise.problem_from_bag
 
-#    render :layout => false
-
-#    respond_to do |format|
-#      format.html # show.html.erb
-#      format.json { render :json => @exercise }
-#    end
+    flash[:notice] = "#{@exercise.inspect}, #{@problem.inspect}"
   end
 
   def update
@@ -47,4 +50,5 @@ class ExercisesController < ApplicationController
 
   def destroy
   end
+
 end

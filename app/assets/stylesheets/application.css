@@ -13,8 +13,65 @@
  */
 
 body {
-  padding-top: 80px;
-  font-family: 'Open Sans', sans-serif;
+    padding-top: 60px;
+    padding-bottom: 40px;
+}
+
+body.splash {
+    background:url(/images/Flat_earth_night.jpg) top right no-repeat;
+    background-position:fixed;
+    background-attachment: fixed;
+}
+
+body.splash hr {
+    display: none;
+}
+
+body.splash footer {
+    color: white;
+}
+
+body.splash footer a {
+    color: white;
+}
+
+div.bigverb {
+    font-size: 36pt;
+    display: block;
+    color: white;
+    opacity: 0.8;
+    line-height: 1.6;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 800;
+}
+
+div.bigverb a {
+    color: white;
+}
+
+div.bigverb a:hover {
+    background: none;
+    color: gray;
+}
+
+div.bigverb .bignoun
+{
+    font-weight: 100;    
+}
+
+div.hero-unit {
+    opacity: 0.8;
+    font-family: 'Open Sans';
+}
+
+div.hero-unit h1 {
+    font-weight: 800;
+}
+
+#problemarea, #problem-and-answer p {
+    font-family: 'STIXGeneral';
+    font-size: 13pt;
+    line-height: 2.2;
 }
 
 #get-hint-button-container {

@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Title:</b>
+  <%= @video.title %>
+</p>
+
+<p>
+  <b>Url:</b>
+  <%= @video.url %>
+</p>
+
+<p>
+  <b>Order:</b>
+  <%= @video.order %>
+</p>
+
+<p>
+  <b>Week:</b>
+  <%= @video.week %>
+</p>
+
+
+<%= link_to 'Edit', edit_video_path(@video) %> |
+<%= link_to 'Back', videos_path %>

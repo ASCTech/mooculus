@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  estimate: 1.5
+  uncertainty: 1.5
+  user_id: 1
+  exercise_id: 1
+
+two:
+  estimate: 1.5
+  uncertainty: 1.5
+  user_id: 1
+  exercise_id: 1

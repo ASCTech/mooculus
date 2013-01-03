@@ -1,11 +1,14 @@
+require 'nokogiri'
+
 namespace :gen do
-  EXERCISES_PATH = "/curriculum/khanExercise/exercises"
+  EXERCISES_PATH = "/public/khan-exercises/exercises"
 
   desc "Generates exercises from location #{EXERCISES_PATH}"
   task :exercises => :environment do
 
     Dir.glob("#{Rails.root}#{EXERCISES_PATH}/*.html") do |file_name|
       page = File.basename(file_name)
+      next if page == "khan-exercise.html" || page == "khan-site.html"
 
       exercise = Exercise.find_or_create_by_page(page)
 

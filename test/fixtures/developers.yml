@@ -1,0 +1,63 @@
+bart-snapp:
+  name: Bart Snapp
+  photo: bart-snapp
+  description: Bart Snapp teaches mathematics at The Ohio State University.  His research interests include commutative ring theory, number theory, and recreational mathematics.  He enjoys exploring connections between mathematics and the real-world problems, art, and music. As an undergraduate, he was involved in distance teaching and learning though OSU's <a href="http://socrates.math.osu.edu/">CROSU</a> program.  Prior to OSU, he worked at Coastal Carolina University. Bart earned his Ph.D. from the University Illinois at Urbana-Champaign. 
+  link: http://www.math.osu.edu/~snapp/
+  email: snapp@math.osu.edu
+
+jim-fowler:
+  name: Jim Fowler 
+  photo: jim-fowler
+  description: Jim is at OSU.
+  link: http://www.math.osu.edu/~fowler/
+  email: fowler@math.osu.edu
+
+steve-gubkin:
+  name: Steven Gubkin 
+  photo: steve-gubkin
+  description: Steve is at OSU.
+  email: gubkin@math.osu.edu
+  link: http://www.math.osu.edu/people/gubkin.1/view
+
+ryan-kowalick:
+  name: Ryan Kowalick 
+  photo: ryan-kowalick
+  description: Ryan Kowalick
+  email: rkowalick@math.osu.edu
+  link: http://www.math.osu.edu/people/kowalick.1
+
+tom-evans:
+  name: Tom Evans
+  photo: tom-evans
+  description: Tom Evans is an Educational Technologist and the lead for open courses at the Ohio State University. You can follow him on Twitter at <a href="http://www.twitter.com/taevans">@taevans</a>.  For Calculus One, Tom created the music and edited some of the videos.
+  email: evans.1517@osu.edu
+  link: http://www.twitter.com/taevans
+
+roman-holowinsky:
+  name: Roman Holowinsky 
+  photo: roman-holowinsky
+  description: Roman Holowinsky has been a professor in the OSU Math Department since Fall 2010.  His research in the field of analytic number theory with a focus on L-functions and modular forms.  Roman is an Alfred P. Sloan fellow and the recipient of the 2011 SASTRA Ramanujan prize.
+  email: romanh@math.osu.edu
+  link: http://www.math.osu.edu/~holowinsky.1
+
+sean-corey:
+  name: Sean Corey 
+  photo: sean-corey
+  description: Sean Corey
+  email: corey.osumath@gmail.com
+
+sean-collins:
+  name: Sean Collins 
+  photo: sean-collins
+  description: Originally from Cincinnati, Sean Collins is a senior at Ohio State majoring in  engineering physics; he's a big fan of chess and cards.  Sean is a teaching assistant for Calculus One.
+  email: collins.999@osu.edu
+
+kevin-jones:
+  name: Kevin Jones
+  email: jones.51@osu.edu
+  description: Kevin Jones is a Senior Producer/Director for Media Services at The Ohio State University; for Calculus One, Kevin Jones handles the video editing.
+
+isaac-smith:
+  name: Isaac Smith 
+  description: Isaac is an undergraduate at Ohio State; he is a teaching assistant for Calculus One.
+  email: smith.7914@osu.edu

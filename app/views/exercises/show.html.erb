@@ -1,10 +1,10 @@
     <script>
       userExercise = {
-        problemType: "firstthing",
+        problemType: "<%= @problem.name %>",
         exerciseModel: {
-          name: "abscissaordinate",
-          displayName: "here it is beign displayd",
-          fileName: "abscissaOrdinate.html",
+          name: "<%= @exercise.name %>",
+          displayName: "<%= @exercise.title %>",
+          fileName: "<%= @exercise.page %>",
         }
       };
       console.log(userExercise);
@@ -17,7 +17,6 @@
         $(Exercises).trigger("problemTemplateRendered");
       });
     </script>
-
 
 <div id="exercise-message-container" style="display: none;">
     <div class="exercise_message"></div>
@@ -32,7 +31,7 @@
         <div id='workarea'></div>
         <div id='hintsarea'></div>
     </div>
-    <div id="answer_area_wrap"><div id="answer_area">
+    <div id="answer_area_wrap"><div class="well"><div id="answer_area">
         <form id="answerform" action="/exercisedashboard" method="get" name="answerform">
             <input type="submit" style="position: absolute; left: -9999px; width: 1px; height: 1px">
             <div id="answercontent" class="info-box">
@@ -57,7 +56,7 @@
                 <span class="info-box-sub-description">To work on problems like this, <a id="readonly-start" href="">start this exercise</a>.</span>
             </div>
             <div class="info-box hint-box">
-                <span class="info-box-header">Need help?</span>
+                <span class="info-box-header">Do you need help?</span>
                 <div id="get-hint-button-container">
                     <input id="hint" type="button" class="btn btn-warning" value="I'd like a hint" name="hint"/>
                 </div>
@@ -136,7 +135,7 @@
                 <img id="issue-throbber" style="display:none;" name="issue-throbber">
             </form>
         </div>
-    </div></div>
+    </div></div></div>
     <div style="clear: both;"></div>
 </div>
 

@@ -342,8 +342,16 @@ Since these limits are different, $\lim_{x\to 2} f(x)$ does not exist.
 
 
 \begin{exercise} 
-Use a table and a calculator to estimate $\lim_{x\to 0} {\sin
-  x\over x}$.
+Use a table and a calculator to estimate $\lim_{x\to 0}
+\frac{\sin(x)}{x}$.
+\end{exercise}
+
+\begin{exercise} 
+Use a table and a calculator to estimate $\lim_{x\to 0} \frac{\sin(2x)}{x}$.
+\end{exercise}
+
+\begin{exercise} 
+Use a table and a calculator to estimate $\lim_{x\to 0} \frac{x}{\sin\left(\frac{x}{3}\right)}$.
 \end{exercise}
 
 \begin{exercise} 
@@ -356,10 +364,15 @@ Use a table and a calculator to estimate $\lim_{x\to 0}
 \frac{2^x-1}{x}$.
 \end{exercise}
 
+\begin{exercise} 
+Use a table and a calculator to estimate $\lim_{x\to 0} (1+x)^{1/x}$. 
+\end{exercise}
+
+
 
 \begin{exercise} 
-Sketch a plot of $f(x) = \dfrac{x}{|x|}$ and explain why $
-\lim_{x\to 0} \frac{x}{|x|}$ does not exist.
+Sketch a plot of $f(x) = \dfrac{x}{|x|}$ and explain why $\lim_{x\to
+  0} \frac{x}{|x|}$ does not exist.
 \end{exercise}
 
 
@@ -379,6 +392,20 @@ of the following form
 where $d = 1,3,7$. What do you notice? How do you reconcile the
 entries in your tables with the value of $\lim_{x\to 0} f(x)$?
 \end{exercise}
+
+
+\begin{exercise}
+In the theory of special relativity, a moving clock moving ticks
+slower than a stationary observer's clock. If the stationary observer
+records that $t_s$ seconds have passed, then the clock moving at
+velocity $v$ has recorded that
+\[
+t_v = t_s \sqrt{1 - v^2/c^2}
+\]
+seconds have passed, where $c$ is the speed of light. What happens as $v\to c$?
+\end{exercise}
+
+
 \end{exercises}
 
 
@@ -572,20 +599,6 @@ This theorem is not too difficult to prove from the definition of limit.
 
 
 \begin{exercise} 
-Use the definition of limits to explain why $\lim _{x\to 0 } x\sin
-\left( {1\over x}\right) = 0$.  Hint: Use the fact that $|\sin a |< 1
-$ for any real number $a$.
-\begin{answer} $0$
-\end{answer}\end{exercise}
-
-\begin{exercise} 
-Use the definition of limits to explain why $\lim_{x\to 4} (2x-5)
-= 3$.
-\end{exercise}
-
-
-
-\begin{exercise} 
 For each of the following limits, $\lim_{x\to a} f(x) =L$, use a
 graphing device to find $\delta$ such that $0<|x -a|<\delta$ implies
 that $|f(x)-L|<\epsilon$ where $\epsilon = .1$.
@@ -600,6 +613,61 @@ that $|f(x)-L|<\epsilon$ where $\epsilon = .1$.
 \end{multicols}  
 \end{enumerate}
 \end{exercise}
+
+
+\begin{exercise} 
+Use the definition of limits to explain why $\lim _{x\to 0 } x\sin
+\left( {1\over x}\right) = 0$.  Hint: Use the fact that $|\sin a |< 1
+$ for any real number $a$.
+\begin{answer} $0$
+\end{answer}\end{exercise}
+
+\begin{exercise} 
+Use the definition of limits to explain why $\lim_{x\to 4} (2x-5)
+= 3$.
+\end{exercise}
+
+\begin{exercise} 
+Use the definition of limits to explain why $\lim_{x\to -3} (-4x-11)
+= 1$.
+\end{exercise}
+
+\begin{exercise} 
+Use the definition of limits to explain why $\lim_{x\to -2} \pi
+= \pi$.
+\end{exercise}
+
+
+\begin{exercise} 
+Use the definition of limits to explain why $\lim_{x\to -2} \frac{x^2-4}{x+2} = -4$.
+\end{exercise}
+
+\begin{exercise} 
+Use the definition of limits to explain why $\lim_{x\to 4} x^3 = 64$.
+\end{exercise}
+
+
+\begin{exercise} 
+Use the definition of limits to explain why $\lim_{x\to 1} (x^2+3x-1) = 3$.
+\end{exercise}
+
+
+\begin{exercise} 
+Use the definition of limits to explain why $\lim_{x\to 9}\frac{x-9}{\sqrt{x}-3}
+= 6$.
+\end{exercise}
+
+
+\begin{exercise} 
+Use the definition of limits to explain why $\lim_{x\to 2}\frac{1}{x}
+= \frac{1}{2}$.
+\end{exercise}
+
+
+
+
+
+
 \end{exercises}
 
 
@@ -1007,7 +1075,7 @@ Now write
 \lim_{x\to 3} \frac{(x-2)(x-7)}{(x-2)(x-3)} &= \lim_{x\to 3} \frac{(x-7)}{(x-3)}\\
 &= \lim_{x\to 3}\frac{-4}{x-3}.
 \end{align*}
-Since $\lim_{x\to 3+} x-3$ approches $0$ from the right, $\lim_{x\to
+Since $\lim_{x\to 3+} x-3$ approaches $0$ from the right, $\lim_{x\to
   3+} f(x) = -\infty$, and since $\lim_{x\to 3-} x-3$ from the left
 $\lim_{x\to 3-} f(x) = \infty$. Hence we have a vertical asymptote at
 $x=3$, see Figure~\ref{plot:(x^2-9x+14)/(x^2-5x+6)}.
@@ -1053,6 +1121,26 @@ $\lim_{x\to -1+} \frac{1+2x}{x^3-1}$
 \begin{exercise}
 $\lim_{x\to 3+} \frac{x-9}{x^2-6x+9}$
 \end{exercise}
+
+\begin{exercise}
+$\lim_{x\to 5} \frac{1}{(x-5)^4}$
+\end{exercise}
+
+
+\begin{exercise}
+$\lim_{x\to -2} \frac{1}{(x^2+3x+2)^2}$
+\end{exercise}
+
+
+\begin{exercise}
+$\lim_{x\to 0} \frac{1}{\frac{x}{x^5}-\cos(x)}$
+\end{exercise}
+
+\begin{exercise}
+$\lim_{x\to 0+} \frac{x-11}{\sin(x)}$
+\end{exercise}
+
+
 
 \endtwocol
 
@@ -1286,7 +1374,44 @@ $\lim_{x\to \infty} \frac{2x^2-x+1}{4x^2-3x-1}$
 $\lim_{x\to -\infty} \frac{x^3-4}{3x^2+4x-1}$
 \end{exercise}
 
+
+\begin{exercise}
+$\lim_{x\to \infty} \left(\frac{4}{x}+\pi\right)$
+\end{exercise}
+
+\begin{exercise}
+$\lim_{x\to \infty} \frac{\cos(x)}{\ln(x)}$
+\end{exercise}
+
+\begin{exercise}
+$\lim_{x\to \infty} \frac{\sin\left(x^7\right)}{\sqrt{x}}$
+\end{exercise}
+
+\begin{exercise}
+$\lim_{x\to \infty} \left(17 + \frac{32}{x} - \frac{\sin(x/2)^2}{x^3}\right)$
+\end{exercise}
+
 \endtwocol
+
+\begin{exercise}
+Suppose a population of feral cats on a certain college campus $t$
+years from now is approximated by
+\[
+p(t) = \frac{1000}{5+ 2e^{-0.1 t}}.
+\]
+Approximately how many feral cats are on campus 10 years from now? 50
+years from now? 100 years from now? 1000 years from now? What do you
+notice about the prediction---is this realistic?
+\end{exercise}
+
+\begin{exercise}
+The amplitude of an oscillating spring is given by
+\[
+a(t) = \frac{2t + \sin(t)}{t}.
+\]
+What happens to the oscillation over a long period of time?
+\end{exercise}
+
 
 \end{exercises}
 
@@ -1396,15 +1521,20 @@ see Figure~\ref{plot:sqrt[5]{x}sin 1/x}. Is this function continuous?
 
 \begin{solution}
 Considering $f(x)$, the only issue is when $x=0$. We must show that
-$\lim_{x\to 0} f(x) = 0$.
+$\lim_{x\to 0} f(x) = 0$. Note
+\[
+-\sqrt[5]{x}\le f(x) \le \sqrt[5]{x}.
+\]
+Since
+\[
+\lim_{x\to 0} -\sqrt[5]{x} = 0 = \lim_{x\to 0}\sqrt[5]{x},
+\]
+we see by the Squeeze Theorem, Theorem~\ref{theorem:squeeze}, that
+$\lim_{x\to 0} f(x) = 0$. Hence $f(x)$ is continuous.
 
-
-PROOF
-
-
-This function is continuous. Here we see how the informal definition
-of continuity being that you can ``draw it'' without ``lifting your
-pencil'' differs from the formal definition. 
+Here we see how the informal definition of continuity being that you
+can ``draw it'' without ``lifting your pencil'' differs from the
+formal definition.
 \end{solution}
 
 We close with a useful theorem about continuous functions:
@@ -1494,17 +1624,87 @@ one decimal place.
 
 \begin{exercises}
 
- \begin{exercise} 
+\begin{exercise} 
 Consider the function
 \[
-h(x) = 
+f(x) = \sqrt{x-4} 
+\]
+Is $f(x)$ continuous at the point $x=4$?  Is $f(x)$ continuous
+function on $\R$?
+\end{exercise}
+
+
+\begin{exercise} 
+Consider the function
+\[
+f(x) = \frac{1}{x+3}
+\]
+Is $f(x)$ continuous at the point $x=3$?  Is $f(x)$ continuous
+function on $\R$?
+\end{exercise}
+
+\begin{exercise} 
+Consider the function
+\[
+f(x) = 
 \begin{cases} 
 2x - 3, & \text{if $x<1$,} \\ 
 0,      & \text{if $x\geq 1$.}
 \end{cases}
 \]
-Show that it is continuous at the point $x=0$.  Is $h$ a continuous function?
+Is $f(x)$ continuous at the point $x=0$?  Is $f(x)$ continuous
+function on $\R$?
 \end{exercise}
+
+
+
+\begin{exercise} 
+Consider the function
+\[
+f(x) = 
+\begin{cases} 
+\frac{x^2 + 10x + 25}{x-5}, & \text{if $x\ne 5$,} \\ 
+10,      & \text{if $x= 5$.}
+\end{cases}
+\]
+Is $f(x)$ continuous at the point $x=5$?  Is $f(x)$ continuous
+function on $\R$?
+\end{exercise}
+
+
+\begin{exercise} 
+Consider the function
+\[
+f(x) = 
+\begin{cases} 
+\frac{x^2 + 10x + 25}{x+5}, & \text{if $x\ne -5$,} \\ 
+0,      & \text{if $x= -5$.}
+\end{cases}
+\]
+Is $f(x)$ continuous at the point $x=-5$?  Is $f(x)$ continuous
+function on $\R$?
+\end{exercise}
+
+
+
+\begin{exercise} 
+Determine the interval(s) on which the function $f(x) = x^7+3x^5-2x +
+4$ is continuous.
+\end{exercise}
+
+
+
+\begin{exercise}
+Determine the interval(s) on which the function $f(x) = \frac{x^2-2x+1}{x+4}$ is continuous. 
+\end{exercise}
+
+
+
+\begin{exercise}
+Determine the interval(s) on which the function $f(x) = \frac{1}{x^2
+  -9}$ is continuous.
+\end{exercise}
+
 
 \begin{exercise}
 Approximate a root of $f=x^3-4x^2+2x+2$ to one decimal place.
@@ -1513,5 +1713,4 @@ Approximate a root of $f=x^3-4x^2+2x+2$ to one decimal place.
 \begin{exercise}
 Approximate a root of $f=x^4+x^3-5x+1$ to one decimal place.
 \end{exercise}
-
 \end{exercises}

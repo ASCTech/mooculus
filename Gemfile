@@ -20,6 +20,9 @@ gem 'devise'
 gem 'omniauth'
 gem 'omniauth-oauth'
 
+# use Nokogiri to parse the exercise files
+gem 'nokogiri'
+
 group :development do
   gem 'capistrano'
   gem 'rvm-capistrano'
@@ -32,6 +35,7 @@ end
 
 group :staging, :production do
   gem 'libv8'
+  gem 'piwik_analytics', '~> 1.0.1'
 end
 
 group :assets do

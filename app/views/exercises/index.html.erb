@@ -1,29 +1,12 @@
 <div class="row-fluid">
-  <div class="span6">
+  <div class="span8">
     Problem
   </div>
-  <div class="span2">
-    Your Score
-  </div>
-  <div class="span4">
-    Actions
-  </div>
-</div>
-
-<% @exercises.each do |exercise| %>
-  <div class="row-fluid">
-    <div class="span6">
-      <%= exercise.title %>
-    </div>
-    <div class="span2">
-    </div>
+  <% if user_signed_in? %>
     <div class="span4">
-      <%= link_to 'Show', exercise %>
-      <%= link_to 'Edit', edit_exercise_path(exercise) %>
-      <%= link_to 'Destroy', exercise, :method => :delete, 
-        :data => { :confirm => 'Are you sure?' } %>
-      </div>
+      Your Score
     </div>
   <% end %>
+</div>
 
-  <%= link_to 'New Exercise', new_exercise_path %>
+<%= render @exercises %>

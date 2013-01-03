@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Title:</b>
+  <%= @handout.title %>
+</p>
+
+<p>
+  <b>Url:</b>
+  <%= @handout.url %>
+</p>
+
+<p>
+  <b>Order:</b>
+  <%= @handout.order %>
+</p>
+
+<p>
+  <b>Week:</b>
+  <%= @handout.week %>
+</p>
+
+
+<%= link_to 'Edit', edit_handout_path(@handout) %> |
+<%= link_to 'Back', handouts_path %>
