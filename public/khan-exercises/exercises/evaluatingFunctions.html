@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html data-require="math polynomials">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Evaluating a function at a point in its domain</title>
+    <script src="../khan-exercise.js"></script>
+</head>
+<body>
+    <div class="exercise">
+        <div class="vars">
+            <var id="x">randRange(-4,4)</var>
+            <var id="poly">new Polynomial(0, randRange(1, 4))</var>
+            <var id="text">poly.text()</var>
+            <var id="answer">poly.evalOf(x)</var>
+            <var id="textForHint">poly.hintEvalOf(x)</var>
+        </div>
+
+        <div class="problems">
+            <div>
+                <div class="question">
+                    <p>Given that <code>f(x) = <var>text</var></code>, evaluate <code>f(<var>x</var>)</code>.      
+                    </p>
+                    
+                    
+                </div>
+
+                <p class="solution" data-forms="decimal"><var>answer</var></p>
+            </div>
+        </div>
+
+        <div class="hints">
+          <p>
+          <code>f(<var>x</var>) = <var>textForHint</var></code>
+          </p>
+          <p><code> \hphantom{f(<var>x</var>)}= <var>answer</var></code></p>
+        </div>
+    </div>
+</body>
+</html>

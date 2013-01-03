@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html data-require="math word-problems">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Repeated linear approximation</title>
+    <script src="../khan-exercise.js"></script>
+</head>
+<body>
+  <div class="exercise">
+    <div class="vars">
+      <var id="SLOPE1">roundTo(2,randRange(-5, 5 ))</var>
+      <var id="SLOPE2">roundTo(2,SLOPE1+randRange(-9, 9 )*.1)</var>
+      <var id="SLOPE3">roundTo(2,SLOPE2+randRange(-9, 9 )*.1)</var>
+      <var id="SLOPE4">roundTo(2,SLOPE3+randRange(-9, 9 )*.1)</var>
+      
+      <var id="DELTAX">roundTo(2,randRange( 1, 4 )*.1)</var>  	
+      
+      <var id="X1">randRange(0,10)</var>
+      <var id="X2">roundTo(2,X1 + DELTAX)</var>
+      <var id="X3">roundTo(2,X2 + DELTAX)</var>
+      <var id="X4">roundTo(2,X3 + DELTAX)</var>
+      <var id="X5">roundTo(2,X4 + DELTAX)</var>
+      <var id="INITIALY"> randRange(0,20) </var>
+      <var id="FINALY"> roundTo(2,INITIALY + DELTAX*(SLOPE1 + SLOPE2 + SLOPE3 + SLOPE4))</var>
+    </div>
+    
+    <div class="problems">
+      <div id="repeated linear approximation">
+	<p class="problem">
+	  Consider the interval <code>I =
+	    [<var>X1</var>,<var>X5</var>]</code>. Break <code>I</code>
+	  into 4 subintervals of length <var>DELTAX</var>:
+	  
+	<p align=center>
+	  <code>[<var>X1</var>,<var>X2</var>] \quad
+	    [<var>X2</var>,<var>X3</var>] \quad
+	    [<var>X3</var>,<var>X4</var>] \quad
+	    [<var>X4</var>,<var>X5</var>]</code>
+	  </p>
+      
+	  Suppose that
+	
+	  <p align=center>
+	  <code>f(<var>X1</var>) = <var>INITIALY</var></code>, 
+	  <code>f'(<var>X1</var>) = <var>SLOPE1</var></code>, 
+	  <code>f'(<var>X2</var>) = <var>SLOPE2</var></code>, 
+	  <code>f'(<var>X3</var>) = <var>SLOPE3</var></code>, and 
+	  <code>f'(<var>X4</var>) = <var>SLOPE4</var></code>.
+	  </p>
+	</p>
+	<p class="question">
+	  What is the approximate value of
+	  <code>f(<var>X5</var>)</code>?
+	</p>
+	<p class="solution" data-type="decimal" data-inexact data-max-error="0.01">
+	  <var>FINALY</var>
+	</p>
+      </div>
+    </div>
+    <div class="hints">
+      <p>Carefully draw a picture.</p>
+      
+      <p><code>f(<var>X2</var>)\approx f(<var>X1</var>)
+      + f'(<var>X1</var>)\cdot<var>DELTAX</var> =<var>INITIALY</var>
+      + <var>SLOPE1</var>\cdot<var>DELTAX</var> = <var>
+      roundTo(2,INITIALY + SLOPE1*DELTAX)</var></code> </p>
+      
+     
+      <p><code>f(<var>X3</var>)\approx f(<var>X2</var>)
+      + f'(<var>X2</var>)\cdot<var>DELTAX</var> =<var>roundTo(2,INITIALY+SLOPE1*DELTAX)</var>
+      + <var>SLOPE2</var>\cdot<var>DELTAX</var> = <var>
+      roundTo(2,INITIALY + SLOPE1*DELTAX +
+      SLOPE2*DELTAX)</var></code> </p>
+      
+      <p><code>f(<var>X4</var>)\approx f(<var>X3</var>)
+      + f'(<var>X3</var>)\cdot<var>DELTAX</var> =<var>roundTo(2,INITIALY+SLOPE1*DELTAX
+      + SLOPE2*DELTAX)</var>+ <var>SLOPE3</var>\cdot<var>DELTAX</var>
+      =<var> roundTo(2,INITIALY + SLOPE1*DELTAX +
+      SLOPE2*DELTAX+SLOPE3*DELTAX)</var></code> </p>
+      
+      <p><code>f(<var>X5</var>)\approx f(<var>X4</var>)
+      + f'(<var>X4</var>)\cdot<var>DELTAX</var> =<var>roundTo(2,INITIALY+SLOPE1*DELTAX
+      + SLOPE2*DELTAX+SLOPE3*DELTAX)</var>
+      + <var>SLOPE4</var>\cdot<var>DELTAX</var> =<var>
+      roundTo(2,INITIALY + SLOPE1*DELTAX +
+      SLOPE2*DELTAX+SLOPE3*DELTAX+SLOPE4*DELTAX)</var></code> </p>
+    
+    </div>
+  </div>
+</body>
+</html>

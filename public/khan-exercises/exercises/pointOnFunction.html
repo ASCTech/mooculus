@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+  <html data-require="math graphie interactive graphie-helpers steveMath8">
+      <head>
+          <title>Points on functions</title>
+          <script src="../khan-exercise.js"></script>
+      </head>
+      <body>
+          <div class="exercise">
+              <div class="vars">
+              	  
+    <var id = "n">randRange(2,4)</var>
+    <var id = "Xs">makeXList()</var>
+    <var id = "Ys">makeYList(-8,8,Xs.length)</var>
+    <var id = "points">makeCoordinates(Xs,Ys)</var>
+    <var id = "f">(function(x){return niceFunction(x,points)})</var>
+    <var id = "X">randRangeExclude(-8,8,[-2,-1,0,1,2])</var>
+    <var id = "Y">f(X)</var>
+    <var id = "zeroXs">locateZeros(f,Xs)</var>
+    <var id = "zeroYs">(
+        function(n){ 
+            var list = []
+            for(var i=0; i&lt;n;i++){
+                list.push(0)
+            }
+          return list
+        })(zeroXs.length) </var>
+    <var id = "zeroPoints">makeCoordinates(zeroXs,zeroYs)</var>
+    <var id = "criticalXs">Xs.concat(zeroXs).sort(function(a,b){return a - b})</var>
+    <var id = "criticalPoints">points.concat(zeroPoints).sort(function(a,b){return a[0] - b[0]})</var>
+    <var id = "m">randRange(0,criticalPoints.length-2)</var>
+	
+              </div>
+
+              <div class="problems">
+              
+                  <div id="problem-type-or-description">
+                      <p class="problem">Below is the graph of a function <code>f</code>.</p>
+                      
+                      <p class="question"> What is <code>f(<var>X</var>)</code>? </p>
+                      
+                      
+                      <div class="graphie" id="grid">
+                    graphInit({
+                        range: 10,
+                        scale: 20,
+                        tickStep: 1,
+                        labelStep: 1,
+                        axisArrows: "<->"
+                    });
+                    
+                    plot(function( x ) {
+                                return ( f(x));
+                            }, [-10, 10], {
+                                stroke: RED,
+                                strokeWidth: 3,
+                                
+                            });
+                   
+                            
+
+               
+                       </div>
+                
+                
+                     
+                
+                  </div>
+                  
+                 
+                 
+              </div>
+              
+              <p class="solution" data-inexact data-max-error="0.5" data-type="decimal"><var>Y</var></p>
+
+              <div class="hints">
+                  <p><code>f(<var>X</var>)</code> is the ordinate of the point on the graph of <code>f</code> whose abscissa is <code><var>X</var></code></p>
+                  <div>The point <code>(<var>X</var>,f(<var>X</var>))</code> is both on the vertical line <code class="hint_blue">x = <var>X</var></code>
+                       and on the graph of <code>f</code>.
+                      <div class="graphie" data-update="grid">
+                                    style({
+                                        stroke: BLUE,
+                                        strokeWidth: 2,
+                                        
+                                    }, function() {
+                                        line( [ X, -11], [ X, 11 ] );
+                                    });
+                                    graph.movablePoint.toFront();
+                      </div> 
+                       
+                  </div>
+                  <div>
+                     The green arrow is pointing to <code>f(<var>X</var>)</code>.
+                         <div class="graphie" data-update="grid">
+                                    style({
+                                        stroke: GREEN,
+                                        strokeWidth: 2,
+                                        arrows: "-&gt;"
+                                    }, function() {
+                                        line( [ X, Y], [ 0, Y ] );
+                                    });
+                                    graph.movablePoint.toFront();
+                         </div> 
+                  </div>
+                  <div>
+                  <code>f(<var>X</var>) \approx <var>roundTo(1,Y)</var></code>
+                  </div>
+                  
+              </div>
+              
+          </div>
+      </body>
+  </html>
