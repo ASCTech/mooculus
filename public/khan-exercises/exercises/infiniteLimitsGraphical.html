@@ -2,7 +2,7 @@
 <html data-require="math polynomials graphie word-problems steveMath8">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>Understanding Infinite Limits Numerically with Graphical Assistance</title>
+    <title>Understanding Infinite Limits Graphically</title>
     <script src="../khan-exercise.js"></script>
 </head>
 <body>
@@ -79,6 +79,7 @@
     		</var>
     		<var id = "leftNiceInfinity">infinityNice(-L)</var>
     		<var id = "rightNiceInfinity">infinityNice(R)</var>
+    		
 	    	
     		
 	    	
@@ -91,14 +92,12 @@
                 	
                     <p>
                     	Consider the function <code>f(x)</code> graphed below. Find
-                    	the value of each of the indicated limits to three decimal places of accuracy.
+                    	the value of each of the indicated limits to within <code>\frac{1}{2}</code>.
                     	If one of the limits appears to be <code>\infty</code> or <code>-\infty</code>, just type "infinity"
                     	or "-infinity".	
                     </p>
                     
-                  	<p> 
-		   		    	<center><code>f(</code><input type='text' id='nameField' size=3><code>)=</code> <span id='nameDisplay'>?</span></center>		      
-		    		</p>
+                  	
 		    		
                 	<div class = graphie id="grid">
                 	graphInit({
@@ -113,29 +112,12 @@
                                 return ( f1(x));
                             }, [-12, 12], {
                                 stroke: RED,
-                                strokeWidth: 2
+                                stokeWidth: 3
                             });	
                      
                    
                     
-                    (function(){
-  					updateNameDisplay = function() {
-  	 		   	    var input = parseFloat(this.value)
-  	 		   	    if (input !== LIMITX && !isNaN(input)){
-      					$('#nameDisplay').text( f1(input));
-  						<div class="graphie" data-update="grid">
-                            ellipse( [input,f1(input)], 1/4, {
-                            stroke: "none",
-                            fill: GREEN
-                            });
-                		</div> 
-  						}
-  					else {$('#nameDisplay').text("?")};
-  					};
-  					$('#nameField').keydown( updateNameDisplay );
-  					$('#nameField').keyup( updateNameDisplay );
-  					$('#nameField').keypress( updateNameDisplay );
-  					})()
+                   
                 	</div>
                 	
                 </div>
@@ -164,16 +146,6 @@
                 		It looks like <code>f(x)</code> is <var>leftHint</var> without bound as <code>x \to <var>LIMITX</var></code>.
                 	</p>
                 	<p>
-                		We can confirm this numerically by evaluating <code>f</code> at inputs close to <code><var>LIMITX</var></code> but slightly 
-                		less than <code><var>LIMITX</var></code>.
-                	</p>
-                	<div>
-                		For instance:
-                			<p><code>f(<var>LIMITX-1</var>) = <var>f1(LIMITX-1)</var></code></p>
-                			<p><code>f(<var>LIMITX-.001</var>) = <var>f1(LIMITX-.001)</var></code></p>
-                			<p><code>f(<var>LIMITX-.000001</var>) = <var>f1(LIMITX-.000001)</var></code></p>
-                	</div>
-                	<p>
                 		Thus <code>\displaystyle\lim_{x \to <var>LIMITX</var>^{-}}f(x) = <var>leftNiceInfinity</var></code>
                 	</p>
                 	<p>
@@ -185,18 +157,9 @@
                 		It looks like <code>f(x)</code> is <var>rightHint</var> without bound as <code>x \to <var>LIMITX</var></code>.
                 	</p>
                 	<p>
-                		We can confirm this numerically by evaluating <code>f</code> at inputs close to <code><var>LIMITX</var></code> but slightly 
-                		more than <code><var>LIMITX</var></code>.
-                	</p>
-                	<div>
-                		For instance:
-                			<p><code>f(<var>LIMITX+1</var>) = <var>f1(LIMITX+1)</var></code></p>
-                			<p><code>f(<var>LIMITX+.001</var>) = <var>f1(LIMITX+.001)</var></code></p>
-                			<p><code>f(<var>LIMITX+.000001</var>) = <var>f1(LIMITX+.000001)</var></code></p>
-                	</div>
-                	<p>
                 		Thus <code>\displaystyle\lim_{x \to <var>LIMITX</var>^{+}}f(x) = <var>rightNiceInfinity</var></code>
                 	</p>
+                	
                 </div>
             </div>
             
@@ -206,14 +169,12 @@
                 	
                     <p>
                     	Consider the function <code>f(x)</code> graphed below. Find
-                    	the value of each of the indicated limits to three decimal places of accuracy.
+                    	the value of each of the indicated limits with an error of at most <code>\frac{1}{2}</code>.
                     	If one of the limits appears to be <code>\infty</code> or <code>-\infty</code>, just type "infinity"
                     	or "-infinity".	
                     </p>
                     
-                  	<p> 
-		   		    	<center><code>f(</code><input type='text' id='nameField' size=3><code>)=</code> <span id='nameDisplay'>?</span></center>		      
-		    		</p>
+                  
 		    		
                 	<div class = graphie id="grid">
                 	graphInit({
@@ -228,29 +189,12 @@
                                 return ( f2(x));
                             }, [-12, 12], {
                                 stroke: RED,
-                                strokeWidth: 2
+                                stokeWidth: 3
                             });	
                      
                     circle( [LIMITX, g(LIMITX)], 4 / 20, { fill: "white" } );
                     
-                    (function(){
-  					updateNameDisplay = function() {
-  	 		   	    var input = parseFloat(this.value)
-  	 		   	    if (input !== LIMITX && !isNaN(input)){
-      					$('#nameDisplay').text( f2(input));
-  						<div class="graphie" data-update="grid">
-                            ellipse( [input,f2(input)], 1/4, {
-                            stroke: "none",
-                            fill: GREEN
-                            });
-                		</div> 
-  						}
-  					else {$('#nameDisplay').text("?")};
-  					};
-  					$('#nameField').keydown( updateNameDisplay );
-  					$('#nameField').keyup( updateNameDisplay );
-  					$('#nameField').keypress( updateNameDisplay );
-  					})()
+                
                 	</div>
                 	
                 </div>
@@ -262,7 +206,7 @@
                         <span class="sol"  data-type="text"><var>leftSol</var></span>
                         <br>
                         <code>\displaystyle\lim_{x \to <var>LIMITX</var>^{+}}f(x)</code>: 
-                        <span class="sol" data-inexact data-max-error="0.001" data-type="decimal"><var>g(LIMITX)</var></span>
+                        <span class="sol" data-inexact data-max-error="0.5" data-type="decimal"><var>g(LIMITX)</var></span>
                     </p>
 
                 </div>
@@ -279,16 +223,6 @@
                 		It looks like <code>f(x)</code> is <var>leftHint</var> without bound as <code>x \to <var>LIMITX</var></code>.
                 	</p>
                 	<p>
-                		We can confirm this numerically by evaluating <code>f</code> at inputs close to <code><var>LIMITX</var></code> but slightly 
-                		less than <code><var>LIMITX</var></code>.
-                	</p>
-                	<div>
-                		For instance:
-                			<p><code>f(<var>LIMITX-1</var>) = <var>f2(LIMITX-1)</var></code></p>
-                			<p><code>f(<var>LIMITX-.001</var>) = <var>f2(LIMITX-.001)</var></code></p>
-                			<p><code>f(<var>LIMITX-.000001</var>) = <var>f2(LIMITX-.000001)</var></code></p>
-                	</div>
-                	<p>
                 		Thus <code>\displaystyle\lim_{x \to <var>LIMITX</var>^{-}}f(x) = <var>leftNiceInfinity</var></code>
                 	</p>
                 	<p>
@@ -300,16 +234,6 @@
                 		It looks like <code>f(x)</code> is approaching about <code><var>roundTo(1,g(LIMITX))</var></code> as <code>x \to <var>LIMITX</var></code>, so
                 		<code>\displaystyle\lim_{x \to <var>LIMITX</var>^{-}}f(x) = <var>roundTo(1,g(LIMITX))</var></code>
                 	</p>
-                	<p>
-                		We can confirm this numerically by evaluating <code>f</code> at inputs close to <code><var>LIMITX</var></code> but slightly 
-                		more than <code><var>LIMITX</var></code>.
-                	</p>
-                	<div>
-                		For instance:
-                			<p><code>f(<var>LIMITX+1</var>) = <var>f2(LIMITX+1)</var></code></p>
-                			<p><code>f(<var>LIMITX+.001</var>) = <var>f2(LIMITX+.001)</var></code></p>
-                			<p><code>f(<var>LIMITX+.000001</var>) = <var>f2(LIMITX+.000001)</var></code></p>
-                	</div>
                 		
                 </div>
             </div>
@@ -318,16 +242,14 @@
             
                 <div class="question">
                 	
-                      <p>
+                    <p>
                     	Consider the function <code>f(x)</code> graphed below. Find
-                    	the value of each of the indicated limits to three decimal places of accuracy.
+                    	the value of each of the indicated limits with an error of at most <code>\frac{1}{2}</code>.
                     	If one of the limits appears to be <code>\infty</code> or <code>-\infty</code>, just type "infinity"
                     	or "-infinity".	
                     </p>
                     
-                  	<p> 
-		   		    	<center><code>f(</code><input type='text' id='nameField' size=3><code>)=</code> <span id='nameDisplay'>?</span></center>		      
-		    		</p>
+                  	
 		    		
                 	<div class = graphie id="grid">
                 	graphInit({
@@ -342,35 +264,18 @@
                                 return ( f3(x));
                             }, [-12, LIMITX-.01], {
                                 stroke: RED,
-                                strokeWidth: 2
+                                stokeWidth: 3
                             });
                     plot(function( x ) {
                                 return ( f3(x));
                             }, [LIMITX+.01, 12], {
                                 stroke: RED,
-                                strokeWidth: 2
+                                stokeWidth: 3
                             });		
                      
                     circle( [LIMITX, g(LIMITX)], 4 / 20, { fill: "white" } );
                     
-                    (function(){
-  					updateNameDisplay = function() {
-  	 		   	    var input = parseFloat(this.value)
-  	 		   	    if (input !== LIMITX && !isNaN(input)){
-      					$('#nameDisplay').text( f3(input));
-  						<div class="graphie" data-update="grid">
-                            ellipse( [input,f3(input)], 1/4, {
-                            stroke: "none",
-                            fill: GREEN
-                            });
-                		</div> 
-  						}
-  					else {$('#nameDisplay').text("?")};
-  					};
-  					$('#nameField').keydown( updateNameDisplay );
-  					$('#nameField').keyup( updateNameDisplay );
-  					$('#nameField').keypress( updateNameDisplay );
-  					})()
+                    
                 	</div>
                 	
                 </div>
@@ -379,7 +284,7 @@
 
                     <p>
                         <code>\displaystyle\lim_{x \to <var>LIMITX</var>^{-}}f(x)</code>: 
-                        <span class="sol"  data-inexact data-max-error="0.001" data-type="decimal"><var>g(LIMITX)</var></span>
+                        <span class="sol"  data-inexact data-max-error="0.5" data-type="decimal"><var>g(LIMITX)</var></span>
                         <br>
                         <code>\displaystyle\lim_{x \to <var>LIMITX</var>^{+}}f(x)</code>: 
                         <span class="sol"  data-type="text"><var>rightSol</var></span>
@@ -399,16 +304,7 @@
                 		It looks like <code>f(x)</code> is approaching about <code><var>roundTo(1,g(LIMITX))</var></code> as <code>x \to <var>LIMITX</var></code>, so
                 		<code>\displaystyle\lim_{x \to <var>LIMITX</var>^{-}}f(x) = <var>roundTo(1,g(LIMITX))</var></code>
                 	</p>
-                		<p>
-                		We can confirm this numerically by evaluating <code>f</code> at inputs close to <code><var>LIMITX</var></code> but slightly 
-                		less than <code><var>LIMITX</var></code>.
-                	</p>
-                	<div>
-                		For instance:
-                			<p><code>f(<var>LIMITX-1</var>) = <var>f3(LIMITX-1)</var></code></p>
-                			<p><code>f(<var>LIMITX-.001</var>) = <var>f3(LIMITX-.001)</var></code></p>
-                			<p><code>f(<var>LIMITX-.000001</var>) = <var>f3(LIMITX-.000001)</var></code></p>
-                	</div>
+                		
                 	<p>
                 		Now lets investigate <code>\displaystyle\lim_{x \to <var>LIMITX</var>^{+}}f(x)</code>.  
                 		Are the values of <code>f</code> approaching some finite value as <code>x</code> gets closer and closer to
@@ -417,16 +313,6 @@
                 	<p>
                 		It looks like <code>f(x)</code> is <var>rightHint</var> without bound as <code>x \to <var>LIMITX</var></code>.
                 	</p>
-                	<p>
-                		We can confirm this numerically by evaluating <code>f</code> at inputs close to <code><var>LIMITX</var></code> but slightly 
-                		less than <code><var>LIMITX</var></code>.
-                	</p>
-                	<div>
-                		For instance:
-                			<p><code>f(<var>LIMITX+1</var>) = <var>f3(LIMITX+1)</var></code></p>
-                			<p><code>f(<var>LIMITX+.001</var>) = <var>f3(LIMITX+.001)</var></code></p>
-                			<p><code>f(<var>LIMITX+.000001</var>) = <var>f3(LIMITX+.000001)</var></code></p>
-                	</div>
                 	<p>
                 		Thus <code>\displaystyle\lim_{x \to <var>LIMITX</var>^{+}}f(x) = <var>rightNiceInfinity</var></code>
                 	</p>

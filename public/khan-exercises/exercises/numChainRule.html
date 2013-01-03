@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html data-require="math word-problems">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Understanding the Chain Rule Numerically</title>
+    <script src="../khan-exercise.js"></script>
+</head>
+<body>
+    <div class="exercise">
+        <div class="vars">
+		<var id="X">randRange(0,10)</var>
+		<var id="DELTA_X">roundTo(3,randRange(0,10)*.01)</var>
+		<var id="fPRIME">roundTo(3,randRange(0,9))</var>
+		<var id="gPRIME">roundTo(3,randRange(0,9))</var>
+		<var id="fVALUE">randRange(0,10)</var>
+		<var id="gVALUE">randRange(0,10)</var>
+		
+		<var id="X_NEW">roundTo(3,X+DELTA_X)</var>
+		<var id="APPROX">roundTo(3,gVALUE + DELTA_X*fPRIME*gPRIME)</var>
+        </div>
+
+        <div class="problems">
+            <div>
+                <div class="question">
+                    <p>Given that <code>f(<var>X</var>) = <var>fVALUE</var>, f'(<var>X</var>) = <var>fPRIME</var>,
+					 g(<var>fVALUE</var>) = <var>gVALUE</var></code>, and <code>g'(<var>fVALUE</var>) = <var>gPRIME</var></code>, what is the 
+					 approximate value of <code>g(f(<var>X + DELTA_X</var>))</code>?
+                    </p>
+                </div>
+
+                <p class="solution" data-forms="decimal"><var>APPROX</var></p>
+            </div>
+        </div>
+
+        <div class="hints">
+            <p><code>g[f(<var>X + DELTA_X</var>)] \approx g[f(<var>X</var>)+f'(<var>X</var>)(<var>DELTA_X</var>)]</code> by using the linear
+                approximation to <code>f</code> at <code><var>X</var></code></p>
+            <p><code>g[f(<var>X</var>)+f'(<var>X</var>)(<var>DELTA_X</var>)] = g[<var>fVALUE</var> + <var>fPRIME</var>(<var>DELTA_X</var>)]</code></p>
+            <p><code>g[<var>fVALUE</var> + <var>roundTo(3,DELTA_X*fPRIME)</var>] \approx g(<var>fVALUE</var>) + g'(<var>fVALUE</var>)(<var>roundTo(3,DELTA_X*fPRIME)</var>)</code>
+                by using the linear approximation to <code>g</code> at <code><var>fVALUE</var></code></p>
+            <p><code>g(<var>fVALUE</var>) + g'(<var>fVALUE</var>)(<var>roundTo(3,DELTA_X*fPRIME)</var>) 
+                = <var>gVALUE</var> + <var>gPRIME</var>(<var>roundTo(3,DELTA_X*fPRIME)</var>)</code></p>
+            <p>Thus <code>g(f(<var>X + DELTA_X</var>)) \approx <var>APPROX</var></code></p>
+            
+        </div>
+    </div>
+</body>
+</html>

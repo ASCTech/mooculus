@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130102045709) do
+ActiveRecord::Schema.define(:version => 20130102001138) do
 
   create_table "authentications", :force => true do |t|
     t.integer  "user_id"
@@ -68,8 +68,18 @@ ActiveRecord::Schema.define(:version => 20130102045709) do
 
   add_index "problems", ["exercise_id"], :name => "index_problems_on_exercise_id"
 
-# Could not dump table "scores" because of following StandardError
-#   Unknown type 'reference' for column 'exercise_id'
+  create_table "scores", :force => true do |t|
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
+    t.integer  "user_id"
+    t.integer  "time_taken"
+    t.integer  "attempt_number"
+    t.boolean  "complete"
+    t.integer  "count_hints"
+    t.string   "attempt_content"
+    t.integer  "seed"
+    t.integer  "problem_id"
+  end
 
   create_table "users", :force => true do |t|
     t.string   "name"
