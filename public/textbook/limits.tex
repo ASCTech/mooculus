@@ -298,7 +298,7 @@ Since these limits are different, $\lim_{x\to 2} f(x)$ does not exist.
             every axis y label/.style={at=(current axis.above origin),anchor=south},
             every axis x label/.style={at=(current axis.right of origin),anchor=west},
             xtick={-4,...,6}, ytick={-3,...,10},
-            xticklabels={-4,,-2,,0,,2,,4,,6}, yticklabels={-2,,0,,2,,4,,6,,8,,10},
+            xticklabels={-4,,-2,,0,,2,,4,,6}, yticklabels={,-2,,0,,2,,4,,6,,8,,10},
             grid=major,
             grid style={dashed, gridColor},
           ]
@@ -567,8 +567,8 @@ Another useful way to put functions together is
 composition\index{composition of functions}. If $f(x)$ and $g(x)$ are
 functions, we can form two functions by composition: $f(g(x))$ and
 $g(f(x))$. For example, if $f(x)=\sqrt{x}$ and $g(x)=x^2+5$, then
-$f(g(x))=\sqrt{x^2+5}$ and $g(f(x))=(\sqrt{x})^2+5=x+5$.  Here is a
-companion to theorem~\xrefn{thm:properties of limits} for composition:
+$f(g(x))=\sqrt{x^2+5}$ and $g(f(x))=(\sqrt{x})^2+5=x+5$.  This brings
+us to our next theorem.
 
 \begin{theorem} Suppose that $\lim_{x\to a}g(x)=L$ and $\lim_{x\to L}f(x)=f(L)$. Then
 $$\lim_{x\to a} f(g(x)) = f(L).$$
@@ -919,7 +919,7 @@ Theorem~\ref{theorem:squeeze}, $\lim_{x \to 0}\frac{\sin(x)}{x} = 1$.
 \begin{answer} $1/6$
 \end{answer}\end{exercise}
 
-\begin{exercise} $\lim_{x\to 0+} \sqrt{{1\over x}+2} - \sqrt{1\over x}$.
+\begin{exercise} $\lim_{x\to 0+} \sqrt{{1\over x}+2} - \sqrt{1\over x}$
 \begin{answer} 0
 \end{answer}\end{exercise}
 
@@ -1254,7 +1254,7 @@ Compute
 	  \addplot [very thick, penColor, smooth] {(1/x) * sin(deg(7*x))+4};
         \end{axis}
 \end{tikzpicture}
-\caption{A plot of $f(x)=\frac{\sin(7x)}{x}+4.$.}
+\caption{A plot of $f(x)=\frac{\sin(7x)}{x}+4$.}
 \label{plot:sin7x/x+4}
 \end{marginfigure}
 
