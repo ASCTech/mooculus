@@ -50,3 +50,6 @@ end
 
 # badges for our users
 gem 'merit'
+
+# I like ambry for storing some static data
+gem 'ambry'

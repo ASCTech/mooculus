@@ -42,4 +42,23 @@ class User < ActiveRecord::Base
     end
     user
   end
+
+  #################################################################
+  # some methods for computing simple statistics for badges
+  def total_hints_requested
+    self.scores.where( :attempt_content => "hint" ).count
+  end
+
+  def total_correct_answers
+    self.scores.where( :complete => true ).count
+  end
+
+  def total_correct_answers_without_hints
+    self.scores.where( :complete => true, :count_hints => 0 ).count
+  end
+
+  def total_thinking_time
+    self.scores.sum(:time_taken)
+  end
+
 end

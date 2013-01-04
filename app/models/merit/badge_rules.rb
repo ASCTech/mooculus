@@ -21,17 +21,53 @@ module Merit
     include Merit::BadgeRulesMethods
 
     def initialize
-      grant_on ['users#create', 'users#update'], :badge => 'autobiographer', :temporary => true do |user|
-        user.name.present?
+      grant_on ['score#attempt'], :badge => 'Hourglass', :to => :user do |score|
+        score.user.total_thinking_time >= 3600
       end
 
-      grant_on ['score#attempt'], :badge => 'answerer', :level => 5, :to => :user do |score|
-        score.user.scores.count > 5
+      grant_on ['score#attempt'], :badge => 'Dayfly', :to => :user do |score|
+        score.user.total_thinking_time >= 86400
       end
 
-      grant_on ['score#attempt'], :badge => 'answerer', :level => 5, :to => :user do |score|
-        score.user.scores.count > 5
+      grant_on ['score#attempt'], :badge => 'Perfect Ten', :to => :user do |score|
+        score.user.total_correct_answers >= 10
       end
+
+      grant_on ['score#attempt'], :badge => 'Hundreder', :to => :user do |score|
+        score.user.total_correct_answers >= 100
+      end
+
+      grant_on ['score#attempt'], :badge => 'Grand Slam', :to => :user do |score|
+        score.user.total_correct_answers >= 1000
+      end
+
+      grant_on ['score#attempt'], :badge => 'Myriad', :to => :user do |score|
+        score.user.total_correct_answers >= 10000
+      end
+
+      grant_on ['score#attempt'], :badge => 'Hole in One', :to => :user do |score|
+        score.user.total_correct_answers_without_hints >= 1
+      end
+
+      grant_on ['score#attempt'], :badge => 'Four Aces', :to => :user do |score|
+        score.user.total_correct_answers_without_hints >= 4
+      end
+
+      grant_on ['score#attempt'], :badge => 'C Note', :to => :user do |score|
+        score.user.total_correct_answers_without_hints >= 100
+      end
+
+      grant_on ['score#hint'], :badge => 'Secret Agent', :to => :user do |score|
+        score.user.total_hints_requested >= 1000
+      end
+
+      grant_on ['score#hint'], :badge => 'Setec Astronomer', :to => :user do |score|
+        score.user.total_hints_requested >= 10000
+      end
+
+      #grant_on ['users#create', 'users#update'], :badge => 'autobiographer', :temporary => true do |user|
+      #  user.name.present?
+      #end
 
       # If it creates user, grant badge
       # Should be "current_user" after registration for badge to be granted.
@@ -40,11 +76,6 @@ module Merit
       # If it has 10 comments, grant commenter-10 badge
       # grant_on 'comments#create', :badge => 'commenter', :level => 10 do |comment|
       #   comment.user.comments.count == 10
-      # end
-
-      # If it has 5 votes, grant relevant-commenter badge
-      # grant_on 'comments#vote', :badge => 'relevant-commenter', :to => :user do |comment|
-      #   comment.votes.count == 5
       # end
 
       # Changes his name by one wider than 4 chars (arbitrary ruby code case)
