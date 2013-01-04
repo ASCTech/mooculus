@@ -8,11 +8,11 @@
 <body>
     <div class="exercise">
       <div class="problems">
-        <div id="like-1-over-x-from-left">
-
-          <div class="vars">
+	
+	<div id="like-1-over-x-from-left">
+	  <div class="vars">
             <var id = "A">randRangeNonZero(-9,9)</var>
-            <var id = "B">randRangeExclude(-9,9,0)</var>
+            <var id = "B">randRangeNonZero(-9,9)</var>
 	    <var id = "sol">(function(A){
     	      if (A &gt; 0){
     	      return "infinity"
@@ -22,66 +22,140 @@
     	      }	
     	      })
 	    </var>
+	    <var id = "sgn">(function(A){
+    	      if (A &gt; 0){
+    	      return "positive"
+    	      }
+    	      else {
+    	      return "negative"
+    	      }	
+    	      })
+	    </var>
           </div>      
-
-          <p class="question">
+          
+	  <p class="question">
             Evaluate the following limit:
             <br><br>
             <code>	
               \displaystyle\lim_{x \to <var>A</var>-}\frac{<var>B</var>}{x-<var>A</var>}   
             </code>
+	    <br><br>
+	    Ansewer either "infinity" or "-infinity".
 	  </p>
    
-          <p class="solution">
-            sol(abs(A)/A*(-1))
+          <p class="solution" data-type="text">
+            <var>sol(A*B)</var>
           </p>
 
 	  <div class="hints">
-	    <p> Note we cannot evaluate this limit directly since the
-	    denominator is zero when <code>x=<var>A</var></code>.</p>
+	    <p> The numerator stays fixed as the denominator approaches zero. </p>
 
-	    <p> Start by factoring the numerator and the
-	    denominator. </p>
+	    <p> Since the numerator is <var>sgn(B)</var> and the denominator is negative, the fraction is <var>sgn(-B)</var></p>
 
-	    <p> In this case we find:
-	      <br><br>
-	      <code>
-		\displaystyle\lim_{x \to <var>A</var>}\frac{<var>num.text()</var>}{<var>denom.text()</var>}  =
-		\lim_{x \to <var>A</var>}\frac{(<var>lin2</var>)(<var>lin1</var>)}{(<var>lin3</var>)(<var>lin1</var>)}   
-	      </code>
-	    </p>
-
-	    <p> Since we are taking the limit as <code>x\to <var>A</var></code>, we may assume that <code>x\ne <var>A</var></code>.
-	    </p>
-
-	    <p> Canceling factors we see:
-	      <br><br>
-	      <code>
-		\displaystyle\lim_{x \to <var>A</var>}\frac{(<var>lin2</var>)(<var>lin1</var>)}{(<var>lin3</var>)(<var>lin1</var>)}=
-		\lim_{x \to <var>A</var>}\frac{(<var>lin2</var>)}{(<var>lin3</var>)}
-	      </code>
-	    </p>
-	    
-	    <p> We can evaluate this rational function at <code>x = <var>A</var></code>.
-	    </p>
-
-	    <p> Hence, 
-	      <br><br>
-	      <code>
-		\displaystyle\lim_{x \to <var>A</var>}\frac{<var>num.text()</var>}{<var>denom.text()</var>}  =
-		\frac{<var>D</var>(<var>A</var>) +<var>-B*D</var>}{<var>E</var>(<var>A</var>)+<var>-C*E</var>}.
-	      </code>
-	    </p>
-	    <p> Finally,
-	      <br><br>
-	      <code>
-		\displaystyle\lim_{x \to <var>A</var>}\frac{<var>num.text()</var>}{<var>denom.text()</var>} =
-		\dfrac{<var>toFraction(D*(A-B)/(E*(A-C)))[0]</var>}{<var>toFraction(D*(A-B)/(E*(A-C)))[1]</var>}.
-	      </code>
-	    </p>
+	    <p> Since the fraction is <var>sgn(-B)</var> and the denominator goes to zero, the limit is <var>sol(-B)</var>.  
 	  </div>
-          
-	</div>          
+	</div> 
+
+
+        <div id="like-1-over-x-from-right">
+
+	  <div class="vars">
+            <var id = "A">randRangeNonZero(-9,9)</var>
+            <var id = "B">randRangeNonZero(-9,9)</var>
+	    <var id = "sol">(function(A){
+    	      if (A &gt; 0){
+    	      return "infinity"
+    	      }
+    	      else {
+    	      return "-infinity"
+    	      }	
+    	      })
+	    </var>
+	    <var id = "sgn">(function(A){
+    	      if (A &gt; 0){
+    	      return "positive"
+    	      }
+    	      else {
+    	      return "negative"
+    	      }	
+    	      })
+	    </var>
+          </div>     
+ 	  
+	  <p class="question">
+            Evaluate the following limit:
+            <br><br>
+            <code>	
+              \displaystyle\lim_{x \to <var>A</var>+}\frac{<var>B</var>}{x-<var>A</var>}   
+            </code>
+	    <br><br>
+	    Ansewer either "infinity" or "-infinity".
+	  </p>
+   
+          <p class="solution" data-type="text">
+            <var>sol(-A*B)</var>
+          </p>
+
+	  <div class="hints">
+	    <p> The numerator stays fixed as the denominator approaches zero. </p>
+
+	    <p> Since the numerator is <var>sgn(B)</var> and the denominator is positive, the fraction is <var>sgn(B)</var></p>
+
+	    <p> Since the fraction is <var>sgn(B)</var> and the denominator goes to zero, the limit is <var>sol(B)</var>.  
+	  </div>
+	</div> 
+
+        <div id="like-1-over-x2d">
+
+	  <div class="vars">
+            <var id = "A">randRangeNonZero(-9,9)</var>
+            <var id = "B">randRangeExclude(1,9,[A])</var>
+	    <var id = "b">randRangeNonZero(-1,1)</var>
+	    <var id = "sol">(function(A){
+    	      if (A &gt; 0){
+    	      return "infinity"
+    	      }
+    	      else {
+    	      return "-infinity"
+    	      }	
+    	      })
+	    </var>
+	    <var id = "sgn">(function(A){
+    	      if (A &gt; 0){
+    	      return "positive"
+    	      }
+    	      else {
+    	      return "negative"
+    	      }	
+    	      })
+	    </var>
+          </div>     
+ 	  
+	  <p class="question">
+            Evaluate the following limit:
+            <br><br>
+            <code>	
+              \displaystyle\lim_{x \to <var>-A</var>}\frac{x+<var>b*B</var>}{(x+<var>A</var>)^2}   
+            </code>
+	    <br><br>
+	    Ansewer either "infinity" or "-infinity".
+	  </p>
+   
+          <p class="solution" data-type="text">
+            <var>sol(-A*B)</var>
+          </p>
+
+	  <div class="hints">
+	    <p> The numerator approaches <var>b*B-A</var> as the denominator approaches zero. </p>
+
+	    <p> Since the numerator is <var>sgn(b*B-A)</var> and the denominator is always positive, the fraction is <var>sgn(b*B-A)</var></p>
+
+	    <p> Since the fraction is <var>sgn(b*B-A)</var> and the denominator goes to zero, the limit is <var>sol(B*b-A)</var>.  
+	  </div>
+	</div> 
+
+         
       </div>
+
 </body>
 </html>
