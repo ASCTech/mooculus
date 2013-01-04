@@ -412,7 +412,7 @@ arc (5:90:0.35in) % top ear
 
 
 \renewcommand{\maketitlepage}[0]{%
-  \cleardoublepage%
+  %\cleardoublepage%
   {%
   \sffamily%
   \begin{fullwidth}%
@@ -519,7 +519,7 @@ arc (5:90:0.35in) % top ear
   \end{fullwidth}%
   }
   \thispagestyle{empty}%
-  \clearpage%
+  %\clearpage%
 }
 
 
@@ -610,7 +610,7 @@ arc (5:90:0.35in) % top ear
 % The main matter in Tufte's /Beautiful Evidence/ doesn't restart the page
 % numbering---it continues where it left off in the front matter.
 \renewcommand\mainmatter{%
-  \cleardoublepage%
+  %\cleardoublepage%
   \@mainmattertrue%
   \fancyhf{}%
   \ifthenelse{\boolean{@tufte@twoside}}%
@@ -623,8 +623,6 @@ arc (5:90:0.35in) % top ear
       \fancyhead[RE,RO]{\smallcaps{\newlinetospace{\plaintitle}}\quad\thepage}% book title
     }%
 }
-
-
 
 
 
