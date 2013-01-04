@@ -7,237 +7,457 @@
 </head>
 <body>
     <div class="exercise">
-       
+      <div class="problems">
+        <div id="Ratio-of-two-quadratics-one-linear-term-cancels">
 
-        <div class="problems">
-            <div id="Ratio-of-two-quadratics-one-linear-term-cancels">
-            
-            	 <div class="vars">
-        			<var id = "A">randRangeNonZero(-9,9)</var>
-          			<var id = "B">randRangeExclude(-9,9,[A])</var>
-          			<var id = "C">randRangeExclude(-9,9,[A,B])</var>
-          			<var id = "D">randRangeNonZero(-9,9)</var>
-          			<var id = "E">randRangeNonZero(-9,9)</var>
-          			<var id = "lin1">new Polynomial(0,1,[-A,1])</var>
-          			<var id = "lin2">new Polynomial(0,1,[-B*D,D])</var>
-          			<var id = "lin3">new Polynomial(0,1,[-C*E,E])</var>
-          			<var id = "num">lin1.multiply(lin2)</var>
-          			<var id = "denom">lin1.multiply(lin3)</var>
-          			<var id = "func"><code>\frac{<var>num.text()</var>}{<var>denom.text()</var>}</code></var>
-       		    </div>
-                
-                <p class="problem">
-                
-                	Evaluate the following limit.
-                
-                	<br><br>
-                
-                	<code>	
-                		\displaystyle\lim_{x \to <var>A</var>}\frac{<var>num.text()</var>}{<var>denom.text()</var>}
-                		
-                	</code>
-                	
-                	
-					
-					
-					
-					
-				</p>
+          <div class="vars">
+            <var id = "A">randRangeNonZero(-9,9)</var>
+            <var id = "B">randRangeExclude(-9,9,[A])</var>
+            <var id = "C">randRangeExclude(-9,9,[A,B])</var>
+            <var id = "D">randRangeNonZero(-9,9)</var>
+            <var id = "E">randRangeNonZero(-9,9)</var>
+            <var id = "lin1">new Polynomial(0,1,[-A,1])</var>
+            <var id = "lin2">new Polynomial(0,1,[-B*D,D])</var>
+            <var id = "lin3">new Polynomial(0,1,[-C*E,E])</var>
+            <var id = "num">lin1.multiply(lin2)</var>
+            <var id = "denom">lin1.multiply(lin3)</var>
+            <var id = "func"><code>\frac{<var>num.text()</var>}{<var>denom.text()</var>}</code></var>
+       	  </div>      
+
+          <p class="question">
+            Evaluate the following limit:
+            <br><br>
+            <code>	
+              \displaystyle\lim_{x \to <var>A</var>}\frac{<var>num.text()</var>}{<var>denom.text()</var>}   
+            </code>
+	  </p>
    
-               <div class="solution">
-               	<var>D*(A-B)/(E*(A-C))</var>
-                </div>
-            </div>
-     
-     <div id="Quadratic-over-linear">
-            
-            	 <div class="vars">
-        			<var id = "A">randRangeNonZero(-9,9)</var>
-          			<var id = "B">randRangeExclude(-9,9,[A])</var>
-          			<var id = "C">randRangeExclude(-9,9,[A,B])</var>
-          			<var id = "D">randRangeNonZero(-9,9)</var>
-          			<var id = "E">randRangeNonZero(-9,9)</var>
-          			<var id = "lin1">new Polynomial(0,1,[-A,1])</var>
-          			<var id = "lin2">new Polynomial(0,1,[-B*D,D])</var>
-          			<var id = "lin3">new Polynomial(0,1,[-C*E,E])</var>
-          			<var id = "num">lin1.multiply(lin2)</var>
-          			<var id = "denom">lin1.multiply(lin3)</var>
-          			<var id = "func"><code>\frac{<var>num.text()</var>}{<var>denom.text()</var>}</code></var>
-       		    </div>
-                
-                <p class="problem">
-                
-                	Evaluate the following limit.
-                	<br><br>
-                
-                	<code>	
-                		\displaystyle\lim_{x \to <var>A</var>}\frac{<var>num.text()</var>}{<var>lin1.text()</var>}
-                		
-                	</code>
-							
-				</p>
-   
-               <div class="solution" >
-				
-					<var>D*A-B*D</var>	
-                    
-                </div>
-            </div>
-     
-      <div id="derivative-of-x2">
-            
-            	 <div class="vars">
-        			<var id = "A">randRangeNonZero(-9,9)</var>
-       		    </div>
-                
-                <p class="problem">
-                
-                Evaluate the following limit
-                	<br><br>
-                
-                	<code>	
-                		\displaystyle\lim_{x \to <var>A</var>}\frac{x^2-<var>A*A</var>}{x-<var>A</var>}
-                		
-                	</code>
-                					
-					
-				</p>
-	  
-               <div class="solution" >
+          <div class="solution">
+            <var>D*(A-B)/(E*(A-C))</var>
+          </div>
 
-                    <var>2*A</var>
-                    
-                </div>
-            </div>
-            
-            
-            <div id="derivative-of-x3">
-            
-            	 <div class="vars">
-        			<var id = "A">randRangeNonZero(-9,9)</var>
-       		    </div>
-                
-                <p class="problem">
-                
-                Evaluate the following limit
-                	<br><br>
-                
-                	<code>	
-                		\displaystyle\lim_{x \to <var>A</var>}\frac{x^3-<var>A*A*A</var>}{x-<var>A</var>}
-                		
-                	</code>
-                	
-                	
-					
-					
-					
-                	
-					 
-					 
-					
-					
-					
-				</p>
-	  
-               <div class="solution">
+	  <div class="hints">
+	    <p> Note we cannot evaluate this limit directly since the
+	    denominator is zero when <code>x=<var>A</var></code>.</p>
 
-                   <var>3*A*A</var>
-                    
-                </div>
-            </div>
-            
-            <div id="derivative-of-x4">
-            
-            	 <div class="vars">
-        			<var id = "A">randRangeNonZero(-9,9)</var>
-       		    </div>
-                
-                <p class="problem">
-                
-                	Evaluate the following limit
-                	
-                	<br><br>
-                
-                	<code>	
-                		\displaystyle\lim_{x \to <var>A</var>}\frac{x^4-<var>A*A*A*A</var>}{x-<var>A</var>}
-                		
-                	</code>
-                	
-                	
-					
-					 
-					 
-					
-					
-					
-				</p>
-	  
-               <div class="solution">
-					<var>4*A*A*A</var>
-                </div>
-            </div>
-     
-     		 <div id="sine-x-over-x">
-            
-            	 <div class="vars">
-        			<var id = "A">randRangeNonZero(-9,9)</var>
-          			<var id = "B">randRangeExclude(-9,9,[0,A])</var>
-       		    </div>
-                
-                <p class="problem">
-                
-                	Evaluate the following limit
-                
-                	<br><br>
-                
-                	<code>	
-                		\displaystyle\lim_{x \to <var>0</var>}\frac{\sin(<var>A</var>x)}{<var>B</var>x}
-                		
-                	</code>
-                	
-                	
-                	
-					 
-					 
-					
-					
-					
-				</p>
-	  
-               <div class="solution" >
+	    <p> Start by factoring the numerator and the
+	    denominator. </p>
 
-                   <var>A/B</var>
-                </div>
-            </div>
-            
-            <div id="needs-conjugate">
-            
-            	 <div class="vars">
-        			<var id = "A">randRange(0,9)</var>
-          			
-       		    </div>
-                
-                <p class="problem">
-                
-                	Evaluate the following limit
-                
-                	<br><br>
-                
-                	<code>	
-                		\displaystyle\lim_{x \to <var>A*A</var>}\frac{x-<var>A*A</var>}{\sqrt{x}-<var>A</var>}
-                		
-                	</code>
-				
-				</p>
-	  
-               <div class="solution" >
-                    <var>2*A</var>
-                </div>
-            </div>
-     
-     
-    
-     
+	    <p> In this case we find:
+	      <br><br>
+	      <code>
+		\displaystyle\lim_{x \to <var>A</var>}\frac{<var>num.text()</var>}{<var>denom.text()</var>}  =
+		\lim_{x \to <var>A</var>}\frac{(<var>lin2</var>)(<var>lin1</var>)}{(<var>lin3</var>)(<var>lin1</var>)}   
+	      </code>
+	    </p>
+
+	    <p> Since we are taking the limit as <code>x\to <var>A</var></code>, we may assume that <code>x\ne <var>A</var></code>.
+	    </p>
+
+	    <p> Canceling factors we see:
+	      <br><br>
+	      <code>
+		\displaystyle\lim_{x \to <var>A</var>}\frac{(<var>lin2</var>)(<var>lin1</var>)}{(<var>lin3</var>)(<var>lin1</var>)}=
+		\lim_{x \to <var>A</var>}\frac{(<var>lin2</var>)}{(<var>lin3</var>)}
+	      </code>
+	    </p>
+	    
+	    <p> We can evaluate this rational function at <code>x = <var>A</var></code>.
+	    </p>
+
+	    <p> Hence, 
+	      <br><br>
+	      <code>
+		\displaystyle\lim_{x \to <var>A</var>}\frac{<var>num.text()</var>}{<var>denom.text()</var>}  =
+		\frac{<var>D</var>(<var>A</var>) +<var>-B*D</var>}{<var>E</var>(<var>A</var>)+<var>-C*E</var>}.
+	      </code>
+	    </p>
+	    <p> Finally,
+	      <br><br>
+	      <code>
+		\dfrac{<var>D*(A-B)</var>}{<var>(E*(A-C))</var>} = <var>D*(A-B)/(E*(A-C))</var>.
+	      </code>
+	    </p>
+	  </div>
+        
 	</div>
+
+
+     
+	<div id="Quadratic-over-linear">
+      
+          <div class="vars">
+            <var id = "A">randRangeNonZero(-9,9)</var>
+            <var id = "B">randRangeExclude(-9,9,[A])</var>
+            <var id = "C">randRangeExclude(-9,9,[A,B])</var>
+            <var id = "D">randRangeNonZero(-9,9)</var>
+            <var id = "E">randRangeNonZero(-9,9)</var>
+            <var id = "lin1">new Polynomial(0,1,[-A,1])</var>
+            <var id = "lin2">new Polynomial(0,1,[-B*D,D])</var>
+            <var id = "lin3">new Polynomial(0,1,[-C*E,E])</var>
+            <var id = "num">lin1.multiply(lin2)</var>
+            <var id = "denom">lin1.multiply(lin3)</var>
+            <var id = "func"><code>\frac{<var>num.text()</var>}{<var>denom.text()</var>}</code></var>
+       	  </div>
+                
+          <p class="question">
+            
+            Evaluate the following limit:
+            <br><br>
+            <code>	
+              \displaystyle\lim_{x \to <var>A</var>}\frac{<var>num.text()</var>}{<var>lin1.text()</var>}
+            </code>
+	  </p>
+	  
+          <div class="solution">
+	    <var>D*A-B*D</var>	
+          </div>
+
+	  <div class="hints">
+	    <p> Note we cannot evaluate this limit directly since the
+	    denominator is zero when <code>x=<var>A</var></code>.</p>
+
+	    <p> Start by factoring the numerator. </p>
+
+	    <p> In this case we find:
+	      <br><br>
+	      <code>
+		\displaystyle\lim_{x \to <var>A</var>}\frac{<var>num.text()</var>}{<var>denom.text()</var>}  =
+		\lim_{x \to <var>A</var>}\frac{(<var>lin2</var>)(<var>lin1</var>)}{<var>lin1</var>}   
+	      </code>
+	    </p>
+
+	    <p> Since we are taking the limit as <code>x\to <var>A</var></code>, we may assume that <code>x\ne <var>A</var></code>.
+	    </p>
+
+	    <p> Canceling factors we see:
+	      <br><br>
+	      <code>
+		\displaystyle\lim_{x \to <var>A</var>}\frac{(<var>lin2</var>)(<var>lin1</var>)}{(<var>lin3</var>)(<var>lin1</var>)}=
+		\lim_{x \to <var>A</var>}(<var>lin2</var>)
+	      </code>
+	    </p>
+	    
+	    <p> We can evaluate this linear function at <code>x = <var>A</var></code>.
+	    </p>
+
+	    <p> Hence, 
+	      <br><br>
+	      <code>
+		\displaystyle\lim_{x \to <var>A</var>}\frac{<var>num.text()</var>}{<var>denom.text()</var>}  =
+		<var>D</var>(<var>A</var>) +<var>-B*D</var>.
+	      </code>
+	    </p>
+	    <p> Finally, we see the solution is
+	      <br><br>
+	      <code>
+		<var>D*(A-B)</var>.
+	      </code>
+	    </p>
+	  </div>
+
+        </div>
+     
+
+
+	<div id="derivative-of-x2">
+          <div class="vars">
+            <var id = "A">randRangeNonZero(-9,9)</var>
+       	  </div>
+                
+          <p class="question">      
+            Evaluate the following limit:
+            <br><br>
+            <code>	
+              \displaystyle\lim_{x \to <var>A</var>}\frac{x^2-<var>A*A</var>}{x-<var>A</var>}
+            </code>				
+	  </p>
+	  
+          <div class="solution" >
+            <var>2*A</var>
+          </div>
+
+	  <div class="hints">
+	    <p> Note we cannot evaluate this limit directly since the
+	    denominator is zero when <code>x=<var>A</var></code>.</p>
+
+	    <p> Start by factoring the numerator. </p>
+
+	    <p> In this case we find:
+	      <br><br>
+	      <code>
+		\displaystyle\lim_{x \to <var>A</var>}\frac{x^2-<var>A*A</var>}{x-<var>A</var>}  =
+		\lim_{x \to <var>A</var>}\frac{(x+<var>A</var>)(x-<var>A</var>)}{x-<var>A</var>}  
+	      </code>
+	    </p>
+
+	    <p> Since we are taking the limit as <code>x\to <var>A</var></code>, we may assume that <code>x\ne <var>A</var></code>.
+	    </p>
+
+	    <p> Canceling factors we see:
+	      <br><br>
+	      <code>
+		\displaystyle\lim_{x \to <var>A</var>}\frac{(x+<var>A</var>)(x-<var>A</var>)}{x-<var>A</var>}   =
+		\lim_{x \to <var>A</var>}(x+<var>A</var>)
+	      </code>
+	    </p>
+	    
+	    <p> We can evaluate this linear function at <code>x = <var>A</var></code>.
+	    </p>
+
+	    <p> Hence, 
+	      <br><br>
+	      <code>
+		\displaystyle\lim_{x \to <var>A</var>}(x+<var>A</var>)  =
+		<var>A</var> +<var>A</var>.
+	      </code>
+	    </p>
+	    <p> Finally, we see the solution is
+	      <br><br>
+	      <code>
+		<var>2*A</var>.
+	      </code>
+	    </p>
+	  </div>
+
+        </div>
+            
+        
+    
+        <div id="derivative-of-x3">
+          <div class="vars">
+            <var id = "A">randRangeNonZero(-9,9)</var>
+       	  </div>      
+          <p class="question">      
+            Evaluate the following limit:
+            <br><br>
+            <code>	
+              \displaystyle\lim_{x \to <var>A</var>}\frac{x^3-<var>A*A*A</var>}{x-<var>A</var>}
+            </code>
+ 	  </p>
+	  
+          <div class="solution">
+            <var>3*A*A</var>        
+          </div>
+
+	  <div class="hints">
+	    <p> Note we cannot evaluate this limit directly since the
+	    denominator is zero when <code>x=<var>A</var></code>.</p>
+
+	    <p> Start by factoring the numerator. </p>
+
+	    <p> In this case we find:
+	      <br><br>
+	      <code>
+		\displaystyle\lim_{x \to <var>A</var>}\frac{x^3-<var>A*A*A</var>}{x-<var>A</var>}  =
+		\lim_{x \to <var>A</var>}\frac{(x^2+<var>A</var>x +<var>A*A</var>)(x-<var>A</var>)}{x-<var>A</var>}   
+	      </code>
+	    </p>
+
+	    <p> Since we are taking the limit as <code>x\to <var>A</var></code>, we may assume that <code>x\ne <var>A</var></code>.
+	    </p>
+
+	    <p> Canceling factors we see:
+	      <br><br>
+	      <code>
+		\displaystyle\lim_{x \to <var>A</var>}\frac{(x^2+<var>A</var>x +<var>A*A</var>)(x-<var>A</var>)}{x-<var>A</var>}  =
+		\lim_{x \to <var>A</var>}(x^2+<var>A</var>x +<var>A*A</var>)
+	      </code>
+	    </p>
+	    
+	    <p> We can evaluate this quadratic function at <code>x = <var>A</var></code>.
+	    </p>
+
+	    <p> Hence, 
+	      <br><br>
+	      <code>
+		\displaystyle\lim_{x \to <var>A</var>}(x^2+<var>A</var>x +<var>A*A</var>) =
+		(<var>A</var>)^2 +<var>A</var>(<var>A</var>) + <var>A*A</var>.
+	      </code>
+	    </p>
+	    <p> Finally, we see the solution is
+	      <br><br>
+	      <code>
+		<var>3*A*A</var>.
+	      </code>
+	    </p>
+	  </div>
+
+        </div>
+        
+
+    
+        <div id="derivative-of-x4">            
+          <div class="vars">
+            <var id = "A">randRangeNonZero(-9,9)</var>
+       	  </div>
+                
+	  <p class="problem"></p>
+          <p class="question">
+            Evaluate the following limit:
+            <br><br>
+            <code>	
+              \displaystyle\lim_{x \to <var>A</var>}\frac{x^4-<var>A*A*A*A</var>}{x-<var>A</var>}
+            </code>
+	  </p>
+	  
+          <div class="solution">
+	    <var>4*A*A*A</var>
+          </div>
+
+	  <div class="hints">
+	    <p> Note we cannot evaluate this limit directly since the
+	    denominator is zero when <code>x=<var>A</var></code>.</p>
+
+	    <p> Start by factoring the numerator. </p>
+
+	    <p> In this case we find:
+	      <br><br>
+	      <code>
+		\displaystyle\lim_{x \to <var>A</var>}\frac{x^4-<var>A*A*A*A</var>}{x-<var>A</var>}  =
+		\lim_{x \to <var>A</var>}\frac{(x^3+<var>A</var>x^2 +<var>A*A</var>x + <var>A*A*A</var>)(x-<var>A</var>)}{x-<var>A</var>}   
+	      </code>
+	    </p>
+
+	    <p> Since we are taking the limit as <code>x\to <var>A</var></code>, we may assume that <code>x\ne <var>A</var></code>.
+	    </p>
+
+	    <p> Canceling factors we see:
+	      <br><br>
+	      <code>
+		\displaystyle\lim_{x \to <var>A</var>}\frac{(x^3+<var>A</var>x^2 +<var>A*A</var>x + <var>A*A*A</var>)(x-<var>A</var>)}{x-<var>A</var>}=
+		\lim_{x \to <var>A</var>}(x^3+<var>A</var>x^2 +<var>A*A</var>x + <var>A*A*A</var>)
+	      </code>
+	    </p>
+	    
+	    <p> We can evaluate this cubic function at <code>x = <var>A</var></code>.
+	    </p>
+
+	    <p> Hence, 
+	      <br><br>
+	      <code>
+		\displaystyle\lim_{x \to <var>A</var>}(x^3+<var>A</var>x^2 +<var>A*A</var>x + <var>A*A*A</var>)=
+		(<var>A</var>)^3+<var>A</var>(<var>A</var>)^2 +<var>A*A</var>(<var>A</var>) + <var>A*A*A</var>.
+	      </code>
+	    </p>
+	    <p> Finally, we see the solution is
+	      <br><br>
+	      <code>
+		<var>4*A*A*A</var>.
+	      </code>
+	    </p>
+	  </div>
+
+        </div>
+     
+     		 
+	
+	<div id="sine-x-over-x">
+          <div class="vars">
+            <var id = "A">randRangeNonZero(-9,9)</var>
+            <var id = "B">randRangeExclude(-9,9,[0,A])</var>
+       	  </div>
+          
+	  <p class="question">
+            Evaluate the following limit:
+            <br><br>
+            <code>	
+              \displaystyle\lim_{x \to <var>0</var>}\frac{\sin(<var>A</var>x)}{<var>B</var>x}
+            </code>	
+	  </p>
+	  
+          <div class="solution" >
+            <var>A/B</var>
+          </div>
+
+	  <div class="hints">
+	    <p> Recall that 
+	      <br><br>
+	      <code>
+		\displaystyle\lim_{x\to 0}\frac{\sin(x)}{x} = 1.
+	      </code>
+	    </p>
+	    <p> Factor out <code>\frac{<var>B</var>}{<var>A</var>}</code> in the denominator to get
+	      <br><br>
+	      <code>\displaystyle\lim_{x \to <var>0</var>}\frac{\sin(<var>A</var>x)}{<var>A</var>x \cdot \frac{<var>B</var>}{<var>A</var>}} 
+		= \lim_{x \to <var>0</var>}\frac{\sin(<var>A</var>x)}{<var>A</var>x} \cdot \frac{<var>A</var>}{<var>B</var>} 
+	      </code>
+	    </p>
+	    
+	    <p>
+	      Set <code>y = <var>A</var>x</code>. Since <code>y\to 0</code> as <code>x\to 0</code>,
+	      <br><br>
+	      <code>\displaystyle\lim_{x \to <var>0</var>}\frac{\sin(<var>A</var>x)}{<var>A</var>x} \cdot \frac{<var>A</var>}{<var>B</var>} = \lim_{y\to 0}
+		\frac{\sin(y)}{y} \cdot \frac{<var>A</var>}{<var>B</var>}.	      
+	      </code>
+	    </p>
+
+	    <p>
+	      Hence the limit is <code>\frac{<var>A</var>}{<var>B</var>} = <var>A/B</var></code>
+	    </p>
+
+
+	    </div>
+	  
+        </div>
+        
+        <div id="needs-conjugate">
+          <div class="vars">
+            <var id = "A">randRangeNonZero(0,9)</var>			
+       	  </div>
+                
+          <p class="question">      
+            Evaluate the following limit:
+            <br><br>
+            <code>	
+              \displaystyle\lim_{x \to <var>A*A</var>}\frac{x-<var>A*A</var>}{\sqrt{x}-<var>A</var>}
+            </code>
+	  </p>
+	  
+          <div class="solution" >
+            <var>2*A</var>
+          </div>
+
+	  <div class="hints">
+	    <p> Note we cannot evaluate this limit directly since the
+	    denominator is zero when <code>x=<var>A*A</var></code>.</p>
+	    
+	    <p> Multiply by the conjugate:
+	    </p>
+
+	    <p> 
+	      <code>\displaystyle\lim_{x \to <var>A*A</var>}\frac{x-<var>A*A</var>}{\sqrt{x}-<var>A</var>} = 
+		\lim_{x \to <var>A*A</var>}\frac{x-<var>A*A</var>}{\sqrt{x}-<var>A</var>} \cdot\frac{\sqrt{x}+<var>A</var>}{\sqrt{x}+<var>A</var>}
+	      </code>
+	    </p>
+	    
+	    <p> Now simplify.
+	      <br><br>
+	      <code>\displaystyle\lim_{x \to <var>A*A</var>}\frac{x-<var>A*A</var>}{\sqrt{x}-<var>A</var>} = 
+		\lim_{x \to <var>A*A</var>}\frac{(x-<var>A*A</var>)(\sqrt{x}+<var>A</var>)}{x-<var>A*A</var>} 
+	      </code>
+	    </p>
+
+	    <p> Since we are taking the limit as <code>x\to <var>A*A</var></code>, we may assume that <code>x\ne <var>A*A</var></code>.
+	    </p>
+	   
+	    <p> Canceling factors we see:
+	      <br><br>
+	      <code>\displaystyle\lim_{x \to <var>A*A</var>}\frac{x-<var>A*A</var>}{\sqrt{x}-<var>A</var>} = 
+		\lim_{x \to <var>A*A</var>}(\sqrt{x}+<var>A</var>) 
+	      </code>
+	    </p>
+
+	    <p> We can evaluate this function at <code>x = <var>A*A</var></code>.
+	    </p>
+
+	    <p> Hence,  we see the solution is <code><var>2*A</var></code>
+	    </p>
+
+	    </div>
+
+        </div>
+     
+      </div>
 </body>
 </html>
