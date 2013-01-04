@@ -15,6 +15,8 @@ Assessor::Application.routes.draw do
 
   get "course" => "course#index"
 
+  # place all special exercise routes about resources :exercises
+  get "exercises/progress" => "exercises#progress"
   resources :exercises
 
   get "khan-exercises/exercises/khan-site.html" => "exercises#khan_site"

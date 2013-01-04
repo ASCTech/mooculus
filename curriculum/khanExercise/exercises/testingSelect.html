@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html data-require="math graphie word-problems">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Testing select menu</title>
+    <script src="../khan-exercise.js"></script>
+</head>
+<body>
+    <div class="exercise">
+        <div class="vars">
+         
+        </div>
+
+        <div class="problems">
+            <div id="average-rate-of-change">
+                
+		<p class="question">
+			<select id = "hey">
+                		<option value="A">Apple</option>
+						<option value="B">Banana</option>
+			</select>  
+			
+			<span id="mark">?</span>
+			
+			<br><br>
+			
+			<select id = "how">
+                		<option value="A">Apple</option>
+						<option value="B">Banana</option>
+			</select>  
+			
+		
+			 
+		</p>    
+                <div class="solution" data-type="custom">
+
+                    <div class="guess">
+                    	 
+                    	[$('#hey :selected').val(),$('#how :selected').val() ]
+                    	
+                    </div>
+                    
+                    
+                    <div class="validator-function">
+                     
+                       return guess[0]=="A" &amp;&amp; guess[1]=="B";
+                    </div>
+                    
+                </div>
+                
+            
+
+        <div class="hints">
+            
+        </div>
+    </div>
+</body>
+</html>

@@ -20,7 +20,7 @@
         </div>
 
         <div class="problems">
-            <div>
+            <div id="gOrdinatePlus">
                 <p class="question">
                     If <code>f(<var>x</var>) = <var>y</var></code> and 
                     <code>f(x) = g(x)+<var>c</var></code>, what point 
@@ -63,7 +63,7 @@
                 </div>
             </div>
             
-            <div>
+            <div id="fOrdinatePlus">
                 <p class="question">
                     If <code>f(<var>x</var>) = <var>y</var></code> and 
                     <code>g(x) = f(x)+<var>c</var></code>, what point 
@@ -106,7 +106,7 @@
                 </div>
             </div>
             
-            <div>
+            <div id="gAbscissaPlus">
                 <p class="question">
                     If <code>f(<var>x</var>) = <var>y</var></code> and 
                     <code>f(x) = g(x+<var>c</var>)</code>, what point 
@@ -149,7 +149,7 @@
                 </div>
             </div>
             
-            <div>
+            <div id="fAbscissaPlus">
                 <p class="question">
                     If <code>f(<var>x</var>) = <var>y</var></code> and 
                     <code>g(x) = f(x+<var>c</var>)</code>, what point 
@@ -197,7 +197,7 @@
                 </div>
             </div>
             
-            <div>
+            <div id="gOrdinateMultiply">
                 <p class="question">
                     If <code>f(<var>x</var>) = <var>y</var></code> and 
                     <code>f(x) = <var>c</var> \cdot g(x)</code>, what point 
@@ -235,13 +235,13 @@
                 	</p>
                 	
                 	<p>
-                	Thus <code>(<var>x</var>,\frac{<var>y</var>}{<var>c</var>})</code> is on the graph of <code>g</code>
+                	Thus <code>(<var>x</var>,\frac{<var>toFraction(y/c)[0]</var>}{<var>toFraction(y/c)[1]</var>})</code> is on the graph of <code>g</code>
                 	</p>
                 	
                 </div>
             </div>
             
-            <div>
+            <div id="fOrdinateMultiply">
                 <p class="question">
                     If <code>f(<var>x</var>) = <var>y</var></code> and 
                     <code>g(x) = <var>c</var> \cdot f(x)</code>, what point 
@@ -284,7 +284,7 @@
                 </div>
             </div>
             
-            <div>
+            <div id="fAbscissaMultiply">
                 <p class="question">
                     If <code>f(<var>x</var>) = <var>y</var></code> and 
                     <code>g(x) = f(<var>c</var> \cdot x)</code>, what point 
@@ -328,12 +328,12 @@
                 	</p>
                 	
                 	<p>
-                		Thus <code>(\frac{<var>x</var>}{<var>c</var>},<var>y</var>)</code> is on the graph of <code>g</code>
+                		Thus <code>(\frac{<var>toFraction(x/c)[0]</var>}{<var>toFraction(x/c)[1]</var>},<var>y</var>)</code> is on the graph of <code>g</code>
                 	</p>
                 </div>
             </div>
             
-            <div>
+            <div id = "gAbscissaMultiply">
                 <p class="question">
                     If <code>f(<var>x</var>) = <var>y</var></code> and 
                     <code>f(x) = g(<var>c</var> \cdot x)</code>, what point 
@@ -376,7 +376,7 @@
                 </div>
             </div>
             
-            <div>
+            <div id="fAbscissaDivide">
                 <p class="question">
                     If <code>f(<var>x</var>) = <var>y</var></code> and 
                     <code>g(x) = f(\frac{x}{<var>c</var>})</code>, what point 
@@ -388,7 +388,7 @@
                 <div class="solution" data-type="multiple">
 
                     <p>
-                        <code>( </code><span class="sol" data-fallback="0" required><var>x-c</var></span>
+                        <code>( </code><span class="sol" data-fallback="0" required><var>x*c</var></span>
                         <code> ,</code><span class="sol" data-fallback="1" required><var>y</var></span><code>)</code>
 
                     </p>
@@ -422,7 +422,7 @@
                 </div>
             </div>
                 
-            <div>
+            <div id="gAbscissaDivide">
                 <p class="question">
                     If <code>f(<var>x</var>) = <var>y</var></code> and 
                     <code>f(x) = g(\frac{x}{<var>c</var>})</code>, what point 
@@ -434,7 +434,7 @@
                 <div class="solution" data-type="multiple">
 
                     <p>
-                        <code>( </code><span class="sol" data-fallback="0" required><var>x-c</var></span>
+                        <code>( </code><span class="sol" data-fallback="0" required><var>x/c</var></span>
                         <code> ,</code><span class="sol" data-fallback="1" required><var>y</var></span><code>)</code>
 
                     </p>
@@ -458,7 +458,7 @@
                 	</p>
                 	
                 	<p>
-                		Thus <code>(g(\frac{<var>x</var>}{<var>c</var>}),<var>y</var>)</code> is on the graph of <code>g</code>
+                		Thus <code>(\frac{<var>toFraction(x/c)[0]</var>}{<var>toFraction(x/c)[1]</var>},<var>y</var>)</code> is on the graph of <code>g</code>
                 	</p>
                 	
                 </div>

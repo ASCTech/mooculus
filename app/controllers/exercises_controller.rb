@@ -7,7 +7,7 @@ class ExercisesController < ApplicationController
   end
 
   def index
-    @exercises = Exercise.all
+    @exercises = Exercise.order(:position)
     @competencies = current_user.competencies if user_signed_in?
   end
 
@@ -49,6 +49,21 @@ class ExercisesController < ApplicationController
   end
 
   def destroy
+  end
+
+  def progress
+    unless user_signed_in?
+      redirect_to user_omniauth_authorize_path(:coursera)
+      flash[:notice] = "Please login"
+      return 
+    end
+
+    exercises = Exercise.order(:position)
+    completed_exercises = 
+      current_user.competencies.order(:estimate).reverse_order.map { |c| c.exercise }
+    incomplete_exercises = exercises - completed_exercises
+    @exercises = completed_exercises + incomplete_exercises
+    @competencies = Competency
   end
 
 end
