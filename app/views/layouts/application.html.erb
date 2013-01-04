@@ -22,9 +22,9 @@
         <a class="brand" href="/"><%=raw html_logo %></a>
         <div class="nav-collapse">
           <ul class="nav">
-            <li class="<%= 'active' if params[:controller] == 'lectures' %>"><%= link_to raw("<i class='icon-film'></i> Lectures"), :controller => "videos", :action => "index" %></li>
-            <li class="<%= 'active' if params[:controller] == 'textbook' %>"><%= link_to raw("<i class='icon-book'></i> Textbook"), :controller => "handouts", :action => "index" %></li>
-            <li class="<%= 'active' if params[:controller] == 'exercises' %>"><%= link_to raw("<i class='icon-pencil'></i> Exercises"), :controller => "exercises", :action => "index" %></li>
+            <li class="<%= 'active' if params[:controller] == 'videos' %>"><%= link_to raw("<i class='icon-film'></i> Lectures"), :controller => "videos", :action => "index" %></li>
+            <li class="<%= 'active' if params[:controller] == 'handouts' %>"><%= link_to raw("<i class='icon-book'></i> Textbook"), :controller => "handouts", :action => "index" %></li>
+            <li class="<%= 'active' if params[:controller] == 'exercises' && params[:action] != "progress" %>"><%= link_to raw("<i class='icon-pencil'></i> Exercises"), :controller => "exercises", :action => "index" %></li>
             <% if user_signed_in? %>
               <li><a href="https://class.coursera.org/calc1-001/forum/index"><i class="icon-comments"></i> Forum</a></li>
             <% end %>
@@ -37,7 +37,7 @@
                   <b class="caret"></b>
                 </a>
                 <ul class="dropdown-menu">
-                  <li><%= link_to raw("<i class='icon-tasks'></i> View progress"), :controller => "exercises", :action => "index" %></li>
+                  <li><%= link_to raw("<i class='icon-tasks'></i> View progress"), :controller => "exercises", :action => "progress" %></li>
                   <li><%= link_to raw("<i class='icon-signout'></i> Log out"), destroy_user_session_path, :method => :delete %></li>
                 </ul>
               </li>
