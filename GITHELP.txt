@@ -1,29 +1,23 @@
 When you initially start working:
 
+  git status
   git checkout master
-  git pull
-  git checkout -b this-is-what-im-working-on
+  git pull 
+  git checkout <branch name>
+  git pull origin master
 
-For example
 
-  git checkout master
-  git pull
-  git checkout -b snapp
-
-Here "snapp" is my branch
-	
-
-As you work:
+do work…
 
   git status
   git add list-of-files-i-changed
   git commit -m "here is what I did"
-
-When you want to contribute what you've done
+  git push  (goes to local branch)
 
   git checkout master
-  git merge this-is-what-im-working-on
+  git merge corey
   git push
+
 
 The this-is-what-im-working-on might be "assessor" or "textbook" or
 "lectures" or whatever.
