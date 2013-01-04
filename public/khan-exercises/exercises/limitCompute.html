@@ -75,7 +75,8 @@
 	    <p> Finally,
 	      <br><br>
 	      <code>
-		\dfrac{<var>D*(A-B)</var>}{<var>(E*(A-C))</var>} = <var>D*(A-B)/(E*(A-C))</var>.
+		\displaystyle\lim_{x \to <var>A</var>}\frac{<var>num.text()</var>}{<var>denom.text()</var>} =
+		\dfrac{<var>toFraction(D*(A-B)/(E*(A-C)))[0]</var>}{<var>toFraction(D*(A-B)/(E*(A-C)))[1]</var>}.
 	      </code>
 	    </p>
 	  </div>
@@ -393,7 +394,10 @@
 	    </p>
 
 	    <p>
-	      Hence the limit is <code>\frac{<var>A</var>}{<var>B</var>} = <var>A/B</var></code>
+	      Hence <code>
+		\displaystyle\lim_{x \to <var>0</var>}\frac{\sin(<var>A</var>x)}{<var>B</var>x}=
+		\dfrac{<var>toFraction(A/B)[0]</var>}{<var>toFraction(A/B)[1]</var>}.
+		</code>
 	    </p>
 
 
