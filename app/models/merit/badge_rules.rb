@@ -21,6 +21,18 @@ module Merit
     include Merit::BadgeRulesMethods
 
     def initialize
+      grant_on ['users#create', 'users#update'], :badge => 'autobiographer', :temporary => true do |user|
+        user.name.present?
+      end
+
+      grant_on ['score#attempt'], :badge => 'answerer', :level => 5, :to => :user do |score|
+        score.user.scores.count > 5
+      end
+
+      grant_on ['score#attempt'], :badge => 'answerer', :level => 5, :to => :user do |score|
+        score.user.scores.count > 5
+      end
+
       # If it creates user, grant badge
       # Should be "current_user" after registration for badge to be granted.
       # grant_on 'users#create', :badge => 'just-registered', :to => :itself

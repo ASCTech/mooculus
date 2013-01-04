@@ -14,7 +14,10 @@ Merit.setup do |config|
 end
 
 # Create application badges (uses https://github.com/norman/ambry)
-# Badge.create!({
-#   :id => 1,
-#   :name => 'just-registered'
-# })
+Badge.create!({
+   :id => 1,
+   :name => 'answerer',
+   :level => 5,
+   :description => 'Submitted answers'
+})
+

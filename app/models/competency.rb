@@ -67,8 +67,8 @@ class Competency < ActiveRecord::Base
   belongs_to :exercise
 
   def Competency.update(user,exercise)
-    scores = Score.where( :exercise_id => exercise.id,
-                          :user_id => user.id )
+    scores = ::Score.where( :exercise_id => exercise.id,
+                            :user_id => user.id ).order(:created_at).limit( 35 )
 
     observations = scores.collect{ |x| x.summary }
 
@@ -76,7 +76,7 @@ class Competency < ActiveRecord::Base
 
     conditions = {
       :user_id => user.id,
-      :exercise_id => exercise }
+      :exercise_id => exercise.id }
     
     @competency = Competency.where(conditions).limit(1).first || Competency.create(conditions)
     @competency.estimate = p

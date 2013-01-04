@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130104152512) do
+ActiveRecord::Schema.define(:version => 20130104194637) do
 
   create_table "authentications", :force => true do |t|
     t.integer  "user_id"
@@ -21,6 +21,17 @@ ActiveRecord::Schema.define(:version => 20130104152512) do
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
+
+  create_table "badges_sashes", :force => true do |t|
+    t.integer  "badge_id"
+    t.integer  "sash_id"
+    t.boolean  "notified_user", :default => false
+    t.datetime "created_at"
+  end
+
+  add_index "badges_sashes", ["badge_id", "sash_id"], :name => "index_badges_sashes_on_badge_id_and_sash_id"
+  add_index "badges_sashes", ["badge_id"], :name => "index_badges_sashes_on_badge_id"
+  add_index "badges_sashes", ["sash_id"], :name => "index_badges_sashes_on_sash_id"
 
   create_table "competencies", :force => true do |t|
     t.float    "estimate"
@@ -59,6 +70,31 @@ ActiveRecord::Schema.define(:version => 20130104152512) do
     t.datetime "updated_at", :null => false
   end
 
+  create_table "merit_actions", :force => true do |t|
+    t.integer  "user_id"
+    t.string   "action_method"
+    t.integer  "action_value"
+    t.boolean  "had_errors",    :default => false
+    t.string   "target_model"
+    t.integer  "target_id"
+    t.boolean  "processed",     :default => false
+    t.string   "log"
+    t.datetime "created_at",                       :null => false
+    t.datetime "updated_at",                       :null => false
+  end
+
+  create_table "merit_score_points", :force => true do |t|
+    t.integer  "score_id"
+    t.integer  "num_points", :default => 0
+    t.string   "log"
+    t.datetime "created_at"
+  end
+
+  create_table "merit_scores", :force => true do |t|
+    t.integer "sash_id"
+    t.string  "category", :default => "default"
+  end
+
   create_table "problems", :force => true do |t|
     t.string   "name"
     t.integer  "exercise_id"
@@ -69,19 +105,13 @@ ActiveRecord::Schema.define(:version => 20130104152512) do
 
   add_index "problems", ["exercise_id"], :name => "index_problems_on_exercise_id"
 
-  create_table "scores", :force => true do |t|
-    t.datetime "created_at",      :null => false
-    t.datetime "updated_at",      :null => false
-    t.integer  "user_id"
-    t.integer  "time_taken"
-    t.integer  "attempt_number"
-    t.boolean  "complete"
-    t.integer  "count_hints"
-    t.string   "attempt_content"
-    t.integer  "seed"
-    t.integer  "problem_id"
-    t.integer  "exercise_id"
+  create_table "sashes", :force => true do |t|
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
+
+# Could not dump table "scores" because of following StandardError
+#   Unknown type 'reference' for column 'exercise_id'
 
   create_table "users", :force => true do |t|
     t.string   "name"
@@ -98,6 +128,8 @@ ActiveRecord::Schema.define(:version => 20130104152512) do
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
     t.string   "coursera_id"
+    t.integer  "sash_id"
+    t.integer  "level",                  :default => 0
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
