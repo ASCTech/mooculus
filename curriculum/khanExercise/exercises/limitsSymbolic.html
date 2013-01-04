@@ -886,20 +886,12 @@
                 </div>
             </div>
      
-     <div id="Quadratic-over-linear">
+     <div id="Quadratic-over-linear-Error-1">
             
             	 <div class="vars">
         			<var id = "A">randRangeNonZero(-9,9)</var>
-          			<var id = "B">randRangeExclude(-9,9,[A])</var>
-          			<var id = "C">randRangeExclude(-9,9,[A,B])</var>
-          			<var id = "D">randRangeNonZero(-9,9)</var>
-          			<var id = "E">randRangeNonZero(-9,9)</var>
-          			<var id = "lin1">new Polynomial(0,1,[-A,1])</var>
-          			<var id = "lin2">new Polynomial(0,1,[-B*D,D])</var>
-          			<var id = "lin3">new Polynomial(0,1,[-C*E,E])</var>
-          			<var id = "num">lin1.multiply(lin2)</var>
-          			<var id = "denom">lin1.multiply(lin3)</var>
-          			<var id = "func"><code>\frac{<var>num.text()</var>}{<var>denom.text()</var>}</code></var>
+          			<var id = "B">randRangeExclude(-9,9,[0,A])</var>
+          			<var id = "C">randRangeExclude(-9,9,[0,A,B])</var>
        		    </div>
                 
                 <p class="problem">
@@ -910,7 +902,7 @@
                 	<br><br>
                 
                 	<code>	
-                		\displaystyle\lim_{x \to <var>A</var>}\frac{<var>num.text()</var>}{<var>lin1.text()</var>}
+                		\displaystyle\lim_{x \to <var>A</var>}\frac{<var>C</var>x^2+<var>B</var>x-<var>A</var>}{x-<var>A</var>}
                 		
                 	</code>
                 	
@@ -937,7 +929,7 @@
                 	
                 	<code>
                 	 
-                		= \displaystyle\displaystyle\lim_{x \to <var>A</var>}\frac{(<var>lin1.text()</var>)(<var>lin2.text()</var>)}{<var>lin1.text()</var>}
+                		=\displaystyle\lim_{x \to <var>A</var>}\frac{<var>C</var>x^2+<var>B</var>x}{x}
                 	</code>
                 	
                 	<br><br>
@@ -962,7 +954,7 @@
 					
 					<code>
 						
-						= \displaystyle\lim_{x \to <var>A</var>} (<var>lin2.text()</var>)
+						=\displaystyle\lim_{x \to <var>A</var>}(<var>C</var>x+<var>B</var>)
 					</code>
 					
 					
@@ -990,7 +982,7 @@
 					
 					<code>
 						
-						= \displaystyle\lim_{x \to <var>A</var>}(<var>D</var>x) +  \displaystyle\lim_{x \to <var>A</var>}(<var>-B*D</var>)
+						=\displaystyle\lim_{x \to <var>A</var>}(<var>C</var>x)+\displaystyle\lim_{x \to <var>A</var>}(<var>B</var>)
 					</code>
 					
 					
@@ -1017,7 +1009,7 @@
 					
 					<code>
 						
-						= \displaystyle\lim_{x \to <var>A</var>}(<var>D</var>x) + <var>-B*D</var>
+						=\displaystyle\lim_{x \to <var>A</var>}(<var>C</var>x)+<var>B</var>
 					</code>
 					
 					
@@ -1044,7 +1036,7 @@
 					
 					<code>
 						
-						= <var>D</var>\displaystyle\lim_{x \to <var>A</var>}(x) + <var>-B*D</var>
+						=<var>C</var>\displaystyle\lim_{x \to <var>A</var>}(x)+<var>B</var>
 					</code>
 					
 					
@@ -1071,7 +1063,7 @@
 					
 					<code>
 						
-						= (<var>D</var>)(<var>A</var>) + <var>-B*D</var>
+						=<var>C</var> \cdot 1+<var>B</var>
 					</code>
 					
 					
@@ -1098,7 +1090,7 @@
 					
 					<code>
 						
-						= <var>D*A-B*D</var>
+						=<var>C+B</var>
 					</code>
 					
 					
@@ -1116,10 +1108,249 @@
                     	[$('#0 :selected').val(),$('#1 :selected').val(),$('#2 :selected').val(),$('#3 :selected').val(),$('#4 :selected').val(),$('#5 :selected').val(),$('#6 :selected').val() ]
                     </div>
                     <div class="validator-function">
-                       return guess[0]=="equivalent" &amp;&amp; guess[1]=="equivalent" 
+                       return guess[0]=="error" &amp;&amp; guess[1]=="equivalent" 
                        &amp;&amp; guess[2]=="sum" &amp;&amp; guess[3]=="constant"
                        &amp;&amp; guess[4]=="product" &amp;&amp; guess[5]=="identity"
                        &amp;&amp; guess[6]=="arithmetic" 
+                    </div>
+                    
+                </div>
+            </div>
+            
+             <div id="Quadratic-over-linear">
+            
+             <div class="vars">
+         <var id = "A">randRangeNonZero(-9,9)</var>
+           <var id = "B">randRangeExclude(-9,9,[A])</var>
+           <var id = "C">randRangeExclude(-9,9,[A,B])</var>
+           <var id = "D">randRangeNonZero(-9,9)</var>
+           <var id = "E">randRangeNonZero(-9,9)</var>
+           <var id = "lin1">new Polynomial(0,1,[-A,1])</var>
+           <var id = "lin2">new Polynomial(0,1,[-B*D,D])</var>
+           <var id = "lin3">new Polynomial(0,1,[-C*E,E])</var>
+           <var id = "num">lin1.multiply(lin2)</var>
+           <var id = "denom">lin1.multiply(lin3)</var>
+           <var id = "func"><code>\frac{<var>num.text()</var>}{<var>denom.text()</var>}</code></var>
+        </div>
+                
+                <p class="problem">
+                
+                 A fully completed limit computation is presented below. Carefully check each step of the calculation, and either say which
+                 limit law justifies the step, or that a mistake has been made. Note that we use the abbreviation "nbhd" for the word "neighborhood"
+                
+                 <br><br>
+                
+                 <code>	
+                 \displaystyle\lim_{x \to <var>A</var>}\frac{<var>num.text()</var>}{<var>lin1.text()</var>}
+                
+                 </code>
+                
+                 <br><br>
+
+<code>\hphantom{\displaystyle\lim_{x \to <var>A</var>}\frac{<var>num.text()</var>}{<var>denom.text()</var>=}}</code>
+
+<select id="0">
+                 <option value="arithmetic">Arithmetic</option>
+<option value="constant">Limit of Constant Function</option>
+  <option value="identity">Limit of Identity Function</option>
+  <option value="sum">Sum Law</option>
+   <option value="product">Product Law</option>
+   <option value="quotient">Quotient Law</option>
+   <option value="power">Power Law</option>
+   <option value="composition">Composition Law</option>
+   <option value="equivalent">Functions agree on a punctured nbhd of <var>A</var></option>
+   <option value="error">An error was made</option>
+   <option value="special">Known value of a special limit</option>
+</select>
+
+
+                 <br><br>
+                
+                 <code>
+                
+                 = \displaystyle\displaystyle\lim_{x \to <var>A</var>}\frac{(<var>lin1.text()</var>)(<var>lin2.text()</var>)}{<var>lin1.text()</var>}
+                 </code>
+                
+                 <br><br>
+
+<code>\hphantom{\displaystyle\lim_{x \to <var>A</var>}\frac{<var>num.text()</var>}{<var>denom.text()</var>=}}</code>
+
+<select id="1">
+                 <option value="arithmetic">Arithmetic</option>
+<option value="constant">Limit of Constant Function</option>
+  <option value="identity">Limit of Identity Function</option>
+  <option value="sum">Sum Law</option>
+   <option value="product">Product Law</option>
+   <option value="quotient">Quotient Law</option>
+   <option value="power">Power Law</option>
+   <option value="composition">Composition Law</option>
+   <option value="equivalent">Functions agree on a punctured nbhd of <var>A</var></option>
+   <option value="error">An error was made</option>
+   <option value="special">Known value of a special limit</option>
+</select>
+
+<br><br>
+
+<code>
+
+= \displaystyle\lim_{x \to <var>A</var>} (<var>lin2.text()</var>)
+</code>
+
+
+                 <br><br>
+
+<code>\hphantom{\displaystyle\lim_{x \to <var>A</var>}\frac{<var>num.text()</var>}{<var>denom.text()</var>=}}</code>
+
+<select id="2">
+                 <option value="arithmetic">Arithmetic</option>
+<option value="constant">Limit of Constant Function</option>
+  <option value="identity">Limit of Identity Function</option>
+  <option value="sum">Sum Law</option>
+   <option value="product">Product Law</option>
+   <option value="quotient">Quotient Law</option>
+   <option value="power">Power Law</option>
+   <option value="composition">Composition Law</option>
+   <option value="equivalent">Functions agree on a punctured nbhd of <var>A</var></option>
+   <option value="error">An error was made</option>
+   <option value="special">Known value of a special limit</option>
+</select>
+
+
+<br><br>
+
+
+<code>
+
+= \displaystyle\lim_{x \to <var>A</var>}(<var>D</var>x) + \displaystyle\lim_{x \to <var>A</var>}(<var>-B*D</var>)
+</code>
+
+
+                 <br><br>
+
+<code>\hphantom{\displaystyle\lim_{x \to <var>A</var>}\frac{<var>num.text()</var>}{<var>denom.text()</var>=}}</code>
+
+<select id="3">
+                 <option value="arithmetic">Arithmetic</option>
+<option value="constant">Limit of Constant Function</option>
+  <option value="identity">Limit of Identity Function</option>
+  <option value="sum">Sum Law</option>
+   <option value="product">Product Law</option>
+   <option value="quotient">Quotient Law</option>
+   <option value="power">Power Law</option>
+   <option value="composition">Composition Law</option>
+   <option value="equivalent">Functions agree on a punctured nbhd of <var>A</var></option>
+   <option value="error">An error was made</option>
+   <option value="special">Known value of a special limit</option>
+</select>
+
+<br><br>
+
+
+<code>
+
+= \displaystyle\lim_{x \to <var>A</var>}(<var>D</var>x) + <var>-B*D</var>
+</code>
+
+
+                 <br><br>
+
+<code>\hphantom{\displaystyle\lim_{x \to <var>A</var>}\frac{<var>num.text()</var>}{<var>denom.text()</var>=}}</code>
+
+<select id="4">
+                 <option value="arithmetic">Arithmetic</option>
+<option value="constant">Limit of Constant Function</option>
+  <option value="identity">Limit of Identity Function</option>
+  <option value="sum">Sum Law</option>
+   <option value="product">Product Law</option>
+   <option value="quotient">Quotient Law</option>
+   <option value="power">Power Law</option>
+   <option value="composition">Composition Law</option>
+   <option value="equivalent">Functions agree on a punctured nbhd of <var>A</var></option>
+   <option value="error">An error was made</option>
+   <option value="special">Known value of a special limit</option>
+</select>
+
+<br><br>
+
+
+<code>
+
+= <var>D</var>\displaystyle\lim_{x \to <var>A</var>}(x) + <var>-B*D</var>
+</code>
+
+
+                 <br><br>
+
+<code>\hphantom{\displaystyle\lim_{x \to <var>A</var>}\frac{<var>num.text()</var>}{<var>denom.text()</var>=}}</code>
+
+<select id="5">
+                 <option value="arithmetic">Arithmetic</option>
+<option value="constant">Limit of Constant Function</option>
+  <option value="identity">Limit of Identity Function</option>
+  <option value="sum">Sum Law</option>
+   <option value="product">Product Law</option>
+   <option value="quotient">Quotient Law</option>
+   <option value="power">Power Law</option>
+   <option value="composition">Composition Law</option>
+   <option value="equivalent">Functions agree on a punctured nbhd of <var>A</var></option>
+   <option value="error">An error was made</option>
+   <option value="special">Known value of a special limit</option>
+</select>
+
+<br><br>
+
+
+<code>
+
+= (<var>D</var>)(<var>A</var>) + <var>-B*D</var>
+</code>
+
+
+                 <br><br>
+
+<code>\hphantom{\displaystyle\lim_{x \to <var>A</var>}\frac{<var>num.text()</var>}{<var>denom.text()</var>=}}</code>
+
+<select id="6">
+                 <option value="arithmetic">Arithmetic</option>
+<option value="constant">Limit of Constant Function</option>
+  <option value="identity">Limit of Identity Function</option>
+  <option value="sum">Sum Law</option>
+   <option value="product">Product Law</option>
+   <option value="quotient">Quotient Law</option>
+   <option value="power">Power Law</option>
+   <option value="composition">Composition Law</option>
+   <option value="equivalent">Functions agree on a punctured nbhd of <var>A</var></option>
+   <option value="error">An error was made</option>
+   <option value="special">Known value of a special limit</option>
+</select>
+
+<br><br>
+
+
+<code>
+
+= <var>D*A-B*D</var>
+</code>
+
+
+                
+
+
+</p>
+<p class="question">
+
+
+</p>
+               <div class="solution" data-type="custom">
+
+                    <div class="guess">
+                     [$('#0 :selected').val(),$('#1 :selected').val(),$('#2 :selected').val(),$('#3 :selected').val(),$('#4 :selected').val(),$('#5 :selected').val(),$('#6 :selected').val() ]
+                    </div>
+                    <div class="validator-function">
+                       return guess[0]=="equivalent" &amp;&amp; guess[1]=="equivalent"
+                       &amp;&amp; guess[2]=="sum" &amp;&amp; guess[3]=="constant"
+                       &amp;&amp; guess[4]=="product" &amp;&amp; guess[5]=="identity"
+                       &amp;&amp; guess[6]=="arithmetic"
                     </div>
                     
                 </div>
