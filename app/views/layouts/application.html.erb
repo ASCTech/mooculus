@@ -38,6 +38,7 @@
                 </a>
                 <ul class="dropdown-menu">
                   <li><%= link_to raw("<i class='icon-tasks'></i> View progress"), :controller => "exercises", :action => "progress" %></li>
+                  <li><%= link_to raw("<i class='icon-user'></i> Profile"), :controller => "profile", :action => "display" %></li>
                   <li><%= link_to raw("<i class='icon-signout'></i> Log out"), destroy_user_session_path, :method => :delete %></li>
                 </ul>
               </li>

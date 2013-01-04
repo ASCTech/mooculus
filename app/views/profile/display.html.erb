@@ -1,0 +1,11 @@
+<h3>Your Profile</h3>
+<%= link_to raw("Edit"), :controller => "profile", :action => "edit" %><br/>
+
+<h4>Name</h4>
+<%= @user.name %>
+
+<h4>Email</h4>
+<%= @user.email.empty? ? "None" : @user.email%>
+
+<h4>Consent</h4>
+You have not consented for the study

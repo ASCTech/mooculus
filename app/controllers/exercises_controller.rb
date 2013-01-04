@@ -54,7 +54,6 @@ class ExercisesController < ApplicationController
   def progress
     unless user_signed_in?
       redirect_to user_omniauth_authorize_path(:coursera)
-      flash[:notice] = "Please login"
       return 
     end
 
