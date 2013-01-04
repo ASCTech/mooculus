@@ -48,5 +48,8 @@ group :assets do
   gem 'turbo-sprockets-rails3'
 end
 
-# better timeouts
-# gem "system_timer", "~> 1.2.4"
+# badges for our users
+gem 'merit'
+
+# I like ambry for storing some static data
+gem 'ambry'
