@@ -1,10 +1,10 @@
 require 'nokogiri'
 
-namespace :gen do
+namespace :exercise do
   EXERCISES_PATH = "/public/khan-exercises/exercises"
 
-  desc "Generates exercises from location #{EXERCISES_PATH}"
-  task :exercises => :environment do
+  desc "Generate exercises from #{EXERCISES_PATH}"
+  task :generate => :environment do
 
     missing_problem_exercises = []
 
@@ -59,5 +59,40 @@ namespace :gen do
       exit 1
     end
 
+    puts "Exercises generated successfully"
   end
+
+  desc "Generate exercise ordering from #{EXERCISES_PATH}/completeOrder.txt"
+  task :order => :environment do
+    unordered_exercises = []
+    file_lines = []
+
+    File.open("#{Rails.root}#{EXERCISES_PATH}/completeOrder.txt") do |file|
+      file_lines = file.readlines.map { |l| l.strip! }
+    end
+
+    Exercise.all.each do |exercise|
+      unless file_lines.include?(exercise.page)
+        unordered_exercises << exercise.page
+        next
+      end
+
+      exercise.position = file_lines.index(exercise.page)
+      exercise.save
+    end
+
+    unless unordered_exercises.empty?
+      unordered_exercises.each do |page|
+        STDERR.puts("ERROR: Exercise #{EXERCISES_PATH}/#{page} does not have an order")
+      end
+      STDERR.puts("ERROR: Not all exercises were given orders")
+      STDERR.puts("ERROR: Please add exercise(s) to completeOrder.txt and run task again")
+      exit 1
+    end
+
+    puts "Exercises ordered successfully"
+  end
+
+  desc "Generate exercises and order them"
+  task :all => [:generate, :order]
 end

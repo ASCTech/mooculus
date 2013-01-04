@@ -7,7 +7,7 @@ class ExercisesController < ApplicationController
   end
 
   def index
-    @exercises = Exercise.order(:id) #Should change to :order when created
+    @exercises = Exercise.order(:position)
     @competencies = current_user.competencies if user_signed_in?
   end
 
@@ -58,7 +58,7 @@ class ExercisesController < ApplicationController
       return 
     end
 
-    exercises = Exercise.order(:id) #Should change to :order when created
+    exercises = Exercise.order(:position)
     completed_exercises = 
       current_user.competencies.order(:estimate).reverse_order.map { |c| c.exercise }
     incomplete_exercises = exercises - completed_exercises
