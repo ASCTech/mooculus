@@ -4,7 +4,15 @@
   </td>
   <% if user_signed_in? %>
     <td>
-      <%= @competencies.where(exercise_id: exercise.id).first || "Not attempted" %>
+      <% if @competencies.where(exercise_id: exercise.id).first %>
+        <div class="progress" style="margin-bottom: 0px;">
+          <%= raw progress_on(exercise) %>
+        </div>
+      <% else %>
+        <div class="progress" style="margin-bottom: 0px;">
+          <div class="bar" style="width: 0%;"></div>
+        </div>
+      <% end %>
     </td>
   <% end %>
 </tr>

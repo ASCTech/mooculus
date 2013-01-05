@@ -5,11 +5,13 @@
   <% if user_signed_in? %>
     <td>
       <% if @competencies.where(exercise_id: exercise.id).first %>
-        <div class="progress progress-success" style="margin-bottom: 0px;">
-          <div class="bar" style="width: 50%;"></div>
+        <div class="progress" style="margin-bottom: 0px;">
+          <%= raw progress_on(exercise) %>
         </div>
       <% else %>
-        Not attempted
+        <div class="progress" style="margin-bottom: 0px;">
+          <div class="bar" style="width: 0%;"></div>
+        </div>
       <% end %>
     </td>
   <% end %>
