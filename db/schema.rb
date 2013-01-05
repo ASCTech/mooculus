@@ -123,7 +123,6 @@ ActiveRecord::Schema.define(:version => 20130104231716) do
     t.string   "attempt_content"
     t.integer  "seed"
     t.integer  "problem_id"
-    t.integer  "exercise_id"
   end
 
   create_table "users", :force => true do |t|
