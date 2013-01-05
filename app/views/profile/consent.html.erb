@@ -1,0 +1,99 @@
+<div class="page-header">
+  <h1>Informed Consent Form <small>to participate in the associated research project</small></h1>
+</div>
+
+<div class="row">
+  <div class="span3"></div>
+<div class="span6">
+
+<p>I consent to participating in (or my child's participation in) research entitled <strong>Massive Open Online Course Technology for Calculus Instruction</strong>.</p>
+
+<!-- <h2>Benefits of the study</h2>
+<h2>Risks or discomforts</h2>
+<h2>Confidentiality</h2>
+<h2>Decision to quit at any time</h2>
+<h2>Findings used for scholarly purposes</h2>
+<h2>Contact information</h2> -->
+
+
+<div class="accordion" id="accordion2">
+  <div class="accordion-group">
+    <div class="accordion-heading">
+      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapsePurpose">
+	Purpose of the study        
+      </a>
+    </div>
+    <div id="collapsePurpose" class="accordion-body collapse in">
+      <div class="accordion-inner">
+        Anim pariatur clichea dn such and such
+      </div>
+    </div>
+  </div>
+
+  <div class="accordion-group">
+    <div class="accordion-heading">
+      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapsePlan">
+        What will be done
+      </a>
+    </div>
+    <div id="collapsePlan" class="accordion-body collapse">
+      <div class="accordion-inner">
+        Anim pariatur cliche...
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<p>Jim Fowler, Principal Investigator, or his/her authorized
+representative has explained the purpose of the study, the procedures
+to be followed, and the expected duration of my
+participation. Possible benefits of the study have been described, as
+have alternative procedures, if such procedures are applicable and
+available.  I understand that participation in the research is
+voluntary and that participating or not participating will have no
+effect on my (my child's) grade, course, or class standing.</p>
+
+<p>I acknowledge that I have had the opportunity to obtain additional
+information regarding the study and that any questions I ahve raised
+have been answered to my full satisfaction.  Furthermore, I understand
+that I am (my child is) free to withdraw consent at any time and to
+discontinue participation in the study without prejudice to me (my
+child).  Students under 18 should opt out from completing the survey
+unless parental permission is provided.</p>
+
+<p>By completing this survey, I acknowledge that I have read and fully
+understand the consent form.</p>
+
+<p>Questions or concerns regarding this project may be directed to Jim
+Fowler (<a href="mailto:fowler@math.osu.edu">fowler@math.osu.edu</a>)
+or the ORRP by calling 614&ndash;688&ndash;8457.</p>
+
+</div>
+<div class="span3"></div>
+</div>
+
+
+<div class="row">
+  <div class="span4"></div>
+  <div class="span4"><p>
+    <%= button_to "I want to participate.",
+	  { :controller => "profile", :action => "record_consent" },
+  	  :class => "btn btn-large btn-block btn-primary" %>
+  </p>
+  </div>
+  <div class="span4"></div>
+</div>
+
+<div class="row">
+  <div class="span4"></div>
+  <div class="span4"><p>
+      <%= button_to "I do not want to participate in the study.",
+	  { :controller => "profile", :action => "display" },
+          :method => :get,
+  	  :class => "btn btn-small btn-block btn-danger" %>
+    </p>
+    <div class="span4"></div>
+</div>
+
+<!-- <p><a href="/textbook/mooculus-Ch1.pdf" class="btn btn-large btn-block btn-primary" type="button"><i class="icon-ok"></i> I want to participate in the study</a></p></div> -->

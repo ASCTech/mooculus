@@ -41,8 +41,30 @@ class ProfileController < ApplicationController
   end
 
   def consent
-    redirect_to action: "display"
-    flash[:notice] =  "Consent form not yet available"
+    unless user_signed_in?
+      redirect_to user_omniauth_authorize_path(:coursera)
+      return 
+    end
+    @user = current_user
+  end
+
+  def record_consent
+    unless user_signed_in?
+      redirect_to user_omniauth_authorize_path(:coursera)
+      return 
+    end
+
+    @user = current_user
+    @user.consent = true
+    @user.consented_at = Time.now
+
+    if @user.save
+      redirect_to action: "display"
+      flash[:notice] =  "You are now participating in the research study.  Thank you!"
+    else
+      redirect_to action: "consent" 
+      flash[:error] = "There was a problem recording your consent."
+    end
   end
 
 end
