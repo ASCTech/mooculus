@@ -1,6 +1,6 @@
 # just use recent data to build the model
 data <- read.csv("enrollments.ssv",sep=" ",header=FALSE)
-data <- subset(data, data$V2 > 10000)
+data <- subset(data, data$V2 > 20000)
 
 dates <- data$V1
 students <- data$V2
