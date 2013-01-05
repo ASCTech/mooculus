@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130104231716) do
+ActiveRecord::Schema.define(:version => 20130105053153) do
 
   create_table "authentications", :force => true do |t|
     t.integer  "user_id"
@@ -112,15 +112,26 @@ ActiveRecord::Schema.define(:version => 20130104231716) do
     t.datetime "updated_at", :null => false
   end
 
-# Could not dump table "scores" because of following StandardError
-#   Unknown type 'reference' for column 'exercise_id'
+  create_table "scores", :force => true do |t|
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
+    t.integer  "user_id"
+    t.integer  "time_taken"
+    t.integer  "attempt_number"
+    t.boolean  "complete"
+    t.integer  "count_hints"
+    t.string   "attempt_content"
+    t.integer  "seed"
+    t.integer  "problem_id"
+    t.integer  "exercise_id"
+  end
 
   create_table "users", :force => true do |t|
     t.string   "name"
-    t.datetime "created_at",                             :null => false
-    t.datetime "updated_at",                             :null => false
-    t.string   "email",                  :default => "", :null => false
-    t.string   "encrypted_password",     :default => "", :null => false
+    t.datetime "created_at",                                :null => false
+    t.datetime "updated_at",                                :null => false
+    t.string   "email",                  :default => "",    :null => false
+    t.string   "encrypted_password",     :default => "",    :null => false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
@@ -132,6 +143,13 @@ ActiveRecord::Schema.define(:version => 20130104231716) do
     t.string   "coursera_id"
     t.integer  "sash_id"
     t.integer  "level",                  :default => 0
+    t.string   "osu_name_dot_number"
+    t.string   "most_recent_ip"
+    t.string   "gender"
+    t.date     "birthday"
+    t.string   "location"
+    t.boolean  "consent",                :default => false
+    t.datetime "consented_at"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

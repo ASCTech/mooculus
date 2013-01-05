@@ -81,14 +81,14 @@ class Competency < ActiveRecord::Base
     @competency = Competency.where(conditions).limit(1).first || Competency.create(conditions)
 
     if not @competency.estimate.nil?
-      @comptency.uncertainty = [ (p - @competency.estimate).abs, 1.0 - p, p ].min
+      @competency.uncertainty = [ (p - @competency.estimate).abs, 1.0 - p, p ].min
     end
 
-    if @comptency.min_estimate.nil? or (@comptency.min_estimate > p)
+    if @competency.min_estimate.nil? or (@competency.min_estimate > p)
       @competency.min_estimate = p
     end
 
-    if @comptency.max_estimate.nil? or (@comptency.max_estimate < p)
+    if @competency.max_estimate.nil? or (@competency.max_estimate < p)
       @competency.max_estimate = p
     end
 

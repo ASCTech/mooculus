@@ -1,10 +1,18 @@
-<div class="row-fluid">
-  <div class="span8">
+<tr>
+  <td>
     <%= link_to exercise.title, exercise %>
-  </div>
-  <div class="span4">
-    <% if user_signed_in? %>
-      <%= @competencies.where(exercise_id: exercise.id).first || "Not attempted" %>
-    <% end %>
-  </div>
-</div>
+  </td>
+  <% if user_signed_in? %>
+    <td>
+      <% if @competencies.where(exercise_id: exercise.id).first %>
+        <div class="progress" style="margin-bottom: 0px;">
+          <%= raw progress_on(exercise) %>
+        </div>
+      <% else %>
+        <div class="progress" style="margin-bottom: 0px;">
+          <div class="bar" style="width: 0%;"></div>
+        </div>
+      <% end %>
+    </td>
+  <% end %>
+</tr>

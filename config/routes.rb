@@ -15,6 +15,10 @@ Assessor::Application.routes.draw do
 
   get "course" => "course#index"
 
+  get "profile/display" => "profile#display"
+  get "profile/edit" => "profile#edit"
+  post "profile/edit" => "profile#update"
+  get "profile/consent" => "profile#consent"
   # place all special exercise routes about resources :exercises
   get "exercises/progress" => "exercises#progress"
   resources :exercises

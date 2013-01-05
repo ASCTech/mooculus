@@ -41,8 +41,6 @@ class ExercisesController < ApplicationController
       @exercise = Exercise.find(params[:id])
     end
     @problem = @exercise.problem_from_bag
-
-    flash[:notice] = "#{@exercise.inspect}, #{@problem.inspect}"
   end
 
   def update
@@ -54,7 +52,6 @@ class ExercisesController < ApplicationController
   def progress
     unless user_signed_in?
       redirect_to user_omniauth_authorize_path(:coursera)
-      flash[:notice] = "Please login"
       return 
     end
 
