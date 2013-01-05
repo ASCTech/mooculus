@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  title: MyString
+  url: MyString
+  order: 1
+  week: 1
+
+two:
+  title: MyString
+  url: MyString
+  order: 1
+  week: 1
