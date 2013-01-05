@@ -29,7 +29,7 @@
                 <p class="problem">
                 
                 	A fully completed limit computation is presented below.  Carefully check each step of the calculation, and either say which
-                	limit law justifies the step, or that a mistake has been made.  Note that we use the abbreviation "nbhd" for the word "neighborhood"
+                	limit law justifies the step, or that a mistake has been made. 
                 
                 	<br><br>
                 
@@ -51,11 +51,11 @@
   						<option value="quotient">Quotient Law</option>
   						<option value="power">Power Law</option>
   						<option value="composition">Composition Law</option>
-  						<option value="equivalent">Functions agree on a punctured nbhd of <var>A</var></option>
+  						<option value="equivalent">Functions agree near the limit point</option>
   						<option value="error">An error was made</option>
   						<option value="special">Known value of a special limit</option>
 					</select>  
-					
+					<span id="mark0"></span>
 					
                 	<br><br>
                 	
@@ -77,13 +77,13 @@
   						<option value="quotient">Quotient Law</option>
   						<option value="power">Power Law</option>
   						<option value="composition">Composition Law</option>
-  						<option value="equivalent">Functions agree on a punctured nbhd of <var>A</var></option>
+  						<option value="equivalent">Functions agree near the limit point</option>
   						<option value="error">An error was made</option>
   						<option value="special">Known value of a special limit</option>
   						
   					
 					</select>  
-					 
+					 <span id="mark1"></span>
 					 <br><br>
 					
 					<code>
@@ -105,11 +105,11 @@
   						<option value="quotient">Quotient Law</option>
   						<option value="power">Power Law</option>
   						<option value="composition">Composition Law</option>
-  						<option value="equivalent">Functions agree on a punctured nbhd of <var>A</var></option>
+  						<option value="equivalent">Functions agree near the limit point</option>
   						<option value="error">An error was made</option>
   						<option value="special">Known value of a special limit</option>
 					</select>  
-					 
+					 <span id="mark2"></span>
 					 
 					 <br><br>
 					
@@ -133,11 +133,11 @@
   						<option value="quotient">Quotient Law</option>
   						<option value="power">Power Law</option>
   						<option value="composition">Composition Law</option>
-  						<option value="equivalent">Functions agree on a punctured nbhd of <var>A</var></option>
+  						<option value="equivalent">Functions agree near the limit point</option>
   						<option value="error">An error was made</option>
   						<option value="special">Known value of a special limit</option>
 					</select>  
-					 
+					 <span id="mark3"></span>
 					 <br><br>
 					
 					
@@ -161,11 +161,11 @@
   						<option value="quotient">Quotient Law</option>
   						<option value="power">Power Law</option>
   						<option value="composition">Composition Law</option>
-  						<option value="equivalent">Functions agree on a punctured nbhd of <var>A</var></option>
+  						<option value="equivalent">Functions agree near the limit point</option>
   						<option value="error">An error was made</option>
   						<option value="special">Known value of a special limit</option>
 					</select>  
-					 
+					 <span id="mark4"></span>
 					 <br><br>
 					
 					
@@ -189,11 +189,11 @@
   						<option value="quotient">Quotient Law</option>
   						<option value="power">Power Law</option>
   						<option value="composition">Composition Law</option>
-  						<option value="equivalent">Functions agree on a punctured nbhd of <var>A</var></option>
+  						<option value="equivalent">Functions agree near the limit point</option>
   						<option value="error">An error was made</option>
   						<option value="special">Known value of a special limit</option>
 					</select>  
-					 
+					 <span id="mark5"></span>
 					 <br><br>
 					
 					
@@ -217,11 +217,11 @@
   						<option value="quotient">Quotient Law</option>
   						<option value="power">Power Law</option>
   						<option value="composition">Composition Law</option>
-  						<option value="equivalent">Functions agree on a punctured nbhd of <var>A</var></option>
+  						<option value="equivalent">Functions agree near the limit point</option>
   						<option value="error">An error was made</option>
   						<option value="special">Known value of a special limit</option>
 					</select>  
-					 
+					 <span id="mark6"></span>
 					 <br><br>
 					
 					
@@ -245,11 +245,11 @@
   						<option value="quotient">Quotient Law</option>
   						<option value="power">Power Law</option>
   						<option value="composition">Composition Law</option>
-  						<option value="equivalent">Functions agree on a punctured nbhd of <var>A</var></option>
+  						<option value="equivalent">Functions agree near the limit point</option>
   						<option value="error">An error was made</option>
   						<option value="special">Known value of a special limit</option>
 					</select>  
-					 
+					 <span id="mark7"></span>
 					 <br><br>
 					
 					
@@ -259,7 +259,82 @@
 						{<var>E*A-C*E</var>}
 					</code>
 					
+					<div class="graphie">
+				$('#check-answer-button').click(function(){
+					if($('#0 :selected').val()=="equivalent"){
+						$('#mark0').css({ 'color': 'green', 'font-size': '150%' });
+						$('#mark0').text("&#x2713;")
+						}
+					else{
+						$('#mark0').css({ 'color': 'red', 'font-size': '150%' });
+						$('#mark0').text("&#x2717;")
 					
+					}
+					if($('#1 :selected').val()=="equivalent"){
+						$('#mark1').css({ 'color': 'green', 'font-size': '150%' });
+						$('#mark1').text("&#x2713;")
+						}
+					else{
+						$('#mark1').css({ 'color': 'red', 'font-size': '150%' });
+						$('#mark1').text("&#x2717;")
+					
+					}
+					if($('#2 :selected').val()=="quotient"){
+						$('#mark2').css({ 'color': 'green', 'font-size': '150%' });
+						$('#mark2').text("&#x2713;")
+						}
+					else{
+						$('#mark2').css({ 'color': 'red', 'font-size': '150%' });
+						$('#mark2').text("&#x2717;")
+					
+					}
+					if($('#3 :selected').val()=="sum"){
+						$('#mark3').css({ 'color': 'green', 'font-size': '150%' });
+						$('#mark3').text("&#x2713;")
+						}
+					else{
+						$('#mark3').css({ 'color': 'red', 'font-size': '150%' });
+						$('#mark3').text("&#x2717;")
+					
+					}
+					if($('#4 :selected').val()=="product"){
+						$('#mark4').css({ 'color': 'green', 'font-size': '150%' });
+						$('#mark4').text("&#x2713;")
+						}
+					else{
+						$('#mark4').css({ 'color': 'red', 'font-size': '150%' });
+						$('#mark4').text("&#x2717;")
+					
+					}
+					if($('#5 :selected').val()=="identity"){
+						$('#mark5').css({ 'color': 'green', 'font-size': '150%' });
+						$('#mark5').text("&#x2713;")
+						}
+					else{
+						$('#mark5').css({ 'color': 'red', 'font-size': '150%' });
+						$('#mark5').text("&#x2717;")
+					
+					}
+					if($('#6 :selected').val()=="constant"){
+						$('#mark6').css({ 'color': 'green', 'font-size': '150%' });
+						$('#mark6').text("&#x2713;")
+						}
+					else{
+						$('#mark6').css({ 'color': 'red', 'font-size': '150%' });
+						$('#mark6').text("&#x2717;")
+					
+					}
+					if($('#7 :selected').val()=="arithmetic"){
+						$('#mark7').css({ 'color': 'green', 'font-size': '150%' });
+						$('#mark7').text("&#x2713;")
+						}
+					else{
+						$('#mark7').css({ 'color': 'red', 'font-size': '150%' });
+						$('#mark7').text("&#x2717;")
+					
+					}
+				})
+			</div>
 					
 					
 				</p>
@@ -293,7 +368,7 @@
                 <p class="problem">
                 
                 	A fully completed limit computation is presented below.  Carefully check each step of the calculation, and either say which
-                	limit law justifies the step, or that a mistake has been made.  Note that we use the abbreviation "nbhd" for the word "neighborhood"
+                	limit law justifies the step, or that a mistake has been made. 
                 
                 	<br><br>
                 
@@ -315,11 +390,11 @@
   						<option value="quotient">Quotient Law</option>
   						<option value="power">Power Law</option>
   						<option value="composition">Composition Law</option>
-  						<option value="equivalent">Functions agree on a punctured nbhd of <var>A</var></option>
+  						<option value="equivalent">Functions agree near the limit point</option>
   						<option value="error">An error was made</option>
   						<option value="special">Known value of a special limit</option>
 					</select>  
-					
+					<span id="mark0"></span>
 					
                 	<br><br>
                 	
@@ -342,13 +417,11 @@
   						<option value="quotient">Quotient Law</option>
   						<option value="power">Power Law</option>
   						<option value="composition">Composition Law</option>
-  						<option value="equivalent">Functions agree on a punctured nbhd of <var>A</var></option>
+  						<option value="equivalent">Functions agree near the limit point</option>
   						<option value="error">An error was made</option>
   						<option value="special">Known value of a special limit</option>
-  						
-  					
 					</select>  
-					 
+					 <span id="mark1"></span>
 					 <br><br>
 					
 					<code>
@@ -371,11 +444,11 @@
   						<option value="quotient">Quotient Law</option>
   						<option value="power">Power Law</option>
   						<option value="composition">Composition Law</option>
-  						<option value="equivalent">Functions agree on a punctured nbhd of <var>A</var></option>
+  						<option value="equivalent">Functions agree near the limit point</option>
   						<option value="error">An error was made</option>
   						<option value="special">Known value of a special limit</option>
 					</select>  
-					 
+					 <span id="mark2"></span>
 					 
 					 <br><br>
 					
@@ -400,11 +473,11 @@
   						<option value="quotient">Quotient Law</option>
   						<option value="power">Power Law</option>
   						<option value="composition">Composition Law</option>
-  						<option value="equivalent">Functions agree on a punctured nbhd of <var>A</var></option>
+  						<option value="equivalent">Functions agree near the limit point</option>
   						<option value="error">An error was made</option>
   						<option value="special">Known value of a special limit</option>
 					</select>  
-					 
+					 <span id="mark3"></span>
 					 <br><br>
 					
 					
@@ -429,11 +502,11 @@
   						<option value="quotient">Quotient Law</option>
   						<option value="power">Power Law</option>
   						<option value="composition">Composition Law</option>
-  						<option value="equivalent">Functions agree on a punctured nbhd of <var>A</var></option>
+  						<option value="equivalent">Functions agree near the limit point</option>
   						<option value="error">An error was made</option>
   						<option value="special">Known value of a special limit</option>
 					</select>  
-					 
+					 <span id="mark4"></span>
 					 <br><br>
 					
 					
@@ -458,11 +531,11 @@
   						<option value="quotient">Quotient Law</option>
   						<option value="power">Power Law</option>
   						<option value="composition">Composition Law</option>
-  						<option value="equivalent">Functions agree on a punctured nbhd of <var>A</var></option>
+  						<option value="equivalent">Functions agree near the limit point</option>
   						<option value="error">An error was made</option>
   						<option value="special">Known value of a special limit</option>
 					</select>  
-					 
+					 <span id="mark5"></span>
 					 <br><br>
 					
 					
@@ -487,11 +560,11 @@
   						<option value="quotient">Quotient Law</option>
   						<option value="power">Power Law</option>
   						<option value="composition">Composition Law</option>
-  						<option value="equivalent">Functions agree on a punctured nbhd of <var>A</var></option>
+  						<option value="equivalent">Functions agree near the limit point</option>
   						<option value="error">An error was made</option>
   						<option value="special">Known value of a special limit</option>
 					</select>  
-					 
+					 <span id="mark6"></span>
 					 <br><br>
 					
 					
@@ -516,11 +589,11 @@
   						<option value="quotient">Quotient Law</option>
   						<option value="power">Power Law</option>
   						<option value="composition">Composition Law</option>
-  						<option value="equivalent">Functions agree on a punctured nbhd of <var>A</var></option>
+  						<option value="equivalent">Functions agree near the limit point</option>
   						<option value="error">An error was made</option>
   						<option value="special">Known value of a special limit</option>
 					</select>  
-					 
+					 <span id="mark7"></span>
 					 <br><br>
 					
 					
@@ -545,11 +618,11 @@
   						<option value="quotient">Quotient Law</option>
   						<option value="power">Power Law</option>
   						<option value="composition">Composition Law</option>
-  						<option value="equivalent">Functions agree on a punctured nbhd of <var>A</var></option>
+  						<option value="equivalent">Functions agree near the limit point</option>
   						<option value="error">An error was made</option>
   						<option value="special">Known value of a special limit</option>
 					</select>  
-					 
+					 <span id="mark8"></span>
 					 <br><br>
 					
 					
@@ -558,7 +631,91 @@
 					= 
                 		<code>\dfrac{<var>toFraction((B*A+C)/(E*A+F))[0]</var>}{<var>toFraction((B*A+C)/(E*A+F))[1]</var>}</code>
 					</code>
+					<div class="graphie">
+				$('#check-answer-button').click(function(){
+					if($('#0 :selected').val()=="error"){
+						$('#mark0').css({ 'color': 'green', 'font-size': '150%' });
+						$('#mark0').text("&#x2713;")
+						}
+					else{
+						$('#mark0').css({ 'color': 'red', 'font-size': '150%' });
+						$('#mark0').text("&#x2717;")
 					
+					}
+					if($('#1 :selected').val()=="equivalent"){
+						$('#mark1').css({ 'color': 'green', 'font-size': '150%' });
+						$('#mark1').text("&#x2713;")
+						}
+					else{
+						$('#mark1').css({ 'color': 'red', 'font-size': '150%' });
+						$('#mark1').text("&#x2717;")
+					
+					}
+					if($('#2 :selected').val()=="equivalent"){
+						$('#mark2').css({ 'color': 'green', 'font-size': '150%' });
+						$('#mark2').text("&#x2713;")
+						}
+					else{
+						$('#mark2').css({ 'color': 'red', 'font-size': '150%' });
+						$('#mark2').text("&#x2717;")
+					
+					}
+					if($('#3 :selected').val()=="quotient"){
+						$('#mark3').css({ 'color': 'green', 'font-size': '150%' });
+						$('#mark3').text("&#x2713;")
+						}
+					else{
+						$('#mark3').css({ 'color': 'red', 'font-size': '150%' });
+						$('#mark3').text("&#x2717;")
+					
+					}
+					if($('#4 :selected').val()=="sum"){
+						$('#mark4').css({ 'color': 'green', 'font-size': '150%' });
+						$('#mark4').text("&#x2713;")
+						}
+					else{
+						$('#mark4').css({ 'color': 'red', 'font-size': '150%' });
+						$('#mark4').text("&#x2717;")
+					
+					}
+					if($('#5 :selected').val()=="constant"){
+						$('#mark5').css({ 'color': 'green', 'font-size': '150%' });
+						$('#mark5').text("&#x2713;")
+						}
+					else{
+						$('#mark5').css({ 'color': 'red', 'font-size': '150%' });
+						$('#mark5').text("&#x2717;")
+					
+					}
+					if($('#6 :selected').val()=="product"){
+						$('#mark6').css({ 'color': 'green', 'font-size': '150%' });
+						$('#mark6').text("&#x2713;")
+						}
+					else{
+						$('#mark6').css({ 'color': 'red', 'font-size': '150%' });
+						$('#mark6').text("&#x2717;")
+					
+					}
+					if($('#7 :selected').val()=="identity"){
+						$('#mark7').css({ 'color': 'green', 'font-size': '150%' });
+						$('#mark7').text("&#x2713;")
+						}
+					else{
+						$('#mark7').css({ 'color': 'red', 'font-size': '150%' });
+						$('#mark7').text("&#x2717;")
+					
+					}
+					if($('#8 :selected').val()=="arithmetic"){
+						$('#mark8').css({ 'color': 'green', 'font-size': '150%' });
+						$('#mark8').text("&#x2713;")
+						}
+					else{
+						$('#mark8').css({ 'color': 'red', 'font-size': '150%' });
+						$('#mark8').text("&#x2717;")
+					
+					}
+				})
+			</div>
 					
 					
 					
@@ -598,7 +755,7 @@
                 <p class="problem">
                 
                 	A fully completed limit computation is presented below.  Carefully check each step of the calculation, and either say which
-                	limit law justifies the step, or that a mistake has been made.  Note that we use the abbreviation "nbhd" for the word "neighborhood"
+                	limit law justifies the step, or that a mistake has been made. 
                 
                 	<br><br>
                 
@@ -620,11 +777,11 @@
   						<option value="quotient">Quotient Law</option>
   						<option value="power">Power Law</option>
   						<option value="composition">Composition Law</option>
-  						<option value="equivalent">Functions agree on a punctured nbhd of <var>A</var></option>
+  						<option value="equivalent">Functions agree near the limit point</option>
   						<option value="error">An error was made</option>
   						<option value="special">Known value of a special limit</option>
 					</select>  
-					
+					<span id="mark0"></span>
 					
                 	<br><br>
                 	
@@ -646,13 +803,11 @@
   						<option value="quotient">Quotient Law</option>
   						<option value="power">Power Law</option>
   						<option value="composition">Composition Law</option>
-  						<option value="equivalent">Functions agree on a punctured nbhd of <var>A</var></option>
+  						<option value="equivalent">Functions agree near the limit point</option>
   						<option value="error">An error was made</option>
   						<option value="special">Known value of a special limit</option>
-  						
-  					
 					</select>  
-					 
+					 <span id="mark1"></span>
 					 <br><br>
 					
 					<code>
@@ -674,11 +829,11 @@
   						<option value="quotient">Quotient Law</option>
   						<option value="power">Power Law</option>
   						<option value="composition">Composition Law</option>
-  						<option value="equivalent">Functions agree on a punctured nbhd of <var>A</var></option>
+  						<option value="equivalent">Functions agree near the limit point</option>
   						<option value="error">An error was made</option>
   						<option value="special">Known value of a special limit</option>
 					</select>  
-					 
+					 <span id="mark2"></span>
 					 
 					 <br><br>
 					
@@ -702,11 +857,11 @@
   						<option value="quotient">Quotient Law</option>
   						<option value="power">Power Law</option>
   						<option value="composition">Composition Law</option>
-  						<option value="equivalent">Functions agree on a punctured nbhd of <var>A</var></option>
+  						<option value="equivalent">Functions agree near the limit point</option>
   						<option value="error">An error was made</option>
   						<option value="special">Known value of a special limit</option>
 					</select>  
-					 
+					 <span id="mark3"></span>
 					 <br><br>
 					
 					
@@ -730,11 +885,11 @@
   						<option value="quotient">Quotient Law</option>
   						<option value="power">Power Law</option>
   						<option value="composition">Composition Law</option>
-  						<option value="equivalent">Functions agree on a punctured nbhd of <var>A</var></option>
+  						<option value="equivalent">Functions agree near the limit point</option>
   						<option value="error">An error was made</option>
   						<option value="special">Known value of a special limit</option>
 					</select>  
-					 
+					 <span id="mark4"></span>
 					 <br><br>
 					
 					
@@ -761,11 +916,11 @@
   						<option value="quotient">Quotient Law</option>
   						<option value="power">Power Law</option>
   						<option value="composition">Composition Law</option>
-  						<option value="equivalent">Functions agree on a punctured nbhd of <var>A</var></option>
+  						<option value="equivalent">Functions agree near the limit point</option>
   						<option value="error">An error was made</option>
   						<option value="special">Known value of a special limit</option>
 					</select>  
-					 
+					 <span id="mark5"></span>
 					 <br><br>
 					
 					
@@ -774,8 +929,8 @@
 						= \dfrac{\displaystyle\lim_{x \to <var>A</var>}(<var>D</var>x)}
 						{\displaystyle\lim_{x \to <var>A</var>}(<var>E</var>x)}
 						+
-						\dfrac{(<var>-B*D</var>)}
-						{(<var>-C*E</var>)}
+						\dfrac{<var>-B*D</var>}
+						{<var>-C*E</var>}
 					</code>
 					
 					
@@ -792,11 +947,11 @@
   						<option value="quotient">Quotient Law</option>
   						<option value="power">Power Law</option>
   						<option value="composition">Composition Law</option>
-  						<option value="equivalent">Functions agree on a punctured nbhd of <var>A</var></option>
+  						<option value="equivalent">Functions agree near the limit point</option>
   						<option value="error">An error was made</option>
   						<option value="special">Known value of a special limit</option>
 					</select>  
-					 
+					 <span id="mark6"></span>
 					 <br><br>
 					
 					
@@ -805,8 +960,8 @@
 						= \dfrac{<var>D</var>\displaystyle\lim_{x \to <var>A</var>}(x)}
 						{<var>E</var>\displaystyle\lim_{x \to <var>A</var>}(x)}
 						+
-						\dfrac{(<var>-B*D</var>)}
-						{(<var>-C*E</var>)}
+						\dfrac{<var>-B*D</var>}
+						{<var>-C*E</var>}
 					</code>
 					
 					
@@ -823,11 +978,11 @@
   						<option value="quotient">Quotient Law</option>
   						<option value="power">Power Law</option>
   						<option value="composition">Composition Law</option>
-  						<option value="equivalent">Functions agree on a punctured nbhd of <var>A</var></option>
+  						<option value="equivalent">Functions agree near the limit point</option>
   						<option value="error">An error was made</option>
   						<option value="special">Known value of a special limit</option>
 					</select>  
-					 
+					 <span id="mark7"></span>
 					 <br><br>
 					
 					
@@ -836,8 +991,8 @@
 					= \dfrac{<var>D</var>\cdot <var>A</var>}
 						{<var>E</var>\cdot<var>A</var>}
 						+
-						\dfrac{(<var>-B*D</var>)}
-						{(<var>-C*E</var>)}
+						\dfrac{<var>-B*D</var>}
+						{<var>-C*E</var>}
 					</code>
 					
 					<br><br>
@@ -853,20 +1008,104 @@
   						<option value="quotient">Quotient Law</option>
   						<option value="power">Power Law</option>
   						<option value="composition">Composition Law</option>
-  						<option value="equivalent">Functions agree on a punctured nbhd of <var>A</var></option>
+  						<option value="equivalent">Functions agree near the limit point</option>
   						<option value="error">An error was made</option>
   						<option value="special">Known value of a special limit</option>
 					</select>  
-					 
+					 <span id="mark8"></span>
 					 <br><br>
 					
 					
 					<code>
-					= \frac{<var>toFraction((D*A/(E*A))+(-B*D)/(-C*E))[0]</var>}{<var>toFraction((D*A/(E*A))+(-B*D)/(-C*E))[1]</var>}
+					= \dfrac{<var>toFraction((D*A/(E*A))+(-B*D)/(-C*E))[0]</var>}{<var>toFraction((D*A/(E*A))+(-B*D)/(-C*E))[1]</var>}
 					
 					</code>
 					
+					<div class="graphie">
+				$('#check-answer-button').click(function(){
+					if($('#0 :selected').val()=="equivalent"){
+						$('#mark0').css({ 'color': 'green', 'font-size': '150%' });
+						$('#mark0').text("&#x2713;")
+						}
+					else{
+						$('#mark0').css({ 'color': 'red', 'font-size': '150%' });
+						$('#mark0').text("&#x2717;")
 					
+					}
+					if($('#1 :selected').val()=="equivalent"){
+						$('#mark1').css({ 'color': 'green', 'font-size': '150%' });
+						$('#mark1').text("&#x2713;")
+						}
+					else{
+						$('#mark1').css({ 'color': 'red', 'font-size': '150%' });
+						$('#mark1').text("&#x2717;")
+					
+					}
+					if($('#2 :selected').val()=="quotient"){
+						$('#mark2').css({ 'color': 'green', 'font-size': '150%' });
+						$('#mark2').text("&#x2713;")
+						}
+					else{
+						$('#mark2').css({ 'color': 'red', 'font-size': '150%' });
+						$('#mark2').text("&#x2717;")
+					
+					}
+					if($('#3 :selected').val()=="sum"){
+						$('#mark3').css({ 'color': 'green', 'font-size': '150%' });
+						$('#mark3').text("&#x2713;")
+						}
+					else{
+						$('#mark3').css({ 'color': 'red', 'font-size': '150%' });
+						$('#mark3').text("&#x2717;")
+					
+					}
+					if($('#4 :selected').val()=="error"){
+						$('#mark4').css({ 'color': 'green', 'font-size': '150%' });
+						$('#mark4').text("&#x2713;")
+						}
+					else{
+						$('#mark4').css({ 'color': 'red', 'font-size': '150%' });
+						$('#mark4').text("&#x2717;")
+					
+					}
+					if($('#5 :selected').val()=="constant"){
+						$('#mark5').css({ 'color': 'green', 'font-size': '150%' });
+						$('#mark5').text("&#x2713;")
+						}
+					else{
+						$('#mark5').css({ 'color': 'red', 'font-size': '150%' });
+						$('#mark5').text("&#x2717;")
+					
+					}
+					if($('#6 :selected').val()=="product"){
+						$('#mark6').css({ 'color': 'green', 'font-size': '150%' });
+						$('#mark6').text("&#x2713;")
+						}
+					else{
+						$('#mark6').css({ 'color': 'red', 'font-size': '150%' });
+						$('#mark6').text("&#x2717;")
+					
+					}
+					if($('#7 :selected').val()=="identity"){
+						$('#mark7').css({ 'color': 'green', 'font-size': '150%' });
+						$('#mark7').text("&#x2713;")
+						}
+					else{
+						$('#mark7').css({ 'color': 'red', 'font-size': '150%' });
+						$('#mark7').text("&#x2717;")
+					
+					}
+					if($('#8 :selected').val()=="arithmetic"){
+						$('#mark8').css({ 'color': 'green', 'font-size': '150%' });
+						$('#mark8').text("&#x2713;")
+						}
+					else{
+						$('#mark8').css({ 'color': 'red', 'font-size': '150%' });
+						$('#mark8').text("&#x2717;")
+					
+					}
+				})
+			</div>
 					
 					
 				</p>
@@ -897,7 +1136,7 @@
                 <p class="problem">
                 
                 	A fully completed limit computation is presented below.  Carefully check each step of the calculation, and either say which
-                	limit law justifies the step, or that a mistake has been made.  Note that we use the abbreviation "nbhd" for the word "neighborhood"
+                	limit law justifies the step, or that a mistake has been made. 
                 
                 	<br><br>
                 
@@ -919,11 +1158,11 @@
   						<option value="quotient">Quotient Law</option>
   						<option value="power">Power Law</option>
   						<option value="composition">Composition Law</option>
-  						<option value="equivalent">Functions agree on a punctured nbhd of <var>A</var></option>
+  						<option value="equivalent">Functions agree near the limit point</option>
   						<option value="error">An error was made</option>
   						<option value="special">Known value of a special limit</option>
 					</select>  
-					
+					<span id="mark0"></span>
 					
                 	<br><br>
                 	
@@ -945,11 +1184,11 @@
   						<option value="quotient">Quotient Law</option>
   						<option value="power">Power Law</option>
   						<option value="composition">Composition Law</option>
-  						<option value="equivalent">Functions agree on a punctured nbhd of <var>A</var></option>
+  						<option value="equivalent">Functions agree near the limit point</option>
   						<option value="error">An error was made</option>
   						<option value="special">Known value of a special limit</option>
 					</select>  
-					 
+					 <span id="mark1"></span>
 					 <br><br>
 					
 					<code>
@@ -971,11 +1210,11 @@
   						<option value="quotient">Quotient Law</option>
   						<option value="power">Power Law</option>
   						<option value="composition">Composition Law</option>
-  						<option value="equivalent">Functions agree on a punctured nbhd of <var>A</var></option>
+  						<option value="equivalent">Functions agree near the limit point</option>
   						<option value="error">An error was made</option>
   						<option value="special">Known value of a special limit</option>
 					</select>  
-					 
+					 <span id="mark2"></span>
 					 
 					 <br><br>
 					
@@ -999,11 +1238,11 @@
   						<option value="quotient">Quotient Law</option>
   						<option value="power">Power Law</option>
   						<option value="composition">Composition Law</option>
-  						<option value="equivalent">Functions agree on a punctured nbhd of <var>A</var></option>
+  						<option value="equivalent">Functions agree near the limit point</option>
   						<option value="error">An error was made</option>
   						<option value="special">Known value of a special limit</option>
 					</select>  
-					 
+					 <span id="mark3"></span>
 					 <br><br>
 					
 					
@@ -1026,11 +1265,11 @@
   						<option value="quotient">Quotient Law</option>
   						<option value="power">Power Law</option>
   						<option value="composition">Composition Law</option>
-  						<option value="equivalent">Functions agree on a punctured nbhd of <var>A</var></option>
+  						<option value="equivalent">Functions agree near the limit point</option>
   						<option value="error">An error was made</option>
   						<option value="special">Known value of a special limit</option>
 					</select>  
-					 
+					 <span id="mark4"></span>
 					 <br><br>
 					
 					
@@ -1053,11 +1292,11 @@
   						<option value="quotient">Quotient Law</option>
   						<option value="power">Power Law</option>
   						<option value="composition">Composition Law</option>
-  						<option value="equivalent">Functions agree on a punctured nbhd of <var>A</var></option>
+  						<option value="equivalent">Functions agree near the limit point</option>
   						<option value="error">An error was made</option>
   						<option value="special">Known value of a special limit</option>
 					</select>  
-					 
+					 <span id="mark5"></span>
 					 <br><br>
 					
 					
@@ -1080,11 +1319,11 @@
   						<option value="quotient">Quotient Law</option>
   						<option value="power">Power Law</option>
   						<option value="composition">Composition Law</option>
-  						<option value="equivalent">Functions agree on a punctured nbhd of <var>A</var></option>
+  						<option value="equivalent">Functions agree near the limit point</option>
   						<option value="error">An error was made</option>
   						<option value="special">Known value of a special limit</option>
 					</select>  
-					 
+					 <span id="mark6"></span>
 					 <br><br>
 					
 					
@@ -1094,7 +1333,76 @@
 					</code>
 					
 					
-                	
+                	<div class="graphie">
+				$('#check-answer-button').click(function(){
+					if($('#0 :selected').val()=="error"){
+						$('#mark0').css({ 'color': 'green', 'font-size': '150%' });
+						$('#mark0').text("&#x2713;")
+						}
+					else{
+						$('#mark0').css({ 'color': 'red', 'font-size': '150%' });
+						$('#mark0').text("&#x2717;")
+					
+					}
+					if($('#1 :selected').val()=="equivalent"){
+						$('#mark1').css({ 'color': 'green', 'font-size': '150%' });
+						$('#mark1').text("&#x2713;")
+						}
+					else{
+						$('#mark1').css({ 'color': 'red', 'font-size': '150%' });
+						$('#mark1').text("&#x2717;")
+					
+					}
+					if($('#2 :selected').val()=="sum"){
+						$('#mark2').css({ 'color': 'green', 'font-size': '150%' });
+						$('#mark2').text("&#x2713;")
+						}
+					else{
+						$('#mark2').css({ 'color': 'red', 'font-size': '150%' });
+						$('#mark2').text("&#x2717;")
+					
+					}
+					if($('#3 :selected').val()=="constant"){
+						$('#mark3').css({ 'color': 'green', 'font-size': '150%' });
+						$('#mark3').text("&#x2713;")
+						}
+					else{
+						$('#mark3').css({ 'color': 'red', 'font-size': '150%' });
+						$('#mark3').text("&#x2717;")
+					
+					}
+					if($('#4 :selected').val()=="product"){
+						$('#mark4').css({ 'color': 'green', 'font-size': '150%' });
+						$('#mark4').text("&#x2713;")
+						}
+					else{
+						$('#mark4').css({ 'color': 'red', 'font-size': '150%' });
+						$('#mark4').text("&#x2717;")
+					
+					}
+					if($('#5 :selected').val()=="identity"){
+						$('#mark5').css({ 'color': 'green', 'font-size': '150%' });
+						$('#mark5').text("&#x2713;")
+						}
+					else{
+						$('#mark5').css({ 'color': 'red', 'font-size': '150%' });
+						$('#mark5').text("&#x2717;")
+					
+					}
+					if($('#6 :selected').val()=="arithmetic"){
+						$('#mark6').css({ 'color': 'green', 'font-size': '150%' });
+						$('#mark6').text("&#x2713;")
+						}
+					else{
+						$('#mark6').css({ 'color': 'red', 'font-size': '150%' });
+						$('#mark6').text("&#x2717;")
+					
+					}
+					
+					
+					
+				})
+			</div>
 					
 					
 				</p>
@@ -1136,7 +1444,7 @@
                 <p class="problem">
                 
                  A fully completed limit computation is presented below. Carefully check each step of the calculation, and either say which
-                 limit law justifies the step, or that a mistake has been made. Note that we use the abbreviation "nbhd" for the word "neighborhood"
+                 limit law justifies the step, or that a mistake has been made.
                 
                  <br><br>
                 
@@ -1158,7 +1466,7 @@
    <option value="quotient">Quotient Law</option>
    <option value="power">Power Law</option>
    <option value="composition">Composition Law</option>
-   <option value="equivalent">Functions agree on a punctured nbhd of <var>A</var></option>
+   <option value="equivalent">Functions agree near the limit point</option>
    <option value="error">An error was made</option>
    <option value="special">Known value of a special limit</option>
 </select>
@@ -1184,7 +1492,7 @@
    <option value="quotient">Quotient Law</option>
    <option value="power">Power Law</option>
    <option value="composition">Composition Law</option>
-   <option value="equivalent">Functions agree on a punctured nbhd of <var>A</var></option>
+   <option value="equivalent">Functions agree near the limit point</option>
    <option value="error">An error was made</option>
    <option value="special">Known value of a special limit</option>
 </select>
@@ -1210,7 +1518,7 @@
    <option value="quotient">Quotient Law</option>
    <option value="power">Power Law</option>
    <option value="composition">Composition Law</option>
-   <option value="equivalent">Functions agree on a punctured nbhd of <var>A</var></option>
+   <option value="equivalent">Functions agree near the limit point</option>
    <option value="error">An error was made</option>
    <option value="special">Known value of a special limit</option>
 </select>
@@ -1238,7 +1546,7 @@
    <option value="quotient">Quotient Law</option>
    <option value="power">Power Law</option>
    <option value="composition">Composition Law</option>
-   <option value="equivalent">Functions agree on a punctured nbhd of <var>A</var></option>
+   <option value="equivalent">Functions agree near the limit point</option>
    <option value="error">An error was made</option>
    <option value="special">Known value of a special limit</option>
 </select>
@@ -1265,7 +1573,7 @@
    <option value="quotient">Quotient Law</option>
    <option value="power">Power Law</option>
    <option value="composition">Composition Law</option>
-   <option value="equivalent">Functions agree on a punctured nbhd of <var>A</var></option>
+   <option value="equivalent">Functions agree near the limit point</option>
    <option value="error">An error was made</option>
    <option value="special">Known value of a special limit</option>
 </select>
@@ -1292,7 +1600,7 @@
    <option value="quotient">Quotient Law</option>
    <option value="power">Power Law</option>
    <option value="composition">Composition Law</option>
-   <option value="equivalent">Functions agree on a punctured nbhd of <var>A</var></option>
+   <option value="equivalent">Functions agree near the limit point</option>
    <option value="error">An error was made</option>
    <option value="special">Known value of a special limit</option>
 </select>
@@ -1319,7 +1627,7 @@
    <option value="quotient">Quotient Law</option>
    <option value="power">Power Law</option>
    <option value="composition">Composition Law</option>
-   <option value="equivalent">Functions agree on a punctured nbhd of <var>A</var></option>
+   <option value="equivalent">Functions agree near the limit point</option>
    <option value="error">An error was made</option>
    <option value="special">Known value of a special limit</option>
 </select>
@@ -1365,7 +1673,7 @@
                 <p class="problem">
                 
                 	A fully completed limit computation is presented below.  Carefully check each step of the calculation, and either say which
-                	limit law justifies the step, or that a mistake has been made.  Note that we use the abbreviation "nbhd" for the word "neighborhood"
+                	limit law justifies the step, or that a mistake has been made. 
                 
                 	<br><br>
                 
@@ -1387,7 +1695,7 @@
   						<option value="quotient">Quotient Law</option>
   						<option value="power">Power Law</option>
   						<option value="composition">Composition Law</option>
-  						<option value="equivalent">Functions agree on a punctured nbhd of <var>A</var></option>
+  						<option value="equivalent">Functions agree near the limit point</option>
   						<option value="error">An error was made</option>
   						<option value="special">Known value of a special limit</option>
 					</select>  
@@ -1414,7 +1722,7 @@
   						<option value="quotient">Quotient Law</option>
   						<option value="power">Power Law</option>
   						<option value="composition">Composition Law</option>
-  						<option value="equivalent">Functions agree on a punctured nbhd of <var>A</var></option>
+  						<option value="equivalent">Functions agree near the limit point</option>
   						<option value="error">An error was made</option>
   						<option value="special">Known value of a special limit</option>
 					</select>  
@@ -1440,7 +1748,7 @@
   						<option value="quotient">Quotient Law</option>
   						<option value="power">Power Law</option>
   						<option value="composition">Composition Law</option>
-  						<option value="equivalent">Functions agree on a punctured nbhd of <var>A</var></option>
+  						<option value="equivalent">Functions agree near the limit point</option>
   						<option value="error">An error was made</option>
   						<option value="special">Known value of a special limit</option>
 					</select>  
@@ -1468,7 +1776,7 @@
   						<option value="quotient">Quotient Law</option>
   						<option value="power">Power Law</option>
   						<option value="composition">Composition Law</option>
-  						<option value="equivalent">Functions agree on a punctured nbhd of <var>A</var></option>
+  						<option value="equivalent">Functions agree near the limit point</option>
   						<option value="error">An error was made</option>
   						<option value="special">Known value of a special limit</option>
 					</select>  
@@ -1496,7 +1804,7 @@
   						<option value="quotient">Quotient Law</option>
   						<option value="power">Power Law</option>
   						<option value="composition">Composition Law</option>
-  						<option value="equivalent">Functions agree on a punctured nbhd of <var>A</var></option>
+  						<option value="equivalent">Functions agree near the limit point</option>
   						<option value="error">An error was made</option>
   						<option value="special">Known value of a special limit</option>
 					</select>  
@@ -1523,7 +1831,7 @@
   						<option value="quotient">Quotient Law</option>
   						<option value="power">Power Law</option>
   						<option value="composition">Composition Law</option>
-  						<option value="equivalent">Functions agree on a punctured nbhd of <var>A</var></option>
+  						<option value="equivalent">Functions agree near the limit point</option>
   						<option value="error">An error was made</option>
   						<option value="special">Known value of a special limit</option>
 					</select>  
@@ -1569,7 +1877,7 @@
                 <p class="problem">
                 
                 	A fully completed limit computation is presented below.  Carefully check each step of the calculation, and either say which
-                	limit law justifies the step, or that a mistake has been made.  Note that we use the abbreviation "nbhd" for the word "neighborhood"
+                	limit law justifies the step, or that a mistake has been made. 
                 
                 	<br><br>
                 
@@ -1591,7 +1899,7 @@
   						<option value="quotient">Quotient Law</option>
   						<option value="power">Power Law</option>
   						<option value="composition">Composition Law</option>
-  						<option value="equivalent">Functions agree on a punctured nbhd of <var>A</var></option>
+  						<option value="equivalent">Functions agree near the limit point</option>
   						<option value="error">An error was made</option>
   						<option value="special">Known value of a special limit</option>
 					</select>  
@@ -1618,7 +1926,7 @@
   						<option value="quotient">Quotient Law</option>
   						<option value="power">Power Law</option>
   						<option value="composition">Composition Law</option>
-  						<option value="equivalent">Functions agree on a punctured nbhd of <var>A</var></option>
+  						<option value="equivalent">Functions agree near the limit point</option>
   						<option value="error">An error was made</option>
   						<option value="special">Known value of a special limit</option>
 					</select>  
@@ -1644,7 +1952,7 @@
   						<option value="quotient">Quotient Law</option>
   						<option value="power">Power Law</option>
   						<option value="composition">Composition Law</option>
-  						<option value="equivalent">Functions agree on a punctured nbhd of <var>A</var></option>
+  						<option value="equivalent">Functions agree near the limit point</option>
   						<option value="error">An error was made</option>
   						<option value="special">Known value of a special limit</option>
 					</select>  
@@ -1672,7 +1980,7 @@
   						<option value="quotient">Quotient Law</option>
   						<option value="power">Power Law</option>
   						<option value="composition">Composition Law</option>
-  						<option value="equivalent">Functions agree on a punctured nbhd of <var>A</var></option>
+  						<option value="equivalent">Functions agree near the limit point</option>
   						<option value="error">An error was made</option>
   						<option value="special">Known value of a special limit</option>
 					</select>  
@@ -1700,7 +2008,7 @@
   						<option value="quotient">Quotient Law</option>
   						<option value="power">Power Law</option>
   						<option value="composition">Composition Law</option>
-  						<option value="equivalent">Functions agree on a punctured nbhd of <var>A</var></option>
+  						<option value="equivalent">Functions agree near the limit point</option>
   						<option value="error">An error was made</option>
   						<option value="special">Known value of a special limit</option>
 					</select>  
@@ -1727,7 +2035,7 @@
   						<option value="quotient">Quotient Law</option>
   						<option value="power">Power Law</option>
   						<option value="composition">Composition Law</option>
-  						<option value="equivalent">Functions agree on a punctured nbhd of <var>A</var></option>
+  						<option value="equivalent">Functions agree near the limit point</option>
   						<option value="error">An error was made</option>
   						<option value="special">Known value of a special limit</option>
 					</select>  
@@ -1753,7 +2061,7 @@
   						<option value="quotient">Quotient Law</option>
   						<option value="power">Power Law</option>
   						<option value="composition">Composition Law</option>
-  						<option value="equivalent">Functions agree on a punctured nbhd of <var>A</var></option>
+  						<option value="equivalent">Functions agree near the limit point</option>
   						<option value="error">An error was made</option>
   						<option value="special">Known value of a special limit</option>
 					</select>  
@@ -1779,7 +2087,7 @@
   						<option value="quotient">Quotient Law</option>
   						<option value="power">Power Law</option>
   						<option value="composition">Composition Law</option>
-  						<option value="equivalent">Functions agree on a punctured nbhd of <var>A</var></option>
+  						<option value="equivalent">Functions agree near the limit point</option>
   						<option value="error">An error was made</option>
   						<option value="special">Known value of a special limit</option>
 					</select>  
@@ -1825,7 +2133,7 @@
                 <p class="problem">
                 
                 	A fully completed limit computation is presented below.  Carefully check each step of the calculation, and either say which
-                	limit law justifies the step, or that a mistake has been made.  Note that we use the abbreviation "nbhd" for the word "neighborhood"
+                	limit law justifies the step, or that a mistake has been made. 
                 
                 	<br><br>
                 
@@ -1847,7 +2155,7 @@
   						<option value="quotient">Quotient Law</option>
   						<option value="power">Power Law</option>
   						<option value="composition">Composition Law</option>
-  						<option value="equivalent">Functions agree on a punctured nbhd of <var>A</var></option>
+  						<option value="equivalent">Functions agree near the limit point</option>
   						<option value="error">An error was made</option>
   						<option value="special">Known value of a special limit</option>
 					</select>  
@@ -1874,7 +2182,7 @@
   						<option value="quotient">Quotient Law</option>
   						<option value="power">Power Law</option>
   						<option value="composition">Composition Law</option>
-  						<option value="equivalent">Functions agree on a punctured nbhd of <var>A</var></option>
+  						<option value="equivalent">Functions agree near the limit point</option>
   						<option value="error">An error was made</option>
   						<option value="special">Known value of a special limit</option>
 					</select>  
@@ -1900,7 +2208,7 @@
   						<option value="quotient">Quotient Law</option>
   						<option value="power">Power Law</option>
   						<option value="composition">Composition Law</option>
-  						<option value="equivalent">Functions agree on a punctured nbhd of <var>A</var></option>
+  						<option value="equivalent">Functions agree near the limit point</option>
   						<option value="error">An error was made</option>
   						<option value="special">Known value of a special limit</option>
 					</select>  
@@ -1928,7 +2236,7 @@
   						<option value="quotient">Quotient Law</option>
   						<option value="power">Power Law</option>
   						<option value="composition">Composition Law</option>
-  						<option value="equivalent">Functions agree on a punctured nbhd of <var>A</var></option>
+  						<option value="equivalent">Functions agree near the limit point</option>
   						<option value="error">An error was made</option>
   						<option value="special">Known value of a special limit</option>
 					</select>  
@@ -1956,7 +2264,7 @@
   						<option value="quotient">Quotient Law</option>
   						<option value="power">Power Law</option>
   						<option value="composition">Composition Law</option>
-  						<option value="equivalent">Functions agree on a punctured nbhd of <var>A</var></option>
+  						<option value="equivalent">Functions agree near the limit point</option>
   						<option value="error">An error was made</option>
   						<option value="special">Known value of a special limit</option>
 					</select>  
@@ -1983,7 +2291,7 @@
   						<option value="quotient">Quotient Law</option>
   						<option value="power">Power Law</option>
   						<option value="composition">Composition Law</option>
-  						<option value="equivalent">Functions agree on a punctured nbhd of <var>A</var></option>
+  						<option value="equivalent">Functions agree near the limit point</option>
   						<option value="error">An error was made</option>
   						<option value="special">Known value of a special limit</option>
 					</select>  
@@ -2009,7 +2317,7 @@
   						<option value="quotient">Quotient Law</option>
   						<option value="power">Power Law</option>
   						<option value="composition">Composition Law</option>
-  						<option value="equivalent">Functions agree on a punctured nbhd of <var>A</var></option>
+  						<option value="equivalent">Functions agree near the limit point</option>
   						<option value="error">An error was made</option>
   						<option value="special">Known value of a special limit</option>
 					</select>  
@@ -2035,7 +2343,7 @@
   						<option value="quotient">Quotient Law</option>
   						<option value="power">Power Law</option>
   						<option value="composition">Composition Law</option>
-  						<option value="equivalent">Functions agree on a punctured nbhd of <var>A</var></option>
+  						<option value="equivalent">Functions agree near the limit point</option>
   						<option value="error">An error was made</option>
   						<option value="special">Known value of a special limit</option>
 					</select>  
@@ -2082,7 +2390,7 @@
                 <p class="problem">
                 
                 	A fully completed limit computation is presented below.  Carefully check each step of the calculation, and either say which
-                	limit law justifies the step, or that a mistake has been made.  Note that we use the abbreviation "nbhd" for the word "neighborhood"
+                	limit law justifies the step, or that a mistake has been made. 
                 
                 	<br><br>
                 
@@ -2104,7 +2412,7 @@
   						<option value="quotient">Quotient Law</option>
   						<option value="power">Power Law</option>
   						<option value="composition">Composition Law</option>
-  						<option value="equivalent">Functions agree on a punctured nbhd of <var>A</var></option>
+  						<option value="equivalent">Functions agree near the limit point</option>
   						<option value="error">An error was made</option>
   						<option value="special">Known value of a special limit</option>
 					</select>  
@@ -2130,7 +2438,7 @@
   						<option value="quotient">Quotient Law</option>
   						<option value="power">Power Law</option>
   						<option value="composition">Composition Law</option>
-  						<option value="equivalent">Functions agree on a punctured nbhd of <var>A</var></option>
+  						<option value="equivalent">Functions agree near the limit point</option>
   						<option value="error">An error was made</option>
   						<option value="special">Known value of a special limit</option>
 					</select>  
@@ -2156,7 +2464,7 @@
   						<option value="quotient">Quotient Law</option>
   						<option value="power">Power Law</option>
   						<option value="composition">Composition Law</option>
-  						<option value="equivalent">Functions agree on a punctured nbhd of <var>A</var></option>
+  						<option value="equivalent">Functions agree near the limit point</option>
   						<option value="error">An error was made</option>
   						<option value="special">Known value of a special limit</option>
 					</select>  
@@ -2184,7 +2492,7 @@
   						<option value="quotient">Quotient Law</option>
   						<option value="power">Power Law</option>
   						<option value="composition">Composition Law</option>
-  						<option value="equivalent">Functions agree on a punctured nbhd of <var>A</var></option>
+  						<option value="equivalent">Functions agree near the limit point</option>
   						<option value="error">An error was made</option>
   						<option value="special">Known value of a special limit</option>
 					</select>  
@@ -2212,7 +2520,7 @@
   						<option value="quotient">Quotient Law</option>
   						<option value="power">Power Law</option>
   						<option value="composition">Composition Law</option>
-  						<option value="equivalent">Functions agree on a punctured nbhd of <var>A</var></option>
+  						<option value="equivalent">Functions agree near the limit point</option>
   						<option value="error">An error was made</option>
   						<option value="special">Known value of a special limit</option>
 					</select>  
@@ -2239,7 +2547,7 @@
   						<option value="quotient">Quotient Law</option>
   						<option value="power">Power Law</option>
   						<option value="composition">Composition Law</option>
-  						<option value="equivalent">Functions agree on a punctured nbhd of <var>A</var></option>
+  						<option value="equivalent">Functions agree near the limit point</option>
   						<option value="error">An error was made</option>
   						<option value="special">Known value of a special limit</option>
 					</select>  
@@ -2285,7 +2593,7 @@
                 <p class="problem">
                 
                 	A fully completed limit computation is presented below.  Carefully check each step of the calculation, and either say which
-                	limit law justifies the step, or that a mistake has been made.  Note that we use the abbreviation "nbhd" for the word "neighborhood"
+                	limit law justifies the step, or that a mistake has been made. 
                 
                 	<br><br>
                 
@@ -2307,7 +2615,7 @@
   						<option value="quotient">Quotient Law</option>
   						<option value="power">Power Law</option>
   						<option value="composition">Composition Law</option>
-  						<option value="equivalent">Functions agree on a punctured nbhd of <var>A</var></option>
+  						<option value="equivalent">Functions agree near the limit point</option>
   						<option value="error">An error was made</option>
   						<option value="special">Known value of a special limit</option>
 					</select>  
@@ -2333,7 +2641,7 @@
   						<option value="quotient">Quotient Law</option>
   						<option value="power">Power Law</option>
   						<option value="composition">Composition Law</option>
-  						<option value="equivalent">Functions agree on a punctured nbhd of <var>A</var></option>
+  						<option value="equivalent">Functions agree near the limit point</option>
   						<option value="error">An error was made</option>
   						<option value="special">Known value of a special limit</option>
 					</select>  
@@ -2359,7 +2667,7 @@
   						<option value="quotient">Quotient Law</option>
   						<option value="power">Power Law</option>
   						<option value="composition">Composition Law</option>
-  						<option value="equivalent">Functions agree on a punctured nbhd of <var>A</var></option>
+  						<option value="equivalent">Functions agree near the limit point</option>
   						<option value="error">An error was made</option>
   						<option value="special">Known value of a special limit</option>
 					</select>  
@@ -2387,7 +2695,7 @@
   						<option value="quotient">Quotient Law</option>
   						<option value="power">Power Law</option>
   						<option value="composition">Composition Law</option>
-  						<option value="equivalent">Functions agree on a punctured nbhd of <var>A</var></option>
+  						<option value="equivalent">Functions agree near the limit point</option>
   						<option value="error">An error was made</option>
   						<option value="special">Known value of a special limit</option>
 					</select>  
@@ -2415,7 +2723,7 @@
   						<option value="quotient">Quotient Law</option>
   						<option value="power">Power Law</option>
   						<option value="composition">Composition Law</option>
-  						<option value="equivalent">Functions agree on a punctured nbhd of <var>A</var></option>
+  						<option value="equivalent">Functions agree near the limit point</option>
   						<option value="error">An error was made</option>
   						<option value="special">Known value of a special limit</option>
 					</select>  
@@ -2442,7 +2750,7 @@
   						<option value="quotient">Quotient Law</option>
   						<option value="power">Power Law</option>
   						<option value="composition">Composition Law</option>
-  						<option value="equivalent">Functions agree on a punctured nbhd of <var>A</var></option>
+  						<option value="equivalent">Functions agree near the limit point</option>
   						<option value="error">An error was made</option>
   						<option value="special">Known value of a special limit</option>
 					</select>  
@@ -2468,7 +2776,7 @@
   						<option value="quotient">Quotient Law</option>
   						<option value="power">Power Law</option>
   						<option value="composition">Composition Law</option>
-  						<option value="equivalent">Functions agree on a punctured nbhd of <var>A</var></option>
+  						<option value="equivalent">Functions agree near the limit point</option>
   						<option value="error">An error was made</option>
   						<option value="special">Known value of a special limit</option>
 					</select>  
@@ -2494,7 +2802,7 @@
   						<option value="quotient">Quotient Law</option>
   						<option value="power">Power Law</option>
   						<option value="composition">Composition Law</option>
-  						<option value="equivalent">Functions agree on a punctured nbhd of <var>A</var></option>
+  						<option value="equivalent">Functions agree near the limit point</option>
   						<option value="error">An error was made</option>
   						<option value="special">Known value of a special limit</option>
 					</select>  
@@ -2520,7 +2828,7 @@
   						<option value="quotient">Quotient Law</option>
   						<option value="power">Power Law</option>
   						<option value="composition">Composition Law</option>
-  						<option value="equivalent">Functions agree on a punctured nbhd of <var>A</var></option>
+  						<option value="equivalent">Functions agree near the limit point</option>
   						<option value="error">An error was made</option>
   						<option value="special">Known value of a special limit</option>
 					</select>  
@@ -2546,7 +2854,7 @@
   						<option value="quotient">Quotient Law</option>
   						<option value="power">Power Law</option>
   						<option value="composition">Composition Law</option>
-  						<option value="equivalent">Functions agree on a punctured nbhd of <var>A</var></option>
+  						<option value="equivalent">Functions agree near the limit point</option>
   						<option value="error">An error was made</option>
   						<option value="special">Known value of a special limit</option>
 					</select>  
