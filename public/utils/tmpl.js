@@ -120,7 +120,7 @@ $.tmpl = {
             wrapper.append(preface);
 
             _.each(youtubeIds, function(youtubeId) {
-                var href = "http://www.khanacademy.org/embed_video?v=" +
+                var href = "http://www.mooculus.osu.edu/embed_video?v=" +
                             youtubeId;
                 var iframe = $("<iframe>").attr({
                     "frameborder": "0",
