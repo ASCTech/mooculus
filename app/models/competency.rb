@@ -62,7 +62,7 @@ class Viterbi
 end
 
 class Competency < ActiveRecord::Base
-  attr_accessible :estimate, :exercise_id, :uncertainty, :user_id
+  attr_accessible :estimate, :exercise_id, :uncertainty, :user_id, :max_estimate, :min_estimate
   belongs_to :user
   belongs_to :exercise
 
@@ -79,7 +79,21 @@ class Competency < ActiveRecord::Base
       :exercise_id => exercise.id }
     
     @competency = Competency.where(conditions).limit(1).first || Competency.create(conditions)
+
+    if not @competency.estimate.nil?
+      @comptency.uncertainty = [ (p - @competency.estimate).abs, 1.0 - p, p ].min
+    end
+
+    if @comptency.min_estimate.nil? or (@comptency.min_estimate > p)
+      @competency.min_estimate = p
+    end
+
+    if @comptency.max_estimate.nil? or (@comptency.max_estimate < p)
+      @competency.max_estimate = p
+    end
+
     @competency.estimate = p
+
     @competency.save
   end
 
