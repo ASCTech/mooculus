@@ -1267,14 +1267,14 @@ body {
 
 
 #outer-wrapper {
-    background: url("http://www.mooculus.osu.edu//images/light-page-bg.png") repeat-x; /*! data-uri(/images/light-page-bg.png) */
+    background: url("/images/light-page-bg.png") repeat-x; /*! data-uri(/images/light-page-bg.png) */
     min-height: 100%;
     height: auto !important;
     height: 100%;
     margin: 0 0 -77px;
 }
 #page-container, #page-container-inner {
-    background: transparent url("http://www.mooculus.osu.edu//images/content-border.1.png") no-repeat right 85px; /*! data-uri(/images/content-border.1.png) */
+    background: transparent url("/images/content-border.1.png") no-repeat right 85px; /*! data-uri(/images/content-border.1.png) */
 }
 #page-container {
     background-position: 0 85px;
@@ -1523,7 +1523,7 @@ footer {
     }
 
     footer.short {
-        background: url("http://www.mooculus.osu.edu//images/light-page-bg.png") repeat-x 0 -30px;
+        background: url("/images/light-page-bg.png") repeat-x 0 -30px;
         border-top: 1px solid #C6D1AD;
         z-index: 10;
     }
@@ -1650,13 +1650,13 @@ footer {
     width: 280px;
     height: 68px;
     background-position: 0 0;
-    background-image: url("http://www.mooculus.osu.edu//images/ka-logo.png"); /*! data-uri(/images/ka-logo.png) */
+    background-image: url("/images/ka-logo.png"); /*! data-uri(/images/ka-logo.png) */
     background-size: 100%;
 }
 
 @media only screen and (-webkit-min-device-pixel-ratio: 2) {
     #logo-image {
-        background-image: url("http://www.mooculus.osu.edu//images/ka-logo_2x.png"); /*! data-uri(/images/ka-logo_2x.png) */
+        background-image: url("/images/ka-logo_2x.png"); /*! data-uri(/images/ka-logo_2x.png) */
     }
 }
 
@@ -2057,7 +2057,7 @@ footer {
 }
 
 .simple-input.search-input {
-    background-image: url("http://www.mooculus.osu.edu//images/non-repeating-sprites.4.png");
+    background-image: url("/images/non-repeating-sprites.4.png");
     background-position: -5px -867px;
     padding-left: 25px;
 }
@@ -3201,15 +3201,15 @@ a.nodeLabel:hover {
     display: inline-block;
 }
 
-.node-icon.node-complete    { background: url("http://www.mooculus.osu.edu//images/node-complete.png?glove");    /*! data-uri(/images/node-complete.png) */ }
-.node-icon.node-review      { background: url("http://www.mooculus.osu.edu//images/node-review.png?glove");      /*! data-uri(/images/node-review.png) */ }
-.node-icon.node-suggested   { background: url("http://www.mooculus.osu.edu//images/node-suggested.png?glove");   /*! data-uri(/images/node-suggested.png) */ }
-.node-icon.node-not-started { background: url("http://www.mooculus.osu.edu//images/node-not-started.png?glove"); /*! data-uri(/images/node-not-started.png) */ }
+.node-icon.node-complete    { background: url("/images/node-complete.png?glove");    /*! data-uri(/images/node-complete.png) */ }
+.node-icon.node-review      { background: url("/images/node-review.png?glove");      /*! data-uri(/images/node-review.png) */ }
+.node-icon.node-suggested   { background: url("/images/node-suggested.png?glove");   /*! data-uri(/images/node-suggested.png) */ }
+.node-icon.node-not-started { background: url("/images/node-not-started.png?glove"); /*! data-uri(/images/node-not-started.png) */ }
 
-.nodeLabelFiltered .node-icon.node-complete    { background: url("http://www.mooculus.osu.edu//images/node-complete-faded.png?glove");    /*! data-uri(/images/node-complete-faded.png) */ }
-.nodeLabelFiltered .node-icon.node-review      { background: url("http://www.mooculus.osu.edu//images/node-review-faded.png?glove");      /*! data-uri(/images/node-review-faded.png) */ }
-.nodeLabelFiltered .node-icon.node-suggested   { background: url("http://www.mooculus.osu.edu//images/node-suggested-faded.png?glove");   /*! data-uri(/images/node-suggested-faded.png) */ }
-.nodeLabelFiltered .node-icon.node-not-started { background: url("http://www.mooculus.osu.edu//images/node-not-started-faded.png?glove"); /*! data-uri(/images/node-not-started-faded.png) */ }
+.nodeLabelFiltered .node-icon.node-complete    { background: url("/images/node-complete-faded.png?glove");    /*! data-uri(/images/node-complete-faded.png) */ }
+.nodeLabelFiltered .node-icon.node-review      { background: url("/images/node-review-faded.png?glove");      /*! data-uri(/images/node-review-faded.png) */ }
+.nodeLabelFiltered .node-icon.node-suggested   { background: url("/images/node-suggested-faded.png?glove");   /*! data-uri(/images/node-suggested-faded.png) */ }
+.nodeLabelFiltered .node-icon.node-not-started { background: url("/images/node-not-started-faded.png?glove"); /*! data-uri(/images/node-not-started-faded.png) */ }
 
 .zoom10 .nodeLabel {
     position: relative;
@@ -3242,15 +3242,15 @@ a.nodeLabel:hover {
     height: 40px;
 }
 
-.zoom9 .nodeLabel.exercise .node-icon.node-complete    { background: url("http://www.mooculus.osu.edu//images/node-complete-40.png?glove");    /*! data-uri(/images/node-complete-40.png) */ }
-.zoom9 .nodeLabel.exercise .node-icon.node-review      { background: url("http://www.mooculus.osu.edu//images/node-review-40.png?glove");      /*! data-uri(/images/node-review-40.png) */ }
-.zoom9 .nodeLabel.exercise .node-icon.node-suggested   { background: url("http://www.mooculus.osu.edu//images/node-suggested-40.png?glove");   /*! data-uri(/images/node-suggested-40.png) */ }
-.zoom9 .nodeLabel.exercise .node-icon.node-not-started { background: url("http://www.mooculus.osu.edu//images/node-not-started-40.png?glove"); /*! data-uri(/images/node-not-started-40.png) */ }
+.zoom9 .nodeLabel.exercise .node-icon.node-complete    { background: url("/images/node-complete-40.png?glove");    /*! data-uri(/images/node-complete-40.png) */ }
+.zoom9 .nodeLabel.exercise .node-icon.node-review      { background: url("/images/node-review-40.png?glove");      /*! data-uri(/images/node-review-40.png) */ }
+.zoom9 .nodeLabel.exercise .node-icon.node-suggested   { background: url("/images/node-suggested-40.png?glove");   /*! data-uri(/images/node-suggested-40.png) */ }
+.zoom9 .nodeLabel.exercise .node-icon.node-not-started { background: url("/images/node-not-started-40.png?glove"); /*! data-uri(/images/node-not-started-40.png) */ }
 
-.zoom9 .nodeLabelFiltered.exercise .node-icon.node-complete    { background: url("http://www.mooculus.osu.edu//images/node-complete-40-faded.png?glove");    /*! data-uri(/images/node-complete-40-faded.png) */ }
-.zoom9 .nodeLabelFiltered.exercise .node-icon.node-review      { background: url("http://www.mooculus.osu.edu//images/node-review-40-faded.png?glove");      /*! data-uri(/images/node-review-40-faded.png) */ }
-.zoom9 .nodeLabelFiltered.exercise .node-icon.node-suggested   { background: url("http://www.mooculus.osu.edu//images/node-suggested-40-faded.png?glove");   /*! data-uri(/images/node-suggested-40-faded.png) */ }
-.zoom9 .nodeLabelFiltered.exercise .node-icon.node-not-started { background: url("http://www.mooculus.osu.edu//images/node-not-started-40-faded.png?glove"); /*! data-uri(/images/node-not-started-40-faded.png) */ }
+.zoom9 .nodeLabelFiltered.exercise .node-icon.node-complete    { background: url("/images/node-complete-40-faded.png?glove");    /*! data-uri(/images/node-complete-40-faded.png) */ }
+.zoom9 .nodeLabelFiltered.exercise .node-icon.node-review      { background: url("/images/node-review-40-faded.png?glove");      /*! data-uri(/images/node-review-40-faded.png) */ }
+.zoom9 .nodeLabelFiltered.exercise .node-icon.node-suggested   { background: url("/images/node-suggested-40-faded.png?glove");   /*! data-uri(/images/node-suggested-40-faded.png) */ }
+.zoom9 .nodeLabelFiltered.exercise .node-icon.node-not-started { background: url("/images/node-not-started-40-faded.png?glove"); /*! data-uri(/images/node-not-started-40-faded.png) */ }
 
 .zoom7 .nodeLabel.exercise .node-icon {
     width: 10px;
@@ -3260,15 +3260,15 @@ a.nodeLabel:hover {
     display: none;
 }
 
-.zoom7 .nodeLabel.exercise .node-icon.node-complete    { background: url("http://www.mooculus.osu.edu//images/node-complete-10.png?glove");    /*! data-uri(/images/node-complete-10.png) */ }
-.zoom7 .nodeLabel.exercise .node-icon.node-review      { background: url("http://www.mooculus.osu.edu//images/node-review-10.png?glove");      /*! data-uri(/images/node-review-10.png) */ }
-.zoom7 .nodeLabel.exercise .node-icon.node-suggested   { background: url("http://www.mooculus.osu.edu//images/node-suggested-10.png?glove");   /*! data-uri(/images/node-suggested-10.png) */ }
-.zoom7 .nodeLabel.exercise .node-icon.node-not-started { background: url("http://www.mooculus.osu.edu//images/node-not-started-10.png?glove"); /*! data-uri(/images/node-not-started-10.png) */ }
+.zoom7 .nodeLabel.exercise .node-icon.node-complete    { background: url("/images/node-complete-10.png?glove");    /*! data-uri(/images/node-complete-10.png) */ }
+.zoom7 .nodeLabel.exercise .node-icon.node-review      { background: url("/images/node-review-10.png?glove");      /*! data-uri(/images/node-review-10.png) */ }
+.zoom7 .nodeLabel.exercise .node-icon.node-suggested   { background: url("/images/node-suggested-10.png?glove");   /*! data-uri(/images/node-suggested-10.png) */ }
+.zoom7 .nodeLabel.exercise .node-icon.node-not-started { background: url("/images/node-not-started-10.png?glove"); /*! data-uri(/images/node-not-started-10.png) */ }
 
-.zoom7 .nodeLabelFiltered.exercise .node-icon.node-complete    { background: url("http://www.mooculus.osu.edu//images/node-complete-10-faded.png?glove");    /*! data-uri(/images/node-complete-10-faded.png) */ }
-.zoom7 .nodeLabelFiltered.exercise .node-icon.node-review      { background: url("http://www.mooculus.osu.edu//images/node-review-10-faded.png?glove");      /*! data-uri(/images/node-review-10-faded.png) */ }
-.zoom7 .nodeLabelFiltered.exercise .node-icon.node-suggested   { background: url("http://www.mooculus.osu.edu//images/node-suggested-10-faded.png?glove");   /*! data-uri(/images/node-suggested-10-faded.png) */ }
-.zoom7 .nodeLabelFiltered.exercise .node-icon.node-not-started { background: url("http://www.mooculus.osu.edu//images/node-not-started-10-faded.png?glove"); /*! data-uri(/images/node-not-started-10-faded.png) */ }
+.zoom7 .nodeLabelFiltered.exercise .node-icon.node-complete    { background: url("/images/node-complete-10-faded.png?glove");    /*! data-uri(/images/node-complete-10-faded.png) */ }
+.zoom7 .nodeLabelFiltered.exercise .node-icon.node-review      { background: url("/images/node-review-10-faded.png?glove");      /*! data-uri(/images/node-review-10-faded.png) */ }
+.zoom7 .nodeLabelFiltered.exercise .node-icon.node-suggested   { background: url("/images/node-suggested-10-faded.png?glove");   /*! data-uri(/images/node-suggested-10-faded.png) */ }
+.zoom7 .nodeLabelFiltered.exercise .node-icon.node-not-started { background: url("/images/node-not-started-10-faded.png?glove"); /*! data-uri(/images/node-not-started-10-faded.png) */ }
 
 .lte7 .zoom6 .nodeLabel .node-icon,
 .lte7 .zoom7 .nodeLabel.topic .node-icon,
@@ -3296,15 +3296,15 @@ a.nodeLabel:hover {
     margin-left: 18px;
 }
 
-.zoom8 .nodeLabel.exercise .node-icon.node-complete    { background: url("http://www.mooculus.osu.edu//images/node-complete-26.png?glove");    /*! data-uri(/images/node-complete-26.png) */ }
-.zoom8 .nodeLabel.exercise .node-icon.node-review      { background: url("http://www.mooculus.osu.edu//images/node-review-26.png?glove");      /*! data-uri(/images/node-review-26.png) */ }
-.zoom8 .nodeLabel.exercise .node-icon.node-suggested   { background: url("http://www.mooculus.osu.edu//images/node-suggested-26.png?glove");   /*! data-uri(/images/node-suggested-26.png) */ }
-.zoom8 .nodeLabel.exercise .node-icon.node-not-started { background: url("http://www.mooculus.osu.edu//images/node-not-started-26.png?glove"); /*! data-uri(/images/node-not-started-26.png) */ }
+.zoom8 .nodeLabel.exercise .node-icon.node-complete    { background: url("/images/node-complete-26.png?glove");    /*! data-uri(/images/node-complete-26.png) */ }
+.zoom8 .nodeLabel.exercise .node-icon.node-review      { background: url("/images/node-review-26.png?glove");      /*! data-uri(/images/node-review-26.png) */ }
+.zoom8 .nodeLabel.exercise .node-icon.node-suggested   { background: url("/images/node-suggested-26.png?glove");   /*! data-uri(/images/node-suggested-26.png) */ }
+.zoom8 .nodeLabel.exercise .node-icon.node-not-started { background: url("/images/node-not-started-26.png?glove"); /*! data-uri(/images/node-not-started-26.png) */ }
 
-.zoom8 .nodeLabelFiltered.exercise .node-icon.node-complete    { background: url("http://www.mooculus.osu.edu//images/node-complete-26-faded.png?glove");    /*! data-uri(/images/node-complete-26-faded.png) */ }
-.zoom8 .nodeLabelFiltered.exercise .node-icon.node-review      { background: url("http://www.mooculus.osu.edu//images/node-review-26-faded.png?glove");      /*! data-uri(/images/node-review-26-faded.png) */ }
-.zoom8 .nodeLabelFiltered.exercise .node-icon.node-suggested   { background: url("http://www.mooculus.osu.edu//images/node-suggested-26-faded.png?glove");   /*! data-uri(/images/node-suggested-26-faded.png) */ }
-.zoom8 .nodeLabelFiltered.exercise .node-icon.node-not-started { background: url("http://www.mooculus.osu.edu//images/node-not-started-26-faded.png?glove"); /*! data-uri(/images/node-not-started-26-faded.png) */ }
+.zoom8 .nodeLabelFiltered.exercise .node-icon.node-complete    { background: url("/images/node-complete-26-faded.png?glove");    /*! data-uri(/images/node-complete-26-faded.png) */ }
+.zoom8 .nodeLabelFiltered.exercise .node-icon.node-review      { background: url("/images/node-review-26-faded.png?glove");      /*! data-uri(/images/node-review-26-faded.png) */ }
+.zoom8 .nodeLabelFiltered.exercise .node-icon.node-suggested   { background: url("/images/node-suggested-26-faded.png?glove");   /*! data-uri(/images/node-suggested-26-faded.png) */ }
+.zoom8 .nodeLabelFiltered.exercise .node-icon.node-not-started { background: url("/images/node-not-started-26-faded.png?glove"); /*! data-uri(/images/node-not-started-26-faded.png) */ }
 
 .zoom6 .nodeLabel.exercise {
     display: none;
@@ -3985,7 +3985,7 @@ a.control:hover { color: #DD6900; }
     content: "";
     width: 13px;
     height: 12px;
-    background-image: url("http://www.mooculus.osu.edu//images/non-repeating-sprites.4.png");
+    background-image: url("/images/non-repeating-sprites.4.png");
     background-position: -72px -67px;
     display: inline-block;
     position: relative;
@@ -4394,19 +4394,19 @@ button.close {
   cursor: not-allowed;
 }
 .small-exercise-icon.node-complete {
-  background: url("http://www.mooculus.osu.edu//images/node-complete-20.png");
+  background: url("/images/node-complete-20.png");
   /*! data-uri(/images/node-complete-20.png) */
 }
 .small-exercise-icon.node-review {
-  background: url("http://www.mooculus.osu.edu//images/node-review-20.png");
+  background: url("/images/node-review-20.png");
   /*! data-uri(/images/node-review-20.png) */
 }
 .small-exercise-icon.node-suggested {
-  background: url("http://www.mooculus.osu.edu//images/node-suggested-20.png");
+  background: url("/images/node-suggested-20.png");
   /*! data-uri(/images/node-suggested-20.png) */
 }
 .small-exercise-icon.node-not-started {
-  background: url("http://www.mooculus.osu.edu//images/node-not-started-20.png");
+  background: url("/images/node-not-started-20.png");
   /*! data-uri(/images/node-not-started-20.png) */
 }
 .topic-exercise-badge {
@@ -6306,7 +6306,7 @@ ul.icons li .icon-large:before {
   left: 8px;
 }
 .large-search-form .throbber {
-  background-image: url("http://www.mooculus.osu.edu//images/throbber.gif");
+  background-image: url("/images/throbber.gif");
   /*! data-uri(/images/throbber.gif) */
 
   height: 16px;
@@ -7120,14 +7120,14 @@ ul.inline-list li {
 .goal a.objective.exercise:before,
 .goal a.objective.GoalObjectiveExerciseProficiency:before,
 .goal a.objective.GoalObjectiveAnyExerciseProficiency:before {
-  background: #3a4759 url("http://www.mooculus.osu.edu//images/generic-exercise-icon-inset-small.png") no-repeat 4px 4px;
+  background: #3a4759 url("/images/generic-exercise-icon-inset-small.png") no-repeat 4px 4px;
   /*! data-uri(/images/generic-exercise-icon-inset-small.png) */
 
 }
 .goal a.objective.video:before,
 .goal a.objective.GoalObjectiveWatchVideo:before,
 .goal a.objective.GoalObjectiveAnyVideo:before {
-  background: #3a4759 url("http://www.mooculus.osu.edu//images/video-camera-icon-inset-small.png") no-repeat 50% 50%;
+  background: #3a4759 url("/images/video-camera-icon-inset-small.png") no-repeat 50% 50%;
   /*! data-uri(/images/video-camera-icon-inset-small.png) */
 
 }
@@ -7162,7 +7162,7 @@ ul.inline-list li {
   content: " ";
   width: 20px;
   height: 20px;
-  background: transparent url("http://www.mooculus.osu.edu//images/video-camera-icon-full-small.png") no-repeat 0 1px;
+  background: transparent url("/images/video-camera-icon-full-small.png") no-repeat 0 1px;
   /*! data-uri(/images/video-camera-icon-full-small.png) */
 
   position: absolute;
@@ -7181,7 +7181,7 @@ ul.inline-list li {
   content: " ";
   width: 20px;
   height: 20px;
-  background: transparent url("http://www.mooculus.osu.edu//images/generic-exercise-icon-full-small.png") no-repeat 0 0;
+  background: transparent url("/images/generic-exercise-icon-full-small.png") no-repeat 0 0;
   /*! data-uri(/images/generic-exercise-icon-full-small.png) */
 
   position: absolute;
@@ -7236,7 +7236,7 @@ ul.inline-list li {
   content: " ";
   width: 30px;
   height: 30px;
-  background: #c7e5f7 url("http://www.mooculus.osu.edu//images/objective-complete-tick.png") no-repeat 50% 50%;
+  background: #c7e5f7 url("/images/objective-complete-tick.png") no-repeat 50% 50%;
   /*! data-uri(/images/objective-complete-tick.png) */
 
   position: absolute;
@@ -7260,7 +7260,7 @@ ul.inline-list li {
 /* override for create goal page delete hover */
 #create-goal-view .goal a.objective.exercise:hover:before,
 #create-goal-view .goal a.objective.video:hover:before {
-  background: #3a4759 url("http://www.mooculus.osu.edu//images/delete-icon-inset-small.png") no-repeat 50% 50%;
+  background: #3a4759 url("/images/delete-icon-inset-small.png") no-repeat 50% 50%;
   /*! data-uri(/images/delete-icon-inset-small.png) */
 
 }
@@ -8423,7 +8423,7 @@ a.simple-button.seethrough.goal-history {
 }
 /*FIXME(marcos): this seems at leaf.earned */
 .current-card .leaves .leaf {
-  background: transparent url("http://www.mooculus.osu.edu//images/power-mode/card-leaf-empty-large.png") no-repeat 50% 0;
+  background: transparent url("/images/power-mode/card-leaf-empty-large.png") no-repeat 50% 0;
   /* data-uri(/images/power-mode/card-leaf-empty-large.png) */
 
   background-size: 40px 40px;
@@ -8434,7 +8434,7 @@ a.simple-button.seethrough.goal-history {
   margin-right: 35px;
 }
 .lte8 .current-card .leaves .leaf {
-  background: transparent url("http://www.mooculus.osu.edu//images/power-mode/card-leaf-empty-small.png") no-repeat 50% 0;
+  background: transparent url("/images/power-mode/card-leaf-empty-small.png") no-repeat 50% 0;
   /* data-uri(/images/power-mode/card-leaf-empty-small.png) */
 
 }
@@ -8480,7 +8480,7 @@ a.simple-button.seethrough.goal-history {
   background-color: transparent;
 }
 .leaves .leaf.earned .full-leaf {
-  background: url("http://www.mooculus.osu.edu//images/power-mode/card-leaf-full-large.png") no-repeat;
+  background: url("/images/power-mode/card-leaf-full-large.png") no-repeat;
   /* data-uri(/images/power-mode/card-leaf-full-large.png) */
 
   background-size: 40px 40px;
@@ -8503,7 +8503,7 @@ a.simple-button.seethrough.goal-history {
   margin: 0 auto;
 }
 .lte8 .leaves .leaf.earned .full-leaf {
-  background: url("http://www.mooculus.osu.edu//images/power-mode/card-leaf-full-small.png") no-repeat 50% 0;
+  background: url("/images/power-mode/card-leaf-full-small.png") no-repeat 50% 0;
   /* data-uri(/images/power-mode/card-leaf-full-small.png) */
 
 }
