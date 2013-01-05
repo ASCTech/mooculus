@@ -1202,7 +1202,7 @@ button.ui-button::-moz-focus-inner { border: 0; padding: 0; } /* reset extra pad
    v2.0 | 20110126
    License: none (public domain)
 */
-
+/*
 html,  div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -1223,6 +1223,7 @@ time, mark, audio, video {
   font: inherit;
   vertical-align: baseline;
 }
+*/
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
@@ -1295,6 +1296,7 @@ article {
 
 /* Basic typography for the entire site */
 
+/*
 h1, h2, h3, h4, h5 { color: #111; font-family:inherit, sans-serif; }
 h1 {font-size:25px; margin-bottom: 22px;}
     .main-headline, .section-headline { padding-top: 22px; }
@@ -1302,12 +1304,7 @@ h1 {font-size:25px; margin-bottom: 22px;}
     .main-headline a:hover, .section-headline a:hover { text-decoration: underline;}
     .main-headline a:visited, .section-headline a:visited { color: #7EA800; }
     h1.main-headline {font-size: 32px; position: relative; line-height: 37px; z-index: 10;}
-
-h2 {font-size:20px; margin-bottom: 22px;}
-h3 {font-size:18px; margin-bottom: 22px;}
-h4 {font-size:15px; margin-bottom: 22px;}
-h5 {font-size: 15px; margin-bottom: -22px;}
-p {  margin: 22px 0;}
+*/
 
 .pulls { margin-bottom: 9px; } /* "Pulls" the next block element up by halving the margin. */
 .pulled { margin-top: 11px; margin-bottom: 22px; } /* Preserves vertical rhythm. Not always necessary */
@@ -1360,6 +1357,8 @@ a:visited {
 }
 
 a:link:hover, a:link:focus, a:visited:hover, a:visited:focus {
+    color: #005987;
+    text-decoration: none;
 }
 
 form { display: inline; }
