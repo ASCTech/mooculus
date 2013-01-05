@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130104231716) do
+ActiveRecord::Schema.define(:version => 20130105053153) do
 
   create_table "authentications", :force => true do |t|
     t.integer  "user_id"
@@ -123,6 +123,7 @@ ActiveRecord::Schema.define(:version => 20130104231716) do
     t.string   "attempt_content"
     t.integer  "seed"
     t.integer  "problem_id"
+    t.integer  "exercise_id"
   end
 
   create_table "users", :force => true do |t|
