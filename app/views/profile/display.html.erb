@@ -1,0 +1,38 @@
+<h3>Your Profile <small><%= link_to "Edit", :controller => "profile", :action => "edit" %></small></h3>
+
+<dl>
+  <dt>Name</dt>
+  <dd><%= @user.name %></dd>
+</dl>
+
+<dl>
+  <dt>Email</dt>
+  <dd><%= @user.email? ? @user.email : "None Given" %></dd>
+</dl>
+
+<dl>
+  <dt>Location</dt>
+  <dd><%= @user.location? ? @user.location : "None Given" %></dd>
+</dl>
+
+<dl>
+  <dt>Gender</dt>
+  <dd><%= @user.gender? ? @user.gender : "None Given" %></dd>
+</dl>
+
+<dl>
+  <dt>Birthday</dt>
+  <dd><%= @user.birthday? ? @user.birthday.strftime("%b %e, %Y") : "None Given" %></dd>
+</dl>
+
+<dl>
+<dt>Consent</dt>
+<dd>
+<% if @user.consent? %>
+  You have already consented for the study.
+<% else %>
+  You have not consented for the study. Give consent 
+  <%= link_to "here", :controller => "profile", :action => "consent" %>.
+<% end %>
+</dd>
+</dt>

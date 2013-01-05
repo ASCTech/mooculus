@@ -1,10 +1,10 @@
-<div class="row-fluid">
-  <div class="span8">
+<tr>
+  <td>
     <%= link_to exercise.title, exercise %>
-  </div>
-  <div class="span4">
-    <% if user_signed_in? %>
+  </td>
+  <% if user_signed_in? %>
+    <td>
       <%= @competencies.where(exercise_id: exercise.id).first || "Not attempted" %>
-    <% end %>
-  </div>
-</div>
+    </td>
+  <% end %>
+</tr>

@@ -1,0 +1,24 @@
+<%= form_tag do %>
+  <fieldset>
+    <legend>Edit Profile</legend>
+
+
+
+    <%= label_tag :email %>
+    <%= text_field_tag :email, @user.email %>
+
+    <%= label_tag :location %>
+    <%= text_field_tag :location, @user.location %>
+
+    <%= label_tag :gender %>
+    <%= select_tag :gender, genders %>
+
+    <%= label_tag :birthday %>
+    <%= select_tag :month, months, class: "input-small" %>
+    <%= select_tag :day, days, class: "input-small" %>
+    <%= select_tag :year, years, class: "input-small" %>
+    <br/>
+
+    <%= button_tag "Save Changes", class: "btn" %>
+  </fieldset>
+<% end %>

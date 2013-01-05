@@ -1,14 +1,18 @@
-<div class="row-fluid">
-  <div class="span8">
-    Problem
-  </div>
-  <% if user_signed_in? %>
-    <div class="span4">
-      Your Score
-    </div>
-  <% end %>
-</div>
+<table class="table table-striped">
+  <thead>
+    <th>
+      Problem
+    </th> 
+    <% if user_signed_in? %>
+      <th>
+        Your Score
+      </th>
+    <% end %>
+  </thead>
 
-<% @exercises.each do |exercise| %>
-  <%= render partial: "index_exercise", locals: { exercise: exercise } %>
-<% end %>
+  <tbody>
+    <% @exercises.each do |exercise| %>
+      <%= render partial: "index_exercise", locals: { exercise: exercise } %>
+    <% end %>
+  </tbody>
+</table>
