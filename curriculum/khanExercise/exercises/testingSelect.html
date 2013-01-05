@@ -20,7 +20,7 @@
 						<option value="B">Banana</option>
 			</select>  
 			
-			<span id="mark">?</span>
+			<span id="mark"></span>
 			
 			<br><br>
 			
@@ -28,7 +28,31 @@
                 		<option value="A">Apple</option>
 						<option value="B">Banana</option>
 			</select>  
+			<span id="mick"></span>
 			
+			<br><br>
+			
+			<div class="graphie">
+				$('#check-answer-button').click(function(){
+					if($('#hey :selected').val()=="B"){
+						$('#mark').css({ 'color': 'red', 'font-size': '150%' });
+						$('#mark').text("&#x2717;")
+						}
+					else{
+						$('#mark').css({ 'color': 'green', 'font-size': '150%' });
+						$('#mark').text("&#x2713;")
+					
+					}
+					if($('#how :selected').val()=="A"){
+						$('#mick').css({ 'color': 'red', 'font-size': '150%' });
+						$('#mick').text("&#x2717;")
+						}
+					else{
+						$('#mick').css({ 'color': 'green', 'font-size': '150%' });
+						$('#mick').text("&#x2713;")
+						}
+				})
+			</div>
 		
 			 
 		</p>    
@@ -42,8 +66,8 @@
                     
                     
                     <div class="validator-function">
-                     	$('mark').text(X)
-                       return guess[0]=="A" &amp;&amp; guess[1]=="B";
+                     	
+                       return guess[0]=="A" &amp;&amp; guess[1]=="B"
                     </div>
                     
                 </div>

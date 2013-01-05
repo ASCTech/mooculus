@@ -2187,7 +2187,7 @@ var Khan = (function() {
                     "This page is out of date. You need to <a href='" + window.location.href +
                     "'>refresh</a>, but don't worry, you haven't lost progress. " +
                     "If you think this is a mistake, " +
-                    "<a href='http://www.khanacademy.org/reportissue?type=Defect&issue_labels='>tell us</a>."
+                    "<a href='mailto:support@mooculus.osu.edu'>tell us</a>."
                 );
 
             }, "attempt_hint_queue");
@@ -2424,8 +2424,8 @@ var Khan = (function() {
                 title = $("#issue-title").val(),
                 path = exerciseFile + "?seed=" +
                     problemSeed + "&problem=" + problemID,
-                pathlink = "[" + path + (exercise.data("name") !== exerciseId ? " (" + exercise.data("name") + ")" : "") + "](http://sandcastle.khanacademy.org/media/castles/Khan:master/exercises/" + path + "&debug)",
-                historyLink = "[Answer timeline](" + "http://sandcastle.khanacademy.org/media/castles/Khan:master/exercises/" + path + "&debug&activity=" + encodeURIComponent(JSON.stringify(userActivityLog)).replace(/\)/g, "\\)") + ")",
+                pathlink = "[" + path + (exercise.data("name") !== exerciseId ? " (" + exercise.data("name") + ")" : "") + "](http://sandcastle.mooculus.osu.edu/media/castles/Khan:master/exercises/" + path + "&debug)",
+                historyLink = "[Answer timeline](" + "http://sandcastle.mooculus.osu.edu/media/castles/Khan:master/exercises/" + path + "&debug&activity=" + encodeURIComponent(JSON.stringify(userActivityLog)).replace(/\)/g, "\\)") + ")",
                 agent = navigator.userAgent,
                 mathjaxInfo = "MathJax is " + (typeof MathJax === "undefined" ? "NOT loaded" :
                     ("loaded, " + (MathJax.isReady ? "" : "NOT ") + "ready, queue length: " + MathJax.Hub.queue.queue.length)),
@@ -2514,7 +2514,7 @@ var Khan = (function() {
             // to fall back to jsonp.
             $.ajax({
 
-                url: (testMode ? "http://www.khanacademy.org/" : "/") + "githubpost",
+                url: (testMode ? "http://www.mooculus.osu.edu/" : "/") + "githubpost",
                 type: testMode ? "GET" : "POST",
                 data: testMode ? {json: JSON.stringify(dataObj)} :
                     JSON.stringify(dataObj),
