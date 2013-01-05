@@ -26,13 +26,12 @@
 </dl>
 
 <dl>
-<dt>Consent</dt>
+<dt>Informed Consent </dt>
 <dd>
 <% if @user.consent? %>
-  You have already consented for the study.
+  You have been participating in the <%= link_to "research study", :controller => "profile", :action => "consent" %> as of <%= @user.consented_at.strftime('%B %e, %Y') %>.
 <% else %>
-  You have not consented for the study. Give consent 
-  <%= link_to "here", :controller => "profile", :action => "consent" %>.
+  We are conducting a study on the effectiveness of online technology for calculus instruction; if you are interested in participating, please <%= link_to "click here", :controller => "profile", :action => "consent" %>.
 <% end %>
 </dd>
 </dt>

@@ -22,7 +22,7 @@
         <a class="brand" href="/"><%=raw html_logo %></a>
         <div class="nav-collapse">
           <ul class="nav">
-            <li class="<%= 'active' if params[:controller] == 'videos' %>"><%= link_to raw("<i class='icon-film'></i> Lectures"), :controller => "videos", :action => "index" %></li>
+            <li><a href="https://class.coursera.org/calc1-001/lecture/index"><i class="icon-film"></i> Lectures</a></li>
             <li class="<%= 'active' if params[:controller] == 'handouts' %>"><%= link_to raw("<i class='icon-book'></i> Textbook"), :controller => "handouts", :action => "index" %></li>
             <li class="<%= 'active' if params[:controller] == 'exercises' && params[:action] != "progress" %>"><%= link_to raw("<i class='icon-pencil'></i> Exercises"), :controller => "exercises", :action => "index" %></li>
             <% if user_signed_in? %>
