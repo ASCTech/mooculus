@@ -28,6 +28,7 @@ GEM
     activesupport (3.2.10)
       i18n (~> 0.6)
       multi_json (~> 1.0)
+    ambry (0.3.1)
     arel (3.0.2)
     bcrypt-ruby (3.0.1)
     builder (3.0.4)
@@ -84,6 +85,8 @@ GEM
       i18n (>= 0.4.0)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
+    merit (1.2.3)
+      ambry (~> 0.3.0)
     mime-types (1.19)
     multi_json (1.5.0)
     multipart-post (1.1.5)
@@ -188,6 +191,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  ambry
   capistrano
   coffee-rails (~> 3.2.1)
   devise
@@ -196,6 +200,7 @@ DEPENDENCIES
   json
   less-rails
   libv8
+  merit
   mysql2
   nokogiri
   oauth-plugin (~> 0.4.0)
