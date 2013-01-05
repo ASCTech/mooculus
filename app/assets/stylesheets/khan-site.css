@@ -7278,6 +7278,7 @@ ul.inline-list li {
   padding: 0 10px 0 8px;
   margin: 0 -10px 0 -8px;
 }
+/*
 .progress-bar {
   position: relative;
   border: 1px solid #000;
@@ -7292,6 +7293,7 @@ ul.inline-list li {
   background: #c7e5f7;
   z-index: -1;
 }
+*/
 .student-goals-filter {
   display: block;
 }
