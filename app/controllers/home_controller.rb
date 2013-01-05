@@ -8,7 +8,7 @@ class HomeController < ApplicationController
   end
 
   def developers
-    @developers = Developer.all
+    @developers = Developer.all.to_a
     @developers.shuffle!
   end
 end
