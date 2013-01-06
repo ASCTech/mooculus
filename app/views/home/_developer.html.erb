@@ -1,14 +1,17 @@
+<% unless @developer.link.nil? %><a href="<%= @developer.link %>"><% end %>
 <img style="float: left; margin-right: 16pt; margin-left: 16pt; margin-bottom: 16pt;" class="img-rounded"
 <% if not @developer.photo.nil? %>
   src="/photos/<%= @developer.photo %>-150.jpg"/>
 <% else %>
   src="/photos/silhouette-150.png"/>
 <% end %>
-<h2><%= @developer.name %></h2>
+<% unless @developer.link.nil? %></a><% end %>
+<% if @developer.link.nil? %>
+  <h4><%= @developer.name %></h4>
+<% else %>
+  <h4><a href="<%= @developer.link %>"><%= @developer.name %></a></h4>
+<% end %>
 <% unless @developer.email.nil? %>
   <span class="email"><a href="mailto:<%= @developer.email %>"><%= @developer.email %></a></span>
 <% end %>
-<% unless @developer.link.nil? %>
-  <span class="url"><a href="<%= @developer.link %>" rel="external"><%= @developer.link %></a></span>
-<% end %>
-<p><%=raw @developer.description %></p>
+<p><%=raw @developer.description.gsub( 'MOOCulus', html_logo ) %></p>
