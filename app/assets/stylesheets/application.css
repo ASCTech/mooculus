@@ -69,7 +69,7 @@ div.hero-unit h1 {
 }
 
 #problemarea, #problem-and-answer p {
-    font-family: 'STIXGeneral';
+    font-family: 'Computer Modern', serif;
     font-size: 13pt;
     line-height: 2.2;
 }
