@@ -11,7 +11,7 @@ class ScoreController < ApplicationController
 
     puts @exercise.inspect
     puts @problem.inspect
-
+    
     @user = current_user
     @score = Score.new(:time_taken => params[:time_taken],
                        :attempt_number => params[:attempt_number],
@@ -25,15 +25,26 @@ class ScoreController < ApplicationController
 
     puts @score.summary
 
-    respond_to do |format|
-      if @score.save
-        format.json { render :json => @score, :status => :created }
-      else
-        format.json { render :json => @score, :status => :unprocessable_entity }
-      end
+    @competency = Competency.update( @user, @exercise )
+    p = @competency.estimate
+
+    @next_exercise = @exercise.next_exercise || @exercise
+
+    @next_problem = nil
+    if p > 0.8
+      @next_problem = @next_exercise.problem_from_bag
+    else
+      @next_problem = @exercise.problem_from_bag
     end
 
-    Competency.update( @user, @exercise )
+    khan = @next_problem.khan_exercise_object
+    khan[:repeatProblem] = @exercise.problem_from_bag.khan_exercise_object
+    khan[:competency] = p
+
+    respond_to do |format|
+      @score.save
+      format.json { render :json => khan, :status => :created }
+    end
   end
 
   def hint

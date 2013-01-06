@@ -2015,7 +2015,7 @@ var Khan = (function() {
     function prepareSite() {
         // TODO(david): Don't add homepage elements with "exercise" class
         exercises = exercises.add($("div.exercise").detach());
-	console.log('preparesite');
+	//console.log('preparesite');
         // Setup appropriate img URLs
         $("#issue-throbber")
             .attr("src", urlBase + "css/images/throbber.gif");
@@ -2758,7 +2758,7 @@ var Khan = (function() {
     }
 
     if (!testMode) {
-	console.log("set up nontestmode");
+	//console.log("set up nontestmode");
         // testMode automatically prepares itself in loadModules,
         // where it loads jQuery and the rest of its dependencies
         // dynamically.

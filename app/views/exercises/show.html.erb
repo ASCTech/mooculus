@@ -1,22 +1,80 @@
     <script>
-      userExercise = {
-        problemType: "<%= @problem.name %>",
-        exerciseModel: {
-          name: "<%= @exercise.name %>",
-          displayName: "<%= @exercise.title %>",
-          fileName: "<%= @exercise.page %>",
-        }
-      };
-      console.log(userExercise);
-      $(Khan).bind( "exerciseLoaded:abscissaordinate", function() {console.log('exerciseLoaded');} );
-      $(Exercises).trigger("readyForNextProblem",{
-        userExercise: userExercise,
-        user: "hello"
-      });
       $(function() {
+        userExercise = {
+          problemType: "<%= @problem.name %>",
+          exerciseModel: {
+            name: "<%= @exercise.name %>",
+            displayName: "<%= @exercise.title %>",
+            fileName: "<%= @exercise.page %>",
+          }
+        };
+
+        $(Khan).bind("newProblem", function() {
+          $('#exercise-title').text( userExercise.exerciseModel.displayName );
+        });        
+
+        var playMode = true;
+        var competency = 0;
+
+        $(Khan).bind("updateUserExercise", function(ev, data) {
+          userExercise = data;
+
+          if ("competency" in data) {
+            competency = data.competency;
+            var $bar = $('.bar');
+            $bar.width( 100 * competency );
+          }
+
+          if (("repeatProblem" in data) && (!playMode)) {
+            userExercise = data.repeatProblem;
+          }
+
+          $(Khan).unbind("gotoNextProblem");
+          $(Khan).bind("gotoNextProblem", function() {
+            $(Exercises).trigger("readyForNextProblem",{
+              userExercise: userExercise,
+              user: "hello"
+            });
+          });
+        });
+
+        $(Exercises).trigger("readyForNextProblem",{
+          userExercise: userExercise,
+          user: "hello"
+        });
+
         $(Exercises).trigger("problemTemplateRendered");
+ 
+        $('#play-button').click( function() {
+          $(this).button('toggle');
+          console.log( playMode );
+          if (playMode) {
+            $(this).html( "<i class='icon-pause'></i>" );
+            playMode = false;
+          } else {
+            $(this).html( "<i class='icon-play'></i>" );
+            playMode = true;
+          }
+        });
+
+
+        $('#reload-button').click( function() {
+          $(Exercises).trigger("readyForNextProblem",{
+            userExercise: userExercise,
+            user: "hello"
+          });
+        });
+
+        // This is enough to convince Chrome to reflow graphies
+        $(Khan).bind("newProblem", function() {
+          $('#problemarea').hide().show(0);
+        });
+
+
       });
     </script>
+
+
 
 <div id="exercise-message-container" style="display: none;">
     <div class="exercise_message"></div>
@@ -25,6 +83,11 @@
     <span id="warning-bar-content"></span>
     <span id="warning-bar-close">(<a href="">close</a>)</span>
 </div>
+
+<div class="page-header">
+  <h1>Exercise <small id="exercise-title">loading&hellip;</small></h1>
+</div>
+
 <div id="problem-and-answer">
     <div id='problemarea'>
         <div id='scratchpad'><div></div></div>
@@ -73,6 +136,30 @@
                     <div class="clear"></div>
                 </div>
             </div>
+	    <div class="btn-group">
+	      <% if @exercise.previous_exercise.nil? %>
+	        <button type="button" class="btn btn-inverse disabled" disabled="disabled"><i class='icon-fast-backward'></i></button>
+	        <button type="button" class="btn btn-inverse disabled" disabled="disabled"><i class='icon-step-backward'></i></button>
+              <% else %>
+                <%= link_to raw("<i class='icon-fast-backward'></i>"), Exercise.first_by_position, :class => "btn btn-inverse" %>
+                <%= link_to raw("<i class='icon-step-backward'></i>"), @exercise.previous_exercise, :class => "btn btn-inverse" %>
+              <% end %>
+
+	      <button type="button" id="play-button" class="btn btn-inverse"><i class='icon-play'></i></button>
+
+	      <% if @exercise.next_exercise.nil? %>
+	        <button type="button" class="btn btn-inverse disabled" disabled="disabled"><i class='icon-step-forward'></i></button>
+	        <button type="button" class="btn btn-inverse disabled" disabled="disabled"><i class='icon-fast-forward'></i></button>
+              <% else %>
+                <%= link_to raw("<i class='icon-step-forward'></i>"), @exercise.next_exercise, :class => "btn btn-inverse" %>
+                <%= link_to raw("<i class='icon-fast-forward'></i>"), Exercise.last_by_position, :class => "btn btn-inverse" %>
+              <% end %>
+	    </div>
+            <button type="button" class="btn btn-inverse" id="reload-button"><i class="icon-repeat"></i> Reload</button>
+
+            <div class="progress progress-striped active">
+              <div class="bar" style="width: 0%;"></div>
+	    </div>
         </form>
         <div id="calculator" class="info-box" style="display: none;">
             <span class="info-box-header">Calculator</span>

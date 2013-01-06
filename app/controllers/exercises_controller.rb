@@ -1,4 +1,7 @@
 class ExercisesController < ApplicationController
+  before_filter do 
+    redirect_to user_omniauth_authorize_path(:coursera) unless current_user
+  end
 
   def khan_site
   end

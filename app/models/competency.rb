@@ -72,7 +72,8 @@ class Competency < ActiveRecord::Base
 
     observations = scores.collect{ |x| x.summary }
 
-    p = Viterbi.viterbi( observations )
+    p = 0.25
+    p = Viterbi.viterbi( observations ) if observations.length > 0
 
     conditions = {
       :user_id => user.id,
@@ -95,6 +96,8 @@ class Competency < ActiveRecord::Base
     @competency.estimate = p
 
     @competency.save
+
+    return @competency
   end
 
 end
