@@ -56,7 +56,7 @@
 ----------------------------------*/
 .ui-widget { font-family: Verdana,Arial,sans-serif; font-size: 1.1em; }
 .ui-widget .ui-widget { font-size: 1em; }
-.ui-widget input, .ui-widget select, .ui-widget textarea, .ui-widget button { font-family: Verdana,Arial,sans-serif; font-size: 1em; }
+.ui-widget input, .ui-widget select, .ui-widget textarea, .ui-widget button { font-family: 'Open Sans',Verdana,Arial,sans-serif; font-size: 1em; }
 .ui-widget-content { border: 1px solid #aaaaaa; background: #ffffff url("http://www.mooculus.ose.edu/stylesheets/jqueryui-package/images/ui-bg_flat_75_ffffff_40x100.png") 50% 50% repeat-x; color: #222222; }
 .ui-widget-content a { color: #222222; }
 .ui-widget-header { border: 1px solid #aaaaaa; background: #cccccc url("http://www.mooculus.ose.edu/stylesheets/jqueryui-package/images/ui-bg_highlight-soft_75_cccccc_1x100.png") 50% 50% repeat-x; color: #222222; font-weight: bold; }
@@ -1257,7 +1257,7 @@ html {
 }
 
 body {
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
     margin: 0;
     color: #444;
     line-height: 22px;
@@ -2022,7 +2022,7 @@ footer {
         line-height: 13px;
         font-size: 10px;
         font-weight: bold;
-        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
     }
 
 #search-box {
@@ -2158,7 +2158,7 @@ ul.topic-browser-menu > li > ul > li > a {
 }
 
 .nav-subheader > span > a {
-    font-family: inherit, Helvetica, Arial, sans-serif;
+    font-family: "Open Sans", Helvetica, Arial, sans-serif;
     font-size: 16px;
     letter-spacing: -1px;
     text-transform: uppercase;
@@ -2709,7 +2709,7 @@ ul.topic-browser-menu > li > ul > li > a {
     padding: 2px 5px 3px;
     color: white;
     font-weight: bold;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
     text-shadow: none;
 
     -webkit-border-radius: 5px;
@@ -3183,7 +3183,7 @@ a.nodeLabel:hover {
 
 .node-text {
     color: white;
-    font-family: "Lucida Grande", "Arial", sans-serif;
+    font-family: "Open Sans", "Lucida Grande", "Arial", sans-serif;
     font-size: 12px;
     width: 80px;
     border: 1px solid transparent;
@@ -4494,7 +4494,7 @@ button.close {
   background-color: #ffffff;
   border-color: #94a170;
   padding: 3px 0;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 12px;
   font-weight: normal;
   line-height: 24px;
@@ -4583,7 +4583,7 @@ button.close {
   font-weight: inherit;
   bottom: 0px;
   text-shadow: none;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 9px;
   font-weight: normal;
   line-height: 17px;
@@ -4637,7 +4637,7 @@ ul.topic-browser-menu.new > li > ul {
   line-height: 14px;
   margin-bottom: 4px;
   font-size: 11px;
-  font-family: arial, sans-serif;
+  font-family: "Open Sans", arial, sans-serif;
 }
 .topic-list a,
 .topic-list a:link,
@@ -6532,7 +6532,7 @@ ul.icons li .icon-large:before {
   /** = padding-left + border **/
 
   border-color: #94a170;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 12px;
   border: 1px solid #94a170;
   border-bottom: 1px solid #999;
