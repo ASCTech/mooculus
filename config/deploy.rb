@@ -20,7 +20,7 @@ set :user, 'deploy'
 
 task :staging do
   set :rails_env, "staging"
-  set :ssh_options, { :forward_agent => true, :port => 2200 }
+  set :ssh_options, { :port => 2200 }
   role :app, "ruby-test.asc.ohio-state.edu"
   role :web, "ruby-test.asc.ohio-state.edu"
   role :db,  "ruby-test.asc.ohio-state.edu", :primary => true
@@ -43,6 +43,7 @@ namespace :deploy do
 
   task :seed, :roles => :app do
     run "cd #{current_path} && #{rake} RAILS_ENV=#{rails_env} db:seed"
+    run "cd #{current_path} && #{rake} RAILS_ENV=#{rails_env} exercise:all"
   end
 end
 
@@ -53,9 +54,16 @@ before "deploy:assets:precompile" do
     "ln -nfs #{shared_path}/config/secret_token.rb #{release_path}/config/initializers/secret_token.rb",
     "ln -fs #{shared_path}/uploads #{release_path}/uploads",
     "ln -fs #{shared_path}/tmp/pids #{release_path}/tmp/pids",
-    "cd #{deploy_to}/current && /usr/bin/env rake exercise:all RAILS_ENV=production",
     "rm #{release_path}/public/system"
   ].join(" && ")
 end
 
 after "deploy:restart", "deploy:cleanup"
+
+desc "tail log files"
+task :tail, :roles => :app do
+  run "tail -f #{shared_path}/log/#{rails_env}.log" do |channel, stream, data|
+    puts "#{channel[:host]}: #{data}"
+    break if stream == :err
+  end
+end
