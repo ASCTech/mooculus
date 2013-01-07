@@ -9,7 +9,7 @@ Developer.create :name => "Bart Snapp", :photo => "bart-snapp",
   :email => 'snapp@math.osu.edu'
 
 Developer.create :name => "Jim Fowler", :photo => "jim-fowler",
-  :description => 'Jim research interests broadly include geometry and topology, and specifically, his interests focus on the topology of high-dimensional manifolds and geometric group theory, which means he thinks about highly symmetric (and therefore very beautiful) geometric objects.  He\'s fond of using computational techniques to attack problems in pure mathematics.</p><p>He received an undergraduate degree from <a href="http://www.harvard.edu/">Harvard University</a> and received a Ph.D. from the <a href="http://www.uchicago.edu/">University of Chicago</a>.</p><p>Jim is the head instructor (&ldquo;project manager&rdquo;) for MOOCulus.',
+  :description => 'Jim\'s research broadly includes geometry and topology; specifically, his interests focus on the topology of high-dimensional manifolds and geometric group theory, which means he thinks about highly symmetric (and therefore very beautiful) geometric objects.  He\'s fond of using computational techniques to attack problems in pure mathematics.</p><p>He received an undergraduate degree from <a href="http://www.harvard.edu/">Harvard University</a> and received a Ph.D. from the <a href="http://www.uchicago.edu/">University of Chicago</a>.</p><p>Jim is the head instructor (&ldquo;project manager&rdquo;) for MOOCulus.',
   :link => 'http://www.math.osu.edu/~fowler/',
   :email => 'fowler@math.osu.edu'
 
