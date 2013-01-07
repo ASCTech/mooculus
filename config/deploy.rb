@@ -53,7 +53,7 @@ before "deploy:assets:precompile" do
     "ln -nfs #{shared_path}/config/secret_token.rb #{release_path}/config/initializers/secret_token.rb",
     "ln -fs #{shared_path}/uploads #{release_path}/uploads",
     "ln -fs #{shared_path}/tmp/pids #{release_path}/tmp/pids",
-    "cd #{deploy_to}/current && /usr/bin/env rake exercise:all RAILS_ENV=production")`
+    "cd #{deploy_to}/current && /usr/bin/env rake exercise:all RAILS_ENV=production",
     "rm #{release_path}/public/system"
   ].join(" && ")
 end
