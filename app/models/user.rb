@@ -7,6 +7,7 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
   devise :omniauthable
+  devise :authentication_keys => [:coursera_id]
 
   # Coursera doesn't provide us with an email address
   def email_required?
