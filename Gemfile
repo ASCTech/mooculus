@@ -14,6 +14,7 @@ gem "oauth-plugin", "~> 0.4.0"
 
 gem 'twitter-bootstrap-rails'
 gem 'less-rails'
+gem 'newrelic_rpm'
 
 # use Devise for login
 gem 'devise'

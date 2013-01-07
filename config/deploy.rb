@@ -31,6 +31,7 @@ task :production do
   set :branch, 'master'
   role :app, "mooculus-1.asc.ohio-state.edu"
   role :web, "mooculus-1.asc.ohio-state.edu"
+  role :web, "mooculus-2.asc.ohio-state.edu"
   role :db,  "mooculus-1.asc.ohio-state.edu", :primary => true
 end
 
@@ -53,6 +54,7 @@ before "deploy:assets:precompile" do
     "ln -nfs #{shared_path}/config/database.yml #{release_path}/config/database.yml",
     "ln -nfs #{shared_path}/config/piwik.yml #{release_path}/config/piwik.yml",
     "ln -nfs #{shared_path}/config/secret_token.rb #{release_path}/config/initializers/secret_token.rb",
+    "ln -nfs #{shared_path}/config/newrelic.yml #{release_path}/config/newrelic.yml",
     "ln -fs #{shared_path}/uploads #{release_path}/uploads",
     "ln -fs #{shared_path}/tmp/pids #{release_path}/tmp/pids",
     "rm #{release_path}/public/system"
