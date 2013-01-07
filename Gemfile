@@ -53,3 +53,6 @@ gem 'merit'
 
 # I like ambry for storing some static data
 gem 'ambry'
+
+# Use gravatar's on profile pages
+gem 'gravatar_image_tag'

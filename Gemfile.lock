@@ -63,6 +63,7 @@ GEM
       railties (>= 3.0.0)
     faraday (0.8.4)
       multipart-post (~> 1.1)
+    gravatar_image_tag (1.1.3)
     hashie (1.2.0)
     highline (1.6.15)
     hike (1.2.1)
@@ -196,6 +197,7 @@ DEPENDENCIES
   coffee-rails (~> 3.2.1)
   devise
   factory_girl_rails
+  gravatar_image_tag
   jquery-rails
   json
   less-rails
