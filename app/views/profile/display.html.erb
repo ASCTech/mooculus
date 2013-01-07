@@ -1,3 +1,7 @@
+<div style="float: right;">
+<a href="https://en.gravatar.com/"><%= gravatar_image_tag( @user.email, :alt => @user.name, :gravatar => { :secure => true } ) %></a>
+</div>
+
 <h3>Your Profile <small><%= link_to "Edit", :controller => "profile", :action => "edit" %></small></h3>
 
 <dl>
