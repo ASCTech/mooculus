@@ -6,13 +6,13 @@ class Viterbi
   STATES = [ :knowing, :unknowing ]
 
   PRIORS = {
-    :knowing => 0.2,
-    :unknowing => 0.8,
+    :knowing => 0.05,
+    :unknowing => 0.95,
   }
 
   TRANSITIONS = {
     :knowing => { :knowing => 0.8, :unknowing => 0.2 },
-    :unknowing => { :knowing => 0.3, :unknowing => 0.7 },
+    :unknowing => { :knowing => 0.05, :unknowing => 0.95 },
   }
   
   EMISSIONS = {
