@@ -2631,7 +2631,7 @@ ul.topic-browser-menu > li > ul > li > a {
 /*    background: #eee; */
     color: #333;
     margin-bottom: 10px;
-    overflow-x: auto;
+    /*overflow-x: auto;*/
     padding: 10px;
     position: relative;
     z-index: 10;

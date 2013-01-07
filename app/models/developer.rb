@@ -4,12 +4,12 @@ class Developer
 end
 
 Developer.create :name => "Bart Snapp", :photo => "bart-snapp",
-  :description => 'Bart Snapp teaches mathematics at OSU.  His research interests include commutative ring theory, number theory, and recreational mathematics.  He enjoys exploring connections between mathematics and the real-world problems, art, and music. As an undergraduate, he was involved in distance teaching and learning though OSU\'s <a href="http://socrates.math.osu.edu/">CROSU</a> program.</p><p>Prior to OSU, he worked at <a href="http://www.coastal.edu/">Coastal Carolina University</a>. Bart earned his Ph.D. from the <a href="http://illinois.edu/">University Illinois at Urbana-Champaign</a>.</p><p>For MOOCulus, Bart leads the development of the <a href="/handouts">the textbook</a> and contributes to exercises.',
+  :description => 'Bart Snapp teaches mathematics at OSU.  His research interests include commutative ring theory, number theory, and recreational mathematics.  He enjoys exploring connections between mathematics and the real-world problems, art, and music. As an undergraduate, he was involved in distance teaching and learning though OSU\'s <a href="http://socrates.math.osu.edu/">CROSU</a> program.</p><p>For MOOCulus, Bart leads the development of the <a href="/handouts">the textbook</a> and contributes to exercises.',
   :link => 'http://www.math.osu.edu/~snapp/',
   :email => 'snapp@math.osu.edu'
 
 Developer.create :name => "Jim Fowler", :photo => "jim-fowler",
-  :description => 'Jim Fowler teaches mathematics at OSU.  His research interests broadly include geometry and topology, and more specifically, his interests focus on the topology of high-dimensional manifolds and geometric group theory, which means he gets to think about highly symmetric (and therefore very beautiful) geometric objects.  He\'s particularly fond of using computational techniques to attack problems in pure mathematics.</p><p>Prior to OSU, he received an undergraduate degree from <a href="http://www.harvard.edu/">Harvard University</a> and received a Ph.D. from the <a href="http://www.uchicago.edu/">University of Chicago</a>.</p><p>Jim is the head instructor (&ldquo;project manager&rdquo;) for MOOCulus.',
+  :description => 'Jim research interests broadly include geometry and topology, and specifically, his interests focus on the topology of high-dimensional manifolds and geometric group theory, which means he thinks about highly symmetric (and therefore very beautiful) geometric objects.  He\'s fond of using computational techniques to attack problems in pure mathematics.</p><p>He received an undergraduate degree from <a href="http://www.harvard.edu/">Harvard University</a> and received a Ph.D. from the <a href="http://www.uchicago.edu/">University of Chicago</a>.</p><p>Jim is the head instructor (&ldquo;project manager&rdquo;) for MOOCulus.',
   :link => 'http://www.math.osu.edu/~fowler/',
   :email => 'fowler@math.osu.edu'
 

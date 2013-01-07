@@ -1,3 +1,16 @@
+
+
+<div class="accordion" id="accordion">
+<% for week in @exercises_by_weeks.keys.sort %>
+  <div class="accordion-group">
+    <div class="accordion-heading">
+      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse<%= week %>">
+        <h4>Week <%= week %></h4>
+      </a>
+    </div>
+    <div id="collapse<%= week %>" class="accordion-body collapse <% if week == 1 %> in <% end %>">
+      <div class="accordion-inner">
+
 <table class="table table-striped">
   <thead>
    <tr>
@@ -13,8 +26,16 @@
   </thead>
 
   <tbody>
-    <% @exercises.each do |exercise| %>
+    <% @exercises_by_weeks[week].each do |exercise| %>
       <%= render partial: "index_exercise", locals: { exercise: exercise } %>
     <% end %>
   </tbody>
 </table>
+
+        
+      </div>
+    </div>
+  </div>
+<% end %>
+</div>
+

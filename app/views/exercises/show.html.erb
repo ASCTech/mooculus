@@ -14,15 +14,89 @@
         });        
 
         var playMode = true;
-        var competency = 0;
+        <% if @competency.nil? %>
+          var competency = 0.0;
+	<% else %>
+          var competency = <%= @competency.max_estimate %>;
+	<% end %>
 
+        var updateCompetency = function() {
+            var $bar = $('.bar');
+            $bar.width( (100 * competency).toFixed(2) + '%' );
+
+	    var percentage = Math.round(competency * 100);
+  	    if (percentage <= 50) {
+	      $('.bar').removeClass("bar-warning bar-success").addClass("bar-danger");
+            } else if (percentage <= 80) {
+	      $('.bar').removeClass("bar-danger bar-success").addClass("bar-warning");
+            } else {
+	      $('.bar').removeClass("bar-danger bar-warning").addClass("bar-success");
+            }
+        };
+
+        updateCompetency();
+
+        /****************************************************************/
+        <% if @exercise.next_exercise.nil? %>
+          var forwardProblem = false;
+        <% else %>
+          var forwardProblem = '<%= @exercise.next_exercise.name %>';
+        <% end %>
+
+        var updateForwardProblem = function () {
+          if (forwardProblem == false) {
+            $('#skip-next-button').attr('disabled', 'disabled');
+            $('#skip-last-button').attr('disabled', 'disabled');
+          } else {
+            $('#skip-next-button').removeAttr('disabled');
+            $('#skip-last-button').removeAttr('disabled');
+            $('#skip-next-button').click( function() {
+              document.location.href='/exercises/' + forwardProblem;
+            });
+          }
+        };
+
+        updateForwardProblem();
+
+        /****************************************************************/
+        <% if @exercise.previous_exercise.nil? %>
+          var backwardProblem = false;
+        <% else %>
+          var backwardProblem = '<%= @exercise.previous_exercise.name %>';
+        <% end %>
+
+        var updateBackwardProblem = function () {
+          if (backwardProblem == false) {
+            $('#skip-prev-button').attr('disabled', 'disabled');
+            $('#skip-first-button').attr('disabled', 'disabled');
+          } else {
+            $('#skip-prev-button').removeAttr('disabled');
+            $('#skip-first-button').removeAttr('disabled');
+            $('#skip-prev-button').click( function() {
+              document.location.href='/exercises/' + backwardProblem;
+            });
+          }
+        };
+
+        updateBackwardProblem();
+
+        /****************************************************************/
         $(Khan).bind("updateUserExercise", function(ev, data) {
           userExercise = data;
 
           if ("competency" in data) {
             competency = data.competency;
-            var $bar = $('.bar');
-            $bar.width( 100 * competency );
+	    updateCompetency();
+          }
+
+          if ("forwardProblem" in data) {
+            forwardProblem = data.forwardProblem;
+            updateForwardProblem();
+          }
+
+          if ("backwardProblem" in data) {
+            backwardProblem = data.backwardProblem;
+            updateBackwardProblem();
           }
 
           if (("repeatProblem" in data) && (!playMode)) {
@@ -31,6 +105,8 @@
 
           $(Khan).unbind("gotoNextProblem");
           $(Khan).bind("gotoNextProblem", function() {
+	    window.history.pushState({},"", '/exercises/' + userExercise.exerciseModel.name );
+
             $(Exercises).trigger("readyForNextProblem",{
               userExercise: userExercise,
               user: "hello"
@@ -38,10 +114,19 @@
           });
         });
 
+        $('#skip-first-button').click( function() {
+          document.location.href='/exercises/' + '<%= Exercise.first_by_position.name %>';
+        });
+        $('#skip-last-button').click( function() {
+          document.location.href='/exercises/' + '<%= Exercise.last_by_position.name %>';
+        });
+
         $(Exercises).trigger("readyForNextProblem",{
           userExercise: userExercise,
           user: "hello"
         });
+
+	window.history.pushState({},"", '/exercises/' + userExercise.exerciseModel.name );
 
         $(Exercises).trigger("problemTemplateRendered");
  
@@ -57,6 +142,10 @@
           }
         });
 
+        $('#scratchpad-button').click( function() {
+	  Khan.scratchpad.toggle();
+	  Khan.scratchpad.resize();
+	});
 
         $('#reload-button').click( function() {
           $(Exercises).trigger("readyForNextProblem",{
@@ -68,12 +157,12 @@
         // This is enough to convince Chrome to reflow graphies
         $(Khan).bind("newProblem", function() {
           $('#problemarea').hide().show(0);
+          $('#answercontent').hide().show(0);
         });
 
-
+        $("[rel=tooltip]").tooltip();
       });
     </script>
-
 
 
 <div id="exercise-message-container" style="display: none;">
@@ -90,7 +179,7 @@
 
 <div id="problem-and-answer">
     <div id='problemarea'>
-        <div id='scratchpad'><div></div></div>
+        <div id='scratchpad' style="width: 100%;"><div  style="width: 100%;"></div></div>
         <div id='workarea'></div>
         <div id='hintsarea'></div>
     </div>
@@ -136,30 +225,23 @@
                     <div class="clear"></div>
                 </div>
             </div>
-	    <div class="btn-group">
-	      <% if @exercise.previous_exercise.nil? %>
-	        <button type="button" class="btn btn-inverse disabled" disabled="disabled"><i class='icon-fast-backward'></i></button>
-	        <button type="button" class="btn btn-inverse disabled" disabled="disabled"><i class='icon-step-backward'></i></button>
-              <% else %>
-                <%= link_to raw("<i class='icon-fast-backward'></i>"), Exercise.first_by_position, :class => "btn btn-inverse" %>
-                <%= link_to raw("<i class='icon-step-backward'></i>"), @exercise.previous_exercise, :class => "btn btn-inverse" %>
-              <% end %>
 
-	      <button type="button" id="play-button" class="btn btn-inverse"><i class='icon-play'></i></button>
+            <div class="info-box">
+              <span class="info-box-header">Progress</span>
+              <div class="progress" id="exercise-progress">
+		<div class="bar" style="width: 0%;"></div>
+	      </div>
+	      <div class="btn-group" id="exercise-vcr-controls">
+	        <button type="button" id="skip-first-button" class="btn btn-inverse" ><i class='icon-fast-backward'></i></button>
+	        <button type="button" id="skip-prev-button" class="btn btn-inverse" ><i class='icon-step-backward'></i></button>
+		<button type="button" id="play-button" class="btn btn-inverse"><i class='icon-play'></i></button>
+		<button type="button" id="skip-next-button" class="btn btn-inverse" ><i class='icon-step-forward'></i></button>
+		<button type="button" id="skip-last-button" class="btn btn-inverse" ><i class='icon-fast-forward'></i></button>
+              </div>
+              <button type="button" class="btn btn-inverse" id="reload-button" rel="tooltip" title="Reload"><i class="icon-repeat"></i></button>
+              <button type="button" class="btn btn-inverse" id="scratchpad-button" rel="tooltip" title="Scratchpad"><i class="icon-picture"></i></button>
+            </div>
 
-	      <% if @exercise.next_exercise.nil? %>
-	        <button type="button" class="btn btn-inverse disabled" disabled="disabled"><i class='icon-step-forward'></i></button>
-	        <button type="button" class="btn btn-inverse disabled" disabled="disabled"><i class='icon-fast-forward'></i></button>
-              <% else %>
-                <%= link_to raw("<i class='icon-step-forward'></i>"), @exercise.next_exercise, :class => "btn btn-inverse" %>
-                <%= link_to raw("<i class='icon-fast-forward'></i>"), Exercise.last_by_position, :class => "btn btn-inverse" %>
-              <% end %>
-	    </div>
-            <button type="button" class="btn btn-inverse" id="reload-button"><i class="icon-repeat"></i> Reload</button>
-
-            <div class="progress progress-striped active">
-              <div class="bar" style="width: 0%;"></div>
-	    </div>
         </form>
         <div id="calculator" class="info-box" style="display: none;">
             <span class="info-box-header">Calculator</span>

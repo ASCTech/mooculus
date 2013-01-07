@@ -39,7 +39,15 @@ class ScoreController < ApplicationController
 
     khan = @next_problem.khan_exercise_object
     khan[:repeatProblem] = @exercise.problem_from_bag.khan_exercise_object
-    khan[:competency] = p
+    khan[:competency] = @competency.max_estimate
+
+    @forward_exercise = @exercise.next_exercise
+    khan[:forwardProblem] = false
+    khan[:forwardProblem] = @forward_exercise.name unless @forward_exercise.nil?
+
+    @backward_exercise = @exercise.previous_exercise
+    khan[:backwardProblem] = false
+    khan[:backwardProblem] = @backward_exercise.name unless @backward_exercise.nil?
 
     respond_to do |format|
       @score.save

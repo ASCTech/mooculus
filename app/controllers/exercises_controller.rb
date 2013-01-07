@@ -12,6 +12,7 @@ class ExercisesController < ApplicationController
   def index
     @exercises = Exercise.order(:position)
     @competencies = current_user.competencies if user_signed_in?
+    @exercises_by_weeks = (Exercise.order(:position).group_by &:week)
   end
 
   def create
@@ -44,6 +45,12 @@ class ExercisesController < ApplicationController
       @exercise = Exercise.find(params[:id])
     end
     @problem = @exercise.problem_from_bag
+
+    conditions = {
+      :user_id => current_user.id,
+      :exercise_id => @exercise.id }
+    
+    @competency = Competency.where(conditions).limit(1).first
   end
 
   def update
@@ -64,6 +71,7 @@ class ExercisesController < ApplicationController
     incomplete_exercises = exercises - completed_exercises
     @exercises = completed_exercises + incomplete_exercises
     @competencies = Competency
+    @exercises_by_weeks = (completed_exercises.group_by &:week)
   end
 
 end

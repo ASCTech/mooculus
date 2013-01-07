@@ -102,3 +102,25 @@ div.hero-unit h1 {
   margin-left: -0.36em;
   margin-right: -0.15em;
 }
+
+/****************************************************************/
+/* About Us page */
+
+.developer_email {
+  float: right;
+  font-size: 75%;
+  font-weight: 100;
+}
+
+/****************************************************************/
+/* Some additions to the answer box */
+
+#scratchpad-button {
+    float: right;
+}
+
+#exercise-progress {
+    margin-top: 12pt;
+    margin-bottom: 12pt;
+}
+

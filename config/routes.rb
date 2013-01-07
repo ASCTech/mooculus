@@ -6,6 +6,7 @@ Assessor::Application.routes.draw do
   get "home/index"
   get "developers" => "home#developers"
   get "about" => "home#about"
+  get "contact" => "home#contact"
 
   get "score/index"
 

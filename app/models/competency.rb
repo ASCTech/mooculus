@@ -16,7 +16,7 @@ class Viterbi
   }
   
   EMISSIONS = {
-    :knowing => { :ace => 0.4, :correct => 0.3, :incorrect => 0.2, :hint => 0.1 },
+    :knowing => { :ace => 0.70, :correct => 0.20, :incorrect => 0.05, :hint => 0.05 },
     :unknowing => { :ace => 0.1, :correct => 0.2, :incorrect => 0.5, :hint => 0.2 },
   }
 
@@ -67,8 +67,9 @@ class Competency < ActiveRecord::Base
   belongs_to :exercise
 
   def Competency.update(user,exercise)
+    # Gather recent scores in chronological order
     scores = ::Score.where( :exercise_id => exercise.id,
-                            :user_id => user.id ).order(:created_at).limit( 35 )
+                            :user_id => user.id ).order('created_at DESC').limit( 35 ).reverse
 
     observations = scores.collect{ |x| x.summary }
 

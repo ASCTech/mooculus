@@ -93,6 +93,34 @@ namespace :exercise do
     puts "Exercises ordered successfully"
   end
 
+  desc "Generate weekly assignments from #{EXERCISES_PATH}/weeks.txt"
+  task :weeks => :environment do
+    unordered_exercises = []
+    file_lines = []
+
+    File.open("#{Rails.root}#{EXERCISES_PATH}/weeks.txt") do |file|
+      file_lines = file.readlines.map { |l| l.strip! }
+    end
+
+    week = 0
+    for line in file_lines
+      if line.match( /\* Week ([0-9]+)/ )
+        week = $1.to_i
+        next
+      end
+
+      exercise = Exercise.where( :page => line + '.html' ).limit(1).first
+      if exercise.nil?
+        STDERR.puts("ERROR: '#{line}' does not match an exercise")
+      else
+        exercise.week = week
+        exercise.save
+      end
+    end
+
+    puts "Exercises assigned to weeks successfully"
+  end
+
   desc "Generate exercises and order them"
-  task :all => [:generate, :order]
+  task :all => [:generate, :order, :weeks]
 end

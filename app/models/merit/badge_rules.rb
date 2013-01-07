@@ -20,6 +20,8 @@ module Merit
   class BadgeRules
     include Merit::BadgeRulesMethods
 
+    # Guru levels using quickly growing functions
+
     def initialize
       grant_on ['score#attempt'], :badge => 'Hourglass', :to => :user do |score|
         score.user.total_thinking_time >= 3600

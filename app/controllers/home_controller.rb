@@ -11,4 +11,7 @@ class HomeController < ApplicationController
     @developers = Developer.all.to_a
     @developers.shuffle!
   end
+
+  def contact
+  end
 end

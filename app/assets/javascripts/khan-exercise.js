@@ -2187,7 +2187,7 @@ var Khan = (function() {
                     "This page is out of date. You need to <a href='" + window.location.href +
                     "'>refresh</a>, but don't worry, you haven't lost progress. " +
                     "If you think this is a mistake, " +
-                    "<a href='mailto:support@mooculus.osu.edu'>tell us</a>."
+                    "<a href='/contact'>tell us</a>."
                 );
 
             }, "attempt_hint_queue");

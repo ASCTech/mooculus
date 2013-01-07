@@ -6,12 +6,14 @@
   src="/photos/silhouette-150.png"/>
 <% end %>
 <% unless @developer.link.nil? %></a><% end %>
-<% if @developer.link.nil? %>
-  <h4><%= @developer.name %></h4>
-<% else %>
-  <h4><a href="<%= @developer.link %>"><%= @developer.name %></a></h4>
-<% end %>
+<h4>
 <% unless @developer.email.nil? %>
-  <span class="email"><a href="mailto:<%= @developer.email %>"><%= @developer.email %></a></span>
+  <span class="developer_email"><a href="mailto:<%= @developer.email %>"><%= @developer.email %></a></span>
 <% end %>
+<% if @developer.link.nil? %>
+  <%= @developer.name %>
+<% else %>
+  <a href="<%= @developer.link %>"><%= @developer.name %></a>
+<% end %>
+</h4>
 <p><%=raw @developer.description.gsub( 'MOOCulus', html_logo ) %></p>
