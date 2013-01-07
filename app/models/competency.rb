@@ -11,13 +11,13 @@ class Viterbi
   }
 
   TRANSITIONS = {
-    :knowing => { :knowing => 0.9, :unknowing => 0.1 },
-    :unknowing => { :knowing => 0.4, :unknowing => 0.6 },
+    :knowing => { :knowing => 0.8, :unknowing => 0.2 },
+    :unknowing => { :knowing => 0.3, :unknowing => 0.7 },
   }
   
   EMISSIONS = {
-    :knowing => { :ace => 0.70, :correct => 0.20, :incorrect => 0.05, :hint => 0.05 },
-    :unknowing => { :ace => 0.1, :correct => 0.2, :incorrect => 0.5, :hint => 0.2 },
+    :knowing => { :ace => 0.5, :correct => 0.2, :incorrect => 0.2, :hint => 0.1 },
+    :unknowing => { :ace => 0.2, :correct => 0.3, :incorrect => 0.3, :hint => 0.2 },
   }
 
   def Viterbi.viterbi(observations)
