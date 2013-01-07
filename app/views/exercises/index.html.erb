@@ -1,5 +1,11 @@
+<% if current_user %>
 <p>To learn mathematics, you must practice.  Even if you aren't entirely sure you will succeed, <strong>jump in!</strong>  Click on an exercise, and if you don't know what to do, ask for a <strong>hint</strong>.</p>
-
+<% else %>
+<div class="alert">
+  <button type="button" class="close" data-dismiss="alert">&times;</button>
+  <strong>Login!</strong>  To do the practice exercises, you must first <%= link_to 'sign in to Coursera', user_omniauth_authorize_path(:coursera) %>.
+</div>
+<% end %>
 <div class="accordion" id="accordion">
 <% for week in @exercises_by_weeks.keys.sort %>
   <div class="accordion-group">
