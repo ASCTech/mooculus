@@ -156,6 +156,8 @@
 
         // This is enough to convince Chrome to reflow graphies
         $(Khan).bind("newProblem", function() {
+          var $bar = $('.bar');
+          $bar.width( (100 * competency).toFixed(2) + '%' );
           $('#problemarea').hide().show(0);
           $('#answercontent').hide().show(0);
         });
