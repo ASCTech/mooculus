@@ -1,0 +1,105 @@
+--Review (points, graphing, lines)--
+
+C = complete with or without hints
+H = has hints
+I = Incomplete
+P = complete, with hints, and throughly checked over.
+
+*POINTS*
+
+CH abscissaOrdinate
+CH plotPoint
+I signedDistances 
+
+*FUNCTIONS*
+CH pointOnFunction
+CH pointOnFunction2
+C isThisAFunctionPoints
+I isThisAFunctionGraph
+C evaluatingFunctions
+I graphingFromEquation
+
+
+I arithmeticFunctionsPointwise
+I arithmeticFunctionsGraphically
+I arithmeticFunctionsSymbolically
+
+I composingFunctionsPointwise
+I composingFunctionsSymbolically
+
+C functionTransformationPointwise
+I graphingTransformationPointwise
+I writeAsTransformation
+I graphingTransformation
+
+I multistepTransformationPointwise
+I multistepGraphingTransformationPointwise
+I multistepWriteAsTransformation
+I multistepGraphingTransformation
+
+C identifyPosNeg
+C identifyIncreaseDecrease
+C identifyMaxMin
+C identifyConcavity
+
+*LINES*
+
+C lineOracle
+I lineGraphFromEquation
+I lineSimilarTrianglesNumbers
+I lineSimilarTrianglesVariables
+I lineEquationFromGraph
+I lineEquationFromWordProblem
+
+
+--Limits and Continuity--
+
+C limitsOracle
+I coolLimitsOracle
+C limitsGraphical
+C limitsOracleGraphical
+	I limitsSymbolic
+	I identifyingLimitLaws
+
+I limitComposeRationalOracle
+	
+I estimateLargeSmall
+
+C infinteLimitOracle
+I coolInfinityLimitOracle
+C infiniteLimitGraphical
+I infiniteLimitSymbolic
+
+C limitsAtInfinityOracle
+I coolLimitsAtInfinityOracle
+C limitsAtInfinityGraphical
+C limitsAtInfinityOracleGraphical
+I limitsAtInfinitySymbolic
+
+C continuityOracle
+C continuityOracleGraphical
+C continuityGraphical
+I continuitySymbolic
+
+C bisectionOracle
+
+
+--Differentiation--
+
+-basic concepts-
+
+approxDeriv
+linearApprox
+repeatedLinApprox
+derivativeOracle
+intuitiveCurveSketch
+
+
+-formal rules-
+numChainRule
+
+
+
+
+
+ 

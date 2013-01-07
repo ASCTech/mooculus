@@ -1,0 +1,80 @@
+Functions - Conceptual
+
+	abscissaOrdinate.html				(done)
+	graphingFromEquation.html		--->	[needs better directions]
+	identifyConcavity.html				(graph concave up or dawn)
+	identifyIncreaseDecrease.html			(graph increasing or dec on interval)
+	identifyMaxMin.html				(local max/ min at a point?)
+	identifyPosNeg.html			--->	(students may be unclear what a "positive" function is. 
+							For instance if f(x) is increasing with negative values)
+	plotPoint.html					(plot a point on a coord grid)
+	pointOnFunction.html				(evaluate a function at a point)
+	pointOnFunction2.html				(plot a point given f(x)=y)
+	signedDistances.html				(horizontal and vertical distance)
+
+Function - Computational
+
+	evaluatingFunctions.html		--->	(needs bold, evaluate 3rd degree poly)
+	functionTransformationPointwise.html		(determine a point on composition of functions)
+	isThisAFunctionPoints.html		--->	(needs bold, definition of function)
+	linearOracle.html			--->	(needs bold, find equation of line)
+
+Limits at points - Conceptual
+
+	approxLimitGraphical.html			(left, right and standard limit)
+	approxLimitsOracle.html				(left, right and standard limit)
+	approxLimitsOracleGraphical.html		(left, right and standard limit)
+	limitsGraphical.html			--->	(needs bold, solution box crowded, needs hint)
+	limitsOracle.html			--->	(needs bold, solution box crowded)
+	imitsOracleGraphical.html		--->	(needs bold, solution box crowded, needs bold)
+	
+Limits at points - Computational
+
+	limitsFactoring.html			--->	(needs hint and re-posing of the task)
+
+Limit Laws
+
+	limitsSymbolic.html			--->	(needs bold, needs Hint)
+
+Limits at infinity - Conceptual
+
+	infinityLimitOracle.html		--->	(needs bold, solution box crowded, needs hint)
+	limitsAtInfinityGraphical.html		--->	(needs bold, solution box crowded, needs hint)
+	limitsAtInfinityOracle.html		--->	(needs bold, solution box crowded, needs hint)
+	limitsAtInfinityOracleGraphical.html	--->	(needs bold, solution box crowded, needs hint)
+
+
+Limits at infinity - Computational
+
+Infinite Limits - Conceptual 
+
+	infiniteLimitOracle.html		--->	(empty doc)
+	infiniteLimitsGraphical.html		--->	(needs bold, solution box crowded, needs hint)
+	infiniteLimitsOracle.html		--->	(needs bold, solution box crowded, needs hint)
+	infiniteLimitsOracleGraphical.html 	--->	(needs bold, solution box crowded, needs hint)
+
+Infinite Limits-Computational
+
+Continuity - Conceptual
+
+	continuityGraphical.html		--->	(needs bold, Lim DNE, point discount, continuous)
+	continuityOracle.html				(Lim DNE, point discont, continuous)
+	continuityOracleGraphical.html		--->	(needs bold, Lim DNE, point discont, continuous)
+
+Continuity - Computational
+
+Intermediate Value Theorem
+
+	bisectionOracle.html			--->	( needs bold, find roots with bisect method)
+
+Derivative - Conceptual
+
+	approxDeriv.html				(definition of derivative)
+	intuitiveCurveSketch.html			(Inc/ dec/ concave up/ down)
+	linearApprox.html			--->	(needs bold, linear approx, needs bold)
+	
+
+Derivative Computational
+	derivativeOracle.html				(definition of derivative)
+	numChainRule.html			--->	(needs bold, linear approx and chain rule)
+	repeatedLinApprox.html				(needs bold)

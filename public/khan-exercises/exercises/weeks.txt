@@ -1,0 +1,42 @@
+* Week 1
+abscissaOrdinate
+plotPoint
+signedDistances
+pointOnFunction
+pointOnFunction2
+evaluatingFunctions
+isThisAFunctionPoints
+graphingFromEquation
+functionTransformationPointwise
+identifyPosNeg
+identifyIncreaseDecrease
+identifyMaxMin
+identifyConcavity
+limitsGraphical
+limitsOracleGraphical
+limitsOracle
+limitIndeterminateForms
+limitsSymbolic
+limitsFactoring
+limitCompute
+* Week 2
+infiniteLimitsGraphical
+infiniteLimitsOracleGraphical
+infiniteLimitsOracle
+limitsSymbolicInfinite
+limitComputeInfinite
+limitsAtInfinityGraphical
+limitsAtInfinityOracle
+limitsAtInfinitySymbolic
+continuityGraphical
+continuityOracleGraphical
+continuityOracle
+bisectionOracle
+linearOracle
+linearApprox
+* Week 3
+approxDeriv
+derivativeOracle
+repeatedLinApprox
+intuitiveCurveSketch
+numChainRule
