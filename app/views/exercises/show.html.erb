@@ -105,7 +105,9 @@
 
           $(Khan).unbind("gotoNextProblem");
           $(Khan).bind("gotoNextProblem", function() {
-	    window.history.pushState({},"", '/exercises/' + userExercise.exerciseModel.name );
+  	    if (window.history.pushState) {
+	      window.history.pushState({},"", '/exercises/' + userExercise.exerciseModel.name );
+            }
 
             $(Exercises).trigger("readyForNextProblem",{
               userExercise: userExercise,
