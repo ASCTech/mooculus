@@ -44,7 +44,7 @@
 	  </p>
    
           <p class="solution" data-type="text">
-            <var>sol(A*B)</var>
+            <var>sol(-B)</var>
           </p>
 
 	  <div class="hints">
@@ -158,12 +158,12 @@
         <div id="three-factors-right">
 
 	  <div class="vars">
-            <var id = "A">randRangeNonZero(-9,9)</var>
-            <var id = "B">randRangeExclude(1,9,[A])</var>
-	    <var id = "C">randRangeExclude(1,9,[A])</var>
-	    <var id = "b">randRangeNonZero(-1,1)</var>
-	    <var id = "c">randRangeNonZero(-1,1)</var>
-	    <var id = "sol">(function(A){
+    	 <var id = "b">randRangeNonZero(-1,1)</var>
+	   	 <var id = "c">randRangeNonZero(-1,1)</var>
+         <var id = "A">randRangeNonZero(-9,9)</var>
+         <var id = "B">randRangeExclude(1,9,[b*A])</var>
+	     <var id = "C">randRangeExclude(1,9,[c*A])</var>
+	     <var id = "sol">(function(A){
     	      if (A &gt; 0){
     	      return "infinity"
     	      }
@@ -210,11 +210,11 @@
         <div id="three-factors-left">
 
 	  <div class="vars">
-            <var id = "A">randRangeNonZero(-9,9)</var>
-            <var id = "B">randRangeExclude(1,9,[A])</var>
-	    <var id = "C">randRangeExclude(1,9,[A])</var>
-	    <var id = "b">randRangeNonZero(-1,1)</var>
+        <var id = "b">randRangeNonZero(-1,1)</var>
 	    <var id = "c">randRangeNonZero(-1,1)</var>
+        <var id = "A">randRangeNonZero(-9,9)</var>
+        <var id = "B">randRangeExclude(1,9,[b*A])</var>
+	    <var id = "C">randRangeExclude(1,9,[c*A])</var>
 	    <var id = "sol">(function(A){
     	      if (A &gt; 0){
     	      return "infinity"
