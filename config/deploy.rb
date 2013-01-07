@@ -42,6 +42,7 @@ namespace :deploy do
   end
 
   task :seed, :roles => :app do
+    run "cd #{current_path} && #{rake} RAILS_ENV=#{rails_env} db:migrate"
     run "cd #{current_path} && #{rake} RAILS_ENV=#{rails_env} db:seed"
     run "cd #{current_path} && #{rake} RAILS_ENV=#{rails_env} exercise:all"
   end
@@ -65,5 +66,16 @@ task :tail, :roles => :app do
   run "tail -f #{shared_path}/log/#{rails_env}.log" do |channel, stream, data|
     puts "#{channel[:host]}: #{data}"
     break if stream == :err
+  end
+end
+
+desc "Remote console on the production appserver"
+task :console, :roles => :app do
+  input = ''
+  run "cd #{current_path} && ./script/console production" do
+    |channel, stream, data|
+    next if data.chomp == input.chomp || data.chomp == ''
+    print data
+    channel.send_data(input = $stdin.gets) if data =~ /^(>|\?)>/
   end
 end
