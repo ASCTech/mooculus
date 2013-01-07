@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130107074140) do
+ActiveRecord::Schema.define(:version => 20130107180557) do
 
   create_table "authentications", :force => true do |t|
     t.integer  "user_id"
@@ -126,6 +126,9 @@ ActiveRecord::Schema.define(:version => 20130107074140) do
     t.integer  "problem_id"
     t.integer  "exercise_id"
   end
+
+  add_index "scores", ["user_id", "complete", "count_hints"], :name => "index_scores_on_user_id_and_complete_and_count_hints"
+  add_index "scores", ["user_id", "complete"], :name => "index_scores_on_user_id_and_complete"
 
   create_table "users", :force => true do |t|
     t.string   "name"
