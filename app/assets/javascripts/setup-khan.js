@@ -1,4 +1,4 @@
-var apiServer = "http://localhost:3000";
+var apiServer = "https://mooculus.osu.edu";
 var Exercises = {
     reviewMode: false,
     practiceMode: true,
