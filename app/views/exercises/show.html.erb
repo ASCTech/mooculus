@@ -128,7 +128,9 @@
           user: "hello"
         });
 
-	window.history.pushState({},"", '/exercises/' + userExercise.exerciseModel.name );
+  	if (window.history.pushState) {
+  	  window.history.pushState({},"", '/exercises/' + userExercise.exerciseModel.name );
+        }
 
         $(Exercises).trigger("problemTemplateRendered");
  
