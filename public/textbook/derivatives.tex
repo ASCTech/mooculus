@@ -114,7 +114,7 @@ $(x,f(x))$ and $(x+h, f(x+h))$ is given by
 \[
 \frac{\Delta y}{\Delta x}=\frac{f(x+h) -f(x)}{(x+h)-x} = \frac{f(x+h)-f(x)}{h},
 \]
-see Figure~\ref{figure:limit-dfn}. This leads to the \textit{Limit Definition of the Derivative}:
+see Figure~\ref{figure:limit-dfn}. This leads to the \textit{limit definition of the derivative}:
 
 \begin{mainDefinition}\index{limit!definition of the derivative}\index{derivative!limit definition}
 The \textbf{derivative} of $f(x)$ is the function
@@ -169,6 +169,8 @@ However, if $y = f(x)$, $\frac{dy}{dx}$, $\dot{y}$, and $D_x f(x)$ are
 also used.
 \end{definition}
 
+Now we will give a number of examples, starting with a basic example.
+
 \begin{example}
 Compute 
 \[
@@ -186,7 +188,30 @@ Using the definition of the derivative,
 &= 3x^2.
 \end{align*}
 \end{solution}
+\begin{marginfigure}[0in]
+\begin{tikzpicture}
+	\begin{axis}[
+            domain=-3:3,
+            ymax=4,
+            ymin=-4,
+            %samples=100,
+            axis lines =middle, xlabel=$x$, ylabel=$y$,
+            every axis y label/.style={at=(current axis.above origin),anchor=south},
+            every axis x label/.style={at=(current axis.right of origin),anchor=west}
+          ]
+          \addplot [very thick, penColor2, smooth,domain=(-3:3)] {3*x^2};
+          \addplot [very thick, penColor, smooth,domain=(-3:3)] {x^3+1};
+          \node at (axis cs:1,1.8) [anchor=west] {\color{penColor}$f(x)$};  
+          \node at (axis cs:-1,3.3) [anchor=west] {\color{penColor2}$f'(x)$};
+        \end{axis}
+\end{tikzpicture}
+\caption{A plot of $f(x) = x^3+1$ and $f'(x) = 3x^2$.}
+\label{figure:plot1/x}
+\end{marginfigure}
 
+
+Next we will consider the derivative a function that is not continuous
+on $\R$.
 
 
 \begin{example}
@@ -195,28 +220,7 @@ Compute
 \dd t \frac{1}{t}.
 \]
 \end{example}
-\begin{marginfigure}
-\begin{tikzpicture}
-	\begin{axis}[
-            domain=-3:3,
-            ymax=4,
-            ymin=-4,
-            samples=100,
-            axis lines =middle, xlabel=$t$, %ylabel=$y$,
-            every axis y label/.style={at=(current axis.above origin),anchor=south},
-            every axis x label/.style={at=(current axis.right of origin),anchor=west}
-          ]
-          \addplot [very thick, penColor2, smooth,domain=(-3:-.1)] {-1/x^2};
-          \addplot [very thick, penColor2, smooth,domain=(.1:3)] {-1/x^2};
-	  \addplot [very thick, penColor, smooth,domain=(-3:-.1)] {1/x};
-          \addplot [very thick, penColor, smooth,domain=(.1:3)] {1/x};
-          \node at (axis cs:1,1) [anchor=west] {\color{penColor}$f(t)$};  %%%% FIX THIS!
-          \node at (axis cs:1,-.42) [anchor=west] {\color{penColor2}$f'(t)$};
-        \end{axis}
-\end{tikzpicture}
-\caption{A plot of $f(t) = \frac{1}{t}$.}
-\label{figure:plot1/x}
-\end{marginfigure}
+
 \begin{solution}
 Using the definition of the derivative,
 \begin{align*}
@@ -230,6 +234,68 @@ Using the definition of the derivative,
 \end{align*}
 This function is differentiable at all real numbers except for $t=0$, see Figure~\ref{figure:plot1/x}.
 \end{solution}
+\begin{marginfigure}
+\begin{tikzpicture}
+	\begin{axis}[
+            domain=-3:3,
+            ymax=4,
+            ymin=-4,
+            samples=100,
+            axis lines =middle, xlabel=$t$, ylabel=$y$,
+            every axis y label/.style={at=(current axis.above origin),anchor=south},
+            every axis x label/.style={at=(current axis.right of origin),anchor=west}
+          ]
+          \addplot [very thick, penColor2, smooth,domain=(-3:-.1)] {-1/x^2};
+          \addplot [very thick, penColor2, smooth,domain=(.1:3)] {-1/x^2};
+	  \addplot [very thick, penColor, smooth,domain=(-3:-.1)] {1/x};
+          \addplot [very thick, penColor, smooth,domain=(.1:3)] {1/x};
+          \node at (axis cs:1,1.3) [anchor=west] {\color{penColor}$f(t)$}; 
+          \node at (axis cs:1,-1.1) [anchor=west] {\color{penColor2}$f'(t)$};
+        \end{axis}
+\end{tikzpicture}
+\caption{A plot of $f(t) = \frac{1}{t}$ and $f'(t) = \frac{-1}{t^2}$.}
+\label{figure:plot1/x}
+\end{marginfigure}
+
+
+As you may have guessed, there is some connection to continuity and
+differentiability. 
+
+
+
+\begin{theorem}
+If $f(x)$ is a differentiable function at $x = a$, then $f(x)$ is
+continuous at $x=a$.
+\end{theorem}
+
+\begin{proof}
+We want to show that $f(x)$ is continuous at $x=a$, hence we must show that 
+\[
+\lim_{x\to a} f(x) = f(a).
+\]
+Consider
+\begin{align*}
+\lim_{x\to a} f(x) - f(a) &= \lim_{x\to a} (x-a)\frac{f(x) - f(a)}{x-a} &\text{Multiply and divide by $(x-a)$.} \\
+&= \lim_{x\to a} (x-a) \lim_{x\to a}\frac{f(x) - f(a)}{x-a} &\text{Limit Law.} \\
+&= \lim_{x\to a} (x-a) \lim_{h\to 0}\frac{f(x+h) - f(a)}{h} &\text{Set $x-a = h$.} \\
+&= 0\cdot f'(a) = 0.
+\end{align*}
+Since 
+\[
+\lim_{x\to a} f(x) - f(a) = 0 
+\]
+we see that $\lim_{x\to a} f(x) = f(a)$, and so $f(x)$ is continuous.
+\end{proof}
+
+This theorem is often write as its contrapositive:
+\begin{quote}
+If $f(x)$ is not continuous at $x=a$, then $f(x)$ is not
+differentiable at $x=a$.
+\end{quote}
+
+
+Let's see a function that is continuous, but whose derivative does not
+exist everywhere.
 
 
 \begin{example}
@@ -242,17 +308,28 @@ Compute
 \begin{tikzpicture}
 	\begin{axis}[
             domain=-3:3,
-            ymax=4,
-            ymin=-1,
+            ymax=3,
+            ymin=-2,
             samples=100,
-            axis lines =middle, xlabel=$x$, ylabel=$f(x)$,
+            axis lines =middle, xlabel=$x$, ylabel=$y$,
             every axis y label/.style={at=(current axis.above origin),anchor=south},
             every axis x label/.style={at=(current axis.right of origin),anchor=west}
           ]
-	  \addplot [very thick, penColor, smooth] {abs(x)};
+          \addplot [very thick, penColor2, smooth,domain=(0:3)] {1};
+          \addplot [very thick, penColor2, smooth,domain=(-3:0)] {-1};
+          \addplot [very thick, penColor, smooth] {abs(x)};
+          \node at (axis cs:1,1.7) [anchor=west] {\color{penColor}$f(t)$}; 
+          \node at (axis cs:-1,-1.5) [anchor=south] {\color{penColor2}$f'(t)$};
+          \addplot[color=penColor2,fill=background,only marks,mark=*] coordinates{(0,1)};  %% open hole
+          \addplot[color=penColor2,fill=background,only marks,mark=*] coordinates{(0,-1)};  %% open hole
         \end{axis}
 \end{tikzpicture}
-\caption{A plot of $f(x) = |x|$.}
+\caption[A plot of $f(x) = |x|$ and its derivative.]{A plot of $f(x) = |x|$ and \[
+f'(x) = \begin{cases}
+1 &\text{if $x>0$,}\\
+-1 &\text{if $x<0$.}
+\end{cases}\]
+}
 \label{figure:plot-abs}
 \end{marginfigure}
 \begin{solution}
@@ -291,28 +368,118 @@ On the other hand
 &= \lim_{h\to 0-}\frac{|h|}{h}\\
 &=-1.
 \end{align*}
-Hence we see that the derivative does not exist at $0$, see Figure~\ref{figure:plot-abs}. 
+Hence we see that the derivative is
+\[
+f'(x) = 
+\begin{cases}
+1 &\text{if $x>0$,}\\
+-1 &\text{if $x<0$.}
+\end{cases}
+\]
+Note this function is undefined at $0$, see Figure~\ref{figure:plot-abs}. 
 \end{solution}
 
 
+Thus we see that all differentiable functions on $\R$ are continuous
+on $\R$. Nevertheless as the previous example shows, there are
+continuous functions on $\R$ that are not differentiable on $\R$.
 
 
+
+\begin{exercises}
+
+\begin{exercise} 
+Fill IN
+\end{exercise}
+
+\end{exercises}
+
+
+
+
+
+\section{Basic Derivative Rules}
+
+
+It is tedious to compute a limit every time we need to know the
+derivative of a function.  Fortunately, we can develop a small
+collection of examples and rules that allow us to compute the
+derivative of almost any function we are likely to encounter.  We will
+start simply, building-up to more complicated examples.
+
+
+\subsection{The Constant Rule}
+
+The simplest function is a constant function.  
+\marginnote{To gain
+  intuition, you should compute the derivative of $f(x) = 6$ using the
+  limit definition of the derivative.}
+\begin{theorem}[The Constant Rule]\index{derivative rules!constant}\index{the constant rule}
+Given a constant $c$,
+\[
+\ddx c = 0.
+\]
+\end{theorem}
+
+\begin{proof}
+From the limit definition of the derivative, write
+\begin{align*}
+\ddx c &= \lim_{h\to 0}\frac{c-c}{h}\\
+&= \lim_{h\to 0} \frac{0}{h}\\
+&= \lim_{h\to 0} 0 = 0.
+\end{align*}
+\end{proof}
+
+Reasons this result makes conceptual sense:
+\begin{itemize}
+\item The constant function plots a horizontal line---so the slope of
+  the tangent line is $0$.
+\item If a object is a constant distance away from a reference point
+  (that is, it isn't moving) then it's velocity is zero.
+\item If an object is traveling at a constant rate, then it's
+  acceleration is zero.
+\end{itemize}
+
+\subsection{The Power Rule}
+
+Now let's examine derivatives of powers of a single variable.  Here we
+have a nice rule.
+
+\marginnote{To gain intuition, you should compute the derivative of
+  $f(x) = x^3$ using the limit definition of the derivative.}
+\begin{theorem}[The Power Rule]\index{derivative rules!power}\index{the power rule}
+For any real number $n$, 
+\[
+\ddx x^n = n x^{n-1}.
+\]
+\end{theorem}
+
+\begin{proof}
+At this point we will only prove this theorem for $n$ being a positive
+integer, later we will give the complete proof. From the limit
+definition of the derivative, write
+\[
+\ddx x^n = \lim_{ h\to0} \frac{(x+ h)^n-x^n}{h}.
+\]
+Start by expanding the term $(x+h)^n$
+\[
+\ddx x^n=\lim_{h\to0} \frac{x^n + nx^{n-1} h + a_2x^{n-2} h^2+\cdots+a_{n-1}x h^{n-1} +  h^n-x^n}{h}
+\]
+Note, we simplify wrote $a_i$ for the various coefficients as we don't
+really need to know what the coefficients are. Canceling the terms
+$x^n$ and $-x^n$, write
+\begin{align*}
+\ddx x^n&=\lim_{h\to0} \frac{nx^{n-1} h + a_2x^{n-2} h^2+\cdots+a_{n-1}x h^{n-1} +  h^n}{h} \\
+&=\lim_{h\to0} nx^{n-1} + a_2x^{n-2} h+\cdots+a_{n-1}x h^{n-2} +  h^{n-1}.
+\end{align*}
+Since every term but the first has a factor of $h$, we see
+\[
+\ddx x^n = \lim_{ h\to0}\frac{(x+ h)^n-x^n}{h} = nx^{n-1}.
+\]
+\end{proof}
 
 \begin{example}
-Discuss the derivative of the function $y=x^{2/3}$, shown in
-figure~\ref{fig:cusp}. We will later see how to compute this
-derivative; for now we use the fact that $
-y'=(2/3)x^{-1/3}$. Visually this looks much like the absolute value
-function, but it technically has a cusp, not a corner. The absolute
-value function has no tangent line at 0 because there are (at least)
-two obvious contenders---the tangent line of the left side of the
-curve and the tangent line of the right side.  The function $
-y=x^{2/3}$ does not have a tangent line at 0, but unlike the absolute
-value function it can be said to have a single direction: as we
-approach 0 from either side the tangent line becomes closer and closer
-to a vertical line; the curve is vertical at 0. But as before, if you
-imagine traveling along the curve, an abrupt change in direction is
-required at 0: a full 180 degree turn.
+HERE HERE HERE $7x^12$
 \end{example}
 
 
@@ -321,141 +488,40 @@ required at 0: a full 180 degree turn.
 
 
 
-differentiable => continuous
-
-not continuous => not diff
-
-
-Now some examples of of computing derivatives via limits. 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Take, for example, $y=f(x)=\sqrt{625-x^2}$ (the upper semicircle of radius
-25 centered at the origin).  When $x=7$, we find that $y=\sqrt{625-49}=24$.
-Suppose we want to know how much $y$ changes when $x$ increases a little,
-say to 7.1 or 7.01.
-
-
-What if we try to do all the algebra without using a specific
-value for $x$? Let's copy from above, replacing 7 by  $x$. We'll have
-to do a bit more than that---for example, 
-the ``24'' in the calculation came from 
-$\sqrt{625-7^2}$, so we'll need to fix that too.
-\begin{align*}
-&{\sqrt{625-(x+ h)^2} - \sqrt{625-x^2}\over  h}= \\
-\qquad&={\sqrt{625-(x+ h)^2} - \sqrt{625-x^2}\over  h}{\sqrt{625-(x+\Delta
-    x)^2}+\sqrt{625-x^2}\over \sqrt{625-(x+ h)^2}+\sqrt{625-x^2}} \\
-&={625-(x+ h)^2-625+x^2\over  h(\sqrt{625-(x+ h)^2}+\sqrt{625-x^2})} \\
-&={625-x^2-2x h- h^2-625+x^2\over   h(\sqrt{625-(x+\Delta
-    x)^2}+\sqrt{625-x^2})} \\
-&={ h(-2x- h)\over  h(\sqrt{625-(x+\Delta
-    x)^2}+\sqrt{625-x^2})} \\
-&= {-2x- h\over\sqrt{625-(x+\Delta
-    x)^2}+\sqrt{625-x^2}} \\
-\end{align*}
-Now what happens when $h$ is very close to zero? Again it seems
-apparent that the quotient will be very close to
-$${-2x\over \sqrt{625-x^2}+\sqrt{625-x^2}}
-={-2x\over 2\sqrt{625-x^2}}={-x\over \sqrt{625-x^2}}.
-$$
-Replacing $x$ by 7 gives $-7/24$, as before, and now we can easily do
-the computation for 12  or any other value of
-$x$ between $-25$ and 25.
-
-So now we have a single, simple formula, ${-x/ \sqrt{625-x^2}}$,
-that tells us the slope of the tangent line for any value of
-$x$. This slope, in turn, tells us how sensitive the value of $y$ is
-to changes in the value of $x$. 
-
-What do we call such a formula? That is, a formula with one variable,
-so that substituting an ``input'' value for the variable produces a
-new ``output'' value? This is a function. Starting with one function,
-$\sqrt{625-x^2}$, we have derived, by means of some slightly nasty
-algebra, a new function, ${-x/ \sqrt{625-x^2}}$, that gives us
-important information about the original function. This new function
-in fact is called the \textit{derivative}\index{derivative} of the
-original function. If the original is referred to as $f$ or $y$ then
-the derivative is often written $f'$ or $y'$ and pronounced ``f
-prime'' or ``y prime'', so in this case we might write $f'(x)=-x/
-\sqrt{625-x^2}$. At a particular point, say $x=7$, we say that
-$f'(7)=-7/24$ or ``$f$ prime of 7 is $-7/24$'' or ``the derivative of
-$f$ at 7 is $-7/24$.''
-
-To summarize, we compute the derivative of $f(x)$ by forming the
-difference quotient
-$$
-{f(x+ h)-f(x)\over  h},
-$$
-which is the slope of a line, then we figure out what happens when
-$h$ gets very close to 0. 
-
-
-We should note that in 
-the particular case of a circle, there's a simple way to find the
-derivative.  Since the tangent to a circle at a point is perpendicular to
-the radius drawn to the point of contact, its slope is the negative
-reciprocal of the slope of the radius.  The radius joining $(0,0)$ to
-$(7,24)$ has slope 24/7.  Hence, the tangent line has slope
-$-7/24$. In general, a radius to the point $(x,\sqrt{625-x^2})$ has
-slope $\sqrt{625-x^2}/x$, so the slope of the tangent line is
-${-x/ \sqrt{625-x^2}}$, as before. It is {\bf NOT} always true that a
-tangent line is perpendicular to a line from the origin---don't use
-this shortcut in any other circumstance. 
-
-As above, and as you might expect, for different values of $x$ we
-generally get different values of the derivative $f'(x)$. Could it be
-that the derivative always has the same value? This would mean that
-the slope of $f$, or the slope of its tangent line, is the same
-everywhere. One curve that always has the same slope is a line; it
-seems odd to talk about the tangent line to a line, but if it makes
-sense at all the tangent line must be the line itself. It is not hard
-to see that the derivative of $f(x)=mx+b$ is $f'(x)=m$; see
-exercise~\xrefn{ex:derivative of a line} .
-
-
-
-
-
-
-
-
-\section{Basic Derivative Rules}
-
-constant rule
-
-
 \subsection{The Sum Rule}
 
-We don't want to rely on some more-or-less obvious physical
-interpretation to determine what is true mathematically, so let's see
-how to verify these rules by computation. We'll do one and leave the
-other for the exercises.
+We want to be able to take derivatives of functions ``one piece at a
+time.'' The \textit{sum rule} allows us to do this.
+\begin{theorem}[The Sum Rule]\index{derivative rules!sum}\index{the sum rule}
+If $f(x)$ and $g(x)$ are differentiable at $x=a$ and $c$ is a constant, then 
+\begin{enumerate}
+\item\label{SR:1} $\ddx \big( f(x) + g(x)\big) = f'(x) + g'(x)$,
+\item $\ddx \big( f(x) - g(x)\big) = f'(x) - g'(x)$,
+\item $\ddx \big(c\cdot f(x)\big) = c\cdot f'(x)$.
+\end{enumerate}
+\end{theorem}
+\begin{proof}
+We will only prove part~\ref{SR:1} above, the rest are similar. Write
 \begin{align*}
-\ddx(f(x)+g(x)) &= \lim_{ h\to 0} {f(x+\Delta
-  x)+g(x+ h) - (f(x)+g(x))\over  h}  \\
-&= \lim_{ h\to 0} {f(x+\Delta
-  x)+g(x+ h) - f(x)-g(x)\over  h}  \\
-&= \lim_{ h\to 0} {f(x+\Delta
-  x)-f(x) +g(x+ h) -g(x)\over  h}  \\
-&= \lim_{ h\to 0} \left({f(x+\Delta
-  x)-f(x)\over  h}  +{g(x+ h) -g(x)\over  h}\right)  \\
-&= \lim_{ h\to 0} {f(x+\Delta
-  x)-f(x)\over  h}  +
+\ddx\big(f(x)+g(x)\big) &= \lim_{ h\to 0} {f(x+h)+g(x+ h) - (f(x)+g(x))\over  h}  \\
+&= \lim_{ h\to 0} {f(x+h)+g(x+ h) - f(x)-g(x)\over  h}  \\
+&= \lim_{ h\to 0} {f(x+h)-f(x) +g(x+ h) -g(x)\over  h}  \\
+&= \lim_{ h\to 0} \left({f(x+h)-f(x)\over  h}  +{g(x+ h) -g(x)\over  h}\right)  \\
+&= \lim_{ h\to 0} {f(x+h)-f(x)\over  h}  +
 \lim_{ h\to 0} {g(x+ h) -g(x)\over  h}  \\
-&=f'(x)+g'(x) \\
+&=f'(x)+g'(x).
 \end{align*}
-This is sometimes called the {\dfont sum rule\index{sum rule}} for derivatives.
+\end{proof}
+Reasons this result makes conceptual sense:
+\begin{itemize}
+\item Viewing the derivative as the velocity of an object, the sum
+  rule is something like a person walking on a moving bus. The
+  velocities add.
+\end{itemize}
+
+
+
+
 \begin{example}
 Find the derivative of $f(x)=x^5+5x^2$. We have to invoke linearity
 twice here: 
@@ -475,62 +541,6 @@ $$f'(x) = \ddx\left( {3\over x^4}-2x^2+6x-7\right)
 
 
 
-\subsection{The Power Rule}
-
- Now
-let's look at the limit:
-\begin{align*}
-\ddx x^n &= \lim_{ h\to0} {(x+ h)^n-x^n\over \Delta
-  x} \\
-&=\lim_{ h\to0} {x^n + nx^{n-1} h + a_2x^{n-2} h^2+\cdots+
-a_{n-1}x h^{n-1} +  h^n-x^n\over  h} \\
-&=\lim_{ h\to0} {nx^{n-1} h + a_2x^{n-2} h^2+\cdots+
-a_{n-1}x h^{n-1} +  h^n\over  h} \\
-&=\lim_{ h\to0} nx^{n-1} + a_2x^{n-2} h+\cdots+
-a_{n-1}x h^{n-2} +  h^{n-1} = nx^{n-1}. \\
-\end{align*}
-
-Now without much trouble we can verify the formula for negative
-integers. First let's look at an example:
-
-\begin{example} Find the derivative of $y=x^{-3}$. Using the formula,
-$y'=-3x^{-3-1}=-3x^{-4}$. 
-\end{example}
-
-Here is the general computation. Suppose $n$ is a negative integer;
-the algebra is easier to follow if we use $n=-m$ in the computation,
-where $m$ is a positive integer.
-\begin{align*}
-\ddx x^n &= \ddx x^{-m} =
-\lim_{ h\to0} {(x+ h)^{-m}-x^{-m}\over \Delta
-  x} \\
-&=\lim_{ h\to0} { {1\over (x+ h)^m} - {1\over x^m} \over
-   h}  \\
-&=\lim_{ h\to0} { x^m - (x+ h)^m \over
-(x+ h)^m x^m  h}  \\
-&=\lim_{ h\to0} { x^m - (x^m + mx^{m-1} h + a_2x^{m-2} h^2+\cdots+
-a_{m-1}x h^{m-1} +  h^m)\over
-(x+ h)^m x^m  h}  \\
-&=\lim_{ h\to0} { -mx^{m-1} - a_2x^{m-2} h-\cdots-
-a_{m-1}x h^{m-2} -  h^{m-1})\over
-(x+ h)^m x^m}  \\
-&={ -mx^{m-1} \over x^mx^m}=
-{ -mx^{m-1} \over x^{2m}}=
--mx^{m-1-2m}= nx^{-m-1} = nx^{n-1}. \\
-\end{align*}
-
-We will later see why the other cases of the power rule work, but from
-now on we will use the power rule whenever $n$ is any real number.
-Let's note here a simple case in which the power rule applies, or
-almost applies, but is not really needed. Suppose that $f(x)=1$;
-remember that this ``1'' is a function, not ``merely'' a number, and
-that $f(x)=1$ has a graph that is a horizontal line, with slope zero
-everywhere. So we know that $f'(x)=0$. We might also write $f(x)=x^0$,
-though there is some question about just what this means at $x=0$. If
-we apply the power rule, we get $f'(x)=0x^{-1}=0/x=0$, again noting
-that there is a problem at $x=0$. So the power rule ``works'' in this
-case, but it's really best to just remember that the derivative of any
-constant function is zero.
 
 
 
