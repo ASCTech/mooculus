@@ -31,7 +31,7 @@ task :production do
   set :branch, 'master'
   role :app, "mooculus-1.asc.ohio-state.edu"
   role :web, "mooculus-1.asc.ohio-state.edu"
-  role :web, "mooculus-2.asc.ohio-state.edu"
+  role :web, "164.107.177.72"
   role :db,  "mooculus-1.asc.ohio-state.edu", :primary => true
 end
 

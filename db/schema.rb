@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130107180557) do
+ActiveRecord::Schema.define(:version => 20130108002651) do
 
   create_table "authentications", :force => true do |t|
     t.integer  "user_id"
@@ -43,6 +43,8 @@ ActiveRecord::Schema.define(:version => 20130107180557) do
     t.float    "max_estimate"
     t.float    "min_estimate"
   end
+
+  add_index "competencies", ["user_id", "exercise_id"], :name => "index_competencies_on_user_id_and_exercise_id"
 
   create_table "developers", :force => true do |t|
     t.string   "name"
@@ -85,6 +87,8 @@ ActiveRecord::Schema.define(:version => 20130107180557) do
     t.datetime "created_at",                       :null => false
     t.datetime "updated_at",                       :null => false
   end
+
+  add_index "merit_actions", ["processed"], :name => "index_merit_actions_on_processed"
 
   create_table "merit_score_points", :force => true do |t|
     t.integer  "score_id"
