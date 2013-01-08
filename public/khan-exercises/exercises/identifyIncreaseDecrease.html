@@ -8,45 +8,39 @@
           <div class="exercise">
               <div class="vars">
               	  
-    <var id = "n">randRange(2,4)</var>
-    <var id = "Xs">makeXList()</var>
-    <var id = "Ys">makeYList(-8,8,Xs.length)</var>
-    <var id = "points">makeCoordinates(Xs,Ys)</var>
-    <var id = "f">(function(x){return niceFunction(x,points)})</var>
-    <var id = "zeroXs">locateZeros(f,Xs)</var>
-    <var id = "zeroYs">(
-        function(n){ 
-            var list = []
-            for(var i=0; i&lt;n;i++){
-                list.push(0)
-            }
-          return list
-        })(zeroXs.length) </var>
-    <var id = "zeroPoints">makeCoordinates(zeroXs,zeroYs)</var>
-    <var id = "criticalXs">Xs.concat(zeroXs).sort(function(a,b){return a - b})</var>
-    <var id = "criticalPoints">points.concat(zeroPoints).sort(function(a,b){return a[0] - b[0]})</var>
-    <var id = "m">randRange(0,criticalPoints.length-2)</var>
-    <var id = "solution">(function(criticalPoints,m){
-        var solution = &quot;&quot;
-        if (criticalPoints[m][1]&gt;criticalPoints[m+1][1]){solution =solution.concat(&quot;decreasing&quot;)}
-        if (criticalPoints[m][1]&lt;criticalPoints[m+1][1]){solution =solution.concat(&quot;increasing&quot;)}
-        return solution
-        })(criticalPoints,m)</var>
+  				  <var id = "n">randRange(2,4)</var>
+  				  <var id = "Xs">makeXList()</var>
+  				  <var id = "Ys">makeYList(-8,8,Xs.length)</var>
+  				  <var id = "points">makeCoordinates(Xs,Ys)</var>
+  				  <var id = "f">(function(x){return niceFunction(x,points)})</var>
+   				  <var id = "zeroXs">locateZeros(f,Xs)</var>
+  				  <var id = "zeroYs">(
+    							    function(n){ 
+           							 var list = []
+           							 for(var i=0; i&lt;n;i++){
+            						    list.push(0)
+           								 }
+        							  return list
+       									 })(zeroXs.length) </var>
+    			  <var id = "zeroPoints">makeCoordinates(zeroXs,zeroYs)</var>
+   				  <var id = "criticalXs">Xs.concat(zeroXs).sort(function(a,b){return a - b})</var>
+    			  <var id = "criticalPoints">points.concat(zeroPoints).sort(function(a,b){return a[0] - b[0]})</var>
+   				  <var id = "m">randRange(0,criticalPoints.length-2)</var>
+   				  <var id = "solution">(function(criticalPoints,m){
+     				   var solution = &quot;&quot;
+       					 if (criticalPoints[m][1]&gt;criticalPoints[m+1][1]){solution =solution.concat(&quot;decreasing&quot;)}
+       					 if (criticalPoints[m][1]&lt;criticalPoints[m+1][1]){solution =solution.concat(&quot;increasing&quot;)}
+       					 return solution
+       					 })(criticalPoints,m)</var>
 
-    <var id = "hintPosNegIncDec">(function(criticalPoints,m){
-        var solution = &quot;&quot;
-        if (criticalPoints[m][1]&gt;criticalPoints[m+1][1]){solution =solution.concat(&quot;and decreasing&quot;)}
-        if (criticalPoints[m][1]&lt;criticalPoints[m+1][1]){solution =solution.concat(&quot;and increasing&quot;)}
-        return solution
-        })(criticalPoints,m)</var>
+   				 <var id = "hintPosNegIncDec">(function(criticalPoints,m){
+      				     var solution = &quot;&quot;
+       					 if (criticalPoints[m][1]&gt;criticalPoints[m+1][1]){solution =solution.concat(&quot;and decreasing&quot;)}
+     					 if (criticalPoints[m][1]&lt;criticalPoints[m+1][1]){solution =solution.concat(&quot;and increasing&quot;)}
+       					 return solution
+      				     })(criticalPoints,m)</var>
      
-     
-     
-      
-      
-		
-            
-            	
+
               </div>
 
               <div class="problems">
@@ -54,15 +48,14 @@
                   <div id="problem-type-or-description">
                       <p class="problem">The graph below is of a function <code>f</code>.  An interval between two points on <code>f \hspace{1mm}</code> has been made green.
                       </p>
-                      <p class="question"> Is <code>f</code> increasing or decreasing on the green interval?
-                      </p>
+                      <p class="question"> Is <code>f</code> increasing or decreasing on the green interval? </p>
+                      
                       
                       <div class="graphie" id="grid">
                     graphInit({
                         range: 10,
                         scale: 20,
                         tickStep: 1,
-                        axisArrows: "<->"
                     });
                     
                     plot(function( x ) {
@@ -88,22 +81,18 @@
                             
 
                
-                </div>
+                	</div>
                 
                 
                      
                       <p class="solution"><var>solution</var></p>
-                      <ul class="choices" data-category="true">
-                    <li>increasing</li>
-                    <li>decreasing</li>
-                </ul>
-                  </div>
+                    	  <ul class="choices" data-category="true">
+                  			  <li>increasing</li>
+                  			  <li>decreasing</li>
+                		  </ul>
                   
-                 
-                 
-              </div>
-
-              <div class="hints">
+                  
+                 <div class="hints">
                   <p>A function <code>f</code> is <i>increasing</i> on an interval if larger abscissas have larger values on that interval.
                    In other words, given any two abscissas <code>x_1</code> and <code>x_2</code> in the interval with <code>x_1 \leq x_2</code>   
                    we have <code>f(x_1) \leq (x_2)</code>
@@ -118,7 +107,11 @@
                    greater or smaller than the value at the left endpoint?</p>
                    
                    <p>The function is <var>solution</var> on the green interval </p>
-              </div>
+              	</div>
+
+              
           </div>
+        </div>
+       </div>
       </body>
   </html>
