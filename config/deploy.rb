@@ -31,6 +31,7 @@ task :production do
   set :branch, 'master'
   role :app, "mooculus-1.asc.ohio-state.edu"
   role :web, "mooculus-1.asc.ohio-state.edu"
+  role :web, "164.107.177.72"
   role :db,  "mooculus-1.asc.ohio-state.edu", :primary => true
 end
 
@@ -53,6 +54,7 @@ before "deploy:assets:precompile" do
     "ln -nfs #{shared_path}/config/database.yml #{release_path}/config/database.yml",
     "ln -nfs #{shared_path}/config/piwik.yml #{release_path}/config/piwik.yml",
     "ln -nfs #{shared_path}/config/secret_token.rb #{release_path}/config/initializers/secret_token.rb",
+    "ln -nfs #{shared_path}/config/newrelic.yml #{release_path}/config/newrelic.yml",
     "ln -fs #{shared_path}/uploads #{release_path}/uploads",
     "ln -fs #{shared_path}/tmp/pids #{release_path}/tmp/pids",
     "rm #{release_path}/public/system"
@@ -69,13 +71,3 @@ task :tail, :roles => :app do
   end
 end
 
-desc "Remote console on the production appserver"
-task :console, :roles => :app do
-  input = ''
-  run "cd #{current_path} && ./script/console production" do
-    |channel, stream, data|
-    next if data.chomp == input.chomp || data.chomp == ''
-    print data
-    channel.send_data(input = $stdin.gets) if data =~ /^(>|\?)>/
-  end
-end

@@ -27,7 +27,7 @@ not equal to, $a$.  This leads us to the formal definition of a
 \begin{tikzpicture}
 	\begin{axis}[
             domain=-2:4,
-            axis lines =middle, xlabel=$x$, ylabel=$f(x)$,
+            axis lines =middle, xlabel=$x$, ylabel=$y$,
             every axis y label/.style={at=(current axis.above origin),anchor=south},
             every axis x label/.style={at=(current axis.right of origin),anchor=west},
             grid=both,
@@ -90,7 +90,7 @@ interpretation of this definition.
 \begin{tikzpicture}
 	\begin{axis}[
             domain=0:2, 
-            axis lines =left, xlabel=$x$, ylabel=$f(x)$,
+            axis lines =left, xlabel=$x$, ylabel=$y$,
             every axis y label/.style={at=(current axis.above origin),anchor=south},
             every axis x label/.style={at=(current axis.right of origin),anchor=west},
             xtick={0.7,1,1.3}, ytick={3,4,5},
@@ -125,7 +125,7 @@ Limits need not exist, let's examine two cases of this.
 \begin{tikzpicture}
 	\begin{axis}[
             domain=-2:4,
-            axis lines =middle, xlabel=$x$, ylabel=$f(x)$,
+            axis lines =middle, xlabel=$x$, ylabel=$y$,
             every axis y label/.style={at=(current axis.above origin),anchor=south},
             every axis x label/.style={at=(current axis.right of origin),anchor=west},
             clip=false,
@@ -228,7 +228,7 @@ the limit does not exist.
 	\begin{axis}[
             domain=-.2:.2,    
             samples=500,
-            axis lines =middle, xlabel=$x$, ylabel=$f(x)$,
+            axis lines =middle, xlabel=$x$, ylabel=$y$,
             yticklabels = {}, 
             every axis y label/.style={at=(current axis.above origin),anchor=south},
             every axis x label/.style={at=(current axis.right of origin),anchor=west},
@@ -273,7 +273,7 @@ x<a+\delta \qquad\text{we have}\qquad |f(x)-L|<\epsilon.
 \begin{example}
 Let $f(x) = \lfloor x\rfloor$. Discuss
 \[
-\lim_{x\to 2-} f(x), \qquad \lim_{x\to 2+} f(x), \qquad\text{and}\qquad\lim_{x\to 2+} f(x).
+\lim_{x\to 2-} f(x), \qquad \lim_{x\to 2+} f(x), \qquad\text{and}\qquad\lim_{x\to 2} f(x).
 \]
 \end{example}
 \begin{solution}
@@ -294,7 +294,7 @@ Since these limits are different, $\lim_{x\to 2} f(x)$ does not exist.
 	\begin{axis}[
             domain=-4:6, xmin=-4, xmax=6, ymin=-3,ymax=10,    
             unit vector ratio*=1 1 1,
-            axis lines =middle, xlabel=$x$, ylabel=$f(x)$,
+            axis lines =middle, xlabel=$x$, ylabel=$y$,
             every axis y label/.style={at=(current axis.above origin),anchor=south},
             every axis x label/.style={at=(current axis.right of origin),anchor=west},
             xtick={-4,...,6}, ytick={-3,...,10},
@@ -515,7 +515,7 @@ follows from the \textit{Triangle Inequality}\index{triangle
 \begin{proof} 
 Given any $\epsilon$ we need to find a $\delta$ such that
 \[
-0<|x< a|< \delta
+0<|x - a|< \delta
 \]
 implies 
 \[
@@ -985,7 +985,7 @@ Figure~\ref{plot:1/(x+1)^2}, something can still be said.
             domain=-2:1,
             ymax=100,
             samples=100,
-            axis lines =middle, xlabel=$x$, ylabel=$f(x)$,
+            axis lines =middle, xlabel=$x$, ylabel=$y$,
             every axis y label/.style={at=(current axis.above origin),anchor=south},
             every axis x label/.style={at=(current axis.right of origin),anchor=west}
           ]
@@ -1030,7 +1030,7 @@ limits, $\lim_{x\to 1+} f(x) = \infty$ and $\lim_{x\to 1-} f(x) =
             ymax=50,
             ymin=-50,
             samples=100,
-            axis lines =middle, xlabel=$x$, ylabel=$f(x)$,
+            axis lines =middle, xlabel=$x$, ylabel=$y$,
             every axis y label/.style={at=(current axis.above origin),anchor=south},
             every axis x label/.style={at=(current axis.right of origin),anchor=west}
           ]
@@ -1087,7 +1087,7 @@ $x=3$, see Figure~\ref{plot:(x^2-9x+14)/(x^2-5x+6)}.
             ymax=50,
             ymin=-50,
             samples=100,
-            axis lines =middle, xlabel=$x$, ylabel=$f(x)$,
+            axis lines =middle, xlabel=$x$, ylabel=$y$,
             every axis y label/.style={at=(current axis.above origin),anchor=south},
             every axis x label/.style={at=(current axis.right of origin),anchor=west}
           ]
@@ -1181,7 +1181,7 @@ f(x) = \frac{6x-9}{x-1}
             ymax=20,
             ymin=-10,
             samples=100,
-            axis lines =middle, xlabel=$x$, ylabel=$f(x)$,
+            axis lines =middle, xlabel=$x$, ylabel=$y$,
             every axis y label/.style={at=(current axis.above origin),anchor=south},
             every axis x label/.style={at=(current axis.right of origin),anchor=west}
           ]
@@ -1247,7 +1247,7 @@ Compute
             ymax=5,
             ymin=3,
             samples=100,
-            axis lines =middle, xlabel=$x$, ylabel=$f(x)$,
+            axis lines =middle, xlabel=$x$, ylabel=$y$,
             every axis y label/.style={at=(current axis.above origin),anchor=south},
             every axis x label/.style={at=(current axis.right of origin),anchor=west}
           ]
@@ -1330,7 +1330,7 @@ Compute
             ymax=4,
             ymin=-1,
             samples=100,
-            axis lines =middle, xlabel=$x$, ylabel=$f(x)$,
+            axis lines =middle, xlabel=$x$, ylabel=$y$,
             every axis y label/.style={at=(current axis.above origin),anchor=south},
             every axis x label/.style={at=(current axis.right of origin),anchor=west}
           ]
@@ -1435,7 +1435,7 @@ at a point} $a$ if $\lim_{x\to a} f(x) = f(a)$.
             ymax=5,
             ymin=0,
             samples=100,
-            axis lines =middle, xlabel=$x$, ylabel=$f(x)$,
+            axis lines =middle, xlabel=$x$, ylabel=$y$,
             every axis y label/.style={at=(current axis.above origin),anchor=south},
             every axis x label/.style={at=(current axis.right of origin),anchor=west}
           ]
@@ -1483,7 +1483,7 @@ interval, then it \textbf{cannot} be continuous on that interval.
 	\begin{axis}[
             domain=-.2:.2,    
             samples=500,
-            axis lines =middle, xlabel=$x$, ylabel=$f(x)$,
+            axis lines =middle, xlabel=$x$, ylabel=$y$,
             yticklabels = {}, 
             every axis y label/.style={at=(current axis.above origin),anchor=south},
             every axis x label/.style={at=(current axis.right of origin),anchor=west},
