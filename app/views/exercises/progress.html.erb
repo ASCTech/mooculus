@@ -53,7 +53,7 @@
 <li>You have spent
 <% if current_user.total_thinking_time > 5*60 %>
   <% if current_user.total_thinking_time > 3*60*60 %>
-    <%= current_user.total_thinking_time / 60*60 %> hours
+    <%= current_user.total_thinking_time / (60*60) %> hours
   <% else %>
     <%= current_user.total_thinking_time / 60 %> minutes
   <% end %>
