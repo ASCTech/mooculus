@@ -202,12 +202,16 @@ Compute
             ymax=4,
             ymin=-4,
             samples=100,
-            axis lines =middle, xlabel=$t$, ylabel=$f(t)$,
+            axis lines =middle, xlabel=$t$, %ylabel=$y$,
             every axis y label/.style={at=(current axis.above origin),anchor=south},
             every axis x label/.style={at=(current axis.right of origin),anchor=west}
           ]
+          \addplot [very thick, penColor2, smooth,domain=(-3:-.1)] {-1/x^2};
+          \addplot [very thick, penColor2, smooth,domain=(.1:3)] {-1/x^2};
 	  \addplot [very thick, penColor, smooth,domain=(-3:-.1)] {1/x};
           \addplot [very thick, penColor, smooth,domain=(.1:3)] {1/x};
+          \node at (axis cs:1,1) [anchor=west] {\color{penColor}$f(t)$};  %%%% FIX THIS!
+          \node at (axis cs:1,-.42) [anchor=west] {\color{penColor2}$f'(t)$};
         \end{axis}
 \end{tikzpicture}
 \caption{A plot of $f(t) = \frac{1}{t}$.}
@@ -380,7 +384,7 @@ new ``output'' value? This is a function. Starting with one function,
 $\sqrt{625-x^2}$, we have derived, by means of some slightly nasty
 algebra, a new function, ${-x/ \sqrt{625-x^2}}$, that gives us
 important information about the original function. This new function
-in fact is called the {\dfont derivative\index{derivative}} of the
+in fact is called the \textit{derivative}\index{derivative} of the
 original function. If the original is referred to as $f$ or $y$ then
 the derivative is often written $f'$ or $y'$ and pronounced ``f
 prime'' or ``y prime'', so in this case we might write $f'(x)=-x/
