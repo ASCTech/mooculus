@@ -38,7 +38,7 @@
                     </p>
 		   		  
 		   		  <p> 
-		   		    	<center><code>f(</code><input type='text' id='nameField' size=3><code>)=</code> <span id='nameDisplay'>?</span></center>		      
+		   		    	<center><code>f(</code><input type='text' id='nameField' value = 'type x values here' size=3><code>)=</code> <span id='nameDisplay'>?</span></center>		      
 		    		</p>
 		    		
                 	<div class = graphie id="grid">
@@ -54,6 +54,10 @@
   						}
   					else {$('#nameDisplay').text("?")};
   					};
+  					var clearTextField = function(){
+  						$('#nameField').val("");
+  						};
+  					$('#nameField').click(clearTextField);
   					$('#nameField').keydown( updateNameDisplay );
   					$('#nameField').keyup( updateNameDisplay );
   					$('#nameField').keypress( updateNameDisplay );

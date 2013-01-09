@@ -38,15 +38,23 @@
                     	<br><br>
                     	
 		   		    <p> 
-		   		    	<center><code>f(</code><input type='text' id='nameField' size=3><code>)=</code> <span id='nameDisplay'>?</span></center>		      
+		   		    	<center><code>f(</code><input type='text' id='nameField' value = 'type x values here' size=3><code>)=</code> <span id='nameDisplay'>?</span></center>		      
 		    		</p>
 		    		<font size="1">A calculator may be necessary</font>
                 	<div class = graphie>
                 	(function(){
   					updateNameDisplay = function() {
   	 		   	    var input = parseFloat(this.value) 	
-      				$('#nameDisplay').text( FNX(input) );
+      				if (!isNaN(input)){
+      					$('#nameDisplay').text( FNX(input) );
+      					}
+      				 else {$('#nameDisplay').text("?")};
+  	    
   					};
+  					var clearTextField = function(){
+  						$('#nameField').val("");
+  						};
+  					$('#nameField').click(clearTextField);
   					$('#nameField').keydown( updateNameDisplay );
   					$('#nameField').keyup( updateNameDisplay );
   					$('#nameField').keypress( updateNameDisplay );
