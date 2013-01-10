@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html data-require="math polynomials graphie word-problems steveMath8">
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <title>Approximating Limits Numerically With Graphical Assistance</title>
     <script src="../khan-exercise.js"></script>
 </head>
 <body>
     <div class="exercise">
-        <div class="vars" data-ensure="JUMP+f(LIMITX)<10">
+        <div class="vars" data-ensure="JUMP+f(LIMITX)&lt;10">
 	
 	    	
 	    	<var id="JUMP">randRangeNonZero(0,3)</var>
@@ -48,19 +48,18 @@
                     	or state that the limit does not exist (DNE).
               
 		   		    <p> 
-		   		    	<center><code>f(</code><input type='text' id='nameField' value = 'type x values here' size=3><code>)=</code> <span id='nameDisplay'>?</span></center>		      
+		   		    	<center><code>f(</code><input type='text' id='nameField' value = 'type x values here' size='3'/><code>)=</code> <span id='nameDisplay'>?</span></center>		      
 		    		</p>
 		    		<p>
 		    			<font size="1"><code>{}^*</code>You can't really be sure whether you are finding the limit from 
 		    			only a finite amount of data, but the function is "reasonable" enough that your experimental data 
 		    			will not lead you astray.</font>
 		    		</p>
-                	<div class = graphie id="grid">
+                	<div class = "graphie" id="grid">
                 	graphInit({
                         range: 10,
                         scale: 20,
                         tickStep: 1,
-                        axisArrows: "<->"
                     });
                     
                     plot(function( x ) {
@@ -112,13 +111,13 @@
 		  <table>
 		    <tr>
                       <td><code>\displaystyle\lim_{x \to <var>LIMITX</var>^{-}}f(x)=</code></td>
-                      <td><span class="sol" data-inexact data-max-error="0.001" data-type="decimal"><var>ANSWER</var></span></td>
+                      <td><span class="sol" data-inexact="data-inexact" data-max-error="0.001" data-type="decimal"><var>ANSWER</var></span></td>
 		    </tr><tr>
                       <td><code>\displaystyle\lim_{x \to <var>LIMITX</var>^{+}}f(x)=</code></td>
-                      <td><span class="sol" data-inexact data-max-error="0.001" data-type="decimal"><var>ANSWER</var></span></td>
-		    </tr><tr>
+                      <td><span class="sol" data-inexact="data-inexact" data-max-error="0.001" data-type="decimal"><var>ANSWER</var></span></td>
+		    </tr>
 		      <td><code>\displaystyle\lim_{x \to <var>LIMITX</var>}f(x)=</code></td>
-                      <td><span class="sol" data-inexact data-max-error="0.001" data-type="decimal"><var>ANSWER</var></span></td>
+                      <td><span class="sol" data-inexact="data-inexact" data-max-error="0.001" data-type="decimal"><var>ANSWER</var></span></td>
 		  </table>
 
                 </div>
@@ -164,19 +163,18 @@
                     	or state that the limit does not exist (DNE).
                  
 		   		    <p> 
-		   		    	<center><code>f(</code><input type='text' id='nameField' value = 'type x values here' size=3><code>)=</code> <span id='nameDisplay'>?</span></center>		      
+		   		    	<center><code>f(</code><input type='text' id='nameField' value = 'type x values here' size='3'/><code>)=</code> <span id='nameDisplay'>?</span></center>		      
 		    		</p>
 		    		<p>
 		    			<font size="1"><code>{}^*</code>You can't really be sure whether you are finding the limit from 
 		    			only a finite amount of data, but the function is "reasonable" enough that your experimental data 
 		    			will not lead you astray.</font>
 		    		</p>
-                	<div class = graphie id="grid">
+                	<div class = "graphie" id="grid">
                 	graphInit({
                         range: 10,
                         scale: 20,
                         tickStep: 1,
-                        axisArrows: "<->"
                     });
                     
                     plot(function( x ) {
@@ -228,13 +226,13 @@
 		  <table>
 		    <tr>
                       <td><code>\displaystyle\lim_{x \to <var>LIMITX</var>^{-}}f(x)=</code></td>
-                      <td><span class="sol" data-inexact data-max-error="0.001" data-type="decimal"><var>ANSWER</var></span></td>
+                      <td><span class="sol" data-inexact="data-inexact" data-max-error="0.001" data-type="decimal"><var>ANSWER</var></span></td>
 		    </tr><tr>
                       <td><code>\displaystyle\lim_{x \to <var>LIMITX</var>^{+}}f(x)=</code></td>
-                      <td><span class="sol" data-inexact data-max-error="0.001" data-type="decimal"><var>ANSWER+JUMP</var></span></td>
+                      <td><span class="sol" data-inexact="data-inexact" data-max-error="0.001" data-type="decimal"><var>ANSWER+JUMP</var></span></td>
 		    </tr><tr>
 		      <td><code>\displaystyle\lim_{x \to <var>LIMITX</var>}f(x)=</code></td>
-                      <td><span class="sol" data-inexact data-max-error="0.001" data-type="text">DNE</span></td>
+                      <td><span class="sol" data-inexact="data-inexact" data-max-error="0.001" data-type="text">DNE</span></td>
 		    </tr>
 		  </table>
 

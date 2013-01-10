@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html data-require="math polynomials graphie word-problems steveMath8">
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <title>Finding roots of continuous functions with the bisection method</title>
     <script src="../khan-exercise.js"></script>
 </head>
@@ -20,7 +20,7 @@
         </div>
 
         <div class="problems">
-            <div id="bisectionMethod" data-weight="3">
+            <div id="bisectionMethod">
             	
             	<p class = "problem"> <code>f</code> is a <em>continuous</em> function. While you don't have
             	a formula for <code>f</code>, you can evaluate <code>f</code> for various values below. 
@@ -38,10 +38,11 @@
                     </p>
 		   		  
 		   		  <p> 
-		   		    	<center><code>f(</code><input type='text' id='nameField' value = 'type x values here' size=3><code>)=</code> <span id='nameDisplay'>?</span></center>		      
+		   		    	<center><code>f(</code><input type='text' id='nameField' value = 'type x values here' size='3'/><code>)=</code> <span id='nameDisplay'>?</span></center>		      
 		    		</p>
+		    	
 		    		
-                	<div class = graphie id="grid">
+                	<div class = "graphie" id="grid">
                 	
                     
                     
@@ -71,10 +72,10 @@
                     <p>
                         First approximation: 
                         <span class="sol" data-type="decimal"><var>ANSWERS[0]</var></span>
-                        <br>
+                        <br/>
                         Second approximation: 
                         <span class="sol"  data-type="decimal"><var>ANSWERS[1]</var></span>
-						<br>
+						<br/>
 						Third approximation: 
                         <span class="sol"  data-type="decimal"><var>ANSWERS[2]</var></span>
                     </p>
@@ -118,11 +119,11 @@
                 		Thus we choose our third approximation to be <code><var>ANSWERS[2]</var></code>.
                 	</p>
                 	<p>
-                		<br>
+                		<br/>
                 		First Approximation: <code><var>ANSWERS[0]</var></code>
-                		<br>
+                		<br/>
                 		Second Approximation: <code><var>ANSWERS[1]</var></code>
-                		<br>
+                		<br/>
                 		Third Approximation: <code><var>ANSWERS[2]</var></code>
                 	</p>
                 	
