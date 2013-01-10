@@ -500,7 +500,7 @@ $\delta = \min\left(\frac{\epsilon}{M}, 1\right)$.
 As you work with limits, you find that you need to do the same
 procedures again and again. The next theorems will expedite this
 process.
-\begin{theorem} 
+\begin{theorem}[Limit Product Law] 
 Suppose $\lim_{x\to a} f(x)=L$ and $\lim_{x\to a}g(x)=M$. Then
 \[
 \lim_{x\to a} f(x)g(x) = LM.
@@ -569,20 +569,35 @@ $g(f(x))$. For example, if $f(x)=\sqrt{x}$ and $g(x)=x^2+5$, then
 $f(g(x))=\sqrt{x^2+5}$ and $g(f(x))=(\sqrt{x})^2+5=x+5$.  This brings
 us to our next theorem.
 
-\marginnote[.5in]{This is sometimes written as $\lim_{g(x)\to L}f(g(x))$.}
-\begin{theorem}[Composition Law]\label{thm:limit of composition}
-Suppose that $\lim_{x\to a}g(x)=L$ and $\lim_{x\to L}f(x)=f(L)$. Then
+\marginnote[.5in]{This is sometimes written as $\lim_{g(x)\to M}f(g(x))$.}
+\begin{theorem}[Limit Composition Law]\label{thm:limit of composition}
+Suppose that $\lim_{x\to a}g(x)=M$ and $\lim_{x\to M}f(x) = f(M)$. Then
 \[
-\lim_{x\to a} f(g(x)) = f(L).
+\lim_{x\to a} f(g(x)) = f(M).
 \]
 \end{theorem}
 
-Note the special form of the condition on $f$: it is not enough to
-know that $\lim_{x\to L}f(x) = M$, though it is a bit tricky to see
-why. Many of the most familiar functions do have this property, and
-this theorem can therefore be applied. For example:
+Note the special form of the condition on $f(x)$: it is not enough to
+know that $\lim_{x\to L}f(x)$ exists, though it is a bit tricky to see
+why. Consider
+\[
+f(x) =\begin{cases}
+3 & \text{if $x=2$,}\\
+4 & \text{if $x\ne 2$.}
+\end{cases}
+\]
+and $g(x) = 2$. Now the conditions of Theorem~\ref{thm:limit of
+  composition} are not satisfied, and
+\[
+\lim_{x\to 1} f(g(x)) = 3 \qquad{but}\qquad \lim_{x\to 2} f(x) = 4.
+\]
 
-\begin{theorem} Suppose that $n$ is a positive integer. Then
+
+Many of the most familiar functions do satisfy the conditions of
+Theorem~\ref{thm:limit of composition}. For example:
+
+\begin{theorem}[Limit Root Law]
+Suppose that $n$ is a positive integer. Then
 $$\lim_{x\to a}\root n\of{x} = \root n\of{a},$$
 provided that $a$ is positive if $n$ is even.
 \label{thm:continuity of roots}
@@ -692,6 +707,8 @@ is some constant, and $n$ is a positive integer. Then
 \item[\textbf{Root Law}] $\lim_{x\to a} \sqrt[n]{f(x)} = \sqrt[n]{\lim_{x\to
     a}f(x)}=\sqrt[n]{L}$ provided if $n$ is even, then $f(x)\ge 0$
   near $a$.
+\item[\textbf{Composition Law}] If $\lim_{x\to a}g(x)=M$ and
+  $\lim_{x\to M}f(x) = f(M)$, then $\lim_{x\to a} f(g(x)) = f(M)$.
 \end{itemize}
 \label{thm:limit laws}
 \end{mainTheorem}
