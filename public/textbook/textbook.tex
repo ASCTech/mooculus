@@ -43,8 +43,8 @@
 \newtoks{\answercontent}
 \usepackage{environ}
  \NewEnviron{answer}{%
-   \answercontent=\expandafter{\BODY}
-   \dumpanswer[\arabic{exercise}. \the\answercontent]
+   \answercontent=\expandafter{\BODY\hspace{1em}}
+   \dumpanswer[\arabic{exercise}.~\the\answercontent]
  }
 \makeatother
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
