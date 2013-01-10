@@ -569,7 +569,9 @@ $g(f(x))$. For example, if $f(x)=\sqrt{x}$ and $g(x)=x^2+5$, then
 $f(g(x))=\sqrt{x^2+5}$ and $g(f(x))=(\sqrt{x})^2+5=x+5$.  This brings
 us to our next theorem.
 
-\marginnote[.5in]{This is sometimes written as $\lim_{g(x)\to M}f(g(x))$.}
+\marginnote[.5in]{This is sometimes written as \[
+\lim_{x\to a}f(g(x)) = \lim_{g(x)\to M}f(g(x)).
+\]}
 \begin{theorem}[Limit Composition Law]\label{thm:limit of composition}
 Suppose that $\lim_{x\to a}g(x)=M$ and $\lim_{x\to M}f(x) = f(M)$. Then
 \[
@@ -696,14 +698,14 @@ could be proved directly as we did in the previous section.
 
 \begin{mainTheorem}[Limit Laws]\index{limit laws}\label{theorem:limit-laws}
 Suppose that $\lim_{x\to a}f(x)=L$, $\lim_{x\to a}g(x)=M$, $k$
-is some constant, and $n$ is a positive integer. Then
+is some constant, and $n$ is a positive integer.
 \begin{itemize}
-\item[\textbf{Constant Law}] $\lim_{x\to a} kf(x) = k\lim_{x\to a}f(x)=kL$ 
-\item[\textbf{Sum Law}] $\lim_{x\to a} (f(x)+g(x)) = \lim_{x\to a}f(x)+\lim_{x\to a}g(x)=L+M$  
-\item[\textbf{Product Law}] $\lim_{x\to a} (f(x)g(x)) = \lim_{x\to a}f(x)\cdot\lim_{x\to a}g(x)=LM$ 
+\item[\textbf{Constant Law}] $\lim_{x\to a} kf(x) = k\lim_{x\to a}f(x)=kL$.
+\item[\textbf{Sum Law}] $\lim_{x\to a} (f(x)+g(x)) = \lim_{x\to a}f(x)+\lim_{x\to a}g(x)=L+M$.  
+\item[\textbf{Product Law}] $\lim_{x\to a} (f(x)g(x)) = \lim_{x\to a}f(x)\cdot\lim_{x\to a}g(x)=LM$. 
 \item[\textbf{Quotient Law}] $\lim_{x\to a} \frac{f(x)}{g(x)} =
-  \frac{\lim_{x\to a}f(x)}{\lim_{x\to a}g(x)}=\frac{L}{M}$, if $M\ne0$
-\item[\textbf{Power Law}] $\lim_{x\to a} f(x)^n = \left(\lim_{x\to a}f(x)\right)^n=L^n$
+  \frac{\lim_{x\to a}f(x)}{\lim_{x\to a}g(x)}=\frac{L}{M}$, if $M\ne0$.
+\item[\textbf{Power Law}] $\lim_{x\to a} f(x)^n = \left(\lim_{x\to a}f(x)\right)^n=L^n$.
 \item[\textbf{Root Law}] $\lim_{x\to a} \sqrt[n]{f(x)} = \sqrt[n]{\lim_{x\to
     a}f(x)}=\sqrt[n]{L}$ provided if $n$ is even, then $f(x)\ge 0$
   near $a$.
