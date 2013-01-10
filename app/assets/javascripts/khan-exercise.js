@@ -1010,7 +1010,7 @@ var Khan = (function() {
             }
 
             // Generate a new problem
-            makeProblem(typeOverride, seedOverride);
+            makeProblem(typeOverride, seedOverride, exerciseId);
 
         }
 
@@ -1082,9 +1082,9 @@ var Khan = (function() {
                  (guess instanceof Array && $.trim(guess.join("").replace(/,/g, "")) === "");
     }
 
-    function makeProblem(id, seed) {
+    function makeProblem(id, seed, exerciseId) {
         debugLog("start of makeProblem");
-
+	
         // Enable scratchpad (unless the exercise explicitly disables it later)
         Khan.scratchpad.enable();
 
@@ -1105,8 +1105,11 @@ var Khan = (function() {
             id = typeof id !== "undefined" ? id : Khan.query.problem;
         }
 
-        if (typeof id !== "undefined") {
-            var problems = exercises.children(".problems").children();
+        if ((typeof id !== "undefined") && (typeof exerciseId !== "undefined")) {
+	    // JIM: This code is better because sometimes problems in separate exercises have the same id
+            var problems = exercises.filter(function() {
+                return $.data(this, "rootName") === exerciseId;
+            }).children(".problems").children();
 
             problem = /^\d+$/.test(id) ?
                 // Access a problem by number
@@ -1323,7 +1326,7 @@ var Khan = (function() {
             // Making the problem failed, let's try again
             debugLog("validator was falsey");
             problem.remove();
-            makeProblem(id, randomSeed);
+            makeProblem(id, randomSeed, exerciseId);
             return;
         }
 
