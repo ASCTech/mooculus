@@ -118,10 +118,7 @@ interpretation of this definition.
 \label{figure:epsilon-delta}
 \end{figure}
 
-Limits need not exist, let's examine two cases of this.
-
-
-\begin{marginfigure}[2in]
+\begin{marginfigure}[0in]
 \begin{tikzpicture}
 	\begin{axis}[
             domain=-2:4,
@@ -168,6 +165,7 @@ Limits need not exist, let's examine two cases of this.
 \label{plot:greatist-integer}
 \end{marginfigure}
 
+Limits need not exist, let's examine two cases of this.
 
 \begin{example}
 Let $f(x) = \lfloor x\rfloor$. Explain why the limit
@@ -570,9 +568,12 @@ $g(f(x))$. For example, if $f(x)=\sqrt{x}$ and $g(x)=x^2+5$, then
 $f(g(x))=\sqrt{x^2+5}$ and $g(f(x))=(\sqrt{x})^2+5=x+5$.  This brings
 us to our next theorem.
 
-\begin{theorem}[Composition Law] Suppose that $\lim_{x\to a}g(x)=L$ and $\lim_{x\to L}f(x)=f(L)$. Then
-$$\lim_{x\to a} f(g(x)) = f(L).$$
-\label{thm:limit of composition}
+\marginnote[.5in]{This is sometimes written as $\lim_{g(x)\to L}f(g(x))$.}
+\begin{theorem}[Composition Law]\label{thm:limit of composition}
+Suppose that $\lim_{x\to a}g(x)=L$ and $\lim_{x\to L}f(x)=f(L)$. Then
+\[
+\lim_{x\to a} f(g(x)) = f(L).
+\]
 \end{theorem}
 
 Note the special form of the condition on $f$: it is not enough to
