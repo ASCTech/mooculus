@@ -7,16 +7,16 @@ Suppose that $f(x)$ is a function.  It is often useful to know how
 sensitive the value of $f(x)$ is to small changes in $x$. To give you
 a feeling why this is true, consider the following:
 \begin{itemize}
-\item If the change is zero, then $x$ gives a local maximal or minimal
-  values for $f(x)$.
-\item If $p(t)$ determines the position of an object with respect to
-  time, the change gives the velocity of the object.
-\item If $v(t)$ determines the velocity of an object with respect to
-  time, the change gives the acceleration of the object.
-\item The change can help us approximate a complicated function with a
-  simple function.
-\item The change can be used to help us solve equations that we would
-  not be able to solve via other methods.
+\item If the rate of change is zero, then $x$ gives a local maximal or
+  minimal values for $f(x)$.
+\item If $p(t)$ represents the position of an object with respect to
+  time, the rate of change gives the velocity of the object.
+\item If $v(t)$ represents the velocity of an object with respect to
+  time, the rate of change gives the acceleration of the object.
+\item The rate of change of a function can help us approximate a
+  complicated function with a simple function.
+\item The rate of change of a function can be used to help us solve
+  equations that we would not be able to solve via other methods.
 \end{itemize}
 
 The rate of change of a function is the slope of the tangent
@@ -410,10 +410,24 @@ start simply, building-up to more complicated examples.
 
 \subsection{The Constant Rule}
 
-The simplest function is a constant function.  
-\marginnote{To gain
-  intuition, you should compute the derivative of $f(x) = 6$ using the
-  limit definition of the derivative.}
+The simplest function is a constant function.  Recall that derivatives
+measure the rate of change of a function at a given point. Hence, the
+derivative of a constant function is zero. For example:
+\begin{itemize}
+\item The constant function plots a horizontal line---so the slope of
+  the tangent line is $0$.
+\item If $p(t)$ represents the position of an object with respect to
+  time and $p(t)$ is constant, then object is not moving, so its
+  velocity is zero. Hence $\dd{t} p(t) = 0$.
+\item If $v(t)$ represents the velocity of an object with respect to
+  time and $v(t)$ is constant, then the object's acceleration is
+  zero. Hence $\dd{t} v(t) = 0$.
+\end{itemize}
+
+
+
+\marginnote{To gain intuition, you should compute the derivative of
+  $f(x) = 6$ using the limit definition of the derivative.}
 \begin{theorem}[The Constant Rule]\index{derivative rules!constant}\index{the constant rule}
 Given a constant $c$,
 \[
@@ -430,15 +444,6 @@ From the limit definition of the derivative, write
 \end{align*}
 \end{proof}
 
-Reasons this result makes conceptual sense:
-\begin{itemize}
-\item The constant function plots a horizontal line---so the slope of
-  the tangent line is $0$.
-\item If a object is a constant distance away from a reference point
-  (that is, it isn't moving) then it's velocity is zero.
-\item If an object is traveling at a constant rate, then it's
-  acceleration is zero.
-\end{itemize}
 
 \subsection{The Power Rule}
 
@@ -491,7 +496,14 @@ HERE HERE HERE $7x^12$
 \subsection{The Sum Rule}
 
 We want to be able to take derivatives of functions ``one piece at a
-time.'' The \textit{sum rule} allows us to do this.
+time.'' The \textit{sum rule} allows us to do this. The sum rule says
+that that we can add the rates of change of two functions to obtain
+the rate of change of the sum of both functions. For example, viewing
+the derivative as the velocity of an object, the sum rule states that
+the velocity person walking on a moving bus is the sum of the velocity
+of the bus and the walking person.
+
+
 \begin{theorem}[The Sum Rule]\index{derivative rules!sum}\index{the sum rule}
 If $f(x)$ and $g(x)$ are differentiable at $x=a$ and $c$ is a constant, then 
 \begin{enumerate}
@@ -512,12 +524,7 @@ We will only prove part~\ref{SR:1} above, the rest are similar. Write
 &=f'(x)+g'(x).
 \end{align*}
 \end{proof}
-Reasons this result makes conceptual sense:
-\begin{itemize}
-\item Viewing the derivative as the velocity of an object, the sum
-  rule is something like a person walking on a moving bus. The
-  velocities add.
-\end{itemize}
+
 
 
 
@@ -529,24 +536,77 @@ twice here:
 f'(x) = \ddx(x^5+5x^2) = \ddx x^5 + \ddx(5x^2) =
 5x^4+5\ddx(x^2) = 5x^4+5\cdot 2x^1 = 5x^4+10x.
 \]
-\vskip-10pt\end{example}
+\end{example}
 
 \begin{example}
 Find the derivative of $f(x)=3/x^4-2x^2+6x-7$.
 $$f'(x) = \ddx\left( {3\over x^4}-2x^2+6x-7\right)
 = \ddx(3x^{-4}-2x^2+6x-7) 
 = -12x^{-5}-4x+6.$$
-\vskip-10pt\end{example}
+\end{example}
 
 
 
+As with the sine, we don't know anything about derivatives that allows
+us to compute the derivatives of the exponential and logarithmic
+functions without going back to basics. Let's do a little work with
+the definition again:
+\begin{align*}
+{d\over dx}a^x&=\lim_{h\to 0} {a^{x+h}-a^x\over h} \\
+&=\lim_{h\to 0} {a^xa^{h}-a^x\over h} \\
+&=\lim_{h\to 0} a^x{a^{h}-1\over h} \\
+&=a^x\lim_{h\to 0} {a^{h}-1\over h} \\
+\end{align*}
+There are two interesting things to note here: As in the case of the
+sine function we are left with a limit that involves $h$ but
+not $x$, which means that whatever $ \lim_{h\to 0} (a^{\Delta
+    x}-1)/h$ is, we know that it is a number, that is, a
+constant. This means that $ a^x$ has a remarkable property: its
+derivative is a constant times itself.
 
+We earlier remarked that the hardest limit we would compute is
+$ \lim_{x\to0}\sin x/x=1$; we now have a limit that is just a bit too
+hard to include here. In fact the hard part is to see that
+$ \lim_{h\to 0} (a^{\Delta
+    x}-1)/h$ even exists---does this fraction really get closer
+and closer to some fixed value? Yes it does, but we will not prove
+this fact.
 
+We can look at some examples. Consider $ (2^x-1)/x$ for some small
+values of $x$: 1, $0.828427124$, $0.756828460$, $0.724061864$,
+$0.70838051$, $0.70070877$ when $x$ is 1, $1/2$, $1/4$, $1/8$, $1/16$,
+$1/32$, respectively. It looks like this is settling in around $0.7$,
+which turns out to be true (but the limit is not exactly $0.7$).
+Consider next $ (3^x-1)/x$: $2$,  $1.464101616$,
+$1.264296052$, $1.177621520$, $1.13720773$, $1.11768854$, at the same
+values of $x$. It turns out to be true that in the limit this
+is about $1.1$. Two examples don't establish a pattern, but if you do
+more examples you will find that the limit varies directly with the
+value of $a$: bigger $a$, bigger limit; smaller $a$, smaller limit. As
+we can already see, some of these limits will be less than 1 and some
+larger than 1. Somewhere between $a=2$ and $a=3$ the limit will be
+exactly 1; the value at which this happens is called $e$, so that
+$$\lim_{h\to 0} {e^{h}-1\over h}=1.$$ As you
+might guess from our two examples, $e$ is closer to 3 than to 2, and
+in fact $e\approx 2.718$.
 
+Now we see that the function $ e^x$ has a truly remarkable property:
+\begin{align*}
+\ddx e^x&=\lim_{h\to 0} {e^{x+h}-e^x\over h} \\
+&=\lim_{h\to 0} {e^xe^{h}-e^x\over h} \\
+&=\lim_{h\to 0} e^x{e^{h}-1\over h} \\
+&=e^x\lim_{h\to 0} {e^{h}-1\over h} \\
+&=e^x \\
+\end{align*}
+That is, $ e^x$ is its own derivative, or in other words the
+slope of $ e^x$ is the same as its height, or the same as its second
+coordinate: The function $ f(x)=e^x$ goes through the point $ (z,e^z)$
+and has slope $ e^z$ there, no matter what $z$ is. It is sometimes
+convenient to express the function $ e^x$ without an exponent, since
+complicated exponents can be hard to read. In such cases we use
+$\exp(x)$, e.g., $ \exp(1+x^2)$ instead of 
+$ e^{1+x^2}$.\index{exp function}
 
-exponent rule
-
-dfn $e^x$
 
 
 

@@ -1,4 +1,8 @@
 textbook.pdf: textbook.tex
+	touch answers.tex
+	pdflatex textbook.tex
+	cp textbook.ans answers.tex
+	pdflatex textbook.tex
 	pdflatex textbook.tex
 
 clean:
