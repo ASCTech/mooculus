@@ -1,9 +1,19 @@
-textbook.pdf: textbook.tex
+FILES=$(wildcard *.tex)
+
+textbook.pdf: $(FILES)
 	touch answers.tex
 	pdflatex textbook.tex
 	cp textbook.ans answers.tex
 	pdflatex textbook.tex
 	pdflatex textbook.tex
+
+textbook-print.pdf: $(FILES)
+	touch answers.tex
+	pdflatex textbook.tex
+	cp textbook.ans answers.tex
+	pdflatex textbook.tex
+	pdflatex textbook.tex
+
 
 clean:
 	rm -f *.swp
