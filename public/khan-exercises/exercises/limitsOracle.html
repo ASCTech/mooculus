@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html data-require="math polynomials graphie word-problems">
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <title>Approximating Limits Numerically</title>
     <script src="../khan-exercise.js"></script>
 </head>
@@ -32,14 +32,14 @@
                     	by evaluating <code>f(x)</code> at various values,
                     	or state that the limit does not exist (DNE).
 		   		    <p> 
-		   		    	<center><code>f(</code><input type='text' id='nameField' value = 'type x values here' size=3><code>)=</code> <span id='nameDisplay'>?</span></center>		      
+		   		    	<center><code>f(</code><input type='text' id='nameField' value = 'type x values here' size='3'/><code>)=</code> <span id='nameDisplay'>?</span></center>		      
 		    		</p>
 		    		<p style="font-size: 7pt; line-height: 9pt;">
 		    			<code>{}^*</code>You can't really be sure whether you are finding the limit from 
 		    			only a finite amount of data, but the function is "reasonable" enough that your experimental data 
 		    			will not lead you astray.
 		    		</p>
-                	<div class = graphie>
+                	<div class = "graphie">
                 	(function(){
   					updateNameDisplay = function() {
   	 		   	    var input = parseFloat(this.value)
@@ -116,14 +116,14 @@
                     	or state that the limit does not exist (DNE).
                 
 		   		    <p> 
-		   		    	<center><code>f(</code><input type='text' id='nameField' value = 'type x values here' size=3><code>)=</code> <span id='nameDisplay'>?</span></center>		      
+		   		    	<center><code>f(</code><input type='text' id='nameField' value = 'type x values here' size='3'/><code>)=</code> <span id='nameDisplay'>?</span></center>		      
 		    		</p>
 		    		<p>
 		    			<font size="1"><code>{}^*</code>You can't really be sure whether you are finding the limit from 
 		    			only a finite amount of data, but the function is "reasonable" enough that your experimental data 
 		    			will not lead you astray.</font>
 		    		</p>
-                	<div class = graphie>
+                	<div class = "graphie">
                 	(function(){
   					updateNameDisplay = function() {
   	 		   	    var input = parseFloat(this.value) 
@@ -204,14 +204,14 @@
                     	or state that the limit does not exist (DNE).
                     
 		   		    <p> 
-		   		    	<center><code>f(</code><input type='text' id='nameField' value = 'type x values here' size=3><code>)=</code> <span id='nameDisplay'>?</span></center>		      
+		   		    	<center><code>f(</code><input type='text' id='nameField' value = 'type x values here' size='3'/><code>)=</code> <span id='nameDisplay'>?</span></center>		      
 		    		</p>
 		    		<p>
 		    			<font size="1"><code>{}^*</code>You can't really be sure whether you are finding the limit from 
 		    			only a finite amount of data, but the function is "reasonable" enough that your experimental data 
 		    			will not lead you astray.</font>
 		    		</p>
-                	<div class = graphie>
+                	<div class = "graphie">
                 	(function(){
   					updateNameDisplay = function() {
   	 		   	    var input = parseFloat(this.value) 
@@ -266,11 +266,11 @@
                 	<p>Now repeat the process for values of <code>x</code> which are greater than <var>LIMITX</var>.</p>
                 	
                 	<p><code>f(<var>LIMITX+.1</var>) = <var>ANSWER+FACTOR*Math.sin(1/(.1))</var></code>
-                	   <br><br><code>f(<var>LIMITX+.01</var>) = <var>ANSWER+FACTOR*Math.sin(1/(.01))</var></code></p>
+                	   <br/><br/><code>f(<var>LIMITX+.01</var>) = <var>ANSWER+FACTOR*Math.sin(1/(.01))</var></code></p>
                 	<p><code>f(<var>LIMITX+.001</var>) = <var>ANSWER+FACTOR*Math.sin(1/(.001))</var></code>
-                	   <br><br><code>f(<var>LIMITX+.0001</var>) = <var>ANSWER+FACTOR*Math.sin(1/(.0001))</var></code></p>
+                	   <br/><br/><code>f(<var>LIMITX+.0001</var>) = <var>ANSWER+FACTOR*Math.sin(1/(.0001))</var></code></p>
                 	<p><code>f(<var>LIMITX+.00001</var>) = <var>ANSWER+FACTOR*Math.sin(1/(.00001))</var></code>
-                	   <br><br><code>f(<var>LIMITX+.000001</var>) = <var>ANSWER+FACTOR*Math.sin(1/(.000001))</var></code></p>
+                	   <br/><br/><code>f(<var>LIMITX+.000001</var>) = <var>ANSWER+FACTOR*Math.sin(1/(.000001))</var></code></p>
                 	<p> It appears that <code>f(x)</code> is not settling down to any one value as <code>x</code> approaches <var>LIMITX</var> from the right.
                 	</p>
                 	<p>so <code>\displaystyle\lim_{x \to <var>LIMITX</var>^{+}}f(x)</code> does not exist (DNE).</p>
@@ -296,14 +296,14 @@
                     	or state that the limit does not exist (DNE).
            
 		   		    <p> 
-		   		    	<center><code>f(</code><input type='text' id='nameField' value = 'type x values here' size=3><code>)=</code> <span id='nameDisplay'>?</span></center>		      
+		   		    	<center><code>f(</code><input type='text' id='nameField' value = 'type x values here' size='3'/><code>)=</code> <span id='nameDisplay'>?</span></center>		      
 		    		</p>
 		    		<p>
 		    			<font size="1"><code>{}^*</code>You can't really be sure whether you are finding the limit from 
 		    			only a finite amount of data, but the function is "reasonable" enough that your experimental data 
 		    			will not lead you astray.</font>
 		    		</p>
-                	<div class = graphie>
+                	<div class = "graphie">
                 	(function(){
   					updateNameDisplay = function() {
   	 		   	    var input = parseFloat(this.value) 
@@ -349,11 +349,11 @@
                 <div class="hints">
 					<p>Try values of <code>x</code> close to <var>LIMITX</var> but not equal to <var>LIMITX</var>.</p>
                 	<p><code>f(<var>LIMITX-.1</var>) = <var>ANSWER+FACTOR*Math.sin(-1/(0.1))</var></code>
-                	   <br><br><code>f(<var>LIMITX-.01</var>) = <var>ANSWER+FACTOR*Math.sin(-1/(.01))</var></code></p>
+                	   <br/><br/><code>f(<var>LIMITX-.01</var>) = <var>ANSWER+FACTOR*Math.sin(-1/(.01))</var></code></p>
                 	<p><code>f(<var>LIMITX-.001</var>) = <var>ANSWER+FACTOR*Math.sin(-1/(.001))</var></code>
-                	   <br><br><code>f(<var>LIMITX-.0001</var>) = <var>ANSWER+FACTOR*Math.sin(-1/(.0001))</var></code></p>
+                	   <br/><br/><code>f(<var>LIMITX-.0001</var>) = <var>ANSWER+FACTOR*Math.sin(-1/(.0001))</var></code></p>
                 	<p><code>f(<var>LIMITX-.00001</var>) = <var>ANSWER+FACTOR*Math.sin(-1/(.00001))</var></code>
-                	   <br><br><code>f(<var>LIMITX-.000001</var>) = <var>ANSWER+FACTOR*Math.sin(-1/(.000001))</var></code></p>
+                	   <br/><br/><code>f(<var>LIMITX-.000001</var>) = <var>ANSWER+FACTOR*Math.sin(-1/(.000001))</var></code></p>
                 	<p> It appears that <code>f(x)</code> is not settling down to any one value as <code>x</code> approaches <var>LIMITX</var> from the left.
                 	</p>
                 	<p>so <code>\displaystyle\lim_{x \to <var>LIMITX</var>^{-}}f(x)</code> does not exist (DNE).</p>
@@ -387,14 +387,14 @@
                     	or state that the limit does not exist (DNE).
      
 		   		    <p> 
-		   		    	<center><code>f(</code><input type='text' id='nameField' value = 'type x values here' size=3><code>)=</code> <span id='nameDisplay'>?</span></center>		      
+		   		    	<center><code>f(</code><input type='text' id='nameField' value = 'type x values here' size='3'/><code>)=</code> <span id='nameDisplay'>?</span></center>		      
 		    		</p>
 		    		<p>
 		    			<font size="1"><code>{}^*</code>You can't really be sure whether you are finding the limit from 
 		    			only a finite amount of data, but the function is "reasonable" enough that your experimental data 
 		    			will not lead you astray.</font>
 		    		</p>
-                	<div class = graphie>
+                	<div class = "graphie">
                 	(function(){
   					updateNameDisplay = function() {
   	 		   	   		var input = parseFloat(this.value) 
@@ -437,21 +437,21 @@
                 <div class="hints">
 					<p>Try values of <code>x</code> close to <var>LIMITX</var> but not equal to <var>LIMITX</var>.</p>
                 	<p><code>f(<var>LIMITX-.1</var>) = <var>ANSWER+FACTOR*Math.sin(-1/(0.1))</var></code>
-                	   <br><br><code>f(<var>LIMITX-.01</var>) = <var>ANSWER+FACTOR*Math.sin(-1/(.01))</var></code></p>
+                	   <br/><br/><code>f(<var>LIMITX-.01</var>) = <var>ANSWER+FACTOR*Math.sin(-1/(.01))</var></code></p>
                 	<p><code>f(<var>LIMITX-.001</var>) = <var>ANSWER+FACTOR*Math.sin(-1/(.001))</var></code>
-                	   <br><br><code>f(<var>LIMITX-.0001</var>) = <var>ANSWER+FACTOR*Math.sin(-1/(.0001))</var></code></p>
+                	   <br/><br/><code>f(<var>LIMITX-.0001</var>) = <var>ANSWER+FACTOR*Math.sin(-1/(.0001))</var></code></p>
                 	<p><code>f(<var>LIMITX-.00001</var>) = <var>ANSWER+FACTOR*Math.sin(-1/(.00001))</var></code>
-                	   <br><br><code>f(<var>LIMITX-.000001</var>) = <var>ANSWER+FACTOR*Math.sin(-1/(.000001))</var></code></p>
+                	   <br/><br/><code>f(<var>LIMITX-.000001</var>) = <var>ANSWER+FACTOR*Math.sin(-1/(.000001))</var></code></p>
                 	<p> It appears that <code>f(x)</code> is not settling down to any one value as <code>x</code> approaches <var>LIMITX</var> from the left.
                 	</p>
                 	<p>so <code>\displaystyle\lim_{x \to <var>LIMITX</var>^{-}}f(x)</code> does not exist (DNE).</p>
                 	<p>Now repeat the process for values of <code>x</code> which are greater than <var>LIMITX</var>.</p>
                 	<p><code>f(<var>LIMITX+.1</var>) = <var>ANSWER+FACTOR*Math.sin(1/(.1))</var></code>
-                	   <br><br><code>f(<var>LIMITX+.01</var>) = <var>ANSWER+FACTOR*Math.sin(1/(.01))</var></code></p>
+                	   <br/><br/><code>f(<var>LIMITX+.01</var>) = <var>ANSWER+FACTOR*Math.sin(1/(.01))</var></code></p>
                 	<p><code>f(<var>LIMITX+.001</var>) = <var>ANSWER+FACTOR*Math.sin(1/(.001))</var></code>
-                	   <br><br><code>f(<var>LIMITX+.0001</var>) = <var>ANSWER+FACTOR*Math.sin(1/(.0001))</var></code></p>
+                	   <br/><br/><code>f(<var>LIMITX+.0001</var>) = <var>ANSWER+FACTOR*Math.sin(1/(.0001))</var></code></p>
                 	<p><code>f(<var>LIMITX+.00001</var>) = <var>ANSWER+FACTOR*Math.sin(1/(.00001))</var></code>
-                	   <br><br><code>f(<var>LIMITX+.000001</var>) = <var>ANSWER+FACTOR*Math.sin(1/(.000001))</var></code></p>
+                	   <br/><br/><code>f(<var>LIMITX+.000001</var>) = <var>ANSWER+FACTOR*Math.sin(1/(.000001))</var></code></p>
                 	<p> It appears that <code>f(x)</code> is not settling down to any one value as <code>x</code> approaches <var>LIMITX</var> from the right.
                 	</p>
                 	<p>so <code>\displaystyle\lim_{x \to <var>LIMITX</var>^{+}}f(x)</code> does not exist (DNE).</p>

@@ -1,7 +1,7 @@
  <!DOCTYPE html>
 <html data-require="math polynomials graphie word-problems steveMath8">
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <title>Understanding Infinite Limits Numerically with Graphical Assistance</title>
     <script src="../khan-exercise.js"></script>
 </head>
@@ -97,16 +97,16 @@
                     </p>
                     
                   	<p> 
-		   		    	<center><code>f(</code><input type='text' id='nameField' value = 'type x values here' size=3><code>)=</code> <span id='nameDisplay'>?</span></center>		      
+		   		    	<center><code>f(</code><input type='text' id='nameField' value = 'type x values here' size='3'/><code>)=</code> <span id='nameDisplay'>?</span></center>		      
 		    		</p>
 		    		
-                	<div class = graphie id="grid">
+                	<div class = "graphie" id="grid">
                 	graphInit({
                         range: 12,
                         scale: 16,
                         labelStep: 1,
                         gridOpacity: 0,
-                        axisArrows: "<->"
+                      
                     });
                     
                      plot(function( x ) {
@@ -121,7 +121,7 @@
                     (function(){
   					updateNameDisplay = function() {
   	 		   	    var input = parseFloat(this.value)
-  	 		   	    if (input !== LIMITX && !isNaN(input)){
+  	 		   	    if (input !== LIMITX &amp;&amp; !isNaN(input)){
       					$('#nameDisplay').text( f1(input));
   						<div class="graphie" data-update="grid">
                             ellipse( [input,f1(input)], 1/4, {
@@ -149,7 +149,7 @@
                     <p>
                         <code>\displaystyle\lim_{x \to <var>LIMITX</var>^{-}}f(x)</code>: 
                         <span class="sol"  data-type="text"><var>leftSol</var></span>
-                        <br>
+                        <br/>
                         <code>\displaystyle\lim_{x \to <var>LIMITX</var>^{+}}f(x)</code>: 
                         <span class="sol"  data-type="text"><var>rightSol</var></span>
                     </p>
@@ -216,16 +216,16 @@
                     </p>
                     
                   	<p> 
-		   		    	<center><code>f(</code><input type='text' id='nameField' value = 'type x values here' size=3><code>)=</code> <span id='nameDisplay'>?</span></center>		      
+		   		    	<center><code>f(</code><input type='text' id='nameField' value = 'type x values here' size='3'/><code>)=</code> <span id='nameDisplay'>?</span></center>		      
 		    		</p>
 		    		
-                	<div class = graphie id="grid">
+                	<div class = "graphie" id="grid">
                 	graphInit({
                         range: 12,
                         scale: 16,
                         labelStep: 1,
                         gridOpacity: 0,
-                        axisArrows: "<->"
+                       
                     });
                     
                      plot(function( x ) {
@@ -240,7 +240,7 @@
                     (function(){
   					updateNameDisplay = function() {
   	 		   	    var input = parseFloat(this.value)
-  	 		   	    if (input !== LIMITX && !isNaN(input)){
+  	 		   	    if (input !== LIMITX &amp;&amp; !isNaN(input)){
       					$('#nameDisplay').text( f2(input));
   						<div class="graphie" data-update="grid">
                             ellipse( [input,f2(input)], 1/4, {
@@ -268,9 +268,9 @@
                     <p>
                         <code>\displaystyle\lim_{x \to <var>LIMITX</var>^{-}}f(x)</code>: 
                         <span class="sol"  data-type="text"><var>leftSol</var></span>
-                        <br>
+                        <br/>
                         <code>\displaystyle\lim_{x \to <var>LIMITX</var>^{+}}f(x)</code>: 
-                        <span class="sol" data-inexact data-max-error="0.001" data-type="decimal"><var>g(LIMITX)</var></span>
+                        <span class="sol" data-inexact="data-inexact" data-max-error="0.001" data-type="decimal"><var>g(LIMITX)</var></span>
                     </p>
 
                 </div>
@@ -334,16 +334,16 @@
                     </p>
                     
                   	<p> 
-		   		    	<center><code>f(</code><input type='text' id='nameField' value = 'type x values here' size=3><code>)=</code> <span id='nameDisplay'>?</span></center>		      
+		   		    	<center><code>f(</code><input type='text' id='nameField' value = 'type x values here' size='3'/><code>)=</code> <span id='nameDisplay'>?</span></center>		      
 		    		</p>
 		    		
-                	<div class = graphie id="grid">
+                	<div class = "graphie" id="grid">
                 	graphInit({
                         range: 12,
                         scale: 16,
                         labelStep: 1,
                         gridOpacity: 0,
-                        axisArrows: "<->"
+                       
                     });
                     
                      plot(function( x ) {
@@ -364,7 +364,7 @@
                     (function(){
   					updateNameDisplay = function() {
   	 		   	    var input = parseFloat(this.value)
-  	 		   	    if (input !== LIMITX && !isNaN(input)){
+  	 		   	    if (input !== LIMITX &amp;&amp; !isNaN(input)){
       					$('#nameDisplay').text( f3(input));
   						<div class="graphie" data-update="grid">
                             ellipse( [input,f3(input)], 1/4, {
@@ -391,8 +391,8 @@
 
                     <p>
                         <code>\displaystyle\lim_{x \to <var>LIMITX</var>^{-}}f(x)</code>: 
-                        <span class="sol"  data-inexact data-max-error="0.001" data-type="decimal"><var>g(LIMITX)</var></span>
-                        <br>
+                        <span class="sol"  data-inexact="data-inexact" data-max-error="0.001" data-type="decimal"><var>g(LIMITX)</var></span>
+                        <br/>
                         <code>\displaystyle\lim_{x \to <var>LIMITX</var>^{+}}f(x)</code>: 
                         <span class="sol"  data-type="text"><var>rightSol</var></span>
                     </p>

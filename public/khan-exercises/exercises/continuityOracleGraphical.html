@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html data-require="math polynomials graphie word-problems steveMath8">
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <title>Understanding Continuity Numerically With Graphical Assistance</title>
     <script src="../khan-exercise.js"></script>
 </head>
 <body>
     <div class="exercise">
-        <div class="vars" data-ensure="JUMP+f(LIMITX)<10 && Math.abs(ANSWER-notANSWER)>1">
+        <div class="vars" data-ensure="JUMP+f(LIMITX)&lt;10 &amp;&amp; Math.abs(ANSWER-notANSWER)&gt;1">
 	
 	    	
 	    	<var id="JUMP">randRangeNonZero(0,3)</var>
@@ -48,15 +48,15 @@
 		    			Try to understand how the two perspectives relate to each other
 		    		</p>
 		   		    <p> 
-		   		    	<center><code>f(</code><input type='text' id='nameField' value = 'type x values here' size=3><code>)=</code> <span id='nameDisplay'>?</span></center>		      
+		   		    	<center><code>f(</code><input type='text' id='nameField' value = 'type x values here' size='3'/><code>)=</code> <span id='nameDisplay'>?</span></center>		      
 		    		</p>
 		    		
-                	<div class = graphie id="grid">
+                	<div class = "graphie" id="grid">
                 	graphInit({
                         range: 10,
                         scale: 20,
                         tickStep: 1,
-                        axisArrows: "<->"
+                        
                     });
                     
                     plot(function( x ) {
@@ -157,15 +157,15 @@
 		    			Try to understand how the two perspectives relate to each other
 		    		</p>
 		   		    <p> 
-		   		    	<center><code>f(</code><input type='text' id='nameField' value = 'type x values here' size=3><code>)=</code> <span id='nameDisplay'>?</span></center>		      
+		   		    	<center><code>f(</code><input type='text' id='nameField' value = 'type x values here' size='3'/><code>)=</code> <span id='nameDisplay'>?</span></center>		      
 		    		</p>
 		    		
-                	<div class = graphie id="grid">
+                	<div class = "graphie" id="grid">
                 	graphInit({
                         range: 10,
                         scale: 20,
                         tickStep: 1,
-                        axisArrows: "<->"
+                        
                     });
                     
                     plot(function( x ) {
@@ -324,15 +324,15 @@
 		    			Try to understand how the two perspectives relate to each other
 		    		</p>
 		   		    <p> 
-		   		    	<center><code>f(</code><input type='text' id='nameField' value = 'type x values here' size=3><code>)=</code> <span id='nameDisplay'>?</span></center>		      
+		   		    	<center><code>f(</code><input type='text' id='nameField' value = 'type x values here' size='3'/><code>)=</code> <span id='nameDisplay'>?</span></center>		      
 		    		</p>
 		    		
-                	<div class = graphie id="grid">
+                	<div class = "graphie" id="grid">
                 	graphInit({
                         range: 10,
                         scale: 20,
                         tickStep: 1,
-                        axisArrows: "<->"
+                        
                     });
                     
                     plot(function( x ) {

@@ -1038,8 +1038,8 @@ Theorem~\ref{theorem:squeeze}, $\lim_{x \to 0}\frac{\sin(x)}{x} = 1$.
 \end{answer}\end{exercise}
 
 \begin{exercise} $\lim _{x\to 1 } \begin{cases}
-x-5 & x\ne 1, \\
-7 & x=1. \end{cases}$
+x-5 & \text{if $x\ne 1$}, \\
+7 & \text{if $x=1$}. \end{cases}$
 \begin{answer} $-4$
 \end{answer}\end{exercise}
 
@@ -1266,10 +1266,10 @@ Find the vertical asymptotes of
 \[
 f(x) = \frac{x^2-x-6}{x+4}.
 \]
-\end{exercise}
 \begin{answer}
-  $x = -4$.
+  $x = -4$
 \end{answer}
+\end{exercise}
 \end{exercises}
 
 
@@ -1466,39 +1466,63 @@ $\lim_{x\to\infty}\ln(x)=\infty$.
 
 \begin{exercises}
 
-\noindent Compute the limits. If a limit does not exist, explain why.
+\noindent Compute the limits.
 \twocol
 \begin{exercise}
 $\lim_{x\to \infty} \frac{1}{x}$
+\begin{answer}
+$0$
+\end{answer}
 \end{exercise}
 
 \begin{exercise}
 $\lim_{x\to \infty} \frac{-x}{\sqrt{4+x^2}}$
+\begin{answer}
+$-1$
+\end{answer}
 \end{exercise}
 
 \begin{exercise}
 $\lim_{x\to \infty} \frac{2x^2-x+1}{4x^2-3x-1}$
+\begin{answer}
+$\frac{1}{2}$
+\end{answer}
 \end{exercise}
 
 \begin{exercise}
 $\lim_{x\to -\infty} \frac{x^3-4}{3x^2+4x-1}$
+\begin{answer}
+$-\infty$
+\end{answer}
 \end{exercise}
 
 
 \begin{exercise}
 $\lim_{x\to \infty} \left(\frac{4}{x}+\pi\right)$
+\begin{answer}
+$\pi$
+\end{answer}
 \end{exercise}
 
 \begin{exercise}
 $\lim_{x\to \infty} \frac{\cos(x)}{\ln(x)}$
+\begin{answer}
+$0$
+\end{answer}
 \end{exercise}
 
 \begin{exercise}
 $\lim_{x\to \infty} \frac{\sin\left(x^7\right)}{\sqrt{x}}$
+\begin{answer}
+$0$
+\end{answer}
 \end{exercise}
 
 \begin{exercise}
 $\lim_{x\to \infty} \left(17 + \frac{32}{x} - \frac{\left(\sin(x/2)\right)^2}{x^3}\right)$
+\begin{answer}
+$17$
+\end{answer}
 \end{exercise}
 
 \endtwocol
@@ -1512,17 +1536,25 @@ p(t) = \frac{1000}{5+ 2e^{-0.1 t}}.
 Approximately how many feral cats are on campus 10 years from now? 50
 years from now? 100 years from now? 1000 years from now? What do you
 notice about the prediction---is this realistic?
+\begin{answer}
+After 10 years, $\approx 174$ cats; after 50 years, $\approx 199$
+cats; after 100 years, $\approx 200$ cats; after 1000 years, $\approx
+200$ cats; in the sense that the population of cats cannot grow
+indefinitely this is somewhat realistic.
+\end{answer}
 \end{exercise}
 
 \begin{exercise}
 The amplitude of an oscillating spring is given by
 \[
-a(t) = \frac{2t + \sin(t)}{t}.
+a(t) = \frac{\sin(t)}{t}.
 \]
-What happens to the oscillation over a long period of time?
+What happens to the amplitude of the oscillation over a long period of
+time?
+\begin{answer}
+The amplitude goes to zero. 
+\end{answer}
 \end{exercise}
-
-
 \end{exercises}
 
 
@@ -1741,6 +1773,9 @@ f(x) = \sqrt{x-4}
 \]
 Is $f(x)$ continuous at the point $x=4$?  Is $f(x)$ a continuous
 function on $\R$?
+\begin{answer}
+  $f(x)$ is continuous at $x=4$ but it is not continuous on $\R$.
+\end{answer}
 \end{exercise}
 
 
@@ -1751,6 +1786,9 @@ f(x) = \frac{1}{x+3}
 \]
 Is $f(x)$ continuous at the point $x=3$?  Is $f(x)$ a continuous
 function on $\R$?
+\begin{answer}
+  $f(x)$ is continuous at $x=4$ but it is not continuous on $\R$.
+\end{answer}
 \end{exercise}
 
 \begin{exercise} 
@@ -1758,12 +1796,15 @@ Consider the function
 \[
 f(x) = 
 \begin{cases} 
-2x - 3, & \text{if $x<1$,} \\ 
-0,      & \text{if $x\geq 1$.}
+2x - 3 & \text{if $x<1$,} \\ 
+0      & \text{if $x\geq 1$.}
 \end{cases}
 \]
-Is $f(x)$ continuous at the point $x=0$?  Is $f(x)$ a continuous
+Is $f(x)$ continuous at the point $x=1$?  Is $f(x)$ a continuous
 function on $\R$?
+\begin{answer}
+  $f(x)$ is not continuous at $x=1$ and it is not continuous on $\R$.
+\end{answer}
 \end{exercise}
 
 
@@ -1773,12 +1814,15 @@ Consider the function
 \[
 f(x) = 
 \begin{cases} 
-\frac{x^2 + 10x + 25}{x-5}, & \text{if $x\ne 5$,} \\ 
-10,      & \text{if $x= 5$.}
+\frac{x^2 + 10x + 25}{x-5} & \text{if $x\ne 5$,} \\ 
+10      & \text{if $x= 5$.}
 \end{cases}
 \]
 Is $f(x)$ continuous at the point $x=5$?  Is $f(x)$ a continuous
 function on $\R$?
+\begin{answer}
+  $f(x)$ is not continuous at $x=5$ and it is not continuous on $\R$.
+\end{answer}
 \end{exercise}
 
 
@@ -1787,12 +1831,15 @@ Consider the function
 \[
 f(x) = 
 \begin{cases} 
-\frac{x^2 + 10x + 25}{x+5}, & \text{if $x\ne -5$,} \\ 
-0,      & \text{if $x= -5$.}
+\frac{x^2 + 10x + 25}{x+5} & \text{if $x\ne -5$,} \\ 
+0      & \text{if $x= -5$.}
 \end{cases}
 \]
 Is $f(x)$ continuous at the point $x=-5$?  Is $f(x)$ a continuous
 function on $\R$?
+\begin{answer}
+  $f(x)$ is continuous at $x=-5$ and it is also continuous on $\R$.
+\end{answer}
 \end{exercise}
 
 
@@ -1800,12 +1847,18 @@ function on $\R$?
 \begin{exercise} 
 Determine the interval(s) on which the function $f(x) = x^7+3x^5-2x +
 4$ is continuous.
+\begin{answer}
+  $\R$
+\end{answer}
 \end{exercise}
 
 
 
 \begin{exercise}
 Determine the interval(s) on which the function $f(x) = \frac{x^2-2x+1}{x+4}$ is continuous. 
+\begin{answer}
+  $(-\infty,-4)\cup(-4,\infty)$
+\end{answer}
 \end{exercise}
 
 
@@ -1813,14 +1866,23 @@ Determine the interval(s) on which the function $f(x) = \frac{x^2-2x+1}{x+4}$ is
 \begin{exercise}
 Determine the interval(s) on which the function $f(x) = \frac{1}{x^2
   -9}$ is continuous.
+\begin{answer}
+  $(-\infty,-3)\cup(-3,3)\cup(3,\infty)$
+\end{answer}
 \end{exercise}
 
 
 \begin{exercise}
-Approximate a root of $f=x^3-4x^2+2x+2$ to one decimal place.
+Approximate a root of $f(x)=x^3-4x^2+2x+2$ to two decimal places.
+\begin{answer}
+$x=-0.48$, $x=1.31$, or $x=3.17$
+\end{answer}
 \end{exercise}
 
 \begin{exercise}
-Approximate a root of $f=x^4+x^3-5x+1$ to one decimal place.
+Approximate a root of $f(x)=x^4+x^3-5x+1$ to two decimal places.
+\begin{answer}
+$x=0.20$, or $x=1.35$
+\end{answer}
 \end{exercise}
 \end{exercises}
