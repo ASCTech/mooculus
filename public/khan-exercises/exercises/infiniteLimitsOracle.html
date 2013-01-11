@@ -1,7 +1,7 @@
  <!DOCTYPE html>
 <html data-require="math polynomials graphie word-problems steveMath8">
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <title>Understanding Infinite Limits Numerically</title>
     <script src="../khan-exercise.js"></script>
 </head>
@@ -98,10 +98,10 @@
                     </p>
                     
                   	<p> 
-		   		    	<center><code>f(</code><input type='text' id='nameField' size=3><code>)=</code> <span id='nameDisplay'>?</span></center>		      
+		   		    	<center><code>f(</code><input type='text' id='nameField' value = 'type x values here' size='3'/><code>)=</code> <span id='nameDisplay'>?</span></center>		      
 		    		</p>
 		    		
-                	<div class = graphie id="grid">
+                	<div class = "graphie" id="grid">
                 	
                     
               
@@ -116,6 +116,10 @@
   						}
   					else {$('#nameDisplay').text("?")};
   					};
+  					var clearTextField = function(){
+  						$('#nameField').val("");
+  						};
+  					$('#nameField').click(clearTextField);
   					$('#nameField').keydown( updateNameDisplay );
   					$('#nameField').keyup( updateNameDisplay );
   					$('#nameField').keypress( updateNameDisplay );
@@ -129,7 +133,7 @@
                     <p>
                         <code>\displaystyle\lim_{x \to <var>LIMITX</var>^{-}}f(x)</code>: 
                         <span class="sol"  data-type="text"><var>leftSol</var></span>
-                        <br>
+                        <br/>
                         <code>\displaystyle\lim_{x \to <var>LIMITX</var>^{+}}f(x)</code>: 
                         <span class="sol"  data-type="text"><var>rightSol</var></span>
                     </p>
@@ -150,9 +154,9 @@
                 	</p>
                 	<p>
                 		<code>f(<var>LIMITX-.1</var>) = <var>f1(LIMITX-.1)</var></code>
-                		<br>
+                		<br/>
                 		<code>f(<var>LIMITX-.001</var>) = <var>f1(LIMITX-.001)</var></code>
-                		<br>
+                		<br/>
                 		<code>f(<var>LIMITX-.000001</var>) = <var>f1(LIMITX-.000001)</var></code>
                 	</p>
                 	<p>
@@ -170,9 +174,9 @@
                 	</p>
                 	<p>
                 		<code>f(<var>LIMITX+.1</var>) = <var>f1(LIMITX+.1)</var></code>
-                		<br>
+                		<br/>
                 		<code>f(<var>LIMITX+.001</var>) = <var>f1(LIMITX+.001)</var></code>
-                		<br>
+                		<br/>
                 		<code>f(<var>LIMITX+.000001</var>) = <var>f1(LIMITX+.000001)</var></code>
                 	</p>
                 	<p>
@@ -181,9 +185,9 @@
                 	</p>
                 	<p>
                 		Final answer:
-                		<br><br>
+                		<br/><br/>
                 		<code>\displaystyle\lim_{x \to <var>LIMITX</var>^{-}}f(x) = <var>leftSolTex</var></code>
-                		<br>
+                		<br/>
                 		<code>\displaystyle\lim_{x \to <var>LIMITX</var>^{+}}f(x) = <var>rightSolTex</var></code>
                 	</p>
                 	
@@ -202,10 +206,10 @@
                     </p>
                     
                   	<p> 
-		   		    	<center><code>f(</code><input type='text' id='nameField' size=3><code>)=</code> <span id='nameDisplay'>?</span></center>		      
+		   		    	<center><code>f(</code><input type='text' id='nameField' value = 'type x values here' size='3'/><code>)=</code> <span id='nameDisplay'>?</span></center>		      
 		    		</p>
 		    		
-                	<div class = graphie id="grid">
+                	<div class = "graphie" id="grid">
                 	
                     
                     (function(){
@@ -217,6 +221,10 @@
   						}
   					else {$('#nameDisplay').text("?")};
   					};
+  					var clearTextField = function(){
+  						$('#nameField').val("");
+  						};
+  					$('#nameField').click(clearTextField);
   					$('#nameField').keydown( updateNameDisplay );
   					$('#nameField').keyup( updateNameDisplay );
   					$('#nameField').keypress( updateNameDisplay );
@@ -230,7 +238,7 @@
                     <p>
                         <code>\displaystyle\lim_{x \to <var>LIMITX</var>^{-}}f(x)</code>: 
                         <span class="sol"  data-type="text"><var>leftSol</var></span>
-                        <br>
+                        <br/>
                         <code>\displaystyle\lim_{x \to <var>LIMITX</var>^{+}}f(x)</code>: 
                         <span class="sol" data-inexact data-max-error="0.001" data-type="decimal"><var>g(LIMITX)</var></span>
                     </p>
@@ -251,9 +259,9 @@
                 	</p>
                 	<p>
                 		<code>f(<var>LIMITX-.1</var>) = <var>f2(LIMITX-.1)</var></code>
-                		<br>
+                		<br/>
                 		<code>f(<var>LIMITX-.001</var>) = <var>f2(LIMITX-.001)</var></code>
-                		<br>
+                		<br/>
                 		<code>f(<var>LIMITX-.000001</var>) = <var>f2(LIMITX-.000001)</var></code>
                 	</p>
                 	<p>
@@ -271,9 +279,9 @@
                 	</p>
                 	<p>
                 		<code>f(<var>LIMITX+.1</var>) = <var>f2(LIMITX+.1)</var></code>
-                		<br>
+                		<br/>
                 		<code>f(<var>LIMITX+.001</var>) = <var>f2(LIMITX+.001)</var></code>
-                		<br>
+                		<br/>
                 		<code>f(<var>LIMITX+.000001</var>) = <var>f2(LIMITX+.000001)</var></code>
                 	</p>
                 	<p>
@@ -282,9 +290,9 @@
                 	</p>
                 	<p>
                 		Final answer:
-                		<br><br>
+                		<br/><br/>
                 		<code>\displaystyle\lim_{x \to <var>LIMITX</var>^{-}}f(x) = <var>leftSolTex</var></code>
-                		<br>
+                		<br/>
                 		<code>\displaystyle\lim_{x \to <var>LIMITX</var>^{+}}f(x) = <var>g(LIMITX)</var></code>
                 	</p>
                 </div>
@@ -302,10 +310,10 @@
                     </p>
                     
                   	<p> 
-		   		    	<center><code>f(</code><input type='text' id='nameField' size=3><code>)=</code> <span id='nameDisplay'>?</span></center>		      
+		   		    	<center><code>f(</code><input type='text' id='nameField' value = 'type x values here' size='3'/><code>)=</code> <span id='nameDisplay'>?</span></center>		      
 		    		</p>
 		    		
-                	<div class = graphie id="grid">
+                	<div class = "graphie" id="grid">
                 	
                     
                     (function(){
@@ -317,6 +325,10 @@
   						}
   					else {$('#nameDisplay').text("?")};
   					};
+  					var clearTextField = function(){
+  						$('#nameField').val("");
+  						};
+  					$('#nameField').click(clearTextField);
   					$('#nameField').keydown( updateNameDisplay );
   					$('#nameField').keyup( updateNameDisplay );
   					$('#nameField').keypress( updateNameDisplay );
@@ -330,7 +342,7 @@
                     <p>
                         <code>\displaystyle\lim_{x \to <var>LIMITX</var>^{-}}f(x)</code>: 
                         <span class="sol"  data-inexact data-max-error="0.001" data-type="decimal"><var>g(LIMITX)</var></span>
-                        <br>
+                        <br/>
                         <code>\displaystyle\lim_{x \to <var>LIMITX</var>^{+}}f(x)</code>: 
                         <span class="sol"  data-type="text"><var>rightSol</var></span>
                     </p>
@@ -351,9 +363,9 @@
                 	</p>
                 	<p>
                 		<code>f(<var>LIMITX-.1</var>) = <var>f3(LIMITX-.1)</var></code>
-                		<br>
+                		<br/>
                 		<code>f(<var>LIMITX-.001</var>) = <var>f3(LIMITX-.001)</var></code>
-                		<br>
+                		<br/>
                 		<code>f(<var>LIMITX-.000001</var>) = <var>f3(LIMITX-.000001)</var></code>
                 	</p>
                 	<p>
@@ -371,9 +383,9 @@
                 	</p>
                 	<p>
                 		<code>f(<var>LIMITX+.1</var>) = <var>f3(LIMITX+.1)</var></code>
-                		<br>
+                		<br/>
                 		<code>f(<var>LIMITX+.001</var>) = <var>f3(LIMITX+.001)</var></code>
-                		<br>
+                		<br/>
                 		<code>f(<var>LIMITX+.000001</var>) = <var>f3(LIMITX+.000001)</var></code>
                 	</p>
                 	<p>
@@ -382,9 +394,9 @@
                 	</p>
                 	<p>
                 		Final answer:
-                		<br><br>
+                		<br/><br/>
                 		<code>\displaystyle\lim_{x \to <var>LIMITX</var>^{-}}f(x) = <var>g(LIMITX)</var></code>
-                		<br>
+                		<br/>
                 		<code>\displaystyle\lim_{x \to <var>LIMITX</var>^{+}}f(x) = <var>rightSolTex</var></code>
                 	</p>
                 </div>

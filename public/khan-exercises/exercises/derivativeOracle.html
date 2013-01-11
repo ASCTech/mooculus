@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html data-require="math graphie polynomials calculus word-problems">
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <title>Numerically approximating derivatives</title>
     <script src="../khan-exercise.js"></script>
     <style type="text/css">
@@ -24,7 +24,7 @@
         </div>
 
         <div class="problems">
-            <div id="unrestricted-domain" data-weight="2">
+            <div id="unrestricted-domain">
 	            <p class="problem">
 	            		Consider a function <code>f(x)</code>. While
                     	you don't know the formula for <code>f(x)</code>
@@ -35,18 +35,26 @@
                 	
                     	Given that <code>f'(<var>X</var>)</code> is an integer, 
                     	approximate <code>f'(<var>X</var>)</code>.
-                    	<br><br>
+                    	<br/><br/>
                     	
 		   		    <p> 
-		   		    	<center><code>f(</code><input type='text' id='nameField' size=3><code>)=</code> <span id='nameDisplay'>?</span></center>		      
+		   		    	<center><code>f(</code><input type='text' id='nameField' value = 'type x values here' size='3'/><code>)=</code> <span id='nameDisplay'>?</span></center>		      
 		    		</p>
 		    		<font size="1">A calculator may be necessary</font>
-                	<div class = graphie>
+                	<div class = "graphie">
                 	(function(){
   					updateNameDisplay = function() {
   	 		   	    var input = parseFloat(this.value) 	
-      				$('#nameDisplay').text( FNX(input) );
+      				if (!isNaN(input)){
+      					$('#nameDisplay').text( FNX(input) );
+      					}
+      				 else {$('#nameDisplay').text("?")};
+  	    
   					};
+  					var clearTextField = function(){
+  						$('#nameField').val("");
+  						};
+  					$('#nameField').click(clearTextField);
   					$('#nameField').keydown( updateNameDisplay );
   					$('#nameField').keyup( updateNameDisplay );
   					$('#nameField').keypress( updateNameDisplay );
@@ -64,33 +72,33 @@
             		<p>
             			<code>
             			\begin{align}
-            			\frac{f(<var>X</var> + 0.1)-f(<var>X</var>)}{0.1} &= \frac{f(<var>X+.1</var>)-f(<var>X</var>)}{0.1}\\ 
+            			\frac{f(<var>X</var> + 0.1)-f(<var>X</var>)}{0.1} &amp;= \frac{f(<var>X+.1</var>)-f(<var>X</var>)}{0.1}\\ 
             			
-            			&= \frac{<var>FNX(X+.1)</var>-<var>FNX(X)</var>}{0.1}\\
-            			&= \frac{<var>FNX(X+.1)-FNX(X)</var>}{0.1}\\
-            			&= <var>10*(FNX(X+.1)-FNX(X))</var>
+            			&amp;= \frac{<var>FNX(X+.1)</var>-<var>FNX(X)</var>}{0.1}\\
+            			&amp;= \frac{<var>FNX(X+.1)-FNX(X)</var>}{0.1}\\
+            			&amp;= <var>10*(FNX(X+.1)-FNX(X))</var>
             			\end{align}
             			</code>
             		</p>
             		<p>
             			<code>
             			\begin{align}
-            			\frac{f(<var>X</var> + 0.001)-f(<var>X</var>)}{0.001} &= \frac{f(<var>X+.001</var>)-f(<var>X</var>)}{0.001}\\ 
+            			\frac{f(<var>X</var> + 0.001)-f(<var>X</var>)}{0.001} &amp;= \frac{f(<var>X+.001</var>)-f(<var>X</var>)}{0.001}\\ 
             			
-            			&= \frac{<var>FNX(X+.001)</var>-<var>FNX(X)</var>}{0.001}\\
-            			&= \frac{<var>FNX(X+.001)-FNX(X)</var>}{0.001}\\
-            			&= <var>1000*(FNX(X+.001)-FNX(X))</var>
+            			&amp;= \frac{<var>FNX(X+.001)</var>-<var>FNX(X)</var>}{0.001}\\
+            			&amp;= \frac{<var>FNX(X+.001)-FNX(X)</var>}{0.001}\\
+            			&amp;= <var>1000*(FNX(X+.001)-FNX(X))</var>
             			\end{align}
             			</code>
             		</p>
             		<p>
             			<code>
             			\begin{align}
-            			\frac{f(<var>X</var> + 0.000001)-f(<var>X</var>)}{0.000001} &= \frac{f(<var>X+.000001</var>)-f(<var>X</var>)}{0.000001}\\ 
+            			\frac{f(<var>X</var> + 0.000001)-f(<var>X</var>)}{0.000001} &amp;= \frac{f(<var>X+.000001</var>)-f(<var>X</var>)}{0.000001}\\ 
             			
-            			&= \frac{<var>FNX(X+.000001)</var>-<var>FNX(X)</var>}{0.000001}\\
-            			&= \frac{<var>FNX(X+.000001)-FNX(X)</var>}{0.000001}\\
-            			&= <var>1000000*(FNX(X+.000001)-FNX(X))</var>
+            			&amp;= \frac{<var>FNX(X+.000001)</var>-<var>FNX(X)</var>}{0.000001}\\
+            			&amp;= \frac{<var>FNX(X+.000001)-FNX(X)</var>}{0.000001}\\
+            			&amp;= <var>1000000*(FNX(X+.000001)-FNX(X))</var>
             			\end{align}
             			</code>
             		</p>

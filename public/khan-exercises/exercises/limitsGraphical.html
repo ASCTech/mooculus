@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html data-require="math polynomials graphie word-problems steveMath8">
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
    	<title>Approximating Limits Graphically</title>
    	<script src="../khan-exercise.js"></script>
 </head>
 <body>
     <div class="exercise">
-        <div class="vars" data-ensure="JUMP+f(LIMITX)<10">
+        <div class="vars" data-ensure="JUMP+f(LIMITX)&lt;10">
 	
 	    	
 	    	<var id="JUMP">randRangeNonZero(0,5)</var>
@@ -43,12 +43,12 @@
 				
 				<p>Note:  If the limit does not exist, write "DNE"</p>
             	<p>
-            	                	<div class = graphie id="grid">
+            	                	<div class = "graphie" id="grid">
                 	graphInit({
                         range: 10,
                         scale: 20,
                         tickStep: 1,
-                        axisArrows: "<->"
+                       
                     });
                     
                     plot(function( x ) {
@@ -95,15 +95,15 @@
        
                 <p class="solution" data-type="multiple">
                         <code>\displaystyle\lim_{x \to <var>LIMITX</var>^{-}}f(x)</code>: 
-                        <span class="sol" data-inexact data-max-error="0.5" data-type="decimal"><var>ANSWER</var></span>
-                        <br>
-                        <br>
+                        <span class="sol" data-inexact="data-inexact" data-max-error="0.5" data-type="decimal"><var>ANSWER</var></span>
+                        <br/>
+                        <br/>
                         <code>\displaystyle\lim_{x \to <var>LIMITX</var>^{+}}f(x)</code>: 
-                        <span class="sol" data-inexact data-max-error="0.5" data-type="decimal"><var>ANSWER</var></span>
-						<br>
-						<br>
+                        <span class="sol" data-inexact="data-inexact" data-max-error="0.5" data-type="decimal"><var>ANSWER</var></span>
+						<br/>
+						<br/>
 						<code>\displaystyle\lim_{x \to <var>LIMITX</var>}f(x)</code>: 
-                        <span class="sol" data-inexact data-max-error="0.5" data-type="decimal"><var>ANSWER</var></span>
+                        <span class="sol" data-inexact="data-inexact" data-max-error="0.5" data-type="decimal"><var>ANSWER</var></span>
     		
                 </p>
 
@@ -235,12 +235,12 @@
 				
 				<p>Note:  If the limit does not exist, write "DNE"</p>
                 <p>
-                	<div class = graphie id="grid">
+                	<div class = "graphie" id="grid">
                 	graphInit({
                         range: 10,
                         scale: 20,
                         tickStep: 1,
-                        axisArrows: "<->"
+
                     });
                     
                     plot(function( x ) {
@@ -290,13 +290,13 @@
 
                     <p>
                         <code>\displaystyle\lim_{x \to <var>LIMITX</var>^{-}}f(x)</code>: 
-                        <span class="sol" data-inexact data-max-error="0.5" data-type="decimal"><var>ANSWER</var></span>
-                        <br>
-                        <br>
+                        <span class="sol" data-inexact="data-inexact" data-max-error="0.5" data-type="decimal"><var>ANSWER</var></span>
+                        <br/>
+                        <br/>
                         <code>\displaystyle\lim_{x \to <var>LIMITX</var>^{+}}f(x)</code>: 
-                        <span class="sol" data-inexact data-max-error="0.5" data-type="decimal"><var>ANSWER+JUMP</var></span>
-						<br>
-					    <br>
+                        <span class="sol" data-inexact="data-inexact" data-max-error="0.5" data-type="decimal"><var>ANSWER+JUMP</var></span>
+						<br/>
+					    <br/>
 						<code>\displaystyle\lim_{x \to <var>LIMITX</var>}f(x)</code>: 
                         <span class="sol"  data-type="text">DNE</span>
                     </p>
@@ -451,7 +451,7 @@
      
         </div>
 
-
+	</div>
 
 </body>
 </html>

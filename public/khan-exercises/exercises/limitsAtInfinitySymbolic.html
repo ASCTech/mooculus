@@ -1,0 +1,3172 @@
+<!DOCTYPE html>
+<html data-require="math word-problems graphie polynomials steveMath8">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>How to find limits at infinity</title>
+    <script src="../khan-exercise.js"></script>
+</head>
+<body>
+    <div class="exercise">
+       
+
+        <div class="problems">
+            <div id="linear-over-linear">
+            
+            	 <div class="vars">
+        			<var id = "A">randRangeNonZero(-10,10)</var>
+        			<var id = "B">randRangeNonZero(-10,10)</var>
+        			<var id = "C">randRangeNonZero(-10,10)</var>
+        			<var id = "D">randRangeNonZero(-10,10)</var>
+                </div>
+                <p class="problem">
+                
+                	A fully completed limit computation is presented below.  Carefully check each step of the calculation, and either say which
+                	limit law justifies the step, or that a mistake has been made.  
+                
+                	<br/><br/>
+                
+                	<code>	
+                		\displaystyle\lim_{x \to \infty}\dfrac{<var>A</var>x+<var>B</var>}{<var>C</var>x+<var>D</var>}
+                		
+                	</code>
+                	
+                	<br/><br/>
+					
+					<code>\hphantom{\displaystyle\lim_{x \to \infty}\dfrac{<var>A</var>x+<var>B</var>}{<var>C</var>x+<var>D</var>} \cdot \dfrac{\dfrac{1}{x}}{\dfrac{1}{x}}}</code>
+					
+					<select id="0">
+                		<option value="arithmetic">Arithmetic</option>
+						<option value="constant">Limit of Constant Function</option>
+ 				   		<option value="identity">Limit of Identity Function</option>
+ 				   		<option value="sum">Sum Law</option>
+  						<option value="product">Product Law</option>
+  						<option value="quotient">Quotient Law</option>
+  						<option value="power">Power Law</option>
+  						<option value="composition">Composition Law</option>
+  						<option value="equivalent">Functions agree for large values of x</option>
+  						<option value="error">An error was made</option>
+  						<option value="special">Known value of a special limit</option>
+					</select>  
+					 <span id="mark0"></span>
+					
+                	<br/><br/>
+                	
+                	<code>
+                	 
+                		=\displaystyle\lim_{x \to \infty}\dfrac{<var>A</var>x+<var>B</var>}{<var>C</var>x+<var>D</var>} \cdot \dfrac{\dfrac{1}{x}}{\dfrac{1}{x}}
+                	</code>
+                	
+                	<br/><br/>
+					
+					<code>\hphantom{\displaystyle\lim_{x \to \infty}\dfrac{<var>A</var>x+<var>B</var>}{<var>C</var>x+<var>D</var>} \cdot \dfrac{\dfrac{1}{x}}{\dfrac{1}{x}}}</code>
+					
+					<select id="1">
+                		<option value="arithmetic">Arithmetic</option>
+						<option value="constant">Limit of Constant Function</option>
+ 				   		<option value="identity">Limit of Identity Function</option>
+ 				   		<option value="sum">Sum Law</option>
+  						<option value="product">Product Law</option>
+  						<option value="quotient">Quotient Law</option>
+  						<option value="power">Power Law</option>
+  						<option value="composition">Composition Law</option>
+  						<option value="equivalent">Functions agree for large values of x</option>
+  						<option value="error">An error was made</option>
+  						<option value="special">Known value of a special limit</option>
+					</select>  
+					 <span id="mark1"></span>
+					
+                	<br/><br/>
+                	
+                	<code>
+                	 
+                		=\displaystyle\lim_{x \to \infty}\dfrac{<var>A</var>+\dfrac{<var>B</var>}{x}}{<var>C</var>+\dfrac{<var>D</var>}{x}} 
+                	</code>
+					
+					<br/><br/>
+					
+					<code>\hphantom{\displaystyle\lim_{x \to \infty}\dfrac{<var>A</var>x+<var>B</var>}{<var>C</var>x+<var>D</var>} \cdot \dfrac{\dfrac{1}{x}}{\dfrac{1}{x}}}</code>
+					
+					<select id="2">
+                		<option value="arithmetic">Arithmetic</option>
+						<option value="constant">Limit of Constant Function</option>
+ 				   		<option value="identity">Limit of Identity Function</option>
+ 				   		<option value="sum">Sum Law</option>
+  						<option value="product">Product Law</option>
+  						<option value="quotient">Quotient Law</option>
+  						<option value="power">Power Law</option>
+  						<option value="composition">Composition Law</option>
+  						<option value="equivalent">Functions agree for large values of x</option>
+  						<option value="error">An error was made</option>
+  						<option value="special">Known value of a special limit</option>
+					</select>  
+					 <span id="mark2"></span>
+					
+                	<br/><br/>
+                	
+                	<code>
+                	 
+                		=\dfrac{\displaystyle\lim_{x \to \infty}(<var>A</var>+\dfrac{<var>B</var>}{x})}{\displaystyle\lim_{x \to \infty}(<var>C</var>+\dfrac{<var>D</var>}{x})} 
+                	</code>
+                	
+                	<br/><br/>
+					
+					<code>\hphantom{\displaystyle\lim_{x \to \infty}\dfrac{<var>A</var>x+<var>B</var>}{<var>C</var>x+<var>D</var>} \cdot \dfrac{\dfrac{1}{x}}{\dfrac{1}{x}}}</code>
+					
+					<select id="3">
+                		<option value="arithmetic">Arithmetic</option>
+						<option value="constant">Limit of Constant Function</option>
+ 				   		<option value="identity">Limit of Identity Function</option>
+ 				   		<option value="sum">Sum Law</option>
+  						<option value="product">Product Law</option>
+  						<option value="quotient">Quotient Law</option>
+  						<option value="power">Power Law</option>
+  						<option value="composition">Composition Law</option>
+  						<option value="equivalent">Functions agree for large values of x</option>
+  						<option value="error">An error was made</option>
+  						<option value="special">Known value of a special limit</option>
+					</select>  
+					 <span id="mark3"></span>
+					
+                	<br/><br/>
+                	
+                	<code>
+                	 
+                		=\dfrac{\displaystyle\lim_{x \to \infty}(<var>A</var>)+\displaystyle\lim_{x \to \infty}(\dfrac{<var>B</var>}{x})}
+                		{\displaystyle\lim_{x \to \infty}(<var>C</var>)+\displaystyle\lim_{x \to \infty}(\dfrac{<var>D</var>}{x})} 
+                	</code>
+                	
+                	<br/><br/>
+					
+					<code>\hphantom{\displaystyle\lim_{x \to \infty}\dfrac{<var>A</var>x+<var>B</var>}{<var>C</var>x+<var>D</var>} \cdot \dfrac{\dfrac{1}{x}}{\dfrac{1}{x}}}</code>
+					
+					<select id="4">
+                		<option value="arithmetic">Arithmetic</option>
+						<option value="constant">Limit of Constant Function</option>
+ 				   		<option value="identity">Limit of Identity Function</option>
+ 				   		<option value="sum">Sum Law</option>
+  						<option value="product">Product Law</option>
+  						<option value="quotient">Quotient Law</option>
+  						<option value="power">Power Law</option>
+  						<option value="composition">Composition Law</option>
+  						<option value="equivalent">Functions agree for large values of x</option>
+  						<option value="error">An error was made</option>
+  						<option value="special">Known value of a special limit</option>
+					</select>  
+					 <span id="mark4"></span>
+					
+                	<br/><br/>
+                	
+                	<code>
+                	 
+                		=\dfrac{\displaystyle\lim_{x \to \infty}(<var>A</var>)+0}
+                		{\displaystyle\lim_{x \to \infty}(<var>C</var>)+0} 
+                	</code>
+                	
+                	<br/><br/>
+					
+					<code>\hphantom{\displaystyle\lim_{x \to \infty}\dfrac{<var>A</var>x+<var>B</var>}{<var>C</var>x+<var>D</var>} \cdot \dfrac{\dfrac{1}{x}}{\dfrac{1}{x}}}</code>
+					
+					<select id="5">
+                		<option value="arithmetic">Arithmetic</option>
+						<option value="constant">Limit of Constant Function</option>
+ 				   		<option value="identity">Limit of Identity Function</option>
+ 				   		<option value="sum">Sum Law</option>
+  						<option value="product">Product Law</option>
+  						<option value="quotient">Quotient Law</option>
+  						<option value="power">Power Law</option>
+  						<option value="composition">Composition Law</option>
+  						<option value="equivalent">Functions agree for large values of x</option>
+  						<option value="error">An error was made</option>
+  						<option value="special">Known value of a special limit</option>
+					</select>  
+					 <span id="mark5"></span>
+					
+                	<br/><br/>
+                	
+                	<code>
+                	 
+                		=\dfrac{<var>A</var>}{<var>C</var>} 
+                	</code>
+                	
+                	<div class="graphie">
+				$('#check-answer-button').click(function(){
+					if($('#0 :selected').val()=="equivalent"){
+						$('#mark0').css({ 'color': 'green', 'font-size': '150%' });
+						$('#mark0').text("&#x2713;")
+						}
+					else{
+						$('#mark0').css({ 'color': 'red', 'font-size': '150%' });
+						$('#mark0').text("&#x2717;")
+					
+					}
+					if($('#1 :selected').val()=="equivalent"){
+						$('#mark1').css({ 'color': 'green', 'font-size': '150%' });
+						$('#mark1').text("&#x2713;")
+						}
+					else{
+						$('#mark1').css({ 'color': 'red', 'font-size': '150%' });
+						$('#mark1').text("&#x2717;")
+					
+					}
+					if($('#2 :selected').val()=="quotient"){
+						$('#mark2').css({ 'color': 'green', 'font-size': '150%' });
+						$('#mark2').text("&#x2713;")
+						}
+					else{
+						$('#mark2').css({ 'color': 'red', 'font-size': '150%' });
+						$('#mark2').text("&#x2717;")
+					
+					}
+					if($('#3 :selected').val()=="sum"){
+						$('#mark3').css({ 'color': 'green', 'font-size': '150%' });
+						$('#mark3').text("&#x2713;")
+						}
+					else{
+						$('#mark3').css({ 'color': 'red', 'font-size': '150%' });
+						$('#mark3').text("&#x2717;")
+					
+					}
+					if($('#4 :selected').val()=="special"){
+						$('#mark4').css({ 'color': 'green', 'font-size': '150%' });
+						$('#mark4').text("&#x2713;")
+						}
+					else{
+						$('#mark4').css({ 'color': 'red', 'font-size': '150%' });
+						$('#mark4').text("&#x2717;")
+					
+					}
+					if($('#5 :selected').val()=="constant"){
+						$('#mark5').css({ 'color': 'green', 'font-size': '150%' });
+						$('#mark5').text("&#x2713;")
+						}
+					else{
+						$('#mark5').css({ 'color': 'red', 'font-size': '150%' });
+						$('#mark5').text("&#x2717;")
+					
+					}
+					
+					
+					
+				})
+			</div>
+					
+				</p>
+
+               <div class="solution" data-type="custom">
+
+                    <div class="guess">
+                    	[$('#0 :selected').val(),$('#1 :selected').val(),$('#2 :selected').val(),$('#3 :selected').val(),$('#4 :selected').val(),$('#5 :selected').val() ]
+                    </div>
+                    <div class="validator-function">
+                       return guess[0]=="equivalent" &amp;&amp; guess[1]=="equivalent" 
+                       &amp;&amp; guess[2]=="quotient" &amp;&amp; guess[3]=="sum"
+                       &amp;&amp; guess[4]=="special" &amp;&amp; guess[5]=="constant"
+                      
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div id="quadratic-over-quadratic">
+            
+            	 <div class="vars">
+        			<var id = "A">randRangeNonZero(-10,10)</var>
+        			<var id = "B">randRangeNonZero(-10,10)</var>
+        			<var id = "C">randRangeNonZero(-10,10)</var>
+        			<var id = "D">randRangeNonZero(-10,10)</var>
+        			<var id = "E">randRangeNonZero(-10,10)</var>
+        			<var id = "F">randRangeNonZero(-10,10)</var>
+                </div>
+                <p class="problem">
+                
+                	A fully completed limit computation is presented below.  Carefully check each step of the calculation, and either say which
+                	limit law justifies the step, or that a mistake has been made.  
+                
+                	<br/><br/>
+                
+                	<code>	
+                		\displaystyle\lim_{x \to \infty}\dfrac{<var>A</var>x^2+<var>B</var>x+<var>C</var>}{<var>D</var>x^2+<var>E</var>x+<var>F</var>}
+                		
+                	</code>
+                	
+                	<br/><br/>
+					
+					<code>\hphantom{\displaystyle\lim_{x \to \infty}\dfrac{<var>A</var>x+<var>B</var>}{<var>C</var>x+<var>D</var>} \cdot \dfrac{\dfrac{1}{x}}{\dfrac{1}{x}}}</code>
+					
+					<select id="0">
+                		<option value="arithmetic">Arithmetic</option>
+						<option value="constant">Limit of Constant Function</option>
+ 				   		<option value="identity">Limit of Identity Function</option>
+ 				   		<option value="sum">Sum Law</option>
+  						<option value="product">Product Law</option>
+  						<option value="quotient">Quotient Law</option>
+  						<option value="power">Power Law</option>
+  						<option value="composition">Composition Law</option>
+  						<option value="equivalent">Functions agree for large values of x</option>
+  						<option value="error">An error was made</option>
+  						<option value="special">Known value of a special limit</option>
+					</select>  
+					<span id="mark0"></span>
+					
+                	<br/><br/>
+                	
+                	<code>
+                	 
+                		=\displaystyle\lim_{x \to \infty}\dfrac{<var>A</var>x^2+<var>B</var>x+<var>C</var>}{<var>D</var>x^2+<var>E</var>x+<var>F</var>} \cdot \dfrac{\dfrac{1}{x^2}}{\dfrac{1}{x^2}}
+                	</code>
+                	
+                	<br/><br/>
+					
+					<code>\hphantom{\displaystyle\lim_{x \to \infty}\dfrac{<var>A</var>x+<var>B</var>}{<var>C</var>x+<var>D</var>} \cdot \dfrac{\dfrac{1}{x}}{\dfrac{1}{x}}}</code>
+					
+					<select id="1">
+                		<option value="arithmetic">Arithmetic</option>
+						<option value="constant">Limit of Constant Function</option>
+ 				   		<option value="identity">Limit of Identity Function</option>
+ 				   		<option value="sum">Sum Law</option>
+  						<option value="product">Product Law</option>
+  						<option value="quotient">Quotient Law</option>
+  						<option value="power">Power Law</option>
+  						<option value="composition">Composition Law</option>
+  						<option value="equivalent">Functions agree for large values of x</option>
+  						<option value="error">An error was made</option>
+  						<option value="special">Known value of a special limit</option>
+					</select>  
+					<span id="mark1"></span>
+					
+                	<br/><br/>
+                	
+                	<code>
+                	 
+                		=\displaystyle\lim_{x \to \infty}\dfrac{<var>A</var>+\dfrac{<var>B</var>}{x}+\dfrac{<var>C</var>}{x^2}}
+                		{<var>D</var>+\dfrac{<var>E</var>}{x}+\dfrac{<var>F</var>}{x^2}}
+                	</code>
+					
+					<br/><br/>
+					
+					<code>\hphantom{\displaystyle\lim_{x \to \infty}\dfrac{<var>A</var>x+<var>B</var>}{<var>C</var>x+<var>D</var>} \cdot \dfrac{\dfrac{1}{x}}{\dfrac{1}{x}}}</code>
+					
+					<select id="2">
+                		<option value="arithmetic">Arithmetic</option>
+						<option value="constant">Limit of Constant Function</option>
+ 				   		<option value="identity">Limit of Identity Function</option>
+ 				   		<option value="sum">Sum Law</option>
+  						<option value="product">Product Law</option>
+  						<option value="quotient">Quotient Law</option>
+  						<option value="power">Power Law</option>
+  						<option value="composition">Composition Law</option>
+  						<option value="equivalent">Functions agree for large values of x</option>
+  						<option value="error">An error was made</option>
+  						<option value="special">Known value of a special limit</option>
+					</select>  
+					<span id="mark2"></span>
+					
+                	<br/><br/>
+                	
+                	<code>
+                	 
+                		=\dfrac{\displaystyle\lim_{x \to \infty}(<var>A</var>+\dfrac{<var>B</var>}{x}+\dfrac{<var>C</var>}{x^2})}
+                		{\displaystyle\lim_{x \to \infty}(<var>D</var>+\dfrac{<var>E</var>}{x}+\dfrac{<var>F</var>}{x^2})}
+                	</code>
+                	
+                	<br/><br/>
+					
+					<code>\hphantom{\displaystyle\lim_{x \to \infty}\dfrac{<var>A</var>x+<var>B</var>}{<var>C</var>x+<var>D</var>} \cdot \dfrac{\dfrac{1}{x}}{\dfrac{1}{x}}}</code>
+					
+					<select id="3">
+                		<option value="arithmetic">Arithmetic</option>
+						<option value="constant">Limit of Constant Function</option>
+ 				   		<option value="identity">Limit of Identity Function</option>
+ 				   		<option value="sum">Sum Law</option>
+  						<option value="product">Product Law</option>
+  						<option value="quotient">Quotient Law</option>
+  						<option value="power">Power Law</option>
+  						<option value="composition">Composition Law</option>
+  						<option value="equivalent">Functions agree for large values of x</option>
+  						<option value="error">An error was made</option>
+  						<option value="special">Known value of a special limit</option>
+					</select>  
+					<span id="mark3"></span>
+					
+                	<br/><br/>
+                	
+                	<code>
+                	 
+                		=\dfrac{\displaystyle\lim_{x \to \infty}(<var>A</var>)+\displaystyle\lim_{x \to \infty}(\dfrac{<var>B</var>}{x})+\displaystyle\lim_{x \to \infty}(\dfrac{<var>C</var>}{x^2})}
+                		{\displaystyle\lim_{x \to \infty}(<var>D</var>)+\displaystyle\lim_{x \to \infty}(\dfrac{<var>E</var>}{x})+\displaystyle\lim_{x \to \infty}(\dfrac{<var>F</var>}{x^2})}
+                	</code>
+                	
+                	<br/><br/>
+					
+					<code>\hphantom{\displaystyle\lim_{x \to \infty}\dfrac{<var>A</var>x+<var>B</var>}{<var>C</var>x+<var>D</var>} \cdot \dfrac{\dfrac{1}{x}}{\dfrac{1}{x}}}</code>
+					
+					<select id="4">
+                		<option value="arithmetic">Arithmetic</option>
+						<option value="constant">Limit of Constant Function</option>
+ 				   		<option value="identity">Limit of Identity Function</option>
+ 				   		<option value="sum">Sum Law</option>
+  						<option value="product">Product Law</option>
+  						<option value="quotient">Quotient Law</option>
+  						<option value="power">Power Law</option>
+  						<option value="composition">Composition Law</option>
+  						<option value="equivalent">Functions agree for large values of x</option>
+  						<option value="error">An error was made</option>
+  						<option value="special">Known value of a special limit</option>
+					</select>  
+					<span id="mark4"></span>
+					
+                	<br/><br/>
+                	
+                	<code>
+                	 
+                		=\dfrac{\displaystyle\lim_{x \to \infty}(<var>A</var>)+0+0}
+                		{\displaystyle\lim_{x \to \infty}(<var>D</var>)+0+0}
+                	</code>
+                	
+                	<br/><br/>
+					
+					<code>\hphantom{\displaystyle\lim_{x \to \infty}\dfrac{<var>A</var>x+<var>B</var>}{<var>C</var>x+<var>D</var>} \cdot \dfrac{\dfrac{1}{x}}{\dfrac{1}{x}}}</code>
+					
+					<select id="5">
+                		<option value="arithmetic">Arithmetic</option>
+						<option value="constant">Limit of Constant Function</option>
+ 				   		<option value="identity">Limit of Identity Function</option>
+ 				   		<option value="sum">Sum Law</option>
+  						<option value="product">Product Law</option>
+  						<option value="quotient">Quotient Law</option>
+  						<option value="power">Power Law</option>
+  						<option value="composition">Composition Law</option>
+  						<option value="equivalent">Functions agree for large values of x</option>
+  						<option value="error">An error was made</option>
+  						<option value="special">Known value of a special limit</option>
+					</select>  
+					<span id="mark5"></span>
+					
+                	<br/><br/>
+                	
+                	<code>
+                	 
+                		=\dfrac{<var>A</var>}{<var>D</var>} 
+                	</code>
+                	
+                	<div class="graphie">
+				$('#check-answer-button').click(function(){
+					if($('#0 :selected').val()=="equivalent"){
+						$('#mark0').css({ 'color': 'green', 'font-size': '150%' });
+						$('#mark0').text("&#x2713;")
+						}
+					else{
+						$('#mark0').css({ 'color': 'red', 'font-size': '150%' });
+						$('#mark0').text("&#x2717;")
+					
+					}
+					if($('#1 :selected').val()=="equivalent"){
+						$('#mark1').css({ 'color': 'green', 'font-size': '150%' });
+						$('#mark1').text("&#x2713;")
+						}
+					else{
+						$('#mark1').css({ 'color': 'red', 'font-size': '150%' });
+						$('#mark1').text("&#x2717;")
+					
+					}
+					if($('#2 :selected').val()=="quotient"){
+						$('#mark2').css({ 'color': 'green', 'font-size': '150%' });
+						$('#mark2').text("&#x2713;")
+						}
+					else{
+						$('#mark2').css({ 'color': 'red', 'font-size': '150%' });
+						$('#mark2').text("&#x2717;")
+					
+					}
+					if($('#3 :selected').val()=="sum"){
+						$('#mark3').css({ 'color': 'green', 'font-size': '150%' });
+						$('#mark3').text("&#x2713;")
+						}
+					else{
+						$('#mark3').css({ 'color': 'red', 'font-size': '150%' });
+						$('#mark3').text("&#x2717;")
+					
+					}
+					if($('#4 :selected').val()=="special"){
+						$('#mark4').css({ 'color': 'green', 'font-size': '150%' });
+						$('#mark4').text("&#x2713;")
+						}
+					else{
+						$('#mark4').css({ 'color': 'red', 'font-size': '150%' });
+						$('#mark4').text("&#x2717;")
+					
+					}
+					if($('#5 :selected').val()=="constant"){
+						$('#mark5').css({ 'color': 'green', 'font-size': '150%' });
+						$('#mark5').text("&#x2713;")
+						}
+					else{
+						$('#mark5').css({ 'color': 'red', 'font-size': '150%' });
+						$('#mark5').text("&#x2717;")
+					
+					}
+					
+					
+					
+				})
+			</div>
+                	
+                	
+					
+				</p>
+
+               <div class="solution" data-type="custom">
+
+                    <div class="guess">
+                    	[$('#0 :selected').val(),$('#1 :selected').val(),$('#2 :selected').val(),$('#3 :selected').val(),$('#4 :selected').val(),$('#5 :selected').val() ]
+                    </div>
+                    <div class="validator-function">
+                       return guess[0]=="equivalent" &amp;&amp; guess[1]=="equivalent" 
+                       &amp;&amp; guess[2]=="quotient" &amp;&amp; guess[3]=="sum"
+                       &amp;&amp; guess[4]=="special" &amp;&amp; guess[5]=="constant"
+                      
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div id="high-exponent-over-itself">
+            
+            	 <div class="vars">
+        			<var id = "A">randRangeNonZero(-10,10)</var>
+        			<var id = "B">randRangeNonZero(-10,10)</var>
+        			<var id = "C">randRangeNonZero(-10,10)</var>
+        			<var id = "D">randRangeNonZero(-10,10)</var>
+        			<var id = "E">randRangeNonZero(-10,10)</var>
+        			<var id = "F">randRangeNonZero(-10,10)</var>
+        			<var id = "E1">randRange(60,100)</var>
+        			<var id = "E2">randRange(20,50)</var>
+        			<var id = "E3">randRange(20,50)</var>
+        			
+                </div>
+                <p class="problem">
+                
+                	A fully completed limit computation is presented below.  Carefully check each step of the calculation, and either say which
+                	limit law justifies the step, or that a mistake has been made.  
+                
+                	<br/><br/>
+                
+                	<code>	
+                		\displaystyle\lim_{x \to \infty}\dfrac{<var>A</var>x^{<var>E1</var>}+<var>B</var>x^{<var>E2</var>}+<var>C</var>}
+                		{<var>D</var>x^{<var>E1</var>}+<var>E</var>x^{<var>E3</var>}+<var>F</var>}
+                		
+                	</code>
+                	
+                	<br/><br/>
+					
+					<code>\hphantom{\displaystyle\lim_{x \to \infty}\dfrac{<var>A</var>x+<var>B</var>}{<var>C</var>x+<var>D</var>} \cdot \dfrac{\dfrac{1}{x}}{\dfrac{1}{x}}}</code>
+					
+					<select id="0">
+                		<option value="arithmetic">Arithmetic</option>
+						<option value="constant">Limit of Constant Function</option>
+ 				   		<option value="identity">Limit of Identity Function</option>
+ 				   		<option value="sum">Sum Law</option>
+  						<option value="product">Product Law</option>
+  						<option value="quotient">Quotient Law</option>
+  						<option value="power">Power Law</option>
+  						<option value="composition">Composition Law</option>
+  						<option value="equivalent">Functions agree for large values of x</option>
+  						<option value="error">An error was made</option>
+  						<option value="special">Known value of a special limit</option>
+					</select>  
+					<span id="mark0"></span>
+					
+                	<br/><br/>
+                	
+                	<code>
+                	 
+                		=\displaystyle\lim_{x \to \infty}\dfrac{<var>A</var>x^{<var>E1</var>}+<var>B</var>x^{<var>E2</var>}+<var>C</var>}
+                		{<var>D</var>x^{<var>E1</var>}+<var>E</var>x^{<var>E3</var>}+<var>F</var>} 
+                		\cdot \dfrac{\dfrac{1}{x^{<var>E1</var>}}}{\dfrac{1}{x^{<var>E1</var>}}}
+                	</code>
+                	
+                	<br/><br/>
+					
+					<code>\hphantom{\displaystyle\lim_{x \to \infty}\dfrac{<var>A</var>x+<var>B</var>}{<var>C</var>x+<var>D</var>} \cdot \dfrac{\dfrac{1}{x}}{\dfrac{1}{x}}}</code>
+					
+					<select id="1">
+                		<option value="arithmetic">Arithmetic</option>
+						<option value="constant">Limit of Constant Function</option>
+ 				   		<option value="identity">Limit of Identity Function</option>
+ 				   		<option value="sum">Sum Law</option>
+  						<option value="product">Product Law</option>
+  						<option value="quotient">Quotient Law</option>
+  						<option value="power">Power Law</option>
+  						<option value="composition">Composition Law</option>
+  						<option value="equivalent">Functions agree for large values of x</option>
+  						<option value="error">An error was made</option>
+  						<option value="special">Known value of a special limit</option>
+					</select>  
+					<span id="mark1"></span>
+					
+                	<br/><br/>
+                	
+                	<code>
+                	 
+                		=\displaystyle\lim_{x \to \infty}\dfrac{<var>A</var>+\dfrac{<var>B</var>}{x^{<var>E1-E2</var>}}+\dfrac{<var>C</var>}{x^{<var>E1</var>}}}
+                		{<var>D</var>+\dfrac{<var>E</var>}{x^{<var>E1-E3</var>}}+\dfrac{<var>F</var>}{x^{<var>E1</var>}}}
+                	</code>
+					
+					<br/><br/>
+					
+					<code>\hphantom{\displaystyle\lim_{x \to \infty}\dfrac{<var>A</var>x+<var>B</var>}{<var>C</var>x+<var>D</var>} \cdot \dfrac{\dfrac{1}{x}}{\dfrac{1}{x}}}</code>
+					
+					<select id="2">
+                		<option value="arithmetic">Arithmetic</option>
+						<option value="constant">Limit of Constant Function</option>
+ 				   		<option value="identity">Limit of Identity Function</option>
+ 				   		<option value="sum">Sum Law</option>
+  						<option value="product">Product Law</option>
+  						<option value="quotient">Quotient Law</option>
+  						<option value="power">Power Law</option>
+  						<option value="composition">Composition Law</option>
+  						<option value="equivalent">Functions agree for large values of x</option>
+  						<option value="error">An error was made</option>
+  						<option value="special">Known value of a special limit</option>
+					</select>  
+					<span id="mark2"></span>
+					
+                	<br/><br/>
+                	
+                	<code>
+                	 
+                		=\dfrac{\displaystyle\lim_{x \to \infty}(<var>A</var>+\dfrac{<var>B</var>}{x^{<var>E1-E2</var>}}+\dfrac{<var>C</var>}{x^{<var>E1</var>}})}
+                		{\displaystyle\lim_{x \to \infty}(<var>D</var>+\dfrac{<var>E</var>}{x^{<var>E1-E3</var>}}+\dfrac{<var>F</var>}{x^{<var>E1</var>}})}
+                	</code>
+                	
+                	<br/><br/>
+					
+					<code>\hphantom{\displaystyle\lim_{x \to \infty}\dfrac{<var>A</var>x+<var>B</var>}{<var>C</var>x+<var>D</var>} \cdot \dfrac{\dfrac{1}{x}}{\dfrac{1}{x}}}</code>
+					
+					<select id="3">
+                		<option value="arithmetic">Arithmetic</option>
+						<option value="constant">Limit of Constant Function</option>
+ 				   		<option value="identity">Limit of Identity Function</option>
+ 				   		<option value="sum">Sum Law</option>
+  						<option value="product">Product Law</option>
+  						<option value="quotient">Quotient Law</option>
+  						<option value="power">Power Law</option>
+  						<option value="composition">Composition Law</option>
+  						<option value="equivalent">Functions agree for large values of x</option>
+  						<option value="error">An error was made</option>
+  						<option value="special">Known value of a special limit</option>
+					</select>  
+					<span id="mark3"></span>
+					
+                	<br/><br/>
+                	
+                	<code>
+                	 
+                		=\dfrac{\displaystyle\lim_{x \to \infty}(<var>A</var>)+\displaystyle\lim_{x \to \infty}(\dfrac{<var>B</var>}{x^{<var>E1-E2</var>}})+\displaystyle\lim_{x \to \infty}(\dfrac{<var>C</var>}{x^{<var>E1</var>}})}
+                		{\displaystyle\lim_{x \to \infty}(<var>D</var>)+\displaystyle\lim_{x \to \infty}(\dfrac{<var>E</var>}{x^{<var>E1-E3</var>}})+\displaystyle\lim_{x \to \infty}(\dfrac{<var>F</var>}{x^{<var>E1</var>}})}
+                	</code>
+                	
+                	<br/><br/>
+					
+					<code>\hphantom{\displaystyle\lim_{x \to \infty}\dfrac{<var>A</var>x+<var>B</var>}{<var>C</var>x+<var>D</var>} \cdot \dfrac{\dfrac{1}{x}}{\dfrac{1}{x}}}</code>
+					
+					<select id="4">
+                		<option value="arithmetic">Arithmetic</option>
+						<option value="constant">Limit of Constant Function</option>
+ 				   		<option value="identity">Limit of Identity Function</option>
+ 				   		<option value="sum">Sum Law</option>
+  						<option value="product">Product Law</option>
+  						<option value="quotient">Quotient Law</option>
+  						<option value="power">Power Law</option>
+  						<option value="composition">Composition Law</option>
+  						<option value="equivalent">Functions agree for large values of x</option>
+  						<option value="error">An error was made</option>
+  						<option value="special">Known value of a special limit</option>
+					</select>  
+					<span id="mark4"></span>
+					
+                	<br/><br/>
+                	
+                	<code>
+                	 
+                		=\dfrac{\displaystyle\lim_{x \to \infty}(<var>A</var>)+0+0}
+                		{\displaystyle\lim_{x \to \infty}(<var>D</var>)+0+0}
+                	</code>
+                	
+                	<br/><br/>
+					
+					<code>\hphantom{\displaystyle\lim_{x \to \infty}\dfrac{<var>A</var>x+<var>B</var>}{<var>C</var>x+<var>D</var>} \cdot \dfrac{\dfrac{1}{x}}{\dfrac{1}{x}}}</code>
+					
+					<select id="5">
+                		<option value="arithmetic">Arithmetic</option>
+						<option value="constant">Limit of Constant Function</option>
+ 				   		<option value="identity">Limit of Identity Function</option>
+ 				   		<option value="sum">Sum Law</option>
+  						<option value="product">Product Law</option>
+  						<option value="quotient">Quotient Law</option>
+  						<option value="power">Power Law</option>
+  						<option value="composition">Composition Law</option>
+  						<option value="equivalent">Functions agree for large values of x</option>
+  						<option value="error">An error was made</option>
+  						<option value="special">Known value of a special limit</option>
+					</select>  
+					<span id="mark5"></span>
+					
+                	<br/><br/>
+                	
+                	<code>
+                	 
+                		=\dfrac{<var>A</var>}{<var>D</var>} 
+                	</code>
+                	
+                	<div class="graphie">
+				$('#check-answer-button').click(function(){
+					if($('#0 :selected').val()=="equivalent"){
+						$('#mark0').css({ 'color': 'green', 'font-size': '150%' });
+						$('#mark0').text("&#x2713;")
+						}
+					else{
+						$('#mark0').css({ 'color': 'red', 'font-size': '150%' });
+						$('#mark0').text("&#x2717;")
+					
+					}
+					if($('#1 :selected').val()=="equivalent"){
+						$('#mark1').css({ 'color': 'green', 'font-size': '150%' });
+						$('#mark1').text("&#x2713;")
+						}
+					else{
+						$('#mark1').css({ 'color': 'red', 'font-size': '150%' });
+						$('#mark1').text("&#x2717;")
+					
+					}
+					if($('#2 :selected').val()=="quotient"){
+						$('#mark2').css({ 'color': 'green', 'font-size': '150%' });
+						$('#mark2').text("&#x2713;")
+						}
+					else{
+						$('#mark2').css({ 'color': 'red', 'font-size': '150%' });
+						$('#mark2').text("&#x2717;")
+					
+					}
+					if($('#3 :selected').val()=="sum"){
+						$('#mark3').css({ 'color': 'green', 'font-size': '150%' });
+						$('#mark3').text("&#x2713;")
+						}
+					else{
+						$('#mark3').css({ 'color': 'red', 'font-size': '150%' });
+						$('#mark3').text("&#x2717;")
+					
+					}
+					if($('#4 :selected').val()=="special"){
+						$('#mark4').css({ 'color': 'green', 'font-size': '150%' });
+						$('#mark4').text("&#x2713;")
+						}
+					else{
+						$('#mark4').css({ 'color': 'red', 'font-size': '150%' });
+						$('#mark4').text("&#x2717;")
+					
+					}
+					if($('#5 :selected').val()=="constant"){
+						$('#mark5').css({ 'color': 'green', 'font-size': '150%' });
+						$('#mark5').text("&#x2713;")
+						}
+					else{
+						$('#mark5').css({ 'color': 'red', 'font-size': '150%' });
+						$('#mark5').text("&#x2717;")
+					
+					}
+					
+					
+					
+				})
+			</div>
+					
+				</p>
+
+               <div class="solution" data-type="custom">
+
+                    <div class="guess">
+                    	[$('#0 :selected').val(),$('#1 :selected').val(),$('#2 :selected').val(),$('#3 :selected').val(),$('#4 :selected').val(),$('#5 :selected').val() ]
+                    </div>
+                    <div class="validator-function">
+                       return guess[0]=="equivalent" &amp;&amp; guess[1]=="equivalent" 
+                       &amp;&amp; guess[2]=="quotient" &amp;&amp; guess[3]=="sum"
+                       &amp;&amp; guess[4]=="special" &amp;&amp; guess[5]=="constant"
+                      
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div id="square-root">
+            
+            	 <div class="vars">
+        			<var id = "A">randRangeNonZero(1,10)</var>
+        			<var id = "B">randRangeNonZero(-10,10)</var>
+        			<var id = "C">randRangeNonZero(1,10)</var>
+        			<var id = "D">randRangeNonZero(-10,10)</var>
+        			<var id = "E">randRangeNonZero(-10,10)</var>
+        			
+        			
+        			
+                </div>
+                <p class="problem">
+                
+                	A fully completed limit computation is presented below.  Carefully check each step of the calculation, and either say which
+                	limit law justifies the step, or that a mistake has been made.  
+                
+                	<br/><br/>
+                
+                	<code>	
+                		\displaystyle\lim_{x \to \infty}\displaystyle\dfrac{<var>A</var>x+<var>B</var>}
+                		{\sqrt{<var>C*C</var>x^{2}+<var>D</var>x+<var>E</var>}}
+                		
+                	</code>
+                	
+                	
+                	
+                	<br/><br/>
+					
+					<code>\hphantom{\displaystyle\lim_{x \to \infty}\dfrac{<var>A</var>x+<var>B</var>}{<var>C</var>x+<var>D</var>} \cdot \dfrac{\dfrac{1}{x}}{\dfrac{1}{x}}}</code>
+					
+					<select id="0">
+                		<option value="arithmetic">Arithmetic</option>
+						<option value="constant">Limit of Constant Function</option>
+ 				   		<option value="identity">Limit of Identity Function</option>
+ 				   		<option value="sum">Sum Law</option>
+  						<option value="product">Product Law</option>
+  						<option value="quotient">Quotient Law</option>
+  						<option value="power">Power Law</option>
+  						<option value="composition">Composition Law</option>
+  						<option value="equivalent">Functions agree for large values of x</option>
+  						<option value="error">An error was made</option>
+  						<option value="special">Known value of a special limit</option>
+					</select>  
+					<span id="mark0"></span>
+					
+                	<br/><br/>
+                	
+                	<code>
+                	 
+                		=\displaystyle\lim_{x \to \infty}\displaystyle\dfrac{<var>A</var>x+<var>B</var>}
+                		{\sqrt{<var>C*C</var>x^{2}+<var>D</var>x+<var>E</var>}}
+                		\cdot \dfrac{\dfrac{1}{x}}{\dfrac{1}{x}}
+                	</code>
+					
+					<br/><br/>
+					
+					<code>\hphantom{\displaystyle\lim_{x \to \infty}\dfrac{<var>A</var>x+<var>B</var>}{<var>C</var>x+<var>D</var>} \cdot \dfrac{\dfrac{1}{x}}{\dfrac{1}{x}}}</code>
+					
+					<select id="1">
+                		<option value="arithmetic">Arithmetic</option>
+						<option value="constant">Limit of Constant Function</option>
+ 				   		<option value="identity">Limit of Identity Function</option>
+ 				   		<option value="sum">Sum Law</option>
+  						<option value="product">Product Law</option>
+  						<option value="quotient">Quotient Law</option>
+  						<option value="power">Power Law</option>
+  						<option value="composition">Composition Law</option>
+  						<option value="equivalent">Functions agree for large values of x</option>
+  						<option value="error">An error was made</option>
+  						<option value="special">Known value of a special limit</option>
+					</select>  
+					<span id="mark1"></span>
+					
+                	<br/><br/>
+                	
+                	<code>
+                	 
+                		=\displaystyle\lim_{x \to \infty}\displaystyle\dfrac{<var>A</var>+\dfrac{<var>B</var>}{x}}
+                		{\dfrac{1}{\sqrt{x^2}}\sqrt{<var>C*C</var>x^{2}+<var>D</var>x+<var>E</var>}}
+                	</code>
+                	
+                	<br/><br/>
+					
+					<code>\hphantom{\displaystyle\lim_{x \to \infty}\dfrac{<var>A</var>x+<var>B</var>}{<var>C</var>x+<var>D</var>} \cdot \dfrac{\dfrac{1}{x}}{\dfrac{1}{x}}}</code>
+					
+					<select id="2">
+                		<option value="arithmetic">Arithmetic</option>
+						<option value="constant">Limit of Constant Function</option>
+ 				   		<option value="identity">Limit of Identity Function</option>
+ 				   		<option value="sum">Sum Law</option>
+  						<option value="product">Product Law</option>
+  						<option value="quotient">Quotient Law</option>
+  						<option value="power">Power Law</option>
+  						<option value="composition">Composition Law</option>
+  						<option value="equivalent">Functions agree for large values of x</option>
+  						<option value="error">An error was made</option>
+  						<option value="special">Known value of a special limit</option>
+					</select>  
+					<span id="mark2"></span>
+					
+                	<br/><br/>
+                	
+                	<code>
+                	 
+                		=\displaystyle\lim_{x \to \infty}\displaystyle\dfrac{<var>A</var>+\dfrac{<var>B</var>}{x}}
+                		{\sqrt{\dfrac{1}{x^2}(<var>C*C</var>x^{2}+<var>D</var>x+<var>E</var>)}}
+                		
+                	</code>
+                	
+                	<br/><br/>
+					
+					<code>\hphantom{\displaystyle\lim_{x \to \infty}\dfrac{<var>A</var>x+<var>B</var>}{<var>C</var>x+<var>D</var>} \cdot \dfrac{\dfrac{1}{x}}{\dfrac{1}{x}}}</code>
+					
+					<select id="3">
+                		<option value="arithmetic">Arithmetic</option>
+						<option value="constant">Limit of Constant Function</option>
+ 				   		<option value="identity">Limit of Identity Function</option>
+ 				   		<option value="sum">Sum Law</option>
+  						<option value="product">Product Law</option>
+  						<option value="quotient">Quotient Law</option>
+  						<option value="power">Power Law</option>
+  						<option value="composition">Composition Law</option>
+  						<option value="equivalent">Functions agree for large values of x</option>
+  						<option value="error">An error was made</option>
+  						<option value="special">Known value of a special limit</option>
+					</select>  
+					<span id="mark3"></span>
+					
+                	<br/><br/>
+                	
+                	<code>
+                	 
+                		=\displaystyle\lim_{x \to \infty}\displaystyle\dfrac{<var>A</var>+\dfrac{<var>B</var>}{x}}
+                		{\sqrt{<var>C*C</var>+\dfrac{<var>D</var>}{x}+\dfrac{<var>E</var>}{x^2}}}
+                	</code>
+                	
+                	<br/><br/>
+					
+					<code>\hphantom{\displaystyle\lim_{x \to \infty}\dfrac{<var>A</var>x+<var>B</var>}{<var>C</var>x+<var>D</var>} \cdot \dfrac{\dfrac{1}{x}}{\dfrac{1}{x}}}</code>
+					
+					<select id="4">
+                		<option value="arithmetic">Arithmetic</option>
+						<option value="constant">Limit of Constant Function</option>
+ 				   		<option value="identity">Limit of Identity Function</option>
+ 				   		<option value="sum">Sum Law</option>
+  						<option value="product">Product Law</option>
+  						<option value="quotient">Quotient Law</option>
+  						<option value="power">Power Law</option>
+  						<option value="composition">Composition Law</option>
+  						<option value="equivalent">Functions agree for large values of x</option>
+  						<option value="error">An error was made</option>
+  						<option value="special">Known value of a special limit</option>
+					</select>  
+					<span id="mark4"></span>
+					
+                	<br/><br/>
+                	
+                	<code>
+                	 
+                		=\dfrac{\displaystyle\lim_{x \to \infty}(<var>A</var>+\dfrac{<var>B</var>}{x})}
+                		{\displaystyle\lim_{x \to \infty}\sqrt{<var>C*C</var>+\dfrac{<var>D</var>}{x}+\dfrac{<var>E</var>}{x^2}}}
+                	</code>
+                	
+                	<br/><br/>
+					
+					<code>\hphantom{\displaystyle\lim_{x \to \infty}\dfrac{<var>A</var>x+<var>B</var>}{<var>C</var>x+<var>D</var>} \cdot \dfrac{\dfrac{1}{x}}{\dfrac{1}{x}}}</code>
+					
+					<select id="5">
+                		<option value="arithmetic">Arithmetic</option>
+						<option value="constant">Limit of Constant Function</option>
+ 				   		<option value="identity">Limit of Identity Function</option>
+ 				   		<option value="sum">Sum Law</option>
+  						<option value="product">Product Law</option>
+  						<option value="quotient">Quotient Law</option>
+  						<option value="power">Power Law</option>
+  						<option value="composition">Composition Law</option>
+  						<option value="equivalent">Functions agree for large values of x</option>
+  						<option value="error">An error was made</option>
+  						<option value="special">Known value of a special limit</option>
+					</select>  
+					<span id="mark5"></span>
+					
+                	<br/><br/>
+                	
+                	<code>
+                	 
+                		=\dfrac{\displaystyle\lim_{x \to \infty}(<var>A</var>+\dfrac{<var>B</var>}{x})}
+                		{\sqrt{\displaystyle\lim_{x \to \infty}(<var>C*C</var>+\dfrac{<var>D</var>}{x}+\dfrac{<var>E</var>}{x^2})}}
+                	</code>
+                	
+                	<br/><br/>
+					
+					<code>\hphantom{\displaystyle\lim_{x \to \infty}\dfrac{<var>A</var>x+<var>B</var>}{<var>C</var>x+<var>D</var>} \cdot \dfrac{\dfrac{1}{x}}{\dfrac{1}{x}}}</code>
+					
+					<select id="6">
+                		<option value="arithmetic">Arithmetic</option>
+						<option value="constant">Limit of Constant Function</option>
+ 				   		<option value="identity">Limit of Identity Function</option>
+ 				   		<option value="sum">Sum Law</option>
+  						<option value="product">Product Law</option>
+  						<option value="quotient">Quotient Law</option>
+  						<option value="power">Power Law</option>
+  						<option value="composition">Composition Law</option>
+  						<option value="equivalent">Functions agree for large values of x</option>
+  						<option value="error">An error was made</option>
+  						<option value="special">Known value of a special limit</option>
+					</select>  
+					<span id="mark6"></span>
+					
+                	<br/><br/>
+                	
+                	<code>
+                	 
+                		=\dfrac{\displaystyle\lim_{x \to \infty}(<var>A</var>)+\displaystyle\lim_{x \to \infty}(\dfrac{<var>B</var>}{x})}
+                		{\sqrt{\displaystyle\lim_{x \to \infty}(<var>C*C</var>)+\displaystyle\lim_{x \to \infty}(\dfrac{<var>D</var>}{x})+\displaystyle\lim_{x \to \infty}(\dfrac{<var>E</var>}{x^2})}}
+                	</code>
+                	
+                	<br/><br/>
+					
+					<code>\hphantom{\displaystyle\lim_{x \to \infty}\dfrac{<var>A</var>x+<var>B</var>}{<var>C</var>x+<var>D</var>} \cdot \dfrac{\dfrac{1}{x}}{\dfrac{1}{x}}}</code>
+					
+					<select id="7">
+                		<option value="arithmetic">Arithmetic</option>
+						<option value="constant">Limit of Constant Function</option>
+ 				   		<option value="identity">Limit of Identity Function</option>
+ 				   		<option value="sum">Sum Law</option>
+  						<option value="product">Product Law</option>
+  						<option value="quotient">Quotient Law</option>
+  						<option value="power">Power Law</option>
+  						<option value="composition">Composition Law</option>
+  						<option value="equivalent">Functions agree for large values of x</option>
+  						<option value="error">An error was made</option>
+  						<option value="special">Known value of a special limit</option>
+					</select>  
+					<span id="mark7"></span>
+					
+                	<br/><br/>
+                	
+                	<code>
+                	 
+                		=\dfrac{\displaystyle\lim_{x \to \infty}(<var>A</var>)+0}
+                		{\sqrt{\displaystyle\lim_{x \to \infty}(<var>C*C</var>)+0+0}}
+                	</code>
+                	
+                	<br/><br/>
+					
+					<code>\hphantom{\displaystyle\lim_{x \to \infty}\dfrac{<var>A</var>x+<var>B</var>}{<var>C</var>x+<var>D</var>} \cdot \dfrac{\dfrac{1}{x}}{\dfrac{1}{x}}}</code>
+					
+					<select id="8">
+                		<option value="arithmetic">Arithmetic</option>
+						<option value="constant">Limit of Constant Function</option>
+ 				   		<option value="identity">Limit of Identity Function</option>
+ 				   		<option value="sum">Sum Law</option>
+  						<option value="product">Product Law</option>
+  						<option value="quotient">Quotient Law</option>
+  						<option value="power">Power Law</option>
+  						<option value="composition">Composition Law</option>
+  						<option value="equivalent">Functions agree for large values of x</option>
+  						<option value="error">An error was made</option>
+  						<option value="special">Known value of a special limit</option>
+					</select>  
+					<span id="mark8"></span>
+					
+                	<br/><br/>
+                	
+                	<code>
+                	 
+                		=\dfrac{<var>A</var>}
+                		{\sqrt{<var>C*C</var>}}
+                	</code>
+                	
+                	<br/><br/>
+					
+					<code>\hphantom{\displaystyle\lim_{x \to \infty}\dfrac{<var>A</var>x+<var>B</var>}{<var>C</var>x+<var>D</var>} \cdot \dfrac{\dfrac{1}{x}}{\dfrac{1}{x}}}</code>
+					
+					<select id="9">
+                		<option value="arithmetic">Arithmetic</option>
+						<option value="constant">Limit of Constant Function</option>
+ 				   		<option value="identity">Limit of Identity Function</option>
+ 				   		<option value="sum">Sum Law</option>
+  						<option value="product">Product Law</option>
+  						<option value="quotient">Quotient Law</option>
+  						<option value="power">Power Law</option>
+  						<option value="composition">Composition Law</option>
+  						<option value="equivalent">Functions agree for large values of x</option>
+  						<option value="error">An error was made</option>
+  						<option value="special">Known value of a special limit</option>
+					</select>  
+					<span id="mark9"></span>
+					
+                	<br/><br/>
+                	
+                	<code>
+                	 
+                		=\dfrac{<var>toFraction(A/C)[0]</var>}{<var>toFraction(A/C)[1]</var>}
+                	</code>
+					
+					<div class="graphie">
+				$('#check-answer-button').click(function(){
+					if($('#0 :selected').val()=="equivalent"){
+						$('#mark0').css({ 'color': 'green', 'font-size': '150%' });
+						$('#mark0').text("&#x2713;")
+						}
+					else{
+						$('#mark0').css({ 'color': 'red', 'font-size': '150%' });
+						$('#mark0').text("&#x2717;")
+					
+					}
+					if($('#1 :selected').val()=="equivalent"){
+						$('#mark1').css({ 'color': 'green', 'font-size': '150%' });
+						$('#mark1').text("&#x2713;")
+						}
+					else{
+						$('#mark1').css({ 'color': 'red', 'font-size': '150%' });
+						$('#mark1').text("&#x2717;")
+					
+					}
+					if($('#2 :selected').val()=="equivalent"){
+						$('#mark2').css({ 'color': 'green', 'font-size': '150%' });
+						$('#mark2').text("&#x2713;")
+						}
+					else{
+						$('#mark2').css({ 'color': 'red', 'font-size': '150%' });
+						$('#mark2').text("&#x2717;")
+					
+					}
+					if($('#3 :selected').val()=="equivalent"){
+						$('#mark3').css({ 'color': 'green', 'font-size': '150%' });
+						$('#mark3').text("&#x2713;")
+						}
+					else{
+						$('#mark3').css({ 'color': 'red', 'font-size': '150%' });
+						$('#mark3').text("&#x2717;")
+					
+					}
+					if($('#4 :selected').val()=="quotient"){
+						$('#mark4').css({ 'color': 'green', 'font-size': '150%' });
+						$('#mark4').text("&#x2713;")
+						}
+					else{
+						$('#mark4').css({ 'color': 'red', 'font-size': '150%' });
+						$('#mark4').text("&#x2717;")
+					
+					}
+					if($('#5 :selected').val()=="power"){
+						$('#mark5').css({ 'color': 'green', 'font-size': '150%' });
+						$('#mark5').text("&#x2713;")
+						}
+					else{
+						$('#mark5').css({ 'color': 'red', 'font-size': '150%' });
+						$('#mark5').text("&#x2717;")
+					
+					}
+					if($('#6 :selected').val()=="sum"){
+						$('#mark6').css({ 'color': 'green', 'font-size': '150%' });
+						$('#mark6').text("&#x2713;")
+						}
+					else{
+						$('#mark6').css({ 'color': 'red', 'font-size': '150%' });
+						$('#mark6').text("&#x2717;")
+					
+					}
+					if($('#7 :selected').val()=="special"){
+						$('#mark7').css({ 'color': 'green', 'font-size': '150%' });
+						$('#mark7').text("&#x2713;")
+						}
+					else{
+						$('#mark7').css({ 'color': 'red', 'font-size': '150%' });
+						$('#mark7').text("&#x2717;")
+					
+					}
+					if($('#8 :selected').val()=="constant"){
+						$('#mark8').css({ 'color': 'green', 'font-size': '150%' });
+						$('#mark8').text("&#x2713;")
+						}
+					else{
+						$('#mark8').css({ 'color': 'red', 'font-size': '150%' });
+						$('#mark8').text("&#x2717;")
+					
+					}
+					if($('#9 :selected').val()=="arithmetic"){
+						$('#mark9').css({ 'color': 'green', 'font-size': '150%' });
+						$('#mark9').text("&#x2713;")
+						}
+					else{
+						$('#mark9').css({ 'color': 'red', 'font-size': '150%' });
+						$('#mark9').text("&#x2717;")
+					
+					}
+					
+					
+				})
+			</div>
+					
+					
+				</p>
+
+               <div class="solution" data-type="custom">
+
+                    <div class="guess">
+                    	[$('#0 :selected').val(),$('#1 :selected').val(),$('#2 :selected').val(),$('#3 :selected').val(),$('#4 :selected').val(),$('#5 :selected').val(),$('#6 :selected').val(),$('#7 :selected').val(),$('#8 :selected').val(),$('#9 :selected').val() ]
+                    </div>
+                    <div class="validator-function">
+                       return guess[0]=="equivalent" &amp;&amp; guess[1]=="equivalent" 
+                       &amp;&amp; guess[2]=="equivalent" &amp;&amp; guess[3]=="equivalent"
+                       &amp;&amp; guess[4]=="quotient" &amp;&amp; guess[5]=="power"
+                       &amp;&amp; guess[6]=="sum" &amp;&amp; guess[7]=="special"
+                        &amp;&amp; guess[8]=="constant"  &amp;&amp; guess[9]=="arithmetic"
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div id="square-root-error">
+            
+            	 <div class="vars">
+        			<var id = "A">randRangeNonZero(1,10)</var>
+        			<var id = "B">randRangeNonZero(-10,10)</var>
+        			<var id = "C">randRangeNonZero(1,10)</var>
+        			<var id = "D">randRangeNonZero(2,10)</var>
+        			<var id = "E">randRangeNonZero(1,10)</var>
+        			
+        			
+        			
+                </div>
+                <p class="problem">
+                
+                	A fully completed limit computation is presented below.  Carefully check each step of the calculation, and either say which
+                	limit law justifies the step, or that a mistake has been made.  
+                
+                	<br/><br/>
+                
+                	<code>	
+                		\displaystyle\lim_{x \to \infty}\displaystyle\dfrac{<var>A</var>x+<var>B</var>}
+                		{\sqrt{<var>C*C</var>x^{2}+<var>D</var>x+<var>E</var>}}
+                		
+                	</code>
+                	
+                	
+                	
+                	<br/><br/>
+					
+					<code>\hphantom{\displaystyle\lim_{x \to \infty}\dfrac{<var>A</var>x+<var>B</var>}{<var>C</var>x+<var>D</var>} \cdot \dfrac{\dfrac{1}{x}}{\dfrac{1}{x}}}</code>
+					
+					<select id="0">
+                		<option value="arithmetic">Arithmetic</option>
+						<option value="constant">Limit of Constant Function</option>
+ 				   		<option value="identity">Limit of Identity Function</option>
+ 				   		<option value="sum">Sum Law</option>
+  						<option value="product">Product Law</option>
+  						<option value="quotient">Quotient Law</option>
+  						<option value="power">Power Law</option>
+  						<option value="composition">Composition Law</option>
+  						<option value="equivalent">Functions agree for large values of x</option>
+  						<option value="error">An error was made</option>
+  						<option value="special">Known value of a special limit</option>
+					</select>  
+					<span id="mark0"></span>
+					
+                	<br/><br/>
+                	
+                	<code>
+                	 
+                		=\displaystyle\lim_{x \to \infty}\displaystyle\dfrac{<var>A</var>x+<var>B</var>}
+                		{\sqrt{<var>C*C</var>x^{2}}+\sqrt{<var>D</var>x}+\sqrt{<var>E</var>}}
+                		
+                	</code>
+					
+					<br/><br/>
+					
+					<code>\hphantom{\displaystyle\lim_{x \to \infty}\dfrac{<var>A</var>x+<var>B</var>}{<var>C</var>x+<var>D</var>} \cdot \dfrac{\dfrac{1}{x}}{\dfrac{1}{x}}}</code>
+					
+					<select id="1">
+                		<option value="arithmetic">Arithmetic</option>
+						<option value="constant">Limit of Constant Function</option>
+ 				   		<option value="identity">Limit of Identity Function</option>
+ 				   		<option value="sum">Sum Law</option>
+  						<option value="product">Product Law</option>
+  						<option value="quotient">Quotient Law</option>
+  						<option value="power">Power Law</option>
+  						<option value="composition">Composition Law</option>
+  						<option value="equivalent">Functions agree for large values of x</option>
+  						<option value="error">An error was made</option>
+  						<option value="special">Known value of a special limit</option>
+					</select>  
+					<span id="mark1"></span>
+					
+                	<br/><br/>
+                	
+                	<code>
+                	 
+                		=\displaystyle\lim_{x \to \infty}\displaystyle\dfrac{<var>A</var>x+<var>B</var>}
+                		{<var>C</var>x+\sqrt{<var>D</var>}\sqrt{x}+\sqrt{<var>E</var>}}
+                		\cdot \dfrac{\dfrac{1}{x}}{\dfrac{1}{x}}
+                	</code>
+                	
+                	<br/><br/>
+					
+					<code>\hphantom{\displaystyle\lim_{x \to \infty}\dfrac{<var>A</var>x+<var>B</var>}{<var>C</var>x+<var>D</var>} \cdot \dfrac{\dfrac{1}{x}}{\dfrac{1}{x}}}</code>
+					
+					<select id="2">
+                		<option value="arithmetic">Arithmetic</option>
+						<option value="constant">Limit of Constant Function</option>
+ 				   		<option value="identity">Limit of Identity Function</option>
+ 				   		<option value="sum">Sum Law</option>
+  						<option value="product">Product Law</option>
+  						<option value="quotient">Quotient Law</option>
+  						<option value="power">Power Law</option>
+  						<option value="composition">Composition Law</option>
+  						<option value="equivalent">Functions agree for large values of x</option>
+  						<option value="error">An error was made</option>
+  						<option value="special">Known value of a special limit</option>
+					</select>  
+					<span id="mark2"></span>
+					
+                	<br/><br/>
+                	
+                	<code>
+                	 
+                		=\displaystyle\lim_{x \to \infty}\displaystyle\dfrac{<var>A</var>+\frac{<var>B</var>}{x}}
+                		{<var>C</var>+\dfrac{\sqrt{<var>D</var>}}{\sqrt{x}}+\dfrac{\sqrt{<var>E</var>}}{x}}
+                		
+                		
+                	</code>
+                	
+                	<br/><br/>
+					
+					<code>\hphantom{\displaystyle\lim_{x \to \infty}\dfrac{<var>A</var>x+<var>B</var>}{<var>C</var>x+<var>D</var>} \cdot \dfrac{\dfrac{1}{x}}{\dfrac{1}{x}}}</code>
+					
+					<select id="3">
+                		<option value="arithmetic">Arithmetic</option>
+						<option value="constant">Limit of Constant Function</option>
+ 				   		<option value="identity">Limit of Identity Function</option>
+ 				   		<option value="sum">Sum Law</option>
+  						<option value="product">Product Law</option>
+  						<option value="quotient">Quotient Law</option>
+  						<option value="power">Power Law</option>
+  						<option value="composition">Composition Law</option>
+  						<option value="equivalent">Functions agree for large values of x</option>
+  						<option value="error">An error was made</option>
+  						<option value="special">Known value of a special limit</option>
+					</select>  
+					<span id="mark3"></span>
+					
+                	<br/><br/>
+                	
+                	<code>
+                	 
+                		=\dfrac{\displaystyle\lim_{x \to \infty}(<var>A</var>+\frac{<var>B</var>}{x})}
+                		{\displaystyle\lim_{x \to \infty}(<var>C</var>+\frac{\sqrt{<var>D</var>}}{\sqrt{x}}+\frac{\sqrt{<var>E</var>}}{x})}
+                	</code>
+                	
+                	<br/><br/>
+					
+					<code>\hphantom{\displaystyle\lim_{x \to \infty}\dfrac{<var>A</var>x+<var>B</var>}{<var>C</var>x+<var>D</var>} \cdot \dfrac{\dfrac{1}{x}}{\dfrac{1}{x}}}</code>
+					
+					<select id="4">
+                		<option value="arithmetic">Arithmetic</option>
+						<option value="constant">Limit of Constant Function</option>
+ 				   		<option value="identity">Limit of Identity Function</option>
+ 				   		<option value="sum">Sum Law</option>
+  						<option value="product">Product Law</option>
+  						<option value="quotient">Quotient Law</option>
+  						<option value="power">Power Law</option>
+  						<option value="composition">Composition Law</option>
+  						<option value="equivalent">Functions agree for large values of x</option>
+  						<option value="error">An error was made</option>
+  						<option value="special">Known value of a special limit</option>
+					</select>  
+					<span id="mark4"></span>
+					
+                	<br/><br/>
+                	
+                	<code>
+                	 
+                		=\dfrac{\displaystyle\lim_{x \to \infty}(<var>A</var>)+\displaystyle\lim_{x \to \infty}(\frac{<var>B</var>}{x})}
+                		{\displaystyle\lim_{x \to \infty}(<var>C</var>)+\displaystyle\lim_{x \to \infty}(\frac{\sqrt{<var>D</var>}}{\sqrt{x}})+\displaystyle\lim_{x \to \infty}(\frac{\sqrt{<var>E</var>}}{x})}
+                	</code>
+                	
+                	<br/><br/>
+					
+					<code>\hphantom{\displaystyle\lim_{x \to \infty}\dfrac{<var>A</var>x+<var>B</var>}{<var>C</var>x+<var>D</var>} \cdot \dfrac{\dfrac{1}{x}}{\dfrac{1}{x}}}</code>
+					
+					<select id="5">
+                		<option value="arithmetic">Arithmetic</option>
+						<option value="constant">Limit of Constant Function</option>
+ 				   		<option value="identity">Limit of Identity Function</option>
+ 				   		<option value="sum">Sum Law</option>
+  						<option value="product">Product Law</option>
+  						<option value="quotient">Quotient Law</option>
+  						<option value="power">Power Law</option>
+  						<option value="composition">Composition Law</option>
+  						<option value="equivalent">Functions agree for large values of x</option>
+  						<option value="error">An error was made</option>
+  						<option value="special">Known value of a special limit</option>
+					</select>  
+					<span id="mark5"></span>
+					
+                	<br/><br/>
+                	
+                	<code>
+                	 
+                		=\dfrac{\displaystyle\lim_{x \to \infty}(<var>A</var>)+0}
+                		{\displaystyle\lim_{x \to \infty}(<var>C</var>)+0+0}
+                	</code>
+                	
+                	<br/><br/>
+					
+					<code>\hphantom{\displaystyle\lim_{x \to \infty}\dfrac{<var>A</var>x+<var>B</var>}{<var>C</var>x+<var>D</var>} \cdot \dfrac{\dfrac{1}{x}}{\dfrac{1}{x}}}</code>
+					
+					<select id="6">
+                		<option value="arithmetic">Arithmetic</option>
+						<option value="constant">Limit of Constant Function</option>
+ 				   		<option value="identity">Limit of Identity Function</option>
+ 				   		<option value="sum">Sum Law</option>
+  						<option value="product">Product Law</option>
+  						<option value="quotient">Quotient Law</option>
+  						<option value="power">Power Law</option>
+  						<option value="composition">Composition Law</option>
+  						<option value="equivalent">Functions agree for large values of x</option>
+  						<option value="error">An error was made</option>
+  						<option value="special">Known value of a special limit</option>
+					</select>  
+					<span id="mark6"></span>
+					
+                	<br/><br/>
+                	
+                	<code>
+                	 
+                		=\dfrac{<var>A</var>}
+                		{<var>C</var>}
+                	</code>
+                	
+                	<div class="graphie">
+				$('#check-answer-button').click(function(){
+					if($('#0 :selected').val()=="error"){
+						$('#mark0').css({ 'color': 'green', 'font-size': '150%' });
+						$('#mark0').text("&#x2713;")
+						}
+					else{
+						$('#mark0').css({ 'color': 'red', 'font-size': '150%' });
+						$('#mark0').text("&#x2717;")
+					
+					}
+					if($('#1 :selected').val()=="equivalent"){
+						$('#mark1').css({ 'color': 'green', 'font-size': '150%' });
+						$('#mark1').text("&#x2713;")
+						}
+					else{
+						$('#mark1').css({ 'color': 'red', 'font-size': '150%' });
+						$('#mark1').text("&#x2717;")
+					
+					}
+					if($('#2 :selected').val()=="equivalent"){
+						$('#mark2').css({ 'color': 'green', 'font-size': '150%' });
+						$('#mark2').text("&#x2713;")
+						}
+					else{
+						$('#mark2').css({ 'color': 'red', 'font-size': '150%' });
+						$('#mark2').text("&#x2717;")
+					
+					}
+					if($('#3 :selected').val()=="quotient"){
+						$('#mark3').css({ 'color': 'green', 'font-size': '150%' });
+						$('#mark3').text("&#x2713;")
+						}
+					else{
+						$('#mark3').css({ 'color': 'red', 'font-size': '150%' });
+						$('#mark3').text("&#x2717;")
+					
+					}
+					if($('#4 :selected').val()=="sum"){
+						$('#mark4').css({ 'color': 'green', 'font-size': '150%' });
+						$('#mark4').text("&#x2713;")
+						}
+					else{
+						$('#mark4').css({ 'color': 'red', 'font-size': '150%' });
+						$('#mark4').text("&#x2717;")
+					
+					}
+					if($('#5 :selected').val()=="special"){
+						$('#mark5').css({ 'color': 'green', 'font-size': '150%' });
+						$('#mark5').text("&#x2713;")
+						}
+					else{
+						$('#mark5').css({ 'color': 'red', 'font-size': '150%' });
+						$('#mark5').text("&#x2717;")
+					
+					}
+					if($('#6 :selected').val()=="constant"){
+						$('#mark6').css({ 'color': 'green', 'font-size': '150%' });
+						$('#mark6').text("&#x2713;")
+						}
+					else{
+						$('#mark6').css({ 'color': 'red', 'font-size': '150%' });
+						$('#mark6').text("&#x2717;")
+					
+					}
+					
+					
+					
+				})
+			</div>
+					
+				</p>
+
+               <div class="solution" data-type="custom">
+
+                    <div class="guess">
+                    	[$('#0 :selected').val(),$('#1 :selected').val(),$('#2 :selected').val(),$('#3 :selected').val(),$('#4 :selected').val(),$('#5 :selected').val(),$('#6 :selected').val() ]
+                    </div>
+                    <div class="validator-function">
+                       return guess[0]=="error" &amp;&amp; guess[1]=="equivalent" 
+                       &amp;&amp; guess[2]=="equivalent" &amp;&amp; guess[3]=="quotient"
+                       &amp;&amp; guess[4]=="sum" &amp;&amp; guess[5]=="special"
+                       &amp;&amp; guess[6]=="constant"
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div id="linear-over-linear-negative">
+            
+            	 <div class="vars">
+        			<var id = "A">randRangeNonZero(-10,10)</var>
+        			<var id = "B">randRangeNonZero(-10,10)</var>
+        			<var id = "C">randRangeNonZero(-10,10)</var>
+        			<var id = "D">randRangeNonZero(-10,10)</var>
+                </div>
+                <p class="problem">
+                
+                	A fully completed limit computation is presented below.  Carefully check each step of the calculation, and either say which
+                	limit law justifies the step, or that a mistake has been made.  
+                
+                	<br/><br/>
+                
+                	<code>	
+                		\displaystyle\lim_{x \to -\infty}\dfrac{<var>A</var>x+<var>B</var>}{<var>C</var>x+<var>D</var>}
+                		
+                	</code>
+                	
+                	<br/><br/>
+					
+					<code>\hphantom{\displaystyle\lim_{x \to -\infty}\dfrac{<var>A</var>x+<var>B</var>}{<var>C</var>x+<var>D</var>} \cdot \dfrac{\dfrac{1}{x}}{\dfrac{1}{x}}}</code>
+					
+					<select id="0">
+                		<option value="arithmetic">Arithmetic</option>
+						<option value="constant">Limit of Constant Function</option>
+ 				   		<option value="identity">Limit of Identity Function</option>
+ 				   		<option value="sum">Sum Law</option>
+  						<option value="product">Product Law</option>
+  						<option value="quotient">Quotient Law</option>
+  						<option value="power">Power Law</option>
+  						<option value="composition">Composition Law</option>
+  						<option value="equivalent">Functions agree for large values of x</option>
+  						<option value="error">An error was made</option>
+  						<option value="special">Known value of a special limit</option>
+					</select>  
+					 <span id="mark0"></span>
+					
+                	<br/><br/>
+                	
+                	<code>
+                	 
+                		=\displaystyle\lim_{x \to -\infty}\dfrac{<var>A</var>x+<var>B</var>}{<var>C</var>x+<var>D</var>} \cdot \dfrac{\dfrac{1}{x}}{\dfrac{1}{x}}
+                	</code>
+                	
+                	<br/><br/>
+					
+					<code>\hphantom{\displaystyle\lim_{x \to -\infty}\dfrac{<var>A</var>x+<var>B</var>}{<var>C</var>x+<var>D</var>} \cdot \dfrac{\dfrac{1}{x}}{\dfrac{1}{x}}}</code>
+					
+					<select id="1">
+                		<option value="arithmetic">Arithmetic</option>
+						<option value="constant">Limit of Constant Function</option>
+ 				   		<option value="identity">Limit of Identity Function</option>
+ 				   		<option value="sum">Sum Law</option>
+  						<option value="product">Product Law</option>
+  						<option value="quotient">Quotient Law</option>
+  						<option value="power">Power Law</option>
+  						<option value="composition">Composition Law</option>
+  						<option value="equivalent">Functions agree for large values of x</option>
+  						<option value="error">An error was made</option>
+  						<option value="special">Known value of a special limit</option>
+					</select>  
+					 <span id="mark1"></span>
+					
+                	<br/><br/>
+                	
+                	<code>
+                	 
+                		=\displaystyle\lim_{x \to -\infty}\dfrac{<var>A</var>+\dfrac{<var>B</var>}{x}}{<var>C</var>+\dfrac{<var>D</var>}{x}} 
+                	</code>
+					
+					<br/><br/>
+					
+					<code>\hphantom{\displaystyle\lim_{x \to -\infty}\dfrac{<var>A</var>x+<var>B</var>}{<var>C</var>x+<var>D</var>} \cdot \dfrac{\dfrac{1}{x}}{\dfrac{1}{x}}}</code>
+					
+					<select id="2">
+                		<option value="arithmetic">Arithmetic</option>
+						<option value="constant">Limit of Constant Function</option>
+ 				   		<option value="identity">Limit of Identity Function</option>
+ 				   		<option value="sum">Sum Law</option>
+  						<option value="product">Product Law</option>
+  						<option value="quotient">Quotient Law</option>
+  						<option value="power">Power Law</option>
+  						<option value="composition">Composition Law</option>
+  						<option value="equivalent">Functions agree for large values of x</option>
+  						<option value="error">An error was made</option>
+  						<option value="special">Known value of a special limit</option>
+					</select>  
+					 <span id="mark2"></span>
+					
+                	<br/><br/>
+                	
+                	<code>
+                	 
+                		=\dfrac{\displaystyle\lim_{x \to -\infty}(<var>A</var>+\dfrac{<var>B</var>}{x})}{\displaystyle\lim_{x \to -\infty}(<var>C</var>+\dfrac{<var>D</var>}{x})} 
+                	</code>
+                	
+                	<br/><br/>
+					
+					<code>\hphantom{\displaystyle\lim_{x \to -\infty}\dfrac{<var>A</var>x+<var>B</var>}{<var>C</var>x+<var>D</var>} \cdot \dfrac{\dfrac{1}{x}}{\dfrac{1}{x}}}</code>
+					
+					<select id="3">
+                		<option value="arithmetic">Arithmetic</option>
+						<option value="constant">Limit of Constant Function</option>
+ 				   		<option value="identity">Limit of Identity Function</option>
+ 				   		<option value="sum">Sum Law</option>
+  						<option value="product">Product Law</option>
+  						<option value="quotient">Quotient Law</option>
+  						<option value="power">Power Law</option>
+  						<option value="composition">Composition Law</option>
+  						<option value="equivalent">Functions agree for large values of x</option>
+  						<option value="error">An error was made</option>
+  						<option value="special">Known value of a special limit</option>
+					</select>  
+					 <span id="mark3"></span>
+					
+                	<br/><br/>
+                	
+                	<code>
+                	 
+                		=\dfrac{\displaystyle\lim_{x \to -\infty}(<var>A</var>)+\displaystyle\lim_{x \to -\infty}(\dfrac{<var>B</var>}{x})}
+                		{\displaystyle\lim_{x \to -\infty}(<var>C</var>)+\displaystyle\lim_{x \to -\infty}(\dfrac{<var>D</var>}{x})} 
+                	</code>
+                	
+                	<br/><br/>
+					
+					<code>\hphantom{\displaystyle\lim_{x \to -\infty}\dfrac{<var>A</var>x+<var>B</var>}{<var>C</var>x+<var>D</var>} \cdot \dfrac{\dfrac{1}{x}}{\dfrac{1}{x}}}</code>
+					
+					<select id="4">
+                		<option value="arithmetic">Arithmetic</option>
+						<option value="constant">Limit of Constant Function</option>
+ 				   		<option value="identity">Limit of Identity Function</option>
+ 				   		<option value="sum">Sum Law</option>
+  						<option value="product">Product Law</option>
+  						<option value="quotient">Quotient Law</option>
+  						<option value="power">Power Law</option>
+  						<option value="composition">Composition Law</option>
+  						<option value="equivalent">Functions agree for large values of x</option>
+  						<option value="error">An error was made</option>
+  						<option value="special">Known value of a special limit</option>
+					</select>  
+					 <span id="mark4"></span>
+					
+                	<br/><br/>
+                	
+                	<code>
+                	 
+                		=\dfrac{\displaystyle\lim_{x \to -\infty}(<var>A</var>)+0}
+                		{\displaystyle\lim_{x \to -\infty}(<var>C</var>)+0} 
+                	</code>
+                	
+                	<br/><br/>
+					
+					<code>\hphantom{\displaystyle\lim_{x \to -\infty}\dfrac{<var>A</var>x+<var>B</var>}{<var>C</var>x+<var>D</var>} \cdot \dfrac{\dfrac{1}{x}}{\dfrac{1}{x}}}</code>
+					
+					<select id="5">
+                		<option value="arithmetic">Arithmetic</option>
+						<option value="constant">Limit of Constant Function</option>
+ 				   		<option value="identity">Limit of Identity Function</option>
+ 				   		<option value="sum">Sum Law</option>
+  						<option value="product">Product Law</option>
+  						<option value="quotient">Quotient Law</option>
+  						<option value="power">Power Law</option>
+  						<option value="composition">Composition Law</option>
+  						<option value="equivalent">Functions agree for large values of x</option>
+  						<option value="error">An error was made</option>
+  						<option value="special">Known value of a special limit</option>
+					</select>  
+					 <span id="mark5"></span>
+					
+                	<br/><br/>
+                	
+                	<code>
+                	 
+                		=\dfrac{<var>A</var>}{<var>C</var>} 
+                	</code>
+                	
+                	<div class="graphie">
+				$('#check-answer-button').click(function(){
+					if($('#0 :selected').val()=="equivalent"){
+						$('#mark0').css({ 'color': 'green', 'font-size': '150%' });
+						$('#mark0').text("&#x2713;")
+						}
+					else{
+						$('#mark0').css({ 'color': 'red', 'font-size': '150%' });
+						$('#mark0').text("&#x2717;")
+					
+					}
+					if($('#1 :selected').val()=="equivalent"){
+						$('#mark1').css({ 'color': 'green', 'font-size': '150%' });
+						$('#mark1').text("&#x2713;")
+						}
+					else{
+						$('#mark1').css({ 'color': 'red', 'font-size': '150%' });
+						$('#mark1').text("&#x2717;")
+					
+					}
+					if($('#2 :selected').val()=="quotient"){
+						$('#mark2').css({ 'color': 'green', 'font-size': '150%' });
+						$('#mark2').text("&#x2713;")
+						}
+					else{
+						$('#mark2').css({ 'color': 'red', 'font-size': '150%' });
+						$('#mark2').text("&#x2717;")
+					
+					}
+					if($('#3 :selected').val()=="sum"){
+						$('#mark3').css({ 'color': 'green', 'font-size': '150%' });
+						$('#mark3').text("&#x2713;")
+						}
+					else{
+						$('#mark3').css({ 'color': 'red', 'font-size': '150%' });
+						$('#mark3').text("&#x2717;")
+					
+					}
+					if($('#4 :selected').val()=="special"){
+						$('#mark4').css({ 'color': 'green', 'font-size': '150%' });
+						$('#mark4').text("&#x2713;")
+						}
+					else{
+						$('#mark4').css({ 'color': 'red', 'font-size': '150%' });
+						$('#mark4').text("&#x2717;")
+					
+					}
+					if($('#5 :selected').val()=="constant"){
+						$('#mark5').css({ 'color': 'green', 'font-size': '150%' });
+						$('#mark5').text("&#x2713;")
+						}
+					else{
+						$('#mark5').css({ 'color': 'red', 'font-size': '150%' });
+						$('#mark5').text("&#x2717;")
+					
+					}
+					
+					
+					
+				})
+			</div>
+					
+				</p>
+
+               <div class="solution" data-type="custom">
+
+                    <div class="guess">
+                    	[$('#0 :selected').val(),$('#1 :selected').val(),$('#2 :selected').val(),$('#3 :selected').val(),$('#4 :selected').val(),$('#5 :selected').val() ]
+                    </div>
+                    <div class="validator-function">
+                       return guess[0]=="equivalent" &amp;&amp; guess[1]=="equivalent" 
+                       &amp;&amp; guess[2]=="quotient" &amp;&amp; guess[3]=="sum"
+                       &amp;&amp; guess[4]=="special" &amp;&amp; guess[5]=="constant"
+                      
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div id="quadratic-over-quadratic-negative">
+            
+            	 <div class="vars">
+        			<var id = "A">randRangeNonZero(-10,10)</var>
+        			<var id = "B">randRangeNonZero(-10,10)</var>
+        			<var id = "C">randRangeNonZero(-10,10)</var>
+        			<var id = "D">randRangeNonZero(-10,10)</var>
+        			<var id = "E">randRangeNonZero(-10,10)</var>
+        			<var id = "F">randRangeNonZero(-10,10)</var>
+                </div>
+                <p class="problem">
+                
+                	A fully completed limit computation is presented below.  Carefully check each step of the calculation, and either say which
+                	limit law justifies the step, or that a mistake has been made.  
+                
+                	<br/><br/>
+                
+                	<code>	
+                		\displaystyle\lim_{x \to -\infty}\dfrac{<var>A</var>x^2+<var>B</var>x+<var>C</var>}{<var>D</var>x^2+<var>E</var>x+<var>F</var>}
+                		
+                	</code>
+                	
+                	<br/><br/>
+					
+					<code>\hphantom{\displaystyle\lim_{x \to -\infty}\dfrac{<var>A</var>x+<var>B</var>}{<var>C</var>x+<var>D</var>} \cdot \dfrac{\dfrac{1}{x}}{\dfrac{1}{x}}}</code>
+					
+					<select id="0">
+                		<option value="arithmetic">Arithmetic</option>
+						<option value="constant">Limit of Constant Function</option>
+ 				   		<option value="identity">Limit of Identity Function</option>
+ 				   		<option value="sum">Sum Law</option>
+  						<option value="product">Product Law</option>
+  						<option value="quotient">Quotient Law</option>
+  						<option value="power">Power Law</option>
+  						<option value="composition">Composition Law</option>
+  						<option value="equivalent">Functions agree for large values of x</option>
+  						<option value="error">An error was made</option>
+  						<option value="special">Known value of a special limit</option>
+					</select>  
+					<span id="mark0"></span>
+					
+                	<br/><br/>
+                	
+                	<code>
+                	 
+                		=\displaystyle\lim_{x \to -\infty}\dfrac{<var>A</var>x^2+<var>B</var>x+<var>C</var>}{<var>D</var>x^2+<var>E</var>x+<var>F</var>} \cdot \dfrac{\dfrac{1}{x^2}}{\dfrac{1}{x^2}}
+                	</code>
+                	
+                	<br/><br/>
+					
+					<code>\hphantom{\displaystyle\lim_{x \to -\infty}\dfrac{<var>A</var>x+<var>B</var>}{<var>C</var>x+<var>D</var>} \cdot \dfrac{\dfrac{1}{x}}{\dfrac{1}{x}}}</code>
+					
+					<select id="1">
+                		<option value="arithmetic">Arithmetic</option>
+						<option value="constant">Limit of Constant Function</option>
+ 				   		<option value="identity">Limit of Identity Function</option>
+ 				   		<option value="sum">Sum Law</option>
+  						<option value="product">Product Law</option>
+  						<option value="quotient">Quotient Law</option>
+  						<option value="power">Power Law</option>
+  						<option value="composition">Composition Law</option>
+  						<option value="equivalent">Functions agree for large values of x</option>
+  						<option value="error">An error was made</option>
+  						<option value="special">Known value of a special limit</option>
+					</select>  
+					<span id="mark1"></span>
+					
+                	<br/><br/>
+                	
+                	<code>
+                	 
+                		=\displaystyle\lim_{x \to -\infty}\dfrac{<var>A</var>+\dfrac{<var>B</var>}{x}+\dfrac{<var>C</var>}{x^2}}
+                		{<var>D</var>+\dfrac{<var>E</var>}{x}+\dfrac{<var>F</var>}{x^2}}
+                	</code>
+					
+					<br/><br/>
+					
+					<code>\hphantom{\displaystyle\lim_{x \to -\infty}\dfrac{<var>A</var>x+<var>B</var>}{<var>C</var>x+<var>D</var>} \cdot \dfrac{\dfrac{1}{x}}{\dfrac{1}{x}}}</code>
+					
+					<select id="2">
+                		<option value="arithmetic">Arithmetic</option>
+						<option value="constant">Limit of Constant Function</option>
+ 				   		<option value="identity">Limit of Identity Function</option>
+ 				   		<option value="sum">Sum Law</option>
+  						<option value="product">Product Law</option>
+  						<option value="quotient">Quotient Law</option>
+  						<option value="power">Power Law</option>
+  						<option value="composition">Composition Law</option>
+  						<option value="equivalent">Functions agree for large values of x</option>
+  						<option value="error">An error was made</option>
+  						<option value="special">Known value of a special limit</option>
+					</select>  
+					<span id="mark2"></span>
+					
+                	<br/><br/>
+                	
+                	<code>
+                	 
+                		=\dfrac{\displaystyle\lim_{x \to -\infty}(<var>A</var>+\dfrac{<var>B</var>}{x}+\dfrac{<var>C</var>}{x^2})}
+                		{\displaystyle\lim_{x \to -\infty}(<var>D</var>+\dfrac{<var>E</var>}{x}+\dfrac{<var>F</var>}{x^2})}
+                	</code>
+                	
+                	<br/><br/>
+					
+					<code>\hphantom{\displaystyle\lim_{x \to -\infty}\dfrac{<var>A</var>x+<var>B</var>}{<var>C</var>x+<var>D</var>} \cdot \dfrac{\dfrac{1}{x}}{\dfrac{1}{x}}}</code>
+					
+					<select id="3">
+                		<option value="arithmetic">Arithmetic</option>
+						<option value="constant">Limit of Constant Function</option>
+ 				   		<option value="identity">Limit of Identity Function</option>
+ 				   		<option value="sum">Sum Law</option>
+  						<option value="product">Product Law</option>
+  						<option value="quotient">Quotient Law</option>
+  						<option value="power">Power Law</option>
+  						<option value="composition">Composition Law</option>
+  						<option value="equivalent">Functions agree for large values of x</option>
+  						<option value="error">An error was made</option>
+  						<option value="special">Known value of a special limit</option>
+					</select>  
+					<span id="mark3"></span>
+					
+                	<br/><br/>
+                	
+                	<code>
+                	 
+                		=\dfrac{\displaystyle\lim_{x \to -\infty}(<var>A</var>)+\displaystyle\lim_{x \to -\infty}(\dfrac{<var>B</var>}{x})+\displaystyle\lim_{x \to -\infty}(\dfrac{<var>C</var>}{x^2})}
+                		{\displaystyle\lim_{x \to -\infty}(<var>D</var>)+\displaystyle\lim_{x \to -\infty}(\dfrac{<var>E</var>}{x})+\displaystyle\lim_{x \to -\infty}(\dfrac{<var>F</var>}{x^2})}
+                	</code>
+                	
+                	<br/><br/>
+					
+					<code>\hphantom{\displaystyle\lim_{x \to -\infty}\dfrac{<var>A</var>x+<var>B</var>}{<var>C</var>x+<var>D</var>} \cdot \dfrac{\dfrac{1}{x}}{\dfrac{1}{x}}}</code>
+					
+					<select id="4">
+                		<option value="arithmetic">Arithmetic</option>
+						<option value="constant">Limit of Constant Function</option>
+ 				   		<option value="identity">Limit of Identity Function</option>
+ 				   		<option value="sum">Sum Law</option>
+  						<option value="product">Product Law</option>
+  						<option value="quotient">Quotient Law</option>
+  						<option value="power">Power Law</option>
+  						<option value="composition">Composition Law</option>
+  						<option value="equivalent">Functions agree for large values of x</option>
+  						<option value="error">An error was made</option>
+  						<option value="special">Known value of a special limit</option>
+					</select>  
+					<span id="mark4"></span>
+					
+                	<br/><br/>
+                	
+                	<code>
+                	 
+                		=\dfrac{\displaystyle\lim_{x \to -\infty}(<var>A</var>)+0+0}
+                		{\displaystyle\lim_{x \to -\infty}(<var>D</var>)+0+0}
+                	</code>
+                	
+                	<br/><br/>
+					
+					<code>\hphantom{\displaystyle\lim_{x \to -\infty}\dfrac{<var>A</var>x+<var>B</var>}{<var>C</var>x+<var>D</var>} \cdot \dfrac{\dfrac{1}{x}}{\dfrac{1}{x}}}</code>
+					
+					<select id="5">
+                		<option value="arithmetic">Arithmetic</option>
+						<option value="constant">Limit of Constant Function</option>
+ 				   		<option value="identity">Limit of Identity Function</option>
+ 				   		<option value="sum">Sum Law</option>
+  						<option value="product">Product Law</option>
+  						<option value="quotient">Quotient Law</option>
+  						<option value="power">Power Law</option>
+  						<option value="composition">Composition Law</option>
+  						<option value="equivalent">Functions agree for large values of x</option>
+  						<option value="error">An error was made</option>
+  						<option value="special">Known value of a special limit</option>
+					</select>  
+					<span id="mark5"></span>
+					
+                	<br/><br/>
+                	
+                	<code>
+                	 
+                		=\dfrac{<var>A</var>}{<var>D</var>} 
+                	</code>
+                	
+                	<div class="graphie">
+				$('#check-answer-button').click(function(){
+					if($('#0 :selected').val()=="equivalent"){
+						$('#mark0').css({ 'color': 'green', 'font-size': '150%' });
+						$('#mark0').text("&#x2713;")
+						}
+					else{
+						$('#mark0').css({ 'color': 'red', 'font-size': '150%' });
+						$('#mark0').text("&#x2717;")
+					
+					}
+					if($('#1 :selected').val()=="equivalent"){
+						$('#mark1').css({ 'color': 'green', 'font-size': '150%' });
+						$('#mark1').text("&#x2713;")
+						}
+					else{
+						$('#mark1').css({ 'color': 'red', 'font-size': '150%' });
+						$('#mark1').text("&#x2717;")
+					
+					}
+					if($('#2 :selected').val()=="quotient"){
+						$('#mark2').css({ 'color': 'green', 'font-size': '150%' });
+						$('#mark2').text("&#x2713;")
+						}
+					else{
+						$('#mark2').css({ 'color': 'red', 'font-size': '150%' });
+						$('#mark2').text("&#x2717;")
+					
+					}
+					if($('#3 :selected').val()=="sum"){
+						$('#mark3').css({ 'color': 'green', 'font-size': '150%' });
+						$('#mark3').text("&#x2713;")
+						}
+					else{
+						$('#mark3').css({ 'color': 'red', 'font-size': '150%' });
+						$('#mark3').text("&#x2717;")
+					
+					}
+					if($('#4 :selected').val()=="special"){
+						$('#mark4').css({ 'color': 'green', 'font-size': '150%' });
+						$('#mark4').text("&#x2713;")
+						}
+					else{
+						$('#mark4').css({ 'color': 'red', 'font-size': '150%' });
+						$('#mark4').text("&#x2717;")
+					
+					}
+					if($('#5 :selected').val()=="constant"){
+						$('#mark5').css({ 'color': 'green', 'font-size': '150%' });
+						$('#mark5').text("&#x2713;")
+						}
+					else{
+						$('#mark5').css({ 'color': 'red', 'font-size': '150%' });
+						$('#mark5').text("&#x2717;")
+					
+					}
+					
+					
+					
+				})
+			</div>
+                	
+                	
+					
+				</p>
+
+               <div class="solution" data-type="custom">
+
+                    <div class="guess">
+                    	[$('#0 :selected').val(),$('#1 :selected').val(),$('#2 :selected').val(),$('#3 :selected').val(),$('#4 :selected').val(),$('#5 :selected').val() ]
+                    </div>
+                    <div class="validator-function">
+                       return guess[0]=="equivalent" &amp;&amp; guess[1]=="equivalent" 
+                       &amp;&amp; guess[2]=="quotient" &amp;&amp; guess[3]=="sum"
+                       &amp;&amp; guess[4]=="special" &amp;&amp; guess[5]=="constant"
+                      
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div id="high-exponent-over-itself-negative">
+            
+            	 <div class="vars">
+        			<var id = "A">randRangeNonZero(-10,10)</var>
+        			<var id = "B">randRangeNonZero(-10,10)</var>
+        			<var id = "C">randRangeNonZero(-10,10)</var>
+        			<var id = "D">randRangeNonZero(-10,10)</var>
+        			<var id = "E">randRangeNonZero(-10,10)</var>
+        			<var id = "F">randRangeNonZero(-10,10)</var>
+        			<var id = "E1">randRange(60,100)</var>
+        			<var id = "E2">randRange(20,50)</var>
+        			<var id = "E3">randRange(20,50)</var>
+        			
+                </div>
+                <p class="problem">
+                
+                	A fully completed limit computation is presented below.  Carefully check each step of the calculation, and either say which
+                	limit law justifies the step, or that a mistake has been made.  
+                
+                	<br/><br/>
+                
+                	<code>	
+                		\displaystyle\lim_{x \to -\infty}\dfrac{<var>A</var>x^{<var>E1</var>}+<var>B</var>x^{<var>E2</var>}+<var>C</var>}
+                		{<var>D</var>x^{<var>E1</var>}+<var>E</var>x^{<var>E3</var>}+<var>F</var>}
+                		
+                	</code>
+                	
+                	<br/><br/>
+					
+					<code>\hphantom{\displaystyle\lim_{x \to -\infty}\dfrac{<var>A</var>x+<var>B</var>}{<var>C</var>x+<var>D</var>} \cdot \dfrac{\dfrac{1}{x}}{\dfrac{1}{x}}}</code>
+					
+					<select id="0">
+                		<option value="arithmetic">Arithmetic</option>
+						<option value="constant">Limit of Constant Function</option>
+ 				   		<option value="identity">Limit of Identity Function</option>
+ 				   		<option value="sum">Sum Law</option>
+  						<option value="product">Product Law</option>
+  						<option value="quotient">Quotient Law</option>
+  						<option value="power">Power Law</option>
+  						<option value="composition">Composition Law</option>
+  						<option value="equivalent">Functions agree for large values of x</option>
+  						<option value="error">An error was made</option>
+  						<option value="special">Known value of a special limit</option>
+					</select>  
+					<span id="mark0"></span>
+					
+                	<br/><br/>
+                	
+                	<code>
+                	 
+                		=\displaystyle\lim_{x \to -\infty}\dfrac{<var>A</var>x^{<var>E1</var>}+<var>B</var>x^{<var>E2</var>}+<var>C</var>}
+                		{<var>D</var>x^{<var>E1</var>}+<var>E</var>x^{<var>E3</var>}+<var>F</var>} 
+                		\cdot \dfrac{\dfrac{1}{x^{<var>E1</var>}}}{\dfrac{1}{x^{<var>E1</var>}}}
+                	</code>
+                	
+                	<br/><br/>
+					
+					<code>\hphantom{\displaystyle\lim_{x \to -\infty}\dfrac{<var>A</var>x+<var>B</var>}{<var>C</var>x+<var>D</var>} \cdot \dfrac{\dfrac{1}{x}}{\dfrac{1}{x}}}</code>
+					
+					<select id="1">
+                		<option value="arithmetic">Arithmetic</option>
+						<option value="constant">Limit of Constant Function</option>
+ 				   		<option value="identity">Limit of Identity Function</option>
+ 				   		<option value="sum">Sum Law</option>
+  						<option value="product">Product Law</option>
+  						<option value="quotient">Quotient Law</option>
+  						<option value="power">Power Law</option>
+  						<option value="composition">Composition Law</option>
+  						<option value="equivalent">Functions agree for large values of x</option>
+  						<option value="error">An error was made</option>
+  						<option value="special">Known value of a special limit</option>
+					</select>  
+					<span id="mark1"></span>
+					
+                	<br/><br/>
+                	
+                	<code>
+                	 
+                		=\displaystyle\lim_{x \to -\infty}\dfrac{<var>A</var>+\dfrac{<var>B</var>}{x^{<var>E1-E2</var>}}+\dfrac{<var>C</var>}{x^{<var>E1</var>}}}
+                		{<var>D</var>+\dfrac{<var>E</var>}{x^{<var>E1-E3</var>}}+\dfrac{<var>F</var>}{x^{<var>E1</var>}}}
+                	</code>
+					
+					<br/><br/>
+					
+					<code>\hphantom{\displaystyle\lim_{x \to -\infty}\dfrac{<var>A</var>x+<var>B</var>}{<var>C</var>x+<var>D</var>} \cdot \dfrac{\dfrac{1}{x}}{\dfrac{1}{x}}}</code>
+					
+					<select id="2">
+                		<option value="arithmetic">Arithmetic</option>
+						<option value="constant">Limit of Constant Function</option>
+ 				   		<option value="identity">Limit of Identity Function</option>
+ 				   		<option value="sum">Sum Law</option>
+  						<option value="product">Product Law</option>
+  						<option value="quotient">Quotient Law</option>
+  						<option value="power">Power Law</option>
+  						<option value="composition">Composition Law</option>
+  						<option value="equivalent">Functions agree for large values of x</option>
+  						<option value="error">An error was made</option>
+  						<option value="special">Known value of a special limit</option>
+					</select>  
+					<span id="mark2"></span>
+					
+                	<br/><br/>
+                	
+                	<code>
+                	 
+                		=\dfrac{\displaystyle\lim_{x \to -\infty}(<var>A</var>+\dfrac{<var>B</var>}{x^{<var>E1-E2</var>}}+\dfrac{<var>C</var>}{x^{<var>E1</var>}})}
+                		{\displaystyle\lim_{x \to -\infty}(<var>D</var>+\dfrac{<var>E</var>}{x^{<var>E1-E3</var>}}+\dfrac{<var>F</var>}{x^{<var>E1</var>}})}
+                	</code>
+                	
+                	<br/><br/>
+					
+					<code>\hphantom{\displaystyle\lim_{x \to -\infty}\dfrac{<var>A</var>x+<var>B</var>}{<var>C</var>x+<var>D</var>} \cdot \dfrac{\dfrac{1}{x}}{\dfrac{1}{x}}}</code>
+					
+					<select id="3">
+                		<option value="arithmetic">Arithmetic</option>
+						<option value="constant">Limit of Constant Function</option>
+ 				   		<option value="identity">Limit of Identity Function</option>
+ 				   		<option value="sum">Sum Law</option>
+  						<option value="product">Product Law</option>
+  						<option value="quotient">Quotient Law</option>
+  						<option value="power">Power Law</option>
+  						<option value="composition">Composition Law</option>
+  						<option value="equivalent">Functions agree for large values of x</option>
+  						<option value="error">An error was made</option>
+  						<option value="special">Known value of a special limit</option>
+					</select>  
+					<span id="mark3"></span>
+					
+                	<br/><br/>
+                	
+                	<code>
+                	 
+                		=\dfrac{\displaystyle\lim_{x \to -\infty}(<var>A</var>)+\displaystyle\lim_{x \to -\infty}(\dfrac{<var>B</var>}{x^{<var>E1-E2</var>}})+\displaystyle\lim_{x \to -\infty}(\dfrac{<var>C</var>}{x^{<var>E1</var>}})}
+                		{\displaystyle\lim_{x \to -\infty}(<var>D</var>)+\displaystyle\lim_{x \to -\infty}(\dfrac{<var>E</var>}{x^{<var>E1-E3</var>}})+\displaystyle\lim_{x \to -\infty}(\dfrac{<var>F</var>}{x^{<var>E1</var>}})}
+                	</code>
+                	
+                	<br/><br/>
+					
+					<code>\hphantom{\displaystyle\lim_{x \to -\infty}\dfrac{<var>A</var>x+<var>B</var>}{<var>C</var>x+<var>D</var>} \cdot \dfrac{\dfrac{1}{x}}{\dfrac{1}{x}}}</code>
+					
+					<select id="4">
+                		<option value="arithmetic">Arithmetic</option>
+						<option value="constant">Limit of Constant Function</option>
+ 				   		<option value="identity">Limit of Identity Function</option>
+ 				   		<option value="sum">Sum Law</option>
+  						<option value="product">Product Law</option>
+  						<option value="quotient">Quotient Law</option>
+  						<option value="power">Power Law</option>
+  						<option value="composition">Composition Law</option>
+  						<option value="equivalent">Functions agree for large values of x</option>
+  						<option value="error">An error was made</option>
+  						<option value="special">Known value of a special limit</option>
+					</select>  
+					<span id="mark4"></span>
+					
+                	<br/><br/>
+                	
+                	<code>
+                	 
+                		=\dfrac{\displaystyle\lim_{x \to -\infty}(<var>A</var>)+0+0}
+                		{\displaystyle\lim_{x \to -\infty}(<var>D</var>)+0+0}
+                	</code>
+                	
+                	<br/><br/>
+					
+					<code>\hphantom{\displaystyle\lim_{x \to -\infty}\dfrac{<var>A</var>x+<var>B</var>}{<var>C</var>x+<var>D</var>} \cdot \dfrac{\dfrac{1}{x}}{\dfrac{1}{x}}}</code>
+					
+					<select id="5">
+                		<option value="arithmetic">Arithmetic</option>
+						<option value="constant">Limit of Constant Function</option>
+ 				   		<option value="identity">Limit of Identity Function</option>
+ 				   		<option value="sum">Sum Law</option>
+  						<option value="product">Product Law</option>
+  						<option value="quotient">Quotient Law</option>
+  						<option value="power">Power Law</option>
+  						<option value="composition">Composition Law</option>
+  						<option value="equivalent">Functions agree for large values of x</option>
+  						<option value="error">An error was made</option>
+  						<option value="special">Known value of a special limit</option>
+					</select>  
+					<span id="mark5"></span>
+					
+                	<br/><br/>
+                	
+                	<code>
+                	 
+                		=\dfrac{<var>A</var>}{<var>D</var>} 
+                	</code>
+                	
+                	<div class="graphie">
+				$('#check-answer-button').click(function(){
+					if($('#0 :selected').val()=="equivalent"){
+						$('#mark0').css({ 'color': 'green', 'font-size': '150%' });
+						$('#mark0').text("&#x2713;")
+						}
+					else{
+						$('#mark0').css({ 'color': 'red', 'font-size': '150%' });
+						$('#mark0').text("&#x2717;")
+					
+					}
+					if($('#1 :selected').val()=="equivalent"){
+						$('#mark1').css({ 'color': 'green', 'font-size': '150%' });
+						$('#mark1').text("&#x2713;")
+						}
+					else{
+						$('#mark1').css({ 'color': 'red', 'font-size': '150%' });
+						$('#mark1').text("&#x2717;")
+					
+					}
+					if($('#2 :selected').val()=="quotient"){
+						$('#mark2').css({ 'color': 'green', 'font-size': '150%' });
+						$('#mark2').text("&#x2713;")
+						}
+					else{
+						$('#mark2').css({ 'color': 'red', 'font-size': '150%' });
+						$('#mark2').text("&#x2717;")
+					
+					}
+					if($('#3 :selected').val()=="sum"){
+						$('#mark3').css({ 'color': 'green', 'font-size': '150%' });
+						$('#mark3').text("&#x2713;")
+						}
+					else{
+						$('#mark3').css({ 'color': 'red', 'font-size': '150%' });
+						$('#mark3').text("&#x2717;")
+					
+					}
+					if($('#4 :selected').val()=="special"){
+						$('#mark4').css({ 'color': 'green', 'font-size': '150%' });
+						$('#mark4').text("&#x2713;")
+						}
+					else{
+						$('#mark4').css({ 'color': 'red', 'font-size': '150%' });
+						$('#mark4').text("&#x2717;")
+					
+					}
+					if($('#5 :selected').val()=="constant"){
+						$('#mark5').css({ 'color': 'green', 'font-size': '150%' });
+						$('#mark5').text("&#x2713;")
+						}
+					else{
+						$('#mark5').css({ 'color': 'red', 'font-size': '150%' });
+						$('#mark5').text("&#x2717;")
+					
+					}
+					
+					
+					
+				})
+			</div>
+					
+				</p>
+
+               <div class="solution" data-type="custom">
+
+                    <div class="guess">
+                    	[$('#0 :selected').val(),$('#1 :selected').val(),$('#2 :selected').val(),$('#3 :selected').val(),$('#4 :selected').val(),$('#5 :selected').val() ]
+                    </div>
+                    <div class="validator-function">
+                       return guess[0]=="equivalent" &amp;&amp; guess[1]=="equivalent" 
+                       &amp;&amp; guess[2]=="quotient" &amp;&amp; guess[3]=="sum"
+                       &amp;&amp; guess[4]=="special" &amp;&amp; guess[5]=="constant"
+                      
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div id="square-root-negative">
+            
+            	 <div class="vars">
+        			<var id = "A">randRangeNonZero(1,10)</var>
+        			<var id = "B">randRangeNonZero(-10,10)</var>
+        			<var id = "C">randRangeNonZero(1,10)</var>
+        			<var id = "D">randRangeNonZero(-10,10)</var>
+        			<var id = "E">randRangeNonZero(-10,10)</var>
+        			
+        			
+        			
+                </div>
+                <p class="problem">
+                
+                	A fully completed limit computation is presented below.  Carefully check each step of the calculation, and either say which
+                	limit law justifies the step, or that a mistake has been made.  
+                
+                	<br/><br/>
+                
+                	<code>	
+                		\displaystyle\lim_{x \to -\infty}\displaystyle\dfrac{<var>A</var>x+<var>B</var>}
+                		{\sqrt{<var>C*C</var>x^{2}+<var>D</var>x+<var>E</var>}}
+                		
+                	</code>
+                	
+                	
+                	
+                	<br/><br/>
+					
+					<code>\hphantom{\displaystyle\lim_{x \to -\infty}\dfrac{<var>A</var>x+<var>B</var>}{<var>C</var>x+<var>D</var>} \cdot \dfrac{\dfrac{1}{x}}{\dfrac{1}{x}}}</code>
+					
+					<select id="0">
+                		<option value="arithmetic">Arithmetic</option>
+						<option value="constant">Limit of Constant Function</option>
+ 				   		<option value="identity">Limit of Identity Function</option>
+ 				   		<option value="sum">Sum Law</option>
+  						<option value="product">Product Law</option>
+  						<option value="quotient">Quotient Law</option>
+  						<option value="power">Power Law</option>
+  						<option value="composition">Composition Law</option>
+  						<option value="equivalent">Functions agree for large values of x</option>
+  						<option value="error">An error was made</option>
+  						<option value="special">Known value of a special limit</option>
+					</select>  
+					<span id="mark0"></span>
+					
+                	<br/><br/>
+                	
+                	<code>
+                	 
+                		=\displaystyle\lim_{x \to -\infty}\displaystyle\dfrac{<var>A</var>x+<var>B</var>}
+                		{\sqrt{<var>C*C</var>x^{2}+<var>D</var>x+<var>E</var>}}
+                		\cdot \dfrac{\dfrac{1}{x}}{\dfrac{1}{x}}
+                	</code>
+					
+					<br/><br/>
+					
+					<code>\hphantom{\displaystyle\lim_{x \to -\infty}\dfrac{<var>A</var>x+<var>B</var>}{<var>C</var>x+<var>D</var>} \cdot \dfrac{\dfrac{1}{x}}{\dfrac{1}{x}}}</code>
+					
+					<select id="1">
+                		<option value="arithmetic">Arithmetic</option>
+						<option value="constant">Limit of Constant Function</option>
+ 				   		<option value="identity">Limit of Identity Function</option>
+ 				   		<option value="sum">Sum Law</option>
+  						<option value="product">Product Law</option>
+  						<option value="quotient">Quotient Law</option>
+  						<option value="power">Power Law</option>
+  						<option value="composition">Composition Law</option>
+  						<option value="equivalent">Functions agree for large values of x</option>
+  						<option value="error">An error was made</option>
+  						<option value="special">Known value of a special limit</option>
+					</select>  
+					<span id="mark1"></span>
+					
+                	<br/><br/>
+                	
+                	<code>
+                	 
+                		=\displaystyle\lim_{x \to -\infty}\displaystyle\dfrac{<var>A</var>+\dfrac{<var>B</var>}{x}}
+                		{\dfrac{-1}{\sqrt{x^2}}\sqrt{<var>C*C</var>x^{2}+<var>D</var>x+<var>E</var>}}
+                	</code>
+                	
+                	<br/><br/>
+					
+					<code>\hphantom{\displaystyle\lim_{x \to -\infty}\dfrac{<var>A</var>x+<var>B</var>}{<var>C</var>x+<var>D</var>} \cdot \dfrac{\dfrac{1}{x}}{\dfrac{1}{x}}}</code>
+					
+					<select id="2">
+                		<option value="arithmetic">Arithmetic</option>
+						<option value="constant">Limit of Constant Function</option>
+ 				   		<option value="identity">Limit of Identity Function</option>
+ 				   		<option value="sum">Sum Law</option>
+  						<option value="product">Product Law</option>
+  						<option value="quotient">Quotient Law</option>
+  						<option value="power">Power Law</option>
+  						<option value="composition">Composition Law</option>
+  						<option value="equivalent">Functions agree for large values of x</option>
+  						<option value="error">An error was made</option>
+  						<option value="special">Known value of a special limit</option>
+					</select>  
+					<span id="mark2"></span>
+					
+                	<br/><br/>
+                	
+                	<code>
+                	 
+                		=\displaystyle\lim_{x \to -\infty}\displaystyle\dfrac{<var>A</var>+\dfrac{<var>B</var>}{x}}
+                		{-\sqrt{\dfrac{1}{x^2}(<var>C*C</var>x^{2}+<var>D</var>x+<var>E</var>)}}
+                		
+                	</code>
+                	
+                	<br/><br/>
+					
+					<code>\hphantom{\displaystyle\lim_{x \to -\infty}\dfrac{<var>A</var>x+<var>B</var>}{<var>C</var>x+<var>D</var>} \cdot \dfrac{\dfrac{1}{x}}{\dfrac{1}{x}}}</code>
+					
+					<select id="3">
+                		<option value="arithmetic">Arithmetic</option>
+						<option value="constant">Limit of Constant Function</option>
+ 				   		<option value="identity">Limit of Identity Function</option>
+ 				   		<option value="sum">Sum Law</option>
+  						<option value="product">Product Law</option>
+  						<option value="quotient">Quotient Law</option>
+  						<option value="power">Power Law</option>
+  						<option value="composition">Composition Law</option>
+  						<option value="equivalent">Functions agree for large values of x</option>
+  						<option value="error">An error was made</option>
+  						<option value="special">Known value of a special limit</option>
+					</select>  
+					<span id="mark3"></span>
+					
+                	<br/><br/>
+                	
+                	<code>
+                	 
+                		=\displaystyle\lim_{x \to -\infty}\displaystyle\dfrac{<var>A</var>+\dfrac{<var>B</var>}{x}}
+                		{-\sqrt{<var>C*C</var>+\dfrac{<var>D</var>}{x}+\dfrac{<var>E</var>}{x^2}}}
+                	</code>
+                	
+                	<br/><br/>
+					
+					<code>\hphantom{\displaystyle\lim_{x \to -\infty}\dfrac{<var>A</var>x+<var>B</var>}{<var>C</var>x+<var>D</var>} \cdot \dfrac{\dfrac{1}{x}}{\dfrac{1}{x}}}</code>
+					
+					<select id="4">
+                		<option value="arithmetic">Arithmetic</option>
+						<option value="constant">Limit of Constant Function</option>
+ 				   		<option value="identity">Limit of Identity Function</option>
+ 				   		<option value="sum">Sum Law</option>
+  						<option value="product">Product Law</option>
+  						<option value="quotient">Quotient Law</option>
+  						<option value="power">Power Law</option>
+  						<option value="composition">Composition Law</option>
+  						<option value="equivalent">Functions agree for large values of x</option>
+  						<option value="error">An error was made</option>
+  						<option value="special">Known value of a special limit</option>
+					</select>  
+					<span id="mark4"></span>
+					
+                	<br/><br/>
+                	
+                	<code>
+                	 
+                		=\dfrac{\displaystyle\lim_{x \to -\infty}(<var>A</var>+\dfrac{<var>B</var>}{x})}
+                		{-\displaystyle\lim_{x \to -\infty}\sqrt{<var>C*C</var>+\dfrac{<var>D</var>}{x}+\dfrac{<var>E</var>}{x^2}}}
+                	</code>
+                	
+                	<br/><br/>
+					
+					<code>\hphantom{\displaystyle\lim_{x \to -\infty}\dfrac{<var>A</var>x+<var>B</var>}{<var>C</var>x+<var>D</var>} \cdot \dfrac{\dfrac{1}{x}}{\dfrac{1}{x}}}</code>
+					
+					<select id="5">
+                		<option value="arithmetic">Arithmetic</option>
+						<option value="constant">Limit of Constant Function</option>
+ 				   		<option value="identity">Limit of Identity Function</option>
+ 				   		<option value="sum">Sum Law</option>
+  						<option value="product">Product Law</option>
+  						<option value="quotient">Quotient Law</option>
+  						<option value="power">Power Law</option>
+  						<option value="composition">Composition Law</option>
+  						<option value="equivalent">Functions agree for large values of x</option>
+  						<option value="error">An error was made</option>
+  						<option value="special">Known value of a special limit</option>
+					</select>  
+					<span id="mark5"></span>
+					
+                	<br/><br/>
+                	
+                	<code>
+                	 
+                		=\dfrac{\displaystyle\lim_{x \to -\infty}(<var>A</var>+\dfrac{<var>B</var>}{x})}
+                		{-\sqrt{\displaystyle\lim_{x \to -\infty}(<var>C*C</var>+\dfrac{<var>D</var>}{x}+\dfrac{<var>E</var>}{x^2})}}
+                	</code>
+                	
+                	<br/><br/>
+					
+					<code>\hphantom{\displaystyle\lim_{x \to -\infty}\dfrac{<var>A</var>x+<var>B</var>}{<var>C</var>x+<var>D</var>} \cdot \dfrac{\dfrac{1}{x}}{\dfrac{1}{x}}}</code>
+					
+					<select id="6">
+                		<option value="arithmetic">Arithmetic</option>
+						<option value="constant">Limit of Constant Function</option>
+ 				   		<option value="identity">Limit of Identity Function</option>
+ 				   		<option value="sum">Sum Law</option>
+  						<option value="product">Product Law</option>
+  						<option value="quotient">Quotient Law</option>
+  						<option value="power">Power Law</option>
+  						<option value="composition">Composition Law</option>
+  						<option value="equivalent">Functions agree for large values of x</option>
+  						<option value="error">An error was made</option>
+  						<option value="special">Known value of a special limit</option>
+					</select>  
+					<span id="mark6"></span>
+					
+                	<br/><br/>
+                	
+                	<code>
+                	 
+                		=\dfrac{\displaystyle\lim_{x \to -\infty}(<var>A</var>)+\displaystyle\lim_{x \to -\infty}(\dfrac{<var>B</var>}{x})}
+                		{-\sqrt{\displaystyle\lim_{x \to -\infty}(<var>C*C</var>)+\displaystyle\lim_{x \to -\infty}(\dfrac{<var>D</var>}{x})+\displaystyle\lim_{x \to -\infty}(\dfrac{<var>E</var>}{x^2})}}
+                	</code>
+                	
+                	<br/><br/>
+					
+					<code>\hphantom{\displaystyle\lim_{x \to -\infty}\dfrac{<var>A</var>x+<var>B</var>}{<var>C</var>x+<var>D</var>} \cdot \dfrac{\dfrac{1}{x}}{\dfrac{1}{x}}}</code>
+					
+					<select id="7">
+                		<option value="arithmetic">Arithmetic</option>
+						<option value="constant">Limit of Constant Function</option>
+ 				   		<option value="identity">Limit of Identity Function</option>
+ 				   		<option value="sum">Sum Law</option>
+  						<option value="product">Product Law</option>
+  						<option value="quotient">Quotient Law</option>
+  						<option value="power">Power Law</option>
+  						<option value="composition">Composition Law</option>
+  						<option value="equivalent">Functions agree for large values of x</option>
+  						<option value="error">An error was made</option>
+  						<option value="special">Known value of a special limit</option>
+					</select>  
+					<span id="mark7"></span>
+					
+                	<br/><br/>
+                	
+                	<code>
+                	 
+                		=\dfrac{\displaystyle\lim_{x \to -\infty}(<var>A</var>)+0}
+                		{-\sqrt{\displaystyle\lim_{x \to -\infty}(<var>C*C</var>)+0+0}}
+                	</code>
+                	
+                	<br/><br/>
+					
+					<code>\hphantom{\displaystyle\lim_{x \to -\infty}\dfrac{<var>A</var>x+<var>B</var>}{<var>C</var>x+<var>D</var>} \cdot \dfrac{\dfrac{1}{x}}{\dfrac{1}{x}}}</code>
+					
+					<select id="8">
+                		<option value="arithmetic">Arithmetic</option>
+						<option value="constant">Limit of Constant Function</option>
+ 				   		<option value="identity">Limit of Identity Function</option>
+ 				   		<option value="sum">Sum Law</option>
+  						<option value="product">Product Law</option>
+  						<option value="quotient">Quotient Law</option>
+  						<option value="power">Power Law</option>
+  						<option value="composition">Composition Law</option>
+  						<option value="equivalent">Functions agree for large values of x</option>
+  						<option value="error">An error was made</option>
+  						<option value="special">Known value of a special limit</option>
+					</select>  
+					<span id="mark8"></span>
+					
+                	<br/><br/>
+                	
+                	<code>
+                	 
+                		=\dfrac{<var>A</var>}
+                		{-\sqrt{<var>C*C</var>}}
+                	</code>
+                	
+                	<br/><br/>
+					
+					<code>\hphantom{\displaystyle\lim_{x \to -\infty}\dfrac{<var>A</var>x+<var>B</var>}{<var>C</var>x+<var>D</var>} \cdot \dfrac{\dfrac{1}{x}}{\dfrac{1}{x}}}</code>
+					
+					<select id="9">
+                		<option value="arithmetic">Arithmetic</option>
+						<option value="constant">Limit of Constant Function</option>
+ 				   		<option value="identity">Limit of Identity Function</option>
+ 				   		<option value="sum">Sum Law</option>
+  						<option value="product">Product Law</option>
+  						<option value="quotient">Quotient Law</option>
+  						<option value="power">Power Law</option>
+  						<option value="composition">Composition Law</option>
+  						<option value="equivalent">Functions agree for large values of x</option>
+  						<option value="error">An error was made</option>
+  						<option value="special">Known value of a special limit</option>
+					</select>  
+					<span id="mark9"></span>
+					
+                	<br/><br/>
+                	
+                	<code>
+                	 
+                		=\dfrac{<var>toFraction(-A/C)[0]</var>}{<var>toFraction(-A/C)[1]</var>}
+                	</code>
+					
+					<div class="graphie">
+				$('#check-answer-button').click(function(){
+					if($('#0 :selected').val()=="equivalent"){
+						$('#mark0').css({ 'color': 'green', 'font-size': '150%' });
+						$('#mark0').text("&#x2713;")
+						}
+					else{
+						$('#mark0').css({ 'color': 'red', 'font-size': '150%' });
+						$('#mark0').text("&#x2717;")
+					
+					}
+					if($('#1 :selected').val()=="equivalent"){
+						$('#mark1').css({ 'color': 'green', 'font-size': '150%' });
+						$('#mark1').text("&#x2713;")
+						}
+					else{
+						$('#mark1').css({ 'color': 'red', 'font-size': '150%' });
+						$('#mark1').text("&#x2717;")
+					
+					}
+					if($('#2 :selected').val()=="equivalent"){
+						$('#mark2').css({ 'color': 'green', 'font-size': '150%' });
+						$('#mark2').text("&#x2713;")
+						}
+					else{
+						$('#mark2').css({ 'color': 'red', 'font-size': '150%' });
+						$('#mark2').text("&#x2717;")
+					
+					}
+					if($('#3 :selected').val()=="equivalent"){
+						$('#mark3').css({ 'color': 'green', 'font-size': '150%' });
+						$('#mark3').text("&#x2713;")
+						}
+					else{
+						$('#mark3').css({ 'color': 'red', 'font-size': '150%' });
+						$('#mark3').text("&#x2717;")
+					
+					}
+					if($('#4 :selected').val()=="quotient"){
+						$('#mark4').css({ 'color': 'green', 'font-size': '150%' });
+						$('#mark4').text("&#x2713;")
+						}
+					else{
+						$('#mark4').css({ 'color': 'red', 'font-size': '150%' });
+						$('#mark4').text("&#x2717;")
+					
+					}
+					if($('#5 :selected').val()=="power"){
+						$('#mark5').css({ 'color': 'green', 'font-size': '150%' });
+						$('#mark5').text("&#x2713;")
+						}
+					else{
+						$('#mark5').css({ 'color': 'red', 'font-size': '150%' });
+						$('#mark5').text("&#x2717;")
+					
+					}
+					if($('#6 :selected').val()=="sum"){
+						$('#mark6').css({ 'color': 'green', 'font-size': '150%' });
+						$('#mark6').text("&#x2713;")
+						}
+					else{
+						$('#mark6').css({ 'color': 'red', 'font-size': '150%' });
+						$('#mark6').text("&#x2717;")
+					
+					}
+					if($('#7 :selected').val()=="special"){
+						$('#mark7').css({ 'color': 'green', 'font-size': '150%' });
+						$('#mark7').text("&#x2713;")
+						}
+					else{
+						$('#mark7').css({ 'color': 'red', 'font-size': '150%' });
+						$('#mark7').text("&#x2717;")
+					
+					}
+					if($('#8 :selected').val()=="constant"){
+						$('#mark8').css({ 'color': 'green', 'font-size': '150%' });
+						$('#mark8').text("&#x2713;")
+						}
+					else{
+						$('#mark8').css({ 'color': 'red', 'font-size': '150%' });
+						$('#mark8').text("&#x2717;")
+					
+					}
+					if($('#9 :selected').val()=="arithmetic"){
+						$('#mark9').css({ 'color': 'green', 'font-size': '150%' });
+						$('#mark9').text("&#x2713;")
+						}
+					else{
+						$('#mark9').css({ 'color': 'red', 'font-size': '150%' });
+						$('#mark9').text("&#x2717;")
+					
+					}
+					
+					
+				})
+			</div>
+					
+					
+				</p>
+				
+			   <div class = "hints">
+			   		<p>Do you think there should be an error from the second equation to the third equation?</p>
+			   		<p>In fact, there is no error.  Since <code>x \to -\infty</code>, <code>x</code> is negative,
+			   		and so <code>-\sqrt{x^2}=x</code>.</p>
+			   </div>	
+				
+               <div class="solution" data-type="custom">
+
+                    <div class="guess">
+                    	[$('#0 :selected').val(),$('#1 :selected').val(),$('#2 :selected').val(),$('#3 :selected').val(),$('#4 :selected').val(),$('#5 :selected').val(),$('#6 :selected').val(),$('#7 :selected').val(),$('#8 :selected').val(),$('#9 :selected').val() ]
+                    </div>
+                    <div class="validator-function">
+                       return guess[0]=="equivalent" &amp;&amp; guess[1]=="equivalent" 
+                       &amp;&amp; guess[2]=="equivalent" &amp;&amp; guess[3]=="equivalent"
+                       &amp;&amp; guess[4]=="quotient" &amp;&amp; guess[5]=="power"
+                       &amp;&amp; guess[6]=="sum" &amp;&amp; guess[7]=="special"
+                        &amp;&amp; guess[8]=="constant"  &amp;&amp; guess[9]=="arithmetic"
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div id="square-root-error-negative">
+            
+            	 <div class="vars">
+        			<var id = "A">randRangeNonZero(1,10)</var>
+        			<var id = "B">randRangeNonZero(-10,10)</var>
+        			<var id = "C">randRangeNonZero(1,10)</var>
+        			<var id = "D">randRangeNonZero(-10,10)</var>
+        			<var id = "E">randRangeNonZero(-10,10)</var>
+        			
+        			
+        			
+                </div>
+                <p class="problem">
+                
+                	A fully completed limit computation is presented below.  Carefully check each step of the calculation, and either say which
+                	limit law justifies the step, or that a mistake has been made.  
+                
+                	<br/><br/>
+                
+                	<code>	
+                		\displaystyle\lim_{x \to -\infty}\displaystyle\dfrac{<var>A</var>x+<var>B</var>}
+                		{\sqrt{<var>C*C</var>x^{2}+<var>D</var>x+<var>E</var>}}
+                		
+                	</code>
+                	
+                	
+                	
+                	<br/><br/>
+					
+					<code>\hphantom{\displaystyle\lim_{x \to -\infty}\dfrac{<var>A</var>x+<var>B</var>}{<var>C</var>x+<var>D</var>} \cdot \dfrac{\dfrac{1}{x}}{\dfrac{1}{x}}}</code>
+					
+					<select id="0">
+                		<option value="arithmetic">Arithmetic</option>
+						<option value="constant">Limit of Constant Function</option>
+ 				   		<option value="identity">Limit of Identity Function</option>
+ 				   		<option value="sum">Sum Law</option>
+  						<option value="product">Product Law</option>
+  						<option value="quotient">Quotient Law</option>
+  						<option value="power">Power Law</option>
+  						<option value="composition">Composition Law</option>
+  						<option value="equivalent">Functions agree for large values of x</option>
+  						<option value="error">An error was made</option>
+  						<option value="special">Known value of a special limit</option>
+					</select>  
+					<span id="mark0"></span>
+					
+                	<br/><br/>
+                	
+                	<code>
+                	 
+                		=\displaystyle\lim_{x \to -\infty}\displaystyle\dfrac{<var>A</var>x+<var>B</var>}
+                		{\sqrt{<var>C*C</var>x^{2}+<var>D</var>x+<var>E</var>}}
+                		\cdot \dfrac{\dfrac{1}{x}}{\dfrac{1}{x}}
+                	</code>
+					
+					<br/><br/>
+					
+					<code>\hphantom{\displaystyle\lim_{x \to -\infty}\dfrac{<var>A</var>x+<var>B</var>}{<var>C</var>x+<var>D</var>} \cdot \dfrac{\dfrac{1}{x}}{\dfrac{1}{x}}}</code>
+					
+					<select id="1">
+                		<option value="arithmetic">Arithmetic</option>
+						<option value="constant">Limit of Constant Function</option>
+ 				   		<option value="identity">Limit of Identity Function</option>
+ 				   		<option value="sum">Sum Law</option>
+  						<option value="product">Product Law</option>
+  						<option value="quotient">Quotient Law</option>
+  						<option value="power">Power Law</option>
+  						<option value="composition">Composition Law</option>
+  						<option value="equivalent">Functions agree for large values of x</option>
+  						<option value="error">An error was made</option>
+  						<option value="special">Known value of a special limit</option>
+					</select>  
+					<span id="mark1"></span>
+					
+                	<br/><br/>
+                	
+                	<code>
+                	 
+                		=\displaystyle\lim_{x \to -\infty}\displaystyle\dfrac{<var>A</var>+\dfrac{<var>B</var>}{x}}
+                		{\dfrac{1}{\sqrt{x^2}}\sqrt{<var>C*C</var>x^{2}+<var>D</var>x+<var>E</var>}}
+                	</code>
+                	
+                	<br/><br/>
+					
+					<code>\hphantom{\displaystyle\lim_{x \to -\infty}\dfrac{<var>A</var>x+<var>B</var>}{<var>C</var>x+<var>D</var>} \cdot \dfrac{\dfrac{1}{x}}{\dfrac{1}{x}}}</code>
+					
+					<select id="2">
+                		<option value="arithmetic">Arithmetic</option>
+						<option value="constant">Limit of Constant Function</option>
+ 				   		<option value="identity">Limit of Identity Function</option>
+ 				   		<option value="sum">Sum Law</option>
+  						<option value="product">Product Law</option>
+  						<option value="quotient">Quotient Law</option>
+  						<option value="power">Power Law</option>
+  						<option value="composition">Composition Law</option>
+  						<option value="equivalent">Functions agree for large values of x</option>
+  						<option value="error">An error was made</option>
+  						<option value="special">Known value of a special limit</option>
+					</select>  
+					<span id="mark2"></span>
+					
+                	<br/><br/>
+                	
+                	<code>
+                	 
+                		=\displaystyle\lim_{x \to -\infty}\displaystyle\dfrac{<var>A</var>+\dfrac{<var>B</var>}{x}}
+                		{\sqrt{\dfrac{1}{x^2}(<var>C*C</var>x^{2}+<var>D</var>x+<var>E</var>)}}
+                		
+                	</code>
+                	
+                	<br/><br/>
+					
+					<code>\hphantom{\displaystyle\lim_{x \to -\infty}\dfrac{<var>A</var>x+<var>B</var>}{<var>C</var>x+<var>D</var>} \cdot \dfrac{\dfrac{1}{x}}{\dfrac{1}{x}}}</code>
+					
+					<select id="3">
+                		<option value="arithmetic">Arithmetic</option>
+						<option value="constant">Limit of Constant Function</option>
+ 				   		<option value="identity">Limit of Identity Function</option>
+ 				   		<option value="sum">Sum Law</option>
+  						<option value="product">Product Law</option>
+  						<option value="quotient">Quotient Law</option>
+  						<option value="power">Power Law</option>
+  						<option value="composition">Composition Law</option>
+  						<option value="equivalent">Functions agree for large values of x</option>
+  						<option value="error">An error was made</option>
+  						<option value="special">Known value of a special limit</option>
+					</select>  
+					<span id="mark3"></span>
+					
+                	<br/><br/>
+                	
+                	<code>
+                	 
+                		=\displaystyle\lim_{x \to -\infty}\displaystyle\dfrac{<var>A</var>+\dfrac{<var>B</var>}{x}}
+                		{\sqrt{<var>C*C</var>+\dfrac{<var>D</var>}{x}+\dfrac{<var>E</var>}{x^2}}}
+                	</code>
+                	
+                	<br/><br/>
+					
+					<code>\hphantom{\displaystyle\lim_{x \to -\infty}\dfrac{<var>A</var>x+<var>B</var>}{<var>C</var>x+<var>D</var>} \cdot \dfrac{\dfrac{1}{x}}{\dfrac{1}{x}}}</code>
+					
+					<select id="4">
+                		<option value="arithmetic">Arithmetic</option>
+						<option value="constant">Limit of Constant Function</option>
+ 				   		<option value="identity">Limit of Identity Function</option>
+ 				   		<option value="sum">Sum Law</option>
+  						<option value="product">Product Law</option>
+  						<option value="quotient">Quotient Law</option>
+  						<option value="power">Power Law</option>
+  						<option value="composition">Composition Law</option>
+  						<option value="equivalent">Functions agree for large values of x</option>
+  						<option value="error">An error was made</option>
+  						<option value="special">Known value of a special limit</option>
+					</select>  
+					<span id="mark4"></span>
+					
+                	<br/><br/>
+                	
+                	<code>
+                	 
+                		=\dfrac{\displaystyle\lim_{x \to -\infty}(<var>A</var>+\dfrac{<var>B</var>}{x})}
+                		{\displaystyle\lim_{x \to -\infty}\sqrt{<var>C*C</var>+\dfrac{<var>D</var>}{x}+\dfrac{<var>E</var>}{x^2}}}
+                	</code>
+                	
+                	<br/><br/>
+					
+					<code>\hphantom{\displaystyle\lim_{x \to -\infty}\dfrac{<var>A</var>x+<var>B</var>}{<var>C</var>x+<var>D</var>} \cdot \dfrac{\dfrac{1}{x}}{\dfrac{1}{x}}}</code>
+					
+					<select id="5">
+                		<option value="arithmetic">Arithmetic</option>
+						<option value="constant">Limit of Constant Function</option>
+ 				   		<option value="identity">Limit of Identity Function</option>
+ 				   		<option value="sum">Sum Law</option>
+  						<option value="product">Product Law</option>
+  						<option value="quotient">Quotient Law</option>
+  						<option value="power">Power Law</option>
+  						<option value="composition">Composition Law</option>
+  						<option value="equivalent">Functions agree for large values of x</option>
+  						<option value="error">An error was made</option>
+  						<option value="special">Known value of a special limit</option>
+					</select>  
+					<span id="mark5"></span>
+					
+                	<br/><br/>
+                	
+                	<code>
+                	 
+                		=\dfrac{\displaystyle\lim_{x \to -\infty}(<var>A</var>+\dfrac{<var>B</var>}{x})}
+                		{\sqrt{\displaystyle\lim_{x \to -\infty}(<var>C*C</var>+\dfrac{<var>D</var>}{x}+\dfrac{<var>E</var>}{x^2})}}
+                	</code>
+                	
+                	<br/><br/>
+					
+					<code>\hphantom{\displaystyle\lim_{x \to -\infty}\dfrac{<var>A</var>x+<var>B</var>}{<var>C</var>x+<var>D</var>} \cdot \dfrac{\dfrac{1}{x}}{\dfrac{1}{x}}}</code>
+					
+					<select id="6">
+                		<option value="arithmetic">Arithmetic</option>
+						<option value="constant">Limit of Constant Function</option>
+ 				   		<option value="identity">Limit of Identity Function</option>
+ 				   		<option value="sum">Sum Law</option>
+  						<option value="product">Product Law</option>
+  						<option value="quotient">Quotient Law</option>
+  						<option value="power">Power Law</option>
+  						<option value="composition">Composition Law</option>
+  						<option value="equivalent">Functions agree for large values of x</option>
+  						<option value="error">An error was made</option>
+  						<option value="special">Known value of a special limit</option>
+					</select>  
+					<span id="mark6"></span>
+					
+                	<br/><br/>
+                	
+                	<code>
+                	 
+                		=\dfrac{\displaystyle\lim_{x \to -\infty}(<var>A</var>)+\displaystyle\lim_{x \to -\infty}(\dfrac{<var>B</var>}{x})}
+                		{\sqrt{\displaystyle\lim_{x \to -\infty}(<var>C*C</var>)+\displaystyle\lim_{x \to -\infty}(\dfrac{<var>D</var>}{x})+\displaystyle\lim_{x \to -\infty}(\dfrac{<var>E</var>}{x^2})}}
+                	</code>
+                	
+                	<br/><br/>
+					
+					<code>\hphantom{\displaystyle\lim_{x \to -\infty}\dfrac{<var>A</var>x+<var>B</var>}{<var>C</var>x+<var>D</var>} \cdot \dfrac{\dfrac{1}{x}}{\dfrac{1}{x}}}</code>
+					
+					<select id="7">
+                		<option value="arithmetic">Arithmetic</option>
+						<option value="constant">Limit of Constant Function</option>
+ 				   		<option value="identity">Limit of Identity Function</option>
+ 				   		<option value="sum">Sum Law</option>
+  						<option value="product">Product Law</option>
+  						<option value="quotient">Quotient Law</option>
+  						<option value="power">Power Law</option>
+  						<option value="composition">Composition Law</option>
+  						<option value="equivalent">Functions agree for large values of x</option>
+  						<option value="error">An error was made</option>
+  						<option value="special">Known value of a special limit</option>
+					</select>  
+					<span id="mark7"></span>
+					
+                	<br/><br/>
+                	
+                	<code>
+                	 
+                		=\dfrac{\displaystyle\lim_{x \to -\infty}(<var>A</var>)+0}
+                		{\sqrt{\displaystyle\lim_{x \to -\infty}(<var>C*C</var>)+0+0}}
+                	</code>
+                	
+                	<br/><br/>
+					
+					<code>\hphantom{\displaystyle\lim_{x \to -\infty}\dfrac{<var>A</var>x+<var>B</var>}{<var>C</var>x+<var>D</var>} \cdot \dfrac{\dfrac{1}{x}}{\dfrac{1}{x}}}</code>
+					
+					<select id="8">
+                		<option value="arithmetic">Arithmetic</option>
+						<option value="constant">Limit of Constant Function</option>
+ 				   		<option value="identity">Limit of Identity Function</option>
+ 				   		<option value="sum">Sum Law</option>
+  						<option value="product">Product Law</option>
+  						<option value="quotient">Quotient Law</option>
+  						<option value="power">Power Law</option>
+  						<option value="composition">Composition Law</option>
+  						<option value="equivalent">Functions agree for large values of x</option>
+  						<option value="error">An error was made</option>
+  						<option value="special">Known value of a special limit</option>
+					</select>  
+					<span id="mark8"></span>
+					
+                	<br/><br/>
+                	
+                	<code>
+                	 
+                		=\dfrac{<var>A</var>}
+                		{\sqrt{<var>C*C</var>}}
+                	</code>
+                	
+                	<br/><br/>
+					
+					<code>\hphantom{\displaystyle\lim_{x \to -\infty}\dfrac{<var>A</var>x+<var>B</var>}{<var>C</var>x+<var>D</var>} \cdot \dfrac{\dfrac{1}{x}}{\dfrac{1}{x}}}</code>
+					
+					<select id="9">
+                		<option value="arithmetic">Arithmetic</option>
+						<option value="constant">Limit of Constant Function</option>
+ 				   		<option value="identity">Limit of Identity Function</option>
+ 				   		<option value="sum">Sum Law</option>
+  						<option value="product">Product Law</option>
+  						<option value="quotient">Quotient Law</option>
+  						<option value="power">Power Law</option>
+  						<option value="composition">Composition Law</option>
+  						<option value="equivalent">Functions agree for large values of x</option>
+  						<option value="error">An error was made</option>
+  						<option value="special">Known value of a special limit</option>
+					</select>  
+					<span id="mark9"></span>
+					
+                	<br/><br/>
+                	
+                	<code>
+                	 
+                		=\dfrac{<var>toFraction(A/C)[0]</var>}{<var>toFraction(A/C)[1]</var>}
+                	</code>
+					
+					<div class="graphie">
+				$('#check-answer-button').click(function(){
+					if($('#0 :selected').val()=="equivalent"){
+						$('#mark0').css({ 'color': 'green', 'font-size': '150%' });
+						$('#mark0').text("&#x2713;")
+						}
+					else{
+						$('#mark0').css({ 'color': 'red', 'font-size': '150%' });
+						$('#mark0').text("&#x2717;")
+					
+					}
+					if($('#1 :selected').val()=="error"){
+						$('#mark1').css({ 'color': 'green', 'font-size': '150%' });
+						$('#mark1').text("&#x2713;")
+						}
+					else{
+						$('#mark1').css({ 'color': 'red', 'font-size': '150%' });
+						$('#mark1').text("&#x2717;")
+					
+					}
+					if($('#2 :selected').val()=="equivalent"){
+						$('#mark2').css({ 'color': 'green', 'font-size': '150%' });
+						$('#mark2').text("&#x2713;")
+						}
+					else{
+						$('#mark2').css({ 'color': 'red', 'font-size': '150%' });
+						$('#mark2').text("&#x2717;")
+					
+					}
+					if($('#3 :selected').val()=="equivalent"){
+						$('#mark3').css({ 'color': 'green', 'font-size': '150%' });
+						$('#mark3').text("&#x2713;")
+						}
+					else{
+						$('#mark3').css({ 'color': 'red', 'font-size': '150%' });
+						$('#mark3').text("&#x2717;")
+					
+					}
+					if($('#4 :selected').val()=="quotient"){
+						$('#mark4').css({ 'color': 'green', 'font-size': '150%' });
+						$('#mark4').text("&#x2713;")
+						}
+					else{
+						$('#mark4').css({ 'color': 'red', 'font-size': '150%' });
+						$('#mark4').text("&#x2717;")
+					
+					}
+					if($('#5 :selected').val()=="power"){
+						$('#mark5').css({ 'color': 'green', 'font-size': '150%' });
+						$('#mark5').text("&#x2713;")
+						}
+					else{
+						$('#mark5').css({ 'color': 'red', 'font-size': '150%' });
+						$('#mark5').text("&#x2717;")
+					
+					}
+					if($('#6 :selected').val()=="sum"){
+						$('#mark6').css({ 'color': 'green', 'font-size': '150%' });
+						$('#mark6').text("&#x2713;")
+						}
+					else{
+						$('#mark6').css({ 'color': 'red', 'font-size': '150%' });
+						$('#mark6').text("&#x2717;")
+					
+					}
+					if($('#7 :selected').val()=="special"){
+						$('#mark7').css({ 'color': 'green', 'font-size': '150%' });
+						$('#mark7').text("&#x2713;")
+						}
+					else{
+						$('#mark7').css({ 'color': 'red', 'font-size': '150%' });
+						$('#mark7').text("&#x2717;")
+					
+					}
+					if($('#8 :selected').val()=="constant"){
+						$('#mark8').css({ 'color': 'green', 'font-size': '150%' });
+						$('#mark8').text("&#x2713;")
+						}
+					else{
+						$('#mark8').css({ 'color': 'red', 'font-size': '150%' });
+						$('#mark8').text("&#x2717;")
+					
+					}
+					if($('#9 :selected').val()=="arithmetic"){
+						$('#mark9').css({ 'color': 'green', 'font-size': '150%' });
+						$('#mark9').text("&#x2713;")
+						}
+					else{
+						$('#mark9').css({ 'color': 'red', 'font-size': '150%' });
+						$('#mark9').text("&#x2717;")
+					
+					}
+					
+					
+				})
+			</div>
+					
+					
+				</p>
+				
+				<div class="hints">
+					<p>
+						There must be an error somewhere:  Try plugging -10000000 into the function and seeing what you get.
+					</p>
+					<p>
+						The error is going from the second equation to the third, can you see why?
+					</p>
+					<p>
+						The error is due to the innocent looking <code>\frac{1}{x} = \frac{1}{\sqrt{x^2}}</code>. 
+						 This is true for positive values of <code>x</code>, but not negative values.  Since we are looking
+						 at a limits as <code>x \to -\infty</code>, x is negative, so <code>-\sqrt{x^2}=x</code>.  That is where the
+						 extra minus sign in the correct limit is coming from.
+					</p>
+				</div>
+
+               <div class="solution" data-type="custom">
+
+                    <div class="guess">
+                    	[$('#0 :selected').val(),$('#1 :selected').val(),$('#2 :selected').val(),$('#3 :selected').val(),$('#4 :selected').val(),$('#5 :selected').val(),$('#6 :selected').val(),$('#7 :selected').val(),$('#8 :selected').val(),$('#9 :selected').val() ]
+                    </div>
+                    <div class="validator-function">
+                       return guess[0]=="equivalent" &amp;&amp; guess[1]=="error" 
+                       &amp;&amp; guess[2]=="equivalent" &amp;&amp; guess[3]=="equivalent"
+                       &amp;&amp; guess[4]=="quotient" &amp;&amp; guess[5]=="power"
+                       &amp;&amp; guess[6]=="sum" &amp;&amp; guess[7]=="special"
+                        &amp;&amp; guess[8]=="constant"  &amp;&amp; guess[9]=="arithmetic"
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            
+        
+        
+        
+        
+        </div>   
+	</div>
+</body>
+</html>

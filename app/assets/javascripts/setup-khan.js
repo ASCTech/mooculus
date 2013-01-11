@@ -1,4 +1,6 @@
-var apiServer = "https://mooculus.osu.edu";
+//var apiServer = "https://mooculus.osu.edu";
+var apiServer = document.location.protocol + "//" + document.location.host;
+
 var Exercises = {
     reviewMode: false,
     practiceMode: true,

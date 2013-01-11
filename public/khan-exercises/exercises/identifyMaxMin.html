@@ -8,7 +8,7 @@
     <div class="exercise">
       <div class="vars">
               	  
-	<var id = "n">randRange(2,4)</var>
+	
 	<var id = "Xs">makeXList()</var>
 	<var id = "Ys">makeYList(-8,8,Xs.length)</var>
 	<var id = "points">makeCoordinates(Xs,Ys)</var>
@@ -26,14 +26,20 @@
 	<var id = "zeroPoints">makeCoordinates(zeroXs,zeroYs)</var>
 	<var id = "criticalXs">Xs.concat(zeroXs).sort(function(a,b){return a - b})</var>
 	<var id = "criticalPoints">points.concat(zeroPoints).sort(function(a,b){return a[0] - b[0]})</var>
-	<var id = "m">randRange(0,Xs.length-2)</var>
-	<var id = "solution">(function(criticalPoints,m){
+	<var id = "m">randRange(0,Xs.length-1)</var>
+	<var id = "solution">(function(points,m){
         
           var solution = &quot;&quot;
-          if (points[m][1] &gt; points[m+1][1]){solution =solution.concat(&quot;local maxima&quot;)}
-          if (points[m][1]&lt;points[m+1][1]){solution =solution.concat(&quot;local minima&quot;)}
+          if (points[m][0] &lt; 10){
+         	 if (points[m][1] &gt; points[m+1][1]){solution =solution.concat(&quot;local maxima&quot;)}
+          	 if (points[m][1]&lt;points[m+1][1]){solution =solution.concat(&quot;local minima&quot;)}
+          	 }
+          else{	 
+         	 if (points[m-1][1] &lt; points[m][1]){solution =solution.concat(&quot;local maxima&quot;)}
+          	 if (points[m-1][1] &gt; points[m][1]){solution =solution.concat(&quot;local minima&quot;)}
+          	 }
           return solution
-          })(criticalPoints,m)</var>
+          })(points,m)</var>
 
 	<var id = "hintPosNegIncDec">(function(criticalPoints,m){
           var solution = &quot;&quot;
@@ -48,27 +54,49 @@
               
               
         <div id="identifyMaxMin_hasMaxOrMin"  data-weight="2">
-          <p class="problem">The graph below is of a function <code>f</code>.
+          <p class="problem">A function <code>f</code> has been graphed on the interval <code>[-12,12]</code>.
           </p>
           <p class="question"> 
+	    
 	    On the interval <code>[-10,10]</code>,
 	    does <code>f</code> have a local maxima, a local minima,
-	    or neither, at the green point?
+	    or neither, at the green point?<code>^*</code>
           </p>
+          <p>* since the domain has been restricted to <code>[-10,10]</code>, either of these two endpoints could be a local extrema </p>
           
           <div class="graphie" id="grid">
             graphInit({
-            range: 10,
+            range: 12,
             scale: 20,
             tickStep: 1,
-            axisArrows: "<->"
+            
               });
                     
               plot(function( x ) {
               return ( f(x));
               }, [-10, 10], {
-              stroke: RED
+              stroke: RED,
+              strokeWidth: 3
               });
+              
+              plot(function( x ) {
+              return ( f(x));
+              }, [-12, -10], {
+              stroke: RED,
+              strokeWidth: 1
+              
+              });
+              
+               plot(function( x ) {
+              return ( f(x));
+              }, [10, 12], {
+              stroke: RED,
+              strokeWidth: 1
+              
+              });
+              
+             
+              
                    
                
               circle( points[m], 1/4, {
@@ -98,7 +126,7 @@
             <p>A point <code>(a,f(a))</code> is a local maxima for <code>f</code> if there is an interval around 
               <code>x=a</code> where <code>f(a)</code> is greater than or equal to all other values of 
               <code>f</code> in that interval.
-              <br><br>
+              <br/><br/>
               A point <code>(a,f(a))</code> is a local minima for <code>f</code> if there is an interval around 
               <code>x=a</code> where <code>f(a)</code> is less than or equal to all other values of 
               <code>f</code> in that interval.
@@ -112,29 +140,46 @@
         </div>
           
         <div id="identifyMaxMin_neither">
-          <p class="problem">The graph below is of a function <code>f</code>.
+                  <p class="problem">A function <code>f</code> has been graphed on the interval <code>[-12,12]</code>.
           </p>
           <p class="question"> 
+	    
 	    On the interval <code>[-10,10]</code>,
 	    does <code>f</code> have a local maxima, a local minima,
-	    or neither, at the green point?
+	    or neither, at the green point?<code>^*</code>
           </p>
+          <p>* since the domain has been restricted to <code>[-10,10]</code>, either of these two endpoints could be a local extrema </p>
                       
           <div class="graphie" id="grid">
             graphInit({
-            range: 10,
+            range: 12,
             scale: 20,
             tickStep: 1,
-            axisArrows: "<->"
+           
               });
                     
               plot(function( x ) {
               return ( f(x));
               }, [-10, 10], {
-              stroke: RED
+              stroke: RED,
+              strokeWidth: 3
               });
-                   
-
+              
+              plot(function( x ) {
+              return ( f(x));
+              }, [-12, -10], {
+              stroke: RED,
+              strokeWidth: 1
+              
+              });
+              
+               plot(function( x ) {
+              return ( f(x));
+              }, [10, 12], {
+              stroke: RED,
+              strokeWidth: 1
+              
+              });
                
               circle( [neitherX,f(neitherX)], 1/4, {
               stroke: "none",
@@ -154,17 +199,12 @@
             <li>local minima</li>
             <li>neither</li>
           </ul>
-        </div>
-                  
-                 
-                 
-      </div>
-
-      <div class="hints">
+        
+         <div class="hints">
         <p>A point <code>(a,f(a))</code> is a local maxima for <code>f</code> if there is an interval around 
           <code>x=a</code> where <code>f(a)</code> is bigger than or equal to all other values of 
           <code>f</code> in that interval.
-          <br><br>
+          <br/><br/>
           A point <code>(a,f(a))</code> is a local minima for <code>f</code> if there is an interval around 
           <code>x=a</code> where <code>f(a)</code> is smaller than or equal to all other values of 
           <code>f</code> in that interval.
@@ -174,8 +214,16 @@
           The green point is neither a local maxima or a local minima.
         </p>
       </div>
+        
+        </div>
+                  
+                 
+                 
+      </div>
+
+     
    
     </div>
-</div>
+
 </body>
 </html>
