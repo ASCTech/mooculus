@@ -673,13 +673,19 @@ that $|f(x)-L|<\epsilon$ where $\epsilon = .1$.
 \end{answer}
 \end{exercise}
 
+\noindent The next set of exercises are for advanced students and can be
+skipped on first reading.
 
 \begin{exercise} 
 Use the definition of limits to explain why $\lim_{x\to 0 } x\sin
-\left( {1\over x}\right) = 0$.  Hint: Use the fact that $|\sin a |< 1
+\left( {1\over x}\right) = 0$.  Hint: Use the fact that $|\sin(a) |< 1
 $ for any real number $a$.
 \begin{answer}
-\end{answer}\end{exercise}
+ Let $\epsilon >0$. Set $\delta = \epsilon$. If $0<|x-0| <\delta$,
+ then $|x\cdot 1|<\epsilon$, since $\sin\left(\frac{1}{x}\right)\le
+ 1$, $|x\sin \left( {1\over x}\right)-0|< \epsilon$.
+\end{answer}
+\end{exercise}
 
 \begin{exercise} 
 Use the definition of limits to explain why $\lim_{x\to 4} (2x-5)

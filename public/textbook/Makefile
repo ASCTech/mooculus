@@ -3,7 +3,8 @@ FILES=$(wildcard *.tex)
 textbook.pdf: $(FILES)
 	touch answers.tex
 	pdflatex textbook.tex
-	cp textbook.ans answers.tex
+#	cp textbook.ans answers.tex
+	makeindex textbook
 	pdflatex textbook.tex
 	pdflatex textbook.tex
 
