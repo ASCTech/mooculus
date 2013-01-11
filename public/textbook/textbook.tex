@@ -46,6 +46,8 @@
    \answercontent=\expandafter{\BODY\hspace{1em}}
    \dumpanswer[\arabic{exercise}. \the\answercontent]
  }
+
+\def\finalizeanswers{\immediate\closeout\answer@stream}
 \makeatother
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -220,6 +222,7 @@ endeavor. You, the reader, must become a doer of mathematics.
 %\bibliography{sample-handout}
 %\bibliographystyle{plainnat}
 
+\finalizeanswers
 \chapter*{Answers to exercises}
 \input{answers}
 
