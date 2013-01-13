@@ -387,13 +387,56 @@ continuous functions on $\R$ that are not differentiable on $\R$.
 
 
 \begin{exercises}
-
 \begin{exercise} 
-Fill IN
+If the line $y = 7x-4$ is tangent to $f(x)$ at $x=2$, find $f(2)$ and $f'(2)$.
+\begin{answer}
+$f(2) =  10$ and $f'(2) = 7$
+\end{answer}
 \end{exercise}
 
-\end{exercises}
+\begin{exercise}
+If $f(3) = 6$ and $f(3.1) = 6.4$, estimate $f'(3)$.
+\begin{answer}
+$f'(3)\approx 4$
+\end{answer}
+\end{exercise}
 
+\begin{exercise}
+If $f(-2) = 4$ and $f(-2+h) = (h+2)^2$, compute $f'(-2)$.
+\begin{answer}
+$f'(-2) = 4$
+\end{answer}
+\end{exercise}
+
+\begin{exercise}
+If $f'(x) = x^3$ and $f(1) = 2$, approximate $f(1.2)$.
+\begin{answer}
+$f(1.2) \approx 1.728$
+\end{answer}
+\end{exercise}
+
+
+\begin{exercise}
+Let $f(x) = x^2 -4$. Use the definition of the derivative to comptute
+$f'(-3)$ and find the equation of the tangent line to the curve at
+$x=-3$.
+\begin{answer}
+$f'(-3) = -6$ with tangent line $y = -6x -13$
+\end{answer}
+\end{exercise}
+
+\begin{exercise}
+Let $f(x) = \frac{1}{x+2}$. Use the definition of the derivative to comptute
+$f'(1)$ and find the equation of the tangent line to the curve at
+$x=1$.
+\begin{answer}
+$f'(1) = -1/2$ with tangent line $y = \frac{-1}{2}x + \frac{5}{6}$
+\end{answer}
+\end{exercise}
+
+
+
+\end{exercises}
 
 
 
@@ -547,67 +590,122 @@ $$f'(x) = \ddx\left( {3\over x^4}-2x^2+6x-7\right)
 
 
 
-As with the sine, we don't know anything about derivatives that allows
-us to compute the derivatives of the exponential and logarithmic
-functions without going back to basics. Let's do a little work with
-the definition again:
+\subsection{The Derivative of $\textit{e}^\textit{x}$}
+
+
+We don't know anything about derivatives that allows us to compute the
+derivatives of exponential functions without getting our hands
+dirty. Let's do a little work with the definition of the derivative:
 \begin{align*}
-{d\over dx}a^x&=\lim_{h\to 0} {a^{x+h}-a^x\over h} \\
-&=\lim_{h\to 0} {a^xa^{h}-a^x\over h} \\
-&=\lim_{h\to 0} a^x{a^{h}-1\over h} \\
-&=a^x\lim_{h\to 0} {a^{h}-1\over h} \\
+\ddx a^x &=\lim_{h\to 0} \frac{a^{x+h}-a^x}{h} \\
+&=\lim_{h\to 0} \frac{a^xa^{h}-a^x}{h} \\
+&=\lim_{h\to 0} a^x\frac{a^{h}-1}{h} \\
+&=a^x\lim_{h\to 0} \frac{a^{h}-1}{h} \\
+&=a^x \cdot \underbrace{\text{(constant)}}_{\lim_{h\to 0} \frac{a^{h}-1}{h}}
 \end{align*}
-There are two interesting things to note here: As in the case of the
-sine function we are left with a limit that involves $h$ but
-not $x$, which means that whatever $ \lim_{h\to 0} (a^{\Delta
-    x}-1)/h$ is, we know that it is a number, that is, a
-constant. This means that $ a^x$ has a remarkable property: its
-derivative is a constant times itself.
-
-We earlier remarked that the hardest limit we would compute is
-$ \lim_{x\to0}\sin x/x=1$; we now have a limit that is just a bit too
-hard to include here. In fact the hard part is to see that
-$ \lim_{h\to 0} (a^{\Delta
-    x}-1)/h$ even exists---does this fraction really get closer
-and closer to some fixed value? Yes it does, but we will not prove
-this fact.
-
-We can look at some examples. Consider $ (2^x-1)/x$ for some small
-values of $x$: 1, $0.828427124$, $0.756828460$, $0.724061864$,
-$0.70838051$, $0.70070877$ when $x$ is 1, $1/2$, $1/4$, $1/8$, $1/16$,
-$1/32$, respectively. It looks like this is settling in around $0.7$,
-which turns out to be true (but the limit is not exactly $0.7$).
-Consider next $ (3^x-1)/x$: $2$,  $1.464101616$,
-$1.264296052$, $1.177621520$, $1.13720773$, $1.11768854$, at the same
-values of $x$. It turns out to be true that in the limit this
-is about $1.1$. Two examples don't establish a pattern, but if you do
-more examples you will find that the limit varies directly with the
-value of $a$: bigger $a$, bigger limit; smaller $a$, smaller limit. As
-we can already see, some of these limits will be less than 1 and some
-larger than 1. Somewhere between $a=2$ and $a=3$ the limit will be
-exactly 1; the value at which this happens is called $e$, so that
-$$\lim_{h\to 0} {e^{h}-1\over h}=1.$$ As you
-might guess from our two examples, $e$ is closer to 3 than to 2, and
-in fact $e\approx 2.718$.
-
+There are two interesting things to note here: We are left with a
+limit that involves $h$ but not $x$, which means that whatever $
+\lim_{h\to 0} (a^h-1)/h$ is, we know that it is a number, that is, a
+constant. This means that $a^x$ has a remarkable property: Its
+derivative is a constant times itself. Unfortunately it is beyond the
+scope of this text to compute the limit
+\[
+\lim_{h\to 0} \frac{a^h-1}{h}.
+\]
+However, we can look at some examples. Consider $(2^h-1)/h$ and $(3^h-1)/h$:
+\begin{fullwidth}
+\[
+\begin{tchart}{ll}
+ h &     (2^h-1)/h\\ \hline
+ -1 & .5  \\
+-0.1 &  \approx0.6700 \\
+-0.01 & \approx0.6910 \\
+-0.001 & \approx0.6929 \\
+-0.0001 & \approx0.6931 \\
+-0.00001 & \approx0.6932 \\
+\end{tchart}
+\qquad
+\begin{tchart}{ll}
+ h &     (2^h-1)/h\\ \hline
+ 1 & 1  \\
+ 0.1 &  \approx0.7177 \\
+ 0.01 & \approx0.6956 \\
+ 0.001 & \approx0.6834 \\
+ 0.0001 & \approx0.6932 \\
+ 0.00001 & \approx0.6932 \\
+\end{tchart}
+\qquad\qquad
+\begin{tchart}{ll}
+ h &     (3^h-1)/h\\ \hline
+-1 & \approx 0.6667  \\
+-0.1 &  \approx1.0404  \\
+-0.01 & \approx1.0926 \\
+-0.001 & \approx1.0980 \\
+-0.0001 & \approx1.0986 \\
+-0.00001 & \approx1.0986 \\
+\end{tchart}
+\qquad
+\begin{tchart}{ll}
+ h &     (3^h-1)/h\\ \hline
+ 1 & 2  \\
+ 0.1 &  \approx1.1612 \\
+ 0.01 & \approx1.1047 \\
+ 0.001 & \approx1.0992 \\
+ 0.0001 & \approx1.0987 \\
+ 0.00001 & \approx1.0986 \\
+\end{tchart}
+\]
+\end{fullwidth}
+While these tables don't establish a pattern, it turns out that
+\[
+\lim_{h\to 0}\frac{a^h-1}{h} \approx .7 \qquad\text{and}\qquad \lim_{h\to 0} \frac{3^h-1}{h} \approx 1.1.
+\]
+Moreover, if you do more examples you will find that the limit varies
+directly with the value of $a$: bigger $a$, bigger limit; smaller $a$,
+smaller limit. As we can already see, some of these limits will be
+less than 1 and some larger than 1. Somewhere between $a=2$ and $a=3$
+the limit will be exactly 1. This happens when 
+\[
+a = e = 2.718281828459045\dots.
+\]
+This brings us to our next definition.
+\begin{definition}\index{e@$e$}\index{Euler's number}
+Euler's number is defined to be the number $e$ such that
+\[
+\lim_{h\to 0} \frac{e^h-1}{h} = 1.
+\]
+\end{definition}
 Now we see that the function $ e^x$ has a truly remarkable property:
+
+\begin{theorem}[The Derivative of $\boldsymbol{e^x}$]\index{ex@$e^x$}\index{derivative!of ex@of $e^x$}
+\[
+\ddx e^x = e^x.
+\]
+\end{theorem}
+\begin{proof}  
+From the limit definition of the derivative, write
 \begin{align*}
-\ddx e^x&=\lim_{h\to 0} {e^{x+h}-e^x\over h} \\
-&=\lim_{h\to 0} {e^xe^{h}-e^x\over h} \\
-&=\lim_{h\to 0} e^x{e^{h}-1\over h} \\
-&=e^x\lim_{h\to 0} {e^{h}-1\over h} \\
-&=e^x \\
+\ddx e^x&=\lim_{h\to 0} \frac{e^{x+h}-e^x}{h} \\
+&=\lim_{h\to 0} \frac{e^xe^{h}-e^x}{h} \\
+&=\lim_{h\to 0} e^x\frac{e^{h}-1}{h} \\
+&=e^x\lim_{h\to 0} \frac{e^{h}-1}{h} \\
+&=e^x.
 \end{align*}
-That is, $ e^x$ is its own derivative, or in other words the
-slope of $ e^x$ is the same as its height, or the same as its second
-coordinate: The function $ f(x)=e^x$ goes through the point $ (z,e^z)$
-and has slope $ e^z$ there, no matter what $z$ is. It is sometimes
-convenient to express the function $ e^x$ without an exponent, since
-complicated exponents can be hard to read. In such cases we use
-$\exp(x)$, e.g., $ \exp(1+x^2)$ instead of 
-$ e^{1+x^2}$.\index{exp function}
+\end{proof}
 
 
+
+Hence, $e^x$ is its own derivative, or in other words the slope of the
+plot of $e^x$ is the same as its height, or the same as its second
+coordinate: The function $ f(x)=e^x$ goes through the point $ (a,e^a)$
+and has slope $e^a$ there, no matter what $a$ is. 
+
+
+
+\begin{example}
+\end{example}
+\begin{solution}
+\end{solution}
 
 
 
@@ -669,15 +767,6 @@ Find the derivatives of the functions in 1--6.
 \begin{answer} $9x^2-x/\sqrt{625-x^2}$
 \end{answer}\end{exercise}
 
-\begin{exercise}
- Find an equation for the tangent line to $f(x) = x^3/4 - 1/x$ at $x=-2$.
-\begin{answer} $y=13x/4+5$
-\end{answer}\end{exercise}
-
-\begin{exercise} Find an equation for 
-the tangent line to $f(x)= 3x^2 - \pi ^3$ at $x= 4$.
-\begin{answer} $y=24x-48-\pi^3$
-\end{answer}\end{exercise}
 
 \begin{exercise} Suppose the position of an object at time $t$ is  given by
 $f(t)=-49 t^2/10+5t+10$. Find a function giving the speed of the object
@@ -702,14 +791,23 @@ of $P$?
 $(-2 , 5)$ and $(2, 3)$.
 \begin{answer} $x^3/16-3x/4+4$
 \end{answer}\end{exercise}
+
+\begin{exercise}
+  Find an equation for the tangent line to $f(x) = x^3/4 - 1/x$ at $x=-2$.
+\begin{answer} $y=13x/4+5$
+\end{answer}\end{exercise}
+
+\begin{exercise} 
+  Find an equation for the tangent line to $f(x)= 3x^2 - \pi ^3$ at
+  $x= 4$.
+\begin{answer} $y=24x-48-\pi^3$
+\end{answer}\end{exercise}
+
+
+
  
 \begin{exercise} Prove that $\ddx(cf(x))= cf'(x)$ using the
 definition of the derivative.
-\end{exercise}
-
-\begin{exercise} Suppose that $f$ and $g$ are differentiable at $x$. Show
-that $f-g$ is differentiable at $x$ using the two linearity
-properties from this section.
 \end{exercise}
 
 \end{exercises}

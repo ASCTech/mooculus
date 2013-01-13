@@ -14,7 +14,7 @@ textbook-print.pdf: $(FILES)
 	touch answers.tex
 	pdflatex -jobname textbook-print textbook.tex
 	cp textbook.ans answers.tex
-	makeindex textbook
+	makeindex textbook-print
 	pdflatex -jobname textbook-print textbook.tex
 	pdflatex -jobname textbook-print textbook.tex
 

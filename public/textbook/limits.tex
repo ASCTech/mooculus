@@ -45,22 +45,22 @@ not equal to, $a$.  This leads us to the formal definition of a
 
 \begin{margintable}[-1in]
 \[
-\begin{array}{c|c}
+\begin{tchart}{ll}
  x & f(x) \\ \hline
  1.7 &  0.7 \\
  1.9 &  0.9 \\
  1.99 &  0.99 \\
  1.999 &  0.999 \\
   2 &  \text{undefined}
-\end{array}\qquad
-\begin{array}{c|c}
+\end{tchart}\qquad
+\begin{tchart}{ll}
  x & f(x) \\ \hline
   2 & \text{undefined}\\
  2.001&  1.001\\
  2.01&  1.01\\
  2.1 &  1.1 \\
  2.3 &  1.3 \\
-\end{array}
+\end{tchart}
 \]
 \caption{Values of $f(x)=\protect\frac{x^2 - 3x + 2}{x-2}$.}
 \label{table:(x^2 - 3x + 2)/(x-2)}
@@ -404,7 +404,7 @@ Sketch a plot of $f(x) = \dfrac{x}{|x|}$ and explain why $\lim_{x\to
 Let $f(x) = \sin\left(\dfrac{\pi}{x}\right)$. Construct three tables
 of the following form
 \[
-\begin{array}{c|c}
+\begin{array}{l|l}
  x & f(x) \\ \hline
  0.d &   \\
  0.0d &  \\
@@ -421,10 +421,10 @@ entries in your tables with the value of $\lim_{x\to 0} f(x)$?
 
 
 \begin{exercise}
-In the theory of special relativity, a moving clock moving ticks
-slower than a stationary observer's clock. If the stationary observer
-records that $t_s$ seconds have passed, then the clock moving at
-velocity $v$ has recorded that
+In the theory of special relativity, a moving clock ticks slower than
+a stationary observer's clock. If the stationary observer records that
+$t_s$ seconds have passed, then the clock moving at velocity $v$ has
+recorded that
 \[
 t_v = t_s \sqrt{1 - v^2/c^2}
 \]

@@ -3,6 +3,9 @@
 \ProvidesPackage{mooculus}[2012/01/30 v0.75]
 \ProcessOptions\relax
 
+
+
+%\RequirePackage[table]{xcolor}
 \RequirePackage[framemethod=TikZ]{mdframed}
 \RequirePackage{environ}
 %\RequirePackage{xkeyval}
@@ -46,7 +49,7 @@
 
 
 %% Colors
-\usepackage[usenames,dvipsnames]{xcolor}
+
 
 
 
@@ -91,7 +94,8 @@
                               % the same as the text
 
 
-
+%% Table colors
+\newenvironment{tchart}{\rowcolors{2}{}{background!95!textColor}\array}{\endarray}
 
 
 
