@@ -59,7 +59,7 @@
                       
                       <div class="graphie" id="grid">
                     graphInit({
-                        range: 10,
+                        range: 12,
                         scale: 20,
                         tickStep: 1,
                        
@@ -67,7 +67,7 @@
                     
                     plot(function( x ) {
                                 return ( f(x));
-                            }, [-10, 10], {
+                            }, [-12, 12], {
                                 stroke: RED
                             });
                    
@@ -111,21 +111,40 @@
                   above any secant line connecting two points on the interval.
                   </p>
                   <div>
-                  		Is <code>f</code> above or below the secant line connecting the endpoints of the interval?
+                  		<p>
+                  			Two movable points have been added which are constrained to the green interval, together with a 
+                  			secant line connecting them
+                  		</p>
                   		<div class="graphie" data-update="grid">
-                            style({
-                                        stroke: BLUE,
-                                        strokeWidth: 2,
-                                        
-                                    }, function() {
-                                        line( [inflectionPoints[m] ,f(inflectionPoints[m]) ], [ inflectionPoints[m+1], f(inflectionPoints[m+1]) ] );
-                                    });
+                            addMouseLayer();
+             			    graph.movablePoint = addMovablePoint({ coord: [inflectionPoints[m],f(inflectionPoints[m])]});
+			  
+			  
+              				graph.movablePoint.onMove = function( x, y ) {
+
+               				 return [ max( inflectionPoints[m], min( x, inflectionPoints[m+1] ) ),f(max( inflectionPoints[m], min( x, inflectionPoints[m+1] ) )) ];
+               					};
+               				 graph.movablePoint2 = addMovablePoint({ coord: [inflectionPoints[m+1],f(inflectionPoints[m+1])]});
+			  
+			  
+              				graph.movablePoint2.onMove = function( x, y ) {
+
+               				 return [ max( inflectionPoints[m], min( x, inflectionPoints[m+1] ) ),f(max( inflectionPoints[m], min( x, inflectionPoints[m+1] ) )) ];
+               					};
+               				
+               				addMovableLineSegment({ 
+              					pointA: graph.movablePoint, 
+              					pointZ: graph.movablePoint2, 
+              					fixed: true
+              					});
+               	
                 		</div> 
                   </div>
                   
-                  <p>Can you see that <code>f</code> will always be <var>hintAboveBelow</var> any 
-                  secant line connecting two points in this interval?  
-                  Use a rule or a piece of paper against the screen if you are having trouble visualizing this.</p>
+                  <p>
+                  	Can you see that <code>f</code> will always be <var>hintAboveBelow</var> any 
+                  	secant line connecting two points in this interval?  
+				  </p>
                   <p><code>f</code> is <var>solution</var></p>
               </div>
           </div>

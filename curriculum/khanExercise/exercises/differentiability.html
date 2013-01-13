@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html data-require="math graphie interactive graphie-helpers steveMath8">
+  <head>
+        <title>Understanding differentiability</title>
+        <script src="../khan-exercise.js"></script>
+  </head>
+  <body>
+    <div class="exercise">
+     
+
+      <div class="problems">
+              
+              
+        <div id="corner"  data-weight="1">
+         <div class="vars" data-ensure="Math.abs((f(A+.001)-f(A-.001))/.001) &lt; 2">
+              	  
+	
+	<var id = "Xs">makeXList()</var>
+	<var id = "Ys">makeYList(-8,8,Xs.length)</var>
+	<var id = "points">makeCoordinates(Xs,Ys)</var>
+	<var id = "f">(function(x){return niceFunction(x,points)})</var>
+	<var id = "A">randRange(-9,9)+.5</var>
+	<var id = "S">randRangeExclude(-3,3,[-1,0,1])/2</var>
+	
+	
+		          	
+      </div>
+         
+          <p class="problem">
+          	A function <code>f</code> has been graphed on the interval <code>[-12,12]</code>.
+          	The thin blue vertical line is <code>x=a</code>.
+          </p>
+          
+          <p class="question">
+          	Is <code>f</code> differentiable at <code>x=a</code>?  If not, why not?
+          </p>
+         
+          <div class="graphie" id="grid">
+            graphInit({
+            range: 12,
+            scale: 20,
+            tickStep: 1,
+			gridOpacity: 0.00005,
+            axisOpacity: 0.5,
+            tickOpacity: 0.00004,
+            
+              });
+                    
+              plot(function( x ) {
+              return ( .8*f(x)+S*Math.abs(x-A));
+              }, [-12, 12], {
+              stroke: RED,
+              strokeWidth: 2
+              });
+             
+               style({
+                 stroke: BLUE,
+                 strokeWidth: 1,
+                 
+                   }, function() {
+                       line( [ A, -20 ], [ A, 20 ]);
+                        });
+             
+              
+              
+
+               
+          </div>
+                
+                
+                     
+          <p class="solution">Not differentiable because
+                    <code>\displaystyle\lim_{h \to <var>0</var>+}\dfrac{f(a+h)-f(a)}{h}</code>
+                    and <code>\displaystyle\lim_{h \to <var>0</var>-}\dfrac{f(a+h)-f(a)}{h}</code>
+                    both exist but they are not equal</p>
+                      <ul class="choices" data-category="true">
+                    <li>Differentiable</li>
+                    <li>Not differentiable because
+                    <code>\displaystyle\lim_{h \to <var>0</var>+}\dfrac{f(a+h)-f(a)}{h}</code>
+                    and <code>\displaystyle\lim_{h \to <var>0</var>-}\dfrac{f(a+h)-f(a)}{h}</code>
+                    both exist but they are not equal</li>
+                    <li> 
+                    Not differentiable either <code>\displaystyle\lim_{h \to <var>0</var>+}\dfrac{f(a+h)-f(a)}{h}</code>
+                    or <code>\displaystyle\lim_{h \to <var>0</var>-}\dfrac{f(a+h)-f(a)}{h}</code> DNE or is infinite
+                    </li>
+                </ul>
+                  
+                  
+                  
+                 
+                 
+              
+
+          <div class="hints">
+           	<div>
+           		<p>
+           		A movable point has been added to the graph. Move it around and see what happens to the secant lines as the points get close to the blue line from both sides.
+           		</p>
+           		<div class="graphie" data-update="grid">
+           			 addMouseLayer();
+              graph.movablePoint = addMovablePoint({ coord: [ 0, .8*f(0)+S*Math.abs(A) ]});
+			  
+			  
+              graph.movablePoint.onMove = function( x, y ) {
+                return [ max( -12, min( x, 12 ) ), .8*f(max( -12, min( x, 12 ) ))+S*Math.abs(x-A) ];
+               	};
+               	
+            
+               	
+            
+              addMovableLineSegment({ 
+              	pointA: graph.movablePoint, 
+              	coordZ: [A,.8*f(A)], 
+              	extendLine: true,
+              	fixed: true,
+              	});
+           			
+           		</div>
+           		
+           	</div>
+           	
+           	<p>
+           		Do you notice how the secant lines look radically different depending on which side the point is on?
+           	</p>
+           	<p>
+           		Both limits exist, because the secant lines appear to approach well defined "one sided tangent lines", but these "one sided tangent lines" are distinct.
+           	</p>
+           	<p>
+           		<code>\displaystyle\lim_{h \to <var>0</var>+}\dfrac{f(a+h)-f(a)}{h}</code> is the slope of the "right tangent line",
+           		and <code>\displaystyle\lim_{h \to <var>0</var>-}\dfrac{f(a+h)-f(a)}{h}</code> is the slope of the "left tangent line".
+           	</p>
+           	<p> Intuitively, it is not differentiable because it isn't smooth at the indicated point:  instead it has a "corner"</p>
+           	<p>
+           			Not differentiable because
+                    <code>\displaystyle\lim_{h \to <var>0</var>+}\dfrac{f(a+h)-f(a)}{h}</code>
+                    and <code>\displaystyle\lim_{h \to <var>0</var>-}\dfrac{f(a+h)-f(a)}{h}</code>
+                    both exist but they are not equal
+           	</p>
+          </div>
+       
+        </div>
+          
+        <div id="differentiable"  data-weight="1">
+          <div class="vars" >
+              	  
+	
+	<var id = "Xs">makeXList()</var>
+	<var id = "Ys">makeYList(-8,8,Xs.length)</var>
+	<var id = "points">makeCoordinates(Xs,Ys)</var>
+	<var id = "f">(function(x){return niceFunction(x,points)})</var>
+	<var id = "A">randRange(-9,9)+.5</var>
+	
+	
+		          	
+      </div>
+          <p class="problem">
+          	A function <code>f</code> has been graphed on the interval <code>[-12,12]</code>.
+          	The thin blue vertical line is <code>x=a</code>.
+          </p>
+          
+          <p class="question">
+          	Is <code>f</code> differentiable at <code>x=a</code>?  If not, why not?
+          </p>
+         
+          <div class="graphie" id="grid">
+            graphInit({
+            range: 12,
+            scale: 20,
+            tickStep: 1,
+			gridOpacity: 0.00005,
+            axisOpacity: 0.5,
+            tickOpacity: 0.00004,
+            
+              });
+                    
+              plot(function( x ) {
+              return ( f(x));
+              }, [-12, 12], {
+              stroke: RED,
+              strokeWidth: 2
+              });
+             
+               style({
+                 stroke: BLUE,
+                 strokeWidth: 1,
+                 
+                   }, function() {
+                       line( [ A, -20 ], [ A, 20 ]);
+                        });
+             
+              
+              
+
+               
+          </div>
+                
+                
+                     
+          <p class="solution">Differentiable</p>
+                      <ul class="choices" data-category="true">
+                    <li>Differentiable</li>
+                    <li>Not differentiable because
+                    <code>\displaystyle\lim_{h \to <var>0</var>+}\dfrac{f(a+h)-f(a)}{h}</code>
+                    and <code>\displaystyle\lim_{h \to <var>0</var>-}\dfrac{f(a+h)-f(a)}{h}</code>
+                    both exist but they are not equal</li>
+                    <li> 
+                    Not differentiable either <code>\displaystyle\lim_{h \to <var>0</var>+}\dfrac{f(a+h)-f(a)}{h}</code>
+                    or <code>\displaystyle\lim_{h \to <var>0</var>-}\dfrac{f(a+h)-f(a)}{h}</code> DNE or is infinite
+                    </li>
+                </ul>
+                  
+                  
+                  
+                 
+                 
+              
+
+          <div class="hints">
+           		<div>
+           		<p>
+           		A movable point has been added to the graph. Move it around and see what happens to the secant lines as the points get close to the blue line from both sides.
+           		</p>
+           		<div class="graphie" data-update="grid">
+           			 addMouseLayer();
+              graph.movablePoint = addMovablePoint({ coord: [ 0, f(0) ]});
+			  
+			  
+              graph.movablePoint.onMove = function( x, y ) {
+                return [ max( -12, min( x, 12 ) ), f(max( -12, min( x, 12 ) )) ];
+               	};
+               	
+            
+               	
+            
+              addMovableLineSegment({ 
+              	pointA: graph.movablePoint, 
+              	coordZ: [A,f(A)], 
+              	extendLine: true,
+              	fixed: true,
+              	});
+           			
+           		</div>
+           		
+           	</div>
+           	<p>
+           		The function looks smooth, so it should be differentiable
+           	</p>
+           	<p>
+           		From a different perspective, the secant lines approach a well defined tangent line as the movable point gets close from the left or the right.
+           	</p>
+           	<p>
+           		Differentiable	
+           	</p>
+          </div>
+       
+        </div>
+        
+        <div id="Cusp"  data-weight="1">
+          <div class="vars" >
+              	  
+	
+	<var id = "Xs">makeXList()</var>
+	<var id = "Ys">makeYList(-8,8,Xs.length)</var>
+	<var id = "points">makeCoordinates(Xs,Ys)</var>
+	<var id = "f">(function(x){return niceFunction(x,points)})</var>
+	<var id = "A">randRange(-9,9)+.5</var>
+	<var id = "SS">randRangeExclude(-6,6,[-3,-2,-1,0,1,2,3])/2</var>
+	<var id = "cubeRoot">
+		(function(x){
+			if (x&gt;0){
+				return Math.pow(x,1/3)
+				}
+			else {
+				return -Math.pow(-x,1/3)
+				}
+			})
+		</var>
+	<var id = "hintPos"> (function(SS){
+					if (SS&gt;0){
+						return " "
+						}
+					else {
+						return "-"
+						}
+				})(SS)</var>
+	<var id = "hintNeg"> (function(SS){
+					if (SS&gt;0){
+						return "-"
+						}
+					else {
+						return " "
+						}
+				})(SS)</var>
+	
+	
+	
+	
+		          	
+      </div>
+          
+          <p class="problem">
+          	A function <code>f</code> has been graphed on the interval <code>[-12,12]</code>.
+          	The thin blue vertical line is <code>x=a</code>.
+          </p>
+          
+          <p class="question">
+          	Is <code>f</code> differentiable at <code>x=a</code>?  If not, why not?
+          </p>
+         
+          <div class="graphie" id="grid">
+            graphInit({
+            range: 12,
+            scale: 20,
+            tickStep: 1,
+			gridOpacity: 0.00005,
+            axisOpacity: 0.5,
+            tickOpacity: 0.00004,
+            
+              });
+                    
+              plot(function( x ) {
+              return ( .5*f(x) + SS*cubeRoot(Math.abs(x-A)));
+              }, [-12, 12], {
+              stroke: RED,
+              strokeWidth: 2
+              });
+              
+           
+             
+               style({
+                 stroke: BLUE,
+                 strokeWidth: 1,
+                 
+                   }, function() {
+                       line( [ A, -20 ], [ A, 20 ]);
+                        });
+             
+              
+              
+
+               
+          </div>
+                
+                
+                     
+          <p class="solution">Not differentiable either <code>\displaystyle\lim_{h \to <var>0</var>+}\dfrac{f(a+h)-f(a)}{h}</code>
+                    or <code>\displaystyle\lim_{h \to <var>0</var>-}\dfrac{f(a+h)-f(a)}{h}</code> DNE or is infinite</p>
+                      <ul class="choices" data-category="true">
+                    <li>Differentiable</li>
+                    <li>Not differentiable because
+                    <code>\displaystyle\lim_{h \to <var>0</var>+}\dfrac{f(a+h)-f(a)}{h}</code>
+                    and <code>\displaystyle\lim_{h \to <var>0</var>-}\dfrac{f(a+h)-f(a)}{h}</code>
+                    both exist but they are not equal</li>
+                    <li>Not differentiable either <code>\displaystyle\lim_{h \to <var>0</var>+}\dfrac{f(a+h)-f(a)}{h}</code>
+                    or <code>\displaystyle\lim_{h \to <var>0</var>-}\dfrac{f(a+h)-f(a)}{h}</code> DNE or is infinite
+                    </li>
+                </ul>
+                  
+                  
+                  
+                 
+                 
+              
+
+          <div class="hints">
+           	<div>
+           		<p>
+           		A movable point has been added to the graph. Move it around and see what happens to the secant lines as the points get close to the blue line from both sides.
+           		</p>
+           		<div class="graphie" data-update="grid">
+           			 addMouseLayer();
+              graph.movablePoint = addMovablePoint({ coord: [ 0, .5*f(0) + SS*cubeRoot(Math.abs(A)) ]});
+			  
+			  
+              graph.movablePoint.onMove = function( x, y ) {
+                return [ max( -12, min( x, 12 ) ), .5*f(max( -12, min( x, 12 ) ))+ SS*cubeRoot(Math.abs(x-A)) ];
+               	};
+               	
+            
+               	
+            
+              addMovableLineSegment({ 
+              	pointA: graph.movablePoint, 
+              	coordZ: [A,.5*f(A)], 
+              	extendLine: true,
+              	fixed: true,
+              	});
+           			
+           		</div>
+           		
+           	</div>
+           	<p>
+           		The curve is not smooth, so we know it will not be differentiable.
+           	</p>
+           	<p>
+           		It looks like the secant lines both approach a vertical line as the movable point gets close.
+           	</p>
+           	<p>
+           		<code>\displaystyle\lim_{h \to <var>0</var>+}\dfrac{f(a+h)-f(a)}{h} = <var>hintPos</var>\infty</code>
+           		and <code>\displaystyle\lim_{h \to <var>0</var>-}\dfrac{f(a+h)-f(a)}{h} = <var>hintNeg</var>\infty</code>
+           	</p>
+           	<p>
+           		Not differentiable either <code>\displaystyle\lim_{h \to <var>0</var>+}\dfrac{f(a+h)-f(a)}{h}</code>
+                    or <code>\displaystyle\lim_{h \to <var>0</var>-}\dfrac{f(a+h)-f(a)}{h}</code> DNE or is infinite
+           	</p>
+          </div>
+       
+        </div>
+        
+        <div id="vertical"  data-weight="1">
+          <div class="vars" data-ensure="Math.abs((f(A+.001)-f(A-.001))/.001) &lt; 2">
+              	  
+	
+	<var id = "Xs">makeXList()</var>
+	<var id = "Ys">makeYList(-8,8,Xs.length)</var>
+	<var id = "points">makeCoordinates(Xs,Ys)</var>
+	<var id = "f">(function(x){return niceFunction(x,points)})</var>
+	<var id = "A">randRange(-9,9)+.5</var>
+	<var id = "S">randRangeExclude(-3,3,[-1,0,1])/2</var>
+	<var id = "SS">randRangeExclude(-6,6,[-3,-2,-1,0,1,2,3])/2</var>
+	<var id = "cubeRoot">
+		(function(x){
+			if (x&gt;0){
+				return Math.pow(x,1/3)
+				}
+			else {
+				return -Math.pow(-x,1/3)
+				}
+			})
+		</var>
+	<var id = "hintPos"> (function(SS){
+					if (SS&gt;0){
+						return " "
+						}
+					else {
+						return "-"
+						}
+				})(SS)</var>
+	
+	
+	
+	
+		          	
+      </div>
+          
+          
+          <p class="problem">
+          	A function <code>f</code> has been graphed on the interval <code>[-12,12]</code>.
+          	The thin blue vertical line is <code>x=a</code>.
+          </p>
+          
+          <p class="question">
+          	Is <code>f</code> differentiable at <code>x=a</code>?  If not, why not?
+          </p>
+         
+          <div class="graphie" id="grid">
+            graphInit({
+            range: 12,
+            scale: 20,
+            tickStep: 1,
+			gridOpacity: 0.00005,
+            axisOpacity: 0.5,
+            tickOpacity: 0.00004,
+            
+              });
+                    
+              plot(function( x ) {
+              return ( .5*f(x) + SS*cubeRoot(x-A));
+              }, [-12, 12], {
+              stroke: RED,
+              strokeWidth: 2
+              });
+             
+               style({
+                 stroke: BLUE,
+                 strokeWidth: 1,
+                 
+                   }, function() {
+                       line( [ A, -20 ], [ A, 20 ]);
+                        });
+             
+              
+              
+
+               
+          </div>
+                
+                
+                     
+          <p class="solution">Not differentiable either <code>\displaystyle\lim_{h \to <var>0</var>+}\dfrac{f(a+h)-f(a)}{h}</code>
+                    or <code>\displaystyle\lim_{h \to <var>0</var>-}\dfrac{f(a+h)-f(a)}{h}</code> DNE or is infinite</p>
+                      <ul class="choices" data-category="true">
+                    <li>Differentiable</li>
+                    <li>Not differentiable because
+                    <code>\displaystyle\lim_{h \to <var>0</var>+}\dfrac{f(a+h)-f(a)}{h}</code>
+                    and <code>\displaystyle\lim_{h \to <var>0</var>-}\dfrac{f(a+h)-f(a)}{h}</code>
+                    both exist but they are not equal</li>
+                    <li>Not differentiable either <code>\displaystyle\lim_{h \to <var>0</var>+}\dfrac{f(a+h)-f(a)}{h}</code>
+                    or <code>\displaystyle\lim_{h \to <var>0</var>-}\dfrac{f(a+h)-f(a)}{h}</code> DNE or is infinite
+                    </li>
+                </ul>
+                  
+                  
+                  
+                 
+                 
+              
+
+          <div class="hints">
+           	<div>
+           		<p>
+           		A movable point has been added to the graph. Move it around and see what happens to the secant lines as the points get close to the blue line from both sides.
+           		</p>
+           		<div class="graphie" data-update="grid">
+           			 addMouseLayer();
+              graph.movablePoint = addMovablePoint({ coord: [ 0, .5*f(0) + SS*cubeRoot(-A) ]});
+			  
+			  
+              graph.movablePoint.onMove = function( x, y ) {
+                return [ max( -12, min( x, 12 ) ), .5*f(max( -12, min( x, 12 ) ))+ SS*cubeRoot(x-A) ];
+               	};
+               	
+            
+               	
+            
+              addMovableLineSegment({ 
+              	pointA: graph.movablePoint, 
+              	coordZ: [A,.5*f(A)], 
+              	extendLine: true,
+              	fixed: true,
+              	});
+           			
+           		</div>
+           		
+           	</div>
+           	<p>
+           		It appears that the vertical line we started with is actually the tangent line to the curve at this point!
+           	</p>
+           	<p>
+           		Vertical lines do not have a slope, so the function is not differentiable.  What happens to the one sided limits?
+           	</p>
+           	<p>
+           		Both one sided limits approach <code><var>hintPos</var>\infty</code>.
+           	</p>
+           	<p>
+           		Not differentiable either <code>\displaystyle\lim_{h \to <var>0</var>+}\dfrac{f(a+h)-f(a)}{h}</code>
+                    or <code>\displaystyle\lim_{h \to <var>0</var>-}\dfrac{f(a+h)-f(a)}{h}</code> DNE or is infinite
+           	</p>
+          </div>
+       
+        </div>
+        
+        <div id="discontinuous"  data-weight="1">
+          <div class="vars" data-ensure="Math.abs(FA-g(A+.1))&gt;1 &amp;&amp;Math.abs(FA-g(A-.1))&gt;1">
+              	  
+	
+	<var id = "Xs">makeXList()</var>
+	<var id = "Ys">makeYList(-8,8,Xs.length)</var>
+	<var id = "points">makeCoordinates(Xs,Ys)</var>
+	<var id = "f">(function(x){return niceFunction(x,points)})</var>
+	<var id = "A">randRange(-9,9)+.5</var>
+	<var id = "cubeRoot">
+		(function(x){
+			if (x&gt;0){
+				return Math.pow(x,1/3)
+				}
+			else {
+				return -Math.pow(-x,1/3)
+				}
+			})
+		</var>
+	<var id="jump">randRangeExclude(-2,2,[-1,1])</var>
+	<var id="g">
+		(function(A,f,jump){
+			var h = function(x){
+				if (x&lt;A){
+					return f(x)
+					}
+				else {
+					return f(x)+jump
+					}
+				}
+			return h	
+			
+			})(A,f,jump)
+		</var>
+		<var id = "FA">randRange(-6,6)</var>
+	<var id="hintPos">
+		(function(A,FA,g){
+			if (  (g(A+.1)-FA)/.1 &gt; 0 ){
+				return " "
+				}
+			else {
+				return "-"
+				}
+			})(A,FA,g)
+		</var>
+	
+	<var id="hintNeg">
+		(function(A,FA,g){
+			if (  -(g(A-.1)-FA)/.1 &gt; 0 ){
+				return " "
+				}
+			else {
+				return "-"
+				}
+			})(A,FA,g)
+		</var>
+	
+	
+	
+		          	
+      </div>
+          
+          <p class="problem">
+          	A function <code>f</code> has been graphed on the interval <code>[-12,12]</code>.
+          	The thin blue vertical line is <code>x=a</code>.
+          </p>
+          
+          <p class="question">
+          	Is <code>f</code> differentiable at <code>x=a</code>?  If not, why not?
+          </p>
+         
+          <div class="graphie" id="grid">
+            graphInit({
+            range: 12,
+            scale: 20,
+            tickStep: 1,
+			gridOpacity: 0.00005,
+            axisOpacity: 0.5,
+            tickOpacity: 0.00004,
+            
+              });
+                    
+              plot(function( x ) {
+              return ( g(x));
+              }, [-12, A-.001], {
+              stroke: RED,
+              strokeWidth: 2
+              });
+              
+              plot(function( x ) {
+              return ( g(x));
+              }, [A+.001, 12], {
+              stroke: RED,
+              strokeWidth: 2
+              });
+             
+              if(jump != 0){
+            	  circle( [A+.1, g(A+.001)], 4 / 20, { fill: "white" } );
+             	  circle( [A-.1, g(A-.001)], 4 / 20, { fill: "white" } );
+             	  }
+             else{
+             	circle( [A, g(A)], 4 / 20, { fill: "white" } );
+             	}
+             
+             circle( [A,FA], 4 / 20, { fill: "RED" } );
+               style({
+                 stroke: BLUE,
+                 strokeWidth: 1,
+                 
+                   }, function() {
+                       line( [ A, -20 ], [ A, 20 ]);
+                        });
+             
+              
+              
+
+               
+          </div>
+                
+                
+                     
+          <p class="solution">Not differentiable either <code>\displaystyle\lim_{h \to <var>0</var>+}\dfrac{f(a+h)-f(a)}{h}</code>
+                    or <code>\displaystyle\lim_{h \to <var>0</var>-}\dfrac{f(a+h)-f(a)}{h}</code> DNE or is infinite</p>
+                      <ul class="choices" data-category="true">
+                    <li>Differentiable</li>
+                    <li>Not differentiable because
+                    <code>\displaystyle\lim_{h \to <var>0</var>+}\dfrac{f(a+h)-f(a)}{h}</code>
+                    and <code>\displaystyle\lim_{h \to <var>0</var>-}\dfrac{f(a+h)-f(a)}{h}</code>
+                    both exist but they are not equal</li>
+                    <li>Not differentiable either <code>\displaystyle\lim_{h \to <var>0</var>+}\dfrac{f(a+h)-f(a)}{h}</code>
+                    or <code>\displaystyle\lim_{h \to <var>0</var>-}\dfrac{f(a+h)-f(a)}{h}</code> DNE or is infinite
+                    </li>
+                </ul>
+                  
+                  
+                  
+                 
+                 
+              
+
+          <div class="hints">
+           	<div>
+           		<p>
+           		A movable point has been added to the graph. Move it around and see what happens to the secant lines as the points get close to the blue line from both sides.
+           		</p>
+           		<div class="graphie" data-update="grid">
+           			 addMouseLayer();
+              graph.movablePoint = addMovablePoint({ coord: [ 0, g(0)]});
+			  
+			  
+              graph.movablePoint.onMove = function( x, y ) {
+                return [ max( -12, min( x, 12 ) ),g(max( -12, min( x, 12 ) )) ];
+               	};
+               	
+            
+               	
+            
+              addMovableLineSegment({ 
+              	pointA: graph.movablePoint, 
+              	coordZ: [A,FA], 
+              	extendLine: true,
+              	fixed: true,
+              	});
+           			
+           		</div>
+           		
+           	</div>
+           	<p>
+           		Both secant lines are approaching vertical tangents as the movable point gets close
+           	</p>
+           	<p>
+           		<code>\displaystyle\lim_{h \to <var>0</var>+}\dfrac{f(a+h)-f(a)}{h} = <var>hintPos</var>\infty</code>
+           		<br/>
+           		<code>\displaystyle\lim_{h \to <var>0</var>-}\dfrac{f(a+h)-f(a)}{h} = <var>hintNeg</var>\infty</code>
+           	</p>
+           	<p>
+           		Not differentiable either <code>\displaystyle\lim_{h \to <var>0</var>+}\dfrac{f(a+h)-f(a)}{h}</code>
+                    or <code>\displaystyle\lim_{h \to <var>0</var>-}\dfrac{f(a+h)-f(a)}{h}</code> DNE or is infinite
+           	</p>
+          </div>
+       
+        </div>          
+                 
+                 
+      </div>
+
+     
+   
+    </div>
+
+</body>
+</html>
