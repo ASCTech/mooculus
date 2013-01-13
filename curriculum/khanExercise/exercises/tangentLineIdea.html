@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html data-require="math graphie interactive graphie-helpers steveMath8">
+  <head>
+        <title>Understanding tangent lines</title>
+        <script src="../khan-exercise.js"></script>
+  </head>
+  <body>
+    <div class="exercise">
+      <div class="vars" data-ensure="Math.abs(A-B)&gt;2">
+              	  
+	
+	<var id = "Xs">makeXList()</var>
+	<var id = "Ys">makeYList(-8,8,Xs.length)</var>
+	<var id = "points">makeCoordinates(Xs,Ys)</var>
+	<var id = "f">(function(x){return niceFunction(x,points)})</var>
+	<var id = "A">randRange(-14,14)/2</var>
+	<var id = "B">randRange(-14,14)/2</var>
+	<var id = "slope">(f(A+.001)-f(A-.001))/(.002)</var>
+	<var id = "slopeB">(f(B+.001)-f(B-.001))/(.002)</var>
+	
+		          	
+      </div>
+
+      <div class="problems">
+              
+              
+        <div id="finding-derivative-graphically"  data-weight="2">
+          <p class="problem">
+          	A function <code>f</code> has been graphed on the interval <code>[-12,12]</code>. We have given
+          	you a movable line determined by two points, one <font color="#37ca3e">FIXED</font> on the graph of <code>f</code>
+          	at the point <code>(<var>A</var>,f(<var>A</var>))</code>, and one you can <font color="ORANGE">DRAG</font> with your mouse.
+          	Drag the movable point so that the line is tangent of the graph of <code>f</code>
+          	at <code>(<var>A</var>,f(<var>A</var>))</code>.
+          </p>
+          
+          
+          <div class="graphie" id="grid">
+            graphInit({
+            range: 12,
+            scale: 20,
+            tickStep: 1,
+			gridOpacity: 0.00005,
+            axisOpacity: 0.5,
+            tickOpacity: 0.00004,
+            
+              });
+                    
+              plot(function( x ) {
+              return ( f(x));
+              }, [-12, 12], {
+              stroke: RED,
+              strokeWidth: 3
+              });
+                             
+              circle( [A,f(A)], 1/4, {
+              stroke: "none",
+              fill: "#37ca3e"
+              });
+              
+              addMouseLayer();
+              graph.movablePoint = addMovablePoint({ coord: [ 0, 0 ]});
+
+              graph.movablePoint.onMove = function( x, y ) {
+                return [ max( -10, min( x, 10 ) ), max( -10, min( y, 10 ) ) ];
+               	};
+            
+              addMovableLineSegment({ 
+              	pointA: graph.movablePoint, 
+              	coordZ: [A,f(A)], 
+              	extendLine: true,
+              	fixed: true
+              	});
+
+               
+          </div>
+                
+                
+                     
+         <div class="solution" data-type="custom">
+
+                    <div class="guess">graph.movablePoint.coord</div>
+                    <div class="validator-function">
+                        
+                        return Math.abs(Math.atan((guess[1] - f(A))/(guess[0]-A)) - Math.atan(slope)) &lt; .1
+                    </div>
+                   
+                </div>
+                  
+                  
+                 
+                 
+              
+
+          <div class="hints">
+           	<p>
+           		The tangent line to a function <code>f</code> at a point <code>(a,f(a))</code>
+           		is the line which best approximates the function near <code>a</code>.
+           	</p>
+           	
+           	<div>
+           		As an example, here is a tangent line to a different point on the same function:
+           		
+           		 <div class="graphie" id="notgrid">
+            graphInit({
+            range: 12,
+            scale: 20,
+            tickStep: 1,
+			gridOpacity: 0.00005,
+            axisOpacity: 0.5,
+            tickOpacity: 0.00004,
+            
+              });
+                    
+              plot(function( x ) {
+              return ( f(x));
+              }, [-12, 12], {
+              stroke: RED,
+              strokeWidth: 3
+              });
+                             
+             circle( [B,f(B)], 1/4, {
+              stroke: "none",
+              fill: "#37ca3e"
+              });
+              style({
+                 stroke: BLUE,
+                 strokeWidth: 2,
+                   }, function() {
+                       line( [ B-20, f(B)-20*slopeB ], [ B+20, f(B)+20*slopeB ]);
+                        });
+
+               
+          		</div>
+           	</div>
+          
+        	<div>
+        		<a href="https://www.youtube.com/watch?v=qr3rlT7NfVU" target="_blank">The line must be drawn here!</a>
+        			<div class="graphie" data-update="grid">
+        				graph.movablePoint.moveTo(A+3,f(A)+3*slope,1);
+        			</div>
+        	</div> 	
+          </div>
+       
+        </div>
+          
+        
+                  
+                 
+                 
+      </div>
+
+     
+   
+    </div>
+
+</body>
+</html>
