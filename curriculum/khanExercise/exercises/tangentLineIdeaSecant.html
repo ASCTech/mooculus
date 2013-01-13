@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html data-require="math graphie interactive graphie-helpers steveMath8">
+  <head>
+        <title>Understanding tangent lines</title>
+        <script src="../khan-exercise.js"></script>
+  </head>
+  <body>
+    <div class="exercise">
+      <div class="vars" data-ensure="Math.abs(A-B)&gt;2">
+              	  
+	
+	<var id = "Xs">makeXList()</var>
+	<var id = "Ys">makeYList(-8,8,Xs.length)</var>
+	<var id = "points">makeCoordinates(Xs,Ys)</var>
+	<var id = "f">(function(x){return niceFunction(x,points)})</var>
+	<var id = "A">randRange(-14,14)/2</var>
+	<var id = "B">randRange(-14,14)/2</var>
+	<var id = "slope">(f(A+.001)-f(A-.001))/(.002)</var>
+	<var id = "slopeB">(f(B+.001)-f(B-.001))/(.002)</var>
+	
+	
+		          	
+      </div>
+
+      <div class="problems">
+              
+              
+        <div id="finding-derivative-graphically"  data-weight="2">
+            <p class="problem">
+          	A function <code>f</code> has been graphed on the interval <code>[-12,12]</code>. We have given
+          	you a movable line determined by two points, one <font color="#37ca3e">FIXED</font> on the graph of <code>f</code>
+          	at the point <font color="#37ca3e"><code>A</code></font>, and one you can <font color="ORANGE">DRAG</font> with your 
+          	mouse at the point <font color="ORANGE"><code>B </code> </font>
+          	<br/><br/>
+          	Drag the movable point  close to the fixed point so that the secant line connecting them 
+          	is close to the tangent line to the graph of <code>f</code> at 
+          	at <font color="#37ca3e"><code>A</code></font>.  
+          	</p>
+          	
+          	
+          	<p class = "question">
+          	
+          	Finally, use the  values of <font color="#37ca3e"><code>A</code></font> and <font color="ORANGE"><code>B </code> </font> you obtain to approximate
+          	<code>f'(<var>A</var>)</code>. Your answer should be accurate to at least 1 decimal place.
+          	</p>
+          
+          <p>
+          	<center>
+          		<font color="#37ca3e">
+          			<code>
+          				A = (<var>A</var>,<var>roundTo(5,f(A))</var>)
+          			</code>
+          		</font> 
+          		<br/>
+          		<font color="ORANGE"><code>B = </code> <span style="font-size: 1.15em;" id="coordB">(0,0)</span></font> 
+           	</center>
+           </p>
+          <div class="graphie" id="grid">
+            graphInit({
+            range: 12,
+            scale: 20,
+            tickStep: 1,
+			gridOpacity: 0.00005,
+            axisOpacity: 0.1,
+            tickOpacity: 0.00004,
+            
+              });
+                    
+              plot(function( x ) {
+              return ( f(x));
+              }, [-12, 12], {
+              stroke: RED,
+              strokeWidth: 3
+              });
+                             
+              circle( [A,f(A)], 1/4, {
+              stroke: "none",
+              fill: "#37ca3e"
+              });
+              
+              addMouseLayer();
+              graph.movablePoint = addMovablePoint({ coord: [ 10, f(10) ]});
+			  
+			  
+              graph.movablePoint.onMove = function( x, y ) {
+              
+             	$("#coordB").text("("+roundTo(5,graph.movablePoint.coord[0]).toString()+","+roundTo(5,graph.movablePoint.coord[1]).toString() +")"   )
+                return [ max( -10, min( x, 10 ) ), f(max( -10, min( x, 10 ) )) ];
+               	};
+               	
+            
+               	
+            
+              addMovableLineSegment({ 
+              	pointA: graph.movablePoint, 
+              	coordZ: [A,f(A)], 
+              	extendLine: true,
+              	fixed: true
+              	});
+              	
+             
+              
+              	
+
+               
+          </div>
+                
+                
+                     
+         <div class="solution" data-type="custom">
+				    <div class="instruction">
+           			<code>f'(x) \approx</code> 
+           		<input id="response" type="text"/>
+           		
+         		    </div>
+                    <div class="guess">[graph.movablePoint.coord,$("input#response").val()]</div>
+                    <div class="validator-function">
+                        
+                        return (Math.abs(Math.atan((guess[0][1] - f(A))/(guess[0][0]-A)) - Math.atan(slope)) &lt; .15) 
+                        &amp;&amp; (Math.abs(guess[1]-(roundTo(5,guess[0][1]) - roundTo(5,f(A)))
+                        /(roundTo(5,guess[0][0])-roundTo(5,A))) &lt; .1)
+                        &amp;&amp; Math.abs(guess[0][0]-A)&lt;1
+                    </div>
+                   
+                </div>
+                  
+                  
+                 
+                 
+              
+
+          <div class="hints">
+           	<div>
+           		Move the point <font color="ORANGE"><code>B</code></font> close to the point 
+           		<font color="#37ca3e"><code>A</code></font>
+           	
+        			<div class="graphie" data-update="grid">
+        				graph.movablePoint.moveTo(A+.1,f(A+.1),1);
+        			</div>
+        	</div> 
+        	
+        	<div>
+        		The displayed points are  
+        		<code>A = (<var>roundTo(5,A)</var>,<var>roundTo(5,f(A))</var>)</code> and
+        		<code>B = (<var>roundTo(5,A+.1)</var>,<var>roundTo(5,f(A+.1))</var>)</code>, so 
+        		the slope of the line is 
+        		<center>
+        		<code>
+        		\dfrac{<var>roundTo(5,f(A+.1))</var> - <var>roundTo(5,f(A))</var>}{<var>roundTo(5,A+.1)</var> - <var>roundTo(5,A)</var>} 
+        		= \dfrac{<var>roundTo(5,f(A+.1)-f(A))</var>}{.1}
+        		\approx <var>roundTo(5,  10*(roundTo(5,f(A+.1))-roundTo(5,f(A)))  )</var>
+        		</code>
+        		</center>
+        		
+        	</div>	
+        	
+        	<div>
+        		<code>f'(<var>A</var>)</code> is the slope of the tangent line to the graph of <code>f</code>
+        		which passes through <code>(<var>A</var>,f(<var>A</var>))</code> so
+        		<br/><br/> 
+        		<code>f'(<var>A</var>) \approx <var>roundTo(5,  10*(roundTo(5,f(A+.1))-roundTo(5,f(A)))  )</var></code>
+         	</div>
+        	
+        	
+          </div>
+       
+        </div>
+          
+        
+                  
+                 
+                 
+      </div>
+
+     
+   
+    </div>
+
+</body>
+</html>
