@@ -263,7 +263,7 @@ differentiability.
 
 
 
-\begin{theorem}
+\begin{theorem}[Differenitability implies Continuity]\label{theorem:diff->cont}
 If $f(x)$ is a differentiable function at $x = a$, then $f(x)$ is
 continuous at $x=a$.
 \end{theorem}
@@ -287,7 +287,7 @@ Since
 we see that $\lim_{x\to a} f(x) = f(a)$, and so $f(x)$ is continuous.
 \end{proof}
 
-This theorem is often write as its contrapositive:
+This theorem is often written as its contrapositive:
 \begin{quote}
 If $f(x)$ is not continuous at $x=a$, then $f(x)$ is not
 differentiable at $x=a$.
@@ -380,9 +380,10 @@ Note this function is undefined at $0$, see Figure~\ref{figure:plot-abs}.
 \end{solution}
 
 
-Thus we see that all differentiable functions on $\R$ are continuous
-on $\R$. Nevertheless as the previous example shows, there are
-continuous functions on $\R$ that are not differentiable on $\R$.
+Thus from Theorem~\ref{theorem:theorem:diff->cont}, we see that all
+differentiable functions on $\R$ are continuous on $\R$. Nevertheless
+as the previous example shows, there are continuous functions on $\R$
+that are not differentiable on $\R$.
 
 
 
@@ -464,7 +465,7 @@ p(x) & q(x) & r(x) & s(x)
 \]
 \end{fullwidth}
 Two of these functions are the derivatives of the other two, identify
-which function are the derivatives of the others.
+which functions are the derivatives of the others.
 \begin{answer}
 $p'(x) = s(x)$ and $r'(x) = q(x)$
 \end{answer}
@@ -657,7 +658,16 @@ For any real number $n$,
 \ddx x^n = n x^{n-1}.
 \]
 \end{theorem}
-
+\marginnote[1in]{Recall, the \textbf{Binomial Theorem}\index{Binomial Theorem} states that if $n$
+  is a nonnegative integer, then
+\[
+(a+b)^n = a^nb^0 + \binom{n}{1} a^{n-1}b^1 + \dots + \binom{n}{n-1} a^{1}b^{n-1} +  a^{0}b^n   
+\]
+where
+\[
+\binom{n}{k} = \frac{n!}{k!(n-k)!}.
+\]
+}
 \begin{proof}
 At this point we will only prove this theorem for $n$ being a positive
 integer, later we will give the complete proof. From the limit
@@ -667,14 +677,14 @@ definition of the derivative, write
 \]
 Start by expanding the term $(x+h)^n$
 \[
-\ddx x^n=\lim_{h\to0} \frac{x^n + nx^{n-1} h + a_2x^{n-2} h^2+\cdots+a_{n-1}x h^{n-1} +  h^n-x^n}{h}
+\ddx x^n=\lim_{h\to0} \frac{x^n + \binom{n}{1}x^{n-1} h + \binom{n}{2}x^{n-2} h^2+\cdots+\binom{n}{n-1}x h^{n-1} +  h^n-x^n}{h}
 \]
-Note, we simplify wrote $a_i$ for the various coefficients as we don't
-really need to know what the coefficients are. Canceling the terms
-$x^n$ and $-x^n$, write
+Note, by the Binomial Theorem, we write $\binom{n}{k}$ for the various
+coefficients. Canceling the terms $x^n$ and $-x^n$, and noting
+$\binom{n}{1}= \binom{n}{n-1}= n$, write
 \begin{align*}
 \ddx x^n&=\lim_{h\to0} \frac{nx^{n-1} h + a_2x^{n-2} h^2+\cdots+a_{n-1}x h^{n-1} +  h^n}{h} \\
-&=\lim_{h\to0} nx^{n-1} + a_2x^{n-2} h+\cdots+a_{n-1}x h^{n-2} +  h^{n-1}.
+&=\lim_{h\to0} nx^{n-1} + \binom{n}{2}x^{n-2} h+\cdots+\binom{n}{n-1}x h^{n-2} +  h^{n-1}.
 \end{align*}
 Since every term but the first has a factor of $h$, we see
 \[
@@ -682,10 +692,50 @@ Since every term but the first has a factor of $h$, we see
 \]
 \end{proof}
 
-\begin{example}
-HERE HERE HERE $7x^12$
-\end{example}
+Now we will show you several examples. We begin with something basic.
 
+\begin{example}
+Compute
+\[
+\ddx x^{13}.
+\]
+\end{example}
+\begin{solution}
+Applying the power rule, we write
+\[
+\ddx x^{13} = 13x^{12}.
+\]
+\end{solution}
+
+Sometimes, it is not as obvious that one should apply the power rule.
+
+\begin{example}
+Compute
+\[
+\ddx \frac{1}{x^4}.
+\]
+\end{example}
+\begin{solution}
+Applying the power rule, we write
+\[
+\ddx \frac{1}{x^4} = \ddx x^{-4} = -4x^{-5}.
+\]
+\end{solution}
+
+The power rule also applies to radicals once we rewrite them as exponents.
+
+\begin{example}
+Compute
+\[
+\ddx \sqrt[5]{x}.
+\]
+\end{example}
+\begin{solution}
+Applying the power rule, we write
+\[
+\ddx \sqrt[5]{x} = \ddx x^{1/5} = \frac{x^{-4/5}}{5}.
+\]
+\end{solution}
 
 
 
@@ -725,24 +775,36 @@ We will only prove part~\ref{SR:1} above, the rest are similar. Write
 \end{proof}
 
 
+\begin{example}
+Compute
+\[
+\ddx x^5+5x^2.
+\] 
+\end{example}
 
-
+\begin{solution}
+Write
+\begin{align*}
+\ddx x^5+5x^2 &= \ddx x^5 + \ddx(5x^2) \\
+&=5x^4+5\ddx(x^2) \\
+&= 5x^4+5\cdot 2x^1 = 5x^4+10x.
+\end{align*}
+\end{solution}
 
 \begin{example}
-Find the derivative of $f(x)=x^5+5x^2$. We have to invoke linearity
-twice here: 
+Compute
 \[
-f'(x) = \ddx(x^5+5x^2) = \ddx x^5 + \ddx(5x^2) =
-5x^4+5\ddx(x^2) = 5x^4+5\cdot 2x^1 = 5x^4+10x.
+\ddx 3/x^4-2x^2+6x-7.
 \]
 \end{example}
 
-\begin{example}
-Find the derivative of $f(x)=3/x^4-2x^2+6x-7$.
-$$f'(x) = \ddx\left( {3\over x^4}-2x^2+6x-7\right)
+\begin{solution}
+\[
+f'(x) = \ddx\left( {3\over x^4}-2x^2+6x-7\right)
 = \ddx(3x^{-4}-2x^2+6x-7) 
-= -12x^{-5}-4x+6.$$
-\end{example}
+= -12x^{-5}-4x+6.
+\]
+\end{solution}
 
 
 
