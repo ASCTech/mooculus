@@ -7,8 +7,6 @@ Suppose that $f(x)$ is a function.  It is often useful to know how
 sensitive the value of $f(x)$ is to small changes in $x$. To give you
 a feeling why this is true, consider the following:
 \begin{itemize}
-\item If the rate of change is zero, then $x$ gives a local maximal or
-  minimal values for $f(x)$.
 \item If $p(t)$ represents the position of an object with respect to
   time, the rate of change gives the velocity of the object.
 \item If $v(t)$ represents the velocity of an object with respect to
@@ -294,7 +292,7 @@ differentiable at $x=a$.
 \end{quote}
 
 
-Let's see a function that is continuous, but whose derivative does not
+Let's see a function that is continuous whose derivative does not
 exist everywhere.
 
 
@@ -616,7 +614,7 @@ derivative of a constant function is zero. For example:
 \item The constant function plots a horizontal line---so the slope of
   the tangent line is $0$.
 \item If $p(t)$ represents the position of an object with respect to
-  time and $p(t)$ is constant, then object is not moving, so its
+  time and $p(t)$ is constant, then the object is not moving, so its
   velocity is zero. Hence $\dd{t} p(t) = 0$.
 \item If $v(t)$ represents the velocity of an object with respect to
   time and $v(t)$ is constant, then the object's acceleration is
@@ -745,11 +743,11 @@ Applying the power rule, we write
 
 We want to be able to take derivatives of functions ``one piece at a
 time.'' The \textit{sum rule} allows us to do this. The sum rule says
-that that we can add the rates of change of two functions to obtain
-the rate of change of the sum of both functions. For example, viewing
-the derivative as the velocity of an object, the sum rule states that
-the velocity person walking on a moving bus is the sum of the velocity
-of the bus and the walking person.
+that we can add the rates of change of two functions to obtain the
+rate of change of the sum of both functions. For example, viewing the
+derivative as the velocity of an object, the sum rule states that the
+velocity of the person walking on a moving bus is the sum of the
+velocity of the bus and the walking person.
 
 
 \begin{theorem}[The Sum Rule]\index{derivative rules!sum}\index{the sum rule}
@@ -777,32 +775,31 @@ We will only prove part~\ref{SR:1} above, the rest are similar. Write
 \begin{example}
 Compute
 \[
-\ddx x^5+5x^2.
+\ddx \left( x^5+\frac{1}{x}\right).
 \] 
 \end{example}
 
 \begin{solution}
 Write
 \begin{align*}
-\ddx x^5+5x^2 &= \ddx x^5 + \ddx(5x^2) \\
-&=5x^4+5\ddx(x^2) \\
-&= 5x^4+5\cdot 2x^1 = 5x^4+10x.
+\ddx \left(x^5+\frac{1}{x}\right) &= \ddx x^5 + \ddx x^{-1} \\
+&=5x^4 - x^{-2}.
 \end{align*}
 \end{solution}
 
 \begin{example}
 Compute
 \[
-\ddx 3/x^4-2x^2+6x-7.
+\ddx \left(\frac{3}{\sqrt[3]{x}}-2\sqrt{x}+\frac{1}{x^7}\right).
 \]
 \end{example}
 
 \begin{solution}
-\[
-f'(x) = \ddx\left( {3\over x^4}-2x^2+6x-7\right)
-= \ddx(3x^{-4}-2x^2+6x-7) 
-= -12x^{-5}-4x+6.
-\]
+Write
+\begin{align*}
+\ddx \left(\frac{3}{\sqrt[3]{x}}-2\sqrt{x}+\frac{1}{x^7}\right) &= 3\ddx x^{-1/3} -2\ddx x^{1/2}+\ddx x^{-7}\\
+&=-x^{-4/3} - x^{-1/2}-7x^{-8}.
+\end{align*}
 \end{solution}
 
 
@@ -875,7 +872,7 @@ However, we can look at some examples. Consider $(2^h-1)/h$ and $(3^h-1)/h$:
 \end{fullwidth}
 While these tables don't prove a pattern, it turns out that
 \[
-\lim_{h\to 0}\frac{a^h-1}{h} \approx .7 \qquad\text{and}\qquad \lim_{h\to 0} \frac{3^h-1}{h} \approx 1.1.
+\lim_{h\to 0}\frac{2^h-1}{h} \approx .7 \qquad\text{and}\qquad \lim_{h\to 0} \frac{3^h-1}{h} \approx 1.1.
 \]
 Moreover, if you do more examples you will find that the limit varies
 directly with the value of $a$: bigger $a$, bigger limit; smaller $a$,
@@ -912,7 +909,7 @@ From the limit definition of the derivative, write
 
 
 
-Hence, $e^x$ is its own derivative, or in other words the slope of the
+Hence $e^x$ is its own derivative. In other words, the slope of the
 plot of $e^x$ is the same as its height, or the same as its second
 coordinate: The function $ f(x)=e^x$ goes through the point $ (a,e^a)$
 and has slope $e^a$ there, no matter what $a$ is. 
