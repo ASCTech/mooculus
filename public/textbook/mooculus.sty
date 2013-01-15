@@ -635,7 +635,25 @@ arc (5:90:0.35in) % top ear
 
 
 
-
+% Remove \FloatBarrier from marginfigure definition
+% to prevent unwanted spaces.
+\makeatletter% so we can use @ commands
+\renewenvironment{@tufte@margin@float}[2][-1.2ex]{%
+  %\FloatBarrier% removed because it adds unwanted white space
+  \begin{lrbox}{\@tufte@margin@floatbox}%
+  \begin{minipage}{\marginparwidth}%
+    \@tufte@caption@font
+    \def\@captype{#2}%
+    \hbox{}\vspace*{#1}%
+    \@tufte@caption@justification
+    \@tufte@margin@par
+    \noindent
+}{%
+  \end{minipage}%
+  \end{lrbox}%
+  \marginpar{\usebox{\@tufte@margin@floatbox}}%
+}
+\makeatother% restore meaning of @
 
 
 

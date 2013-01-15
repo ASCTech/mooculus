@@ -117,6 +117,15 @@ interpretation of this definition.
   $|f(x) - L|<\epsilon$.}
 \label{figure:epsilon-delta}
 \end{figure}
+Limits need not exist, let's examine two cases of this.
+
+\begin{example}
+Let $f(x) = \lfloor x\rfloor$. Explain why the limit
+\[
+\lim_{x\to 2} f(x)
+\]
+does not exist.
+\end{example}
 
 \begin{marginfigure}[0in]
 \begin{tikzpicture}
@@ -164,23 +173,13 @@ interpretation of this definition.
   interval $[1,2]$.}
 \label{plot:greatist-integer}
 \end{marginfigure}
-
-Limits need not exist, let's examine two cases of this.
-
-\begin{example}
-Let $f(x) = \lfloor x\rfloor$. Explain why the limit
-\[
-\lim_{x\to 2} f(x)
-\]
-does not exist.
-\end{example}
 \begin{solution}
-This is the function that returns the greatest integer less than or
-equal to $x$. Since $f(x)$ is defined for all real numbers, one might
-be tempted to think that the limit above is simply $f(2) =
-2$. However, this is not the case.  If $x<2$, then $f(x) =1$. Hence if
-$\epsilon = .5$, we can \textbf{always} find a value for $x$ (just to
-the left of $2$) such that
+The function $\lfloor x \rfloor$ is the function that returns the
+greatest integer less than or equal to $x$. Since $f(x)$ is defined
+for all real numbers, one might be tempted to think that the limit
+above is simply $f(2) = 2$. However, this is not the case.  If $x<2$,
+then $f(x) =1$. Hence if $\epsilon = .5$, we can \textbf{always} find
+a value for $x$ (just to the left of $2$) such that
 \[
 0< |x -2|< \delta, \qquad\text{where} \qquad \epsilon < |f(x)-2|.
 \]

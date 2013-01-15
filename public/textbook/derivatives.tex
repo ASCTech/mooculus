@@ -3,6 +3,7 @@
 
 \section{Slopes of Tangent Lines via Limits}
 
+
 Suppose that $f(x)$ is a function.  It is often useful to know how
 sensitive the value of $f(x)$ is to small changes in $x$. To give you
 a feeling why this is true, consider the following:
@@ -870,6 +871,7 @@ However, we can look at some examples. Consider $(2^h-1)/h$ and $(3^h-1)/h$:
 \end{tchart}
 \]
 \end{fullwidth}
+
 While these tables don't prove a pattern, it turns out that
 \[
 \lim_{h\to 0}\frac{2^h-1}{h} \approx .7 \qquad\text{and}\qquad \lim_{h\to 0} \frac{3^h-1}{h} \approx 1.1.
@@ -917,92 +919,170 @@ and has slope $e^a$ there, no matter what $a$ is.
 
 
 \begin{example}
+Compute:
+\[
+\ddx\left(8\sqrt{x} + 7e^x \right)
+\]
 \end{example}
-\begin{solution}
-\end{solution}
 
+\begin{solution}
+Write:
+\begin{align*}
+\ddx\left(8\sqrt{x} + 7e^x \right) &= 8\ddx x^{1/2} + 7\ddx e^x\\
+&= 4x^{-1/2} + 7 e^x.
+\end{align*}
+\end{solution}
 
 
 \begin{exercises}
 
-Find the derivatives of the given functions.
+\noindent Compute:
 
 \twocol
 
-\begin{exercise} $x^{100}$
-\begin{answer} $100x^{99}$
-\end{answer}\end{exercise}
+%% constants
 
-\begin{exercise} $x^{-100}$
+\begin{exercise} $\ddx 5$
+\begin{answer} $0$
+\end{answer}
+\end{exercise}
+
+\begin{exercise} $\ddx -7$
+\begin{answer} $0$
+\end{answer}
+\end{exercise}
+
+\begin{exercise} $\ddx e^7$
+\begin{answer} $0$
+\end{answer}
+\end{exercise}
+
+\begin{exercise} $\ddx \frac{1}{\sqrt{2}}$
+\begin{answer} $0$
+\end{answer}
+\end{exercise}
+
+%% powers
+
+\begin{exercise} $\ddx x^{100}$
+\begin{answer} $100x^{99}$
+\end{answer}
+\end{exercise}
+
+\begin{exercise} $\ddx x^{-100}$
 \begin{answer} $-100x^{-101}$
 \end{answer}\end{exercise}
 
-\begin{exercise} $\displaystyle {1\over x^5}$
+\begin{exercise} $\ddx \frac{1}{x^5}$
 \begin{answer} $-5x^{-6}$
 \end{answer}\end{exercise}
 
-\begin{exercise} $x^\pi$
+\begin{exercise} $\ddx x^\pi$
 \begin{answer} $\pi x^{\pi-1}$
 \end{answer}\end{exercise}
 
-\begin{exercise} $x^{3/4}$
+\begin{exercise} $\ddx x^{3/4}$
 \begin{answer} $(3/4)x^{-1/4}$
 \end{answer}\end{exercise}
 
-\begin{exercise} $x^{-9/7}$
+\begin{exercise} $\ddx \frac{1}{(\sqrt[7]{x})^9}$
 \begin{answer} $-(9/7)x^{-16/7}$
+\end{answer}\end{exercise}
+
+%% sums
+
+\begin{exercise} $\ddx \left(5x^3+12x^2-15\right)$
+\begin{answer} $15x^2+24x$
+\end{answer}\end{exercise}
+
+\begin{exercise} $\ddx \left(-4x^5 + 3x^2 - \frac{5}{x^2}\right)$
+\begin{answer} $-20x^4+6x+10/x^3$
+\end{answer}\end{exercise}
+
+\begin{exercise} $\ddx 5(-3x^2 + 5x + 1)$
+\begin{answer} $-30x+25$
+\end{answer}\end{exercise}
+
+\begin{exercise} $\ddx \left(3\sqrt{x} + \frac{1}{x} - x^e\right)$
+\begin{answer} $\frac{3}{2}x^{-1/2}-x^{-2}-ex^{e-1}$
+\end{answer}\end{exercise}
+
+
+\begin{exercise} $\ddx \left(\frac{x^2}{x^7}+\frac{\sqrt{x}}{x}\right)$
+\begin{answer} $-5x^{-6} - x^{-3/2}/2$
+\end{answer}\end{exercise}
+\endtwocol
+
+\noindent Expand or simplify to compute the following:
+
+\twocol
+
+\begin{exercise} $\ddx \left((x+1)(x^2+2x-3)\right)$
+\begin{answer} $3x^2+6x-1$
+\end{answer}\end{exercise}
+
+\begin{exercise} $\ddx \frac{x^3 -2x^2 -5x + 6}{(x-1)}$
+\begin{answer} $2x-1 $
+\end{answer}\end{exercise}
+
+\begin{exercise} $\ddx \frac{x-5}{\sqrt{x}-\sqrt{5}}$
+\begin{answer} $x^{-1/2}/2 $
+\end{answer}\end{exercise}
+
+\begin{exercise} $\ddx \left((x+1)(x+1)(x-1)(x-1)\right)$
+\begin{answer} $4x^3-4x$
 \end{answer}\end{exercise}
 
 \endtwocol
 
-Find the derivatives of the functions in 1--6.
-
-\begin{exercise} $5x^3+12x^2-15$
-\begin{answer} $15x^2+24x$
-\end{answer}\end{exercise}
-
-\begin{exercise} $-4x^5 + 3x^2 - 5/x^2$
-\begin{answer} $-20x^4+6x+10/x^3$
-\end{answer}\end{exercise}
-
-\begin{exercise} $5(-3x^2 + 5x + 1)$
-\begin{answer} $-30x+25$
-\end{answer}\end{exercise}
-
-\begin{exercise} $f(x)+g(x)$, where $f(x)=x^2-3x+2$ and $g(x)=2x^3-5x$
-\begin{answer} $6x^2+2x-8$
-\end{answer}\end{exercise}
-
-\begin{exercise} $(x+1)(x^2+2x-3)$
-\begin{answer} $3x^2+6x-1$
-\end{answer}\end{exercise}
-
-\begin{exercise} $\sqrt{625-x^2}+3x^3+12$ (See section \xrefn{sec:slope of a function}.)
-\begin{answer} $9x^2-x/\sqrt{625-x^2}$
-\end{answer}\end{exercise}
-
-
 \begin{exercise} Suppose the position of an object at time $t$ is  given by
-$f(t)=-49 t^2/10+5t+10$. Find a function giving the speed of the object
+$f(t)=-49 t^2/10+5t+10$. Find a function giving the velocity of the object
 at time $t$. The acceleration of an object is the rate at which its
-speed is changing, which means it is given by the derivative of the
-speed function. Find the acceleration of the object at time $t$.
+velocity is changing, which means it is given by the derivative of the
+velocity function. Find the acceleration of the object at time $t$.
 \begin{answer} $-49t/5+5$, $-49/5$
 \end{answer}\end{exercise}
 
-\begin{exercise} Let $f(x) =x^3$ and $c= 3$. Sketch the graphs of $f$,
-$cf$, $f'$, and $(cf)'$ on the same diagram.
+\begin{exercise} Let $f(x) =x^3$ and $c= 3$. Sketch the graphs of $f(x)$,
+$cf(x)$, $f'(x)$, and $(cf(x))'$ on the same diagram.
+\begin{answer}
+See Figure\begin{marginfigure}[0in]
+  \begin{tikzpicture}
+	\begin{axis}[
+            domain=-3:3,
+            ymax=10,
+            ymin=-10,
+            samples=100,
+            axis lines =middle, xlabel=$x$, ylabel=$y$,
+            every axis y label/.style={at=(current axis.above origin),anchor=south},
+            every axis x label/.style={at=(current axis.right of origin),anchor=west},
+          ]
+          \addplot [very thick, penColor, smooth,domain=(-3:3)] {x^3};
+          \addplot [very thick, penColor2, smooth,domain=(-3:3)] {3*x^3};
+          \addplot [very thick, penColor!50!background, smooth,domain=(-3:3)] {3*x^2};
+          \addplot [very thick, penColor2!50!background, smooth,domain=(-3:3)] {9*x^2};
+          \node at (axis cs:1.5,3) [anchor=west] {\color{penColor}$f(x)$}; 
+          \node at (axis cs:-1,-3) [anchor=west] {\color{penColor2}$cf(x)$};
+          \node at (axis cs:-1.6,3) [anchor=west] {\color{penColor!50!background}$f'(x)$};
+          \node at (axis cs:-.9,7) [anchor=west] {\color{penColor2!50!background}$(cf(x))'$};
+        \end{axis}
+\end{tikzpicture}
+\label{figure:answer-cont-diff}
+Answer 2.2.21.
+\end{marginfigure}
+\end{answer}
 \end{exercise}
 
-\begin{exercise} The general polynomial $P$ of degree $n$ in the variable $x$
-has the form $P(x)= \sum _{k=0 } ^n a_k x^k = a_0 + a_1 x + \ldots
-+ a_n x^n$. What is the derivative (with respect to $x$)
-of $P$?
-\begin{answer} $\sum_{k=1}^n ka_kx^{k-1}$
-\end{answer}\end{exercise}
+%\begin{exercise} 
+%The general polynomial $P$ of degree $n$ in the variable $x$ has the
+%form $P(x)= \sum _{k=0 } ^n a_k x^k = a_0 + a_1 x + \ldots + a_n
+%x^n$. What is the derivative (with respect to $x$) of $P$?
+%\begin{answer} $\sum_{k=1}^n ka_kx^{k-1}$
+%\end{answer}\end{exercise}
 
-\begin{exercise} Find a cubic polynomial whose graph has horizontal tangents at
-$(-2 , 5)$ and $(2, 3)$.
+\begin{exercise} 
+Find a cubic polynomial whose graph has horizontal tangents at $(-2 ,
+5)$ and $(2, 3)$.
 \begin{answer} $x^3/16-3x/4+4$
 \end{answer}\end{exercise}
 
