@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html data-require="math graphie interactive graphie-helpers steveMath8">
+  <head>
+        <title>Comparing a function and its derivative</title>
+        <script src="../khan-exercise.js"></script>
+  </head>
+  <body>
+    <div class="exercise">
+     
+
+      <div class="problems">
+              
+              
+        <div id="yes"  data-weight="2">
+           <div class="vars" data-ensure="zeroXs.length&gt;0">
+              	  
+	
+	<var id = "Xs">makeXList()</var>
+	<var id = "A">KhanUtil.rand(4)</var>
+	<var id = "B">KhanUtil.rand(4)</var>
+	<var id = "Ys">makeYList(-8,8,Xs.length)</var>
+	<var id = "points">makeCoordinates(Xs,Ys)</var>
+	<var id = "f">(function(x){return niceFunction(x,points)})</var>
+	<var id = "F">(function(x){return numInt(f,0,x)})</var>
+	<var id = "zeroXs">locateZeros(f,Xs)</var>
+	<var id = "maxF">(function(F,zeroXs){
+				var max = Math.abs(F(-10))
+				for (var i=0;i&lt;zeroXs.length;i++){
+					if (Math.abs(F(zeroXs[i])) &gt; Math.abs(max)){
+						max = Math.abs(F(zeroXs[i]))
+						}
+					}
+				return max
+			})(F,zeroXs)
+		
+		</var>
+		
+	
+	
+	
+	
+	
+	
+	
+		          	
+      </div>
+          
+          
+          <p class="problem">
+          Does it look like  the <font color="BLUE">blue</font> function (thinner) is the derivative of the
+          <font color="RED">red</font> function (thicker)?
+          	 
+          	</p>
+          	
+         
+          
+         
+          <div class="graphie" id="grid">
+            graphInit({
+            range: [[-10,10],[-maxF,maxF]],
+            scale: [20,200/maxF],
+            tickStep: 1,
+			gridOpacity: 0.00005,
+            axisOpacity: 0.1,
+            tickOpacity: 0.00004,
+            
+              });
+                    
+              plot(function( x ) {
+              return ( F(x));
+              }, [-12, 12], {
+              stroke: RED,
+              strokeWidth: 4
+              });
+				
+				
+			
+			 plot(function( x ) {
+              return ( f(x));
+              }, [-12, 12], {
+              stroke: BLUE,
+              strokeWidth: 2
+              });   
+          </div>
+                
+                
+                     
+           <p class="solution">Yes</p>
+                <ul class="choices" data-category="true">
+                    <li>Yes</li>
+                    <li>No</li>
+                </ul>
+                  
+                  
+                 
+                 
+              
+
+          <div class="hints">
+       		
+       			<p>
+       				We can look for some broad features:
+       				<br/> 
+       				Where should the derivative of the <font color="RED">red</font> function be zero?
+       				<br/>
+       				Does the <font color="BLUE">blue</font> function have a value of zero at these points?
+       			</p>
+       			<div>
+       				<p>
+       					We have added vertical lines at each of the locations where the derivative of the <font color="RED">red</font> function be zero, 
+       				 So far so good:  the <font color="BLUE">blue</font> function has zeros in the right places.
+       				</p>
+       				<div class="graphie" data-update="grid">
+       					for (var l =0; l&lt;zeroXs.length;l++){
+       							 line([zeroXs[l],-maxF],[zeroXs[l],maxF],{opacity:.4})	
+       						}
+       				</div>
+       				
+       			</div>
+       			<p>
+       				The zeros were right, but what about the sign of the derivative on each of the <code><var>zeroXs.length+1</var></code> intervals we have created?
+       			</p>
+       			<div>
+       				The derivative should be positive on each of the intervals which have been highlighted in yellow, and the <font color="BLUE">blue</font> function is positive on these intervals.
+       				<div class="graphie" data-update="grid">
+       					if (f(-10) &gt;=0){
+       						 plot(function( x ) {
+             					 return ( F(x));
+            					  }, [-10, zeroXs[0]], {
+             					 stroke: "#ffef00",
+       							opacity: .8,
+       							strokeWidth: 5,
+              					});
+       						}
+       					
+       					if (f(10) &gt;=0){
+       						plot(function( x ) {
+             					 return ( F(x));
+            					  }, [zeroXs[zeroXs.length-1], 10], {
+             					 stroke: "#ffef00",
+       							opacity: .8,
+       							strokeWidth: 5,
+              					});
+       						
+       						};
+       					
+       					for (var j=0;j&lt;zeroXs.length-1;j++){
+       						var mid = (zeroXs[j]+zeroXs[j+1])/2;
+       						if (f(mid)&gt;0){
+       							
+       							plot(function( x ) {
+             					 return ( F(x));
+            					  }, [zeroXs[j], zeroXs[j+1]], {
+             					 stroke: "#ffef00",
+       							opacity: .8,
+       							strokeWidth: 5,
+              					});
+       							
+       							
+       							}
+       						};
+       						
+       						
+       						
+       						
+       						
+       				</div>
+       			
+       			</div>
+       			<p>
+       			Everything seems to check out:  It does seem reasonable that the <font color="BLUE">blue</font> function could be the derivative of the <font color="RED">red</font> function.
+       			</p>
+       		</div>
+          </div>
+          
+        <div id="no"  data-weight="2">
+          
+           <div class="vars" data-ensure="steveSign(f(A)) == -steveSign(newf(A)) || steveSign(f(B)) == -steveSign(newf(B))" >
+              	  
+	
+	<var id = "Xs">makeXList()</var>
+	<var id = "A">randRange(-16,16)/2</var>
+	<var id = "B">randRangeExclude(-16,16,[A])/2</var>
+	
+	<var id = "Ys">makeYList(-8,8,Xs.length)</var>
+	<var id = "points">makeCoordinates(Xs,Ys)</var>
+	<var id = "f">(function(x){return niceFunction(x,points)})</var>
+	<var id = "F">(function(x){return numInt(f,0,x)})</var>
+	<var id = "zeroXs">locateZeros(f,Xs)</var>
+	<var id = "maxF">(function(F,zeroXs){
+				var max = Math.abs(F(-10))
+				for (var i=0;i&lt;zeroXs.length;i++){
+					if (Math.abs(F(zeroXs[i])) &gt; Math.abs(max)){
+						max = Math.abs(F(zeroXs[i]))
+						}
+					}
+				if (max &gt; Math.abs(F(10))){
+					return max
+					}
+				else {
+					return Math.abs(F(10))
+					}
+			})(F,zeroXs)
+		
+		</var>
+		
+	
+	<var id = "newXs">makeXList()</var>
+	<var id = "newYs">makeYList(-8,8,newXs.length)</var>
+	<var id = "newpoints">makeCoordinates(newXs,newYs)</var>
+	<var id = "newf">(function(x){return niceFunction(x,newpoints)})</var>
+	<var id = "hintPosNegRed">(function(x){
+				if (x&gt; 0){
+					return "positive"
+					}
+				else {
+					return "negative"
+					}
+				})(f(C))
+		</var>
+	<var id = "hintPosNegBlue">(function(x){
+				if (x&gt; 0){
+					return "positive"
+					}
+				else {
+					return "negative"
+					}
+				})(-f(C))
+		</var>
+	<var id = "C">(function(A,B,f,newf){
+					if (steveSign(f(A)) == -steveSign(newf(A))){
+						return A
+						}
+					else {
+						return B
+						}
+				})(A,B,f,newf)
+		</var>
+	
+	
+	
+	
+	
+	
+		          	
+      </div>
+          
+          <p class="problem">
+          Does it look like  the <font color="BLUE">blue</font> function (thinner) is the derivative of the
+          <font color="RED">red</font> function (thicker)?
+          	 
+          	</p>
+          	
+         
+          
+         
+          <div class="graphie" id="grid">
+            graphInit({
+            range: [[-10,10],[-maxF,maxF]],
+            scale: [20,200/maxF],
+            tickStep: 1,
+			gridOpacity: 0.00005,
+            axisOpacity: 0.1,
+            tickOpacity: 0.00004,
+            
+              });
+                    
+              plot(function( x ) {
+              return ( F(x));
+              }, [-12, 12], {
+              stroke: RED,
+              strokeWidth: 4
+              });
+				
+				
+			
+			 plot(function( x ) {
+              return ( newf(x));
+              }, [-12, 12], {
+              stroke: BLUE,
+              strokeWidth: 2
+              }); 
+              
+              
+          </div>
+                
+                
+                     
+         <p class="solution">No</p>
+                <ul class="choices" data-category="true">
+                    <li>Yes</li>
+                    <li>No</li>
+                </ul>
+                  
+                  
+                 
+                 
+              
+
+          <div class="hints">
+       		<p>
+       			Does it look like slopes on the red function correspond to heights on the blue function?
+       		</p>
+       		<p>
+       			All it takes is one clear counterexample to show that the blue function is not the derivative of the red.
+       		</p>
+       		<div>
+       			At the indicated point on the graph, the slope of the tangent line to the red function is <var>hintPosNegRed</var>,
+       			but the value of the blue function is <var>hintPosNegBlue</var>
+       			<div class="graphie" data-update="grid">
+       				line([C,-maxF],[C,maxF],{opacity:.5})
+       			</div>
+       		</div>
+       		<p>
+       			The blue function could not be the derivative of the red function.
+       		</p>
+       		
+       		</div>
+          </div>
+       
+        </div>
+          
+        
+                  
+                 
+                 
+      </div>
+
+     
+   
+    
+
+</body>
+</html>
