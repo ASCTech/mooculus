@@ -7,8 +7,6 @@ Suppose that $f(x)$ is a function.  It is often useful to know how
 sensitive the value of $f(x)$ is to small changes in $x$. To give you
 a feeling why this is true, consider the following:
 \begin{itemize}
-\item If the rate of change is zero, then $x$ gives a local maximal or
-  minimal values for $f(x)$.
 \item If $p(t)$ represents the position of an object with respect to
   time, the rate of change gives the velocity of the object.
 \item If $v(t)$ represents the velocity of an object with respect to
@@ -263,7 +261,7 @@ differentiability.
 
 
 
-\begin{theorem}
+\begin{theorem}[Differenitability implies Continuity]\label{theorem:diff->cont}
 If $f(x)$ is a differentiable function at $x = a$, then $f(x)$ is
 continuous at $x=a$.
 \end{theorem}
@@ -287,14 +285,14 @@ Since
 we see that $\lim_{x\to a} f(x) = f(a)$, and so $f(x)$ is continuous.
 \end{proof}
 
-This theorem is often write as its contrapositive:
+This theorem is often written as its contrapositive:
 \begin{quote}
 If $f(x)$ is not continuous at $x=a$, then $f(x)$ is not
 differentiable at $x=a$.
 \end{quote}
 
 
-Let's see a function that is continuous, but whose derivative does not
+Let's see a function that is continuous whose derivative does not
 exist everywhere.
 
 
@@ -380,19 +378,97 @@ Note this function is undefined at $0$, see Figure~\ref{figure:plot-abs}.
 \end{solution}
 
 
-Thus we see that all differentiable functions on $\R$ are continuous
-on $\R$. Nevertheless as the previous example shows, there are
-continuous functions on $\R$ that are not differentiable on $\R$.
+Thus from Theorem~\ref{theorem:diff->cont}, we see that all
+differentiable functions on $\R$ are continuous on $\R$. Nevertheless
+as the previous example shows, there are continuous functions on $\R$
+that are not differentiable on $\R$.
 
 
 
 \begin{exercises}
+
+\noindent These exercises are conceptual in nature and require one to
+think about what the derivative means.
+
 \begin{exercise} 
 If the line $y = 7x-4$ is tangent to $f(x)$ at $x=2$, find $f(2)$ and $f'(2)$.
 \begin{answer}
 $f(2) =  10$ and $f'(2) = 7$
 \end{answer}
 \end{exercise}
+
+\begin{exercise}
+Here are plots of four functions. 
+\begin{fullwidth}
+\[
+\begin{array}{cccc}
+\begin{tikzpicture}
+	\begin{axis}[
+            domain=-3:3,
+            width=2in,
+            ymax=4,
+            ymin=-4,
+            %samples=100,
+            axis lines =middle, xlabel=$x$, ylabel=$y$,
+            every axis y label/.style={at=(current axis.above origin),anchor=south},
+            every axis x label/.style={at=(current axis.right of origin),anchor=west}
+          ]
+          \addplot [very thick, penColor, smooth,domain=(-3:3)] {x^4-4*x^3+4*x^2};
+        \end{axis}
+\end{tikzpicture} & 
+\begin{tikzpicture}
+	\begin{axis}[
+            domain=-3:3,
+            width=2in,
+            ymax=4,
+            ymin=-4,
+            %samples=100,
+            axis lines =middle, xlabel=$x$, ylabel=$y$,
+            every axis y label/.style={at=(current axis.above origin),anchor=south},
+            every axis x label/.style={at=(current axis.right of origin),anchor=west}
+          ]
+          \addplot [very thick, penColor, smooth,domain=(-3:3)] {3*x^2-6*x};
+        \end{axis}
+\end{tikzpicture} & 
+\begin{tikzpicture}
+	\begin{axis}[
+            domain=-3:3,
+            width=2in,
+            ymax=4,
+            ymin=-4,
+            %samples=100,
+            axis lines =middle, xlabel=$x$, ylabel=$y$,
+            every axis y label/.style={at=(current axis.above origin),anchor=south},
+            every axis x label/.style={at=(current axis.right of origin),anchor=west}
+          ]
+          \addplot [very thick, penColor, smooth,domain=(-3:3)] {x^3-3*x^2+2};
+        \end{axis}
+\end{tikzpicture} & 
+\begin{tikzpicture}
+	\begin{axis}[
+            domain=-3:3,
+            width=2in,
+            ymax=4,
+            ymin=-4,
+            %samples=100,
+            axis lines =middle, xlabel=$x$, ylabel=$y$,
+            every axis y label/.style={at=(current axis.above origin),anchor=south},
+            every axis x label/.style={at=(current axis.right of origin),anchor=west}
+          ]
+          \addplot [very thick, penColor, smooth,domain=(-3:3)] {4*x^3-12*x^2 + 8*x};
+        \end{axis}
+\end{tikzpicture} \\
+p(x) & q(x) & r(x) & s(x)
+\end{array}
+\]
+\end{fullwidth}
+Two of these functions are the derivatives of the other two, identify
+which functions are the derivatives of the others.
+\begin{answer}
+$p'(x) = s(x)$ and $r'(x) = q(x)$
+\end{answer}
+\end{exercise}
+
 
 \begin{exercise}
 If $f(3) = 6$ and $f(3.1) = 6.4$, estimate $f'(3)$.
@@ -416,8 +492,70 @@ $f(1.2) \approx 1.728$
 \end{exercise}
 
 
+\begin{marginfigure}[0in]
+\begin{tikzpicture}
+	\begin{axis}[
+            domain=0:6,
+            ymax=4,
+            ymin=-1,
+            samples=100,
+            axis lines =middle, xlabel=$x$, ylabel=$y$,
+            every axis y label/.style={at=(current axis.above origin),anchor=south},
+            every axis x label/.style={at=(current axis.right of origin),anchor=west},
+            grid=both,
+            grid style={dashed, gridColor},
+            xtick={0,...,6},
+            ytick={-1,...,4},
+          ]
+          \addplot [very thick, penColor, smooth,domain=(3:6)] {3-abs(sin(deg(pi*x/3)))};
+          \addplot [very thick, penColor, smooth,domain=(0:3)] {3-abs(sin(deg(pi*x/3)))};
+          \addplot[color=penColor,fill=background,only marks,mark=*] coordinates{(4.5,2)};  %% open hole
+        \end{axis}
+\end{tikzpicture}
+\caption{A plot of $f(x)$.}
+\label{figure:plot-cont-diff}
+\end{marginfigure}
 \begin{exercise}
-Let $f(x) = x^2 -4$. Use the definition of the derivative to comptute
+Consider the plot of $f(x)$ in Figure~\ref{figure:plot-cont-diff}. 
+\begin{enumerate}
+\item On which subinterval(s) of $[0,6]$ is $f(x)$ continuous? 
+\item On which subinterval(s) of $[0,6]$ is $f(x)$ differentiable?
+\item Sketch a plot of $f'(x)$.  
+\end{enumerate}
+\begin{answer}
+(a) $[0,4.5)\cup(4.5,6]$, (b) $[0,3)\cup(3,6]$, (c) See Figure\begin{marginfigure}[0in]
+  \begin{tikzpicture}
+	\begin{axis}[
+            domain=0:6,
+            ymax=1.5,
+            ymin=-1.5,
+            samples=100,
+            axis lines =middle, xlabel=$x$, ylabel=$y$,
+            every axis y label/.style={at=(current axis.above origin),anchor=south},
+            every axis x label/.style={at=(current axis.right of origin),anchor=west},
+            grid=both,
+            grid style={dashed, gridColor},
+            xtick={0,...,6},
+            ytick={-1,...,1},
+          ]
+          \addplot [very thick, penColor, smooth,domain=(0:3)] {-(pi/3)*cos(deg(pi*x/3)))};
+          \addplot [very thick, penColor, smooth,domain=(3:6)] {-(pi/3)*cos(deg(pi*(x-3)/3)))};
+          \addplot[color=penColor,fill=background,only marks,mark=*] coordinates{(3,pi/3)};  %% open hole
+          \addplot[color=penColor,fill=background,only marks,mark=*] coordinates{(3,-pi/3)};  %% open hole
+          \addplot[color=penColor,fill=background,only marks,mark=*] coordinates{(4.5,0)};  %% open hole
+        \end{axis}
+\end{tikzpicture}
+\label{figure:answer-cont-diff}
+Answer 2.1.6: (c) a sketch of $f'(x)$.
+\end{marginfigure}
+\end{answer}
+\end{exercise}
+
+\break
+\noindent These exercises are computational in nature.
+
+\begin{exercise}
+Let $f(x) = x^2 -4$. Use the definition of the derivative to compute
 $f'(-3)$ and find the equation of the tangent line to the curve at
 $x=-3$.
 \begin{answer}
@@ -426,7 +564,7 @@ $f'(-3) = -6$ with tangent line $y = -6x -13$
 \end{exercise}
 
 \begin{exercise}
-Let $f(x) = \frac{1}{x+2}$. Use the definition of the derivative to comptute
+Let $f(x) = \frac{1}{x+2}$. Use the definition of the derivative to compute
 $f'(1)$ and find the equation of the tangent line to the curve at
 $x=1$.
 \begin{answer}
@@ -434,7 +572,23 @@ $f'(1) = -1/2$ with tangent line $y = \frac{-1}{2}x + \frac{5}{6}$
 \end{answer}
 \end{exercise}
 
+\begin{exercise}
+Let $f(x) = \sqrt{x-3}$. Use the definition of the derivative to compute
+$f'(5)$ and find the equation of the tangent line to the curve at
+$x=5$.
+\begin{answer}
+$f'(5) = \frac{1}{2\sqrt{2}}$ with tangent line $y = \frac{1}{2\sqrt{2}}x -\frac{1}{2\sqrt{2}}$
+\end{answer}
+\end{exercise}
 
+\begin{exercise}
+Let $f(x) = \frac{1}{\sqrt{x}}$. Use the definition of the derivative
+to compute $f'(4)$ and find the equation of the tangent line to the
+curve at $x=4$.
+\begin{answer}
+$f'(4) = \frac{-1}{16}$ with tangent line $y = \frac{-1}{16}x +\frac{3}{4}$
+\end{answer}
+\end{exercise}
 
 \end{exercises}
 
@@ -448,7 +602,7 @@ It is tedious to compute a limit every time we need to know the
 derivative of a function.  Fortunately, we can develop a small
 collection of examples and rules that allow us to compute the
 derivative of almost any function we are likely to encounter.  We will
-start simply, building-up to more complicated examples.
+start simply and build-up to more complicated examples.
 
 
 \subsection{The Constant Rule}
@@ -460,13 +614,13 @@ derivative of a constant function is zero. For example:
 \item The constant function plots a horizontal line---so the slope of
   the tangent line is $0$.
 \item If $p(t)$ represents the position of an object with respect to
-  time and $p(t)$ is constant, then object is not moving, so its
+  time and $p(t)$ is constant, then the object is not moving, so its
   velocity is zero. Hence $\dd{t} p(t) = 0$.
 \item If $v(t)$ represents the velocity of an object with respect to
   time and $v(t)$ is constant, then the object's acceleration is
   zero. Hence $\dd{t} v(t) = 0$.
 \end{itemize}
-
+The examples above lead us to our next theorem.
 
 
 \marginnote{To gain intuition, you should compute the derivative of
@@ -501,7 +655,16 @@ For any real number $n$,
 \ddx x^n = n x^{n-1}.
 \]
 \end{theorem}
-
+\marginnote[1in]{Recall, the \textbf{Binomial Theorem}\index{Binomial Theorem} states that if $n$
+  is a nonnegative integer, then
+\[
+(a+b)^n = a^nb^0 + \binom{n}{1} a^{n-1}b^1 + \dots + \binom{n}{n-1} a^{1}b^{n-1} +  a^{0}b^n   
+\]
+where
+\[
+\binom{n}{k} = \frac{n!}{k!(n-k)!}.
+\]
+}
 \begin{proof}
 At this point we will only prove this theorem for $n$ being a positive
 integer, later we will give the complete proof. From the limit
@@ -511,14 +674,14 @@ definition of the derivative, write
 \]
 Start by expanding the term $(x+h)^n$
 \[
-\ddx x^n=\lim_{h\to0} \frac{x^n + nx^{n-1} h + a_2x^{n-2} h^2+\cdots+a_{n-1}x h^{n-1} +  h^n-x^n}{h}
+\ddx x^n=\lim_{h\to0} \frac{x^n + \binom{n}{1}x^{n-1} h + \binom{n}{2}x^{n-2} h^2+\cdots+\binom{n}{n-1}x h^{n-1} +  h^n-x^n}{h}
 \]
-Note, we simplify wrote $a_i$ for the various coefficients as we don't
-really need to know what the coefficients are. Canceling the terms
-$x^n$ and $-x^n$, write
+Note, by the Binomial Theorem, we write $\binom{n}{k}$ for the
+coefficients. Canceling the terms $x^n$ and $-x^n$, and noting
+$\binom{n}{1}= \binom{n}{n-1}= n$, write
 \begin{align*}
 \ddx x^n&=\lim_{h\to0} \frac{nx^{n-1} h + a_2x^{n-2} h^2+\cdots+a_{n-1}x h^{n-1} +  h^n}{h} \\
-&=\lim_{h\to0} nx^{n-1} + a_2x^{n-2} h+\cdots+a_{n-1}x h^{n-2} +  h^{n-1}.
+&=\lim_{h\to0} nx^{n-1} + \binom{n}{2}x^{n-2} h+\cdots+\binom{n}{n-1}x h^{n-2} +  h^{n-1}.
 \end{align*}
 Since every term but the first has a factor of $h$, we see
 \[
@@ -526,10 +689,50 @@ Since every term but the first has a factor of $h$, we see
 \]
 \end{proof}
 
-\begin{example}
-HERE HERE HERE $7x^12$
-\end{example}
+Now we will show you several examples. We begin with something basic.
 
+\begin{example}
+Compute
+\[
+\ddx x^{13}.
+\]
+\end{example}
+\begin{solution}
+Applying the power rule, we write
+\[
+\ddx x^{13} = 13x^{12}.
+\]
+\end{solution}
+
+Sometimes, it is not as obvious that one should apply the power rule.
+
+\begin{example}
+Compute
+\[
+\ddx \frac{1}{x^4}.
+\]
+\end{example}
+\begin{solution}
+Applying the power rule, we write
+\[
+\ddx \frac{1}{x^4} = \ddx x^{-4} = -4x^{-5}.
+\]
+\end{solution}
+
+The power rule also applies to radicals once we rewrite them as exponents.
+
+\begin{example}
+Compute
+\[
+\ddx \sqrt[5]{x}.
+\]
+\end{example}
+\begin{solution}
+Applying the power rule, we write
+\[
+\ddx \sqrt[5]{x} = \ddx x^{1/5} = \frac{x^{-4/5}}{5}.
+\]
+\end{solution}
 
 
 
@@ -540,11 +743,11 @@ HERE HERE HERE $7x^12$
 
 We want to be able to take derivatives of functions ``one piece at a
 time.'' The \textit{sum rule} allows us to do this. The sum rule says
-that that we can add the rates of change of two functions to obtain
-the rate of change of the sum of both functions. For example, viewing
-the derivative as the velocity of an object, the sum rule states that
-the velocity person walking on a moving bus is the sum of the velocity
-of the bus and the walking person.
+that we can add the rates of change of two functions to obtain the
+rate of change of the sum of both functions. For example, viewing the
+derivative as the velocity of an object, the sum rule states that the
+velocity of the person walking on a moving bus is the sum of the
+velocity of the bus and the walking person.
 
 
 \begin{theorem}[The Sum Rule]\index{derivative rules!sum}\index{the sum rule}
@@ -569,24 +772,35 @@ We will only prove part~\ref{SR:1} above, the rest are similar. Write
 \end{proof}
 
 
+\begin{example}
+Compute
+\[
+\ddx \left( x^5+\frac{1}{x}\right).
+\] 
+\end{example}
 
-
+\begin{solution}
+Write
+\begin{align*}
+\ddx \left(x^5+\frac{1}{x}\right) &= \ddx x^5 + \ddx x^{-1} \\
+&=5x^4 - x^{-2}.
+\end{align*}
+\end{solution}
 
 \begin{example}
-Find the derivative of $f(x)=x^5+5x^2$. We have to invoke linearity
-twice here: 
+Compute
 \[
-f'(x) = \ddx(x^5+5x^2) = \ddx x^5 + \ddx(5x^2) =
-5x^4+5\ddx(x^2) = 5x^4+5\cdot 2x^1 = 5x^4+10x.
+\ddx \left(\frac{3}{\sqrt[3]{x}}-2\sqrt{x}+\frac{1}{x^7}\right).
 \]
 \end{example}
 
-\begin{example}
-Find the derivative of $f(x)=3/x^4-2x^2+6x-7$.
-$$f'(x) = \ddx\left( {3\over x^4}-2x^2+6x-7\right)
-= \ddx(3x^{-4}-2x^2+6x-7) 
-= -12x^{-5}-4x+6.$$
-\end{example}
+\begin{solution}
+Write
+\begin{align*}
+\ddx \left(\frac{3}{\sqrt[3]{x}}-2\sqrt{x}+\frac{1}{x^7}\right) &= 3\ddx x^{-1/3} -2\ddx x^{1/2}+\ddx x^{-7}\\
+&=-x^{-4/3} - x^{-1/2}-7x^{-8}.
+\end{align*}
+\end{solution}
 
 
 
@@ -656,9 +870,9 @@ However, we can look at some examples. Consider $(2^h-1)/h$ and $(3^h-1)/h$:
 \end{tchart}
 \]
 \end{fullwidth}
-While these tables don't establish a pattern, it turns out that
+While these tables don't prove a pattern, it turns out that
 \[
-\lim_{h\to 0}\frac{a^h-1}{h} \approx .7 \qquad\text{and}\qquad \lim_{h\to 0} \frac{3^h-1}{h} \approx 1.1.
+\lim_{h\to 0}\frac{2^h-1}{h} \approx .7 \qquad\text{and}\qquad \lim_{h\to 0} \frac{3^h-1}{h} \approx 1.1.
 \]
 Moreover, if you do more examples you will find that the limit varies
 directly with the value of $a$: bigger $a$, bigger limit; smaller $a$,
@@ -695,7 +909,7 @@ From the limit definition of the derivative, write
 
 
 
-Hence, $e^x$ is its own derivative, or in other words the slope of the
+Hence $e^x$ is its own derivative. In other words, the slope of the
 plot of $e^x$ is the same as its height, or the same as its second
 coordinate: The function $ f(x)=e^x$ goes through the point $ (a,e^a)$
 and has slope $e^a$ there, no matter what $a$ is. 
