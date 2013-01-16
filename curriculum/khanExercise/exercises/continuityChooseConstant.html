@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html data-require="math word-problems graphie polynomials steveMath8 subhints">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>Piecewise defined continuous functions</title>
+    <script src="../khan-exercise.js"></script>
+</head>
+<body>
+    <div class="exercise">
+      <div class="problems">
+    
+
+     	<div id="linear-linear">
+     		<div class="vars">
+     		<var id = "A">randRangeNonZero(-9,9)</var>
+            <var id = "B">randRangeExclude(-9,9,[0,A])</var>
+            <var id = "C">randRangeExclude(-9,9,[1])</var>
+     		</div>
+     	
+     	
+     	  <p class="question">
+            
+           Choose the value of <code>k</code> that makes the following function continuous at <code>x=<var>A</var></code>:
+            <br/><br/>
+            <code>
+            	f(x) = \left\{
+       			 \begin{array}{ll}
+        		   kx+<var>A</var> &amp; \quad x &lt; <var>C</var> \\
+          		  <var>B</var>x +k & \quad x \geq <var>C</var>
+        		\end{array}
+    			\right.
+            </code>
+	  </p>
+	  
+	  <div class="hints">
+	  <p>
+	    For <code>f</code> to be continuous at <code>x=<var>A</var></code> we need 
+	    <code>\displaystyle\lim_{x \to <var>A</var>^-}f(x) = \displaystyle\lim_{x \to <var>A</var>^+}f(x) = f(<var>A</var>)</code>
+	  </p>
+	  <p>
+	  	Since <code>f</code> is linear on both intervals <code>(-\infty,<var>C</var>)</code> and <code>[<var>C</var>,\infty)</code>
+	  	it is continuous on both of those intervals.  Thus we can evaluate both one sided limits by evaluating the respective linear function at
+	  	<code>x = <var>C</var></code>
+	  </p>
+	  <p>
+	  	Thus we need <code><var>C</var>k+<var>A</var> = <var>B</var> \cdot <var>C</var> +k</code>
+	  </p>
+	  <p>
+	  	Solving for <code>k</code> we obtain <code>k= \dfrac{<var>toFraction((B*C-A)/(C-1))[0]</var>}{<var>toFraction((B*C-A)/(C-1))[1]</var>} </code>
+	  </p>
+	  </div>
+	  
+	  <p class ="solution"><var>(B*C-A)/(C-1)</var></p>
+	  	
+	  </div>
+     	
+		<div id="Quadratic-over-linear-and-linear">
+      
+          <div class="vars">
+            <var id = "A">randRangeNonZero(-9,9)</var>
+            <var id = "B">randRangeExclude(-9,9,[A])</var>
+            <var id = "C">randRangeExclude(-9,9,[A,B])</var>
+            <var id = "D">randRangeNonZero(-9,9)</var>
+            <var id = "E">randRangeNonZero(-9,9)</var>
+            <var id = "lin1">new Polynomial(0,1,[-A,1])</var>
+            <var id = "lin2">new Polynomial(0,1,[-B*D,D])</var>
+            <var id = "lin3">new Polynomial(0,1,[-C*E,E])</var>
+            <var id = "num">lin1.multiply(lin2)</var>
+            <var id = "denom">lin1.multiply(lin3)</var>
+            <var id = "func"><code>\frac{<var>num.text()</var>}{<var>denom.text()</var>}</code></var>
+            <var id = "F">randRangeNonZero(-9,9)</var>
+       	  </div>
+                
+          <p class="question">
+            
+           Choose the value of <code>k</code> that makes the following function continuous at <code>x=<var>A</var></code>:
+            <br/><br/>
+            <code>
+            	f(x) = \left\{
+        \begin{array}{ll}
+           \dfrac{<var>num.text()</var>}{<var>lin1.text()</var>} &amp; \quad x &lt; <var>A</var> \\
+            <var>F</var>x +k & \quad x \geq <var>A</var>
+        \end{array}
+    \right.
+            </code>
+           
+	  </p>
+	  
+          <div class="solution">
+	    <var>D*A-B*D-F*A</var>	
+          </div>
+
+	  <div class="hints">
+	    
+	 
+	    
+	   
+	    <p>
+	    	For <code>f</code> to be continuous at <code>x=<var>A</var></code> we need 
+	    	<code>\displaystyle\lim_{x \to <var>A</var>^-}f(x) = \displaystyle\lim_{x \to <var>A</var>^+}f(x) = f(<var>A</var>)</code>
+	    </p>
+	    <p> First lets evaluate <code>\displaystyle\lim_{x \to <var>A</var>^-}f(x)</code>. Since <code>x &lt; <var>A</var></code>
+	    as <code>x</code> approaches <code><var>A</var></code> from the left, <code>f(x) = \dfrac{<var>num.text()</var>}{<var>lin1.text()</var>}</code> 
+	    as <code>x \to <var>A</var>^-</code>
+
+		</p>
+		<div>
+		<p>
+			So <code>\displaystyle\lim_{x \to <var>A</var>^-}f(x) = \displaystyle\lim_{x \to <var>A</var>^-}\dfrac{<var>num.text()</var>}{<var>lin1.text()</var>}</code>
+			[<a href="#" class="show-subhint" data-subhint="computing">Show me how to evaluate that limit</a>]
+		</p>
+		
+			
+		 <div class = "subhint" id="computing">
+	    <p> Start by factoring the numerator. </p>
+
+	    <p> In this case we find:
+	      <br/><br/>
+	      <code>
+		\displaystyle\lim_{x \to <var>A</var>-}\frac{<var>num.text()</var>}{<var>denom.text()</var>}  =
+		\lim_{x \to <var>A</var>-}\frac{(<var>lin2</var>)(<var>lin1</var>)}{<var>lin1</var>}   
+	      </code>
+	    </p>
+
+	    <p> Since we are taking the limit as <code>x\to <var>A</var>^-</code>, we may assume that <code>x\ne <var>A</var></code>.
+	    </p>
+
+	    <p> Canceling factors we see:
+	      <br/><br/>
+	      <code>
+		\displaystyle\lim_{x \to <var>A</var>-}\frac{(<var>lin2</var>)(<var>lin1</var>)}{(<var>lin3</var>)(<var>lin1</var>)}=
+		\lim_{x \to <var>A</var>-}(<var>lin2</var>)
+	      </code>
+	    </p>
+	    
+	    <p> We can evaluate this linear function at <code>x = <var>A</var></code>.
+	    </p>
+
+	    <p> Hence, 
+	      <br/><br/>
+	      <code>
+		\displaystyle\lim_{x \to <var>A</var>-}\frac{<var>num.text()</var>}{<var>denom.text()</var>}  =
+		<var>D</var>(<var>A</var>) +<var>-B*D</var>.
+	      </code>
+	    </p>
+	    <p> Thus,
+	      <code>
+		\displaystyle\lim_{x \to <var>A</var>^-}f(x) = <var>D*(A-B)</var>.
+	      </code>
+	    </p>
+	    
+	    </div>
+	    
+	  </div>
+	  	
+	  	<p>
+	  		Thus <code>\displaystyle\lim_{x \to <var>A</var>^-}f(x)= <var>D*(A-B)</var></code>
+	  	</p>
+	  	<p>
+	  		<code>\displaystyle\lim_{x \to <var>A</var>^+}f(x)= \displaystyle\lim_{x \to <var>A+</var>} (<var>F</var>x +k)</code>, because <code>x &gt; <var>A</var></code>
+	  		as <code>x</code> approaches <code><var>A</var></code> from the right.
+	  	</p> 
+	  	<p>
+	  		<code>\displaystyle\lim_{x \to <var>A+</var>} (<var>F</var>x +k) = <var>F</var> \cdot <var>A</var> + k = <var>F*A</var> +k = f(<var>A</var>)</code> because linear functions are continuous.
+	  	</p>
+	  	<p>
+	  		For <code>f</code> to be continuous, these limits have to be equal.  Thus <code><var>D*(A-B)</var> = <var>F*A</var>+k</code>
+	  	</p>
+	  	<p>
+	  		When <code>k  = <var>D*A-D*B-F*A</var></code>, <code>f</code> is continuous.
+	  	</p>
+	  </div>
+
+        </div>
+
+		<div id="sine-x-over-x">
+          <div class="vars">
+            <var id = "A">randRangeNonZero(-9,9)</var>
+            <var id = "B">randRangeExclude(-9,9,[0,A,1])</var>
+            <var id = "C">randRangeNonZero(-9,9)</var>
+            <var id = "D">randRangeNonZero(-9,9)</var>
+            <var id = "E">randRangeNonZero(-9,9)</var>
+       	  </div>
+          
+	  <p class="question">
+           What value of <code>k</code> makes the following function continuous?
+            
+            <br/><br/>
+            <code>
+            	f(x) = \left\{
+        \begin{array}{ll}
+            \dfrac{\sin(<var>A</var>x)}{<var>B</var>x} &amp; \quad x &lt;0 \\
+            <var>C</var>x +<var>D</var>k+<var>E</var> & \quad x \geq 0
+         \end{array}
+   		 \right.
+            </code>
+            
+	  </p>
+	  
+          <div class="solution" >
+            <var>(A/B-E)/D</var>
+          </div>
+
+	  <div class="hints">
+	     <p>
+	     	By the definition of continuity, we need <code>\displaystyle\lim_{x \to 0^-}f(x) = \displaystyle\lim_{x \to 0^+}f(x) = f(0)</code>
+	     </p>
+	
+	     <div>
+	     <p>
+	    <code> \displaystyle\lim_{x \to 0^-}f(x) = \displaystyle\lim_{x \to 0^-}\dfrac{\sin(<var>A</var>x)}{<var>B</var>x}</code>  because 
+	     <code>x &lt; 0</code> as <code>x</code> approaches <code>0</code> from the left.
+	     [<a href="#" class="show-subhint" data-subhint="computing">Show me how to evaluate that limit</a>]
+	     </p>
+	    <div class = "subhint" id = "computing">
+	    <p> Recall that 
+	      <br/><br/>
+	      <code>
+		\displaystyle\lim_{x\to 0}\frac{\sin(x)}{x} = 1.
+	      </code>
+	    </p>
+	    <p> Factor out <code>\frac{<var>B</var>}{<var>A</var>}</code> in the denominator to get
+	      <br/><br/>
+	      <code>\displaystyle\lim_{x \to <var>0</var>}\frac{\sin(<var>A</var>x)}{<var>A</var>x \cdot \frac{<var>B</var>}{<var>A</var>}} 
+		= \lim_{x \to <var>0</var>}\frac{\sin(<var>A</var>x)}{<var>A</var>x} \cdot \frac{<var>A</var>}{<var>B</var>} 
+	      </code>
+	    </p>
+	    
+	    <p>
+	      Set <code>y = <var>A</var>x</code>. Since <code>y\to 0</code> as <code>x\to 0</code>,
+	      <br/><br/>
+	      <code>\displaystyle\lim_{x \to <var>0</var>}\frac{\sin(<var>A</var>x)}{<var>A</var>x} \cdot \frac{<var>A</var>}{<var>B</var>} = \lim_{y\to 0}
+		\frac{\sin(y)}{y} \cdot \frac{<var>A</var>}{<var>B</var>}.	      
+	      </code>
+	    </p>
+
+	    <p>
+	      Hence <code>
+		\displaystyle\lim_{x \to <var>0</var>}\frac{\sin(<var>A</var>x)}{<var>B</var>x}=
+		\dfrac{<var>toFraction(A/B)[0]</var>}{<var>toFraction(A/B)[1]</var>}.
+		</code>
+	    </p>
+	    </div>
+		</div>
+
+		<p>
+	    	Thus <code>\displaystyle\lim_{x \to 0^-}f(x) = \dfrac{<var>toFraction(A/B)[0]</var>}
+	    	{<var>toFraction(A/B)[1]</var>}</code>
+	    </p>
+	   <p>
+	  		<code>\displaystyle\lim_{x \to 0^+}f(x) = f(0) = <var>D</var>k + <var>E</var></code> because <code>f</code> is linear for all 
+	  		<code>x \leq 0</code>, and so continuous on the interval <code>(-\infty,0]</code>
+	  	</p>
+	  	<p>
+	  		Thus for <code>f</code> to be continuous we need <code><var>D</var>k + <var>E</var> = \dfrac{<var>toFraction(A/B)[0]</var>}
+	    	{<var>toFraction(A/B)[1]</var>}</code>
+	  	</p>
+	  	<p>
+	  		Solving for <code>k</code> we obtain <code>k = \dfrac{<var>toFraction((A/B-E)/D)[0]</var>}
+	    	{<var>toFraction((A/B-E)/D)[1]</var>}</code>
+	  	</p>
+	  		
+	    </div>
+	  		
+        </div>
+        
+        <div id="needs-conjugate">
+          <div class="vars">
+            <var id = "A">randRangeNonZero(0,9)</var>			
+       	  </div>
+                
+          <p class="question">      
+           What are values of <code>C</code> and <code>k</code> if <code>f</code> is continuous for all <code>x \geq 0</code>?
+            <br/><br/>
+            <code>
+            	f(x) = \left\{
+       	 \begin{array}{ll}
+           \frac{x-<var>A*A</var>}{\sqrt{x}-<var>A</var>} &amp; \text{if  }  x \neq C \\
+            k & \text{if  } x = C
+        \end{array}
+    \right.
+            </code>
+           
+	  </p>
+	  
+          <div class="solution" data-type="multiple">
+
+                    <p>
+                        <code>C=</code> <span class="sol" ><var>A*A</var></span>
+                        <br/>
+                        <code>k=</code> <span class="sol" ><var>2*A</var></span>
+
+                    </p>
+
+                </div>
+	  <div class="hints">
+	    
+	    <p>
+	    	This function is function <code>\frac{x-<var>A*A</var>}{\sqrt{x}-<var>A</var>}</code> 
+	    	except it has been redefined at one point where <code>x = C</code>
+	    </p>
+	    <p>
+	    	<code>C</code> needs to be <code><var>A*A</var></code> because otherwise <code><var>A*A</var></code> will not even be in
+	    	the domain of <code>f</code>, and so <code>f</code> would have no hope of being continuous for all positive numbers.
+	    </p>
+	    <p>
+	     So now we know <code>f</code> looks like this :
+	     <br/><br/>
+	      <code>
+            	f(x) = \left\{
+       	 \begin{array}{ll}
+           \frac{x-<var>A*A</var>}{\sqrt{x}-<var>A</var>} &amp; \text{if  }  x \neq <var>A*A</var> \\
+            k & \text{if  } x = <var>A*A</var>
+        \end{array}
+    \right.
+            </code>
+	    </p>
+	    <div>
+	    <p>
+	    	For <code>f</code> to be continuous at <code><var>A*A</var></code>, we need 
+	    	<br/><br/>
+	    	<code>f(<var>A*A</var>) = \displaystyle\lim_{x \to <var>A*A</var>}f(x)</code>
+	    	<br/><br/>
+	    	that is,
+	    	<br/><br/>
+	    	<code>k=\displaystyle\lim_{x \to <var>A*A</var>}\frac{x-<var>A*A</var>}{\sqrt{x}-<var>A</var>}</code>
+	    	[<a href="#" class="show-subhint" data-subhint="computing">Show me how to evaluate that limit</a>]
+	    </p>
+	    <div class = "subhint" id="computing">
+	    <p> Note we cannot evaluate this limit directly since the
+	    denominator is zero when <code>x=<var>A*A</var></code>.</p>
+	    
+	    <p> Multiply by the conjugate:
+	    </p>
+
+	    <p> 
+	      <code>\displaystyle\lim_{x \to <var>A*A</var>}\frac{x-<var>A*A</var>}{\sqrt{x}-<var>A</var>} = 
+		\lim_{x \to <var>A*A</var>}\frac{x-<var>A*A</var>}{\sqrt{x}-<var>A</var>} \cdot\frac{\sqrt{x}+<var>A</var>}{\sqrt{x}+<var>A</var>}
+	      </code>
+	    </p>
+	    
+	    <p> Now simplify.
+	      <br/><br/>
+	      <code>\displaystyle\lim_{x \to <var>A*A</var>}\frac{x-<var>A*A</var>}{\sqrt{x}-<var>A</var>} = 
+		\lim_{x \to <var>A*A</var>}\frac{(x-<var>A*A</var>)(\sqrt{x}+<var>A</var>)}{x-<var>A*A</var>} 
+	      </code>
+	    </p>
+
+	    <p> Since we are taking the limit as <code>x\to <var>A*A</var></code>, we may assume that <code>x\ne <var>A*A</var></code>.
+	    </p>
+	   
+	    <p> Canceling factors we see:
+	      <br/><br/>
+	      <code>\displaystyle\lim_{x \to <var>A*A</var>}\frac{x-<var>A*A</var>}{\sqrt{x}-<var>A</var>} = 
+		\lim_{x \to <var>A*A</var>}(\sqrt{x}+<var>A</var>) 
+	      </code>
+	    </p>
+
+	    <p> We can evaluate this function at <code>x = <var>A*A</var></code>.
+	    </p>
+
+	    <p> 
+	    	Hence,  we see the solution is <code><var>2*A</var></code>
+	    </p>
+	    </div>
+ 		</div>
+ 		<p>
+ 		Thus <code>k=\displaystyle\lim_{x \to <var>A*A</var>}\frac{x-<var>A*A</var>}{\sqrt{x}-<var>A</var>}=<var>2*A</var></code>
+ 		</p>
+	    </div>
+
+        </div>
+     
+      </div>
+      </div>
+</body>
+</html>
