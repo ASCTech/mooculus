@@ -1381,7 +1381,43 @@ Khan.answerTypes = $.extend(Khan.answerTypes, {
                 return correct === guess;
             };
         }
-    }
+    },
+
+		"function": {
+			setup: function(solutionarea, solution) {
+				// Add a text box
+				var input = $('<input class="input-large" type="text">');
+				$(solutionarea).append(input);
+
+				// The fallback variable is used in place of the answer, if no
+				// answer is provided (i.e. the field is left blank)
+				var fallback = $(solution).data("fallback");
+
+				return {
+					validator: Khan.answerTypes["function"].createValidator(solution),
+						answer: function() {
+							// return the value in the text box, or the fallback
+							return input.val().length > 0 ?
+								input.val() :
+								(fallback ? fallback + "" : "");
+						},
+						solution: $.trim($(solution).text()),
+						examples: ["An expression like sin(3y)+(x+1)^3-9"],
+						showGuess: function(guess) {
+							input.val(guess === undefined ? "" : guess);
+						}
+				};
+			},
+			createValidator: function(solution) {
+				$.getScript("assets/utils/math-function-parser.js")
+				var correct = mathFunctionParser.parse($.trim($(solution).text()));
+
+				return function(guess) {
+					guess = mathFunctionParser.parse($.trim(guess));
+					return correct.equals(guess);
+				};
+			}
+		}
 });
 
 })();
