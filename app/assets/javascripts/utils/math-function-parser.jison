@@ -126,7 +126,7 @@ var sub = function(str) {
     })
 }
 
-var random_bindings = function() {
+var randomBindings = function() {
     var alphabet = "abcdefghijklmnopqrstuvwxyz";
     var result = new Object();
     for(var i=0; i<alphabet.length; i++) {
@@ -142,7 +142,7 @@ StraightLineProgram.prototype = {
 	var successful_trials = 0;
 
         for( var i=0; i < total_trials; i++ ) {
-	    bindings = random_bindings();
+	    bindings = randomBindings();
 	    if (Math.abs(this.f(bindings) - other.f(bindings)) < epsilon) {
 		successful_trials++;
 	    }
@@ -150,7 +150,7 @@ StraightLineProgram.prototype = {
 	return (successful_trials > 0.95 * total_trials);
     },
 
-    equals_for_binding: function(other,bindings) {
+    equalsForBinding: function(other,bindings) {
 	var epsilon = 0.0001;
 
 	return (Math.abs(this.f(bindings) - other.f(bindings)) < epsilon);
