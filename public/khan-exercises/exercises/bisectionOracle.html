@@ -6,7 +6,7 @@
     <script src="../khan-exercise.js"></script>
 </head>
 <body>
-    <div class="exercise">
+    <div class="exercise" data-ensure="Math.abs(f(ANSWERS[0])) &gt; .001 &amp;&amp; Math.abs(f(ANSWERS[1])) &gt; .001 &amp;&amp; Math.abs(f(ANSWERS[2])) &gt; .001">
         <div class="vars" data-ensure="zeroXs.length &gt; 0">
 	    		<var id = "Xs">makeXList()</var>
     			<var id = "Ys">makeYList(-8,8,Xs.length)</var>
