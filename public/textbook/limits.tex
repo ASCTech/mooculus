@@ -530,7 +530,7 @@ $\delta = \min\left(\frac{\epsilon}{M}, 1\right)$.
 As you work with limits, you find that you need to do the same
 procedures again and again. The next theorems will expedite this
 process.
-\begin{theorem}[Limit Product Law] 
+\begin{theorem}[Limit Product Law]\label{theorem:limit-product} 
 Suppose $\lim_{x\to a} f(x)=L$ and $\lim_{x\to a}g(x)=M$. Then
 \[
 \lim_{x\to a} f(x)g(x) = LM.
@@ -552,7 +552,7 @@ implies
 \]
 Here we use an algebraic trick, add $0 = -f(x)M+f(x)M$:
 \begin{align*}
-|f(x)g(x)-LM| &= |f(x)g(x)\boldsymbol{-f(x)M+f(x)M}-LM| \\
+|f(x)g(x)-LM| &= |f(x)g(x){\color{penColor2}-f(x)M+f(x)M}-LM| \\
 &=|f(x)(g(x)-M)+(f(x)-L)M| \\
 &\le |f(x)(g(x)-M)|+|(f(x)-L)M| \\
 &=|f(x)||g(x)-M|+|f(x)-L||M|.
@@ -870,13 +870,15 @@ Compute
 \]
 \end{example}
 
+\break
+
 \begin{solution}
 To compute this limit, use the Squeeze Theorem,
 Theorem~\ref{theorem:squeeze}. First note that we only need to examine
 $x\in \left(\frac{-\pi}{2}, \frac{\pi}{2}\right)$ and for the present
 time, we'll assume that $x$ is positive---consider the diagrams below:
 
-
+%\vspace{5cm}
 
 \begin{fullwidth}
 \begin{tabular}{ccc}
@@ -950,7 +952,7 @@ Triangle $A$ & Sector & Triangle $B$ \\
 \end{tabular}
 \end{fullwidth}
 
-\vspace{1cm}
+
 
 From our diagrams above we see that
 \[
