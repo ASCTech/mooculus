@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html data-require="math word-problems graphie polynomials steveMath8">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>Computing the derivative using the limit definition</title>
+    <script src="../khan-exercise.js"></script>
+</head>
+<body>
+    <div class="exercise">
+      <div class="problems">
+        <div id="quadratic">
+
+          <div class="vars">
+            <var id = "A">randRangeNonZero(-9,9)</var>
+            <var id = "B">randRangeNonZero(-9,9)</var>
+            <var id = "C">randRangeNonZero(-9,9)</var>
+            <var id = "X">randRangeNonZero(-9,9)</var>
+            <var id = "choice">randRangeNonZero(-1,1)</var>
+            <var id = "notation">(function(choice,X){
+            					if (choice &gt; 0){
+            						return "f'("+X+")"
+            					}
+            					else{ 
+            						return  "\\dfrac{d}{dx}f(x)|_{x="+X+"}"
+            						}
+            					})(choice,X)</var>
+            <var id="f">function(x){return A*x*x+B*x+C}</var>
+            
+       	  </div>      
+
+          <p class="problem">
+          	Let <code>f</code> be the function defined by <code>f(x)=<var>A</var>x^2+<var>B</var>x +<var>C</var></code>
+	  	  </p>
+	  	  <p class ="question">
+	  	  	Compute <code><var>notation</var></code>
+	  	  </p>
+   
+          <div class="solution">
+            <var>2*A*X+B</var>
+          </div>
+
+	  <div class="hints">
+	    <div>
+	    	<p>
+	    		The first thing to do (every time!) is to draw a picture that reminds you 
+	    		what limit you should be calculating.  You don't have to have an accurate sketch of the 
+	    		function, but you should be able to see why the limit you write down actually computes the
+	    		slope of the tangent lint you are interested in.  
+ 	    	</p>
+ 	    	<div class = "graphie" id = "grid">
+ 	    		graphInit({
+                        range: [[-10,10],[-2,10]],
+                        scale: 20,
+                        tickStep: 1,
+                  
+                  		 gridOpacity: 0.00005,
+                         axisOpacity: 0.2,
+                         tickOpacity: 0.00004,      
+                    });
+                    
+                    plot(function( x ) {
+                                return .5*x*x+1;
+                            }, [-10, 10], {
+                                stroke: RED,
+                                strokeWidth: 3
+                            });
+                            
+                    line([1-20,1.5-20*1.5],[2+20,1+.5*2*2+20*1.5]);
+                    line([1,1.5],[2,1.5]);
+                    line([2,1.5],[2,3]);
+                    label( [ 1.5,1.5 ], "h", "below" );
+                    label( [ 2,2.25 ], "f(a+h)-f(a)", "right" );
+ 	    	</div>
+ 	    	
+	    </div>
+	    <p>
+	    	So, <code><var>notation</var> = \displaystyle\lim_{h \to 0}\dfrac{f(<var>X</var>+h)-f(x)}{h}</code>
+	    </p>
+	    <p> <code>=\displaystyle\lim_{h \to 0}
+	    \dfrac{[<var>A</var>(<var>X</var>+h)^2+<var>B</var>(<var>X</var>+h)+<var>C</var>]-[<var>A</var>(<var>X</var>)^2+<var>B</var>(<var>X</var>)+<var>C</var>] }{h}</code>
+	    </p>
+	     <p> <code>=\displaystyle\lim_{h \to 0}
+	    \dfrac{[<var>A</var>((<var>X</var>)^2+2(<var>X</var>)h+h^2)+<var>B</var>(<var>X</var>)+<var>B</var>h+<var>C</var>]-[<var>A*X*X+B*X+C</var>] }{h}</code>
+	    </p>
+	     <p> <code>=\displaystyle\lim_{h \to 0}
+	    \dfrac{[<var>A</var>(<var>X</var>)^2+2(<var>A</var>)(<var>X</var>)h+<var>A</var>h^2+<var>B</var>(<var>X</var>)+<var>B</var>h+<var>C</var>]-[<var>A*X*X+B*X+C</var>] }{h}</code>
+	    </p>
+	    <p> <code>=\displaystyle\lim_{h \to 0}
+	    \dfrac{[<var>A*X*X</var>+<var>2*A*X</var>h+<var>A</var>h^2+<var>B*X</var>+<var>B</var>h+<var>C</var>]-[<var>A*X*X+B*X+C</var>] }{h}</code>
+	    </p>
+	   <p> <code>=\displaystyle\lim_{h \to 0}
+	    \dfrac{[<var>2*A*X+B</var>h+<var>A</var>h^2+<var>A*X*X+B*X+C</var>]-[<var>A*X*X+B*X+C</var>] }{h}</code>
+	    </p>
+	    <p> <code>=\displaystyle\lim_{h \to 0}
+	    \dfrac{<var>2*A*X+B</var>h+<var>A</var>h^2 }{h}</code>
+	    </p>
+	     <p> <code>=\displaystyle\lim_{h \to 0}
+	    (<var>2*A*X+B</var>+<var>A</var>h)</code>
+	    </p>
+	     <p> 
+	     	<code>=<var>2*A*X+B</var></code>
+	    </p>
+	  </div>
+        
+	</div>
+	
+		<div id="square-root">
+			<div class="vars">
+            <var id = "A">randRange(1,9)</var>
+            <var id = "B">randRange(1,9)</var>
+            <var id = "X">randRange(1,9)</var>
+            <var id = "choice">randRangeNonZero(-1,1)</var>
+            <var id = "notation">(function(choice,X){
+            					if (choice &gt; 0){
+            						return "f'("+X+")"
+            					}
+            					else{ 
+            						return  "\\dfrac{d}{dx}f(x)|_{x="+X+"}"
+            						}
+            					})(choice,X)</var>
+            <var id="f">function(x){return A*x*x+B*x+C}</var>
+            </div>
+            
+             <p class="problem">
+          	Let <code>f</code> be the function defined by <code>f(x)=\sqrt{<var>A</var>x+<var>B</var>}</code>
+	  	  </p>
+	  	  <p class ="question">
+	  	  	Compute <code><var>notation</var></code> with an error of at most <code>.0001</code>
+	  	  </p>
+   
+         
+        <div class="solution" data-inexact data-max-error="0.001" data-type="decimal">
+            <var>A/(2*Math.pow(A*X+B,.5))</var>
+          </div>
+          
+          <div class="hints">
+          	<div>
+	    	<p>
+	    		The first thing to do (every time!) is to draw a picture that reminds you 
+	    		what limit you should be calculating.  You don't have to have an accurate sketch of the 
+	    		function, but you should be able to see why the limit you write down actually computes the
+	    		slope of the tangent lint you are interested in.  
+ 	    	</p>
+ 	    	<div class = "graphie" id = "grid">
+ 	    		graphInit({
+                        range: [[-10,10],[-2,10]],
+                        scale: 20,
+                        tickStep: 1,
+                  
+                  		 gridOpacity: 0.00005,
+                         axisOpacity: 0.2,
+                         tickOpacity: 0.00004,      
+                    });
+                    
+                    plot(function( x ) {
+                                return .5*x*x+1;
+                            }, [-10, 10], {
+                                stroke: RED,
+                                strokeWidth: 3
+                            });
+                            
+                    line([1-20,1.5-20*1.5],[2+20,1+.5*2*2+20*1.5]);
+                    line([1,1.5],[2,1.5]);
+                    line([2,1.5],[2,3]);
+                    label( [ 1.5,1.5 ], "h", "below" );
+                    label( [ 2,2.25 ], "f(a+h)-f(a)", "right" );
+ 	    	</div>
+ 	    	
+	    </div>
+	    <p>
+	    	So, <code><var>notation</var> = \displaystyle\lim_{h \to 0}\dfrac{f(<var>X</var>+h)-f(x)}{h}</code>
+	    </p>
+	    <p>
+	    	<code>= \displaystyle\lim_{h \to 0}\dfrac{\sqrt{<var>A</var>(<var>X</var>+h)+<var>B</var>}-\sqrt{<var>A</var>(<var>X</var>)+<var>B</var>}}{h}</code>
+	    </p>
+	     <p>
+	    	<code>= \displaystyle\lim_{h \to 0}\dfrac{\sqrt{<var>A*X+B</var>+<var>A</var>h}-\sqrt{<var>A*X+B</var>}}{h}</code>
+	    </p>
+	     <p>
+	    	<code>= \displaystyle\lim_{h \to 0}\dfrac{\sqrt{<var>A*X+B</var>+<var>A</var>h}-\sqrt{<var>A*X+B</var>}}{h}\cdot \dfrac{\sqrt{<var>A*X+B</var>+<var>A</var>h}+\sqrt{<var>A*X+B</var>}}{\sqrt{<var>A*X+B</var>+<var>A</var>h}+\sqrt{<var>A*X+B</var>}}</code>
+	    </p>
+	    <p>
+	    	<code>= \displaystyle\lim_{h \to 0}\dfrac{(<var>A*X+B</var>+<var>A</var>h)-(<var>A*X+B</var>)}{h(\sqrt{<var>A*X+B</var>+<var>A</var>h}+\sqrt{<var>A*X+B</var>})}</code>
+	    </p>
+	     <p>
+	    	<code>= \displaystyle\lim_{h \to 0}\dfrac{<var>A</var>h}{h(\sqrt{<var>A*X+B</var>+<var>A</var>h}+\sqrt{<var>A*X+B</var>})}</code>
+	    </p>
+	    <p>
+	    	<code>= \displaystyle\lim_{h \to 0}\dfrac{<var>A</var>}{\sqrt{<var>A*X+B</var>+<var>A</var>h}+\sqrt{<var>A*X+B</var>}}</code>
+	    </p>
+	    <p>
+	    	<code>= \dfrac{<var>A</var>}{2\sqrt{<var>A*X+B</var>}}</code>
+	    </p>
+	    <p>
+	    	<code>\approx <var>A/(2*Math.pow(A*X+B,.5))</var></code>
+	    </p>
+	    
+          
+          </div>
+            
+       	  </div>
+       	  
+       	  <div id="reciprocal">
+       	  <div class="vars" data-ensure="Math.abs(A*X+B) &gt;.1">
+            <var id = "A">randRange(2,9)</var>
+            <var id = "B">randRange(1,9)</var>
+            <var id = "X">randRange(1,20)/10</var>
+            <var id = "choice">randRangeNonZero(-1,1)</var>
+            <var id = "notation">(function(choice,X){
+            					if (choice &gt; 0){
+            						return "f'("+X+")"
+            					}
+            					else{ 
+            						return  "\\dfrac{d}{dx}f(x)|_{x="+X+"}"
+            						}
+            					})(choice,X)</var>
+            <var id="f">function(x){return A*x*x+B*x+C}</var>
+            </div>
+            
+             <p class="problem">
+          	Let <code>f</code> be the function defined by <code>f(x)=\dfrac{1}{<var>A</var>x+<var>B</var>}</code>
+	  	  	</p>
+	  	  	
+	  	  <p class ="question">
+	  	  	Compute <code><var>notation</var></code> with an error of at most <code>.0001</code>
+	  	  </p>
+	  	  
+	  	  <div class="hints">
+	  	  <div>
+	    	<p>
+	    		The first thing to do (every time!) is to draw a picture that reminds you 
+	    		what limit you should be calculating.  You don't have to have an accurate sketch of the 
+	    		function, but you should be able to see why the limit you write down actually computes the
+	    		slope of the tangent lint you are interested in.  
+ 	    	</p>
+ 	    	<div class = "graphie" id = "grid">
+ 	    		graphInit({
+                        range: [[-10,10],[-2,10]],
+                        scale: 20,
+                        tickStep: 1,
+                  
+                  		 gridOpacity: 0.00005,
+                         axisOpacity: 0.2,
+                         tickOpacity: 0.00004,      
+                    });
+                    
+                    plot(function( x ) {
+                                return .5*x*x+1;
+                            }, [-10, 10], {
+                                stroke: RED,
+                                strokeWidth: 3
+                            });
+                            
+                    line([1-20,1.5-20*1.5],[2+20,1+.5*2*2+20*1.5]);
+                    line([1,1.5],[2,1.5]);
+                    line([2,1.5],[2,3]);
+                    label( [ 1.5,1.5 ], "h", "below" );
+                    label( [ 2,2.25 ], "f(a+h)-f(a)", "right" );
+ 	    	</div>
+ 	    	
+	    </div>
+	    <p>
+	    	So, <code><var>notation</var> = \displaystyle\lim_{h \to 0}\dfrac{f(<var>X</var>+h)-f(<var>X</var>)}{h}</code>
+	    </p>
+	  	 <p>
+	  	 	<code>
+	  	 	= \displaystyle\lim_{h \to 0}\dfrac{\dfrac{1}{<var>A</var>(<var>X</var>+h)+<var>B</var>}-\dfrac{1}{<var>A</var>(<var>X</var>)+<var>B</var>}}{h}
+	  	 	</code>
+	  	 </p> 
+	  	  <p>
+	  	 	<code>
+	  	 	= \displaystyle\lim_{h \to 0}  [\dfrac{1}{<var>A*X+B</var>+<var>A</var>h}-\dfrac{1}{<var>A*X+B</var>}] \cdot \dfrac{1}{h}
+	  	 	</code>
+	  	 </p>
+	  	  <p>
+	  	 	<code>
+	  	 	= \displaystyle\lim_{h \to 0}  [\dfrac{1}{<var>A*X+B</var>+<var>A</var>h} \cdot \dfrac{<var>A*X+B</var>}{<var>A*X+B</var>}-\dfrac{1}{<var>A*X+B</var>}\cdot\dfrac{<var>A*X+B</var>+<var>A</var>h}{<var>A*X+B</var>+<var>A</var>h}] \cdot \dfrac{1}{h}
+	  	 	</code>
+	  	 </p>
+	  	 <p>
+	  	 	<code>
+	  	 	= \displaystyle\lim_{h \to 0}  [\dfrac{<var>A*X+B</var> - (<var>A*X+B</var>+<var>A</var>h)}{(<var>A*X+B</var>+<var>A</var>h)(<var>A*X+B</var>)} \cdot \dfrac{1}{h}
+	  	 	</code>
+	  	 </p> 
+	  	  <p>
+	  	 	<code>
+	  	 	= \displaystyle\lim_{h \to 0}  [\dfrac{<var>-A</var>h}{(<var>A*X+B</var>+<var>A</var>h)(<var>A*X+B</var>)} \cdot \dfrac{1}{h}
+	  	 	</code>
+	  	 </p> 
+	  	 <p>
+	  	 	<code>
+	  	 	= \displaystyle\lim_{h \to 0}  [\dfrac{<var>-A</var>}{(<var>A*X+B</var>+<var>A</var>h)(<var>A*X+B</var>)}
+	  	 	</code>
+	  	 </p> 
+	  	 <p>
+	  	 	<code>
+	  	 	=\dfrac{<var>-A</var>}{(<var>A*X+B</var>+0)(<var>A*X+B</var>)}
+	  	 	</code>
+	  	 </p> 
+	  	 <p>
+	  	 	<code>
+	  	 	\approx <var>(-A/(A*X+B))/(A*X+B)</var>
+	  	 	</code>
+	  	 </p> 
+	  	  
+       	  </div> 
+       	  
+       	   <div class="solution" data-inexact data-max-error="0.001" data-type="decimal">
+            <var>(-A/(A*X+B))/(A*X+B)</var>
+          </div>     
+		
+		</div>
+		
+		<div id="linear">
+			<div class = "vars">
+				<var id = "A">randRange(2,9)</var>
+           	    <var id = "B">randRange(1,9)</var>
+            	<var id = "X">randRangeNonZero(-9,9)</var>
+            	<var id = "choice">randRangeNonZero(-1,1)</var>
+            	<var id = "notation">(function(choice,X){
+            					if (choice &gt; 0){
+            						return "f'("+X+")"
+            					}
+            					else{ 
+            						return  "\\dfrac{d}{dx}f(x)|_{x="+X+"}"
+            						}
+            					})(choice,X)</var>
+            	<var id="f">function(x){return A*x*x+B*x+C}</var>
+            	</div>
+            	 <p class="problem">
+          	Let <code>f</code> be the function defined by <code>f(x)=<var>A</var>x+<var>B</var></code>
+	  	  	</p>
+	  	  	
+	  	  <p class ="question">
+	  	  	Compute <code><var>notation</var></code>
+	  	  </p>
+          
+          <p class="solution">
+          <var>A</var>
+          </p>
+          
+          <div class="hints">
+          	<p>
+          		The derivative is the slope of a tangent line to the graph of <code>f</code>. Since
+          		in this case <code>f</code> is linear, we should really hope that the derivative will just be the slope
+          		of the function.  Lets double check this intuition just to make sure.
+          	</p>
+          	<p>
+          		<code>
+          		\displaystyle\lim_{h \to 0} \dfrac{f(<var>X</var>+h)-f(<var>X</var>)}{h}
+          		</code>
+          	</p>
+          	<p>
+          		<code>
+          		=\displaystyle\lim_{h \to 0} \dfrac{(<var>A</var>(<var>X</var>+h)+<var>B</var>)-(<var>A</var>(<var>X</var>)+<var>B</var>)}{h}
+          		</code>
+          	</p>
+          	<p>
+          		<code>
+          		=\displaystyle\lim_{h \to 0} \dfrac{(<var>A*X+B</var>+<var>A</var>h)-(<var>A*X+B</var>)}{h}
+          		</code>
+          	</p>
+          	<p>
+          		<code>
+          		=\displaystyle\lim_{h \to 0} \dfrac{<var>A</var>h}{h}
+          		</code>
+          	</p>
+          	<p>
+          		<code>
+          		=\displaystyle\lim_{h \to 0} ( <var>A</var> )
+          		</code>
+          	</p>
+          	<p>
+          		<code>
+          		= <var>A</var>
+          		</code>
+          	</p>
+          </div>
+            
+            </div>
+		</div>
+      </div>
+
+</body>
+</html>
