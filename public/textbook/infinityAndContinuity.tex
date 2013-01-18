@@ -1,199 +1,633 @@
-\chapter{Infinity and Continuity}
+%\chapter{Infinity and Continuity}
+
 
 \section{Infinite Limits}
 
 
-\begin{figure}
+Consider the function
+\[
+f(x) = \frac{1}{(x+1)^2}
+\]
+While the $\lim_{x\to -1} f(x)$ does not exist, see
+Figure~\ref{plot:1/(x+1)^2}, something can still be said.
+\begin{marginfigure}
 \begin{tikzpicture}
 	\begin{axis}[
-            domain=-2:2,
+            domain=-2:1,
+            ymax=100,
             samples=100,
-            axis lines =middle, xlabel=$x$, ylabel=$f(x)$,
+            axis lines =middle, xlabel=$x$, ylabel=$y$,
             every axis y label/.style={at=(current axis.above origin),anchor=south},
             every axis x label/.style={at=(current axis.right of origin),anchor=west}
           ]
-	  \addplot [very thick, penColor, smooth, domain=(.1:2)] {1/x};
-          \addplot [very thick, penColor, smooth, domain=(-2:-.1)] {1/x};
+	  \addplot [very thick, penColor, smooth, domain=(-2:-1.1)] {1/(x+1)^2};
+          \addplot [very thick, penColor, smooth, domain=(-.9:1)] {1/(x+1)^2};
+          \addplot [textColor, dashed] plot coordinates {(-1,0) (-1,100)};
         \end{axis}
 \end{tikzpicture}
-\caption{A plot of $f(x)=\protect\frac{1}{x}$.}
-\label{plot:1/x}
-\end{figure}
+\caption{A plot of $f(x)=\protect\frac{1}{(x+1)^2}$.}
+\label{plot:1/(x+1)^2}
+\end{marginfigure}
 
-Another example of a function whose domain is not the entire $x$-axis
-is: $y=f(x)=1/x$, the reciprocal function.  We cannot substitute $x=0$
-in this formula.  The function makes sense, however, for any nonzero
-$x$, so we take the domain to be: $\{x\in\R\mid x\ne 0\}$.  The graph
-of this function does not have any point $(x,y)$ with $x=0$.  As $x$
-gets close to 0 from either side, the graph goes off toward infinity.
-We call the vertical line $x=0$ an {\dfont
-  asymptote\index{asymptote}}.
+
+\begin{definition}\label{def:inflimit}\index{limit!infinite}\index{infinite limit}
+If $f(x)$ grows arbitrarily large as $x$ approaches $a$, we write
+\[
+\lim_{x\to a} f(x) = \infty
+\]
+and say that the limit of $f(x)$ \textbf{approaches infinity} as $x$
+goes to $a$.
+
+If $|f(x)|$ grows arbitrarily large as $x$ approaches $a$ and $f(x)$ is
+negative, we write
+\[
+\lim_{x\to a} f(x) = -\infty
+\]
+and say that the limit of $f(x)$ \textbf{approaches negative infinity}
+as $x$ goes to $a$.
+\end{definition}
+
+On the other hand, if we consider the function 
+\[
+f(x) = \frac{1}{(x-1)}
+\]
+While we have $\lim_{x\to 1} f(x) \ne \pm\infty$, we do have one-sided
+limits, $\lim_{x\to 1+} f(x) = \infty$ and $\lim_{x\to 1-} f(x) =
+-\infty$, see Figure~\ref{plot:1/(x-1)}.
+\begin{marginfigure}
+\begin{tikzpicture}
+	\begin{axis}[
+            domain=-1:2,
+            ymax=50,
+            ymin=-50,
+            samples=100,
+            axis lines =middle, xlabel=$x$, ylabel=$y$,
+            every axis y label/.style={at=(current axis.above origin),anchor=south},
+            every axis x label/.style={at=(current axis.right of origin),anchor=west}
+          ]
+	  \addplot [very thick, penColor, smooth, domain=(1.02:2)] {1/(x-1)};
+          \addplot [very thick, penColor, smooth, domain=(-1:.98)] {1/(x-1)};
+          \addplot [textColor, dashed] plot coordinates {(1,-50) (1,50)};
+        \end{axis}
+\end{tikzpicture}
+\caption{A plot of $f(x)=\protect\frac{1}{x-1}$.}
+\label{plot:1/(x-1)}
+\end{marginfigure}
+
+
+\begin{definition}\label{def:vert asymptote}\index{asymptote!vertical}\index{vertical asymptote}
+If 
+\[
+\lim_{x\to a} f(x) = \pm\infty, \qquad \lim_{x\to a+} f(x) = \pm\infty, \qquad\text{or}\qquad \lim_{x\to a-} f(x) = \pm\infty,
+\]
+then the line $x=a$ is a \textbf{vertical asymptote} of $f(x)$.
+\end{definition}
+
+
+\begin{example}
+Find the vertical asymptotes of 
+\[
+f(x) = \frac{x^2-9x+14}{x^2-5x+6}.
+\]
+\end{example}
+\begin{solution}
+Start by factoring both the numerator and the denominator:
+\[
+\frac{x^2-9x+14}{x^2-5x+6} = \frac{(x-2)(x-7)}{(x-2)(x-3)}
+\]
+Using limits, we must investigate when $x\to 2$ and $x\to 3$. Write
+\begin{align*}
+\lim_{x\to 2} \frac{(x-2)(x-7)}{(x-2)(x-3)} &= \lim_{x\to 2} \frac{(x-7)}{(x-3)}\\
+&= \frac{-5}{-1}\\
+&=5.
+\end{align*}
+Now write
+\begin{align*}
+\lim_{x\to 3} \frac{(x-2)(x-7)}{(x-2)(x-3)} &= \lim_{x\to 3} \frac{(x-7)}{(x-3)}\\
+&= \lim_{x\to 3}\frac{-4}{x-3}.
+\end{align*}
+Since $\lim_{x\to 3+} x-3$ approaches $0$ from the right and the
+numerator is negative, $\lim_{x\to 3+} f(x) = -\infty$. Since
+$\lim_{x\to 3-} x-3$ approaches $0$ from the left and the numerator is
+negative, $\lim_{x\to 3-} f(x) = \infty$. Hence we have a vertical
+asymptote at $x=3$, see Figure~\ref{plot:(x^2-9x+14)/(x^2-5x+6)}.
+\end{solution}
+\begin{marginfigure}[-4in]
+\begin{tikzpicture}
+	\begin{axis}[
+            domain=1:4,
+            ymax=50,
+            ymin=-50,
+            samples=100,
+            axis lines =middle, xlabel=$x$, ylabel=$y$,
+            every axis y label/.style={at=(current axis.above origin),anchor=south},
+            every axis x label/.style={at=(current axis.right of origin),anchor=west}
+          ]
+	  \addplot [very thick, penColor, smooth, domain=(3.02:4)] {(x-7)/(x-3)};
+          \addplot [very thick, penColor, smooth, domain=(1:2.98)] {(x-7)/(x-3)};
+          \addplot [textColor, dashed] plot coordinates {(3,-50) (3,50)};
+          \addplot[color=penColor,fill=background,only marks,mark=*] coordinates{(2,5)};  %% open hole
+        \end{axis}
+\end{tikzpicture}
+\caption{A plot of $f(x)=\protect\frac{x^2-9x+14}{x^2-5+6}$.}
+\label{plot:(x^2-9x+14)/(x^2-5x+6)}
+\end{marginfigure}
+
+
+\begin{exercises}
+
+\noindent Compute the limits. If a limit does not exist, explain why.
+\twocol
+\begin{exercise}
+$\lim_{x\to 1-} \frac{1}{x^2-1}$
+\begin{answer}
+  $-\infty$
+\end{answer}
+\end{exercise}
+
+\begin{exercise}
+$\lim_{x\to 4-} \frac{3}{x^2-2}$
+\begin{answer}
+  $3/14$
+\end{answer}
+\end{exercise}
+
+\begin{exercise}
+$\lim_{x\to -1+} \frac{1+2x}{x^3-1}$
+\begin{answer}
+  $1/2$
+\end{answer}
+\end{exercise}
+
+\begin{exercise}
+$\lim_{x\to 3+} \frac{x-9}{x^2-6x+9}$
+\begin{answer}
+  $-\infty$
+\end{answer}
+\end{exercise}
+
+\begin{exercise}
+$\lim_{x\to 5} \frac{1}{(x-5)^4}$
+\begin{answer}
+  $\infty$
+\end{answer}
+\end{exercise}
+
+
+\begin{exercise}
+$\lim_{x\to -2} \frac{1}{(x^2+3x+2)^2}$
+\begin{answer}
+  $\infty$
+\end{answer}
+\end{exercise}
+
+
+\begin{exercise}
+$\lim_{x\to 0} \frac{1}{\frac{x}{x^5}-\cos(x)}$
+\begin{answer}
+  0
+\end{answer}
+\end{exercise}
+
+\begin{exercise}
+$\lim_{x\to 0+} \frac{x-11}{\sin(x)}$
+\begin{answer}
+  $-\infty$
+\end{answer}
+\end{exercise}
+
+
+\endtwocol
+
+
+\begin{exercise}
+Find the vertical asymptotes of
+\[
+f(x) = \frac{x-3}{x^2+2x-3}.
+\]
+\begin{answer}
+  $x = 1$ and $x = -3$
+\end{answer}
+\end{exercise}
+
+
+\begin{exercise}
+Find the vertical asymptotes of
+\[
+f(x) = \frac{x^2-x-6}{x+4}.
+\]
+\begin{answer}
+  $x = -4$
+\end{answer}
+\end{exercise}
+\end{exercises}
+
+
+
+
+
 
 \section{Limits at Infinity}
 
+
+Consider the function:
+\[
+f(x) = \frac{6x-9}{x-1}
+\]
+\begin{marginfigure}[0in]
+\begin{tikzpicture}
+	\begin{axis}[
+            domain=1:4,
+            ymax=20,
+            ymin=-10,
+            samples=100,
+            axis lines =middle, xlabel=$x$, ylabel=$y$,
+            every axis y label/.style={at=(current axis.above origin),anchor=south},
+            every axis x label/.style={at=(current axis.right of origin),anchor=west}
+          ]
+	  \addplot [very thick, penColor, smooth, domain=(0:.9)] {(6*x-9)/(x-1)};
+          \addplot [very thick, penColor, smooth, domain=(1.1:3)] {(6*x-9)/(x-1)};
+          \addplot [textColor, dashed] plot coordinates {(1,-10) (1,20)};
+        \end{axis}
+\end{tikzpicture}
+\caption{A plot of $f(x)=\protect\frac{6x-9}{x-1}$.}
+\label{plot:(6x-9)/(x-1)}
+\end{marginfigure}
+As $x$ approaches infinity, it seems like $f(x)$ approaches a specific
+value. This is a \textit{limit at infinity}.
+
+\begin{definition}\label{def:limitAtInfty}\index{limit!at infinity}
+If $f(x)$ becomes arbitrarily close to a specific value $L$ by making
+$x$ sufficiently large, we write
+\[
+\lim_{x\to \infty} f(x) = L
+\]
+and we say, the \textbf{limit at infinity} of $f(x)$ is $L$.  
+
+If $f(x)$ becomes
+arbitrarily close to a specific value $L$ by making $x$ sufficiently
+large and negative, we write
+\[
+\lim_{x\to -\infty} f(x) = L
+\]
+and we say, the \textbf{limit at negative infinity} of $f(x)$ is $L$.  
+\end{definition}
+
+\begin{example} Compute
+\[
+\lim_{x\to\infty} \frac{6x-9}{x-1}.
+\]
+\end{example}
+
+
+\begin{solution}
+Write
+\begin{align*}
+\lim_{x\to\infty}\frac{6x-9}{x-1} &= \lim_{x\to\infty}\frac{6x-9}{x-1} \frac{1/x}{1/x}\\
+&=\lim_{x\to\infty}\frac{\frac{6x}{x} - \frac{9}{x}}{\frac{x}{x} - \frac{1}{x}}\\
+&= \lim_{x\to\infty} \frac{6}{1}\\
+&= 6.
+\end{align*}
+\end{solution}
+
+
+Here is a somewhat different example of a limit at infinity.
+
+\begin{example}
+Compute
+\[
+\lim_{x\to \infty} \frac{\sin(7x)}{x}+4.
+\]
+\end{example}
+
+\begin{marginfigure}[0in]
+\begin{tikzpicture}
+	\begin{axis}[
+            domain=2:20,
+            ymax=5,
+            ymin=3,
+            samples=100,
+            axis lines =middle, xlabel=$x$, ylabel=$y$,
+            every axis y label/.style={at=(current axis.above origin),anchor=south},
+            every axis x label/.style={at=(current axis.right of origin),anchor=west}
+          ]
+	  \addplot [very thick, penColor, smooth] {(1/x) * sin(deg(7*x))+4};
+        \end{axis}
+\end{tikzpicture}
+\caption{A plot of $f(x)=\frac{\sin(7x)}{x}+4$.}
+\label{plot:sin7x/x+4}
+\end{marginfigure}
+
+\begin{solution}
+We can bound our function
+\[
+-1/x + 4 \le \frac{\sin(7x)}{x}+4 \le 1/x + 4.
+\]
+Since 
+\[
+\lim_{x\to \infty} -1/x + 4 = 4 = \lim_{x\to \infty}1/x + 4
+\] 
+we conclude by the Squeeze Theorem, Theorem~\ref{theorem:squeeze},
+$\lim_{x\to\infty}\frac{\sin(7x)}{x}+4 = 4$.
+\end{solution}
+
+
+
+
+
+
+\begin{definition}\label{def:horiz asymptote}\index{asymptote!horizontal}\index{horizontal asymptote}
+If  
+\[
+\lim_{x\to \infty} f(x) = L \qquad\text{or}\qquad \lim_{x\to -\infty} f(x) = L,
+\]
+then the line $y=L$ is a \textbf{horizontal asymptote} of $f(x)$.
+\end{definition}
+
+\begin{example} 
+Give the horizontal asymptotes of
+\[
+f(x) = \frac{6x-9}{x-1}
+\]
+\end{example}
+
+\begin{solution}
+From our previous work, we see that $\lim_{x\to \infty} f(x) = 6$, and
+upon further inspection, we see that $\lim_{x\to -\infty} f(x) =
+6$. Hence the horizontal asymptote of $f(x)$ is the line $y=6$.
+\end{solution}
+
+
+It is a common misconception that a function cannot cross an
+asymptote. As the next example shows, a function can cross an
+asymptote, and in this case this occurs an infinite number of times!
+
+\begin{example}
+Give a horizontal asymptote of
+\[
+f(x) = \frac{\sin(7x)}{x}+4.
+\]
+\end{example}
+
+\begin{solution}
+Again from previous work, we see that $\lim_{x\to \infty} f(x) =
+4$. Hence $y=4$ is a horizontal asymptote of $f(x)$.
+\end{solution}
+
+
+We conclude with an infinite limit at infinity.
+
+\begin{example}
+Compute
+\[
+\lim_{x\to \infty} \ln(x)
+\]
+\end{example}
+\begin{marginfigure}[0in]
+\begin{tikzpicture}
+	\begin{axis}[
+            domain=0:20,
+            ymax=4,
+            ymin=-1,
+            samples=100,
+            axis lines =middle, xlabel=$x$, ylabel=$y$,
+            every axis y label/.style={at=(current axis.above origin),anchor=south},
+            every axis x label/.style={at=(current axis.right of origin),anchor=west}
+          ]
+	  \addplot [very thick, penColor, smooth] {ln(x)};
+        \end{axis}
+\end{tikzpicture}
+\caption{A plot of $f(x)=\ln(x)$.}
+\label{plot:lnx}
+\end{marginfigure}
+
+\begin{solution}
+The function $\ln(x)$ grows very slowly, and seems like it may have a
+horizontal asymptote, see Figure~\ref{plot:lnx}. However, if we
+consider the definition of the natural log
+\[
+\ln(x) = y \qquad \Leftrightarrow\qquad e^y =x
+\]
+Since we need to raise $e$ to higher and higher values to obtain
+larger numbers, we see that $\ln(x)$ is unbounded, and hence
+$\lim_{x\to\infty}\ln(x)=\infty$.
+\end{solution}
+
+
+\begin{exercises}
+
+\noindent Compute the limits.
+\twocol
+\begin{exercise}
+$\lim_{x\to \infty} \frac{1}{x}$
+\begin{answer}
+$0$
+\end{answer}
+\end{exercise}
+
+\begin{exercise}
+$\lim_{x\to \infty} \frac{-x}{\sqrt{4+x^2}}$
+\begin{answer}
+$-1$
+\end{answer}
+\end{exercise}
+
+\begin{exercise}
+$\lim_{x\to \infty} \frac{2x^2-x+1}{4x^2-3x-1}$
+\begin{answer}
+$\frac{1}{2}$
+\end{answer}
+\end{exercise}
+
+\begin{exercise}
+$\lim_{x\to -\infty} \frac{x^3-4}{3x^2+4x-1}$
+\begin{answer}
+$-\infty$
+\end{answer}
+\end{exercise}
+
+
+\begin{exercise}
+$\lim_{x\to \infty} \left(\frac{4}{x}+\pi\right)$
+\begin{answer}
+$\pi$
+\end{answer}
+\end{exercise}
+
+\begin{exercise}
+$\lim_{x\to \infty} \frac{\cos(x)}{\ln(x)}$
+\begin{answer}
+$0$
+\end{answer}
+\end{exercise}
+
+\begin{exercise}
+$\lim_{x\to \infty} \frac{\sin\left(x^7\right)}{\sqrt{x}}$
+\begin{answer}
+$0$
+\end{answer}
+\end{exercise}
+
+\begin{exercise}
+$\lim_{x\to \infty} \left(17 + \frac{32}{x} - \frac{\left(\sin(x/2)\right)^2}{x^3}\right)$
+\begin{answer}
+$17$
+\end{answer}
+\end{exercise}
+
+\endtwocol
+
+\begin{exercise}
+Suppose a population of feral cats on a certain college campus $t$
+years from now is approximated by
+\[
+p(t) = \frac{1000}{5+ 2e^{-0.1 t}}.
+\]
+Approximately how many feral cats are on campus 10 years from now? 50
+years from now? 100 years from now? 1000 years from now? What do you
+notice about the prediction---is this realistic?
+\begin{answer}
+After 10 years, $\approx 174$ cats; after 50 years, $\approx 199$
+cats; after 100 years, $\approx 200$ cats; after 1000 years, $\approx
+200$ cats; in the sense that the population of cats cannot grow
+indefinitely this is somewhat realistic.
+\end{answer}
+\end{exercise}
+
+\begin{exercise}
+The amplitude of an oscillating spring is given by
+\[
+a(t) = \frac{\sin(t)}{t}.
+\]
+What happens to the amplitude of the oscillation over a long period of
+time?
+\begin{answer}
+The amplitude goes to zero. 
+\end{answer}
+\end{exercise}
+\end{exercises}
+
+
+
+
 \section{Continuity}
 
-As we have defined it in Section~\xrefn{sec:functions}, a function is
-a very general object.  At this point, it is useful to introduce a
-collection of adjectives to describe certain kinds of functions; these
-adjectives name useful properties that functions may have.  Consider
-the graphs of the functions in Figure~\xrefn{fig:function types}.  It
-would clearly be useful to have words to help us describe the distinct
-features of each of them.  We will point out and define a few
-adjectives (there are many more) for the functions pictured here.  For
-the sake of the discussion, we will assume that the graphs do not
-exhibit any unusual behavior off-stage (i.e., outside the view of the
-graphs).
 
-
-PICTURE HERE 
-%Figure, (a) rough function, (b) continuous but not differentiable
-%function, (c) differentiable function bounded by $\pm 1$, (d) unbounded
-%parabola function.
-% BADBAD
-% \figure
-% \vbox{\beginpicture
-% \normalgraphs
-% \sevenpoint
-% \longticklength3pt
-% % exp(-x^2)
-% \setcoordinatesystem units <1truecm,1truecm>
-% \setplotarea x from -3 to 3, y from -3 to 3
-% \axis left shiftedto x=0 ticks length <2pt> numbered from -3 to -1 by 1 /
-% \axis left shiftedto x=0 ticks length <2pt> numbered from 1 to 3 by 1 /
-% \axis bottom shiftedto y=0 ticks length <2pt> numbered from -3 to -1 by 1 /
-% \axis bottom shiftedto y=0 ticks length <2pt> numbered from 1 to 3 by 1 /
-% \setquadratic
-% \plot -3.000 0.000 -2.850 0.000 -2.700 0.001 -2.550 0.001 -2.400 0.003 
-% -2.250 0.006 -2.100 0.012 -1.950 0.022 -1.800 0.039 -1.650 0.066 
-% -1.500 0.105 -1.350 0.162 -1.200 0.237 -1.050 0.332 -0.900 0.445 
-% -0.750 0.570 -0.600 0.698 -0.450 0.817 -0.300 0.914 -0.150 0.978 
-% 0.000 1.000 0.150 0.978 0.300 0.914 0.450 0.817 0.600 0.698 
-% 0.750 0.570 0.900 0.445 1.050 0.332 1.200 0.237 1.350 0.162 
-% 1.500 0.105 1.650 0.066 1.800 0.039 1.950 0.022 2.100 0.012 
-% 2.250 0.006 2.400 0.003 2.550 0.001 2.700 0.001 2.850 0.000 
-% 3.000 0.000 /
-% \put {(c)} [b] <0pt,3pt> at 0 3
-% \setcoordinatesystem units <1truecm,1truecm> point at 0 -7
-% \setplotarea x from -3 to 3, y from -3 to 3
-% \axis left shiftedto x=0 ticks length <2pt> numbered from -3 to -1 by 1 /
-% \axis left shiftedto x=0 ticks length <2pt> numbered from 1 to 3 by 1 /
-% \axis bottom shiftedto y=0 ticks length <2pt> numbered from -3 to -1 by 1 /
-% \axis bottom shiftedto y=0 ticks length <2pt> numbered from 1 to 3 by 1 /
-% \setlinear
-% \putrule from -3 1 to -1 1
-% \putrule from 2 -0.5 to 3 -0.5
-% \plot 1 1 2 0 /
-% \setquadratic
-% \plot -1.000 -1.000 -0.967 -1.034 -0.933 -1.071 -0.900 -1.111 -0.867 -1.154 
-% -0.833 -1.200 -0.800 -1.250 -0.767 -1.304 -0.733 -1.364 -0.700 -1.429 
-% -0.667 -1.500 -0.633 -1.579 -0.600 -1.667 -0.567 -1.765 -0.533 -1.875 
-% -0.500 -2.000 -0.467 -2.143 -0.433 -2.308 -0.400 -2.500 -0.367 -2.727 
-% -0.333 -3.000 /
-% \plot 0.333 3.000 0.367 2.727 0.400 2.500 0.433 2.308 0.467 2.143 
-% 0.500 2.000 0.533 1.875 0.567 1.765 0.600 1.667 0.633 1.579 
-% 0.667 1.500 0.700 1.429 0.733 1.364 0.767 1.304 0.800 1.250 
-% 0.833 1.200 0.867 1.154 0.900 1.111 0.933 1.071 0.967 1.034 
-% 1.000 1.000 /
-% \put {(a)} [b] <0pt,3pt> at 0 3
-% \setcoordinatesystem units <1truecm,1truecm> point at -8 -7
-% \setplotarea x from -3 to 3, y from -3 to 3
-% \axis left shiftedto x=0 ticks length <2pt> numbered from -3 to -1 by 1 /
-% \axis left shiftedto x=0 ticks length <2pt> numbered from 1 to 3 by 1 /
-% \axis bottom shiftedto y=0 ticks length <2pt> numbered from -3 to -1 by 1 /
-% \axis bottom shiftedto y=0 ticks length <2pt> numbered from 1 to 3 by 1 /
-% \setlinear
-% \putrule from 1 1 to 3 1
-% \plot -3 1 -1 3 0 0 /
-% \setquadratic
-% \plot
-% 0.000 0.000 0.012 0.112 0.025 0.158 0.038 0.194 0.050 0.224 
-% 0.062 0.250 0.075 0.274 0.088 0.296 0.100 0.316 0.112 0.335 
-% 0.125 0.354 0.138 0.371 0.150 0.387 0.162 0.403 0.175 0.418 
-% 0.188 0.433 0.200 0.447 0.212 0.461 0.225 0.474 0.238 0.487 
-% 0.250 0.500 / 
-% \plot
-% 0.250 0.500 0.288 0.536 0.325 0.570 0.362 0.602 0.400 0.632 
-% 0.438 0.661 0.475 0.689 0.512 0.716 0.550 0.742 0.588 0.766 
-% 0.625 0.791 0.662 0.814 0.700 0.837 0.738 0.859 0.775 0.880 
-% 0.812 0.901 0.850 0.922 0.888 0.942 0.925 0.962 0.962 0.981 
-% 1.000 1.000 /
-% \put {(b)} [b] <0pt,3pt> at 0 3
-% \setcoordinatesystem units <1truecm,1truecm> point at -8 0
-% \setplotarea x from -3 to 3, y from -3 to 3
-% \axis left shiftedto x=0 ticks length <2pt> length <2pt> numbered from -3 to -1 by 1 /
-% \axis left shiftedto x=0 ticks length <2pt> length <2pt> numbered from 1 to 3 by 1 /
-% \axis bottom shiftedto y=0 ticks length <2pt> numbered from -3 to -1 by 1 /
-% \axis bottom shiftedto y=0 ticks length <2pt> numbered from 1 to 3 by 1 /
-% \setquadratic
-% \plot 0.333 3.000 0.467 2.143 0.600 1.667 0.733 1.364 0.867 1.154 
-% 1.000 1.000 1.133 0.882 1.267 0.789 1.400 0.714 1.533 0.652 
-% 1.667 0.600 1.800 0.556 1.933 0.517 2.067 0.484 2.200 0.455 
-% 2.333 0.429 2.467 0.405 2.600 0.385 2.733 0.366 2.867 0.349 
-% 3.000 0.333 /
-% \plot -3.000 -0.333 -2.867 -0.349 -2.733 -0.366 -2.600 -0.385 -2.467 -0.405 
-% -2.333 -0.429 -2.200 -0.455 -2.067 -0.484 -1.933 -0.517 -1.800 -0.556 
-% -1.667 -0.600 -1.533 -0.652 -1.400 -0.714 -1.267 -0.789 -1.133 -0.882 
-% -1.000 -1.000 -0.867 -1.154 -0.733 -1.364 -0.600 -1.667 -0.467 -2.143 
-% -0.333 -3.000 /
-% \put {(d)} [b] <0pt,3pt> at 0 3
-% \endpicture}
-% \figrdef{fig:function types}
-% \endfigure{Function Types: (a) a discontinuous function, (b) a
-%   continuous function, (c) a bounded, differentiable function, (d) an
-%   unbounded, differentiable function}
-
-\noindent{\bf Functions.}  Each graph in
-Figure~\xrefn{fig:function types}
-certainly represents a function---since each passes the {\em vertical
-line test}.  In other words, as you sweep a vertical line across the graph
-of each function, the line never intersects the graph more than once.  If
-it did, then the graph would not represent a function.
-
-\noindent{\bf Bounded.} The graph in (c) appears to approach zero as $x$ goes
-to both positive and negative infinity.  It also never exceeds the value
-$1$ or drops below the value $0$.  Because the graph never increases or
-decreases without bound, we say that the function represented by the graph
-in (c) is a {\dfont bounded} 
-function\index{function!bounded}\index{bounded function}.  
-
-\begin{definition}
-A function $f$ is \textbf{bounded} if there is a number $M$ such that
-$|f(x)| < M$ for every $x$ in the domain of $f$.
-\end{definition}
-
-For the function in (c), one such choice for $M$ would be $10$.  However,
-the smallest (optimal) choice would be $M=1$.  In either case, simply
-finding an $M$ is enough to establish boundedness.  No such $M$ exists for
-the hyperbola in (d) and hence we can say that it is 
-\textbf{unbounded}\index{function!unbounded}\index{unbounded function}.  
-
-\noindent{\bf Continuity.}  The graphs shown in (b) and (c) both represent
-{\bf continuous} functions.  Geometrically, this is because there are no
-jumps in the graphs.  That is, if you pick a point on the graph and
-approach it from the left and right, the values of the function approach
-the value of the function at that point.  For example, we can see that this
-is not true for function values near $x=-1$ on the graph in (a) which is
-not continuous at that location.  
+Informally, a function is continuous if you can ``draw it'' without
+``lifting your pencil.'' We need a formal definition.
 
 \begin{definition} A function $f$ is \textbf{continuous
-at a point} $a$ if $\ds \lim_{x\to a} f(x) = f(a)$.  
+at a point} $a$ if $\lim_{x\to a} f(x) = f(a)$.  
 \end{definition}
 \index{continuous}
+\begin{marginfigure}[0in]
+\begin{tikzpicture}
+	\begin{axis}[
+            domain=0:10,
+            ymax=5,
+            ymin=0,
+            samples=100,
+            axis lines =middle, xlabel=$x$, ylabel=$y$,
+            every axis y label/.style={at=(current axis.above origin),anchor=south},
+            every axis x label/.style={at=(current axis.right of origin),anchor=west}
+          ]
+	  \addplot [very thick, penColor, smooth, domain=(4:10)] {3 + sin(deg(x*2))/(x-1)};
+          \addplot [very thick, penColor, smooth, domain=(0:4)] {1};
+          \addplot[color=penColor,fill=background,only marks,mark=*] coordinates{(4,3.30)};  %% open hole
+          \addplot[color=penColor,fill=background,only marks,mark=*] coordinates{(6,2.893)};  %% open hole
+          \addplot[color=penColor,fill=penColor,only marks,mark=*] coordinates{(4,1)};  %% closed hole
+          \addplot[color=penColor,fill=penColor,only marks,mark=*] coordinates{(6,2)};  %% closed hole
+        \end{axis}
+\end{tikzpicture}
+\caption{A plot of a function with discontinuities at $x=4$ and $x=6$.}
+\label{plot:discontinuous-function}
+\end{marginfigure}
 
-\begin{definition} A function $f$ is \textbf{continuous} if it is
-continuous at every point in its domain.
+\begin{example}
+Find the discontinuities (the values for $x$ where a function is not
+continuous) for the function given in Figure~\ref{plot:discontinuous-function}.
+\end{example}
+\begin{solution}
+From Figure~\ref{plot:discontinuous-function} we see that $\lim_{x\to 4} f(x)$ does not exist as
+\[
+\lim_{x\to 4-}f(x) = 1\qquad\text{and}\qquad \lim_{x\to 4+}f(x) \approx 3.5
+\]
+Hence $\lim_{x\to 4} f(x) \ne f(4)$, and so $f(x)$ is not
+continuous at $x=4$.
+
+We also see that $\lim_{x\to 6} f(x) \approx 3$ while $f(6) =
+2$. Hence $\lim_{x\to 6} f(x) \ne f(6)$, and so $f(x)$ is not
+continuous at $x=6$.
+\end{solution}
+
+Building from the definition of \textit{continuous at a point}, we can
+now define what it means for a function to be \textit{continuous} on
+an interval.
+
+\begin{definition} A function $f$ is \textbf{continuous on an interval} if it is
+continuous at every point in the interval.
 \end{definition}
 
-Strangely, we can also say that (d) is continuous even though there is a
-vertical asymptote.  A careful reading of the definition of continuous
-reveals the phrase ``\textit{at every point in its domain.}''  Because the
-location of the asymptote, $x=0$, is not in the domain of the function, and
-because the rest of the function is \textbf{well-behaved}, we can say that (d)
-is continuous.
+In particular, we should note that if a function is not defined on an
+interval, then it \textbf{cannot} be continuous on that interval.
+\begin{marginfigure}[0in]
+\begin{tikzpicture}
+	\begin{axis}[
+            domain=-.2:.2,    
+            samples=500,
+            axis lines =middle, xlabel=$x$, ylabel=$y$,
+            yticklabels = {}, 
+            every axis y label/.style={at=(current axis.above origin),anchor=south},
+            every axis x label/.style={at=(current axis.right of origin),anchor=west},
+            clip=false,
+          ]
+	  \addplot [very thick, penColor, smooth, domain=(-.2:-.02)] {abs(x)^(1/5)*sin(deg(1/x))};
+          \addplot [very thick, penColor, smooth, domain=(.02:.2)] {x^(1/5)*sin(deg(1/x))};
+	  \addplot [color=penColor, fill=penColor, very thick, smooth,domain=(-.02:.02)] {abs(x)^(1/5)} \closedcycle;
+          \addplot [color=penColor, fill=penColor, very thick, smooth,domain=(-.02:.02)] {-abs(x)^(1/5)} \closedcycle;
+        \end{axis}
+\end{tikzpicture}
+\caption[A continuous function.]{A plot of
+\[
+f(x)=
+\begin{cases}
+\sqrt[5]{x}\sin\left(\frac{1}{x}\right) & \text{if $x \ne 0$,}\\
+ 0 & \text{if $x = 0$.}
+\end{cases}
+\]
+}
+\label{plot:sqrt[5]{x}sin 1/x}
+\end{marginfigure}
 
-We now have a collection of adjectives to describe the very rich and
-complex set of objects known as functions.
+\begin{example}
+Consider the function
+\[
+f(x) = 
+\begin{cases}
+\sqrt[5]{x}\sin\left(\frac{1}{x}\right) & \text{if $x \ne 0$,}\\
+0 & \text{if $x = 0$,}
+\end{cases}
+\]
+see Figure~\ref{plot:sqrt[5]{x}sin 1/x}. Is this function continuous?
+\end{example}
+
+\begin{solution}
+Considering $f(x)$, the only issue is when $x=0$. We must show that
+$\lim_{x\to 0} f(x) = 0$. Note
+\[
+-|\sqrt[5]{x}|\le f(x) \le |\sqrt[5]{x}|.
+\]
+Since
+\[
+\lim_{x\to 0} -|\sqrt[5]{x}| = 0 = \lim_{x\to 0}|\sqrt[5]{x}|,
+\]
+we see by the Squeeze Theorem, Theorem~\ref{theorem:squeeze}, that
+$\lim_{x\to 0} f(x) = 0$. Hence $f(x)$ is continuous.
+
+Here we see how the informal definition of continuity being that you
+can ``draw it'' without ``lifting your pencil'' differs from the
+formal definition.
+\end{solution}
 
 We close with a useful theorem about continuous functions:
 
@@ -205,7 +639,7 @@ number $c$ in $[a, b]$ such that $f(c) = d$.
 \marginnote[-.7in]{The Intermediate Value Theorem is most frequently
   used when $d=0$.}  
 \marginnote[-.2in]{For a nice proof of this theorem, see: Walk, Stephen
-  M.\ \textit{The intermediate value theorem is NOT obvious---and I am
+  M. \textit{The intermediate value theorem is NOT obvious---and I am
     going to prove it to you}. College Math. J. 42 (2011), no. 4,
   254--259.}
 In Figure~\ref{figure:intermediate-value}, we see a geometric
@@ -238,7 +672,7 @@ interpretation of this theorem.
           \addplot [color=penColor,fill=penColor,only marks,mark=*] coordinates{(5,1.679)};  %% closed hole          
         \end{axis}
 \end{tikzpicture}
-\caption{A geometric interpertation of the Intermediate Value
+\caption{A geometric interpretation of the Intermediate Value
   Theorem. The function $f(x)$ is continuous on the interval
   $[a,b]$. Since $d$ is in the interval $[f(a),f(b)]$, there exists a
   value $c$ in $[a,b]$ such that $f(c) = d$.}
@@ -249,75 +683,156 @@ interpretation of this theorem.
 
 
 
-\begin{example} Explain why the function $\ds f=x^3 + 3x^2+x-2$ has a root between 0
+\begin{example} 
+Explain why the function $f(x) =x^3 + 3x^2+x-2$ has a root between 0
 and 1.
-
-By theorem~\xrefn{thm:properties of limits}, $f$ is continuous.
-Since $f(0)=-2$ and $f(1)=3$, and $0$ is between $-2$ and $3$, there
-is a $c\in[0,1]$ such that $f(c)=0$.
 \end{example}
+
+\begin{solution}
+By Theorem~\ref{theorem:limit-laws}, $\lim_{x\to a} f(x) =
+f(a)$, for all real values of $a$, and hence $f$ is continuous.  Since
+$f(0)=-2$ and $f(1)=3$, and $0$ is between $-2$ and $3$, there is a
+$c\in[0,1]$ such that $f(c)=0$.
+\end{solution}
 
 This example also points the way to a simple method for approximating
 roots. 
 
-\begin{example} Approximate the root of the previous example  to one decimal
-place. THIS IS A GOOD EXAMPLE - CF WITH THE PAPER LIST ABOVE.
-
-If we compute $f(0.1)$, $f(0.2)$, and so on, we find that 
-$f(0.6)<0$ and $f(0.7)>0$, so by the Intermediate Value Theorem, $f$
-has a root between $0.6$ and $0.7$. Repeating the process with
-$f(0.61)$, $f(0.62)$, and so on, we find that
-$f(0.61)<0$ and $f(0.62)>0$, so $f$ has a root between
-$0.61$ and $0.62$, and the root is $0.6$ rounded to one decimal place.
+\begin{example} 
+Approximate a root of $f(x) =x^3 + 3x^2+x-2$ to one decimal place.
 \end{example}
+\begin{solution}
+If we compute $f(0.1)$, $f(0.2)$, and so on, we find that $f(0.6)<0$
+and $f(0.7)>0$, so by the Intermediate Value Theorem, $f$ has a root
+between $0.6$ and $0.7$. Repeating the process with $f(0.61)$,
+$f(0.62)$, and so on, we find that $f(0.61)<0$ and $f(0.62)>0$, so $f$
+has a root between $0.61$ and $0.62$, and the root is $0.6$ rounded to
+one decimal place.
+\end{solution}
+
+
+
 
 
 \begin{exercises}
 
-\begin{exercise} Along the lines of Figure~\xrefn{fig:function types},
-for each part below sketch the
- graph of a function that is:
-
-\begin{enumerate}
-
-  \item Bounded, but not continuous.
-
-  \item Differentiable and unbounded.
-
-  \item Continuous at $x=0$, not continuous at $x=1$, and bounded.
-  
-  \item Differentiable everywhere except at $x=-1$, continuous, and unbounded.
-
- \end{enumerate}
+\begin{exercise} 
+Consider the function
+\[
+f(x) = \sqrt{x-4} 
+\]
+Is $f(x)$ continuous at the point $x=4$?  Is $f(x)$ a continuous
+function on $\R$?
+\begin{answer}
+  $f(x)$ is continuous at $x=4$ but it is not continuous on $\R$.
+\end{answer}
 \end{exercise}
 
-\begin{exercise} Is $f(x)=\sin(x)$ a bounded function?  If so, find the smallest $M$.
+
+\begin{exercise} 
+Consider the function
+\[
+f(x) = \frac{1}{x+3}
+\]
+Is $f(x)$ continuous at the point $x=3$?  Is $f(x)$ a continuous
+function on $\R$?
+\begin{answer}
+  $f(x)$ is continuous at $x=3$ but it is not continuous on $\R$.
+\end{answer}
 \end{exercise}
 
-\begin{exercise} Is $\ds s(t) = 1/(1+t^2)$ a bounded function?  If so, find the
-smallest $M$.
+\begin{exercise} 
+Consider the function
+\[
+f(x) = 
+\begin{cases} 
+2x - 3 & \text{if $x<1$,} \\ 
+0      & \text{if $x\geq 1$.}
+\end{cases}
+\]
+Is $f(x)$ continuous at the point $x=1$?  Is $f(x)$ a continuous
+function on $\R$?
+\begin{answer}
+  $f(x)$ is not continuous at $x=1$ and it is not continuous on $\R$.
+\end{answer}
 \end{exercise}
 
- \begin{exercise} Is $v(u) = 2\ln|u|$ a bounded function?  If so, find the smallest $M$.
+
+
+\begin{exercise} 
+Consider the function
+\[
+f(x) = 
+\begin{cases} 
+\frac{x^2 + 10x + 25}{x-5} & \text{if $x\ne 5$,} \\ 
+10      & \text{if $x= 5$.}
+\end{cases}
+\]
+Is $f(x)$ continuous at the point $x=5$?  Is $f(x)$ a continuous
+function on $\R$?
+\begin{answer}
+  $f(x)$ is not continuous at $x=5$ and it is not continuous on $\R$.
+\end{answer}
 \end{exercise}
 
- \begin{exercise} Consider the function 
-$$h(x) = \begin{cases}
-2x - 3, & \mbox{if $x<1$,} \\
-0, & \mbox{if $x\geq 1$.}
-\end{cases}$$
-Show that it is continuous at the point $x=0$.  Is $h$ a continuous function?
+
+\begin{exercise} 
+Consider the function
+\[
+f(x) = 
+\begin{cases} 
+\frac{x^2 + 10x + 25}{x+5} & \text{if $x\ne -5$,} \\ 
+0      & \text{if $x= -5$.}
+\end{cases}
+\]
+Is $f(x)$ continuous at the point $x=-5$?  Is $f(x)$ a continuous
+function on $\R$?
+\begin{answer}
+  $f(x)$ is continuous at $x=-5$ and it is also continuous on $\R$.
+\end{answer}
+\end{exercise}
+
+
+
+\begin{exercise} 
+Determine the interval(s) on which the function $f(x) = x^7+3x^5-2x +
+4$ is continuous.
+\begin{answer}
+  $\R$
+\end{answer}
+\end{exercise}
+
+
+
+\begin{exercise}
+Determine the interval(s) on which the function $f(x) = \frac{x^2-2x+1}{x+4}$ is continuous. 
+\begin{answer}
+  $(-\infty,-4)\cup(-4,\infty)$
+\end{answer}
+\end{exercise}
+
+
+
+\begin{exercise}
+Determine the interval(s) on which the function $f(x) = \frac{1}{x^2
+  -9}$ is continuous.
+\begin{answer}
+  $(-\infty,-3)\cup(-3,3)\cup(3,\infty)$
+\end{answer}
+\end{exercise}
+
+
+\begin{exercise}
+Approximate a root of $f(x)=x^3-4x^2+2x+2$ to two decimal places.
+\begin{answer}
+$x=-0.48$, $x=1.31$, or $x=3.17$
+\end{answer}
 \end{exercise}
 
 \begin{exercise}
-Approximate a root of $\ds f=x^3-4x^2+2x+2$ to one decimal place.
+Approximate a root of $f(x)=x^4+x^3-5x+1$ to two decimal places.
+\begin{answer}
+$x=0.20$, or $x=1.35$
+\end{answer}
 \end{exercise}
-
-\begin{exercise}
-Approximate a root of $\ds f=x^4+x^3-5x+1$ to one decimal place.
-\end{exercise}
-
 \end{exercises}
-
-
-
