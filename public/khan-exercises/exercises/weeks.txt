@@ -28,15 +28,29 @@ limitComputeInfinite
 limitsAtInfinityGraphical
 limitsAtInfinityOracle
 limitsAtInfinitySymbolic
+limitsAtInfinityCompute
 continuityGraphical
 continuityOracleGraphical
 continuityOracle
 bisectionOracle
-linearOracle
+continuityChooseConstant
 * Week 3
-linearApprox
+linearTriangles1
+linearTriangles2
+linearOracle
+tangentLineIdea
+tangentLineIdeaSlope
+tangentLineIdeaSecant
 approxDeriv
+linearApprox
 derivativeOracle
+derivativeSign
+comparingFunctionAndDerivative
+differentiability
+derivativeDefinition
+differentiateUsingLimit
 repeatedLinApprox
-intuitiveCurveSketch
 numChainRule
+* Week 4
+intuitiveCurveSketch
+

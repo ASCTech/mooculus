@@ -26,17 +26,30 @@ limitComputeInfinite.html
 limitsAtInfinityGraphical.html
 limitsAtInfinityOracle.html
 limitsAtInfinitySymbolic.html
+limitsAtInfinityCompute.html
 continuityGraphical.html
 continuityOracleGraphical.html
 continuityOracle.html
 bisectionOracle.html
+continuityChooseConstant.html
+linearTriangles1.html
+linearTriangles2.html
 linearOracle.html
-linearApprox.html
+tangentLineIdea.html
+tangentLineIdeaSlope.html
+tangentLineIdeaSecant.html
 approxDeriv.html
+linearApprox.html
 derivativeOracle.html
+derivativeSign.html
+comparingFunctionAndDerivative.html
+differentiability.html
+derivativeDefinition.html
+differentiateUsingLimit.html
 repeatedLinApprox.html
-intuitiveCurveSketch.html
 numChainRule.html
+intuitiveCurveSketch.html
+
 
 
 
