@@ -41,7 +41,7 @@ tangentLineIdeaSecant.html
 approxDeriv.html
 linearApprox.html
 derivativeOracle.html
-derivativeSign.html
+derivaticeSign.html
 comparingFunctionAndDerivative.html
 differentiability.html
 derivativeDefinition.html
