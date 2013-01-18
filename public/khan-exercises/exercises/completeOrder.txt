@@ -42,6 +42,7 @@ approxDeriv.html
 linearApprox.html
 derivativeOracle.html
 derivaticeSign.html
+derivativeSign.html
 comparingFunctionAndDerivative.html
 differentiability.html
 derivativeDefinition.html
