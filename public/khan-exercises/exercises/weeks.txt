@@ -45,6 +45,7 @@ approxDeriv
 linearApprox
 derivativeOracle
 derivativeSign
+derivaticeSign
 comparingFunctionAndDerivative
 differentiability
 derivativeDefinition
