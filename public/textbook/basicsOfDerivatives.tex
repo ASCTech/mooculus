@@ -266,7 +266,7 @@ differentiability.
 
 
 
-\begin{mainTheorem}[Differenitability implies Continuity]\label{theorem:diff-cont}
+\begin{mainTheorem}[Differentiability implies Continuity]\label{theorem:diff-cont}
 If $f(x)$ is a differentiable function at $x = a$, then $f(x)$ is
 continuous at $x=a$.
 \end{mainTheorem}
@@ -280,7 +280,7 @@ Consider
 \begin{align*}
 \lim_{x\to a} \left(f(x) - f(a)\right) &= \lim_{x\to a} \left((x-a)\frac{f(x) - f(a)}{x-a}\right) &\text{Multiply and divide by $(x-a)$.} \\
 &= \lim_{x\to a} (x-a) \lim_{x\to a}\frac{f(x) - f(a)}{x-a} &\text{Limit Law.} \\
-&= \lim_{x\to a} (x-a) \lim_{h\to 0}\frac{f(x+h) - f(a)}{h} &\text{Set $x-a = h$.} \\
+&= \lim_{h\to 0} h \lim_{h\to 0}\frac{f(a+h) - f(a)}{h} &\text{Set $x = a+h$.} \\
 &= 0\cdot f'(a) = 0.
 \end{align*}
 Since 
@@ -797,10 +797,7 @@ If $f(x)$ and $g(x)$ are differentiable and $c$ is a constant, then
 
           \node at (axis cs:4,1.4) [anchor=west,penColor5] {$f'(x)$};
           \node at (axis cs:4,2.9) [anchor=west,penColor4] {$g'(x)$};
-          %\node at (axis cs:4,4.3) [anchor=west] {$f'(x)+g'(x)$};
-          \node at (axis cs:4.45,4.3) [anchor=west] {$+$};
-          \node at (axis cs:4,4.3) [anchor=west,penColor5] {$f'(x)$};
-          \node at (axis cs:4.65,4.3) [anchor=west,penColor4] {$g'(x)$};
+          \node at (axis cs:4,4.3) [anchor=west] {${\color{penColor5}f'(x)}+{\color{penColor4}g'(x)}$};
           \node at (axis cs:3.5,1.2) [anchor=north] {$\underbrace{\hspace{.50in}}_{1}$};
         \end{axis}
 \end{tikzpicture}

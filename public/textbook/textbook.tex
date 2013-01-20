@@ -4,8 +4,10 @@
 
 
 
+
+
 % BADBAD should include cents symbol?
-\newcommand\cents{cents}
+%\newcommand\cents{cents}
 
 \setcounter{secnumdepth}{2}
 
@@ -19,7 +21,7 @@
 
 
 % For nicely typeset tabular material
-\usepackage{booktabs}
+%\usepackage{booktabs}
 
 % Prints the month name (e.g., January) and the year (e.g., 2008)
 \newcommand{\monthyear}{%
@@ -34,23 +36,7 @@
 
 \newcommand{\xrefn}[1]{\ref{#1}}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\makeatletter
-\newwrite\answer@stream
-\immediate\openout\answer@stream=\jobname.ans
 
-\def\dumpanswer[#1]{\immediate\write\answer@stream{#1}}
-
-\newtoks{\answercontent}
-\usepackage{environ}
- \NewEnviron{answer}{%
-   \answercontent=\expandafter{\BODY\hspace{1em}}
-   \dumpanswer[\arabic{exercise}. \the\answercontent]
- }
-
-\def\finalizeanswers{\immediate\closeout\answer@stream}
-\makeatother
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \newenvironment{lemma}{\subsection*{Lemma}}{}
 \newenvironment{remark}[1]{\subsection*{Remark: #1}}{}
@@ -107,7 +93,7 @@ Copyright \copyright\ \the\year\ Jim Fowler and Bart Snapp
 This work is licensed under the Creative Commons
 Attribution-NonCommercial-ShareAlike License. To view a copy of this
 license, visit
-\url{http://creativecommons.org/licenses/by-nc-sa/3.0/}~or send a
+\url{http://creativecommons.org/licenses/by-nc-sa/3.0/}~or send a~or send a
 letter to Creative Commons, 543 Howard Street, 5th Floor, San
 Francisco, California, 94105, USA. If you distribute this work or a
 derivative, include the history of the document.
@@ -226,7 +212,8 @@ endeavor. You, the reader, must become a doer of mathematics.
 \finalizeanswers
 \chapter*{Answers to Exercises}
 \addcontentsline{toc}{chapter}{Answers to Exercises}
-\input{answers}
+\IfFileExists{answers.tex}{\input{answers}}
+
 
 \backmatter
 %\addcontentsline{toc}{chapter}{Index}

@@ -5,6 +5,8 @@
 
 
 
+
+%\RequirePackage{hyperref}
 %\RequirePackage[table]{xcolor}
 \RequirePackage[framemethod=TikZ]{mdframed}
 \RequirePackage{environ}
@@ -25,7 +27,6 @@
 \usetikzlibrary{shapes}
 \usetikzlibrary{decorations}
 \tikzset{>=stealth} %% makes all arrows the same
-
 
 
 %% Font
@@ -50,7 +51,6 @@
 
 
 %% Colors
-
 
 
 
@@ -97,7 +97,17 @@
                                 % usually the same as the background
 \colorlet{cowDark}{textColor} % the dark colors of the cow -- usually
                               % the same as the text
+\colorlet{hyperColor}{green!30!black} % Color of a curve in a plot
 
+\hypersetup{ 
+    colorlinks = true, 
+    linkcolor = hyperColor,
+    anchorcolor = hyperColor,
+    citecolor = hyperColor,
+    filecolor = hyperColor,
+    pagecolor = hyperColor,
+    urlcolor = hyperColor
+} 
 
 %% Table colors
 \newenvironment{tchart}{\rowcolors{2}{}{background!95!textColor}\array}{\endarray}
@@ -376,6 +386,39 @@ skipabove=\baselineskip]{warning}%
   \item \addtocounter{exercise}{1}
 }
 {\end{enumerate}}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\makeatletter
+\newwrite\answer@stream
+\immediate\openout\answer@stream=\jobname.ans
+
+\def\dumpanswer[#1]{\immediate\write\answer@stream{#1}}
+
+\newtoks{\answercontent}
+         \NewEnviron{answer}{%
+         \answercontent=\expandafter{\BODY\hspace{1em}}
+         \dumpanswer[\arabic{exercise}. \the\answercontent]
+         }
+
+         \def\finalizeanswers{\immediate\closeout\answer@stream}
+\makeatother
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
