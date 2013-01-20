@@ -1386,8 +1386,10 @@ Khan.answerTypes = $.extend(Khan.answerTypes, {
 		"function": {
 			setup: function(solutionarea, solution) {
 				// Add a text box
-				var input = $('<input class="input-large" type="text">');
-				$(solutionarea).append(input);
+				var input = $('<input id="MathInput" onkeyup="Preview.Update()" class="input-large" type="text">');
+        $(solutionarea).append(input); 
+        var input2 = $('Preview is shown here: <div id="MathPreview" style="border:1px solid; padding: 3px; width:50%; margin-top:5px"></div> <div id="MathBuffer" style="border:1px solid; padding: 3px; width:50%; margin-top:5px; visibility:hidden; position:absolute; top:0; left: 0"></div><');
+        $(solutionarea).append(input2); 
 
 				// The fallback variable is used in place of the answer, if no
 				// answer is provided (i.e. the field is left blank)
