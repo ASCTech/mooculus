@@ -28,6 +28,15 @@
 \usetikzlibrary{decorations}
 \tikzset{>=stealth} %% makes all arrows the same
 
+\RequirePackage{dingbat,pifont}
+\newcommand{\video}[2][0in]{
+  \marginnote[#1]{\href{#2}{\ding{224}\raisebox{.8pt}{\eye}}}
+  }
+
+\newcommand{\onlineEx}[2][0in]{
+  \marginnote[#1]{\href{#2}{\ding{224}\smallpencil}}
+  }
+
 
 %% Font
 

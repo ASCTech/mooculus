@@ -131,91 +131,71 @@ which is precisely what we obtained before.
 \end{solution}
 
 
-\begin{example} Compute the derivative of $\ds f(x)=x^2\sqrt{625-x^2}$.  We have
-already computed $\ds {d\over
-  dx}\sqrt{625-x^2}={-x\over\sqrt{625-x^2}}$.  Now
-$$f'(x)=x^2{-x\over\sqrt{625-x^2}}+2x\sqrt{625-x^2}=
-{-x^3+2x(625-x^2)\over \sqrt{625-x^2}}=
-{-3x^3+1250x\over \sqrt{625-x^2}}.
-$$
-\end{example}
+
 
 \begin{exercises}
 
-In 1--4, find the derivatives of the functions using the product rule.
+\noindent Compute:
 
-\begin{exercise} $\ds x^3(x^3-5x+10)$
-\begin{answer} $\ds 3x^2(x^3-5x+10)+x^3(3x^2-5)$
+\twocol
+
+\begin{exercise} $\ddx x^3(x^3-5x+10)$
+\begin{answer} $3x^2(x^3-5x+10)+x^3(3x^2-5)$
 \end{answer}\end{exercise}
 
-\begin{exercise} $\ds (x^2+5x-3)(x^5-6x^3+3x^2-7x+1)$
-\begin{answer} $\ds (x^2+5x-3)(5x^4-18x^2+6x-7)+(2x+5)(x^5-6x^3+3x^2-7x+1)$
+\begin{exercise} $\ddx (x^2+5x-3)(x^5-6x^3+3x^2-7x+1)$
+\begin{answer} $(x^2+5x-3)(5x^4-18x^2+6x-7)+(2x+5)(x^5-6x^3+3x^2-7x+1)$
 \end{answer}\end{exercise}
 
-\begin{exercise} $\ds \sqrt{x}\sqrt{625-x^2}$
-\begin{answer} $\ds \ds{\sqrt{625-x^2}\over 2\sqrt{x}}-{x\sqrt{x}\over\sqrt{625-x^2}}$
+\begin{exercise} $\ddx \sqrt{x}\sqrt{625-x^2}$
+\begin{answer} $\frac{\sqrt{625-x^2}}{2\sqrt{x}}-\frac{x\sqrt{x}}{\sqrt{625-x^2}}$
 \end{answer}\end{exercise}
 
-\begin{exercise} $\displaystyle {\sqrt{625-x^2}\over x^{20}}$
-\begin{answer} $\ds{-1\over x^{19}\sqrt{625-x^2}}-{20\sqrt{625-x^2}\over x^{21}}$
+\begin{exercise} $\ddx\frac{\sqrt{625-x^2}}{x^{20}}$
+\begin{answer} $\frac{-1}{x^{19}\sqrt{625-x^2}}-\frac{20\sqrt{625-x^2}}{x^{21}}$
 \end{answer}\end{exercise}
 
-\begin{exercise} Use the product rule to compute the derivative of $\ds f(x)=(2x-3)^2$.
- Sketch the function.  Find an equation of the tangent line to the curve at
- $x=2$.  Sketch the tangent line at $x=2$.
+\begin{exercise} $\ddx e^{2x} = \ddx \left(e^x \cdot e^x\right)$
+\begin{answer}
+$2e^{2x}$
+\end{answer}
+\end{exercise}
+
+\begin{exercise} $\ddx e^{3x}$
+\begin{answer} $3e^{3x}$
+\end{answer}\end{exercise}
+
+
+\begin{exercise} $\ddx 3x^2e^{4x}$
+\begin{answer} $6xe^{4x}+12x^2e^{4x}$
+\end{answer}\end{exercise}
+
+
+\begin{exercise} $\ddx \frac{3e^x}{x^{16}}$
+\begin{answer} $\frac{-48e^x}{x^{17}}+\frac{3e^x}{x^{16}}$
+\end{answer}\end{exercise}
+
+
+\endtwocol
+
+
+\begin{exercise} 
+Use the product rule to compute the derivative of $f(x)=(2x-3)^2$ with
+respect to $x$.  Sketch the function.  Find an equation of the tangent
+line to the curve at $x=2$.  Sketch the tangent line at $x=2$.
 \begin{answer} $f'=4(2x-3)$, $y=4x-7$
 \end{answer}\end{exercise}
 
 \begin{exercise}
 Suppose that $f$, $g$, and $h$ are differentiable functions.
-Show that $(fgh)'(x) = f'(x) g(x)h(x) + f(x)g'(x) h(x) + f(x) g(x)
-h'(x)$.
+Show that 
+\[
+\ddx f(x)\cdot g(x) \cdot h(x) = f(x) g(x)h'(x) + f(x)g'(x) h(x) + f'(x) g(x) h(x).
+\]
+\begin{answer}
+$\ddx f(x)g(x)h(x) = \ddx f(x)(g(x)h(x)) = f(x) \ddx (g(x) h(x)) + f'(x) g(x) h(x) = f(x) (g(x) h'(x)+ g'(x)h(x)) + f'(x) g(x) h(x) = f(x)g(x)h'(x)+ f(x) g'(x)h(x)) + f'(x) g(x) h(x)$
+\end{answer}
 \end{exercise}
-
-\begin{exercise}
-State and prove a rule to compute $(fghi)'(x)$, 
-similar to the rule in the previous problem.
-\end{exercise}
-
-\begin{remark}{Product notation}
-Suppose $\ds f_1 , f_2 , \ldots f_n$ are functions.
-The product of all these functions can be written
-$$ \prod _{k=1 } ^n f_k.$$
-This is similar to the use of $\ds \sum$ to denote a 
-sum.
-For example,
-$$\prod _{k=1 } ^5 f_k =f_1 f_2 f_3 f_4 f_5$$
-and
-$$
-\prod _ {k=1 } ^n k = 1\cdot 2 \cdot \ldots \cdot n = n!.$$
-We sometimes use somewhat more complicated conditions; for example
-$$\prod _{k=1 , k\neq j } ^n f_k$$
-denotes the product of $\ds f_1$ through $\ds f_n$ except for $\ds f_j$.
-For example, 
-$$\prod _{k=1 , k\neq 4} ^5 x^k = x\cdot x^2 \cdot x^3 \cdot x^5 =
-x^{11}.$$
-\end{remark}
-
-\begin{exercise}
-  The {\dfont generalized product rule\index{product rule!generalized}\/} 
-says that if $\ds f_1 , f_2 ,\ldots ,f_n$ are differentiable functions at
-  $x$ then
-$${d\over dx}\prod _{k=1 } ^n f_k(x) = 
-\sum _{j=1 } ^n \left(f'_j (x) \prod _{k=1 , k\neq j} ^n
-   f_k (x)\right).$$
-Verify that this is the same as your answer to the previous problem
-when $n=4$,
-and write out what this says when $n=5$.
-\end{exercise}
-
-%% Wills
-%% \begin{exercise} 
-%% The generalized product rule is trivial when $n=1$. The case
-%% when $n=2$ is shown in the text and the case when $n=3$ is assigned
-%% in an earlier exercise. Use mathematical induction to show that the
-%% generalized product rule is true for any positive integer $n$.
-%%  \end{exer}
-
 \end{exercises}
 
 
@@ -232,25 +212,38 @@ We'd like to have a formula to compute
 \]
 if we already know $f'(x)$ and $g'(x)$. Instead of attacking this
 problem head-on, let's notice that we've already done part of the
-problem: $f(x)/g(x)= f(x)\cdot(1/g(x))$, that is, this is ``really'' a
+problem: $f(x)/g(x)= f(x)\cdot(1/g(x))$, that is, this is really a
 product, and we can compute the derivative if we know $f'(x)$ and
-$(1/g(x))'$. So really the only new bit of information we need is
-$(1/g(x))'$ in terms of $g'(x)$. As with the product rule, let's set
-this up and see how far we can get:
+$(1/g(x))'$. This brings us to our next derivative rule.
+
+\begin{mainTheorem}[The Quotient Rule]\index{derivative rules!quotient}\index{quotient rule}\label{theorem:quotient-rule}
+If $f(x)$ and $g(x)$ are differentiable, then
+\[
+\ddx \frac{f(x)}{g(x)} = \frac{f'(x)g(x)-f(x)g'(x)}{g(x)^2}.
+\]
+\end{mainTheorem}
+\begin{proof}
+First note that if we knew how to compute
+\[
+\ddx \frac{1}{g(x)}
+\]
+then we could use the product rule to complete our proof.  Write
 \begin{align*}
-{d\over dx}{1\over g(x)}&=\lim_{h\to0} 
-{{1\over g(x+h)}-{1\over g(x)}\over h} \\
-&=\lim_{h\to0} {{g(x)-g(x+h)\over g(x+h)g(x)}\over h} \\
-&=\lim_{h\to0} {g(x)-g(x+h)\over g(x+h)g(x)h} \\
-&=\lim_{h\to0} -{g(x+h)-g(x)\over h}
- {1\over g(x+h)g(x)} \\
-&=-{g'(x)\over g(x)^2} \\
+\ddx\frac{1}{g(x)}&=\lim_{h\to0} \frac{\frac{1}{g(x+h)}-\frac{1}{g(x)}}{h} \\
+&=\lim_{h\to0} \frac{\frac{g(x)-g(x+h)}{g(x+h)g(x)}}{h} \\
+&=\lim_{h\to0} \frac{g(x)-g(x+h)}{g(x+h)g(x)h} \\
+&=\lim_{h\to0} -\frac{g(x+h)-g(x)}{h} \frac{1}{g(x+h)g(x)} \\
+&=-\frac{g'(x)}{g(x)^2}.
 \end{align*}
 Now we can put this together with the product rule:
-$${d\over dx}{f(x)\over g(x)}=f(x){-g'(x)\over g(x)^2}+f'(x){1\over
-  g(x)}={-f(x)g'(x)+f'(x)g(x)\over g(x)^2}=
-  {f'(x)g(x)-f(x)g'(x)\over g(x)^2}.
-$$
+\begin{align*}
+\ddx\frac{f(x)}{g(x)} &=f(x)\frac{-g'(x)}{g(x)^2}+f'(x)\frac{1}{g(x)}\\
+&=\frac{-f(x)g'(x)+f'(x)g(x)}{g(x)^2}\\
+&=\frac{f'(x)g(x)-f(x)g'(x)}{g(x)^2}.
+\end{align*}
+
+\end{proof}
+
 
 \begin{example}
 Compute the derivative of $\ds (x^2+1)/(x^3-3x)$.
@@ -304,8 +297,6 @@ $${d\over dx}{10\over x^2}=10{-2x\over x^4}.$$
 Note that we first use linearity of the derivative to pull the 10 out
 in front.
 
-% Hack
-% \vfill\eject
 
 \begin{exercises}
 
