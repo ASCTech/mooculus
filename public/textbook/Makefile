@@ -8,6 +8,8 @@ textbook.pdf: $(FILES)
 	makeindex textbook
 	pdflatex textbook.tex
 	pdflatex textbook.tex
+	mv -f textbook.pdf textbook-undistilled.pdf
+	gs -q -dBATCH -dNOPAUSE -sDEVICE=pdfwrite -sOutputFile=textbook.pdf textbook-undistilled.pdf
 
 textbook-print.pdf: $(FILES)
 	rm -f answers.tex
@@ -17,6 +19,8 @@ textbook-print.pdf: $(FILES)
 	makeindex textbook-print
 	pdflatex -jobname textbook-print textbook.tex
 	pdflatex -jobname textbook-print textbook.tex
+	mv -f textbook-print.pdf textbook-print-undistilled.pdf
+	gs -q -dBATCH -dNOPAUSE -sDEVICE=pdfwrite -sOutputFile=textbook-print.pdf textbook-print-undistilled.pdf
 
 install: textbook.pdf textbook-print.pdf
 	mv -f textbook-print.pdf mooculus-print.pdf
