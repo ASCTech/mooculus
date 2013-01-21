@@ -246,13 +246,19 @@ Now we can put this together with the product rule:
 
 
 \begin{example}
-Compute the derivative of $\ds (x^2+1)/(x^3-3x)$.
-$${d\over dx}{x^2+1\over
-  x^3-3x}={2x(x^3-3x)-(x^2+1)(3x^2-3)\over(x^3-3x)^2}=
-  {-x^4-6x^2+3\over (x^3-3x)^2}.
-$$
-
+Compute:
+\[
+\ddx \frac{x^2+1}{x^3-3x}.
+\]
 \end{example}
+
+\begin{solution}
+Write
+\begin{align*}
+\ddx \frac{x^2+1}{x^3-3x} &= \frac{2x(x^3-3x)-(x^2+1)(3x^2-3)}{(x^3-3x)^2}\\
+&=\frac{-x^4-6x^2+3}{(x^3-3x)^2}.
+\end{align*}
+\end{solution}
 
 It is often possible to calculate derivatives in more than one way, as
 we have already seen. Since every quotient can be written as a
@@ -260,9 +266,15 @@ product, it is always possible to use the product rule to compute the
 derivative, though it is not always simpler.
 
 \begin{example}
-Find the derivative of $\ds \sqrt{625-x^2}/\sqrt{x}$ in two ways: using the
-quotient rule, and using the product rule.
+Compute 
+\[
+\ddx \frac{\sqrt{625-x^2}}{\sqrt{x}}
+\] 
+in two ways. First using the quotient rule and thne using the product
+rule.
+\end{example}
 
+\begin{solution}
 Quotient rule:
 $${d\over dx}{\sqrt{625-x^2}\over\sqrt{x}} = 
 {\sqrt{x}(-x/\sqrt{625-x^2})-\sqrt{625-x^2}\cdot 1/(2\sqrt{x})\over
@@ -277,25 +289,7 @@ $$
 
 With a bit of algebra, both of these simplify to
 $$-{x^2+625\over 2\sqrt{625-x^2}x^{3/2}}.$$
-
-\end{example}
-
-Occasionally you will need to compute the derivative of a quotient
-with a constant numerator, like $\ds 10/x^2$. Of course you can use the
-quotient rule, but it is usually not the easiest method. If we do use
-it here, we get 
-$${d\over dx}{10\over x^2}={x^2\cdot 0-10\cdot 2x\over x^4}=
-{-20\over x^3},$$
-since the derivative of 10 is 0. But it is simpler to do this:
-$${d\over dx}{10\over x^2}={d\over dx}10x^{-2}=-20x^{-3}.$$
-Admittedly, $\ds x^2$ is a particularly simple denominator, but we will
-see that a similar calculation is usually possible. Another approach
-is to remember that
-$${d\over dx}{1\over g(x)}={-g'(x)\over g(x)^2},$$
-but this requires extra memorization. Using this formula,
-$${d\over dx}{10\over x^2}=10{-2x\over x^4}.$$
-Note that we first use linearity of the derivative to pull the 10 out
-in front.
+\end{solution}
 
 
 \begin{exercises}
