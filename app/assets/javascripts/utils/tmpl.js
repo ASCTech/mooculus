@@ -220,6 +220,10 @@ $.tmpl = {
                     var text = $elem.text();
                     $elem.text(KhanUtil.cleanMath ? KhanUtil.cleanMath(text) : text);
 
+		    // The above code was needed for KathJax to work, but now
+		    // I'm just going to replace the content with an appropriate script tag
+		    $(elem).replaceWith('<script type="math/tex">' + text + '</script>');
+
                     // Stick the processing request onto the queue
                     if (typeof MathJax !== "undefined") {
                         KhanUtil.debugLog("adding " + text + " to MathJax typeset queue");
