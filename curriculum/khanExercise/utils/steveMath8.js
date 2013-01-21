@@ -195,6 +195,26 @@ $.extend(KhanUtil, {
     		
     	},
     	
+    randFunction: function(depth, elemFunctions, variables){
+    	if (depth >0){
+    		var i = KhanUtil.randRange(0,elemFunctions.length -1);
+    		var operation = elemFunctions[i];
+    		if (operation == "+" || operation == "*" || operation == "-" || operation == "/"){
+    			return "((" + KhanUtil.randFunction(depth-1, elemFunctions,variables) + ")" + 
+    			operation + "(" + KhanUtil.randFunction(depth-1,elemFunctions,variables) + "))";
+    			}
+    		else {
+    			return operation+"(" + KhanUtil.randFunction(depth-1, elemFunctions,variables) + ")";
+    			}
+    	
+    		}
+    	if (depth==0){
+    		var j = KhanUtil.randRange(0,variables.length-1);
+    		return variables[j];
+    		
+    		}
+    	},
+    	
     	
     
     //////////////////////////
