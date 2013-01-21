@@ -6,8 +6,7 @@
 %%
 
 \s+                   /* skip whitespace */
-//[0-9]+("."[0-9]+)?\b  return 'NUMBER'
-[0-9]+("."[0-9]+)?      return 'NUMBER'
+[0-9]+([,.][0-9]+)?     return 'NUMBER'
 "e"                     return 'E'
 [A-Za-z]\b              return 'VAR'
 "*"                     return '*'
@@ -57,9 +56,9 @@ expressions
 
 number
     : NUMBER
-        {$$ = new StraightLineProgram(function(bindings){ return parseFloat(yytext); },
-				      parseFloat(yytext).toString(),
-				      parseFloat(yytext).toString());}
+        {$$ = new StraightLineProgram(function(bindings){ return parseFloat(yytext.replace(',','.')); },
+				      parseFloat(yytext.replace(',','.')).toString(),
+				      parseFloat(yytext.replace(',','.')).toString());}
     ;
 
 variable
