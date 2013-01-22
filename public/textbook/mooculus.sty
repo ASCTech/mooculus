@@ -6,8 +6,6 @@
 
 
 
-%\RequirePackage{hyperref}
-%\RequirePackage[table]{xcolor}
 \RequirePackage[framemethod=TikZ]{mdframed}
 \RequirePackage{environ}
 %\RequirePackage{xkeyval}
@@ -141,12 +139,15 @@
 \draw [thick] (4,3) -- (5,3);
 \end{tikzpicture}}
 
-\newcommand{\video}[2][0in]{
-  \marginnote[#1]{\href{#2}{\scalebox{2}{\ding{224}}\film}}
+
+\newcommand{\linkArrow}{\raisebox{-4pt}{\scalebox{2}{\ding{224}}}}
+
+\newcommand{\video}[2][0in]{%% positioning needs fixed
+  \marginnote[#1]{\href{#2}{\linkArrow\film}}
   }
 
-\newcommand{\onlineEx}[2][0in]{
-  \marginnote[#1]{\href{#2}{\scalebox{2}{\ding{224}}\raisebox{1.5pt}{\pmb{\smallpencil}}}}
+\newcommand{\onlineEx}[2][0in]{%% positioning needs fixed
+  \marginnote[#1]{\href{#2}{\linkArrow\raisebox{1.5pt}{\pmb{\smallpencil}}}}
   }
 
 
@@ -311,7 +312,7 @@ font=\upshape
 
 
 \newmdtheoremenv[hidealllines=true,leftmargin=40,roundcorner=10pt%
-rightmargin=40,backgroundcolor=red!10,%
+rightmargin=40,backgroundcolor=red!5!background,%
 innertopmargin=6pt,%
 splittopskip=\topskip,skipbelow=\baselineskip,%
 skipabove=\baselineskip]{warning}%
@@ -412,20 +413,21 @@ skipabove=\baselineskip]{warning}%
   \newpage
   \dumpanswer[\noexpand\subsection*{Answers for \arabic{chapter}.\arabic{section}}]
   \subsection*{Exercises for Section \arabic{chapter}.\arabic{section}}
-\vspace{-15pt}
-
-\rule{\textwidth}{2pt}
+  \vspace{-15pt}
+  
+  \rule{\textwidth}{2pt}
   \setcounter{exercise}{0}
   \BODY
-\newpage
+  \newpage
 }%
 {}
 \newenvironment{exercise}{
-\begin{enumerate}[(1)]
-  \setcounter{enumi}{\value{exercise}}
-  \item \addtocounter{exercise}{1}
+  \begin{enumerate}[(1)]
+    \setcounter{enumi}{\value{exercise}}
+  \item \addtocounter{exercise}{1} 
 }
-{\end{enumerate}}
+           {%\hyperlink{a:\thesection\value{exercise}}{\linkArrow} %% for adding a link to exercises
+           \end{enumerate}}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -437,18 +439,16 @@ skipabove=\baselineskip]{warning}%
 
 \newtoks{\answercontent}
          \NewEnviron{answer}{%
-         \answercontent=\expandafter{\BODY\hspace{1em}}
-         \dumpanswer[\arabic{exercise}. \the\answercontent]
+           \answercontent=\expandafter{\BODY\qquad}
+         \dumpanswer[\noexpand\bfseries\arabic{exercise}.\space\noexpand\mdseries \the\answercontent]
          }
 
          \def\finalizeanswers{\immediate\closeout\answer@stream}
 \makeatother
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-
-
-
-
+%\hyperlink{foo_1}{This becomes a link}.
+%\hypertarget{foo_1}{This is the target}.
 
 
 

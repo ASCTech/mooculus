@@ -8,20 +8,24 @@ often useful to know what the graph of the function looks like. We can
 obtain a good picture of the graph using certain crucial information
 provided by derivatives of the function and certain limits.
 
-\section{Maxima and Minima}{}{}
-\nobreak
-A {\dfont local maximum\index{local maximum} point\/} on a function is a
-point $(x,y)$ on the graph of the function whose $y$ coordinate is
-larger than all other $y$ coordinates on the graph at points ``close
-to'' $(x,y)$. More precisely, $(x,f(x))$ is a local maximum if there
-is an interval $(a,b)$ with $a<x<b$ and $f(x)\ge f(z)$ for every $z$
-in $(a,b)$. Similarly, $(x,y)$ is a {\dfont local minimum\index{local
-minimum} point\/} if it has locally the smallest $y$ coordinate. Again
-being more precise: $(x,f(x))$ is a local minimum if there
-is an interval $(a,b)$ with $a<x<b$ and $f(x)\le f(z)$ for every $z$
-in $(a,b)$. A 
-{\dfont local extremum\index{local
-extremum}\/} is either a local minimum or a local maximum.
+\section{Extrema}
+
+Local \textit{extrema} on a function are points on the graph where the
+$y$ coordinate is larger (or smaller) than all other $y$ coordinates
+on the graph at points ``close to'' $(x,y)$. 
+
+\begin{definition}\hfil
+\begin{enumerate}
+\item A point $(x,f(x))$ is a \textbf{local maximum}\index{local
+  maximum} if there is an interval $a<x<b$ with $f(x)\ge f(z)$ for
+  every $z$ in $(a,b)$.
+\item A point $(x,f(x))$ is a \textbf{local minimum}\index{local
+  minimum} if there is an interval $a<x<b$ with $f(x)\le f(z)$ for
+  every $z$ in $(a,b)$.
+\end{enumerate}
+A \textbf{local extremum}\index{local extremum} is either a local
+maximum or a local minimum.
+\end{definition}
 
 Local maximum and minimum points are quite distinctive on the graph of
 a function, and are therefore useful in understanding the shape of the
@@ -29,145 +33,112 @@ graph. In many applied problems we want to find the largest or
 smallest value that a function achieves (for example, we might want
 to find the minimum cost at which some task can be performed) and so
 identifying maximum and minimum points will be useful for applied
-problems as well. Some examples of local maximum and minimum points
-are shown in figure~\xrefn{fig:max and min points}.
-
-% BADBAD
-% \figure
-% \vbox{\beginpicture
-% \normalgraphs
-% \ninepoint
-% \setcoordinatesystem units <1.5truecm,1.5truecm>
-% \setplotarea x from -1.5 to 1.5, y from -1.5 to 1.5
-% \axis left shiftedto x=0 /
-% \axis bottom shiftedto y=0 /
-% \setquadratic
-% \plot -1.400 -1.344 -1.330 -1.023 -1.260 -0.740 -1.190 -0.495 -1.120 -0.285 
-% -1.050 -0.108 -0.980 0.039 -0.910 0.156 -0.840 0.247 -0.770 0.313 
-% -0.700 0.357 -0.630 0.380 -0.560 0.384 -0.490 0.372 -0.420 0.346 
-% -0.350 0.307 -0.280 0.258 -0.210 0.201 -0.140 0.137 -0.070 0.070 
-% 0.000 0.000 0.070 -0.070 0.140 -0.137 0.210 -0.201 0.280 -0.258 
-% 0.350 -0.307 0.420 -0.346 0.490 -0.372 0.560 -0.384 0.630 -0.380 
-% 0.700 -0.357 0.770 -0.313 0.840 -0.247 0.910 -0.156 0.980 -0.039 
-% 1.050 0.108 1.120 0.285 1.190 0.495 1.260 0.740 1.330 1.023 
-% 1.400 1.344 /
-% \put {$\bullet$} at -0.5512 0.3752
-% \put {$\bullet$} at 0.5512 -0.3752
-% \put {$A$} [b] <0pt,4pt> at -0.5512 0.3752
-% \put {$B$} [t] <0pt,-4pt> at 0.5512 -0.3752
-% \setcoordinatesystem units <1.5truecm,1.5truecm> point at -4 0
-% \setplotarea x from -1.5 to 1.5, y from -1.5 to 1.5
-% \axis left shiftedto x=0 /
-% \axis bottom shiftedto y=0 /
-% \setlinear
-% \plot -1.5 -1 -1 0.5 -0.25 -0.25 0.5 1.4 1.5 -0.5 /
-% \multiput {$\bullet$} at -1 0.5 -0.25 -0.25 0.5 1.4 /
-% \multiput {$A$} [b] <0pt,4pt> at -1 0.5 0.5 1.4 /
-% \put {$B$} [t] <0pt,-4pt> at -0.25 -0.25 
-% \endpicture}
-% \figrdef{fig:max and min points}
-% \endfigure{Some local maximum points ($A$) and minimum points ($B$).}
+problems as well.
 
 If $(x,f(x))$ is a point where $f(x)$ reaches a local maximum or minimum,
 and if the derivative of $f$ exists at $x$, then the graph has a
 tangent line and the tangent line must be horizontal. This is
 important enough to state as a theorem, though we will not prove it.
 
-\begin{theorem} (Fermat's Theorem) If $f(x)$ has a local extremum at $x=a$ and
-$f$ is differentiable at $a$, then $f'(a)=0$.
-\end{theorem}
-\index{Fermat's Theorem}
+\begin{mainTheorem}[Fermat's Theorem]\index{Fermat's Theorem}
+If $f(x)$ has a local extremum at $x=a$ and $f(x)$ is differentiable at
+$a$, then $f'(a)=0$.
+\end{mainTheorem}
+\begin{marginfigure}[0in]
+\begin{tikzpicture}
+	\begin{axis}[
+            domain=-3:3,
+            ymax=3,
+            ymin=-3,
+            %samples=100,
+            axis lines =middle, xlabel=$x$, ylabel=$y$,
+            every axis y label/.style={at=(current axis.above origin),anchor=south},
+            every axis x label/.style={at=(current axis.right of origin),anchor=west}
+          ]
+          \addplot [dashed, textColor, smooth] plot coordinates {(.451,0) (.451,.631)}; %% {.451};
+          \addplot [dashed, textColor, smooth] plot coordinates {(2.215,-2.113) (2.215,0)}; %% axis{2.215};
+          \addplot [very thick, penColor2, smooth] {3*x^2-8*x+3};
+          \addplot [very thick, penColor, smooth] {x^3-4*x^2+3*x};
+          \node at (axis cs:2.5,-2) [anchor=west] {\color{penColor}$f(x)$};  
+          \node at (axis cs:.2,2) [anchor=west] {\color{penColor2}$f'(x)$};
+          \addplot[color=penColor2,fill=penColor2,only marks,mark=*] coordinates{(.451,0)};  %% closed hole
+          \addplot[color=penColor2,fill=penColor2,only marks,mark=*] coordinates{(2.215,0)};  %% closed hole
+          \addplot[color=penColor,fill=penColor,only marks,mark=*] coordinates{(.451,.631)};  %% closed hole
+          \addplot[color=penColor,fill=penColor,only marks,mark=*] coordinates{(2.215,-2.113)};  %% closed hole
+        \end{axis}
+\end{tikzpicture}
+\caption{A plot of $f(x) = x^3-4x^2+3x$ and $f'(x) = 3x^2-8x+3$.}
+\label{figure:x^3-4x^2+3x}
+\end{marginfigure}
+Thus, the only points at which a function can have a local maximum or
+minimum are points at which the derivative is zero, as in the left
+hand graph in Figure~\ref{figure:x^3-4x^2+3x}, or the derivative
+is undefined, as in Figure~\ref{figure:x^{2/3}}. This brings us to our next definition.
+\begin{marginfigure}[0in]
+\begin{tikzpicture}
+	\begin{axis}[
+            domain=-3:3,
+            ymax=3,
+            ymin=-1,
+            axis lines =middle, xlabel=$x$, ylabel=$y$,
+            every axis y label/.style={at=(current axis.above origin),anchor=south},
+            every axis x label/.style={at=(current axis.right of origin),anchor=west}
+          ]
+          \addplot [very thick, penColor2, samples=100, smooth,domain=(-3:-.01)] {(2/3)*abs(x)^(-1/3)};
+          \addplot [very thick, penColor2, samples=100, smooth,domain=(.01:3)] {(2/3)*abs(x)^(-1/3)};
+          \addplot [very thick, penColor, smooth,domain=(-3:-.01)] {abs(x)^(2/3)};
+          \addplot [very thick, penColor, smooth,domain=(.01:3)] {x^(2/3)};         
+          \node at (axis cs:-2,1.7) [anchor=west] {\color{penColor}$f(x)$};  
+          \node at (axis cs:2,.7) [anchor=west] {\color{penColor2}$f'(x)$};
+        \end{axis}
+\end{tikzpicture}
+\caption{A plot of $f(x) = x^{2/3}$ and $f'(x) = \frac{2}{3x^{1/3}}$.}
+\label{figure:x^{2/3}}
+\end{marginfigure}
 
-Thus, the only
-points at which a function can have a local maximum or minimum are
-points at which the derivative is zero, as in the left hand graph in
-figure~\xrefn{fig:max and min points},
-or the derivative is undefined, as in the right hand graph. Any value
-of $x$ for which $f'(x)$ is zero or undefined is called a
-{\dfont critical\index{critical value}
-value\/} for $f$.
-When looking for local maximum and minimum points, you are likely to
-make two sorts of mistakes: You may forget that a maximum or minimum
-can occur where the derivative does not exist, and so forget to check
-whether the derivative exists everywhere. You might also assume that
-any place that the derivative is zero is a local maximum or minimum
-point, but this is not true. A portion of the graph of $\ds f(x)=x^3$ is
-shown in figure~\xrefn{fig:non extremum}. The derivative of $f$ is
-$f'(x)=3x^2$, and $f'(0)=0$, but there is neither a maximum nor
-minimum at $(0,0)$.
+\begin{definition}\index{critical value}
+Any value of $x$ for which $f'(x)$ is zero or undefined is called a
+\textbf{critical value} for $f(x)$.
+\end{definition}
 
-% BADBAD
-% \figure
-% \vbox{\beginpicture
-% \normalgraphs
-% \ninepoint
-% \setcoordinatesystem units <1.5truecm,0.75truecm>
-% \setplotarea x from -1.5 to 1.5, y from -3.4 to 3.4
-% \axis left shiftedto x=0 /
-% \axis bottom shiftedto y=0 /
-% \setquadratic
-% \plot -1.500 -3.375 -1.425 -2.894 -1.350 -2.460 -1.275 -2.073 -1.200 -1.728 
-% -1.125 -1.424 -1.050 -1.158 -0.975 -0.927 -0.900 -0.729 -0.825 -0.562 
-% -0.750 -0.422 -0.675 -0.308 -0.600 -0.216 -0.525 -0.145 -0.450 -0.091 
-% -0.375 -0.053 -0.300 -0.027 -0.225 -0.011 -0.150 -0.003 -0.075 -0.000 
-% 0.000 0.000 0.075 0.000 0.150 0.003 0.225 0.011 0.300 0.027 
-% 0.375 0.053 0.450 0.091 0.525 0.145 0.600 0.216 0.675 0.308 
-% 0.750 0.422 0.825 0.562 0.900 0.729 0.975 0.927 1.050 1.158 
-% 1.125 1.424 1.200 1.728 1.275 2.073 1.350 2.460 1.425 2.894 
-% 1.500 3.375 /
-% \endpicture}
-% \figrdef{fig:non extremum}
-% \endfigure{No maximum or minimum even though the derivative is zero.}
+\begin{warning} When looking for local maximum and minimum points, you are likely to
+make two sorts of mistakes: 
+\begin{itemize}
+\item You may forget that a maximum or minimum can occur where the
+  derivative does not exist, and so forget to check whether the
+  derivative exists everywhere. 
+\item You might assume that any place that the derivative is zero is a
+  local maximum or minimum point, but this is not true. See Figure~\ref{figure:x^3}.
+\end{itemize}
+\end{warning}
+
+
 
 Since the derivative is zero or undefined at both local maximum and
 local minimum points, we need a way to determine which, if either,
-actually occurs. The most
-elementary approach, but one that is often tedious or difficult, is to
-test directly whether the $y$ coordinates ``near'' the potential
-maximum or minimum are above or below the $y$ coordinate at the point
-of interest. Of course, there are too many points ``near'' the point
-to test, but a little thought shows we need only test two provided we
-know that $f$ is continuous (recall that this means that the graph of
-$f$ has no jumps or gaps).
-
-Suppose, for example, that we have identified three points at which
-$f'$ is zero or nonexistent: $\ds (x_1,y_1)$, $\ds (x_2,y_2)$, $\ds (x_3,y_3)$,
-and $\ds x_1<x_2<x_3$ (see figure~\xrefn{fig:testing for max and
-min}). Suppose that we compute the value of $f(a)$ for $\ds x_1<a<x_2$, and
-that $\ds f(a)<f(x_2)$. What can we say about the graph between $a$ and
-$\ds x_2$? Could there be a point $\ds (b,f(b))$, $\ds a<b<x_2$ with
-$\ds f(b)>f(x_2)$? No: if there were, the graph would go up from
-$(a,f(a))$ to $(b,f(b))$ then down to $\ds (x_2,f(x_2))$ and somewhere in
-between would have a local maximum point. (This is not obvious; it is
-a result of the Extreme Value Theorem, theorem~\xrefn{thm:evt}.)
-But at that local maximum
-point the derivative of $f$ would be zero or nonexistent, yet we
-already know that the derivative is zero or nonexistent only at $\ds x_1$,
-$\ds x_2$, and $\ds x_3$. The upshot is that one computation tells us that
-$\ds (x_2,f(x_2))$ has the largest $y$ coordinate of any point on the
-graph near $\ds x_2$ and to the left of $\ds x_2$. We can perform the same
-test on the right. If we find that on both sides of $\ds x_2$ the values
-are smaller, then there must be a local maximum at $\ds (x_2,f(x_2))$; if
-we find that on both sides of $\ds x_2$ the values are larger, then there
-must be a local minimum at $\ds (x_2,f(x_2))$; if we find one of each,
-then there is neither a local maximum or minimum at $\ds x_2$.
-
-% BADBAD
-% \figure
-% \vbox{\beginpicture
-% \normalgraphs
-% \ninepoint
-% \setcoordinatesystem units <1.5truecm,1truecm>
-% \setplotarea x from -1.5 to 1.5, y from -1.5 to 1.5
-% \axis left shiftedto x=0 /
-% \axis bottom shiftedto y=0 ticks withvalues 
-% {$x_1$} {$a$} {$b$} {$x_2$} {$x_3$} / at
-% -1.3 -1 -0.5 0.5 1 / /
-% \multiput {$\bullet$} at -1.3 0.5 -1 0.8 0.5 1.3 1 0.2 /
-% \setquadratic
-% \endpicture}
-% \figrdef{fig:testing for max and min}
-% \endfigure{Testing for a maximum or minimum.}
+actually occurs. The most elementary approach is to test directly
+whether the $y$ coordinates near the potential maximum or minimum are
+above or below the $y$ coordinate at the point of interest. 
+\begin{marginfigure}[0in]
+\begin{tikzpicture}
+	\begin{axis}[
+            domain=-3:3,
+            ymax=3,
+            ymin=-3,
+            axis lines =middle, xlabel=$x$, ylabel=$y$,
+            every axis y label/.style={at=(current axis.above origin),anchor=south},
+            every axis x label/.style={at=(current axis.right of origin),anchor=west}
+          ]
+          \addplot [very thick, penColor2, smooth] {3*x^2};
+          \addplot [very thick, penColor, smooth] {x^3};         
+          \node at (axis cs:1,.9) [anchor=west] {\color{penColor}$f(x)$};  
+          \node at (axis cs:-.5,1) [anchor=west] {\color{penColor2}$f'(x)$};
+        \end{axis}
+\end{tikzpicture}
+\caption{A plot of $f(x) = x^3$ and $f'(x) = 3x^2$. While $f'(0)=0$,
+  there is neither a maximum nor minimum at $(0,f(0))$.}
+\label{figure:x^3}
+\end{marginfigure}
 
 It is not always easy to compute the value of a function at a
 particular point. The task is made easier by the availability of
@@ -178,81 +149,90 @@ sometimes easy to perform, you should always consider it.
 
 \begin{example}
 Find all local maximum and minimum points for the function 
-$\ds f(x)=x^3-x$. The derivative is $\ds f'(x)=3x^2-1$. This is defined
-everywhere and is zero at $\ds x=\pm \sqrt{3}/3$. Looking first at
-$\ds x=\sqrt{3}/3$, we see that $\ds f(\sqrt{3}/3)=-2\sqrt{3}/9$. Now we test
-two points on either side of 
-$\ds x=\sqrt{3}/3$, making sure that neither is farther away than
-the nearest critical value; since $\ds \sqrt{3}<3$, $\ds \sqrt{3}/3<1$ and
-we can use $x=0$ and $x=1$. Since
-$\ds f(0)=0>-2\sqrt{3}/9$
-and $\ds f(1)=0>-2\sqrt{3}/9$, there must be a local minimum at 
-$\ds x=\sqrt{3}/3$. For $\ds x=-\sqrt{3}/3$, we see that
-$\ds f(-\sqrt{3}/3)=2\sqrt{3}/9$. This time we can use $x=0$ and $x=-1$,
-and we find that $\ds f(-1)=f(0)=0< 2\sqrt{3}/9$, so there must be a local
-maximum at $\ds x=-\sqrt{3}/3$.
-\end{example}
-\label{exam:simple cubic}
-
-Of course this example is made very simple by our choice of points to
-test, namely $x=-1$, $0$, $1$. We could have used other values, say
-$-5/4$, $1/3$, and $3/4$, but this would have made the calculations
-considerably more tedious.
-
-\begin{example}
-\label{example:max and min}
-Find all local maximum and minimum points for 
-$f(x)=\sin x+\cos x$. The derivative is $f'(x)=\cos x-\sin x$. This is
-always defined and is zero whenever $\cos x=\sin x$. Recalling that
-the $\cos x$ and $\sin x$ are the $x$ and $y$ coordinates of points on
-a unit circle, we see that $\cos x=\sin x$ when $x$ is $\pi/4$, 
-$\pi/4\pm\pi$, $\pi/4\pm2\pi$, $\pi/4\pm3\pi$, etc. Since both sine
-and cosine have a period of $2\pi$, we need only determine the status
-of $x=\pi/4$ and $x=5\pi/4$. We can use $0$ and $\pi/2$ to test the
-critical value $x= \pi/4$. 
-We find that $\ds f(\pi/4)=\sqrt{2}$, $\ds f(0)=1<\sqrt{2}$ and $\ds f(\pi/2)=1$,
-so there is a local maximum when $x=\pi/4$ and also when
-$x=\pi/4\pm2\pi$, $\pi/4\pm4\pi$, etc. We can summarize this more
-neatly by saying that there are local maxima at $\pi/4\pm 2k\pi$ for
-every integer $k$.
-
-We use $\pi$ and $2\pi$ to test the critical value $x=5\pi/4$. The
-relevant values are $\ds f(5\pi/4)=-\sqrt2$, $\ds f(\pi)=-1>-\sqrt2$,
-$\ds f(2\pi)=1>-\sqrt2$, so there is a local minimum at $x=5\pi/4$,
-$5\pi/4\pm2\pi$, $5\pi/4\pm4\pi$, etc. More succinctly, there are
-local minima at $5\pi/4\pm 2k\pi$ for
-every integer $k$.
+$f(x)=x^3-x$. 
 \end{example}
 
-\begin{exercises} In problems 1--12, find all local maximum and minimum
-points $(x,y)$ by the method of this section.
+\begin{solution} 
+Write
+\[
+\ddx f(x)=3x^2-1.
+\] 
+This is defined everywhere and is zero at $x=\pm \sqrt{3}/3$. Looking
+first at $x=\sqrt{3}/3$, we see that 
+\[
+f(\sqrt{3}/3)=-2\sqrt{3}/9.
+\] 
+Now we test two points on either side of $x=\sqrt{3}/3$, making sure
+that neither is farther away than the nearest critical value; since
+$\sqrt{3}<3$, $\sqrt{3}/3<1$ and we can use $x=0$ and $x=1$. Since
+\[
+f(0)=0>-2\sqrt{3}/9\qquad\text{and}\qquad f(1)=0>-2\sqrt{3}/9,
+\] 
+there must be a local minimum at $x=\sqrt{3}/3$.
+
+For $x=-\sqrt{3}/3$, we see that $f(-\sqrt{3}/3)=2\sqrt{3}/9$. This
+time we can use $x=0$ and $x=-1$, and we find that $f(-1)=f(0)=0<
+2\sqrt{3}/9$, so there must be a local maximum at $x=-\sqrt{3}/3$, see
+Figure~\ref{figure:x^3-x}.
+\end{solution}
+\begin{marginfigure}[0in]
+\begin{tikzpicture}
+	\begin{axis}[
+            domain=-2:2,
+            ymax=2,
+            ymin=-2,
+            %samples=100,
+            axis lines =middle, xlabel=$x$, ylabel=$y$,
+            every axis y label/.style={at=(current axis.above origin),anchor=south},
+            every axis x label/.style={at=(current axis.right of origin),anchor=west}
+          ]
+          \addplot [dashed, textColor, smooth] plot coordinates {(-.577,0) (-.577,.385)}; %% {.451};
+          \addplot [dashed, textColor, smooth] plot coordinates {(.577,-.385) (.577,0)}; %% axis{2.215};
+          \addplot [very thick, penColor2, smooth] {3*x^2-1};
+          \addplot [very thick, penColor, smooth] {x^3-x};
+          \node at (axis cs:1,1) [anchor=west] {\color{penColor}$f(x)$};  
+          \node at (axis cs:-.75,1) [anchor=west] {\color{penColor2}$f'(x)$};
+          \addplot[color=penColor2,fill=penColor2,only marks,mark=*] coordinates{(-.577,0)};  %% closed hole
+          \addplot[color=penColor2,fill=penColor2,only marks,mark=*] coordinates{(.577,0)};  %% closed hole
+          \addplot[color=penColor,fill=penColor,only marks,mark=*] coordinates{(-.577,.385)};  %% closed hole
+          \addplot[color=penColor,fill=penColor,only marks,mark=*] coordinates{(.577,-.385)};  %% closed hole
+        \end{axis}
+\end{tikzpicture}
+\caption{A plot of $f(x) = x^3-x$ and $f'(x) = 3x^2-1$.}
+\label{figure:x^3-x}
+\end{marginfigure}
+
+
+\begin{exercises} 
+\noindent In problems 1--12, find all local maximum and minimum points
+$(x,y)$ by the method of this section.
 
 \twocol
-\begin{exercise} $\ds y=x^2-x$ 
+\begin{exercise} $y=x^2-x$ 
 \begin{answer} min at $x=1/2$
 \end{answer}\end{exercise}
 
-\begin{exercise} $\ds y=2+3x-x^3$ 
+\begin{exercise} $y=2+3x-x^3$ 
 \begin{answer} min at $x=-1$, max at $x=1$
 \end{answer}\end{exercise}
 
-\begin{exercise} $\ds y=x^3-9x^2+24x$
+\begin{exercise} $y=x^3-9x^2+24x$
 \begin{answer} max at $x=2$, min at $x=4$
 \end{answer}\end{exercise}
 
-\begin{exercise} $\ds y=x^4-2x^2+3$ 
+\begin{exercise} $y=x^4-2x^2+3$ 
 \begin{answer} min at $x=\pm 1$, max at $x=0$.
 \end{answer}\end{exercise}
 
-\begin{exercise} $\ds y=3x^4-4x^3$
+\begin{exercise} $y=3x^4-4x^3$
 \begin{answer} min at $x=1$
 \end{answer}\end{exercise}
 
-\begin{exercise} $\ds y=(x^2-1)/x$
+\begin{exercise} $y=(x^2-1)/x$
 \begin{answer} none
 \end{answer}\end{exercise}
 
-\begin{exercise} $\ds y=3x^2-(1/x^2)$ 
+\begin{exercise} $y=3x^2-(1/x^2)$ 
 \begin{answer} none
 \end{answer}\end{exercise}
 
@@ -260,29 +240,29 @@ points $(x,y)$ by the method of this section.
 \begin{answer} min at $x=7\pi/12+k\pi$, max at $x=-\pi/12+k\pi$, for integer $k$.
 \end{answer}\end{exercise}
 
-\begin{exercise} $\ds f(x) = \begin{cases} x-1 & x < 2  \\
+\begin{exercise} $f(x) = \begin{cases} x-1 & x < 2  \\
 x^2 & x\geq 2 \end{cases}$
 \begin{answer} none
 \end{answer}\end{exercise}
 
- \begin{exercise} $\ds f(x) = \begin{cases} x-3 & x < 3  \\
+ \begin{exercise} $f(x) = \begin{cases} x-3 & x < 3  \\
 x^3  & 3\leq x \leq 5 \\
 1/x  & x>5 \end{cases}$
 \begin{answer} local max at $x=5$
 \end{answer}\end{exercise}
 
-\begin{exercise} $\ds f(x) = x^2 - 98x + 4$
+\begin{exercise} $f(x) = x^2 - 98x + 4$
 %(Hint: Complete the square.)
 \begin{answer} local min at $x=49$
 \end{answer}\end{exercise}
 
-\begin{exercise} $\ds f(x) =\begin{cases} -2 & x = 0  \\
+\begin{exercise} $f(x) =\begin{cases} -2 & x = 0  \\
 1/x^2 & x \neq 0 \end{cases}$
 \begin{answer} local min at $x=0$
 \end{answer}\end{exercise}
 
 \endtwocol
-\bsk
+
 \begin{exercise}  For any real number $x$ there is a unique
   integer $n$ such that $n \leq x < n +1$, and the greatest
   integer\index{greatest integer} function is defined as $\ds\lfloor
@@ -304,7 +284,7 @@ points. Give examples to show that a cubic polynomial can have zero,
 one, or two critical points.
 \end{exercise}
 
-\begin{exercise} Explore the family of functions $\ds f(x) = x^3 + cx +1$ where $c$
+\begin{exercise} Explore the family of functions $f(x) = x^3 + cx +1$ where $c$
  is a constant.  How many and what types of local extremes are there?
  Your answer should depend on the value of $c$, that is, different
  values of $c$ will give different answers.
@@ -321,14 +301,28 @@ which says that a polynomial of degree $n$ has
 \end{exercises}
 
 
-\section{The first derivative test} {}{}
-\nobreak
+
+
+
+
+
+
+
+\section{The First Derivative Test}
+
 The method of the previous section for deciding whether there is a
-local maximum or minimum at a critical value is not always
-convenient. We can instead use information about the derivative
-$f'(x)$ to decide; since we have already had to compute the derivative
-to find the critical values, there is often relatively little extra
-work involved in this method.
+local maximum or minimum at a critical value by testing ``near-by''
+points is not always convenient. Instead, since we have already had to
+compute the derivative to find the critical values, we can use
+information about the derivative to decide.
+
+\begin{mainTheorem}[First Derivative Test]\index{first derivative test}\hfil
+\begin{enumerate}
+\item If $f'(x) >0$ on an interval, then $f(x)$ is increasing on that interval
+\item If $f'(x) <0$ on an interval, then $f(x)$ is decreasing on that interval.
+\end{enumerate}
+\end{mainTheorem}
+
 
 How can the derivative tell us whether there is a maximum, minimum, or
 neither at a point? Suppose that $f'(a)=0$. If there is a local
@@ -430,31 +424,31 @@ local maximum points, local minimum points, or neither.
 
 \twocol
 
-\begin{exercise} $\ds y=x^2-x$ 
+\begin{exercise} $y=x^2-x$ 
 \begin{answer} min at $x=1/2$
 \end{answer}\end{exercise}
 
-\begin{exercise} $\ds y=2+3x-x^3$ 
+\begin{exercise} $y=2+3x-x^3$ 
 \begin{answer} min at $x=-1$, max at $x=1$
 \end{answer}\end{exercise}
 
-\begin{exercise} $\ds y=x^3-9x^2+24x$
+\begin{exercise} $y=x^3-9x^2+24x$
 \begin{answer} max at $x=2$, min at $x=4$
 \end{answer}\end{exercise}
 
-\begin{exercise} $\ds y=x^4-2x^2+3$ 
+\begin{exercise} $y=x^4-2x^2+3$ 
 \begin{answer} min at $x=\pm 1$, max at $x=0$.
 \end{answer}\end{exercise}
 
-\begin{exercise} $\ds y=3x^4-4x^3$
+\begin{exercise} $y=3x^4-4x^3$
 \begin{answer} min at $x=1$
 \end{answer}\end{exercise}
 
-\begin{exercise} $\ds y=(x^2-1)/x$
+\begin{exercise} $y=(x^2-1)/x$
 \begin{answer} none
 \end{answer}\end{exercise}
 
-\begin{exercise} $\ds y=3x^2-(1/x^2)$ 
+\begin{exercise} $y=3x^2-(1/x^2)$ 
 \begin{answer} none
 \end{answer}\end{exercise}
 
@@ -463,24 +457,24 @@ local maximum points, local minimum points, or neither.
 \end{answer}\end{exercise}
 
 \begin{exercise}
-$\ds f(x) = (5-x)/(x+2)$
+$f(x) = (5-x)/(x+2)$
 \begin{answer} none
 \end{answer}\end{exercise}
 
-\begin{exercise} $\ds f(x) = |x^2 - 121|$
+\begin{exercise} $f(x) = |x^2 - 121|$
 \begin{answer} max at $x=0$, min at $x=\pm 11$
 \end{answer}\end{exercise}
 
-\begin{exercise} $\ds f(x) = x^3/(x+1)$
+\begin{exercise} $f(x) = x^3/(x+1)$
 \begin{answer} min at $x=-3/2$, neither at $x=0$
 \end{answer}\end{exercise}
 
-\begin{exercise} $\ds f(x)= \begin{cases}
+\begin{exercise} $f(x)= \begin{cases}
 x^2 \sin(1/x)  & x\neq 0  \\
  0  & x=0 \end{cases}$
 \end{exercise}
 
-\begin{exercise} $\ds f(x) = \sin ^2 x$
+\begin{exercise} $f(x) = \sin ^2 x$
 \begin{answer} min at $n\pi$, max at $\pi/2+n\pi$
 \end{answer}\end{exercise}
 
@@ -490,7 +484,7 @@ x^2 \sin(1/x)  & x\neq 0  \\
 \begin{answer} min at $2n\pi$, max at $(2n+1)\pi$
 \end{answer}\end{exercise}
 
-\begin{exercise}  Let $\ds f(\theta) = \cos^2(\theta) -
+\begin{exercise}  Let $f(\theta) = \cos^2(\theta) -
  2\sin(\theta)$.  Find the intervals where $f$ is increasing and the
  intervals where $f$ is decreasing in $[0,2\pi]$.  Use this
  information to classify the critical points of $f$ as either local
@@ -499,11 +493,11 @@ x^2 \sin(1/x)  & x\neq 0  \\
 \end{answer}\end{exercise}
 
 \begin{exercise} Let $r>0$. Find the local
-maxima and minima of the function $\ds f(x)
+maxima and minima of the function $f(x)
 =\sqrt{r^2 -x^2 }$ on its domain $[-r,r]$.
 \end{exercise}
 
-\begin{exercise} Let $\ds f(x) =a x^2 + bx + c$ with $a\neq 0$. Show that $f$
+\begin{exercise} Let $f(x) =a x^2 + bx + c$ with $a\neq 0$. Show that $f$
 has exactly one critical point using the first derivative test. Give
 conditions on $a$ and $b$ which guarantee that the critical point will
 be a maximum. It is possible to see this without using calculus at
@@ -516,8 +510,8 @@ all; explain.
 
 
 
-\section{The second derivative test} {}{}
-\nobreak
+\section{The Second Derivative Test}
+
 The basis of the first derivative test is that if the derivative
 changes from positive to negative at a point at which the derivative
 is zero then there is a local maximum at the point, and similarly for
@@ -534,9 +528,9 @@ minimum.
 
 \begin{example}
 Consider again $f(x)=\sin x + \cos x$, with $f'(x)=\cos x-\sin x$ and
-$ f''(x)=-\sin x -\cos x$. Since $\ds f''(\pi/4)=-\sqrt{2}/2-\sqrt2/2=-\sqrt2<0$,
+$ f''(x)=-\sin x -\cos x$. Since $f''(\pi/4)=-\sqrt{2}/2-\sqrt2/2=-\sqrt2<0$,
 we know there is a local maximum at $\pi/4$. Since
-$\ds f''(5\pi/4)=--\sqrt{2}/2--\sqrt2/2=\sqrt2>0$, there is a local
+$f''(5\pi/4)=--\sqrt{2}/2--\sqrt2/2=\sqrt2>0$, there is a local
 minimum at $5\pi/4$.
 \end{example}
 
@@ -546,13 +540,13 @@ and sometimes the second derivative is quite difficult to evaluate; in
 such cases we must fall back on one of the previous tests.
 
 \begin{example}
-Let $\ds f(x)=x^4$. The derivatives are $\ds f'(x)=4x^3$ and
-$\ds f''(x)=12x^2$. Zero is the only critical value, but $f''(0)=0$, so
+Let $f(x)=x^4$. The derivatives are $f'(x)=4x^3$ and
+$f''(x)=12x^2$. Zero is the only critical value, but $f''(0)=0$, so
 the second derivative test tells us nothing. However, $f(x)$ is
 positive everywhere except at zero, so clearly $f(x)$ has a local
-minimum at zero. On the other hand, $\ds f(x)=-x^4$ also has zero as its
+minimum at zero. On the other hand, $f(x)=-x^4$ also has zero as its
 only critical value, and the second derivative is again zero, but
-$\ds -x^4$ has a local maximum at zero.
+$-x^4$ has a local maximum at zero.
 \end{example}
 
 \begin{exercises}
@@ -560,31 +554,31 @@ Find all local maximum and minimum points by the second derivative
 test. 
 
 \twocol
-\begin{exercise} $\ds y=x^2-x$ 
+\begin{exercise} $y=x^2-x$ 
 \begin{answer} min at $x=1/2$
 \end{answer}\end{exercise}
 
-\begin{exercise} $\ds y=2+3x-x^3$ 
+\begin{exercise} $y=2+3x-x^3$ 
 \begin{answer} min at $x=-1$, max at $x=1$
 \end{answer}\end{exercise}
 
-\begin{exercise} $\ds y=x^3-9x^2+24x$
+\begin{exercise} $y=x^3-9x^2+24x$
 \begin{answer} max at $x=2$, min at $x=4$
 \end{answer}\end{exercise}
 
-\begin{exercise} $\ds y=x^4-2x^2+3$ 
+\begin{exercise} $y=x^4-2x^2+3$ 
 \begin{answer} min at $x=\pm 1$, max at $x=0$.
 \end{answer}\end{exercise}
 
-\begin{exercise} $\ds y=3x^4-4x^3$
+\begin{exercise} $y=3x^4-4x^3$
 \begin{answer} min at $x=1$
 \end{answer}\end{exercise}
 
-\begin{exercise} $\ds y=(x^2-1)/x$
+\begin{exercise} $y=(x^2-1)/x$
 \begin{answer} none
 \end{answer}\end{exercise}
 
-\begin{exercise} $\ds y=3x^2-(1/x^2)$ 
+\begin{exercise} $y=3x^2-(1/x^2)$ 
 \begin{answer} none
 \end{answer}\end{exercise}
 
@@ -592,43 +586,43 @@ test.
 \begin{answer} min at $x=7\pi/12+n\pi$, max at $x=-\pi/12+n\pi$, for integer $n$.
 \end{answer}\end{exercise}
 
-\begin{exercise} $\ds y = 4x+\sqrt{1-x}$
+\begin{exercise} $y = 4x+\sqrt{1-x}$
 \begin{answer} max at $x=63/64$
 \end{answer}\end{exercise}
 
-\begin{exercise} $\ds y = (x+1)/\sqrt{5x^2 + 35}$
+\begin{exercise} $y = (x+1)/\sqrt{5x^2 + 35}$
 \begin{answer} max at $x=7$
 \end{answer}\end{exercise}
 
-\begin{exercise} $\ds y= x^5 - x$
-\begin{answer} max at $\ds -5^{-1/4}$, min at $\ds 5^{-1/4}$
+\begin{exercise} $y= x^5 - x$
+\begin{answer} max at $-5^{-1/4}$, min at $5^{-1/4}$
 \end{answer}\end{exercise}
 
-\begin{exercise} $\ds y = 6x +\sin 3x$
+\begin{exercise} $y = 6x +\sin 3x$
 \begin{answer} none
 \end{answer}\end{exercise}
 
-\begin{exercise} $\ds y = x+ 1/x$
+\begin{exercise} $y = x+ 1/x$
 \begin{answer} max at $-1$, min at $1$
 \end{answer}\end{exercise}
 
-\begin{exercise} $\ds y = x^2+ 1/x$
-\begin{answer} min at $\ds 2^{-1/3}$
+\begin{exercise} $y = x^2+ 1/x$
+\begin{answer} min at $2^{-1/3}$
 \end{answer}\end{exercise}
 
-\begin{exercise} $\ds y = (x+5)^{1/4}$
+\begin{exercise} $y = (x+5)^{1/4}$
 \begin{answer} none
 \end{answer}\end{exercise}
 
-\begin{exercise} $\ds y = \tan^2 x$
+\begin{exercise} $y = \tan^2 x$
 \begin{answer} min at $n\pi$
 \end{answer}\end{exercise}
 
-\begin{exercise} $\ds y =\cos^2 x - \sin^2 x$
+\begin{exercise} $y =\cos^2 x - \sin^2 x$
 \begin{answer} max at $n\pi$, min at $\pi/2+n\pi$
 \end{answer}\end{exercise}
 
-\begin{exercise} $\ds y = \sin^3 x$
+\begin{exercise} $y = \sin^3 x$
 \begin{answer} max at $\pi/2+2n\pi$, min at $3\pi/2+2n\pi$
 \end{answer}\end{exercise}
 
@@ -716,10 +710,10 @@ usually $f''(a)=0$. We can identify such points by first finding where
 $f''(x)$ is zero and then checking to see whether $f''(x)$ does in
 fact go from positive to negative or negative to positive at these
 points. Note that it is possible that $f''(a)=0$ but the concavity is
-the same on both sides; $\ds f(x)=x^4$ at $x=0$ is an example.
+the same on both sides; $f(x)=x^4$ at $x=0$ is an example.
 
 \begin{example}
-Describe the concavity of $\ds f(x)=x^3-x$. $\ds f'(x)=3x^2-1$, $f''(x)=6x$.
+Describe the concavity of $f(x)=x^3-x$. $f'(x)=3x^2-1$, $f''(x)=6x$.
 Since $f''(0)=0$, there is potentially an inflection point at
 zero. Since $f''(x)>0$ when $x>0$ and $f''(x)<0$ when $x<0$ the
 concavity does change from down to up at zero, and the curve is
@@ -736,33 +730,33 @@ Describe the concavity of the functions in 1--18.
 
 \twocol
 
-\begin{exercise} $\ds y=x^2-x$ 
+\begin{exercise} $y=x^2-x$ 
 \begin{answer} concave up everywhere
 \end{answer}\end{exercise}
 
-\begin{exercise} $\ds y=2+3x-x^3$ 
+\begin{exercise} $y=2+3x-x^3$ 
 \begin{answer} concave up when $x<0$, concave down when $x>0$
 \end{answer}\end{exercise}
 
-\begin{exercise} $\ds y=x^3-9x^2+24x$
+\begin{exercise} $y=x^3-9x^2+24x$
 \begin{answer} concave down when $x<3$, concave up when $x>3$
 \end{answer}\end{exercise}
 
-\begin{exercise} $\ds y=x^4-2x^2+3$ 
-\begin{answer} concave up when $\ds x<-1/\sqrt3$ or $\ds x>1/\sqrt3$,
-concave down when $\ds -1/\sqrt3<x<1/\sqrt3$
+\begin{exercise} $y=x^4-2x^2+3$ 
+\begin{answer} concave up when $x<-1/\sqrt3$ or $x>1/\sqrt3$,
+concave down when $-1/\sqrt3<x<1/\sqrt3$
 \end{answer}\end{exercise}
 
-\begin{exercise} $\ds y=3x^4-4x^3$
+\begin{exercise} $y=3x^4-4x^3$
 \begin{answer} concave up when $x<0$ or $x>2/3$,
 concave down when $0<x<2/3$
 \end{answer}\end{exercise}
 
-\begin{exercise} $\ds y=(x^2-1)/x$
+\begin{exercise} $y=(x^2-1)/x$
 \begin{answer} concave up when $x<0$, concave down when $x>0$
 \end{answer}\end{exercise}
 
-\begin{exercise} $\ds y=3x^2-(1/x^2)$ 
+\begin{exercise} $y=3x^2-(1/x^2)$ 
 \begin{answer} concave up when $x<-1$ or $x>1$, concave down when
 $-1<x<0$ or $0<x<1$
 \end{answer}\end{exercise}
@@ -772,58 +766,58 @@ $-1<x<0$ or $0<x<1$
 concave up on $((8n+3)\pi/4,(8n+7)\pi/4)$, for integer $n$
 \end{answer}\end{exercise}
 
-\begin{exercise} $\ds y = 4x+\sqrt{1-x}$
+\begin{exercise} $y = 4x+\sqrt{1-x}$
 \begin{answer} concave down everywhere
 \end{answer}\end{exercise}
 
-\begin{exercise} $\ds y = (x+1)/\sqrt{5x^2 + 35}$
-\begin{answer} concave up on $\ds (-\infty,(21-\sqrt{497})/4)$ and 
-$\ds (21+\sqrt{497})/4,\infty)$
+\begin{exercise} $y = (x+1)/\sqrt{5x^2 + 35}$
+\begin{answer} concave up on $(-\infty,(21-\sqrt{497})/4)$ and 
+$(21+\sqrt{497})/4,\infty)$
 \end{answer}\end{exercise}
 
-\begin{exercise} $\ds y= x^5 - x$
+\begin{exercise} $y= x^5 - x$
 \begin{answer} concave up on $(0,\infty)$
 \end{answer}\end{exercise}
 
-\begin{exercise} $\ds y = 6x + \sin 3x$
+\begin{exercise} $y = 6x + \sin 3x$
 \begin{answer} concave down on $(2n\pi/3,(2n+1)\pi/3)$
 \end{answer}\end{exercise}
 
-\begin{exercise} $\ds y = x+ 1/x$
+\begin{exercise} $y = x+ 1/x$
 \begin{answer} concave up on $(0,\infty)$
 \end{answer}\end{exercise}
 
-\begin{exercise} $\ds y = x^2+ 1/x$
+\begin{exercise} $y = x^2+ 1/x$
 \begin{answer} concave up on $(-\infty,-1)$ and $(0,\infty)$
 \end{answer}\end{exercise}
 
-\begin{exercise} $\ds y = (x+5)^{1/4}$
+\begin{exercise} $y = (x+5)^{1/4}$
 \begin{answer} concave down everywhere
 \end{answer}\end{exercise}
 
-\begin{exercise} $\ds y = \tan^2 x$
+\begin{exercise} $y = \tan^2 x$
 \begin{answer} concave up everywhere
 \end{answer}\end{exercise}
 
-\begin{exercise} $\ds y =\cos^2 x - \sin^2 x$
+\begin{exercise} $y =\cos^2 x - \sin^2 x$
 \begin{answer} concave up on $(\pi/4+n\pi,3\pi/4+n\pi)$
 \end{answer}\end{exercise}
 
-\begin{exercise} $\ds y = \sin^3 x$
-\begin{answer} inflection points at $n\pi$, $\ds \pm\arcsin(\sqrt{2/3})+n\pi$
+\begin{exercise} $y = \sin^3 x$
+\begin{answer} inflection points at $n\pi$, $\pm\arcsin(\sqrt{2/3})+n\pi$
 \end{answer}\end{exercise}
 
 \endtwocol
 
 \msk \begin{exercise} Identify the intervals on which the graph of the function
-$\ds f(x) = x^4-4x^3 +10$ is of one of these four
+$f(x) = x^4-4x^3 +10$ is of one of these four
 shapes: concave up and increasing; concave up and decreasing; concave
 down and increasing; concave down and decreasing.
 \begin{answer} up/incr: $(3,\infty)$, up/decr: $(-\infty,0)$, $(2,3)$,
 down/decr: $(0,2)$
 \end{answer}\end{exercise}
 
-\begin{exercise} Describe the concavity of $\ds y =  x^3 + bx^2 + cx + d$.
+\begin{exercise} Describe the concavity of $y =  x^3 + bx^2 + cx + d$.
 You will need to consider different cases, depending on the values of
 the coefficients.
 \end{exercise}
@@ -882,7 +876,7 @@ fundamental theorem of algebra.
 % and concave down.
 % \label{exer:linear concavity} 
 % 
-% \begin{exercise} Let $\ds f(x) = ax^2 + bx +c$ with $a \neq 0$. Use the second
+% \begin{exercise} Let $f(x) = ax^2 + bx +c$ with $a \neq 0$. Use the second
 % derivative test to show that $f$ is concave up on all of $\R$
 % if $a>0$ and that $f$ is concave down on all of $\R$ if $a<0$.
 % \label{exer:quadratic concavity}
@@ -915,15 +909,15 @@ denominator it is worth looking for a vertical asymptote by
 checking to see if the denominator can ever be zero, and then checking
 the limit at such points. Note that there is not always a vertical
 asymptote where the derivative is zero: $f(x)=(\sin x)/x$ has a zero
-denominator at $x=0$, but since $\ds \lim_{x\to 0}(\sin x)/x=1$ there is
+denominator at $x=0$, but since $\lim_{x\to 0}(\sin x)/x=1$ there is
 no asymptote there.
 
 A horizontal asymptote is a horizontal line to which $f(x)$ gets closer and
 closer as $x$ approaches $\infty$ (or as $x$ approaches $-\infty$).  For
 example, the reciprocal function has the $x$-axis for a horizontal
 asymptote.  Horizontal asymptotes can be identified by computing 
-the limits $\ds \lim_{x \to \infty}f(x)$ and $\ds \lim_{x \to -\infty}f(x)$.
-Since $\ds \lim_{x \to \infty}1/x=\lim_{x \to -\infty}1/x=0$, the line
+the limits $\lim_{x \to \infty}f(x)$ and $\lim_{x \to -\infty}f(x)$.
+Since $\lim_{x \to \infty}1/x=\lim_{x \to -\infty}1/x=0$, the line
 $y=0$ (that is, the $x$-axis) is a horizontal asymptote in both directions.
 
 Some functions have asymptotes that are neither horizontal nor
@@ -932,7 +926,7 @@ difficult to identify and we will ignore them.
 
 If the domain of the function does not extend out to infinity, we should
 also ask what happens as $x$ approaches the boundary of the domain.  For
-example, the function $\ds y=f(x)=1/\sqrt{r^2-x^2}$ has domain $-r<x<r$, and
+example, the function $y=f(x)=1/\sqrt{r^2-x^2}$ has domain $-r<x<r$, and
 $y$ becomes infinite as $x$ approaches either $r$ or $-r$. In this
 case we might also identify this behavior because when $x=\pm r$ the
 denominator of the function is zero.
@@ -944,8 +938,8 @@ a point.
 Finally, it is worthwhile to notice any symmetry.  A function $f(x)$ that
 has the same value for $-x$ as for $x$, i.e., $f(-x)=f(x)$, is called an
 ``even function.''  Its graph is symmetric with respect to the $y$-axis.
-Some examples of even functions are: $\ds x^n$ when $n$ is an even number,
-$\cos x$, and $\ds \sin^2x$.  On the other hand, a function that satisfies the
+Some examples of even functions are: $x^n$ when $n$ is an even number,
+$\cos x$, and $\sin^2x$.  On the other hand, a function that satisfies the
 property $f(-x)=-f(x)$ is called an ``odd function.''  Its graph is
 symmetric with respect to the origin.  Some examples of odd functions are:
 $x^n$ when $n$ is an odd number, $\sin x$, and $\tan x$.  Of course, most
@@ -960,67 +954,67 @@ intercepts.
 
 \twocol
 
-\begin{exercise} $\ds y=x^5-5x^4+5x^3$
+\begin{exercise} $y=x^5-5x^4+5x^3$
 \end{exercise}
 
-\begin{exercise} $\ds y=x^3-3x^2-9x+5$
+\begin{exercise} $y=x^3-3x^2-9x+5$
 \end{exercise}
 
-\begin{exercise} $\ds y=(x-1)^2(x+3)^{2/3}$
+\begin{exercise} $y=(x-1)^2(x+3)^{2/3}$
 \end{exercise}
 
-\begin{exercise} $\ds x^2+x^2y^2=a^2y^2$, $a>0$.
+\begin{exercise} $x^2+x^2y^2=a^2y^2$, $a>0$.
 \end{exercise}
 
-\begin{exercise} $\ds y = 4x+\sqrt{1-x}$
+\begin{exercise} $y = 4x+\sqrt{1-x}$
 \end{exercise}
 
-\begin{exercise} $\ds y = (x+1)/\sqrt{5x^2 + 35}$
+\begin{exercise} $y = (x+1)/\sqrt{5x^2 + 35}$
 \end{exercise}
 
-\begin{exercise} $\ds y= x^5 - x$
+\begin{exercise} $y= x^5 - x$
 \end{exercise}
 
-\begin{exercise} $\ds y = 6x + \sin 3x$
+\begin{exercise} $y = 6x + \sin 3x$
 \end{exercise}
 
-\begin{exercise} $\ds y = x+ 1/x$
+\begin{exercise} $y = x+ 1/x$
 \end{exercise}
 
-\begin{exercise} $\ds y = x^2+ 1/x$
+\begin{exercise} $y = x^2+ 1/x$
 \end{exercise}
 
-\begin{exercise} $\ds y = (x+5)^{1/4}$
+\begin{exercise} $y = (x+5)^{1/4}$
 \end{exercise}
 
-\begin{exercise} $\ds y = \tan^2 x$
+\begin{exercise} $y = \tan^2 x$
 \end{exercise}
 
-\begin{exercise} $\ds y =\cos^2 x - \sin^2 x$
+\begin{exercise} $y =\cos^2 x - \sin^2 x$
 \end{exercise}
 
-\begin{exercise} $\ds y = \sin^3 x$
+\begin{exercise} $y = \sin^3 x$
 \end{exercise}
 
-\begin{exercise} $\ds y=x(x^2+1)$
+\begin{exercise} $y=x(x^2+1)$
 \end{exercise}
 
-\begin{exercise} $\ds y=x^3+6x^2 + 9x$
+\begin{exercise} $y=x^3+6x^2 + 9x$
 \end{exercise}
 
-\begin{exercise} $\ds y=x/(x^2-9)$
+\begin{exercise} $y=x/(x^2-9)$
 \end{exercise}
 
-\begin{exercise} $\ds y=x^2/(x^2+9)$
+\begin{exercise} $y=x^2/(x^2+9)$
 \end{exercise}
 
-\begin{exercise} $\ds y=2\sqrt{x} - x$
+\begin{exercise} $y=2\sqrt{x} - x$
 \end{exercise}
 
-\begin{exercise} $\ds y=3\sin(x) - \sin^3(x)$, for $x\in[0,2\pi]$
+\begin{exercise} $y=3\sin(x) - \sin^3(x)$, for $x\in[0,2\pi]$
 \end{exercise}
 
-\begin{exercise} $\ds y=(x-1)/(x^2)$
+\begin{exercise} $y=(x-1)/(x^2)$
 \end{exercise}
 
 \endtwocol
@@ -1033,12 +1027,12 @@ concave up and increasing; concave up and decreasing; concave
 down and increasing; concave down and decreasing.
 
 \begin{exercise} $f(\theta)=\sec(\theta)$ \end{exercise}
-\begin{exercise} $\ds f(x) = 1/(1+x^2)$\end{exercise}
-\begin{exercise} $\ds f(x) = (x-3)/(2x-2)$ \end{exercise}
-\begin{exercise} $\ds f(x) = 1/(1-x^2)$\end{exercise}
-\begin{exercise} $\ds f(x) = 1+1/(x^2)$\end{exercise}
+\begin{exercise} $f(x) = 1/(1+x^2)$\end{exercise}
+\begin{exercise} $f(x) = (x-3)/(2x-2)$ \end{exercise}
+\begin{exercise} $f(x) = 1/(1-x^2)$\end{exercise}
+\begin{exercise} $f(x) = 1+1/(x^2)$\end{exercise}
 
-\begin{exercise} Let $\ds f(x) = 1/(x^2-a^2)$, where $a\geq0$.  Find any
+\begin{exercise} Let $f(x) = 1/(x^2-a^2)$, where $a\geq0$.  Find any
  vertical and horizontal asymptotes and the intervals upon which the
  given function is concave up and increasing; concave up and
  decreasing; concave down and increasing; concave down and decreasing.
