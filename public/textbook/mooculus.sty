@@ -28,14 +28,7 @@
 \usetikzlibrary{decorations}
 \tikzset{>=stealth} %% makes all arrows the same
 
-\RequirePackage{dingbat,pifont}
-\newcommand{\video}[2][0in]{
-  \marginnote[#1]{\href{#2}{\ding{224}\raisebox{.8pt}{\eye}}}
-  }
 
-\newcommand{\onlineEx}[2][0in]{
-  \marginnote[#1]{\href{#2}{\ding{224}\smallpencil}}
-  }
 
 
 %% Font
@@ -120,6 +113,44 @@
 
 %% Table colors
 \newenvironment{tchart}{\rowcolors{2}{}{background!95!textColor}\array}{\endarray}
+
+
+
+
+
+
+
+
+%% Adds marginpar like links
+\RequirePackage{dingbat,pifont}
+\newcommand{\film}{\begin{tikzpicture}[scale=.09,color=hyperColor]
+%\draw[help lines] (0,0) grid (5,4);
+\draw [thick] (0,0) -- (0,4);
+\draw [thick] (5,0) -- (5,4);
+
+\draw [thick] (0,0) -- (5,0);
+\draw [thick] (0,4) -- (5,4);
+\draw [thick] (0,2) -- (5,2);
+
+\draw [thick] (1,0) -- (1,4);
+\draw [thick] (4,0) -- (4,4);
+
+\draw [thick] (0,1) -- (1,1);
+\draw [thick] (0,3) -- (1,3);
+\draw [thick] (4,1) -- (5,1);
+\draw [thick] (4,3) -- (5,3);
+\end{tikzpicture}}
+
+\newcommand{\video}[2][0in]{
+  \marginnote[#1]{\href{#2}{\scalebox{2}{\ding{224}}\film}}
+  }
+
+\newcommand{\onlineEx}[2][0in]{
+  \marginnote[#1]{\href{#2}{\scalebox{2}{\ding{224}}\raisebox{1.5pt}{\pmb{\smallpencil}}}}
+  }
+
+
+
 
 
 
