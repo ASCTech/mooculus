@@ -101,7 +101,41 @@ $.tmpl = {
 
         "data-unwrap": function(elem) {
             return $(elem).contents();
+        },
+
+        "data-video-hint": function(elem) {
+            var youtubeIds = $(elem).data("youtube-id");
+            if (!youtubeIds) {
+                return;
+            }
+
+            youtubeIds = youtubeIds.split(/,\s*/);
+
+            var author = $(elem).data("video-hint-author") || "Sal";
+            var msg = "Watch " + author +
+                      " work through a very similar problem:";
+            var preface = $("<p>").text(msg);
+
+            var wrapper = $("<div>", { "class": "video-hint" });
+            wrapper.append(preface);
+
+            _.each(youtubeIds, function(youtubeId) {
+                var href = "http://www.mooculus.osu.edu/embed_video?v=" +
+                            youtubeId;
+                var iframe = $("<iframe>").attr({
+                    "frameborder": "0",
+                    "scrolling": "no",
+                    "width": "100%",
+                    "height": "360px",
+                    "src": href
+                });
+
+                wrapper.append(iframe);
+            });
+
+            return wrapper;
         }
+
     },
 
     // Processors that act based on tag names
@@ -185,6 +219,10 @@ $.tmpl = {
                     // Clean up any strange mathematical expressions
                     var text = $elem.text();
                     $elem.text(KhanUtil.cleanMath ? KhanUtil.cleanMath(text) : text);
+
+		    // The above code was needed for KathJax to work, but now
+		    // I'm just going to replace the content with an appropriate script tag
+		    $(elem).replaceWith('<script type="math/tex">' + text + '</script>');
 
                     // Stick the processing request onto the queue
                     if (typeof MathJax !== "undefined") {
