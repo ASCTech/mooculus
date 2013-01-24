@@ -317,24 +317,26 @@ The method of the previous section for deciding whether there is a
 local maximum or minimum at a critical value by testing ``near-by''
 points is not always convenient. Instead, since we have already had to
 compute the derivative to find the critical values, we can use
-information about the derivative to decide.
-
-\begin{mainTheorem}[First Derivative Test]\index{first derivative test}\hfil
+information about the derivative to decide. Recall that
 \begin{enumerate}
-\item If $f'(x) >0$ on an interval, then $f(x)$ is increasing on that interval
+\item If $f'(x) >0$ on an interval, then $f(x)$ is increasing on that interval.
 \item If $f'(x) <0$ on an interval, then $f(x)$ is decreasing on that interval.
 \end{enumerate}
-\end{mainTheorem}
 
-
-How can the derivative tell us whether there is a maximum, minimum, or
-neither at a point? Suppose that $f'(a)=0$:
+So how exactly does the derivative tell us whether there is a maximum,
+minimum, or neither at a point? Use the first derivative test.
+\begin{mainTheorem}[First Derivative Test]\index{first derivative test}\label{T:fdt}\hfil
+Suppose that $f(x)$ is continuous on an interval, and that $f'(a)=0$
+for some value of $a$ in that interval.
 \begin{itemize}
-\item If there is a local maximum when $x=a$, $f(x)$ must be
-  increasing before $x=a$ and decreasing after $x=a$.
-\item If there is a local minimum when $x=a$, $f(x)$ must be
-  increasing before $x=a$ and decreasing after $x=a$.
+\item If $f'(x)>0$ to the left of $a$ and $f'(x)<0$ to the right of
+  $a$, then $f(a)$ is a local maximum.
+\item If $f'(x)<0$ to the left of $a$ and $f'(x)>0$ to the right of
+  $a$, then $f(a)$ is a local minimum.
+\item If there $f'(x)$ has the same sign to the left and right of
+  $f'(a)$, then $f'(a)$ is not a local extremum.
 \end{itemize}
+\end{mainTheorem}
 
 \begin{example}
 Consider the function 
@@ -411,8 +413,8 @@ From this we can make a sign table:
 
 
 Hence $f(x)$ is increasing on $(-2,0)\cup(1,\infty)$ and $f(x)$ is
-decreasing on $(-\infty,-2)\cup(0,1)$. Moreover the local maximum is
-at $x=0$ while the local minima are at $x=-2$ and $x=1$. See
+decreasing on $(-\infty,-2)\cup(0,1)$. Moreover, from the first derivative test, Theorem~\ref{T:fdt}, the local maximum is
+at $x=0$ while the local minima are at $x=-2$ and $x=1$, see
 Figure~\ref{figure:(x^4)/4 + (x^3)/3 -x^2}.
 \end{solution}
 \begin{marginfigure}[-3in]
@@ -426,19 +428,20 @@ Figure~\ref{figure:(x^4)/4 + (x^3)/3 -x^2}.
             every axis y label/.style={at=(current axis.above origin),anchor=south},
             every axis x label/.style={at=(current axis.right of origin),anchor=west}
           ]
-          \addplot [dashed, textColor, smooth] plot coordinates {(-.577,0) (-.577,.385)}; %% {.451};
-          \addplot [dashed, textColor, smooth] plot coordinates {(.577,-.385) (.577,0)}; %% axis{2.215};
+          \addplot [dashed, textColor, smooth] plot coordinates {(-2,0) (-2,-2.667)}; %% {.451};
+          \addplot [dashed, textColor, smooth] plot coordinates {(1,0) (1,-.4167)}; %% axis{2.215};
 
           \addplot [very thick, penColor, smooth] {(x^4)/4 + (x^3)/3 -x^2};
           \addplot [very thick, penColor2, smooth] {x^3 + x^2 -2*x};
 
-          \node at (axis cs:1,1) [anchor=west] {\color{penColor}$f(x)$};  
-          \node at (axis cs:-.75,1) [anchor=west] {\color{penColor2}$f'(x)$};
+          \node at (axis cs:-1.3,-2) [anchor=west] {\color{penColor}$f(x)$};  
+          \node at (axis cs:-2.1,2) [anchor=west] {\color{penColor2}$f'(x)$};
 
-          \addplot[color=penColor2,fill=penColor2,only marks,mark=*] coordinates{(-.577,0)};  %% closed hole
-          \addplot[color=penColor2,fill=penColor2,only marks,mark=*] coordinates{(.577,0)};  %% closed hole
-          \addplot[color=penColor,fill=penColor,only marks,mark=*] coordinates{(-.577,.385)};  %% closed hole
-          \addplot[color=penColor,fill=penColor,only marks,mark=*] coordinates{(.577,-.385)};  %% closed hole
+          \addplot[color=penColor2,fill=penColor2,only marks,mark=*] coordinates{(-2,0)};  %% closed hole
+          \addplot[color=penColor2,fill=penColor2,only marks,mark=*] coordinates{(1,0)};  %% closed hole
+          \addplot[color=penColor2,fill=penColor3,only marks,mark=*] coordinates{(0,0)};  %% closed hole
+          \addplot[color=penColor,fill=penColor,only marks,mark=*] coordinates{(-2,.-2.667)};  %% closed hole
+          \addplot[color=penColor,fill=penColor,only marks,mark=*] coordinates{(1,-.4167)};  %% closed hole
         \end{axis}
 \end{tikzpicture}
 \label{figure:(x^4)/4 + (x^3)/3 -x^2}
@@ -534,7 +537,6 @@ conditions on $a$ and $b$ which guarantee that the critical point will
 be a maximum. It is possible to see this without using calculus at
 all; explain.
 \end{exercise}
-
 \end{exercises}
 
 
@@ -546,16 +548,19 @@ all; explain.
 The basis of the first derivative test is that if the derivative
 changes from positive to negative at a point at which the derivative
 is zero then there is a local maximum at the point, and similarly for
-a local minimum. If $f'$ changes from positive to negative it is
-decreasing; this means that the derivative of $f'$, $f''$, might be negative,
-and if in fact $f''$ is negative then $f'$ is definitely
-decreasing, so there is a local maximum at the point in question. Note
-well that $f'$ might change from positive to negative while $f''$ is
-zero, in which case $f''$ gives us no information about the critical
-value. Similarly, if $f'$ changes from negative to positive there is a
-local minimum at the point, and $f'$ is increasing. If $f''>0$ at the
-point, this tells us that $f'$ is increasing, and so there is a local
-minimum. 
+a local minimum. 
+
+
+If $f'(x)$ changes from positive to negative it is
+decreasing; this means that the derivative of $f'(x)$, $f''(x)$, might
+be negative, and if in fact $f''(x)$ is negative then $f'$ is
+definitely decreasing, so there is a local maximum at the point in
+question. Note well that $f'(x)$ might change from positive to
+negative while $f''(x)$ is zero, in which case $f''(x)$ gives us no
+information about the critical value. Similarly, if $f'(x)$ changes
+from negative to positive there is a local minimum at the point, and
+$f'$ is increasing. If $f''>0$ at the point, this tells us that $f'$
+is increasing, and so there is a local minimum.
 
 \begin{example}
 Consider again $f(x)=\sin x + \cos x$, with $f'(x)=\cos x-\sin x$ and
