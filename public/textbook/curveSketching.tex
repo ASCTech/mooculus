@@ -108,7 +108,7 @@ make two sorts of mistakes:
   derivative does not exist, and so forget to check whether the
   derivative exists everywhere. 
 \item You might assume that any place that the derivative is zero is a
-  local maximum or minimum point, but this is not true. See Figure~\ref{figure:x^3}.
+  local maximum or minimum point, but this is not true, see Figure~\ref{figure:x^3}.
 \end{itemize}
 \end{warning}
 
@@ -188,10 +188,13 @@ Figure~\ref{figure:x^3-x}.
           ]
           \addplot [dashed, textColor, smooth] plot coordinates {(-.577,0) (-.577,.385)}; %% {.451};
           \addplot [dashed, textColor, smooth] plot coordinates {(.577,-.385) (.577,0)}; %% axis{2.215};
+
           \addplot [very thick, penColor2, smooth] {3*x^2-1};
           \addplot [very thick, penColor, smooth] {x^3-x};
+
           \node at (axis cs:1,1) [anchor=west] {\color{penColor}$f(x)$};  
           \node at (axis cs:-.75,1) [anchor=west] {\color{penColor2}$f'(x)$};
+
           \addplot[color=penColor2,fill=penColor2,only marks,mark=*] coordinates{(-.577,0)};  %% closed hole
           \addplot[color=penColor2,fill=penColor2,only marks,mark=*] coordinates{(.577,0)};  %% closed hole
           \addplot[color=penColor,fill=penColor,only marks,mark=*] coordinates{(-.577,.385)};  %% closed hole
@@ -338,10 +341,8 @@ Consider the function
 \[
 f(x) = \frac{x^4}{4}+\frac{x^3}{3}-x^2
 \]
-\begin{enumerate}
-\item Find the intervals on which $f(x)$ is increasing and decreasing.
-\item Identify the local extrema of $f(x)$. 
-\end{enumerate}
+Find the intervals on which $f(x)$ is increasing and decreasing and
+identify the local extrema of $f(x)$.
 \end{example}
 
 \begin{solution}
@@ -362,16 +363,22 @@ f'(x) &= x^3+x^2-2x \\
 \end{align*}
 So the critical values (when $f'(x)=0$) are when $x=-2$, $x=0$, and
 $x=1$. Now we can check points between the critical values to find
-when $f'(x)$ is increasing and decreasing and make a sign table:
+when $f'(x)$ is increasing and decreasing:
+\[
+f'(-3)=-12 \qquad f'(.5)=-0.625 \qquad f'(-1)=2 \qquad f'(2)=8
+\]
+From this we can make a sign table:
+
+\flushleft
 \begin{tikzpicture}
 	\begin{axis}[
-            %trim axis left,
+            trim axis left,
+            scale only axis,
             domain=-3:3,
             ymax=2,
             ymin=-2,
             axis lines=none,
-            height=4cm, %% Hard coded height! 
-            %scale only axis,
+            height=3cm, %% Hard coded height! 
             width=\textwidth, %% width
           ]
           \addplot [draw=none, fill=fill1, domain=(-3:-2)] {2} \closedcycle;
@@ -389,15 +396,10 @@ when $f'(x)$ is increasing and decreasing and make a sign table:
           \node at (axis cs:0,0) [anchor=north,textColor] {\footnotesize$0$};
           \node at (axis cs:1,0) [anchor=north,textColor] {\footnotesize$1$};
 
-          \node at (axis cs:-2.5,1) [anchor=south,textColor] {\footnotesize$f'(x)<0$};
-          \node at (axis cs:.5,1) [anchor=south,textColor] {\footnotesize$f'(x)<0$};
-          \node at (axis cs:-1,1) [anchor=south,textColor] {\footnotesize$f'(x)>0$};
-          \node at (axis cs:2,1) [anchor=south,textColor] {\footnotesize$f'(x)>0$};
-
-          \node at (axis cs:-2.5,.5) [anchor=south,textColor] {\footnotesize$f'(-3)=-12$};
-          \node at (axis cs:.5,.5) [anchor=south,textColor] {\footnotesize$f'(.5)=-0.625$};
-          \node at (axis cs:-1,.5) [anchor=south,textColor] {\footnotesize$f'(-1)=2$};
-          \node at (axis cs:2,.5) [anchor=south,textColor] {\footnotesize$f'(2)=8$};
+          \node at (axis cs:-2.5,1) [textColor] {\footnotesize$f'(x)<0$};
+          \node at (axis cs:.5,1) [textColor] {\footnotesize$f'(x)<0$};
+          \node at (axis cs:-1,1) [textColor] {\footnotesize$f'(x)>0$};
+          \node at (axis cs:2,1) [textColor] {\footnotesize$f'(x)>0$};
 
           \node at (axis cs:-2.5,-.5) [anchor=north,textColor] {\footnotesize Decreasing};
           \node at (axis cs:.5,-.5) [anchor=north,textColor] {\footnotesize Decreasing};
@@ -408,6 +410,12 @@ when $f'(x)$ is increasing and decreasing and make a sign table:
 \end{tikzpicture}
 
 
+Hence $f(x)$ is increasing on $(-2,0)\cup(1,\infty)$ and $f(x)$ is
+decreasing on $(-\infty,-2)\cup(0,1)$. Moreover the local maximum is
+at $x=0$ while the local minima are at $x=-2$ and $x=1$. See
+Figure~\ref{figure:(x^4)/4 + (x^3)/3 -x^2}.
+\end{solution}
+\begin{marginfigure}[-3in]
 \begin{tikzpicture}
 	\begin{axis}[
             domain=-4:4,
@@ -418,12 +426,27 @@ when $f'(x)$ is increasing and decreasing and make a sign table:
             every axis y label/.style={at=(current axis.above origin),anchor=south},
             every axis x label/.style={at=(current axis.right of origin),anchor=west}
           ]
+          \addplot [dashed, textColor, smooth] plot coordinates {(-.577,0) (-.577,.385)}; %% {.451};
+          \addplot [dashed, textColor, smooth] plot coordinates {(.577,-.385) (.577,0)}; %% axis{2.215};
 
           \addplot [very thick, penColor, smooth] {(x^4)/4 + (x^3)/3 -x^2};
+          \addplot [very thick, penColor2, smooth] {x^3 + x^2 -2*x};
+
+          \node at (axis cs:1,1) [anchor=west] {\color{penColor}$f(x)$};  
+          \node at (axis cs:-.75,1) [anchor=west] {\color{penColor2}$f'(x)$};
+
+          \addplot[color=penColor2,fill=penColor2,only marks,mark=*] coordinates{(-.577,0)};  %% closed hole
+          \addplot[color=penColor2,fill=penColor2,only marks,mark=*] coordinates{(.577,0)};  %% closed hole
+          \addplot[color=penColor,fill=penColor,only marks,mark=*] coordinates{(-.577,.385)};  %% closed hole
+          \addplot[color=penColor,fill=penColor,only marks,mark=*] coordinates{(.577,-.385)};  %% closed hole
         \end{axis}
 \end{tikzpicture}
+\label{figure:(x^4)/4 + (x^3)/3 -x^2}
+\caption{}
+\end{marginfigure}
 
-\end{solution}
+
+
 
 \begin{exercises}
 In 1--13,
