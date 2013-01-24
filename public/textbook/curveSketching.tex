@@ -406,6 +406,23 @@ when $f'(x)$ is increasing and decreasing and make a sign table:
 
         \end{axis}
 \end{tikzpicture}
+
+
+\begin{tikzpicture}
+	\begin{axis}[
+            domain=-4:4,
+            ymax=5,
+            ymin=-5,
+            %samples=100,
+            axis lines =middle, xlabel=$x$, ylabel=$y$,
+            every axis y label/.style={at=(current axis.above origin),anchor=south},
+            every axis x label/.style={at=(current axis.right of origin),anchor=west}
+          ]
+
+          \addplot [very thick, penColor, smooth] {(x^4)/4 + (x^3)/3 -x^2};
+        \end{axis}
+\end{tikzpicture}
+
 \end{solution}
 
 \begin{exercises}
