@@ -6,8 +6,6 @@
 
 
 
-%\RequirePackage{hyperref}
-%\RequirePackage[table]{xcolor}
 \RequirePackage[framemethod=TikZ]{mdframed}
 \RequirePackage{environ}
 %\RequirePackage{xkeyval}
@@ -28,14 +26,7 @@
 \usetikzlibrary{decorations}
 \tikzset{>=stealth} %% makes all arrows the same
 
-\RequirePackage{dingbat,pifont}
-\newcommand{\video}[2][0in]{
-  \marginnote[#1]{\href{#2}{\ding{224}\raisebox{.8pt}{\eye}}}
-  }
 
-\newcommand{\onlineEx}[2][0in]{
-  \marginnote[#1]{\href{#2}{\ding{224}\smallpencil}}
-  }
 
 
 %% Font
@@ -120,6 +111,47 @@
 
 %% Table colors
 \newenvironment{tchart}{\rowcolors{2}{}{background!95!textColor}\array}{\endarray}
+
+
+
+
+
+
+
+
+%% Adds marginpar like links
+\RequirePackage{dingbat,pifont}
+\newcommand{\film}{\begin{tikzpicture}[scale=.09,color=hyperColor]
+%\draw[help lines] (0,0) grid (5,4);
+\draw [thick] (0,0) -- (0,4);
+\draw [thick] (5,0) -- (5,4);
+
+\draw [thick] (0,0) -- (5,0);
+\draw [thick] (0,4) -- (5,4);
+\draw [thick] (0,2) -- (5,2);
+
+\draw [thick] (1,0) -- (1,4);
+\draw [thick] (4,0) -- (4,4);
+
+\draw [thick] (0,1) -- (1,1);
+\draw [thick] (0,3) -- (1,3);
+\draw [thick] (4,1) -- (5,1);
+\draw [thick] (4,3) -- (5,3);
+\end{tikzpicture}}
+
+
+\newcommand{\linkArrow}{\raisebox{-4pt}{\scalebox{2}{\ding{224}}}}
+
+\newcommand{\video}[2][0in]{%% positioning needs fixed
+  \marginnote[#1]{\href{#2}{\linkArrow\film}}
+  }
+
+\newcommand{\onlineEx}[2][0in]{%% positioning needs fixed
+  \marginnote[#1]{\href{#2}{\linkArrow\raisebox{1.5pt}{\pmb{\smallpencil}}}}
+  }
+
+
+
 
 
 
@@ -280,7 +312,7 @@ font=\upshape
 
 
 \newmdtheoremenv[hidealllines=true,leftmargin=40,roundcorner=10pt%
-rightmargin=40,backgroundcolor=red!10,%
+rightmargin=40,backgroundcolor=red!5!background,%
 innertopmargin=6pt,%
 splittopskip=\topskip,skipbelow=\baselineskip,%
 skipabove=\baselineskip]{warning}%
@@ -381,20 +413,21 @@ skipabove=\baselineskip]{warning}%
   \newpage
   \dumpanswer[\noexpand\subsection*{Answers for \arabic{chapter}.\arabic{section}}]
   \subsection*{Exercises for Section \arabic{chapter}.\arabic{section}}
-\vspace{-15pt}
-
-\rule{\textwidth}{2pt}
+  \vspace{-15pt}
+  
+  \rule{\textwidth}{2pt}
   \setcounter{exercise}{0}
   \BODY
-\newpage
+  \newpage
 }%
 {}
 \newenvironment{exercise}{
-\begin{enumerate}[(1)]
-  \setcounter{enumi}{\value{exercise}}
-  \item \addtocounter{exercise}{1}
+  \begin{enumerate}[(1)]
+    \setcounter{enumi}{\value{exercise}}
+  \item \addtocounter{exercise}{1} 
 }
-{\end{enumerate}}
+           {%\hyperlink{a:\thesection\value{exercise}}{\linkArrow} %% for adding a link to exercises
+           \end{enumerate}}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -406,18 +439,16 @@ skipabove=\baselineskip]{warning}%
 
 \newtoks{\answercontent}
          \NewEnviron{answer}{%
-         \answercontent=\expandafter{\BODY\hspace{1em}}
-         \dumpanswer[\arabic{exercise}. \the\answercontent]
+           \answercontent=\expandafter{\BODY\qquad}
+         \dumpanswer[\noexpand\bfseries\arabic{exercise}.\space\noexpand\mdseries \the\answercontent]
          }
 
          \def\finalizeanswers{\immediate\closeout\answer@stream}
 \makeatother
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-
-
-
-
+%\hyperlink{foo_1}{This becomes a link}.
+%\hypertarget{foo_1}{This is the target}.
 
 
 
