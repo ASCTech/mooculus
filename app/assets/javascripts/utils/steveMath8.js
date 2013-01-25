@@ -194,6 +194,35 @@ $.extend(KhanUtil, {
     		}
     		
     	},
+    
+    randFunction: function(depth, operations,vars){
+    		var i = KhanUtil.randRange(0,operations.length-1);
+    		var operator = operations[i];
+    		if (depth>0){
+    			if (operator == "+"){
+    				return "("+KhanUtil.randFunction(depth-1,operations,vars) + "+" + KhanUtil.randFunction(depth-1,operations,vars) +")"
+    				}
+    			else if (operator == "-"){
+    				return "("+KhanUtil.randFunction(depth-1,operations,vars) + "-" + KhanUtil.randFunction(depth-1,operations,vars) +")"
+    				}
+    			else if (operator == "*"){
+    				return "("+KhanUtil.randFunction(depth-1,operations,vars) + "*" + KhanUtil.randFunction(depth-1,operations,vars) +")"
+    				}
+    			else if (operator == "/"){
+    				return "("+KhanUtil.randFunction(depth-1,operations,vars) + "/" + KhanUtil.randFunction(depth-1,operations,vars) +")"
+    				}
+    			else if (operator == "^"){
+    				return "("+KhanUtil.randFunction(depth-1,operations,vars) + "^" + KhanUtil.randFunction(depth-1,operations,vars) +")"
+    				}
+    			else {
+    				return "("+operator + "(" + KhanUtil.randFunction(depth-1,operations,vars) +"))"
+    				}
+    			}
+    		if (depth ==0){
+    			var k = KhanUtil.randRange(0,vars.length-1);
+    			return vars[k]
+    			}
+    		},
     	
     	
     
