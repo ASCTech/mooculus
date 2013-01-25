@@ -111,7 +111,7 @@ e
     | '(' e ')'
         {$$ = $2;}
     | EXP e %prec FUNCTION_APPLICATION
-        {$$ = new StraightLineProgram(function(bindings){ return Math.exp($2.evaluate(bindings)); },
+        {$$ = new StraightLineProgram(function(bindings){ return Math.pow(Math.E,$2.evaluate(bindings)); },
 				      'e^{' + $2.tex + '}',
 				      ['^', 'e', $2.syntax_tree] );}
     | LOG e %prec FUNCTION_APPLICATION

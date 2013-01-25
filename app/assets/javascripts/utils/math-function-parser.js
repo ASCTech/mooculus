@@ -57,7 +57,7 @@ case 13:this.$ = $$[$0];
 break;
 case 14:this.$ = $$[$0-1];
 break;
-case 15:this.$ = new StraightLineProgram(function(bindings){ return Math.exp($$[$0].evaluate(bindings)); },
+case 15:this.$ = new StraightLineProgram(function(bindings){ return Math.pow(Math.E,$$[$0].evaluate(bindings)); },
 				      'e^{' + $$[$0].tex + '}',
 				      ['^', 'e', $$[$0].syntax_tree] );
 break;
