@@ -39,10 +39,10 @@
 
 
 %left '+' '-'
+%left UMINUS
 %left '*' '/'
 %right '^'
 %left FUNCTION_APPLICATION
-%left UMINUS
 
 %start expressions
 
