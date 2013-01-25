@@ -2347,6 +2347,9 @@ var Khan = (function() {
 		appended.fadeIn(400);
 		appended.runModules(problem);
 
+		// Reprocess the math in the hint
+		MathJax.Hub.Queue(["Typeset",MathJax.Hub,hint]);
+
                 // Grow the scratchpad to cover the new hint
                 Khan.scratchpad.resize();
 
