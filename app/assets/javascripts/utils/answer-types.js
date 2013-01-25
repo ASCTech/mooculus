@@ -1386,10 +1386,11 @@ Khan.answerTypes = $.extend(Khan.answerTypes, {
     "parsedExpression": {
 	setup: function(solutionarea, solution) {
 	    // Add a text box
-	    var input = $('<input id="MathInput" onkeyup="Preview.Update()" class="input-large" type="text">');
-	    $(solutionarea).append(input); 
 	    $(solutionarea).append('<div id="MathPreview" style="padding: 3px; width:100%; margin-top:5px; display: none;"><script type="math/tex"></script></div>');
 	    $(solutionarea).append('<div id="MathFunctionError" style="display: none; font-weight: bold; color: red;">Error: the expression is invalid.</div>');
+
+	    var input = $('<input id="MathInput" onkeyup="Preview.Update()" class="input-large" type="text">');
+	    $(solutionarea).append(input); 
 	    // The fallback variable is used in place of the answer, if no
 	    // answer is provided (i.e. the field is left blank)
 	    var fallback = $(solution).data("fallback");
@@ -1411,9 +1412,9 @@ Khan.answerTypes = $.extend(Khan.answerTypes, {
 	},
 	createValidator: function(solution) {
 	    var correct = mathFunctionParser.parse($.trim($(solution).text()));
-	    
 	    return function(guess) {
 		guess_expression = mathFunctionParser.parse($.trim(guess));
+		console.log( "comparing " + guess_expression.tex + " wth the correct " + correct.tex );
 		return correct.equals(guess_expression);
 	    };
 	}
