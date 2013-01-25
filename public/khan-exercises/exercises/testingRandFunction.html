@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html data-require="math word-problems steveMath8 math-function-parser">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>Test Function Parser</title>
+    <script src="../khan-exercise.js"></script>
+</head>
+<body>
+  <div class="exercise">
+    <div class="vars">
+		<var id="EXP">randFunction(3,["+","*","power","coefficient","sin","cos","exp"],["x"])</var>
+		<var id="LaTeXEXP">mathFunctionParser.parse(EXP).tex</var>
+		<var id="ghgh">mathFunctionParser.parse(EXP).f({x:2})</var>
+    </div>
+
+    <div class="problems">
+      <div id="testing-function">
+
+        <p class="question">  
+         	Write 2.
+        	<br/><br/>
+        	<var>EXP</var>
+        	<br/><br/>
+        	<code><var>LaTeXEXP</var></code>
+        	<br/><br/>
+        	Value at <code>x=2, y=3: <var>ghgh</var></code>
+        	</p>    
+        <p class="solution">
+        	2
+        </p>
+       
+      </div>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html data-require="math math-format graphie interactive ast math-model subhints steveMath8">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>Understanding the product rule geometrically and algebraically</title>
+    <script src="../khan-exercise.js"></script>
+</head>
+<body>
+<div class="exercise">
+    <div class="vars" >
+        
+        
+        
+    <var id = "Xs">makeXList()</var>
+    <var id = "A">randRange(-14,14)/7</var>
+	<var id = "Ys">makeYList(-8,8,Xs.length)</var>
+	<var id = "points">makeCoordinates(Xs,Ys)</var>
+	<var id = "f">(function(x){return niceFunction(x,points)})</var>
+	<var id = "gXs">makeXList()</var>
+    <var id = "gA">randRange(-14,14)/7</var>
+	<var id = "gYs">makeYList(-8,8,gXs.length)</var>
+	<var id = "gpoints">makeCoordinates(gXs,gYs)</var>
+	<var id = "g">(function(x){return niceFunction(x,gpoints)})</var>
+	<var id = "fg">(function(x){return f(x)*g(x)})</var>
+	<var id ="findMax">(function(f){
+		var max = f(-10)
+		for (var i =0; i &lt; 200; i++)
+			{
+			if (f(-10+i/10)&gt; max){
+				max = f(-10+i/10)
+				}	
+			}
+		return max
+		
+		})	
+	</var>
+	<var id ="findMin">(function(f){
+		var min = f(-10)
+		for (var i =0; i &lt; 200; i++)
+			{
+			if (f(-10+i/10)&lt; min){
+				min = f(-10+i/10)
+				}	
+			}
+		return min
+		
+		})	
+	</var>
+	<var id="max">findMax(fg)+3</var>
+	
+	
+    </div>
+
+   
+  
+
+    
+
+    <div class="problems">
+        <div id="standard-form">
+          <p class = "problem"> 
+          gfdgf
+          </p>
+          <p class="question"> gfdg </p>
+          <div class="graphie" id="grid">
+            graphInit({
+                range: 11,
+                scale: 20,
+                axisArrows: "&lt;-&gt;",
+                tickStep: 1,
+                labelStep: 1,
+                gridOpacity: 0.0001,
+                axisOpacity: 0.2,
+                tickOpacity: 0.001,
+                labelOpacity: 0.001
+            });
+			
+			   plot(function( x ) {
+              return ( f(x));
+              }, [-12, 12], {
+              stroke: RED,
+              strokeWidth: 1
+              });
+                             
+              circle( [A,f(A)], 1/4, {
+              stroke: "none",
+              fill: "#37ca3e"
+              });
+              
+              plot(function( x ) {
+              return ( g(x));
+              }, [-12, 12], {
+              stroke: GREEN,
+              strokeWidth: 2
+              });
+                             
+              circle( [A,g(A)], 1/4, {
+              stroke: "none",
+              fill: "#37ca3e"
+              });
+              
+              plot(function( x ) {
+              return ( f(x)*g(x)*10/max);
+              }, [-12, 12], {
+              stroke: BLUE,
+              strokeWidth: 3
+              });
+                             
+              circle( [A,f(A)*g(A)*10/max], 1/4, {
+              stroke: "none",
+              fill: "#37ca3e"
+              });
+              
+              
+             
+             
+
+        </div>
+        <p class="solution">1</p>
+        	
+		<div class="hints">
+			<p>
+				Place the point of tangency of the movable tangent line right over the green point.  Now move
+				the point of tangency a little to the right.  Did the slope increase or decrease?
+			</p>
+		</div>
+      
+          
+       </div>
+
+    </div>
+
+</div>
+</body>
+</html>
