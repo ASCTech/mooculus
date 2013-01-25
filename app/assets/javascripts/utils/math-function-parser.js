@@ -31,7 +31,7 @@ case 6:this.$ = new StraightLineProgram(function(bindings){ return $$[$0-2].eval
 				      '\\left(' + $$[$0-2].tex + ' \\cdot ' + $$[$0].tex + '\\right)',
 				      ['*', $$[$0-2].syntax_tree, $$[$0].syntax_tree] );
 break;
-case 7:this.$ = new StraightLineProgram(function(bindings){ return Math.pow($$[$0-3].evaluate(bindings) * $$[$0-2].evaluate(bindings),$$[$0].evaluate(bindings)); },
+case 7:this.$ = new StraightLineProgram(function(bindings){ return $$[$0-3].evaluate(bindings) * Math.pow($$[$0-2].evaluate(bindings),$$[$0].evaluate(bindings)); },
 	  			      '\\left(' + $$[$0-3].tex + ' \\cdot \\left(' + $$[$0-2].tex + '\\right)^{' + $$[$0].tex + '}\\right)',
 				      ['*', $$[$0-3].syntax_tree, ['^', $$[$0-2].syntax_tree, $$[$0].syntax_tree]] );
 break;

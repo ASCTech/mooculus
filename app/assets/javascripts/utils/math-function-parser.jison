@@ -59,7 +59,7 @@ expressions
 
 number
     : NUMBER
-        {$$ = new StraightLineProgram(function(bindings){ return parseFloat(yytext.replace(',','.')); },
+{$$ = new StraightLineProgram(function(bindings){ return parseFloat(yytext.replace(',','.')); },
 				      parseFloat(yytext.replace(',','.')).toString(),
 				      parseFloat(yytext.replace(',','.')).toString());}
     ;
@@ -85,7 +85,7 @@ e
 				      '\\left(' + $1.tex + ' \\cdot ' + $3.tex + '\\right)',
 				      ['*', $1.syntax_tree, $3.syntax_tree] );}
     | number variable '^' e
-        {$$ = new StraightLineProgram(function(bindings){ return Math.pow($1.evaluate(bindings) * $2.evaluate(bindings),$4.evaluate(bindings)); },
+        {$$ = new StraightLineProgram(function(bindings){ return $1.evaluate(bindings) * Math.pow($2.evaluate(bindings),$4.evaluate(bindings)); },
 	  			      '\\left(' + $1.tex + ' \\cdot \\left(' + $2.tex + '\\right)^{' + $4.tex + '}\\right)',
 				      ['*', $1.syntax_tree, ['^', $2.syntax_tree, $4.syntax_tree]] );}
     | variable
