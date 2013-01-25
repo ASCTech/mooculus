@@ -40,7 +40,7 @@
 
 %left '+' '-'
 %left '*' '/'
-%left '^'
+%right '^'
 %left FUNCTION_APPLICATION
 %left UMINUS
 
