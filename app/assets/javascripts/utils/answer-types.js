@@ -1394,8 +1394,6 @@ Khan.answerTypes = $.extend(Khan.answerTypes, {
 	    // answer is provided (i.e. the field is left blank)
 	    var fallback = $(solution).data("fallback");
 
-	    console.log( "I believe the answer is " + $.trim($(solution).text()) );
-
 	    return {
 		validator: Khan.answerTypes["parsedExpression"].createValidator(solution),
 		answer: function() {
@@ -1415,7 +1413,6 @@ Khan.answerTypes = $.extend(Khan.answerTypes, {
 	    var correct = mathFunctionParser.parse($.trim($(solution).text()));
 	    
 	    return function(guess) {
-		console.log( "Checking answer " + guess + " versus the correct " + $.trim($(solution).text()) );
 		guess_expression = mathFunctionParser.parse($.trim(guess));
 		return correct.equals(guess_expression);
 	    };
