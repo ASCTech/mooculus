@@ -200,23 +200,24 @@ StraightLineProgram.prototype = {
 	this.evaluate(bindings)
     },
 
+    equalsForBinding: function(other,bindings) {
+	var epsilon = 0.0001;
+	var this_evaluated = this.evaluate(bindings);	
+	var other_evaluated = other.evaluate(bindings);
+	return (Math.abs(this_evaluated - other_evaluated) < epsilon) || (this_evaluated == other_evaluated);
+    },
+
     equals: function(other) {
 	var total_trials = 20;
-	var epsilon = 0.0001;
 	var successful_trials = 0;
 
         for( var i=0; i < total_trials; i++ ) {
-	    bindings = randomBindings();
-	    if (Math.abs(this.evaluate(bindings) - other.evaluate(bindings)) < epsilon) {
+	    var bindings = randomBindings();
+	    if (this.equalsForBinding(other,bindings)) {
 		successful_trials++;
 	    }
 	}
 	return (successful_trials > 0.95 * total_trials);
     },
-
-    equalsForBinding: function(other,bindings) {
-	var epsilon = 0.0001;
-
-	return (Math.abs(this.evaluate(bindings) - other.evaluate(bindings)) < epsilon);
-    }
 }
+
