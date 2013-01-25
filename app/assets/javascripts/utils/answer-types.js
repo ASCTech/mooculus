@@ -1386,11 +1386,11 @@ Khan.answerTypes = $.extend(Khan.answerTypes, {
     "parsedExpression": {
 	setup: function(solutionarea, solution) {
 	    // Add a text box
-	    $(solutionarea).append('<div id="MathPreview" style="padding: 3px; width:100%; margin-top:5px; display: none;"><script type="math/tex"></script></div>');
+	    var input = $('<input id="MathInput" onkeyup="Preview.Update()" autocomplete="off" class="input-large" type="text">');
+	    $(solutionarea).append(input); 
+	    $(solutionarea).append('<div id="MathPreview" style="padding: 3px; width:100%; margin-top:5px;"><script type="math/tex"></script></div>');
 	    $(solutionarea).append('<div id="MathFunctionError" style="display: none; font-weight: bold; color: red;">Error: the expression is invalid.</div>');
 
-	    var input = $('<input id="MathInput" onkeyup="Preview.Update()" class="input-large" type="text">');
-	    $(solutionarea).append(input); 
 	    // The fallback variable is used in place of the answer, if no
 	    // answer is provided (i.e. the field is left blank)
 	    var fallback = $(solution).data("fallback");
