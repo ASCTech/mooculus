@@ -204,7 +204,9 @@ StraightLineProgram.prototype = {
 	var epsilon = 0.0001;
 	var this_evaluated = this.evaluate(bindings);	
 	var other_evaluated = other.evaluate(bindings);
-	return (Math.abs(this_evaluated - other_evaluated) < epsilon) || (this_evaluated == other_evaluated);
+	return (Math.abs(this_evaluated - other_evaluated) < epsilon) ||
+	    (this_evaluated == other_evaluated) ||
+	    (isNaN(this_evaluated) && isNaN(other_evaluated));
     },
 
     equals: function(other) {
