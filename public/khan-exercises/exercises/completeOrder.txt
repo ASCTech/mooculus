@@ -49,6 +49,12 @@ differentiateUsingLimit.html
 repeatedLinApprox.html
 numChainRule.html
 intuitiveCurveSketch.html
+productRuleLines.html
+productRulePoints.html
+productRuleTwoWays.html
+quotientRulePoints.html
+secondDerivativeSign.html
+testingRandFunction.html
 
 
 

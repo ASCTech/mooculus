@@ -8,25 +8,21 @@
 <body>
   <div class="exercise">
     <div class="vars">
-		<var id="EXP">randFunction(3,["+","*","power","coefficient","sin","cos","exp"],["x"])</var>
+		<var id="EXP">randFunction(2,["exp"],["x"])</var>
 		<var id="LaTeXEXP">mathFunctionParser.parse(EXP).tex</var>
-		<var id="ghgh">mathFunctionParser.parse(EXP).f({x:2})</var>
+		<var id="ghgh">mathFunctionParser.parse(EXP).evaluate({x:2})</var>
     </div>
 
     <div class="problems">
       <div id="testing-function">
 
         <p class="question">  
-         	Write 2.
-        	<br/><br/>
-        	<var>EXP</var>
-        	<br/><br/>
+         	Type an expression equivalent to 
         	<code><var>LaTeXEXP</var></code>
-        	<br/><br/>
-        	Value at <code>x=2, y=3: <var>ghgh</var></code>
+        	
         	</p>    
-        <p class="solution">
-        	2
+        <p class="solution" data-type="parsedExpression">
+        	<var>EXP</var>
         </p>
        
       </div>

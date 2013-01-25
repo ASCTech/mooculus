@@ -68,6 +68,9 @@
                         range: 10,
                         scale: 20,
                         tickStep: 1,
+                         gridOpacity: 0.00005,
+                            axisOpacity: 0.2,
+                            tickOpacity: 0.00004,
                         
                     });
                     
@@ -76,6 +79,8 @@
                             }, [-10, 10], {
                                 stroke: RED
                             });
+                    
+                    label([7,f(7)],"f&apos;","above");
                    
                     plot(function( x ) {
                                 return ( f(x));
@@ -91,6 +96,7 @@
                             stroke: "none",
                             fill: GREEN
                             });
+                  
                             
 
                
