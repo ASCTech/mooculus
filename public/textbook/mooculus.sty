@@ -140,7 +140,7 @@
 \end{tikzpicture}}
 
 
-\newcommand{\linkArrow}{\raisebox{-4pt}{\scalebox{2}{\ding{224}}}}
+\newcommand{\linkArrow}{\raisebox{-3pt}{\scalebox{1.6}{\ding{224}}}}
 
 \newcommand{\video}[2][0in]{%% positioning needs fixed
   \marginnote[#1]{\href{#2}{\linkArrow\film}}
@@ -424,9 +424,9 @@ skipabove=\baselineskip]{warning}%
 \newenvironment{exercise}{
   \begin{enumerate}[(1)]
     \setcounter{enumi}{\value{exercise}}
-  \item \addtocounter{exercise}{1} 
+  \item \addtocounter{exercise}{1}\hypertarget{e:\arabic{chapter}.\arabic{section}.\arabic{exercise}}{} 
 }
-           {%\hyperlink{a:\thesection\value{exercise}}{\linkArrow} %% for adding a link to exercises
+           {\ignorespaces\hyperlink{a:\arabic{chapter}.\arabic{section}.\arabic{exercise}}{\linkArrow} %% for adding a link to exercises
            \end{enumerate}}
 
 
@@ -440,7 +440,7 @@ skipabove=\baselineskip]{warning}%
 \newtoks{\answercontent}
          \NewEnviron{answer}{%
            \answercontent=\expandafter{\BODY\qquad}
-         \dumpanswer[\noexpand\bfseries\arabic{exercise}.\space\noexpand\mdseries \the\answercontent]
+         \dumpanswer[\noexpand\hypertarget{a:\arabic{chapter}.\arabic{section}.\arabic{exercise}}{\noexpand\hyperlink{e:\arabic{chapter}.\arabic{section}.\arabic{exercise}}{\noexpand\bfseries\arabic{exercise}.}}\space\noexpand\mdseries \the\answercontent]
          }
 
          \def\finalizeanswers{\immediate\closeout\answer@stream}
