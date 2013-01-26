@@ -12,9 +12,9 @@ switch (yystate) {
 case 1: typeof console !== 'undefined' ? console.log($$[$0-1]) : print($$[$0-1]);
           return $$[$0-1]; 
 break;
-case 2:this.$ = new StraightLineProgram(function(bindings){ return parseFloat(yytext); },
-				      parseFloat(yytext).toString(),
-				      parseFloat(yytext).toString());
+case 2:this.$ = new StraightLineProgram(function(bindings){ return parseFloat(yytext.replace(',','.')); },
+				      parseFloat(yytext.replace(',','.')).toString(),
+				      parseFloat(yytext.replace(',','.')).toString());
 break;
 case 3:this.$ = new StraightLineProgram(function(bindings){ return bindings[yytext.toLowerCase()]; },
 				      yytext.toLowerCase(),
@@ -591,7 +591,7 @@ case 26:return 'INVALID'
 break;
 }
 };
-lexer.rules = [/^(?:\s+)/,/^(?:[0-9]+(\.[0-9]+)?)/,/^(?:e\b)/,/^(?:[A-Za-z]\b)/,/^(?:\*)/,/^(?:\/)/,/^(?:-)/,/^(?:\+)/,/^(?:\^)/,/^(?:\()/,/^(?:\))/,/^(?:pi\b)/,/^(?:sin\b)/,/^(?:cos\b)/,/^(?:tan\b)/,/^(?:csc\b)/,/^(?:sec\b)/,/^(?:cot\b)/,/^(?:arcsin\b)/,/^(?:arccos\b)/,/^(?:arctan\b)/,/^(?:log\b)/,/^(?:ln\b)/,/^(?:exp\b)/,/^(?:sqrt\b)/,/^(?:$)/,/^(?:.)/];
+lexer.rules = [/^(?:\s+)/,/^(?:[0-9]+([,.][0-9]+)?)/,/^(?:e\b)/,/^(?:[A-Za-z]\b)/,/^(?:\*)/,/^(?:\/)/,/^(?:-)/,/^(?:\+)/,/^(?:\^)/,/^(?:\()/,/^(?:\))/,/^(?:pi\b)/,/^(?:sin\b)/,/^(?:cos\b)/,/^(?:tan\b)/,/^(?:csc\b)/,/^(?:sec\b)/,/^(?:cot\b)/,/^(?:arcsin\b)/,/^(?:arccos\b)/,/^(?:arctan\b)/,/^(?:log\b)/,/^(?:ln\b)/,/^(?:exp\b)/,/^(?:sqrt\b)/,/^(?:$)/,/^(?:.)/];
 lexer.conditions = {"INITIAL":{"rules":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26],"inclusive":true}};
 return lexer;})()
 parser.lexer = lexer;
