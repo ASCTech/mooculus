@@ -59,4 +59,6 @@ productRuleTwoWays
 quotientRulePoints
 secondDerivativeSign
 testingRandFunction
+productRuleMultiplyLines
+productRuleCompute
 

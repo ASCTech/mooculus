@@ -51,10 +51,12 @@ numChainRule.html
 intuitiveCurveSketch.html
 productRuleLines.html
 productRulePoints.html
+productRuleCompute.html
 productRuleTwoWays.html
 quotientRulePoints.html
 secondDerivativeSign.html
 testingRandFunction.html
+productRuleMultiplyLines.html
 
 
 

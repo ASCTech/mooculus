@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html data-require="math calculus word-problems steveMath8 polynomials math-function-parser">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>Computing derivatives using the product rule</title>
+    <script src="../khan-exercise.js"></script>
+</head>
+<body>
+  <div class="exercise">
+    <div class="vars">
+		 	<var id = "f">new Polynomial(0,3)</var>
+		    <var id = "fText">f.text().replace(/{/g,"").replace(/}/g,"")</var>
+		    <var id = "derivf">ddxPolynomial(f)</var>
+		    <var id = "derivfText">derivf.text().replace(/{/g,"").replace(/}/g,"")</var>
+		    
+		    <var id = "h">new Polynomial(0,3)</var>
+		    <var id = "hText">h.text().replace(/{/g,"").replace(/}/g,"")</var>
+		    <var id = "derivh">ddxPolynomial(h)</var>
+		    <var id = "derivhText">derivh.text().replace(/{/g,"").replace(/}/g,"")</var>
+    </div>
+
+    <div class="problems">
+      <div id="testing-function">
+
+        <p class="question">  
+         	Without distributing, find the derivative of <code>f(x)=(<var>fText</var>)(<var>hText</var>)</code>
+        	
+        	
+        	</p>    
+        <p class="solution">
+        	1
+        </p>
+       
+      </div>
+    </div>
+  </div>
+</body>
+</html>

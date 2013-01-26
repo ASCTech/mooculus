@@ -2,13 +2,13 @@
 <html data-require="math word-problems steveMath8 math-function-parser">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-    <title>Test Function Parser</title>
+    <title>Practice with entering expressions</title>
     <script src="../khan-exercise.js"></script>
 </head>
 <body>
   <div class="exercise">
     <div class="vars">
-		<var id="EXP">randFunction(2,["exp"],["x"])</var>
+		<var id="EXP">randFunction(3,["+","/","*","power","coefficient","constant","sin"],["x"])</var>
 		<var id="LaTeXEXP">mathFunctionParser.parse(EXP).tex</var>
 		<var id="ghgh">mathFunctionParser.parse(EXP).evaluate({x:2})</var>
     </div>
@@ -19,6 +19,7 @@
         <p class="question">  
          	Type an expression equivalent to 
         	<code><var>LaTeXEXP</var></code>
+        	
         	
         	</p>    
         <p class="solution" data-type="parsedExpression">

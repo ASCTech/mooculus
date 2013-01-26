@@ -214,6 +214,15 @@ $.extend(KhanUtil, {
     			else if (operator == "^"){
     				return "("+KhanUtil.randFunction(depth-1,operations,vars) + "^" + KhanUtil.randFunction(depth-1,operations,vars) +")"
     				}
+    			else if (operator == "power"){
+    				return KhanUtil.randFunction(depth-1,operations,vars) + "^" + KhanUtil.randRange(2,8)
+    				}
+    			else if (operator =="coefficient"){
+    				return KhanUtil.randRangeExclude(-10,10,[0,1]) + "*" + KhanUtil.randFunction(depth-1,operations,vars)
+    				}
+    			else if (operator=="constant"){
+    				return  "("+KhanUtil.randFunction(depth-1,operations,vars) + "+" + KhanUtil.randRangeExclude(-10,10,[0])+")"
+    				}
     			else {
     				return "("+operator + "(" + KhanUtil.randFunction(depth-1,operations,vars) +"))"
     				}
