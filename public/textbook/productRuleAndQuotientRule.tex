@@ -147,14 +147,6 @@ which is precisely what we obtained before.
 \begin{answer} $(x^2+5x-3)(5x^4-18x^2+6x-7)+(2x+5)(x^5-6x^3+3x^2-7x+1)$
 \end{answer}\end{exercise}
 
-\begin{exercise} $\ddx \sqrt{x}\sqrt{625-x^2}$
-\begin{answer} $\frac{\sqrt{625-x^2}}{2\sqrt{x}}-\frac{x\sqrt{x}}{\sqrt{625-x^2}}$
-\end{answer}\end{exercise}
-
-\begin{exercise} $\ddx\frac{\sqrt{625-x^2}}{x^{20}}$
-\begin{answer} $\frac{-1}{x^{19}\sqrt{625-x^2}}-\frac{20\sqrt{625-x^2}}{x^{21}}$
-\end{answer}\end{exercise}
-
 \begin{exercise} $\ddx e^{2x} = \ddx \left(e^x \cdot e^x\right)$
 \begin{answer}
 $2e^{2x}$
@@ -186,8 +178,41 @@ line to the curve at $x=2$.  Sketch the tangent line at $x=2$.
 \begin{answer} $f'=4(2x-3)$, $y=4x-7$
 \end{answer}\end{exercise}
 
+\noindent Use the following table to compute solve the next 4
+problems. Note $\left.\ddx f(x)\right|_{x=a}$ is the derivative of
+$f(x)$ evaluated at $x=a$.
+\[
+\begin{tchart}{lllll}
+ x    & 1 & 2  & 3 & 4 \\ \hline 
+ f(x) & -2 & -3 & 1 & 4 \\
+f'(x) & -1 &  0 & 3 & 5\\
+ g(x) &  1 &  4 & 2 & -1 \\
+g'(x) &  2 &  -1 & -2 & -3\\
+\end{tchart}
+\]
+
+\twocol
+\begin{exercise} $\left. \ddx f(x)g(x) \right|_{x=2}$
+\begin{answer} $3$
+\end{answer}\end{exercise}
+
+\begin{exercise} $\left. \ddx xf(x) \right|_{x=3}$
+\begin{answer} $10$
+\end{answer}\end{exercise}
+
+\begin{exercise} $\left. \ddx xg(x) \right|_{x=4}$
+\begin{answer} $-13$
+\end{answer}\end{exercise}
+
+\begin{exercise} $\left. \ddx f(x)g(x) \right|_{x=1}$
+\begin{answer} $-5$
+\end{answer}\end{exercise}
+\endtwocol
+
+
+
 \begin{exercise}
-Suppose that $f$, $g$, and $h$ are differentiable functions.
+Suppose that $f(x)$, $g(x)$, and $h(x)$ are differentiable functions.
 Show that 
 \[
 \ddx f(x)\cdot g(x) \cdot h(x) = f(x) g(x)h'(x) + f(x)g'(x) h(x) + f'(x) g(x) h(x).
@@ -307,20 +332,16 @@ quotient rule.
 {(x^2+5x-3)(5x^4-18x^2+6x-7)\over(x^5-6x^3+3x^2-7x+1)^2}$
 \end{answer}\end{exercise}
 
-\ssk
-\begin{exercise} ${\sqrt{x}\over\sqrt{625-x^2}}$
-\begin{answer} ${1\over 2\sqrt{x}\sqrt{625-x^2}}+{x^{3/2}\over(625-x^2)^{3/2}}$
-\end{answer}\end{exercise}
-
-\begin{exercise} ${\sqrt{625-x^2}\over x^{20}}$
-\begin{answer} ${-1\over x^{19}\sqrt{625-x^2}}-{20\sqrt{625-x^2}\over x^{21}}$
-\end{answer}\end{exercise}
 
 \begin{exercise} $\frac{e^x-4}{2x}$
-\begin{answer} $NONE YET$
+\begin{answer} $\frac{2xe^x-(e^x-4)2}{4x^2}$
+\end{answer}\end{exercise}
+
+\begin{exercise} $\frac{2-x-\sqrt{x}}{x+2}$
+\begin{answer} $\frac{(x+2)(-1-(1/2)x^{-1/2}) - (2-x-\sqrt{x})}{(x+2)^2}$
 \end{answer}\end{exercise}
 \endtwocol
-\bsk
+
 
 \begin{exercise} Find an equation for the tangent line to $f(x) = (x^2 -
 4)/(5-x)$ at $x= 3$.  
@@ -332,48 +353,49 @@ $f(x) = (x-2)/(x^3 + 4x - 1)$ at $x=1$.
 \begin{answer} $y=11x/16-15/16$
 \end{answer}\end{exercise}
 
-\begin{exercise} Let $P$ be a polynomial of degree $n$ and let $Q$ be a
-polynomial of degree $m$ (with $Q$ not the zero polynomial). 
-Using sigma notation we can write
-$$P=\sum _{k=0 } ^n a_k x^k,\qquad
-Q=\sum_{k=0}^m b_k x^k.
-$$
-Use sigma notation to write the derivative of the 
-{\dfont rational function\index{rational function}}
-$P/Q$.
-%% \begin{answer} $\left(\sum_{k=0}^m b_k x^k\sum _{k=1}^n ka_k x^{k-1}-
-%% \sum _{k=0 } ^n a_k x^k\sum_{k=1}^m kb_k x^k\right)/
-%% \left(\sum_{k=0}^m b_k x^k\right)^2$
-%% \end{answer}
-\end{exercise}
-
 \begin{exercise} The curve $y=1/(1+x^2)$ is an example of a class of
-curves each of which is called a {\dfont witch of
-Agnesi\index{witch of Agnesi}}. 
-Sketch the curve and find the tangent line to the curve at
-$x= 5$. (The word {\em witch\/} here is a mistranslation of the
-original Italian, as described at
-% BADBAD
-% $$\hbox{\url{http://mathworld.wolfram.com/WitchofAgnesi.html} 
-% \vb|http://mathworld.wolfram.com/WitchofAgnesi.html|\endurl}$$
-% and 
-% \begin{align*}
-% \hbox{\url{http://instructional1.calstatela.edu/sgray/Agnesi/WitchHistory/Historynamewitch.html} 
-% \vb|http://|\endurl}%
-% &\!\!\hbox{\url{http://instructional1.calstatela.edu/sgray/Agnesi/WitchHistory/Historynamewitch.html} 
-% \vb|instructional1.calstatela.edu/sgray/Agnesi/|\endurl} \\
-% &\hbox{\url{http://instructional1.calstatela.edu/sgray/Agnesi/WitchHistory/Historynamewitch.html} 
-% \vb|WitchHistory/Historynamewitch.html|\endurl.)} \\
-% \end{align*}
+curves each of which is called a \textit{witch of Agnesi}. Find the
+tangent line to the curve at $x= 5$. Note, the word \textit{witch}
+here is due to a mistranslation.
 \begin{answer} $y=19/169-5x/338$
 \end{answer}\end{exercise}
-%% \footnote{Due to a mistranslation of the Italian word
-%%   \emph{versiera} which actually refers to a rope that turns the
-%%   sail.}.  
  
-\begin{exercise} If $f'(4) = 5$, $g'(4) = 12$, $(fg)(4)= f(4)g(4)=2$, and $g(4) = 6$,
-compute $f(4)$ and $\ds{d\over dx}{f\over g}$ at 4.
-\begin{answer} $13/18$
+
+\noindent Use the following table to compute solve the next 4
+problems. Note $\left.\ddx f(x)\right|_{x=a}$ is the derivative of
+$f(x)$ evaluated at $x=a$.
+\[
+\begin{tchart}{lllll}
+ x    & 1 & 2  & 3 & 4 \\ \hline 
+ f(x) & -2 & -3 & 1 & 4 \\
+f'(x) & -1 &  0 & 3 & 5\\
+ g(x) &  1 &  4 & 2 & -1 \\
+g'(x) &  2 &  -1 & -2 & -3\\
+\end{tchart}
+\]
+
+\twocol
+\begin{exercise} $\left. \ddx \frac{f(x)}{g(x)} \right|_{x=2}$
+\begin{answer} $-1/4$
+\end{answer}\end{exercise}
+
+\begin{exercise} $\left. \ddx \frac{f(x)}{x} \right|_{x=3}$
+\begin{answer} $8/9$
+\end{answer}\end{exercise}
+
+\begin{exercise} $\left. \ddx \frac{xf(x)}{g(x)} \right|_{x=4}$
+\begin{answer} $26$
+\end{answer}\end{exercise}
+
+\begin{exercise} $\left. \ddx \frac{f(x)g(x)}{x} \right|_{x=1}$
+\begin{answer} $-3$
+\end{answer}\end{exercise}
+\endtwocol
+
+
+\begin{exercise} If $f'(4) = 5$, $g'(4) = 12$, $f(4)g(4)=2$, and $g(4) = 6$,
+compute $f(4)$ and $\ddx\frac{f(x)}{g(x)}$ at 4.
+\begin{answer} $f(4) = 1/3, \ddx \frac{f(x)}{g(x)} = 13/18$
 \end{answer}\end{exercise}
 
 \end{exercises}

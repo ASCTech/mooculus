@@ -171,6 +171,7 @@
 
 %% User defined commands
 \renewcommand{\epsilon}{\varepsilon}
+\renewcommand{\theta}{\vartheta} %% only for kmath
 \renewcommand{\l}{\ell}
 \newcommand{\ddx}{\frac{d}{dx}}
 \newcommand{\dd}[1]{\frac{d}{d #1}}
@@ -307,7 +308,7 @@ font=\upshape
   roundcorner=10pt,
   splittopskip=\topskip,skipbelow=\baselineskip,skipabove=\baselineskip,
   font=\upshape ]{procedureForPlotting}% 
-{Procedure for Plotting Functions}
+{Procedure for Sketching the Plots of Functions}
 
 \theoremheaderfont{\normalfont\bfseries} \theorembodyfont{\upshape}
 \newmdtheoremenv[leftmargin=40,%
@@ -463,7 +464,7 @@ skipabove=\baselineskip]{warning}%
 \newtoks{\answercontent}
          \NewEnviron{answer}{%
            \answercontent=\expandafter{\BODY\qquad}
-         \dumpanswer[\noexpand\hypertarget{a:\arabic{chapter}.\arabic{section}.\arabic{exercise}}{\noexpand\hyperlink{e:\arabic{chapter}.\arabic{section}.\arabic{exercise}}{\noexpand\bfseries\arabic{exercise}.}}\space\noexpand\mdseries \the\answercontent]
+           \dumpanswer[\noexpand\hypertarget{a:\arabic{chapter}.\arabic{section}.\arabic{exercise}}{\noexpand\hyperlink{e:\arabic{chapter}.\arabic{section}.\arabic{exercise}}{\noexpand\bfseries\arabic{exercise}.}}\space\noexpand\mdseries \the\answercontent]
          }
 
          \def\finalizeanswers{\immediate\closeout\answer@stream}
