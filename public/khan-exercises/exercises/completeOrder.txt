@@ -49,7 +49,6 @@ differentiateUsingLimit.html
 repeatedLinApprox.html
 numChainRule.html
 intuitiveCurveSketch.html
-productRuleLines.html
 productRulePoints.html
 productRuleCompute.html
 quotientRuleCompute.html
