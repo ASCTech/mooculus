@@ -64,3 +64,4 @@ increaseDecreaseDerivativePoint
 curveSketchPoints
 thirdDerivativeSign
 quotientRuleCompute
+differentiatePolynomial
