@@ -1,0 +1,126 @@
+<h3>Techniques of Differentiation</h3>
+
+<p>Last week, in <a href="/calc1-001/wiki/view?page=Week3">Week 3</a>, we first
+met derivatives; if you are
+wondering <a href="/calc1-001/lecture/117"><i class="icon-film"></i>&nbsp;what
+Week 4 will bring</a>, wonder no more: we will be computing more
+derivatives!  Most importantly, this week we learn the <strong>product
+rule</strong> and the <strong>quotient rule</strong>, which will let
+us take derivatives of products and quotients, respectively.
+
+<p>If you want help, have ideas for how to improve the course, or just
+want to chat, please <strong>post your thoughts</strong>
+by <a href="/calc1-001/forum/index">using the forum</a>.  As is now our custom, we'll
+holding <a href="/calc1-001/wiki/view?page=OfficeHours">Office
+Hours</a> on January 31, 2013 at 9:30AM EST.</p>
+
+<p>Additionally, this week we're rolling out a
+new <a href="https://mooculus.osu.edu/exercises/testingRandFunction"><i class="icon-pencil"></i>&nbsp;answer
+type on mooculus</a>, which lets you enter mathematical expression in
+a very free form way, and get instant feedback.  At the
+moment, <a href="http://en.wikiquote.org/wiki/J._D._Salinger#Seymour:_An_Introduction_.281959.29">the
+parentheses are in bloom</a> but we're working on fixing that.</p>
+
+<h3>How do I differentiate a product?</h3>
+
+<p>To <strong>differentiate the product</strong> of two differentiable functions,
+use <a href="/calc1-001/lecture/109"><i class="icon-film"></i>&nbsp;the
+product rule</a>, which states that</p>
+<blockquote>
+$$\displaystyle\frac{d}{dx} \left( f(x) \, g(x) \right) = f'(x) \, g(x) + f(x) \, g'(x).$$
+</blockquote>
+<p>That looks wrong!  But <a href="/calc1-001/lecture/115"><i class="icon-film"></i>&nbsp;it makes sense geometrically</a>, and 
+<a href="/calc1-001/lecture/105"><i class="icon-film"></i>&nbsp;there's
+a formal proof</a> which you can read
+on <a href="https://mooculus.osu.edu/handouts"><i class="icon-book"></i>&nbsp;Page&nbsp;72
+of the Textbook.</a></p>
+
+<p>Be sure to <a href="https://mooculus.osu.edu/exercises/productRuleCompute"><i class="icon-pencil"></i>&nbsp;practice computing with the product rule.</a></p>
+
+<h3>How do I differentiate a quotient?</h3>
+
+<p>Once you can differentiate a product, you might suspect there is a <strong>quotient rule</strong>.  Indeed, <a href="/calc1-001/lecture/101"><i class="icon-film"></i>&nbsp;there is a quotient rule</a> but it can be <a href="/calc1-001/lecture/99"><i class="icon-film"></i>&nbsp;difficult to remember</a> considering that the quotient rule says that
+<blockquote>
+$$
+\displaystyle\frac{d}{dx} \displaystyle\frac{f(x)}{g(x)} = 
+\displaystyle\frac{f'(x)\, g(x) - f(x)\, g'(x)}{g(x)^2}.
+$$
+</blockquote>
+<p>You will find a proof of the quotient rule on <a href="https://mooculus.osu.edu/handouts"><i class="icon-book"></i>&nbsp;Page&nbsp;75
+of the Textbook</a>; another proof will appear next week, by combining the power rule, product rule, and the chain rule.</p>
+
+<p>Be sure to <a href="https://mooculus.osu.edu/exercises/quotientRuleCompute"><i class="icon-pencil"></i>&nbsp;practice computing with the quotient rule.</a></p>
+
+<h3>Higher derivatives?</h3>
+
+<p>Since the derivative is a function, we can <strong>differentiate
+the derivative</strong> to get the <strong>second derivative</strong>
+of a function.  But that raises a
+question: <a href="/calc1-001/lecture/109"><i class="icon-film"></i>&nbsp;what
+do these higher derivatives mean?</a>.  If we
+consider <a href="/calc1-001/lecture/107"><i class="icon-film"></i>&nbsp;the
+sign of the second derivative</a>, we'll find that it encodes
+information about the <strong>concavity</strong> of the function;
+there are some graphs
+on <a href="https://mooculus.osu.edu/handouts"><i class="icon-book"></i>&nbsp;Page&nbsp;60
+of the Textbook</a>, and you
+can <a href="https://mooculus.osu.edu/exercises/secondDerivativeSign"><i class="icon-pencil"></i>&nbsp;play
+with concavity on mooculus.</a>
+</p>
+
+<p>Once we are talking about <strong>derivatives in the
+abstract</strong>, you might
+wonder <a href="/calc1-001/lecture/107"><i class="icon-film"></i>&nbsp;whether
+$$\frac{d}{dx}$$ has any meaning by itself</a>.  You might think of
+$$\frac{d}{dx}$$ sort of like you think of $$f$$ as opposed to
+$$f(x)$$, by which I mean $$\frac{d}{dx}$$ is &ldquo;the derivative
+not applied yet to anything.&rdquo; If you keep taking more math
+classes (and I hope you will!), you'll learn more about this
+perspective when you
+study <a href="http://en.wikipedia.org/wiki/Differential_operator">differential
+operators</a>.</p>
+
+<h3>How can I sketch a graph without a computer?</h3>
+
+<p><a href="http://en.wikipedia.org/wiki/Richard_Hamming">Richard Hamming</a> wrote in the preface to one of his books that &ldquo;the purpose of computing is insight, not numbers.&rdquo;  I agree!  Given a function, your goal is to <strong>describe the qualitative features</strong> of that function.</p>
+
+<p>Chief among those qualitative features are <a href="/calc1-001/lecture/111"><i class="icon-film"></i>&nbsp;extreme values</a>, which you will find defined on <a href="https://mooculus.osu.edu/handouts"><i class="icon-book"></i>&nbsp;Page&nbsp;53 of the Textbook.</a>  Once we know we're looking for extrema, we have to figure out a way to find what we desire; <a href="/calc1-001/lecture/123"><i class="icon-film"></i>&nbsp;Fermat's theorem</a>, which you'll find on <a href="https://mooculus.osu.edu/handouts"><i class="icon-book"></i>&nbsp;Page&nbsp;54 of the Textbook</a> helps.  It says that the only place you'll find a local minimum or a local maximum is at a <strong>critical point</strong>, meaning an input $$x$$ where either $$f'(x) = 0$$ or $$f'(x)$$ doesn't exist.</p>
+
+<p>By combining information about extrema and the sign of the first
+derivative and the sign of the second derivative, you
+can <a href="/calc1-001/lecture/119"><i class="icon-film"></i>&nbsp;sketch
+graphs which illustrate the qualitative features of a function</a>.
+The procedure is outlined
+on <a href="https://mooculus.osu.edu/handouts"><i class="icon-book"></i>&nbsp;Page&nbsp;67
+of the Textbook</a>.</p>
+
+<p>Sometimes people are tricked into thinking that, if you're standing at a local minimum, the function is decreasing to your left and increasing to your right.  There are some <a href="/calc1-001/lecture/125"><i class="icon-film"></i>&nbsp;pathological examples which should dissuade you from that notion</a>.</p>
+
+<p>Practicing the <a href="https://mooculus.osu.edu/exercises/intuitiveCurveSketch"><i class="icon-pencil"></i>&nbsp;various skills related to curve sketching</a> is a good way to review much of what we've done in the course thus far&mdash;write down a random function, and see if you can draw a picture of your random creation!</p>
+
+<h3>How do I differentiate $$e^x$$?</h3>
+
+Remember back to <a href="/calc1-001/wiki/view?page=Week2">Week 2</a>,
+when we used the Intermediate Value Theorem to
+find <a href="/calc1-001/lecture/57"><i class="icon-film"></i>&nbsp;fixed
+points of functions</a>, meaning inputs $$x$$ so that $$f(x) = x$$?
+We can ask if there is a <strong>fixed point</strong> of
+$$\displaystyle\frac{d}{dx}$$, meaning a <em>function</em> which is
+unchanged when you differentiate it.  Admittedly, $$f(x) = 0$$ is such an example, but
+a more exciting example is <a href="/calc1-001/lecture/57"><i class="icon-film"></i>&nbsp;the
+function $$f(x) = e^x$$, which is also its own derivative</a>.  You can read the
+proof on <a href="https://mooculus.osu.edu/handouts"><i class="icon-book"></i>&nbsp;Page&nbsp;50
+of the Textbook.</a>
+
+<h3>At the end of the week&hellip;</h3>
+
+<p>When you've reached the end of the week, take the <a href="/calc1-001/quiz/index">End of Week 4 Quiz</a>.  To give you a sense of what to expect on the quiz, you'll find the quiz includes</p>
+<ul>
+<li>one question on <a href="/calc1-001/lecture/111"><i class="icon-film"></i>&nbsp;local extrema</a>,</li>
+<li>four questions on finding <a href="/calc1-001/lecture/123"><i class="icon-film"></i>&nbsp;critical points and extreme values</a>,</li>
+<li>one question on the <a href="/calc1-001/lecture/109"><i class="icon-film"></i>&nbsp;second derivative</a>,</li>
+<li>one question on <a href="/calc1-001/lecture/107"><i class="icon-film"></i>&nbsp;concavity</a>, and</li>
+<li>three questions on the <a href="/calc1-001/lecture/103"><i class="icon-film"></i>&nbsp;product rule</a> and the <a href="/calc1-001/lecture/103"><i class="icon-film"></i>&nbsp;quotient rule</a>.</li>
+</ul>
+<p>I wish you the very best on this week's quiz; if you get stuck, please don't be afraid to <a href="/calc1-001/forum/index">post to the forum</a> or <a href="/calc1-001/wiki/view?page=OfficeHours">bring it up during office hours</a>.  <strong>Have fun!</strong></p>
+
