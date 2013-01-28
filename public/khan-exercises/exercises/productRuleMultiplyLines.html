@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html data-require="math word-problems polynomials calculus steveMath8 math-function-parser">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>Thinking about the product rule by multiplying two tangent lines</title>
+    <script src="../khan-exercise.js"></script>
+</head>
+<body>
+  <div class="exercise">
+    <div class="vars">
+		   	<var id = "X">randRange(-10,10)</var>
+		   
+		    <var id = "f">new Polynomial(0,3)</var>
+		    <var id = "fText">f.text().replace(/{/g,"").replace(/}/g,"")</var>
+		    <var id = "derivf">ddxPolynomial(f)</var>
+		    <var id = "derivfText">derivf.text().replace(/{/g,"").replace(/}/g,"")</var>
+		    
+		    <var id = "h">new Polynomial(0,3)</var>
+		    <var id = "hText">h.text().replace(/{/g,"").replace(/}/g,"")</var>
+		    <var id = "derivh">ddxPolynomial(h)</var>
+		    <var id = "derivhText">derivh.text().replace(/{/g,"").replace(/}/g,"")</var>
+		  
+		    <var id = "fh">f.multiply(h)</var>
+		    <var id = "fhText">fh.text().replace(/{/g,"").replace(/}/g,"")</var>
+		    <var id = "derivfh">ddxPolynomial(fh)</var>
+		    <var id = "derivfgText">derivfh.text().replace(/{/g,"").replace(/}/g,"")</var>
+    </div>
+
+    <div class="problems">
+      <div id="testing-function">
+
+        <p class="question">  
+         	  <p class="problem">
+         	  <code>f = <var>f</var></code>
+         	  <br/>
+         	  	<code>f' = <var>derivfText</var></code>
+         	  	<br/>
+         	  	<code>g = <var>h</var></code>
+         	  	<br/>
+         	 <code> g' =	<var>derivhText</var></code>
+         	  	<br/>
+         	  <code>	fg = <var>fhText</var></code>
+         	  	<br/>
+         	  	<code>fg' = <var>derivfgText</var></code>
+         	  	
+         	  	<p>  	
+         	  		<center>Find a place inside where there's joy, and the joy will burn out the pain.</center>
+         	  		<center> - Joseph Campbell</center>
+         	  	</p>
+         	  	<p>
+         	  		In this exercise we will be seeing how to find the tangent line to the product of two functions by
+         	  		multiplying tangent lines to each of the two functions.  This will give another explanation of the product rule.
+         	  		Read over the problem, and then go back and fill in the answers for each function or expression.
+         	  		
+         	  	</p>
+         	  	<p>
+         	  	Suppose that:
+                <br/>
+                <code>f(x) = <var>fText</var></code>
+                <br/>
+                <code>g(x) = <var>gText</var></code>
+                </p>
+				<p>
+				First we are going to find the derivatives, <code>f'</code> and <code>g'</code>, of these two functions using the power and sum rules.
+				Then, we will use that work to find the equations of the tangent line to 
+				<code>f</code> and <code>g</code> at <code>x=<var>X</var></code>, which we will call <code>L_1</code>
+				and <code>L_2</code> respectively.
+				</p>
+				<p>
+				Our hope is that we can get a handle on the derivative of 
+				<code>f \cdot g</code> at <code>x = <var>X</var></code>. Since
+				<code>f(x) \approx L_1(x)</code> and <code>g(x) \approx L_2(x)</code> near <code>x=<var>X</var></code>,
+				so we should suspect that <code>f(x) \cdot g(x) \approx L_1(x) \cdot L_2(x)</code> near <code>x=<var>X</var></code>.
+				Let <code>p(x)=L_1(x) \cdot L_2(x)</code> which should be a parabola which approximates <code>f(x) \cdot g(x)</code>
+ 				quite well near <code>x = <var>X</var></code>.
+  				</p> 
+  				<p>
+  				We want to figure out the slope of a tangent line to the graph of <code>f \cdot g</code>, but all we have
+  				is a parabola which approximates <code>f \cdot g</code> well.  What will we do?  Just find the tangent line to this parabola
+  				at <code>x  = <var>X</var></code>.  So now figure out the derivative of <code>p</code>, and the tangent line <code>L_3</code>
+  				to <code>p</code> near <code>x = <var>X</var></code>.
+  				</p>
+  				<p>
+  				We should be guessing that <code>L_3</code> is actually a tangent line to <code>f \cdot g</code>, so
+  				the slope of this tangent line should be <code>(f \cdot g)'(<var>X</var>)</code>.  Let's just check that the product rule would
+  				give us the same answer.
+  				</p>
+  				<p>
+  					Compute <code>f(<var>X</var>)</code>, <code>f'(<var>X</var>)</code>, <code>g(<var>X</var>)</code>, and <code>g'(<var>X</var>)</code>, and finally
+  					<code>(f \cdot g)'(<var>X</var>) = f(<var>X</var>)\cdot g'(<var>X</var>) + f'(<var>X</var>)g(<var>X</var>)</code>.  Is this equal to the slope you computed above?
+  				</p>
+			
+			</p>
+        	
+        	
+        	</p>    
+        <div class="solution" data-type="multiple">
+       	    <code>f'(x)=</code> <span class="sol" data-type="parsedExpression"><var>fText</var></span>
+        	<code>g'(x)=</code> <span class="sol" data-type="parsedExpression"><var>fText</var></span>
+        	<code>L_1(x)=</code> <span class="sol" data-type="parsedExpression"><var>fText</var></span>
+        	<code>L_2(x)=</code> <span class="sol" data-type="parsedExpression">x^2-1</span>
+        	<code>p(x)=</code> <span class="sol" data-type="parsedExpression"><var>fText</var></span>
+        	<code>p'(x)=</code> <span class="sol" data-type="parsedExpression"><var>fText</var></span>
+        	<code>L_3(x)=</code> <span class="sol" data-type="parsedExpression"><var>fText</var></span>
+        	<code>f(<var>X</var>)=</code> <span class="sol" data-type="parsedExpression"><var>fText</var></span>
+        	<code>f'(<var>X</var>)=</code> <span class="sol" data-type="parsedExpression"><var>fText</var></span>
+        	<code>g(<var>X</var>)=</code> <span class="sol" data-type="parsedExpression"><var>fText</var></span>
+        	<code>g'(<var>X</var>)=</code> <span class="sol" data-type="parsedExpression"><var>fText</var></span>
+        	<code>(f \cdot g)'(<var>X</var>) =</code> <span class="sol" data-type="parsedExpression"><var>fText</var></span>
+        </div>
+       
+      </div>
+    </div>
+  </div>
+</body>
+</html>

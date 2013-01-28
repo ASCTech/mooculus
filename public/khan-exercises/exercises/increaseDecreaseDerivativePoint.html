@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html data-require="math word-problems polynomials calculus steveMath8 math-function-parser">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>Using the derivative to determine increasing/decreasing behavior</title>
+    <script src="../khan-exercise.js"></script>
+</head>
+<body>
+  <div class="exercise">
+    <div class="vars" data-ensure="Math.abs(derivf.evalOf(X))  &gt; .5 &amp;&amp; f.coefs[2] != 0">
+			<var id = "X">randRange(-5,5)</var>
+			<var id = "f">new Polynomial(0,KhanUtil.randRange(2,4))</var>
+		    <var id = "fText">f.text().replace(/{/g,"").replace(/}/g,"")</var>
+		    <var id = "derivf">ddxPolynomial(f)</var>
+		    <var id = "derivfText">derivf.text().replace(/{/g,"").replace(/}/g,"")</var>
+		    <var id = "ANSWER">derivf.evalOf(X)</var>
+		    <var id = "solIncDec">(function(ANSWER){
+		    				if (ANSWER &gt; 0){
+		    					return "increasing"
+		    					}
+		    				else {
+		    					return "decreasing"
+		    					}
+		    					})(ANSWER)
+		    	</var>
+		    <var id = "hintPosNeg">(function(ANSWER){
+		    				if (ANSWER &gt; 0){
+		    					return "positive"
+		    					}
+		    				else {
+		    					return "negative"
+		    					}
+		    					})(ANSWER)
+		    	</var>
+		    
+    </div>
+
+    <div class="problems">
+      <div id="testing-function">
+
+        <p class="problem">  
+         	Let <code>f</code> be the function defined by <code>f(x) = <var>fText</var></code>.	
+        </p>    
+        <p class = "question">
+        	Find the formula for <code>f'(x)</code>, evaluate <code>f'(<var>X</var>)</code> and decide
+        	if <code>f</code> is increasing or decreasing near <code>x = <var>X</var></code>.
+        </p>
+       
+       <p class="solution"><var>solIncDec</var></p>
+        
+          <ul class="choices" data-category="true">
+            <li>increasing</li>
+            <li>decreasing</li>
+          </ul>
+        <div class="hints">
+        	<p>
+        		<code>f'(x) =  <var>derivfText</var></code>
+        	</p>
+        	<p>
+        		<code>f'(<var>X</var>) = <var>derivf.hintEvalOf(X)</var> = <var>derivf.evalOf(X)</var></code>
+        	</p>
+        	<p>
+        		Since <code>f'(<var>X</var>)</code> is <var>hintPosNeg</var> and continuous at <code>x  = <var>X</var></code>, we know that
+        		it is <var>hintPosNeg</var> around  <code>x  = <var>X</var></code>.  Thus <code>f</code> is <var>solIncDec</var> near <code>x = <var>X</var></code>
+        	</p>
+        </div>
+       
+      </div>
+    </div>
+  </div>
+</body>
+</html>

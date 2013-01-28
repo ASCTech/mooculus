@@ -1383,41 +1383,42 @@ Khan.answerTypes = $.extend(Khan.answerTypes, {
         }
     },
 
-		"function": {
-			setup: function(solutionarea, solution) {
-			    // Add a text box
-			    var input = $('<input id="MathInput" onkeyup="Preview.Update()" class="input-large" type="text">');
-			    $(solutionarea).append(input); 
-			    $(solutionarea).append('<div id="MathPreview" style="padding: 3px; width:100%; margin-top:5px; display: none;"><script type="math/tex"></script></div>');
-			    $(solutionarea).append('<div id="MathFunctionError" style="display: none; font-weight: bold; color: red;">Error: the expression is invalid.</div>');
-				// The fallback variable is used in place of the answer, if no
-				// answer is provided (i.e. the field is left blank)
-				var fallback = $(solution).data("fallback");
+    "parsedExpression": {
+	setup: function(solutionarea, solution) {
+	    // Add a text box
+	    var input = $('<input id="MathInput" onkeyup="Preview.Update()" autocomplete="off" class="input-large" type="text">');
+	    $(solutionarea).append(input); 
+	    $(solutionarea).append('<div id="MathPreview" style="padding: 3px; width:100%; margin-top:5px;"><script type="math/tex"></script></div>');
+	    $(solutionarea).append('<div id="MathFunctionError" style="display: none; font-weight: bold; color: red;">Error: the expression is invalid.</div>');
 
-				return {
-					validator: Khan.answerTypes["function"].createValidator(solution),
-						answer: function() {
-							// return the value in the text box, or the fallback
-							return input.val().length > 0 ?
-								input.val() :
-								(fallback ? fallback + "" : "");
-						},
-						solution: $.trim($(solution).text()),
-						examples: ["An expression like sin(3y)+(x+1)^3-9"],
-						showGuess: function(guess) {
-							input.val(guess === undefined ? "" : guess);
-						}
-				};
-			},
-			createValidator: function(solution) {
-				var correct = mathFunctionParser.parse($.trim($(solution).text()));
+	    // The fallback variable is used in place of the answer, if no
+	    // answer is provided (i.e. the field is left blank)
+	    var fallback = $(solution).data("fallback");
 
-				return function(guess) {
-					guess = mathFunctionParser.parse($.trim(guess));
-					return correct.equals(guess);
-				};
-			}
+	    return {
+		validator: Khan.answerTypes["parsedExpression"].createValidator(solution),
+		answer: function() {
+		    // return the value in the text box, or the fallback
+		    return input.val().length > 0 ?
+			input.val() :
+			(fallback ? fallback + "" : "");
+		},
+		solution: $.trim($(solution).text()),
+		examples: ["An expression like sin(3y)+(x+1)^3-9"],
+		showGuess: function(guess) {
+		    input.val(guess === undefined ? "" : guess);
 		}
+	    };
+	},
+	createValidator: function(solution) {
+	    var correct = mathFunctionParser.parse($.trim($(solution).text()));
+	    return function(guess) {
+		guess_expression = mathFunctionParser.parse($.trim(guess));
+		console.log( "comparing " + guess_expression.tex + " wth the correct " + correct.tex );
+		return correct.equals(guess_expression);
+	    };
+	}
+    }
 });
 
 })();
