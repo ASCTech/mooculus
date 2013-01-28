@@ -15,7 +15,6 @@ var Preview = {
 		$("#MathFunctionError").show();
 	    }
 	} else {
-	    text = '';
 	    $("#MathPreview").hide();
 	}
     },
