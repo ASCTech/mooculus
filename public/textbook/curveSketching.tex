@@ -96,9 +96,9 @@ Figure~\ref{figure:x^{2/3}}. This brings us to our next definition.
 \label{figure:x^{2/3}}
 \end{marginfigure}
 
-\begin{definition}\index{critical value}
+\begin{definition}\index{critical point}
 Any value of $x$ for which $f'(x)$ is zero or undefined is called a
-\textbf{critical value} for $f(x)$.
+\textbf{critical point} for $f(x)$.
 \end{definition}
 
 \begin{warning} 
@@ -164,7 +164,7 @@ first at $x=\sqrt{3}/3$, we see that
 f(\sqrt{3}/3)=-2\sqrt{3}/9.
 \] 
 Now we test two points on either side of $x=\sqrt{3}/3$, making sure
-that neither is farther away than the nearest critical value; since
+that neither is farther away than the nearest critical point; since
 $\sqrt{3}<3$, $\sqrt{3}/3<1$ and we can use $x=0$ and $x=1$. Since
 \[
 f(0)=0>-2\sqrt{3}/9\qquad\text{and}\qquad f(1)=0>-2\sqrt{3}/9,
@@ -290,9 +290,9 @@ local min at $x=\sqrt{\frac{|c|}{3}}$
 \section{The First Derivative Test}
 
 The method of the previous section for deciding whether there is a
-local maximum or minimum at a critical value by testing ``near-by''
+local maximum or minimum at a critical point by testing ``near-by''
 points is not always convenient. Instead, since we have already had to
-compute the derivative to find the critical values, we can use
+compute the derivative to find the critical points, we can use
 information about the derivative to decide. Recall that
 \begin{itemize}
 \item If $f'(x) >0$ on an interval, then $f(x)$ is increasing on that interval.
@@ -339,8 +339,8 @@ f'(x) &= x^3+x^2-2x \\
 &=x(x^2+x-2)\\
 &=x(x+2)(x-1).
 \end{align*}
-So the critical values (when $f'(x)=0$) are when $x=-2$, $x=0$, and
-$x=1$. Now we can check points \textbf{between} the critical values to find
+So the critical points (when $f'(x)=0$) are when $x=-2$, $x=0$, and
+$x=1$. Now we can check points \textbf{between} the critical points to find
 when $f'(x)$ is increasing and decreasing:
 \[
 f'(-3)=-12 \qquad f'(.5)=-0.625 \qquad f'(-1)=2 \qquad f'(2)=8
@@ -433,7 +433,7 @@ studying how $f'(x)$ changes. This leads us to our next section.
 
 
 \begin{exercises}
-\noindent In the following exercises, find all critical values and
+\noindent In the following exercises, find all critical points and
 identify them as local maximum points, local minimum points, or
 neither.
 
@@ -473,7 +473,7 @@ neither.
 has exactly one critical point using the first derivative test. Give
 conditions on $a$ and $b$ which guarantee that the critical point will
 be a maximum. 
-\begin{answer} $f'(x) = 2ax + b$, this has only one root and hence one critical value; $a<0$ to guarantee a maximum.
+\begin{answer} $f'(x) = 2ax + b$, this has only one root and hence one critical point; $a<0$ to guarantee a maximum.
 \end{answer}
 \end{exercise}
 \end{exercises}
@@ -1028,7 +1028,7 @@ the plot of a function.
 \item Find candidates for vertical asymptotes, these are points where
   $f(x)$ is undefined.
 \item Compute $f'(x)$ and $f''(x)$.
-\item Find the critical values, the points where $f'(x) = 0$. 
+\item Find the critical points, the points where $f'(x) = 0$. 
 \item Use the second derivative test to identify local extrema and/or
   find the intervals where your function is increasing/decreasing.
 \item Find the candidates for inflection points, the points where $f''(x) = 0$.
@@ -1070,7 +1070,7 @@ for all real numbers.  Now compute $f'(x)$ and $f''(x)$,
 f'(x) = 6x^2 -6x -12\qquad\text{and}\qquad f''(x) = 12x-6.
 \]
 
-The critical values are where $f'(x) = 0$, thus we need to solve $6x^2
+The critical points are where $f'(x) = 0$, thus we need to solve $6x^2
 -6x -12 = 0$ for x. Write
 \begin{align*}
 6x^2 -6x -12 &= 0 \\
@@ -1081,7 +1081,7 @@ Thus
 \[
 f'(2) = 0\qquad\text{and}\qquad f'(-1) = 0.
 \]
-Mark the critical values $x=2$ and $x=-1$ on your plot, see
+Mark the critical points $x=2$ and $x=-1$ on your plot, see
 Figure~\ref{figure:CS2}.
 \begin{marginfigure}[-3in]
 \begin{tikzpicture}
@@ -1100,11 +1100,11 @@ Figure~\ref{figure:CS2}.
          \addplot[color=penColor,fill=penColor,only marks,mark=*] coordinates{(0,0)};  %% closed hole
         \end{axis}
 \end{tikzpicture}
-\caption{Now we add the critical values $x=-1$ and $x=2$.}
+\caption{Now we add the critical points $x=-1$ and $x=2$.}
 \label{figure:CS2}
 \end{marginfigure}
 
-Check the second derivative evaluated at the critical values. In this
+Check the second derivative evaluated at the critical points. In this
 case,
 \[
 f''(-1) = -18 \qquad\text{and}\qquad f''(2) = 18,
@@ -1256,7 +1256,7 @@ intercepts.
 
 \begin{exercise} $y= x^5 - x$
 \begin{answer}
-$y$-intercept at $(0,0)$; no vertical asymptotes; critical values:
+$y$-intercept at $(0,0)$; no vertical asymptotes; critical points:
   $x=\pm\sqrt[4]{5}$; local max at $x=-\sqrt[4]{5}$, local min at
   $x=-\sqrt[4]{5}$; increasing on $(-\infty,-\sqrt[4]{5})$, decreasing
   on $(-\sqrt[4]{5},\sqrt[4]{5})$, increasing on
@@ -1268,7 +1268,7 @@ $y$-intercept at $(0,0)$; no vertical asymptotes; critical values:
 
 \begin{exercise} $y=x(x^2+1)$
 \begin{answer}
-$y$-intercept at $(0,0)$; no vertical asymptotes; no critical values;
+$y$-intercept at $(0,0)$; no vertical asymptotes; no critical points;
   no local extrema; increasing on $(-\infty,\infty)$; concave down on
   $(-\infty,0)$, concave up on $(0, \infty)$; roots at $x=0$; no
   horizontal asymptotes; interval for sketch: $[-3,3]$ (answers may
@@ -1278,7 +1278,7 @@ $y$-intercept at $(0,0)$; no vertical asymptotes; no critical values;
 
 \begin{exercise} $y=2\sqrt{x} - x$
 \begin{answer}
-$y$-intercept at $(0,0)$; no vertical asymptotes; critical values: $x=
+$y$-intercept at $(0,0)$; no vertical asymptotes; critical points: $x=
   1$; local max at $x=1$; increasing on $[0,1)$, decreasing on
     $(1,\infty)$; concave down on $[0,\infty)$; roots at $x=0$, $x=4$;
       no horizontal asymptotes; interval for sketch: $[0,6]$ (answers
@@ -1288,7 +1288,7 @@ $y$-intercept at $(0,0)$; no vertical asymptotes; critical values: $x=
 
 \begin{exercise} $y=x^3+6x^2 + 9x$
 \begin{answer}
-$y$-intercept at $(0,0)$; no vertical asymptotes; critical values:
+$y$-intercept at $(0,0)$; no vertical asymptotes; critical points:
   $x=-3$, $x= -1$; local max at $x=-3$, local min at $x=-1$;
   increasing on $(-\infty,-3)$, decreasing on $(-3,-1)$, increasing on
   $(-1,\infty)$; concave down on $(-\infty,-2)$, concave up on $(-2,
@@ -1299,7 +1299,7 @@ $y$-intercept at $(0,0)$; no vertical asymptotes; critical values:
 
 \begin{exercise} $y=x^3-3x^2-9x+5$
 \begin{answer}
-$y$-intercept at $(0,5)$; no vertical asymptotes; critical values:
+$y$-intercept at $(0,5)$; no vertical asymptotes; critical points:
   $x=-1$, $x= 3$; local max at $x=-1$, local min at $x=3$; increasing
   on $(-\infty,-1)$, decreasing on $(-1,3)$, increasing on
   $(3,\infty)$; concave down on $(-\infty,1)$, concave up on $(1,
@@ -1312,7 +1312,7 @@ $y$-intercept at $(0,5)$; no vertical asymptotes; critical values:
 
 \begin{exercise} $y=x^5-5x^4+5x^3$
 \begin{answer}
-$y$-intercept at $(0,0)$; no vertical asymptotes; critical values:
+$y$-intercept at $(0,0)$; no vertical asymptotes; critical points:
   $x=0$, $x= \frac{10\pm\sqrt{85}}{5}$; local max at $x=
   \frac{10-\sqrt{85}}{5}$, local min at $x= \frac{10+\sqrt{85}}{5}$;
   increasing on $(-\infty,\frac{10-\sqrt{85}}{5})$, decreasing on
@@ -1329,7 +1329,7 @@ $y$-intercept at $(0,0)$; no vertical asymptotes; critical values:
 
 \begin{exercise} $y = x+ 1/x$
 \begin{answer}
-no $y$-intercept; vertical asymptote at $x=0$; critical values: $x=0$,
+no $y$-intercept; vertical asymptote at $x=0$; critical points: $x=0$,
 $x=\pm 1$; local max at $x=-1$, local min at $1$; increasing on
 $(-\infty,-1)$, decreasing on $(-1,0)\cup(0,1)$, increasing on
 $(1,\infty)$; concave down on $(-\infty,0)$, concave up on $(0,
@@ -1340,7 +1340,7 @@ $[-2,2]$ (answers may vary)
 
 \begin{exercise} $y = x^2+ 1/x$
 \begin{answer}
-no $y$-intercept; vertical asymptote at $x=0$; critical values: $x=0$,
+no $y$-intercept; vertical asymptote at $x=0$; critical points: $x=0$,
 $x=\frac{1}{\sqrt[3]{2}}$; local min at $x=\frac{1}{\sqrt[3]{2}}$;
 decreasing on $(-\infty,0)$, decreasing on
 $(0,\frac{1}{\sqrt[3]{2}})$, increasing on
