@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html data-require="math calculus word-problems steveMath8 polynomials math-function-parser">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>Computing derivatives using the product rule</title>
+    <script src="../khan-exercise.js"></script>
+</head>
+<body>
+  <div class="exercise">
+    <div class="vars">
+		 	<var id = "f">new Polynomial(0,KhanUtil.randRange(1,2))</var>
+		    <var id = "fText">f.text().replace(/{/g,"").replace(/}/g,"")</var>
+		    <var id = "derivf">ddxPolynomial(f)</var>
+		    <var id = "derivfText">derivf.text().replace(/{/g,"").replace(/}/g,"")</var>
+		    
+		    <var id = "h">new Polynomial(0,KhanUtil.randRange(1,3))</var>
+		    <var id = "hText">h.text().replace(/{/g,"").replace(/}/g,"")</var>
+		    <var id = "derivh">ddxPolynomial(h)</var>
+		    <var id = "derivhText">derivh.text().replace(/{/g,"").replace(/}/g,"")</var>
+		    
+    </div>
+
+    <div class="problems">
+      <div id="testing-function">
+
+        <p class="question">  
+         	Without distributing, use the product rule to find the derivative of <code>(<var>fText</var>)(<var>hText</var>)</code>
+        	
+        	
+        	</p>    
+        <p class="solution" data-type="parsedExpression"> 
+        	(<var>fText</var>)*(<var>derivhText</var>)+(<var>derivfText</var>)*(<var>hText</var>)
+        </p>
+        
+        <div class = "hints">
+        	<p>
+        		The product rule says <code>\dfrac{d}{dx} f(x) \cdot g(x) = f(x) \color{blue}{\dfrac{d}{dx} g(x)}+ g(x) \color{red}{\dfrac{d}{dx} f(x)}</code>
+        	</p>
+        	<div>
+        		<p>
+        			So <code>\dfrac{d}{dx}(<var>fText</var>)(<var>hText</var>) </code> 
+        		</p>
+        		<p>
+        			<code> =  (<var>fText</var>)\color{blue}{\dfrac{d}{dx}(<var>hText</var>)}+ (<var>hText</var>)\color{red}{\dfrac{d}{dx}(<var>fText</var>)} </code>
+        		</p>
+        	</div>
+        	<p>
+        		<code> =  (<var>fText</var>)\color{blue}{(<var>derivhText</var>)}+ (<var>hText</var>)\color{red}{(<var>derivfText</var>)} </code>
+        	</p>
+        	<p>
+        		Enter this as  (<var>fText</var>)*(<var>derivhText</var>)+ (<var>hText</var>)*(<var>derivfText</var>)
+        	</p>
+        </div>
+       
+      </div>
+    </div>
+  </div>
+</body>
+</html>

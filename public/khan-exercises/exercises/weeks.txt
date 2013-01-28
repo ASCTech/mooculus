@@ -53,4 +53,14 @@ repeatedLinApprox
 numChainRule
 * Week 4
 intuitiveCurveSketch
-
+productRulePoints
+productRuleTwoWays
+quotientRulePoints
+secondDerivativeSign
+testingRandFunction
+productRuleMultiplyLines
+productRuleCompute
+increaseDecreaseDerivativePoint
+curveSketchPoints
+thirdDerivativeSign
+quotientRuleCompute

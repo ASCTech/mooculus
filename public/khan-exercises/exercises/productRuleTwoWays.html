@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html data-require="math word-problems">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>Two different approximations of a product</title>
+    <script src="../khan-exercise.js"></script>
+</head>
+<body>
+    <div class="exercise">
+        <div class="vars">
+           <var id = "X">randRange(-10,10)</var>
+           <var id = "Y1">randRange(-10,10)</var>
+           <var id = "Y2">randRangeExclude(-10,10,[Y1])</var>
+           <var id = "M1">randRange(-9,9)</var>
+           <var id = "M2">randRange(-9,9)</var>
+           <var id = "place">randRange(2,4)</var>
+           <var id = "h">roundTo(place,randRangeNonZero(-3,3)/Math.pow(10,place))</var>
+        </div>
+
+        <div class="problems">
+            <div id="average-rate-of-change">
+                <p class="problem">Suppose that:
+                <br/><br/>
+                <code>f(<var>X</var>) = <var>Y1</var></code>
+                <br/>
+                <code>f'(<var>X</var>) = <var>M1</var></code>
+                <br/>
+                <code>g(<var>X</var>) = <var>Y2</var></code>
+                <br/>
+                <code>g'(<var>X</var>) = <var>M2</var></code>
+                <br/><br/>
+                There are two natural ways to approximate <code>f(<var>X+h</var>)\cdot g(<var>X+h</var>)</code>:
+                <br/><br/>
+                <b>Method 1</b>: First approximate <code>f(<var>X+h</var>)</code> and <code>g(<var>X+h</var>)</code> using their
+                linearizations at <code>x = <var>X</var></code>, and then multiply these two approximations together.
+                <br/><br/>
+                <b>Method 2</b>: Compute <code>\left.\dfrac{d}{dx}f(x)\cdot g(x)\right\vert_{x=<var>X</var>}</code> and use this
+                to to approximate <code>f(<var>X+h</var>)\cdot g(<var>X+h</var>)</code> directly using the linearization of
+                the function <code>f(x) \cdot g(x)</code> at <code>x = <var>X</var></code>
+		</p>
+		<p class="question">Approximate <code>f(<var>X+h</var>)\cdot g(<var>X+h</var>)</code> using each of the methods above.
+			Contemplate why they both give good approximations.  What is the difference between the two approximations?
+			Can you see how the comparison gives a good reason to believe the product rule?
+		</p>    
+               <div class="solution" data-type="multiple">
+
+                    <p>
+                        Method 1 approximation: <span class="sol"><var>roundTo(2*place,(Y1+M1*h)*(Y2+M2*h))</var></span>
+                        <br/>
+                        Method 2 approximation: <span class="sol" ><var>roundTo(2*place,(Y1+M1*h)*(Y2+M2*h) - M1*M2*h*h)</var></span>
+
+                    </p>
+
+                </div>
+                
+                <div class="hints">
+                	<p>Lets do Method 1 first:</p>
+                	<div>
+                		<p>
+                			<code>f(<var>X+h</var>) = f(<var>X</var> + <var>h</var>)</code>
+                		</p>
+                		<p>
+                			<code>	
+                				\hphantom{f(<var>X+h</var>)}\approx f(<var>X</var>) + f'(<var>X</var>)\cdot (<var>h</var>)
+                			</code>
+                		</p>
+                		<p>
+                			<code>	
+                				\hphantom{f(<var>X+h</var>)}= <var>Y1</var>+<var>M1</var> \cdot (<var>h</var>)
+                			</code>
+                		</p>
+                		<p>
+                			<code>	
+                				\hphantom{f(<var>X+h</var>)}= <var>Y1 + M1*h</var>
+                			</code>
+                		</p>	
+                	</div>
+                	
+                	<div>
+                		<p>
+                			<code>g(<var>X+h</var>) = g(<var>X</var> + <var>h</var>)</code>
+                		</p>
+                		<p>
+                			<code>	
+                				\hphantom{g(<var>X+h</var>)}\approx g(<var>X</var>) + g'(<var>X</var>)\cdot (<var>h</var>)
+                			</code>
+                		</p>
+                		<p>
+                			<code>	
+                				\hphantom{f(<var>X+h</var>)}= <var>Y2</var>+<var>M2</var> \cdot (<var>h</var>)
+                			</code>
+                		</p>
+                		<p>
+                			<code>	
+                				\hphantom{f(<var>X+h</var>)}= <var>Y2 + M2*h</var>
+                			</code>
+                		</p>	
+                	</div>
+                	
+                	<div>
+                		so 
+                		<code>
+                			<p>f(<var>X+h</var>) \cdot g(<var>X+h</var>) \approx (<var>Y1 + M1*h</var>) \cdot (<var>Y2 + M2*h</var>) = <var>roundTo(2*place,(Y1+M1*h)*(Y2+M2*h))</var></p>
+                		</code>
+                	</div>
+                	<p>
+                		Now lets try Method 2:
+                	</p>
+                	
+                	<p>
+                		Just to have a symbol for the product function around, lets define <code>p</code> by 
+                		<code>p(x) = f(x) \cdot g(x)</code>.
+                	</p>
+                	<p>
+                		Then method 2 is really asking us to approximate <code>p(<var>X+h</var>)</code> by using 
+                		the linearization of <code>p</code> at <code>x = <var>X</var></code>.
+                	</p>
+                	<p>
+                		By the product rule, <code>p'(x) = f(x)g'(x)+f'(x)g(x)</code>, so 
+                		<code>p'(<var>X</var>) = (<var>Y1</var>)(<var>M2</var>) + (<var>M1</var>)(<var>Y2</var>)
+                		= <var>Y1*M2+M1*Y2</var></code>
+                		
+                	</p>
+                	<p>
+                		 <code>p(<var>X</var>) = f(<var>X</var>) \cdot g(<var>X</var>) = (<var>Y1</var>)(<var>Y2</var>) = <var>Y1*Y2</var> </code>
+                	</p>
+                	<div>
+                		<p>So using the linear approximation, we can say </p>
+                		<p>	<code>p(<var>X+h</var>) = p(<var>X</var>+<var>h</var>)</code></p>
+                		<p>	<code>\hphantom{p(<var>X+h</var>)} \approx p(<var>X</var>)+p'(<var>X</var>) \cdot (<var>h</var>)</code></p>
+                		<p>	<code>\hphantom{p(<var>X+h</var>)} = <var>Y1*Y2</var>+<var>Y1*M2+M1*Y2</var> \cdot (<var>h</var>)</code></p>
+                		<p>	<code>\hphantom{p(<var>X+h</var>)} = <var>Y1*Y2+(Y1*M2+M1*Y2)*h</var></code></p>
+                	</div>
+                	<p> Therefore, method 2 gives us the approximation <code>f(<var>X+h</var>) \cdot g(<var>X+h</var>) \approx <var>Y1*Y2+(Y1*M2+M1*Y2)*h</var></code> </p>
+                	
+                </div>
+                
+                
+            </div>
+        </div>
+
+       
+    </div>
+</body>
+</html>
