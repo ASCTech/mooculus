@@ -11,105 +11,59 @@ var $0 = $$.length - 1;
 switch (yystate) {
 case 1: return $$[$0-1]; 
 break;
-case 2:this.$ = new StraightLineProgram(function(bindings){ return parseFloat(yytext.replace(',','.')); },
-				      parseFloat(yytext.replace(',','.')).toString(),
-				      parseFloat(yytext.replace(',','.')).toString());
+case 2:this.$ = parseFloat(yytext.replace(',','.'));
 break;
-case 3:this.$ = new StraightLineProgram(function(bindings){ return bindings[yytext.toLowerCase()]; },
-				      yytext.toLowerCase(),
-				      yytext.toLowerCase());
+case 3:this.$ = yytext.toLowerCase();
 break;
-case 4:this.$ = new StraightLineProgram(function(bindings){ return $$[$0-2].evaluate(bindings) + $$[$0].evaluate(bindings); },
-				      '\\left(' + $$[$0-2].tex + ' + ' + $$[$0].tex + '\\right)',
-				      ['+', $$[$0-2].syntax_tree, $$[$0].syntax_tree] );
+case 4:this.$ = ['+', $$[$0-2], $$[$0]]; 
 break;
-case 5:this.$ = new StraightLineProgram(function(bindings){ return $$[$0-2].evaluate(bindings) - $$[$0].evaluate(bindings); },
-				      '\\left(' + $$[$0-2].tex + ' - ' + $$[$0].tex + '\\right)',
-				      ['-', $$[$0-2].syntax_tree, $$[$0].syntax_tree] );
+case 5:this.$ = ['-', $$[$0-2], $$[$0]]; 
 break;
-case 6:this.$ = new StraightLineProgram(function(bindings){ return $$[$0-2].evaluate(bindings) * $$[$0].evaluate(bindings); },
-				      '\\left(' + $$[$0-2].tex + ' \\cdot ' + $$[$0].tex + '\\right)',
-				      ['*', $$[$0-2].syntax_tree, $$[$0].syntax_tree] );
+case 6:this.$ = ['*', $$[$0-2], $$[$0]]; 
 break;
-case 7:this.$ = new StraightLineProgram(function(bindings){ return $$[$0-3].evaluate(bindings) * Math.pow($$[$0-2].evaluate(bindings),$$[$0].evaluate(bindings)); },
-	  			      '\\left(' + $$[$0-3].tex + ' \\cdot \\left(' + $$[$0-2].tex + '\\right)^{' + $$[$0].tex + '}\\right)',
-				      ['*', $$[$0-3].syntax_tree, ['^', $$[$0-2].syntax_tree, $$[$0].syntax_tree]] );
+case 7:this.$ = ['*', $$[$0-3], ['^', $$[$0-2], $$[$0]]]; 
 break;
 case 8:this.$ = $$[$0]
 break;
-case 9:this.$ = new StraightLineProgram(function(bindings){ return $$[$0-1].evaluate(bindings) * $$[$0].evaluate(bindings); },
-				      '\\left(' + $$[$0-1].tex + ' \\cdot ' + $$[$0].tex + '\\right)',
-				      ['*', $$[$0-1].syntax_tree, $$[$0].syntax_tree] );
+case 9:this.$ = ['*', $$[$0-1], $$[$0]]; 
 break;
-case 10:this.$ = new StraightLineProgram(function(bindings){ return $$[$0-2].evaluate(bindings) / $$[$0].evaluate(bindings); },
-				      '\\displaystyle\\frac{' + $$[$0-2].tex + '}{' + $$[$0].tex + '}',
-				      ['/', $$[$0-2].syntax_tree, $$[$0].syntax_tree] );
+case 10:this.$ = ['/', $$[$0-2], $$[$0]]; 
 break;
-case 11:this.$ = new StraightLineProgram(function(bindings){ return Math.pow($$[$0-2].evaluate(bindings),$$[$0].evaluate(bindings)); },
-				      '\\left(' + $$[$0-2].tex + '\\right)^{' + $$[$0].tex + '}',
-				      ['^', $$[$0-2].syntax_tree, $$[$0].syntax_tree] );
+case 11:this.$ = ['^', $$[$0-2], $$[$0]]; 
 break;
-case 12:this.$ = new StraightLineProgram(function(bindings){ return -($$[$0].evaluate(bindings)); },
-				      '-\\left(' + $$[$0].tex + '\\right)',
-				      ['*', -1, $$[$0].syntax_tree] );
+case 12:this.$ = ['~', $$[$0]]; 
 break;
 case 13:this.$ = $$[$0];
 break;
 case 14:this.$ = $$[$0-1];
 break;
-case 15:this.$ = new StraightLineProgram(function(bindings){ return Math.pow(Math.E,$$[$0].evaluate(bindings)); },
-				      'e^{' + $$[$0].tex + '}',
-				      ['^', 'e', $$[$0].syntax_tree] );
+case 15:this.$ = ['^', 'e', $$[$0]]; 
 break;
-case 16:this.$ = new StraightLineProgram(function(bindings){ return Math.log($$[$0].evaluate(bindings)); },
-				      '\\log \\left(' + $$[$0].tex + '\\right)',
-				      ['log', $$[$0].syntax_tree] );
+case 16:this.$ = ['log', $$[$0]]; 
 break;
-case 17:this.$ = new StraightLineProgram(function(bindings){ return Math.sin($$[$0].evaluate(bindings)); },
-				      '\\sin \\left(' + $$[$0].tex + '\\right)',
-				      ['sin', $$[$0].syntax_tree] );
+case 17:this.$ = ['sin', $$[$0]]; 
 break;
-case 18:this.$ = new StraightLineProgram(function(bindings){ return Math.cos($$[$0].evaluate(bindings)); },
-				      '\\cos \\left(' + $$[$0].tex + '\\right)',
-				      ['cos', $$[$0].syntax_tree] );
+case 18:this.$ = ['cos', $$[$0]]; 
 break;
-case 19:this.$ = new StraightLineProgram(function(bindings){ return Math.tan($$[$0].evaluate(bindings)); },
-				      '\\tan \\left(' + $$[$0].tex + '\\right)',
-				      ['tan', $$[$0].syntax_tree] );
+case 19:this.$ = ['tan', $$[$0]]; 
 break;
-case 20:this.$ = new StraightLineProgram(function(bindings){ return 1.0/Math.sin($$[$0].evaluate(bindings)); },
-				      '\\csc \\left(' + $$[$0].tex + '\\right)',
-				      ['csc', $$[$0].syntax_tree] );
+case 20:this.$ = ['csc', $$[$0]]; 
 break;
-case 21:this.$ = new StraightLineProgram(function(bindings){ return 1.0/Math.cos($$[$0].evaluate(bindings)); },
-				      '\\sec \\left(' + $$[$0].tex + '\\right)',
-				      ['sec', $$[$0].syntax_tree] );
+case 21:this.$ = ['sec', $$[$0]]; 
 break;
-case 22:this.$ = new StraightLineProgram(function(bindings){ return 1.0/Math.tan($$[$0].evaluate(bindings)); },
-				      '\\cot \\left(' + $$[$0].tex + '\\right)',
-				      ['cot', $$[$0].syntax_tree] );
+case 22:this.$ = ['cot', $$[$0]]; 
 break;
-case 23:this.$ = new StraightLineProgram(function(bindings){ return Math.arcsin($$[$0].evaluate(bindings)); },
-				      '\\arcsin \\left(' + $$[$0].tex + '\\right)',
-				      ['arcsin', $$[$0].syntax_tree] );
+case 23:this.$ = ['arcsin', $$[$0]]; 
 break;
-case 24:this.$ = new StraightLineProgram(function(bindings){ return Math.arccos($$[$0].evaluate(bindings)); },
-				      '\\arccos \\left(' + $$[$0].tex + '\\right)',
-				      ['arccos', $$[$0].syntax_tree] );
+case 24:this.$ = ['arccos', $$[$0]]; 
 break;
-case 25:this.$ = new StraightLineProgram(function(bindings){ return Math.arctan($$[$0].evaluate(bindings)); },
-				      '\\arctan \\left(' + $$[$0].tex + '\\right)',
-				      ['arctan', $$[$0].syntax_tree] );
+case 25:this.$ = ['arctan', $$[$0]]; 
 break;
-case 26:this.$ = new StraightLineProgram(function(bindings){ return Math.pow($$[$0].evaluate(bindings),0.5); },
-				      '\\sqrt{' + $$[$0].tex + '}',
-				      ['sqrt', $$[$0].syntax_tree] );
+case 26:this.$ = ['sqrt', $$[$0]]; 
 break;
-case 27:this.$ = new StraightLineProgram(function(bindings){ return Math.E; },
-				      'e', "e");
+case 27:this.$ = "e";
 break;
-case 28:this.$ = new StraightLineProgram(function(bindings){ return Math.PI; },
-				      '\\pi', "pi");
+case 28:this.$ = "pi";
 break;
 case 29:this.$ = $$[$0];
 break;
@@ -312,57 +266,6 @@ parse: function parse(input) {
     return true;
 }};
 
-
-function StraightLineProgram(f,tex,tree)
-{
-    this.evaluate = f;
-    this.tex = tex;
-    this.syntax_tree = tree;
-}
-
-var sub = function(str) {
-  return str.replace(/#\{(.*?)\}/g,
-    function(whole, expr) {
-      return eval(expr)
-    })
-}
-
-var randomBindings = function() {
-    var alphabet = "abcdefghijklmnopqrstuvwxyz";
-    var result = new Object();
-    for(var i=0; i<alphabet.length; i++) {
-	result[alphabet.charAt(i)] = Math.random() * 20.0 - 10.0;
-    }
-    return result;
-}
-
-StraightLineProgram.prototype = {
-    f: function(bindings) {
-	this.evaluate(bindings)
-    },
-
-    equalsForBinding: function(other,bindings) {
-	var epsilon = 0.0001;
-	var this_evaluated = this.evaluate(bindings);	
-	var other_evaluated = other.evaluate(bindings);
-	return (Math.abs(this_evaluated - other_evaluated) < epsilon) ||
-	    (this_evaluated == other_evaluated) ||
-	    (isNaN(this_evaluated) && isNaN(other_evaluated));
-    },
-
-    equals: function(other) {
-	var total_trials = 20;
-	var successful_trials = 0;
-
-        for( var i=0; i < total_trials; i++ ) {
-	    var bindings = randomBindings();
-	    if (this.equalsForBinding(other,bindings)) {
-		successful_trials++;
-	    }
-	}
-	return (successful_trials > 0.95 * total_trials);
-    },
-}
 
 /* Jison generated lexer */
 var lexer = (function(){
