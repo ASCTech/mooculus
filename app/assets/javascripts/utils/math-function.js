@@ -279,7 +279,7 @@ var MathFunction = (function () {
 
 	// Derivative of a constant
 	if (typeof tree === 'number') {
-	    story.push( 'The derivative of a constant is zero, that is, ' + ddx + latex_ast(tree) + ' = 0</code>.' );
+	    story.push( 'The derivative of a constant is zero, that is, <code>' + ddx + latex_ast(tree) + ' = 0</code>.' );
 	    return 0;
 	}
 	
@@ -448,7 +448,7 @@ var MathFunction = (function () {
 		    var power_rule = mathFunctionParser.parse('a^(f) * log(a)');
 		    var result = substitute_ast( power_rule, { "a": base, "f": exponent } );
 
-		    story.push( 'The derivative of <code>a^' + latex_ast( x ) + '</code> is <code>a^{' + latex_ast( x ) + '} \, \log a</code>, that is, <code>' + ddx + latex_ast( tree ) + ' = ' + latex_ast( result ) + '</code>.' );
+		    story.push( 'The derivative of <code>a^' + latex_ast( x ) + '</code> is <code>a^{' + latex_ast( x ) + '} \\, \\log a</code>, that is, <code>' + ddx + latex_ast( tree ) + ' = ' + latex_ast( result ) + '</code>.' );
 
 		    return result;
 		}
