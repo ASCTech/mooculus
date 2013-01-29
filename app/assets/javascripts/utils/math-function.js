@@ -342,7 +342,7 @@ var MathFunction = (function () {
 				    return latex_ast(v);
 			    })).join( ' \\cdot ' ) })).join( ' + ' ) + '</code>.' );
 
-	    var inner_operands = $.extend({}, operands);
+	    var inner_operands = operands.slice();
 
 	    var result = $.merge( ['+'], $.map( operands, function(v,i) {
 		return [$.merge( ['*'], $.map( inner_operands, function(w,j) {
@@ -351,6 +351,7 @@ var MathFunction = (function () {
 			// remove terms that have derivative 1
 			if (d === 1)
 			    return null;
+
 			return [d];
 		    } else {
 			return [w];
@@ -609,3 +610,4 @@ var MathFunction = (function () {
 
     return my;
 }());
+
