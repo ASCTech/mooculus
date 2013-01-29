@@ -987,6 +987,7 @@ Khan.answerTypes = $.extend(Khan.answerTypes, {
                 return $(solution).clone()
                     .find(".MathJax").remove().end()
                     .find("code").removeAttr("id").end()
+                    .find("script").removeAttr("id").end()
                     .html();
             };
 
@@ -1142,6 +1143,7 @@ Khan.answerTypes = $.extend(Khan.answerTypes, {
                 return $(solution).clone()
                     .find(".MathJax").remove().end()
                     .find("code").removeAttr("id").end()
+                    .find("script").removeAttr("id").end()
                     .html();
             };
             var correct = extractRawCode(solution);
@@ -1411,10 +1413,10 @@ Khan.answerTypes = $.extend(Khan.answerTypes, {
 	    };
 	},
 	createValidator: function(solution) {
-	    var correct = mathFunctionParser.parse($.trim($(solution).text()));
+	    var correct = MathFunction.parse($.trim($(solution).text()));
 	    return function(guess) {
-		guess_expression = mathFunctionParser.parse($.trim(guess));
-		console.log( "comparing " + guess_expression.tex + " wth the correct " + correct.tex );
+		guess_expression = MathFunction.parse($.trim(guess));
+
 		return correct.equals(guess_expression);
 	    };
 	}

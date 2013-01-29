@@ -58,10 +58,8 @@ productRuleTwoWays
 quotientRulePoints
 secondDerivativeSign
 testingRandFunction
-productRuleMultiplyLines
 productRuleCompute
 increaseDecreaseDerivativePoint
 curveSketchPoints
-thirdDerivativeSign
 quotientRuleCompute
 differentiatePolynomial

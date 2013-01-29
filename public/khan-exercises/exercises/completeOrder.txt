@@ -59,5 +59,3 @@ intuitiveCurveSketch.html
 increaseDecreaseDerivativePoint.html
 curveSketchPoints.html
 productRuleTwoWays.html
-productRuleMultiplyLines.html
-thirdDerivativeSign.html
