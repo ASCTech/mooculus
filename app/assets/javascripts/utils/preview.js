@@ -5,7 +5,7 @@ var Preview = {
 	    var math = MathJax.Hub.getAllJax($("#MathPreview")[0])[0];
 	    try
 	    {
-		text = mathFunctionParser.parse(text).tex;
+		text = MathFunction.parse(text).tex();
 		MathJax.Hub.Queue(["Text",math,text]);
 		$("#MathFunctionError").hide();
 		$("#MathPreview").show();
