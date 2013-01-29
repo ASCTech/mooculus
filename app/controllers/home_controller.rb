@@ -14,4 +14,7 @@ class HomeController < ApplicationController
 
   def contact
   end
+
+  def derivative
+  end
 end
