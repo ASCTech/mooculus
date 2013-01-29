@@ -117,7 +117,7 @@
                     stroke: KhanUtil.BLUE
                 }, function() {
                     graph.tangentLine = plot( function( x ) {
-                        return  (((g(graph.pointA.coord[0]+.01)-g(graph.pointA.coord[0]-.01))/(.02))*(x-graph.pointA.coord[0])*(x-graph.pointA.coord[0]))*11/maxf;
+                        return  (((g(graph.pointA.coord[0]+.01)-g(graph.pointA.coord[0]-.01))/(.02))*(x-graph.pointA.coord[0])*(x-graph.pointA.coord[0]) + g(graph.pointA.coord[0])*(x-graph.pointA.coord[0]) +f(graph.pointA.coord[0]))*11/maxf;
                     }, [ -11, 11 ] );
                     graph.tangentLine.toBack();
                 });
