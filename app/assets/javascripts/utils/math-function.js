@@ -55,10 +55,10 @@ var MathFunction = (function () {
 	var needle_operands = needle.slice(1);
 
 	if (haystack_operator === needle_operator) {
-	    if (haystack_operands.length == needle_operands.length) {
+	    if (haystack_operands.length >= needle_operands.length) {
 		var matches = {}
 
-		$.each( haystack_operands, function(i) {
+		$.each( needle_operands, function(i) {
 		    var new_matches = tree_match( haystack_operands[i], needle_operands[i] );
 		    
 		    if (new_matches === null) {
@@ -69,6 +69,10 @@ var MathFunction = (function () {
 			matches = $.extend( matches, new_matches );
 		    }
 		} );
+
+		if (matches != null) {
+		    matches = $.extend( matches, { remainder: haystack_operands.slice( needle_operands.length ) } );
+		}
 
 		return matches;
 	    }
@@ -121,9 +125,9 @@ var MathFunction = (function () {
 
 	var match = tree_match( haystack, needle );
 	if (match != null) {
-	    return substitute_ast( replacement, match );
+	    return $.merge( substitute_ast( replacement, match ), match.remainder );
 	}
-	
+
 	var operator = haystack[0];
 	var operands = haystack.slice(1);
 
@@ -139,18 +143,17 @@ var MathFunction = (function () {
 
 	while( keep_going ) {
 	    keep_going = false;
-	    
+
 	    if (subtree_matches( tree, right_associator )) {
-		console.log( right_associator );
 		tree = replace_subtree( tree, right_associator, associated );
 		keep_going = true;
 	    }
 
 	    if (subtree_matches( tree, left_associator )) {
-		console.log( left_associator );
 		tree = replace_subtree( tree, left_associator, associated );
 		keep_going = true;
 	    }
+
 	}
 
 	return tree;
