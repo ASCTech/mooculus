@@ -15,8 +15,8 @@ var MathFunction = (function () {
 	    return tree;
 	}    
 	
-	operator = tree[0];
-	operands = tree.slice(1);
+	var operator = tree[0];
+	var operands = tree.slice(1);
 	
 	return $.merge( [operator], $.map( operands, function(v,i) { return [substitute_ast(v,bindings)]; } ) );
     };
@@ -238,8 +238,8 @@ var MathFunction = (function () {
 	    return tree;
 	}    
 	
-	operator = tree[0];
-	operands = tree.slice(1);
+	var operator = tree[0];
+	var operands = tree.slice(1);
 	
 	if (operator in math_functions) {
 	    return "{" + latex_functions[operator]( $.map( operands, function(v,i) { return latex_ast(v); } ) ) + "}";
@@ -279,8 +279,8 @@ var MathFunction = (function () {
 	    return 0;
 	}
     
-	operator = tree[0];
-	operands = tree.slice(1);
+	var operator = tree[0];
+	var operands = tree.slice(1);
 
 	// derivative of sum is sum of derivatives
 	if ((operator === '+') || (operator === '-') || (operator === '~')) {
