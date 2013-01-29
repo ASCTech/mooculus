@@ -423,6 +423,14 @@ var MathFunction = (function () {
 	},
     };
 
+    function htmlEncode(value){
+	if (value) {
+            return jQuery('<div />').text(value).html();
+	} else {
+            return '';
+	}
+    }
+
     my.parse = function(string) {
 	return new StraightLineProgram( mathFunctionParser.parse(string) );
     };
