@@ -1,0 +1,52 @@
+<script>
+var Preview = {
+    Update: function () {
+	var text = document.getElementById("MathInput").value; 
+	if (text.length > 0) {
+	    var math = MathJax.Hub.getAllJax($("#MathPreview")[0])[0];
+	    try
+	    {
+                var f = MathFunction.parse(text);
+                var text = MathFunction.parse(text).tex();
+		var text = '\\frac{d}{dx} ' + text + ' = ' + f.derivative("x").tex();
+		MathJax.Hub.Queue(["Text",math,text]);
+		$("#MathFunctionError").hide();
+		$("#MathPreview").show();
+                var story = f.derivative_story("x");
+		$('#solution').empty();
+		for( var i = 0; i < story.length; i++ ) {
+		    $("<div>" + story[i] + "</div>").appendTo("#solution");
+		}
+
+		$('#solution code').each( function() {
+		    var text = $(this).text();
+		    var script=document.createElement('script');
+		    script.type='math/tex';
+		    $(script).append( $(this).text() );
+		    $(this).replaceWith( script );
+		});
+
+		MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
+	    }
+	    catch(err)
+	    {
+		$("#MathFunctionError").show();
+		$("#MathPreview").hide();
+	    }
+	} else {
+	    $("#MathPreview").hide();
+	}
+    },
+};
+
+</script>
+
+<p>Enter a function, and see how to differentiate it.</p>
+
+<input class="function" id="MathInput" onkeyup="Preview.Update()" autocomplete="off" type="text" value="x^2" />
+
+<div id="MathPreview" style="padding: 3px; width:100%; margin-top:5px;"><script type="math/tex"></script></div>
+<div id="MathFunctionError" style="display: none; font-weight: bold; color: red;">Error: the expression is invalid.</div>
+
+<div id="solution">
+</div>
