@@ -448,9 +448,9 @@ case 2:return 29
 break;
 case 3:return 9
 break;
-case 4:return 12 // there is some variety in multiplication symbols
+case 4:return 13
 break;
-case 5:return 12
+case 5:return 12 // there is some variety in multiplication symbols
 break;
 case 6:return 12
 break;
@@ -460,13 +460,13 @@ case 8:return 12
 break;
 case 9:return 12
 break;
-case 10:return 14
+case 10:return 12
 break;
-case 11:return 11
+case 11:return 14
 break;
-case 12:return 11 // there is quite some variety with unicode hyphens
+case 12:return 11
 break;
-case 13:return 11
+case 13:return 11 // there is quite some variety with unicode hyphens
 break;
 case 14:return 11
 break;
@@ -552,11 +552,11 @@ case 54:return 11
 break;
 case 55:return 11
 break;
-case 56:return 10
+case 56:return 11
 break;
-case 57:return 13
+case 57:return 10
 break;
-case 58:return 13
+case 58:return 13 // lots of ways to denote exponentiation
 break;
 case 59:return 13
 break;
@@ -566,54 +566,62 @@ case 61:return 13
 break;
 case 62:return 13
 break;
-case 63:return 15
+case 63:return 13
 break;
-case 64:return 16
+case 64:return 15
 break;
-case 65:return 15
+case 65:return 16
 break;
-case 66:return 16
+case 66:return 15
 break;
-case 67:return 15
+case 67:return 16
 break;
-case 68:return 16
+case 68:return 15
 break;
-case 69:return 30
+case 69:return 16
 break;
-case 70:return 19
+case 70:return 30
 break;
-case 71:return 20
+case 71:return 19
 break;
-case 72:return 21
+case 72:return 20
 break;
-case 73:return 22
+case 73:return 21
 break;
-case 74:return 23
+case 74:return 22
 break;
-case 75:return 24
+case 75:return 23
 break;
-case 76:return 25
+case 76:return 24
 break;
-case 77:return 26
+case 77:return 25
 break;
-case 78:return 27
+case 78:return 26
 break;
-case 79:return 18
+case 79:return 27
 break;
-case 80:return 18
+case 80:return 25
 break;
-case 81:return 17
+case 81:return 26
 break;
-case 82:return 28
+case 82:return 27
 break;
-case 83:return 5
+case 83:return 18
 break;
-case 84:return 'INVALID'
+case 84:return 18
+break;
+case 85:return 17
+break;
+case 86:return 28
+break;
+case 87:return 5
+break;
+case 88:return 'INVALID'
 break;
 }
 };
-lexer.rules = [/^(?:\s+)/,/^(?:[0-9]+([,.][0-9]+)?)/,/^(?:e\b)/,/^(?:[A-Za-z]\b)/,/^(?:\*)/,/^(?:\\xB7)/,/^(?:\u00B7)/,/^(?:\u2022)/,/^(?:\u22C5)/,/^(?:\u00D7)/,/^(?:\/)/,/^(?:-)/,/^(?:\u002D)/,/^(?:\u007E)/,/^(?:\u00AD)/,/^(?:\u058A)/,/^(?:\u05BE)/,/^(?:\u1400)/,/^(?:\u1806)/,/^(?:\u2010)/,/^(?:\u2011)/,/^(?:\u2012)/,/^(?:\u2013)/,/^(?:\u2014)/,/^(?:\u2015)/,/^(?:\u207B)/,/^(?:\u208B)/,/^(?:\u2212)/,/^(?:\u2E17)/,/^(?:\u2E3A)/,/^(?:\u2E3B)/,/^(?:\u301C)/,/^(?:\u3030)/,/^(?:\u30A0)/,/^(?:\uFE31)/,/^(?:\uFE32)/,/^(?:\uFE58)/,/^(?:\uFE63)/,/^(?:\uFF0D)/,/^(?:\u002D)/,/^(?:\u007E)/,/^(?:\u00AD)/,/^(?:\u058A)/,/^(?:\u1806)/,/^(?:\u2010)/,/^(?:\u2011)/,/^(?:\u2012)/,/^(?:\u2013)/,/^(?:\u2014)/,/^(?:\u2015)/,/^(?:\u2053)/,/^(?:\u207B)/,/^(?:\u208B)/,/^(?:\u2212)/,/^(?:\u301C)/,/^(?:\u3030)/,/^(?:\+)/,/^(?:\^)/,/^(?:\u2038)/,/^(?:\u2041)/,/^(?:\u028C)/,/^(?:\u2227)/,/^(?:\u02C7)/,/^(?:\()/,/^(?:\))/,/^(?:\[)/,/^(?:\])/,/^(?:\{)/,/^(?:\})/,/^(?:pi\b)/,/^(?:sin\b)/,/^(?:cos\b)/,/^(?:tan\b)/,/^(?:csc\b)/,/^(?:sec\b)/,/^(?:cot\b)/,/^(?:arcsin\b)/,/^(?:arccos\b)/,/^(?:arctan\b)/,/^(?:log\b)/,/^(?:ln\b)/,/^(?:exp\b)/,/^(?:sqrt\b)/,/^(?:$)/,/^(?:.)/];
-lexer.conditions = {"INITIAL":{"rules":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84],"inclusive":true}};
+lexer.rules = [/^(?:\s+)/,/^(?:[0-9]+([,.][0-9]+)?)/,/^(?:e\b)/,/^(?:[A-Za-z]\b)/,/^(?:\*\*)/,/^(?:\*)/,/^(?:\\xB7)/,/^(?:\u00B7)/,/^(?:\u2022)/,/^(?:\u22C5)/,/^(?:\u00D7)/,/^(?:\/)/,/^(?:-)/,/^(?:\u002D)/,/^(?:\u007E)/,/^(?:\u00AD)/,/^(?:\u058A)/,/^(?:\u05BE)/,/^(?:\u1400)/,/^(?:\u1806)/,/^(?:\u2010)/,/^(?:\u2011)/,/^(?:\u2012)/,/^(?:\u2013)/,/^(?:\u2014)/,/^(?:\u2015)/,/^(?:\u207B)/,/^(?:\u208B)/,/^(?:\u2212)/,/^(?:\u2E17)/,/^(?:\u2E3A)/,/^(?:\u2E3B)/,/^(?:\u301C)/,/^(?:\u3030)/,/^(?:\u30A0)/,/^(?:\uFE31)/,/^(?:\uFE32)/,/^(?:\uFE58)/,/^(?:\uFE63)/,/^(?:\uFF0D)/,/^(?:\u002D)/,/^(?:\u007E)/,/^(?:\u00AD)/,/^(?:\u058A)/,/^(?:\u1806)/,/^(?:\u2010)/,/^(?:\u2011)/,/^(?:\u2012)/,/^(?:\u2013)/,/^(?:\u2014)/,/^(?:\u2015)/,/^(?:\u2053)/,/^(?:\u207B)/,/^(?:\u208B)/,/^(?:\u2212)/,/^(?:\u301C)/,/^(?:\u3030)/,/^(?:\+)/,/^(?:\^)/,/^(?:\u2038)/,/^(?:\u2041)/,/^(?:\u028C)/,/^(?:\u2227)/,/^(?:\u02C7)/,/^(?:\()/,/^(?:\))/,/^(?:\[)/,/^(?:\])/,/^(?:\{)/,/^(?:\})/,/^(?:pi\b)/,/^(?:sin\b)/,/^(?:cos\b)/,/^(?:tan\b)/,/^(?:csc\b)/,/^(?:sec\b)/,/^(?:cot\b)/,/^(?:arcsin\b)/,/^(?:arccos\b)/,/^(?:arctan\b)/,/^(?:asin\b)/,/^(?:acos\b)/,/^(?:atan\b)/,/^(?:log\b)/,/^(?:ln\b)/,/^(?:exp\b)/,/^(?:sqrt\b)/,/^(?:$)/,/^(?:.)/];
+lexer.conditions = {"INITIAL":{"rules":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88],"inclusive":true}};
 return lexer;})()
 parser.lexer = lexer;
 function Parser () { this.yy = {}; }Parser.prototype = parser;parser.Parser = Parser;
