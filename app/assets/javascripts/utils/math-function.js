@@ -202,8 +202,8 @@ var MathFunction = (function () {
 	    return tree;
 	}    
 	
-	operator = tree[0];
-	operands = tree.slice(1);
+	var operator = tree[0];
+	var operands = tree.slice(1);
 
 	if (operator in math_functions) {
 	    return math_functions[operator]( $.map( operands, function(v,i) { return evaluate_ast(v,bindings); } ) );
