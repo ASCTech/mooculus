@@ -320,9 +320,17 @@ var MathFunction = (function () {
 	    }
 
 	    if (numeric_operands.length > 0) {
+		if (non_numeric_operands.length == 0) {
+		    story.push( 'Since the derivative of a constant is zero, <code>' + ddx + latex_ast( tree ) + ' = 0.</code>' );
+		    var result = 0;
+		    return result;
+		}
+
 		var remaining = $.merge( ['*'], non_numeric_operands );
 		if (non_numeric_operands.length == 1) 
 		    remaining = non_numeric_operands[0];
+
+
 
 		if (remaining === x) {
 		    story.push( 'By the constant multiple rule, <code>' + ddx + latex_ast( tree ) + ' = ' + ($.map( numeric_operands, function(v,i) { return v; } )).join( ' \\cdot ' ) + '</code>.' );
@@ -374,6 +382,19 @@ var MathFunction = (function () {
 	if (operator === '/') {
 	    var f = operands[0];
 	    var g = operands[1];
+
+	    if (f === 1) {
+		story.push( 'Since <code>\\frac{d}{du} \\frac{1}{u}</code> is <code>\\frac{-1}{u^2}</code>, the chain rule gives <code>' + ddx + latex_ast( tree ) + ' = \\frac{-1}{ ' + latex_ast(g) + '^2' + '} \\cdot ' + ddx + latex_ast( g ) );
+
+		var a = derivative_of_ast(g,x,story);
+
+		var quotient_rule = mathFunctionParser.parse('-a/(f^2)');
+		var result = substitute_ast( quotient_rule, { "a": a, "f": g } );
+
+		story.push( 'So since <code>\\frac{d}{du} \\frac{1}{u}</code> is <code>\\frac{-1}{u^2}</code>, the chain rule gives <code>' + ddx + latex_ast( tree ) + ' = ' + latex_ast(result) + '</code>.' );
+
+		return result;
+	    }
 
 	    story.push( 'Using the quotient rule, <code>' + ddx + latex_ast( tree ) + ' = \\frac{' + ddx + '\\left(' + latex_ast(f) + '\\right) \\cdot ' + latex_ast(g) + ' - ' + latex_ast(g) + '\\cdot ' + ddx + '\\left(' + latex_ast(g) + '\\right)}{ \\left( ' + latex_ast(g) + ' \\right)^2} </code>.' );
 

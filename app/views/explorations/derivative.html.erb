@@ -26,15 +26,21 @@ var Preview = {
 		    $(this).replaceWith( script );
 		});
 
+		$("#solution").show();
 		MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
+		$("#claim").show();
 	    }
 	    catch(err)
 	    {
 		$("#MathFunctionError").show();
 		$("#MathPreview").hide();
+		$("#solution").hide();
+		$("#claim").hide();
 	    }
 	} else {
 	    $("#MathPreview").hide();
+	    $("#solution").hide();
+	    $("#claim").hide();
 	}
     },
 };
@@ -43,10 +49,9 @@ var Preview = {
 
 <p>Enter a function, and see how to differentiate it.</p>
 
-<input class="function" id="MathInput" onkeyup="Preview.Update()" autocomplete="off" type="text" value="x^2" />
+<input class="function" id="MathInput" onkeyup="Preview.Update()" autocomplete="off" type="text" value="" />
 
-<div id="MathPreview" style="padding: 3px; width:100%; margin-top:5px;"><script type="math/tex"></script></div>
+<div id="claim" style="display: none; font-family: 'Computer Modern';">I claim that <span id="MathPreview"><script type="math/tex"></script></span>.</div>
 <div id="MathFunctionError" style="display: none; font-weight: bold; color: red;">Error: the expression is invalid.</div>
 
-<div id="solution">
-</div>
+<div id="solution" style="display: none; font-family: 'Computer Modern';"></div>
