@@ -1,0 +1,205 @@
+<script>
+
+<% resolution = 500 %>
+
+var GraphPreview = {
+    f: MathFunction.parse("x"),
+
+    bindings: {},
+
+    x1: -10.0,
+    x2: 10.0,
+    y1: -10.0,
+    y2: 10.0,
+
+    drawGraph: function() { 
+	var f = GraphPreview.f;
+	var paper = GraphPreview.paper;
+	var bindings = GraphPreview.bindings;
+
+	var x1 = GraphPreview.x1;
+	var x2 = GraphPreview.x2;
+	var y1 = GraphPreview.y1;
+	var y2 = GraphPreview.y2;
+	
+	var resolution = <%= resolution %>;
+
+	var path = '';
+	var code = 'M';
+	var overrender = 1;
+	for( var i=0; i<overrender * resolution; i ++ ) {
+	    var x = i * (x2 - x1) / (overrender * resolution) + x1;
+	    var x_pixel = Math.round(i / overrender);
+	    bindings["x"] = x + 0.0000001;
+	    var y = f.evaluate( bindings );
+	    var y_pixel = Math.round(resolution - j);
+	    var j = (y - y1) * resolution / (y2 - y1);
+
+	    bindings["x"] = x - (x2 - x1)/resolution;
+	    var other_y = f.evaluate( bindings );
+
+	    if (isFinite(y_pixel)) {
+		if ((Math.abs(y - other_y) > 5) && (y * other_y < 0))
+		    code = 'M';
+
+		path = path + code + ( x_pixel + ',' + y_pixel );
+		code = 'L';
+	    } else {
+		code = 'M';
+	    }
+	}
+	paper.clear();
+	
+	var p = paper.path( path );
+	p.attr("stroke-width", "4");	
+
+	var axes = "M<%= resolution / 2%>,0V<%= resolution %> M0,<%= resolution/2 %>H<%= resolution %>";
+
+	var p = paper.path( axes );
+	p.attr("opacity", "0.5");	
+
+	for( var i=Math.ceil(x1+0.0001); i <= Math.ceil(x2); i++ ) {
+	    var x = (i - x1) * resolution / (x2 - x1);
+	    var grid = "M" + Math.round(x) + ",0V<%= resolution %>";
+	    var p = paper.path( grid );
+	    p.attr("opacity", "0.15");	
+	}
+
+	for( var i=Math.ceil(y1+0.0001); i <= Math.ceil(y2); i++ ) {
+	    var y = (i - y1) * resolution / (y2 - y1);
+	    var grid = "M0," + Math.round(y) + ",0H<%= resolution %>";
+	    var p = paper.path( grid );
+	    p.attr("opacity", "0.15");	
+	}
+    },
+
+    update: function () {
+
+	var text = document.getElementById("MathInput").value; 
+	if (text.length > 0) {
+	    var math = MathJax.Hub.getAllJax($("#MathPreview")[0])[0];
+	    try
+	    {
+                var f = this.f = MathFunction.parse(text);
+		var text = 'y = ' + f.tex();
+		MathJax.Hub.Queue(["Text",math,text]);
+		$("#MathFunctionError").hide();
+		$("#MathPreview").show();
+
+                var vars = f.variables();
+
+		if ($.inArray("y", vars) != -1)
+		    throw "Cannot have y on the right hand side.";
+
+		vars = $.grep(vars, function(e) {
+		    return e !== "x";
+		});
+
+		$("#sliders").children().hide();
+		for( var i=0; i<vars.length; i++ ) {
+		    $("#wrap_" + vars[i]).show();
+		}
+
+                // raphael see function
+		window.setTimeout(GraphPreview.drawGraph,0);
+
+		$("#graph").show();
+		MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
+		$("#claim").show();
+	    }
+	    catch(err)
+	    {
+		$("#MathFunctionError").show();
+		$("#MathPreview").hide();
+		$("#claim").hide();
+	    }
+	} else {
+	    $("#MathPreview").hide();
+	    $("#claim").hide();
+	}
+    },
+};
+
+
+  $(function() {
+    var paper = Raphael(document.getElementById("graph"));
+    GraphPreview.paper = paper;
+
+      $("#graph").mousewheel( function(event, delta, deltaX, deltaY) {
+	  event.preventDefault();
+	  var x1 = GraphPreview.x1;
+	  var x2 = GraphPreview.x2;
+	  var y1 = GraphPreview.y1;
+	  var y2 = GraphPreview.y2;
+
+	  var width = x2 - x1;
+	  var height = y2 - y1;
+
+	  var factor = 1.05;
+	  if (deltaY < 0)
+	      factor = 1.0/factor;
+
+	  var extra_width = width * (factor - 1.0);
+	  var extra_height = height * (factor - 1.0);
+	  
+	  GraphPreview.x1 = x1 - 0.5 * extra_width,
+	  GraphPreview.y1 = y1 - 0.5 * extra_height,
+	  GraphPreview.x2 = x2 + 0.5 * extra_width,
+	  GraphPreview.y2 = y2 + 0.5 * extra_height,
+
+	  window.setTimeout(GraphPreview.drawGraph,0);
+      });
+
+
+	  <% for v in 'a'..'z' %>
+      $( "#slider_<%= v %>" ).slider();
+      $( "#slider_<%= v %>" ).slider( "option", "min", -10 );
+      $( "#slider_<%= v %>" ).slider( "option", "max", 10 );
+      $( "#slider_<%= v %>" ).slider( "option", "step", 0.1 );
+
+      $( "#slider_<%= v %>" ).slider({
+	  slide: function( event, ui ) { GraphPreview.bindings["<%= v %>"] = $( "#slider_<%= v %>" ).slider( "option", "value" );
+					 window.setTimeout(GraphPreview.drawGraph,0); }
+      });
+
+      GraphPreview.bindings["<%= v %>"] = 0.0;
+      $( "#slider_<%= v %>" ).slider( "option", "value", 0 );
+
+	  <% end %>
+
+      var text = "(a+1)*x^2";
+      document.getElementById("MathInput").value = text;
+      GraphPreview.f = MathFunction.parse(text);
+      $("#MathPreview").show();
+      $("#claim").show();
+      $("#wrap_a").show();
+      window.setTimeout(GraphPreview.drawGraph,0);
+
+  });
+
+</script>
+
+<div class="page-header">
+  <h1>Graph! <small>Control other variables with sliders.</small></h1>
+</div>
+
+<div id="graph" style="float: left; padding-right: 12pt; padding-bottom: 12pt; font-family: 'Computer Modern'; width: <%= resolution %>px; height: <%= resolution %>px;"></div>
+<div>
+
+<div id="sliders" style="float: right;">
+<% for v in 'a'..'z' %>
+<div id="wrap_<%= v %>" class="slider_wrap" style="padding-top: 12pt;  display:none; width: 300px;">
+    <span><script type="math/tex"><%= v %></script></span><div id="slider_<%= v %>" style="width: 90%; float: right;"></div>
+</div>
+<% end %>
+</div>
+
+<div>
+    <script type="math/tex">y = </script>&nbsp;<input class="function" id="MathInput" onkeyup="GraphPreview.update()" autocomplete="off" type="text" value="" />
+</div>
+
+    <div id="claim" style="display: none; font-family: 'Computer Modern';"><span id="MathPreview"><script type="math/tex">y = \left( (a+1) \cdot x^2 \right)</script></span>.</div>
+<div id="MathFunctionError" style="display: none; font-weight: bold; color: red;">Error: the expression is invalid.</div>
+
+
+</div>
