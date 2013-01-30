@@ -9,6 +9,7 @@
 [0-9]+([,.][0-9]+)?     return 'NUMBER'
 "e"                     return 'E'
 [A-Za-z]\b              return 'VAR'
+"**"                    return '^'
 "*"                     return '*' // there is some variety in multiplication symbols
 "\xB7"                  return '*'
 "\u00B7"                return '*'
@@ -62,7 +63,7 @@
 "\u301C"                return '-'
 "\u3030"                return '-'
 "+"                     return '+'
-"^"                     return '^'
+"^"                     return '^' // lots of ways to denote exponentiation
 "\u2038"                return '^'
 "\u2041"                return '^'
 "\u028C"                return '^'
@@ -84,6 +85,9 @@
 "arcsin"                return 'ARCSIN'
 "arccos"                return 'ARCCOS'
 "arctan"                return 'ARCTAN'
+"asin"                  return 'ARCSIN'
+"acos"                  return 'ARCCOS'
+"atan"                  return 'ARCTAN'
 "log"                   return 'LOG'
 "ln"                    return 'LOG'
 "exp"                   return 'EXP'

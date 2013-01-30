@@ -7,7 +7,6 @@ Assessor::Application.routes.draw do
   get "developers" => "home#developers"
   get "about" => "home#about"
   get "contact" => "home#contact"
-  get "derivative" => "home#derivative"
 
   get "score/index"
 
@@ -87,4 +86,9 @@ Assessor::Application.routes.draw do
   # This is a legacy wild controller route that's not recommended for RESTful applications.
   # Note: This route will make all actions in every controller accessible via GET requests.
   # match ':controller(/:action(/:id))(.:format)'
+
+  # explorations
+  get "explorations" => "explorations#index"
+  get "explorations/derivative" => "explorations#derivative"
+  get "explorations/graph" => "explorations#graph"
 end

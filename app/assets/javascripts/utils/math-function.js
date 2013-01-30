@@ -179,6 +179,9 @@ var MathFunction = (function () {
 	"sin": function(operands) { return Math.sin(operands[0]); },
 	"cos": function(operands) { return Math.cos(operands[0]); },
 	"tan": function(operands) { return Math.tan(operands[0]); },
+	"arcsin": function(operands) { return Math.arcsin(operands[0]); },
+	"arccos": function(operands) { return Math.arccos(operands[0]); },
+	"arctan": function(operands) { return Math.arctan(operands[0]); },
 	"csc": function(operands) { return 1.0/Math.sin(operands[0]); },
 	"sec": function(operands) { return 1.0/Math.cos(operands[0]); },
 	"cot": function(operands) { return 1.0/Math.tan(operands[0]); },
@@ -193,14 +196,20 @@ var MathFunction = (function () {
 	}
 
 	if (typeof tree === 'string') {
+	    if (tree === "e")
+		return Math.E;
+
+	    if (tree === "pi")
+		return Math.PI;
+
 	    if (tree in bindings)
 		return bindings[tree];
 	    
 	    return tree;
 	}    
 	
-	operator = tree[0];
-	operands = tree.slice(1);
+	var operator = tree[0];
+	var operands = tree.slice(1);
 
 	if (operator in math_functions) {
 	    return math_functions[operator]( $.map( operands, function(v,i) { return evaluate_ast(v,bindings); } ) );
@@ -208,6 +217,21 @@ var MathFunction = (function () {
 	
 	return NaN;
     };
+
+    function leaves( tree ) {
+	if (typeof tree === 'number') {
+	    return [tree];
+	}
+
+	if (typeof tree === 'string') {
+	    return [tree];
+	}    
+
+	var operator = tree[0];
+	var operands = tree.slice(1);
+
+	return [].concat( $.map( operands, function(v,i) { return leaves(v); } ) );
+    }
 
     /****************************************************************/
     // convert an AST to a LaTeX expression
@@ -217,11 +241,14 @@ var MathFunction = (function () {
 	"-": function(operands) { return "\\left(" + operands.join( ' - ' ) + "\\right)"; },
 	"~": function(operands) { return "- \\left( " + operands.join( ' + ' ) + "\\right)"; },
 	"*": function(operands) { return "\\left(" + operands.join( " \\cdot " ) + "\\right)"; },
-	"/": function(operands) { return "\\left(" + operands.join( " \\over " ) + "\\right)"; },
+	"/": function(operands) { return "\\frac{" + operands[0] + "}{" + operands[1] + "}"; },
 	"^": function(operands) { return operands[0] + "^" + operands[1]; },
 	"sin": function(operands) { return "\\sin \\left(" + operands[0] + "\\right)"; },
 	"cos": function(operands) { return "\\cos \\left(" + operands[0] + "\\right)"; },
 	"tan": function(operands) { return "\\tan \\left(" + operands[0] + "\\right)"; },
+	"arcsin": function(operands) { return "\\arcsin \\left(" + operands[0] + "\\right)"; },
+	"arccos": function(operands) { return "\\arccos \\left(" + operands[0] + "\\right)"; },
+	"arctan": function(operands) { return "\\arctan \\left(" + operands[0] + "\\right)"; },
 	"csc": function(operands) { return "\\csc \\left(" + operands[0] + "\\right)"; },
 	"sec": function(operands) { return "\\sec \\left(" + operands[0] + "\\right)"; },
 	"cot": function(operands) { return "\\cot \\left(" + operands[0] + "\\right)"; },
@@ -273,7 +300,7 @@ var MathFunction = (function () {
 
 	// Derivative of a constant
 	if (typeof tree === 'number') {
-	    story.push( 'The derivative of a constant is zero, that is, ' + ddx + latex_ast(tree) + ' = 0</code>.' );
+	    story.push( 'The derivative of a constant is zero, that is, <code>' + ddx + latex_ast(tree) + ' = 0</code>.' );
 	    return 0;
 	}
 	
@@ -295,6 +322,7 @@ var MathFunction = (function () {
 	if ((operator === '+') || (operator === '-') || (operator === '~')) {
 	    story.push( 'Using the sum rule, <code>' + ddx + latex_ast( tree ) + ' = ' + ($.map( operands, function(v,i) { return ddx + latex_ast(v); } )).join( ' + ' ) + '</code>.' );
 	    var result = $.merge( [operator], $.map( operands, function(v,i) { return [derivative_of_ast(v,x,story)]; } ) );
+	    result = clean_ast(result);
 	    story.push( 'So using the sum rule, <code>' + ddx + latex_ast( tree ) + ' = ' + latex_ast(result) + '</code>.' );
 	    return result;
 	}
@@ -314,13 +342,22 @@ var MathFunction = (function () {
 	    }
 
 	    if (numeric_operands.length > 0) {
+		if (non_numeric_operands.length == 0) {
+		    story.push( 'Since the derivative of a constant is zero, <code>' + ddx + latex_ast( tree ) + ' = 0.</code>' );
+		    var result = 0;
+		    return result;
+		}
+
 		var remaining = $.merge( ['*'], non_numeric_operands );
 		if (non_numeric_operands.length == 1) 
 		    remaining = non_numeric_operands[0];
 
+
+
 		if (remaining === x) {
 		    story.push( 'By the constant multiple rule, <code>' + ddx + latex_ast( tree ) + ' = ' + ($.map( numeric_operands, function(v,i) { return v; } )).join( ' \\cdot ' ) + '</code>.' );
 		    var result = $.merge( ['*'], numeric_operands );
+		    result = clean_ast(result);
 		    return result;
 		}
 
@@ -328,7 +365,7 @@ var MathFunction = (function () {
 
 		var d = derivative_of_ast(remaining,x,story);
 		var result = $.merge( ['*'], $.merge( numeric_operands, [d] ) );
-		
+		result = clean_ast(result);
 		story.push( 'And so <code>' + ddx + latex_ast( tree ) + ' = ' + latex_ast(result) + '</code>.' );
 		return result;
 	    }
@@ -358,7 +395,7 @@ var MathFunction = (function () {
 		    }
 		} ) )];
 	    } ) );
-
+	    result = clean_ast(result);
 	    story.push( 'So using the product rule, <code>' + ddx + latex_ast( tree ) + ' = ' + latex_ast(result) + '</code>.' );
 
 	    return result;
@@ -368,6 +405,19 @@ var MathFunction = (function () {
 	if (operator === '/') {
 	    var f = operands[0];
 	    var g = operands[1];
+
+	    if (f === 1) {
+		story.push( 'Since <code>\\frac{d}{du} \\frac{1}{u}</code> is <code>\\frac{-1}{u^2}</code>, the chain rule gives <code>' + ddx + latex_ast( tree ) + ' = \\frac{-1}{ ' + latex_ast(g) + '^2' + '} \\cdot ' + ddx + latex_ast( g ) );
+
+		var a = derivative_of_ast(g,x,story);
+
+		var quotient_rule = mathFunctionParser.parse('-a/(f^2)');
+		var result = substitute_ast( quotient_rule, { "a": a, "f": g } );
+		result = clean_ast(result);
+		story.push( 'So since <code>\\frac{d}{du} \\frac{1}{u}</code> is <code>\\frac{-1}{u^2}</code>, the chain rule gives <code>' + ddx + latex_ast( tree ) + ' = ' + latex_ast(result) + '</code>.' );
+
+		return result;
+	    }
 
 	    story.push( 'Using the quotient rule, <code>' + ddx + latex_ast( tree ) + ' = \\frac{' + ddx + '\\left(' + latex_ast(f) + '\\right) \\cdot ' + latex_ast(g) + ' - ' + latex_ast(g) + '\\cdot ' + ddx + '\\left(' + latex_ast(g) + '\\right)}{ \\left( ' + latex_ast(g) + ' \\right)^2} </code>.' );
 
@@ -379,7 +429,7 @@ var MathFunction = (function () {
 	    var quotient_rule = mathFunctionParser.parse('(a * g - f * b)/(g^2)');
 
 	    var result = substitute_ast( quotient_rule, { "a": a, "b": b, "f": f, "g": g } );
-
+	    result = clean_ast(result);
 	    story.push( 'So using the quotient rule, <code>' + ddx + latex_ast( tree ) + ' = ' + latex_ast(result) + '</code>.' );
 
 	    return result;
@@ -394,7 +444,7 @@ var MathFunction = (function () {
 		if ((typeof base === 'string') && (base === 'x')) {
 		    var power_rule = mathFunctionParser.parse('n * (f^(n-1))');
 		    var result = substitute_ast( power_rule, { "n": exponent, "f": base } );
-
+		    result = clean_ast(result);
 		    story.push( 'By the power rule, <code>' + ddx + latex_ast( tree ) + ' = ' + latex_ast( exponent ) + ' \\cdot \\left(' + latex_ast( base ) + '\\right)^{' + latex_ast( ['-', exponent, 1] ) + '}</code>.' );
 
 		    return result;
@@ -411,7 +461,7 @@ var MathFunction = (function () {
 
 		var power_rule = mathFunctionParser.parse('n * (f^(n-1)) * a');
 		var result = substitute_ast( power_rule, { "n": exponent, "f": base, "a" : a } );
-
+		result = clean_ast(result);
 		story.push( 'So by the power rule and the chain rule, <code>' + ddx + latex_ast( tree ) + ' = ' + latex_ast(result) + '</code>.' );
 		return result;
 	    }
@@ -420,7 +470,7 @@ var MathFunction = (function () {
 		if ((typeof exponent === 'string') && (exponent === x)) {
 		    var power_rule = mathFunctionParser.parse('e^(f)');
 		    var result = substitute_ast( power_rule, { "f": exponent } );
-
+		    result = clean_ast(result);
 		    story.push( 'The derivative of <code>e^' + latex_ast( x ) + '</code> is itself, that is, <code>' + ddx + latex_ast( tree ) + ' = ' + latex_ast( tree ) + '</code>.' );
 
 		    return result;
@@ -432,7 +482,7 @@ var MathFunction = (function () {
 
 		var d = derivative_of_ast(exponent,x,story);
 		var result = substitute_ast( power_rule, { "f": exponent, "d": d } );
-
+		result = clean_ast(result);
 		story.push( 'So using the rule for <code>e^x</code> and the chain rule, <code>' + ddx + latex_ast( tree ) + ' = ' + latex_ast(result) + '</code>.' );
 		return result;
 	    }
@@ -441,8 +491,8 @@ var MathFunction = (function () {
 		if ((typeof exponent === 'string') && (exponent === x)) {
 		    var power_rule = mathFunctionParser.parse('a^(f) * log(a)');
 		    var result = substitute_ast( power_rule, { "a": base, "f": exponent } );
-
-		    story.push( 'The derivative of <code>a^' + latex_ast( x ) + '</code> is <code>a^{' + latex_ast( x ) + '} \, \log a</code>, that is, <code>' + ddx + latex_ast( tree ) + ' = ' + latex_ast( result ) + '</code>.' );
+		    result = clean_ast(result);
+		    story.push( 'The derivative of <code>a^' + latex_ast( x ) + '</code> is <code>a^{' + latex_ast( x ) + '} \\, \\log a</code>, that is, <code>' + ddx + latex_ast( tree ) + ' = ' + latex_ast( result ) + '</code>.' );
 
 		    return result;
 		}
@@ -455,7 +505,7 @@ var MathFunction = (function () {
 		var power_rule = mathFunctionParser.parse('a^(b)*log(a)*d');
 		var d = derivative_of_ast(exponent,x,story);
 		var result = substitute_ast( power_rule, { "a": base, "b": exponent, "d": d } );
-
+		result = clean_ast(result);
 		story.push( 'So using the rule for <code>a^x</code> and the chain rule, <code>' + ddx + latex_ast( tree ) + ' = ' + latex_ast(result) + '</code>.' );
 		return result;		
 	    }
@@ -464,14 +514,14 @@ var MathFunction = (function () {
 	    var f = base;
 	    var g = exponent;
 
-	    story.push( "Recall the general rule for exponents, namely that <code>\\frac{d}{dx} u(x)^{v(x)} = u(x)^{v(x)} \\cdot \left( v'(x) \\cdot \\log u(x) + \\frac{v(x) \\cdot u'(x)}{u(x)} \\right)</code>.  In this case, <code>u(x) = " +  latex_ast( f ) + "</code> and <code>v(x) = " + latex_ast( g ) + "</code>." );
+	    story.push( "Recall the general rule for exponents, namely that <code>\\frac{d}{dx} u(x)^{v(x)} = u(x)^{v(x)} \\cdot \\left( v'(x) \\cdot \\log u(x) + \\frac{v(x) \\cdot u'(x)}{u(x)} \\right)</code>.  In this case, <code>u(x) = " +  latex_ast( f ) + "</code> and <code>v(x) = " + latex_ast( g ) + "</code>." );
 
 	    var a = derivative_of_ast(f,x,story);
 	    var b = derivative_of_ast(g,x,story);
 
 	    var power_rule = mathFunctionParser.parse('(f^g)*(b * log(f) + (g * a)/f)');
 	    var result = substitute_ast( power_rule, { "a": a, "b": b, "f": f, "g": g } );
-
+	    result = clean_ast(result);
 	    story.push( 'So by the general rule for exponents, <code>' + ddx + latex_ast( tree ) + ' = ' + latex_ast(result) + '</code>.' );
 	    return result;
 	}
@@ -487,6 +537,7 @@ var MathFunction = (function () {
 	    } else if ((typeof input == "string") && (input == x)) {
 		var result = ['*',
 			      substitute_ast( derivatives[operator], { "x": input } )];
+		result = clean_ast(result);
 		story.push( 'It is the case that <code>' + ddx + latex_ast( tree ) + ' = ' + latex_ast(result) + '</code>.' );
 		return result;
 	    } else if ((typeof input == "string") && (input != x)) {
@@ -502,7 +553,7 @@ var MathFunction = (function () {
 		var result = ['*',
 			      substitute_ast( derivatives[operator], { "x": input } ),
 			      derivative_of_ast( input, x, story )];
-		
+		result = clean_ast(result);		
 		story.push( 'So by the chain rule, <code>' + ddx + latex_ast( tree ) + ' = ' + latex_ast(result) + '</code>.' );
 		return result;
 	    }
@@ -588,6 +639,20 @@ var MathFunction = (function () {
 	    derivative_of_ast( this.syntax_tree, x, story );
 	    story = simplify_story( story );
 	    return story;
+	},
+
+	variables: function() {
+	    var result = leaves( this.syntax_tree ); 
+
+	    result = $.grep( result, function(v,i) {
+		return (typeof v === 'string') && (v != "e")
+	    });
+
+	    result = result.filter(function(itm,i,a){
+		return i==result.indexOf(itm);
+	    });
+	    
+	    return result;
 	},
 	
 	equals: function(other) {
