@@ -1,0 +1,80 @@
+<script>
+var Preview = {
+    text: "",
+
+    update: function () {
+	var new_text = document.getElementById("MathInput").value; 
+	if (Preview.text != new_text) {
+	    Preview.text = new_text;
+	    window.setTimeout(Preview.writeStory,0);
+	}
+    },
+
+    writeStory: function () {
+	var text = document.getElementById("MathInput").value; 
+	if (text.length > 0) {
+	    var math = MathJax.Hub.getAllJax($("#MathPreview")[0])[0];
+	    try
+	    {
+                var f = MathFunction.parse(text);
+                var text = MathFunction.parse(text).tex();
+		var text = '\\frac{d}{dx} ' + text + ' = ' + f.derivative("x").tex();
+		MathJax.Hub.Queue(["Text",math,text]);
+		$("#MathFunctionError").hide();
+		$("#MathPreview").show();
+                var story = f.derivative_story("x");
+		$('#solution').empty();
+		for( var i = 0; i < story.length; i++ ) {
+		    $("<div>" + story[i] + "</div>").appendTo("#solution");
+		}
+
+		$('#solution code').each( function() {
+		    var text = $(this).text();
+		    var script=document.createElement('script');
+		    script.type='math/tex';
+		    $(script).append( $(this).text() );
+		    $(this).replaceWith( script );
+		});
+
+		$("#solution").show();
+		MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
+		$("#claim").show();
+	    }
+	    catch(err)
+	    {
+		$("#MathFunctionError").show();
+		$("#MathPreview").hide();
+		$("#solution").hide();
+		$("#claim").hide();
+	    }
+	} else {
+	    $("#MathPreview").hide();
+	    $("#solution").hide();
+	    $("#claim").hide();
+	}
+    },
+
+};
+
+    $(function() {
+	var firstTime = true;
+	MathJax.Hub.Register.MessageHook("New Math", function (message) {
+	    if (firstTime)
+		Preview.update();
+	    else
+		firstTime = false;
+	})
+
+    });
+</script>
+
+<div class="page-header">
+  <h1>Differentiate!  <small>See the work shown step-by-step.</small></h1>
+</div>
+
+<input class="function" style="width:30%;" id="MathInput" onkeyup="Preview.update()" autocomplete="off" type="text" value="(1+2*x)^5" />
+
+<div id="claim" style="display: none; font-family: 'Computer Modern';">I claim that <span id="MathPreview"><script type="math/tex"></script></span>.</div>
+<div id="MathFunctionError" style="display: none; font-weight: bold; color: red;">Error: the expression is invalid.</div>
+
+<div id="solution" style="display: none; font-family: 'Computer Modern';"></div>
