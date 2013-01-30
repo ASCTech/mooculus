@@ -279,8 +279,8 @@ We want to show that $f(x)$ is continuous at $x=a$, hence we must show that
 Consider
 \begin{align*}
 \lim_{x\to a} \left(f(x) - f(a)\right) &= \lim_{x\to a} \left((x-a)\frac{f(x) - f(a)}{x-a}\right) &\text{Multiply and divide by $(x-a)$.} \\
-&= \lim_{h\to 0} h \frac{f(a+h) - f(a)}{h} &\text{Set $x = a+h$.} \\
-&= \lim_{h\to 0} h \lim_{h\to 0}\frac{f(a+h) - f(a)}{h} &\text{Limit Law.} \\
+&= \lim_{h\to 0} h \cdot \frac{f(a+h) - f(a)}{h} &\text{Set $x = a+h$.} \\
+&= \left(\lim_{h\to 0} h\right) \left(\lim_{h\to 0}\frac{f(a+h) - f(a)}{h}\right) &\text{Limit Law.} \\
 &= 0\cdot f'(a) = 0.
 \end{align*}
 Since 
