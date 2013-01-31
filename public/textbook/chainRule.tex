@@ -11,7 +11,7 @@ this case.
 
 
 Consider $\sqrt{625-x^2}$. This function has many simpler
-components, like 625 and $x^2$, and then there is that square root
+components, like $625$ and $x^2$, and then there is that square root
 symbol, so the square root function $\sqrt{x}=x^{1/2}$ is
 involved. The obvious question is: can we compute the derivative using
 the derivatives of the constituents $625-x^2$ and $\sqrt{x}$?
@@ -31,21 +31,19 @@ $g(x)=625-x^2$ and compute the derivatives.  First,
 Suppose we want the derivative of $f(g(x))$.
 Again, let's set up the derivative and play some algebraic tricks:
 \begin{align*}
-{d\over dx}f(g(x))
-&=\lim_{\Delta x\to0} {f(g(x+\Delta x))-f(g(x))\over\Delta x} \\
-&=\lim_{\Delta x\to0} {f(g(x+\Delta x))-f(g(x))\over g(x+\Delta
-  x))-g(x)} {g(x+\Delta x))-g(x)\over\Delta x} \\
+\ddx f(g(x)) &=\lim_{h\to0} \frac{f(g(x+h))-f(g(x))}{h} \\
+&=\lim_{h\to0} \frac{f(g(x+h))-f(g(x))}{g(x+h))-g(x)} \frac{g(x+h))-g(x)}{h} \\
 \end{align*}
 Now we see immediately that the second fraction turns into $g'(x)$
 when we take the limit. The first fraction is more complicated, but it
-too looks something like a derivative. The denominator, $g(x+\Delta
-x))-g(x)$, is a change in the value of $g$, so let's abbreviate
-it as $\Delta g=g(x+\Delta
-x))-g(x)$, which also means $g(x+\Delta x)=g(x)+\Delta g$. This gives
+too looks something like a derivative. The denominator, $g(x+h))-g(x)$, is a change in the value of $g(x)$, so let's abbreviate
+it as $\Delta g=g(x+h))-g(x)$, which also means $g(x+h)=g(x)+\Delta g$. This gives
 us
-$$\lim_{\Delta x\to0} {f(g(x)+\Delta g)-f(g(x))\over \Delta g}.$$
-As $\Delta x$ goes to 0, it is also true that $\Delta g$ goes to 0,
-because $g(x+\Delta x)$ goes to $g(x)$. So we can rewrite this limit
+\[
+\lim_{h\to0} {f(g(x)+\Delta g)-f(g(x))\over \Delta g}.
+\]
+As $h$ goes to 0, it is also true that $\Delta g$ goes to 0,
+because $g(x+h)$ goes to $g(x)$. So we can rewrite this limit
 as
 $$\lim_{\Delta g\to0} {f(g(x)+\Delta g)-f(g(x))\over \Delta g}.$$
 Now this looks exactly like a derivative, namely $f'(g(x))$, that is,
@@ -53,17 +51,17 @@ the function $f'(x)$ with $x$ replaced by $g(x)$. If this all
 withstands scrutiny, we then get
 $${d\over dx}f(g(x))=f'(g(x))g'(x).$$
 Unfortunately, there is a small flaw in the argument. Recall that what
-we mean by $\lim_{\Delta x\to0}$ involves what happens when $\Delta x$
+we mean by $\lim_{h\to0}$ involves what happens when $h$
 is close to 0 {\it but not equal to 0.} The qualification is very
-important, since we must be able to divide by $\Delta x$.
-But when $\Delta x$ is close to 0 but not equal to 0,
+important, since we must be able to divide by $h$.
+But when $h$ is close to 0 but not equal to 0,
 $\Delta g=g(x+\Delta
 x))-g(x)$ is close to 0 {\it and possibly equal to 0.} This means it
 doesn't really make sense to divide by $\Delta g$.
 Fortunately, it is possible to recast the argument to avoid this
 difficulty, but it is a bit tricky; we will not include the details,
 which can be found in many calculus books. Note that many functions
-$g$ do have the property that $g(x+\Delta x)-g(x)\not=0$ when $\Delta
+$g$ do have the property that $g(x+h)-g(x)\not=0$ when $\Delta
 x$ is small, and for these functions the argument above is fine.
 
 The chain rule has a particularly simple expression if we use the
