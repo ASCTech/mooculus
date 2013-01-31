@@ -222,7 +222,12 @@ $.tmpl = {
 
 		    // The above code was needed for KathJax to work, but now
 		    // I'm just going to replace the content with an appropriate script tag
-		    $(elem).replaceWith('<script type="math/tex">' + text + '</script>');
+		    //$(elem).replaceWith('<script type="math/tex">' + text + '</script>');
+
+		    var script=document.createElement('script');
+		    script.type='math/tex';
+		    $(script).text( KhanUtil.cleanMath ? KhanUtil.cleanMath(text) : text );
+		    $(elem).replaceWith( script );
 
                     // Stick the processing request onto the queue
                     if (typeof MathJax !== "undefined") {

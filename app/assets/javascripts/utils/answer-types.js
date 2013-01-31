@@ -1413,9 +1413,9 @@ Khan.answerTypes = $.extend(Khan.answerTypes, {
 	    };
 	},
 	createValidator: function(solution) {
-	    var correct = mathFunctionParser.parse($.trim($(solution).text()));
+	    var correct = MathFunction.parse($.trim($(solution).text()));
 	    return function(guess) {
-		guess_expression = mathFunctionParser.parse($.trim(guess));
+		guess_expression = MathFunction.parse($.trim(guess));
 
 		return correct.equals(guess_expression);
 	    };
