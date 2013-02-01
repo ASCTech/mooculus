@@ -1,0 +1,83 @@
+\documentclass{beamer}
+
+\usepackage{beamerthemeblackboard}
+%\usepackage{graphics}
+%\usepackage{verbatim}
+
+\usepackage[absolute,overlay]{textpos}
+
+\setbeamertemplate{footline}{}
+
+\newcommand{\MyBlock}[1]{%
+  \begin{textblock*}{11cm}(1cm,8.5cm)%
+    \hfill\scalebox{2}{\color{red!70!black} #1}%
+  \end{textblock*}%
+}
+
+%\usepackage{txfonts}
+\usepackage{kerkis}
+
+\usebackgroundtemplate%
+{%
+    \includegraphics[width=\paperwidth,height=\paperheight]{blackboard.png}%
+}
+\begin{document}
+
+
+
+\title{\scalebox{2}{\textbf{MOOC}\textnormal{ULUS}}}
+\author{Massive Open Online Calculus}
+\date{}
+\begin{frame}
+\titlepage
+\end{frame}
+
+
+
+
+{
+\usebackgroundtemplate{\includegraphics[height=\paperheight]{mooculusHome.png}}
+\begin{frame}
+
+\MyBlock{\color{yellow} What is \textbf{MOOC}\textnormal{ULUS}?}
+\end{frame}
+}
+
+
+
+{
+\usebackgroundtemplate{\includegraphics[height=\paperheight]{exercise.png}}
+\begin{frame}
+
+\MyBlock{What is \textbf{MOOC}\textnormal{ULUS}?}
+\end{frame}
+}
+
+
+{
+\usebackgroundtemplate{\includegraphics[height=\paperheight]{textbook.png}}
+\begin{frame}
+
+\MyBlock{What is \textbf{MOOC}\textnormal{ULUS}?}
+\end{frame}
+}
+
+{
+\usebackgroundtemplate{\includegraphics[height=\paperheight]{lectures.png}}
+\begin{frame}
+
+\MyBlock{What is \textbf{MOOC}\textnormal{ULUS}?}
+\end{frame}
+}
+
+
+{
+\usebackgroundtemplate{\includegraphics[height=\paperheight]{forum.png}}
+\begin{frame}
+
+\MyBlock{What is \textbf{MOOC}\textnormal{ULUS}?}
+\end{frame}
+}
+
+
+\end{document}
