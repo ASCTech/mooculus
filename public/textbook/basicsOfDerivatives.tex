@@ -809,7 +809,14 @@ If $f(x)$ and $g(x)$ are differentiable and $c$ is a constant, then
         \end{axis}
 \end{tikzpicture}
 \label{figure:sum-rule}
-\caption{A geometric interpretation of the sum rule.}
+\caption{A geometric interpretation of the sum rule. Since every
+  point on $f(x)+g(x)$ is the sum of the corresponding points on
+  $f(x)$ and $g(x)$, increasing $a$ by a ``small amount'' $h$,
+  increases $f(a)+g(a)$ by the sum of $f'(a)h$ and
+  $g'(a)h$. Hence, 
+\[
+\frac{\Delta y}{\Delta x}\approx \frac{f'(a)h+g'(a)h}{h} = f'(a) + g'(a).
+\]}
 \end{marginfigure}
 
 \begin{proof}

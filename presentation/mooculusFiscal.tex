@@ -1,18 +1,41 @@
 \documentclass{beamer}
 
 \usepackage{beamerthemeblackboard}
+\usepackage{environ}
 %\usepackage{graphics}
 %\usepackage{verbatim}
 
 \usepackage[absolute,overlay]{textpos}
-
+%\usepackage{tikz}
 \setbeamertemplate{footline}{}
 
-\newcommand{\MyBlock}[1]{%
-  \begin{textblock*}{11cm}(1cm,8.5cm)%
-    \hfill\scalebox{2}{\color{red!70!black} #1}%
-  \end{textblock*}%
+\newcommand{\mooculus}{\textsf{\textbf{MOOC}\textnormal{ULUS}}}
+
+
+
+\newcommand{\MyBlock}[1]{
+  \begin{textblock*}{11cm}(1cm,8.5cm)
+    \begin{tikzpicture}
+      \node[rectangle, rounded corners, inner sep=5pt,minimum width=11cm,align=right,
+        text=yellow, text opacity=1,
+        fill=black, fill opacity=.4](box){
+        \hfill\scalebox{2}{ #1}
+      };
+    \end{tikzpicture}
+
+  \end{textblock*}
 }
+
+
+
+%% \newcommand{\MyBlock}[1]{
+%%   \begin{textblock*}{11cm}(1cm,8.5cm)
+%%     \hfill\scalebox{2}{\color{red!70!black} #1}
+%%   \end{textblock*}
+%% }
+
+
+
 
 %\usepackage{txfonts}
 \usepackage{kerkis}
@@ -25,7 +48,7 @@
 
 
 
-\title{\scalebox{2}{\textbf{MOOC}\textnormal{ULUS}}}
+\title{\scalebox{2}{\mooculus}}
 \author{Massive Open Online Calculus}
 \date{}
 \begin{frame}
@@ -35,13 +58,18 @@
 
 
 
+
+
+
 {
 \usebackgroundtemplate{\includegraphics[height=\paperheight]{mooculusHome.png}}
 \begin{frame}
 
-\MyBlock{\color{yellow} What is \textbf{MOOC}\textnormal{ULUS}?}
+\MyBlock{\color{yellow} What is \mooculus?}
 \end{frame}
 }
+
+
 
 
 
@@ -49,16 +77,16 @@
 \usebackgroundtemplate{\includegraphics[height=\paperheight]{exercise.png}}
 \begin{frame}
 
-\MyBlock{What is \textbf{MOOC}\textnormal{ULUS}?}
+\MyBlock{What is \mooculus?}
 \end{frame}
 }
 
 
 {
-\usebackgroundtemplate{\includegraphics[height=\paperheight]{textbook.png}}
+\usebackgroundtemplate{\includegraphics[height=\paperheight]{textbook.png}} %% NEED TO ZOOM!
 \begin{frame}
 
-\MyBlock{What is \textbf{MOOC}\textnormal{ULUS}?}
+\MyBlock{What is \mooculus?}
 \end{frame}
 }
 
@@ -66,7 +94,7 @@
 \usebackgroundtemplate{\includegraphics[height=\paperheight]{lectures.png}}
 \begin{frame}
 
-\MyBlock{What is \textbf{MOOC}\textnormal{ULUS}?}
+\MyBlock{What is \mooculus?}
 \end{frame}
 }
 
@@ -75,7 +103,34 @@
 \usebackgroundtemplate{\includegraphics[height=\paperheight]{forum.png}}
 \begin{frame}
 
-\MyBlock{What is \textbf{MOOC}\textnormal{ULUS}?}
+\MyBlock{What is \mooculus?}
+\end{frame}
+}
+
+
+{
+\usebackgroundtemplate{\includegraphics[height=\paperheight]{blackboard.png}}
+\begin{frame}
+
+\MyBlock{How do we run \mooculus?}
+\end{frame}
+}
+
+
+{
+\usebackgroundtemplate{\includegraphics[height=\paperheight]{blackboard.png}}
+\begin{frame}
+
+\MyBlock{How do students run \mooculus?}
+\end{frame}
+}
+
+
+{
+\usebackgroundtemplate{\includegraphics[height=\paperheight]{blackboard.png}}
+\begin{frame}
+
+\MyBlock{Where can \mooculus~take us?}
 \end{frame}
 }
 

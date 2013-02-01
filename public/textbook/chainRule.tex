@@ -61,9 +61,11 @@ $f(x)$ and $g(x)$? To do so, we need the \textit{chain rule}.
           \node at (axis cs:-.7,-1.4) [anchor=east] {$a$};
         \end{axis}
 \end{tikzpicture}
-\caption{A geometric interpretation of the chain rule. Here 
+\caption{A geometric interpretation of the chain rule. Increasing $a$
+  by a ``small amount'' $h$, increases $f(g(a))$ by $f'(g(a))g'(a)h$. Hence, 
 \[
-\frac{\Delta y}{\Delta x}\approx \frac{f'(g(a))g'(a)h}{h} = f'(g(a))g'(a).
+\frac{\Delta y}{\Delta x}\approx \frac{f'(g(a))g'(a)h}{h} =
+f'(g(a))g'(a).
 \]}
 \end{marginfigure}
 \begin{mainTheorem}[Chain Rule]\index{chain rule}\index{derivative rules!chain}
@@ -118,9 +120,10 @@ $f(g)$ and the tangent line of $f(x)$ at $x=g$, see the figure below:
           \node at (axis cs:1.666,2.333) [anchor=west] {$E(g)(g-g_0)$};
 
           \addplot [very thick,penColor, smooth,domain=(0:7/4)] {-1/(x-2)};
+          \addplot [very thick,penColor2, smooth,domain=(0:2)] {x};
+
           \addplot[color=penColor,fill=penColor,only marks,mark=*] coordinates{(1.666,3)};  %% closed hole          
           \addplot[color=penColor,fill=penColor,only marks,mark=*] coordinates{(1,1)};  %% closed hole          
-          \addplot [very thick,penColor2, smooth,domain=(0:2)] {x};
         \end{axis}
 \end{tikzpicture}
 \vspace{.2cm}
@@ -437,40 +440,6 @@ at $(1,\sqrt{4+\sqrt{5}})$.
 
 
 
-As we have seen, there is a close relationship between the derivatives
-of $e^x$ and $\ln x$ because these functions are inverses. Rather
-than relying on pictures for our understanding, we would like to be
-able to exploit this relationship computationally.  In fact this
-technique can help us find derivatives in many situations, not just
-when we seek the derivative of an inverse function.
-
-We will begin by illustrating the technique to find what we already
-know, the derivative of $\ln x$. Let's write $y=\ln x$ and then $
-x=e^{\ln x}=e^y$, that is, $x=e^y$. We say that this equation
-defines the function $y=\ln x$ implicitly\index{implicit
-  function}\index{function!implicit} because while it is not an
-explicit expression $y=\ldots$, it is true that if $x=e^y$ then
-$y$ is in fact the natural logarithm function. Now, for the time
-being, pretend that all we know of $y$ is that $x=e^y$; what can
-we say about derivatives? We can take the derivative of both sides of
-the equation:
-$${d\over dx}x={d\over dx}e^y.$$
-Then using the chain rule on the right hand side:
-$$1 = \left({d\over dx}y\right) e^y = y'e^y.$$
-Then we can solve for $y'$:
-$$y'={1\over e^y} = {1\over x}.$$
-There is one little difficulty here. To use the chain rule to compute 
-$d/dx(e^y)=y'e^y$ we need to know that the function $y$ {\it has\/} a
-derivative. All we have shown is that {\it if\/} it has a derivative
-then that derivative must be $1/x$. When using this method we will
-always have to assume that the desired derivative exists, but
-fortunately this is a safe assumption for most such problems. 
-
-The example $y=\ln x$ involved an inverse function defined implicitly,
-but other functions can be defined implicitly, and sometimes a single
-equation can be used to implicitly define more than one
-function. 
-
 Here's a familiar example. The equation $r^2=x^2+y^2$
 describes a circle of radius $r$. The circle is not a function
 $y=f(x)$ because for some values of $x$ there are two corresponding
@@ -586,6 +555,46 @@ y'&= {m\over n}x^{m-1-m+(m/n)} \\
 y'&= {m\over n}x^{(m/n)-1} \\
 \end{align*}
 \end{example}
+
+
+
+
+
+\subsection{The Derivative of Inverse Functions}
+
+As we have seen, there is a close relationship between the derivatives
+of $e^x$ and $\ln x$ because these functions are inverses. Rather
+than relying on pictures for our understanding, we would like to be
+able to exploit this relationship computationally.  In fact this
+technique can help us find derivatives in many situations, not just
+when we seek the derivative of an inverse function.
+
+We will begin by illustrating the technique to find what we already
+know, the derivative of $\ln x$. Let's write $y=\ln x$ and then $
+x=e^{\ln x}=e^y$, that is, $x=e^y$. We say that this equation
+defines the function $y=\ln x$ implicitly\index{implicit
+  function}\index{function!implicit} because while it is not an
+explicit expression $y=\ldots$, it is true that if $x=e^y$ then
+$y$ is in fact the natural logarithm function. Now, for the time
+being, pretend that all we know of $y$ is that $x=e^y$; what can
+we say about derivatives? We can take the derivative of both sides of
+the equation:
+$${d\over dx}x={d\over dx}e^y.$$
+Then using the chain rule on the right hand side:
+$$1 = \left({d\over dx}y\right) e^y = y'e^y.$$
+Then we can solve for $y'$:
+$$y'={1\over e^y} = {1\over x}.$$
+There is one little difficulty here. To use the chain rule to compute 
+$d/dx(e^y)=y'e^y$ we need to know that the function $y$ {\it has\/} a
+derivative. All we have shown is that {\it if\/} it has a derivative
+then that derivative must be $1/x$. When using this method we will
+always have to assume that the desired derivative exists, but
+fortunately this is a safe assumption for most such problems. 
+
+The example $y=\ln x$ involved an inverse function defined implicitly,
+but other functions can be defined implicitly, and sometimes a single
+equation can be used to implicitly define more than one
+function. 
 
 \begin{exercises}
 
