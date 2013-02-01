@@ -237,7 +237,7 @@ var MathFunction = (function () {
     /****************************************************************/
     // convert an AST to parseable text
 
-    var latex_functions = {
+    var text_functions = {
 	"+": function(operands) { return "(" + operands.join( ' + ' ) + ")"; },
 	"-": function(operands) { return "(" + operands.join( ' - ' ) + ")"; },
 	"~": function(operands) { return "- ( " + operands.join( ' + ' ) + ")"; },
@@ -271,7 +271,7 @@ var MathFunction = (function () {
 	var operands = tree.slice(1);
 	
 	if (operator in math_functions) {
-	    return "(" + latex_functions[operator]( $.map( operands, function(v,i) { return latex_ast(v); } ) ) + ")";
+	    return "(" + text_functions[operator]( $.map( operands, function(v,i) { return text_ast(v); } ) ) + ")";
 	}
 	
 	return NaN;
