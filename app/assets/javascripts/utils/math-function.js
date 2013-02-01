@@ -233,6 +233,51 @@ var MathFunction = (function () {
 	return [].concat( $.map( operands, function(v,i) { return leaves(v); } ) );
     }
 
+
+    /****************************************************************/
+    // convert an AST to parseable text
+
+    var latex_functions = {
+	"+": function(operands) { return "(" + operands.join( ' + ' ) + ")"; },
+	"-": function(operands) { return "(" + operands.join( ' - ' ) + ")"; },
+	"~": function(operands) { return "- ( " + operands.join( ' + ' ) + ")"; },
+	"*": function(operands) { return "(" + operands.join( " * " ) + ")"; },
+	"/": function(operands) { return "((" + operands[0] + ")/(" + operands[1] + "))"; },
+	"^": function(operands) { return "(" + operands[0]  + ")^(" + operands[1] + ")"; },
+	"sin": function(operands) { return "sin (" + operands[0] + ")"; },
+	"cos": function(operands) { return "cos (" + operands[0] + ")"; },
+	"tan": function(operands) { return "tan (" + operands[0] + ")"; },
+	"arcsin": function(operands) { return "arcsin (" + operands[0] + ")"; },
+	"arccos": function(operands) { return "arccos (" + operands[0] + ")"; },
+	"arctan": function(operands) { return "arctan (" + operands[0] + ")"; },
+	"csc": function(operands) { return "csc (" + operands[0] + ")"; },
+	"sec": function(operands) { return "sec (" + operands[0] + ")"; },
+	"cot": function(operands) { return "cot (" + operands[0] + ")"; },
+	"log": function(operands) { return "log (" + operands[0] + ")"; },
+	"sqrt": function(operands) { return "sqrt(" + operands[0] + ")"; },
+    };
+
+    function text_ast(tree) {
+	if (typeof tree === 'number') {
+	    return tree;
+	}
+
+	if (typeof tree === 'string') {
+	    
+	    return tree;
+	}    
+	
+	var operator = tree[0];
+	var operands = tree.slice(1);
+	
+	if (operator in math_functions) {
+	    return "(" + latex_functions[operator]( $.map( operands, function(v,i) { return latex_ast(v); } ) ) + ")";
+	}
+	
+	return NaN;
+    };
+
+
     /****************************************************************/
     // convert an AST to a LaTeX expression
 
@@ -242,7 +287,7 @@ var MathFunction = (function () {
 	"~": function(operands) { return "- \\left( " + operands.join( ' + ' ) + "\\right)"; },
 	"*": function(operands) { return "\\left(" + operands.join( " \\cdot " ) + "\\right)"; },
 	"/": function(operands) { return "\\frac{" + operands[0] + "}{" + operands[1] + "}"; },
-	"^": function(operands) { return operands[0] + "^" + operands[1]; },
+	"^": function(operands) { return operands[0] + "^{" + operands[1] + "}"; },
 	"sin": function(operands) { return "\\sin \\left(" + operands[0] + "\\right)"; },
 	"cos": function(operands) { return "\\cos \\left(" + operands[0] + "\\right)"; },
 	"tan": function(operands) { return "\\tan \\left(" + operands[0] + "\\right)"; },
@@ -618,6 +663,10 @@ var MathFunction = (function () {
 	
 	tex: function() {
 	    return latex_ast( this.syntax_tree );
+	},
+
+	toString: function() {
+	    return text_ast( this.syntax_tree );
 	},
 	
 	equalsForBinding: function(other,bindings) {
