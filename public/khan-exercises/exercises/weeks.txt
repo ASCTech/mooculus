@@ -63,3 +63,6 @@ increaseDecreaseDerivativePoint
 curveSketchPoints
 quotientRuleCompute
 differentiatePolynomial
+* Week 5
+chainRuleTable
+chainRule1

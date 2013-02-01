@@ -59,3 +59,5 @@ intuitiveCurveSketch.html
 increaseDecreaseDerivativePoint.html
 curveSketchPoints.html
 productRuleTwoWays.html
+chainRuleTable.html
+chainRule1.html

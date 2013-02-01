@@ -1,0 +1,39 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Copyright 2010 Jasper Bosch <p.j.bosch@student.rug.nl>  %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Some parts of this theme are based on the 'diepentheme' %
+% by Guido Diepen <diepen@cs.uu.nl>                       %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\RequirePackage{calc}
+\RequirePackage{tikz}
+
+% link to the backgroundimage, default is blackboard.png
+% image should be in the same directory as the other files
+%% \def\blackboard@backgroundimagefile{blackboard}
+%% \DeclareOptionBeamer{backgroundimagefile}{\def\blackboard@backgroundimagefile{#1}}
+%% \ProcessOptionsBeamer
+
+%% \mode<presentation>
+
+%% \pgfdeclareimage[interpolate=true, height=\the\paperheight, width=\the\paperwidth]{backgroundImage}{\blackboard@backgroundimagefile}
+
+%% % stretch background image over the entire page
+%% \setbeamertemplate{background}{
+%% 	\begin{tikzpicture}
+%% 		\useasboundingbox (0,0) rectangle (\the\paperwidth, \the\paperheight); 
+%% 		\pgftext[at=\pgfpoint{0cm}{0cm}, left, base]{\pgfuseimage{backgroundImage}}; 
+%% 	\end{tikzpicture}
+%% }
+
+% use a small dash ('-') for a bulletpoint list
+\setbeamertemplate{itemize item}{\usebeamercolor[fg]{item}\small\ECFAugie{-}}
+
+\defbeamertemplate*{frametitle}{blackboard theme}[1][left]
+{
+  \begin{beamercolorbox}{frametitle}
+  \vskip17pt
+  \usebeamerfont{my frametitle}
+  \insertframetitle \\
+  \usebeamerfont{framesubtitle}\insertframesubtitle
+  \end{beamercolorbox}
+}
