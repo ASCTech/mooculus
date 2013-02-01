@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html data-require="math word-problems steveMath8 math-function-parser">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>Chain Rule Computations 1</title>
+    <script src="../khan-exercise.js"></script>
+</head>
+<body>
+  <div class="exercise">
+  
+
+    <div class="problems">
+      <div id="polyToLargePower">
+      		
+      		  <div class="vars">
+				<var id = "f">new Polynomial(0,KhanUtil.randRange(1,2))</var>
+				<var id = "power">randRange(20,50)</var>
+			    <var id = "EXP">"("+f.text().replace(/{/g,"").replace(/}/g,"")+")^(" + power + ")" </var>
+				<var id="LaTeXEXP">MathFunction.parse(EXP).derivative_story('x')</var>
+				<var id="ghgh">MathFunctionParser.parse(EXP).evaluate({x:2})</var>
+  			  </div>
+        	
+        	<p class="question">
+        		Use the chain rule to find 
+        		<code>\dfrac{d}{dx}(<var>f.text()</var>)^{<var>power</var>}</code>
+        		<br/><br/>
+        		<var>LaTeXEXP[0]</var>
+        		<br/><br/>
+        		<var>MathFunction.parse(EXP).expr()</var>
+        		
+        	</p>
+        <p class="solution" data-type="parsedExpression">
+        	<var>EXP</var>
+        </p>
+        <div class="hints">
+        	<p>
+        		One expression you could type which works is <var>EXP</var>
+        	</p>
+        </div>
+       
+      </div>
+    </div>
+  </div>
+</body>
+</html>
