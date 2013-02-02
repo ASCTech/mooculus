@@ -1388,7 +1388,7 @@ Khan.answerTypes = $.extend(Khan.answerTypes, {
     "parsedExpression": {
 	setup: function(solutionarea, solution) {
 	    // Add a text box
-	    var input = $('<input id="MathInput" onkeyup="Preview.Update()" autocomplete="off" class="input-large" type="text">');
+	    var input = $('<textarea id="MathInput" onkeyup="Preview.Update()" autocomplete="off" rows="4" cols="50">');
 	    $(solutionarea).append(input); 
 	    $(solutionarea).append('<div id="MathPreview" style="padding: 3px; width:100%; margin-top:5px;"><script type="math/tex"></script></div>');
 	    $(solutionarea).append('<div id="MathFunctionError" style="display: none; font-weight: bold; color: red;">Error: the expression is invalid.</div>');
