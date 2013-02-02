@@ -1,5 +1,11 @@
 \documentclass{beamer}
 
+
+
+%\usepackage{txfonts}
+\usepackage{kerkis}
+
+
 \usepackage{beamerthemeblackboard}
 \usepackage{environ}
 %\usepackage{graphics}
@@ -9,17 +15,22 @@
 %\usepackage{tikz}
 \setbeamertemplate{footline}{}
 
+
+
+
+
 \newcommand{\mooculus}{\textsf{\textbf{MOOC}\textnormal{ULUS}}}
 
 
 
 \newcommand{\MyBlock}[1]{
-  \begin{textblock*}{11cm}(1cm,8.5cm)
+  \begin{textblock*}{\paperwidth}(0cm,8.5cm)
     \begin{tikzpicture}
-      \node[rectangle, rounded corners, inner sep=5pt,minimum width=11cm,align=right,
+      \node[rectangle, %rounded corners, 
+        inner xsep=5pt,text width=\paperwidth,minimum height=.5in,align=right,anchor=west,
         text=yellow, text opacity=1,
-        fill=black, fill opacity=.4](box){
-        \hfill\scalebox{2}{ #1}
+        fill=black, fill opacity=.8](box){
+        \hfill\raisebox{10pt}{\scalebox{2}{ #1 \quad}}
       };
     \end{tikzpicture}
 
@@ -37,8 +48,7 @@
 
 
 
-%\usepackage{txfonts}
-\usepackage{kerkis}
+
 
 \usebackgroundtemplate%
 {%
@@ -65,7 +75,7 @@
 \usebackgroundtemplate{\includegraphics[height=\paperheight]{mooculusHome.png}}
 \begin{frame}
 
-\MyBlock{\color{yellow} What is \mooculus?}
+\MyBlock{What is \mooculus?}
 \end{frame}
 }
 
@@ -83,7 +93,7 @@
 
 
 {
-\usebackgroundtemplate{\includegraphics[height=\paperheight]{textbook.png}} %% NEED TO ZOOM!
+\usebackgroundtemplate{\includegraphics[width=\paperwidth]{textbook.png}} %% NEED TO ZOOM!
 \begin{frame}
 
 \MyBlock{What is \mooculus?}
