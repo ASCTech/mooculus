@@ -453,8 +453,8 @@ variable. For example:
 x^2+y^2 = 4,\qquad x^3+y^3 = 9xy, \qquad x^4+3x^2 = x^{2/3}+y^{2/3} = 1.
 \]
 Your inclination might be simply to solve each of these for $y$ and go
-merrily on your way. However this can be difficult and it may requre
-two \textit{branches}, for example to explicity plot $x^2+y^2 = 4$,
+merrily on your way. However this can be difficult and it may require
+two \textit{branches}, for example to explicitly plot $x^2+y^2 = 4$,
 one needs both $y= \sqrt{4-x^2}$ and $y=-\sqrt{4-x^2}$. Moreover, it not even be
 possible to solve for $y$. To deal with such situations, we use
 \textit{implicit differentiation}. Let's see an illustrative example:
@@ -584,27 +584,35 @@ factor out the $\dydx$, just as in the previous example.
 
 
 Geometrically, there is a close relationship between the plots of
-$e^x$ and $\ln(x)$, they are HEREHEREHEHR, see Figure~\ref{}. One may
-suspect that we can use the fact that $\ddx e^x = e^x$, to deduce the
-derivative of $\ln(x)$.  We will use implicit differentaition to
-exploit this relationship computationally. To do this though, we need
-a theorem.
+$e^x$ and $\ln(x)$, they are reflections of each other over the line
+$y=x$, see Figure~\ref{plot:e^x lnx}. One may suspect that we can use the fact
+that $\ddx e^x = e^x$, to deduce the derivative of $\ln(x)$.  We will
+use implicit differentiation to exploit this relationship
+computationally.
 
-\begin{mainTheorem}[Inverse Function Theorem]\index{inverse function theorem}
-If $f(x)$ is a differentiable function, and $f'(x)$ is continuous, and
-$f'(a) \neq 0$, then 
-\begin{enumerate}
-\item $f^{-1}(y)$ is defined for $y$ near $f(a)$,
-\item $f^{-1}(y)$ is differentiable near $f(a)$, 
-\item $\dd{y} f^{-1}(y)$ is continuous near $f(a)$, and
-\item $\dd{y}f^{-1}  = \displaystyle\frac{1}{f'(f^{-1}(y))}$.
-\end{enumerate}
-\end{mainTheorem}
+\begin{marginfigure}
+\begin{tikzpicture}
+	\begin{axis}[
+            xmin=-6,xmax=6,ymin=-6,ymax=6,
+            axis lines=center,
+            xlabel=$x$, ylabel=$y$,
+            every axis y label/.style={at=(current axis.above origin),anchor=south},
+            every axis x label/.style={at=(current axis.right of origin),anchor=west},
+          ]        
+          \addplot [very thick, penColor, smooth, domain=(-6:6)] {e^x};
+          \addplot [very thick, penColor2, samples=100, smooth, domain=(.01:6)] {ln(x)};
+          \addplot [dashed, textColor, domain=(-6:6)] {x};
+          \node at (axis cs:-2,1) [penColor] {$e^x$};
+          \node at (axis cs:1,-2) [penColor2] {$\ln(x)$};
+        \end{axis}
+\end{tikzpicture}
+\caption{A plot of $e^x$ and $\ln(x)$. Since they are inverse
+  functions, they are reflections of each other across the line $y=x$.}
+\label{plot:e^x lnx}
+\end{marginfigure}
 
-We will illustrate this theorem by using it to find the derivative of
-$\ln(x)$. 
 
-\begin{mainTheorem}[The Derivative of the Natural Logrithm]\index{the derivative of the natural logrithm}
+\begin{mainTheorem}[The Derivative of the Natural Logrithm]\index{the derivative of the natural logarithm}
 \[
 \ddx \ln(x) = \frac{1}{x}.
 \]
@@ -616,28 +624,43 @@ Recall
 \ln(x) = y \qquad\Leftrightarrow\qquad e^y = x.
 \]
 Hence
-\begin{align}
+\begin{align*}
 e^y &= x\\
 \ddx e^y &= \ddx x &\text{Differentiate both sides.}\\
-e^y \dydx &= 1 &\text{Implicit differentation.}\\
+e^y \dydx &= 1 &\text{Implicit differentiation.}\\
 \dydx &= \frac{1}{e^y} = \frac{1}{x}.
-\end{align}
-However, there is one catch. To write $d/dx(e^y)=y'e^y$ we need to know that the function $y$ {\it has\/} a
-derivative. All we have shown is that {\it if\/} it has a derivative
-then that derivative must be $1/x$. When using this method we will
-always have to assume that the desired derivative exists, but
-fortunately this is a safe assumption for most such problems. 
-
-The example $y=\ln x$ involved an inverse function defined implicitly,
-but other functions can be defined implicitly, and sometimes a single
-equation can be used to implicitly define more than one
-function. 
+\end{align*}
+Since $y=\ln(x)$, $\ddx \ln(x) = \frac{1}{x}$.
 \end{proof}
+
+There is one catch to the proof given above. To write
+$d/dx(e^y)=e^y\dydx$ we need to know that the function $y$
+\textit{has} a derivative. All we have shown is that \textit{if} it
+has a derivative then that derivative must be $1/x$. The \textit{Inverse
+Function Theorem} guarantees this.
+
+\begin{mainTheorem}[Inverse Function Theorem]\index{Inverse Function Theorem}
+If $f(x)$ is a differentiable function, and $f'(x)$ is continuous, and
+$f'(a) \neq 0$, then
+\begin{enumerate}
+\item $f^{-1}(y)$ is defined for $y$ near $f(a)$,
+\item $f^{-1}(y)$ is differentiable near $f(a)$, 
+\item $\dd{y} f^{-1}(y)$ is continuous near $f(a)$, and
+\item $\dd{y} f^{-1}(y)  = \displaystyle\frac{1}{f'(f^{-1}(y))}$.
+\end{enumerate}
+\end{mainTheorem}
+
+
+
 
 \begin{exercises}
 
-In exercises 1--8, find a formula for the derivative $y'$ at the point
-$(x,y)$:
+\noindent Compute $\dydx$:
+\twocol
+
+\begin{exercise} $x^2 + y^2 = 4$
+\begin{answer} $-x/y$
+\end{answer}\end{exercise}
 
 \begin{exercise} $y^2=1+x^2$
 \begin{answer} $x/y$
@@ -651,25 +674,23 @@ $(x,y)$:
 \begin{answer} $(2xy-3x^2-y^2)/(2xy-3y^2-x^2)$
 \end{answer}\end{exercise}
 
-\begin{exercise}  $4\cos x \sin y = 1$
-\begin{answer} $\sin(x)\sin(y)/(\cos(x)\cos(y))$
+\begin{exercise} $x^2y-y^3 = 6$
+\begin{answer} $\frac{2xy+x^2}{3y^2}$
 \end{answer}\end{exercise}
 
 \begin{exercise} $\sqrt{x} + \sqrt{y} = 9$
 \begin{answer} $-\sqrt{y}/\sqrt{x}$
 \end{answer}\end{exercise}
 
-\begin{exercise} $\tan(x/y) = x+ y$
- \begin{answer} $(y\sec^2(x/y)-y^2)/(x\sec^2(x/y)+y^2)$
-\end{answer}\end{exercise}
-
-\begin{exercise} $\sin (x+y ) =xy$
- \begin{answer} $(y-\cos(x+y))/(\cos(x+y)-x)$
+\begin{exercise} $xy^{3/2}+4 = 2x+y$
+\begin{answer} $\frac{y^{3/2}-2}{1-y^{1/2}3x/2}$
 \end{answer}\end{exercise}
 
 \begin{exercise} ${1\over x} + {1\over y} = 7$
 \begin{answer} $-y^2/x^2$
 \end{answer}\end{exercise}
+
+\endtwocol
 
 \begin{exercise}
 A hyperbola passing through $(8,6)$ consists of all points whose distance
@@ -677,17 +698,6 @@ from the origin is a constant more than its distance from the point (5,2).
 Find the slope of the tangent line to the hyperbola at $(8,6)$.
 \begin{answer} $1$
 \end{answer}\end{exercise}
-
-\begin{exercise}
-Compute $y'$ for the ellipse of example~\xrefn{example:ellipse}.
-%% \begin{answer} {\fivepoint 
-%% \hbox{$\bigg({x_1-x\over\sqrt{(x-x_1)^2+(y-y_1)^2}}+
-%% {x_2-x\over\sqrt{(x-x_2)^2+(y-y_2)^2}}\bigg)\bigg/$}\hfill\break
-%% \hbox{$\bigg(
-%% {y-y_1\over\sqrt{(x-x_1)^2+(y-y_1)^2}}+
-%% {y-y_2\over\sqrt{(x-x_2)^2+(y-y_2)^2}}\bigg)$}}
-%% \end{answer}
-\end{exercise}
 
 \begin{exercise} The graph of the equation $x^2 - xy + y^2 = 9$ is an ellipse.
 Find the lines tangent to this curve at the two
@@ -709,60 +719,22 @@ $(-2\sqrt3,-\sqrt3)$
 
 \begin{exercise} Find an equation for the tangent line to 
 $x^4 = y^2 + x^2$ at $(2, \sqrt{12})$. 
-(This curve is the {\dfont kampyle of Eudoxus}.)
+This curve is the \textit{kampyle of Eudoxus}.
 \begin{answer} $y=7x/\sqrt3-8/\sqrt3$
 \end{answer}\end{exercise}
 
 \begin{exercise} Find an equation for the tangent line to $x^{2/3} +
 y^{2/3} = a^{2/3}$ at a point $(x_1 ,y_1)$ on the curve, 
-with $x_1 \neq 0$ and $y_1 \neq 0$. (This curve is an {\dfont astroid}.)
+with $x_1 \neq 0$ and $y_1 \neq 0$. This curve is an \textit{astroid}.
 \begin{answer} $y=(-y_1^{1/3}x+y_1^{1/3}x_1+x_1^{1/3}y_1)/x_1^{1/3}$
 \end{answer}\end{exercise}
 
 \begin{exercise} Find an equation for the tangent line to $(x^2 +y^2 )^2 =x^2
 -y^2$ at a point $(x_1 , y_1)$ on the curve, with $x_1 \neq 0, -1, 1$.
-(This curve is a {\dfont lemniscate}.)
+(This curve is a \textit{lemniscate}.
 \begin{answer} $(y-y_1)/(x-x_1)=(2x_1^3+2x_1y_1^2-x_1)/(2y_1^3+2y_1x_1^2+y_1)$
 \end{answer}\end{exercise}
 
-\begin{remark}{Definition}
-Two curves are {\dfont orthogonal\/} if at each point of intersection,
-the angle between their tangent lines is $\pi/2$. Two
-families of curves, $\cal{A}$ and $\cal{B}$, are
-{\dfont orthogonal trajectories} of each other if given any curve $C$
-in $\cal{A}$ and any curve $D$ in $\cal{B}$ the curves $C$
-and $D$ are orthogonal.
-For example, the family of horizontal lines in the plane is
-orthogonal to the family of vertical lines in the plane.
-\end{remark}
-
- \begin{exercise} Show that $x^2 -y^2 =5$ is orthogonal to $4x^2 +9y^2
- =72$. (Hint: You need to find the intersection points of the two
- curves and then show that the product of the derivatives at each
- intersection point is $-1$.)
-\end{exercise}
-
-\begin{exercise} Show that $x^2 +y^2 = r^2$ is orthogonal to
-$y=mx$. Conclude that the family of circles centered at the origin is
-an orthogonal trajectory of the family of lines that pass through the
-origin.
-
-Note that there is a technical issue when $m=0$. The circles fail to
-be differentiable when they cross the $x$-axis. However, the circles
-are orthogonal to the $x$-axis. Explain why. Likewise, the vertical
-line through the origin requires a separate argument.
-\end{exercise}
-
-\begin{exercise} For $k\not= 0$ and $c \neq 0$ show that $y^2 -x^2 =k$ is orthogonal to
-$yx =c$. In the case where $k$ and $c$ are both zero, the curves
-  intersect at the origin. Are the curves $y^2 -x^2 =0$ and $yx=0$
-  orthogonal to each other?
-\end{exercise}
-
-\begin{exercise} Suppose that $m\neq 0$. Show that the family of curves
-$\{y=mx+b \mid b\in \R \}$ is orthogonal to the
-family of curves $\{y=-(x/m)+c \mid c \in \R\}$.
-\end{exercise}
 
 \end{exercises}
 
@@ -786,7 +758,7 @@ family of curves $\{y=-(x/m)+c \mid c \in \R\}$.
 
 
 
-\section{Logarithmtic Differentiation}
+\section{Logarithmic Differentiation}
 
 
 
