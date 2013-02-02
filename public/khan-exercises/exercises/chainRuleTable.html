@@ -133,7 +133,19 @@
                 <p class="solution"><var>derivfTable[X-1]*derivgTable[fxTable[X-1]-1]</var></p>
         		<div class="hints">
         			<p>
-        				The chain rule says <code><var>notation</var> = f'(<var>X</var>) \cdot g'(f(<var>X</var>))</code> 
+        				The derivative of a function tells you the factor by which a small change in inputs scales to become a small change in outputs.
+        			</p>
+        			<p>
+        				In this case, if we were to wiggle our input by <code>h</code> (from <code><var>X</var></code> to 
+        				<code><var>X</var>+h</code>), first <code>f</code> would scale that wiggle by 
+        				<code>f'(<var>X</var>)</code>.  So now the input of <code>g</code> 
+        				is wiggling by <code>f'(<var>X</var>)\cdot h</code> (from <code>f(<var>X</var>)</code> to 
+        				<code>f(<var>X</var>) + f'(<var>X</var>)\cdot h</code>) so <code>g</code>  scales that new wiggle by <code>g'(f(<var>X</var>))</code>.
+        				In total the wiggle <code>h</code> became <code>f'(<var>X</var>) \cdot g'(f(<var>X</var>))  \cdot h</code>, and so the derivative of
+        				<code>g \circ f</code> at <code>x = <var>X</var></code> is <code>f'(<var>X</var>) \cdot g'(f(<var>X</var>))</code>.
+        			</p>
+        			<p>
+        				This is the chain rule!  To summarize, the chain rule says <code><var>notation</var> = f'(<var>X</var>) \cdot g'(f(<var>X</var>))</code> 
         			</p>
         			<p>
         				<code>f(<var>X</var>) = <var>fxTable[X-1]</var></code>, so <code><var>notation</var> = f'(<var>X</var>) \cdot g'(<var>fxTable[X-1]</var>)</code> 
