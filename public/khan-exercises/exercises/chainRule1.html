@@ -39,6 +39,36 @@
         </div>
        
       </div>
+      <div id= "squareRoot">
+      	
+      		
+      		  <div class="vars">
+				<var id = "f">new Polynomial(0,KhanUtil.randRange(1,2))</var>
+			    <var id = "EXP">"sqrt("+f.text().replace(/{/g,"").replace(/}/g,"")+")"</var>
+				<var id="story">MathFunction.parse(EXP).derivative_story('x')</var>
+				<var id="ghgh">MathFunctionParser.parse(EXP).evaluate({x:2})</var>
+			\
+  			  </div>
+        	
+        	<p class="question">
+        		
+        		Use the chain rule to find 
+        		<code>\dfrac{d}{dx}\sqrt{<var>f.text()</var>}</code>
+        	</p>
+        <p class="solution" data-type="parsedExpression">
+        	<var>MathFunction.parse(EXP).derivative('x').toString()</var>
+        </p>
+        <div class="hints">
+        	<p data-each="story as hint">
+        		<var>hint</var>
+        	</p>
+        	<p>
+        		You can enter this as <var>MathFunction.parse(EXP).derivative('x').toString()</var>
+        	</p>
+        </div>
+       
+      
+      </div>
     </div>
   </div>
 </body>

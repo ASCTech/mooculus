@@ -66,3 +66,8 @@ differentiatePolynomial
 * Week 5
 chainRuleTable
 chainRule1
+chainRule2
+exponentiationDerivative
+exponentiationDerivative2
+logarithmDifferentiate
+chainRule3

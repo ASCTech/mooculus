@@ -61,3 +61,8 @@ curveSketchPoints.html
 productRuleTwoWays.html
 chainRuleTable.html
 chainRule1.html
+chainRule2.html
+exponentiationDerivative.html
+exponentiationDerivative2.html
+logarithmDifferentiate.html
+chainRule3.html
