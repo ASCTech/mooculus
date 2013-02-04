@@ -75,3 +75,4 @@ inverseFunctionPoints
 inverseFunctionPointGraph
 inverseFunctionExpression
 tangentLineInverse
+inverseFunctionRulePoint
