@@ -602,7 +602,7 @@ computationally.
             every axis x label/.style={at=(current axis.right of origin),anchor=west},
           ]        
           \addplot [very thick, penColor, smooth, domain=(-6:6)] {e^x};
-          \addplot [very thick, penColor2, samples=100, smooth, domain=(.01:6)] {ln(x)};
+          \addplot [very thick, penColor2, samples=100, smooth, domain=(.002:6)] {ln(x)};
           \addplot [dashed, textColor, domain=(-6:6)] {x};
           \node at (axis cs:-2,1) [penColor] {$e^x$};
           \node at (axis cs:1,-2) [penColor2] {$\ln(x)$};
@@ -732,7 +732,7 @@ with $x_1 \neq 0$ and $y_1 \neq 0$. This curve is an \textit{astroid}.
 
 \begin{exercise} Find an equation for the tangent line to $(x^2 +y^2 )^2 =x^2
 -y^2$ at a point $(x_1 , y_1)$ on the curve, with $x_1 \neq 0, -1, 1$.
-(This curve is a \textit{lemniscate}.
+This curve is a \textit{lemniscate}.
 \begin{answer} $(y-y_1)/(x-x_1)=(2x_1^3+2x_1y_1^2-x_1)/(2y_1^3+2y_1x_1^2+y_1)$
 \end{answer}\end{exercise}
 
