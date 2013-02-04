@@ -167,7 +167,7 @@ If one is working with a function of a variable other than $x$, say $t$ we write
 \[
 \dd{t} f(t) = f'(t).
 \]
-However, if $y = f(x)$, $\frac{dy}{dx}$, $\dot{y}$, and $D_x f(x)$ are
+However, if $y = f(x)$, $\dydx$, $\dot{y}$, and $D_x f(x)$ are
 also used.
 \end{definition}
 
@@ -609,7 +609,7 @@ derivative of almost any function we are likely to encounter.  We will
 start simply and build-up to more complicated examples.
 
 
-\subsection{The Constant Rule}
+\subsection*{The Constant Rule}
 
 The simplest function is a constant function.  Recall that derivatives
 measure the rate of change of a function at a given point. Hence, the
@@ -646,14 +646,14 @@ From the limit definition of the derivative, write
 \end{proof}
 
 
-\subsection{The Power Rule}
+\subsection*{The Power Rule}
 
 Now let's examine derivatives of powers of a single variable.  Here we
 have a nice rule.
 
 \marginnote{To gain intuition, you should compute the derivative of
   $f(x) = x^3$ using the limit definition of the derivative.}
-\begin{mainTheorem}[The Power Rule]\index{derivative rules!power}\index{the power rule}
+\begin{mainTheorem}[The Power Rule]\index{derivative rules!power}\index{the power rule}\label{T:powerrule}
 For any real number $n$, 
 \[
 \ddx x^n = n x^{n-1}.
@@ -671,7 +671,7 @@ where
 }
 \begin{proof}
 At this point we will only prove this theorem for $n$ being a positive
-integer, later we will give the complete proof. From the limit
+integer. Later in Section~\ref{S:logdiff}, we will give the complete proof. From the limit
 definition of the derivative, write
 \[
 \ddx x^n = \lim_{ h\to0} \frac{(x+ h)^n-x^n}{h}.
@@ -743,7 +743,7 @@ Applying the power rule, we write
 
 
 
-\subsection{The Sum Rule}
+\subsection*{The Sum Rule}
 
 We want to be able to take derivatives of functions ``one piece at a
 time.'' The \textit{sum rule} allows us to do this. The sum rule says
@@ -809,7 +809,14 @@ If $f(x)$ and $g(x)$ are differentiable and $c$ is a constant, then
         \end{axis}
 \end{tikzpicture}
 \label{figure:sum-rule}
-\caption{A geometric interpretation of the sum rule.}
+\caption{A geometric interpretation of the sum rule. Since every
+  point on $f(x)+g(x)$ is the sum of the corresponding points on
+  $f(x)$ and $g(x)$, increasing $a$ by a ``small amount'' $h$,
+  increases $f(a)+g(a)$ by the sum of $f'(a)h$ and
+  $g'(a)h$. Hence, 
+\[
+\frac{\Delta y}{\Delta x}\approx \frac{f'(a)h+g'(a)h}{h} = f'(a) + g'(a).
+\]}
 \end{marginfigure}
 
 \begin{proof}
@@ -859,7 +866,7 @@ Write
 
 
 
-\subsection{The Derivative of $\textit{e}^\textit{x}$}
+\subsection*{The Derivative of $\textit{e}^\textit{x}$}
 
 
 We don't know anything about derivatives that allows us to compute the

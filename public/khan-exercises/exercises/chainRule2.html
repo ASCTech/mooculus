@@ -15,8 +15,8 @@
       		  <div class="vars">
 				<var id = "f">new Polynomial(0,KhanUtil.randRange(1,2))</var>
 				<var id = "h">new Polynomial(0,KhanUtil.randRange(1,2))</var>
-				<var id = "power1">randRange(20,50)</var>
-				<var id = "power2">randRange(20,50)</var>
+				<var id = "power1">randRange(3,5)</var>
+				<var id = "power2">randRange(3,5)</var>
 			    <var id = "EXP">"("+f.text().replace(/{/g,"").replace(/}/g,"")+")^(" + power1 + ")/("+h.text().replace(/{/g,"").replace(/}/g,"")+")^(" + power2 + ")" </var>
 				<var id="story">MathFunction.parse(EXP).derivative_story('x')</var>
 			
@@ -45,8 +45,8 @@
       		  <div class="vars">
 				<var id = "f">new Polynomial(0,KhanUtil.randRange(1,2))</var>
 				<var id = "h">new Polynomial(0,KhanUtil.randRange(1,2))</var>
-				<var id = "power1">randRange(20,50)</var>
-				<var id = "power2">randRange(20,50)</var>
+				<var id = "power1">randRange(3,5)</var>
+				<var id = "power2">randRange(3,5)</var>
 			    <var id = "EXP">"("+f.text().replace(/{/g,"").replace(/}/g,"")+")^(" + power1 + ")*("+h.text().replace(/{/g,"").replace(/}/g,"")+")^(" + power2 + ")" </var>
 				<var id="story">MathFunction.parse(EXP).derivative_story('x')</var>
 			
@@ -75,7 +75,7 @@
       		
       		  <div class="vars">
 				<var id = "f">new Polynomial(0,KhanUtil.randRange(1,2))</var>
-				<var id = "power">randRange(20,50)</var>
+				<var id = "power">randRange(3,5)</var>
 			    <var id = "EXP">"sqrt(("+f.text().replace(/{/g,"").replace(/}/g,"")+")^"+power+")"</var>
 				<var id="story">MathFunction.parse(EXP).derivative_story('x')</var>
 				<var id="ghgh">MathFunctionParser.parse(EXP).evaluate({x:2})</var>

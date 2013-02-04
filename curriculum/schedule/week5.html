@@ -1,0 +1,118 @@
+<h3>Chain Rule</h3>
+
+<p>Previously, in <a href="/calc1-001/wiki/view?page=Week4">Week
+4</a>, we worked on techniques of differentiation&mdash;specifically,
+the product and quotient
+rules.  <a href="/calc1-001/lecture/BADBAD"><i class="icon-film"></i>&nbsp;Is there anything more to learn about derivatives?</a>  Yes!  This
+week, in Week 5, we'll learn the <strong>chain rule</strong> which
+lets us differentiate the composition of two functions.</p>
+
+<p>This week's <a href="/calc1-001/wiki/view?page=OfficeHours">Office
+Hours</a> will be held on February 5, 2013 at 5:30PM EST.  And this
+week we're rolling out a
+couple <a href="https://mooculus.osu.edu/explorations">explorations</a>:
+one which lets you <a href="https://mooculus.osu.edu/explorations/derivative">differentiate any function, and see the solution
+step-by-step</a>; the other lets you <a href="https://mooculus.osu.edu/explorations/graph">graph and wiggle extra variables with
+sliders</a>.  If you have ideas about other explorations or other ways to
+improve the course, please <a href="/calc1-001/forum/index">post your
+ideas in the forum</a>.
+
+<h3>How do I differentiate the composition of two functions?</h3>
+
+<p>Suppose \(f\) is differentiable at \(a\) and \(g\) is
+differentiable at \(f(a\).  Then \(\left(g \circ f\right)\) is
+differentiable at \(a\), and 
+<blockquote>
+\(\left(g \circ f\right)'(a) = g'(f(a))\, f'(a)\).
+</blockquote>
+This is the celebrated <a href="/calc1-001/lecture/BADBAD"><i class="icon-film"></i>&nbsp;chain rule</a> and you can read more about it on <a href="https://mooculus.osu.edu/handouts"><i class="icon-book"></i>&nbsp;Page&nbsp;79
+of the Textbook</a>.</p>
+
+<p>You might wonder why you'd care about such a rule: a couple
+examples where it helps
+include <a href="/calc1-001/lecture/BADBAD"><i class="icon-film"></i>&nbsp;differentiating \((1+2x)^5\) and \(\sqrt{x^2+0.0001}\)</a>.  The
+slogan &ldquo;derivative of the outside function at the inside, times
+the derivative of the inside&rdquo; will, I hope, make it easy to
+remember what to do!  It takes practice.
+
+<h3>How do I find the tangent line to a curve?</h3>
+
+<p>Sometimes, we're given equations like \(y^2 - x^3 + x - 1 = 0\); we
+can plot the points satisfying this equation in the plane, but the
+resulting curve fails the vertical line test&mdash;so there's no
+function which has that whole curve as its graph.  Nevertheless, we can
+still ask for a tangent line to the curve: the trick
+is <a href="/calc1-001/lecture/BADBAD"><i class="icon-film"></i>&nbsp;implicit differentiation</a>, which you can read about
+on <a href="https://mooculus.osu.edu/handouts"><i class="icon-book"></i>&nbsp;Page&nbsp;86 of the Textbook</a>.</p>
+
+<p>There's a bunch of fascinating <a href="http://en.wikipedia.org/wiki/Algebraic_curve">curves in the plane</a>, but one example stands out historically: 
+ <a href="/calc1-001/lecture/BADBAD"><i class="icon-film"></i>&nbsp;the
+ folium of Descartes</a>, given by \(x^3 + y^3 - 3axy = 0\) for some
+ choice of \(a\).  Descartes challenged Fermat to find the tangent
+ line to the curve; Fermat solved the problem, and now so can you,
+ using <a href="http://en.wikipedia.org/wiki/Implicit_function#Implicit_differentiation">implicit
+ differentiation</a>.</p>
+
+<h3>How do I find the derivative of an inverse function?</h3>
+
+<p>Given an invertible function \(f\), the derivative measures how
+changing the input affects the output.  The derivative of the inverse
+\(f^{-1}\) encodes how wiggling the output of \(f\) would
+&ldquo;affect&rdquo; the input to \(f\), so perhaps it is reasonable
+to expect that
+<blockquote>
+\( \left( f^{-1} \right)'(y) = \displaystyle\frac{1}{f'(f^{-1}(y))} \).
+</blockquote>
+This is made precise with the <a href="/calc1-001/lecture/BADBAD"><i class="icon-film"></i>&nbsp;inverse
+function theorem</a>.</p>
+
+<p>As a particular example, the inverse of the function \(f(x) = e^x\)
+is the <strong>natural logarithm</strong>.
+We <a href="/calc1-001/lecture/BADBAD"><i class="icon-film"></i>&nbsp;compute
+the derivative of log</a> and find that 
+<blockquote>
+\(\displaystyle\frac{d}{dx} \log x = \displaystyle\frac{1}{x}\).
+</blockquote>
+Note that I follow the
+convention that there is only one log&mdash;the natural log&mdash;so I
+write it as \(\log x\); sometimes you'll see this function denoted
+\(\ln x\) instead.</p>
+
+<p>Once we know that \(\displaystyle\frac{d}{dx}
+\log x = \displaystyle\frac{1}{x}\), there is one fun application of this fact: <a href="/calc1-001/lecture/BADBAD"><i class="icon-film"></i>&nbsp;logarithmic differentiation</a>, which you can read more about on
+<a href="https://mooculus.osu.edu/handouts"><i class="icon-book"></i>&nbsp;Page&nbsp;91
+of the Textbook</a>.</p>
+
+<h3>How can I multiply quickly?</h3>
+
+<p>Multiplication is an extremely important operation, so we
+should <a href="/calc1-001/lecture/BADBAD"><i class="icon-film"></i>&nbsp;figure
+out how to multiply quickly</a>.  Thousands of years ago, the
+Babylonians
+used <a href="https://spark-public.s3.amazonaws.com/calc1/PDFs/quartersquares.pdf"><i class="icon-file"></i>&nbsp;quartersquares</a>
+which makes multiplication faster, but requires a separate table for
+division.  <a href="http://en.wikipedia.org/wiki/Logarithm#From_Napier_to_Euler">Logarithms
+are even better</a> since logs, for instance, not only turn multiplication into addition, but division into subtraction.  You can play around with logarithms by printing out your very own <a href="https://spark-public.s3.amazonaws.com/calc1/PDFs/log-table.pdf"><i class="icon-file"></i>&nbsp;log table</a> or <a href="https://spark-public.s3.amazonaws.com/calc1/PDFs/sliderule.pdf"><i class="icon-file"></i>&nbsp;slide rule</a>.</p>
+
+<h3>How do I justify the derivative rules?</h3>
+
+<p>We've been using the power rule, but so far, we only checked it for positive, whole number exponents; <a href="/calc1-001/lecture/BADBAD"><i class="icon-film"></i>&nbsp;how do we justify the power rule in general?</a>  One way is with logarithms!  Because logarithms convert multiplication into addition, we can also use logs to give <a href="/calc1-001/lecture/BADBAD"><i class="icon-film"></i>&nbsp;another proof of the product rule</a>.</p>
+
+<p>Last week, in Week 4, we introduced the <strong>quotient rule</strong> but we didn't prove it; with the product rule and chain rule and power rule, we can now give <a href="/calc1-001/lecture/BADBAD"><i class="icon-film"></i>&nbsp;a proof of the quotient rule.</a></p>
+
+<h3>At the end of the week&hellip;</h3>
+
+<p>When you've reached the end of the week, take the <a href="/calc1-001/quiz/index">End of Week 5 Quiz</a>.  So you aren't surprised when you take the quiz, you should expect</p>
+<ul>
+<li>three questions involving <a href="/calc1-001/lecture/BADBAD"><i class="icon-film"></i>&nbsp;the chain rule</a>,</li>
+<li>three questions combining the chain rule with <a href="/calc1-001/lecture/BADBAD"><i class="icon-film"></i>&nbsp;the derivative of log</a>,</li>
+<li>two questions about <a href="/calc1-001/lecture/BADBAD"><i class="icon-film"></i>&nbsp;implicit differentiation</a>, like the <a href="/calc1-001/lecture/BADBAD"><i class="icon-film"></i>&nbsp;folium of Descartes</a>, and</li>
+<li>two questions for which <a href="/calc1-001/lecture/BADBAD"><i class="icon-film"></i>&nbsp;logarithmic differentiation</a> might help.</li>
+</ul>
+<p>I hope you do really well on this week's quiz; if you aren't sure
+how to differentiate something, you might
+find <a href="https://mooculus.osu.edu/explorations/derivative">the
+derivative exploration</a> helpful; if you are stuck, you might also
+want to <a href="/calc1-001/forum/index">post a message on the
+forum</a> or <a href="/calc1-001/wiki/view?page=OfficeHours">discuss
+it with me during office hours</a>.  <strong>Good luck!</strong></p>
