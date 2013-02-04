@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html data-require="math word-problems steveMath8 math-function-parser">
+<head>  
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>ULTIMATE DIFFERENTIATION CHALLENGE FOR WEEK 5</title>
+    <script src="../khan-exercise.js"></script>
+</head>
+<body>
+  <div class="exercise">
+  
+
+    <div class="problems">
+      <div id="polynomial">
+      		
+      		  <div class="vars">
+			 <var id="EXP">randFunction(3,["+","/","*","power","coefficient","constant","exp","log"],["x"])</var>
+				<var id="LaTeXEXP">MathFunction.parse(EXP).tex()</var>
+				<var id="story">MathFunction.parse(EXP).derivative_story('x')</var>
+			
+  			  </div>
+        	
+        	<p class="question">
+        		
+        		Find   <code>\dfrac{d}{dx}<var>LaTeXEXP</var></code>.  Simplifying first will make your life easier.
+        		
+        	</p>
+        <p class="solution" data-type="parsedExpression">
+        	<var>MathFunction.parse(EXP).derivative('x').toString()</var>
+        </p>
+        
+       
+      </div>
+      
+  
+</div>
+</div>
+</body>
+</html>

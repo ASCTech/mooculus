@@ -70,4 +70,8 @@ chainRule2
 exponentiationDerivative
 exponentiationDerivative2
 logarithmDifferentiate
-chainRule3
+ultimateWeek5
+inverseFunctionPoints
+inverseFunctionPointGraph
+inverseFunctionExpression
+tangentLineInverse

@@ -65,4 +65,8 @@ chainRule2.html
 exponentiationDerivative.html
 exponentiationDerivative2.html
 logarithmDifferentiate.html
-chainRule3.html
+ultimateWeek5.html
+inverseFunctionPoints.html
+inverseFunctionPointGraph.html
+inverseFunctionExpression.html
+tangentLineInverse.html
