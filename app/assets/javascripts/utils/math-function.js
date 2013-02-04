@@ -125,6 +125,7 @@ var MathFunction = (function () {
 
 	var match = tree_match( haystack, needle );
 	if (match != null) {
+	    console.log( match );
 	    return $.merge( substitute_ast( replacement, match ), match.remainder );
 	}
 
@@ -135,29 +136,34 @@ var MathFunction = (function () {
     };
 
     function associate_ast( tree, op ) {
-	var right_associator = [op, 'a', [op, 'b', 'c']];
-	var left_associator = [op, [op, 'a', 'b'], 'c'];
-	var associated = [op, 'a', 'b', 'c'];
+	if (typeof tree === 'number') {
+	    return tree;
+	}    
+	
+	if (typeof tree === 'string') {
+	    return tree;
+	}    
 
-	var keep_going = true;
+	var operator = tree[0];
+	var operands = tree.slice(1);
+	operands = $.map( operands, function(v,i) { return [associate_ast(v, op)]; } );
 
-	while( keep_going ) {
-	    keep_going = false;
-
-	    if (subtree_matches( tree, right_associator )) {
-		tree = replace_subtree( tree, right_associator, associated );
-		keep_going = true;
+	if (operator == op) {
+	    var result = [];
+	    
+	    for( var i=0; i<operands.length; i++ ) {
+		if ((typeof operands[i] !== 'number') && (typeof operands[i] !== 'string') && (operands[i][0] === op)) {
+		    result = result.concat( operands[i].slice(1) );
+		} else {
+		    result.push( operands[i] );
+		}
 	    }
 
-	    if (subtree_matches( tree, left_associator )) {
-		tree = replace_subtree( tree, left_associator, associated );
-		keep_going = true;
-	    }
-
+	    operands = result;
 	}
 
-	return tree;
-    };
+	return $.merge( [operator], operands );
+    }
 
     function clean_ast( tree ) {
 	tree = associate_ast( tree, '+' );
@@ -188,6 +194,7 @@ var MathFunction = (function () {
 	"sqrt": function(operands) { return Math.sqrt(operands[0]); },
 	"log": function(operands) { return Math.log(operands[0]); },
 	"^": function(operands) { return Math.pow(operands[0], operands[1]); },
+	"apply": function(operands) { return NaN; },
     };
 
     function evaluate_ast(tree, bindings) {
@@ -255,6 +262,7 @@ var MathFunction = (function () {
 	"cot": function(operands) { return "cot (" + operands[0] + ")"; },
 	"log": function(operands) { return "log (" + operands[0] + ")"; },
 	"sqrt": function(operands) { return "sqrt(" + operands[0] + ")"; },
+	"apply": function(operands) { return operands[0] + "(" + operands[1] + ")"; },
     };
 
     function text_ast(tree) {
@@ -299,6 +307,7 @@ var MathFunction = (function () {
 	"cot": function(operands) { return "\\cot \\left(" + operands[0] + "\\right)"; },
 	"log": function(operands) { return "\\log \\left(" + operands[0] + "\\right)"; },
 	"sqrt": function(operands) { return "\\sqrt{" + operands[0] + "}"; },
+	"apply": function(operands) { return operands[1] + " \\left(" + operands[1] + "\\right)"; },
     };
 
     function latex_ast(tree) {
