@@ -59,3 +59,15 @@ intuitiveCurveSketch.html
 increaseDecreaseDerivativePoint.html
 curveSketchPoints.html
 productRuleTwoWays.html
+chainRuleTable.html
+chainRule1.html
+chainRule2.html
+exponentiationDerivative.html
+exponentiationDerivative2.html
+logarithmDifferentiate.html
+ultimateWeek5.html
+inverseFunctionPoints.html
+inverseFunctionPointGraph.html
+inverseFunctionExpression.html
+tangentLineInverse.html
+inverseFunctionRulePoint.html

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html data-require="math word-problems steveMath8 math-function-parser">
+<head>  
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>Differentiating exponential functions</title>
+    <script src="../khan-exercise.js"></script>
+</head>
+<body>
+  <div class="exercise">
+  
+
+    <div class="problems">
+      <div id="integerBase">
+      		
+      		  <div class="vars">
+				<var id="EXP">randRange(2,10)+"^x"</var>
+				<var id="LaTeXEXP">MathFunction.parse(EXP).tex()</var>
+				<var id="story">MathFunction.parse(EXP).derivative_story('x')</var>
+			
+  			  </div>
+        	
+        	<p class="question">
+        		
+        		Evaluate 
+        		<code>\dfrac{d}{dx}<var>LaTeXEXP</var></code>	
+        	</p>
+        <p class="solution" data-type="parsedExpression">
+        	<var>MathFunction.parse(EXP).derivative('x').toString()</var>
+        </p>
+        <div class="hints">
+        	<p data-each="story as hint">
+        		<var>hint</var>
+        	</p>
+        	<p>
+        		You can enter this as <var>MathFunction.parse(EXP).derivative('x').toString()</var>
+        	</p>
+        </div>
+       
+      </div>
+  
+</div>
+</div>
+</body>
+</html>
