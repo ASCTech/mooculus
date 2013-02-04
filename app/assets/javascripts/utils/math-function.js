@@ -190,6 +190,29 @@ var MathFunction = (function () {
 	return $.merge( [operator], operands );
     }
 
+    function remove_zeroes( tree ) {
+	if (typeof tree === 'number') {
+	    return tree;
+	}    
+	
+	if (typeof tree === 'string') {
+	    return tree;
+	}    
+
+	var operator = tree[0];
+	var operands = tree.slice(1);
+	operands = $.map( operands, function(v,i) { return [remove_zeroes(v)]; } );
+
+	if (operator === "*") {
+	    for( var i=0; i<operands.length; i++ ) {
+		if (operands[i] === 0)
+		    return 0;
+	    }
+	}
+
+	return $.merge( [operator], operands );
+    }
+
     function collapse_unary_minus( tree ) {
 	if (typeof tree === 'number') {
 	    return tree;
@@ -216,10 +239,9 @@ var MathFunction = (function () {
 	tree = associate_ast( tree, '-' );
 	tree = associate_ast( tree, '*' );
 	tree = remove_identity( tree, '*', 1 );
-	tree = remove_identity( tree, '+', 0 );
 	tree = collapse_unary_minus( tree );
-
-	tree = remove_identity( tree, '*', 1 );
+	tree = remove_zeroes( tree );
+	tree = remove_identity( tree, '+', 0 );
 
 	return tree;
     };
@@ -421,7 +443,13 @@ var MathFunction = (function () {
 	    story.push( 'The derivative of a constant is zero, that is, <code>' + ddx + latex_ast(tree) + ' = 0</code>.' );
 	    return 0;
 	}
-	
+
+	// Derivative of a more complicated constant 
+	if ((variables_in_ast(tree)).indexOf(x) < 0) {
+	    story.push( 'The derivative of a constant is zero, that is, <code>' + ddx + latex_ast(tree) + ' = 0</code>.' );
+	    return 0;
+	}	
+
 	// Derivative of a variable
 	if (typeof tree === 'string') {
 	    if (x === tree) {
@@ -451,7 +479,7 @@ var MathFunction = (function () {
 	    var numeric_operands = [];
 
 	    for( var i=0; i<operands.length; i++ ) {
-		if (typeof operands[i] === 'number') {
+		if ((typeof operands[i] === 'number') || ((variables_in_ast(operands[i])).indexOf(x) < 0)) {
 		    any_numbers = true;
 		    numeric_operands.push( operands[i] );
 		} else {
@@ -473,13 +501,13 @@ var MathFunction = (function () {
 
 
 		if (remaining === x) {
-		    story.push( 'By the constant multiple rule, <code>' + ddx + latex_ast( tree ) + ' = ' + ($.map( numeric_operands, function(v,i) { return v; } )).join( ' \\cdot ' ) + '</code>.' );
+		    story.push( 'By the constant multiple rule, <code>' + ddx + latex_ast( tree ) + ' = ' + ($.map( numeric_operands, function(v,i) { return latex_ast(v); } )).join( ' \\cdot ' ) + '</code>.' );
 		    var result = $.merge( ['*'], numeric_operands );
 		    result = clean_ast(result);
 		    return result;
 		}
 
-		story.push( 'By the constant multiple rule, <code>' + ddx + latex_ast( tree ) + ' = ' + ($.map( numeric_operands, function(v,i) { return v; } )).join( ' \\cdot ' ) + ' \\cdot ' + ddx + '\\left(' + latex_ast(remaining) + '\\right)</code>.' );
+		story.push( 'By the constant multiple rule, <code>' + ddx + latex_ast( tree ) + ' = ' + ($.map( numeric_operands, function(v,i) { return latex_ast(v); } )).join( ' \\cdot ' ) + ' \\cdot ' + ddx + '\\left(' + latex_ast(remaining) + '\\right)</code>.' );
 
 		var d = derivative_of_ast(remaining,x,story);
 		var result = $.merge( ['*'], $.merge( numeric_operands, [d] ) );
@@ -494,7 +522,7 @@ var MathFunction = (function () {
 				if (i == j)
 				    return ddx + '\\left(' + latex_ast(v) + '\\right)';
 				else
-				    return latex_ast(v);
+				    return latex_ast(w);
 			    })).join( ' \\cdot ' ) })).join( ' + ' ) + '</code>.' );
 
 	    var inner_operands = operands.slice();
@@ -524,13 +552,29 @@ var MathFunction = (function () {
 	    var f = operands[0];
 	    var g = operands[1];
 
-	    if (f === 1) {
-		story.push( 'Since <code>\\frac{d}{du} \\frac{1}{u}</code> is <code>\\frac{-1}{u^2}</code>, the chain rule gives <code>' + ddx + latex_ast( tree ) + ' = \\frac{-1}{ ' + latex_ast(g) + '^2' + '} \\cdot ' + ddx + latex_ast( g ) );
+	    if ((variables_in_ast(g)).indexOf(x) < 0) {
+		story.push( 'By the constant multiple rule, <code>' + ddx + latex_ast( tree ) + ' = ' + latex_ast(['/', 1, g]) + ' \\cdot ' + ddx + '\\left(' + latex_ast(f) + '\\right)</code>.' );
+
+		var df = derivative_of_ast(f,x,story);		
+		var quotient_rule = mathFunctionParser.parse('(1/g)*d');
+		var result = substitute_ast( quotient_rule, { "d": df, "g": g } );
+		result = clean_ast(result);
+		story.push( 'So <code>' + ddx + latex_ast( tree ) + ' = ' + latex_ast(result) + '</code>.' );
+		
+		return result;		
+	    }
+
+	    if ((variables_in_ast(f)).indexOf(x) < 0) {
+		if (f !== 1) {
+		    story.push( 'By the constant multiple rule, <code>' + ddx + latex_ast( tree ) + ' = ' + latex_ast(f) + ' \\cdot ' + ddx + '\\left(' + latex_ast(['/',1,g]) + '\\right)</code>.' );
+		}
+
+		story.push( 'Since <code>\\frac{d}{du} \\frac{1}{u}</code> is <code>\\frac{-1}{u^2}</code>, the chain rule gives <code>' + ddx + latex_ast( tree ) + ' = ' + latex_ast(f) + '\\cdot \\frac{-1}{ ' + latex_ast(g) + '^2' + '} \\cdot ' + ddx + latex_ast( g ) + "</code>." );
 
 		var a = derivative_of_ast(g,x,story);
 
-		var quotient_rule = mathFunctionParser.parse('-a/(f^2)');
-		var result = substitute_ast( quotient_rule, { "a": a, "f": g } );
+		var quotient_rule = mathFunctionParser.parse('f * (-a/(g^2))');
+		var result = substitute_ast( quotient_rule, { "f": f, "a": a, "g": g } );
 		result = clean_ast(result);
 		story.push( 'So since <code>\\frac{d}{du} \\frac{1}{u}</code> is <code>\\frac{-1}{u^2}</code>, the chain rule gives <code>' + ddx + latex_ast( tree ) + ' = ' + latex_ast(result) + '</code>.' );
 
