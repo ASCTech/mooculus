@@ -1,0 +1,68 @@
+\documentclass{article}
+\usepackage{nopageno}
+\usepackage{geometry}
+\geometry{margin=0.5in,landscape}
+\usepackage{tikz}
+\begin{document}
+
+\null\vfill
+
+\begin{center}
+  Official Slide Rule for \textsf{\textbf{MOOC}\textsf{ulus}}
+\end{center}
+
+<% offsets = Array.new
+   offsets[0] = 1.75
+   offsets[1] = 1.50
+   offsets[2] = 1.325
+   offsets[3] = 1.25
+%>
+
+<% anchor = 'south' %>
+<% for sides in 1..2 %>
+
+\noindent
+\begin{tikzpicture}
+
+<% for i in 1..10 %>
+\draw (<%= float(Math.log(i)/Math.log(10.0)) %>\textwidth,0) -- (<%= float(Math.log(i)/Math.log(10.0)) %>\textwidth,<%= float(offsets[0]) %>);
+\node[anchor=<%= anchor %>] (<%= i %>) at (<%= float(Math.log(i)/Math.log(10.0)) %>\textwidth,<%= float(offsets[0]) %>) {\textbf{<%= i %>}};
+<% end %>
+
+<% for i in 11..100 %>
+<% next if i % 10 == 0 %>
+<% x = Rational(i,10) %>
+\draw (<%= float(Math.log(x)/Math.log(10.0)) %>\textwidth,0) -- (<%= float(Math.log(x)/Math.log(10.0)) %>\textwidth,<%= float(offsets[1]) %>);
+<% if i % 5 == 0 or i < 30 %>
+\node[anchor=<%= anchor %>] (<%= '%.1f' % Rational(i,10) %>) at (<%= float(Math.log(x)/Math.log(10.0)) %>\textwidth,<%= float(offsets[1]) %>) {\scriptsize <%= '%.1f' % Rational(i,10) %>};
+<% end %>
+<% end %>
+
+<% for i in 101..1000 %>
+<% next if i % 10 == 0 %>
+<% next if i % 100 == 0 %>
+<% x = Rational(i,100) %>
+<% width = (Math.log(Rational(i+1,100))/Math.log(10.0) - Math.log(Rational(x,100))/Math.log(10.0)).abs/4.0 %>
+<% width = 0.000001 %>
+<% if i % 5 == 0 %>
+\draw (<%= float(Math.log(x)/Math.log(10.0)) %>\textwidth,0) -- (<%= float(Math.log(x)/Math.log(10.0)) %>\textwidth,<%= float(offsets[2]) %>);
+<% else %>
+\draw[ultra thin] (<%= float(Math.log(x)/Math.log(10.0)) %>\textwidth,0) -- (<%= float(Math.log(x)/Math.log(10.0)) %>\textwidth,<%= float(offsets[3]) %>);
+<% end %>
+<% end %>
+
+\end{tikzpicture}
+
+<% offsets = offsets.collect{ |x| -x } %>
+<% anchor = 'north' %>
+
+<% end %>
+
+\begin{center}
+  Official Slide Rule for \textsf{\textbf{MOOC}\textsf{ulus}}
+\end{center}
+
+\vfill\null
+
+
+\end{document}

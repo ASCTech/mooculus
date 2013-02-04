@@ -1,3 +1,6 @@
+mathFunctionParser = require('./math-function-parser.js');
+$ = require('jquery');
+
 var MathFunction = (function () {
     var my = {};
 
@@ -393,7 +396,7 @@ var MathFunction = (function () {
 	"cot": function(operands) { return "\\cot \\left(" + operands[0] + "\\right)"; },
 	"log": function(operands) { return "\\log \\left(" + operands[0] + "\\right)"; },
 	"sqrt": function(operands) { return "\\sqrt{" + operands[0] + "}"; },
-	"apply": function(operands) { return operands[1] + " \\left(" + operands[1] + "\\right)"; },
+	"apply": function(operands) { return operands[0] + " \\left(" + operands[1] + "\\right)"; },
     };
 
     function latex_ast(tree) {
@@ -687,7 +690,20 @@ var MathFunction = (function () {
 	    story.push( 'So by the general rule for exponents, <code>' + ddx + latex_ast( tree ) + ' = ' + latex_ast(result) + '</code>.' );
 	    return result;
 	}
-	
+
+	if (operator === "apply") {
+	    var input = operands[1];
+
+	    story.push( 'By the chain rule, <code>' + ddx + latex_ast( tree ) + ' = ' + latex_ast(substitute_ast( ["apply",operands[0] + "'","x"], { "x": input } )) + " \\cdot " + ddx + latex_ast(input)  + '</code>.' );	    
+
+	    var result = ['*',
+			  substitute_ast( ["apply",operands[0] + "'","x"], { "x": input } ),
+			  derivative_of_ast( input, x, story )];
+	    result = clean_ast(result);		
+	    story.push( 'So by the chain rule, <code>' + ddx + latex_ast( tree ) + ' = ' + latex_ast(result) + '</code>.' );
+	    return result;	    
+	}
+
 	// chain rule
 	if (operator in derivatives) {
 	    var input = operands[0];
@@ -777,6 +793,19 @@ var MathFunction = (function () {
 	evaluate: function(bindings) {
 	    return evaluate_ast( this.syntax_tree, bindings );
 	},
+
+	substitute: function(bindings) {
+	    var ast_bindings = new Object();
+
+	    var alphabet = "abcdefghijklmnopqrstuvwxyz";
+	    for(var i=0; i<alphabet.length; i++) {
+		var c = alphabet.charAt(i);
+		if (c in bindings)
+		    ast_bindings[c] = bindings[c].syntax_tree;
+	    }
+
+	    return new StraightLineProgram( substitute_ast( this.syntax_tree, ast_bindings ) );
+	},
 	
 	tex: function() {
 	    return latex_ast( this.syntax_tree );
@@ -832,3 +861,4 @@ var MathFunction = (function () {
     return my;
 }());
 
+module.exports = MathFunction;
