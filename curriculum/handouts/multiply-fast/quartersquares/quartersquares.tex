@@ -1,0 +1,357 @@
+\documentclass[12pt]{article}
+\usepackage{nopageno}
+\usepackage[margin=0.75in]{geometry}
+\usepackage{textcomp}
+\usepackage{add-copyright}
+
+\title{Quartersquares: an old-fashioned way to multiply}
+
+\begin{document}
+
+\section*{Quartersquares: an old-fashioned way to multiply}
+
+Recall the fact that
+$$
+ab = \frac{(a+b)^2}{4} - \frac{(a-b)^2}{4}.
+$$
+To multiply $a$ and $b$,
+\begin{itemize}
+\item Look up $a+b$ in the table.
+\item Look up $a-b$ in the table.
+\item Subtract the quartersquare of $a-b$ from the quartersquare of $a+b$.
+\end{itemize}
+From a complexity point of view, this is an improvement: adding
+(subtracting) an $n$ digit number to (from) an $n$ digit number
+requires $n$ operations, but multiplying an $n$ digit number by an $n$
+digit number using the usual algorithm requires $n^2$ operations.
+\textbf{Multiplication is expensive.}  By using quartersquares, we can
+replace expensive multiplications with cheaper additions,
+subtractions, and table lookups.
+
+\vfill
+
+\begin{center}
+\begin{tabular}{|rr|rr|rr|rr|rr|rr|}
+\hline
+$n$ & $n^2/4$
+ & 
+$n$ & $n^2/4$
+ & 
+$n$ & $n^2/4$
+ & 
+$n$ & $n^2/4$
+ & 
+$n$ & $n^2/4$
+ & 
+$n$ & $n^2/4$
+\\
+\hline
+1 & \textonequarter
+ & 
+26 & 169
+ & 
+51 & 650\textonequarter
+ & 
+76 & 1444
+ & 
+101 & 2550\textonequarter
+ & 
+126 & 3969
+\\
+2 & 1
+ & 
+27 & 182\textonequarter
+ & 
+52 & 676
+ & 
+77 & 1482\textonequarter
+ & 
+102 & 2601
+ & 
+127 & 4032\textonequarter
+\\
+3 & 2\textonequarter
+ & 
+28 & 196
+ & 
+53 & 702\textonequarter
+ & 
+78 & 1521
+ & 
+103 & 2652\textonequarter
+ & 
+128 & 4096
+\\
+4 & 4
+ & 
+29 & 210\textonequarter
+ & 
+54 & 729
+ & 
+79 & 1560\textonequarter
+ & 
+104 & 2704
+ & 
+129 & 4160\textonequarter
+\\
+5 & 6\textonequarter
+ & 
+30 & 225
+ & 
+55 & 756\textonequarter
+ & 
+80 & 1600
+ & 
+105 & 2756\textonequarter
+ & 
+130 & 4225
+\\
+6 & 9
+ & 
+31 & 240\textonequarter
+ & 
+56 & 784
+ & 
+81 & 1640\textonequarter
+ & 
+106 & 2809
+ & 
+131 & 4290\textonequarter
+\\
+7 & 12\textonequarter
+ & 
+32 & 256
+ & 
+57 & 812\textonequarter
+ & 
+82 & 1681
+ & 
+107 & 2862\textonequarter
+ & 
+132 & 4356
+\\
+8 & 16
+ & 
+33 & 272\textonequarter
+ & 
+58 & 841
+ & 
+83 & 1722\textonequarter
+ & 
+108 & 2916
+ & 
+133 & 4422\textonequarter
+\\
+9 & 20\textonequarter
+ & 
+34 & 289
+ & 
+59 & 870\textonequarter
+ & 
+84 & 1764
+ & 
+109 & 2970\textonequarter
+ & 
+134 & 4489
+\\
+10 & 25
+ & 
+35 & 306\textonequarter
+ & 
+60 & 900
+ & 
+85 & 1806\textonequarter
+ & 
+110 & 3025
+ & 
+135 & 4556\textonequarter
+\\
+11 & 30\textonequarter
+ & 
+36 & 324
+ & 
+61 & 930\textonequarter
+ & 
+86 & 1849
+ & 
+111 & 3080\textonequarter
+ & 
+136 & 4624
+\\
+12 & 36
+ & 
+37 & 342\textonequarter
+ & 
+62 & 961
+ & 
+87 & 1892\textonequarter
+ & 
+112 & 3136
+ & 
+137 & 4692\textonequarter
+\\
+13 & 42\textonequarter
+ & 
+38 & 361
+ & 
+63 & 992\textonequarter
+ & 
+88 & 1936
+ & 
+113 & 3192\textonequarter
+ & 
+138 & 4761
+\\
+14 & 49
+ & 
+39 & 380\textonequarter
+ & 
+64 & 1024
+ & 
+89 & 1980\textonequarter
+ & 
+114 & 3249
+ & 
+139 & 4830\textonequarter
+\\
+15 & 56\textonequarter
+ & 
+40 & 400
+ & 
+65 & 1056\textonequarter
+ & 
+90 & 2025
+ & 
+115 & 3306\textonequarter
+ & 
+140 & 4900
+\\
+16 & 64
+ & 
+41 & 420\textonequarter
+ & 
+66 & 1089
+ & 
+91 & 2070\textonequarter
+ & 
+116 & 3364
+ & 
+141 & 4970\textonequarter
+\\
+17 & 72\textonequarter
+ & 
+42 & 441
+ & 
+67 & 1122\textonequarter
+ & 
+92 & 2116
+ & 
+117 & 3422\textonequarter
+ & 
+142 & 5041
+\\
+18 & 81
+ & 
+43 & 462\textonequarter
+ & 
+68 & 1156
+ & 
+93 & 2162\textonequarter
+ & 
+118 & 3481
+ & 
+143 & 5112\textonequarter
+\\
+19 & 90\textonequarter
+ & 
+44 & 484
+ & 
+69 & 1190\textonequarter
+ & 
+94 & 2209
+ & 
+119 & 3540\textonequarter
+ & 
+144 & 5184
+\\
+20 & 100
+ & 
+45 & 506\textonequarter
+ & 
+70 & 1225
+ & 
+95 & 2256\textonequarter
+ & 
+120 & 3600
+ & 
+145 & 5256\textonequarter
+\\
+21 & 110\textonequarter
+ & 
+46 & 529
+ & 
+71 & 1260\textonequarter
+ & 
+96 & 2304
+ & 
+121 & 3660\textonequarter
+ & 
+146 & 5329
+\\
+22 & 121
+ & 
+47 & 552\textonequarter
+ & 
+72 & 1296
+ & 
+97 & 2352\textonequarter
+ & 
+122 & 3721
+ & 
+147 & 5402\textonequarter
+\\
+23 & 132\textonequarter
+ & 
+48 & 576
+ & 
+73 & 1332\textonequarter
+ & 
+98 & 2401
+ & 
+123 & 3782\textonequarter
+ & 
+148 & 5476
+\\
+24 & 144
+ & 
+49 & 600\textonequarter
+ & 
+74 & 1369
+ & 
+99 & 2450\textonequarter
+ & 
+124 & 3844
+ & 
+149 & 5550\textonequarter
+\\
+25 & 156\textonequarter
+ & 
+50 & 625
+ & 
+75 & 1406\textonequarter
+ & 
+100 & 2500
+ & 
+125 & 3906\textonequarter
+ & 
+150 & 5625
+\\
+\hline
+\end{tabular}
+\end{center}
+
+\vfill
+\null
+
+\end{document}
+
