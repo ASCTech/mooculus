@@ -125,6 +125,7 @@ var MathFunction = (function () {
 
 	var match = tree_match( haystack, needle );
 	if (match != null) {
+	    console.log( match );
 	    return $.merge( substitute_ast( replacement, match ), match.remainder );
 	}
 
@@ -135,34 +136,112 @@ var MathFunction = (function () {
     };
 
     function associate_ast( tree, op ) {
-	var right_associator = [op, 'a', [op, 'b', 'c']];
-	var left_associator = [op, [op, 'a', 'b'], 'c'];
-	var associated = [op, 'a', 'b', 'c'];
+	if (typeof tree === 'number') {
+	    return tree;
+	}    
+	
+	if (typeof tree === 'string') {
+	    return tree;
+	}    
 
-	var keep_going = true;
+	var operator = tree[0];
+	var operands = tree.slice(1);
+	operands = $.map( operands, function(v,i) { return [associate_ast(v, op)]; } );
 
-	while( keep_going ) {
-	    keep_going = false;
-
-	    if (subtree_matches( tree, right_associator )) {
-		tree = replace_subtree( tree, right_associator, associated );
-		keep_going = true;
+	if (operator == op) {
+	    var result = [];
+	    
+	    for( var i=0; i<operands.length; i++ ) {
+		if ((typeof operands[i] !== 'number') && (typeof operands[i] !== 'string') && (operands[i][0] === op)) {
+		    result = result.concat( operands[i].slice(1) );
+		} else {
+		    result.push( operands[i] );
+		}
 	    }
 
-	    if (subtree_matches( tree, left_associator )) {
-		tree = replace_subtree( tree, left_associator, associated );
-		keep_going = true;
-	    }
-
+	    operands = result;
 	}
 
-	return tree;
-    };
+	return $.merge( [operator], operands );
+    }
+
+    function remove_identity( tree, op, identity ) {
+	if (typeof tree === 'number') {
+	    return tree;
+	}    
+	
+	if (typeof tree === 'string') {
+	    return tree;
+	}    
+
+	var operator = tree[0];
+	var operands = tree.slice(1);
+	operands = $.map( operands, function(v,i) { return [remove_identity(v, op, identity)]; } );
+
+	if (operator == op) {
+	    operands = $.grep(operands, function (a) { return a != identity; });
+	    if (operands.length == 0)
+		operands = [identity];
+
+	    if (operands.length == 1)
+		return operands[0];
+	}
+
+	return $.merge( [operator], operands );
+    }
+
+    function remove_zeroes( tree ) {
+	if (typeof tree === 'number') {
+	    return tree;
+	}    
+	
+	if (typeof tree === 'string') {
+	    return tree;
+	}    
+
+	var operator = tree[0];
+	var operands = tree.slice(1);
+	operands = $.map( operands, function(v,i) { return [remove_zeroes(v)]; } );
+
+	if (operator === "*") {
+	    for( var i=0; i<operands.length; i++ ) {
+		if (operands[i] === 0)
+		    return 0;
+	    }
+	}
+
+	return $.merge( [operator], operands );
+    }
+
+    function collapse_unary_minus( tree ) {
+	if (typeof tree === 'number') {
+	    return tree;
+	}    
+	
+	if (typeof tree === 'string') {
+	    return tree;
+	}    
+
+	var operator = tree[0];
+	var operands = tree.slice(1);
+	operands = $.map( operands, function(v,i) { return [collapse_unary_minus(v)]; } );
+
+	if (operator == "~") {
+	    if (typeof operands[0] === 'number')
+		return -operands[0];
+	}
+
+	return $.merge( [operator], operands );
+    }
 
     function clean_ast( tree ) {
 	tree = associate_ast( tree, '+' );
 	tree = associate_ast( tree, '-' );
 	tree = associate_ast( tree, '*' );
+	tree = remove_identity( tree, '*', 1 );
+	tree = collapse_unary_minus( tree );
+	tree = remove_zeroes( tree );
+	tree = remove_identity( tree, '+', 0 );
 
 	return tree;
     };
@@ -188,6 +267,7 @@ var MathFunction = (function () {
 	"sqrt": function(operands) { return Math.sqrt(operands[0]); },
 	"log": function(operands) { return Math.log(operands[0]); },
 	"^": function(operands) { return Math.pow(operands[0], operands[1]); },
+	"apply": function(operands) { return NaN; },
     };
 
     function evaluate_ast(tree, bindings) {
@@ -233,6 +313,19 @@ var MathFunction = (function () {
 	return [].concat( $.map( operands, function(v,i) { return leaves(v); } ) );
     }
 
+    function variables_in_ast( tree ) {
+	var result = leaves( tree );
+
+	result = $.grep( result, function(v,i) {
+	    return (typeof v === 'string') && (v != "e")
+	});
+
+	result = result.filter(function(itm,i,a){
+	    return i==result.indexOf(itm);
+	});
+	    
+	return result;
+    }
 
     /****************************************************************/
     // convert an AST to parseable text
@@ -240,7 +333,7 @@ var MathFunction = (function () {
     var text_functions = {
 	"+": function(operands) { return "(" + operands.join( ' + ' ) + ")"; },
 	"-": function(operands) { return "(" + operands.join( ' - ' ) + ")"; },
-	"~": function(operands) { return "- ( " + operands.join( ' + ' ) + ")"; },
+	"~": function(operands) { return "-( " + operands.join( ' + ' ) + ")"; },
 	"*": function(operands) { return "(" + operands.join( " * " ) + ")"; },
 	"/": function(operands) { return "((" + operands[0] + ")/(" + operands[1] + "))"; },
 	"^": function(operands) { return "(" + operands[0]  + ")^(" + operands[1] + ")"; },
@@ -255,6 +348,7 @@ var MathFunction = (function () {
 	"cot": function(operands) { return "cot (" + operands[0] + ")"; },
 	"log": function(operands) { return "log (" + operands[0] + ")"; },
 	"sqrt": function(operands) { return "sqrt(" + operands[0] + ")"; },
+	"apply": function(operands) { return operands[0] + "(" + operands[1] + ")"; },
     };
 
     function text_ast(tree) {
@@ -284,7 +378,7 @@ var MathFunction = (function () {
     var latex_functions = {
 	"+": function(operands) { return "\\left(" + operands.join( ' + ' ) + "\\right)"; },
 	"-": function(operands) { return "\\left(" + operands.join( ' - ' ) + "\\right)"; },
-	"~": function(operands) { return "- \\left( " + operands.join( ' + ' ) + "\\right)"; },
+	"~": function(operands) { return "-\\left( " + operands.join( ' + ' ) + "\\right)"; },
 	"*": function(operands) { return "\\left(" + operands.join( " \\cdot " ) + "\\right)"; },
 	"/": function(operands) { return "\\frac{" + operands[0] + "}{" + operands[1] + "}"; },
 	"^": function(operands) { return operands[0] + "^{" + operands[1] + "}"; },
@@ -299,6 +393,7 @@ var MathFunction = (function () {
 	"cot": function(operands) { return "\\cot \\left(" + operands[0] + "\\right)"; },
 	"log": function(operands) { return "\\log \\left(" + operands[0] + "\\right)"; },
 	"sqrt": function(operands) { return "\\sqrt{" + operands[0] + "}"; },
+	"apply": function(operands) { return operands[1] + " \\left(" + operands[1] + "\\right)"; },
     };
 
     function latex_ast(tree) {
@@ -348,7 +443,13 @@ var MathFunction = (function () {
 	    story.push( 'The derivative of a constant is zero, that is, <code>' + ddx + latex_ast(tree) + ' = 0</code>.' );
 	    return 0;
 	}
-	
+
+	// Derivative of a more complicated constant 
+	if ((variables_in_ast(tree)).indexOf(x) < 0) {
+	    story.push( 'The derivative of a constant is zero, that is, <code>' + ddx + latex_ast(tree) + ' = 0</code>.' );
+	    return 0;
+	}	
+
 	// Derivative of a variable
 	if (typeof tree === 'string') {
 	    if (x === tree) {
@@ -378,7 +479,7 @@ var MathFunction = (function () {
 	    var numeric_operands = [];
 
 	    for( var i=0; i<operands.length; i++ ) {
-		if (typeof operands[i] === 'number') {
+		if ((typeof operands[i] === 'number') || ((variables_in_ast(operands[i])).indexOf(x) < 0)) {
 		    any_numbers = true;
 		    numeric_operands.push( operands[i] );
 		} else {
@@ -400,13 +501,13 @@ var MathFunction = (function () {
 
 
 		if (remaining === x) {
-		    story.push( 'By the constant multiple rule, <code>' + ddx + latex_ast( tree ) + ' = ' + ($.map( numeric_operands, function(v,i) { return v; } )).join( ' \\cdot ' ) + '</code>.' );
+		    story.push( 'By the constant multiple rule, <code>' + ddx + latex_ast( tree ) + ' = ' + ($.map( numeric_operands, function(v,i) { return latex_ast(v); } )).join( ' \\cdot ' ) + '</code>.' );
 		    var result = $.merge( ['*'], numeric_operands );
 		    result = clean_ast(result);
 		    return result;
 		}
 
-		story.push( 'By the constant multiple rule, <code>' + ddx + latex_ast( tree ) + ' = ' + ($.map( numeric_operands, function(v,i) { return v; } )).join( ' \\cdot ' ) + ' \\cdot ' + ddx + '\\left(' + latex_ast(remaining) + '\\right)</code>.' );
+		story.push( 'By the constant multiple rule, <code>' + ddx + latex_ast( tree ) + ' = ' + ($.map( numeric_operands, function(v,i) { return latex_ast(v); } )).join( ' \\cdot ' ) + ' \\cdot ' + ddx + '\\left(' + latex_ast(remaining) + '\\right)</code>.' );
 
 		var d = derivative_of_ast(remaining,x,story);
 		var result = $.merge( ['*'], $.merge( numeric_operands, [d] ) );
@@ -421,7 +522,7 @@ var MathFunction = (function () {
 				if (i == j)
 				    return ddx + '\\left(' + latex_ast(v) + '\\right)';
 				else
-				    return latex_ast(v);
+				    return latex_ast(w);
 			    })).join( ' \\cdot ' ) })).join( ' + ' ) + '</code>.' );
 
 	    var inner_operands = operands.slice();
@@ -451,13 +552,29 @@ var MathFunction = (function () {
 	    var f = operands[0];
 	    var g = operands[1];
 
-	    if (f === 1) {
-		story.push( 'Since <code>\\frac{d}{du} \\frac{1}{u}</code> is <code>\\frac{-1}{u^2}</code>, the chain rule gives <code>' + ddx + latex_ast( tree ) + ' = \\frac{-1}{ ' + latex_ast(g) + '^2' + '} \\cdot ' + ddx + latex_ast( g ) );
+	    if ((variables_in_ast(g)).indexOf(x) < 0) {
+		story.push( 'By the constant multiple rule, <code>' + ddx + latex_ast( tree ) + ' = ' + latex_ast(['/', 1, g]) + ' \\cdot ' + ddx + '\\left(' + latex_ast(f) + '\\right)</code>.' );
+
+		var df = derivative_of_ast(f,x,story);		
+		var quotient_rule = mathFunctionParser.parse('(1/g)*d');
+		var result = substitute_ast( quotient_rule, { "d": df, "g": g } );
+		result = clean_ast(result);
+		story.push( 'So <code>' + ddx + latex_ast( tree ) + ' = ' + latex_ast(result) + '</code>.' );
+		
+		return result;		
+	    }
+
+	    if ((variables_in_ast(f)).indexOf(x) < 0) {
+		if (f !== 1) {
+		    story.push( 'By the constant multiple rule, <code>' + ddx + latex_ast( tree ) + ' = ' + latex_ast(f) + ' \\cdot ' + ddx + '\\left(' + latex_ast(['/',1,g]) + '\\right)</code>.' );
+		}
+
+		story.push( 'Since <code>\\frac{d}{du} \\frac{1}{u}</code> is <code>\\frac{-1}{u^2}</code>, the chain rule gives <code>' + ddx + latex_ast( tree ) + ' = ' + latex_ast(f) + '\\cdot \\frac{-1}{ ' + latex_ast(g) + '^2' + '} \\cdot ' + ddx + latex_ast( g ) + "</code>." );
 
 		var a = derivative_of_ast(g,x,story);
 
-		var quotient_rule = mathFunctionParser.parse('-a/(f^2)');
-		var result = substitute_ast( quotient_rule, { "a": a, "f": g } );
+		var quotient_rule = mathFunctionParser.parse('f * (-a/(g^2))');
+		var result = substitute_ast( quotient_rule, { "f": f, "a": a, "g": g } );
 		result = clean_ast(result);
 		story.push( 'So since <code>\\frac{d}{du} \\frac{1}{u}</code> is <code>\\frac{-1}{u^2}</code>, the chain rule gives <code>' + ddx + latex_ast( tree ) + ' = ' + latex_ast(result) + '</code>.' );
 
@@ -485,7 +602,7 @@ var MathFunction = (function () {
 	    var base = operands[0];
 	    var exponent = operands[1];
 	    
-	    if (typeof exponent === 'number') {
+	    if ((variables_in_ast(exponent)).indexOf(x) < 0) {
 		if ((typeof base === 'string') && (base === 'x')) {
 		    var power_rule = mathFunctionParser.parse('n * (f^(n-1))');
 		    var result = substitute_ast( power_rule, { "n": exponent, "f": base } );
@@ -691,17 +808,7 @@ var MathFunction = (function () {
 	},
 
 	variables: function() {
-	    var result = leaves( this.syntax_tree ); 
-
-	    result = $.grep( result, function(v,i) {
-		return (typeof v === 'string') && (v != "e")
-	    });
-
-	    result = result.filter(function(itm,i,a){
-		return i==result.indexOf(itm);
-	    });
-	    
-	    return result;
+	    return variables_in_ast( this.syntax_tree );
 	},
 	
 	equals: function(other) {
