@@ -1,0 +1,33 @@
+\documentclass{article}
+\usepackage{nopageno}
+\usepackage{geometry}
+\geometry{margin=0.1in}
+\usepackage{add-copyright}
+\begin{document}
+
+\null\vfill
+
+\begin{center}
+  \textsc{Table of the Common Logarithm}
+\end{center}
+
+\scriptsize 
+\begin{center}
+\begin{tabular}{r|rrrrrrrrrr}
+\mbox{\textbf{N}} & 0 & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9  \\
+\hline
+<% for i in 10..99 %>
+<% x = (i / 10.0) %>
+<%= '%.1f' % x %>
+<% for j in 0..9 %>
+<% y = x + j / 100.0 %>
+ & <%= ('%.5f' % ((Math.log(y)/Math.log(10.0))))[2..-1] %>
+<% if j != 9 %> <% end %>
+<% end %> \\
+<% end %>
+\end{tabular}
+\end{center}
+\vfill
+\null
+
+\end{document}
