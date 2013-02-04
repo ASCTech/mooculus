@@ -70,3 +70,4 @@ inverseFunctionPoints.html
 inverseFunctionPointGraph.html
 inverseFunctionExpression.html
 tangentLineInverse.html
+inverseFunctionRulePoint.html

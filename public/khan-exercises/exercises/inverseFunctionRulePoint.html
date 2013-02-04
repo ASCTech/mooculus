@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html data-require="math word-problems">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>Using the inverse function rule at a point</title>
+    <script src="../khan-exercise.js"></script>
+</head>
+<body>
+    <div class="exercise">
+        <div class="vars">
+          <var id="X">randRange(-10,10)</var>
+          <var id="Y">randRange(-10,10)</var>
+          <var id="M">randRangeExclude(-10,10,[-1,0,1])</var>
+        </div>
+
+        <div class="problems">
+            <div id="inverseFunctionRule">
+                <p class="problem">Suppose that <code>f(<var>X</var>) = <var>Y</var></code>, and <code>f'(<var>X</var>) = <var>M</var></code>.
+		</p>
+		<p class="question">
+			Using this information you can determine one and only one value of <code>f^{-1}(x)</code>.  Find it.
+		</p>    
+                <div class="solution" data-type="multiple">
+
+              <p>
+                <code>(f^{-1})'( </code><span class="sol"><var>Y</var></span>
+                <code> =</code><span class="sol"><var>1/M</var></span>
+			
+              </p>
+
+            </div>
+            
+             <div class="hints">
+             		<p>
+             			The inverse function rule says that <code>(f^{-1})'(x)= \dfrac{1}{f'(f^{-1}(x))}</code>
+             		</p>
+             		<p>
+             			The only value we have for <code>f</code> is <code>f(<var>X</var>) = <var>Y</var></code>, so the only value for 
+             			<code>f^{-1}</code> we have is <code>f^{-1}(<var>Y</var>) = <var>X</var></code>
+             		</p> 
+             		<p>
+             			Therefore  <code>(f^{-1})'(<var>Y</var>)= \dfrac{1}{f'(f^{-1}(<var>Y</var>))}</code>
+             		</p>
+             		<p>
+             			So  <code>(f^{-1})'(<var>Y</var>)= \dfrac{1}{f'(<var>X</var>)}</code>
+             		</p>
+             		<p>
+             			So  <code>(f^{-1})'(<var>Y</var>)= \dfrac{<var>toFraction(1/M)[0]</var>}{<var>toFraction(1/M)[1]</var>}</code>
+             		</p>
+      		  </div>
+            
+            </div>
+        </div>
+
+       
+    </div>
+</body>
+</html>
