@@ -165,10 +165,61 @@ var MathFunction = (function () {
 	return $.merge( [operator], operands );
     }
 
+    function remove_identity( tree, op, identity ) {
+	if (typeof tree === 'number') {
+	    return tree;
+	}    
+	
+	if (typeof tree === 'string') {
+	    return tree;
+	}    
+
+	var operator = tree[0];
+	var operands = tree.slice(1);
+	operands = $.map( operands, function(v,i) { return [remove_identity(v, op, identity)]; } );
+
+	if (operator == op) {
+	    operands = $.grep(operands, function (a) { return a != identity; });
+	    if (operands.length == 0)
+		operands = [identity];
+
+	    if (operands.length == 1)
+		return operands[0];
+	}
+
+	return $.merge( [operator], operands );
+    }
+
+    function collapse_unary_minus( tree ) {
+	if (typeof tree === 'number') {
+	    return tree;
+	}    
+	
+	if (typeof tree === 'string') {
+	    return tree;
+	}    
+
+	var operator = tree[0];
+	var operands = tree.slice(1);
+	operands = $.map( operands, function(v,i) { return [collapse_unary_minus(v)]; } );
+
+	if (operator == "~") {
+	    if (typeof operands[0] === 'number')
+		return -operands[0];
+	}
+
+	return $.merge( [operator], operands );
+    }
+
     function clean_ast( tree ) {
 	tree = associate_ast( tree, '+' );
 	tree = associate_ast( tree, '-' );
 	tree = associate_ast( tree, '*' );
+	tree = remove_identity( tree, '*', 1 );
+	tree = remove_identity( tree, '+', 0 );
+	tree = collapse_unary_minus( tree );
+
+	tree = remove_identity( tree, '*', 1 );
 
 	return tree;
     };
@@ -240,6 +291,19 @@ var MathFunction = (function () {
 	return [].concat( $.map( operands, function(v,i) { return leaves(v); } ) );
     }
 
+    function variables_in_ast( tree ) {
+	var result = leaves( tree );
+
+	result = $.grep( result, function(v,i) {
+	    return (typeof v === 'string') && (v != "e")
+	});
+
+	result = result.filter(function(itm,i,a){
+	    return i==result.indexOf(itm);
+	});
+	    
+	return result;
+    }
 
     /****************************************************************/
     // convert an AST to parseable text
@@ -247,7 +311,7 @@ var MathFunction = (function () {
     var text_functions = {
 	"+": function(operands) { return "(" + operands.join( ' + ' ) + ")"; },
 	"-": function(operands) { return "(" + operands.join( ' - ' ) + ")"; },
-	"~": function(operands) { return "- ( " + operands.join( ' + ' ) + ")"; },
+	"~": function(operands) { return "-( " + operands.join( ' + ' ) + ")"; },
 	"*": function(operands) { return "(" + operands.join( " * " ) + ")"; },
 	"/": function(operands) { return "((" + operands[0] + ")/(" + operands[1] + "))"; },
 	"^": function(operands) { return "(" + operands[0]  + ")^(" + operands[1] + ")"; },
@@ -292,7 +356,7 @@ var MathFunction = (function () {
     var latex_functions = {
 	"+": function(operands) { return "\\left(" + operands.join( ' + ' ) + "\\right)"; },
 	"-": function(operands) { return "\\left(" + operands.join( ' - ' ) + "\\right)"; },
-	"~": function(operands) { return "- \\left( " + operands.join( ' + ' ) + "\\right)"; },
+	"~": function(operands) { return "-\\left( " + operands.join( ' + ' ) + "\\right)"; },
 	"*": function(operands) { return "\\left(" + operands.join( " \\cdot " ) + "\\right)"; },
 	"/": function(operands) { return "\\frac{" + operands[0] + "}{" + operands[1] + "}"; },
 	"^": function(operands) { return operands[0] + "^{" + operands[1] + "}"; },
@@ -494,7 +558,7 @@ var MathFunction = (function () {
 	    var base = operands[0];
 	    var exponent = operands[1];
 	    
-	    if (typeof exponent === 'number') {
+	    if ((variables_in_ast(exponent)).indexOf(x) < 0) {
 		if ((typeof base === 'string') && (base === 'x')) {
 		    var power_rule = mathFunctionParser.parse('n * (f^(n-1))');
 		    var result = substitute_ast( power_rule, { "n": exponent, "f": base } );
@@ -700,17 +764,7 @@ var MathFunction = (function () {
 	},
 
 	variables: function() {
-	    var result = leaves( this.syntax_tree ); 
-
-	    result = $.grep( result, function(v,i) {
-		return (typeof v === 'string') && (v != "e")
-	    });
-
-	    result = result.filter(function(itm,i,a){
-		return i==result.indexOf(itm);
-	    });
-	    
-	    return result;
+	    return variables_in_ast( this.syntax_tree );
 	},
 	
 	equals: function(other) {
