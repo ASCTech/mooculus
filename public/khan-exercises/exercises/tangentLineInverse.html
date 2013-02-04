@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html data-require="math graphie interactive graphie-helpers steveMath8">
+  <head>
+        <title>Relating the derivative of a function to its inverse</title>
+        <script src="../khan-exercise.js"></script>
+  </head>
+  <body>
+    <div class="exercise">
+      <div class="vars" >
+              	  
+	
+	<var id="X">randRangeNonZero(-5,-1)</var>
+	<var id="Y">randRangeNonZero(X+5,5)</var>
+	<var id="C">randRangeNonZero(-3,3)</var>
+	<var id="A">X</var>
+	<var id="B">A+1</var>
+	<var id="FACTOR">randRange(1,4)</var>
+	<var id = "f">(function(x){return Y+.05*FACTOR*(Math.pow(x-X+C,3)-Math.pow(C,3))})</var>
+	<var id = "cubeRoot">(function(x){
+						if (x &gt;=0){
+							return Math.pow(x,1/3)
+							}
+						else{
+							return -Math.pow(-x,1/3)
+							}
+						})</var>
+	<var id = "g">(function(x){return X-C+cubeRoot((x-Y)*20/FACTOR+C*C*C)})</var>
+	   	
+      </div>
+
+      <div class="problems">
+              
+              
+        <div id="finding-derivative-graphically"  data-weight="2">
+            <p class="problem">
+          	A function <font color = "RED"><code>f</code></font> has been graphed on the interval <code>[-12,12]</code> in red, along with its inverse <font color="BLUE"><code>f^{-1}</code></font> in blue. We have given
+          	you a movable line determined by two points, one <font color="#37ca3e">FIXED</font> on the graph of <code>f</code>
+          	at the point <font color="#37ca3e"><code>A</code></font>, and one you can <font color="ORANGE">DRAG</font> with your 
+          	mouse at the point <font color="ORANGE"><code>B </code> </font>
+          	<br/><br/>
+          	Drag the movable point  close to the fixed point so that the secant line connecting them 
+          	is close to the tangent line to the graph of <font color = "RED"><code>f</code></font>  
+          	at <font color="#37ca3e"><code>A</code></font>.  The corresponding secant line to the graph of <font color ="blue"><code>f^{-1}</code></font>
+          	is also shown.
+          	<br/><br/>
+          	Using these two points there is only one point of the graph of <font color="BLUE"><code>f^{-1}</code></font> whose derivative you can approximate.
+          	</p>
+          	
+          	
+          <p class = "question">
+          	
+          Use the  values of <font color="#37ca3e"><code>A</code></font> and <font color="ORANGE"><code>B </code> </font> to find an approximation
+          of the derivative of <font color="BLUE"><code>f^{-1}</code></font> at the one point you can.
+          	</p>
+          <p>Make sure your points are quite close together, and record at least 2 decimal places of your approximation.</p>
+          <p>
+          	<center>
+          		<font color="#37ca3e">
+          			<code>
+          				A = (<var>A</var>,<var>roundTo(5,f(A))</var>)
+          			</code>
+          		</font> 
+          		<br/>
+          		<font color="ORANGE"><code>B = </code> <span style="font-size: 1.15em;" id="coordB">(0,0)</span></font> 
+           	</center>
+           </p>
+           
+         <div class="graphie" id="grid">
+            graphInit({
+            range: 12,
+            scale: 20,
+            tickStep: 1,
+			gridOpacity: 0.00005,
+            axisOpacity: 0.1,
+            tickOpacity: 0.00004,
+            
+              });
+                    
+              plot(function( x ) {
+              return ( f(x));
+              }, [-12, 12], {
+              stroke: RED,
+              strokeWidth: 3,
+              opacity: 0.3
+              });
+              
+              plot(function( x ) {
+              return ( g(x));
+              }, [-12, 12], {
+              stroke: BLUE,
+              strokeWidth: 3,
+              opacity: 0.4
+              });
+              
+               line( [ -12, -12 ], [ 12, 12 ],{opacity:0.3} );
+                             
+              circle( [A,f(A)], 1/4, {
+              stroke: "none",
+              fill: "#37ca3e"
+              });
+              
+               circle( [f(A),A], 1/4, {
+              stroke: "none",
+              fill: "#37ca3e"
+              });
+              
+              addMouseLayer();
+              graph.pointA = addMovablePoint({ coord: [ A+1, f(A+1) ]});
+			  
+			  var pointConstraint  = function(x){
+			  		
+			  		if (x&lt;g(-10)){
+			  			return g(-10)
+			  			}
+			  		else if (x&gt;g(10)){
+			  			return g(10)
+			  			}
+			  		else if (x&lt;-10){
+			  			return -10
+			  			}
+			  		else if (x&gt;10){
+			  			return 10
+			  			}	
+			  		else if (Math.abs(x - X) &lt; .01){
+			  			if (x &gt; X){
+			  				return X+.01
+			  				}
+			  			else {
+			  				return X-.01
+			  				}
+			  			}
+			  		else{
+			  			return x
+			  			}
+			  		};
+			  		
+              graph.pointA.onMove = function( x, y ) {
+              	   
+              	   graph.drawTangentLine2();
+              	   
+             	$("#coordB").text("("+roundTo(5,graph.pointA.coord[0]).toString()+","+roundTo(5,graph.pointA.coord[1]).toString() +")"   )
+                return [ pointConstraint(x), (f(pointConstraint(x))) ];
+               	};
+               	
+            
+               	
+             graph.tangentLine = bogusShape;
+
+            graph.drawTangentLine = function() {
+                graph.tangentLine.remove();
+                
+                
+                style({
+                    stroke: KhanUtil.PINK,
+                    opacity: 0.5
+                }, function() {
+                    graph.tangentLine = plot( function( x ) {
+                        return (f(graph.pointA.coord[0])-Y)/(graph.pointA.coord[0]-X)*(x-X)+Y;
+                    }, [ -12, 12 ] );
+                    graph.tangentLine.toBack();
+                });
+                
+            };
+            
+             graph.drawTangentLine();
+             
+               graph.tangentLine2 = bogusShape;
+
+            graph.drawTangentLine2 = function() {
+            
+                graph.tangentLine2.remove();
+                
+
+                 style({
+                    stroke: KhanUtil.PINK,
+                    opacity: 0.5
+                }, function() {
+                    graph.tangentLine2 = plot( function( x ) {
+                        return (graph.pointA.coord[0]-X)/(f(graph.pointA.coord[0])-Y)*(x-Y)+X;
+                    }, [ -12, 12 ] );
+                    graph.tangentLine2.toBack();
+                });
+                graph.drawTangentLine();
+                
+            };
+            
+             graph.drawTangentLine2();
+              	
+             
+              
+              	
+
+               
+          </div>   
+                     
+         <div class="solution" data-type="custom">
+				    <div class="instruction">
+           			<code>(f^{-1})'(</code> <input id="response0" type="text" autocomplete="off"/><code>) \approx</code> 
+           		<input id="response1" type="text" autocomplete="off"/>
+           		
+         		    </div>
+                    <div class="guess">[[roundTo(5,graph.pointA.coord[0]),roundTo(5,graph.pointA.coord[1])],$("input#response0").val(),$("input#response1").val()]</div>
+                    <div class="validator-function">
+                        
+                        return Math.abs(guess[0][0]-X)&lt;0.5
+                        			&amp;&amp; guess[1]==Y
+                        			&amp;&amp; Math.abs(  guess[2] - (guess[0][0] - X)/(guess[0][1]-Y)   )&lt;0.1
+                        			
+                    </div>
+                   
+                </div>
+                  
+          <div class="hints">
+           	<div>
+           		Move the point <font color="ORANGE"><code>B</code></font> close to the point 
+           		<font color="#37ca3e"><code>A</code></font>
+           	
+        			<div class="graphie" data-update="grid">
+        				graph.pointA.moveTo(A+.1,f(A+.1),1);
+        			</div>
+        	</div> 
+        	
+        	<div>
+        		<p>
+        		The displayed points are  
+        		<code>A = (<var>roundTo(5,A)</var>,<var>roundTo(5,f(A))</var>)</code> and
+        		<code>B = (<var>roundTo(5,A+.1)</var>,<var>roundTo(5,f(A+.1))</var>)</code>
+        		</p>
+        	</div>	
+        	
+        	<p>
+        		The corresponding points on the graph of the inverse function are <code>\tilde{A} = (<var>roundTo(5,f(A))</var>,<var>roundTo(5,A)</var>)</code> and
+        		<code>\tilde{B} = (<var>roundTo(5,f(A+.1))</var>,<var>roundTo(5,A+.1)</var>)</code>
+        	</p>
+        	
+        	<p>
+        		The slope of the secant line connecting <code>\tilde{A}</code> and <code>\tilde{B}</code> is a good approximation to the derivative of 
+        		<code>f^{-1}</code> at <code>x = <var>Y</var></code>.
+        	</p>
+        	<p>
+        		The slope of the line connecting <code>\tilde{A}</code> and <code>\tilde{B}</code>  is <code>\dfrac{0.1}{<var>roundTo(5,f(A+.1))</var> - <var>roundTo(5,f(A))</var>} \approx <var>roundTo(4,0.1/(roundTo(5,f(A+.1)) - roundTo(5,f(A))))</var></code>
+        	</p>
+        	<p>
+        		Therefore <code>(f^{-1})'(<var>Y</var>) \approx <var>roundTo(4,0.1/(roundTo(5,f(A+.1)) - roundTo(5,f(A))))</var></code>
+        	</p>
+        	
+        	
+        
+        	
+        	
+          </div>
+       
+        </div>
+          
+        
+                  
+                 
+                 
+      </div>
+
+     
+   
+    </div>
+
+</body>
+</html>
