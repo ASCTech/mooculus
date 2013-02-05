@@ -77,10 +77,11 @@ If $f(x)$ and $g(x)$ are differentiable, then
 \end{mainTheorem}
 
 \begin{proof}
-Let $g_0$ some $x$-value and consider the following:
+Let $g_0$ be some $x$-value and consider the following:
 \[
 f'(g_0) = \lim_{h\to 0}\frac{f(g_0+h)-f(g_0)}{h}.
 \]
+
 Set $h = g-g_0$ and we have
 \begin{equation}\label{E:chainRuleLim}
 f'(g_0) = \lim_{g\to g_0} \frac{f(g)-f(g_0)}{g-g_0}.
@@ -90,11 +91,16 @@ however, we cannot as we cannot be sure that
 \[
 g(x+h) - g(x) \ne 0\qquad\text{when $h\ne 0$.}
 \]
-To overcome this difficulty, let $E(g)$ be the difference between
-$f(g)$ and the tangent line of $f(x)$ at $x=g$, see the figure below:
+To overcome this difficulty, let $E(g)$ be the ``error term'' that
+gives the difference between the slope of the secant line from
+$f(g_0)$ to $f(g)$ and $f'(g_0)$,
+\[
+E(g) = \frac{f(g)-f(g_0)}{g-g_0} - f'(g_0).
+\]
+In particular, $E(g)(g-g_0)$ is the difference between $f(g)$ and the
+tangent line of $f(x)$ at $x=g$, see the figure below:
 
-\vspace{.2cm}
-
+\vspace{1cm}
 \begin{tikzpicture}
 	\begin{axis}[
             clip=false,
@@ -127,7 +133,7 @@ $f(g)$ and the tangent line of $f(x)$ at $x=g$, see the figure below:
           \addplot[color=penColor,fill=penColor,only marks,mark=*] coordinates{(1,1)};  %% closed hole          
         \end{axis}
 \end{tikzpicture}
-\vspace{.2cm}
+\vspace{2cm}
 
 Hence we see that
 \begin{equation}\label{E:chainRuleDer}
@@ -137,6 +143,8 @@ and so
 \[
 \frac{f(g)-f(g_0)}{g-g_0} = f'(g_0) + E(g).
 \]
+
+
 Combining this with Equation~\ref{E:chainRuleLim}, we have that
 \begin{align*}
 f'(g_0) &= \lim_{g\to g_0}\frac{f(g)-f(g_0)}{g-g_0} \\
@@ -458,8 +466,8 @@ Your inclination might be simply to solve each of these for $y$ and go
 merrily on your way. However this can be difficult and it may require
 two \textit{branches}, for example to explicitly plot $x^2+y^2 = 4$,
 one needs both $y= \sqrt{4-x^2}$ and $y=-\sqrt{4-x^2}$. Moreover, it
-not even be possible to solve for $y$. To deal with such situations,
-we use \index{implicit differentiation}\textit{implicit
+may not even be possible to solve for $y$. To deal with such
+situations, we use \index{implicit differentiation}\textit{implicit
   differentiation}. Let's see an illustrative example:
 
 
@@ -576,7 +584,7 @@ after taking the derivative we obtain something where it is hard to
 solve for $\dydx$. In fact, \textit{this never happens}. All
 occurrences $\dydx$ arise from applying the chain rule, and whenever
 the chain rule is used it deposits a single $\dydx$ multiplied by some
-other expression. Hence our expression in linear in $\dydx$, it will
+other expression. Hence our expression is linear in $\dydx$, it will
 always be possible to group the terms containing $\dydx$ together and
 factor out the $\dydx$, just as in the previous example. 
 
@@ -805,7 +813,7 @@ From the table, we see that
 \[
 \log_{10}(1.38) \approx 0.1399\qquad\text{and}\qquad \log_{10}(2.34)\approx 0.3692
 \]
-Add these number together to get $0.5091$. Essentially, we know the
+Add these numbers together to get $0.5091$. Essentially, we know the
 following at this point:
 \[
 \begin{array}{ccccc}
