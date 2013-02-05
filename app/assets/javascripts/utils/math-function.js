@@ -1,8 +1,3 @@
-if (typeof require == "function") {
-    $ = require('jquery');
-    mathFunctionParser = require('./math-function-parser.js');
-}
-
 var MathFunction = (function () {
     var my = {};
 
@@ -860,6 +855,17 @@ var MathFunction = (function () {
 
 		    if (Math.abs(this_evaluated/other_evaluated - 1.0) < epsilon)
 			successful_trials++;
+		    else {
+			console.log( "x = " + bindings["x"] );
+			console.log( "this = " + this_evaluated );
+			console.log( "other = " + other_evaluated );
+			console.log( "" );
+		    }
+		} else {
+		    console.log( "x = " + bindings["x"] );
+		    console.log( "this = " + this_evaluated );
+		    console.log( "other = " + other_evaluated );
+		    console.log( "" );
 		}
 
 		if (actual_trials > 50)
@@ -880,4 +886,3 @@ var MathFunction = (function () {
     return my;
 }());
 
-module.exports = MathFunction;
