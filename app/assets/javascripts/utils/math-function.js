@@ -1,3 +1,8 @@
+if (typeof require == "function") {
+    $ = require('jquery');
+    mathFunctionParser = require('./math-function-parser.js');
+}
+
 var MathFunction = (function () {
     var my = {};
 
@@ -875,3 +880,4 @@ var MathFunction = (function () {
     return my;
 }());
 
+module.exports = MathFunction;
