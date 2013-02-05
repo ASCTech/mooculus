@@ -1,0 +1,77 @@
+\documentclass[12pt]{amsart}
+\usepackage{fullpage}
+\usepackage{hyperref}
+\newcommand{\mooculus}{\textsf{\textbf{mooc}ulus}}
+\usepackage{nopageno}
+
+\title{What is Mooculus?}
+\author{Jim Fowler \and Bart Snapp}
+
+\begin{document}
+
+\maketitle
+
+On January~7, 2013, the math department launched its first massive
+open online course (MOOC); the course is called ``Calculus One'' and
+is designed to cover the same content as our local, in-person sections
+of Math~1151.  Our online calculus course is available on Coursera at
+\begin{center}
+\url{https://www.coursera.org/course/calc1}
+\end{center}
+but since Coursera's platform lacks, for instance, randomly generated
+math problems, we built our own MOOC platform here at Ohio State---we
+call it \mooculus.  I encourage you to explore the platform we've
+built by going to
+\begin{center}
+\url{https://mooculus.osu.edu/}
+\end{center}
+
+\subsection*{How many people are taking the course?}
+
+There are 32,890 students enrolled; a popular concern about MOOCs is
+the high attrition rate, but we have had 11,133 students engage with
+the course during Week~4, which is quite a healthy showing.  People
+are spending upwards of ten hours a week on our content.
+
+\subsection*{How has the course been received?}
+
+Remarkably well; posts on the forum include ``the teaching style is
+the best I've seen on Coursera so far'' and ``one of the best
+lecturers I've ever seen anywhere, live or online'' and ``this is the
+first example I have seen in either Edx or Coursera of using the
+medium really well.''  Thousands of people from all over the world are
+successfully learning calculus with OSU's help.
+
+\subsection*{How does a student engage with our course?}
+
+For the student, \mooculus\ provides new content each week, in the form of
+\begin{itemize}
+\item another chapter to our free, open-source calculus textbook;
+\item a dozen short lecture videos, between 2 and 15 minutes long; and
+\item interactive randomly-generated exercises that emphasize both conceptual and computational learning.
+\end{itemize}
+Since one learns math by doing math, the interactive exercises are
+especially important.  Unlike any other MOOC platform, we use
+a Hidden Markov Model to estimate student learning, based on how the
+student engages with our website.  Once \mooculus\ believes the
+student has mastered a particular problem, the
+student is provided with another challenge.
+
+\subsection*{Why build our own platform?}
+
+By building \mooculus, we provide a better student experience than any
+other MOOC platform.  For instance, a common complaint with other
+systems that don't rely on randomly generated exercises is that a
+student eventually ``runs out'' of new exercises to try---\mooculus\
+never runs out of problems.
+
+Additionally, now that we've built \mooculus, we can use the same
+platform for other courses---even the English MOOC will be built on
+our same system.
+
+\end{document}
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: t
+%%% End: 
