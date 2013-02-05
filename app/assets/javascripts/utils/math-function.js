@@ -813,10 +813,11 @@ var MathFunction = (function () {
 	},
 	
 	equalsForBinding: function(other,bindings) {
-	    var epsilon = 0.0001;
+	    var epsilon = 0.01;
 	    var this_evaluated = this.evaluate(bindings);	
 	    var other_evaluated = other.evaluate(bindings);
-	    return (Math.abs(this_evaluated - other_evaluated) < epsilon) ||
+
+	    return (Math.abs(this_evaluated/other_evaluated - 1.0) < epsilon) ||
 		(this_evaluated == other_evaluated) ||
 		(isNaN(this_evaluated) && isNaN(other_evaluated));
 	},
@@ -838,16 +839,32 @@ var MathFunction = (function () {
 	},
 	
 	equals: function(other) {
-	    var total_trials = 20;
+	    var total_trials = 300;
 	    var successful_trials = 0;
-	    
+	    var actual_trials = 0;
+	    var epsilon = 0.01;
+
             for( var i=0; i < total_trials; i++ ) {
 		var bindings = randomBindings();
-		if (this.equalsForBinding(other,bindings)) {
-		    successful_trials++;
+
+		var this_evaluated = this.evaluate(bindings);	
+		var other_evaluated = other.evaluate(bindings);
+
+		if (isFinite(this_evaluated) && isFinite(other_evaluated)) {
+		    actual_trials++;
+
+		    if (Math.abs(this_evaluated/other_evaluated - 1.0) < epsilon)
+			successful_trials++;
 		}
+
+		if (actual_trials > 50)
+		    break;
 	    }
-	    return (successful_trials > 0.95 * total_trials);
+
+	    if (actual_trials < 10)
+		return false;
+
+	    return (successful_trials > 0.75 * actual_trials);
 	},
     };
 
