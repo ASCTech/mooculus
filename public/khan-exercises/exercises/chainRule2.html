@@ -74,18 +74,20 @@
       	
       		
       		  <div class="vars">
-				<var id = "f">new Polynomial(0,KhanUtil.randRange(1,2))</var>
+				<var id = "A">randRange(2,9)</var>
+				<var id = "B">randRange(2,9)</var>
+				<var id = "C">randRange(20,30)</var>
 				<var id = "power">randRange(3,5)</var>
-			    <var id = "EXP">"sqrt(("+f.text().replace(/{/g,"").replace(/}/g,"")+")^"+power+")"</var>
+			    <var id = "EXP">"sqrt(("+A+"*x^2+"+B+"*x+"+C+")^"+power+")"</var>
 				<var id="story">MathFunction.parse(EXP).derivative_story('x')</var>
 				<var id="ghgh">MathFunctionParser.parse(EXP).evaluate({x:2})</var>
-			\
+			
   			  </div>
         	
         	<p class="question">
         		
         		Use the chain rule to find 
-        		<code>\dfrac{d}{dx}\sqrt{(<var>f.text()</var>)^{<var>power</var>}}</code>
+        		<code>\dfrac{d}{dx}\sqrt{(<var>A</var>x^2+<var>B</var>x+<var>C</var>)^{<var>power</var>}}</code>
         	</p>
         <p class="solution" data-type="parsedExpression">
         	<var>MathFunction.parse(EXP).derivative('x').toString()</var>
