@@ -9,8 +9,8 @@
  */
 @font-face {
   font-family: Symbola;
-  src: url(fonts/Symbola.eot);
-  src: local("Symbola Regular"), local("Symbola"), url(fonts/Symbola.ttf) format("truetype"), url(fonts/Symbola.otf) format("opentype"), url(fonts/Symbola.svg#Symbola) format("svg");
+  src: url(/fonts/Symbola.eot);
+  src: local("Symbola Regular"), local("Symbola"), url(/fonts/Symbola.ttf) format("truetype"), url(/fonts/Symbola.otf) format("opentype"), url(/fonts/Symbola.svg#Symbola) format("svg");
 }
 .mathquill-editable {
   display: -moz-inline-box;

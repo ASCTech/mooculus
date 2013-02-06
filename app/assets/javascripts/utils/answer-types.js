@@ -1388,8 +1388,11 @@ Khan.answerTypes = $.extend(Khan.answerTypes, {
     "parsedExpression": {
 	setup: function(solutionarea, solution) {
 	    // Add a text box
-	    var input = $('<span>x + \sqrt{x^2 + 1}</span>');
-	    $(solutionarea).append(input).mathquill('editable');
+	    var input = $('<span class="mathquill-editable">x + \\sqrt{x^2 + 1}</span>');
+	    $(solutionarea).append(input);
+	    $(input).mathquill('editable');
+
+	    $(input).mathquill('redraw')
 	    // The fallback variable is used in place of the answer, if no
 	    // answer is provided (i.e. the field is left blank)
 	    var fallback = $(solution).data("fallback");
@@ -1397,6 +1400,10 @@ Khan.answerTypes = $.extend(Khan.answerTypes, {
 	    return {
 		validator: Khan.answerTypes["parsedExpression"].createValidator(solution),
 		answer: function() {
+		    console.log( $(input) );
+		    console.log( $(input).mathquill('latex') );
+		    return $(input).mathquill('latex');
+
 		    // return the value in the text box, or the fallback
 		    return input.val().length > 0 ?
 			input.val() :
