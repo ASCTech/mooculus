@@ -889,6 +889,9 @@ var MathFunction = (function () {
     };
 
     my.parse_tex = function(string) {
+	// patch "2^32" to mean "2^{3}2"
+	string = string.replace( /\^([0-9])/g, "^{$1}" )
+	// things like \cdot2 confuses my tokenizer
 	string = string.replace( /([^0-9])([0-9])/g, "$1 $2" )
 	return new StraightLineProgram( latexFunctionParser.parse(string) );
     };
