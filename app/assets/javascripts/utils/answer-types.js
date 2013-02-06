@@ -1415,7 +1415,7 @@ Khan.answerTypes = $.extend(Khan.answerTypes, {
 			(fallback ? fallback + "" : "");
 		},
 		solution: $.trim($(solution).text()),
-		examples: ["An expression like sin(3y)+(x+1)^3-9"],
+		examples: ["An TeX expression like \\sin (3y) + \\sqrt{x}"],
 		showGuess: function(guess) {
 		    input.val(guess === undefined ? "" : guess);
 		}
