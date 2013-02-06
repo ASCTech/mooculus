@@ -1,3 +1,9 @@
+if (typeof require === "function") {
+    $ = require('jquery')
+    mathFunctionParser = require('./math-function-parser.js');
+    latexFunctionParser = require('./math-function-parser.js');
+}
+
 var MathFunction = (function () {
     var my = {};
 
@@ -267,6 +273,7 @@ var MathFunction = (function () {
 	"sqrt": function(operands) { return Math.sqrt(operands[0]); },
 	"log": function(operands) { return Math.log(operands[0]); },
 	"^": function(operands) { return Math.pow(operands[0], operands[1]); },
+	"abs": function(operands) { return Math.abs(operands[0]); },
 	"apply": function(operands) { return NaN; },
     };
 
@@ -348,6 +355,7 @@ var MathFunction = (function () {
 	"cot": function(operands) { return "cot (" + operands[0] + ")"; },
 	"log": function(operands) { return "log (" + operands[0] + ")"; },
 	"sqrt": function(operands) { return "sqrt(" + operands[0] + ")"; },
+	"abs": function(operands) { return "abs(" + operands[0] + ")"; },
 	"apply": function(operands) { return operands[0] + "(" + operands[1] + ")"; },
     };
 
@@ -393,6 +401,7 @@ var MathFunction = (function () {
 	"cot": function(operands) { return "\\cot \\left(" + operands[0] + "\\right)"; },
 	"log": function(operands) { return "\\log \\left(" + operands[0] + "\\right)"; },
 	"sqrt": function(operands) { return "\\sqrt{" + operands[0] + "}"; },
+	"abs":  function(operands) { return "\\left|" + operands[0] + "\\right|"; },
 	"apply": function(operands) { return operands[0] + " \\left(" + operands[1] + "\\right)"; },
     };
 
@@ -433,6 +442,7 @@ var MathFunction = (function () {
 	"arcsin": mathFunctionParser.parse('1/sqrt(1 - x^2)'),
 	"arccos": mathFunctionParser.parse('-1/sqrt(1 - x^2)'),
 	"arctan": mathFunctionParser.parse('1/(1 + x^2)'),
+	"abs": mathFunctionParser.parse('abs(x)/x'),
     };
     
     function derivative_of_ast(tree,x,story) {
@@ -853,19 +863,23 @@ var MathFunction = (function () {
 		if (isFinite(this_evaluated) && isFinite(other_evaluated)) {
 		    actual_trials++;
 
-		    if (Math.abs(this_evaluated/other_evaluated - 1.0) < epsilon)
+		    if (Math.abs(this_evaluated - other_evaluated) < (epsilon * Math.abs(other_evaluated) + epsilon * epsilon))
 			successful_trials++;
 		    else {
+			/*
 			console.log( "x = " + bindings["x"] );
 			console.log( "this = " + this_evaluated );
 			console.log( "other = " + other_evaluated );
 			console.log( "" );
+			*/
 		    }
 		} else {
+		    /*
 		    console.log( "x = " + bindings["x"] );
 		    console.log( "this = " + this_evaluated );
 		    console.log( "other = " + other_evaluated );
 		    console.log( "" );
+		    */
 		}
 
 		if (actual_trials > 50)
@@ -883,6 +897,17 @@ var MathFunction = (function () {
 	return new StraightLineProgram( mathFunctionParser.parse(string) );
     };
 
+    my.parse_tex = function(string) {
+	// patch "2^32" to mean "2^{3}2"
+	string = string.replace( /\^([0-9])/g, "^{$1}" )
+	// things like \cdot2 confuses my tokenizer
+	string = string.replace( /([^0-9])([0-9])/g, "$1 $2" )
+	return new StraightLineProgram( latexFunctionParser.parse(string) );
+    };
+
     return my;
 }());
 
+if (typeof require === "function") {
+    module.exports = MathFunction;
+}
