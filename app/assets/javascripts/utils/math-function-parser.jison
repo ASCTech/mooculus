@@ -92,6 +92,7 @@
 "ln"                    return 'LOG'
 "exp"                   return 'EXP'
 "sqrt"                  return 'SQRT'
+"abs"                   return 'SQRT'
 <<EOF>>                 return 'EOF'
 .                       return 'INVALID'
 
@@ -178,6 +179,8 @@ e
         {$$ = ['arctan', $2]; }
     | SQRT e %prec FUNCTION_APPLICATION
         {$$ = ['sqrt', $2]; }
+    | ABS e %prec FUNCTION_APPLICATION
+        {$$ = ['abs', $2]; }
     | E
         {$$ = "e";}
     | PI
