@@ -46,7 +46,6 @@
 
 /* operator associations and precedence */
 
-%left '='
 %left '+' '-'
 %left '*' '/'
 %left UMINUS
@@ -60,13 +59,61 @@
 expressions
     : e EOF
         { return $1; }
+    | term EOF
+        { return $1; }
     ;
+
+term
+    : NUMBER
+        {$$ = parseFloat(yytext.replace(',','.'));}
+    | VARIABLE
+        {$$ = yytext;}
+    | E
+        {$$ = "e";}
+    | PI
+        {$$ = "pi";}
+    | '(' e ')'
+        {$$ = $2;}
+    | '{' e '}'
+        {$$ = $2;}
+    | '-' term %prec UMINUS
+        {$$ = ['~', $2]; }
+    | FRAC '{' e '}' '{' e '}'
+        {$$ = ['/', $3, $6]; }
+
+    | EXP term %prec FUNCTION_APPLICATION
+        {$$ = ['^', 'e', $2]; }
+    | LOG term %prec FUNCTION_APPLICATION
+        {$$ = ['log', $2]; }
+    | SIN term %prec FUNCTION_APPLICATION
+        {$$ = ['sin', $2]; }
+    | COS term %prec FUNCTION_APPLICATION
+        {$$ = ['cos', $2]; }
+    | TAN term %prec FUNCTION_APPLICATION
+        {$$ = ['tan', $2]; }
+
+    | CSC term %prec FUNCTION_APPLICATION
+        {$$ = ['csc', $2]; }
+    | SEC term %prec FUNCTION_APPLICATION
+        {$$ = ['sec', $2]; }
+    | COT term %prec FUNCTION_APPLICATION
+        {$$ = ['cot', $2]; }
+
+    | ARCSIN term %prec FUNCTION_APPLICATION
+        {$$ = ['arcsin', $2]; }
+    | ARCCOS term %prec FUNCTION_APPLICATION
+        {$$ = ['arccos', $2]; }
+    | ARCTAN term %prec FUNCTION_APPLICATION
+        {$$ = ['arctan', $2]; }
+    | SQRT '{' e '}' %prec FUNCTION_APPLICATION
+        {$$ = ['sqrt', $3]; }
+    | e '^' term
+        {$$ = ['^', $1, $3]; }
+;
 
 e
     : e '+' e
         {$$ = ['+', $1, $3]; }
-    | e '^' e
-        {$$ = ['^', $1, $3]; }
     | e '-' e
         {$$ = ['-', $1, $3]; }
     | e '*' e
@@ -77,42 +124,5 @@ e
         {$$ = ['/', $1, $3]; }
     | '-' e %prec UMINUS
         {$$ = ['~', $2]; }
-    | '(' e ')'
-        {$$ = $2;}
-    | FRAC '{' e '}' '{' e '}'
-        {$$ = ['/', $3, $6]; }
-    | NUMBER
-        {$$ = parseFloat(yytext.replace(',','.'));}
-    | VARIABLE
-        {$$ = yytext;}
-    | E
-        {$$ = "e";}
-    | PI
-        {$$ = "pi";}
-    | EXP e %prec FUNCTION_APPLICATION
-        {$$ = ['^', 'e', $2]; }
-    | LOG e %prec FUNCTION_APPLICATION
-        {$$ = ['log', $2]; }
-    | SIN e %prec FUNCTION_APPLICATION
-        {$$ = ['sin', $2]; }
-    | COS e %prec FUNCTION_APPLICATION
-        {$$ = ['cos', $2]; }
-    | TAN e %prec FUNCTION_APPLICATION
-        {$$ = ['tan', $2]; }
-
-    | CSC e %prec FUNCTION_APPLICATION
-        {$$ = ['csc', $2]; }
-    | SEC e %prec FUNCTION_APPLICATION
-        {$$ = ['sec', $2]; }
-    | COT e %prec FUNCTION_APPLICATION
-        {$$ = ['cot', $2]; }
-
-    | ARCSIN e %prec FUNCTION_APPLICATION
-        {$$ = ['arcsin', $2]; }
-    | ARCCOS e %prec FUNCTION_APPLICATION
-        {$$ = ['arccos', $2]; }
-    | ARCTAN e %prec FUNCTION_APPLICATION
-        {$$ = ['arctan', $2]; }
-    | SQRT '{' e '}' %prec FUNCTION_APPLICATION
-        {$$ = ['sqrt', $3]; }
+    | term { $$ = $1; }
     ;
