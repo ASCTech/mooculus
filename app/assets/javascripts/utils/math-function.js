@@ -1,3 +1,4 @@
+
 var MathFunction = (function () {
     var my = {};
 
@@ -853,7 +854,7 @@ var MathFunction = (function () {
 		if (isFinite(this_evaluated) && isFinite(other_evaluated)) {
 		    actual_trials++;
 
-		    if (Math.abs(this_evaluated/other_evaluated - 1.0) < epsilon)
+		    if (Math.abs(this_evaluated - other_evaluated) < (epsilon * Math.abs(other_evaluated) + epsilon * epsilon))
 			successful_trials++;
 		    else {
 			/*
@@ -888,6 +889,7 @@ var MathFunction = (function () {
     };
 
     my.parse_tex = function(string) {
+	string = string.replace( /([^0-9])([0-9])/g, "$1 $2" )
 	return new StraightLineProgram( latexFunctionParser.parse(string) );
     };
 
