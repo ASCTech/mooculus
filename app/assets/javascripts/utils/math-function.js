@@ -887,6 +887,10 @@ var MathFunction = (function () {
 	return new StraightLineProgram( mathFunctionParser.parse(string) );
     };
 
+    my.parse_tex = function(string) {
+	return new StraightLineProgram( latexFunctionParser.parse(string) );
+    };
+
     return my;
 }());
 

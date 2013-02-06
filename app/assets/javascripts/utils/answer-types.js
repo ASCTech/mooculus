@@ -1387,12 +1387,17 @@ Khan.answerTypes = $.extend(Khan.answerTypes, {
 
     "parsedExpression": {
 	setup: function(solutionarea, solution) {
-	    // Add a text box
-	    var input = $('<span class="mathquill-editable">x + \\sqrt{x^2 + 1}</span>');
-	    $(solutionarea).append(input);
-	    $(input).mathquill('editable');
+	    var input_box = $('<div class="parsed-expression-answer-type"></div>');
+	    $(solutionarea).append(input_box);	    
 
-	    $(input).mathquill('redraw')
+	    var input = $('<span class="mathquill-editable"></span>');
+	    $(input_box).append(input);
+	    $(input).mathquill('editable');
+	    $(input).focus();
+
+	    $(input_box).append('<div class="MathPreview" style="padding: 3px; width:100%; margin-top:5px;"><script type="math/tex"></script></div>');
+	    $(input_box).append('<div class="MathFunctionError" style="display: none; font-weight: bold; color: red;">Error: the expression is invalid.</div>');
+
 	    // The fallback variable is used in place of the answer, if no
 	    // answer is provided (i.e. the field is left blank)
 	    var fallback = $(solution).data("fallback");
@@ -1402,11 +1407,11 @@ Khan.answerTypes = $.extend(Khan.answerTypes, {
 		answer: function() {
 		    console.log( $(input) );
 		    console.log( $(input).mathquill('latex') );
-		    return $(input).mathquill('latex');
-
+		    var text = $(input).mathquill('latex');
+		    
 		    // return the value in the text box, or the fallback
-		    return input.val().length > 0 ?
-			input.val() :
+		    return text.length > 0 ?
+			text :
 			(fallback ? fallback + "" : "");
 		},
 		solution: $.trim($(solution).text()),
@@ -1419,7 +1424,7 @@ Khan.answerTypes = $.extend(Khan.answerTypes, {
 	createValidator: function(solution) {
 	    var correct = MathFunction.parse($.trim($(solution).text()));
 	    return function(guess) {
-		guess_expression = MathFunction.parse($.trim(guess));
+		guess_expression = MathFunction.parse_tex($.trim(guess));
 
 		return correct.equals(guess_expression);
 	    };
