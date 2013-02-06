@@ -46,9 +46,10 @@
 
 /* operator associations and precedence */
 
+
 %left '+' '-'
 %left '*' '/'
-%left UMINUS
+%right UMINUS
 %right '^'
 %left FUNCTION_APPLICATION
 
@@ -76,8 +77,6 @@ term
         {$$ = $2;}
     | '{' e '}'
         {$$ = $2;}
-    | '-' term %prec UMINUS
-        {$$ = ['~', $2]; }
     | FRAC '{' e '}' '{' e '}'
         {$$ = ['/', $3, $6]; }
 
