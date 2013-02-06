@@ -6,45 +6,41 @@
 %%
 
 \s+                   /* skip whitespace */
-"-"?[0-9]+("."[0-9]+)?  return 'NUMBER'
-"="                   return '='
-"*"                   return '*'
-"\\cdot"              return '*'
-"\cdot"               return '*'
-"/"                   return '/'
-"-"                   return '-'
-"+"                   return '+'
-"^"                   return '^'
-"!"                   return '!'
-"%"                   return '%'
-"("                   return '('
-"\\left("             return '('
-"\\right)"            return ')'
-")"                   return ')'
-"{"                   return '{'
-"}"                   return '}'
-"\\pi"                return 'PI'
-"\\frac"               return 'FRAC'
+[0-9]+("."[0-9]+)?  return 'NUMBER'
+"*"                     return '*'
+"/"                     return '/'
+"-"                     return '-'
+"+"                     return '+'
+"^"                     return '^'
+"("                     return '('
+"\\left("               return '('
+"\\right)"              return ')'
+")"                     return ')'
+"{"                     return '{'
+"}"                     return '}'
+"\\cdot"                return '*'
+"\\pi"                  return 'PI'
+"\\frac"                return 'FRAC'
 "\\pi"                  return 'PI'
 "\\sin"                 return 'SIN'
-"\\cos"                   return 'COS'
-"\\tan"                   return 'TAN'
-"\\csc"                   return 'CSC'
-"\\sec"                   return 'SEC'
-"\\cot"                   return 'COT'
-"\\arcsin"                return 'ARCSIN'
-"\\arccos"                return 'ARCCOS'
-"\\arctan"                return 'ARCTAN'
-"\\asin"                  return 'ARCSIN'
-"\\acos"                  return 'ARCCOS'
-"\\atan"                  return 'ARCTAN'
-"\\log"                   return 'LOG'
-"\\ln"                    return 'LOG'
-"\\exp"                   return 'EXP'
-"\\sqrt"                  return 'SQRT'
-[A-Za-z]\b            return 'VARIABLE'
-<<EOF>>               return 'EOF'
-.                     return 'INVALID'
+"\\cos"                 return 'COS'
+"\\tan"                 return 'TAN'
+"\\csc"                 return 'CSC'
+"\\sec"                 return 'SEC'
+"\\cot"                 return 'COT'
+"\\arcsin"              return 'ARCSIN'
+"\\arccos"              return 'ARCCOS'
+"\\arctan"              return 'ARCTAN'
+"\\asin"                return 'ARCSIN'
+"\\acos"                return 'ARCCOS'
+"\\atan"                return 'ARCTAN'
+"\\log"                 return 'LOG'
+"\\ln"                  return 'LOG'
+"\\exp"                 return 'EXP'
+"\\sqrt"                return 'SQRT'
+[A-Za-z]                return 'VARIABLE'
+<<EOF>>                 return 'EOF'
+.                       return 'INVALID'
 
 /lex
 
@@ -69,6 +65,8 @@ expressions
 e
     : e '+' e
         {$$ = ['+', $1, $3]; }
+    | e '^' e
+        {$$ = ['^', $1, $3]; }
     | e '-' e
         {$$ = ['-', $1, $3]; }
     | e '*' e
@@ -77,8 +75,6 @@ e
         {$$ = ['*', $1, $2]; }
     | e '/' e
         {$$ = ['/', $1, $3]; }
-    | e '^' e
-        {$$ = ['^', $1, $3]; }
     | '-' e %prec UMINUS
         {$$ = ['~', $2]; }
     | '(' e ')'
