@@ -15,6 +15,8 @@
 "("                     return '('
 "\\left("               return '('
 "\\right)"              return ')'
+"\\left|"               return 'LEFT_ABS'
+"\\right|"              return 'RIGHT_ABS'
 ")"                     return ')'
 "{"                     return '{'
 "}"                     return '}'
@@ -77,6 +79,8 @@ term
         {$$ = $2;}
     | '{' e '}'
         {$$ = $2;}
+    | 'LEFT_ABS' e 'RIGHT_ABS'
+        {$$ = ['abs', $2]; }
     | FRAC '{' e '}' '{' e '}'
         {$$ = ['/', $3, $6]; }
 
