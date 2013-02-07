@@ -20,10 +20,13 @@ set :user, 'deploy'
 
 task :staging do
   set :rails_env, "staging"
-  set :ssh_options, { :port => 2200 }
-  role :app, "ruby-test.asc.ohio-state.edu"
-  role :web, "ruby-test.asc.ohio-state.edu"
-  role :db,  "ruby-test.asc.ohio-state.edu", :primary => true
+  set :ssh_options, { :port => 22 }
+#  role :app, "apps-s.asc.ohio-state.edu"
+#  role :web, "apps-s.asc.ohio-state.edu"
+#  role :db,  "apps-s.asc.ohio-state.edu", :primary => true
+  role :app, "164.107.177.242"
+  role :web, "164.107.177.242"
+  role :db,  "164.107.177.242", :primary => true
 end
 
 task :production do
