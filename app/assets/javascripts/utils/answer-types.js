@@ -1387,16 +1387,34 @@ Khan.answerTypes = $.extend(Khan.answerTypes, {
 
     "parsedExpression": {
 	setup: function(solutionarea, solution) {
-	    var input_box = $('<div class="parsed-expression-answer-type"></div>');
-	    $(solutionarea).append(input_box);	    
+
+	    this.parsedExpressionId = 17;
+
+	    var tabs = $('<ul class="nav nav-tabs"><li class="active"><a href="#wysiwyg' + this.parsedExpressionId  + '" data-toggle="tab">WYSIWYG</a></li><li><a href="#plaintext' + this.parsedExpressionId + '" data-toggle="tab">Plain Text</a></li></ul>');
+
+	    $(solutionarea).append(tabs);
+	    
+	    var tabcontent = $('<div class="tab-content"></div>');
+	    $(solutionarea).append(tabcontent);	    
+
+	    var input_box = $('<div class="tab-pane active parsed-expression-answer-type" id="wysiwyg' + this.parsedExpressionId + '"></div>');
+	    $(tabcontent).append(input_box);
 
 	    var input = $('<span class="mathquill-editable"></span>');
 	    $(input_box).append(input);
 	    $(input).mathquill('editable');
 	    $(input).focus();
 
-	    $(input_box).append('<div class="MathPreview" style="padding: 3px; width:100%; margin-top:5px;"><script type="math/tex"></script></div>');
+	    $(input_box).append('<div class="MathPreview" style="width:100%;"><script type="math/tex"></script></div>');
 	    $(input_box).append('<div class="MathFunctionError" style="display: none; font-weight: bold; color: red;">Error: the expression is invalid.</div>');
+	    var old_input_box = $('<div class="tab-pane parsed-expression-answer-type" id="plaintext' + this.parsedExpressionId + '"></div>');
+	    $(tabcontent).append(old_input_box);
+
+	    var old_input = $('<textarea class="parsed-expression"></textarea>');
+	    $(old_input_box).append(old_input);
+
+	    $(old_input_box).append('<div class="MathPreview" style="width:100%;"><script type="math/tex"></script></div>');
+	    $(old_input_box).append('<div class="MathFunctionError" style="display: none; font-weight: bold; color: red;">Error: the expression is invalid.</div>');
 
 	    // The fallback variable is used in place of the answer, if no
 	    // answer is provided (i.e. the field is left blank)
@@ -1405,9 +1423,12 @@ Khan.answerTypes = $.extend(Khan.answerTypes, {
 	    return {
 		validator: Khan.answerTypes["parsedExpression"].createValidator(solution),
 		answer: function() {
-		    console.log( $(input) );
-		    console.log( $(input).mathquill('latex') );
-		    var text = $(input).mathquill('latex');
+		    var text;
+
+		    if (input_box.hasClass('active'))
+			text = 'latex:' + $(input).mathquill('latex');
+		    if (old_input_box.hasClass('active'))
+			text = 'text:' + $(old_input).val();
 		    
 		    // return the value in the text box, or the fallback
 		    return text.length > 0 ?
@@ -1424,8 +1445,20 @@ Khan.answerTypes = $.extend(Khan.answerTypes, {
 	createValidator: function(solution) {
 	    var correct = MathFunction.parse($.trim($(solution).text()));
 	    return function(guess) {
-		guess_expression = MathFunction.parse_tex($.trim(guess));
+		guess = $.trim(guess);
 
+		var guess_expression;
+
+		if (guess.match(/^latex:/)) {
+		    guess = guess.replace(/^latex:/,'');
+		    guess_expression = MathFunction.parse_tex(guess);
+		}
+		    
+		if (guess.match(/^text:/)) {
+		    guess = guess.replace(/^text:/,'');
+		    guess_expression = MathFunction.parse(guess);
+		}
+		   
 		return correct.equals(guess_expression);
 	    };
 	}
