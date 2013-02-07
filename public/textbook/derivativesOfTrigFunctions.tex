@@ -50,35 +50,35 @@ $\sin(\theta)$.
             every axis x label/.style={at=(current axis.right of origin),anchor=west},
           ]        
           \addplot [very thick, textColor!30!background, smooth, domain=(-.2:.2+pi/2)] ({cos(deg(x))},{sin(deg(x))});
-          \addplot [textColor] plot coordinates {(0,0) (.766,.643)}; %% 40 degrees
-          \addplot [very thick, penColor2!30!background] {(x-.766)*(-.766/.643)+.643};
+          \addplot [textColor,very thick] plot coordinates {(0,0) (.766,.643)}; %% 40 degrees
+          \addplot [textColor,very thick] plot coordinates {(0,0) (.766,0)}; %% bottom
+          %\addplot [very thick, penColor2!30!background] {(x-.766)*(-.766/.643)+.643};
           \addplot [textColor,dashed] plot coordinates {(0,0) (.766-.196,.643+1-.766)}; %% 40+16.98 degrees          
 
-          \addplot [textColor!20!background] plot coordinates {(.766,.643) (1,.839)}; %% hyp
-          \addplot [textColor!20!background] plot coordinates {(1,.643) (1,.839)}; %% side
-          \addplot [textColor!20!background] plot coordinates {(.766,.643) (1,.643)}; %% bottom
-          \addplot [textColor!20!background,smooth, domain=(0:40)] ({.05*cos(x)+.766},{.05*sin(x)+.643}); %% angle
-          \node at (axis cs:.84,.670) [textColor!20!background] {\footnotesize$\theta$};
+          %% \addplot [textColor!20!background] plot coordinates {(.766,.643) (1,.839)}; %% hyp
+          %% \addplot [textColor!20!background] plot coordinates {(1,.643) (1,.839)}; %% side
+          %% \addplot [textColor!20!background] plot coordinates {(.766,.643) (1,.643)}; %% bottom
+          %% \addplot [textColor!20!background,smooth, domain=(0:40)] ({.05*cos(x)+.766},{.05*sin(x)+.643}); %% angle
+          %% \node at (axis cs:.84,.670) [textColor!20!background] {\footnotesize$\theta$};
           
-          \addplot [textColor!20!background] plot coordinates {(.766,.643) (.766,.839)}; %% side
-          \addplot [textColor!20!background] plot coordinates {(.766,.839) (1,.839)}; %% bottom
-          \addplot [textColor!20!background,smooth, domain=(180:220)] ({.05*cos(x)+1},{.05*sin(x)+.839}); %% angle
-          \node at (axis cs:.926,.812) [textColor!20!background] {\footnotesize$\theta$};
+          %% \addplot [textColor!20!background] plot coordinates {(.766,.643) (.766,.839)}; %% side
+          %% \addplot [textColor!20!background] plot coordinates {(.766,.839) (1,.839)}; %% bottom
+          %% \addplot [textColor!20!background,smooth, domain=(180:220)] ({.05*cos(x)+1},{.05*sin(x)+.839}); %% angle
+          %% \node at (axis cs:.926,.812) [textColor!20!background] {\footnotesize$\theta$};
+          
+          \draw[rotate around={30:(.5,.5)}] (.7,.7) rectangle (.25,.25);
 
-          \addplot [textColor!20!background] plot coordinates {(.766,.643) (.766,.643+1-.766)}; %% side
-          \addplot [textColor!20!background] plot coordinates {(.766,.643+1-.766) (.766-.196,.643+1-.766)}; %% top
-          \addplot [textColor!20!background,smooth, domain=(90:130)] ({.05*cos(x)+.766},{.05*sin(x)+.643}); %% angle
-          \node at (axis cs:.739,.717) [textColor!20!background] {\footnotesize$\theta$};
+          %\draw[textColor, rotate around={45:(.5,.5)}] (.5,.5) rectangle (.2,.2);
 
+          \addplot [penColor4,very thick] plot coordinates {(.766,.643) (.766,.643+1-.766)}; %% side
+          \addplot [textColor,very thick] plot coordinates {(.766,.643+1-.766) (.766-.196,.643+1-.766)}; %% top
+          \addplot [textColor,smooth, domain=(90:130)] ({.05*cos(x)+.766},{.05*sin(x)+.643}); %% angle
           \addplot [very thick, textColor] plot coordinates {(.766-.196,.643+1-.766) (.766,.643)}; %% hyp
-          \addplot [very thick, penColor4] plot coordinates {(.766-.196,.643) (.766-.196,.643+1-.766)}; %% side
-          \addplot [very thick, textColor] plot coordinates {(.766,.643) (.766-.196,.643)}; %% bottom
-          \addplot [very thick, textColor,smooth, domain=(270:310)] ({.05*cos(x)+.766-.196},{.05*sin(x)+.643+1-.766}); %% angle 
-          \node at (axis cs:.597,.803) [textColor] {\footnotesize$\theta$};
+          \node at (axis cs:.739,.717) [textColor] {\footnotesize$\theta$};
           
-          \node at (axis cs:.668,.643) [anchor=north] {\footnotesize$h\sin(\theta)$};
-          \node at (axis cs:.57,.76) [anchor=east] {\footnotesize$h\cos(\theta)$};
-          \node at (axis cs:.668,.76) [anchor=west] {\footnotesize$\approx h$};
+          \node at (axis cs:.668,.877) [anchor=south] {\footnotesize$h\sin(\theta)$};
+          \node at (axis cs:.766,.76) [anchor=west] {\footnotesize$h\cos(\theta)$};
+          \node at (axis cs:.65,.78) [anchor=west] {\footnotesize$\approx h$};
 
           \addplot [very thick, penColor] plot coordinates {(.766,0) (.766,.643)}; %% sin theta          
           
