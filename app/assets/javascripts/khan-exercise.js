@@ -306,9 +306,8 @@ var Khan = (function() {
         urlBase: urlBase,
 
         moduleDependencies: {
-            "math": [{
-                src: urlBase + "utils/MathJax/1.1a/MathJax.js?config=KAthJax-8a6b08f6f5c97d7c3c310cc909a7a140"
-            }, "raphael"],
+	    // We don't need Kathjax anymore, since we're loading MathJax from the CDN
+            "math": ["raphael"],
 
             // Load Raphael locally because IE8 has a problem with the 1.5.2 minified release
             // http://groups.google.com/group/raphaeljs/browse_thread/thread/c34c75ad8d431544
@@ -2347,6 +2346,9 @@ var Khan = (function() {
                 var appended = $(hint).appendTo("#hintsarea");
 		appended.fadeIn(400);
 		appended.runModules(problem);
+
+		// Reprocess the math in the hint
+		MathJax.Hub.Queue(["Typeset",MathJax.Hub,hint]);
 
                 // Grow the scratchpad to cover the new hint
                 Khan.scratchpad.resize();

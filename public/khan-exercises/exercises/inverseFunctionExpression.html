@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html data-require="math word-problems steveMath8 math-function-parser">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>Finding the formula of the inverse of a function</title>
+    <script src="../khan-exercise.js"></script>
+</head>
+<body>
+  <div class="exercise">
+   
+
+    <div class="problems">
+      <div id="linear">
+      	
+      	 <div class="vars">
+    		<var id="A">randRangeNonZero(-10,10)</var>
+    		<var id="B">randRangeNonZero(-10,10)</var>
+    	</div>
+
+        <p class="problem">  
+         		<code>f(x) = <var>A</var>x+<var>B</var></code>
+        	</p>    
+        	
+        	<p class="question">
+        		Find the formula for <code>f^{-1}(x)</code>
+        	</p>
+        <p class="solution" data-type="parsedExpression">
+        	(x-<var>B</var>)/<var>A</var>
+        </p>
+        <div class="hints">
+        	<p>
+        		The definition of inverse functions states that <code>f(f^{-1}(x))=x</code>
+        	</p>
+        	<p>
+        		So <code><var>A</var>\cdot f^{-1}(x)+<var>B</var> = x</code>
+        	</p>
+        	<p>
+        		 <code><var>A</var>\cdot f^{-1}(x)= x-<var>B</var> </code>
+        	</p>
+        	<p>
+        		Therefore <code>f^{-1}(x)= \dfrac{x-<var>B</var>}{<var>A</var>} </code>
+        	</p>
+        	<p>
+        		Write this as (x-(<var>B</var>))/(<var>A</var>)
+        	</p>
+        </div>
+       
+      </div>
+      <div id="linearOverLinear">
+      	
+      	 <div class="vars" data-ensure="A*D-B*C!=0">
+    		<var id="A">randRangeNonZero(-10,10)</var>
+    		<var id="B">randRangeNonZero(-10,10)</var>
+    		<var id="C">randRangeNonZero(-10,10)</var>
+    		<var id="D">randRangeNonZero(-10,10)</var>
+    	</div>
+
+        <p class="problem">  
+         		<code>f(x) = \dfrac{<var>A</var>x+<var>B</var>}{<var>C</var>x+<var>D</var>}</code>
+        	</p>    
+        	
+        	<p class="question">
+        		Find the formula for <code>f^{-1}(x)</code>
+        	</p>
+        <p class="solution" data-type="parsedExpression">
+        	 (<var>D</var>x - (<var>B</var>))/(<var>A</var> - (<var>C</var>x))
+        </p>
+        <div class="hints">
+        	<p>
+        		The definition of inverse functions states that <code>f(f^{-1}(x))=x</code>
+        	</p>
+        	<p>
+        		So <code>\dfrac{<var>A</var>\cdot f^{-1}(x)+<var>B</var>}{<var>C</var>\cdot f^{-1}(x)+<var>D</var>} = x</code>
+        	</p>
+        	<p>
+        		 <code><var>A</var>\cdot f^{-1}(x)+<var>B</var>= x \cdot (<var>C</var> \cdot f^{-1}(x) + <var>D</var>) </code>
+        	</p>
+        	<p>
+        		 <code><var>A</var>\cdot f^{-1}(x)+<var>B</var>=<var>C</var>x\cdot f^{-1}(x) +<var>D</var>x</code>
+        	</p>
+        	<p>
+        		<code>(<var>A</var> -<var>C</var>x)\cdot f^{-1}(x)+<var>B</var>=<var>D</var>x</code>
+        	</p>
+        	<p>
+        		<code>(<var>A</var> -<var>C</var>x)\cdot f^{-1}(x)=<var>D</var>x -<var>B</var></code>
+        	</p>
+        	<p>
+        		<code>f^{-1}(x)=\dfrac{<var>D</var>x -<var>B</var>}{<var>A</var> -<var>C</var>x}</code>
+        	</p>
+        	<p>
+        		Write this as (<var>D</var>x - (<var>B</var>))/(<var>A</var> - (<var>C</var>x))
+        	</p>
+        </div>
+       
+      </div>
+      <div id="oddRootOfLinear">
+      	
+      	 <div class="vars" >
+    		<var id="A">randRangeNonZero(-10,10)</var>
+    		<var id="B">randRangeNonZero(-10,10)</var>
+    		<var id="N">randRangeExclude(3,7,[4,6])</var>
+    		
+    	</div>
+
+        <p class="problem">  
+         		<code>f(x) = \sqrt[<var>N</var>]{<var>A</var>x+<var>B</var>}</code>
+        	</p>    
+        	
+        	<p class="question">
+        		Find the formula for <code>f^{-1}(x)</code>
+        	</p>
+        <p class="solution" data-type="parsedExpression">
+        	 (x^<var>N</var>-<var>B</var>)/(<var>A</var>)
+        </p>
+        <div class="hints">
+        	<p>
+        		The definition of inverse functions states that <code>f(f^{-1}(x))=x</code>
+        	</p>
+        	<p>
+        		So <code>\sqrt[<var>N</var>]{<var>A</var>f^{-1}(x)+<var>B</var>} = x</code>
+        	</p>
+        	<p>
+        		<code><var>A</var>f^{-1}(x)+<var>B</var> = x^{<var>N</var>}</code>
+        	</p>
+        	<p>
+        		<code><var>A</var>f^{-1}(x) = x^{<var>N</var>}-<var>B</var></code>
+        	</p>
+        	<p>
+        		<code>f^{-1}(x) = \dfrac{x^{<var>N</var>}-<var>B</var>}{<var>A</var>}</code>
+        	</p>
+        	<p>
+        		Write this as (x^<var>N</var>-<var>B</var>)/(<var>A</var>)
+        	</p>
+        	
+        </div>
+       
+      </div>
+       <div id="constantOverOddRootOfLinear">
+      	
+      	 <div class="vars" >
+    		<var id="A">randRangeNonZero(-10,10)</var>
+    		<var id="B">randRangeNonZero(-10,10)</var>
+    		<var id="C">randRangeNonZero(-10,10)</var>
+    		<var id="N">randRangeExclude(3,7,[4,6])</var>
+    		
+    	</div>
+
+        <p class="problem">  
+         		<code>f(x) = \dfrac{<var>C</var>}{\sqrt[<var>N</var>]{<var>A</var>x+<var>B</var>}}</code>
+        	</p>    
+        	
+        	<p class="question">
+        		Find the formula for <code>f^{-1}(x)</code>
+        	</p>
+        <p class="solution" data-type="parsedExpression">
+        	((<var>C</var>/x)^(<var>N</var>)-<var>B</var>)/(<var>A</var>)
+        </p>
+        <div class="hints">
+        	<p>
+        		The definition of inverse functions states that <code>f(f^{-1}(x))=x</code>
+        	</p>
+        	<p>
+        		So <code>\dfrac{<var>C</var>}{\sqrt[<var>N</var>]{<var>A</var>f^{-1}(x)+<var>B</var>}}= x</code>
+        	</p>
+        	<p>
+        		<code>\dfrac{\sqrt[<var>N</var>]{<var>A</var>f^{-1}(x)+<var>B</var>}}{<var>C</var>} = \dfrac{1}{x}</code>
+        	</p>
+        	<p>
+        		<code>\sqrt[<var>N</var>]{<var>A</var>f^{-1}(x)+<var>B</var>} = \dfrac{<var>C</var>}{x}</code>
+        	</p>
+        	<p>
+        		<code><var>A</var>f^{-1}(x)+<var>B</var> = (\dfrac{<var>C</var>}{x})^{<var>N</var>}</code>
+        	</p>
+        	<p>
+        		<code><var>A</var>f^{-1}(x) = (\dfrac{<var>C</var>}{x})^{<var>N</var>}-<var>B</var></code>
+        	</p>
+        	<p>
+        		<code>f^{-1}(x) = \dfrac{(\dfrac{<var>C</var>}{x})^{<var>N</var>}-<var>B</var>}{<var>A</var>}</code>
+        	</p>
+        	<p>
+        		Enter this as ((<var>C</var>/x)^(<var>N</var>)-<var>B</var>)/(<var>A</var>)
+        	</p>
+        	
+        </div>
+       
+      </div>
+      <div id="exponential">
+      	
+      	 <div class="vars">
+    		<var id="A">randRangeNonZero(-10,10)</var>
+    		<var id="B">randRangeNonZero(-10,10)</var>
+    		<var id="C">randRangeExclude(-10,10,[0,1])</var>
+    	</div>
+
+        <p class="problem">  
+         		<code>f(x) = <var>C</var>e^{<var>A</var>x+<var>B</var>}</code>
+        	</p>    
+        	
+        	<p class="question">
+        		Find the formula for <code>f^{-1}(x)</code>
+        	</p>
+        <p class="solution" data-type="parsedExpression">
+        	(log(  x/(<var>C</var>)) - (<var>B</var>)) /(<var>A</var>)
+        </p>
+        <div class="hints">
+        	<p>
+        		The definition of inverse functions states that <code>f(f^{-1}(x))=x</code>
+        	</p>
+        	<p>
+        		So <code><var>C</var>e^{<var>A</var>f^{-1}(x)+<var>B</var>} = x</code>
+        	</p>
+        	<p>
+        		 <code>e^{<var>A</var>f^{-1}(x)+<var>B</var>}= \dfrac{x}{<var>C</var>} </code>
+        	</p>
+        	<p>
+        		 <code><var>A</var>f^{-1}(x)+<var>B</var>= \log(\dfrac{x}{<var>C</var>}) </code>
+        	</p>
+        	<p>
+        		 <code><var>A</var>f^{-1}(x)= \log(\dfrac{x}{<var>C</var>}) -<var>B</var></code>
+        	</p>
+        	<p>
+        		 <code>f^{-1}(x)= \dfrac{\log(\dfrac{x}{<var>C</var>}) -<var>B</var>}{<var>A</var>}</code>
+        	</p>
+        	<p>
+        		Write this as (log(  x/(<var>C</var>)) - (<var>B</var>)) /(<var>A</var>)
+        	</p>
+        </div>
+       
+      </div>
+      <div id="logarithm">
+      	
+      	 <div class="vars">
+    		<var id="A">randRangeNonZero(-10,10)</var>
+    		<var id="B">randRangeNonZero(-10,10)</var>
+    		<var id="C">randRangeExclude(-10,10,[0,1])</var>
+    	</div>
+
+        <p class="problem">  
+         		<code>f(x) = <var>C</var>\log(<var>A</var>x+<var>B</var>)</code>
+        	</p>    
+        	
+        	<p class="question">
+        		Find the formula for <code>f^{-1}(x)</code>
+        	</p>
+        <p class="solution" data-type="parsedExpression">
+        	 (e^(x/(<var>C</var>))-<var>B</var>)/(<var>A</var>)
+        </p>
+        <div class="hints">
+        	<p>
+        		The definition of inverse functions states that <code>f(f^{-1}(x))=x</code>
+        	</p>
+        	<p>
+        		So <code><var>C</var>\log(<var>A</var>f^{-1}(x)+<var>B</var>) = x</code>
+        	</p>
+        	<p>
+        		 <code>\log(<var>A</var>f^{-1}(x)+<var>B</var>)= \dfrac{x}{<var>C</var>} </code>
+        	</p>
+        	<p>
+        		 <code><var>A</var>f^{-1}(x)+<var>B</var>= e^{\frac{x}{<var>C</var>}} </code>
+        	</p>
+        	<p>
+        		<code><var>A</var>f^{-1}(x)= e^{\frac{x}{<var>C</var>}} -<var>B</var></code>
+        	</p>
+        	<p>
+        		 <code>f^{-1}(x)= \dfrac{e^{\frac{x}{<var>C</var>}} -<var>B</var>}{<var>A</var>}</code>
+        	</p>
+        	<p>
+        		Write this as (e^(x/(<var>C</var>))-<var>B</var>)/(<var>A</var>)
+        	</p>
+        </div>
+       
+      </div>
+      
+    </div>
+  </div>
+</body>
+</html>

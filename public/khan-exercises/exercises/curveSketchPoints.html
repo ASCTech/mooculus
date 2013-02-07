@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html data-require="math word-problems polynomials calculus steveMath8 math-function-parser">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>Using derivatives to understand concavity and increasing/decreasing behavior</title>
+    <script src="../khan-exercise.js"></script>
+</head>
+<body>
+  <div class="exercise">
+    <div class="vars" data-ensure="Math.abs(derivf.evalOf(X))  &gt; .5 &amp;&amp; f.coefs[2] != 0">
+			<var id = "X">randRange(-5,5)</var>
+			<var id = "f">new Polynomial(0,KhanUtil.randRange(2,4))</var>
+		    <var id = "fText">f.text().replace(/{/g,"").replace(/}/g,"")</var>
+		    <var id = "derivf">ddxPolynomial(f)</var>
+		    <var id = "derivfText">derivf.text().replace(/{/g,"").replace(/}/g,"")</var>
+		    <var id = "secondDerivf">ddxPolynomial(derivf)</var>
+		    <var id = "secondDerivfText">secondDerivf.text().replace(/{/g,"").replace(/}/g,"")</var>
+		    <var id = "ANSWER1">derivf.evalOf(X)</var>
+		    <var id = "ANSWER2">secondDerivf.evalOf(X)</var>
+		    <var id = "solIncDec">(function(ANSWER1){
+		    				if (ANSWER1 &gt; 0){
+		    					return "increasing"
+		    					}
+		    				else {
+		    					return "decreasing"
+		    					}
+		    					})(ANSWER1)
+		    	</var>
+		    <var id = "hintPosNeg1">(function(ANSWER1){
+		    				if (ANSWER1 &gt; 0){
+		    					return "positive"
+		    					}
+		    				else {
+		    					return "negative"
+		    					}
+		    					})(ANSWER1)
+		    	</var>
+		     <var id = "hintPosNeg2">(function(ANSWER2){
+		    				if (ANSWER2 &gt; 0){
+		    					return "positive"
+		    					}
+		    				else {
+		    					return "negative"
+		    					}
+		    					})(ANSWER2)
+		    	</var>
+		     <var id = "solUpDown">(function(ANSWER2){
+		    				if (ANSWER2 &gt; 0){
+		    					return "concave up"
+		    					}
+		    				else {
+		    					return "concave down"
+		    					}
+		    					})(ANSWER2)
+		    	</var>
+		    <var id = "finalAnswer">(function(ANSWER1,ANSWER2){
+		    	var sol = " "
+		    		if (ANSWER1 &gt;0){ 
+		    			sol= sol+"increasing and "
+		    			}
+		    		else {
+		    			sol = "decreasing and " 
+		    			}
+		    		if (ANSWER2 &gt; 0){
+		    			sol = sol+"concave up"
+		    			}
+		    		else {
+		    			sol = sol+"concave down"
+		    			}
+		    		return sol
+		    		
+		    		
+		    		})(ANSWER1,ANSWER2)</var>
+		    
+    </div>
+
+    <div class="problems">
+      <div id="testing-function">
+
+        <p class="problem">  
+         	
+         	Let <code>f</code> be the function defined by <code>f(x) = <var>fText</var></code>.	
+        </p>    
+        <p class = "question">
+        	Find the formulas for <code>f'(x)</code>, <code>f''(x)</code>. Decide
+        	whether <code>f</code> is increasing or decreasing near <code>x = <var>X</var></code>, and
+        	whether <code>f</code> is concave up or concave down near <code>x = <var>X</var></code>.
+        </p>
+       
+       <p class="solution"><var>finalAnswer</var></p>
+        
+          <ul class="choices" data-category="true">
+            <li>increasing and concave up</li>
+            <li>increasing and concave down</li>
+            <li>decreasing and concave up</li>
+            <li>decreasing and concave down</li>
+          </ul>
+        <div class="hints">
+        	<p>
+        		<code>f'(x) =  <var>derivfText</var></code>
+        	</p>
+        	
+        	<p>
+        		<code>f'(<var>X</var>) = <var>derivf.hintEvalOf(X)</var> = <var>derivf.evalOf(X)</var></code>
+        	</p>
+        	
+        	<p>
+        		Since <code>f'(<var>X</var>)</code> is <var>hintPosNeg1</var> and continuous at <code>x  = <var>X</var></code>, we know that
+        		it is <var>hintPosNeg1</var> around  <code>x  = <var>X</var></code>.  Thus <code>f</code> is <var>solIncDec</var> near <code>x = <var>X</var></code>
+        	</p>
+        	<p>
+        		<code>f''(x) =  <var>secondDerivfText</var></code>
+        	</p>
+        	<p>
+        		<code>f''(<var>X</var>) = <var>secondDerivf.hintEvalOf(X)</var> = <var>secondDerivf.evalOf(X)</var></code>
+        	</p>
+        	<p>
+        		Since <code>f''(<var>X</var>)</code> is <var>hintPosNeg2</var> and continuous at <code>x  = <var>X</var></code>, we know that
+        		it is <var>hintPosNeg2</var> around  <code>x  = <var>X</var></code>.  Thus <code>f</code> is <var>solUpDown</var> near <code>x = <var>X</var></code>
+        	</p>
+        	<p>
+        		Therefore <code>f</code> is <var>finalAnswer</var>
+        	</p>
+        </div>
+       
+      </div>
+    </div>
+  </div>
+</body>
+</html>

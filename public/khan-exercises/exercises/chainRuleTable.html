@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html data-require="math word-problems">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>Applying the chain rule given a table of values</title>
+    <script src="../khan-exercise.js"></script>
+</head>
+<body>
+    <div class="exercise">
+        <div class="vars">
+        	<var id = "fxTable">shuffle([1,2,3,4,5,6,7,8,9,10])</var>
+        	<var id = "derivfTable">[randRange(-10,10),randRange(-10,10),randRange(-10,10),randRange(-10,10),randRange(-10,10),randRange(-10,10),
+        	randRange(-10,10),randRange(-10,10),randRange(-10,10),randRange(-10,10)]</var>
+        	<var id = "gxTable">[randRange(-10,10),randRange(-10,10),randRange(-10,10),randRange(-10,10),randRange(-10,10),randRange(-10,10),
+        	randRange(-10,10),randRange(-10,10),randRange(-10,10),randRange(-10,10)]</var>
+        	<var id = "derivgTable">[randRange(-10,10),randRange(-10,10),randRange(-10,10),randRange(-10,10),randRange(-10,10),randRange(-10,10),
+        	randRange(-10,10),randRange(-10,10),randRange(-10,10),randRange(-10,10)]</var>
+        	<var id = "X">randRange(1,10)</var>
+        	<var id ="coin">randRange(0,1)</var>
+        	<var id="notation">(function(coin,X){
+        		if (coin ==0){
+        			return "\\left. \\dfrac{d}{dx} g(f(x)) \\right|_{x ="+ X+"}"
+        			}
+        		else {
+        			return "(g \\circ f)'(" + X+")"
+        			}
+        		})(coin,X)</var>
+        	
+        </div>
+
+        <div class="problems">
+            <div id="chainRuleTable">
+                <p class="question">
+                		Evaluate <code><var>notation</var></code>
+                		<br/>
+						<div style = "width:30%; ">
+						
+						<table class = "table table-hover table-bordered" style=" text-align:right;" >
+						
+							<tr>
+								<th><code>x</code></th>
+								<th><code>f(x)</code></th>
+								<th><code>f'(x)</code></th>
+								<th><code>g(x)</code></th>
+								<th><code>g'(x)</code></th>
+							</tr>
+							
+							<tr>
+								<td>1</td>
+								<td><code><var>fxTable[0]</var></code></td>
+								<td><code><var>derivfTable[0]</var></code></td>
+								<td><code><var>gxTable[0]</var></code></td>
+								<td><code><var>derivgTable[0]</var></code></td>
+							</tr>
+						
+							<tr>
+								<td>2</td>
+								<td><code><var>fxTable[1]</var></code></td>
+								<td><code><var>derivfTable[1]</var></code></td>
+								<td><code><var>gxTable[1]</var></code></td>
+								<td><code><var>derivgTable[1]</var></code></td>
+							</tr>
+							
+							<tr>
+								<td>3</td>
+								<td><code><var>fxTable[2]</var></code></td>
+								<td><code><var>derivfTable[2]</var></code></td>
+								<td><code><var>gxTable[2]</var></code></td>
+								<td><code><var>derivgTable[2]</var></code></td>
+							</tr>
+							
+							<tr>
+								<td>4</td>
+								<td><code><var>fxTable[3]</var></code></td>
+								<td><code><var>derivfTable[3]</var></code></td>
+								<td><code><var>gxTable[3]</var></code></td>
+								<td><code><var>derivgTable[3]</var></code></td>
+							</tr>
+							
+							<tr>
+								<td>5</td>
+								<td><code><var>fxTable[4]</var></code></td>
+								<td><code><var>derivfTable[4]</var></code></td>
+								<td><code><var>gxTable[4]</var></code></td>
+								<td><code><var>derivgTable[4]</var></code></td>
+							</tr>
+							
+								<tr>
+								<td>6</td>
+								<td><code><var>fxTable[5]</var></code></td>
+								<td><code><var>derivfTable[5]</var></code></td>
+								<td><code><var>gxTable[5]</var></code></td>
+								<td><code><var>derivgTable[5]</var></code></td>
+							</tr>
+							
+							<tr>
+								<td>7</td>
+								<td><code><var>fxTable[6]</var></code></td>
+								<td><code><var>derivfTable[6]</var></code></td>
+								<td><code><var>gxTable[6]</var></code></td>
+								<td><code><var>derivgTable[6]</var></code></td>
+							</tr>
+							
+							<tr>
+								<td>8</td>
+								<td><code><var>fxTable[7]</var></code></td>
+								<td><code><var>derivfTable[7]</var></code></td>
+								<td><code><var>gxTable[7]</var></code></td>
+								<td><code><var>derivgTable[7]</var></code></td>
+							</tr>
+							
+							<tr>
+								<td>9</td>
+								<td><code><var>fxTable[8]</var></code></td>
+								<td><code><var>derivfTable[8]</var></code></td>
+								<td><code><var>gxTable[8]</var></code></td>
+								<td><code><var>derivgTable[8]</var></code></td>
+							</tr>
+							
+							<tr>
+								<td>10</td>
+								<td><code><var>fxTable[9]</var></code></td>
+								<td><code><var>derivfTable[9]</var></code></td>
+								<td><code><var>gxTable[9]</var></code></td>
+								<td><code><var>derivgTable[9]</var></code></td>
+							</tr>
+							
+						</table> 
+						</div>
+                	
+                </p>
+
+                <p class="solution"><var>derivfTable[X-1]*derivgTable[fxTable[X-1]-1]</var></p>
+        		<div class="hints">
+        			<p>
+        				The derivative of a function tells you the factor by which a small change in inputs scales to become a small change in outputs.
+        			</p>
+        			<p>
+        				In this case, if we were to wiggle our input by <code>h</code> (from <code><var>X</var></code> to 
+        				<code><var>X</var>+h</code>), first <code>f</code> would scale that wiggle by 
+        				<code>f'(<var>X</var>)</code>.  So now the input of <code>g</code> 
+        				is wiggling by <code>f'(<var>X</var>)\cdot h</code> (from <code>f(<var>X</var>)</code> to 
+        				<code>f(<var>X</var>) + f'(<var>X</var>)\cdot h</code>) so <code>g</code>  scales that new wiggle by <code>g'(f(<var>X</var>))</code>.
+        				In total the wiggle <code>h</code> became <code>f'(<var>X</var>) \cdot g'(f(<var>X</var>))  \cdot h</code>, and so the derivative of
+        				<code>g \circ f</code> at <code>x = <var>X</var></code> is <code>f'(<var>X</var>) \cdot g'(f(<var>X</var>))</code>.
+        			</p>
+        			<p>
+        				This is the chain rule!  To summarize, the chain rule says <code><var>notation</var> = f'(<var>X</var>) \cdot g'(f(<var>X</var>))</code> 
+        			</p>
+        			<p>
+        				<code>f(<var>X</var>) = <var>fxTable[X-1]</var></code>, so <code><var>notation</var> = f'(<var>X</var>) \cdot g'(<var>fxTable[X-1]</var>)</code> 
+        			</p>
+        			<p>
+        				<code>f'(<var>X</var>) = <var>derivfTable[X-1]</var></code> and <code>g'(<var>fxTable[X-1]</var>) = <var>derivgTable[fxTable[X-1]-1]</var></code>
+        			</p>
+        			<p>
+        				Thus <code><var>notation</var> =  <var>derivfTable[X-1]</var> \cdot  <var>derivgTable[fxTable[X-1]-1]</var> = <var>derivfTable[X-1]*derivgTable[fxTable[X-1]-1]</var> </code>
+        			</p>
+        		</div>
+            </div>
+       		  
+        </div>
+
+      
+    </div>
+</body>
+</html>

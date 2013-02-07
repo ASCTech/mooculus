@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html data-require="math word-problems steveMath8 graphie math-function-parser">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>Chain Rule Computations 2</title>
+    <script src="../khan-exercise.js"></script>
+</head>
+<body>
+  <div class="exercise">
+  
+
+    <div class="problems">
+      <div id="quotientPower">
+      		
+      		  <div class="vars">
+				<var id = "f">new Polynomial(0,KhanUtil.randRange(1,2))</var>
+				<var id = "h">new Polynomial(0,KhanUtil.randRange(1,2))</var>
+				<var id = "power1">randRange(3,5)</var>
+				<var id = "power2">randRange(3,5)</var>
+			    <var id = "EXP">"("+f.text().replace(/{/g,"").replace(/}/g,"")+")^(" + power1 + ")/("+h.text().replace(/{/g,"").replace(/}/g,"")+")^(" + power2 + ")" </var>
+				<var id="story">MathFunction.parse(EXP).derivative_story('x')</var>
+			
+  			  </div>
+        	
+        	<p class="question">
+        		
+        		Use the chain rule to find 
+        		<code>\dfrac{d}{dx}\dfrac{(<var>f.text()</var>)^{<var>power1</var>}}{ (<var>h.text()</var>)^{<var>power2</var>}}</code>	
+        	</p>
+        <p class="solution" data-type="parsedExpression">
+        	<var>MathFunction.parse(EXP).derivative('x').toString()</var>
+        </p>
+        <div class="hints">
+        	<p data-each="story as hint">
+        		<var>hint</var>
+        	</p>
+        	<p>
+        		You can enter this as <var>MathFunction.parse(EXP).derivative('x').toString()</var>
+        	</p>
+        </div>
+       
+      </div>
+      <div id="productPower">
+      		
+      		  <div class="vars">
+				<var id = "f">new Polynomial(0,KhanUtil.randRange(1,2))</var>
+				<var id = "h">new Polynomial(0,KhanUtil.randRange(1,2))</var>
+				<var id = "power1">randRange(3,5)</var>
+				<var id = "power2">randRange(3,5)</var>
+			    <var id = "EXP">"("+f.text().replace(/{/g,"").replace(/}/g,"")+")^(" + power1 + ")*("+h.text().replace(/{/g,"").replace(/}/g,"")+")^(" + power2 + ")" </var>
+				<var id="story">MathFunction.parse(EXP).derivative_story('x')</var>
+			
+  			  </div>
+        	
+        	<p class="question">
+        		
+        		Use the chain rule to find 
+        		<code>\dfrac{d}{dx}(<var>f.text()</var>)^{<var>power1</var>} (<var>h.text()</var>)^{<var>power2</var>}</code>	
+        	</p>
+        <p class="solution" data-type="parsedExpression">
+        	<var>MathFunction.parse(EXP).derivative('x').toString()</var>
+        </p>
+        <div class="hints">
+        	<p data-each="story as hint">
+        		<var>hint</var>
+        	</p>
+        	<p>
+        		You can enter this as <var>MathFunction.parse(EXP).derivative('x').toString()</var>
+        	</p>
+        </div>
+       
+      </div>
+      <div id= "squareRoot">
+      	
+      		
+      		  <div class="vars">
+				<var id = "A">randRange(2,9)</var>
+				<var id = "B">randRange(2,9)</var>
+				<var id = "C">randRange(20,30)</var>
+				<var id = "power">randRange(3,5)</var>
+			    <var id = "EXP">"sqrt(("+A+"*x^2+"+B+"*x+"+C+")^"+power+")"</var>
+				<var id="story">MathFunction.parse(EXP).derivative_story('x')</var>
+				<var id="ghgh">MathFunctionParser.parse(EXP).evaluate({x:2})</var>
+			
+  			  </div>
+        	
+        	<p class="question">
+        		
+        		Use the chain rule to find 
+        		<code>\dfrac{d}{dx}\sqrt{(<var>A</var>x^2+<var>B</var>x+<var>C</var>)^{<var>power</var>}}</code>
+        	</p>
+        <p class="solution" data-type="parsedExpression">
+        	<var>MathFunction.parse(EXP).derivative('x').toString()</var>
+        </p>
+        <div class="hints">
+        	<p data-each="story as hint">
+        		<var>hint</var>
+        	</p>
+        	<p>
+        		You can enter this as <var>MathFunction.parse(EXP).derivative('x').toString()</var>
+        	</p>
+        </div>
+       
+      
+      </div>
+    </div>
+  </div>
+</body>
+</html>

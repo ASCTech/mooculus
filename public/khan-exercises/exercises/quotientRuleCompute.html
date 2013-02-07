@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html data-require="math calculus word-problems steveMath8 polynomials math-function-parser">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>Computing derivatives using the quotient rule</title>
+    <script src="../khan-exercise.js"></script>
+</head>
+<body>
+  <div class="exercise">
+    <div class="vars">
+		 	<var id = "f">new Polynomial(0,KhanUtil.randRange(1,2))</var>
+		    <var id = "fText">f.text().replace(/{/g,"").replace(/}/g,"")</var>
+		    <var id = "derivf">ddxPolynomial(f)</var>
+		    <var id = "derivfText">derivf.text().replace(/{/g,"").replace(/}/g,"")</var>
+		    
+		    <var id = "h">new Polynomial(0,KhanUtil.randRange(1,3))</var>
+		    <var id = "hText">h.text().replace(/{/g,"").replace(/}/g,"")</var>
+		    <var id = "derivh">ddxPolynomial(h)</var>
+		    <var id = "derivhText">derivh.text().replace(/{/g,"").replace(/}/g,"")</var>
+		    
+    </div>
+
+    <div class="problems">
+      <div id="testing-function">
+
+        <p class="question">  
+         	Use the quotient rule to find the derivative of <code>\dfrac{<var>fText</var>}{<var>hText</var>}</code>
+        	
+        	
+        	</p>    
+        <p class="solution" data-type="parsedExpression"> 
+        	((<var>hText</var>)*(<var>derivfText</var>)-(<var>fText</var>)*(<var>derivhText</var>))/(<var>hText</var>)^2
+        </p>
+        
+        <div class = "hints">
+        	<p>
+        		The quotient rule says <code>\dfrac{d}{dx} f(x) \cdot g(x) = \dfrac{g(x) \color{blue}{\dfrac{d}{dx} f(x)}-f(x) \color{red}{\dfrac{d}{dx} g(x)}}{g(x)^2}</code>
+        	</p>
+        	<div>
+        		<p>
+        			So <code>\dfrac{d}{dx}\dfrac{<var>fText</var>}{<var>hText</var>}</code> 
+        		</p>
+        		<p>
+        			<code> =  \dfrac{(<var>hText</var>)\color{blue}{\dfrac{d}{dx}(<var>fText</var>)}-(<var>fText</var>)\color{red}{\dfrac{d}{dx}(<var>hText</var>)}}{(<var>hText</var>)^2} </code>
+        		</p>
+        	</div>
+        	<p>
+        		<code> =  \dfrac{(<var>hText</var>)\color{blue}{(<var>derivfText</var>)}-(<var>fText</var>)\color{red}{(<var>derivhText</var>)}}{(<var>hText</var>)^2} </code>
+        	</p>
+        	<p>
+        		Enter this as ( (<var>hText</var>)*(<var>derivfText</var>) - (<var>fText</var>)*(<var>derivhText</var>) )/((<var>hText</var>)^2)
+        	</p>
+        </div>
+       
+      </div>
+    </div>
+  </div>
+</body>
+</html>

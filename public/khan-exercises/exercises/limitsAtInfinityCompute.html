@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html data-require="math word-problems graphie polynomials steveMath8">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>Computing limits at infinity</title>
+    <script src="../khan-exercise.js"></script>
+</head>
+<body>
+    <div class="exercise">
+       
+
+        <div class="problems">
+            <div id="linear-over-linear">
+            
+            	 <div class="vars">
+        			<var id = "A">randRangeNonZero(-10,10)</var>
+        			<var id = "B">randRangeNonZero(-10,10)</var>
+        			<var id = "C">randRangeNonZero(-10,10)</var>
+        			<var id = "D">randRangeNonZero(-10,10)</var>
+                </div>
+                <p class="problem">
+                
+                	Compute the following limit symbolically (not by plugging in points!) 
+                
+                	<br/><br/>
+                
+                	<code>	
+                		\displaystyle\lim_{x \to \infty}\dfrac{<var>A</var>x+<var>B</var>}{<var>C</var>x+<var>D</var>}
+                		
+                	</code>
+            	</p>
+   
+          <div class="solution">
+            <var>A/C</var>
+          </div>
+
+	  <div class="hints">
+	   <p>
+	   		First we multiply the numerator and denominator by the reciprocal of the largest power of <code>x</code> 
+	   		which appears anywhere in the expression.
+	   		<br/><br/>
+	   		<code>
+	   		\displaystyle\lim_{x \to \infty}\dfrac{<var>A</var>x+<var>B</var>}{<var>C</var>x+<var>D</var>} = 
+	   		\displaystyle\lim_{x \to \infty}\dfrac{<var>A</var>x+<var>B</var>}{<var>C</var>x+<var>D</var>} \cdot \dfrac{\dfrac{1}{x}}{\dfrac{1}{x}}
+	 		</code>
+	   </p>
+	   <p>
+	       From there, we distribute the <code>\dfrac{1}{x}</code> to the numerator and denominator.
+	       <br/><br/>
+	       <code>
+	       		\displaystyle\lim_{x \to \infty}\dfrac{<var>A</var>+\dfrac{<var>B</var>}{x}}{<var>C</var>+\dfrac{<var>D</var>}{x}}
+	       </code>
+	   </p>
+	   <p>
+	   		Now we can use the quotient law and sum law to rewrite the limit:
+	   		<code>
+	       		\dfrac{\displaystyle\lim_{x \to \infty}(<var>A</var>)+\displaystyle\lim_{x \to \infty}(\dfrac{<var>B</var>}{x})}{\displaystyle\lim_{x \to \infty}(<var>C</var>)+\displaystyle\lim_{x \to \infty}(\dfrac{<var>D</var>}{x})}
+	       </code>
+	   </p>
+	   <p>
+	   		Using the fact that the limit of a constant function is that constant, and that <code>\dfrac{1}{x} \to 0</code>  as <code>x \to \infty</code> we obtain
+	   		<br/><br/>
+	   		<code>\dfrac{<var>A</var>+0}{<var>C</var>+0}</code>
+	   </p> 
+	   <p>
+	   	The final answer is <code>\frac{<var>toFraction(A/C)[0]</var>}{<var>toFraction(A/C)[1]</var>}</code>
+	   </p>
+	  </div>
+        
+	</div>
+            
+            <div id="quadratic-over-quadratic">
+            
+            	 <div class="vars">
+        			<var id = "A">randRangeNonZero(-10,10)</var>
+        			<var id = "B">randRangeNonZero(-10,10)</var>
+        			<var id = "C">randRangeNonZero(-10,10)</var>
+        			<var id = "D">randRangeNonZero(-10,10)</var>
+        			<var id = "E">randRangeNonZero(-10,10)</var>
+        			<var id = "F">randRangeNonZero(-10,10)</var>
+                </div>
+                <p class="problem">      	
+                	Compute the following limit symbolically (not by plugging in points!)
+                	<br/><br/>
+                	<code>	
+                		\displaystyle\lim_{x \to \infty}\dfrac{<var>A</var>x^2+<var>B</var>x+<var>C</var>}{<var>D</var>x^2+<var>E</var>x+<var>F</var>}
+                		
+                	</code>					
+				</p>
+
+               <div class="solution">
+                    <var>A/D</var>
+                </div>
+                
+                <div class="hints">
+	   <p>
+	   		First we multiply the numerator and denominator by the reciprocal of the largest power of <code>x</code> 
+	   		which appears anywhere in the expression.
+	   		<br/><br/>
+	   		<code>
+	   		\displaystyle\lim_{x \to \infty}\dfrac{<var>A</var>x^2+<var>B</var>x+<var>C</var>}{<var>D</var>x^2+<var>E</var>x+<var>F</var>} = 
+	   		\displaystyle\lim_{x \to \infty}\dfrac{<var>A</var>x^2+<var>B</var>x+<var>C</var>}{<var>D</var>x^2+<var>E</var>x+<var>F</var>} \cdot \dfrac{\dfrac{1}{x^2}}{\dfrac{1}{x^2}}
+	 		</code>
+	   </p>
+	   <p>
+	       From there, we distribute the <code>\dfrac{1}{x}</code> to the numerator and denominator.
+	       <br/><br/>
+	       <code>
+	       		\displaystyle\lim_{x \to \infty}\dfrac{<var>A</var>+\dfrac{<var>B</var>}{x}+\dfrac{<var>C</var>}{x^2}}{<var>D</var>+\dfrac{<var>E</var>}{x}+\dfrac{<var>F</var>}{x^2}}
+	       </code>
+	   </p>
+	   <p>
+	   		Now we can use the quotient law and sum law to rewrite the limit:
+	   		<code>
+	       		\dfrac{\displaystyle\lim_{x \to \infty}(<var>A</var>)+\displaystyle\lim_{x \to \infty}(\dfrac{<var>B</var>}{x})+\displaystyle\lim_{x \to \infty}(\dfrac{<var>C</var>}{x^2})}
+	       		{\displaystyle\lim_{x \to \infty}(<var>D</var>)+\displaystyle\lim_{x \to \infty}(\dfrac{<var>E</var>}{x})+\displaystyle\lim_{x \to \infty}(\dfrac{<var>F</var>}{x^2})}
+	  		</code>
+	   </p>
+	   <p>
+	   		Using the fact that the limit of a constant function is that constant, and that <code>\dfrac{1}{x} \to 0</code>  as <code>x \to \infty</code> we obtain
+	   		<br/><br/>
+	   		<code>\dfrac{<var>A</var>+0+0}{<var>D</var>+0+0}</code>
+	   </p> 
+	   <p>
+	   	The final answer is <code>\frac{<var>toFraction(A/D)[0]</var>}{<var>toFraction(A/D)[1]</var>}</code>
+	   </p>
+	   </div>
+	  </div>
+        
+            
+            <div id="high-exponent-over-itself">
+            
+            	 <div class="vars">
+        			<var id = "A">randRangeNonZero(-10,10)</var>
+        			<var id = "B">randRangeNonZero(-10,10)</var>
+        			<var id = "C">randRangeNonZero(-10,10)</var>
+        			<var id = "D">randRangeNonZero(-10,10)</var>
+        			<var id = "E">randRangeNonZero(-10,10)</var>
+        			<var id = "F">randRangeNonZero(-10,10)</var>
+        			<var id = "E1">randRange(60,100)</var>
+        			<var id = "E2">randRange(20,50)</var>
+        			<var id = "E3">randRange(20,50)</var>
+        			
+                </div>
+                <p class="problem">   	
+                	Compute the following limit symbolically (not by plugging in points!)
+                	<br/><br/>
+                	<code>	
+                		\displaystyle\lim_{x \to \infty}\dfrac{<var>A</var>x^{<var>E1</var>}+<var>B</var>x^{<var>E2</var>}+<var>C</var>}
+                		{<var>D</var>x^{<var>E1</var>}+<var>E</var>x^{<var>E3</var>}+<var>F</var>}
+                		
+                	</code>	
+				</p>
+
+               <div class="solution">
+                    <var>A/D</var>
+                </div>
+                
+                <div class="hints">
+	   <p>
+	   		First we multiply the numerator and denominator by the reciprocal of the largest power of <code>x</code> 
+	   		which appears anywhere in the expression.
+	   		<br/><br/>
+	   		<code>
+	   		\displaystyle\lim_{x \to \infty}\dfrac{<var>A</var>x^{<var>E1</var>}+<var>B</var>x^{<var>E2</var>}+<var>C</var>}
+                		{<var>D</var>x^{<var>E1</var>}+<var>E</var>x^{<var>E3</var>}+<var>F</var>} = 
+	   		\displaystyle\lim_{x \to \infty}\dfrac{<var>A</var>x^{<var>E1</var>}+<var>B</var>x^{<var>E2</var>}+<var>C</var>}
+                		{<var>D</var>x^{<var>E1</var>}+<var>E</var>x^{<var>E3</var>}+<var>F</var>} \cdot \dfrac{\dfrac{1}{x^{<var>E1</var>}}}{\dfrac{1}{x^{<var>E1</var>}}}
+	 		</code>
+	   </p>
+	   <p>
+	       From there, we distribute the <code>\dfrac{1}{x}</code> to the numerator and denominator.
+	       <br/><br/>
+	       <code>
+	       		\displaystyle\lim_{x \to \infty}\dfrac{<var>A</var>+\dfrac{<var>B</var>}{x^{<var>E1-E2</var>}}+\dfrac{<var>C</var>}{x^{<var>E1</var>}}}
+                		{<var>D</var>+\dfrac{<var>E</var>}{x^{<var>E1-E3</var>}}+\dfrac{<var>F</var>}{x^{<var>E1</var>}}}
+	       </code>
+	   </p>
+	   <p>
+	   		Now we can use the quotient law and sum law to rewrite the limit:
+	   		<code>
+	       		\dfrac{\displaystyle\lim_{x \to \infty}(<var>A</var>)+\displaystyle\lim_{x \to \infty}(\dfrac{<var>B</var>}{x^{<var>E1-E2</var>}})+\displaystyle\lim_{x \to \infty}(\dfrac{<var>C</var>}{x^{<var>E1</var>}})}
+                		{\displaystyle\lim_{x \to \infty}(<var>D</var>)+\displaystyle\lim_{x \to \infty}(\dfrac{<var>E</var>}{x^{<var>E1-E3</var>}})+\displaystyle\lim_{x \to \infty}(\dfrac{<var>F</var>}{x^{<var>E1</var>}})}
+	  		</code>
+	   </p>
+	   <p>
+	   		Using the fact that the limit of a constant function is that constant, and that <code>\dfrac{1}{x} \to 0</code>  as <code>x \to \infty</code> we obtain
+	   		<br/><br/>
+	   		<code>\dfrac{<var>A</var>+0+0}{<var>D</var>+0+0}</code>
+	   </p> 
+	   <p>
+	   	The final answer is <code>\frac{<var>toFraction(A/D)[0]</var>}{<var>toFraction(A/D)[1]</var>}</code>
+	   </p>
+	   </div>
+            </div>
+            
+            <div id="square-root">
+            
+            	 <div class="vars">
+        			<var id = "A">randRangeNonZero(1,10)</var>
+        			<var id = "B">randRangeNonZero(-10,10)</var>
+        			<var id = "C">randRangeNonZero(1,10)</var>
+        			<var id = "D">randRangeNonZero(-10,10)</var>
+        			<var id = "E">randRangeNonZero(-10,10)</var>
+        			
+        			
+        			
+                </div>
+                <p class="problem">
+                
+                
+                
+                	<code>	
+                		\displaystyle\lim_{x \to \infty}\displaystyle\dfrac{<var>A</var>x+<var>B</var>}
+                		{\sqrt{<var>C*C</var>x^{2}+<var>D</var>x+<var>E</var>}}
+                		
+                	</code>
+                	
+                	
+                
+					
+					
+				</p>
+
+               <div class="solution">
+					<var>A/C</var>
+                </div>
+                
+            	<div class = "hints">
+            		<p>
+            			Lets think about this a little heuristically first.  When <code>x</code> is very large, higher order 
+            			terms are going to dominate smaller terms in the expression.  So we should estimate that, 
+            			for our intents and purposes, <code><var>C*C</var>x^{2}+<var>D</var>x+<var>E</var></code> should be growing
+            			like <code>x^2</code>.  So <code>\sqrt{<var>C*C</var>x^{2}+<var>D</var>x+<var>E</var>}</code> should grow roughly like
+            			<code>x</code>.  This leads me to guess that I should multiply the numerator and denominator by <code>\dfrac{1}{x}</code>.            			
+            		</p>
+            		<p>
+            			<code>	
+                		\displaystyle\lim_{x \to \infty}\dfrac{<var>A</var>x+<var>B</var>}
+                		{\sqrt{<var>C*C</var>x^{2}+<var>D</var>x+<var>E</var>}} \cdot \dfrac{\dfrac{1}{x}}{\dfrac{1}{x}}
+                		</code>
+            		</p>
+            		<p>
+            			<code>	
+                		=\displaystyle\lim_{x \to \infty}\dfrac{<var>A</var>+\dfrac{<var>B</var>}{x}}
+                		{\dfrac{1}{x}\sqrt{<var>C*C</var>x^{2}+<var>D</var>x+<var>E</var>}}
+                		</code>
+            		</p>
+            		<p>
+            			My whole goal here is to compare how <code>\sqrt{<var>C*C</var>x^{2}+<var>D</var>x+<var>E</var>}</code> with how
+            			<code>x</code> is growing.  How will I do this?  I somehow have to move that <code>\frac{1}{x}</code> under the
+            			square root sign.  To do this, I will first observe that  <code>\frac{1}{x} = \frac{1}{|x|} = \frac{1}{\sqrt{x^2}}</code>
+            			when <code>x</code> is positive.  Then I will use the algebraic properties of square roots to complete the simplification.
+            		</p>
+            		<p>
+            			<code>
+            				\displaystyle\lim_{x \to \infty}\dfrac{<var>A</var>+\dfrac{<var>B</var>}{x}}
+                		{\dfrac{1}{\sqrt{x^2}}\sqrt{<var>C*C</var>x^{2}+<var>D</var>x+<var>E</var>}}
+            			</code>
+            			<br/>
+            			<code>
+            				=\displaystyle\lim_{x \to \infty}\dfrac{<var>A</var>+\dfrac{<var>B</var>}{x}}
+                		{\sqrt{\dfrac{1}{x^2}(<var>C*C</var>x^{2}+<var>D</var>x+<var>E</var>)}}
+            			</code>
+            			<br/>
+            			<code>
+            				=\displaystyle\lim_{x \to \infty}\dfrac{<var>A</var>+\dfrac{<var>B</var>}{x}}
+                		{\sqrt{<var>C*C</var>+\dfrac{<var>D</var>}{x}+\dfrac{<var>E</var>}{x^2}}}
+            			</code>
+            		</p>
+            		<p>
+            			By the quotient rule we have:
+            			<br/>
+            				<code>
+            				\dfrac{\displaystyle\lim_{x \to \infty}(<var>A</var>+\dfrac{<var>B</var>}{x})}
+                		{\displaystyle\lim_{x \to \infty}\sqrt{<var>C*C</var>+\dfrac{<var>D</var>}{x}+\dfrac{<var>E</var>}{x^2}}}
+            			</code>
+            			
+            		</p>
+            		<p>
+            			We can bring the limit inside the square root because the square root function is continuous.  Reread the last sentence.  Make you you understand why it makes sense.
+            			<br/>
+            			<code>
+            				\dfrac{\displaystyle\lim_{x \to \infty}(<var>A</var>+\dfrac{<var>B</var>}{x})}
+                		{\sqrt{\displaystyle\lim_{x \to \infty}(<var>C*C</var>+\dfrac{<var>D</var>}{x}+\dfrac{<var>E</var>}{x^2})}}
+            			</code>
+            		</p>
+            		<p>
+            			Now using the sum rule we have:
+            			<br/>
+            			<code>
+            				\dfrac{\displaystyle\lim_{x \to \infty}(<var>A</var>)+\displaystyle\lim_{x \to \infty}(\dfrac{<var>B</var>}{x})}
+                		{\sqrt{\displaystyle\lim_{x \to \infty}(<var>C*C</var>)+\displaystyle\lim_{x \to \infty}(\dfrac{<var>D</var>}{x})+\displaystyle\lim_{x \to \infty}(\dfrac{<var>E</var>}{x^2})}}
+            			</code>
+            		</p>
+            		<p>
+            			Because <code>\displaystyle\lim_{x \to \infty}(\dfrac{1}{x}) = 0</code> and by the constant function rule,
+            			<br/>
+            			<code>
+            			=\dfrac{<var>A</var>+0}
+                		{\sqrt{<var>C*C</var>+0+0}}
+            			</code>
+            		</p>
+            		<p>
+            			The final answer is <code>\dfrac{<var>toFraction(A/C)[0]</var>}{<var>toFraction(A/C)[1]</var>}</code>
+            		</p>
+            	</div>
+            </div>
+            
+            <div id="linear-over-linear-negative">
+            
+            	 <div class="vars">
+        			<var id = "A">randRangeNonZero(-10,10)</var>
+        			<var id = "B">randRangeNonZero(-10,10)</var>
+        			<var id = "C">randRangeNonZero(-10,10)</var>
+        			<var id = "D">randRangeNonZero(-10,10)</var>
+                </div>
+                <p class="problem">
+                
+                	Compute the following limit symbolically (not by plugging in points!)
+                	<br/>
+                	<code>	
+                		\displaystyle\lim_{x \to -\infty}\dfrac{<var>A</var>x+<var>B</var>}{<var>C</var>x+<var>D</var>}
+                		
+                	</code>
+                	
+					
+				</p>
+
+               <div class="solution">
+					<var>A/C</var>
+                </div>
+                <div class="hints">
+	   <p>
+	   		First we multiply the numerator and denominator by the reciprocal of the largest power of <code>x</code> 
+	   		which appears anywhere in the expression.
+	   		<br/><br/>
+	   		<code>
+	   		\displaystyle\lim_{x \to -\infty}\dfrac{<var>A</var>x+<var>B</var>}{<var>C</var>x+<var>D</var>} = 
+	   		\displaystyle\lim_{x \to -\infty}\dfrac{<var>A</var>x+<var>B</var>}{<var>C</var>x+<var>D</var>} \cdot \dfrac{\dfrac{1}{x}}{\dfrac{1}{x}}
+	 		</code>
+	   </p>
+	   <p>
+	       From there, we distribute the <code>\dfrac{1}{x}</code> to the numerator and denominator.
+	       <br/><br/>
+	       <code>
+	       		\displaystyle\lim_{x \to -\infty}\dfrac{<var>A</var>+\dfrac{<var>B</var>}{x}}{<var>C</var>+\dfrac{<var>D</var>}{x}}
+	       </code>
+	   </p>
+	   <p>
+	   		Now we can use the quotient law and sum law to rewrite the limit:
+	   		<code>
+	       		\dfrac{\displaystyle\lim_{x \to -\infty}(<var>A</var>)+\displaystyle\lim_{x \to -\infty}(\dfrac{<var>B</var>}{x})}{\displaystyle\lim_{x \to -\infty}(<var>C</var>)+\displaystyle\lim_{x \to -\infty}(\dfrac{<var>D</var>}{x})}
+	       </code>
+	   </p>
+	   <p>
+	   		Using the fact that the limit of a constant function is that constant, and that <code>\dfrac{1}{x} \to 0</code>  as <code>x \to -\infty</code> we obtain
+	   		<br/><br/>
+	   		<code>\dfrac{<var>A</var>+0}{<var>C</var>+0}</code>
+	   </p> 
+	   <p>
+	   	The final answer is <code>\frac{<var>toFraction(A/C)[0]</var>}{<var>toFraction(A/C)[1]</var>}</code>
+	   </p>
+	  </div>
+                
+            </div>
+            
+            <div id="quadratic-over-quadratic-negative">
+            
+            	 <div class="vars">
+        			<var id = "A">randRangeNonZero(-10,10)</var>
+        			<var id = "B">randRangeNonZero(-10,10)</var>
+        			<var id = "C">randRangeNonZero(-10,10)</var>
+        			<var id = "D">randRangeNonZero(-10,10)</var>
+        			<var id = "E">randRangeNonZero(-10,10)</var>
+        			<var id = "F">randRangeNonZero(-10,10)</var>
+                </div>
+                <p class="problem">
+                
+                	Compute the following limit symbolically (not by plugging in points!)
+                	<br/>
+                	<code>	
+                		\displaystyle\lim_{x \to -\infty}\dfrac{<var>A</var>x^2+<var>B</var>x+<var>C</var>}{<var>D</var>x^2+<var>E</var>x+<var>F</var>}
+                		
+                	</code>
+                	
+				</p>
+
+               <div class="solution">
+					<var>A/D</var>
+                </div>
+                 <div class="hints">
+	   <p>
+	   		First we multiply the numerator and denominator by the reciprocal of the largest power of <code>x</code> 
+	   		which appears anywhere in the expression.
+	   		<br/><br/>
+	   		<code>
+	   		\displaystyle\lim_{x \to -\infty}\dfrac{<var>A</var>x^2+<var>B</var>x+<var>C</var>}{<var>D</var>x^2+<var>E</var>x+<var>F</var>} = 
+	   		\displaystyle\lim_{x \to -\infty}\dfrac{<var>A</var>x^2+<var>B</var>x+<var>C</var>}{<var>D</var>x^2+<var>E</var>x+<var>F</var>} \cdot \dfrac{\dfrac{1}{x}}{\dfrac{1}{x}}
+	 		</code>
+	   </p>
+	   <p>
+	       From there, we distribute the <code>\dfrac{1}{x}</code> to the numerator and denominator.
+	       <br/><br/>
+	       <code>
+	       		\displaystyle\lim_{x \to -\infty}\dfrac{<var>A</var>+\dfrac{<var>B</var>}{x}+\dfrac{<var>C</var>}{x^2}}{<var>D</var>+\dfrac{<var>E</var>}{x}+\dfrac{<var>F</var>}{x^2}}
+	       </code>
+	   </p>
+	   <p>
+	   		Now we can use the quotient law and sum law to rewrite the limit:
+	   		<code>
+	       		\dfrac{\displaystyle\lim_{x \to -\infty}(<var>A</var>)+\displaystyle\lim_{x \to -\infty}(\dfrac{<var>B</var>}{x})+\displaystyle\lim_{x \to -\infty}(\dfrac{<var>C</var>}{x^2})}
+	       		{\displaystyle\lim_{x \to -\infty}(<var>D</var>)+\displaystyle\lim_{x \to -\infty}(\dfrac{<var>E</var>}{x})+\displaystyle\lim_{x \to -\infty}(\dfrac{<var>F</var>}{x^2})}
+	  		</code>
+	   </p>
+	   <p>
+	   		Using the fact that the limit of a constant function is that constant, and that <code>\dfrac{1}{x} \to 0</code>  as <code>x \to -\infty</code> we obtain
+	   		<br/><br/>
+	   		<code>\dfrac{<var>A</var>+0+0}{<var>D</var>+0+0}</code>
+	   </p> 
+	   <p>
+	   	The final answer is <code>\frac{<var>toFraction(A/D)[0]</var>}{<var>toFraction(A/D)[1]</var>}</code>
+	   </p>
+	   </div>
+            </div>
+            
+            <div id="high-exponent-over-itself-negative">
+            
+            	 <div class="vars">
+        			<var id = "A">randRangeNonZero(-10,10)</var>
+        			<var id = "B">randRangeNonZero(-10,10)</var>
+        			<var id = "C">randRangeNonZero(-10,10)</var>
+        			<var id = "D">randRangeNonZero(-10,10)</var>
+        			<var id = "E">randRangeNonZero(-10,10)</var>
+        			<var id = "F">randRangeNonZero(-10,10)</var>
+        			<var id = "E1">randRange(60,100)</var>
+        			<var id = "E2">randRange(20,50)</var>
+        			<var id = "E3">randRange(20,50)</var>
+        			
+                </div>
+                <p class="problem">
+                	Compute the following limit symbolically (not by plugging in points!)
+                	<br/>
+                	<code>	
+                		\displaystyle\lim_{x \to -\infty}\dfrac{<var>A</var>x^{<var>E1</var>}+<var>B</var>x^{<var>E2</var>}+<var>C</var>}
+                		{<var>D</var>x^{<var>E1</var>}+<var>E</var>x^{<var>E3</var>}+<var>F</var>}                		
+                	</code>
+				</p>
+
+               <div class="solution">
+                    <var>A/D</var>
+                </div>
+                
+                <div class="hints">
+	   <p>
+	   		First we multiply the numerator and denominator by the reciprocal of the largest power of <code>x</code> 
+	   		which appears anywhere in the expression.
+	   		<br/><br/>
+	   		<code>
+	   		\displaystyle\lim_{x \to -\infty}\dfrac{<var>A</var>x^{<var>E1</var>}+<var>B</var>x^{<var>E2</var>}+<var>C</var>}
+                		{<var>D</var>x^{<var>E1</var>}+<var>E</var>x^{<var>E3</var>}+<var>F</var>} = 
+	   		\displaystyle\lim_{x \to -\infty}\dfrac{<var>A</var>x^{<var>E1</var>}+<var>B</var>x^{<var>E2</var>}+<var>C</var>}
+                		{<var>D</var>x^{<var>E1</var>}+<var>E</var>x^{<var>E3</var>}+<var>F</var>} \cdot \dfrac{\dfrac{1}{x^{<var>E1</var>}}}{\dfrac{1}{x^{<var>E1</var>}}}
+	 		</code>
+	   </p>
+	   <p>
+	       From there, we distribute the <code>\dfrac{1}{x}</code> to the numerator and denominator.
+	       <br/><br/>
+	       <code>
+	       		\displaystyle\lim_{x \to -\infty}\dfrac{<var>A</var>+\dfrac{<var>B</var>}{x^{<var>E1-E2</var>}}+\dfrac{<var>C</var>}{x^{<var>E1</var>}}}
+                		{<var>D</var>+\dfrac{<var>E</var>}{x^{<var>E1-E3</var>}}+\dfrac{<var>F</var>}{x^{<var>E1</var>}}}
+	       </code>
+	   </p>
+	   <p>
+	   		Now we can use the quotient law and sum law to rewrite the limit:
+	   		<code>
+	       		\dfrac{\displaystyle\lim_{x \to -\infty}(<var>A</var>)+\displaystyle\lim_{x \to -\infty}(\dfrac{<var>B</var>}{x^{<var>E1-E2</var>}})+\displaystyle\lim_{x \to -\infty}(\dfrac{<var>C</var>}{x^{<var>E1</var>}})}
+                		{\displaystyle\lim_{x \to -\infty}(<var>D</var>)+\displaystyle\lim_{x \to -\infty}(\dfrac{<var>E</var>}{x^{<var>E1-E3</var>}})+\displaystyle\lim_{x \to -\infty}(\dfrac{<var>F</var>}{x^{<var>E1</var>}})}
+	  		</code>
+	   </p>
+	   <p>
+	   		Using the fact that the limit of a constant function is that constant, and that <code>\dfrac{1}{x} \to 0</code>  as <code>x \to -\infty</code> we obtain
+	   		<br/><br/>
+	   		<code>\dfrac{<var>A</var>+0+0}{<var>D</var>+0+0}</code>
+	   </p> 
+	   <p>
+	   	The final answer is <code>\frac{<var>toFraction(A/D)[0]</var>}{<var>toFraction(A/D)[1]</var>}</code>
+	   </p>
+	   </div>
+            </div>
+            
+            <div id="square-root-negative">
+            
+            	 <div class="vars">
+        			<var id = "A">randRangeNonZero(1,10)</var>
+        			<var id = "B">randRangeNonZero(-10,10)</var>
+        			<var id = "C">randRangeNonZero(1,10)</var>
+        			<var id = "D">randRangeNonZero(-10,10)</var>
+        			<var id = "E">randRangeNonZero(-10,10)</var>
+        			
+        			
+        			
+                </div>
+                <p class="problem">
+                
+                
+                
+                	<code>	
+                		\displaystyle\lim_{x \to -\infty}\displaystyle\dfrac{<var>A</var>x+<var>B</var>}
+                		{\sqrt{<var>C*C</var>x^{2}+<var>D</var>x+<var>E</var>}}
+                		
+                	</code>
+                	
+                	
+				</p>
+				
+			  <div class = "hints">
+            		<p>
+            			Lets think about this a little heuristically first.  When <code>x</code> is very large in absolute value, higher order 
+            			terms are going to dominate smaller terms in the expression.  So we should estimate that, 
+            			for our intents and purposes, <code><var>C*C</var>x^{2}+<var>D</var>x+<var>E</var></code> should be growing
+            			like <code>x^2</code>.  So <code>\sqrt{<var>C*C</var>x^{2}+<var>D</var>x+<var>E</var>}</code> should grow roughly like
+            			<code>x</code>.  This leads me to guess that we should multiply the numerator and denominator by <code>\dfrac{1}{x}</code>.            			
+            		</p>
+            		<p>
+            			<code>	
+                		\displaystyle\lim_{x \to -\infty}\dfrac{<var>A</var>x+<var>B</var>}
+                		{\sqrt{<var>C*C</var>x^{2}+<var>D</var>x+<var>E</var>}} \cdot \dfrac{\dfrac{1}{x}}{\dfrac{1}{x}}
+                		</code>
+            		</p>
+            		<p>
+            			<code>	
+                		=\displaystyle\lim_{x \to -\infty}\dfrac{<var>A</var>+\dfrac{<var>B</var>}{x}}
+                		{\dfrac{1}{x}\sqrt{<var>C*C</var>x^{2}+<var>D</var>x+<var>E</var>}}
+                		</code>
+            		</p>
+            		<p>
+            			Our whole goal here is to compare how <code>\sqrt{<var>C*C</var>x^{2}+<var>D</var>x+<var>E</var>}</code> with how
+            			<code>x</code> is growing.  How will we do this?  We somehow have to move that <code>\frac{1}{x}</code> under the
+            			square root sign.  To do this, first observe that  <code>\frac{1}{x} = \frac{-1}{|x|} = \frac{-1}{\sqrt{x^2}}</code>
+            			when <code>x</code> is negative. This is worth stressing:  When x is negative, <code>\sqrt{x^2} = -x</code>.  Try some values and convince yourself of why this is true.
+            			 Then we will use the algebraic properties of square roots to complete the simplification.
+            		</p>
+            		<p>
+            			<code>
+            				\displaystyle\lim_{x \to -\infty}\dfrac{<var>A</var>+\dfrac{<var>B</var>}{x}}
+                		{\dfrac{-1}{\sqrt{x^2}}\sqrt{<var>C*C</var>x^{2}+<var>D</var>x+<var>E</var>}}
+            			</code>
+            			<br/>
+            			<code>
+            				=\displaystyle\lim_{x \to -\infty}\dfrac{<var>A</var>+\dfrac{<var>B</var>}{x}}
+                		{-\sqrt{\dfrac{1}{x^2}(<var>C*C</var>x^{2}+<var>D</var>x+<var>E</var>)}}
+            			</code>
+            			<br/>
+            			<code>
+            				=-\displaystyle\lim_{x \to -\infty}\dfrac{<var>A</var>+\dfrac{<var>B</var>}{x}}
+                		{\sqrt{<var>C*C</var>+\dfrac{<var>D</var>}{x}+\dfrac{<var>E</var>}{x^2}}}
+            			</code>
+            		</p>
+            		<p>
+            			By the quotient rule we have:
+            			<br/>
+            				<code>
+            				-\dfrac{\displaystyle\lim_{x \to -\infty}(<var>A</var>+\dfrac{<var>B</var>}{x})}
+                		{\displaystyle\lim_{x \to -\infty}\sqrt{<var>C*C</var>+\dfrac{<var>D</var>}{x}+\dfrac{<var>E</var>}{x^2}}}
+            			</code>
+            			
+            		</p>
+            		<p>
+            			We can bring the limit inside the square root because the square root function is continuous.  Reread the last sentence.  Make you you understand why it makes sense.
+            			<br/>
+            			<code>
+            				-\dfrac{\displaystyle\lim_{x \to -\infty}(<var>A</var>+\dfrac{<var>B</var>}{x})}
+                		{\sqrt{\displaystyle\lim_{x \to -\infty}(<var>C*C</var>+\dfrac{<var>D</var>}{x}+\dfrac{<var>E</var>}{x^2})}}
+            			</code>
+            		</p>
+            		<p>
+            			Now using the sum rule we have:
+            			<br/>
+            			<code>
+            				-\dfrac{\displaystyle\lim_{x \to -\infty}(<var>A</var>)+\displaystyle\lim_{x \to -\infty}(\dfrac{<var>B</var>}{x})}
+                		{\sqrt{\displaystyle\lim_{x \to -\infty}(<var>C*C</var>)+\displaystyle\lim_{x \to -\infty}(\dfrac{<var>D</var>}{x})+\displaystyle\lim_{x \to -\infty}(\dfrac{<var>E</var>}{x^2})}}
+            			</code>
+            		</p>
+            		<p>
+            			Because <code>\displaystyle\lim_{x \to -\infty}(\dfrac{1}{x}) = 0</code> and by the constant function rule,
+            			<br/>
+            			<code>
+            			=-\dfrac{<var>A</var>+0}
+                		{\sqrt{<var>C*C</var>+0+0}}
+            			</code>
+            		</p>
+            		<p>
+            			The final answer is <code>\dfrac{<var>toFraction(-A/C)[0]</var>}{<var>toFraction(-A/C)[1]</var>}</code>
+            		</p>
+            	</div>
+				
+               <div class="solution">
+  					<var>-A/C</var>
+               </div>
+                    
+                </div>
+                
+            <div id="linear-over-quardatic">
+            
+            	 <div class="vars">
+        			<var id = "A">randRangeNonZero(-10,10)</var>
+        			<var id = "B">randRangeNonZero(-10,10)</var>
+        			<var id = "C">randRangeNonZero(-10,10)</var>
+        			<var id = "D">randRangeNonZero(-10,10)</var>
+        			<var id = "E">randRangeNonZero(-10,10)</var>
+                </div>
+                <p class="problem">
+                
+                	Compute the following limit symbolically (not by plugging in points!) 
+                
+                	<br/><br/>
+                
+                	<code>	
+                		\displaystyle\lim_{x \to \infty}\dfrac{<var>A</var>x+<var>B</var>}{<var>C</var>x^2+<var>D</var>x +<var>E</var>}
+                		
+                	</code>
+            	</p>
+   
+          <div class="solution">
+            <var>0</var>
+          </div>
+
+	  <div class="hints">
+	   <p>
+	   		First we multiply the numerator and denominator by the reciprocal of the largest power of <code>x</code> 
+	   		which appears anywhere in the expression.
+	   		<br/><br/>
+	   		<code>
+	   		\displaystyle\lim_{x \to \infty}\dfrac{<var>A</var>x+<var>B</var>}{<var>C</var>x^2+<var>D</var>x +<var>E</var>} = 
+	   		\displaystyle\lim_{x \to \infty}\dfrac{<var>A</var>x+<var>B</var>}{<var>C</var>x^2+<var>D</var>x +<var>E</var>} \cdot \dfrac{\dfrac{1}{x^2}}{\dfrac{1}{x^2}}
+	 		</code>
+	   </p>
+	   <p>
+	       From there, we distribute the <code>\dfrac{1}{x}</code> to the numerator and denominator.
+	       <br/><br/>
+	       <code>
+	       		\displaystyle\lim_{x \to \infty}\dfrac{\dfrac{<var>A</var>}{x}+\dfrac{<var>B</var>}{x^2}}{<var>C</var>+\dfrac{<var>D</var>}{x} +\dfrac{<var>E</var>}{x^2}}
+	       </code>
+	   </p>
+	   <p>
+	   		Now we can use the quotient law and sum law to rewrite the limit:
+	   		<code>
+	       		\dfrac{\displaystyle\lim_{x \to \infty}(\dfrac{<var>A</var>}{x})+\displaystyle\lim_{x \to \infty}(\dfrac{<var>B</var>}{x^2})}{\displaystyle\lim_{x \to \infty}(<var>C</var>)+\displaystyle\lim_{x \to \infty}(\dfrac{<var>D</var>}{x}) +\displaystyle\lim_{x \to \infty}(\dfrac{<var>E</var>}{x^2})}
+	       </code>
+	   </p>
+	   <p>
+	   		Using the fact that the limit of a constant function is that constant, and that <code>\dfrac{1}{x} \to 0</code>  as <code>x \to \infty</code> we obtain
+	   		<br/><br/>
+	   		<code>\dfrac{0+0}{<var>C</var>+0+0}</code>
+	   </p> 
+	   <p>
+	   	The final answer is <code>0</code>
+	   </p>
+	  </div>
+        
+	</div>
+            
+            <div id="quadratic-over-linear">
+            
+            	 <div class="vars">
+        			<var id = "A">randRangeNonZero(-10,10)</var>
+        			<var id = "B">randRangeNonZero(-10,10)</var>
+        			<var id = "C">randRangeNonZero(-10,10)</var>
+        			<var id = "D">randRangeNonZero(-10,10)</var>
+        			<var id = "E">randRangeNonZero(-10,10)</var>
+        			<var id = "num">(function(A){
+        					if (steveSign(A)&gt; 0){
+        						return "positive"
+        						}
+        					else {return "negative"}
+        						
+        					})(A)</var>
+        			<var id = "denom">(function(C){
+        					if (steveSign(C)&gt; 0){
+        						return "positive"
+        						}
+        					else {return "negative"}
+        						
+        					})(C) </var>
+        			<var id = "lim">(function(R){
+        					if (steveSign(R)&gt; 0){
+        						return ""
+        						}
+        					else {return "-"}
+        						
+        					})(A/C)</var>
+        			<var id="answer">(function(R){
+        					if (steveSign(R)&gt; 0){
+        						return "infinity"
+        						}
+        					else {return "-infinity"}
+        						
+        					})(A/C)</var>
+                </div>
+                <p class="problem">
+                
+                	Compute the following limit symbolically (not by plugging in points!) 
+                
+                	<br/><br/>
+                
+                	<code>	
+                		\displaystyle\lim_{x \to \infty}\dfrac{<var>A</var>x^2+<var>B</var>x+<var>E</var>}{<var>C</var>x+<var>D</var>}
+                		
+                	</code>
+            	</p>
+   
+          <div class="solution" data-type="text">
+            <var>answer</var>
+          </div>
+
+	  <div class="hints">
+	   <p>
+	   		First we multiply the numerator and denominator by the reciprocal of the largest power of <code>x</code> 
+	   		which appears anywhere in the expression.
+	   		<br/><br/>
+	   		<code>
+	   		\displaystyle\lim_{x \to \infty}\dfrac{<var>A</var>x^2+<var>B</var>x+<var>E</var>}{<var>C</var>x+<var>D</var>} = 
+	   		\displaystyle\lim_{x \to \infty}\dfrac{<var>A</var>x^2+<var>B</var>x+<var>E</var>}{<var>C</var>x+<var>D</var>} \cdot \dfrac{\dfrac{1}{x^2}}{\dfrac{1}{x^2}}
+	 		</code>
+	   </p>
+	   <p>
+	       From there, we distribute the <code>\dfrac{1}{x^2}</code> to the numerator and denominator.
+	       <br/><br/>
+	       <code>
+	       		\displaystyle\lim_{x \to \infty}\dfrac{<var>A</var>+\dfrac{<var>B</var>}{x} + \dfrac{<var>E</var>}{x^2}}{\dfrac{<var>C</var>}{x}+\dfrac{<var>D</var>}{x^2}}
+	       </code>
+	   </p>
+	   <p>
+	   		At this point the numerator is approaching <code><var>A</var></code> as <code>x \to \infty</code>, and the denominator is approaching <code>0</code>.  So we should expect an infinite value for the
+	   		limit.  The only question is, is the denominator approaching <code>0</code> from the left, or from the right?  This will determine whether the answer is <code>\infty</code> or <code>-\infty</code>
+	   </p>
+	   <p>
+	   		Think about the relative sizes of  <code>\dfrac{<var>C</var>}{x}</code> and <code>\dfrac{<var>D</var>}{x^2}</code>.  When x is large, both quantities are close to 0.  Which one is closer to <code>0</code>?
+	   		What does that say about the sign of <code>\dfrac{<var>C</var>}{x}+\dfrac{<var>D</var>}{x^2}</code> as <code>x \to \infty</code>?
+	   </p> 
+	   <p>
+	   		<code>\dfrac{<var>C</var>}{x}</code> is a lot bigger than <code>\dfrac{<var>D</var>}{x^2}</code>, and so the sum of these two terms will have the same sign as <code><var>C</var></code>.
+	   </p>
+	   <p>
+	   		Thus the entire limit is approaching <code><var>lim</var> \infty</code> , because the numerator is <var>num</var> and the denominator is <var>denom</var>.
+	   </p>
+	  </div>
+        
+	</div>
+                    
+        </div>   
+	</div>
+</body>
+</html>

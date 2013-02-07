@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html data-require="math calculus word-problems steveMath8 polynomials math-function-parser">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>Computing derivatives of polynomials</title>
+    <script src="../khan-exercise.js"></script>
+</head>
+<body>
+  <div class="exercise">
+    <div class="vars">
+		 	<var id = "degree">randRange(2,4)</var>
+		 	<var id = "f">new Polynomial(0,degree)</var>
+		    <var id = "fText">f.text().replace(/{/g,"").replace(/}/g,"")</var>
+		    <var id = "derivf">ddxPolynomial(f)</var>
+		    <var id = "derivfText">derivf.text().replace(/{/g,"").replace(/}/g,"")</var>
+		    <var id = "hintArray">(function(f){
+		    	 var hint0 = " "
+		    	 var hint1 = " "
+		    	 var hint2 = " "
+		    	for (var i = 0; i < f.getNumberOfTerms()-1; i = i + 1) {
+               
+                var term = f.getCoefAndDegreeForTerm(i);
+                
+				hint0 = hint0+ "\\dfrac{d}{dx}("+term.coef+"x^{" + term.degree+"})+";
+				hint1 = hint1+ term.coef+"\\dfrac{d}{dx}(x^{" + term.degree+"})+";
+				hint2 = hint2+ "("+ term.coef+"\\cdot" + term.degree+")x^{" + (term.degree-1)+"}"+((term.degree!=1)? "+":"");
+				
+				}
+				var term = f.getCoefAndDegreeForTerm( f.getNumberOfTerms()-1);
+				hint0 =  (term.degree !=0)?hint0+ "\\dfrac{d}{dx}("+term.coef+"x^{" + term.degree+"})" : hint0+ "\\dfrac{d}{dx}("+term.coef+")";
+				hint1 = (term.degree !=0)?hint1+ term.coef+"\\dfrac{d}{dx}(x^{" + term.degree+"})": hint1+"0";
+				hint2 = (term.degree !=0)?hint2+ "("+ term.coef+"\\cdot" + term.degree+")x^{" + (term.degree-1)+"}": hint2;
+				return [hint0,hint1,hint2]
+				})(f)</var>
+		    
+    </div>
+
+    <div class="problems">
+      <div id="diffPoly">
+
+        <p class="question">  
+         	Find the derivative of <code><var>fText</var></code> using the sum rule and the power rule.
+        </p>    
+        <p class="solution" data-type="parsedExpression"> 
+        	<var>derivfText</var>
+        </p>
+        
+        <div class = "hints">
+        	<p>
+        		<code> \dfrac{d}{dx}(<var>fText</var>) =  <var>hintArray[0]</var></code> by the sum rule.
+        	</p>
+        	<p>
+        		<code> =  <var>hintArray[1]</var></code> by the constant factor rule.
+        	</p>
+        	<p>
+        		<code> =  <var>hintArray[2]</var></code> by the power rule.
+        	</p>
+        	<p>
+        		<code> =  <var>derivfText</var></code> 
+        	</p>
+        	<p>Enter this as <var>derivfText</var></p>
+        </div>   
+      </div>
+    </div>
+</div>
+</body>
+</html>

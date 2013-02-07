@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html data-require="math math-format graphie interactive ast math-model subhints steveMath8">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>Understanding the sign of the second derivative</title>
+    <script src="../khan-exercise.js"></script>
+</head>
+<body>
+<div class="exercise">
+    <div class="vars" >
+        
+        
+        
+    <var id = "Xs">makeXList()</var>
+    <var id = "A">Xs[randRange(1,Xs.length-2)]+randRange(-3,3)/3</var>
+	<var id = "Ys">makeYList(-8,8,Xs.length)</var>
+	<var id = "points">makeCoordinates(Xs,Ys)</var>
+	<var id = "f">(function(x){return niceFunction(x,points)})</var>
+	<var id = "ANSWER">(function(A,f){
+		var B = (f(A+.001)-2*f(A)+f(A-.001))*1000*1000; //An approximation to the second derivative
+		if (B &gt;0){return "positive"}
+		else {return "negative"}
+		})(A,f)
+	</var>
+	<var id = "hintIncDec">(function(A,f){
+		var B = (f(A+.001)-2*f(A)+f(A-.001))*1000*1000; //An approximation to the second derivative
+		if (B &gt;0){return "increasing"}
+		else {return "decreasing"}
+		})(A,f)
+	</var>
+    </div>
+
+   
+  
+
+    
+
+    <div class="problems">
+        <div id="standard-form">
+          <p class = "problem"> 
+          As you vary the blue point, the slope of the tangent line also varies.  The second derivative measures
+          the rate of change of slopes of tangent lines.  If the second derivative at a point is positive, 
+          the slope will get larger when you wiggle the input to the right.  If the second derivative is negative,
+          the slope will decrease when you wiggle the input to the right.
+          </p>
+          <p class="question"> Is the second derivative positive or negative at the green point? </p>
+          <div class="graphie" id="grid">
+            graphInit({
+                range: 11,
+                scale: 20,
+                axisArrows: "&lt;-&gt;",
+                tickStep: 1,
+                labelStep: 1,
+                gridOpacity: 0.0001,
+                axisOpacity: 0.2,
+                tickOpacity: 0.001,
+                labelOpacity: 0.001
+            });
+			
+			   plot(function( x ) {
+              return ( f(x));
+              }, [-12, 12], {
+              stroke: RED,
+              strokeWidth: 3
+              });
+                             
+              circle( [A,f(A)], 1/4, {
+              stroke: "none",
+              fill: "#37ca3e"
+              });
+              
+              addMouseLayer();
+              
+            
+            graph.pointA = addMovablePoint({
+                coord: [ A-1, f(A-1) ],
+                normalStyle: {
+                    stroke: KhanUtil.BLUE,
+                    fill: KhanUtil.BLUE
+                }
+            });
+          
+
+           
+           
+
+            
+            graph.pointA.onMove = function( x, y ) {
+                graph.drawTangentLine();
+				return [ max( -10.5, min( x, 10.5 ) ), f(max( -10.5, min( x, 10.5 ) )) ];
+                
+            };
+           
+
+            graph.tangentLine = bogusShape;
+
+            graph.drawTangentLine = function() {
+                graph.tangentLine.remove();
+                
+                style({
+                    stroke: KhanUtil.BLUE
+                }, function() {
+                    graph.tangentLine = plot( function( x ) {
+                        return  ((f(graph.pointA.coord[0]+.001)-f(graph.pointA.coord[0]-.001))/(.002))*(x -graph.pointA.coord[0]) + graph.pointA.coord[1];
+                    }, [ -11, 11 ] );
+                    graph.tangentLine.toBack();
+                });
+            };
+            
+            
+
+            graph.drawTangentLine();
+
+             
+             
+
+        </div>
+        <p class="solution"><var>ANSWER</var></p>
+        	 <ul class="choices" data-category="true">
+                  <li>positive</li>
+                  <li>negative</li>
+             </ul>
+		<div class="hints">
+			<p>
+				Place the point of tangency of the movable tangent line right over the green point.  Now move
+				the point of tangency a little to the right.  Did the slope increase or decrease?
+			</p>
+			<p>
+				The slope is <u><var>hintIncDec</var></u> through the green point.
+			</p>
+			<p>
+				The second derivative is <u><var>ANSWER</var></u> at the green point.
+			</p>
+		</div>
+      
+          
+       </div>
+
+    </div>
+
+</div>
+</body>
+</html>

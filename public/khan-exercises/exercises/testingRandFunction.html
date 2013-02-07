@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html data-require="math word-problems steveMath8 math-function-parser">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>Practice with entering expressions</title>
+    <script src="../khan-exercise.js"></script>
+</head>
+<body>
+  <div class="exercise">
+    <div class="vars">
+		<var id="EXP">randFunction(3,["+","/","*","power","coefficient","constant","sin"],["x"])</var>
+		<var id="LaTeXEXP">MathFunction.parse(EXP).tex()</var>
+    </div>
+
+    <div class="problems">
+      <div id="testing-function">
+
+        <p class="problem">  
+         	This week we are introducing a new feature:  The ability to type mathematical expressions as answers!
+         	This exercise is just to help you get used to entering such expressions.  We automatically display what you 
+         	have written in a nicer to read format below the answer box.  If what is currently typed in is not valid, 
+         	that information is also displayed.  Currently, we have more parenthesis displayed than we would like,
+         	we will hopefully fix this soon.
+         	<br/><br/>
+            You can try simplifying the expression
+         	before entering it if you want a challenge.  For example if the displayed function is <code>2sin(x+x)*cos(x+x)</code>, then you
+         	could simplify this to <code>2sin(2x)cos(2x)</code> and type 2*sin(2*x)*cos(2*x).  If you really are up
+         	on your trig, you might recognize that you could simplify further to <code>sin(4x)</code> and write sin(4*x).
+			<br/>
+        	</p>    
+        	
+        	<p class="question">
+        		Type an expression equivalent to 
+        		<code><var>LaTeXEXP</var></code>
+        	</p>
+        <p class="solution" data-type="parsedExpression">
+        	<var>EXP</var>
+        </p>
+        <div class="hints">
+        	<p>
+        		One expression you could type which works is <var>EXP</var>
+        	</p>
+        </div>
+       
+      </div>
+    </div>
+  </div>
+</body>
+</html>

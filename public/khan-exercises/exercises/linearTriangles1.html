@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html data-require="math interactive graphie">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>Understanding lines via similar triangles 1</title>
+    <script src="../khan-exercise.js"></script>
+    <style type="text/css">
+        #answer_area input[type=text] {
+            width: 50px;
+            margin: 0px 0px 0px 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="exercise">
+        <div class="problems">
+
+            <div id="plotPoint">
+
+           
+                <div class="vars" data-ensure="Math.abs(Y2-Y1)&gt;1">
+                    <var id="X1">randRange( -10, -5 )</var>
+                    <var id="Y1">randRange( -10, 10 )</var>
+                     <var id="X2">randRange( 5, 10)</var>
+                    <var id="Y2">randRangeExclude( -10, 10,[Y1] )</var>
+                     <var id="X3">randRange( -2, 2)</var>
+                     <var id="slope">(Y2-Y1)/(X2-X1)</var>
+                    <var id="Y3">Y1+(X3-X1)*slope</var>
+                    <var id="aboveBelow">
+                    	(function(slope){
+                    		if (slope &gt; 0){
+                    			return ["above","plus","+"];
+                    			}
+                    		else {
+                    			return ["below","minus","-"];
+                    			}
+                    		
+                    		})(slope)
+                    </var>
+                </div>
+               
+                <div class="problem">
+                    
+                    	<font color="red">UNDER CONSTRUCTION!  The following problem has a loading bug.  This is due to having text inside the picture 
+                    	- we are working on a solution.  It should load after a minute or so.</font>
+                    <br/><br/>
+                    
+                    <code>A = (<var>X1</var>,<var>Y1</var>)</code> and 
+                    <code>C = (<var>X2</var>,<var>Y2</var>)</code>.  <code>B</code> is a point on the line passing through
+                    <code>A</code> and <code>C</code>. The abscissa of <code>B</code> is <code><var>X3</var></code>.
+                    <br/><br/>
+                  
+                   	<code>\triangle ADB</code> is similar to <code>\triangle AEC</code> so 
+                  
+                   	<center>
+                   		<p>
+                   			<code>
+                   				\dfrac{\  \overline{BD}\  }{\  \overline{DA}\  } = \dfrac{\  \overline{CE}\  }{\  \overline{EA}\  }
+                   			</code>
+                   		</p>
+                   	</center>
+                   	
+                   	
+                   	
+                   	First find the (positive) lengths of <code>\overline{DA}</code>, <code>\overline{CE}</code> and <code>\overline{EA}</code>, and
+                   	then use these together with the proportion above to find the length of <code>\overline{BD}</code>. Finally, use this length to determine 
+                   	the ordinate of the point <code>B</code>
+                    
+                    
+                    <div class="graphie" id="grid">
+                        graphInit({
+                            range: 13,
+                            scale: 17,
+                            axisArrows: "&lt;-&gt;",
+                           
+                           
+                            gridOpacity: 0.00005,
+                            axisOpacity: 0.2,
+                            tickOpacity: 0.00004,
+                            
+                        });
+
+                        
+                        
+                     	    line([X1-20,Y1-20*slope],[X2+20,Y2+20*slope], {stroke: RED});
+                     	 
+                     	    circle( [X1,Y1], 1/4, {
+                            stroke: "none",
+                            fill: GREEN
+                            });
+                            
+                            circle( [X2,Y1], 1/4, {
+                            stroke: "none",
+                            fill: GREEN
+                            });
+                            
+                            circle( [X3,Y1], 1/4, {
+                            stroke: "none",
+                            fill: GREEN
+                            });
+                            
+                            circle( [X2,Y2], 1/4, {
+                            stroke: "none",
+                            fill: GREEN
+                            });
+                            
+                            circle( [X3,Y3], 1/4, {
+                            stroke: "none",
+                            fill: GREEN
+                            });
+                            
+                            line([X1,Y1],[X2,Y1], {stroke: BLUE});
+                            line([X2,Y1],[X2,Y2], {stroke: BLUE});
+                            line([X3,Y1],[X3,Y3], {stroke: BLUE});
+                           
+                            
+                            if (slope &lt; 0){ 
+                            	label( [ X1, Y1 ], "A", "below" );
+                            	label( [ X2, Y2 ], "C", "below" );
+                            	label( [ X3, Y3 ], "B", "below" );
+                            	label( [ X3, Y1 ], "D", "above" );
+                            	label( [ X2, Y1 ], "E", "above" );
+                            	}
+                        	else {
+                        		label( [ X1, Y1 ], "A", "above" );
+                            	label( [ X2, Y2 ], "C", "above" );
+                            	label( [ X3, Y3 ], "B", "above" );
+                            	label( [ X3, Y1 ], "D", "below" );
+                            	label( [ X2, Y1 ], "E", "below" );
+                        		}
+                        
+                          
+                            
+                            
+
+                        
+                    </div>
+                    
+                     WARNING: Do not figure out the equation of the line to solve this problem!  This is actually where the formula for 
+                    the equation of a line comes from, and the next few exercises will build up everything you need to know about
+                    lines.
+                </div>
+                <div class="solution" data-type="multiple">
+                	
+                	<p> 
+                		<code>\overline{DA} = </code> <span class="sol" id = "sol0"><var>Math.abs(X3-X1)</var></span>
+                	</p>
+                	<p> 
+                		<code>\overline{CE} = </code> <span class="sol"><var>Math.abs(Y2-Y1)</var></span>
+                	</p>
+                	<p> 
+                		<code>\overline{EA} = </code> <span class="sol"><var>Math.abs(X2-X1)</var></span>
+                	</p>
+    				<p> 
+    					<code>\overline{BD} = </code>  <span class="sol"><var>Math.abs(Y3-Y1)</var></span>
+    				</p>
+   					 <p>
+   					 	Ordinate of <code>B = </code>  <span class="sol"><var>Y3</var></span>
+   					 </p>
+   					  <p class="example">Integers like 6, or reduced fractions like <code>\frac{2}{3}</code></p>
+					</div>
+
+		<div class="hints">
+            <p> 
+            	<code>\overline{DA} = </code>
+            	abscissa of <code>D</code> minus abscissa of <code>A=</code>
+            	<code><var>X3</var> - <var>X1</var> = <var>X3-X1</var></code>
+            </p> 
+            <p>
+            	<code>\overline{CE} = </code>
+            	ordinate of <code>C</code> minus ordinate of <code>E=</code>
+            	<code>|<var>Y2</var> - <var>Y1</var>| = <var>Math.abs(Y2-Y1)</var></code>
+            </p>   
+            <p> 
+            	<code>\overline{EA} = </code>
+            	abscissa of <code>E</code> minus abscissa of <code>A=</code>
+            	<code><var>X2</var> - <var>X1</var> = <var>X2-X1</var></code>
+            </p> 
+            <p>
+            	so <code>\dfrac{\overline{DB}}{<var>X3-X1</var>} = \dfrac{<var>Math.abs(Y2-Y1)</var>}{<var>X2-X1</var>}</code>
+            </p>
+            <p>
+            	Therefore, <code>\overline{DB} = \dfrac{<var>toFraction((X3-X1)*Math.abs(Y2-Y1)/(X2-X1))[0]</var>}
+            	{<var>toFraction((X3-X1)*Math.abs(Y2-Y1)/(X2-X1))[1]</var>}</code>
+            </p>
+            <p>
+            	Since <code>B</code> is <var>aboveBelow[0]</var> <code>D</code>, the ordinate of <code>B</code> is the ordinate 
+            	of <code>D</code> <var>aboveBelow[1]</var> the length of <code>\overline{DB}</code>.
+            </p>
+            <p>
+            	Thus the ordinate of <code>B = <var>Y1</var> <var>aboveBelow[2]</var> \dfrac{<var>toFraction((X3-X1)*Math.abs(Y2-Y1)/(X2-X1))[0]</var>}
+            	{<var>toFraction((X3-X1)*Math.abs(Y2-Y1)/(X2-X1))[1]</var>} = \dfrac{<var>toFraction(Y3)[0]</var>}
+            	{<var>toFraction(Y3)[1]</var>}</code>
+            </p>
+            <p>
+            In summary,
+            <br/>
+            <code>\overline{DA} = <var>X3-X1</var></code>
+            <br/>
+            <code>\overline{CE} = <var>Math.abs(Y2-Y1)</var> </code>
+            <br/>
+            <code>\overline{EA} = <var>X2-X1</var> </code>
+            <br/>
+            <code>\overline{DB} = \dfrac{<var>toFraction((X3-X1)*Math.abs(Y2-Y1)/(X2-X1))[0]</var>}
+            	{<var>toFraction((X3-X1)*Math.abs(Y2-Y1)/(X2-X1))[1]</var>}</code>
+            <br/>
+            	Ordinate of <code>B =\dfrac{<var>toFraction(Y3)[0]</var>}
+            	{<var>toFraction(Y3)[1]</var>}</code>
+            </p>       
+        </div>
+    </div>
+    	</div>
+    	</div>
+</body>
+</html>

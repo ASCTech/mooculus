@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html data-require="math word-problems">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>Using the product rule at a fixed abscissa</title>
+    <script src="../khan-exercise.js"></script>
+</head>
+<body>
+    <div class="exercise">
+        <div class="vars">
+           <var id = "X">randRange(-10,10)</var>
+           <var id = "Y1">randRange(-10,10)</var>
+           <var id = "Y2">randRangeExclude(-10,10,[Y1])</var>
+           <var id = "M1">randRange(-9,9)</var>
+           <var id = "M2">randRange(-9,9)</var>
+        </div>
+
+        <div class="problems">
+            <div id="average-rate-of-change">
+                <p class="problem">Suppose that:
+                <br/><br/>
+                <code>f(<var>X</var>) = <var>Y1</var></code>
+                <br/>
+                <code>f'(<var>X</var>) = <var>M1</var></code>
+                <br/>
+                <code>g(<var>X</var>) = <var>Y2</var></code>
+                <br/>
+                <code>g'(<var>X</var>) = <var>M2</var></code>
+                
+		</p>
+		<p class="question">
+			What is <code>\left.\dfrac{d}{dx}(f(x)\cdot g(x))\right|_{x=<var>X</var>}</code> ?
+		</p>    
+               <div class="solution">
+               		<var>Y1*M2+Y2*M1</var>
+                </div>
+                
+                <div class="hints">
+                	<p>
+                		The product rule says 
+                		<code>
+                			(f \cdot g)'(x)
+                			= f(x) \cdot g'(x) + g(x) \cdot f'(x)
+                		</code>
+                	</p>
+                	<p>
+                		Plug in <code>x = <var>X</var></code>
+                	</p>
+                	<p>
+                		<code>
+                			(f \cdot g)'(<var>X</var>)
+                			= f(<var>X</var>) \cdot g'(<var>X</var>) + g(<var>X</var>) \cdot f'(<var>X</var>)
+                		</code>	
+                	</p>
+                	<p>
+                		<code>
+                			(f \cdot g)'(<var>X</var>)
+                			= (<var>Y1</var>) \cdot (<var>M2</var>) + (<var>Y2</var>) \cdot (<var>M1</var>)
+                		</code>	
+                	</p>
+                	<p>
+                		<code>
+                			(f \cdot g)'(<var>X</var>)
+                			= <var>Y1*M2+Y2*M1</var>
+                		</code>	
+                	</p>
+                </div>
+                
+                
+            </div>
+        </div>
+
+       
+    </div>
+</body>
+</html>

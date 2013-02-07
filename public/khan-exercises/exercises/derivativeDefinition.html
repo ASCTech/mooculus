@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html data-require="math word-problems">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>Thinking about the definition of the derivative</title>
+    <script src="../khan-exercise.js"></script>
+</head>
+<body>
+    <div class="exercise">
+        <div class="vars">
+          
+           <var id = "A1">randRange(1,9)</var>
+           <var id = "B1">randRange(-9,0)</var>
+           <var id = "A2">randRange(1,9)</var>
+           <var id = "B2">randRange(-9,0)</var>
+           <var id = "C2">randRangeExclude(-9,9,[A2-B2,0])</var>
+           <var id = "A3">randRange(1,9)</var>
+           <var id = "B3">randRange(-9,0)</var>
+           <var id = "C3">randRangeExclude(-9,9,[A3-B3,0])</var>
+           <var id = "A4">randRange(1,9)</var>
+           <var id = "B4">randRange(-9,0)</var>
+           <var id = "C4">randRangeExclude(-9,9,[A4-B4,0])</var>
+        </div>
+
+        <div class="problems">
+            <div id="Nonstanard-definition-h">
+                <p class = "problem">
+                	<code>f</code> is a differentiable function.
+                </p>
+				<p class="question">
+					Which of the limits is equal to <code>f'(a)</code>?
+				</p>    
+				<p class="solution"><code>\displaystyle\lim_{h \to 0}\dfrac{f(a+<var>A1</var>h) - f(a+<var>B1</var>h)}{<var>A1-B1</var>h}</code></p>
+                <ul class="choices">
+                    <li><code>\displaystyle\lim_{h \to 0}\dfrac{f(a+<var>A2</var>h) - f(a+<var>B2</var>h)}{<var>C2</var>h}</code></li>
+                    <li><code>\displaystyle\lim_{h \to 0}\dfrac{f(a+<var>A3</var>h) - f(a+<var>B3</var>h)}{<var>C3</var>h}</code></li>
+                    <li><code>\displaystyle\lim_{h \to 0}\dfrac{f(a+<var>A4</var>h) - f(a+<var>B4</var>h)}{<var>C4</var>h}</code></li>
+                </ul>
+                <div class="hints">
+             		<p>
+             			The derivative should be a limit of slopes of secant lines to the function.  Which of these fractions is the slope of a secant line?
+             		</p>
+             		<p>
+             			In each of the definitions there are two points we should be focusing our attention on, because <code>f</code>
+             			is being evaluated at 2 different values.  Which of the fractions represents the slope of the line passing through those
+             			two points?
+             		</p>
+             		<p>
+             			<code>\dfrac{f(a+<var>A1</var>h) - f(a+<var>B1</var>h)}{<var>A1-B1</var>h}</code> is the only expression where 
+             			which appropriately represents a slope:  It is the slope between the point <code>(a+<var>A1</var>h, f(a+<var>A1</var>h))</code>
+             			and <code>(a+<var>B1</var>h, f(a+<var>B1</var>h))</code>.  These two points are close to <code>(a,f(a))</code> when <code>h</code>
+             			is small, so the slope of the secant lines between these 2 points should be close to <code>f'(a)</code>.
+             		</p>
+             		<p>
+             			Check to make sure you understand why the other choices do not represent slopes of secant lines which are close to the tangent line.
+             		</p>
+             		<p>
+             			The correct answer is <code>\displaystyle\lim_{h \to 0}\dfrac{f(a+<var>A1</var>h) - f(a+<var>B1</var>h)}{<var>A1-B1</var>h}</code>.
+             		</p>
+      			</div>
+            </div>
+        </div>
+
+       
+    </div>
+</body>
+</html>

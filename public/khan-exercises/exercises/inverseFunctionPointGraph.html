@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html data-require="math word-problems steveMath8 graphie">
+<head>  
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>Understanding inverse functions at a single point graphically</title>
+    <script src="../khan-exercise.js"></script>
+</head>
+<body>
+  <div class="exercise">
+  
+
+    <div class="problems">
+      <div id="pointNotation">
+      		
+      		  <div class="vars">
+      		  	
+				<var id="X">randRangeNonZero(-5,5)</var>
+				<var id="Y">randRangeNonZero(-5,5)</var>
+				<var id="A">randRangeNonZero(-3,3)</var>
+				<var id = "f">(function(x){return Y+.05*(Math.pow(x-X+A,3)-Math.pow(A,3))})</var>
+				<var id = "cubeRoot">(function(x){
+						if (x &gt;=0){
+							return Math.pow(x,1/3)
+							}
+						else{
+							return -Math.pow(-x,1/3)
+							}
+						})</var>
+				<var id = "g">(function(x){return X-A+cubeRoot(20*x+A*A*A-20*Y)})</var>
+			
+  			  </div>
+        	
+        	<p class="problem">
+        		The fixed green point <code>(<var>X</var>, <var>Y</var>)</code> is on the graph of <code>f</code> (red).
+        	</p>
+        	 <p class="question">
+        	 	Drag the orange point to the point you can determine on the graph of <code>f^{-1}</code> (blue).
+        	 
+        	   <div class="graphie" id="grid">
+                        graphInit({
+                            range: 11,
+                            scale: 20,
+                            axisArrows: "&lt;-&gt;",
+                            tickStep: 1,
+                        
+                            gridOpacity: 0.05,
+                            axisOpacity: 0.2,
+                            tickOpacity: 0.4,
+                           
+                        });
+                        
+                         plot(function( x ) {
+              return ( f(x));
+              }, [-12, 12], {
+              stroke: RED,
+              strokeWidth: 3,
+              opacity: .3
+              });
+              
+                                       plot(function( x ) {
+              return ( g(x));
+              }, [-12, 12], {
+              stroke: BLUE,
+              strokeWidth: 3,
+              opacity: .4
+              });
+					
+					   circle( [X,Y], 1/4, {
+             				 stroke: "none",
+            				  fill: "#37ca3e"
+           					   });
+					
+                      line( [ -12, -12 ], [ 12, 12 ],{opacity:0.5} );
+                    
+                        addMouseLayer();
+                        graph.movablePoint = addMovablePoint({ coord: [ 0, 0 ], snapY: 1, snapX: 1 });
+
+                        graph.movablePoint.onMove = function( x, y ) {
+                            return [ max( -10, min( x, 10 ) ), max( -10, min( y, 10 ) ) ];
+                        };
+                    </div>
+           <div class="solution" data-type="custom">
+
+                    <div class="guess">[ graph.movablePoint.coord, $( "#solutionarea" ).find( "input:checked" ).val() ]</div>
+                    <div class="validator-function">
+                        if ( guess[ 0 ][ 0 ] === 0 &amp;&amp; guess[ 0 ][ 1 ] === 0 &amp;&amp; guess[ 1 ] == null ) {
+                            return "";
+                        }
+                        return guess[ 0 ][ 0 ] === Y &amp;&amp; guess[ 0 ][ 1 ] === X
+                    </div>
+                    <div class="show-guess">
+                        graph.movablePoint.setCoord( guess[0] );
+                    </div>
+                    <div class="show-guess-solutionarea">
+                        $( "#solutionarea" ).find( "input" ).prop( 'checked', false );
+                        if ( guess[ 1 ] != null ) {
+                            $( "#solutionarea" ).find( "input[value=" + guess[ 1 ] + "]" ).prop( 'checked', true );
+                        }
+                    </div>
+                </div>
+        <div class="hints">
+        	<p>
+        		By definition, <code>f^{-1}(f(x)) = x</code> for all <code>x</code> in the domain of <code>f</code>
+        	</p>
+        	<p>
+        		So <code>f^{-1}(f(<var>X</var>)) = <var>X</var></code>
+        	</p>
+        	<p>
+        		Thus <code>f^{-1}(<var>Y</var>) = <var>X</var></code>
+        	</p>
+        	<div>
+        		 <div class="graphie" data-update="grid">
+        		 		graph.movablePoint.moveTo( Y, X );
+        			 </div>
+        		<p>
+        			So <code>(<var>Y</var>, <var>X</var>)</code> is on the graph of <code>f^{-1}</code>.
+        		</p>
+        	</div>
+        	<div>
+        		 <div class="graphie" data-update="grid">
+        		 	
+        		 	line( [ X, Y ], [ Y, X ],{opacity:0.5} );
+        		 </div>
+        		<p>
+        			Notice that the points on a function and its inverse function are reflections of each other about the line <code>y=x</code>
+				</p>        	
+        	</div>
+        </div>
+       
+      </div>
+  
+</div>
+</div>
+</body>
+</html>

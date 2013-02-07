@@ -5,12 +5,12 @@
 
 
 
-%\RequirePackage[table]{xcolor}
+
 \RequirePackage[framemethod=TikZ]{mdframed}
 \RequirePackage{environ}
 %\RequirePackage{xkeyval}
 \RequirePackage{tikz}
-\RequirePackage{amssymb}
+%\RequirePackage{amssymb}
 %\RequirePackage{amsmath}
 \RequirePackage{mathtools} %% trying to get cases to work in caption
 \RequirePackage{ntheorem}
@@ -25,6 +25,7 @@
 \usetikzlibrary{shapes}
 \usetikzlibrary{decorations}
 \tikzset{>=stealth} %% makes all arrows the same
+
 
 
 
@@ -50,7 +51,6 @@
 
 
 %% Colors
-
 
 
 
@@ -81,22 +81,78 @@
 }{}
 
 \colorlet{penColor}{blue!50!black} % Color of a curve in a plot
-\colorlet{penColor2}{green!50!black} % Color of a curve in a plot
+%\colorlet{penColor2}{green!50!black} % Color of a curve in a plot
+\colorlet{penColor2}{red!50!black} % Color of a curve in a plot
+\colorlet{penColor3}{red!50!blue} % Color of a curve in a plot
+\colorlet{penColor4}{green!50!black} % Color of a curve in a plot
+\colorlet{penColor5}{orange!80!black} % Color of a curve in a plot
 \colorlet{fill1}{blue!50!black!20} % Color of fill in a plot
 \colorlet{fill2}{blue!10} % Color of fill in a plot
 \colorlet{gridColor}{gray!50} % Color of grid in a plot
-\colorlet{definitionBackground}{black!10!background} % Color of the background of
+\colorlet{definitionBackground}{black!8!background} % Color of the background of
                                           % a definition
-\colorlet{theoremBackground}{blue!50!black!10!background} % Color of the background of a theorem
+\colorlet{theoremBackground}{blue!50!black!8!background} % Color of the background of a theorem
 \colorlet{mainTheoremBorder}{blue!50!black} % Color of the border of a main theorem
+\colorlet{mainOtherBorder}{black} % Color of the border of a main theorem
 \colorlet{cowLight}{background} % the light colors of the cow --
                                 % usually the same as the background
 \colorlet{cowDark}{textColor} % the dark colors of the cow -- usually
                               % the same as the text
+\colorlet{hyperColor}{green!30!penColor} % Color of a link
 
+\hypersetup{ 
+    colorlinks = true, 
+    linkcolor = hyperColor,
+    anchorcolor = hyperColor,
+    citecolor = hyperColor,
+    filecolor = hyperColor,
+    pagecolor = hyperColor,
+    urlcolor = hyperColor
+} 
 
 %% Table colors
 \newenvironment{tchart}{\rowcolors{2}{}{background!95!textColor}\array}{\endarray}
+
+
+
+
+
+
+
+
+%% Adds marginpar like links
+\RequirePackage{dingbat,pifont}
+\newcommand{\film}{\begin{tikzpicture}[scale=.09,color=hyperColor]
+%\draw[help lines] (0,0) grid (5,4);
+\draw [thick] (0,0) -- (0,4);
+\draw [thick] (5,0) -- (5,4);
+
+\draw [thick] (0,0) -- (5,0);
+\draw [thick] (0,4) -- (5,4);
+\draw [thick] (0,2) -- (5,2);
+
+\draw [thick] (1,0) -- (1,4);
+\draw [thick] (4,0) -- (4,4);
+
+\draw [thick] (0,1) -- (1,1);
+\draw [thick] (0,3) -- (1,3);
+\draw [thick] (4,1) -- (5,1);
+\draw [thick] (4,3) -- (5,3);
+\end{tikzpicture}}
+
+
+\newcommand{\linkArrow}{\raisebox{-3pt}{\scalebox{1.6}{\ding{224}}}}
+
+\newcommand{\video}[2][0in]{%% positioning needs fixed
+  \marginnote[#1]{\href{#2}{\linkArrow\film}}
+  }
+
+\newcommand{\onlineEx}[2][0in]{%% positioning needs fixed
+  \marginnote[#1]{\href{#2}{\linkArrow\raisebox{1.5pt}{\pmb{\smallpencil}}}}
+  }
+
+
+
 
 
 
@@ -115,8 +171,10 @@
 
 %% User defined commands
 \renewcommand{\epsilon}{\varepsilon}
+\renewcommand{\theta}{\vartheta} %% only for kmath
 \renewcommand{\l}{\ell}
 \newcommand{\ddx}{\frac{d}{dx}}
+\newcommand{\dydx}{\frac{dy}{dx}}
 \newcommand{\dd}[1]{\frac{d}{d #1}}
 \newcommand{\R}{\mathbb{R}}
 %\DeclareMathOperator*\plim{lim}
@@ -234,6 +292,28 @@ font=\upshape
 \theoremheaderfont{\normalfont\bfseries} \theorembodyfont{\upshape}
 \newmdtheoremenv[leftmargin=40,%
   rightmargin=40,backgroundcolor=definitionBackground,fontcolor=textColor,%%
+  innertopmargin=6pt,innerlinewidth=1,innerlinecolor=mainOtherBorder!20!background,
+  middlelinewidth=2,middlelinecolor=mainOtherBorder,
+  outerlinewidth=1,outerlinecolor=mainOtherBorder!10!background,
+  roundcorner=10pt,
+  splittopskip=\topskip,skipbelow=\baselineskip,skipabove=\baselineskip,
+  font=\upshape ]{definitionOfTheDerivative}% 
+{Definition of the Derivative}
+
+\theoremheaderfont{\normalfont\bfseries} \theorembodyfont{\upshape}
+\newmdtheoremenv[leftmargin=40,%
+  rightmargin=40,backgroundcolor=definitionBackground,fontcolor=textColor,%%
+  innertopmargin=6pt,innerlinewidth=1,innerlinecolor=mainOtherBorder!20!background,
+  middlelinewidth=2,middlelinecolor=mainOtherBorder,
+  outerlinewidth=1,outerlinecolor=mainOtherBorder!10!background,
+  roundcorner=10pt,
+  splittopskip=\topskip,skipbelow=\baselineskip,skipabove=\baselineskip,
+  font=\upshape ]{procedureForPlotting}% 
+{Procedure for Sketching the Plots of Functions}
+
+\theoremheaderfont{\normalfont\bfseries} \theorembodyfont{\upshape}
+\newmdtheoremenv[leftmargin=40,%
+  rightmargin=40,backgroundcolor=definitionBackground,fontcolor=textColor,%%
   innertopmargin=6pt,innerlinewidth=1,innerlinecolor=mainTheoremBorder!20!background,
   middlelinewidth=2,middlelinecolor=mainTheoremBorder,
   outerlinewidth=1,outerlinecolor=mainTheoremBorder!10!background,
@@ -257,7 +337,7 @@ font=\upshape
 
 
 \newmdtheoremenv[hidealllines=true,leftmargin=40,roundcorner=10pt%
-rightmargin=40,backgroundcolor=red!10,%
+rightmargin=40,backgroundcolor=red!5!background,%
 innertopmargin=6pt,%
 splittopskip=\topskip,skipbelow=\baselineskip,%
 skipabove=\baselineskip]{warning}%
@@ -358,20 +438,52 @@ skipabove=\baselineskip]{warning}%
   \newpage
   \dumpanswer[\noexpand\subsection*{Answers for \arabic{chapter}.\arabic{section}}]
   \subsection*{Exercises for Section \arabic{chapter}.\arabic{section}}
-\vspace{-15pt}
-
-\rule{\textwidth}{2pt}
+  \vspace{-15pt}
+  
+  \rule{\textwidth}{2pt}
   \setcounter{exercise}{0}
   \BODY
-\newpage
+  \newpage
 }%
 {}
 \newenvironment{exercise}{
-\begin{enumerate}[(1)]
-  \setcounter{enumi}{\value{exercise}}
-  \item \addtocounter{exercise}{1}
+  \begin{enumerate}[(1)]
+    \setcounter{enumi}{\value{exercise}}
+  \item \addtocounter{exercise}{1}\hypertarget{e:\arabic{chapter}.\arabic{section}.\arabic{exercise}}{} 
 }
-{\end{enumerate}}
+           {\ignorespaces\hyperlink{a:\arabic{chapter}.\arabic{section}.\arabic{exercise}}{\linkArrow} %% for adding a link to exercises
+           \end{enumerate}}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\makeatletter
+\newwrite\answer@stream
+\immediate\openout\answer@stream=\jobname.ans
+
+\def\dumpanswer[#1]{\immediate\write\answer@stream{#1}}
+
+\newtoks{\answercontent}
+         \NewEnviron{answer}{%
+           \answercontent=\expandafter{\BODY\qquad}
+           \dumpanswer[\noexpand\hypertarget{a:\arabic{chapter}.\arabic{section}.\arabic{exercise}}{\noexpand\hyperlink{e:\arabic{chapter}.\arabic{section}.\arabic{exercise}}{\noexpand\bfseries\arabic{exercise}.}}\space\noexpand\mdseries \the\answercontent]
+         }
+
+         \def\finalizeanswers{\immediate\closeout\answer@stream}
+\makeatother
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\hyperlink{foo_1}{This becomes a link}.
+%\hypertarget{foo_1}{This is the target}.
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -635,7 +747,25 @@ arc (5:90:0.35in) % top ear
 
 
 
-
+% Remove \FloatBarrier from marginfigure definition
+% to prevent unwanted spaces.
+\makeatletter% so we can use @ commands
+\renewenvironment{@tufte@margin@float}[2][-1.2ex]{%
+  %\FloatBarrier% removed because it adds unwanted white space
+  \begin{lrbox}{\@tufte@margin@floatbox}%
+  \begin{minipage}{\marginparwidth}%
+    \@tufte@caption@font
+    \def\@captype{#2}%
+    \hbox{}\vspace*{#1}%
+    \@tufte@caption@justification
+    \@tufte@margin@par
+    \noindent
+}{%
+  \end{minipage}%
+  \end{lrbox}%
+  \marginpar{\usebox{\@tufte@margin@floatbox}}%
+}
+\makeatother% restore meaning of @
 
 
 

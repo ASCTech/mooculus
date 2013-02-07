@@ -68,6 +68,9 @@
                         range: 10,
                         scale: 20,
                         tickStep: 1,
+                         gridOpacity: 0.00005,
+                            axisOpacity: 0.2,
+                            tickOpacity: 0.00004,
                         
                     });
                     
@@ -76,7 +79,9 @@
                             }, [-10, 10], {
                                 stroke: RED
                             });
-                   
+                    
+                    label([0,10],"f&apos;(x)","right");
+                   label([10,0],"x","right");
                     plot(function( x ) {
                                 return ( f(x));
                             }, [criticalXs[m], criticalXs[m+1]], {
@@ -91,6 +96,7 @@
                             stroke: "none",
                             fill: GREEN
                             });
+                  
                             
 
                

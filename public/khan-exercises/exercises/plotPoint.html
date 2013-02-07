@@ -28,16 +28,14 @@
                             scale: 20,
                             axisArrows: "&lt;-&gt;",
                             tickStep: 1,
-                            labelStep: 1,
+                        
                             gridOpacity: 0.05,
                             axisOpacity: 0.2,
                             tickOpacity: 0.4,
-                            labelOpacity: 0.5
+                           
                         });
 
-                        label( [ 0, 11 ], "y", "above" );
-                        label( [ 11, 0 ], "x", "right" );
-
+                     
                         addMouseLayer();
                         graph.movablePoint = addMovablePoint({ coord: [ 0, 0 ], snapY: 1, snapX: 1 });
 
@@ -65,8 +63,7 @@
                         }
                     </div>
                 </div>
-
-<div class="hints">
+				<div class="hints">
                         <p>Coordinates are listed as <code>(\blue{abscissa},\green{ordinate})</code>. </p>
                         <p>
                             So, for <code>( \blue{<var>X</var>}, \green{<var>Y</var>} )</code> our
@@ -93,6 +90,13 @@
                                         line( [ X, -12 ], [ X, 12 ]);
                                     });
                                     graph.movablePoint.toFront();
+                                    
+                                    (function () {
+  var script = document.createElement("script");
+  script.type = "text/javascript";
+  script.src  = "http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+  document.getElementsByTagName("head")[0].appendChild(script);
+})();
                                 
                                 </div>
                         </div>
