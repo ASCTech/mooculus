@@ -1387,11 +1387,16 @@ Khan.answerTypes = $.extend(Khan.answerTypes, {
 
     "parsedExpression": {
 	setup: function(solutionarea, solution) {
-	    // Add a text box
-	    var input = $('<textarea id="MathInput" onkeyup="Preview.Update()" autocomplete="off" rows="4" cols="50">');
-	    $(solutionarea).append(input); 
-	    $(solutionarea).append('<div id="MathPreview" style="padding: 3px; width:100%; margin-top:5px;"><script type="math/tex"></script></div>');
-	    $(solutionarea).append('<div id="MathFunctionError" style="display: none; font-weight: bold; color: red;">Error: the expression is invalid.</div>');
+	    var input_box = $('<div class="parsed-expression-answer-type"></div>');
+	    $(solutionarea).append(input_box);	    
+
+	    var input = $('<span class="mathquill-editable"></span>');
+	    $(input_box).append(input);
+	    $(input).mathquill('editable');
+	    $(input).focus();
+
+	    $(input_box).append('<div class="MathPreview" style="padding: 3px; width:100%; margin-top:5px;"><script type="math/tex"></script></div>');
+	    $(input_box).append('<div class="MathFunctionError" style="display: none; font-weight: bold; color: red;">Error: the expression is invalid.</div>');
 
 	    // The fallback variable is used in place of the answer, if no
 	    // answer is provided (i.e. the field is left blank)
@@ -1400,13 +1405,17 @@ Khan.answerTypes = $.extend(Khan.answerTypes, {
 	    return {
 		validator: Khan.answerTypes["parsedExpression"].createValidator(solution),
 		answer: function() {
+		    console.log( $(input) );
+		    console.log( $(input).mathquill('latex') );
+		    var text = $(input).mathquill('latex');
+		    
 		    // return the value in the text box, or the fallback
-		    return input.val().length > 0 ?
-			input.val() :
+		    return text.length > 0 ?
+			text :
 			(fallback ? fallback + "" : "");
 		},
 		solution: $.trim($(solution).text()),
-		examples: ["An expression like sin(3y)+(x+1)^3-9"],
+		examples: ["An TeX expression like \\sin (3y) + \\sqrt{x}"],
 		showGuess: function(guess) {
 		    input.val(guess === undefined ? "" : guess);
 		}
@@ -1415,7 +1424,7 @@ Khan.answerTypes = $.extend(Khan.answerTypes, {
 	createValidator: function(solution) {
 	    var correct = MathFunction.parse($.trim($(solution).text()));
 	    return function(guess) {
-		guess_expression = MathFunction.parse($.trim(guess));
+		guess_expression = MathFunction.parse_tex($.trim(guess));
 
 		return correct.equals(guess_expression);
 	    };
