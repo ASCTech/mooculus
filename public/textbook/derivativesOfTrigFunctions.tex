@@ -2,245 +2,335 @@
 
 
 
-\section{The Derivative of $\sin x$, continued}{}
-{The Derivative of the sine, continued}
-%\section{The Derivative of {$\bmit\mathop{\bf sin} x$} Redux}{}
-\nobreak
-Now we can complete the calculation of the derivative of the sine:
-\begin{align*}
-{d\over dx}\sin x &= \lim_{\Delta x\to0} {\sin(x+\Delta x)-\sin x
-  \over \Delta x} \\
-&=\lim_{\Delta x\to0} 
-\sin x{\cos \Delta x - 1\over \Delta x}+\cos x{\sin\Delta x\over
-  \Delta x} \\
-&=\sin x \cdot 0 + \cos x \cdot 1 = \cos x. \\
-\end{align*}
+\section{The Derivative of Trigonometric Functions}
 
-The derivative of a function measures the slope or steepness of the
-function; if we examine the graphs of the sine and cosine side by
+Up until this point of the course we have been largely ignoring a large
+class of functions---those involving $\sin(x)$ and $\cos(x)$. It is
+now time to visit our two friends who concern themselves periodically
+with triangles and circles.
+
+\begin{theorem}[The Derivative of sin(\textit{x})]\index{derivative of sine}\label{theorem:deriv sin}
+\[
+\ddx \sin(x) = \cos(x).
+\]
+\end{theorem}
+\marginnote{
+\begin{align*}
+\lim_{h\to 0}\frac{\cos(h)-1}{h} &= \lim_{h\to 0}\left(\frac{\cos(h)-1}{h}\cdot\frac{\cos(h)+1}{\cos(h)+1}\right)\\
+&=\lim_{h\to 0}\frac{\cos^2(h)-1}{h(\cos(h)+1)}\\
+&=\lim_{h\to 0}\frac{-\sin^2(h)}{h(\cos(h)+1)}\\
+&=-\lim_{h\to 0}\left(\frac{\sin(h)}{h}\cdot\frac{\sin(h)}{(\cos(h)+1)}\right)\\
+&= -1 \cdot \frac{0}{2} = 0.
+\end{align*}
+}
+\begin{proof}
+Using the definition of the derivative, write
+\begin{align*}
+\ddx \sin(x) &= \lim_{h\to0} \frac{\sin(x+h)-\sin(x)}{h} \\
+&= \lim_{h\to0} \frac{\sin(x)\cos(h)+\sin(h)\cos(x)-\sin(x)}{h}  & \text{Trig Identity.}\\
+&= \lim_{h\to0} \left(\frac{\sin(x)\cos(h)-\sin(x)}{h} + \frac{\sin(h)\cos{x}}{h} \right)\\
+&=\lim_{h\to0} \left(\sin (x)\frac{\cos(h) - 1}{h}+\cos(x)\frac{\sin(h)}{h}\right) \\
+&=\sin(x) \cdot 0 + \cos(x) \cdot 1 = \cos x. & \text{See Example~\ref{example:sinx/x}.}
+\end{align*}
+\end{proof}
+
+Consider the following geometric interpretation of the derivative of
+$\sin(\theta)$.  
+%\begin{figure}
+
+\begin{tikzpicture}
+	\begin{axis}[
+            xmin=-.1,xmax=1.1,ymin=-.1,ymax=1.1,
+            axis lines=center,
+            ticks=none,
+            width=5in,
+            unit vector ratio*=1 1 1,
+            xlabel=$x$, ylabel=$y$,
+            every axis y label/.style={at=(current axis.above origin),anchor=south},
+            every axis x label/.style={at=(current axis.right of origin),anchor=west},
+          ]        
+          \addplot [very thick, textColor!30!background, smooth, domain=(-.2:.2+pi/2)] ({cos(deg(x))},{sin(deg(x))});
+          \addplot [textColor] plot coordinates {(0,0) (.766,.643)}; %% 40 degrees
+          \addplot [very thick, penColor2!30!background] {(x-.766)*(-.766/.643)+.643};
+          \addplot [textColor,dashed] plot coordinates {(0,0) (.766-.196,.643+1-.766)}; %% 40+16.98 degrees          
+
+          \addplot [textColor!20!background] plot coordinates {(.766,.643) (1,.839)}; %% hyp
+          \addplot [textColor!20!background] plot coordinates {(1,.643) (1,.839)}; %% side
+          \addplot [textColor!20!background] plot coordinates {(.766,.643) (1,.643)}; %% bottom
+          \addplot [textColor!20!background,smooth, domain=(0:40)] ({.05*cos(x)+.766},{.05*sin(x)+.643}); %% angle
+          \node at (axis cs:.84,.670) [textColor!20!background] {\footnotesize$\theta$};
+          
+          \addplot [textColor!20!background] plot coordinates {(.766,.643) (.766,.839)}; %% side
+          \addplot [textColor!20!background] plot coordinates {(.766,.839) (1,.839)}; %% bottom
+          \addplot [textColor!20!background,smooth, domain=(180:220)] ({.05*cos(x)+1},{.05*sin(x)+.839}); %% angle
+          \node at (axis cs:.926,.812) [textColor!20!background] {\footnotesize$\theta$};
+
+          \addplot [textColor!20!background] plot coordinates {(.766,.643) (.766,.643+1-.766)}; %% side
+          \addplot [textColor!20!background] plot coordinates {(.766,.643+1-.766) (.766-.196,.643+1-.766)}; %% top
+          \addplot [textColor!20!background,smooth, domain=(90:130)] ({.05*cos(x)+.766},{.05*sin(x)+.643}); %% angle
+          \node at (axis cs:.739,.717) [textColor!20!background] {\footnotesize$\theta$};
+
+          \addplot [very thick, textColor] plot coordinates {(.766-.196,.643+1-.766) (.766,.643)}; %% hyp
+          \addplot [very thick, penColor4] plot coordinates {(.766-.196,.643) (.766-.196,.643+1-.766)}; %% side
+          \addplot [very thick, textColor] plot coordinates {(.766,.643) (.766-.196,.643)}; %% bottom
+          \addplot [very thick, textColor,smooth, domain=(270:310)] ({.05*cos(x)+.766-.196},{.05*sin(x)+.643+1-.766}); %% angle 
+          \node at (axis cs:.597,.803) [textColor] {\footnotesize$\theta$};
+          
+          \node at (axis cs:.668,.643) [anchor=north] {\footnotesize$h\sin(\theta)$};
+          \node at (axis cs:.57,.76) [anchor=east] {\footnotesize$h\cos(\theta)$};
+          \node at (axis cs:.668,.76) [anchor=west] {\footnotesize$\approx h$};
+
+          \addplot [very thick, penColor] plot coordinates {(.766,0) (.766,.643)}; %% sin theta          
+          
+          \addplot [textColor, smooth, domain=(0:40)] ({.15*cos(x)},{.15*sin(x)});
+          \addplot [textColor, smooth, domain=(40:56.90)] ({.17*cos(x)},{.17*sin(x)});
+          \addplot [textColor, smooth, domain=(40:56.90)] ({.185*cos(x)},{.185*sin(x)});
+          \node at (axis cs:.15,.07) [anchor=west] {$\theta$};
+          \node at (axis cs:.15,.17) {$h$};
+          \node at (axis cs:.766,.322) [anchor=east] {$\sin(\theta)$};
+          \node at (axis cs:.383,0) [anchor=north] {$\cos(\theta)$};
+        \end{axis}
+\end{tikzpicture}
+%\label{figure:geo-interp sinx/x}
+%\end{figure}
+
+Here we see that Increasing $\theta$ by a ``small amount'' $h$,
+increases $\sin(\theta)$ by $h\cos(\theta)$. Hence,
+\[
+\frac{\Delta y}{\Delta \theta}\approx \frac{h\cos(\theta)}{h} =
+\cos(\theta).
+\]
+Note, the hypotenuse of the small triangle in the figure is actually
+$\tan(h)$ units in length. However, when $h$ is near zero,
+$\tan(h)\approx h$.
+
+
+
+The derivative of a function measures the slope of the plot of a
+function.  If we examine the graphs of the sine and cosine side by
 side, it should be that the latter appears to accurately describe the
-slope of the former, and indeed this is true:
-% BADBAD
-% $$\vbox{
-% \beginpicture
-% \normalgraphs
-% \sevenpoint
-% \setcoordinatesystem units <1truecm,1truecm> point at 0 0
-% \setplotarea x from 0 to 6.3, y from -1.3 to 1.1
-% \axis left shiftedto x=0 ticks withvalues {$-1$} {$1$} / at -1 1 / /
-% \axis bottom shiftedto y=0 ticks withvalues 
-%   {$\pi/2$} {$\pi$} {$3\pi/2$} {$2\pi$}  /
-%   at 1.57 3.14 4.71 6.28  / /
-% \setquadratic
-% \plot 0.000 0.000 0.126 0.125 0.251 0.249 0.377 0.368 0.503 0.482 
-% 0.628 0.588 0.754 0.685 0.880 0.771 1.005 0.844 1.131 0.905 
-% 1.257 0.951 1.382 0.982 1.508 0.998 1.634 0.998 1.759 0.982 
-% 1.885 0.951 2.011 0.905 2.136 0.844 2.262 0.771 2.388 0.685 
-% 2.513 0.588 2.639 0.482 2.765 0.368 2.890 0.249 3.016 0.125 
-% 3.142 0.000 3.267 -0.125 3.393 -0.249 3.519 -0.368 3.644 -0.482 
-% 3.770 -0.588 3.896 -0.685 4.021 -0.771 4.147 -0.844 4.273 -0.905 
-% 4.398 -0.951 4.524 -0.982 4.650 -0.998 4.775 -0.998 4.901 -0.982 
-% 5.027 -0.951 5.152 -0.905 5.278 -0.844 5.404 -0.771 5.529 -0.685 
-% 5.655 -0.588 5.781 -0.482 5.906 -0.368 6.032 -0.249 6.158 -0.125 
-% 6.283 0.000 /
-% \put {$\sin x$} at 3.14 -1.2
-% \setcoordinatesystem units <1truecm,1truecm> point at -8 0
-% \setplotarea x from 0 to 6.3, y from -1.3 to 1.1
-% \axis left shiftedto x=0 ticks withvalues {$-1$} {$1$} / at -1 1 / /
-% \axis bottom shiftedto y=0 ticks withvalues 
-%   {$\pi/2$} {$\pi$} {$3\pi/2$} {$2\pi$}  /
-%   at 1.57 3.14 4.71 6.28  / /
-% \setquadratic
-% \plot 0.000 1.000 
-% 0.105 0.995 0.209 0.978 0.314 0.951 0.419 0.914 
-% 0.524 0.866 0.628 0.809 0.733 0.743 0.838 0.669 0.942 0.588 
-% 1.047 0.500 1.152 0.407 1.257 0.309 1.361 0.208 1.466 0.105 
-% 1.571 0.000 1.676 -0.105 1.780 -0.208 1.885 -0.309 1.990 -0.407 
-% 2.094 -0.500 2.199 -0.588 2.304 -0.669 2.409 -0.743 2.513 -0.809 
-% 2.618 -0.866 2.723 -0.914 2.827 -0.951 2.932 -0.978 3.037 -0.995 
-% 3.142 -1.000 3.246 -0.995 3.351 -0.978 3.456 -0.951 3.560 -0.914 
-% 3.665 -0.866 3.770 -0.809 3.875 -0.743 3.979 -0.669 4.084 -0.588 
-% 4.189 -0.500 4.294 -0.407 4.398 -0.309 4.503 -0.208 4.608 -0.105 
-% 4.712 0.000 4.817 0.105 4.922 0.208 5.027 0.309 5.131 0.407 
-% 5.236 0.500 5.341 0.588 5.445 0.669 5.550 0.743 5.655 0.809 
-% 5.760 0.866 5.864 0.914 5.969 0.951 6.074 0.978 6.178 0.995 
-% 6.283 1.000  /
-% \put {$\cos x$} at 3.14 -1.2
-% \endpicture}$$
-Notice that where the cosine is zero the sine does appear to have a
-horizontal tangent line, and that the sine appears to be steepest
-where the cosine takes on its extreme values of 1 and $-1$.
+slope of the former, and indeed this is true, see
+Figure~\ref{figure:sin/cos}.
+\begin{figure*}
+\begin{tikzpicture}
+	\begin{axis}[
+            xmin=-6.75,xmax=6.75,ymin=-1.5,ymax=1.5,
+            axis lines=center,
+            ticks=none,
+            width=9in,
+            height=2in,
+            unit vector ratio*=1 1 1,
+            xlabel=$x$, ylabel=$y$,
+            every axis y label/.style={at=(current axis.above origin),anchor=south},
+            every axis x label/.style={at=(current axis.right of origin),anchor=west},
+          ]        
+          \addplot [very thick, penColor, samples=100,smooth, domain=(-6.75:6.75)] {sin(deg(x))};
+          \addplot [very thick, penColor2, samples=100,smooth, domain=(-6.75:6.75)] {cos(deg(x))};
+          \node at (axis cs:3.14,.75) [penColor] {$f(x)$};
+          \node at (axis cs:-1.57,.75) [penColor2] {$f'(x)$};
+        \end{axis}
+\end{tikzpicture}
+\caption{Here we see a plot of $f(x)=\sin(x)$ and its derivative
+  $f'(x)=\cos(x)$. One can readily see that $\cos(x)$ is positive when
+  $\sin(x)$ is increasing, and that $\cos(x)$ is negative when
+  $\sin(x)$ is decreasing.}
+\label{figure:sin/cos}
+\end{figure*}
 
 Of course, now that we know the derivative of the sine, we can compute
 derivatives of more complicated functions involving the sine.
 
-\begin{example}
-Compute the derivative of $\ds \sin(x^2)$.
-$${d\over dx}\sin(x^2) = \cos(x^2)\cdot 2x = 2x\cos(x^2).$$
-\vskip-25pt\end{example}
+%\break
 
-\begin{example}
-Compute the derivative of $\ds \sin^2(x^3-5x)$.
+\begin{theorem}[The Derivative of cos(\textit{x})]\index{derivative of cosine}
+\[
+\ddx \cos(x) = -\sin(x).
+\]
+\end{theorem}
+
+\begin{proof}
+Recall that
 \begin{align*}
-{d\over dx}\sin^2(x^3-5x)&={d\over dx}(\sin(x^3-5x))^2 \\
-&=2(\sin(x^3-5x))^1\cos(x^3-5x)(3x^2-5) \\
-&=2(3x^2-5)\cos(x^3-5x)\sin(x^3-5x). \\
-\end{align*}
-\vskip-20pt\end{example}
-
-\begin{exercises}
-Find the derivatives of the following functions.
-
-\twocol
-
-\begin{exercise} $\ds \sin^2(\sqrt{x})$
-\begin{answer} $\ds \sin(\sqrt{x})\cos(\sqrt{x})/\sqrt{x}$
-\end{answer}\end{exercise}
-
-\begin{exercise} $\ds \sqrt{x}\sin x$
-\begin{answer} $\ds{\sin x\over2\sqrt x}+\sqrt{x}\cos x$
-\end{answer}\end{exercise}
-
-\begin{exercise} $\ds {1\over \sin x}$
-\begin{answer} $ \ds-{\cos x\over \sin^2 x}$
-\end{answer}\end{exercise}
-
-\begin{exercise} $\ds {x^2+x\over \sin x}$
-\begin{answer} $\ds {(2x +1)\sin x - (x^2+x)\cos x\over \sin^2 x}$
-\end{answer}\end{exercise}
-
-\begin{exercise} $\ds \sqrt{1-\sin^2x\ }$
-\begin{answer} $\ds {-\sin x\cos x\over \sqrt{1-\sin^2x\ }}$
-\end{answer}\end{exercise}
-
-\endtwocol
-
-\end{exercises}
-
-
-
-
-
-
-
-
-\section{Derivatives of the Trigonometric Functions}{}{}
-\nobreak
-All of the other trigonometric functions can be
-expressed in terms of the sine, and so their derivatives can easily be
-calculated using the rules we already have. For the cosine we need to
-use two identities,
-\begin{align*}
-\cos x &= \sin(x+{\pi\over2}), \\
-\sin x &= -\cos(x+{\pi\over2}). \\
+\cos(x) &= \sin\left(x+\frac{\pi}{2}\right), \\
+\sin(x) &= -\cos\left(x+\frac{\pi}{2}\right).
 \end{align*}
 Now:
 \begin{align*}
-{d\over dx}\cos x &= {d\over dx}\sin(x+{\pi\over2}) =
-\cos(x+{\pi\over2})\cdot 1 = -\sin x \\
-{d\over dx}\tan x &= {d\over dx}{\sin x\over \cos x}=
-{\cos^2 x + \sin^2 x\over \cos^2 x}={1\over \cos^2 x}=\sec^2 x \\
-{d\over dx}\sec x &= {d\over dx}(\cos x)^{-1}=
--1(\cos x)^{-2}(-\sin x) = {\sin x \over \cos^2 x} = \sec x\tan x \\
+\ddx \cos(x) &= \ddx \sin\left(x+\frac{\pi}{2}\right)\\
+&=\cos\left(x+\frac{\pi}{2}\right)\cdot 1 \\
+&= -\sin(x).
 \end{align*}
+\end{proof}
+
+Next we have:
+
+\begin{theorem}[The Derivative of tan(\textit{x})]\index{derivative of tangent}
+\[
+\ddx \tan(x) = \sec^2(x).
+\]
+\end{theorem}
+
+\begin{proof}
+We'll rewrite $\tan(x)$ as $\frac{\sin(x)}{\cos(x)}$ and use the quotient rule. Write
+\begin{align*}
+\ddx\tan(x) &= \ddx\frac{\sin(x)}{\cos(x)}\\
+&=\frac{\cos^2(x) + \sin^2(x)}{\cos^2 x}\\
+&=\frac{1}{\cos^2(x)}\\
+&=\sec^2(x).
+\end{align*}
+\end{proof}
+
+Finally, we have
+
+\begin{theorem}[The Derivative of sec(\textit{x})]\index{derivative of secant}
+\[
+\ddx \tan(x) = \sec^2(x).
+\]
+\end{theorem}
+
+\begin{proof}
+We'll rewrite $\sec(x)$ as $(\cos(x))^{-1}$ and use the power rule and the chain rule. Write
+\begin{align*}
+\ddx \sec(x) &= \ddx\cos (x))^{-1}\\
+&=-1(\cos(x))^{-2}(-\sin(x)) \\
+&= \frac{\sin(x)}{\cos^2(x)} \\
+&= \sec(x)\tan(x).
+\end{align*}
+\end{proof}
+
+
 The derivatives of the cotangent and cosecant are similar and left as
 exercises. 
+
+Putting this all together, we have:
+
+\begin{mainTheorem}[The Derivatives of Trigonometric Functions] \hfil
+\begin{itemize}
+\item $\ddx \sin(x) = \cos(x)$.
+\item $\ddx \cos(x) = -\sin(x)$.
+\item $\ddx \tan(x) = \sec^2(x)$.
+\item $\ddx \sec(x) = \sec(x)\tan(x)$.
+\item $\ddx \csc(x) = -\csc(x)\cot(x)$.
+\item $\ddx \cot(x) = -\csc^2(x)$.
+\end{itemize}
+\end{mainTheorem}
+
+
 
 \begin{exercises}
 Find the derivatives of the following functions.
 
 \twocol
 
-\begin{exercise} $\ds \sin x\cos x$
-\begin{answer} $\ds \cos^2 x-\sin^2 x$
+\begin{exercise} $\sin^2(\sqrt{x})$
+\begin{answer} $\sin(\sqrt{x})\cos(\sqrt{x})/\sqrt{x}$
 \end{answer}\end{exercise}
 
-\begin{exercise} $\ds \sin(\cos x)$
-\begin{answer} $\ds -\sin x\cos(\cos x)$
+\begin{exercise} $\sqrt{x}\sin x$
+\begin{answer} $\ds{\sin x\over2\sqrt x}+\sqrt{x}\cos x$
 \end{answer}\end{exercise}
 
-\begin{exercise} $\ds \sqrt{x\tan x\ }$
+\begin{exercise} ${1\over \sin x}$
+\begin{answer} $ \ds-{\cos x\over \sin^2 x}$
+\end{answer}\end{exercise}
+
+\begin{exercise} ${x^2+x\over \sin x}$
+\begin{answer} ${(2x +1)\sin x - (x^2+x)\cos x\over \sin^2 x}$
+\end{answer}\end{exercise}
+
+\begin{exercise} $\sqrt{1-\sin^2x\ }$
+\begin{answer} ${-\sin x\cos x\over \sqrt{1-\sin^2x\ }}$
+\end{answer}\end{exercise}
+
+\begin{exercise} $\sin x\cos x$
+\begin{answer} $\cos^2 x-\sin^2 x$
+\end{answer}\end{exercise}
+
+\begin{exercise} $\sin(\cos x)$
+\begin{answer} $-\sin x\cos(\cos x)$
+\end{answer}\end{exercise}
+
+\begin{exercise} $\sqrt{x\tan x\ }$
 \begin{answer} $\ds{\tan x+x\sec^2 x\over2\sqrt{x\tan x\ }}$
 \end{answer}\end{exercise}
 
-\begin{exercise} $\ds \tan x/(1+\sin x)$
-\begin{answer} $\ds {\sec^2 x(1+\sin x)-\tan x \cos x\over (1+\sin x)^2}$
+\begin{exercise} $\tan x/(1+\sin x)$
+\begin{answer} ${\sec^2 x(1+\sin x)-\tan x \cos x\over (1+\sin x)^2}$
 \end{answer}\end{exercise}
 
-\begin{exercise} $\ds \cot x$
-\begin{answer} $\ds  -\csc^2 x$
+\begin{exercise} $\cot x$
+\begin{answer} $ -\csc^2 x$
 \end{answer}\end{exercise}
 
-\begin{exercise} $\ds \csc x$
-\begin{answer} $\ds  -\csc x\cot x$
+\begin{exercise} $\csc x$
+\begin{answer} $ -\csc x\cot x$
 \end{answer}\end{exercise}
 
-\begin{exercise} $\ds x^3 \sin (23x^2 )$
-\begin{answer} $\ds 3x^2\sin(23x^2)+46x^4\cos(23x^2)$
+\begin{exercise} $x^3 \sin (23x^2 )$
+\begin{answer} $3x^2\sin(23x^2)+46x^4\cos(23x^2)$
 \end{answer}\end{exercise}
 
-\begin{exercise} $\ds \sin ^2 x + \cos ^2 x$
+\begin{exercise} $\sin ^2 x + \cos ^2 x$
  \begin{answer} $0$
 \end{answer}\end{exercise}
 
-\begin{exercise}  $\ds \sin (\cos (6x) )$
- \begin{answer} $\ds -6\cos(\cos(6x))\sin(6x)$
+\begin{exercise}  $\sin (\cos (6x) )$
+ \begin{answer} $-6\cos(\cos(6x))\sin(6x)$
 \end{answer}\end{exercise}
 
 \endtwocol
 
 \begin{exercise} Compute $\ds{d\over d\theta}{\sec \theta\over 1+\sec \theta}$.
- \begin{answer} $\ds \sin\theta/(\cos\theta+1)^2$
+ \begin{answer} $\sin\theta/(\cos\theta+1)^2$
 \end{answer}\end{exercise}
 
 \begin{exercise} Compute $\ds{d\over dt}t^5 \cos (6t)$.
-\begin{answer} $\ds 5t^4\cos(6t)-6t^5\sin(6t)$
+\begin{answer} $5t^4\cos(6t)-6t^5\sin(6t)$
 \end{answer}\end{exercise}
 
 \begin{exercise} Compute $\ds{d\over dt}{t^3 \sin (3t)\over\cos (2t)}$.
-\begin{answer} $\ds 3t^2(\sin(3t)+t\cos(3t))/\cos(2t)+2t^3\sin(3t)\sin(2t)/\cos^2(2t)$
+\begin{answer} $3t^2(\sin(3t)+t\cos(3t))/\cos(2t)+2t^3\sin(3t)\sin(2t)/\cos^2(2t)$
 \end{answer}\end{exercise}
 
 \begin{exercise} Find all points on the graph of
-$\ds f(x)=\sin^2(x)$ at which the tangent line is horizontal.
+$f(x)=\sin^2(x)$ at which the tangent line is horizontal.
 \begin{answer} $n\pi/2$, any integer $n$
 \end{answer}\end{exercise}
 
-\begin{exercise} Find all points on the graph of $\ds f(x) = 2\sin(x) -
+\begin{exercise} Find all points on the graph of $f(x) = 2\sin(x) -
 \sin^2(x)$ at which the tangent line is horizontal.
 \begin{answer} $\pi/2+n\pi$, any integer $n$
 \end{answer}\end{exercise}
 
 \begin{exercise} Find an
- equation for the tangent line to $\ds \sin^2(x)$ at 
+ equation for the tangent line to $\sin^2(x)$ at 
 $x=\pi/3$.
 \begin{answer} $\sqrt3x/2+3/4-\sqrt3\pi/6$
 \end{answer}\end{exercise}
 
-\begin{exercise} Find an equation for the tangent line to $\ds \sec ^2 x$
+\begin{exercise} Find an equation for the tangent line to $\sec ^2 x$
 at $x=\pi/3$.
-\begin{answer} $\ds 8\sqrt3x+4-8\sqrt3\pi/3$
+\begin{answer} $8\sqrt3x+4-8\sqrt3\pi/3$
 \end{answer}\end{exercise}
 
-\begin{exercise} Find an equation for the tangent line to $\ds \cos ^2 x -
+\begin{exercise} Find an equation for the tangent line to $\cos ^2 x -
 \sin ^2 (4x)$ at $x=\pi/6$.
-\begin{answer} $\ds 3\sqrt3x/2-\sqrt3\pi/4$
+\begin{answer} $3\sqrt3x/2-\sqrt3\pi/4$
 \end{answer}\end{exercise}
 
-\begin{exercise} Find the points on the curve $\ds y= x+ 2\cos x$ that have a
+\begin{exercise} Find the points on the curve $y= x+ 2\cos x$ that have a
 horizontal tangent line.
-\begin{answer} $\ds \pi/6+2n\pi$, $5\pi/6+2n\pi$, any integer $n$
+\begin{answer} $\pi/6+2n\pi$, $5\pi/6+2n\pi$, any integer $n$
 \end{answer}\end{exercise}
-
-\begin{exercise} Let $C$ be a circle of radius $r$. Let $A$ be an arc on $C$
-subtending a central angle $\theta$. Let $B$ be the chord of
-$C$ whose endpoints are the endpoints of $A$. (Hence, $B$ also
-subtends $\theta$.) Let $s$ be the length of $A$
-and let $d$ be the length of $B$. Sketch a diagram of the situation
-and compute $\ds \lim_{\theta \to 0^+ } s/d$.
-\end{exercise}
 
 \end{exercises}
+
+
+
+
+
+
+
 
 
 
@@ -348,7 +438,7 @@ write $y=\arcsin(x)$.
 % \endfigure{The sine, the truncated sine, the inverse sine.}
 
 Recall that a function and its inverse undo each other in either
-order, for example, $\ds (\root3\of x)^3=x$ and $\ds \root3\of{x^3}=x$. This
+order, for example, $(\root3\of x)^3=x$ and $\root3\of{x^3}=x$. This
 does not work with the sine and the ``inverse sine'' because the
 inverse sine is the inverse of the truncated sine function, not the
 real sine function. It is true that $\sin(\arcsin(x))=x$, that is, the
@@ -372,12 +462,12 @@ y'={1\over \cos y} \\
 As we expect when using implicit differentiation, $y$ appears on the
 right hand side here. We would certainly prefer to have $y'$ written
 in terms of $x$, and as in the case of $\ln x$ we can actually do that
-here. Since $\ds \sin^2y+\cos^2 y=1$, $\ds \cos^2y=1-\sin^2y=1-x^2$. So 
-$\ds \cos y=\pm\sqrt{1-x^2\ }$, but which is it---plus or minus? It could
+here. Since $\sin^2y+\cos^2 y=1$, $\cos^2y=1-\sin^2y=1-x^2$. So 
+$\cos y=\pm\sqrt{1-x^2\ }$, but which is it---plus or minus? It could
 in general be either, but this isn't ``in general'': since
 $y=\arcsin(x)$ we know that $-\pi/2\le y\le \pi/2$, and the cosine of
 an angle in this interval is always positive. Thus
-$\ds \cos y=\sqrt{1-x^2\ }$ and
+$\cos y=\sqrt{1-x^2\ }$ and
 $${d\over dx}\arcsin(x)={1\over \sqrt{1-x^2\ }}.$$
 Note that this agrees with figure~\xrefn{fig:truncated sine}: the
 graph of the arcsine has positive slope everywhere.
@@ -513,41 +603,41 @@ the arctangent is left as an exercise.
 
 \begin{exercises}
 
-\begin{exercise} Show that the derivative of $\arccos x$ is $\ds -{1\over
+\begin{exercise} Show that the derivative of $\arccos x$ is $-{1\over
   \sqrt{1-x^2}}$. 
 \end{exercise}
 
 \begin{exercise} Show that the derivative of 
-$\arctan x$ is $\ds {1\over 1+x^2}$. 
+$\arctan x$ is ${1\over 1+x^2}$. 
 \end{exercise}
 
 \begin{exercise} The inverse of $\cot$ is usually defined so that the
  range of arccot is $(0, \pi )$.  Sketch the graph of $y=\arccot
  x$. In the process you will make it clear what the domain of arccot
  is. Find the derivative of the arccotangent.
-\begin{answer} $\ds {-1\over 1+x^2}$
+\begin{answer} ${-1\over 1+x^2}$
 \end{answer}\end{exercise}
 
 \begin{exercise} Show that $\arccot x + \arctan x =\pi/2$.
 \end{exercise}
 
-\begin{exercise} Find the derivative of $\ds \arcsin(x^2)$.
-\begin{answer} $\ds {2x\over\sqrt{1-x^4}}$
+\begin{exercise} Find the derivative of $\arcsin(x^2)$.
+\begin{answer} ${2x\over\sqrt{1-x^4}}$
 \end{answer}\end{exercise}
 
-\begin{exercise} Find the derivative of $\ds \arctan(e^x)$.
-\begin{answer} $\ds {e^x\over1+e^{2x}}$
+\begin{exercise} Find the derivative of $\arctan(e^x)$.
+\begin{answer} ${e^x\over1+e^{2x}}$
 \end{answer}\end{exercise}
 
-\begin{exercise} Find the derivative of $\ds \arccos (\sin x^3 )$
-\begin{answer} $\ds -3x^2\cos(x^3)/\sqrt{1-\sin^2(x^3)}$
+\begin{exercise} Find the derivative of $\arccos (\sin x^3 )$
+\begin{answer} $-3x^2\cos(x^3)/\sqrt{1-\sin^2(x^3)}$
 \end{answer}\end{exercise}
 
-\begin{exercise} Find the derivative of $\ds \ln( (\arcsin x )^2)$
-\begin{answer} $\ds {2\over(\arcsin x)\sqrt{1-x^2}}$
+\begin{exercise} Find the derivative of $\ln( (\arcsin x )^2)$
+\begin{answer} ${2\over(\arcsin x)\sqrt{1-x^2}}$
 \end{answer}\end{exercise}
 
-\begin{exercise} Find the derivative of $\ds \arccos e^x$
+\begin{exercise} Find the derivative of $\arccos e^x$
 \begin{answer} $\ds-e^x/\sqrt{1-e^{2x}}$
 \end{answer}\end{exercise}
 
@@ -555,8 +645,8 @@ $\arctan x$ is $\ds {1\over 1+x^2}$.
 \begin{answer} $0$
 \end{answer}\end{exercise}
 
-\begin{exercise} Find the derivative of $\ds \log _5 (\arctan (x^x ) )$
-\begin{answer} $\ds {(1+\ln x)x^x\over\ln5(1+x^{2x})\arctan(x^x)}$
+\begin{exercise} Find the derivative of $\log _5 (\arctan (x^x ) )$
+\begin{answer} ${(1+\ln x)x^x\over\ln5(1+x^{2x})\arctan(x^x)}$
 \end{answer}\end{exercise}
 
 \end{exercises}
