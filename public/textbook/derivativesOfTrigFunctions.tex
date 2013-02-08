@@ -52,7 +52,7 @@ $\sin(\theta)$.
           \addplot [very thick, textColor!30!background, smooth, domain=(-.2:.2+pi/2)] ({cos(deg(x))},{sin(deg(x))});
           \addplot [textColor,very thick] plot coordinates {(0,0) (.766,.643)}; %% 40 degrees
           \addplot [textColor,very thick] plot coordinates {(0,0) (.766,0)}; %% bottom
-          %\addplot [very thick, penColor2!30!background] {(x-.766)*(-.766/.643)+.643};
+          \addplot [very thick, penColor2!30!background] {(x-.766)*(-.766/.643)+.643};
           \addplot [textColor,dashed] plot coordinates {(0,0) (.766-.196,.643+1-.766)}; %% 40+16.98 degrees          
 
           %% \addplot [textColor!20!background] plot coordinates {(.766,.643) (1,.839)}; %% hyp
@@ -100,9 +100,9 @@ increases $\sin(\theta)$ by $h\cos(\theta)$. Hence,
 \frac{\Delta y}{\Delta \theta}\approx \frac{h\cos(\theta)}{h} =
 \cos(\theta).
 \]
-Note, the hypotenuse of the small triangle in the figure is actually
-$\tan(h)$ units in length. However, when $h$ is near zero,
-$\tan(h)\approx h$.
+Since the tangent line to the circle is locally a good approximation
+for the circle and radians measure the arc length of the unit circle,
+the hypotenuse of the small triangle in the figure is approximately $h$.
 
 
 
@@ -214,6 +214,8 @@ Putting this all together, we have:
 \item $\ddx \cot(x) = -\csc^2(x)$.
 \end{itemize}
 \end{mainTheorem}
+
+
 
 
 
