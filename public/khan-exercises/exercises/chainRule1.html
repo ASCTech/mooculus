@@ -18,7 +18,7 @@
 			    <var id = "EXP">"("+f.text().replace(/{/g,"").replace(/}/g,"")+")^(" + power + ")" </var>
 				<var id="story">MathFunction.parse(EXP).derivative_story('x')</var>
 				<var id="ghgh">MathFunctionParser.parse(EXP).evaluate({x:2})</var>
-			\
+			
   			  </div>
         	
         	<p class="question">
@@ -43,7 +43,10 @@
       	
       		
       		  <div class="vars">
-				<var id = "f">new Polynomial(0,KhanUtil.randRange(1,2))</var>
+      		  	<var id = "A">randRange(2,9)</var>
+      		  	<var id = "B">randRange(2,9)</var>
+      		  	<var id = "C">randRange(20,40)</var>
+				<var id = "f">new Polynomial(0,2,[C,B,A])</var>
 			    <var id = "EXP">"sqrt("+f.text().replace(/{/g,"").replace(/}/g,"")+")"</var>
 				<var id="story">MathFunction.parse(EXP).derivative_story('x')</var>
 				<var id="ghgh">MathFunctionParser.parse(EXP).evaluate({x:2})</var>
