@@ -15,6 +15,10 @@
 "("                     return '('
 "\\left("               return '('
 "\\right)"              return ')'
+"\\left["               return '['
+"\\right]"              return ']'
+"["                     return '['
+"]"                     return ']'
 "\\left|"               return 'LEFT_ABS'
 "\\right|"              return 'RIGHT_ABS'
 ")"                     return ')'
@@ -78,6 +82,8 @@ term
     | '(' e ')'
         {$$ = $2;}
     | '{' e '}'
+        {$$ = $2;}
+    | '[' e ']'
         {$$ = $2;}
     | 'LEFT_ABS' e 'RIGHT_ABS'
         {$$ = ['abs', $2]; }
