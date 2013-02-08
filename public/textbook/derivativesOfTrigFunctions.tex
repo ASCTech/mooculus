@@ -216,6 +216,18 @@ Putting this all together, we have:
 \end{mainTheorem}
 
 
+\begin{warning}
+When working with derivatives of trigonometric functions, we suggest
+you use \textbf{radians} for angle measure. For example, while
+\[
+\sin\left((90^\circ\right)^2) = \sin\left(\left(\frac{\pi}{2}\right)^2\right),
+\]
+one must be careful with derivatives as
+\[
+\left. \ddx \sin\left(x^2\right)\right|_{x=90^\circ} \ne \left. \ddx \sin\left(x^2\right)\right|_{x=\frac{\pi}{2}}.
+\]
+Alternatively, one could think of $x^\circ$ as meaning $\frac{x\cdot\pi}{180}$.
+\end{warning}
 
 
 
