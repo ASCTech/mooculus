@@ -116,7 +116,10 @@ Figure~\ref{figure:sin/cos}.
 	\begin{axis}[
             xmin=-6.75,xmax=6.75,ymin=-1.5,ymax=1.5,
             axis lines=center,
-            ticks=none,
+            xtick={-6.28, -4.71, -3.14, -1.57, 0, 1.57, 3.142, 4.71, 6.28},
+            xticklabels={$-2\pi$,$-3\pi/2$,$-\pi$, $-\pi/2$, $0$, $\pi/2$, $\pi$, $3\pi/2$, $2\pi$},
+            ytick={-1,1},
+            %ticks=none,
             width=9in,
             height=2in,
             unit vector ratio*=1 1 1,
@@ -174,7 +177,7 @@ Next we have:
 We'll rewrite $\tan(x)$ as $\frac{\sin(x)}{\cos(x)}$ and use the quotient rule. Write
 \begin{align*}
 \ddx\tan(x) &= \ddx\frac{\sin(x)}{\cos(x)}\\
-&=\frac{\cos^2(x) + \sin^2(x)}{\cos^2 x}\\
+&=\frac{\cos^2(x) + \sin^2(x)}{\cos^2(x)}\\
 &=\frac{1}{\cos^2(x)}\\
 &=\sec^2(x).
 \end{align*}
@@ -191,7 +194,7 @@ Finally, we have
 \begin{proof}
 We'll rewrite $\sec(x)$ as $(\cos(x))^{-1}$ and use the power rule and the chain rule. Write
 \begin{align*}
-\ddx \sec(x) &= \ddx\cos (x))^{-1}\\
+\ddx \sec(x) &= \ddx(\cos (x))^{-1}\\
 &=-1(\cos(x))^{-2}(-\sin(x)) \\
 &= \frac{\sin(x)}{\cos^2(x)} \\
 &= \sec(x)\tan(x).
@@ -224,9 +227,14 @@ you use \textbf{radians} for angle measure. For example, while
 \]
 one must be careful with derivatives as
 \[
-\left. \ddx \sin\left(x^2\right)\right|_{x=90^\circ} \ne \left. \ddx \sin\left(x^2\right)\right|_{x=\frac{\pi}{2}}.
+\left. \ddx \sin\left(x^2\right)\right|_{x=90^\circ} \ne \underbrace{2\cdot 90\cdot \cos(90^2)}_{\text{incorrect}}
 \]
-Alternatively, one could think of $x^\circ$ as meaning $\frac{x\cdot\pi}{180}$.
+Alternatively, one could think of $x^\circ$ as meaning
+$\frac{x\cdot\pi}{180}$, as then $90^\circ = \frac{90\cdot\pi}{180} =
+\frac{\pi}{2}$. In this case
+\[
+2\cdot 90^\circ\cdot \cos((90^\circ)^2) = 2\cdot \frac{\pi}{2}\cdot\cos\left(\left(\frac{\pi}{2}\right)^2\right).
+\]
 \end{warning}
 
 
@@ -240,51 +248,51 @@ Find the derivatives of the following functions.
 \begin{answer} $\sin(\sqrt{x})\cos(\sqrt{x})/\sqrt{x}$
 \end{answer}\end{exercise}
 
-\begin{exercise} $\sqrt{x}\sin x$
-\begin{answer} $\ds{\sin x\over2\sqrt x}+\sqrt{x}\cos x$
+\begin{exercise} $\sqrt{x}\sin(x)$
+\begin{answer} ${\sin(x)\over2\sqrt x}+\sqrt{x}\cos(x)$
 \end{answer}\end{exercise}
 
-\begin{exercise} ${1\over \sin x}$
-\begin{answer} $ \ds-{\cos x\over \sin^2 x}$
+\begin{exercise} ${1\over \sin(x)}$
+\begin{answer} $ -{\cos(x)\over \sin^2(x)}$
 \end{answer}\end{exercise}
 
-\begin{exercise} ${x^2+x\over \sin x}$
-\begin{answer} ${(2x +1)\sin x - (x^2+x)\cos x\over \sin^2 x}$
+\begin{exercise} ${x^2+x\over \sin(x)}$
+\begin{answer} ${(2x +1)\sin(x) - (x^2+x)\cos(x) \over \sin^2 (x)}$
 \end{answer}\end{exercise}
 
-\begin{exercise} $\sqrt{1-\sin^2x\ }$
-\begin{answer} ${-\sin x\cos x\over \sqrt{1-\sin^2x\ }}$
+\begin{exercise} $\sqrt{1-\sin^2(x)}$
+\begin{answer} ${-\sin(x)\cos(x)\over \sqrt{1-\sin^2(x)}}$
 \end{answer}\end{exercise}
 
-\begin{exercise} $\sin x\cos x$
-\begin{answer} $\cos^2 x-\sin^2 x$
+\begin{exercise} $\sin (x)\cos(x)$
+\begin{answer} $\cos^2(x)-\sin^2(x)$
 \end{answer}\end{exercise}
 
-\begin{exercise} $\sin(\cos x)$
-\begin{answer} $-\sin x\cos(\cos x)$
+\begin{exercise} $\sin(\cos(x))$
+\begin{answer} $-\sin(x)\cos(\cos(x))$
 \end{answer}\end{exercise}
 
-\begin{exercise} $\sqrt{x\tan x\ }$
-\begin{answer} $\ds{\tan x+x\sec^2 x\over2\sqrt{x\tan x\ }}$
+\begin{exercise} $\sqrt{x\tan(x)}$
+\begin{answer} ${\tan(x)+x\sec^2(x)\over2\sqrt{x\tan(x)}}$
 \end{answer}\end{exercise}
 
-\begin{exercise} $\tan x/(1+\sin x)$
-\begin{answer} ${\sec^2 x(1+\sin x)-\tan x \cos x\over (1+\sin x)^2}$
+\begin{exercise} $\tan(x)/(1+\sin(x))$
+\begin{answer} ${\sec^2(x)(1+\sin(x))-\tan(x) \cos(x)\over (1+\sin(x))^2}$
 \end{answer}\end{exercise}
 
-\begin{exercise} $\cot x$
-\begin{answer} $ -\csc^2 x$
+\begin{exercise} $\cot(x)$
+\begin{answer} $ -\csc^2(x)$
 \end{answer}\end{exercise}
 
-\begin{exercise} $\csc x$
-\begin{answer} $ -\csc x\cot x$
+\begin{exercise} $\csc(x)$
+\begin{answer} $ -\csc(x)\cot(x)$
 \end{answer}\end{exercise}
 
 \begin{exercise} $x^3 \sin (23x^2 )$
 \begin{answer} $3x^2\sin(23x^2)+46x^4\cos(23x^2)$
 \end{answer}\end{exercise}
 
-\begin{exercise} $\sin ^2 x + \cos ^2 x$
+\begin{exercise} $\sin ^2(x) + \cos ^2(x)$
  \begin{answer} $0$
 \end{answer}\end{exercise}
 
@@ -294,15 +302,15 @@ Find the derivatives of the following functions.
 
 \endtwocol
 
-\begin{exercise} Compute $\ds{d\over d\theta}{\sec \theta\over 1+\sec \theta}$.
- \begin{answer} $\sin\theta/(\cos\theta+1)^2$
+\begin{exercise} Compute ${d\over d\theta}{\sec(\theta)\over 1+\sec(\theta)}$.
+ \begin{answer} $\sin(\theta)/(\cos(\theta)+1)^2$
 \end{answer}\end{exercise}
 
-\begin{exercise} Compute $\ds{d\over dt}t^5 \cos (6t)$.
+\begin{exercise} Compute ${d\over dt}t^5 \cos (6t)$.
 \begin{answer} $5t^4\cos(6t)-6t^5\sin(6t)$
 \end{answer}\end{exercise}
 
-\begin{exercise} Compute $\ds{d\over dt}{t^3 \sin (3t)\over\cos (2t)}$.
+\begin{exercise} Compute ${d\over dt}{t^3 \sin (3t)\over\cos (2t)}$.
 \begin{answer} $3t^2(\sin(3t)+t\cos(3t))/\cos(2t)+2t^3\sin(3t)\sin(2t)/\cos^2(2t)$
 \end{answer}\end{exercise}
 
@@ -322,17 +330,17 @@ $x=\pi/3$.
 \begin{answer} $\sqrt3x/2+3/4-\sqrt3\pi/6$
 \end{answer}\end{exercise}
 
-\begin{exercise} Find an equation for the tangent line to $\sec ^2 x$
+\begin{exercise} Find an equation for the tangent line to $\sec^2(x)$
 at $x=\pi/3$.
 \begin{answer} $8\sqrt3x+4-8\sqrt3\pi/3$
 \end{answer}\end{exercise}
 
-\begin{exercise} Find an equation for the tangent line to $\cos ^2 x -
-\sin ^2 (4x)$ at $x=\pi/6$.
+\begin{exercise} Find an equation for the tangent line to $\cos^2(x) -
+\sin^2(4x)$ at $x=\pi/6$.
 \begin{answer} $3\sqrt3x/2-\sqrt3\pi/4$
 \end{answer}\end{exercise}
 
-\begin{exercise} Find the points on the curve $y= x+ 2\cos x$ that have a
+\begin{exercise} Find the points on the curve $y= x+ 2\cos(x)$ that have a
 horizontal tangent line.
 \begin{answer} $\pi/6+2n\pi$, $5\pi/6+2n\pi$, any integer $n$
 \end{answer}\end{exercise}
@@ -350,290 +358,387 @@ horizontal tangent line.
 
 
 \section{Inverse Trigonometric Functions}{}{}
-\nobreak
-The trigonometric functions frequently arise in problems, and often it
-is necessary to invert the functions, for example, to find an angle with
-a specified sine. Of course, there are many angles with the same sine,
-so the sine function doesn't actually have an inverse that reliably
-``undoes'' the sine function. If you know that $\sin x=0.5$, you can't
-reverse this to discover $x$, that is, you can't solve for
-$x$, as there are infinitely many angles with sine
-$0.5$. Nevertheless, it is useful to have something like an inverse to
-the sine, however imperfect. The usual approach is to pick out some
-collection of angles that produce all possible values of the sine
-exactly once. If we ``discard'' all other angles, the resulting
-function does have a proper inverse.
 
-The sine takes on all values between $-1$ and $1$ exactly once on the
-interval $[-\pi/2,\pi/2]$. If we truncate the sine, keeping only the
-interval $[-\pi/2,\pi/2]$, as shown in figure~\xrefn{fig:truncated
-sine}, then this truncated sine has an inverse function. We call this
-the inverse\index{inverse sine} sine or the arcsine\index{arcsine}, and
-write $y=\arcsin(x)$.
+The trigonometric functions frequently arise in problems, and often we
+are interested in finding specific angles, say $\theta$ such that
+\[
+\sin(\theta) = .7
+\]
+Hence we want to be able to invert functions like $\sin(\theta)$ and
+$\cos(\theta)$.  
 
-% BADBAD
-% \figure
-% \vbox{\beginpicture
-% \normalgraphs
-% \sevenpoint
-% \setcoordinatesystem units <1truecm,1truecm> point at 0 0
-% \setplotarea x from -6.3 to 6.3, y from -1.1 to 1.1
-% \axis left shiftedto x=0 ticks length <2pt> withvalues {$-1$} {$1$} / at -1 1 / /
-% \axis bottom shiftedto y=0 ticks length <2pt> withvalues 
-%   {$\pi/2$} {$\pi$} {$3\pi/2$} {$2\pi$} {$-\pi/2$} {$-\pi$} {$-3\pi/2$} {$-2\pi$} /
-%   at 1.57 3.14 4.71 6.28 -1.57 -3.14 -4.71 -6.28 / /
-% \setquadratic
-% \plot -6.283 0.000 -6.158 0.125 -6.032 0.249 -5.906 0.368 -5.781 0.482 
-% -5.655 0.588 -5.529 0.685 -5.404 0.771 -5.278 0.844 -5.152 0.905 
-% -5.027 0.951 -4.901 0.982 -4.775 0.998 -4.650 0.998 -4.524 0.982 
-% -4.398 0.951 -4.273 0.905 -4.147 0.844 -4.021 0.771 -3.896 0.685 
-% -3.770 0.588 -3.644 0.482 -3.519 0.368 -3.393 0.249 -3.267 0.125 
-% -3.142 0.000 -3.016 -0.125 -2.890 -0.249 -2.765 -0.368 -2.639 -0.482 
-% -2.513 -0.588 -2.388 -0.685 -2.262 -0.771 -2.136 -0.844 -2.011 -0.905 
-% -1.885 -0.951 -1.759 -0.982 -1.634 -0.998 -1.508 -0.998 -1.382 -0.982 
-% -1.257 -0.951 -1.131 -0.905 -1.005 -0.844 -0.880 -0.771 -0.754 -0.685 
-% -0.628 -0.588 -0.503 -0.482 -0.377 -0.368 -0.251 -0.249 -0.126 -0.125 
-% 0.000 0.000 0.126 0.125 0.251 0.249 0.377 0.368 0.503 0.482 
-% 0.628 0.588 0.754 0.685 0.880 0.771 1.005 0.844 1.131 0.905 
-% 1.257 0.951 1.382 0.982 1.508 0.998 1.634 0.998 1.759 0.982 
-% 1.885 0.951 2.011 0.905 2.136 0.844 2.262 0.771 2.388 0.685 
-% 2.513 0.588 2.639 0.482 2.765 0.368 2.890 0.249 3.016 0.125 
-% 3.142 0.000 3.267 -0.125 3.393 -0.249 3.519 -0.368 3.644 -0.482 
-% 3.770 -0.588 3.896 -0.685 4.021 -0.771 4.147 -0.844 4.273 -0.905 
-% 4.398 -0.951 4.524 -0.982 4.650 -0.998 4.775 -0.998 4.901 -0.982 
-% 5.027 -0.951 5.152 -0.905 5.278 -0.844 5.404 -0.771 5.529 -0.685 
-% 5.655 -0.588 5.781 -0.482 5.906 -0.368 6.032 -0.249 6.158 -0.125 
-% 6.283 0.000 /
-% \setcoordinatesystem units <1truecm,1truecm> point at 3 3.5
-% \setplotarea x from -1.57 to 1.57, y from -1.1 to 1.1
-% \axis left shiftedto x=0 ticks length <2pt> withvalues {$-1$} {$1$} / at -1 1 / /
-% \axis bottom shiftedto y=0 ticks length <2pt> withvalues 
-%   {$\pi/2$} {$-\pi/2$} /
-%   at 1.57 -1.57 / /
-% \setquadratic
-% \plot -1.571 -1.000 -1.466 -0.995 -1.361 -0.978 -1.257 -0.951 -1.152 -0.914 
-% -1.047 -0.866 -0.942 -0.809 -0.838 -0.743 -0.733 -0.669 -0.628 -0.588 
-% -0.524 -0.500 -0.419 -0.407 -0.314 -0.309 -0.209 -0.208 -0.105 -0.105 
-% 0.000 0.000 0.105 0.105 0.209 0.208 0.314 0.309 0.419 0.407 
-% 0.524 0.500 0.628 0.588 0.733 0.669 0.838 0.743 0.942 0.809 
-% 1.047 0.866 1.152 0.914 1.257 0.951 1.361 0.978 1.466 0.995 
-% 1.571 1.000 /
-% \setcoordinatesystem units <1truecm,1truecm> point at -3 3.5
-% \setplotarea x from -1 to 1, y from -1.6 to 1.6
-% \axis left shiftedto x=0 ticks length <2pt> withvalues {$-\pi/2$} {$\pi/2$} / 
-%   at -1.57 1.57 / /
-% \axis bottom shiftedto y=0 ticks length <2pt> withvalues 
-%   {$-1$} {$1$} /
-%   at -1 1 / /
-% \setquadratic
-% \plot -1.000 -1.571 -0.980 -1.370 -0.960 -1.287 -0.940 -1.223 -0.920 -1.168 
-% -0.900 -1.120 -0.880 -1.076 -0.860 -1.035 -0.840 -0.997 -0.820 -0.961 
-% -0.800 -0.927 -0.780 -0.895 -0.760 -0.863 -0.740 -0.833 -0.720 -0.804 
-% -0.700 -0.775 -0.680 -0.748 -0.660 -0.721 -0.640 -0.694 -0.620 -0.669 
-% -0.600 -0.644 -0.580 -0.619 -0.560 -0.594 -0.540 -0.570 -0.520 -0.547 
-% -0.500 -0.524 -0.480 -0.501 -0.460 -0.478 -0.440 -0.456 -0.420 -0.433 
-% -0.400 -0.412 -0.380 -0.390 -0.360 -0.368 -0.340 -0.347 -0.320 -0.326 
-% -0.300 -0.305 -0.280 -0.284 -0.260 -0.263 -0.240 -0.242 -0.220 -0.222 
-% -0.200 -0.201 -0.180 -0.181 -0.160 -0.161 -0.140 -0.140 -0.120 -0.120 
-% -0.100 -0.100 -0.080 -0.080 -0.060 -0.060 -0.040 -0.040 -0.020 -0.020 
-% 0.000 0.000 0.020 0.020 0.040 0.040 0.060 0.060 0.080 0.080 
-% 0.100 0.100 0.120 0.120 0.140 0.140 0.160 0.161 0.180 0.181 
-% 0.200 0.201 0.220 0.222 0.240 0.242 0.260 0.263 0.280 0.284 
-% 0.300 0.305 0.320 0.326 0.340 0.347 0.360 0.368 0.380 0.390 
-% 0.400 0.412 0.420 0.433 0.440 0.456 0.460 0.478 0.480 0.501 
-% 0.500 0.524 0.520 0.547 0.540 0.570 0.560 0.594 0.580 0.619 
-% 0.600 0.644 0.620 0.669 0.640 0.694 0.660 0.721 0.680 0.748 
-% 0.700 0.775 0.720 0.804 0.740 0.833 0.760 0.863 0.780 0.895 
-% 0.800 0.927 0.820 0.961 0.840 0.997 0.860 1.035 0.880 1.076 
-% 0.900 1.120 0.920 1.168 0.940 1.223 0.960 1.287 0.980 1.370 
-% 1.000 1.571 /
-% \endpicture}
-% \figrdef{fig:truncated sine}
-% \endfigure{The sine, the truncated sine, the inverse sine.}
+However, since these functions are not one-to-one, meaning there are
+are infinitely many angles with $\sin(\theta) = .7$, it is impossible
+to find a true inverse function for $\sin(\theta)$. Nevertheless, it
+is useful to have something like an inverse to the sine, however
+imperfect. The usual approach is to pick out some collection of angles
+that produce all possible values of the sine exactly once. If we
+``discard'' all other angles, the resulting function has a proper
+inverse.
+\begin{figure*}
+\begin{tikzpicture}
+	\begin{axis}[
+            xmin=-6.75,xmax=6.75,ymin=-1.5,ymax=1.5,
+            axis lines=center,
+            xtick={-6.28, -4.71, -3.14, -1.57, 0, 1.57, 3.142, 4.71, 6.28},
+            xticklabels={$-2\pi$,$-3\pi/2$,$-\pi$, $-\pi/2$, $0$, $\pi/2$, $\pi$, $3\pi/2$, $2\pi$},
+            ytick={-1,1},
+            %ticks=none,
+            width=9in,
+            height=2in,
+            unit vector ratio*=1 1 1,
+            xlabel=$\theta$, ylabel=$y$,
+            every axis y label/.style={at=(current axis.above origin),anchor=south},
+            every axis x label/.style={at=(current axis.right of origin),anchor=west},
+          ]        
+          \addplot [very thick, penColor!20!background, samples=100,smooth, domain=(-6.75:-1.57)] {sin(deg(x))};
+          \addplot [very thick, penColor!20!background, samples=100,smooth, domain=(1.57:6.75)] {sin(deg(x))};
+          \addplot [very thick, penColor, samples=100,smooth, domain=(-1.57:1.57)] {sin(deg(x))};
+          
+          \addplot[color=penColor,fill=penColor,only marks,mark=*] coordinates{(-1.57,-1)};  %% closed hole          
+          \addplot[color=penColor,fill=penColor,only marks,mark=*] coordinates{(1.57,1)};  %% closed hole          
+          \node at (axis cs:3.14,.75) [penColor] {$\sin(\theta)$};
+        \end{axis}
+\end{tikzpicture}
+\caption{The function $\sin(\theta)$ takes on all values between $-1$
+  and $1$ exactly once on the interval $[-\pi/2,\pi/2]$. If we
+  restrict $\sin(\theta)$ to this interval, then this restricted
+  function has an inverse.}
+\label{figure:sin-restricted}
+\end{figure*}
+
+In a similar fashion, we need to restrict cosine to be able to take an inverse.
+
+\begin{figure*}
+\begin{tikzpicture}
+	\begin{axis}[
+            xmin=-6.75,xmax=6.75,ymin=-1.5,ymax=1.5,
+            axis lines=center,
+            xtick={-6.28, -4.71, -3.14, -1.57, 0, 1.57, 3.142, 4.71, 6.28},
+            xticklabels={$-2\pi$,$-3\pi/2$,$-\pi$, $-\pi/2$, $0$, $\pi/2$, $\pi$, $3\pi/2$, $2\pi$},
+            ytick={-1,1},
+            %ticks=none,
+            width=9in,
+            height=2in,
+            unit vector ratio*=1 1 1,
+            xlabel=$\theta$, ylabel=$y$,
+            every axis y label/.style={at=(current axis.above origin),anchor=south},
+            every axis x label/.style={at=(current axis.right of origin),anchor=west},
+          ]        
+          \addplot [very thick, penColor2!20!background, samples=100,smooth, domain=(-6.75:0)] {cos(deg(x))};
+          \addplot [very thick, penColor2!20!background, samples=100,smooth, domain=(3.14:6.75)] {cos(deg(x))};
+          \addplot [very thick, penColor2, samples=100,smooth, domain=(0:3.14)] {cos(deg(x))};
+          
+          \addplot[color=penColor2,fill=penColor2,only marks,mark=*] coordinates{(0,1)};  %% closed hole          
+          \addplot[color=penColor2,fill=penColor2,only marks,mark=*] coordinates{(pi,-1)};  %% closed hole          
+          \node at (axis cs:-1.57,.75) [penColor2] {$\cos(\theta)$};
+        \end{axis}
+\end{tikzpicture}
+\caption{The function $\cos(\theta)$ takes on all values between $-1$
+  and $1$ exactly once on the interval $[0,\pi]$. If we restrict
+  $\cos(\theta)$ to this interval, then this restricted function has
+  an inverse.}
+\label{figure:cos-restricted}
+\end{figure*}
+
+By examining both sine and cosine on restricted domains, we can now produce functions arcsine and arccosine:
+
+\begin{fullwidth}
+\begin{tabular}{lll}\index{arcsine}\index{arccosine}
+\begin{tikzpicture}
+	\begin{axis}[
+            xmin=-1.5,xmax=1.5,ymin=-1.75,ymax=1.75,
+            axis lines=center,
+            ytick={-1.57, 0, 1.57},
+            yticklabels={$-\pi/2$, $0$, $\pi/2$},
+            xtick={-1,1},
+            unit vector ratio*=1 1 1,
+            xlabel=$y$, ylabel=$\theta$,
+            every axis y label/.style={at=(current axis.above origin),anchor=south},
+            every axis x label/.style={at=(current axis.right of origin),anchor=west},
+          ]        
+          \addplot [very thick, penColor4, samples=100,smooth, domain=(-1:1)] {asin(x)*pi/180};
+                    
+          \addplot[color=penColor4,fill=penColor4,only marks,mark=*] coordinates{(-1,-pi/2)};  %% closed hole          
+          \addplot[color=penColor4,fill=penColor4,only marks,mark=*] coordinates{(1,pi/2)};  %% closed hole          
+        \end{axis}
+\end{tikzpicture}
+
+&
+
+\hspace{1in}
+
+&
+
+\begin{tikzpicture}
+	\begin{axis}[
+            xmin=-1.5,xmax=1.5,ymin=-.25,ymax=3.25,
+            axis lines=center,
+            ytick={0, 1.57,3.14},
+            yticklabels={$0$, $\pi/2$,$\pi$},
+            xtick={-1,1},
+            unit vector ratio*=1 1 1,
+            xlabel=$y$, ylabel=$\theta$,
+            every axis y label/.style={at=(current axis.above origin),anchor=south},
+            every axis x label/.style={at=(current axis.right of origin),anchor=west},
+          ]        
+          \addplot [very thick, penColor5, samples=100,smooth, domain=(-1:1)] {acos(x)*pi/180};
+                    
+          \addplot[color=penColor5,fill=penColor5,only marks,mark=*] coordinates{(1,0)};  %% closed hole          
+          \addplot[color=penColor5,fill=penColor5,only marks,mark=*] coordinates{(-1,pi)};  %% closed hole          
+        \end{axis}
+\end{tikzpicture} \\
+\begin{minipage}{2.5in}
+Here we see a plot of $\arcsin(y)$, the inverse function of
+$\sin(\theta)$ when it is restricted to the interval $[-\pi/2,\pi/2]$.
+\end{minipage}
+
+& 
+
+& 
+\begin{minipage}{2.5in}
+Here we see a plot of $\arccos(y)$, the inverse function of
+$\cos(\theta)$ when it is restricted to the interval $[0,\pi]$.
+\end{minipage}
+\end{tabular}
+\end{fullwidth}
+
+\vspace{.5cm}
 
 Recall that a function and its inverse undo each other in either
-order, for example, $(\root3\of x)^3=x$ and $\root3\of{x^3}=x$. This
-does not work with the sine and the ``inverse sine'' because the
-inverse sine is the inverse of the truncated sine function, not the
-real sine function. It is true that $\sin(\arcsin(x))=x$, that is, the
-sine undoes the arcsine. It is not true that the arcsine undoes the
-sine, for example, $\sin(5\pi/6)=1/2$ and $\arcsin(1/2)=\pi/6$, so
-doing first the sine then the arcsine does not get us back where we
-started. This is because $5\pi/6$ is not in the domain of the
-truncated sine. If we start with an angle between $-\pi/2$ and $\pi/2$
-then the arcsine does reverse the sine: $\sin(\pi/6)=1/2$ and
-$\arcsin(1/2)=\pi/6$.
+order, for example, 
+\[
+\sqrt[3]{x^3}=x\qquad \text{and}\qquad \sqrt[3]{x^3}=x. 
+\]
+However, since arcsine is the inverse of sine restricted to the
+interval $[-\pi/2,\pi/2]$, this does not work with sine and arcsine, for example
+\[
+\arcsin(\sin(\pi))=0.
+\]
+Moreover, there is a similar situation for cosine and arccosine as
+\[
+\arccos(\cos(2\pi))=0.
+\]
+Once you get a feel for how $\arcsin(y)$ and $\arccos(y)$ behave, let's examine tangent.
+
+\newpage
+
+\begin{fullwidth}
+\begin{figure*}
+\begin{tikzpicture}
+	\begin{axis}[
+            xmin=-6.75,xmax=6.75,ymin=-3,ymax=3,
+            axis lines=center,
+            width=9in,
+            height=3.5in,
+            xtick={-6.28, -4.71, -3.14, -1.57, 0, 1.57, 3.142, 4.71, 6.28},
+            xticklabels={$-2\pi$,$-3\pi/2$,$-\pi$, $-\pi/2$, $0$, $\pi/2$, $\pi$, $3\pi/2$, $2\pi$},       
+            unit vector ratio*=1 1 1,
+            xlabel=$\theta$, ylabel=$y$,
+            every axis y label/.style={at=(current axis.above origin),anchor=south},
+            every axis x label/.style={at=(current axis.right of origin),anchor=west},
+          ]        
+          \addplot [very thick, penColor3, samples=100,smooth, domain=(-1.55:1.55)] {tan(deg(x))};
+          \addplot [very thick, penColor3!30!background, samples=100,smooth, domain=(-4.69:-1.59)] {tan(deg(x))};
+          \addplot [very thick, penColor3!30!background, samples=100,smooth, domain=(-6.75:-4.73)] {tan(deg(x))};
+          \addplot [very thick, penColor3!30!background, samples=100,smooth, domain=(1.59:4.69)] {tan(deg(x))};
+          \addplot [very thick, penColor3!30!background, samples=100,smooth, domain=(4.73:6.75)] {tan(deg(x))};
+          
+          \addplot [textColor,dashed] plot coordinates {(-4.71,-3) (-4.71,3)};
+          \addplot [textColor,dashed] plot coordinates {(-1.57,-3) (-1.57,3)};
+          \addplot [textColor,dashed] plot coordinates {(1.57,-3) (1.57,3)};
+          \addplot [textColor,dashed] plot coordinates {(4.71,-3) (4.71,3)};
+          
+          \node at (axis cs:.4,1.25) [penColor3] {$\tan(\theta)$};    
+        \end{axis}
+\end{tikzpicture}
+\caption{The function $\tan(\theta)$ takes on all values in $\R$
+  exactly once on the open interval $(-\pi/2,\pi/2)$. If we restrict
+  $\tan(\theta)$ to this interval, then this restricted function has
+  an inverse.}
+\end{figure*}
+\end{fullwidth}
+
+Again, only working on a restricted domain of tangent, we can produce an inverse function, arctangent. 
+\begin{fullwidth}
+\begin{figure*}[!h]
+\begin{tikzpicture}
+	\begin{axis}[
+            xmin=-6,xmax=6,ymin=-2,ymax=2,
+            axis lines=center,
+            ytick={0, -1.57,1.57},
+            width=9in,
+            height=2.5in,
+            yticklabels={$0$, $-\pi/2$,$\pi/2$},
+            xtick={0},
+            unit vector ratio*=1 1 1,
+            xlabel=$y$, ylabel=$\theta$,
+            every axis y label/.style={at=(current axis.above origin),anchor=south},
+            every axis x label/.style={at=(current axis.right of origin),anchor=west},
+          ]        
+          \addplot [very thick, penColor3!20!penColor2, samples=100,smooth, domain=(-6:6)] {atan(x)*pi/180};
+          \addplot [textColor,dashed] plot coordinates {(-6,-1.57) (6,-1.57)};
+          \addplot [textColor,dashed] plot coordinates {(-6,1.57) (6,1.57)};
+        \end{axis}
+\end{tikzpicture}
+\caption{Here we see a plot of $\arctan(y)$, the inverse function of
+$\tan(\theta)$ when it is restricted to the interval $(-\pi/2,\pi/2)$.}
+\end{figure*}
+\index{arctangent}
+\end{fullwidth}
+
+We leave it to you, the reader, to investigate the functions
+arcsecant, arccosecant, and arccotangent.
+
+
+\subsection*{The Derivatives of Inverse Trigonometric Functions}
 
 What is the derivative of the arcsine? Since this is an inverse
-function, we can discover the derivative by using implicit
-differentiation. Suppose $y=\arcsin(x)$. Then 
-$$\sin(y)=\sin(\arcsin(x))=x.$$
-Now taking the derivative of both sides, we get
+function, we can find its derivative by using implicit
+differentiation and the Inverse Function Theorem, Theorem~\ref{theorem:IFT}.
+
+
+\begin{theorem}[The Derivative of arcsin(\textit{y})]\index{derivative of arcsine}
+\[
+\dd{y} \arcsin(y) = \frac{1}{\sqrt{1-y^2}}.
+\]
+\end{theorem}
+
+\begin{proof} 
+To start, note that the Inverse Function Theorem,
+Theorem~\ref{theorem:IFT} assures us that this derivative actually
+exists.  Recall
+\[
+\arcsin(y) = \theta \qquad\Rightarrow\qquad \sin(\theta) = y.
+\]
+Hence
 \begin{align*}
-y'\cos y &= 1 \\
-y'={1\over \cos y} \\
+\sin(\theta) &= y\\
+\dd{y} \sin(\theta) &= \dd{y} y \\
+\cos(\theta) \frac{d\theta}{dy} &= 1 \\
+\frac{d\theta}{dy} &= \frac{1}{\cos(\theta)}.
 \end{align*}
-As we expect when using implicit differentiation, $y$ appears on the
-right hand side here. We would certainly prefer to have $y'$ written
-in terms of $x$, and as in the case of $\ln x$ we can actually do that
-here. Since $\sin^2y+\cos^2 y=1$, $\cos^2y=1-\sin^2y=1-x^2$. So 
-$\cos y=\pm\sqrt{1-x^2\ }$, but which is it---plus or minus? It could
-in general be either, but this isn't ``in general'': since
-$y=\arcsin(x)$ we know that $-\pi/2\le y\le \pi/2$, and the cosine of
+At this point, we would like $\cos(\theta)$ written in terms of $y$. Since
+\[
+\cos^2(\theta)+\sin^2(\theta) =1
+\]
+and $\sin(\theta) = y$, we may write
+\begin{align*}
+\cos^2(\theta)+y^2 &=1\\
+\cos^2(\theta) &=1-y^2\\
+\cos(\theta) &= \pm \sqrt{1-y^2}.
+\end{align*}
+Since $\theta=\arcsin(y)$ we know that $-\pi/2\le \theta\le \pi/2$, and the cosine of
 an angle in this interval is always positive. Thus
-$\cos y=\sqrt{1-x^2\ }$ and
-$${d\over dx}\arcsin(x)={1\over \sqrt{1-x^2\ }}.$$
-Note that this agrees with figure~\xrefn{fig:truncated sine}: the
-graph of the arcsine has positive slope everywhere.
+$\cos(\theta)=\sqrt{1-y^2}$ and 
+\[
+\dd{y} \arcsin(y) = \frac{1}{\sqrt{1-y^2}}.
+\]
+\end{proof}
 
-We can do something similar for the cosine. As with the sine, we must
-first truncate the cosine so that it can be inverted, as shown in
-figure~\xrefn{fig:truncated cosine}. Then we use
-implicit differentiation to find that
-$${d\over dx}\arccos(x)={-1\over \sqrt{1-x^2\ }}.$$ Note that the
-truncated cosine uses a different interval than the truncated sine, so
-that if $y=\arccos(x)$ we know that $0\le y\le \pi$. The computation
-of the derivative of the arccosine\index{arccosine} is left as an exercise.
+We can do something similar with arccosine. 
 
-% BADBAD
-% \figure
-% \vbox{\beginpicture
-% \normalgraphs
-% \sevenpoint
-% \setcoordinatesystem units <1truecm,1truecm> point at 0 0
-% \setplotarea x from 0 to 3.14, y from -1.1 to 1.1
-% \axis left shiftedto x=0 ticks length <2pt> withvalues {$-1$} {$1$} / at -1 1 / /
-% \axis bottom shiftedto y=0 ticks length <2pt> withvalues 
-%   {$\pi/2$} {$\pi$} /
-%   at 1.57 3.14 / /
-% \setquadratic
-% \plot 0.000 1.000 0.105 0.995 0.209 0.978 0.314 0.951 0.419 0.914 
-% 0.524 0.866 0.628 0.809 0.733 0.743 0.838 0.669 0.942 0.588 
-% 1.047 0.500 1.152 0.407 1.257 0.309 1.361 0.208 1.466 0.105 
-% 1.571 0.000 1.676 -0.105 1.780 -0.208 1.885 -0.309 1.990 -0.407 
-% 2.094 -0.500 2.199 -0.588 2.304 -0.669 2.409 -0.743 2.513 -0.809 
-% 2.618 -0.866 2.723 -0.914 2.827 -0.951 2.932 -0.978 3.037 -0.995 
-% 3.142 -1.000  /
-% \setcoordinatesystem units <1truecm,1truecm> point at -6 1
-% \setplotarea x from -1 to 1, y from 0 to 3.2
-% \axis left shiftedto x=0 ticks length <2pt> withvalues {$\pi/2$} {$\pi$} / 
-%   at 1.57 3.14 / /
-% \axis bottom shiftedto y=0 ticks length <2pt> withvalues 
-%   {$-1$} {$1$} /
-%   at -1 1 / /
-% \setquadratic
-% \plot -1.000 3.142 -0.950 2.824 -0.900 2.691 -0.850 2.587 -0.800 2.498 
-% -0.750 2.419 -0.700 2.346 -0.650 2.278 -0.600 2.214 -0.550 2.153 
-% -0.500 2.094 -0.450 2.038 -0.400 1.982 -0.350 1.928 -0.300 1.875 
-% -0.250 1.823 -0.200 1.772 -0.150 1.721 -0.100 1.671 -0.050 1.621 
-% 0.000 1.571 0.050 1.521 0.100 1.471 0.150 1.420 0.200 1.369 
-% 0.250 1.318 0.300 1.266 0.350 1.213 0.400 1.159 0.450 1.104 
-% 0.500 1.047 0.550 0.988 0.600 0.927 0.650 0.863 0.700 0.795 
-% 0.750 0.723 0.800 0.644 0.850 0.555 0.900 0.451 0.950 0.318 
-% 1.000 0.000  /
-% \endpicture}
-% \figrdef{fig:truncated cosine}
-% \endfigure{The truncated cosine, the inverse cosine.}
+\begin{theorem}[The Derivative of arccos(\textit{y})]\index{derivative of arccosine}
+\[
+\dd{y} \arccos(y) = \frac{-1}{\sqrt{1-y^2}}.
+\]
+\end{theorem}
 
-Finally we look at the tangent; the other trigonometric functions also
-have ``partial inverses'' but the sine, cosine and tangent are enough
-for most purposes. The tangent, truncated tangent and inverse tangent
-are shown in figure~\xrefn{fig:truncated tangent}; the derivative of
-the arctangent is left as an exercise.
+\begin{proof} 
+To start, note that the Inverse Function Theorem,
+Theorem~\ref{theorem:IFT} assures us that this derivative actually
+exists.  Recall
+\[
+\arccos(y) = \theta \qquad\Rightarrow\qquad \cos(\theta) = y.
+\]
+Hence
+\begin{align*}
+\cos(\theta) &= y\\
+\dd{y} \cos(\theta) &= \dd{y} y \\
+-\sin(\theta) \frac{d\theta}{dy} &= 1 \\
+\frac{d\theta}{dy} &= \frac{-1}{\sin(\theta)}.
+\end{align*}
+At this point, we would like $\sin(\theta)$ written in terms of $y$. Since
+\[
+\cos^2(\theta)+\sin^2(\theta) =1
+\]
+and $\cos(\theta) = y$, we may write
+\begin{align*}
+y^2+\sin^2(\theta) &=1\\
+\sin^2(\theta) &=1-y^2\\
+\sin(\theta) &= \pm \sqrt{1-y^2}.
+\end{align*}
+Since $\theta=\arccos(y)$ we know that $0\le \theta\le \pi$, and the sine of
+an angle in this interval is always positive. Thus
+$\sin(\theta)=\sqrt{1-y^2}$ and 
+\[
+\dd{y} \arccos(y) = \frac{-1}{\sqrt{1-y^2}}.
+\]
+\end{proof}
 
-% BADBAD
-% \figure
-% \vbox{\beginpicture
-% \normalgraphs
-% \sevenpoint
-% \setcoordinatesystem units <0.5truecm,0.2truecm> point at 8 0
-% \setplotarea x from -4.7 to 4.7, y from -14.1 to 14.1
-% \axis left shiftedto x=0 /
-% \axis bottom shiftedto y=0 ticks length <2pt> withvalues 
-%   {$-\pi/2$} {$\pi/2$} /
-%   at -1.57 1.57 / /
-% \setquadratic
-% \plot -4.640 -13.790 -4.565 -6.737 -4.490 -4.424 -4.415 -3.264 -4.340 -2.561 
-% -4.265 -2.085 -4.190 -1.738 -4.115 -1.471 -4.040 -1.257 -3.965 -1.080 
-% -3.890 -0.929 -3.815 -0.799 -3.740 -0.682 -3.666 -0.578 -3.591 -0.482 
-% -3.516 -0.392 -3.441 -0.308 -3.366 -0.228 -3.291 -0.150 -3.216 -0.074 
-% -3.141 0.001 -3.066 0.076 -2.991 0.152 -2.916 0.230 -2.841 0.310 
-% -2.766 0.394 -2.691 0.484 -2.616 0.580 -2.541 0.685 -2.466 0.801 
-% -2.391 0.932 -2.316 1.083 -2.241 1.261 -2.166 1.476 -2.091 1.744 
-% -2.016 2.094 -1.941 2.573 -1.866 3.283 -1.792 4.457 -1.717 6.812 
-% -1.642 14.102 /
-% \plot -1.500 -14.101 -1.425 -6.810 -1.350 -4.455 -1.275 -3.282 -1.200 -2.572 
-% -1.125 -2.093 -1.050 -1.743 -0.975 -1.475 -0.900 -1.260 -0.825 -1.083 
-% -0.750 -0.932 -0.675 -0.800 -0.600 -0.684 -0.525 -0.579 -0.450 -0.483 
-% -0.375 -0.394 -0.300 -0.309 -0.225 -0.229 -0.150 -0.151 -0.075 -0.075 
-% 0.000 0.000 0.075 0.075 0.150 0.151 0.225 0.229 0.300 0.309 
-% 0.375 0.394 0.450 0.483 0.525 0.579 0.600 0.684 0.675 0.800 
-% 0.750 0.932 0.825 1.083 0.900 1.260 0.975 1.475 1.050 1.743 
-% 1.125 2.093 1.200 2.572 1.275 3.282 1.350 4.455 1.425 6.810 
-% 1.500 14.101  /
-% \plot 1.642 -14.102 1.717 -6.812 1.792 -4.457 1.866 -3.283 1.941 -2.573 
-% 2.016 -2.094 2.091 -1.744 2.166 -1.476 2.241 -1.261 2.316 -1.083 
-% 2.391 -0.932 2.466 -0.801 2.541 -0.685 2.616 -0.580 2.691 -0.484 
-% 2.766 -0.394 2.841 -0.310 2.916 -0.230 2.991 -0.152 3.066 -0.076 
-% 3.141 -0.001 3.216 0.074 3.291 0.150 3.366 0.228 3.441 0.308 
-% 3.516 0.392 3.591 0.482 3.666 0.578 3.740 0.682 3.815 0.799 
-% 3.890 0.929 3.965 1.080 4.040 1.257 4.115 1.471 4.190 1.738 
-% 4.265 2.085 4.340 2.561 4.415 3.264 4.490 4.424 4.565 6.737 
-% 4.640 13.790 /
-% \setcoordinatesystem units <0.5truecm,0.2truecm> point at 0 0
-% \setplotarea x from -1.57 to 1.57, y from -14.1 to 14.1
-% \axis left shiftedto x=0 /
-% \axis bottom shiftedto y=0 ticks length <2pt> withvalues 
-%   {$-\pi/2$} {$\pi/2$} /
-%   at -1.57 1.57 / /
-% \setquadratic
-% \plot -1.500 -14.101 -1.425 -6.810 -1.350 -4.455 -1.275 -3.282 -1.200 -2.572 
-% -1.125 -2.093 -1.050 -1.743 -0.975 -1.475 -0.900 -1.260 -0.825 -1.083 
-% -0.750 -0.932 -0.675 -0.800 -0.600 -0.684 -0.525 -0.579 -0.450 -0.483 
-% -0.375 -0.394 -0.300 -0.309 -0.225 -0.229 -0.150 -0.151 -0.075 -0.075 
-% 0.000 0.000 0.075 0.075 0.150 0.151 0.225 0.229 0.300 0.309 
-% 0.375 0.394 0.450 0.483 0.525 0.579 0.600 0.684 0.675 0.800 
-% 0.750 0.932 0.825 1.083 0.900 1.260 0.975 1.475 1.050 1.743 
-% 1.125 2.093 1.200 2.572 1.275 3.282 1.350 4.455 1.425 6.810 
-% 1.500 14.101  /
-% \setcoordinatesystem units <0.3truecm,0.5truecm> point at -18 0
-% \setplotarea x from -10 to 10, y from -1.57 to 1.57
-% \axis left shiftedto x=0 ticks length <2pt> withvalues {$-\pi/2$} {$\pi/2$} /
-%   at -1.57 1.57 / /
-% \axis bottom shiftedto y=0 /
-% \setquadratic
-% \plot  -10.000 -1.471 -9.500 -1.466 -9.000 -1.460 -8.500 -1.454 -8.000 -1.446 
-% -7.500 -1.438 -7.000 -1.429 -6.500 -1.418 -6.000 -1.406 -5.500 -1.391 
-% -5.000 -1.373 -4.500 -1.352 -4.000 -1.326 -3.500 -1.292 -3.000 -1.249 
-% -2.500 -1.190 -2.000 -1.107 -1.500 -0.983 -1.000 -0.785 -0.500 -0.464 
-% 0.000 0.000 0.500 0.464 1.000 0.785 1.500 0.983 2.000 1.107 
-% 2.500 1.190 3.000 1.249 3.500 1.292 4.000 1.326 4.500 1.352 
-% 5.000 1.373 5.500 1.391 6.000 1.406 6.500 1.418 7.000 1.429 
-% 7.500 1.438 8.000 1.446 8.500 1.454 9.000 1.460 9.500 1.466 
-% 10.000 1.471 /
-% \endpicture}
-% \figrdef{fig:truncated tangent}
-% \endfigure{The tangent, the truncated tangent, the inverse tangent.}
+Finally, let's look at arctangent.
+
+\begin{theorem}[The Derivative of arctan(\textit{y})]\index{derivative of arctangent}
+\[
+\dd{y} \arctan(y) = \frac{1}{1+y^2}.
+\]
+\end{theorem}
+
+\begin{proof} 
+To start, note that the Inverse Function Theorem,
+Theorem~\ref{theorem:IFT} assures us that this derivative actually
+exists.  Recall
+\[
+\arctan(y) = \theta \qquad\Rightarrow\qquad \tan(\theta) = y.
+\]
+Hence
+\begin{align*}
+\tan(\theta) &= y\\
+\dd{y} \tan(\theta) &= \dd{y} y \\
+\sec^2(\theta) \frac{d\theta}{dy} &= 1 \\
+\frac{d\theta}{dy} &= \frac{1}{\sec^2(\theta)}.
+\end{align*}
+At this point, we would like $\sec^2(\theta)$ written in terms of $y$. Recall
+\[
+\sec^2(\theta) = 1+\tan^2(\theta)
+\]
+and $\tan(\theta) = y$, we may write $\sec^2(\theta)=1+y^2$. Hence
+\[
+\dd{y} \arctan(y) = \frac{1}{1+y^2}.
+\]
+\end{proof}
+
+We leave it to you, the reader, to investigate the derivatives of
+arcsecant, arccosecant, and arccotangent. However, as a gesture of
+friendship, we now present you with a list of derivative formulas for
+inverse trigonometric functions.
+
+\begin{mainTheorem}[The Derivatives of Inverse Trigonometric Functions] \hfil
+\begin{itemize}
+\item $\dd{y} \arcsin(y) = \frac{1}{\sqrt{1-y^2}}$.
+\item $\dd{y} \arccos(y) = \frac{-1}{\sqrt{1-y^2}}$.
+\item $\dd{y} \arctan(y) = \frac{1}{1+y^2}$.
+\item $\dd{y} \arcsec(y) = \frac{1}{|y|\sqrt{y^2-1}}$ for $|y|>1$.
+\item $\dd{y} \arccsc(y) = \frac{-1}{|y|\sqrt{y^2-1}}$ for $|y|>1$.
+\item $\dd{y} \arccot(y) = \frac{-1}{1+y^2}$.
+\end{itemize}
+\end{mainTheorem}
+
+
+
+
 
 \begin{exercises}
 
-\begin{exercise} Show that the derivative of $\arccos x$ is $-{1\over
-  \sqrt{1-x^2}}$. 
-\end{exercise}
-
-\begin{exercise} Show that the derivative of 
-$\arctan x$ is ${1\over 1+x^2}$. 
-\end{exercise}
-
 \begin{exercise} The inverse of $\cot$ is usually defined so that the
- range of arccot is $(0, \pi )$.  Sketch the graph of $y=\arccot
- x$. In the process you will make it clear what the domain of arccot
- is. Find the derivative of the arccotangent.
+ range of arccotangent is $(0, \pi)$.  Sketch the graph of
+ $y=\arccot(x)$. In the process you will make it clear what the domain
+ of arccotangent is. Find the derivative of the arccotangent.
 \begin{answer} ${-1\over 1+x^2}$
 \end{answer}\end{exercise}
 
-\begin{exercise} Show that $\arccot x + \arctan x =\pi/2$.
-\end{exercise}
+%% \begin{exercise} Show that $\arccot(x) + \arctan(x) =\pi/2$.
+%% \end{exercise}
 
 \begin{exercise} Find the derivative of $\arcsin(x^2)$.
 \begin{answer} ${2x\over\sqrt{1-x^4}}$
@@ -647,15 +752,15 @@ $\arctan x$ is ${1\over 1+x^2}$.
 \begin{answer} $-3x^2\cos(x^3)/\sqrt{1-\sin^2(x^3)}$
 \end{answer}\end{exercise}
 
-\begin{exercise} Find the derivative of $\ln( (\arcsin x )^2)$
-\begin{answer} ${2\over(\arcsin x)\sqrt{1-x^2}}$
+\begin{exercise} Find the derivative of $\ln( (\arcsin(x) )^2)$
+\begin{answer} ${2\over(\arcsin(x))\sqrt{1-x^2}}$
 \end{answer}\end{exercise}
 
-\begin{exercise} Find the derivative of $\arccos e^x$
-\begin{answer} $\ds-e^x/\sqrt{1-e^{2x}}$
+\begin{exercise} Find the derivative of $\arccos(e^x)$
+\begin{answer} $-e^x\sqrt{1-e^{2x}}$
 \end{answer}\end{exercise}
 
-\begin{exercise} Find the derivative of $\arcsin x + \arccos x$
+\begin{exercise} Find the derivative of $\arcsin(x) + \arccos(x)$
 \begin{answer} $0$
 \end{answer}\end{exercise}
 
