@@ -1,0 +1,88 @@
+<script>
+	$(function () {
+	
+    var paper = new Raphael(document.getElementById('graph'), 500, 500);
+   	var vertAxis = paper.path("M 150 0 l 0 300 z");
+   	vertAxis.attr({opacity:.3});
+   	var horzAxis = paper.path("M 0 150 l 300 0 z");
+   	horzAxis.attr({opacity:.3});
+   	
+   	var radius = paper.path("M 150 150 l 100 0 z");
+   	radius.attr("stroke", "#0000FF");
+   	var radiusArray = radius.attr("path");
+   	
+   	var cosine = paper.path("M 150 150 l 100 0 z");
+   	cosine.attr("stroke", "#0000FF");
+   	var cosArray = cosine.attr("path");
+   	
+   	var sine = paper.path("M 250 0 l 0 0 z");
+   	sine.attr("stroke", "#0000FF");
+   	var sinArray = sine.attr("path");
+   	
+   	var tangent = paper.path("M 0 0 l 0 0 z");
+   	tangent.attr("stroke", "#0000FF");
+   	var tanArray = tangent.attr("path");
+   	
+   	
+   	var unitCirc = paper.circle(150,150,100);
+ 	 var circ = paper.circle(250, 150, 7).attr({
+    fill: "hsb(.8, 1, 1)",
+    stroke: "none",
+    opacity: .5
+});
+var start = function () {
+    // storing original coordinates
+    this.ox = this.attr("cx");
+    this.oy = this.attr("cy");
+    this.attr({opacity: 1});
+},
+move = function (x, y) {
+	var X = x+this.ox-150
+	var Y = 150-y-this.oy
+    this.attr({cx: 150+100*X/Math.sqrt(X*X+Y*Y), cy:  150-100*Y/Math.sqrt(X*X+Y*Y)});
+   
+   radiusArray[1][1] = 150+100*X/Math.sqrt(X*X+Y*Y);
+   radiusArray[1][2] = 150-100*Y/Math.sqrt(X*X+Y*Y);
+   radius.attr({path: radiusArray});
+   
+   cosArray[1][1] = 150+100*X/Math.sqrt(X*X+Y*Y);
+   cosArray[1][2] = 150
+   cosine.attr({path: cosArray});
+   
+   sinArray[0][1] = 150+100*X/Math.sqrt(X*X+Y*Y);
+   sinArray[0][2] = 150;
+   sinArray[1][1] = 150+100*X/Math.sqrt(X*X+Y*Y);
+   sinArray[1][2] = 150-100*Y/Math.sqrt(X*X+Y*Y);
+   sine.attr({path: sinArray});
+   
+   tanArray[0][1] = 150+100*X/Math.sqrt(X*X+Y*Y);
+   tanArray[0][2] = 150-100*Y/Math.sqrt(X*X+Y*Y);
+   tanArray[1][1] = 150+10000.0/X;
+   tanArray[1][2] = 150;
+   tangent.attr({path: tanArray});
+   
+   
+},
+up = function () {
+    // restoring state
+    this.attr({opacity: .5});
+};
+circ.drag(move, start, up);   
+
+
+
+ 
+      
+
+
+    
+});
+        
+	</script>
+
+<div class="page-header">
+  <h1>Graph! <small>Control other variables with sliders.</small></h1>
+</div>
+
+<div id='graph'></div>
+
