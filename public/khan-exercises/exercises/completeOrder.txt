@@ -73,3 +73,5 @@ tangentLineInverse.html
 inverseFunctionRulePoint.html
 trigDifferentiate.html
 trigDifferentiate2.html
+inverseTrigDiff1.html
+inverseTrigDiff2.html
