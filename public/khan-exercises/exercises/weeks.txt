@@ -76,3 +76,8 @@ inverseFunctionPointGraph
 inverseFunctionExpression
 tangentLineInverse
 inverseFunctionRulePoint
+* Week 6
+trigDifferentiate
+trigDifferentiate2
+inverseTrigDiff1
+inverseTrigDiff2
