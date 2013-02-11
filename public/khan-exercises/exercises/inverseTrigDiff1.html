@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html data-require="math word-problems steveMath8 graphie math-function-parser">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>Differentiating Expressions Involving Inverse Trig Functions 1</title>
+    <script src="../khan-exercise.js"></script>
+</head>
+<body>
+  <div class="exercise">
+  
+
+    <div class="problems">
+      <div id="trigOfPoly">
+      		
+      		  <div class="vars">
+				<var id = "f">new Polynomial(0,KhanUtil.randRange(1,2))</var>
+				<var id = "trigFunction">["arcsin","arccos","arctan"][randRange(0,2)]</var>
+			    <var id = "EXP">trigFunction+"("+f.text().replace(/{/g,"").replace(/}/g,"")+")"</var>
+				<var id="story">MathFunction.parse(EXP).derivative_story('x')</var>
+  			  </div>
+        	
+        	<p class="question">
+        		
+        		Use the chain rule to find 
+        		<code>\dfrac{d}{dx}<var>"\\"+EXP</var></code>	
+        	</p>
+        <p class="solution" data-type="parsedExpression">
+        	<var>MathFunction.parse(EXP).derivative('x').toString()</var>
+        </p>
+        <div class="hints">
+        	<p data-each="story as hint">
+        		<var>hint</var>
+        	</p>
+        	<p>
+        		You can enter this as <var>MathFunction.parse(EXP).derivative('x').toString()</var>
+        	</p>
+        </div>
+       
+      </div>
+      <div id="trigOfExp">
+      		
+      		  <div class="vars">
+				<var id = "trigFunction">["arcsin","arccos","arctan"][randRange(0,2)]</var>
+			    <var id = "EXP">trigFunction+"(exp(x))"</var>
+				<var id="story">MathFunction.parse(EXP).derivative_story('x')</var>
+  			  </div>
+        	
+        	<p class="question">
+        		
+        		Use the chain rule to find 
+        		<code>\dfrac{d}{dx}<var>"\\"+trigFunction+"(e^x)"</var></code>	
+        	</p>
+        <p class="solution" data-type="parsedExpression">
+        	<var>MathFunction.parse(EXP).derivative('x').toString()</var>
+        </p>
+        <div class="hints">
+        	<p data-each="story as hint">
+        		<var>hint</var>
+        	</p>
+        	<p>
+        		You can enter this as <var>MathFunction.parse(EXP).derivative('x').toString()</var>
+        	</p>
+        </div>
+       
+      </div>
+       <div id="trigOfLog">
+      		
+      		  <div class="vars">
+				<var id = "trigFunction">["arcsin","arccos","arctan"][randRange(0,2)]</var>
+			    <var id = "EXP">trigFunction+"(log(x))"</var>
+				<var id="story">MathFunction.parse(EXP).derivative_story('x')</var>
+  			  </div>
+        	
+        	<p class="question">
+        		
+        		Use the chain rule to find 
+        		<code>\dfrac{d}{dx}<var>"\\"+trigFunction+"(\\log(x))"</var></code>	
+        	</p>
+        <p class="solution" data-type="parsedExpression">
+        	<var>MathFunction.parse(EXP).derivative('x').toString()</var>
+        </p>
+        <div class="hints">
+        	<p data-each="story as hint">
+        		<var>hint</var>
+        	</p>
+        	<p>
+        		You can enter this as <var>MathFunction.parse(EXP).derivative('x').toString()</var>
+        	</p>
+        </div>
+       
+      </div>
+      <div id="logOfTrig">
+      		
+      		  <div class="vars">
+				<var id = "trigFunction">["arcsin","arccos","arctan"][randRange(0,2)]</var>
+			    <var id = "EXP">"log("+trigFunction+"(x))"</var>
+				<var id="story">MathFunction.parse(EXP).derivative_story('x')</var>
+  			  </div>
+        	
+        	<p class="question">
+        		
+        		Use the chain rule to find 
+        		<code>\dfrac{d}{dx}<var>"\\log(\\"+trigFunction+"(x))"</var></code>	
+        	</p>
+        <p class="solution" data-type="parsedExpression">
+        	<var>MathFunction.parse(EXP).derivative('x').toString()</var>
+        </p>
+        <div class="hints">
+        	<p data-each="story as hint">
+        		<var>hint</var>
+        	</p>
+        	<p>
+        		You can enter this as <var>MathFunction.parse(EXP).derivative('x').toString()</var>
+        	</p>
+        </div>
+       
+      </div>
+      <div id="expOfTrig">
+      		
+      		  <div class="vars">
+				<var id = "trigFunction">["arcsin","arccos","arctan"][randRange(0,2)]</var>
+			    <var id = "EXP">"exp("+trigFunction+"(x))"</var>
+				<var id="story">MathFunction.parse(EXP).derivative_story('x')</var>
+  			  </div>
+        	
+        	<p class="question">
+        		
+        		Use the chain rule to find 
+        		<code>\dfrac{d}{dx}<var>"e^{\\"+trigFunction+"(x)}"</var></code>	
+        	</p>
+        <p class="solution" data-type="parsedExpression">
+        	<var>MathFunction.parse(EXP).derivative('x').toString()</var>
+        </p>
+        <div class="hints">
+        	<p data-each="story as hint">
+        		<var>hint</var>
+        	</p>
+        	<p>
+        		You can enter this as <var>MathFunction.parse(EXP).derivative('x').toString()</var>
+        	</p>
+        </div>
+       
+      </div>
+      
+      
+     
+    </div>
+  </div>
+</body>
+</html>
