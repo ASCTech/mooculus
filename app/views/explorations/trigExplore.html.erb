@@ -1,88 +1,1053 @@
+<script src = "https://raw.github.com/DmitryBaranovskiy/raphael/master/raphael.js"></script>
 <script>
+	
+
 	$(function () {
 	
-    var paper = new Raphael(document.getElementById('graph'), 500, 500);
-   	var vertAxis = paper.path("M 150 0 l 0 300 z");
+    var paper = new Raphael(document.getElementById('graph'), 1500, 1000);
+    
+    
+    /////////////////////////////////////////////////////////////////
+    //// Selecting which trig function to use ////
+    ////////////////////////////////////////////////////////////////
+    
+    var sineText = paper.text(120,30,"Sine").attr({'font-size':30});
+    var cosineText = paper.text(250,30,"Cosine").attr({'font-size':30});
+    var secantText = paper.text(390,30,"Secant").attr({'font-size':30});
+    var cosecantText = paper.text(540,30,"Cosecant").attr({'font-size':30});
+    var tangentText = paper.text(710,30,"Tangent").attr({'font-size':30});
+    var cotangentText = paper.text(900,30,"Cotangent").attr({'font-size':30});
+    
+    
+    var sineBox = sineText.getBBox();
+    var sineRect = paper.rect(sineBox.x-10, sineBox.y-10,sineBox.width+20,sineBox.height+20).attr({'stroke':'none',fill: "#fa00ff", opacity: .3});
+
+    var cosineBox = cosineText.getBBox();
+    var cosineRect = paper.rect(cosineBox.x-10, cosineBox.y-10,cosineBox.width+20,cosineBox.height+20).attr({'stroke':'none',fill: "#fa00ff", opacity: 0});
+    
+    var tangentBox = tangentText.getBBox();
+    var tangentRect = paper.rect(tangentBox.x-10, tangentBox.y-10,tangentBox.width+20,tangentBox.height+20).attr({'stroke':'none',fill: "#fa00ff", opacity: 0});
+    
+    var secantBox = secantText.getBBox();
+    var secantRect = paper.rect(secantBox.x-10, secantBox.y-10,secantBox.width+20,secantBox.height+20).attr({'stroke':'none',fill: "#fa00ff", opacity: 0});
+    
+    var cosecantBox = cosecantText.getBBox();
+    var cosecantRect = paper.rect(cosecantBox.x-10, cosecantBox.y-10,cosecantBox.width+20,cosecantBox.height+20).attr({'stroke':'none',fill: "#fa00ff", opacity: 0});
+    
+    var cotangentBox = cotangentText.getBBox();
+    var cotangentRect = paper.rect(cotangentBox.x-10, cotangentBox.y-10,cotangentBox.width+20,cotangentBox.height+20).attr({'stroke':'none',fill: "#fa00ff", opacity: 0});
+		
+	
+	
+	sineRect.click(
+	function (){
+		this.attr({opacity: 0.3});
+
+		graphSin.show();
+		pointGraphSin.show();
+		sine.attr({stroke: "#fa00ff", "stroke-width": 4});
+		
+		cosineRect.attr({opacity:0});
+		graphCos.hide();
+		pointGraphCos.hide();
+		cosine.attr({stroke: "#0000ff", "stroke-width": 1});
+		
+		tangentRect.attr({opacity:0});
+		graphTan.hide();
+		pointGraphTan.hide();
+		tangent.attr({stroke: "#0000ff", "stroke-width": 1});
+		
+		secantRect.attr({opacity:0});
+		graphSec.hide();
+		pointGraphSec.hide();
+		secant.attr({stroke: "#0000ff", "stroke-width": 1});
+		
+		cosecantRect.attr({opacity:0});
+		graphCosec.hide();
+		pointGraphCosec.hide();
+		cosecant.attr({stroke: "#0000ff", "stroke-width": 1});
+		
+		cotangentRect.attr({opacity:0});
+		graphCotan.hide();
+		pointGraphCotan.hide();
+		cotangent.attr({stroke: "#0000ff", "stroke-width": 1});
+		
+		
+		
+		circ.toFront();
+		pointGraphSin.toFront();
+		}
+	);
+	
+
+	cosineRect.click(
+	function (){
+		this.attr({opacity: 0.3});
+		
+		graphCos.show();
+		pointGraphCos.show();
+		cosine.attr({stroke: "#fa00ff", "stroke-width": 4});
+		
+		sineRect.attr({opacity:0});
+		graphSin.hide();
+		pointGraphSin.hide();
+		sine.attr({stroke: "#0000ff", "stroke-width": 1});
+		
+		tangentRect.attr({opacity:0});
+		graphTan.hide();
+		pointGraphTan.hide();
+		tangent.attr({stroke: "#0000ff", "stroke-width": 1});
+		
+		secantRect.attr({opacity:0});
+		graphSec.hide();
+		pointGraphSec.hide();
+		secant.attr({stroke: "#0000ff", "stroke-width": 1});
+		
+		cosecantRect.attr({opacity:0});
+		graphCosec.hide();
+		pointGraphCosec.hide();
+		cosecant.attr({stroke: "#0000ff", "stroke-width": 1});
+		
+		cotangentRect.attr({opacity:0});
+		graphCotan.hide();
+		pointGraphCotan.hide();
+		cotangent.attr({stroke: "#0000ff", "stroke-width": 1});
+		
+	    
+	    cosine.toFront();
+	    circ.toFront();
+	    pointGraphCos.toFront();
+		}
+	);
+	
+	tangentRect.click(
+	function (){
+		this.attr({opacity: 0.3});
+		
+		graphTan.show();
+		pointGraphTan.show();
+		tangent.attr({stroke: "#fa00ff", "stroke-width": 4});
+		
+		sineRect.attr({opacity:0});
+		graphSin.hide();
+		pointGraphSin.hide();
+		sine.attr({stroke: "#0000ff", "stroke-width": 1});
+		
+		cosineRect.attr({opacity:0});
+		graphCos.hide();
+		pointGraphCos.hide();
+		cosine.attr({stroke: "#0000ff", "stroke-width": 1});
+		
+		secantRect.attr({opacity:0});
+		graphSec.hide();
+		pointGraphSec.hide();
+		secant.attr({stroke: "#0000ff", "stroke-width": 1});
+		
+		cosecantRect.attr({opacity:0});
+		graphCosec.hide();
+		pointGraphCosec.hide();
+		cosecant.attr({stroke: "#0000ff", "stroke-width": 1});
+		
+		cotangentRect.attr({opacity:0});
+		graphCotan.hide();
+		pointGraphCotan.hide();
+		cotangent.attr({stroke: "#0000ff", "stroke-width": 1});
+		
+	    tangent.toFront();
+	    circ.toFront();
+	    pointGraphTan.toFront();
+		}
+	);
+	
+	secantRect.click(
+	function (){
+		this.attr({opacity: 0.3});
+		
+		graphSec.show();
+		pointGraphSec.show();
+		secant.attr({stroke: "#fa00ff", "stroke-width": 4});
+		
+		sineRect.attr({opacity:0});
+		graphSin.hide();
+		pointGraphSin.hide();
+		sine.attr({stroke: "#0000ff", "stroke-width": 1});
+		
+		cosineRect.attr({opacity:0});
+		graphCos.hide();
+		pointGraphCos.hide();
+		cosine.attr({stroke: "#0000ff", "stroke-width": 1});
+		
+		tangentRect.attr({opacity:0});
+		graphTan.hide();
+		pointGraphTan.hide();
+		tangent.attr({stroke: "#0000ff", "stroke-width": 1});
+		
+		cosecantRect.attr({opacity:0});
+		graphCosec.hide();
+		pointGraphCosec.hide();
+		cosecant.attr({stroke: "#0000ff", "stroke-width": 1});
+		
+		cotangentRect.attr({opacity:0});
+		graphCotan.hide();
+		pointGraphCotan.hide();
+		cotangent.attr({stroke: "#0000ff", "stroke-width": 1});
+		
+	    
+	    secant.toFront();
+	    circ.toFront();
+	    pointGraphSec.toFront();
+		}
+	);
+	
+	cosecantRect.click(
+	function (){
+		this.attr({opacity: 0.3});
+		
+		graphCosec.show();
+		pointGraphCosec.show();
+		cosecant.attr({stroke: "#fa00ff", "stroke-width": 4});
+		
+		sineRect.attr({opacity:0});
+		graphSin.hide();
+		pointGraphSin.hide();
+		sine.attr({stroke: "#0000ff", "stroke-width": 1});
+		
+		cosineRect.attr({opacity:0});
+		graphCos.hide();
+		pointGraphCos.hide();
+		cosine.attr({stroke: "#0000ff", "stroke-width": 1});
+		
+		tangentRect.attr({opacity:0});
+		graphTan.hide();
+		pointGraphTan.hide();
+		tangent.attr({stroke: "#0000ff", "stroke-width": 1});
+		
+		secantRect.attr({opacity:0});
+		graphSec.hide();
+		pointGraphSec.hide();
+		secant.attr({stroke: "#0000ff", "stroke-width": 1});
+		
+		cotangentRect.attr({opacity:0});
+		graphCotan.hide();
+		pointGraphCotan.hide();
+		cotangent.attr({stroke: "#0000ff", "stroke-width": 1});
+		
+	    
+	    cosecant.toFront();
+	    circ.toFront();
+	    pointGraphCosec.toFront();
+		}
+	);
+	
+	cotangentRect.click(
+	function (){
+		this.attr({opacity: 0.3});
+		
+		graphCotan.show();
+		pointGraphCotan.show();
+		cotangent.attr({stroke: "#fa00ff", "stroke-width": 4});
+		
+		sineRect.attr({opacity:0});
+		graphSin.hide();
+		pointGraphSin.hide();
+		sine.attr({stroke: "#0000ff", "stroke-width": 1});
+		
+		cosineRect.attr({opacity:0});
+		graphCos.hide();
+		pointGraphCos.hide();
+		cosine.attr({stroke: "#0000ff", "stroke-width": 1});
+		
+		tangentRect.attr({opacity:0});
+		graphTan.hide();
+		pointGraphTan.hide();
+		tangent.attr({stroke: "#0000ff", "stroke-width": 1});
+		
+		secantRect.attr({opacity:0});
+		graphSec.hide();
+		pointGraphSec.hide();
+		secant.attr({stroke: "#0000ff", "stroke-width": 1});
+		
+		cosecantRect.attr({opacity:0});
+		graphCosec.hide();
+		pointGraphCosec.hide();
+		cosecant.attr({stroke: "#0000ff", "stroke-width": 1});
+		
+		
+		
+	    
+	    cotangent.toFront();
+	    circ.toFront();
+	    pointGraphCotan.toFront();
+		}
+	);
+	
+    
+    
+    //////////////////////////////////////////
+    //// For unit circle picture //
+    /////////////////////////////////////////
+    var cenX = 200;
+    var cenY = 300;
+    var rad = 100
+    var theta = 0
+    var thetaText = paper.text(450,100,"Theta = 0.0000000000000000").attr({'font-size': 12});
+    var unitCirc = paper.circle(cenX,cenY,rad).attr({"stroke-width":2});
+    //circ is the point located at (cos theta, sin theta)
+    var circ = paper.circle(cenX+rad, cenY, 7).attr({
+    	fill: "#fa00ff",
+   	    stroke: "none"
+        }); 
+        
+   	var vertAxis = paper.path("M" + cenX+ " " + (cenY-2*rad)+" l 0 " + 4*rad);
    	vertAxis.attr({opacity:.3});
-   	var horzAxis = paper.path("M 0 150 l 300 0 z");
+   	var horzAxis = paper.path("M"+ (cenX - 2*rad) +" "+cenY  +"l" +4*rad +" 0 ");
    	horzAxis.attr({opacity:.3});
    	
-   	var radius = paper.path("M 150 150 l 100 0 z");
+   	var radius = paper.path("M" +cenX+" "+ cenY+ "l" +  rad+" 0 ");
    	radius.attr("stroke", "#0000FF");
    	var radiusArray = radius.attr("path");
    	
-   	var cosine = paper.path("M 150 150 l 100 0 z");
+   	var cosine =  paper.path("M" +cenX+" "+ cenY+ "l" +  rad+" 0 ");
    	cosine.attr("stroke", "#0000FF");
    	var cosArray = cosine.attr("path");
    	
-   	var sine = paper.path("M 250 0 l 0 0 z");
-   	sine.attr("stroke", "#0000FF");
+   	var sine = paper.path("M" +  cenX+rad+ " " + cenY +" l 0 0 ");
+   	sine.attr({stroke: "#fa00ff", "stroke-width": 4});
    	var sinArray = sine.attr("path");
    	
-   	var tangent = paper.path("M 0 0 l 0 0 z");
+   	var tangent = paper.path("M 0 0 l 0 0 ");
    	tangent.attr("stroke", "#0000FF");
    	var tanArray = tangent.attr("path");
    	
+   	var cotangent =  paper.path("M" +(cenX+rad)+" "+ cenY+ "l 0 " +  -10*rad+" ");
+   	cotangent.attr("stroke", "#0000FF");
+   	var cotanArray = cotangent.attr("path");
    	
-   	var unitCirc = paper.circle(150,150,100);
- 	 var circ = paper.circle(250, 150, 7).attr({
-    fill: "hsb(.8, 1, 1)",
-    stroke: "none",
-    opacity: .5
-});
+   	var secant =  paper.path("M" +cenX+" "+ cenY+ "l" +  rad+" 0 ");
+    secant.attr("stroke", "#0000FF");
+   	var secArray = secant.attr("path");
+   	
+   	var cosecant = paper.path("M" +cenX+" "+ cenY+ "l 0 "+ (-4*rad) + " ");
+    cosecant.attr("stroke", "#0000FF");
+   	var cscArray = cosecant.attr("path");
+   	
+   	//line is the tangent line to the circle at circ - it contains both tangent and cotangent.  Looks nicer to have the
+   	//full line present all the time.
+   	var line = paper.path("M"+ (cenX+rad) +" 0 l 0 "+ (cenY+4*rad) +"");
+   	line.attr("stroke", "#0000FF");
+   	var lineArray = line.attr("path");
+   	
+   	
+   	///////////////////////////////
+    // For graph of sin //
+    //////////////////////////////
+    
+    var cenX2 =  600
+    var cenY2 = cenY
+    // The corresponding point on the graph of the function
+    var pointGraphSin = paper.circle(cenX2,cenY2,7).attr({
+    	fill: "#fa00ff",
+   	    stroke: "none"
+        }); 
+    
+    var vertAxis2 = paper.path("M" + cenX2+ " " + (cenY2-2*rad)+" l 0 " + 4*rad +"");
+   	vertAxis2.attr({opacity:.3});
+   	var horzAxis2 = paper.path("M"+ (cenX2 - rad) +" "+cenY2  +"l" +7*rad +" 0 ");
+   	horzAxis2.attr({opacity:.3});
+   	var graphDirections = "M"+ cenX2 +" " + cenY2
+   	for (var i = 0; i<rad*2*Math.PI;i++){
+   		graphDirections = graphDirections+" l "+  1 + " " + -rad*(Math.sin((i+1)/rad) - Math.sin(i/rad)) 
+   		}
+   	var graphSin =  paper.path(graphDirections);
+    
+
+// start, move and up apply are used in dragging the point on the unit circle
 var start = function () {
     // storing original coordinates
     this.ox = this.attr("cx");
     this.oy = this.attr("cy");
     this.attr({opacity: 1});
-},
-move = function (x, y) {
-	var X = x+this.ox-150
-	var Y = 150-y-this.oy
-    this.attr({cx: 150+100*X/Math.sqrt(X*X+Y*Y), cy:  150-100*Y/Math.sqrt(X*X+Y*Y)});
    
-   radiusArray[1][1] = 150+100*X/Math.sqrt(X*X+Y*Y);
-   radiusArray[1][2] = 150-100*Y/Math.sqrt(X*X+Y*Y);
+},
+
+
+move = function (x, y) {
+	
+	var X1 = x+this.ox-cenX;
+	var Y1 = cenY-y-this.oy;
+	var X = X1/Math.sqrt(X1*X1+Y1*Y1);
+	var Y = Y1/Math.sqrt(X1*X1+Y1*Y1);
+    theta = (Y >= 0) ? Math.atan2(Y,X) : 2*Math.PI+Math.atan2(Y,X) ;
+	pointGraphSin.attr({'cx': cenX2+rad*theta, 'cy': cenY2-rad*Math.sin(theta)});
+	pointGraphCos.attr({'cx': cenX2+rad*theta, 'cy': cenY2-rad*Math.cos(theta)});
+	pointGraphTan.attr({'cx': cenX2+rad*theta, 'cy': cenY2-rad*Math.tan(theta)});
+	pointGraphSec.attr({'cx': cenX2+rad*theta, 'cy': cenY2-rad/Math.cos(theta)});
+	pointGraphCosec.attr({'cx': cenX2+rad*theta, 'cy': cenY2-rad/Math.sin(theta)});
+	pointGraphCotan.attr({'cx': cenX2+rad*theta, 'cy': cenY2-rad/Math.tan(theta)});
+	
+	thetaText.attr({'text':  "Theta ="+theta})
+	
+    this.attr({cx: cenX+rad*X, cy:  cenY-rad*Y});
+   
+   radiusArray[1][1] = cenX+rad*X;
+   radiusArray[1][2] = cenY-rad*Y;
    radius.attr({path: radiusArray});
    
-   cosArray[1][1] = 150+100*X/Math.sqrt(X*X+Y*Y);
-   cosArray[1][2] = 150
+   
+   cosArray[1][1] = cenX+rad*X;
+   cosArray[1][2] = cenY
    cosine.attr({path: cosArray});
    
-   sinArray[0][1] = 150+100*X/Math.sqrt(X*X+Y*Y);
-   sinArray[0][2] = 150;
-   sinArray[1][1] = 150+100*X/Math.sqrt(X*X+Y*Y);
-   sinArray[1][2] = 150-100*Y/Math.sqrt(X*X+Y*Y);
+   sinArray[0][1] = cenX+rad*X;
+   sinArray[0][2] = cenY;
+   sinArray[1][1] = cenX+rad*X;
+   sinArray[1][2] = cenY-rad*Y;
    sine.attr({path: sinArray});
    
-   tanArray[0][1] = 150+100*X/Math.sqrt(X*X+Y*Y);
-   tanArray[0][2] = 150-100*Y/Math.sqrt(X*X+Y*Y);
-   tanArray[1][1] = 150+10000.0/X;
-   tanArray[1][2] = 150;
+   tanArray[0][1] = cenX+rad*X;
+   tanArray[0][2] = cenY-rad*Y;
+   tanArray[1][1] = cenX+rad/X;
+   tanArray[1][2] = cenY;
    tangent.attr({path: tanArray});
+   
+   
+   secArray[1][1] = cenX+rad/X;
+   secArray[1][2] = cenY;
+   secant.attr({path: secArray});
+   
+   cscArray[1][1] = cenX;
+   cscArray[1][2] = cenY-rad/Y;
+   cosecant.attr({path: cscArray});
+   
+   
+   cotanArray[0][1] = cenX+rad*X;
+   cotanArray[0][2] = cenY-rad*Y;
+   cotanArray[1][1] = cenX;
+   cotanArray[1][2] = cenY-rad/Y;
+   cotangent.attr({path: cotanArray});
+   
+   lineArray[0][1] = cenX+rad*X+1000;
+   lineArray[0][2] = cenY-rad*Y+X*1000/Y;
+   lineArray[1][1] = cenX+rad*X-1000;
+   lineArray[1][2] = cenY-rad*Y-X*1000/Y;
+   line.attr({path: lineArray});
+   
+ 
    
    
 },
 up = function () {
-    // restoring state
-    this.attr({opacity: .5});
+   
 };
 circ.drag(move, start, up);   
 
 
+//startG, moveG, and upG are all used in dragging the point on the graph.
 
+var startG = function () {
+    // storing original coordinates
+    this.ox = this.attr("cx");
+    this.oy = this.attr("cy");
+    this.attr({opacity: 1});
+    
+},
+
+
+moveG = function (x, y) {
+	var X1 = x+this.ox-cenX2;
+	var Y1 = cenY2-y-this.oy;
+	theta = X1/rad
+	var X = Math.cos(theta);
+	var Y = Math.sin(theta);
+    this.attr({cx: this.ox+x, cy:  cenY2-rad*Y});
+    pointGraphSin.attr({'cx': cenX2+rad*theta, 'cy': cenY2-rad*Math.sin(theta)});
+    pointGraphCos.attr({'cx': cenX2+rad*theta, 'cy': cenY2-rad*Math.cos(theta)});
+    pointGraphTan.attr({'cx': cenX2+rad*theta, 'cy': cenY2-rad*Math.tan(theta)});
+    pointGraphCotan.attr({'cx': cenX2+rad*theta, 'cy': cenY2-rad/Math.tan(theta)});
+    pointGraphSec.attr({'cx': cenX2+rad*theta, 'cy': cenY2-rad/Math.cos(theta)});
+    pointGraphCosec.attr({'cx': cenX2+rad*theta, 'cy': cenY2-rad/Math.sin(theta)});
+    circ.attr({cx: cenX+rad*X, cy: cenY-rad*Y});
+    
+    
+    
+    thetaText.attr({'text':  "Theta = "+theta})
+    
+   radiusArray[1][1] = cenX+rad*X;
+   radiusArray[1][2] = cenY-rad*Y;
+   radius.attr({path: radiusArray});
+   
+   
+   cosArray[1][1] = cenX+rad*X;
+   cosArray[1][2] = cenY
+   cosine.attr({path: cosArray});
+   
+   sinArray[0][1] = cenX+rad*X;
+   sinArray[0][2] = cenY;
+   sinArray[1][1] = cenX+rad*X;
+   sinArray[1][2] = cenY-rad*Y;
+   sine.attr({path: sinArray});
+   
+   tanArray[0][1] = cenX+rad*X;
+   tanArray[0][2] = cenY-rad*Y;
+   tanArray[1][1] = cenX+rad/X;
+   tanArray[1][2] = cenY;
+   tangent.attr({path: tanArray});
+   
+   
+   secArray[1][1] = cenX+rad/X;
+   secArray[1][2] = cenY;
+   secant.attr({path: secArray});
+   
+   cscArray[1][1] = cenX;
+   cscArray[1][2] = cenY-rad/Y;
+   cosecant.attr({path: cscArray});
+   
+   
+   cotanArray[0][1] = cenX+rad*X;
+   cotanArray[0][2] = cenY-rad*Y;
+   cotanArray[1][1] = cenX;
+   cotanArray[1][2] = cenY-rad/Y;
+   cotangent.attr({path: cotanArray});
+   
+   lineArray[0][1] = cenX+rad*X+1000;
+   lineArray[0][2] = cenY-rad*Y+X*1000/Y;
+   lineArray[1][1] = cenX+rad*X-1000;
+   lineArray[1][2] = cenY-rad*Y-X*1000/Y;
+   line.attr({path: lineArray});
+   
  
-      
+ 
+   
+   
+},
+upG = function () {
+    
+};
+pointGraphSin.drag(moveG, startG, upG);
+	
+	///////////////////////////////
+    // For graph of tan //
+    //////////////////////////////
+    
+    // The corresponding point on the graph of the function
+    var pointGraphTan = paper.circle(cenX2,cenY2,7).attr({
+    	fill: "#fa00ff",
+   	    stroke: "none"
+        }); 
+    
+  
+   	var graphDirectionsTan = "M"+ cenX2 +" " + cenY2
+   	for (var i = 0; i<rad*2*Math.PI;i++){
+   		graphDirectionsTan = graphDirectionsTan+" l "+  1 + " " + -rad*(Math.tan((i+1)/rad) - Math.tan(i/rad)) 
+   		}
+   	var graphTan =  paper.path(graphDirectionsTan);
+    
+
+//startG, moveG, and upG are all used in dragging the point on the graph.
+
+var startGTan = function () {
+    // storing original coordinates
+    this.ox = this.attr("cx");
+    this.oy = this.attr("cy");
+    this.attr({opacity: 1});
+    
+},
 
 
+moveGTan = function (x, y) {
+	var X1 = x+this.ox-cenX2;
+	var Y1 = cenY2-y-this.oy;
+	theta = X1/rad
+	var X = Math.cos(theta);
+	var Y = Math.sin(theta);
+    this.attr({cx: this.ox+x, cy:  cenY2-rad*Y/X});
+    circ.attr({cx: cenX+rad*X, cy: cenY-rad*Y});
+    thetaText.attr({'text':  "Theta = "+theta})
+    
+   radiusArray[1][1] = cenX+rad*X;
+   radiusArray[1][2] = cenY-rad*Y;
+   radius.attr({path: radiusArray});
+   
+   
+   cosArray[1][1] = cenX+rad*X;
+   cosArray[1][2] = cenY
+   cosine.attr({path: cosArray});
+   
+   sinArray[0][1] = cenX+rad*X;
+   sinArray[0][2] = cenY;
+   sinArray[1][1] = cenX+rad*X;
+   sinArray[1][2] = cenY-rad*Y;
+   sine.attr({path: sinArray});
+   
+   tanArray[0][1] = cenX+rad*X;
+   tanArray[0][2] = cenY-rad*Y;
+   tanArray[1][1] = cenX+rad/X;
+   tanArray[1][2] = cenY;
+   tangent.attr({path: tanArray});
+   
+   
+   secArray[1][1] = cenX+rad/X;
+   secArray[1][2] = cenY;
+   secant.attr({path: secArray});
+   
+   cscArray[1][1] = cenX;
+   cscArray[1][2] = cenY-rad/Y;
+   cosecant.attr({path: cscArray});
+   
+   
+   cotanArray[0][1] = cenX+rad*X;
+   cotanArray[0][2] = cenY-rad*Y;
+   cotanArray[1][1] = cenX;
+   cotanArray[1][2] = cenY-rad/Y;
+   cotangent.attr({path: cotanArray});
+   
+   lineArray[0][1] = cenX+rad*X+1000;
+   lineArray[0][2] = cenY-rad*Y+X*1000/Y;
+   lineArray[1][1] = cenX+rad*X-1000;
+   lineArray[1][2] = cenY-rad*Y-X*1000/Y;
+   line.attr({path: lineArray});
+   
+ 
+ 
+   
+   
+},
+upGTan = function () {
+    
+};
+pointGraphTan.drag(moveGTan, startGTan, upGTan);
+
+	///////////////////////////////
+    // For graph of sec //
+    //////////////////////////////
+    
+    // The corresponding point on the graph of the function
+    var pointGraphSec = paper.circle(cenX2,cenY2-rad,7).attr({
+    	fill: "#fa00ff",
+   	    stroke: "none"
+        }); 
+    
+  
+   	var graphDirectionsSec = "M"+ cenX2 +" " + (cenY2-rad)+" "
+   	for (var i = 0; i<rad*2*Math.PI;i++){
+   		graphDirectionsSec = graphDirectionsSec+"  l  "+  1 + " " + (-rad*(1/Math.cos((i+1)/rad) - 1/Math.cos(i/rad))) 
+   		}
+   	var graphSec =  paper.path(graphDirectionsSec);
+    
+
+//startG, moveG, and upG are all used in dragging the point on the graph.
+
+var startGSec = function () {
+    // storing original coordinates
+    this.ox = this.attr("cx");
+    this.oy = this.attr("cy");
+    this.attr({opacity: 1});
+    
+},
+
+
+moveGSec = function (x, y) {
+	var X1 = x+this.ox-cenX2;
+	var Y1 = cenY2-y-this.oy;
+	theta = X1/rad
+	var X = Math.cos(theta);
+	var Y = Math.sin(theta);
+    this.attr({cx: this.ox+x, cy:  cenY2-rad/X});
+    pointGraphSin.attr({'cx': cenX2+rad*theta, 'cy': cenY2-rad*Math.sin(theta)});
+    pointGraphCos.attr({'cx': cenX2+rad*theta, 'cy': cenY2-rad*Math.cos(theta)});
+    pointGraphTan.attr({'cx': cenX2+rad*theta, 'cy': cenY2-rad*Math.tan(theta)});
+    pointGraphCotan.attr({'cx': cenX2+rad*theta, 'cy': cenY2-rad/Math.tan(theta)});
+    pointGraphSec.attr({'cx': cenX2+rad*theta, 'cy': cenY2-rad/Math.cos(theta)});
+    pointGraphCosec.attr({'cx': cenX2+rad*theta, 'cy': cenY2-rad/Math.sin(theta)});
+    circ.attr({cx: cenX+rad*X, cy: cenY-rad*Y});
+    thetaText.attr({'text':  "Theta = "+theta})
+    
+   radiusArray[1][1] = cenX+rad*X;
+   radiusArray[1][2] = cenY-rad*Y;
+   radius.attr({path: radiusArray});
+   
+   
+   cosArray[1][1] = cenX+rad*X;
+   cosArray[1][2] = cenY
+   cosine.attr({path: cosArray});
+   
+   sinArray[0][1] = cenX+rad*X;
+   sinArray[0][2] = cenY;
+   sinArray[1][1] = cenX+rad*X;
+   sinArray[1][2] = cenY-rad*Y;
+   sine.attr({path: sinArray});
+   
+   tanArray[0][1] = cenX+rad*X;
+   tanArray[0][2] = cenY-rad*Y;
+   tanArray[1][1] = cenX+rad/X;
+   tanArray[1][2] = cenY;
+   tangent.attr({path: tanArray});
+   
+   
+   secArray[1][1] = cenX+rad/X;
+   secArray[1][2] = cenY;
+   secant.attr({path: secArray});
+   
+   cscArray[1][1] = cenX;
+   cscArray[1][2] = cenY-rad/Y;
+   cosecant.attr({path: cscArray});
+   
+   
+   cotanArray[0][1] = cenX+rad*X;
+   cotanArray[0][2] = cenY-rad*Y;
+   cotanArray[1][1] = cenX;
+   cotanArray[1][2] = cenY-rad/Y;
+   cotangent.attr({path: cotanArray});
+   
+   lineArray[0][1] = cenX+rad*X+1000;
+   lineArray[0][2] = cenY-rad*Y+X*1000/Y;
+   lineArray[1][1] = cenX+rad*X-1000;
+   lineArray[1][2] = cenY-rad*Y-X*1000/Y;
+   line.attr({path: lineArray});
+   
+ 
+ 
+   
+   
+},
+upGSec = function () {
+    
+};
+pointGraphSec.drag(moveGSec, startGSec, upGSec);
+
+    ///////////////////////////////
+    // For graph of csc //
+    //////////////////////////////
+    
+    // The corresponding point on the graph of the function
+    var pointGraphCosec = paper.circle(cenX2,cenY2,7).attr({
+    	fill: "#fa00ff",
+   	    stroke: "none"
+        }); 
+    
+  //I add in an extra piece of this graph, and use some trig identities to graph it correctly.  I had to have some work around for starting
+  //the path at infinity...
+   	var graphDirectionsCosec = "M"+ (cenX2-rad*Math.PI/2) +" " + (cenY2+rad)+" "
+   	for (var i = 0; i<rad*2.5*Math.PI;i++){
+   		graphDirectionsCosec = graphDirectionsCosec+"  l  "+  1 + " " + (rad*(1/Math.cos((i+1)/rad) - 1/Math.cos(i/rad))) 
+   		}
+   	var graphCosec =  paper.path(graphDirectionsCosec);
+    
+
+//startG, moveG, and upG are all used in dragging the point on the graph.
+
+var startGCosec = function () {
+    // storing original coordinates
+    this.ox = this.attr("cx");
+    this.oy = this.attr("cy");
+    this.attr({opacity: 1});
+    
+},
+
+
+moveGCosec = function (x, y) {
+	var X1 = x+this.ox-cenX2;
+	var Y1 = cenY2-y-this.oy;
+	theta = X1/rad
+	var X = Math.cos(theta);
+	var Y = Math.sin(theta);
+    this.attr({cx: this.ox+x, cy:  cenY2-rad/Y});
+    pointGraphSin.attr({'cx': cenX2+rad*theta, 'cy': cenY2-rad*Math.sin(theta)});
+    pointGraphCos.attr({'cx': cenX2+rad*theta, 'cy': cenY2-rad*Math.cos(theta)});
+    pointGraphTan.attr({'cx': cenX2+rad*theta, 'cy': cenY2-rad*Math.tan(theta)});
+    pointGraphCotan.attr({'cx': cenX2+rad*theta, 'cy': cenY2-rad/Math.tan(theta)});
+    pointGraphSec.attr({'cx': cenX2+rad*theta, 'cy': cenY2-rad/Math.cos(theta)});
+    pointGraphCosec.attr({'cx': cenX2+rad*theta, 'cy': cenY2-rad/Math.sin(theta)});
+    circ.attr({cx: cenX+rad*X, cy: cenY-rad*Y});
+    thetaText.attr({'text':  "Theta = "+theta})
+    
+   radiusArray[1][1] = cenX+rad*X;
+   radiusArray[1][2] = cenY-rad*Y;
+   radius.attr({path: radiusArray});
+   
+   
+   cosArray[1][1] = cenX+rad*X;
+   cosArray[1][2] = cenY
+   cosine.attr({path: cosArray});
+   
+   sinArray[0][1] = cenX+rad*X;
+   sinArray[0][2] = cenY;
+   sinArray[1][1] = cenX+rad*X;
+   sinArray[1][2] = cenY-rad*Y;
+   sine.attr({path: sinArray});
+   
+   tanArray[0][1] = cenX+rad*X;
+   tanArray[0][2] = cenY-rad*Y;
+   tanArray[1][1] = cenX+rad/X;
+   tanArray[1][2] = cenY;
+   tangent.attr({path: tanArray});
+   
+   
+   secArray[1][1] = cenX+rad/X;
+   secArray[1][2] = cenY;
+   secant.attr({path: secArray});
+   
+   cscArray[1][1] = cenX;
+   cscArray[1][2] = cenY-rad/Y;
+   cosecant.attr({path: cscArray});
+   
+   
+   cotanArray[0][1] = cenX+rad*X;
+   cotanArray[0][2] = cenY-rad*Y;
+   cotanArray[1][1] = cenX;
+   cotanArray[1][2] = cenY-rad/Y;
+   cotangent.attr({path: cotanArray});
+   
+   lineArray[0][1] = cenX+rad*X+1000;
+   lineArray[0][2] = cenY-rad*Y+X*1000/Y;
+   lineArray[1][1] = cenX+rad*X-1000;
+   lineArray[1][2] = cenY-rad*Y-X*1000/Y;
+   line.attr({path: lineArray});
+   
+ 
+ 
+   
+   
+},
+upGCosec = function () {
+    
+};
+pointGraphCosec.drag(moveGCosec, startGCosec, upGCosec);
+
+    ///////////////////////////////
+    // For graph of cot //
+    //////////////////////////////
+    
+    // The corresponding point on the graph of the function
+    var pointGraphCotan = paper.circle(cenX2,cenY2,7).attr({
+    	fill: "#fa00ff",
+   	    stroke: "none"
+        }); 
+    
+  //I add in an extra piece of this graph, and use some trig identities to graph it correctly.  I had to have some work around for starting
+  //the path at infinity...
+   	var graphDirectionsCotan = "M"+ (cenX2-rad*Math.PI/2) +" " + (cenY2)+" "
+   	for (var i = 0; i<rad*2.5*Math.PI;i++){
+   		graphDirectionsCotan = graphDirectionsCotan+"  l  "+  1 + " " + (rad*(Math.tan((i+1)/rad) - Math.tan(i/rad))) 
+   		}
+   	var graphCotan =  paper.path(graphDirectionsCotan);
+    
+
+//startG, moveG, and upG are all used in dragging the point on the graph.
+
+var startGCotan = function () {
+    // storing original coordinates
+    this.ox = this.attr("cx");
+    this.oy = this.attr("cy");
+    this.attr({opacity: 1});
+    
+},
+
+
+moveGCotan = function (x, y) {
+	var X1 = x+this.ox-cenX2;
+	var Y1 = cenY2-y-this.oy;
+	theta = X1/rad
+	var X = Math.cos(theta);
+	var Y = Math.sin(theta);
+    this.attr({cx: this.ox+x, cy:  cenY2-rad*X/Y});
+    circ.attr({cx: cenX+rad*X, cy: cenY-rad*Y});
+    pointGraphSin.attr({'cx': cenX2+rad*theta, 'cy': cenY2-rad*Math.sin(theta)});
+    pointGraphCos.attr({'cx': cenX2+rad*theta, 'cy': cenY2-rad*Math.cos(theta)});
+    pointGraphTan.attr({'cx': cenX2+rad*theta, 'cy': cenY2-rad*Math.tan(theta)});
+    pointGraphCotan.attr({'cx': cenX2+rad*theta, 'cy': cenY2-rad/Math.tan(theta)});
+    pointGraphSec.attr({'cx': cenX2+rad*theta, 'cy': cenY2-rad/Math.cos(theta)});
+    pointGraphCosec.attr({'cx': cenX2+rad*theta, 'cy': cenY2-rad/Math.sin(theta)});
+     
+    thetaText.attr({'text':  "Theta = "+theta})
+    
+   radiusArray[1][1] = cenX+rad*X;
+   radiusArray[1][2] = cenY-rad*Y;
+   radius.attr({path: radiusArray});
+   
+   
+   cosArray[1][1] = cenX+rad*X;
+   cosArray[1][2] = cenY
+   cosine.attr({path: cosArray});
+   
+   sinArray[0][1] = cenX+rad*X;
+   sinArray[0][2] = cenY;
+   sinArray[1][1] = cenX+rad*X;
+   sinArray[1][2] = cenY-rad*Y;
+   sine.attr({path: sinArray});
+   
+   tanArray[0][1] = cenX+rad*X;
+   tanArray[0][2] = cenY-rad*Y;
+   tanArray[1][1] = cenX+rad/X;
+   tanArray[1][2] = cenY;
+   tangent.attr({path: tanArray});
+   
+   
+   secArray[1][1] = cenX+rad/X;
+   secArray[1][2] = cenY;
+   secant.attr({path: secArray});
+   
+   cscArray[1][1] = cenX;
+   cscArray[1][2] = cenY-rad/Y;
+   cosecant.attr({path: cscArray});
+   
+   
+   cotanArray[0][1] = cenX+rad*X;
+   cotanArray[0][2] = cenY-rad*Y;
+   cotanArray[1][1] = cenX;
+   cotanArray[1][2] = cenY-rad/Y;
+   cotangent.attr({path: cotanArray});
+   
+   lineArray[0][1] = cenX+rad*X+1000;
+   lineArray[0][2] = cenY-rad*Y+X*1000/Y;
+   lineArray[1][1] = cenX+rad*X-1000;
+   lineArray[1][2] = cenY-rad*Y-X*1000/Y;
+   line.attr({path: lineArray});
+   
+ 
+ 
+   
+   
+},
+upGCotan = function () {
+    
+};
+pointGraphCotan.drag(moveGCotan, startGCotan, upGCotan);
+
+
+	////////////////////////////////////
+    // For graph of cosine //
+    ////////////////////////////////////
+    
+    // The corresponding point on the graph of the function
+    var pointGraphCos = paper.circle(cenX2,cenY2-rad,7).attr({
+    	fill: "#fa00ff",
+   	    stroke: "none"
+        }); 
+    
+   	var graphDirectionsCos = "M"+ cenX2 +" " + (cenY2-rad)
+   	for (var i = 0; i<rad*2*Math.PI;i++){
+   		graphDirectionsCos = graphDirectionsCos+" l "+  1 + " " + -rad*(Math.cos((i+1)/rad) - Math.cos(i/rad)) 
+   		}
+   	
+   	var graphCos =  paper.path(graphDirectionsCos);
+    
+
+
+//startGCos, moveGCos, and upGCos are all used in dragging the point on the graph.
+
+var startGCos = function () {
+    // storing original coordinates
+    this.ox = this.attr("cx");
+    this.oy = this.attr("cy");
+    this.attr({opacity: 1});
+    
+},
+
+
+moveGCos = function (x, y) {
+	var X1 = x+this.ox-cenX2;
+	var Y1 = cenY2-y-this.oy;
+	theta = X1/rad
+	var X = Math.cos(theta);
+	var Y = Math.sin(theta);
+    this.attr({cx: this.ox+x, cy:  cenY2-rad*X});
+    pointGraphSin.attr({'cx': cenX2+rad*theta, 'cy': cenY2-rad*Math.sin(theta)});
+    pointGraphCos.attr({'cx': cenX2+rad*theta, 'cy': cenY2-rad*Math.cos(theta)});
+    pointGraphTan.attr({'cx': cenX2+rad*theta, 'cy': cenY2-rad*Math.tan(theta)});
+    pointGraphCotan.attr({'cx': cenX2+rad*theta, 'cy': cenY2-rad/Math.tan(theta)});
+    pointGraphSec.attr({'cx': cenX2+rad*theta, 'cy': cenY2-rad/Math.cos(theta)});
+    pointGraphCosec.attr({'cx': cenX2+rad*theta, 'cy': cenY2-rad/Math.sin(theta)});
+    circ.attr({cx: cenX+rad*X, cy: cenY-rad*Y});
+    thetaText.attr({'text':  "Theta = "+theta})
+    
+    radiusArray[1][1] = cenX+rad*X;
+   radiusArray[1][2] = cenY-rad*Y;
+   radius.attr({path: radiusArray});
+   
+   
+   cosArray[1][1] = cenX+rad*X;
+   cosArray[1][2] = cenY
+   cosine.attr({path: cosArray});
+   
+   sinArray[0][1] = cenX+rad*X;
+   sinArray[0][2] = cenY;
+   sinArray[1][1] = cenX+rad*X;
+   sinArray[1][2] = cenY-rad*Y;
+   sine.attr({path: sinArray});
+   
+   tanArray[0][1] = cenX+rad*X;
+   tanArray[0][2] = cenY-rad*Y;
+   tanArray[1][1] = cenX+rad/X;
+   tanArray[1][2] = cenY;
+   tangent.attr({path: tanArray});
+   
+   
+   secArray[1][1] = cenX+rad/X;
+   secArray[1][2] = cenY;
+   secant.attr({path: secArray});
+   
+   cscArray[1][1] = cenX;
+   cscArray[1][2] = cenY-rad/Y;
+   cosecant.attr({path: cscArray});
+   
+   
+   cotanArray[0][1] = cenX+rad*X;
+   cotanArray[0][2] = cenY-rad*Y;
+   cotanArray[1][1] = cenX;
+   cotanArray[1][2] = cenY-rad/Y;
+   cotangent.attr({path: cotanArray});
+   
+   lineArray[0][1] = cenX+rad*X+1000;
+   lineArray[0][2] = cenY-rad*Y+X*1000/Y;
+   lineArray[1][1] = cenX+rad*X-1000;
+   lineArray[1][2] = cenY-rad*Y-X*1000/Y;
+   line.attr({path: lineArray});
+   
+ 
+ 
+   
+   
+},
+upGCos = function () {
+    circ.toFront();
+};
+pointGraphCos.drag(moveGCos, startGCos, upGCos);
+
+pointGraphCos.hide();
+graphCos.hide();
+pointGraphCosec.hide();
+graphCosec.hide();
+pointGraphCotan.hide();
+graphCotan.hide();
+pointGraphTan.hide();
+graphTan.hide();
+pointGraphSec.hide();
+graphSec.hide();
+pointGraphSin.toFront();
+circ.toFront();
     
 });
         
 	</script>
+<style type="text/css">
+document.ondblclick = function(evt) {
+    if (window.getSelection)
+        window.getSelection().removeAllRanges();
+    else if (document.selection)
+        document.selection.empty();
+}
+</style>
 
 <div class="page-header">
-  <h1>Graph! <small>Control other variables with sliders.</small></h1>
+  <h1>Play with trig functions!</h1>
+  <h6>Click the name of a trig function.  A line segment on the unit circle picture will become pink:  The length of this line segment is the value 
+  of the trig function for the given value of theta.</h6>  
+  <h6>You can drag the point around on the circle, or on the graph of the trig function to the right.</h6>
+  <h6>Make sure you understand why each trig function has the shape it does.  Where are they increasing or decreasing?  Where are their asymptotes?  Where do they
+  acheive their maxima and minima?<h6>
 </div>
 
 <div id='graph'></div>
+
 

@@ -71,3 +71,5 @@ inverseFunctionPointGraph.html
 inverseFunctionExpression.html
 tangentLineInverse.html
 inverseFunctionRulePoint.html
+trigDifferentiate.html
+trigDifferentiate2.html
