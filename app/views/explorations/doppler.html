@@ -1,0 +1,80 @@
+<script src = "https://raw.github.com/DmitryBaranovskiy/raphael/master/raphael.js"></script>
+<script>
+$(function() {
+var paper = new Raphael(document.getElementById('graph'), 1000, 500);
+var car = paper.rect(0,0,100,50).attr({'stroke':'none',fill: "#000000", opacity: 1});
+var observer = paper.rect(0,0,30,30).attr({'stroke':'none',fill: "#0000FF", opacity: 1});
+
+var mod, modGain, osc;
+var context = new webkitAudioContext();
+var out = context.destination;
+
+var startAudio = function(){
+    osc = context.createOscillator();
+    osc.frequency.value = 300;
+    osc.connect(out);
+    osc.noteOn(0);
+};
+
+    startAudio();
+
+var start = function () {
+    this.ox = this.attr("x");
+    this.oy = this.attr("y");
+};
+
+var move = function (x, y) {
+  var x1 = x+this.ox;
+  var y1 = y+this.oy;
+  this.attr({x: x1, y: y1});
+};
+
+var up = function () {
+    this.ox = null;
+    this.oy = null;
+};
+
+    var velocity = 10;
+
+car.drag(move, start, up);   
+observer.drag(move, start, up);   
+
+    var move_car = function() {
+	if (!(typeof car.ox == "number")) {
+	    var x = car.attr("x")  - velocity;
+	    if (x < -100)
+		x = 1000;
+
+	    car.attr({x: x - velocity});
+	}
+
+	if (typeof car.previous_x == "number") {
+	    var x1 = observer.previous_x - car.previous_x;
+	    var y1 = observer.previous_y - car.previous_y;
+
+	    var x2 = observer.attr("x") - car.attr("x");
+	    var y2 = observer.attr("y") - car.attr("y");
+
+	    var change = Math.sqrt(x2*x2 + y2*y2) - Math.sqrt(x1*x1 + y1*y1);
+
+	    var frequency = 200 * 50.0 / (50.0 + change);
+	    osc.frequency.value = frequency;
+	}
+
+	car.previous_x = car.attr("x");
+	car.previous_y = car.attr("y");
+
+	observer.previous_x = observer.attr("x");
+	observer.previous_y = observer.attr("y");
+
+	window.setTimeout(move_car, 30);
+    };
+    
+    window.setTimeout(move_car, 30);
+
+});
+
+</script>
+
+
+<div id='graph'></div>

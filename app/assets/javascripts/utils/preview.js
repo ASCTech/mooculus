@@ -10,6 +10,16 @@ $(function() {
 		if ($(input_box).children('.mathquill-editable').length > 0) {
 		    text = $(input_box).children('.mathquill-editable').mathquill('latex');
 		    parser = MathFunction.parse_tex;
+
+		    var function_list = ["log","sqrt","arcsin","arccos","arctan","sin","cos","tan","sec","csc","cot"];
+
+		    $(input_box).children(".MathFunctionErrorForgetBackslash").hide();			
+		    for( var i = 0; i < function_list.length; i++ ) {
+			if (text.match( function_list[i] ) && !(text.match( '\\\\' + function_list[i] ))) {
+			    $(input_box).children(".MathFunctionErrorForgetBackslash").show();			
+			}
+		    }
+
 		} else {
 		    text = $(input_box).children('.parsed-expression').val();
 		    parser = MathFunction.parse;

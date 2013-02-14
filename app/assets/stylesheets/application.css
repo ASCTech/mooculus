@@ -124,3 +124,14 @@ div.hero-unit h1 {
     margin-bottom: 12pt;
 }
 
+.mathquill-editable {
+    width: 90%;
+}
+
+#solutionarea .tab-content {
+}
+
+#solutionarea .MathPreview {
+    margin-top: 12pt;
+    margin-bottom: 12pt;
+}

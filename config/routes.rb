@@ -92,4 +92,5 @@ Assessor::Application.routes.draw do
   get "explorations/derivative" => "explorations#derivative"
   get "explorations/graph" => "explorations#graph"
   get "explorations/trigExplore" => "explorations#trigExplore"
+  get "explorations/doppler" => "explorations#doppler"
 end
