@@ -87,6 +87,43 @@ Now let's see some real examples of this in action.
 distance vs displacement
 speed vs velocity
 
+\begin{example}
+The Mostar bridge in Bosnia is 25 meters above the river
+Neretva. For fun, you decided to dive off the bridge. Your position
+$t$ seconds after jumping off is
+\[
+p(t) = -4.9t^2 + 25.
+\]
+When do you hit the water? What is your instantaneous velocity as you
+enter the water?  What is your average velocity during your dive?
+\end{example}
+
+\begin{solution}
+To find when you hit the water, you must solve
+\[
+-4.9t^2 + 25 = 0
+\]
+Write
+\begin{align*}
+-4.9t^2 &= -25 \\
+t^2 &\approx 5.1 \\ 
+t &\approx 2.26
+\end{align*}
+Hence after approximately 2.26 seconds, you gracefully enter the
+river.
+
+Your instantaneous velocity is given by $p'(t)$. Write
+\[
+p'(t) = -9.8t
+\]
+so your instantaneous velocity is approximately $-9.8\cdot 2.26\approx
+-22$ meters per second.
+
+Finally, your average velocity is given by
+\[
+\frac{p'(2.26) -p'(0)}{2.26} \approx \frac{-22}{2.26} = -9.7.
+\]
+\end{solution}
 
 \subsection*{Biological Applications}
 
@@ -95,7 +132,7 @@ speed vs velocity
 \subsection*{Economic Applications}
 
 There are three main players when dealing with very basic economic
-questions: The \textit{revenue}, the amount of money aquired from
+questions: The \textit{revenue}, the amount of money acquired from
 selling a product; the \textit{cost}, the amount of money it takes to
 produce an item; and the \textit{profit}, the revenue minus the cost.
 \begin{align*}
@@ -105,7 +142,7 @@ p(x) &= r(x)-c(x) = \text{the profit from selling $x$ items}.
 \end{align*}
 The rate of change in these functions is denoted by the word \textit{marginal}, hence 
 \begin{align*}
-\dd[r]{x} &= \text{the marginal revnue, how the revnue is changing.}\\
+\dd[r]{x} &= \text{the marginal revenue, how the revenue is changing.}\\
 \dd[c]{x} &= \text{the marginal cost, how the cost is changing.}
 \end{align*}
 
