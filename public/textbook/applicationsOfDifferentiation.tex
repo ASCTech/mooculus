@@ -30,34 +30,35 @@ interval $[a, a+\Delta x]$ is given by
             every axis x label/.style={at=(current axis.right of origin),anchor=west},
           ]                  
           
-          \addplot[mark=none,penColor,very thick] coordinates { (0,0)
-            (0.5, 23.)  (1.5, 72.)  (2.5, 145.)  (3.5, 193.)  (4.5,
-            230.)  (5.5, 294.)  (6.5, 326.)  (7.5, 380.)  (8.5, 423.)
-            (9.5, 461.)  (10.5, 532.)  (11.5, 563.)  (12.,600.)  };
+          \addplot[mark=none,penColor,very thick] coordinates { 
+
+            (0,0) (1.5, 50.)  (4.5, 270)  (6.5, 270.) (10.5, 540.)  (12.,600.)        
+          };
         \end{axis}
 \end{tikzpicture}
-\caption{Here we see a plot of the distance traveled on a 600 mile road trip.}
+\caption{Here we see a plot of the distance traveled on a $600$ mile road trip.}
 \label{figure:road-trip}
 \end{marginfigure}
 
 \begin{example}
-Suppose you drive a car 600 mile road trip. Your distance from home is
+Suppose you drive a car $600$ mile road trip. Your distance from home is
 recorded by the plot shown in Figure~\ref{figure:road-trip}. What was
-your average velocity during hours 4--8 of your trip?
+your average velocity during hours $4$--$8$ of your trip?
 \end{example}
 
 \begin{solution}
 Examining Figure~\ref{figure:road-trip}, we see that we were around
-200 miles from home at hour 4, and 400 miles from home at hour 8. Hence our average velocity was 
+$240$ miles from home at hour $4$, and $360$ miles from home at hour
+$8$. Hence our average velocity was
 \[
-\frac{400-210}{8-4} = \frac{190}{4} = 47.5 \text{ miles per hour.}
+\frac{360-240}{8-4} = \frac{120}{4} = 30~\text{miles per hour.}
 \]
 \end{solution}
 
 Of course if you look at Figure~\ref{figure:road-trip} closely, you
-see that sometime we were driving faster than 50 miles per hour, and
-other times we were driving slower. To get more information, we need
-to know the \textit{instantaneous rate of change}.
+see that sometime we were driving faster and other times we were
+driving slower. To get more information, we need to know the
+\textit{instantaneous rate of change}.
 
 \begin{definition}\index{instantaneous rate of change}
 Given a function, the \textbf{instantaneous rate of change} at $x=a$ is given by
@@ -70,22 +71,33 @@ Given a function, the \textbf{instantaneous rate of change} at $x=a$ is given by
 Again suppose, you drive a car 600 mile road trip. Your distance from
 home is recorded by the plot shown in
 Figure~\ref{figure:road-trip}. What was your instantaneous velocity
-7.5 hours into your trip?
+$8$ hours into your trip?
 \end{example}
 \begin{solution}
 Since the instantaneous rate of change is measured by the derivative,
-we need to find the slope of the tangent line to the curve. At 7
-hours, the curve is growing at an essentially constant rate, it looks
-like around 50 miles per hour.
+we need to find the slope of the tangent line to the curve. At $7$
+hours, the curve is growing at an essentially constant rate. In fact,
+the growth rate seems to be constant from $(7,300)$ to
+$(10,500)$. This gives us an instantaneous growth rate at hour $8$ of
+about $200/3 = 67$ miles per hour.
 \end{solution}
 
-Now let's see some real examples of this in action.
+
 
 
 \subsection*{Physical Applications}
 
-distance vs displacement
-speed vs velocity
+In physical applications, we are often concerned about
+\textit{position}, \textit{velocity}, \textit{speed},
+\textit{acceleration}.
+\begin{align*}
+p(t) &= \text{position with respect to time.}\\
+v(t) &= p'(t) = \text{velocity with respect to time.}\\
+s(t) &= |v(t)| = \text{speed, the absolute value of velocity.}\\
+a(t) &=v'(t) = \text{acceleration with respect to time.}
+\end{align*}
+
+Let's see an example.
 
 \begin{example}
 The Mostar bridge in Bosnia is 25 meters above the river
@@ -121,12 +133,62 @@ so your instantaneous velocity is approximately $-9.8\cdot 2.26\approx
 
 Finally, your average velocity is given by
 \[
-\frac{p'(2.26) -p'(0)}{2.26} \approx \frac{-22}{2.26} = -9.7.
+\frac{p'(2.26) -p'(0)}{2.26} \approx \frac{-22}{2.26} =
+-9.7~\text{meters per second}
 \]
 \end{solution}
 
+
+Sometimes we are also interested in \textit{angular velocity}. If an
+object is moving past you, you can measure how the angle between you, the object and the FIX
+
+\begin{example}
+The Earth make a complete rotation on its axis every 24 hours. If the
+Earth is approximately 4000 miles, what is the velocity of someone
+standing at $42^\circ$ latitude? What is their angular velocity?
+\end{example}
+
+\begin{solution}
+Since the Earth spins once every 24 hours, its angular velocity is $\frac{2\pi}{24}$
+\end{solution}
+
+
+
+
 \subsection*{Biological Applications}
 
+In biological applications, we are often concerned with how animals
+and plants grow, though there are numerous other applications too.
+
+\begin{example}
+A certain bacterium divides into two cells every 20 minutes. The
+initial population of a culture is 120 cells. Find a formula for the
+population.  What is the average growth rate during the first 4 hours?
+What is the instanteauosu growth rate of the population at 4 hours?
+What rate is the population growing at 20 hours?
+\end{example}
+
+
+\begin{solution}
+Since we start with 120 cells, and this population doubles every 20
+minutes, the the population doubles three times an hour. So the
+formula for the population is
+\[
+p(t) = 120\cdot 2^{3t}
+\]
+where $t$ is time measured in hours.
+
+Now, the average growth rate during the first 4 hours is given by
+\[
+\frac{p(4)-p(0)}{4} =\frac{491520-120}{4} = 122850~\text{cells per hour.}
+\]
+
+We comput the instantaneous growth rate of the population with
+\[
+p'(t) = \ln(2)\cdot 360\cdot 2^{3t}.
+\]
+So $p'(4) \approx  1022087$ cells per hour.
+\end{solution}
 
 
 \subsection*{Economic Applications}
@@ -265,6 +327,12 @@ plugging in all the known values (namely, $x$, $y$, and $\ds \dot{x}$), and
 then solving for $\ds \dot{y}$.
 
 To summarize, here are the steps in doing a related rates problem:
+
+
+\begin{verbatim}
+http://mathoverflow.net/questions/83097/are-there-any-related-rates-calculus-problems-that-dont-feel-contrived
+\end{verbatim}
+
 
 \begin{itemize} % BADBAD
 
