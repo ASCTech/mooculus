@@ -1012,6 +1012,9 @@ var MathFunction = (function () {
 	string = string.replace( /\^([0-9])/g, "^{$1}" )
 	// things like \cdot2 confuses my tokenizer
 	string = string.replace( /([^0-9])([0-9])/g, "$1 $2" )
+	// mathquill inserts space after periods
+	string = string.replace( /\. ([0-9])/g, ".$1" )
+	string = string.replace( /, ([0-9])/g, ",$1" )
 	return new StraightLineProgram( latexFunctionParser.parse(string) );
     };
 
