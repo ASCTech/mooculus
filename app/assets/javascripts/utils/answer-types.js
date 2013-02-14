@@ -1407,6 +1407,8 @@ Khan.answerTypes = $.extend(Khan.answerTypes, {
 
 	    $(input_box).append('<div class="MathPreview" style="width:100%;"><script type="math/tex"></script></div>');
 	    $(input_box).append('<div class="MathFunctionError" style="display: none; font-weight: bold; color: red;">Error: the expression is invalid.</div>');
+	    $(input_box).append('<div class="MathFunctionErrorForgetBackslash" style="display: none; font-weight: bold; color: red;">Warning: make sure that you use backslashes before functions!</div>');
+
 	    var old_input_box = $('<div class="tab-pane parsed-expression-answer-type" id="plaintext' + this.parsedExpressionId + '"></div>');
 	    $(tabcontent).append(old_input_box);
 
