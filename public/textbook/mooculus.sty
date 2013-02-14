@@ -175,8 +175,22 @@
 \renewcommand{\l}{\ell}
 \newcommand{\ddx}{\frac{d}{dx}}
 \newcommand{\dydx}{\frac{dy}{dx}}
-\newcommand{\dd}[1]{\frac{d}{d #1}}
+
+%\newcommand{\dd}[1]{\frac{d}{d #1}}
+\def\dd{\@ifnextchar[{\@with}{\@without}}
+\def\@with[#1]#2{\frac{d #1}{d #2}}
+\def\@without#1{\frac{d}{d #1}}
+
 \newcommand{\R}{\mathbb{R}}
+\DeclareMathOperator{\arccot}{arccot}
+\DeclareMathOperator{\arcsec}{arcsec}
+\DeclareMathOperator{\arccsc}{arccsc}
+\DeclareMathOperator{\sech}{sech}
+\DeclareMathOperator{\csch}{csch}
+\DeclareMathOperator{\arcsinh}{arcsinh}
+\DeclareMathOperator{\arcsech}{arcsech}
+\DeclareMathOperator{\arccosh}{arccosh}
+
 %\DeclareMathOperator*\plim{lim}
 %\renewcommand{\lim}{\displaystyle\plim} if we really want all limits display style
 \everymath{\displaystyle}

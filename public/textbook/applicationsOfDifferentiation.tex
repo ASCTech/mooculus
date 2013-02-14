@@ -2,12 +2,183 @@
 
 \section{The Derivative as a Rate}
 
+The world is constantly changing around us. To simplify matters we
+will only consider change in one dimension. This means that if we
+think of a ball being tossed in the air, we will consider its vertical
+movement separately from its lateral and forward movement.  To
+understand how things change, we need to understand the \textit{rate}
+of change. Let's start out rather basic.
+
+\begin{definition}\index{average rate of change}
+Given a function $f(x)$, the \textbf{average rate of change} over the
+interval $[a, a+\Delta x]$ is given by
+\[
+\frac{f(a+\Delta x) - f(a)}{\Delta x}.
+\]
+\end{definition}
+\begin{marginfigure}
+\begin{tikzpicture}
+	\begin{axis}[
+            xmin=0,xmax=12,ymin=0,ymax=600,
+            axis lines=center,
+            ytick={100,200,300,400,500,600},
+            xtick={1,...,12},
+            grid=both,
+            grid style={dashed, gridColor},
+            xlabel=$t$, ylabel=$d$,
+            every axis y label/.style={at=(current axis.above origin),anchor=south},
+            every axis x label/.style={at=(current axis.right of origin),anchor=west},
+          ]                  
+          
+          \addplot[mark=none,penColor,very thick] coordinates { (0,0)
+            (0.5, 23.)  (1.5, 72.)  (2.5, 145.)  (3.5, 193.)  (4.5,
+            230.)  (5.5, 294.)  (6.5, 326.)  (7.5, 380.)  (8.5, 423.)
+            (9.5, 461.)  (10.5, 532.)  (11.5, 563.)  (12.,600.)  };
+        \end{axis}
+\end{tikzpicture}
+\caption{Here we see a plot of the distance traveled on a 600 mile road trip.}
+\label{figure:road-trip}
+\end{marginfigure}
+
+\begin{example}
+Suppose you drive a car 600 mile road trip. Your distance from home is
+recorded by the plot shown in Figure~\ref{figure:road-trip}. What was
+your average velocity during hours 4--8 of your trip?
+\end{example}
+
+\begin{solution}
+Examining Figure~\ref{figure:road-trip}, we see that we were around
+200 miles from home at hour 4, and 400 miles from home at hour 8. Hence our average velocity was 
+\[
+\frac{400-210}{8-4} = \frac{190}{4} = 47.5 \text{ miles per hour.}
+\]
+\end{solution}
+
+Of course if you look at Figure~\ref{figure:road-trip} closely, you
+see that sometime we were driving faster than 50 miles per hour, and
+other times we were driving slower. To get more information, we need
+to know the \textit{instantaneous rate of change}.
+
+\begin{definition}\index{instantaneous rate of change}
+Given a function, the \textbf{instantaneous rate of change} at $x=a$ is given by
+\[
+\left.\ddx f(x) \right|_{x=a}.
+\] 
+\end{definition}
+
+\begin{example} 
+Again suppose, you drive a car 600 mile road trip. Your distance from
+home is recorded by the plot shown in
+Figure~\ref{figure:road-trip}. What was your instantaneous velocity
+7.5 hours into your trip?
+\end{example}
+\begin{solution}
+Since the instantaneous rate of change is measured by the derivative,
+we need to find the slope of the tangent line to the curve. At 7
+hours, the curve is growing at an essentially constant rate, it looks
+like around 50 miles per hour.
+\end{solution}
+
+Now let's see some real examples of this in action.
+
+
+\subsection*{Physical Applications}
+
+distance vs displacement
+speed vs velocity
+
+
+\subsection*{Biological Applications}
 
 
 
+\subsection*{Economic Applications}
+
+There are three main players when dealing with very basic economic
+questions: The \textit{revenue}, the amount of money aquired from
+selling a product; the \textit{cost}, the amount of money it takes to
+produce an item; and the \textit{profit}, the revenue minus the cost.
+\begin{align*}
+r(x) &= \text{revenue from selling $x$ items.}\\
+c(x) &= \text{cost of producing $x$ items.}\\
+p(x) &= r(x)-c(x) = \text{the profit from selling $x$ items}.
+\end{align*}
+The rate of change in these functions is denoted by the word \textit{marginal}, hence 
+\begin{align*}
+\dd[r]{x} &= \text{the marginal revnue, how the revnue is changing.}\\
+\dd[c]{x} &= \text{the marginal cost, how the cost is changing.}
+\end{align*}
+
+\begin{exercises}
+
+\noindent Exercises related to physical applications:
+
+\begin{exercise}
+1
+\begin{answer}
+\end{answer}
+\end{exercise}
+
+\begin{exercise}
+2
+\begin{answer}
+\end{answer}
+\end{exercise}
+
+\begin{exercise}
+3
+\begin{answer}
+\end{answer}
+\end{exercise}
+
+\begin{exercise}
+4
+\begin{answer}
+\end{answer}
+\end{exercise}
+
+\noindent Exercises related to biological applications:
+
+\begin{exercise}
+5
+\begin{answer}
+\end{answer}
+\end{exercise}
+
+\begin{exercise}
+6
+\begin{answer}
+\end{answer}
+\end{exercise}
+
+\begin{exercise}
+7
+\begin{answer}
+\end{answer}
+\end{exercise}
 
 
+\noindent Exercises related to economic applications:
 
+\begin{exercise}
+8
+\begin{answer}
+\end{answer}
+\end{exercise}
+
+\begin{exercise}
+9
+\begin{answer}
+\end{answer}
+\end{exercise}
+
+\begin{exercise}
+10
+\begin{answer}
+\end{answer}
+\end{exercise}
+
+\end{exercises}
 
 
 
@@ -726,3 +897,341 @@ cm/sec) at which the paper is being cut.
 
 
 \section{l'H\^{o}pital's Rule}
+
+
+Now consider this limit:
+$$\lim_{x\to \pi}{x^2-\pi^2\over \sin x}.$$
+As $x$ approaches $\pi$, both the numerator and denominator approach
+zero, so it is not obvious what, if anything, the quotient
+approaches. We can often compute such limits by application of the
+following theorem.
+
+\begin{theorem} (L'H\^opital's Rule) For ``sufficiently nice'' functions $f(x)$
+and $g(x)$, if $\ds\lim_{x\to a} f(x)= 0 = \lim_{x\to a}
+g(x)$ or $\ds\lim_{x\to a} f(x)= \pm\infty = \lim_{x\to a}
+g(x)$, and if $\ds\lim_{x\to a}{f'(x)\over g'(x)}$ exists,
+then $\ds\lim_{x\to a}{f(x)\over g(x)}=\lim_{x\to
+a}{f'(x)\over g'(x)}$.  This remains true if ``$x\to a$'' is replaced
+by ``$x\to \infty$'' or ``$x\to -\infty$''.
+\end{theorem}
+\index{L'H\^opital's Rule}
+
+This theorem is somewhat difficult to prove, in part because it
+incorporates so many different possibilities, so we will not prove it
+here. We also will not need to worry about the precise definition of 
+``sufficiently nice'', as the functions we encounter will be
+suitable. 
+
+%% fixme: do plausibility argument with tan lines at x=a?
+
+\begin{example}
+Compute $\ds\lim_{x\to \pi}{x^2-\pi^2\over \sin x}$ in two ways.
+\msk
+First we use L'H\^opital's Rule: Since the numerator and denominator
+both approach zero,
+$$\lim_{x\to \pi}{x^2-\pi^2\over \sin x}=
+\lim_{x\to \pi}{2x \over \cos x},$$
+provided the latter exists. But in fact this is an easy limit, since
+the denominator now approaches $-1$, so 
+$$\lim_{x\to \pi}{x^2-\pi^2\over \sin x}={2\pi\over -1} = -2\pi.$$
+
+We don't really need L'H\^opital's Rule to do this limit. Rewrite it
+as 
+$$\lim_{x\to \pi}(x+\pi){x-\pi\over \sin x}$$
+and note that 
+$$\lim_{x\to \pi}{x-\pi\over \sin x}=
+\lim_{x\to \pi}{x-\pi\over -\sin (x-\pi)}=
+\lim_{x\to 0}-{x\over \sin x}$$
+since $x-\pi$ approaches zero as $x$ approaches $\pi$.
+Now
+$$\lim_{x\to \pi}(x+\pi){x-\pi\over \sin x}=
+\lim_{x\to \pi}(x+\pi)\lim_{x\to 0}-{x\over \sin x}=
+2\pi(-1)=-2\pi$$
+as before.
+\end{example}
+
+\begin{example} Compute $\ds\lim_{x\to \infty}{2x^2-3x+7\over
+x^2+47x+1}$ in two ways.
+\msk
+As $x$ goes to infinity both the numerator and denominator go to
+infinity, so we may apply L'H\^opital's Rule:
+$$\lim_{x\to \infty}{2x^2-3x+7\over x^2+47x+1}=
+\lim_{x\to \infty}{4x-3\over 2x+47}.$$
+In the second quotient, it is still the case that the numerator and
+denominator both go to infinity, so we are allowed to use
+L'H\^opital's Rule again:
+$$\lim_{x\to \infty}{4x-3\over 2x+47}=\lim_{x\to \infty}{4\over 2}=2.$$
+So the original limit is 2 as well.
+
+Again, we don't really need L'H\^opital's Rule, and in fact a more
+elementary approach is easier---we divide the numerator and
+denominator by $\ds x^2$:
+$$\lim_{x\to \infty}{2x^2-3x+7\over x^2+47x+1}=
+\lim_{x\to \infty}{2x^2-3x+7\over x^2+47x+1}{{1\over x^2}\over {1\over
+    x^2}}=
+\lim_{x\to \infty}{2-{3\over x}+{7\over x^2}\over
+1+{47\over x}+{1\over x^2}}.$$
+Now as $x$ approaches infinity, all the quotients with some power of
+$x$ in the denominator approach zero, leaving 2 in the numerator and 1
+in the denominator, so the limit again is 2.
+\end{example}
+
+\begin{example} Compute $\ds\lim_{x\to 0}{\sec x - 1\over \sin x}$.
+\msk
+Both the numerator and denominator approach zero, so applying 
+L'H\^opital's Rule:
+$$\lim_{x\to 0}{\sec x - 1\over \sin x}=
+\lim_{x\to 0}{\sec x\tan x\over \cos x}={1\cdot 0\over 1}=0.$$
+\vskip -16pt
+\end{example}
+
+\begin{example} Compute $\ds\lim_{x\to 0^+} x\ln x$.
+
+This doesn't appear to be suitable for L'H\^opital's Rule, but it also
+is not ``obvious''. As $x$ approaches zero, $\ln x$ goes to $-\infty$,
+so the product looks like $(\hbox{something very small})\cdot 
+(\hbox{something very large and negative})$. But this could be
+anything: it depends on {\it how small\/} and {\it how large}. 
+For example, consider $\ds (x^2)(1/x)$, $(x)(1/x)$, and $\ds (x)(1/x^2)$. As
+$x$ approaches zero, each of these is $(\hbox{something very small})\cdot 
+(\hbox{something very large})$, yet the limits are respectively 
+zero, $1$, and $\infty$.
+
+We can
+in fact turn this into a L'H\^opital's Rule problem:
+$$x\ln x = {\ln x\over 1/x}={\ln x\over x^{-1}}.$$
+Now as $x$ approaches zero, both the numerator and denominator
+approach infinity (one $-\infty$ and one $+\infty$, but only the size
+is important). Using  L'H\^opital's Rule:
+$$\lim_{x\to 0^+} {\ln x\over x^{-1}}=
+\lim_{x\to 0^+} {1/x\over -x^{-2}} =\lim_{x\to 0^+} {1\over x}(-x^2)=
+\lim_{x\to 0^+} -x = 0.$$
+One way to interpret this is that since $\ds\lim_{x\to
+  0^+}x\ln x = 0$, the $x$ approaches zero much faster than the $\ln x$
+approaches $-\infty$.
+\end{example}
+
+% Most from Keisler
+\begin{exercises}
+
+Compute the limits.
+
+\twocol
+
+\begin{exercise} $\ds\lim_{x\to 0} {\cos x -1\over \sin x}$
+\begin{answer} $0$
+\end{answer}\end{exercise}
+
+\begin{exercise} $\ds\lim_{x\to \infty} {e^x\over x^3}$
+\begin{answer} $\infty$
+\end{answer}\end{exercise}
+
+\begin{exercise} $\ds\lim_{x\to \infty} \sqrt{x^2+x}-\sqrt{x^2-x}$
+\begin{answer} $1$
+\end{answer}\end{exercise}
+
+\begin{exercise} $\ds\lim_{x\to \infty} {\ln x\over x}$
+\begin{answer} $0$
+\end{answer}\end{exercise}
+
+\begin{exercise} $\ds\lim_{x\to \infty} {\ln x\over \sqrt{x}}$
+\begin{answer} $0$
+\end{answer}\end{exercise}
+
+\begin{exercise} $\ds\lim_{x\to\infty} {e^x + e^{-x}\over e^x -e^{-x}}$
+\begin{answer} 1
+\end{answer}\end{exercise}
+
+\begin{exercise} $\ds\lim_{x\to0}{\sqrt{9+x}-3\over x}$
+\begin{answer} $1/6$
+\end{answer}\end{exercise}
+
+\begin{exercise} $\ds\lim_{t\to1^+}{(1/t)-1\over t^2-2t+1}$
+\begin{answer} $-\infty$
+\end{answer}\end{exercise}
+
+\begin{exercise} $\ds\lim_{x\to2}{2-\sqrt{x+2}\over 4-x^2}$
+\begin{answer} $1/16$
+\end{answer}\end{exercise}
+
+\begin{exercise} $\ds\lim_{t\to\infty}{t+5-2/t-1/t^3\over 3t+12-1/t^2}$
+\begin{answer} $1/3$
+\end{answer}\end{exercise}
+
+\begin{exercise} $\ds\lim_{y\to\infty}{\sqrt{y+1}+\sqrt{y-1}\over y}$
+\begin{answer} $0$
+\end{answer}\end{exercise}
+
+\begin{exercise} $\ds\lim_{x\to1}{\sqrt{x}-1\over \root 1/3\of{x}-1}$
+\begin{answer} $3/2$
+\end{answer}\end{exercise}
+
+\begin{exercise} $\ds\lim_{x\to0}{(1-x)^{1/4}-1\over x}$
+\begin{answer} $-1/4$
+\end{answer}\end{exercise}
+
+\begin{exercise} $\ds\lim_{t\to 0}{\left(t+{1\over t}\right)((4-t)^{3/2}-8)}$
+\begin{answer} $-3$
+\end{answer}\end{exercise}
+
+\begin{exercise} $\ds\lim_{t\to 0^+}\left({1\over t}+{1\over\sqrt{t}}\right)
+(\sqrt{t+1}-1)$
+\begin{answer} $1/2$
+\end{answer}\end{exercise}
+
+\begin{exercise} $\ds\lim_{x\to 0}{x^2\over\sqrt{2x+1}-1}$
+\begin{answer} $0$
+\end{answer}\end{exercise}
+
+\begin{exercise} $\ds\lim_{u\to 1}{(u-1)^3\over (1/u)-u^2+3/u-3}$
+\begin{answer} $-1$
+\end{answer}\end{exercise}
+
+\begin{exercise} $\ds\lim_{x\to 0}{2+(1/x)\over 3-(2/x)}$
+\begin{answer} $-1/2$
+\end{answer}\end{exercise}
+
+\begin{exercise} $\ds\lim_{x\to 0^+}{1+5/\sqrt{x}\over 2+1/\sqrt{x}}$
+\begin{answer} $5$
+\end{answer}\end{exercise}
+
+\begin{exercise} $\ds\lim_{x\to 0^+}{3+x^{-1/2}+x^{-1}\over 2+4x^{-1/2}}$
+\begin{answer} $\infty$
+\end{answer}\end{exercise}
+
+\begin{exercise} $\ds\lim_{x\to\infty}{x+x^{1/2}+x^{1/3}\over x^{2/3}+x^{1/4}}$
+\begin{answer} $\infty$
+\end{answer}\end{exercise}
+
+\begin{exercise} $\ds\lim_{t\to\infty}
+{1-\sqrt{t\over t+1}\over 2-\sqrt{4t+1\over t+2}}$
+\begin{answer} $2/7$
+\end{answer}\end{exercise}
+
+\begin{exercise} $\ds\lim_{t\to\infty}{1-{t\over t-1}\over 1-\sqrt{t\over t-1}}$
+\begin{answer} $2$
+\end{answer}\end{exercise}
+
+\begin{exercise} $\ds\lim_{x\to-\infty}{x+x^{-1}\over 1+\sqrt{1-x}}$
+\begin{answer} $-\infty$
+\end{answer}\end{exercise}
+
+\begin{exercise} $\ds\lim_{x\to1}{\int_1^x 1/t\,dt\over\int_1^x 1/(2t+1)\,dt}$
+\begin{answer} $3$
+\end{answer}\end{exercise}
+
+\begin{exercise} $\ds\lim_{x\to\infty}{\int_1^x\sqrt{t+(1/t)}\,dt\over x\sqrt{x}}$
+\begin{answer} $2/3$
+\end{answer}\end{exercise}
+
+\begin{exercise} $\ds\lim_{x\to\pi/2}{\cos x\over (\pi/2)-x}$
+\begin{answer} $1$
+\end{answer}\end{exercise}
+
+\begin{exercise} $\ds\lim_{x\to0}{e^x-1\over x}$
+\begin{answer} $1$
+\end{answer}\end{exercise}
+
+\begin{exercise} $\ds\lim_{x\to0}{x^2\over e^x-x-1}$
+\begin{answer} $2$
+\end{answer}\end{exercise}
+
+\begin{exercise} $\ds\lim_{x\to1}{\ln x\over x-1}$
+\begin{answer} $1$
+\end{answer}\end{exercise}
+
+\begin{exercise} $\ds\lim_{x\to0}{\ln(x^2+1)\over x}$
+\begin{answer} $0$
+\end{answer}\end{exercise}
+
+\begin{exercise} $\ds\lim_{x\to1}{x\ln x\over x^2-1}$
+\begin{answer} $1/2$
+\end{answer}\end{exercise}
+
+\begin{exercise} $\ds\lim_{x\to0}{\sin(2x)\over\ln(x+1)}$
+\begin{answer} $2$
+\end{answer}\end{exercise}
+
+\begin{exercise} $\ds\lim_{x\to1}{x^{1/4}-1\over x}$
+\begin{answer} $0$
+\end{answer}\end{exercise}
+
+\begin{exercise} $\ds\lim_{x\to1^+}{\sqrt{x}\over x-1}$
+\begin{answer} $\infty$
+\end{answer}\end{exercise}
+
+\begin{exercise} $\ds\lim_{x\to1}{\sqrt{x}-1\over x-1}$
+\begin{answer} $1/2$
+\end{answer}\end{exercise}
+
+\begin{exercise} $\ds\lim_{x\to\infty}{x^{-1}+x^{-1/2}\over x+x^{-1/2}}$
+\begin{answer} $0$
+\end{answer}\end{exercise}
+
+\begin{exercise} $\ds\lim_{x\to\infty}{x+x^{-2}\over 2x+x^{-2}}$
+\begin{answer} $1/2$
+\end{answer}\end{exercise}
+
+\begin{exercise} $\ds\lim_{x\to\infty}{5+x^{-1}\over 1+2x^{-1}}$
+\begin{answer} $5$
+\end{answer}\end{exercise}
+
+\begin{exercise} $\ds\lim_{x\to\infty}{4x\over\sqrt{2x^2+1}}$
+\begin{answer} $\ds 2\sqrt2$
+\end{answer}\end{exercise}
+
+\begin{exercise} $\ds\lim_{x\to0}{3x^2+x+2\over x-4}$
+\begin{answer} $-1/2$
+\end{answer}\end{exercise}
+
+\begin{exercise} $\ds\lim_{x\to0}{\sqrt{x+1}-1\over \sqrt{x+4}-2}$
+\begin{answer} $2$
+\end{answer}\end{exercise}
+
+\begin{exercise} $\ds\lim_{x\to0}{\sqrt{x+1}-1\over \sqrt{x+2}-2}$
+\begin{answer} $0$
+\end{answer}\end{exercise}
+
+\begin{exercise} $\ds\lim_{x\to0^+}{\sqrt{x+1}+1\over\sqrt{x+1}-1}$
+\begin{answer} $\infty$
+\end{answer}\end{exercise}
+
+\begin{exercise} $\ds\lim_{x\to0}{\sqrt{x^2+1}-1\over\sqrt{x+1}-1}$
+\begin{answer} $0$
+\end{answer}\end{exercise}
+
+\begin{exercise} $\ds\lim_{x\to\infty}{(x+5)\left({1\over 2x}+{1\over x+2}\right)}$
+\begin{answer} $3/2$
+\end{answer}\end{exercise}
+
+\begin{exercise} $\ds\lim_{x\to0^+}{(x+5)\left({1\over 2x}+{1\over x+2}\right)}$
+\begin{answer} $\infty$
+\end{answer}\end{exercise}
+
+\begin{exercise} $\ds\lim_{x\to1}{(x+5)\left({1\over 2x}+{1\over x+2}\right)}$
+\begin{answer} $5$
+\end{answer}\end{exercise}
+
+\begin{exercise} $\ds\lim_{x\to2}{x^3-6x-2\over x^3+4}$
+\begin{answer} $-1/2$
+\end{answer}\end{exercise}
+
+\begin{exercise} $\ds\lim_{x\to2}{x^3-6x-2\over x^3-4x}$
+\begin{answer} does not exist
+\end{answer}\end{exercise}
+
+\begin{exercise} $\ds\lim_{x\to1+}{x^3+4x+8\over 2x^3-2}$
+\begin{answer} $\infty$
+\end{answer}\end{exercise}
+
+\endtwocol
+
+\msk
+\begin{exercise} The function $\ds f(x) = {x\over\sqrt{x^2+1}}$ has two horizontal
+ asymptotes.  Find them and give a rough sketch of $f$ with its horizontal
+ asymptotes. 
+\begin{answer} $y=1$ and $y=-1$
+\end{answer}\end{exercise}
+
+\end{exercises}
+
