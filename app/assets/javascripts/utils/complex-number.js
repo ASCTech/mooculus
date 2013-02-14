@@ -132,7 +132,7 @@ ComplexNumber.prototype = {
     },
 
     log: function() {
-	var this_modulus = Math.log(Math.sqrt( this.real * this.real + this_imag * this_imag ));
+	var this_modulus = Math.log(Math.sqrt( this.real * this.real + this.imaginary * this.imaginary ));
 	var this_argument = Math.atan2( this.imaginary, this.real );
 
 	return new ComplexNumber( this_modulus, this_argument );
@@ -162,6 +162,10 @@ ComplexNumber.prototype = {
 
 	return new ComplexNumber( (Math.exp( this_new_log_modulus ) * Math.cos( this_new_argument )),
 				  (Math.exp( this_new_log_modulus ) * Math.sin( this_new_argument )) );
+    },
+
+    sqrt: function() {
+	return this.power( new ComplexNumber(0.5,0) );
     },
 
     divide: function(other) {
@@ -201,13 +205,13 @@ ComplexNumber.prototype = {
 	var i = new ComplexNumber(0,1);
 	var one = new ComplexNumber(1,0);
 
-	return (i.multiply( this ).sum(  one.minus( this.multiply( this ) ) )).log().multiply( minus_i );
+	return ((i.multiply( this )).sum(  one.subtract( this.multiply( this ) ).sqrt() )).log().multiply( minus_i );
     },
 
     arccos: function() {
 	var half_pi = new ComplexNumber( Math.PI / 2, 0 );
 
-	return half_pi.minus( this.arcsin() );
+	return half_pi.subtract( this.arcsin() );
     },
 
     arctan: function() {
@@ -216,7 +220,7 @@ ComplexNumber.prototype = {
 	var half_i = new ComplexNumber(0,0.5);
 	var one = new ComplexNumber(1,0);
 	
-	return (one.minus( i.multiply( this ) ).log()).minus( 
+	return (one.subtract( i.multiply( this ) ).log()).subtract( 
 	    one.sum( i.multiply( this ) ).log()
 	).multiply( half_i );
     },
