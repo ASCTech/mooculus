@@ -428,7 +428,23 @@ var MathFunction = (function () {
 	
 	var operator = tree[0];
 	var operands = tree.slice(1);
-	
+
+	// Display trig functions in a more reasonable format
+	if (operator === "^") {
+	    if (operands[0][0] === "sin")
+		return "\\sin^{" + latex_ast(operands[1]) + "}" + "\\left(" + operands[0][1] + "\\right)";
+	    if (operands[0][0] === "cos")
+		return "\\cos^{" + latex_ast(operands[1]) + "}" + "\\left(" + operands[0][1] + "\\right)";
+	    if (operands[0][0] === "tan")
+		return "\\tan^{" + latex_ast(operands[1]) + "}" + "\\left(" + operands[0][1] + "\\right)";
+	    if (operands[0][0] === "sec")
+		return "\\sec^{" + latex_ast(operands[1]) + "}" + "\\left(" + operands[0][1] + "\\right)";
+	    if (operands[0][0] === "csc")
+		return "\\csc^{" + latex_ast(operands[1]) + "}" + "\\left(" + operands[0][1] + "\\right)";
+	    if (operands[0][0] === "cot")
+		return "\\cot^{" + latex_ast(operands[1]) + "}" + "\\left(" + operands[0][1] + "\\right)";
+	}
+
 	if (operator in math_functions) {
 	    return "{" + latex_functions[operator]( $.map( operands, function(v,i) { return latex_ast(v); } ) ) + "}";
 	}

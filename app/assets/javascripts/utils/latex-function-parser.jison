@@ -28,12 +28,19 @@
 "\\pi"                  return 'PI'
 "\\frac"                return 'FRAC'
 "\\pi"                  return 'PI'
+"\\sin"\^                 return 'SIN_POWER'
+"\\cos"\^                 return 'COS_POWER'
+"\\tan"\^                 return 'TAN_POWER'
+"\\csc"\^                 return 'CSC_POWER'
+"\\sec"\^                 return 'SEC_POWER'
+"\\cot"\^                 return 'COT_POWER'
 "\\sin"                 return 'SIN'
 "\\cos"                 return 'COS'
 "\\tan"                 return 'TAN'
 "\\csc"                 return 'CSC'
 "\\sec"                 return 'SEC'
 "\\cot"                 return 'COT'
+
 "\\arcsin"              return 'ARCSIN'
 "\\arccos"              return 'ARCCOS'
 "\\arctan"              return 'ARCTAN'
@@ -63,6 +70,11 @@
 
 %% /* language grammar */
 
+number
+    : NUMBER {$$ = parseFloat(yytext.replace(',','.'));}
+    | '{' number '}' {$$ = $2;}
+;
+
 expressions
     : e EOF
         { return $1; }
@@ -71,8 +83,8 @@ expressions
     ;
 
 term
-    : NUMBER
-        {$$ = parseFloat(yytext.replace(',','.'));}
+    : number 
+        { $$ = $1; }
     | VARIABLE
         {$$ = yytext;}
     | E
@@ -94,6 +106,21 @@ term
         {$$ = ['^', 'e', $2]; }
     | LOG term %prec FUNCTION_APPLICATION
         {$$ = ['log', $2]; }
+
+    // FIXME: should handle inverse trig functions at this level
+    | SIN_POWER term term %prec FUNCTION_APPLICATION
+        {$$ = ['^', ['sin', $3], $2]; }
+    | COS_POWER term term %prec FUNCTION_APPLICATION
+        {$$ = ['^', ['cos', $3], $2]; }
+    | TAN_POWER term term %prec FUNCTION_APPLICATION
+        {$$ = ['^', ['tan', $3], $2]; }
+    | SEC_POWER term term %prec FUNCTION_APPLICATION
+        {$$ = ['^', ['sec', $3], $2]; }
+    | CSC_POWER term term %prec FUNCTION_APPLICATION
+        {$$ = ['^', ['csc', $3], $2]; }
+    | COT_POWER term term %prec FUNCTION_APPLICATION
+        {$$ = ['^', ['cot', $3], $2]; }
+
     | SIN term %prec FUNCTION_APPLICATION
         {$$ = ['sin', $2]; }
     | COS term %prec FUNCTION_APPLICATION
