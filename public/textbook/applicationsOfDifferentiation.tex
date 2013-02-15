@@ -79,7 +79,7 @@ we need to find the slope of the tangent line to the curve. At $7$
 hours, the curve is growing at an essentially constant rate. In fact,
 the growth rate seems to be constant from $(7,300)$ to
 $(10,500)$. This gives us an instantaneous growth rate at hour $8$ of
-about $200/3 = 67$ miles per hour.
+about $200/3 \approx 67$ miles per hour.
 \end{solution}
 
 
@@ -100,7 +100,7 @@ a(t) &=v'(t) = \text{acceleration with respect to time.}
 Let's see an example.
 
 \begin{example}
-The Mostar bridge in Bosnia is 25 meters above the river
+The Mostar bridge in Bosnia is $25$ meters above the river
 Neretva. For fun, you decided to dive off the bridge. Your position
 $t$ seconds after jumping off is
 \[
@@ -109,7 +109,21 @@ p(t) = -4.9t^2 + 25.
 When do you hit the water? What is your instantaneous velocity as you
 enter the water?  What is your average velocity during your dive?
 \end{example}
-
+\begin{marginfigure}
+\begin{tikzpicture}
+	\begin{axis}[
+            xmin=0,xmax=3,ymin=0,ymax=30,
+            axis lines=center,
+            xlabel=$t$, ylabel=$p$,
+            every axis y label/.style={at=(current axis.above origin),anchor=south},
+            every axis x label/.style={at=(current axis.right of origin),anchor=west},
+          ]        
+          \addplot [very thick, penColor,smooth] {-4.9*x^2+25};
+        \end{axis}
+\end{tikzpicture}
+\caption{Here we see a plot of $p(t) = -4.9t^2 + 25$. Note, time is on
+  the $t$-axis and vertical height is on the $p$-axis.}
+\end{marginfigure}
 \begin{solution}
 To find when you hit the water, you must solve
 \[
@@ -121,7 +135,7 @@ Write
 t^2 &\approx 5.1 \\ 
 t &\approx 2.26
 \end{align*}
-Hence after approximately 2.26 seconds, you gracefully enter the
+Hence after approximately $2.26$ seconds, you gracefully enter the
 river.
 
 Your instantaneous velocity is given by $p'(t)$. Write
@@ -139,19 +153,6 @@ Finally, your average velocity is given by
 \end{solution}
 
 
-Sometimes we are also interested in \textit{angular velocity}. If an
-object is moving past you, you can measure how the angle between you, the object and the FIX
-
-\begin{example}
-The Earth make a complete rotation on its axis every 24 hours. If the
-Earth is approximately 4000 miles, what is the velocity of someone
-standing at $42^\circ$ latitude? What is their angular velocity?
-\end{example}
-
-\begin{solution}
-Since the Earth spins once every 24 hours, its angular velocity is $\frac{2\pi}{24}$
-\end{solution}
-
 
 
 
@@ -164,13 +165,28 @@ and plants grow, though there are numerous other applications too.
 A certain bacterium divides into two cells every 20 minutes. The
 initial population of a culture is 120 cells. Find a formula for the
 population.  What is the average growth rate during the first 4 hours?
-What is the instanteauosu growth rate of the population at 4 hours?
+What is the instantaneous growth rate of the population at 4 hours?
 What rate is the population growing at 20 hours?
 \end{example}
+\begin{marginfigure}
+\begin{tikzpicture}
+	\begin{axis}[
+            xmin=0,xmax=5,ymin=0,ymax=1000000,
+            axis lines=center,
+            xlabel=$t$, ylabel=$p$,
+            every axis y label/.style={at=(current axis.above origin),anchor=south},
+            every axis x label/.style={at=(current axis.right of origin),anchor=west},restrict y to domain=0:10000000,
+          ]        
+          \addplot [very thick, penColor, smooth] {120*2^(3*x)};
+        \end{axis}
+\end{tikzpicture}
+\caption{Here we see a plot of $p(t) = 120\cdot 2^{3x}$. Note, time is on
+  the $t$-axis and population is on the $p$-axis.}
+\end{marginfigure}
 
 
 \begin{solution}
-Since we start with 120 cells, and this population doubles every 20
+Since we start with $120$ cells, and this population doubles every $20$
 minutes, the the population doubles three times an hour. So the
 formula for the population is
 \[
@@ -178,16 +194,18 @@ p(t) = 120\cdot 2^{3t}
 \]
 where $t$ is time measured in hours.
 
-Now, the average growth rate during the first 4 hours is given by
+Now, the average growth rate during the first $4$ hours is given by
 \[
 \frac{p(4)-p(0)}{4} =\frac{491520-120}{4} = 122850~\text{cells per hour.}
 \]
 
-We comput the instantaneous growth rate of the population with
+We compute the instantaneous growth rate of the population with
 \[
 p'(t) = \ln(2)\cdot 360\cdot 2^{3t}.
 \]
-So $p'(4) \approx  1022087$ cells per hour.
+So $p'(4) \approx 1022087$ cells per hour. Note how fast $p(t)$ is
+growing, this is why it is important to stop bacterial infections
+fast!
 \end{solution}
 
 
@@ -204,9 +222,56 @@ p(x) &= r(x)-c(x) = \text{the profit from selling $x$ items}.
 \end{align*}
 The rate of change in these functions is denoted by the word \textit{marginal}, hence 
 \begin{align*}
-\dd[r]{x} &= \text{the marginal revenue, how the revenue is changing.}\\
-\dd[c]{x} &= \text{the marginal cost, how the cost is changing.}
+\dd[r]{x} &= \text{the marginal revenue, how the revenue is changing when selling $x$ items.}\\
+\dd[c]{x} &= \text{the marginal cost, how the cost is changing when selling $x$ items.}
 \end{align*}
+
+Let's see an example.
+
+\begin{example}
+A manufacturer sells at the price of \$$40$ each. The cost function for producing $x$ backpacks is
+\[
+c(x) = \frac{2100}{x} + 22x.
+\]
+Express profit as a function of backpacks sold. What is the average
+profit after $10$ items are sold? What is the marginal profit when
+$10$ backpacks are sold?
+\end{example}
+\begin{marginfigure}
+\begin{tikzpicture}
+	\begin{axis}[
+            xmin=1,xmax=30,ymin=-2100,ymax=500,
+            axis lines=center,
+            xlabel=$x$, ylabel=$p$,
+            every axis y label/.style={at=(current axis.above origin),anchor=south},
+            every axis x label/.style={at=(current axis.right of origin),anchor=west},restrict y to domain=-2500:500,
+          ]        
+          \addplot [very thick, penColor,smooth, samples=100,domain=(1:30)] {-2100/x + 18*x};
+        \end{axis}
+\end{tikzpicture}
+\caption{Here we see a plot of $p(x) = 18x - \frac{2100}{x}$. Note,
+  this graph shows that while initial production costs are high (and
+  hence profit is low) but this can be reduced as more backpacks are
+  produced.}
+\end{marginfigure}
+\begin{solution}
+The profit is given by
+\[
+p(x) = r(x) - c(x)  = 40x - \left(\frac{2100}{x} + 22x\right).
+\]
+So the average growth rate of the profit after 10 backpacks are sold is
+\[
+\frac{p(10)-p(1)}{10} = \$205.20~\text{dollars per backpack sold}.
+\]
+On the other hand, the marginal profit when $10$ backpacks are sold is
+\[
+\left.\ddx p(x) \right|_{x=10} = \left.\left(18 + \frac{2100}{x^2}\right) \right|_{x=10} = 39~\text{dollars per backpack sold}.
+\]
+
+\end{solution}
+
+
+
 
 \begin{exercises}
 
@@ -287,21 +352,16 @@ The rate of change in these functions is denoted by the word \textit{marginal}, 
 
 \section{Related Rates Problems}
 
-Suppose we have two variables $x$ and $y$ (in most problems the
-letters will be different, but for now let's use $x$ and $y$) which
-are both changing with time.  A ``related rates'' problem is a problem
-in which we know one of the rates of change at a given instant---say,
-$\ds \dot x = dx/dt$---and we want to find the other rate $\ds \dot y = dy/dt$ at that
-instant. (The use of $\ds \dot x$ \index{dot notation}
-\index{derivative!dot notation}
-to mean $dx/dt$ goes back to Newton and
-is still used for this purpose, especially by physicists\index{physicists}.)
+Suppose we have two variables $x$ and $y$ which are both changing with
+time.  A \textit{related rates} problem is a problem where we know one
+of the rates of change at a given instant---say, $\dd[x]{t}$---and we
+want to find the other rate $\ds \dot y = dy/dt$ at that instant.
 
 If $y$ is written in terms of $x$, i.e., $y=f(x)$, then this is easy
 to do using the chain rule:
-$$
+\[
 \dot y = {dy\over dt}={dy\over dx}\cdot{dx\over dt}={dy\over dx}\dot x.
-$$
+\]
 That is, find the derivative of $f(x)$, plug in the value of
 $x$ at the instant in question, and multiply by the given value of
 $\ds \dot{x}=dx/dt$ to get $\ds \dot{y}=dy/dt$.
@@ -331,6 +391,8 @@ To summarize, here are the steps in doing a related rates problem:
 
 \begin{verbatim}
 http://mathoverflow.net/questions/83097/are-there-any-related-rates-calculus-problems-that-dont-feel-contrived
+
+http://themathblogger.wordpress.com/2009/10/05/business-calculus-word-problem/
 \end{verbatim}
 
 
@@ -1011,15 +1073,18 @@ zero, so it is not obvious what, if anything, the quotient
 approaches. We can often compute such limits by application of the
 following theorem.
 
-\begin{theorem} (L'H\^opital's Rule) For ``sufficiently nice'' functions $f(x)$
-and $g(x)$, if $\ds\lim_{x\to a} f(x)= 0 = \lim_{x\to a}
-g(x)$ or $\ds\lim_{x\to a} f(x)= \pm\infty = \lim_{x\to a}
-g(x)$, and if $\ds\lim_{x\to a}{f'(x)\over g'(x)}$ exists,
-then $\ds\lim_{x\to a}{f(x)\over g(x)}=\lim_{x\to
-a}{f'(x)\over g'(x)}$.  This remains true if ``$x\to a$'' is replaced
-by ``$x\to \infty$'' or ``$x\to -\infty$''.
-\end{theorem}
-\index{L'H\^opital's Rule}
+\begin{mainTheorem}[L'H\^opital's Rule]\index{L'H\^opital's Rule} 
+Let $f$ and $g$ be functions that are differentiable near $a$.  If
+\[
+\lim_{x \to a} f(x) = \lim_{x \to a}g(x) = 0 \qquad \text{or}\qquad \pm \infty,
+\]
+and $\lim_{x \to a} \frac{f'(x)}{g'(x)}$ exists, and $g'(x) \neq 0$
+for all $x$ near $a$, then 
+\[
+\lim_{x \to a} \frac{f(x)}{g(x)} = \lim_{x \to a} \frac{f'(x)}{g'(x)}.
+\]
+\end{mainTheorem}
+
 
 This theorem is somewhat difficult to prove, in part because it
 incorporates so many different possibilities, so we will not prove it
