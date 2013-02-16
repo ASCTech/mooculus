@@ -7,7 +7,7 @@ will only consider change in one dimension. This means that if we
 think of a ball being tossed in the air, we will consider its vertical
 movement separately from its lateral and forward movement.  To
 understand how things change, we need to understand the \textit{rate}
-of change. Let's start out rather basic.
+of change. Let's start out with some rather basic ideas.
 
 \begin{definition}\index{average rate of change}
 Given a function $f(x)$, the \textbf{average rate of change} over the
@@ -354,67 +354,28 @@ On the other hand, the marginal profit when $10$ backpacks are sold is
 
 Suppose we have two variables $x$ and $y$ which are both changing with
 time.  A \textit{related rates} problem is a problem where we know one
-of the rates of change at a given instant---say, $\dd[x]{t}$---and we
-want to find the other rate $\ds \dot y = dy/dt$ at that instant.
-
-If $y$ is written in terms of $x$, i.e., $y=f(x)$, then this is easy
-to do using the chain rule:
+of the rates of change at a given instant say, $\dd[x]{t}$. Suppose
+further we want to find the other rate $\dd[y]{t}$ at that instant.
+If $y$ is written in terms of $x$, then this is easy to do using the
+chain rule:
 \[
-\dot y = {dy\over dt}={dy\over dx}\cdot{dx\over dt}={dy\over dx}\dot x.
+\dd[y]{t}=y'(x(t))\cdot x'(t).
 \]
-That is, find the derivative of $f(x)$, plug in the value of
-$x$ at the instant in question, and multiply by the given value of
-$\ds \dot{x}=dx/dt$ to get $\ds \dot{y}=dy/dt$.
-
-\begin{example}
-Suppose an object is moving along a path described by $\ds y=x^2$, that
-is, it is moving on a parabolic path. At a particular time, say $t=5$,
-the $x$ coordinate is 6 and 
-we measure the speed at which the $x$ coordinate of the object is
-changing and find that $dx/dt = 3$. At the same time, how fast is the
-$y$ coordinate changing?
-
-Using the chain rule, $\ds dy/dt = 2x\cdot dx/dt$. At $t=5$ we know that
-$x=6$ and $dx/dt=3$, so $dy/dt = 2\cdot 6\cdot 3 = 36$.
-\end{example}
-
-In many cases, particularly interesting ones,
-$x$ and $y$ will be related in some other way, for example
-$x=f(y)$, or $F(x,y)=k$, or perhaps $F(x,y)=G(x,y)$, where $F(x,y)$
-and $G(x,y)$ are expressions involving both variables.  In all cases, you
-can solve the related rates problem by taking the derivative of both sides,
-plugging in all the known values (namely, $x$, $y$, and $\ds \dot{x}$), and
-then solving for $\ds \dot{y}$.
-
-To summarize, here are the steps in doing a related rates problem:
-
-
-\begin{verbatim}
-http://mathoverflow.net/questions/83097/are-there-any-related-rates-calculus-problems-that-dont-feel-contrived
-
-http://themathblogger.wordpress.com/2009/10/05/business-calculus-word-problem/
-\end{verbatim}
-
-
-\begin{itemize} % BADBAD
-
-\item{1.} Decide what the two variables are.
-\item{2.}  Find an equation relating them.
-\item{3.}  Take $d/dt$ of both sides.
-\item{4.}  Plug in all known values at the instant in question.
-\item{5.}  Solve for the unknown rate.
-
-\end{itemize}
+In many cases, particularly interesting ones, $x$ and $y$ will be
+related in some other way, let's see a concrete example. 
 
 \begin{example}
 \label{exam:receding airplane}
-A plane is flying directly away from you at 500 mph at an altitude of
-3 miles.  How fast is the plane's distance from you increasing at the
-moment when the plane is flying over a point on the ground 4 miles
+A plane is flying directly away from you at $500$ mph at an altitude of
+$3$ miles.  How fast is the plane's distance from you increasing at the
+moment when the plane is flying over a point on the ground $4$ miles
 from you?
+\end{example}
 
-To see what's going on, we first draw a schematic representation of
-the situation, as in figure~\xrefn{fig:airplane}.
+\begin{solution}
+We'll try to use a general stragety to solve this problems. To start,
+\textbf{draw a picture}.
+
 
 %%BADBAD
 %% \figure
@@ -436,18 +397,39 @@ the situation, as in figure~\xrefn{fig:airplane}.
 %% \figrdef{fig:airplane}
 %% \endfigure{Receding airplane.}
 
+Next we'll need to \textbf{find an equation}. 
 Because the plane is in level flight directly away from you, the rate
 at which $x$ changes is the speed of the plane, $dx/dt=500$. The
 distance between you and the plane is $y$; it is $dy/dt$ that we wish
-to know. By the Pythagorean Theorem we know that $\ds x^2+9=y^2$. Taking
-the derivative:
-$$ 2x \dot x = 2y\dot y.$$
-We are interested in the time at which $x=4$; at this time we know
-that $\ds 4^2+9=y^2$, so $y=5$. Putting together all the information we
+to know. By the Pythagorean Theorem we know that $x^2+9=y^2$. 
+
+Now we'll \textbf{differentate the equation}. Write
+$$ 2x \dot x = 2y\dot y.$$ We are interested in the time at which
+$x=4$; at this time we know that $4^2+9=y^2$, so $y=5$. So now we'll
+\textbf{evaluate the equation at the desired values}.
+Putting together all the information we
 get
 $$2(4)(500)=2(5)\dot y.$$
-Thus, $\ds \dot y=400$ mph.
-\end{example}
+Thus, $\dot y=400$ mph.
+\end{solution}
+
+To summarize, here are the steps in doing a related rates problem:
+
+\begin{enumerate}
+\item Draw a picture.
+\item Find an equation.
+\item Differentiate the equation.
+\item Evaluate the equation at the desired values. 
+\end{enumerate}
+
+\begin{verbatim}
+http://mathoverflow.net/questions/83097/are-there-any-related-rates-calculus-problems-that-dont-feel-contrived
+
+http://themathblogger.wordpress.com/2009/10/05/business-calculus-word-problem/
+\end{verbatim}
+
+
+
 
 \begin{example}
 You are inflating a spherical balloon at the rate of 7 cm${}^3$/sec.  How
@@ -455,10 +437,10 @@ fast is its radius increasing when the radius is 4 cm?
 
 Here the variables are the radius $r$ and the volume $V$.  We know $dV/dt$,
 and we want $dr/dt$.  The two variables are related by means of the
-equation $\ds V=4\pi r^3/3$.  Taking the derivative of both sides gives
-$\ds dV/dt=4\pi r^2\dot r$.  We now substitute the values we know at the
-instant in question: $\ds 7=4\pi 4^2\dot r$, so
-$\ds \dot r=7/(64\pi)$ cm/sec.
+equation $V=4\pi r^3/3$.  Taking the derivative of both sides gives
+$dV/dt=4\pi r^2\dot r$.  We now substitute the values we know at the
+instant in question: $7=4\pi 4^2\dot r$, so
+$\dot r=7/(64\pi)$ cm/sec.
 \end{example}
 
 \begin{example} Water is poured into a conical container at the rate of 10
@@ -474,7 +456,7 @@ three things varying with time: the water level $h$ (the height of the cone
 of water), the radius $r$ of the circular top surface of water (the base
 radius of the cone of water), and the volume of water $V$.  
 The volume of a cone is given by
-$\ds V=\pi r^2h/3$.  We know $dV/dt$, and we want $dh/dt$.  At
+$V=\pi r^2h/3$.  We know $dV/dt$, and we want $dh/dt$.  At
 first something seems to be wrong: we have a third variable $r$ whose rate
 we don't know.  
 
@@ -513,9 +495,9 @@ But the dimensions of the cone of water must have the same
 proportions as those of the container.  
 That is, because of similar triangles, 
 $r/h=10/30$ so $r=h/3$.  Now we can eliminate $r$ from the
-problem entirely: $\ds V=\pi(h/3)^2h/3=\pi h^3/27$.  We take
+problem entirely: $V=\pi(h/3)^2h/3=\pi h^3/27$.  We take
 the derivative of both sides and plug in $h=4$ and $dV/dt=10$, obtaining
-$\ds 10=(3\pi\cdot 4^2/27)(dh/dt)$.  Thus, $dh/dt=90/(16\pi)$
+$10=(3\pi\cdot 4^2/27)(dh/dt)$.  Thus, $dh/dt=90/(16\pi)$
 cm/sec.
 \end{example}
 
@@ -536,7 +518,7 @@ $xy$-plane let us make the convenient choice of putting the origin at the
 location of $P$ at time $t=0$, i.e., a distance 10 directly below the point
 of attachment.  Then the rate we know is $dx/dt$, and in part 
 (a) the rate we want is $dy/dt$ (the rate at which $P$ is rising).  In part
-(b) the rate we want is $\ds \dot{\theta}=d\theta/dt$, where $\theta$ stands for
+(b) the rate we want is $\dot{\theta}=d\theta/dt$, where $\theta$ stands for
 the angle in radians through which the swing has swung from the vertical.
 (Actually, since we want our answer in deg/sec, at the end we must convert
 $d\theta/dt$ from rad/sec by multiplying by $180/\pi$.)
@@ -583,24 +565,24 @@ $d\theta/dt$ from rad/sec by multiplying by $180/\pi$.)
 \noindent
 (a)~From the diagram we see that we have a right triangle whose legs
 are $x$ and $10-y$, and whose hypotenuse is 10.  Hence
-$\ds x^2+(10-y)^2=100$.  Taking the derivative of both sides we obtain:
+$x^2+(10-y)^2=100$.  Taking the derivative of both sides we obtain:
 $2x\dot{x}+2(10-y)(0-\dot{y})=0$.  We now look at what we know after 1
 second, namely $x=6$ (because $x$ started at 0 and has been increasing at
 the rate of 6 ft/sec for 1 sec), $y=2$ (because we get $10-y=8$ from
 the Pythagorean theorem applied to the triangle with hypotenuse 10 and
-leg 6), and $\ds \dot{x}=6$.  Putting in these values gives us
+leg 6), and $\dot{x}=6$.  Putting in these values gives us
 $2\cdot 6\cdot 6-2\cdot 8\dot{y}=0$, from which we can easily solve
-for $\ds \dot{y}$: $\ds \dot{y}=4.5$ ft/sec.
+for $\dot{y}$: $\dot{y}=4.5$ ft/sec.
 
 \noindent
 (b)~Here our two variables are $x$ and $\theta$, so we want to use the
 same right triangle as in part (a), but this time relate $\theta$ to
 $x$.  Since the hypotenuse is constant (equal to 10), the best way to
 do this is to use the sine: $\sin\theta=x/10$.  Taking derivatives we
-obtain $\ds (\cos\theta)\dot{\theta}=0.1\dot{x}$.  At the instant in
+obtain $(\cos\theta)\dot{\theta}=0.1\dot{x}$.  At the instant in
 question ($t=1$ sec), when we have a right triangle with sides
-6--8--10, $\ds \cos\theta=8/10$ and $\ds \dot{x}=6$. Thus
-$(8/10)\dot{\theta}=6/10$, i.e., $\ds \dot{\theta}=6/8=3/4$ rad/sec, or
+6--8--10, $\cos\theta=8/10$ and $\dot{x}=6$. Thus
+$(8/10)\dot{\theta}=6/10$, i.e., $\dot{\theta}=6/8=3/4$ rad/sec, or
 approximately $43$ deg/sec.  
 \end{example} 
 
@@ -649,8 +631,8 @@ changing?
 Let $a(t)$ be the distance of car A north of $P$ at time $t$, and
 $b(t)$ the distance of car B east of $P$ at time $t$, and let $c(t)$
 be the distance from car A to car B at time $t$.  By the Pythagorean
-Theorem, $\ds c(t)^2=a(t)^2+b(t)^2$. Taking derivatives
-we get $\ds 2c(t)c'(t)=2a(t)a'(t)+2b(t)b'(t)$, so
+Theorem, $c(t)^2=a(t)^2+b(t)^2$. Taking derivatives
+we get $2c(t)c'(t)=2a(t)a'(t)+2b(t)b'(t)$, so
 $$
   \dot{c}={a\dot{a}+b\dot{b}\over c}={a\dot{a}+b\dot{b}\over \sqrt{a^2+b^2}}.
 $$
@@ -722,7 +704,7 @@ miles along the shore from the point $A$?
 A baseball diamond is a square 90 ft on a side.  A player runs from first
 base to second base at 15 ft/sec.  At what rate is the player's distance
 from third base decreasing when she is half way from first to second base?
-\begin{answer} $\ds 3\sqrt5$ ft/s
+\begin{answer} $3\sqrt5$ ft/s
 \end{answer}\end{exercise}
 
 \begin{exercise} Sand is poured onto a surface at 15 cm${}^3$/sec, forming a
@@ -746,7 +728,7 @@ A balloon is at a height of 50 meters, and is rising at the constant rate
 of 5 m/sec.  A bicyclist passes beneath it, traveling in a
 straight line at the constant speed of 10 m/sec.  How fast is the distance
 between the bicyclist and the balloon increasing 2 seconds later?
-\begin{answer} $\ds 5\sqrt{10}/2$ m/s
+\begin{answer} $5\sqrt{10}/2$ m/s
 \end{answer}\end{exercise}
 
 \begin{exercise} A pyramid-shaped vat has square cross-section and stands on its
@@ -801,13 +783,13 @@ The trough shown in figure~\xrefn{fig:trough}
 is constructed by fastening together three
 slabs of wood of dimensions 10 ft $\times$ 1 ft, and then attaching the
 construction to a wooden wall at each end.  The angle $\theta$ was
-originally $\ds 30^\circ$, but because of poor construction the sides are
+originally $30^\circ$, but because of poor construction the sides are
 collapsing.  The trough is full of water.  At what rate (in ft${}^3$/sec) 
 is 
 the water spilling out over the top of
-the trough if the sides have each fallen to an angle of $\ds 45^\circ$, and are
-collapsing at the rate of $\ds 1^\circ$ per second?
-\begin{answer} $\ds \pi\sqrt2/36$ ft$^3$/s
+the trough if the sides have each fallen to an angle of $45^\circ$, and are
+collapsing at the rate of $1^\circ$ per second?
+\begin{answer} $\pi\sqrt2/36$ ft$^3$/s
 \end{answer}\end{exercise}
 
 %%BADBAD
@@ -858,7 +840,7 @@ A police helicopter is flying at 150 mph at a constant altitude of 0.5 mile
 above a straight road.  The pilot uses radar to determine that an oncoming
 car is at a distance of exactly 1 mile from the helicopter, and that this
 distance is decreasing at 190 mph.  Find the speed of the car.
-\begin{answer} $\ds 380/\sqrt3-150\approx 69.4$ mph
+\begin{answer} $380/\sqrt3-150\approx 69.4$ mph
 \end{answer}\end{exercise}
 
 \begin{exercise} A police helicopter is flying at 200 kilometers per hour at
@@ -866,7 +848,7 @@ a constant altitude of 1 km above a straight road.  The pilot uses
 radar to determine that an oncoming car is at a distance of exactly 2
 kilometers from the helicopter, and that this distance is decreasing at 250
 kph.  Find the speed of the car.
-\begin{answer} $\ds 500/\sqrt3-200\approx 88.7$ km/hr
+\begin{answer} $500/\sqrt3-200\approx 88.7$ km/hr
 \end{answer}\end{exercise}
 
 %BADBAD
@@ -905,8 +887,8 @@ per second. How fast is its shadow moving?
 between the two roads is 120${}^\circ$ instead of 90${}^\circ$ (that
 is, the ``north--south'' road actually goes in a somewhat northwesterly
 direction from $P$).  Recall the law of cosines:
-$\ds c^2=a^2+b^2-2ab\cos\theta$.
-\begin{answer} $\ds 136\sqrt{475}/19\approx 156$ km/hr
+$c^2=a^2+b^2-2ab\cos\theta$.
+\begin{answer} $136\sqrt{475}/19\approx 156$ km/hr
 \end{answer}\end{exercise}
 
 \begin{exercise}
@@ -930,7 +912,7 @@ suppose that instead of car B an airplane is flying at speed $200$
 km/hr to the east of $P$ at an altitude of 2 km, as depicted in
 figure~\xrefn{fig:car and airplane}. How fast is the distance between
 car and airplane changing?  
-\begin{answer} $\ds 3800/\sqrt{329}\approx 210$ km/hr 
+\begin{answer} $3800/\sqrt{329}\approx 210$ km/hr 
 \end{answer}\end{exercise}
 
 %%BADBAD
@@ -963,13 +945,13 @@ km/hr to the east of $P$ at an altitude of 2 km, and that it is
 gaining altitude at 10 km/hr.
 How fast is
 the distance between car and airplane changing?
-\begin{answer} \hbox{$\ds 820/\sqrt{329}+150\sqrt{57}/\sqrt{47}\approx 210$ km/hr}
+\begin{answer} \hbox{$820/\sqrt{329}+150\sqrt{57}/\sqrt{47}\approx 210$ km/hr}
 \end{answer}\end{exercise}
 
 \begin{exercise}
 A light shines from the top of a pole 20 m high.  An object is dropped from
-the same height from a point 10 m away, so that its height at time $\ds t$
-seconds is $\ds h(t)=20-9.8t^2/2$.  How fast is the object's shadow
+the same height from a point 10 m away, so that its height at time $t$
+seconds is $h(t)=20-9.8t^2/2$.  How fast is the object's shadow
 moving on the ground one second later?
 \begin{answer} $4000/49$ m/s
 \end{answer}\end{exercise}
@@ -979,9 +961,9 @@ The two blades of a pair of scissors are fastened at the point $A$ as
 shown in figure~\xrefn{fig:scissors}.  Let
 $a$ denote the distance from $A$ to the tip of the blade (the point $B$).
 Let $\beta$ denote the angle at the tip of the blade that is formed by the
-line $\ds \overline{AB}$ and the bottom edge of the blade, line
-$\ds \overline{BC}$, and let $\theta$ denote the angle between
-$\ds \overline{AB}$ and the horizontal.
+line $\overline{AB}$ and the bottom edge of the blade, line
+$\overline{BC}$, and let $\theta$ denote the angle between
+$\overline{AB}$ and the horizontal.
 Suppose that a piece of paper is cut in such a way that the center
 of the scissors at $A$ is fixed, and the paper is also fixed.  As the
 blades are closed (i.e., the angle $\theta$ in the diagram is decreased),
@@ -993,13 +975,13 @@ the distance $x$ between $A$ and $C$ increases, cutting the paper.
 $\theta$, $\beta$, and $d\theta/dt$.
 
 \item{\bf c.} Suppose that the distance $a$ is 20 cm, and the
-angle $\beta$ is $\ds 5^\circ$.  Further suppose that $\theta$ is
+angle $\beta$ is $5^\circ$.  Further suppose that $\theta$ is
 decreasing at 50
-deg/sec.  At the instant when $\ds \theta=30^\circ$, find the rate (in
+deg/sec.  At the instant when $\theta=30^\circ$, find the rate (in
 cm/sec) at which the paper is being cut.
 \end{enumerate}
 \begin{answer} (a) $x=a\cos\theta-a\sin\theta\cot(\theta+\beta)=
-\hbox{$a\sin\beta/\sin(\theta+\beta$), (c) $\ds \dot x\approx 3.79$ cm/s}$
+\hbox{$a\sin\beta/\sin(\theta+\beta$), (c) $\dot x\approx 3.79$ cm/s}$
 \end{answer}\end{exercise}
 
 
@@ -1135,7 +1117,7 @@ So the original limit is 2 as well.
 
 Again, we don't really need L'H\^opital's Rule, and in fact a more
 elementary approach is easier---we divide the numerator and
-denominator by $\ds x^2$:
+denominator by $x^2$:
 $$\lim_{x\to \infty}{2x^2-3x+7\over x^2+47x+1}=
 \lim_{x\to \infty}{2x^2-3x+7\over x^2+47x+1}{{1\over x^2}\over {1\over
     x^2}}=
@@ -1162,7 +1144,7 @@ is not ``obvious''. As $x$ approaches zero, $\ln x$ goes to $-\infty$,
 so the product looks like $(\hbox{something very small})\cdot 
 (\hbox{something very large and negative})$. But this could be
 anything: it depends on {\it how small\/} and {\it how large}. 
-For example, consider $\ds (x^2)(1/x)$, $(x)(1/x)$, and $\ds (x)(1/x^2)$. As
+For example, consider $(x^2)(1/x)$, $(x)(1/x)$, and $(x)(1/x^2)$. As
 $x$ approaches zero, each of these is $(\hbox{something very small})\cdot 
 (\hbox{something very large})$, yet the limits are respectively 
 zero, $1$, and $\infty$.
@@ -1347,7 +1329,7 @@ Compute the limits.
 \end{answer}\end{exercise}
 
 \begin{exercise} $\ds\lim_{x\to\infty}{4x\over\sqrt{2x^2+1}}$
-\begin{answer} $\ds 2\sqrt2$
+\begin{answer} $2\sqrt2$
 \end{answer}\end{exercise}
 
 \begin{exercise} $\ds\lim_{x\to0}{3x^2+x+2\over x-4}$
@@ -1397,7 +1379,7 @@ Compute the limits.
 \endtwocol
 
 \msk
-\begin{exercise} The function $\ds f(x) = {x\over\sqrt{x^2+1}}$ has two horizontal
+\begin{exercise} The function $f(x) = {x\over\sqrt{x^2+1}}$ has two horizontal
  asymptotes.  Find them and give a rough sketch of $f$ with its horizontal
  asymptotes. 
 \begin{answer} $y=1$ and $y=-1$
