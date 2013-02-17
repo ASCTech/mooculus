@@ -361,8 +361,15 @@ chain rule:
 \[
 \dd[y]{t}=y'(x(t))\cdot x'(t).
 \]
-In many cases, particularly interesting ones, $x$ and $y$ will be
-related in some other way, let's see a concrete example. 
+In many cases, particularly interesting ones, our functions will 
+related in some other way. Nevertheless in each case we'll use the same strategy:
+\begin{enumerate}
+\item \textbf{Draw a picture.}
+\item \textbf{Find an equation.}
+\item \textbf{Differentiate the equation.}
+\item \textbf{Evaluate the equation at the desired values.} 
+\end{enumerate}
+Let's see a concrete example. 
 
 \begin{example}
 \label{exam:receding airplane}
@@ -373,60 +380,45 @@ from you?
 \end{example}
 
 \begin{solution}
-We'll try to use a general stragety to solve this problems. To start,
+We'll use our general strategy to solve this problems. To start,
 \textbf{draw a picture}.
 
+\begin{tikzpicture}
+\draw[textColor, dashed, very thick] (0,0) -- (5,4);
+%\draw[penColor, dashed, very thick] (0,0) -- (0,4);
+\draw[penColor, dashed, very thick] (5,0) -- (5,4);
+\draw[penColor, dashed, very thick] (0,0) -- (5,0);
+\draw[->,penColor, very thick] (1,4) -- (6,4);
+\node [left,penColor] at (0,0) {\scalebox{3} \Ladiesroom};
+\node [right,penColor] at (6,4) {\scalebox{3}{\ding{40}}};
+\node [right,penColor] at (5,2) {3 miles};
+\node [above,penColor] at (3.5,4) {$p'(t) = 500$ mph};
+\node [below,penColor] at (2.5,0) {$4$ miles};
+\node [left,textColor] at (2.4,2) {$s(t)$ miles};
+\end{tikzpicture}
 
-%%BADBAD
-%% \figure
-%% \vbox{\beginpicture
-%% \normalgraphs
-%% \ninepoint
-%% \setcoordinatesystem units <.75truecm,.75truecm>
-%% \setplotarea x from 0 to 6, y from 0 to 3
-%% \axis bottom shiftedto y=0 /
-%% \setlinear
-%% \setdashes
-%% \plot 0 0 5 3 /
-%% \putrule from 5 0 to 5 3
-%% \put {$\longrightarrow$} [l] at 5 3
-%% \put {$x$} [t] <0pt,-4pt> at 2.5 0
-%% \put {$y$} [br] <-2pt,2pt> at 2.5 1.5
-%% \put {$3$} [l] <4pt,0pt> at 5 1.5
-%% \endpicture}
-%% \figrdef{fig:airplane}
-%% \endfigure{Receding airplane.}
-
-Next we'll need to \textbf{find an equation}. 
-Because the plane is in level flight directly away from you, the rate
-at which $x$ changes is the speed of the plane, $dx/dt=500$. The
-distance between you and the plane is $y$; it is $dy/dt$ that we wish
-to know. By the Pythagorean Theorem we know that $x^2+9=y^2$. 
-
-Now we'll \textbf{differentate the equation}. Write
-$$ 2x \dot x = 2y\dot y.$$ We are interested in the time at which
-$x=4$; at this time we know that $4^2+9=y^2$, so $y=5$. So now we'll
+Next we need to \textbf{find an equation}.  If $p(t)$ is the
+position of the plane, the plane, $p'(t)=500$. The distance between
+you and the plane is $s$ and it is $\dd[s]{t}$ that we wish to
+know. By the Pythagorean Theorem we know that
+\[
+p^2+3^2=s^2.
+\] 
+Now we \textbf{differentiate the equation}. Write
+\[
+2p(t)p'(t)  = 2s(t) s'(t).
+\] 
+We are interested in the time at which
+$p(t)=4$. At this time we know that $4^2+9=s^2$, so $s(t)=5$. So now we'll
 \textbf{evaluate the equation at the desired values}.
 Putting together all the information we
 get
-$$2(4)(500)=2(5)\dot y.$$
-Thus, $\dot y=400$ mph.
+\[
+2(4)(500)=2(5)s'(t).
+\]
+Thus, $s'(t)=400$ mph.
 \end{solution}
 
-To summarize, here are the steps in doing a related rates problem:
-
-\begin{enumerate}
-\item Draw a picture.
-\item Find an equation.
-\item Differentiate the equation.
-\item Evaluate the equation at the desired values. 
-\end{enumerate}
-
-\begin{verbatim}
-http://mathoverflow.net/questions/83097/are-there-any-related-rates-calculus-problems-that-dont-feel-contrived
-
-http://themathblogger.wordpress.com/2009/10/05/business-calculus-word-problem/
-\end{verbatim}
 
 
 
@@ -434,157 +426,157 @@ http://themathblogger.wordpress.com/2009/10/05/business-calculus-word-problem/
 \begin{example}
 You are inflating a spherical balloon at the rate of 7 cm${}^3$/sec.  How
 fast is its radius increasing when the radius is 4 cm?
-
-Here the variables are the radius $r$ and the volume $V$.  We know $dV/dt$,
-and we want $dr/dt$.  The two variables are related by means of the
-equation $V=4\pi r^3/3$.  Taking the derivative of both sides gives
-$dV/dt=4\pi r^2\dot r$.  We now substitute the values we know at the
-instant in question: $7=4\pi 4^2\dot r$, so
-$\dot r=7/(64\pi)$ cm/sec.
 \end{example}
+
+\begin{solution}
+We'll use our general strategy to solve this problems. To start,
+\textbf{draw a picture}.
+
+\begin{tikzpicture}
+\draw[penColor!50!background,very thick] (0,0) ellipse (2 and 1);
+\draw [penColor, very thick] (0,0) circle [radius=2];
+\draw[textColor, dashed, very thick] (0,0) -- (2,0);
+\node [below,penColor] at (1,0) {$r=4$ cm};
+\node [penColor,left] at (-1.5,1.42) {$\dd[V]{t}$ = 7 cm$^3$/sec};
+\node [penColor, right] at (1.5,-1.42) {$V = \frac{4\pi r^3}{3}$};
+\end{tikzpicture}
+
+Here the variables are the radius $r$ and the volume $V$.  We know
+$\dd[V]{t}$, and we want to know $\dd[r]{t}$. 
+
+
+Next we need to \textbf{find an equation}.  Thinking of the variables
+$r$ and $V$ as functions of time, they are related by the equation
+\[
+V(t)=\frac{4\pi (r(t))^3}{3}.
+\]
+
+Now we need to \textbf{differentiate the equation}.  Taking the
+derivative of both sides gives 
+\[
+\dd[V]{t}=4\pi (r(t))^2\cdot r'(t).
+\]  
+Finally we \textbf{evaluate the equation at the desired values}. Set
+$r(t)= 4$ cm and $\dd[V]{t}$ = 7 cm$^3$/sec. Write 
+\begin{align*}
+7 &=4\pi 4^2r'(t),\\
+r'(t) &=7/(64\pi)~\text{cm/sec}.
+\end{align*}
+\end{solution}
 
 \begin{example} Water is poured into a conical container at the rate of 10
 cm${}^3$/sec.  The cone points directly down, and it has a height of
-30 cm and a base radius of 10 cm; see figure~\xrefn{fig:cone tank}.
-How fast is the water level rising when the water is 4 cm deep (at its
-deepest point)?
-
-The water forms a conical shape within the big cone; its
-height and base radius and volume are all increasing
-as water is poured into the container.  This means that we actually have
-three things varying with time: the water level $h$ (the height of the cone
-of water), the radius $r$ of the circular top surface of water (the base
-radius of the cone of water), and the volume of water $V$.  
-The volume of a cone is given by
-$V=\pi r^2h/3$.  We know $dV/dt$, and we want $dh/dt$.  At
-first something seems to be wrong: we have a third variable $r$ whose rate
-we don't know.  
-
-%%--- figure MB --------------------------------------------------
-%\begin{psfigure}{1.85in}{1.9in}{124.figMB.ps}
-%\puttext{-3,-20}{\Tiny$h$}
-%\puttext{6,-3}{\Tiny$r$}
-%\puttext{15, 43}{\Tiny$10$}
-%\puttext{40, 0}{\Tiny$30$}
-%\end{psfigure}
-%%------------------------------
-%%BADBAD
-%% \figure
-%% \vbox{\beginpicture
-%% \normalgraphs
-%% \sevenpoint
-%% \setcoordinatesystem units <1truecm,1truecm>
-%% \setplotarea x from -1.5 to 1.5, y from -5 to 1
-%% \ellipticalarc  axes ratio 3:1  360 degrees from 1.5 0 center at 0 0
-%% \ellipticalarc  axes ratio 3:1  360 degrees from 0.75 -2.5 center at 0 -2.5
-%% \betweenarrows {10} from 0 0.75 to 1.5 0.75
-%% \betweenarrows {30} from 1.7 -5 to 1.7 0
-%% \betweenarrows {$h$} from -1 -5 to -1 -2.5
-%% \put {$r$} at 0.385 -2.1
-%% \setlinear
-%% \plot 1.5 0 0 -5 -1.5 0 /
-%% \setplotsymbol ({\teeny.})
-%% \plotsymbolspacing=.2pt
-%% \arrow <2pt> [0.7, 2] from 0.25 -2.1 to 0 -2.1
-%% \arrow <2pt> [0.7, 2] from 0.50 -2.1 to 0.75 -2.1
-%% \endpicture}
-%% \figrdef{fig:cone tank}
-%% \endfigure{Conical water tank.}
-
-But the dimensions of the cone of water must have the same
-proportions as those of the container.  
-That is, because of similar triangles, 
-$r/h=10/30$ so $r=h/3$.  Now we can eliminate $r$ from the
-problem entirely: $V=\pi(h/3)^2h/3=\pi h^3/27$.  We take
-the derivative of both sides and plug in $h=4$ and $dV/dt=10$, obtaining
-$10=(3\pi\cdot 4^2/27)(dh/dt)$.  Thus, $dh/dt=90/(16\pi)$
-cm/sec.
+30 cm and a base radius of 10 cm.  How fast is the water level rising
+when the water is 4 cm deep?
 \end{example}
 
+\begin{solution}
+We'll use our general strategy to solve this problems. To start,
+\textbf{draw a picture}.
+
+\begin{tikzpicture}
+\draw[penColor,very thick] (0,4) ellipse (4 and 1);
+\draw[penColor!50!background,very thick] (0,2) ellipse (2 and .5);
+\draw[penColor, very thick] (3.97,3.85) -- (0,0);
+\draw[penColor, very thick] (-3.97,3.85) -- (0,0);
+\draw[penColor, very thick] (0,4) -- (4,4);
+\draw[penColor!50!background, very thick] (0,2) -- (2,2);
+\draw[->,line width=0.4cm, textColor!20!background] (0,6) -- (0,4.25);
+\draw[->, dashed, textColor, very thick] (2.1,0) -- (2.1,2);
+\draw[dashed, textColor, very thick] (-4.1,0) -- (-4.1,4);
+\node[right, textColor] at (.4,5.6) {$\dd[V]{t} = 10$ cm$^3$/sec};
+\node[below, penColor] at (2,4) {$10$ cm};
+\node[above, penColor] at (1,2) {$r$ cm};
+\node[right, textColor] at (2.1,1) {$h(t) = 4$ cm};
+\node[left, textColor] at (-4.1,2) {$30$ cm};
+\end{tikzpicture}
+
+Note, no attempt was made to draw this picture to scale, rather we
+want all the of the relevant information to be available to the
+mathematician.
+
+Now we need to \textbf{find an equation}. The formula for the volume of a cone tell us that 
+\[
+V = \frac{\pi}{3} r^2 h.
+\]
+
+Now we must \textbf{differentiate the equation}. We should use implicit differentiation, and treat each of the variables as functions of $t$. Write
+\begin{equation}\label{equation:cone/water}
+\dd[V]{t} = \frac{\pi}{3}\left(2rh \dd[r]{t} + r^2 \dd[h]{t}\right).
+\end{equation}
+
+At this point we \textbf{evaluate the equation at the desired values}.
+At first something seems to be wrong, we do not know $\dd[r]{t}$.
+However, the dimensions of the cone of water must have the same
+proportions as those of the container.  That is, because of similar
+triangles, 
+\[
+\frac{r}{h}=\frac{10}{30} \qquad\text{so}\qquad r={h/3}.
+\]  
+In particular, we see that when $h = 4$, $r=4/3$ and 
+\[
+\dd[r]{t} = \frac{1}{3}\cdot \dd[h]{t}
+\]
+Now we can \textbf{evaluate the equation at the desired
+  values}. Starting with Equation~\ref{equation:cone/water}, we plug
+in $\dd[V]{t} = 10$, $r = 4/3$, $\dd[r]{t} = \frac{1}{3}\cdot \dd[h]{t}$
+and $h=4$. Write
+\begin{align*}
+10 &= \frac{\pi}{3}\left(2\cdot \frac{4}{3}\cdot 4 \cdot\frac{1}{3}\cdot\dd[h]{t} + \left(\frac{4}{3}\right)^2 \dd[h]{t}\right)\\
+10 &= \frac{\pi}{3}\left(\frac{32}{9}\dd[h]{t} + \frac{16}{9} \dd[h]{t}\right)\\
+10 &= \frac{16\pi}{9}\dd[h]{t}\\
+\frac{90}{16\pi} &= \dd[h]{t}.
+\end{align*}
+Thus, $\dd[h]{t}=\frac{90}{16\pi}$ cm/sec.
+\end{solution}
+
 \begin{example}
-A swing consists of a board at the end of a 10 ft long rope.  Think of the
-board as a point $P$ at the end of the rope, and let $Q$ be the point of
-attachment at the other end.  Suppose that the swing is directly below $Q$
-at time $t=0$, and is being pushed by someone who walks at 6
-ft/sec from left to right.  Find (a) how fast the swing is rising after 1
-sec; (b) the angular speed of the rope in deg/sec after 1 sec.
+A swing consists of a board at the end of a $10$ ft long rope.  Think
+of the board as a point $P$ at the end of the rope, and let $Q$ be the
+point of attachment at the other end.  Suppose that the swing is
+directly below $Q$ at time $t=0$, and is being pushed by someone who
+walks at 6 ft/sec from left to right.  What is the angular speed of
+the rope in deg/sec after 1 sec?
+\end{example}
 
-We  start out by asking: What is the geometric
-quantity whose rate of change we know, and what is the geometric quantity
-whose rate of change we're being asked about?  Note that the person pushing
-the swing is moving horizontally at a rate we know.  In other words,
-the  horizontal coordinate of $P$ is increasing at 6 ft/sec.  In the
-$xy$-plane let us make the convenient choice of putting the origin at the
-location of $P$ at time $t=0$, i.e., a distance 10 directly below the point
-of attachment.  Then the rate we know is $dx/dt$, and in part 
-(a) the rate we want is $dy/dt$ (the rate at which $P$ is rising).  In part
-(b) the rate we want is $\dot{\theta}=d\theta/dt$, where $\theta$ stands for
-the angle in radians through which the swing has swung from the vertical.
-(Actually, since we want our answer in deg/sec, at the end we must convert
-$d\theta/dt$ from rad/sec by multiplying by $180/\pi$.)
+\begin{solution}
+To start, \textbf{draw a picture}.
 
-%%--- figure MC --------------------------------------------------
-%\begin{psfigure}{1.95in}{2.0in}{124.figMC.ps}
-%%\putcrosshair{0,0}
-%\puttext{-6.67, 46.7}{\Small$Q$}
-%\puttext{5,16}{\Small$\theta$}
-%\puttext{46.7, -40.}{\Small$P$}
-%\puttext{20., -26.7}{\Small$x$}
-%\puttext{-6.67, -36.7}{\Small$y$}
-%\puttext{33.3, 0.}{\Small$10$}
-%\end{psfigure}
-%%------------------------------
-%%BADBAD
-%% \figure
-%% \vbox{\beginpicture
-%% \normalgraphs
-%% \sevenpoint
-%% \setcoordinatesystem units <0.5truecm,0.5truecm>
-%% \setplotarea x from -6 to 6, y from 0 to 10
-%% \circulararc  73.74 degrees from -6 2 center at 0 10
-%% \circulararc  36.87 degrees from 0 8 center at 0 10
-%% %\betweenarrows {10} from 0 0.75 to 1.5 0.75
-%% %\betweenarrows {30} from 1.7 0 to 1.7 -5
-%% %\betweenarrows {$h$} from -1 -2.5 to -1 -5
-%% %\put {$r$} at 0.385 -2.1
-%% \setlinear
-%% \plot 0 10 6 2 /
-%% \setdashes
-%% \putrule from 0 0 to 0 10
-%% \putrule from 0 2 to 6 2
-%% \multiput {$\bullet$} at 0 10 6 2 /
-%% \put {$P$} [l] <4pt,0pt> at 6 2
-%% \put {$Q$} [b] <0pt,4pt> at 0 10
-%% \put {$x$} [b] <0pt,4pt> at 3 2
-%% \put {$y$} [r] <-4pt,0pt> at 0 1
-%% \put {$\theta$} [tl] at 0.6 7.7
-%% \endpicture}
-%% \figrdef{fig:swing}
-%% \endfigure{Swing.}
+\begin{tikzpicture}[scale=1.5]
+\draw[penColor!50!background, very thick] (0,3) -- (0,-1);
+\draw[penColor, very thick] (0,3) -- (2.12,-.12);
+\draw [penColor!50!background, very thick] (-2.12,-.12) arc [radius=3, start angle=225, end angle= 315];
+\draw [penColor, very thick] (0,2.3) arc [radius=.7, start angle=270, end angle= 305];
+\draw[->, penColor, very thick] (0,-.12) -- (2,-.12);
 
-\noindent
-(a)~From the diagram we see that we have a right triangle whose legs
-are $x$ and $10-y$, and whose hypotenuse is 10.  Hence
-$x^2+(10-y)^2=100$.  Taking the derivative of both sides we obtain:
-$2x\dot{x}+2(10-y)(0-\dot{y})=0$.  We now look at what we know after 1
-second, namely $x=6$ (because $x$ started at 0 and has been increasing at
-the rate of 6 ft/sec for 1 sec), $y=2$ (because we get $10-y=8$ from
-the Pythagorean theorem applied to the triangle with hypotenuse 10 and
-leg 6), and $\dot{x}=6$.  Putting in these values gives us
-$2\cdot 6\cdot 6-2\cdot 8\dot{y}=0$, from which we can easily solve
-for $\dot{y}$: $\dot{y}=4.5$ ft/sec.
+\node[penColor,rotate=35] at (2.12,-.12) {\scalebox{3} \Ladiesroom};
+\node[penColor,right] at (2.3,-.12) {$P$};
+\node[penColor,right,above] at (0,3) {$Q$};
+\node[penColor,right] at (1.06,1.5) {$10$ ft};
+\node[penColor,above] at (1,-.12) {$\dd[x]{t} = 6$ ft/sec};
+\node[penColor,right,above] at (.3,2) {$\theta$};
+\end{tikzpicture}
 
-\noindent
-(b)~Here our two variables are $x$ and $\theta$, so we want to use the
-same right triangle as in part (a), but this time relate $\theta$ to
-$x$.  Since the hypotenuse is constant (equal to 10), the best way to
-do this is to use the sine: $\sin\theta=x/10$.  Taking derivatives we
-obtain $(\cos\theta)\dot{\theta}=0.1\dot{x}$.  At the instant in
-question ($t=1$ sec), when we have a right triangle with sides
-6--8--10, $\cos\theta=8/10$ and $\dot{x}=6$. Thus
-$(8/10)\dot{\theta}=6/10$, i.e., $\dot{\theta}=6/8=3/4$ rad/sec, or
-approximately $43$ deg/sec.  
-\end{example} 
+Now we must \textbf{find an equation}. From the right triangle in our
+picture, we see
+\[
+\sin(\theta)=x/10.
+\]
+We can now \textbf{differentiate the equation}. Taking derivatives we obtain 
+\[
+\cos(\theta)\cdot \theta'(t)=0.1 x'(t).
+\]
+Now we can \textbf{evaluate the equation at the desired values}.  When
+$t=1$ sec, we have a $6-8-10$ right triangle, since the person was
+pushed by someone who walks $6$ ft/sec.  Hence $x'(t) = 6$, and 
+$\cos\theta=8/10$. Thus 
+\[
+(8/10) \theta'(t) =6/10,
+\]
+and so  $\theta'(t)=6/8=3/4$ rad/sec, or approximately $43$ deg/sec.
+\end{solution} 
+
+
 
 We have seen that sometimes there are apparently more than two
 variables that change with time, but in reality there are just two, as
@@ -596,56 +588,60 @@ variables, take the derivative of both sides of the equation relating all of
 the variables, and then substitute all of the known values and solve for
 the unknown rate.
 
+
+
 \begin{example}
 A road running north to south crosses a road going east to west at the
-point $P$.  Car A is driving north along the first road, and car B is
-driving east along the second road.  At a particular time car A is $10$
-kilometers to the north of $P$ and traveling at 80 km/hr, while car B
-is 15 kilometers to the east of $P$ and traveling at 100 km/hr.
-How fast is the distance between the two cars
-changing?
-%%BADBAD
-%% \figure
-%% \vbox{\beginpicture
-%% \normalgraphs
-%% \sevenpoint
-%% \setcoordinatesystem units <0.5truecm,0.5truecm>
-%% \setplotarea x from 0 to 10, y from 0 to 6
-%% \axis left shiftedto x=0 /
-%% \axis bottom shiftedto y=0 /
-%% \multiput {$\bullet$} at 0 0 0 4 7 0 /
-%% \setdashes\setlinear
-%% \plot 0 4 7 0 /
-%% \put {$(0,a(t))$} [r] <-4pt,0pt> at 0 4
-%% \put {$(b(t),0)$} [t] <0pt,-6pt> at 7 0
-%% \put {$c(t)$} [bl] <2pt,2pt> at 3.5 2
-%% \put {$P$} [tr] <-2pt,-2pt> at 0 0
-%% \setsolid
-%% \setplotsymbol ({\tenrm.}) 
-%% \arrow <5pt> [.25, 1] from 0 4 to 0 5
-%% \arrow <5pt> [.25, 1] from 7 0 to 8 0
-%% \endpicture}
-%% \figrdef{fig:departing cars}
-%% \endfigure{Cars moving apart.}
-
-Let $a(t)$ be the distance of car A north of $P$ at time $t$, and
-$b(t)$ the distance of car B east of $P$ at time $t$, and let $c(t)$
-be the distance from car A to car B at time $t$.  By the Pythagorean
-Theorem, $c(t)^2=a(t)^2+b(t)^2$. Taking derivatives
-we get $2c(t)c'(t)=2a(t)a'(t)+2b(t)b'(t)$, so
-$$
-  \dot{c}={a\dot{a}+b\dot{b}\over c}={a\dot{a}+b\dot{b}\over \sqrt{a^2+b^2}}.
-$$
-Substituting known values we get:
-$$
-\dot{c}={10\cdot 80+15\cdot100\over
-  \sqrt{10^2+15^2}}={460\over\sqrt{13}} \approx 127.6 \hbox{km/hr}
-$$
-at the time of interest.
+point $P$.  Cyclist $A$ is riding north along the first road, and cyclist $B$ is
+riding east along the second road.  At a particular time, cyclist $A$ is $3$
+kilometers to the north of $P$ and traveling at $20$ km/hr, while cyclist
+$B$ is $4$ kilometers to the east of $P$ and traveling at $15$ km/hr.
+How fast is the distance between the two cyclists changing?
 \end{example}
-\label{exam:departing cars}
 
-%\begin{psfigure}{2.0in}{2.0in}{124.figMD.ps}
+\begin{solution}
+We start the same way we always do, we \textbf{draw a picture}.
+
+\begin{tikzpicture}
+\draw[->,penColor!50!background, very thick] (-1,0) -- (4,0);
+\draw[->,penColor!50!background, very thick] (0,-1) -- (0,4);
+\draw[->,penColor, very thick] (0,3) -- (0,4);
+\draw[->,penColor, very thick] (3,0) -- (4,0);
+\draw [penColor, fill] (0,0) circle [radius=.07];
+\draw [penColor, fill] (3,0) circle [radius=.07];
+\draw [penColor, fill] (0,3) circle [radius=.07];
+\draw[dashed,penColor, very thick] (3,0) -- (0,3);
+
+\node[penColor,rotate=90,right] at (.5,3) {\scalebox{-2} \Bicycle};
+\node[penColor,right] at (0,.2) {$P$};
+\node[penColor,left] at (0,3) {$(0,a(t))$};
+\node[penColor,below] at (3,0) {$(b(t),0)$};
+\node[penColor,above] at (1.6,1.6) {$c(t)$};
+\node[penColor,right,above] at (3.5,0) {\scalebox{-2}[2] \Bicycle};
+\end{tikzpicture}
+
+Here $a(t)$ is the distance of cyclist $A$ north of $P$ at time $t$,
+and $b(t)$ the distance of cyclist $B$ east of $P$ at time $t$, and
+$c(t)$ is the distance from cyclist $A$ to cyclist $B$ at time $t$.
+
+Now we must \textbf{find an equation}.  By the Pythagorean Theorem,
+\[
+c(t)^2=a(t)^2+b(t)^2.
+\] 
+Now we can \textbf{differentiate the equation}. Taking derivatives we get 
+\[
+2c(t)c'(t)=2a(t)a'(t)+2b(t)b'(t).
+\]
+Now we can  \textbf{evaluate the equation at the desired values}.
+We know that $a(t) = 3$, $a'(t) = 20$, $b(t) = 4$ and $b'(t) = 15$. Hence 
+by the Pythagorean Theorem, $c(t) = 5$. So 
+\[
+2\cdot 5 \cdot c'(t) = 2 \cdot 3\cdot 20 + 2 \cdot 4 \cdot 15
+\]
+solving for $c'(t)$ we find $c'(t) = 24$ km/sec.
+\end{solution}
+
+
 
 Notice how this problem differs from example~\xrefn{exam:receding
 airplane}.  In both cases we started with the Pythagorean Theorem and
@@ -658,6 +654,15 @@ though we are interested in a specific value of each side of the
 triangle (namely, when the sides have lengths 10 and 15). Make sure that
 you understand at the start of the problem what are the variables and
 what are the constants.
+
+
+
+\begin{verbatim}
+http://mathoverflow.net/questions/83097/are-there-any-related-rates-calculus-problems-that-dont-feel-contrived
+
+http://themathblogger.wordpress.com/2009/10/05/business-calculus-word-problem/
+\end{verbatim}
+
 
 \begin{exercises}
 
@@ -883,10 +888,14 @@ per second. How fast is its shadow moving?
 %% \figrdef{fig:falling ball}
 %% \endfigure{Falling ball.}
 
-\begin{exercise} Do example~\xrefn{exam:departing cars} assuming that the angle
-between the two roads is 120${}^\circ$ instead of 90${}^\circ$ (that
-is, the ``north--south'' road actually goes in a somewhat northwesterly
-direction from $P$).  Recall the law of cosines:
+\begin{exercise} 
+A road running in a northwest direction crosses a road going east to
+west at a $120^\circ$ at a point $P$. Car $A$ is driving northwesterly
+along the ﬁrst road, and car $B$ is driving east along the second
+road. At a particular time car $A$ is $10$ kilometers to the northwest
+of P and traveling at $80$ km/hr, while car $B$ is $15$ kilometers to
+the east of $P$ and traveling at $100$ km/hr. How fast is the distance
+between the two cars changing? Hint, recall the law of cosines:
 $c^2=a^2+b^2-2ab\cos\theta$.
 \begin{answer} $136\sqrt{475}/19\approx 156$ km/hr
 \end{answer}\end{exercise}
@@ -900,18 +909,21 @@ cars are going at constant speed toward $P$, and the two cars will collide in
 \end{answer}\end{exercise}
 
 \begin{exercise}
-Do example~\xrefn{exam:departing cars} assuming that
-8 seconds ago car A started from rest at $P$ and has been picking up
-speed at the steady rate of 5 m/sec${}^2$, and 6 seconds after car A
-started car B passed $P$ moving east at constant speed 60 m/sec.
+A road running north to south crosses a road going east to west at the
+point $P$. Eight seconds ago car $A$ started from rest at $P$ and has
+been picking up speed at the steady rate of $5$ m/sec${}^2$, and $6$
+seconds after car $A$ started car $B$ passed $P$ moving east at
+constant speed 60 m/sec. How fast is the distance between the two cars
+changing?
 \begin{answer} $68$ m/s
 \end{answer}\end{exercise}
 
-\begin{exercise} Referring again to example~\xrefn{exam:departing cars},
-suppose that instead of car B an airplane is flying at speed $200$
-km/hr to the east of $P$ at an altitude of 2 km, as depicted in
-figure~\xrefn{fig:car and airplane}. How fast is the distance between
-car and airplane changing?  
+\begin{exercise} 
+Suppose a car is driving north along a road at $80$ km/hr and an
+airplane is flying east at speed $200$ km/hr. Their paths crossed at a
+point $P$. At a certain time, the car is 10 kilometers north of $P$
+and the airplane is 15 kilometers to the east of $P$ at an altitude of
+2 km. How fast is the distance between car and airplane changing?
 \begin{answer} $3800/\sqrt{329}\approx 210$ km/hr 
 \end{answer}\end{exercise}
 
@@ -939,12 +951,15 @@ car and airplane changing?
 %% \figrdef{fig:car and airplane}
 %% \endfigure{Car and airplane.}
 
-\begin{exercise} Referring again to example~\xrefn{exam:departing cars}, suppose
-that instead of car B an airplane is flying at speed $200$
-km/hr to the east of $P$ at an altitude of 2 km, and that it is
-gaining altitude at 10 km/hr.
-How fast is
-the distance between car and airplane changing?
+
+
+\begin{exercise} 
+Suppose a car is driving north along a road at $80$ km/hr and an
+airplane is flying east at speed $200$ km/hr. Their paths crossed at a
+point $P$. At a certain time, the car is 10 kilometers north of $P$
+and the airplane is 15 kilometers to the east of $P$ at an altitude of
+2 km---gaining altitude at 10 km/hr. How fast is the distance between
+car and airplane changing?
 \begin{answer} \hbox{$820/\sqrt{329}+150\sqrt{57}/\sqrt{47}\approx 210$ km/hr}
 \end{answer}\end{exercise}
 
