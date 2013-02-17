@@ -57,7 +57,7 @@ $8$. Hence our average velocity was
 \end{solution}
 
 Of course if you look at Figure~\ref{figure:road-trip} closely, you
-see that sometime we were driving faster and other times we were
+see that sometimes we were driving faster and other times we were
 driving slower. To get more information, we need to know the
 \textit{instantaneous rate of change}.
 
@@ -134,22 +134,22 @@ Write
 \begin{align*}
 -4.9t^2 &= -25 \\
 t^2 &\approx 5.1 \\ 
-t &\approx 2.26
+t &\approx 2.26.
 \end{align*}
 Hence after approximately $2.26$ seconds, you gracefully enter the
 river.
 
 Your instantaneous velocity is given by $p'(t)$. Write
 \[
-p'(t) = -9.8t
+p'(t) = -9.8t,
 \]
-so your instantaneous velocity is approximately $-9.8\cdot 2.26\approx
--22$ meters per second.
+so your instantaneous velocity when you enter the water is
+approximately $-9.8\cdot 2.26\approx -22$ meters per second.
 
-Finally, your average velocity is given by
+Finally, your average velocity during your dive is given by
 \[
 \frac{p'(2.26) -p'(0)}{2.26} \approx \frac{-22}{2.26} =
--9.7~\text{meters per second}
+-9.7~\text{meters per second}.
 \]
 \end{solution}
 
@@ -235,7 +235,7 @@ A manufacturer sells backpacks at the price of \$$40$ each. The cost function fo
 c(x) = \frac{2100}{x} + 22x.
 \]
 Express profit as a function of backpacks sold. What is the average
-profit after $10$ items are sold? What is the marginal profit when
+profit after $10$ backpacks are sold? What is the marginal profit when
 $10$ backpacks are sold?
 \end{example}
 \begin{marginfigure}
@@ -262,7 +262,7 @@ p(x) = r(x) - c(x)  = 40x - \left(\frac{2100}{x} + 22x\right).
 \]
 So the average growth rate of the profit after 10 backpacks are sold is
 \[
-\frac{p(10)-p(1)}{10} = \$205.20~\text{dollars per backpack sold}.
+\frac{p(10)-p(1)}{10} = 205.20~\text{dollars per backpack sold}.
 \]
 On the other hand, the marginal profit when $10$ backpacks are sold is
 \[
@@ -354,22 +354,26 @@ On the other hand, the marginal profit when $10$ backpacks are sold is
 \section{Related Rates Problems}
 
 Suppose we have two variables $x$ and $y$ which are both changing with
-time.  A \textit{related rates} problem is a problem where we know one
-of the rates of change at a given instant say, $\dd[x]{t}$. Suppose
-further we want to find the other rate $\dd[y]{t}$ at that instant.
-If $y$ is written in terms of $x$, then this is easy to do using the
-chain rule:
+respect to time.  A \textit{related rates} problem is a problem where
+we know one rate at a given instant, and wish to find the other.  If
+$y$ is written in terms of $x$, and we are given $\dd[x]{t}$, then it
+is easy to find $\dd[y]{t}$ using the chain rule:
 \[
 \dd[y]{t}=y'(x(t))\cdot x'(t).
 \]
-In many cases, particularly interesting ones, our functions will 
-related in some other way. Nevertheless in each case we'll use the same strategy:
-\begin{enumerate}
-\item \textbf{Draw a picture.}
-\item \textbf{Find an equation.}
-\item \textbf{Differentiate the equation.}
-\item \textbf{Evaluate the equation at the desired values.} 
-\end{enumerate}
+In many cases, particularly interesting ones, our functions will
+related in some other way. Nevertheless, in each case we'll use the
+same strategy:
+
+\begin{guidelinesForRelatedRates}\hfil
+\begin{itemize}
+\item[\textbf{Draw a picture.}] If possible draw a schematic picture with all the relevant information. 
+\item[\textbf{Find an equation.}] We want an equation that relates all relevant functions. 
+\item[\textbf{Differentiate the equation.}] Here we will use implicit differentiation. 
+\item[\textbf{Evaluate the equation at the desired values.} ] The known values
+  should let you solve for the relevant rate.
+\end{itemize}
+\end{guidelinesForRelatedRates}
 Let's see a concrete example. 
 
 \begin{example}
@@ -381,27 +385,27 @@ from you?
 \end{example}
 
 \begin{solution}
-We'll use our general strategy to solve this problems. To start,
+We'll use our general strategy to solve this problem. To start,
 \textbf{draw a picture}.
 
 \begin{tikzpicture}
-\draw[textColor, dashed, very thick] (0,0) -- (5,4);
+\draw[penColor2, dashed, very thick] (0,0) -- (5,4);
 %\draw[penColor, dashed, very thick] (0,0) -- (0,4);
 \draw[penColor, dashed, very thick] (5,0) -- (5,4);
 \draw[penColor, dashed, very thick] (0,0) -- (5,0);
 \draw[->,penColor, very thick] (1,4) -- (6,4);
+\draw [penColor, fill] (5,4) circle [radius=.07];
 \node [left,penColor] at (0,0) {\scalebox{3} \Ladiesroom};
 \node [right,penColor] at (6,4) {\scalebox{3}{\ding{40}}};
-\node [right,penColor] at (5,2) {3 miles};
-\node [above,penColor] at (3.5,4) {$p'(t) = 500$ mph};
+\node [right,penColor] at (5,2) {$3$ miles};
+\node [above,penColor] at (3,4) {$p'(t) = 500$ mph};
+\node [above,penColor] at (5,4) {$p(t)$};
 \node [below,penColor] at (2.5,0) {$4$ miles};
-\node [left,textColor] at (2.4,2) {$s(t)$ miles};
+\node [left,penColor2] at (2.4,2) {$s(t)$ miles};
 \end{tikzpicture}
 
-Next we need to \textbf{find an equation}.  If $p(t)$ is the
-position of the plane, the plane, $p'(t)=500$. The distance between
-you and the plane is $s$ and it is $\dd[s]{t}$ that we wish to
-know. By the Pythagorean Theorem we know that
+Next we need to \textbf{find an equation}. By the Pythagorean Theorem
+we know that
 \[
 p^2+3^2=s^2.
 \] 
@@ -409,15 +413,14 @@ Now we \textbf{differentiate the equation}. Write
 \[
 2p(t)p'(t)  = 2s(t) s'(t).
 \] 
-We are interested in the time at which
-$p(t)=4$. At this time we know that $4^2+9=s^2$, so $s(t)=5$. So now we'll
-\textbf{evaluate the equation at the desired values}.
-Putting together all the information we
-get
+Now we'll \textbf{evaluate the equation at the desired values}.  We
+are interested in the time at which $p(t)=4$ and $p'(t) =
+500$. Additionally, at this time we know that $4^2+9=s^2$, so
+$s(t)=5$.  Putting together all the information we get
 \[
-2(4)(500)=2(5)s'(t).
+2(4)(500)=2(5)s'(t),
 \]
-Thus, $s'(t)=400$ mph.
+thus $s'(t)=400$ mph.
 \end{solution}
 
 
@@ -430,21 +433,16 @@ fast is its radius increasing when the radius is 4 cm?
 \end{example}
 
 \begin{solution}
-We'll use our general strategy to solve this problems. To start,
-\textbf{draw a picture}.
+To start, \textbf{draw a picture}.
 
 \begin{tikzpicture}
 \draw[penColor!50!background,very thick] (0,0) ellipse (2 and 1);
 \draw [penColor, very thick] (0,0) circle [radius=2];
-\draw[textColor, dashed, very thick] (0,0) -- (2,0);
-\node [below,penColor] at (1,0) {$r=4$ cm};
-\node [penColor,left] at (-1.5,1.42) {$\dd[V]{t}$ = 7 cm$^3$/sec};
+\draw[penColor2, dashed, very thick] (0,0) -- (2,0);
+\node [below,penColor2] at (1,0) {$r=4$ cm};
+\node [penColor,left] at (-1.5,1.42) {$\dd[V]{t} = 7$ cm$^3$/sec};
 \node [penColor, right] at (1.5,-1.42) {$V = \frac{4\pi r^3}{3}$};
 \end{tikzpicture}
-
-Here the variables are the radius $r$ and the volume $V$.  We know
-$\dd[V]{t}$, and we want to know $\dd[r]{t}$. 
-
 
 Next we need to \textbf{find an equation}.  Thinking of the variables
 $r$ and $V$ as functions of time, they are related by the equation
@@ -472,8 +470,7 @@ when the water is 4 cm deep?
 \end{example}
 
 \begin{solution}
-We'll use our general strategy to solve this problems. To start,
-\textbf{draw a picture}.
+To start, \textbf{draw a picture}.
 
 \begin{tikzpicture}
 \draw[penColor,very thick] (0,4) ellipse (4 and 1);
@@ -482,14 +479,14 @@ We'll use our general strategy to solve this problems. To start,
 \draw[penColor, very thick] (-3.97,3.85) -- (0,0);
 \draw[penColor, very thick] (0,4) -- (4,4);
 \draw[penColor!50!background, very thick] (0,2) -- (2,2);
-\draw[->,line width=0.4cm, textColor!20!background] (0,6) -- (0,4.25);
-\draw[->, dashed, textColor, very thick] (2.1,0) -- (2.1,2);
-\draw[dashed, textColor, very thick] (-4.1,0) -- (-4.1,4);
-\node[right, textColor] at (.4,5.6) {$\dd[V]{t} = 10$ cm$^3$/sec};
+\draw[->,line width=0.4cm, penColor!20!background] (0,6) -- (0,4.25);
+\draw[dashed, penColor2, very thick] (2.1,0) -- (2.1,2);
+\draw[dashed, penColor, very thick] (-4.1,0) -- (-4.1,4);
+\node[right, penColor] at (.4,5.6) {$\dd[V]{t} = 10$ cm$^3$/sec};
 \node[below, penColor] at (2,4) {$10$ cm};
 \node[above, penColor] at (1,2) {$r$ cm};
-\node[right, textColor] at (2.1,1) {$h(t) = 4$ cm};
-\node[left, textColor] at (-4.1,2) {$30$ cm};
+\node[right, penColor2] at (2.1,1) {$h(t) = 4$ cm};
+\node[left, penColor] at (-4.1,2) {$30$ cm};
 \end{tikzpicture}
 
 Note, no attempt was made to draw this picture to scale, rather we
@@ -516,7 +513,7 @@ triangles,
 \]  
 In particular, we see that when $h = 4$, $r=4/3$ and 
 \[
-\dd[r]{t} = \frac{1}{3}\cdot \dd[h]{t}
+\dd[r]{t} = \frac{1}{3}\cdot \dd[h]{t}.
 \]
 Now we can \textbf{evaluate the equation at the desired
   values}. Starting with Equation~\ref{equation:cone/water}, we plug
@@ -543,19 +540,19 @@ the rope in deg/sec after 1 sec?
 \begin{solution}
 To start, \textbf{draw a picture}.
 
-\begin{tikzpicture}[scale=1.5]
+\begin{tikzpicture}[scale=1.3]
 \draw[penColor!50!background, very thick] (0,3) -- (0,-1);
 \draw[penColor, very thick] (0,3) -- (2.12,-.12);
 \draw [penColor!50!background, very thick] (-2.12,-.12) arc [radius=3, start angle=225, end angle= 315];
-\draw [penColor, very thick] (0,2.3) arc [radius=.7, start angle=270, end angle= 305];
+\draw [penColor2, very thick] (0,2.3) arc [radius=.7, start angle=270, end angle= 305];
 \draw[->, penColor, very thick] (0,-.12) -- (2,-.12);
 
-\node[penColor,rotate=35] at (2.12,-.12) {\scalebox{3} \Ladiesroom};
+\node[penColor] at (2.12,-.12) {\scalebox{3} \Ladiesroom};
 \node[penColor,right] at (2.3,-.12) {$P$};
 \node[penColor,right,above] at (0,3) {$Q$};
 \node[penColor,right] at (1.06,1.5) {$10$ ft};
 \node[penColor,above] at (1,-.12) {$\dd[x]{t} = 6$ ft/sec};
-\node[penColor,right,above] at (.3,2) {$\theta$};
+\node[penColor2,right,above] at (.3,2) {$\theta$};
 \end{tikzpicture}
 
 Now we must \textbf{find an equation}. From the right triangle in our
@@ -568,9 +565,9 @@ We can now \textbf{differentiate the equation}. Taking derivatives we obtain
 \cos(\theta)\cdot \theta'(t)=0.1 x'(t).
 \]
 Now we can \textbf{evaluate the equation at the desired values}.  When
-$t=1$ sec, we have a $6-8-10$ right triangle, since the person was
-pushed by someone who walks $6$ ft/sec.  Hence $x'(t) = 6$, and 
-$\cos\theta=8/10$. Thus 
+$t=1$ sec, the person was pushed by someone who walks $6$
+ft/sec. Hence we have a $6-8-10$ right triangle, with $x'(t) = 6$, and
+$\cos\theta=8/10$. Thus
 \[
 (8/10) \theta'(t) =6/10,
 \]
@@ -580,13 +577,11 @@ and so  $\theta'(t)=6/8=3/4$ rad/sec, or approximately $43$ deg/sec.
 
 
 We have seen that sometimes there are apparently more than two
-variables that change with time, but in reality there are just two, as
-the others can be expressed in terms of just two. But sometimes there
-really are several variables that change with time; as long as you
-know the rates of change of all but one of them you can find the rate
-of change of the remaining one.  As in the case when there are just two
-variables, take the derivative of both sides of the equation relating all of
-the variables, and then substitute all of the known values and solve for
+variables that change with time, but as long as you know the rates of
+change of all but one of them you can find the rate of change of the
+remaining one.  As in the case when there are just two variables, take
+the derivative of both sides of the equation relating all of the
+variables, and then substitute all of the known values and solve for
 the unknown rate.
 
 
@@ -611,13 +606,15 @@ We start the same way we always do, we \textbf{draw a picture}.
 \draw [penColor, fill] (0,0) circle [radius=.07];
 \draw [penColor, fill] (3,0) circle [radius=.07];
 \draw [penColor, fill] (0,3) circle [radius=.07];
-\draw[dashed,penColor, very thick] (3,0) -- (0,3);
+\draw[dashed,penColor2, very thick] (3,0) -- (0,3);
 
 \node[penColor,rotate=90,right] at (.5,3) {\scalebox{-2} \Bicycle};
 \node[penColor,right] at (0,.2) {$P$};
-\node[penColor,left] at (0,3) {$(0,a(t))$};
-\node[penColor,below] at (3,0) {$(b(t),0)$};
-\node[penColor,above] at (1.6,1.6) {$c(t)$};
+\node[penColor,left] at (-.3,3) {$a'(t) = 20$ km/hr};
+\node[penColor,left] at (0,1.5) {$3$ km};
+\node[penColor,below] at (1.5,0) {$4$ km};
+\node[penColor,below] at (4,0) {$b'(t)= 15$ km/hr};
+\node[penColor2,above] at (1.6,1.6) {$c(t)$};
 \node[penColor,right,above] at (3.5,0) {\scalebox{-2}[2] \Bicycle};
 \end{tikzpicture}
 
@@ -625,7 +622,7 @@ Here $a(t)$ is the distance of cyclist $A$ north of $P$ at time $t$,
 and $b(t)$ the distance of cyclist $B$ east of $P$ at time $t$, and
 $c(t)$ is the distance from cyclist $A$ to cyclist $B$ at time $t$.
 
-Now we must \textbf{find an equation}.  By the Pythagorean Theorem,
+We must \textbf{find an equation}.  By the Pythagorean Theorem,
 \[
 c(t)^2=a(t)^2+b(t)^2.
 \] 
@@ -639,30 +636,9 @@ by the Pythagorean Theorem, $c(t) = 5$. So
 \[
 2\cdot 5 \cdot c'(t) = 2 \cdot 3\cdot 20 + 2 \cdot 4 \cdot 15
 \]
-solving for $c'(t)$ we find $c'(t) = 24$ km/sec.
+solving for $c'(t)$ we find $c'(t) = 24$ km/hr.
 \end{solution}
 
-
-
-Notice how this problem differs from example~\xrefn{exam:receding
-airplane}.  In both cases we started with the Pythagorean Theorem and
-took derivatives on both sides.  However, in
-example~\xrefn{exam:receding airplane} one of the sides was a constant
-(the altitude of the plane), and so the derivative of the square of
-that side of the triangle was simply zero.  In this example, on the
-other hand, all three sides of the right triangle are variables, even
-though we are interested in a specific value of each side of the
-triangle (namely, when the sides have lengths 10 and 15). Make sure that
-you understand at the start of the problem what are the variables and
-what are the constants.
-
-
-
-\begin{verbatim}
-http://mathoverflow.net/questions/83097/are-there-any-related-rates-calculus-problems-that-dont-feel-contrived
-
-http://themathblogger.wordpress.com/2009/10/05/business-calculus-word-problem/
-\end{verbatim}
 
 
 \begin{exercises}
@@ -746,86 +722,86 @@ pyramids) is $(1/3)(\hbox{height})(\hbox{area of base})$.
 \begin{answer} $75/64$ m/min
 \end{answer}\end{exercise}
 
-\begin{exercise}
-The sun is rising at the rate of $1/4$ deg/min, and appears to be
-climbing into the sky perpendicular to the
-horizon, as depicted in figure~\xrefn{fig:sunrise sunset}.
-How fast is the shadow of a 200 meter building
-shrinking at the moment when the shadow is 500 meters long? 
-\begin{answer} $145\pi/72$ m/s
-\end{answer}\end{exercise}
+%% \begin{exercise}
+%% The sun is rising at the rate of $1/4$ deg/min, and appears to be
+%% climbing into the sky perpendicular to the
+%% horizon, as depicted in figure~\xrefn{fig:sunrise sunset}.
+%% How fast is the shadow of a 200 meter building
+%% shrinking at the moment when the shadow is 500 meters long? 
+%% \begin{answer} $145\pi/72$ m/s
+%% \end{answer}\end{exercise}
 
-\begin{exercise} The sun is setting at the rate of $1/4$ deg/min, and appears
-to be dropping perpendicular to the horizon, as depicted in
-figure~\xrefn{fig:sunrise sunset}. How fast is the shadow of a 25
-meter wall lengthening at the moment when the shadow is 50 meters long?
-\begin{answer} $25\pi/144$ m/min
-\end{answer}\end{exercise}
+%% \begin{exercise} The sun is setting at the rate of $1/4$ deg/min, and appears
+%% to be dropping perpendicular to the horizon, as depicted in
+%% figure~\xrefn{fig:sunrise sunset}. How fast is the shadow of a 25
+%% meter wall lengthening at the moment when the shadow is 50 meters long?
+%% \begin{answer} $25\pi/144$ m/min
+%% \end{answer}\end{exercise}
 
-%% BADBAD
-%% \font\miscsymbols miscsymbols10 scaled 2000
-%% %\begin{psfigure}{2.45in}{1.25in}{124.figME.ps}
-%% \figure
-%% \vbox{\beginpicture
-%% \normalgraphs
-%% \sevenpoint
-%% \setcoordinatesystem units <0.3truecm,0.3truecm>
-%% \setplotarea x from -10 to 10, y from 0 to 8
-%% \axis bottom shiftedto y=0 /
-%% \setdashes\setlinear
-%% \plot 5 0 -8 8 /
-%% \setsolid
-%% \setplotsymbol ({\tenrm.}) 
-%% \plot 0 0 0 3 /
-%% \put {\miscsymbols k} at -9 8.6
-%% \endpicture}
-%% \figrdef{fig:sunrise sunset}
-%% \endfigure{Sunrise or sunset.}
+%% %% BADBAD
+%% %% \font\miscsymbols miscsymbols10 scaled 2000
+%% %% %\begin{psfigure}{2.45in}{1.25in}{124.figME.ps}
+%% %% \figure
+%% %% \vbox{\beginpicture
+%% %% \normalgraphs
+%% %% \sevenpoint
+%% %% \setcoordinatesystem units <0.3truecm,0.3truecm>
+%% %% \setplotarea x from -10 to 10, y from 0 to 8
+%% %% \axis bottom shiftedto y=0 /
+%% %% \setdashes\setlinear
+%% %% \plot 5 0 -8 8 /
+%% %% \setsolid
+%% %% \setplotsymbol ({\tenrm.}) 
+%% %% \plot 0 0 0 3 /
+%% %% \put {\miscsymbols k} at -9 8.6
+%% %% \endpicture}
+%% %% \figrdef{fig:sunrise sunset}
+%% %% \endfigure{Sunrise or sunset.}
 
 
 
-\begin{exercise}
-The trough shown in figure~\xrefn{fig:trough}
-is constructed by fastening together three
-slabs of wood of dimensions 10 ft $\times$ 1 ft, and then attaching the
-construction to a wooden wall at each end.  The angle $\theta$ was
-originally $30^\circ$, but because of poor construction the sides are
-collapsing.  The trough is full of water.  At what rate (in ft${}^3$/sec) 
-is 
-the water spilling out over the top of
-the trough if the sides have each fallen to an angle of $45^\circ$, and are
-collapsing at the rate of $1^\circ$ per second?
-\begin{answer} $\pi\sqrt2/36$ ft$^3$/s
-\end{answer}\end{exercise}
+%% \begin{exercise}
+%% The trough shown in figure~\xrefn{fig:trough}
+%% is constructed by fastening together three
+%% slabs of wood of dimensions 10 ft $\times$ 1 ft, and then attaching the
+%% construction to a wooden wall at each end.  The angle $\theta$ was
+%% originally $30^\circ$, but because of poor construction the sides are
+%% collapsing.  The trough is full of water.  At what rate (in ft${}^3$/sec) 
+%% is 
+%% the water spilling out over the top of
+%% the trough if the sides have each fallen to an angle of $45^\circ$, and are
+%% collapsing at the rate of $1^\circ$ per second?
+%% \begin{answer} $\pi\sqrt2/36$ ft$^3$/s
+%% \end{answer}\end{exercise}
 
-%%BADBAD
-%\begin{psfigure}{2.5in}{1.5in}{124.figMF.ps}
-%% \figure
-%% \vbox{\beginpicture
-%% \normalgraphs
-%% \sevenpoint
-%% \setcoordinatesystem units <0.9truecm,0.9truecm>
-%% \setplotarea x from -1 to 12, y from 0 to 4
-%% \setlinear
-%% \plot -0.5 0.866 0 0 1 0 1.5 0.866 -0.5 0.866 /
-%% \plot 1 0 10.4 3.42 10.9 4.29 8.9 4.29 -0.5 0.866 /
-%% \plot 10.9 4.29 1.5 0.866 /
-%% \put {$\theta$} [b] <0pt,3pt> at -0.15 0.3
-%% \put {$\theta$} [b] <0pt,3pt> at 1.15 0.3
-%% \put {$1$} [t] <0pt,-4pt> at 0.5 0
-%% \put {$1$} [tr] <-2pt,-2pt> at -0.25 0.433
-%% \put {$1$} [tl] <2pt,-2pt> at 10.65 3.853
-%% \put {$10$} [tl] <2pt,-2pt> at 5.7 1.71
-%% \circulararc 30 degrees from 0 0.3 center at 0 0
-%% \circulararc -30 degrees from 1 0.3 center at 1 0
-%% \setdashes <2pt>
-%% \plot 0 0 9.4 3.42 10.4 3.42 / 
-%% \plot 9.4 3.42 8.9 4.29 / 
-%% \plot 0 0 0 0.866 /
-%% \plot 1 0 1 0.866 /
-%% \endpicture}
-%% \figrdef{fig:trough}
-%% \endfigure{Trough.}
+%% %%BADBAD
+%% %\begin{psfigure}{2.5in}{1.5in}{124.figMF.ps}
+%% %% \figure
+%% %% \vbox{\beginpicture
+%% %% \normalgraphs
+%% %% \sevenpoint
+%% %% \setcoordinatesystem units <0.9truecm,0.9truecm>
+%% %% \setplotarea x from -1 to 12, y from 0 to 4
+%% %% \setlinear
+%% %% \plot -0.5 0.866 0 0 1 0 1.5 0.866 -0.5 0.866 /
+%% %% \plot 1 0 10.4 3.42 10.9 4.29 8.9 4.29 -0.5 0.866 /
+%% %% \plot 10.9 4.29 1.5 0.866 /
+%% %% \put {$\theta$} [b] <0pt,3pt> at -0.15 0.3
+%% %% \put {$\theta$} [b] <0pt,3pt> at 1.15 0.3
+%% %% \put {$1$} [t] <0pt,-4pt> at 0.5 0
+%% %% \put {$1$} [tr] <-2pt,-2pt> at -0.25 0.433
+%% %% \put {$1$} [tl] <2pt,-2pt> at 10.65 3.853
+%% %% \put {$10$} [tl] <2pt,-2pt> at 5.7 1.71
+%% %% \circulararc 30 degrees from 0 0.3 center at 0 0
+%% %% \circulararc -30 degrees from 1 0.3 center at 1 0
+%% %% \setdashes <2pt>
+%% %% \plot 0 0 9.4 3.42 10.4 3.42 / 
+%% %% \plot 9.4 3.42 8.9 4.29 / 
+%% %% \plot 0 0 0 0.866 /
+%% %% \plot 1 0 1 0.866 /
+%% %% \endpicture}
+%% %% \figrdef{fig:trough}
+%% %% \endfigure{Trough.}
 
 \begin{exercise}
 A woman 5 ft tall walks at the rate of 3.5 ft/sec away from a streetlight
@@ -857,42 +833,42 @@ kph.  Find the speed of the car.
 \begin{answer} $500/\sqrt3-200\approx 88.7$ km/hr
 \end{answer}\end{exercise}
 
-%BADBAD
-%\font\miscsymbols miscsymbols10 scaled 2000
-\begin{exercise}
-A light shines from the top of a pole 20 m high. A ball is falling 10
-meters from the pole, casting a shadow on a building 30 meters away,
-as shown in figure~\xrefn{fig:falling ball}.
-When the ball is 25 meters from the ground it is falling at 6 meters
-per second. How fast is its shadow moving?
-\begin{answer} 18 m/s
-\end{answer}\end{exercise}
+%% %BADBAD
+%% %\font\miscsymbols miscsymbols10 scaled 2000
+%% \begin{exercise}
+%% A light shines from the top of a pole 20 m high. A ball is falling 10
+%% meters from the pole, casting a shadow on a building 30 meters away,
+%% as shown in figure~\xrefn{fig:falling ball}.
+%% When the ball is 25 meters from the ground it is falling at 6 meters
+%% per second. How fast is its shadow moving?
+%% \begin{answer} 18 m/s
+%% \end{answer}\end{exercise}
 
-%% BADBAD
-%% \figure
-%% \vbox{\beginpicture
-%% \normalgraphs
-%% \ninepoint
-%% \setcoordinatesystem units <.7truecm,.7truecm>
-%% \setplotarea x from 0 to 4.5, y from 0 to 4
-%% \axis bottom /
-%% \setlinear
-%% \linethickness1pt
-%% \putrule from 0 0 to 0 2
-%% \put {$\bullet$} at 1 2.5
-%% \put {\miscsymbols k} at 0.05 2
-%% \putrule from 3 0 to 3 4
-%% \putrule from 3 4 to 4.5 4
-%% \setdashes <2pt>
-%% \plot 0 2 3 3.5 /
-%% \endpicture}
-%% \figrdef{fig:falling ball}
-%% \endfigure{Falling ball.}
+%% %% BADBAD
+%% %% \figure
+%% %% \vbox{\beginpicture
+%% %% \normalgraphs
+%% %% \ninepoint
+%% %% \setcoordinatesystem units <.7truecm,.7truecm>
+%% %% \setplotarea x from 0 to 4.5, y from 0 to 4
+%% %% \axis bottom /
+%% %% \setlinear
+%% %% \linethickness1pt
+%% %% \putrule from 0 0 to 0 2
+%% %% \put {$\bullet$} at 1 2.5
+%% %% \put {\miscsymbols k} at 0.05 2
+%% %% \putrule from 3 0 to 3 4
+%% %% \putrule from 3 4 to 4.5 4
+%% %% \setdashes <2pt>
+%% %% \plot 0 2 3 3.5 /
+%% %% \endpicture}
+%% %% \figrdef{fig:falling ball}
+%% %% \endfigure{Falling ball.}
 
 \begin{exercise} 
 A road running in a northwest direction crosses a road going east to
 west at a $120^\circ$ at a point $P$. Car $A$ is driving northwesterly
-along the ﬁrst road, and car $B$ is driving east along the second
+along the first road, and car $B$ is driving east along the second
 road. At a particular time car $A$ is $10$ kilometers to the northwest
 of P and traveling at $80$ km/hr, while car $B$ is $15$ kilometers to
 the east of $P$ and traveling at $100$ km/hr. How fast is the distance
@@ -902,10 +878,10 @@ $c^2=a^2+b^2-2ab\cos\theta$.
 \end{answer}\end{exercise}
 
 \begin{exercise}
-Do example~\xrefn{exam:departing cars} assuming that
-car A is 300 meters north of $P$, car B is 400 meters east of $P$, both
-cars are going at constant speed toward $P$, and the two cars will collide in
-10 seconds.
+A road running north to south crosses a road going east to west at the
+point $P$. Car A is 300 meters north of $P$, car B is 400 meters east
+of $P$, both cars are going at constant speed toward $P$, and the two
+cars will collide in 10 seconds.
 \begin{answer} $-50$ m/s
 \end{answer}\end{exercise}
 
@@ -972,33 +948,33 @@ moving on the ground one second later?
 \begin{answer} $4000/49$ m/s
 \end{answer}\end{exercise}
 
-\begin{exercise}
-The two blades of a pair of scissors are fastened at the point $A$ as
-shown in figure~\xrefn{fig:scissors}.  Let
-$a$ denote the distance from $A$ to the tip of the blade (the point $B$).
-Let $\beta$ denote the angle at the tip of the blade that is formed by the
-line $\overline{AB}$ and the bottom edge of the blade, line
-$\overline{BC}$, and let $\theta$ denote the angle between
-$\overline{AB}$ and the horizontal.
-Suppose that a piece of paper is cut in such a way that the center
-of the scissors at $A$ is fixed, and the paper is also fixed.  As the
-blades are closed (i.e., the angle $\theta$ in the diagram is decreased),
-the distance $x$ between $A$ and $C$ increases, cutting the paper.
-\begin{enumerate}
-\item{\bf a.} Express $x$ in terms of $a$, $\theta$, and $\beta$.
+%% \begin{exercise}
+%% The two blades of a pair of scissors are fastened at the point $A$ as
+%% shown in figure~\xrefn{fig:scissors}.  Let
+%% $a$ denote the distance from $A$ to the tip of the blade (the point $B$).
+%% Let $\beta$ denote the angle at the tip of the blade that is formed by the
+%% line $\overline{AB}$ and the bottom edge of the blade, line
+%% $\overline{BC}$, and let $\theta$ denote the angle between
+%% $\overline{AB}$ and the horizontal.
+%% Suppose that a piece of paper is cut in such a way that the center
+%% of the scissors at $A$ is fixed, and the paper is also fixed.  As the
+%% blades are closed (i.e., the angle $\theta$ in the diagram is decreased),
+%% the distance $x$ between $A$ and $C$ increases, cutting the paper.
+%% \begin{enumerate}
+%% \item{\bf a.} Express $x$ in terms of $a$, $\theta$, and $\beta$.
 
-\item{\bf b.} Express $dx/dt$ in terms of $a$,
-$\theta$, $\beta$, and $d\theta/dt$.
+%% \item{\bf b.} Express $dx/dt$ in terms of $a$,
+%% $\theta$, $\beta$, and $d\theta/dt$.
 
-\item{\bf c.} Suppose that the distance $a$ is 20 cm, and the
-angle $\beta$ is $5^\circ$.  Further suppose that $\theta$ is
-decreasing at 50
-deg/sec.  At the instant when $\theta=30^\circ$, find the rate (in
-cm/sec) at which the paper is being cut.
-\end{enumerate}
-\begin{answer} (a) $x=a\cos\theta-a\sin\theta\cot(\theta+\beta)=
-\hbox{$a\sin\beta/\sin(\theta+\beta$), (c) $\dot x\approx 3.79$ cm/s}$
-\end{answer}\end{exercise}
+%% \item{\bf c.} Suppose that the distance $a$ is 20 cm, and the
+%% angle $\beta$ is $5^\circ$.  Further suppose that $\theta$ is
+%% decreasing at 50
+%% deg/sec.  At the instant when $\theta=30^\circ$, find the rate (in
+%% cm/sec) at which the paper is being cut.
+%% \end{enumerate}
+%% \begin{answer} (a) $x=a\cos\theta-a\sin\theta\cot(\theta+\beta)=
+%% \hbox{$a\sin\beta/\sin(\theta+\beta$), (c) $\dot x\approx 3.79$ cm/s}$
+%% \end{answer}\end{exercise}
 
 
 %%BADBAD
@@ -1061,20 +1037,19 @@ cm/sec) at which the paper is being cut.
 
 
 
-\section{l'H\^{o}pital's Rule}
+\section{L'H\^{o}pital's Rule}
 
 
-Now consider this limit:
-$$\lim_{x\to \pi}{x^2-\pi^2\over \sin x}.$$
-As $x$ approaches $\pi$, both the numerator and denominator approach
-zero, so it is not obvious what, if anything, the quotient
-approaches. We can often compute such limits by application of the
-following theorem.
+Derivatives allow us to take problems that were once difficult to
+solve and convert them to problems that are easy to solve. Let us
+consider l'H\^{o}pital's rule:
 
-\begin{mainTheorem}[L'H\^opital's Rule]\index{L'H\^opital's Rule} 
-Let $f$ and $g$ be functions that are differentiable near $a$.  If
+\marginnote[1in]{L'H\^opital's rule applies even when $\lim_{x\to a}f(x) =
+  \pm \infty$ and $\lim_{x\to a}g(x) = \mp \infty$. See Example~\ref{example:xlnx infty}.}
+\begin{mainTheorem}[L'H\^opital's Rule]\index{l'H\^opital's Rule} 
+Let $f(x)$ and $g(x)$ be functions that are differentiable near $a$.  If
 \[
-\lim_{x \to a} f(x) = \lim_{x \to a}g(x) = 0 \qquad \text{or}\qquad \pm \infty,
+\lim_{x \to a} f(x) = \lim_{x \to a}g(x) = 0 \qquad \text{or} \pm \infty,
 \]
 and $\lim_{x \to a} \frac{f'(x)}{g'(x)}$ exists, and $g'(x) \neq 0$
 for all $x$ near $a$, then 
@@ -1082,324 +1057,504 @@ for all $x$ near $a$, then
 \lim_{x \to a} \frac{f(x)}{g(x)} = \lim_{x \to a} \frac{f'(x)}{g'(x)}.
 \]
 \end{mainTheorem}
-
-
 This theorem is somewhat difficult to prove, in part because it
 incorporates so many different possibilities, so we will not prove it
-here. We also will not need to worry about the precise definition of 
-``sufficiently nice'', as the functions we encounter will be
-suitable. 
+here. 
 
-%% fixme: do plausibility argument with tan lines at x=a?
+L'H\^{o}pital's rule allows us to investigate limits of
+\textit{indeterminate form}.
 
-\begin{example}
-Compute $\ds\lim_{x\to \pi}{x^2-\pi^2\over \sin x}$ in two ways.
-\msk
-First we use L'H\^opital's Rule: Since the numerator and denominator
-both approach zero,
-$$\lim_{x\to \pi}{x^2-\pi^2\over \sin x}=
-\lim_{x\to \pi}{2x \over \cos x},$$
-provided the latter exists. But in fact this is an easy limit, since
-the denominator now approaches $-1$, so 
-$$\lim_{x\to \pi}{x^2-\pi^2\over \sin x}={2\pi\over -1} = -2\pi.$$
+\begin{definition}[List of Indeterminate Forms]\index{indeterminate form}\hfil
+\begin{itemize}
+\item[\textbf{0/0}] This refers to a limit of the form $\lim_{x\to a}
+  \frac{f(x)}{g(x)}$ where $f(x)\to 0$ and $g(x)\to 0$ as $x\to a$.
+\item[\textbf{$\pmb\infty$/$\pmb\infty$}] This refers to a limit of the form $\lim_{x\to a}
+  \frac{f(x)}{g(x)}$ where $f(x)\to \infty$ and $g(x)\to \infty$ as $x\to a$.
+\item[\textbf{0\,$\pmb{\cdot\infty}$}] This refers to a limit of the form $\lim_{x\to a}
+  \left(f(x)\cdot g(x)\right)$ where $f(x)\to 0$ and $g(x)\to \infty$ as $x\to a$.
+\item[\textbf{$\pmb\infty$--$\pmb\infty$}] This refers to a limit of the form $\lim_{x\to a}\left(
+  f(x)-g(x)\right)$ where $f(x)\to \infty$ and $g(x)\to \infty$ as $x\to a$.
 
-We don't really need L'H\^opital's Rule to do this limit. Rewrite it
-as 
-$$\lim_{x\to \pi}(x+\pi){x-\pi\over \sin x}$$
-and note that 
-$$\lim_{x\to \pi}{x-\pi\over \sin x}=
-\lim_{x\to \pi}{x-\pi\over -\sin (x-\pi)}=
-\lim_{x\to 0}-{x\over \sin x}$$
-since $x-\pi$ approaches zero as $x$ approaches $\pi$.
-Now
-$$\lim_{x\to \pi}(x+\pi){x-\pi\over \sin x}=
-\lim_{x\to \pi}(x+\pi)\lim_{x\to 0}-{x\over \sin x}=
-2\pi(-1)=-2\pi$$
-as before.
+\item[\textbf{1$^{\pmb\infty}$}] This refers to a limit of the form $\lim_{x\to a}
+  f(x)^{g(x)}$ where $f(x)\to 1$ and $g(x)\to \infty$ as $x\to a$.
+\item[\textbf{0$^\text{0}$}] This refers to a limit of the form $\lim_{x\to a}
+  f(x)^{g(x)}$ where $f(x)\to 0$ and $g(x)\to 0$ as $x\to a$.
+\item[\textbf{$\pmb\infty^\text{0}$}] This refers to a limit of the form $\lim_{x\to a}
+  f(x)^{g(x)}$ where $f(x)\to \infty$ and $g(x)\to 0$ as $x\to a$.
+\end{itemize}
+In each of these cases, it is \textbf{not} the value of the limit is
+not immediately obvious. Hence a careful analysis is required!
+\end{definition}
+
+Our first example will be the computation of a limit that was somewhat
+difficult before, see Example~\ref{example:sinx/x}.
+
+\begin{example}[0/0]\label{example:sinx/x-lhopital}
+Compute
+\[
+\lim_{x\to 0} \frac{\sin(x)}{x}.
+\]
 \end{example}
 
-\begin{example} Compute $\ds\lim_{x\to \infty}{2x^2-3x+7\over
-x^2+47x+1}$ in two ways.
-\msk
-As $x$ goes to infinity both the numerator and denominator go to
-infinity, so we may apply L'H\^opital's Rule:
-$$\lim_{x\to \infty}{2x^2-3x+7\over x^2+47x+1}=
-\lim_{x\to \infty}{4x-3\over 2x+47}.$$
-In the second quotient, it is still the case that the numerator and
-denominator both go to infinity, so we are allowed to use
-L'H\^opital's Rule again:
-$$\lim_{x\to \infty}{4x-3\over 2x+47}=\lim_{x\to \infty}{4\over 2}=2.$$
-So the original limit is 2 as well.
+\begin{marginfigure}
+\begin{tikzpicture}
+	\begin{axis}[
+            xmin=-1.6,xmax=1.6,ymin=-1.5,ymax=1.5,
+            axis lines=center,
+            xtick={-1.57, 0, 1.57},
+            xticklabels={$-\pi/2$, $0$, $\pi/2$},
+            ytick={-1,1},
+            %ticks=none,
+            %width=3in,
+            %height=2in,
+            unit vector ratio*=1 1 1,
+            xlabel=$x$, ylabel=$y$,
+            every axis y label/.style={at=(current axis.above origin),anchor=south},
+            every axis x label/.style={at=(current axis.right of origin),anchor=west},
+          ]        
+          \addplot [very thick, penColor, samples=100,smooth, domain=(-1.6:1.6)] {sin(deg(x))};
+          \addplot [very thick, penColor2, samples=100,smooth] {x};
+          \node at (axis cs:1,.6) [penColor] {$f(x)$};
+          \node at (axis cs:-1,-1.2) [penColor2] {$g(x)$};
+        \end{axis}
+\end{tikzpicture}
+\caption{A plot of $f(x)=\sin(x)$ and $g(x) = x$. Note how the tangent
+  lines for each curve are coincide at $x=0$.}
+\label{example:sinx and x}
+\end{marginfigure}
 
-Again, we don't really need L'H\^opital's Rule, and in fact a more
-elementary approach is easier---we divide the numerator and
-denominator by $x^2$:
-$$\lim_{x\to \infty}{2x^2-3x+7\over x^2+47x+1}=
-\lim_{x\to \infty}{2x^2-3x+7\over x^2+47x+1}{{1\over x^2}\over {1\over
-    x^2}}=
-\lim_{x\to \infty}{2-{3\over x}+{7\over x^2}\over
-1+{47\over x}+{1\over x^2}}.$$
-Now as $x$ approaches infinity, all the quotients with some power of
-$x$ in the denominator approach zero, leaving 2 in the numerator and 1
-in the denominator, so the limit again is 2.
+\begin{solution}
+Set $f(x) = \sin(x)$ and $g(x) = x$.  Since both $f(x)$ and $g(x)$ are
+differentiable functions at $0$, and 
+\[
+\lim_{x \to 0} f(x) = \lim_{x \to 0}g(x) = 0,
+\]
+so this situation is ripe for l'H\^opital's Rule. Now 
+\[
+f'(x) = \cos(x) \qquad\text{and}\qquad g'(x) = 1.
+\] 
+L'H\^opital's rule tells us that 
+\[
+\lim_{x \to 0} \frac{\sin(x)}{x} = \lim_{x \to 0} \frac{\cos(x)}{1} = 1.
+\]
+\end{solution}
+
+
+
+From this example, we gain an intuitive feeling for why l'H\^opital's
+rule is true: If two functions are both $0$ when $x=a$, and if their
+tangent lines have the same slope, then the functions coincide as $x$
+approaches $a$. See Figure~\ref{example:sinx and x}. 
+
+
+
+
+Our next set of examples will run through the various indeterminate
+forms\index{indeterminate forms} one is likely to encounter.
+
+\begin{example}[$\pmb\infty$/$\pmb\infty$] Compute 
+\[
+\lim_{x\to \pi/2+} \frac{\sec(x)}{\tan(x)}.
+\]
 \end{example}
 
-\begin{example} Compute $\ds\lim_{x\to 0}{\sec x - 1\over \sin x}$.
-\msk
-Both the numerator and denominator approach zero, so applying 
-L'H\^opital's Rule:
-$$\lim_{x\to 0}{\sec x - 1\over \sin x}=
-\lim_{x\to 0}{\sec x\tan x\over \cos x}={1\cdot 0\over 1}=0.$$
-\vskip -16pt
+\begin{solution}
+Set $f(x) = \sec(x)$ and $g(x) = \tan(x)$. Both $f(x)$ and $g(x)$
+are differentiable near $\pi/2$. Additionally,
+\[
+\lim_{x \to \pi/2+} f(x) = \lim_{x \to \pi/2+}g(x) = -\infty.
+\]
+This situation is ripe for l'H\^opital's Rule. Now 
+\[
+f'(x) = \sec(x)\tan(x) \qquad\text{and}\qquad g'(x) = \sec^2(x), 
+\]
+L'H\^opital's rule tells us that 
+\[
+\lim_{x\to \pi/2+} \frac{\sec(x)}{\tan(x)} = \lim_{x\to \pi/2+}
+\frac{\sec(x)\tan(x)}{\sec^2(x)} = \lim_{x\to \pi/2+} \sin(x) =
+1.
+\]
+\end{solution}
+
+
+
+\begin{example}[0\,$\pmb{\cdot\infty}$]\label{example:xlnx infty} 
+Compute 
+\[
+\lim_{x\to 0+} x\ln x.
+\]
 \end{example}
 
-\begin{example} Compute $\ds\lim_{x\to 0^+} x\ln x$.
+\begin{solution}
+This doesn't appear to be suitable for l'H\^opital's Rule. As $x$
+approaches zero, $\ln x$ goes to $-\infty$, so the product looks like
+\[
+(\text{something very small})\cdot (\text{something very large and
+  negative}).
+\] 
+This product could be anything---a careful analysis is required.
+Write
+\[
+x\ln x = \frac{\ln x}{x^{-1}}.
+\]
+Set $f(x) = \ln(x)$ and $g(x) = x^{-1}$.  Since both functions are differentiable near zero and 
+\[
+\lim_{x\to 0+} \ln(x) = -\infty\qquad\text{and}\qquad \lim_{x\to 0+} x^{-1} = \infty,
+\]
+we may apply l'H\^opital's rule. Write
+\[
+f'(x) = x^{-1}\qquad \text{and}\qquad g'(x) = -x^{-2},
+\]
+so
+\[
+\lim_{x\to 0+} x\ln x = \lim_{x\to 0+} \frac{\ln x}{x^{-1}} = \lim_{x\to 0+} \frac{x^{-1}}{-x^{-2}} =\lim_{x\to 0+} -x = 0.
+\]
+One way to interpret this is that since $\lim_{x\to 0^+}x\ln x = 0$,
+the function $x$ approaches zero much faster than $\ln x$ approaches
+$-\infty$.
+\end{solution}
 
-This doesn't appear to be suitable for L'H\^opital's Rule, but it also
-is not ``obvious''. As $x$ approaches zero, $\ln x$ goes to $-\infty$,
-so the product looks like $(\hbox{something very small})\cdot 
-(\hbox{something very large and negative})$. But this could be
-anything: it depends on {\it how small\/} and {\it how large}. 
-For example, consider $(x^2)(1/x)$, $(x)(1/x)$, and $(x)(1/x^2)$. As
-$x$ approaches zero, each of these is $(\hbox{something very small})\cdot 
-(\hbox{something very large})$, yet the limits are respectively 
-zero, $1$, and $\infty$.
+\subsection*{Indeterminate Forms Involving Subtraction}
 
-We can
-in fact turn this into a L'H\^opital's Rule problem:
-$$x\ln x = {\ln x\over 1/x}={\ln x\over x^{-1}}.$$
-Now as $x$ approaches zero, both the numerator and denominator
-approach infinity (one $-\infty$ and one $+\infty$, but only the size
-is important). Using  L'H\^opital's Rule:
-$$\lim_{x\to 0^+} {\ln x\over x^{-1}}=
-\lim_{x\to 0^+} {1/x\over -x^{-2}} =\lim_{x\to 0^+} {1\over x}(-x^2)=
-\lim_{x\to 0^+} -x = 0.$$
-One way to interpret this is that since $\ds\lim_{x\to
-  0^+}x\ln x = 0$, the $x$ approaches zero much faster than the $\ln x$
-approaches $-\infty$.
+There are two basic cases here, we'll do an example of each.
+
+\begin{example}[$\pmb\infty$--$\pmb\infty$]
+Compute
+\[
+\lim_{x\to 0} \left(\cot(x) - \csc(x)\right).
+\]
 \end{example}
+
+\begin{solution}
+Here we simply need to write each term as a fraction,
+\begin{align*}
+\lim_{x\to 0} \left(\cot(x) - \csc(x)\right) &= \lim_{x\to 0} \left(\frac{\cos(x)}{\sin(x)} - \frac{1}{\sin(x)}\right)\\
+&= \lim_{x\to 0} \frac{\cos(x)-1}{\sin(x)} 
+\end{align*}
+Setting $f(x) = \cos(x)-1$ and $g(x)=\sin(x)$, both functions are differentiable near zero and 
+\[
+\lim_{x\to 0}(\cos(x)-1)=\lim_{x\to 0}\sin(x) = 0.
+\]
+We may now apply l'H\^opital's rule. Write
+\[
+f'(x) = -\sin(x)\qquad \text{and}\qquad g'(x) = \cos(x),
+\]
+so
+\[
+\lim_{x\to 0} \left(\cot(x) - \csc(x)\right) = \lim_{x\to 0} \frac{\cos(x)-1}{\sin(x)} = \lim_{x\to 0} \frac{-\sin(x)}{\cos(x)} =0.
+\]
+\end{solution}
+
+
+Sometimes one must be slightly more clever. 
+
+\begin{example}[$\pmb\infty$--$\pmb\infty$]
+Compute
+\[
+\lim_{x\to\infty}\left(\sqrt{x^2+x}-x\right).
+\]
+\end{example}
+
+\begin{solution}
+Again, this doesn't appear to be suitable for l'H\^opital's Rule. A bit of algebraic manipulation will help. Write
+\begin{align*}
+\lim_{x\to\infty}\left(\sqrt{x^2+x}-x\right) &= \lim_{x\to\infty}\left(x\left(\sqrt{1+1/x}-1\right)\right)\\
+&=\lim_{x\to\infty}\frac{\sqrt{1+1/x}-1}{x^{-1}}
+\end{align*}
+Now set $f(x) = \sqrt{1+1/x}-1$, $g(x) = x^{-1}$. Since both
+  functions are differentiable for large values of $x$ and 
+\[
+\lim_{x\to\infty} (\sqrt{1+1/x}-1) = \lim_{x\to\infty}x^{-1} = 0, 
+\]
+we may apply l'H\^opital's rule. Write
+\[
+f'(x) = (1/2)(1+1/x)^{-1/2}\cdot(-x^{-2}) \qquad \text{and}\qquad g'(x) = -x^{-2}
+\]
+so
+\begin{align*}
+\lim_{x\to\infty}\left(\sqrt{x^2+x}-x\right) &= \lim_{x\to\infty}\frac{\sqrt{1+1/x}-1}{x^{-1}} \\
+&= \lim_{x\to\infty}\frac{(1/2)(1+1/x)^{-1/2}\cdot(-x^{-2})}{-x^{-2}} \\
+&= \lim_{x\to\infty} \frac{1}{2\sqrt{1+1/x}}\\
+&= \frac{1}{2}.
+\end{align*}
+\end{solution}
+
+
+\subsection*{Exponential Indeterminate Forms}
+
+There is a standard trick for dealing with the indeterminate forms
+\[
+1^\infty,\qquad 0^0,\qquad \infty^0.
+\]
+Given $u(x)$ and $v(x)$ such that
+\[
+\lim_{x\to a}u(x)^{v(x)}
+\]
+falls into one of the categories described above, rewrite as
+\[
+\lim_{x\to a}e^{v(x)\ln(u(x))}
+\]
+and then examine 
+\[
+\lim_{x\to a} \frac{\ln(u(x))}{v(x)^{-1}}
+\]
+using l'H\^opital's rule.  Since these forms are all very similar, we
+will only give a single example.
+
+
+\begin{example}[1$^{\pmb\infty}$]
+Compute
+\[
+\lim_{x\to \infty}\left(1 + \frac{1}{x}\right)^x.
+\]
+\end{example}
+
+\begin{solution}
+Write
+\[
+\lim_{x\to \infty}\left(1 + \frac{1}{x}\right)^x = \lim_{x\to \infty}e^{x\ln\left(1 + \frac{1}{x}\right)}.
+\]
+So now look at
+\[
+\lim_{x\to\infty} \frac{\ln\left(1 + \frac{1}{x}\right)}{x^{-1}}
+\]
+Setting $f(x) = \ln\left(1 + \frac{1}{x}\right)$ and $g(x) = x^{-1}$,
+both functions are differentiable for large values of $x$ and
+\[
+\lim_{x\to \infty}\ln\left(1 + \frac{1}{x}\right)=\lim_{x\to \infty}x^{-1} = 0.
+\]
+We may now apply l'H\^opital's rule. Write
+\[
+f'(x) = \frac{-x^{-2}}{1 + \frac{1}{x}}\qquad\text{and}\qquad g'(x) = -x^{-2},
+\]
+so
+\begin{align*}
+\lim_{x\to\infty} \frac{\ln\left(1 + \frac{1}{x}\right)}{x^{-1}} &= \lim_{x\to\infty} \frac{\frac{-x^{-2}}{1 + \frac{1}{x}}}{-x^{-2}} \\
+&=\lim_{x\to\infty} \frac{1}{1 + \frac{1}{x}}\\
+&=1.
+\end{align*}
+Hence, 
+\[
+\lim_{x\to \infty}\left(1 + \frac{1}{x}\right)^x = \lim_{x\to \infty}e^{x\ln\left(1 + \frac{1}{x}\right)} =e^{1} = e.
+\]
+\end{solution}
+
+
+
+
+
+
+
+
+
+
 
 % Most from Keisler
 \begin{exercises}
 
-Compute the limits.
+\noindent Compute the limits.
 
 \twocol
 
-\begin{exercise} $\ds\lim_{x\to 0} {\cos x -1\over \sin x}$
+\begin{exercise} $\lim_{x\to 0} {\cos x -1\over \sin x}$
 \begin{answer} $0$
 \end{answer}\end{exercise}
 
-\begin{exercise} $\ds\lim_{x\to \infty} {e^x\over x^3}$
+\begin{exercise} $\lim_{x\to \infty} {e^x\over x^3}$
 \begin{answer} $\infty$
 \end{answer}\end{exercise}
 
-\begin{exercise} $\ds\lim_{x\to \infty} \sqrt{x^2+x}-\sqrt{x^2-x}$
+\begin{exercise} $\lim_{x\to \infty} \sqrt{x^2+x}-\sqrt{x^2-x}$
 \begin{answer} $1$
 \end{answer}\end{exercise}
 
-\begin{exercise} $\ds\lim_{x\to \infty} {\ln x\over x}$
+\begin{exercise} $\lim_{x\to \infty} {\ln x\over x}$
 \begin{answer} $0$
 \end{answer}\end{exercise}
 
-\begin{exercise} $\ds\lim_{x\to \infty} {\ln x\over \sqrt{x}}$
+\begin{exercise} $\lim_{x\to \infty} {\ln x\over \sqrt{x}}$
 \begin{answer} $0$
 \end{answer}\end{exercise}
 
-\begin{exercise} $\ds\lim_{x\to\infty} {e^x + e^{-x}\over e^x -e^{-x}}$
+\begin{exercise} $\lim_{x\to\infty} {e^x + e^{-x}\over e^x -e^{-x}}$
 \begin{answer} 1
 \end{answer}\end{exercise}
 
-\begin{exercise} $\ds\lim_{x\to0}{\sqrt{9+x}-3\over x}$
+\begin{exercise} $\lim_{x\to0}{\sqrt{9+x}-3\over x}$
 \begin{answer} $1/6$
 \end{answer}\end{exercise}
 
-\begin{exercise} $\ds\lim_{t\to1^+}{(1/t)-1\over t^2-2t+1}$
+\begin{exercise} $\lim_{t\to1^+}{(1/t)-1\over t^2-2t+1}$
 \begin{answer} $-\infty$
 \end{answer}\end{exercise}
 
-\begin{exercise} $\ds\lim_{x\to2}{2-\sqrt{x+2}\over 4-x^2}$
+\begin{exercise} $\lim_{x\to2}{2-\sqrt{x+2}\over 4-x^2}$
 \begin{answer} $1/16$
 \end{answer}\end{exercise}
 
-\begin{exercise} $\ds\lim_{t\to\infty}{t+5-2/t-1/t^3\over 3t+12-1/t^2}$
+\begin{exercise} $\lim_{t\to\infty}{t+5-2/t-1/t^3\over 3t+12-1/t^2}$
 \begin{answer} $1/3$
 \end{answer}\end{exercise}
 
-\begin{exercise} $\ds\lim_{y\to\infty}{\sqrt{y+1}+\sqrt{y-1}\over y}$
+\begin{exercise} $\lim_{y\to\infty}{\sqrt{y+1}+\sqrt{y-1}\over y}$
 \begin{answer} $0$
 \end{answer}\end{exercise}
 
-\begin{exercise} $\ds\lim_{x\to1}{\sqrt{x}-1\over \root 1/3\of{x}-1}$
+\begin{exercise} $\lim_{x\to1}{\sqrt{x}-1\over \root 1/3\of{x}-1}$
 \begin{answer} $3/2$
 \end{answer}\end{exercise}
 
-\begin{exercise} $\ds\lim_{x\to0}{(1-x)^{1/4}-1\over x}$
+\begin{exercise} $\lim_{x\to0}{(1-x)^{1/4}-1\over x}$
 \begin{answer} $-1/4$
 \end{answer}\end{exercise}
 
-\begin{exercise} $\ds\lim_{t\to 0}{\left(t+{1\over t}\right)((4-t)^{3/2}-8)}$
+\begin{exercise} $\lim_{t\to 0}{\left(t+{1\over t}\right)((4-t)^{3/2}-8)}$
 \begin{answer} $-3$
 \end{answer}\end{exercise}
 
-\begin{exercise} $\ds\lim_{t\to 0^+}\left({1\over t}+{1\over\sqrt{t}}\right)
+\begin{exercise} $\lim_{t\to 0^+}\left({1\over t}+{1\over\sqrt{t}}\right)
 (\sqrt{t+1}-1)$
 \begin{answer} $1/2$
 \end{answer}\end{exercise}
 
-\begin{exercise} $\ds\lim_{x\to 0}{x^2\over\sqrt{2x+1}-1}$
+\begin{exercise} $\lim_{x\to 0}{x^2\over\sqrt{2x+1}-1}$
 \begin{answer} $0$
 \end{answer}\end{exercise}
 
-\begin{exercise} $\ds\lim_{u\to 1}{(u-1)^3\over (1/u)-u^2+3/u-3}$
+\begin{exercise} $\lim_{u\to 1}{(u-1)^3\over (1/u)-u^2+3/u-3}$
 \begin{answer} $-1$
 \end{answer}\end{exercise}
 
-\begin{exercise} $\ds\lim_{x\to 0}{2+(1/x)\over 3-(2/x)}$
+\begin{exercise} $\lim_{x\to 0}{2+(1/x)\over 3-(2/x)}$
 \begin{answer} $-1/2$
 \end{answer}\end{exercise}
 
-\begin{exercise} $\ds\lim_{x\to 0^+}{1+5/\sqrt{x}\over 2+1/\sqrt{x}}$
+\begin{exercise} $\lim_{x\to 0^+}{1+5/\sqrt{x}\over 2+1/\sqrt{x}}$
 \begin{answer} $5$
 \end{answer}\end{exercise}
 
-\begin{exercise} $\ds\lim_{x\to 0^+}{3+x^{-1/2}+x^{-1}\over 2+4x^{-1/2}}$
+\begin{exercise} $\lim_{x\to 0^+}{3+x^{-1/2}+x^{-1}\over 2+4x^{-1/2}}$
 \begin{answer} $\infty$
 \end{answer}\end{exercise}
 
-\begin{exercise} $\ds\lim_{x\to\infty}{x+x^{1/2}+x^{1/3}\over x^{2/3}+x^{1/4}}$
+\begin{exercise} $\lim_{x\to\infty}{x+x^{1/2}+x^{1/3}\over x^{2/3}+x^{1/4}}$
 \begin{answer} $\infty$
 \end{answer}\end{exercise}
 
-\begin{exercise} $\ds\lim_{t\to\infty}
+\begin{exercise} $\lim_{t\to\infty}
 {1-\sqrt{t\over t+1}\over 2-\sqrt{4t+1\over t+2}}$
 \begin{answer} $2/7$
 \end{answer}\end{exercise}
 
-\begin{exercise} $\ds\lim_{t\to\infty}{1-{t\over t-1}\over 1-\sqrt{t\over t-1}}$
+\begin{exercise} $\lim_{t\to\infty}{1-{t\over t-1}\over 1-\sqrt{t\over t-1}}$
 \begin{answer} $2$
 \end{answer}\end{exercise}
 
-\begin{exercise} $\ds\lim_{x\to-\infty}{x+x^{-1}\over 1+\sqrt{1-x}}$
+\begin{exercise} $\lim_{x\to-\infty}{x+x^{-1}\over 1+\sqrt{1-x}}$
 \begin{answer} $-\infty$
 \end{answer}\end{exercise}
 
-\begin{exercise} $\ds\lim_{x\to1}{\int_1^x 1/t\,dt\over\int_1^x 1/(2t+1)\,dt}$
-\begin{answer} $3$
-\end{answer}\end{exercise}
 
-\begin{exercise} $\ds\lim_{x\to\infty}{\int_1^x\sqrt{t+(1/t)}\,dt\over x\sqrt{x}}$
-\begin{answer} $2/3$
-\end{answer}\end{exercise}
 
-\begin{exercise} $\ds\lim_{x\to\pi/2}{\cos x\over (\pi/2)-x}$
+\begin{exercise} $\lim_{x\to\pi/2}{\cos x\over (\pi/2)-x}$
 \begin{answer} $1$
 \end{answer}\end{exercise}
 
-\begin{exercise} $\ds\lim_{x\to0}{e^x-1\over x}$
+\begin{exercise} $\lim_{x\to0}{e^x-1\over x}$
 \begin{answer} $1$
 \end{answer}\end{exercise}
 
-\begin{exercise} $\ds\lim_{x\to0}{x^2\over e^x-x-1}$
+\begin{exercise} $\lim_{x\to0}{x^2\over e^x-x-1}$
 \begin{answer} $2$
 \end{answer}\end{exercise}
 
-\begin{exercise} $\ds\lim_{x\to1}{\ln x\over x-1}$
+\begin{exercise} $\lim_{x\to1}{\ln x\over x-1}$
 \begin{answer} $1$
 \end{answer}\end{exercise}
 
-\begin{exercise} $\ds\lim_{x\to0}{\ln(x^2+1)\over x}$
+\begin{exercise} $\lim_{x\to0}{\ln(x^2+1)\over x}$
 \begin{answer} $0$
 \end{answer}\end{exercise}
 
-\begin{exercise} $\ds\lim_{x\to1}{x\ln x\over x^2-1}$
+\begin{exercise} $\lim_{x\to1}{x\ln x\over x^2-1}$
 \begin{answer} $1/2$
 \end{answer}\end{exercise}
 
-\begin{exercise} $\ds\lim_{x\to0}{\sin(2x)\over\ln(x+1)}$
+\begin{exercise} $\lim_{x\to0}{\sin(2x)\over\ln(x+1)}$
 \begin{answer} $2$
 \end{answer}\end{exercise}
 
-\begin{exercise} $\ds\lim_{x\to1}{x^{1/4}-1\over x}$
+\begin{exercise} $\lim_{x\to1}{x^{1/4}-1\over x}$
 \begin{answer} $0$
 \end{answer}\end{exercise}
 
-\begin{exercise} $\ds\lim_{x\to1^+}{\sqrt{x}\over x-1}$
+\begin{exercise} $\lim_{x\to1^+}{\sqrt{x}\over x-1}$
 \begin{answer} $\infty$
 \end{answer}\end{exercise}
 
-\begin{exercise} $\ds\lim_{x\to1}{\sqrt{x}-1\over x-1}$
+\begin{exercise} $\lim_{x\to1}{\sqrt{x}-1\over x-1}$
 \begin{answer} $1/2$
 \end{answer}\end{exercise}
 
-\begin{exercise} $\ds\lim_{x\to\infty}{x^{-1}+x^{-1/2}\over x+x^{-1/2}}$
+\begin{exercise} $\lim_{x\to\infty}{x^{-1}+x^{-1/2}\over x+x^{-1/2}}$
 \begin{answer} $0$
 \end{answer}\end{exercise}
 
-\begin{exercise} $\ds\lim_{x\to\infty}{x+x^{-2}\over 2x+x^{-2}}$
+\begin{exercise} $\lim_{x\to\infty}{x+x^{-2}\over 2x+x^{-2}}$
 \begin{answer} $1/2$
 \end{answer}\end{exercise}
 
-\begin{exercise} $\ds\lim_{x\to\infty}{5+x^{-1}\over 1+2x^{-1}}$
+\begin{exercise} $\lim_{x\to\infty}{5+x^{-1}\over 1+2x^{-1}}$
 \begin{answer} $5$
 \end{answer}\end{exercise}
 
-\begin{exercise} $\ds\lim_{x\to\infty}{4x\over\sqrt{2x^2+1}}$
+\begin{exercise} $\lim_{x\to\infty}{4x\over\sqrt{2x^2+1}}$
 \begin{answer} $2\sqrt2$
 \end{answer}\end{exercise}
 
-\begin{exercise} $\ds\lim_{x\to0}{3x^2+x+2\over x-4}$
+\begin{exercise} $\lim_{x\to0}{3x^2+x+2\over x-4}$
 \begin{answer} $-1/2$
 \end{answer}\end{exercise}
 
-\begin{exercise} $\ds\lim_{x\to0}{\sqrt{x+1}-1\over \sqrt{x+4}-2}$
+\begin{exercise} $\lim_{x\to0}{\sqrt{x+1}-1\over \sqrt{x+4}-2}$
 \begin{answer} $2$
 \end{answer}\end{exercise}
 
-\begin{exercise} $\ds\lim_{x\to0}{\sqrt{x+1}-1\over \sqrt{x+2}-2}$
+\begin{exercise} $\lim_{x\to0}{\sqrt{x+1}-1\over \sqrt{x+2}-2}$
 \begin{answer} $0$
 \end{answer}\end{exercise}
 
-\begin{exercise} $\ds\lim_{x\to0^+}{\sqrt{x+1}+1\over\sqrt{x+1}-1}$
+\begin{exercise} $\lim_{x\to0^+}{\sqrt{x+1}+1\over\sqrt{x+1}-1}$
 \begin{answer} $\infty$
 \end{answer}\end{exercise}
 
-\begin{exercise} $\ds\lim_{x\to0}{\sqrt{x^2+1}-1\over\sqrt{x+1}-1}$
+\begin{exercise} $\lim_{x\to0}{\sqrt{x^2+1}-1\over\sqrt{x+1}-1}$
 \begin{answer} $0$
 \end{answer}\end{exercise}
 
-\begin{exercise} $\ds\lim_{x\to\infty}{(x+5)\left({1\over 2x}+{1\over x+2}\right)}$
+\begin{exercise} $\lim_{x\to\infty}{(x+5)\left({1\over 2x}+{1\over x+2}\right)}$
 \begin{answer} $3/2$
 \end{answer}\end{exercise}
 
-\begin{exercise} $\ds\lim_{x\to0^+}{(x+5)\left({1\over 2x}+{1\over x+2}\right)}$
+\begin{exercise} $\lim_{x\to0^+}{(x+5)\left({1\over 2x}+{1\over x+2}\right)}$
 \begin{answer} $\infty$
 \end{answer}\end{exercise}
 
-\begin{exercise} $\ds\lim_{x\to1}{(x+5)\left({1\over 2x}+{1\over x+2}\right)}$
+\begin{exercise} $\lim_{x\to1}{(x+5)\left({1\over 2x}+{1\over x+2}\right)}$
 \begin{answer} $5$
 \end{answer}\end{exercise}
 
-\begin{exercise} $\ds\lim_{x\to2}{x^3-6x-2\over x^3+4}$
+\begin{exercise} $\lim_{x\to2}{x^3-6x-2\over x^3+4}$
 \begin{answer} $-1/2$
 \end{answer}\end{exercise}
 
-\begin{exercise} $\ds\lim_{x\to2}{x^3-6x-2\over x^3-4x}$
+\begin{exercise} $\lim_{x\to2}{x^3-6x-2\over x^3-4x}$
 \begin{answer} does not exist
 \end{answer}\end{exercise}
 
-\begin{exercise} $\ds\lim_{x\to1+}{x^3+4x+8\over 2x^3-2}$
+\begin{exercise} $\lim_{x\to1+}{x^3+4x+8\over 2x^3-2}$
 \begin{answer} $\infty$
 \end{answer}\end{exercise}
-
 \endtwocol
-
-\msk
-\begin{exercise} The function $f(x) = {x\over\sqrt{x^2+1}}$ has two horizontal
- asymptotes.  Find them and give a rough sketch of $f$ with its horizontal
- asymptotes. 
-\begin{answer} $y=1$ and $y=-1$
-\end{answer}\end{exercise}
-
 \end{exercises}
 
