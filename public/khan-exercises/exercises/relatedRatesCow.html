@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html data-require="math word-problems steveMath8 graphie math-function-parser">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>A spherical cow</title>
+    <script src="../khan-exercise.js"></script>
+</head>
+<body>
+  <div class="exercise">
+  
+
+    <div class="problems">
+      <div id="piOver4">
+        	
+        	<div class="vars">
+        		<var id="Rate">randRange(1,20)</var>
+        		<var id="Radius">randRange(5,15)</var>
+        	</div>
+        	<p class="problem">
+        		Fred the spherical cow is happily grazing on cubical grass pellets.  He grows in volume at a rate of <code><var>Rate</var></code> cubic feet per day.		
+        	</p>
+        
+        	<p class = "question">
+        		When Fred's radius is <code><var>Radius</var></code> feet, at what rate is his surface area growing?
+        	</p>
+       	    <p class="solution" data-type="parsedExpression">
+        			<var>2*Rate/Radius</var>
+            </p>
+            <div class="hints">
+            	<div>
+            		<p> 
+            			Let <code>A</code> be Fred's surface area, <code>V</code> be his volume and <code>r</code> be his radius.
+            		</p>
+            		<p>
+            			Picture
+            		</p>
+            	</div>
+            	<div>
+            		<p>
+            			Known Rate:  <code>\left. \dfrac{dV}{dt}\right|_{r = <var>Radius</var>} = <var>Rate</var></code>
+            		</p>
+            		<p>
+            			Unknown Rate: <code>\left.\dfrac{dA}{dt}\right|_{r = <var>Radius</var>}</code>
+            		</p>
+            	</div>
+            		<p>
+						<b>Introduction</b>:  I will first find a formula for <code>V</code> and <code>A</code> in terms of <code>r</code>.  I will use implicit differentiation and
+						the equation relating <code>V</code> to <code>r</code> to find the rate that <code>r</code> is changing at the instant that <code> r = <var>Radius</var></code>.
+						Then, using the rate information about <code>r</code>, and the equation relating <code>A</code> to <code>r</code>, I will find the rate that <code>A</code>
+						is changing at this instant.
+					</p>
+					
+					<p>
+						The volume of a sphere is <code>\dfrac{4}{3}\pi</code> times the cube of the radius.  So <code>V = \dfrac{4\pi}{3} r^3</code>.
+						<br/>
+						The surface area of a sphere is <code>4\pi</code> times the square of the radius.  So <code>A = 4\pi r^2</code>
+					</p>
+					
+					<p>
+						Differentiating with respect to time, we obtain <code>\dfrac{dV}{dt} = \dfrac{d}{dt}\left( \dfrac{4\pi}{3} r^3\right)</code>
+					</p>
+					<div>
+						<p>
+							<code>\dfrac{dV}{dt} = \dfrac{d}{dr}\left( \dfrac{4\pi}{3} r^3\right) \cdot \dfrac{dr}{dt}</code>, by the chain rule.
+						</p>
+						<p>
+							<code>\dfrac{dV}{dt} = 4\pi r^2\cdot \dfrac{dr}{dt}</code>
+						</p>
+					</div>
+					<p>
+						At the time of interest, <code>r = <var>Radius</var></code> and <code>\left. \dfrac{dV}{dt}\right|_{r = <var>Radius</var>} = <var>Rate</var></code>.
+					</p>
+					<p>
+						Thus <code><var>Rate</var>= 4 \cdot <var>Radius</var>^2\pi \cdot \left.\dfrac{dr}{dt}\right|_{r = <var>Radius</var>}</code>
+					</p>
+					<p>
+						Therefore <code>\left.\dfrac{dr}{dt}\right|_{r = <var>Radius</var>} = \dfrac{<var>Rate</var>}{ <var>4*Radius*Radius</var>\pi}</code>
+					</p>
+					<p>
+						Now we can use this in combination with the equation relating radius and surface area to find the rate of change in surface area with respect to time.
+					</p>
+					<div>
+						<p>
+							<code>A = 4\pi r^2</code>
+						</p>
+						<p>
+							<code>\dfrac{dA}{dt} = \dfrac{d}{dt} 4\pi r^2</code>
+						</p>
+						<p>
+							<code>\dfrac{dA}{dt} = \dfrac{d}{dr} \left(4\pi r^2\right) \dfrac{dr}{dt}</code>
+						</p>
+						<p>
+							<code>\dfrac{dA}{dt} = 8 \pi r \dfrac{dr}{dt}</code>
+						</p>
+						<p>
+							At the time in question, <code>\left.\dfrac{dr}{dt}\right|_{r = <var>Radius</var>} = \dfrac{<var>Rate</var>}{ <var>4*Radius*Radius</var>\pi}</code> and 
+							<code>r = <var>Radius</var></code>
+						</p>
+						<p>
+							So <code>\dfrac{dA}{dt} = 8 \cdot <var>Radius</var> \cdot  \dfrac{<var>Rate</var>}{ <var>4*Radius*Radius</var>\pi} \cdot \pi </code>
+						</p>
+					</div>
+					<p>
+						Therefore, at the instant that Fred's radius is <code><var>Radius</var></code>, his surface area is increasing at a rate of <code>\dfrac{<var>toFraction(2*Rate/Radius)[0]</var>}{<var>toFraction(2*Rate/Radius)[1]</var>}</code>
+					</p>
+
+            </div>
+       
+      </div>
+    </div>
+  </div>

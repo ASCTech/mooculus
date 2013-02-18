@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html data-require="math word-problems steveMath8 graphie math-function-parser">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>Suddenly, a Whale!?!</title>
+    <script src="../khan-exercise.js"></script>
+</head>
+<body>
+  <div class="exercise">
+  
+
+    <div class="problems">
+      <div id="piOver4">
+        	
+        	<div class="vars">
+        		<var id="A">randRange(1,9)*100</var>
+        		<var id="R">randRange(2,10)</var>
+        	</div>
+        	<p class="problem">
+        		A large whale suddenly materializes in the air above the nearest intersection, which you know to be <code><var>A</var></code> feet away from you. 
+        		When the whale materializes it is at rest, but as the laws of physics dictate, the whale begins accelerating towards the Earth with an acceleration of about <code>32</code>
+        		feet per second per second.  Intensely curious about the time of this occurrence, you grab a protractor and start taking measurements.
+        		When you first manage to get a measurement, the angle between your line of sight with the whale and the horizontal is <code>\dfrac{\pi}{4}</code> and a tenth of a  second later, 
+        		the angle has changed to <code>\dfrac{\pi}{4} - \dfrac{1}{<var>10*R</var>}</code>.  
+        	</p>
+        
+        	<p class = "question">
+        		Approximately how many seconds have elapsed between the time that the whale appeared and your first measurement?
+        	</p>
+        	
+        	<p>
+        		Hint:  First approximate the rate that the angle is changing with respect to time when you took your first measurement.
+        	</p>
+       	    <p class="solution" data-type="parsedExpression">
+        	1
+            </p>
+            <div class="hints">
+            	<div>
+            	<p>
+            		Let <code>\theta</code> be the angle of your line of sight with the whale and the ground.  Let <code>y</code> be the height of the whale.
+            	</p>
+            	<p>
+            		picture
+            	</p>
+            	</div>
+            	<p>
+            		Since <code>\theta</code> changes from <code>\dfrac{\pi}{4}</code> to <code>\dfrac{\pi}{4} - \dfrac{1}{<var>10*R</var>}</code> in a tenth of a second, we can estimate
+            		that <code>\left. \dfrac{d\theta}{dt} \right|_{\theta = \frac{\pi}{4}}  \approx -\dfrac{ \frac{1}{<var>10*R</var>}}{\frac{1}{10}} = -\dfrac{1}{<var>R</var>}</code>
+            	</p>
+            	<p>
+            		<b>Introduction</b>:  I will first use trigonometry to relate <code>\theta</code> and  <code>y</code>.  Then I will implicitly differentiate with respect to time, to obtain an equation
+            		relating the rates.  This will allow me to figure out how fast the whale was falling at the time I took my first measurement.  Then, using the fact that the velocity of the whale started
+            		at zero, and is increasing at a constant rate, I will be able to figure out how many seconds elapsed since the whale first materialized.
+            	</p>
+            	<p>
+            		By the definition of the tangent function, <code>\tan(\theta) = \dfrac{y}{<var>A</var>}</code>.
+            	</p>
+            	<p>
+            		Implicitly differentiating with respect to time I have <code>\dfrac{d}{dt}\tan(\theta) = \dfrac{d}{dt}\dfrac{y}{<var>A</var>}</code>.
+            	</p>
+            	<div>
+            		<p>
+            			<code>\dfrac{d}{d\theta}\left(\tan(\theta)\right) \cdot \dfrac{d\theta}{dt} =\dfrac{1}{<var>A</var>} \cdot \dfrac{dy}{dt}</code>, by the chain rule.
+            		</p>
+            		<p>
+            			<code>\sec^2(\theta) \dfrac{d\theta}{dt} =\dfrac{1}{<var>A</var>} \cdot \dfrac{dy}{dt}</code>
+            		</p>
+            		<p>
+            			<code>\dfrac{dy}{dt} = <var>A</var>\sec^2(\theta) \dfrac{d\theta}{dt}</code>
+            		</p>
+            		
+            	</div>
+            	<div>
+            	<p>
+            		At the time of the first measurement, <code>\theta = \dfrac{\pi}{4}</code>, so <code>\sec^2(\theta) = 2</code>.  We already estimated that  <code>\left. \dfrac{d\theta}{dt} \right|_{\theta = \frac{\pi}{4}}  \approx -\dfrac{1}{<var>R</var>}</code>.
+            	</p>
+            	<p>
+            		So <code>\left.\dfrac{dy}{dt}\right|_{\theta = \frac{\pi}{4}} \approx <var>A</var>\cdot 2 \cdot \dfrac{-1}{<var>R</var>}</code>
+            	</p>
+            	<p>
+            		Now, I also know that the velocity is increasing at a constant rate of 32 ft/sec every second.  So it must have taken the whale <code>\dfrac{<var>A</var>\cdot 2 \cdot \dfrac{1}{<var>R</var>}}{32}</code> seconds to accelerate to that velocity.
+            	</p>
+            	<p>
+            		Thus <code>\dfrac{<var>A</var>\cdot 2 }{32 \cdot <var>R</var>}</code> seconds elapsed between the time the whale materialized and the time of your first measurement.
+            	</p>
+            	</div>
+            	
+            </div>
+       
+      </div>
+    </div>
+  </div>
+</body>
+</html>
