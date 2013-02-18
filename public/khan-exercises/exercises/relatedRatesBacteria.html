@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html data-require="math word-problems steveMath8 graphie math-function-parser">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>A colony of bacteria</title>
+    <script src="../khan-exercise.js"></script>
+</head>
+<body>
+  <div class="exercise">
+  
+
+    <div class="problems">
+      <div id="piOver4">
+        	
+        	<div class="vars">
+        		<var id="Rate">randRange(1,20)</var>
+        		<var id="Radius">randRange(2,5)</var>
+        	</div>
+        	<p class="problem">
+        		A colony of bacterial are growing in a Petri dish.  They form a circular disk, which appears to be growing at a rate of <code><var>Rate</var></code> cubic millimeters per hour.
+        		
+        	</p>
+        
+        	<p class = "question">
+        		When the disk is <code><var>Radius</var></code> millimeters, at what rate is the radius growing in mm/hour?
+        	</p>
+       	    <p class="solution" data-type="parsedExpression">
+        		<var>Rate/(2*Math.PI*Radius)</var>
+            </p>
+            <div class="hints">
+            	<div>
+            		<p> 
+            			Let <code>A</code> be the area of the colony, and <code>r</code> be its radius.
+            		</p>
+            		<p>
+            			Picture
+            		</p>
+            	</div>
+            	<div>
+            		<p>
+            			Known Rate:  <code>\left. \dfrac{dA}{dt}\right|_{r = <var>Radius</var>} = <var>Rate</var></code>
+            		</p>
+            		<p>
+            			Unknown Rate: <code>\left.\dfrac{dA}{dt}\right|_{r = <var>Radius</var>}</code>
+            		</p>
+            	</div>
+
+            		<p>
+						<b>Introduction</b>: I will first write an equation relating <code>A</code> and <code>r</code> using  geometry.  I will then implicitly
+						differentiate this equation with respect to time to obtain an equation relating the rates <code>\dfrac{dA}{dt}</code> and <code>\dfrac{dr}{dt}</code>.
+						Finally I will use the information given in the problem to solve for <code>\left.\dfrac{dA}{dt}\right|_{r = <var>Radius</var>}</code>.
+					</p>
+					
+					<p>
+						The area of a disk is <code>\pi</code> times the square of the radius.  So <code>A = \pi r^2</code>
+					</p>
+					
+					<p>
+						Differentiating with respect to time, we obtain <code>\dfrac{dA}{dt} = \dfrac{d}{dt}\left( \pi r^2\right)</code>
+					</p>
+					<div>
+						<p>
+							<code>\dfrac{dA}{dt} = \dfrac{d}{dr}\left( \pi r^2\right) \cdot \dfrac{dr}{dt}</code>, by the chain rule.
+						</p>
+						<p>
+							<code>\dfrac{dA}{dt} = 2\pi r\cdot \dfrac{dr}{dt}</code>
+						</p>
+					</div>
+					<p>
+						At the time of interest, <code>r = <var>Radius</var></code> and <code>\left. \dfrac{dA}{dt}\right|_{r = <var>Radius</var>} = <var>Rate</var></code>.
+					</p>
+					<p>
+						Thus <code><var>Rate</var>= 2 \cdot <var>Radius</var>\pi \cdot \left.\dfrac{dr}{dt}\right|_{r = <var>Radius</var>}</code>
+					</p>
+					<p>
+						Therefore <code>\left.\dfrac{dr}{dt}\right|_{r = <var>Radius</var>} = \dfrac{<var>Rate</var>}{ <var>2*Radius</var>\pi}</code>
+					</p>
+					<p>
+						In conclusion, the radius of the colony is increasing at a rate of  <code> \dfrac{<var>Rate</var>}{<var>2*Radius</var>\pi}</code> mm/sec at the time that
+						the radius is <code><var>Radius</var></code>.
+					</p>
+
+            </div>
+       
+      </div>
+    </div>
+  </div>
+</body>
+</html>

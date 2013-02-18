@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html data-require="math word-problems steveMath8 graphie math-function-parser">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>Shadow on a building</title>
+    <script src="../khan-exercise.js"></script>
+</head>
+<body>
+  <div class="exercise">
+  
+
+    <div class="problems">
+      <div id="shadowBuilding">
+        	
+        	<div class="vars">
+				<var id = "A">randRange(3,5)*10</var>
+				<var id = "B">randRange(4,7)</var>
+				<var id = "C">randRange(3,6)</var>
+				<var id = "D">randRange(1,A/5-2)*5 </var>
+				
+  			  </div>
+        	
+        	<p class="problem">
+        		A light on the ground is <var>A</var> feet away from a building.  A <var>B</var> foot tall man is walking from the light to the building at a rate of <var>C</var> feet per second.
+        		 He is casting a shadow on the side of the building.  At what rate is his shadow shrinking when he is <var>D</var> feet from the building?
+        	</p>
+        <p class="solution" data-type="parsedExpression">
+        	<var>A*B*C/(A-D)/(A-D)</var>
+        </p>
+        <div class="hints">
+        	<p>
+        		Let <code>x</code> be the distance between the man and the light source, and let <code>y</code> be the height of his shadow at the same time.  Note that
+        		 when the man is <code><var>D</var></code> feet from the building,  he is <code><var>A-D</var></code> feet away from the light source, so 
+        		 <code>x=<var>A-D</var></code> at the time we are interested in.
+        	</p>
+        	<p>
+        		Picture
+        	</p>
+        	<div>
+        		<p>Known Rate:  <code>\dfrac{dx}{dt} = <var>C</var></code></p>
+        		<p>Unknown Rate: <code>\left. \dfrac{dy}{dt} \right|_{x = <var>A-D</var>} </code></p>
+        	</div>
+        	<p>
+        		<b>Introduction</b>:  I will first write an equation relating <code>x</code> and <code>y</code> by using similar triangles.  I will the implicitly
+        		differentiate this equation with respect to time to obtain an equation relating the rates <code>\dfrac{dx}{dt}</code> and <code>\dfrac{dy}{dt}</code>.
+        		I will then use this to find the particular rate of interest, namely <code>\left. \dfrac{dy}{dt} \right|_{x = <var>A-D</var>} </code>.
+        	</p>
+        	<p>
+        		By similar triangles, <code>\dfrac{x}{<var>B</var>} = \dfrac{<var>A</var>}{y}</code>
+        	</p>
+        	<p>
+        		Implicitly differentiating with respect to <code>t</code>, we have  <code> \dfrac{d}{dt}\dfrac{x}{<var>B</var>} = \dfrac{d}{dt} \dfrac{<var>A</var>}{y}</code>
+        	</p>
+        	<div>
+        		<p>        			
+        				 <code> \dfrac{1}{<var>B</var>} \dfrac{dx}{dt}= \dfrac{d}{dy} \left(\dfrac{<var>A</var>}{y} \right)  \cdot \dfrac{dy}{dt}</code>, by the chain rule.
+        		</p>
+        		<p>        			
+        				 <code> \dfrac{1}{<var>B</var>} \dfrac{dx}{dt}= <var>A</var>\dfrac{d}{dy}( y^{-1}) \cdot  \dfrac{dy}{dt}</code>
+        		</p>
+        		<p>        			
+        				 <code> \dfrac{1}{<var>B</var>} \dfrac{dx}{dt}= <var>-A</var>y^{-2} \dfrac{dy}{dt}</code>
+        		</p>
+        		<p>        			
+        				 <code> \dfrac{1}{<var>B</var>} \dfrac{dx}{dt}= \dfrac{<var>-A</var>}{y^2} \dfrac{dy}{dt}</code>
+        		</p>
+        		<p>        			
+        				 <code> \dfrac{-1}{<var>A</var> \cdot <var>B</var>} y^2\dfrac{dx}{dt}= \dfrac{dy}{dt}</code>
+        		</p>
+        		<p>        			
+        				 <code> \dfrac{dy}{dt} = \dfrac{-y^2}{<var>A*B</var>}\dfrac{dx}{dt}</code>
+        		</p>
+        	</div>
+        	<div>
+        		<p>
+					This is an equation relating the rates!  We know <code>\dfrac{dx}{dt} = <var>C</var></code> because the man is walking at a constant rate of <code><var>C</var></code> feet/second.
+					So we can substitute that into our expression:
+        		</p>
+        		<p>
+        			<code> \dfrac{dy}{dt} = \dfrac{-y^2}{<var>A*B</var>}\cdot <var>C</var></code>
+        		</p>
+        		<p>
+        			This equation tells us, in words, that at any instant, the rate that the shadow is decreasing is the square of the current length of the shadow times <code>\dfrac{<var>C</var>}{<var>A*B</var>}</code>
+        		</p>
+        	</div>
+        	<div>
+        		<p>
+        			Thus, to solve the problem, we need to  figure out the length of the shadow at the time when the man is <code><var>D</var></code> feet from the building,
+        			i.e. we need to figure out the value of <code>y</code> when <code>x = <var>A-D</var></code>.  We can do this using the first equation we wrote down relating
+        			<code>x</code> and <code>y</code>.
+        		</p>
+        		<p>
+        			<code>\dfrac{x}{<var>B</var>} = \dfrac{<var>A</var>}{y}</code>
+        		</p>
+        		<p>
+        			<code>\dfrac{<var>A-D</var>}{<var>B</var>} = \dfrac{<var>A</var>}{y}</code>
+        		</p>
+        		<p>
+        			<code>\dfrac{<var>A-D</var>}{<var>B</var>} = \dfrac{<var>A</var>}{y}</code>
+        		</p>
+        		<p>
+        			<code>y \cdot <var>A-D</var>= <var>A</var> \cdot <var>B</var> </code>
+        		</p>
+        		<p>
+        			<code>y = \dfrac{<var>A*B</var>}{<var>A-D</var>}</code>
+        		</p>
+        	</div>
+        		<p>
+        			Therefore, <code> \dfrac{dy}{dt} = \dfrac{-\left(\dfrac{<var>A*B</var>}{<var>A-D</var>}\right)^2}{<var>A*B</var>}\cdot <var>C</var></code> when the man is <code><var>D</var></code> feet away from the building.  Since the question asks for what rate at which
+        			the mans shadow is <b>shrinking</b>, this rate is positive.
+        		</p>
+        		<p>
+        			Thus, the mans shadow is shrinking at a rate of <code>\dfrac{\left(\dfrac{<var>A*B</var>}{<var>A-D</var>}\right)^2}{<var>A*B</var>}\cdot <var>C</var></code> when the man is <code><var>D</var></code> feet away from the building.
+        		</p>
+        </div>
+       
+      </div>
+    </div>
+  </div>
+</body>
+</html>

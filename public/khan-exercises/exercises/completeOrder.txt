@@ -75,3 +75,11 @@ trigDifferentiate.html
 trigDifferentiate2.html
 inverseTrigDiff1.html
 inverseTrigDiff2.html
+lhopital.html
+relatedRatesBacteria.html
+relatedRatesBubble.html
+relatedRatesBoats.html
+relatedRatesShadowBuilding.html
+relatedRatesCow.html
+relatedRatesChronos.html
+relatedRatesWhale.html

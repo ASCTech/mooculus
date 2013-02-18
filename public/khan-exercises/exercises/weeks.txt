@@ -81,3 +81,12 @@ trigDifferentiate
 trigDifferentiate2
 inverseTrigDiff1
 inverseTrigDiff2
+* Week 7
+lhopital
+relatedRatesBacteria
+relatedRatesBoats
+relatedRatesShadowBuilding
+relatedRatesCow
+relatedRatesChronos
+relatedRatesWhale
+relatedRatesBubble
