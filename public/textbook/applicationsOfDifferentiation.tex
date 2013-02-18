@@ -26,6 +26,8 @@ This theorem is somewhat difficult to prove, in part because it
 incorporates so many different possibilities, so we will not prove it
 here. 
 
+\break
+
 L'H\^{o}pital's rule allows us to investigate limits of
 \textit{indeterminate form}.
 
@@ -61,7 +63,24 @@ Compute
 \]
 \end{example}
 
-\begin{marginfigure}
+\begin{solution}
+Set $f(x) = \sin(x)$ and $g(x) = x$.  Since both $f(x)$ and $g(x)$ are
+differentiable functions at $0$, and 
+\[
+\lim_{x \to 0} f(x) = \lim_{x \to 0}g(x) = 0,
+\]
+so this situation is ripe for l'H\^opital's Rule. Now 
+\[
+f'(x) = \cos(x) \qquad\text{and}\qquad g'(x) = 1.
+\] 
+L'H\^opital's rule tells us that 
+\[
+\lim_{x \to 0} \frac{\sin(x)}{x} = \lim_{x \to 0} \frac{\cos(x)}{1} = 1.
+\]
+\end{solution}
+
+
+\begin{marginfigure}[-1in]
 \begin{tikzpicture}
 	\begin{axis}[
             xmin=-1.6,xmax=1.6,ymin=-1.5,ymax=1.5,
@@ -87,23 +106,6 @@ Compute
   lines for each curve are coincide at $x=0$.}
 \label{example:sinx and x}
 \end{marginfigure}
-
-\begin{solution}
-Set $f(x) = \sin(x)$ and $g(x) = x$.  Since both $f(x)$ and $g(x)$ are
-differentiable functions at $0$, and 
-\[
-\lim_{x \to 0} f(x) = \lim_{x \to 0}g(x) = 0,
-\]
-so this situation is ripe for l'H\^opital's Rule. Now 
-\[
-f'(x) = \cos(x) \qquad\text{and}\qquad g'(x) = 1.
-\] 
-L'H\^opital's rule tells us that 
-\[
-\lim_{x \to 0} \frac{\sin(x)}{x} = \lim_{x \to 0} \frac{\cos(x)}{1} = 1.
-\]
-\end{solution}
-
 
 
 From this example, we gain an intuitive feeling for why l'H\^opital's
