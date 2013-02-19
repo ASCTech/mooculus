@@ -293,6 +293,7 @@
                     if (latex) {
                         $.tmpl.type.code()(code[0]);
                     }
+
                     // Run after MathJax typesetting
                     MathJax.Hub.Queue(function() {
                         // Avoid an icky flash
@@ -694,14 +695,16 @@
                     // positive x-axis
                     for (var x = step; x <= stop; x += step) {
                         if (x < stop || !axisArrows) {
-                            this.label([x, 0], xLabelFormat(x), "below");
+                            var l = this.label([x, 0], xLabelFormat(x), "below");
+			    l.css("pointer-events", "none");
                         }
                     }
 
                     // negative x-axis
                     for (var x = -step * (unityLabels ? 1 : 2); x >= start; x -= step) {
                         if (x > start || !axisArrows) {
-                            this.label([x, 0], xLabelFormat(x), "below");
+                            var l = this.label([x, 0], xLabelFormat(x), "below");
+			    l.css("pointer-events", "none");
                         }
                     }
 
@@ -712,14 +715,16 @@
                     // positive y-axis
                     for (var y = step; y <= stop; y += step) {
                         if (y < stop || !axisArrows) {
-                            this.label([0, y], yLabelFormat(y), "left");
+                            var l = this.label([0, y], yLabelFormat(y), "left");
+			    l.css("pointer-events", "none");
                         }
                     }
 
                     // negative y-axis
                     for (var y = -step * (unityLabels ? 1 : 2); y >= start; y -= step) {
                         if (y > start || !axisArrows) {
-                            this.label([0, y], yLabelFormat(y), "left");
+                            var l = this.label([0, y], yLabelFormat(y), "left");
+			    l.css("pointer-events", "none");
                         }
                     }
 

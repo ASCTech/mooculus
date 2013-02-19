@@ -1,7 +1,7 @@
     <script>
 //<![CDATA[
       $(function() {
-        userExercise = {
+        var userExercise = {
           problemType: "<%= @problem.name %>",
           exerciseModel: {
             name: "<%= @exercise.name %>",
@@ -170,13 +170,6 @@
       });
 //]]>
     </script>
-
-<div class="alert">
-  <button type="button" class="close" data-dismiss="alert">&times;</button>
-  <strong>Warning!</strong> We have added a brand new answer interface; if you find a bug, please post a screenshot in <a href="https://class.coursera.org/calc1-001/forum/thread?thread_id=1556">the forum</a>.  <strong>Make sure that you type \log, \sin, \cos, \sqrt with the preceeding backslash, just like in TeX.</strong>  
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/00PUqA-zPk8?rel=0" frameborder="0" allowfullscreen></iframe>
-</div>
 
 <div id="exercise-message-container" style="display: none;">
     <div class="exercise_message"></div>
