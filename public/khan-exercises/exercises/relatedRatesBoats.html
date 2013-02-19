@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html data-require="math word-problems steveMath8 graphie math-function-parser">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>Two  boats</title>
+    <script src="../khan-exercise.js"></script>
+</head>
+<body>
+  <div class="exercise">
+  
+
+    <div class="problems">
+      <div id="piOver4">
+        	
+        	<div class="vars">
+        		<var id="A">randRange(2,20)</var>
+        		<var id="B">randRange(2,20)</var>
+        		<var id = "T">randRange(2,4)</var>
+        		
+        	</div>
+        	<p class="problem">
+        		Two row boats start at the same location, and start traveling apart along straight lines which meet at an angle of <code>\dfrac{\pi}{3}</code>.
+        		Boat A is traveling at a rate of <code><var>A</var></code> miles per hour directly east, and boat B is traveling at a rate of <code><var>B</var></code> miles per hour
+        		going both north and east.
+        	</p>
+        
+        	<p class = "question">
+        		How fast is the distance between the rowboats increasing <code><var>T</var></code> hours into the journey? 
+        	</p>
+       	    <p class="solution" data-type="parsedExpression">
+        			<var>(A*A*T+B*B*T - A*B*T)/Math.sqrt(A*A*T*T+B*B*T*T-A*B*T*T)
+            </p>
+            <div class="hints">
+            	<p>	
+            		Let <code>x</code> be the distance of boat A from the starting position,  <code>y</code> be the distance of boat B from the starting position, and <code>r</code>
+            		be the distance between the two boats.
+            		<br/>
+            		picture
+            	</p>
+            	<p>
+            		Known rates: <code>\dfrac{dx}{dt} = <var>A</var></code>
+            		<br/>
+            		<code>\hphantom{Known rates: } \dfrac{dy}{dt} = <var>B</var></code>
+            		<br/>
+            		Unknown rate: <code>\left.\dfrac{dr}{dt}\right|_{t= <var>T</var>}</code>
+            	</p>
+            	<p>
+            		<b>Introduction</b>:  I will first relate <code>x</code>, <code>y</code>, and <code>r</code> using trigonometry.  I will then differentiate this equation implicitly with respect to time
+            		to obtain a new equation relating the rates <code>\dfrac{dx}{dt}</code>, <code>\dfrac{dy}{dt}</code>, and <code>\dfrac{dr}{dt}</code>.  Finally I will use the rate information I have 
+            		about <code>\dfrac{dx}{dt}</code> and <code>\dfrac{dy}{dt}</code> to
+            		to figure the rate I am interested in</code>.
+            	</p>
+            	<p>
+            		By the law of cosines we have <code>r^2 = x^2+y^2-2xy\cos(\dfrac{\pi}{3})</code>.  Since <code>\cos(\dfrac{\pi}{3}) = \dfrac{1}{2}</code> this simplifies down to
+            		<code>r^2 = x^2+y^2-xy</code>
+            	</p>
+            	<p>
+            		Differentiating implicitly with respect to time we obtain <code>\dfrac{d}{dt} r^2 = \dfrac{d}{dt} \left( x^2+y^2-xy\right)</code>
+            	</p>
+            	<div>
+            		<p>
+            			<code>\dfrac{d}{dr}\left( r^2\right) \cdot \dfrac{dr}{dt}= \dfrac{d}{dx}\left( x^2\right) \cdot \dfrac{dx}{dt} + \dfrac{d}{dy}\left(y^2\right)\dfrac{dy}{dt} - \dfrac{d}{dt}\left(xy\right)</code>, by the chain rule.
+            		</p>
+            		<p>
+            			<code>2r\dfrac{dr}{dt}= 2x \dfrac{dx}{dt} + 2y\dfrac{dy}{dt} - \left(x\dfrac{dy}{dt} + y\dfrac{dx}{dt}\right)</code>, by the product rule.
+            		</p>
+            	</div>
+            	<p>
+            		At the instant we are interested in, <code>x = <var>T</var> \cdot <var>A</var> = <var>A*T</var></code>, <code>y = <var>T</var> \cdot <var>B</var> = <var>B*T</var></code>, 
+            		so using the relation between the three variables we know <code>c = \sqrt{<var>A*T</var>^2+<var>B*T</var>^2 - <var>A*T</var> \cdot <var>B*T</var>} = \sqrt{<var>A*A*T*T+B*B*T*T-A*B*T*T</var>}</code>.  Also
+            		<code>\dfrac{dx}{dt} = <var>A</var></code> and <code>\dfrac{dy}{dt} = <var>B</var></code>.  Thus 
+            		<br/>
+            		<code>2\sqrt{<var>A*A*T*T+B*B*T*T-A*B*T*T</var>}\dfrac{dr}{dt} = 2\cdot<var>A*T</var>\cdot <var>A</var> +    2\cdot<var>B*T</var>\cdot <var>B</var> - \left(<var>A*T</var> \cdot <var>B</var> + <var>B*T</var> \cdot <var>A</var>\right)</code>
+            		<br/>
+            		So <code>\dfrac{dr}{dt} = \dfrac{<var>A*A*T+B*B*T - A*B*T</var>}{\sqrt{<var>A*A*T*T+B*B*T*T-A*B*T*T</var>}}</code> (Do you understand geometrically why this rate has to be constant?  Could you have used this to simplify your work?)
+            	</p>
+            	<p>
+            		In conclusion, the distance between the two row boats is increasing at a constant rate of <code>\dfrac{<var>A*A*T+B*B*T - A*B*T</var>}{\sqrt{<var>A*A*T*T+B*B*T*T-A*B*T*T</var>}} \dfrac{miles}{hour}</code> 
+            	</p>
+            
+            	
+            </div>
+       
+      </div>
+    </div>
+  </div>

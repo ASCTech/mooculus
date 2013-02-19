@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html data-require="math word-problems steveMath8 graphie math-function-parser">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>The Sands of Time</title>
+    <script src="../khan-exercise.js"></script>
+</head>
+<body>
+  <div class="exercise">
+  
+
+    <div class="problems">
+      <div id="piOver4">
+        	
+        	<div class="vars">
+        		<var id="H">randRange(1,9)</var>
+        		<var id="R">randRange(1,9)</var>
+        		<var id="P">randRange(2,5)</var>
+        	</div>
+        	<p class="problem">
+        		Chronos is letting the sands of time slip through his fingers.  The sand accumulates in a conical pile whose radius is <code><var>P</var></code> times its height.
+        		The  height of the cone is changing at a rate of <code><var>R</var></code> miles per second at the instant that the cone is <code><var>H</var></code> miles high.
+        	</p>
+        
+        	<p class = "question">
+        		What rate is the sand leaving his hands at that instant, in cubic miles per second?
+        	</p>
+       	    <p class="solution" data-type="parsedExpression">
+        		<var>Math.PI*P*P*H*H*R</var>
+            </p>
+            <div class="hints">
+            	<div>
+            		<p> 
+            			Let <code>h</code> be the height of the cone, and <code>V</code> be the volume of the sand.
+            		</p>
+            		<p>
+            			Picture
+            		</p>
+            	</div>
+            	<div>
+            		<p>
+            			Known Rate:  <code>\left. \dfrac{dh}{dt}\right|_{h = <var>H</var>} = <var>R</var></code>
+            		</p>
+            		<p>
+            			Unknown Rate: <code>\left.\dfrac{dV}{dt}\right|_{h = <var>H</var>}</code>
+            		</p>
+            	</div>
+
+            		<p>
+						<b>Introduction</b>: I will first write an equation relating <code>h</code> and <code>V</code> using solid geometry.  I will then implicitly
+						differentiate this equation with respect to time to obtain an equation relating the rates <code>\dfrac{dV}{dt}</code> and <code>\dfrac{dh}{dt}</code>.
+						Finally I will use the information given in the problem to solve for <code>\left.\dfrac{dV}{dt}\right|_{h = <var>H</var>}</code>.
+					</p>
+					
+					<p>
+						The volume of a cone is one third the area of the base times the height.  In this case, the base is a circle of radius <code><var>P</var>h</code>.  So the area of the
+						base is <code>\pi(<var>P</var>h)^2</code>.  The height is <code>h</code>.  So the volume of the cone is <code>\dfrac{1}{3} \cdot \pi(<var>P</var>h)^2 \cdot h</code>, or in other words
+						<code>V = \dfrac{<var>P*P</var>\pi}{3} \cdot h^3</code>
+					</p>
+					
+					<p>
+						Differentiating with respect to time, we obtain <code>\dfrac{dV}{dt} = \dfrac{d}{dt}\left(\dfrac{<var>P*P</var>\pi}{3} \cdot h^3\right)</code>
+					</p>
+					<div>
+						<p>
+							<code>\dfrac{dV}{dt} = \dfrac{<var>P*P</var>\pi}{3}\dfrac{d}{dh}\left(  h^3\right) \cdot \dfrac{dh}{dt}</code>, by the chain rule.
+						</p>
+						<p>
+							<code>\dfrac{dV}{dt} = <var>P*P</var>\pi h^2\cdot \dfrac{dh}{dt}</code>
+						</p>
+					</div>
+					<p>
+						At the time of interest, <code>h = <var>H</var></code> and <code>\left. \dfrac{dh}{dt}\right|_{h = <var>H</var>} = <var>R</var></code>.
+					</p>
+					<p>
+						Thus <code>\left.\dfrac{dV}{dt}\right|_{h = <var>H</var>} = <var>P*P</var>\pi\cdot  <var>H</var>^2\cdot <var>R</var></code>
+					</p>
+					<p>
+						Thus the sand is slipping from Chronos' mighty fingers at a rate of <code><var>P*P*H*H*R</var>\pi</code> cubic miles per second, 
+						at the time that the pile is <code><var>H</var></code> miles high.
+					</p>
+
+            </div>
+       
+      </div>
+    </div>
+  </div>
+</body>
+</html>

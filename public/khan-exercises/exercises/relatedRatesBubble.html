@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html data-require="math word-problems steveMath8 graphie math-function-parser">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>Blowing a bubble</title>
+    <script src="../khan-exercise.js"></script>
+</head>
+<body>
+  <div class="exercise">
+  
+
+    <div class="problems">
+      <div id="piOver4">
+        	
+        	<div class="vars">
+        		<var id="Rate">randRange(2,20)</var>
+        		
+        	</div>
+        	<p class="problem">
+        		In a feverish dream, you hatch a theory that to make the largest chewing gum bubble imaginable, you need to blow it up so that the radius is increasing at a constant rate of
+        		<code><var>Rate</var></code> millimeters per second.  
+        	</p>
+        
+        	<p class = "question">
+        		As a function of the radius <code>r</code>, at what rate must you blow air into the bubble to achieve this in <code>{\text{mm}}^3/\sec</code> ? 
+        	</p>
+       	    <p class="solution" data-type="parsedExpression">
+        			<var>4*Math.PI*Rate</var>*r^2
+            </p>
+            <div class="hints">
+            	<p>	
+            		Let <code>V</code> be the volume of the bubble, and <code>r</code> be the radius of the bubble.
+            		<br/>
+            		picture
+            	</p>
+            	<p>
+            		Known rate: <code>\dfrac{dr}{dt} = <var>Rate</var></code>
+            		<br/>
+            		Unknown rate: <code>\left.\dfrac{dV}{dt}\right|_{r}</code>
+            	</p>
+            	<p>
+            		<b>Introduction</b>:  I will first relate <code>V</code> and <code>r</code> by using solid geometry.  I will then differentiate this equation implicitly with respect to time
+            		to obtain a new equation relating the rates <code>\dfrac{dV}{dt}</code> and <code>\dfrac{dr}{dt}</code>.  Finally I will use the rate information I have about <code>\dfrac{dr}{dt}</code>
+            		to figure out a formula for <code>\dfrac{dV}{dt}</code>.
+            	</p>
+            	<p>
+            		Since the bubble is a sphere, we have <code>V = \dfrac{4}{3}\pi r^3</code>
+            	</p>
+            	<p>
+            		Differentiating implicitly with respect to time we obtain <code>\dfrac{dV}{dt} = \dfrac{d}{dt}\dfrac{4}{3}\pi r^3</code>
+            	</p>
+            	<div>
+            		<p>
+            			<code>\dfrac{dV}{dt} = \dfrac{d}{dr}\left( \dfrac{4}{3}\pi r^3\right) \cdot \dfrac{dr}{dt}</code>, by the chain rule.
+            		</p>
+            		<p>
+            			<code>\dfrac{dV}{dt} = 4\pi r^2\dfrac{dr}{dt}</code>
+            		</p>
+            	</div>
+            	<p>
+            		But it is our heartfelt desire that <code>\dfrac{dr}{dt} = <var>Rate</var></code>, so 
+            		<br/>
+            		<code>\dfrac{dV}{dt} = 4\cdot <var>Rate</var>\pi r^2</code>
+            	</p>
+            	<p>
+            		In conclusion, to keep the radius increasing at a constant rate of <code><var>Rate</var> \text{mm}/\sec</code> you have to increase the volume at the variable rate of 
+            		<code>\dfrac{dV}{dt} =<var>4*Rate</var>\pi r^2 \text{mm}^3/\sec</code>
+            	</p>
+            	
+            </div>
+       
+      </div>
+    </div>
+  </div>

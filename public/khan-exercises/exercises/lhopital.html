@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html data-require="math word-problems steveMath8 graphie math-function-parser">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>Th&eacute;or&egrave;me de l&rsquo;H&ocirc;pital</title>
+    <script src="../khan-exercise.js"></script>
+</head>
+<body>
+<div class="exercise">
+  
+
+    <div class="problems">
+      
+    <div id="polyOverPoly">
+      		
+        <div class="vars" data-ensure="f.coefs[deg]!=0 && g.coefs[deg]!=0 && fA!=0 && gA !=0 && MathFunction.parse(fExp).derivative('x').evaluate({x:A})!=0">
+				<var id = "A">randRange(1,10)</var>
+				<var id = "deg">randRange(2,3)</var>
+				<var id = "f">new Polynomial(0,deg)</var>
+				<var id = "g">new Polynomial(0,deg)</var>
+				<var id="fA">new Polynomial(0,0,[f.evalOf(A)])</var>
+				<var id="gA">new Polynomial(0,0,[g.evalOf(A)])</var>
+			    <var id = "fExp">f.text().replace(/{/g,"").replace(/}/g,"")</var>
+			    <var id = "gExp">g.text().replace(/{/g,"").replace(/}/g,"")</var>
+			    <var id = "num">f.subtract(fA)</var>
+			    <var id = "denom">g.subtract(gA)</var>
+				<var id="fStory">MathFunction.parse(fExp).derivative_story('x')</var>
+				<var id="gStory">MathFunction.parse(fExp).derivative_story('x')</var>
+  			  </div>	
+        <p class="question">
+        		Use L'Hôpital's Rule to evaluate the following limit:
+        		<br/><br/>
+        		<code>\displaystyle\lim_{x \to <var>A</var>} \dfrac{<var>f.subtract(fA).text()</var>}{<var>g.subtract(gA).text()</var>}</code>	
+        	</p>
+        <p class="solution" data-type="parsedExpression">
+        	<var>MathFunction.parse(fExp).derivative('x').evaluate({x:A})/MathFunction.parse(gExp).derivative('x').evaluate({x:A})</var>
+        </p>
+        <div class="hints">
+        	
+        	<p>
+        		L'H&ocirc;pital's rule applies because the limit of the numerator and denominator are both zero.  We know this because both are continuous, so we can just directly evaluate them
+        		at the limit point: <code><var>num.hintEvalOf(A)</var>=0</code> and  <code><var>denom.hintEvalOf(A)</var>=0</code>. Both the numerator and denominator are differentiable, because they are polynomials.
+        		Lastly, the derivative of the denominator is nonzero in some punctured neighborhood of <code><var>A</var></code>, because nonzero polynomials have a finite number of roots.
+       		</p>
+       		<p>
+       			Thus <code>\displaystyle\lim_{x \to <var>A</var>} \dfrac{<var>f.subtract(fA).text()</var>}{<var>g.subtract(gA).text()</var>} = <code>\displaystyle\lim_{x \to <var>A</var>} \dfrac{\frac{d}{dx}(<var>f.subtract(fA).text()</var>)}{\frac{d}{dx}(<var>g.subtract(gA).text()</var>)}</code></code>
+       		</p>
+       		<p>
+       			Differentiating the numerator and denominator we have <code>\displaystyle\lim_{x \to <var>A</var>} \dfrac{<var>ddxPolynomial(num).text()</var>}{<var>ddxPolynomial(denom).text()</var>}</code></code>
+       		</p>
+       		<p>
+       			But this is the limit of a rational function at a point where the denominator is not zero, so by continuity, we can evaluate the limit just by evaluating this rational function at <code>x = <var>A</var></code>, i.e. the value
+       			is just <code>\dfrac{<var>ddxPolynomial(num).hintEvalOf(A)</var>}{<var>ddxPolynomial(denom).hintEvalOf(A)</var>} = \dfrac{<var>ddxPolynomial(num).evalOf(A)</var>}{<var>ddxPolynomial(denom).evalOf(A)</var>}</code>
+       		</p>
+       		<p>
+       			In summary, <code>\displaystyle\lim_{x \to <var>A</var>} \dfrac{<var>f.subtract(fA).text()</var>}{<var>g.subtract(gA).text()</var>} = \dfrac{<var>ddxPolynomial(num).evalOf(A)</var>}{<var>ddxPolynomial(denom).evalOf(A)</var>}</code>	
+       		</p>
+        </div>
+       
+      </div>
+    <div id="logOverPoly">
+      		
+        <div class="vars" data-ensure="f.coefs[deg]!=0 && f1!=0 && ddxPolynomial(denom).evalOf(1)!=0">
+				<var id = "deg">randRange(2,3)</var>
+				<var id = "f">new Polynomial(0,deg)</var>
+				<var id="f1">new Polynomial(0,0,[f.evalOf(1)])</var>
+			    <var id = "fExp">f.text().replace(/{/g,"").replace(/}/g,"")</var>
+			    <var id = "denom">f.subtract(f1)</var>
+  			  </div>	
+        <p class="question">
+        		Use L'Hôpital's Rule to evaluate the following limit:
+        		<br/><br/>
+        		<code>\displaystyle\lim_{x \to 1} \dfrac{log(x)}{<var>f.subtract(f1).text()</var>}</code>	
+        	</p>
+        <p class="solution" data-type="parsedExpression">
+        	<var>1/MathFunction.parse(fExp).derivative('x').evaluate({x:1})</var>
+        </p>
+        <div class="hints">
+        	
+        	<p>
+        		L'H&ocirc;pital's rule applies because the limit of the numerator and denominator are both zero.  We know this because both are continuous, so we can just directly evaluate them
+        		at the limit point: <code>\log(1)=0</code> and  <code><var>denom.hintEvalOf(1)</var>=0</code>. Both the numerator and denominator are differentiable.
+        		Lastly, the derivative of the denominator is nonzero in some punctured neighborhood of <code>1</code>, because nonzero polynomials have a finite number of roots.
+       		</p>
+       		<p>
+       			Thus <code>\displaystyle\lim_{x \to 1} \dfrac{\log(x)}{<var>denom.text()</var>} = <code>\displaystyle\lim_{x \to 1} \dfrac{\frac{d}{dx}(\log(x))}{\frac{d}{dx}(<var>denom.text()</var>)}</code></code>
+       		</p>
+       		<p>
+       			Differentiating the numerator and denominator we have <code>\displaystyle\lim_{x \to <var>A</var>} \dfrac{\frac{1}{x}}{<var>ddxPolynomial(denom).text()</var>}</code></code>
+       		</p>
+       		<p>
+       			But this is the limit of a rational function at a point where the denominator is not zero, so by continuity, we can evaluate the limit just by evaluating this rational function at <code>x = 1</code>, i.e. the value
+       			is just <code>\dfrac{1}{<var>ddxPolynomial(denom).hintEvalOf(1)</var>} = \dfrac{1}{<var>ddxPolynomial(denom).evalOf(1)</var>}</code>
+       		</p>
+       		<p>
+       			In summary, <code>\displaystyle\lim_{x \to 1} \dfrac{\log(x)}{<var>denom.text()</var>} = \dfrac{1}{<var>ddxPolynomial(denom).evalOf(1)</var>}</code>	
+       		</p>
+        </div>
+       
+      </div>
+    <div id="expOverPoly">
+      		
+        <div class="vars" data-ensure="f.coefs[deg]!=0 && f1!=0 && ddxPolynomial(denom).evalOf(1)!=0">
+				<var id = "deg">randRange(2,3)</var>
+				<var id = "f">new Polynomial(0,deg)</var>
+				<var id="f1">new Polynomial(0,0,[f.evalOf(1)])</var>
+			    <var id = "fExp">f.text().replace(/{/g,"").replace(/}/g,"")</var>
+			    <var id = "denom">f.subtract(f1)</var>
+  			  </div>	
+        <p class="question">
+        		Use L'Hôpital's Rule to evaluate the following limit:
+        		<br/><br/>
+        		<code>\displaystyle\lim_{x \to 1} \dfrac{e^x-e}{<var>f.subtract(f1).text()</var>}</code>	
+        	</p>
+        <p class="solution" data-type="parsedExpression">
+        	<var>Math.E/MathFunction.parse(fExp).derivative('x').evaluate({x:1})</var>
+        </p>
+        <div class="hints">
+        	
+        	<p>
+        		L'H&ocirc;pital's rule applies because the limit of the numerator and denominator are both zero.  We know this because both are continuous, so we can just directly evaluate them
+        		at the limit point: <code>e-e=0</code> and  <code><var>denom.hintEvalOf(1)</var>=0</code>. Both the numerator and denominator are differentiable.
+        		Lastly, the derivative of the denominator is nonzero in some punctured neighborhood of <code>1</code>, because nonzero polynomials have a finite number of roots.
+       		</p>
+       		<p>
+       			Thus <code>\displaystyle\lim_{x \to 1} \dfrac{e^x}{<var>denom.text()</var>} = <code>\displaystyle\lim_{x \to 1} \dfrac{\frac{d}{dx} e^x}{\frac{d}{dx}(<var>denom.text()</var>)}</code></code>
+       		</p>
+       		<p>
+       			Differentiating the numerator and denominator we have <code>\displaystyle\lim_{x \to <var>A</var>} \dfrac{e^x}{<var>ddxPolynomial(denom).text()</var>}</code></code>
+       		</p>
+       		<p>
+       			But this is the limit of a rational function at a point where the denominator is not zero, so by continuity, we can evaluate the limit just by evaluating this rational function at <code>x = 1</code>, i.e. the value
+       			is just <code>\dfrac{e}{<var>ddxPolynomial(denom).hintEvalOf(1)</var>} = \dfrac{e}{<var>ddxPolynomial(denom).evalOf(1)</var>}</code>
+       		</p>
+       		<p>
+       			In summary, <code>\displaystyle\lim_{x \to 1} \dfrac{\log(x)}{<var>denom.text()</var>} = \dfrac{e}{<var>ddxPolynomial(denom).evalOf(1)</var>}</code>	
+       		</p>
+        </div>
+       
+      </div>
+     
+     </div>
+     
+</div>
+</body>
+</html>
