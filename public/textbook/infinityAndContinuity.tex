@@ -632,20 +632,20 @@ formal definition.
 We close with a useful theorem about continuous functions:
 
 \begin{mainTheorem}[Intermediate Value Theorem]
-If $f(x)$ is a function that is continuous for all $x$ in the closed
-interval $[a,b]$ and $d$ is between $f(a)$ and $f(b)$, then there is a
-number $c$ in $[a, b]$ such that $f(c) = d$.
+If $f(x)$ is a continuous function for all $x$ in the closed interval
+$[a,b]$ and $d$ is between $f(a)$ and $f(b)$, then there is a number
+$c$ in $[a, b]$ such that $f(c) = d$.
 \end{mainTheorem}
-\marginnote[-.7in]{The Intermediate Value Theorem is most frequently
+\marginnote[-1.2in]{The Intermediate Value Theorem is most frequently
   used when $d=0$.}  
-\marginnote[-.2in]{For a nice proof of this theorem, see: Walk, Stephen
+\marginnote[-.7in]{For a nice proof of this theorem, see: Walk, Stephen
   M. \textit{The intermediate value theorem is NOT obvious---and I am
     going to prove it to you}. College Math. J. 42 (2011), no. 4,
   254--259.}
 In Figure~\ref{figure:intermediate-value}, we see a geometric
 interpretation of this theorem.
 
-\begin{figure}
+\begin{marginfigure}
 \begin{tikzpicture}
 	\begin{axis}[
             domain=0:6, ymin=0, ymax=2.2,xmax=6,
@@ -677,7 +677,7 @@ interpretation of this theorem.
   $[a,b]$. Since $d$ is in the interval $[f(a),f(b)]$, there exists a
   value $c$ in $[a,b]$ such that $f(c) = d$.}
 \label{figure:intermediate-value}
-\end{figure}
+\end{marginfigure}
 
 
 
