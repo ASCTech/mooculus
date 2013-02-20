@@ -18,6 +18,9 @@ var startAudio = function(){
 
     startAudio();
 
+var velocity_x = -50;
+var velocity_y = 0;
+
 var start = function () {
     this.ox = this.attr("x");
     this.oy = this.attr("y");
@@ -26,6 +29,12 @@ var start = function () {
 var move = function (x, y) {
   var x1 = x+this.ox;
   var y1 = y+this.oy;
+
+  if (this == car) {
+    velocity_x = x1 - this.attr("x");
+    velocity_y = y1 - this.attr("y");
+  }
+
   this.attr({x: x1, y: y1});
 };
 
@@ -34,18 +43,20 @@ var up = function () {
     this.oy = null;
 };
 
-    var velocity = 10;
-
 car.drag(move, start, up);   
 observer.drag(move, start, up);   
 
     var move_car = function() {
 	if (!(typeof car.ox == "number")) {
-	    var x = car.attr("x")  - velocity;
+	    var x = car.attr("x") + velocity_x;
 	    if (x < -100)
 		x = 1000;
 
-	    car.attr({x: x - velocity});
+	    var y = car.attr("y") + velocity_y;
+	    if (y < -100)
+		x = 1000;
+
+	    car.attr({x: x, y: y});
 	}
 
 	if (typeof car.previous_x == "number") {
