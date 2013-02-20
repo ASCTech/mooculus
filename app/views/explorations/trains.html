@@ -1,0 +1,177 @@
+<script src = "https://raw.github.com/DmitryBaranovskiy/raphael/master/raphael.js"></script>
+<script>
+$(function() {
+
+    var w = $(window).width() * 0.9, 
+    h = $(window).height() * 0.9;
+
+    var paper = Raphael($("#graph").get(0), w,h);
+    
+    var horizontal_track = paper.rect(0,0,0,0).attr({'stroke':'none',fill: "#000000", opacity: 0.25});
+    var vertical_track = paper.rect(0,0,0,0).attr({'stroke':'none',fill: "#000000", opacity: 0.25});
+    var bottom_track = paper.rect(0,0,0,0).attr({'stroke':'none',fill: "#000000", opacity: 0.25});
+
+    var arthur_bertram_chain = paper.path().attr({'stroke':'#000000'});
+    var bertram_clarabel_chain = paper.path().attr({'stroke':'#000000'});
+
+    var clarabel = paper.rect(0,0,0,0).attr({'stroke':'none',fill: "#000000", opacity: 1});
+    var arthur = paper.rect(0,0,0,0).attr({'stroke':'none',fill: "#000000", opacity: 1});
+    var bertram = paper.rect(0,0,0,0).attr({'stroke':'none',fill: "#000000", opacity: 1});
+
+    clarabel.track = horizontal_track;
+    clarabel.position = 0.28571428571428571428;
+
+    arthur.track = bottom_track;
+    arthur.position = 0.2142857142857142857;
+
+    bertram.track = vertical_track;
+    bertram.position = 0.46428571428571428571;
+
+    arthur_bertram = 0.357142857142857142;
+    bertram_clarabel = 0.357142857142857142;
+
+    var start = function () {
+	this.ox = this.attr("x");
+	this.oy = this.attr("y");
+    };
+    
+    var move = function (x, y) {
+	var x1 = x+this.ox;
+	var y1 = y+this.oy;
+	
+	// horizontal track
+	if (this.track.attr("width") > this.track.attr("height")) {
+	    this.attr({x: x1});
+	    this.position = (3*w/4 - x1) / h;
+	} else {
+	    this.attr({y: y1});
+	    this.position = y1 / h;
+	}
+
+	if (this == arthur) {
+	    bertram.position = 0.75 - Math.sqrt( Math.pow(arthur_bertram,2.0) - Math.pow(arthur.position,2.0) );
+	    clarabel.update_chain();
+	    bertram.update_position();
+	    clarabel.update_position();
+	}
+
+	if (this == bertram) {
+	    arthur.update_chain();
+	    clarabel.update_chain();
+	    arthur.update_position();
+	    clarabel.update_position();
+	}
+
+	if (this == clarabel) {
+	    bertram.position = 0.25 + Math.sqrt( Math.pow(bertram_clarabel,2.0) - Math.pow(clarabel.position,2.0) );
+	    arthur.update_chain();
+	    bertram.update_position();
+	    arthur.update_position();
+	}
+
+	arthur_bertram_chain.attr({path: "M" + arthur.attr("x") + "," + arthur.attr("y") + " " + "L" + bertram.attr("x") + "," + bertram.attr("y")});
+	bertram_clarabel_chain.attr({path: "M" + clarabel.attr("x") + "," + clarabel.attr("y") + " " + "L" + bertram.attr("x") + "," + bertram.attr("y")});
+    };
+
+    var up = function () {
+	this.ox = null;
+	this.oy = null;
+    };
+
+    arthur.drag(move, start, up);   
+    bertram.drag(move, start, up);   
+    clarabel.drag(move, start, up);   
+
+    var update_position = function() {
+	var w = paper.width;
+	var h = paper.height;
+
+	if (this.track.attr("width") > this.track.attr("height")) {
+	    this.attr({x: 3*w/4 - h * this.position});
+	    this.attr({y: this.track.attr("y")});
+	    this.attr({width: w/20});
+	    this.attr({height: w/30});
+	} else {
+	    this.attr({y: h * this.position});
+	    this.attr({x: this.track.attr("x")});
+	    this.attr({height: w/20});
+	    this.attr({width: w/30});
+	}	
+
+    }
+
+    arthur.update_position = update_position;
+    bertram.update_position = update_position;
+    clarabel.update_position = update_position;
+
+    arthur.update_chain = function () {
+	arthur.position = Math.sqrt( arthur_bertram*arthur_bertram - Math.pow(0.75 - bertram.position,2.0) );
+    }
+
+    bertram.update_chain = function () {
+	bertram.position = Math.sqrt( Math.pow(arthur_bertram,2.0) - Math.pow(arthur.position,2.0) );
+    }
+
+    clarabel.update_chain = function () {
+	clarabel.position = Math.sqrt( Math.pow(bertram_clarabel,2.0) - Math.pow(0.25 - bertram.position,2.0) );
+    }
+
+
+var redraw = function() {
+    var w = paper.width;
+    var h = paper.height;
+
+    horizontal_track.attr("width", w);
+    horizontal_track.attr("height", w/30);
+    horizontal_track.attr("x", 0);
+    horizontal_track.attr("y", h/4);
+
+    bottom_track.attr("width", w);
+    bottom_track.attr("height", w/30);
+    bottom_track.attr("x", 0);
+    bottom_track.attr("y", 3*h/4);
+
+    vertical_track.attr("width", w/30);
+    vertical_track.attr("height", h);
+    vertical_track.attr("x", 3*w/4);
+    vertical_track.attr("y", 0);
+    
+    arthur.update_position();
+    bertram.update_position();
+    clarabel.update_position();
+
+    arthur_bertram_chain.attr({path: "M" + arthur.attr("x") + "," + arthur.attr("y") + " " + "L" + bertram.attr("x") + "," + bertram.attr("y")});
+    bertram_clarabel_chain.attr({path: "M" + clarabel.attr("x") + "," + clarabel.attr("y") + " " + "L" + bertram.attr("x") + "," + bertram.attr("y")});
+};
+
+
+$(window).resize(function(){
+     w = $(window).width() * 0.9;
+     h = $(window).height() * 0.9;
+     paper.setSize(w,h);
+     redraw(); // code to handle re-drawing, if necessary
+});
+
+redraw();
+
+});
+
+</script>
+
+<p>On a certain island, the train Clarabel is stuck.  Thankfully,
+Clarabel's track intersects Bertram's track (at switch D), and
+there is a 50 foot steel cable welded to Bertram and Clarabel.  Now
+Bertram is also stuck, but Bertram's track intersects Arthur's track
+(at switch E), and there is a 50 foot iron chain welded to Bertram
+and Arthur.</p>
+
+<p>Arthur is travelling away from switch E at a speed of 10 feet per
+minute, and is currently 30 feet from switch E.  Bertram is 40 feet
+from switch E and 30 feet from switch D.  Clarabel is
+currently 40 feet from switch D.</p>
+
+    <p>Be &ldquo;Really Useful&rdquo; by computing how fast Clarabel is moving toward
+switch D.</p>
+
+
+<div id='graph'></div>

@@ -9,7 +9,7 @@
         return str;
     };
 
-    $("a.show-subhint").live("click", function(event) {
+    $("a.show-subhint").on("click", function(event) {
         var subhint = $("#" + $(this).data("subhint"));
         var visibleText = $(this).data("visible-text") || $(this).text();
         var hiddenText = $(this).data("hidden-text") || "Hide explanation";
@@ -24,7 +24,7 @@
         return false;
     });
 
-    $("a.show-definition").live("hover", function(event) {
+    $("a.show-definition").on("hover", function(event) {
         $("#" + $(this).data("definition")).toggle(200);
         return false;
     });

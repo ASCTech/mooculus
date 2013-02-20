@@ -28,14 +28,13 @@
                             scale: 20,
                             axisArrows: "&lt;-&gt;",
                             tickStep: 1,
-                        
+                            labelStep: 1,
                             gridOpacity: 0.05,
                             axisOpacity: 0.2,
                             tickOpacity: 0.4,
                            
                         });
 
-                     
                         addMouseLayer();
                         graph.movablePoint = addMovablePoint({ coord: [ 0, 0 ], snapY: 1, snapX: 1 });
 
@@ -64,9 +63,9 @@
                     </div>
                 </div>
 				<div class="hints">
-                        <p>Coordinates are listed as <code>(\blue{abscissa},\green{ordinate})</code>. </p>
+                        <p>Coordinates are listed as <code>(\color{blue}{abscissa},\color{green}{ordinate})</code>. </p>
                         <p>
-                            So, for <code>( \blue{<var>X</var>}, \green{<var>Y</var>} )</code> our
+                            So, for <code>( \color{blue}{<var>X</var>}, \color{green}{<var>Y</var>} )</code> our
                             <span class="hint_blue"><code>abscissa</code></span> is <code class="hint_blue"><var>X</var></code> and our
                             <span class="hint_green"><code>ordinate</code></span> is <code class="hint_green"><var>Y</var></code>.</p>
 
@@ -121,7 +120,7 @@
 
                         <div>
                             <p class="final_answer">
-                                Move the point to <code>( \blue{<var>X</var>}, \green{<var>Y</var>} )</code> at the marked point above.
+                                Move the point to <code>( \color{blue}{<var>X</var>}, \color{green}{<var>Y</var>} )</code> at the marked point above.
                                 <input type="button" value="Show me" onClick="javascript:KhanUtil.currentGraph.graph.movablePoint.moveTo( KhanUtil.tmpl.getVAR('X'), KhanUtil.tmpl.getVAR('Y') );" />
                             </p>
                             <div class="graphie" data-update="grid">

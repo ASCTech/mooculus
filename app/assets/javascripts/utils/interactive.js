@@ -59,6 +59,11 @@ $.extend(KhanUtil, {
         var ymin = ymax - (graph.ypixels / graph.scale[1]);
         graph.range = [[xmin, xmax], [ymin, ymax]];
 
+	// FIXME: I'm simply NOT USING the mouse layer anymore---hope that not having it doesn't break anything!  ~jim
+	graph.mouselayer = graph.raphael;
+        Khan.scratchpad.disable();
+	return;
+
         graph.mouselayer = Raphael(graph.raphael.canvas.parentNode, graph.xpixels, graph.ypixels);
         $(graph.mouselayer.canvas).css("z-index", 1);
         Khan.scratchpad.disable();
