@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html data-require="math word-problems steveMath8 graphie math-function-parser">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>Finding the maximum value of a function</title>
+    <script src="../khan-exercise.js"></script>
+</head>
+<body>
+  <div class="exercise">
+  
+
+    <div class="problems">
+      <div id="cubic">
+      		
+      		  <div class="vars">
+				<var id="A">randRange(-11,-1)</var>
+				<var id="B">randRangeExclude(-10,10,[-1,0,1])</var>
+				<var id="C">randRangeExclude(-10,10,[-1,0,1])</var>
+				<var id="f">new Polynomial(0,3,[C,B,A,1])</var>
+				<var id="r1">"\\dfrac{"+(-2*A)+ "- \\sqrt{"+(4*A*A-12*B)+"}}{6}"</var>
+				<var id="r2">"\\dfrac{"+(-2*A)+ "+ \\sqrt{"+(4*A*A-12*B)+"}}{6}"</var>
+				<var id="noRoots">"
+							<p>
+								The discriminant of <code>f'</code> is <code>(<var>2*A</var>)^2-4\cdot3\cdot<var>B</var> = <var>4*A*A-12*B</var></code> is negative,
+								so <code>f'</code> has no real roots.
+							</p>
+							<p>
+							Since <code>f'</code> has no real roots, we can see that <code>f'</code> is always positive, so <code>f</code> is always increasing.
+							</p>
+							<p>
+							Thus the global maximum of <code>f</code> on this interval occurs at the right endpoint.
+							</p>
+							<p>
+							Thus the global maximum occurs at <code>x=5</code>
+							 </p>
+				"</var>
+				<var id="r1lessMinus5">"
+							<p>
+								The roots of <code>f'</code> are <code><var>r1</var> \approx <var>roundTo(3,(-2*A-Math.sqrt(4*A*A-12*B))/6)</var></code> 
+								and <code><var>r2</var> \approx <var>roundTo(3,(-2*A+Math.sqrt(4*A*A-12*B))/6)</var></code> 
+							</p>
+							<p>
+								<code><var>r1</var></code> is not in the domain <code>[-5,5]</code>, but <code><var>r2</var></code> is.  
+							</p>
+							<p>
+							The sign of the derivative goes from negative to positive through <code><var>r2</var></code>, so <code><var>r2</var></code> is
+							the global minimum on this domain, and each of the two endpoints are local maximums.
+							</p>
+							<p>
+								<code>f(-5) = <var>-5*5*5+A*5*5-B*5+C</var></code> and <code>f(5) = <var>5*5*5+A*5*5+B*5+C</var></code>, so the global maximum is assumed at 
+								<code>x =  
+									<var>
+										(function(A,B){
+											if (A&gt;B){
+												return -5
+												}
+											else {
+												return 5
+												}
+										})(-5*5*5+A*5*5-B*5+C,5*5*5+A*5*5+B*5+C)
+										</var>
+									</code>
+							 </p>
+				"</var>
+				<var id="r2more5">"
+							<p>
+								The roots of <code>f'</code> are <code><var>r1</var> \approx <var>roundTo(3,(-2*A-Math.sqrt(4*A*A-12*B))/6)</var></code> 
+								and <code><var>r2</var> \approx <var>roundTo(3,(-2*A+Math.sqrt(4*A*A-12*B))/6)</var></code> 
+							</p>
+							<p>
+								<code><var>r2</var></code> is not in the domain <code>[-5,5]</code>, but <code><var>r1</var></code> is not.  
+							</p>
+							<p>
+							The sign of the derivative goes from positive to negative through <code><var>r1</var></code>, so <code><var>r1</var></code> the location of a
+							a local maximum on this domain, and each of the two endpoints are local minimums.
+							</p>
+							<p>
+								The global maximum is assumed at <code><var>r1</var></code> 
+							 </p>
+				"</var>
+				<var id="bothIn">"
+							<p>
+								
+								The roots of <code>f'</code> are <code><var>r1</var> \approx <var>roundTo(3,(-2*A-Math.sqrt(4*A*A-12*B))/6)</var></code> 
+								and <code><var>r2</var> \approx <var>roundTo(3,(-2*A+Math.sqrt(4*A*A-12*B))/6)</var></code> 
+							</p>
+							<p>
+							The sign of the derivative goes from positive to negative through <code><var>r1</var></code> and from negative to positive as you pass through
+							<code><var>r2</var></code>, so the two local maxima on this domain are at <code><var>r1</var></code> and <code>x = 5</code>
+							</p>
+							<p>
+								<code>f(<var>r1</var>) \approx <var>roundTo(3,f.evalOf((-2*A+Math.sqrt(4*A*A-12*B))/6))</var></code> 
+								and <code>f(5) = <var>f.evalOf(5)</var></code>, so the absolute maximum is achieved at 
+								<var>(function(X,A,B){
+											if (A &gt; B){
+												return X
+												}
+											else{
+												return 5
+												}
+											})(((-2*A+Math.sqrt(4*A*A-12*B))/6,f.evalOf((-2*A+Math.sqrt(4*A*A-12*B))/6)),f.evalOf(5))</var>
+							 </p>
+				"</var>
+				<var id="crazyHints">(function(){
+							if (4*A*A-12*B&lt;0){
+								return noRoots;
+								}
+							else if ((-2*A-Math.sqrt(4*A*A-12*B))/6&lt;-5){
+								return r1lessMinus5;
+								}
+							else if ((-2*A+Math.sqrt(4*A*A-12*B))/6&gt;5){
+								return r2more5;
+								}
+							else {
+								return bothIn
+								}
+							})()</var>
+				<var id="SOL">(function(){
+							if (4*A*A-12*B&lt;0){
+								return 5;
+								}
+							else if ((-2*A-Math.sqrt(4*A*A-12*B))/6&lt;-5){
+								return (function(A,B){
+											if (A&gt;B){
+												return -5
+												}
+											else {
+												return 5
+												}
+										})(-5*5*5+A*5*5-B*5+C,5*5*5+A*5*5+B*5+C);
+								}
+							else if ((-2*A+Math.sqrt(4*A*A-12*B))/6&gt;5){
+								return (-2*A-Math.sqrt(4*A*A-12*B))/6;
+								}
+							else {
+								return (function(X,A,B){
+											if (A &gt; B){
+												return X
+												}
+											else{
+												return 5
+												}
+											})(((-2*A+Math.sqrt(4*A*A-12*B))/6,f.evalOf((-2*A+Math.sqrt(4*A*A-12*B))/6)),f.evalOf(5))
+								}
+							})()</var>
+  			  </div>
+        	
+        	
+        	<p class="question">
+        		For what abscissa <code>x</code> does the function <code>f(x) = x^3+<var>A</var>x^2+<var>B</var>x+<var>C</var></code> assume its maximum value on the interval <code>[-5,5]</code>?
+        	</p>
+        	
+       <div class="solution" data-type="parsedExpression">
+                	
+       <var>SOL</var>
+                	
+					</div>
+        <div class="hints">
+        	<p>
+        		We will investigate the increasing and decreasing behavior of <code>f</code> by partitioning the domain <code>[-5,5]</code> with respect to 
+        		the sign of <code>f'(x)</code>.
+        	</p>
+        	<p>
+        		<code>f'(x) = 3x^2+<var>2*A</var>x+<var>B</var></code>
+        	</p>
+        	<var>crazyHints</var>
+        	
+        </div>
+       
+</div>      
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html data-require="math word-problems steveMath8 graphie math-function-parser">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>Folding a box</title>
+    <script src="../khan-exercise.js"></script>
+</head>
+<body>
+  <div class="exercise">
+  
+
+    <div class="problems">
+      <div id="quadratic">
+      		
+      		  <div class="vars">
+				<var id="W">randRange(10,20)</var>
+				<var id="L">randRange(W+1,30)</var>
+				
+				
+  			  </div>
+        	
+        	<p class="problem">
+        		You have a sheet of paper which is  <code><var>W</var></code> inches wide, and <code><var>L</var></code> inches long.
+        		You want to make a box by cutting a square out of each corner, so that you can fold up each of the four "flaps" you create.  The resulting box has
+        		only 5 sides - the "top" is open.
+        	</p>
+        	<p class="question">
+        		How many inches should the squares you cut out of the corners measure on one side in order to maximize the volume of the resulting box?
+        	</p>
+        	
+       <div class="solution" data-type="parsedExpression">
+                	
+           (<var>4*W+4*L</var> - sqrt(<var>(4*W+4*L)*(4*W+4*L)-48*W*L</var>))/24</code>
+                	
+					</div>
+        <div class="hints">
+        	<p>
+        		The volume of the box is <var>V(x) = x(<var>W</var>-2x)(<var>L</var>-2x)</var>, which expands out to 
+        		<code>V(x) = <var>W*L</var>x-<var>2*W+2*L</var>x^2+4x^3</code>.  The domain of this function is <code>[0,\dfrac{<var>W</var>}{2}]</code>, because 
+        		<var>x</var> is a length, and so must be positive, and cannot be greater than <code>\dfrac{<var>W</var>}{2}</code> because the sheet of paper is 
+        		only <code><var>W</var></code> inches wide.
+        	</p>
+        	<p>
+        		Differentiating we have <code>V'(x) = <var>W*L</var>-<var>4*W+4*L</var>x+12x^2</code></code>
+        	</p>
+        	<p>
+        		By the quadratic formula, <code>V'</code> has two zeros, at <code>\dfrac{<var>4*W+4*L</var> \pm \sqrt{<var>4*W+4*L</var>^2-4\cdot12\cdot<var>W*L</var>}}{2\cdot 12}</code>
+        	</p>
+        	<p>
+        		So either <code>x= \dfrac{<var>4*W+4*L</var> + \sqrt{<var>(4*W+4*L)*(4*W+4*L)-48*W*L</var>}}{24}</code> or <code>x= \dfrac{<var>4*W+4*L</var> - \sqrt{<var>(4*W+4*L)*(4*W+4*L)-48*W*L</var>}}{24}</code>
+        	</p>
+        	<p>
+        		By inspection, only <code>x= \dfrac{<var>4*W+4*L</var> - \sqrt{<var>(4*W+4*L)*(4*W+4*L)-48*W*L</var>}}{24}</code> falls within the domain of this function.
+        	</p>
+        	<p>
+        		Since <code>V'</code> is a quadratic with a positive lead coefficient, which has two roots, we know the behavior of its graph:  it must go from positive to negative, and back to positive again
+        		as it passes through its two roots.  The root in the domain is the first one, so the derivative is passing from positive to negative there.  Thus this really is a local maximum value.  As it is the only local maximum on this interval, it must be the 
+        		location to the global maximum.
+        	</p>
+        	<p>
+        		Thus to maximize the are of the box, you should cut out a square with a side length of <code>\dfrac{<var>4*W+4*L</var> - \sqrt{<var>(4*W+4*L)*(4*W+4*L)-48*W*L</var>}}{24}</code>
+        	</p>
+        </div>
+       
+</div>      
+</div>
+</div>
+</body>
+</html>
