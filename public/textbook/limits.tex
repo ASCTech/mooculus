@@ -921,7 +921,7 @@ time, we'll assume that $x$ is positive---consider the diagrams below:
             every axis x label/.style={at=(current axis.right of origin),anchor=west},
           ]        
           \addplot [draw=none,fill=fill1] plot coordinates {(0,0) (.766,.643)}\closedcycle; %% sector
-          \addplot [draw=none, fill=fill1, smooth, domain=(0:41)] ({cos(x)},{sin(x)})\closedcycle; %% sector 41 is a hack, should be 40
+          \addplot [draw=none, fill=fill1, samples=100, domain=(0:40)] ({cos(x)},{sin(x)})\closedcycle; %% sector 
           \addplot [very thick, penColor2, smooth, domain=(-.2:.2+pi/2)] ({cos(deg(x))},{sin(deg(x))});
           \addplot [textColor] plot coordinates {(0,0) (1,.839)}; %% 40 degrees
           \addplot [textColor] plot coordinates {(.766,0) (.766,.643)}; %% 40 degrees

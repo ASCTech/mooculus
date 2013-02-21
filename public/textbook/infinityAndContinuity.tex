@@ -656,8 +656,8 @@ interpretation of this theorem.
             xticklabels={$a$,$c$,$b$}, yticklabels={$f(a)$,$f(c)=d$,$f(b)$},
             axis on top,
           ]
-          \addplot [draw=none, fill=fill2, smooth, domain=(0:7)] {1.679} \closedcycle;
-          \addplot [draw=none, fill=background, smooth, domain=(0:7)] {.203} \closedcycle;
+          \addplot [draw=none, fill=fill2, domain=(0:7)] {1.679} \closedcycle;
+          \addplot [draw=none, fill=background, domain=(0:7)] {.203} \closedcycle;
           \addplot [textColor,dashed] plot coordinates {(0,1.679) (6,1.679)};
           \addplot [textColor,dashed] plot coordinates {(0,.203) (6,.203)};
           \addplot [textColor,dashed] plot coordinates {(5,0) (5,1.679)};
