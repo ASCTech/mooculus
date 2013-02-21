@@ -90,3 +90,11 @@ relatedRatesCow
 relatedRatesChronos
 relatedRatesWhale
 relatedRatesBubble
+* Week 8
+optimizationPrescribingExtrema
+optimizationInstallingPipe
+optimizationRectangleParabola
+optimizationPainting
+optimizationDrug
+optimizationBox
+optimizationCubic
