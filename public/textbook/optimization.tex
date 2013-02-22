@@ -19,7 +19,7 @@ We already know how to find local extrema. We wish to find
 
 \marginnote{It is common to leave off the word ``absolute'' when
   asking for absolute extrema. Hence a ``maximum'' or a ``minimum''
-  referrs to an absolute extremum. On the otherhand, local extrema are
+  refers to an absolute extremum. On the other hand, local extrema are
   always specified as such.}
 \begin{definition}\hfil\index{maximum/minimum!absolute}
 \begin{enumerate}
@@ -33,7 +33,7 @@ absolute maximum or an absolute minimum.
 \end{definition}
 
 If we are working on an finite closed interval, then we have the
-folloing theorem.
+following theorem.
 
 \begin{mainTheorem}[Extreme Value Theorem]\label{theorem:evt}\index{Extreme Value Theorem}
 If $f(x)$ is a continuous function for all $x$ in the closed interval
@@ -147,37 +147,81 @@ now
 \]
 The derivative $f'(x)$ is never zero, but $f'(x)$ is undefined at
 $x=2$, so we have a critical point at $x=2$. Compute $f(2)=
-0$. Checking the end points we get $f(1)=1$ and $f(4)=2$. The smallest
+0$. Checking the endpoints we get $f(1)=1$ and $f(4)=2$. The smallest
 of these numbers is $f(2)=0$, which is, therefore, the minimum value
-of $f(x)$ on the interval and the maximum is $f(4)=2$.
-\end{solution}
+of $f(x)$ on the interval and the maximum is $f(4)=2$, see Figure~\ref{figure:evt |x-2|}.
+\end{solution}\begin{marginfigure}
+\begin{tikzpicture}
+	\begin{axis}[
+            domain=-3:2, ymin=-1, ymax=3, xmin=0, xmax=5,
+            axis lines =center, xlabel=$x$, ylabel=$y$,
+            every axis y label/.style={at=(current axis.above origin),anchor=south},
+            every axis x label/.style={at=(current axis.right of origin),anchor=west},
+            axis on top,
+          ]
+          \addplot [draw=none, fill=fill2, domain=(1:4)] {3} \closedcycle;
+          \addplot [draw=none, fill=fill2, domain=(1:4)] {-1} \closedcycle;
+          
+          \addplot [fill1,very thick] plot coordinates {(1,-1) (1,3)};
+          \addplot [fill1,very thick] plot coordinates {(4,-1) (4,3)};
 
+          \addplot [very thick,penColor,domain=(1:4)] {abs(x-2)};
+                    
+          \addplot [color=penColor,fill=penColor,only marks,mark=*] coordinates{(4,2)};  %% closed hole          
+          \addplot [color=penColor,fill=penColor,only marks,mark=*] coordinates{(2,0)};  %% closed hole          
+        \end{axis}
+\end{tikzpicture}
+\caption{A plot of the function $f(x) = |x-2|$ on the interval $[1,4]$.}
+\label{figure:evt |x-2|}
+\end{marginfigure}
 
-%% Example of concavity
+\begin{warning}
+If the interval is not closed, for example $(-\pi/2, \pi/2)$ then the
+Extreme Value Theorem, Theorem~\ref{theorem:evt}, \textbf{does not
+  apply}. Consider $f(x) = \tan(x)$, this function has no
+absolute (or even local) extrema on this interval, see Figure~\ref{figure:NOevt tan}.
+\end{warning}\begin{marginfigure}
+\begin{tikzpicture}
+	\begin{axis}[
+            domain=-2:2, ymin=-10, ymax=10, xmin=-2, xmax=2,
+            axis lines =center, xlabel=$x$, ylabel=$y$,
+            xtick={-1.57,1.57},
+            xticklabels={$-\pi/2$,$\pi/2$},
+            every axis y label/.style={at=(current axis.above origin),anchor=south},
+            every axis x label/.style={at=(current axis.right of origin),anchor=west},
+            axis on top,
+          ]
+          \addplot [draw=none, fill=fill2, domain=(-1.57:1.57)] {10} \closedcycle;
+          \addplot [draw=none, fill=fill2, domain=(-1.57:1.57)] {-10} \closedcycle;
+          
+          \addplot [very thick,penColor,samples=100,smooth,domain=(-1.54:1.54)] {tan(deg(x))};
+        \end{axis}
+\end{tikzpicture}
+\caption{A plot of the function $f(x) = \tan(x)$ on the interval
+  $(-\pi/2,\pi/2)$. Here the Extreme Value Theorem does not apply
+because we are on an open interval.}
+\label{figure:NOevt tan}
+\end{marginfigure}
 
-%% example of tan on $[-\pi/2,\pi/2]$
-
+Finally, if there are several critical points in the interval, then
+the mathematician might want to use the second derivative test,
+Theorem~\ref{T:sdt}, to identify if the critical points are local
+maxima or minima, rather than simply evaluating the function at these
+points. Regardless, it depends on the situation, and we will leave it
+up to you---our capable reader.
 
 
 
 
 \begin{exercises}
+\noindent Find the maximum value and minimum values of $f(x)$ for $x$
+in the given interval
 
 \begin{exercise}
-Let $f(x) = \begin{cases}
-1 + 4 x -x^2 & \text{for } x\leq 3 \\
-            (x+5)/2          &\text{for } x>3
-\end{cases}$
-
-\item{} Find the maximum value and minimum values of $f(x)$ for $x$ in $[0,4]$.
-Graph $f(x)$ to check your answers.
+$f(x) = \begin{cases} 1 + 4 x -x^2 & \text{if  $x\leq 3$} \\ 
+(x+5)/2 &\text{if $x>3$},
+\end{cases}$ on the interval $[0,4]$
 \begin{answer} max at $(2,5)$, min at $(0,1)$
-\end{answer}\end{exercise}
-
-\begin{exercise}
-Find the dimensions of the rectangle of largest area having fixed perimeter
-$100$.
-\begin{answer} $25\times 25$
 \end{answer}\end{exercise}
 
 \end{exercises}
@@ -201,9 +245,26 @@ $100$.
 \section{Basic Optimization Problems}
 
 
+In this section, we will present several worked examples of
+optimization problems. Our method for solving these problems is
+essentially the following:
+
+
+\begin{guidelinesForOptimization}\hfil
+\begin{itemize}
+\item[\textbf{Draw a picture.}] If possible, draw a schematic picture with all the relevant information. 
+\item[\textbf{Find a Function.}] We need the function that needs to be optimized. 
+\item[\textbf{Find critical points and endpoints.}] These will be our
+  candidates for the optimal values.
+\item[\textbf{Check your values.} ] This step is essential!
+\end{itemize}
+\end{guidelinesForOptimization}
+
 \begin{example}
 Of all rectangles of area 100, which has the smallest perimeter?
+\end{example}
 
+\begin{solution}
 First we must translate this into a purely mathematical problem in
 which we want to find the minimum value of a function.
 If $x$ denotes one of the sides of the rectangle, then the adjacent side
@@ -226,7 +287,7 @@ minimum, or neither at $x=10$? The second derivative is
 $f''(x)=400/x^3$, and $f''(10)>0$, so there is a local minimum. Since
 there is only one critical value, this is also the global minimum, so the
 rectangle with smallest perimeter is the $10\times10$ square.
-\end{example}
+\end{solution}
 
 \begin{example}
 You want to sell a certain number $n$ of items in order to maximize your
@@ -237,7 +298,9 @@ your fixed costs (``start-up costs'') total \$2000, and the per item cost
 of production (``marginal cost'') is \$0.50.  Find the price to set per
 item and the number of items sold in order to maximize profit, and also
 determine the maximum profit you can get.
+\end{example}
 
+\begin{solution}
 The first step is to convert the problem into a function maximization
 problem. Since we want to maximize profit by setting the price per
 item, we should look for a function $P(x)$ representing the profit
@@ -261,7 +324,7 @@ be a global maximum as well. (Alternately, we could compute
 $P(0)=-12000$, $P(1.25)=3625$, and $P(1.5)=3000$ and note that
 $P(1.25)$ is the maximum of these.) Thus the maximum profit is \$3625,
 attained when we set the price at \$1.25 and sell 7500 items.
-\end{example}
+\end{solution}
 
 
 %BADBAD 
@@ -294,7 +357,9 @@ area) that fits inside the graph of the parabola $y=x^2$ below the
 line $y=a$ ($a$ is an unspecified constant value), with the top side of
 the rectangle on the horizontal line $y=a$; see
 figure~\xrefn{fig:rectangle optimization}.)
+\end{example}
 
+\begin{solution}
 We want to find the maximum value of some function $A(x)$ representing
 area.  Perhaps the hardest part of this problem is deciding what $x$
 should represent. The lower right corner of the rectangle is at
@@ -312,7 +377,7 @@ value. Testing this and the two endpoints, we have
 $A(0)=A(\sqrt{a})=0$ and $A(\sqrt{a/3})=(4/9)\sqrt{3}a^{3/2}$. The
 maximum area thus occurs when the rectangle has dimensions
 $2\sqrt{a/3}\times (2/3)a$.
-\end{example}
+\end{solution}
 
 %% BADBAD
 %% \figure
@@ -338,8 +403,9 @@ volume of the sphere is occupied by the cone?  (Here by ``cone'' we mean a
 right circular cone, i.e., a cone for which the base is perpendicular to
 the axis of symmetry, and for which the cross-section cut perpendicular to
 the axis of symmetry at any point is a circle.)
+\end{example}
 
-
+\begin{solution}
 Let $R$ be the radius of the sphere, and let $r$ and $h$ be the base radius
 and height of the cone inside the sphere.  What we want to maximize is the
 volume of the cone: $\pi r^2h/3$.  Here $R$ is a fixed value, but
@@ -381,7 +447,7 @@ We compute $V(0)=V(2R)=0$ and $V(4R/3)=(32/81)\pi R^3$. The maximum is
 the latter; since the volume of the sphere is $(4/3)\pi R^3$, the
 fraction of the sphere occupied by the cone is 
 $${(32/81)\pi R^3\over (4/3)\pi R^3}={8\over 27}\approx 30\%.$$
-\end{example}
+\end{solution}
 
 \begin{example}
 You are making cylindrical containers to contain a given volume.  Suppose
@@ -389,7 +455,9 @@ that the top and bottom are made of a material that is $N$ times as
 expensive (cost per unit area) as the material used for the lateral side of
 the cylinder.  Find (in terms of $N$) the ratio of height to base radius of
 the cylinder that minimizes the cost of making the containers.
+\end{example}
 
+\begin{solution}
 Let us first choose letters to represent various things: $h$ for the
 height, $r$ for the base radius, $V$ for the volume of the
 cylinder, and $c$ for the cost per unit area of the lateral side of
@@ -422,7 +490,7 @@ so the minimum cost occurs when the height $h$ is $2N$ times the
 radius. If, for example, there is no difference in the cost of
 materials, the height is twice the radius (or the height is equal to
 the diameter).
-\end{example}
+\end{solution}
 
 %% BADBAD
 %% \figure
@@ -457,7 +525,9 @@ and let $w$, which is less than $v$, be your speed on the sand.  Right
 now you are at the point $D$, which is a distance $a$ from $C$.  At
 what point $B$ should you turn off the road and head across the sand
 in order to minimize your travel time to $A$?
+\end{example}
 
+\begin{solution}
 Let $x$ be the distance short of $C$ where you turn off, i.e., the distance
 from $B$ to $C$.  We want to minimize the total travel time.  Recall
 that when traveling at constant velocity, time is distance divided by velocity.
@@ -509,29 +579,18 @@ So the upshot is this: If you start farther away from $C$ than
 $wb/\sqrt{v^2-w^2}$ then you always want to cut across the sand 
 when you are a distance $wb/\sqrt{v^2-w^2}$ from point $C$. If you
 start closer than this to $C$, you should cut directly across the sand.
-\end{example}
+\end{solution}
 \label{exam:sand and road}
 
-\leftline{\bf Summary---Steps to solve an optimization problem.}
-
-\begin{itemize} % BADBAD
-
-\item{1.} Decide what the variables are and what the constants are, draw a
-diagram if appropriate, understand clearly what it is that is to be
-maximized or minimized.
-
-\item{2.} Write a formula for the function for which you wish to find 
-the maximum or minimum.
-
-\item{3.} Express that formula in terms of only one variable, that is, in
-the form $f(x)$.
-
-\item{4.} Set $f'(x)=0$ and solve. Check all critical values and
-  endpoints to determine the extreme value.
-
-\end{itemize}
 
 \begin{exercises}
+
+
+\begin{exercise}
+Find the dimensions of the rectangle of largest area having fixed perimeter
+$100$.
+\begin{answer} $25\times 25$
+\end{answer}\end{exercise}
 
 
 \begin{exercise}
