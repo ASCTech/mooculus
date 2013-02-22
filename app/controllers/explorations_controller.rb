@@ -5,4 +5,7 @@ class ExplorationsController < ApplicationController
 
   def derivative
   end
+
+  def doppler
+  end
 end

@@ -805,16 +805,20 @@ $.extend(KhanUtil, {
                     lineLength = graph.range[1][1] - graph.range[1][0];
                 }
             }
-            this.visibleLine.translate(scaledA[0] - this.visibleLine.attr("translation").x,
-                    scaledA[1] - this.visibleLine.attr("translation").y);
-            this.visibleLine.rotate(-angle, scaledA[0], scaledA[1]);
-            this.visibleLine.scale(lineLength, 1, scaledA[0], scaledA[1]);
+
+	    var t = [["r", -angle, scaledA[0], scaledA[1]],
+		     ["s", lineLength, 1, scaledA[0], scaledA[1]],
+		     ['t', scaledA[0], scaledA[1]]];
+
+            this.visibleLine.transform(t); 
+	    lineSegment.visibleLine.attr( {'stroke-width': lineLength} );
 
             if (!this.fixed) {
-                this.mouseTarget.translate(scaledA[0] - this.mouseTarget.attr("translation").x,
-                        scaledA[1] - this.mouseTarget.attr("translation").y);
-                this.mouseTarget.rotate(-angle, scaledA[0], scaledA[1]);
-                this.mouseTarget.scale(lineLength, 1, scaledA[0], scaledA[1]);
+		var t = [["r", -angle, scaledA[0], scaledA[1]],
+			 ["s", lineLength, 1, scaledA[0], scaledA[1]],
+			 ['t', scaledA[0], scaledA[1]]];
+
+		this.mouseTarget.transform(t); 
             }
         };
 
