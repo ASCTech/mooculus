@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html data-require="math word-problems steveMath8 graphie math-function-parser">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>A rectangle in a parabola</title>
+    <script src="../khan-exercise.js"></script>
+</head>
+<body>
+  <div class="exercise">
+  
+
+    <div class="problems">
+      <div id="quadratic">
+      		
+      		  <div class="vars">	
+				<var id="A">randRange(2,20)</var>
+				<var id="B">randRange(2,20)</var>
+  			  </div>
+        	
+        	<p class="problem">
+        		Let <code>f(x) = <var>B</var>-<var>A</var>x^2</code>.  The graph of <code>f</code> and the horizontal axis bound a region.  Consider
+        		rectangles in this region based on the horizontal axis, and with a vertex on the graph of <code>f</code>.  Note that, by geometry, such a rectangle is necessarily
+        		symmetric with respect to the vertical axis.  
+        	</p>
+        	<p class="question">
+        		What is the greatest area achieved by such a rectangle?
+        	</p>
+        	
+       <div class="solution" data-type="parsedExpression">
+                	
+           <var>(2*B - 2*B/(3*A))*Math.sqrt(B/(3*A))</var>
+                	
+					</div>
+        <div class="hints">
+        	<p>
+        		Let <code>A(x)</code> be the area of the rectangle with vertex <code>(x,f(x))</code>.  Then <code>A(x) = 2x \cdot ( <var>B</var>-<var>A</var>x^2)</code>.
+        		Note that by symmetry, we need only consider <code>x &gt;0</code>.
+        	</p>
+        	<p>
+        		Simplifying, we obtain <code>A'(x) = <var>2*B</var>x - <var>2*A</var>x^3</code>
+        	</p>
+        	<p>
+        		Differentiating, we obtain <code>A'(x) = <var>2*B</var> - <var>6*A</var>x^2</code>
+        	</p>
+        	<p>
+        		Setting this equal to zero, <code><var>2*B</var> - <var>6*A</var>x^2 = 0</code>
+        	</p>
+        	<p>
+        		 <code> <var>6*A</var>x^2 = <var>2*B</var></code>
+        	</p>
+        	<p>
+        		 <code>x^2 = \dfrac{<var>2*B</var>}{<var>6*A</var>}</code>
+        	</p>
+        	<p>
+        		 <code>x^2 = <var>displayMode(B/(3*A))</var></code>
+        	</p>
+        	<p>
+        		 <code>x = \sqrt{<var>displayMode(B/(3*A))</var>}</code>, because we are only considering positive values of <code>x</code>.
+        	</p>
+        	<p>
+        		Since this is the only critical point of <code>A</code> for positive values of <code>x</code>, and we know that there must be some 
+        		maximizing value of <code>x</code> because <code>A</code> is nonnegative on the region of interest, we can say with certainty that 
+        		<code>x = \sqrt{<var>displayMode(B/(3*A))</var>}</code> is the location of the global maximum of <code>A</code>.
+        	</p>
+        	<p>
+        		Thus the maximum area achieved by all such rectangles is <code>A(\sqrt{<var>displayMode(B/(3*A))</var>}) = 
+        		2\cdot \sqrt{<var>displayMode(B/(3*A))</var>} \cdot (<var>B</var> - \left(\sqrt{<var>displayMode(B/(3*A))</var>}\right)^2)
+        		=  2\cdot \sqrt{<var>displayMode(B/(3*A))</var>} \cdot (<var>displayMode(B - B/(3*A))</var>) 
+        		= <var>displayMode(2*B - 2*B/(3*A))</var>\sqrt{<var>displayMode(B/(3*A))</var>}</code>
+        	</p>
+        </div>
+       
+</div>      
+</div>
+</div>
+</body>
+</html>

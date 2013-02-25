@@ -6,6 +6,15 @@ $.extend(KhanUtil, {
     },
     
     // Approximates a root of f on the interval (xmin,xmax) by successively halving the interval.
+    
+    displayMode: function(x){
+									if (KhanUtil.toFraction(x)[1] == 1){
+										return x
+										}
+									else return "\\frac{"+KhanUtil.toFraction(x)[0]+"}{" + KhanUtil.toFraction(x)[1]+"}"
+									
+									},
+    
     steveRoot: function(f,xmin,xmax){
         var l = xmin
         var r = xmax

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html data-require="math word-problems steveMath8 graphie math-function-parser">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>Viewing a painting</title>
+    <script src="../khan-exercise.js"></script>
+</head>
+<body>
+  <div class="exercise">
+  
+
+    <div class="problems">
+      <div id="quadratic">
+      		
+      		  <div class="vars">	
+				<var id="A">randRange(2,6)</var>
+				<var id="B">randRange(4,10)+A</var>
+  			  </div>
+        	
+        	<p class="problem">
+        		A painting is mounted on a wall.  The bottom of the painting is <var>A</var> feet above eye level, and the top of the painting is <var>B</var> feet above eye level.
+        		If you stand directly underneath the painting, you cannot see it at all.  Similarly, if you stand very far away, you cannot see it very well.  At some distance away
+        		from the wall, the angle subtended by the painting, whose vertex is your eye, is maximized.    
+        	</p>
+        	<p class="question">
+        		How far away must you stand from the wall to achieve this maximal viewing angle?
+        	</p>
+        	
+       <div class="solution" data-type="parsedExpression">
+                	
+           <var>Math.sqrt(A*B)</var>
+                	
+					</div>
+        <div class="hints">
+        	<p>
+        		The angle in question is <code>\theta = \arctan(\dfrac{<var>B</var>}{x}) - \arctan(\dfrac{<var>A</var>}{x})</code>.
+        	</p>
+        	<p>
+        		The angle in question is <code>\theta = \arctan(\dfrac{<var>B</var>}{x}) - \arctan(\dfrac{<var>A</var>}{x})</code>.
+        	</p>
+        	<p>
+        		<code>\dfrac{d\theta}{dx} = \dfrac{1}{1+(\dfrac{<var>B</var>}{x})^2}\cdot \dfrac{-(<var>B</var>)}{x^2}  + 
+        		\dfrac{1}{1+(\dfrac{<var>A</var>}{x})^2}\cdot \dfrac{(<var>A</var>)}{x^2}</code>
+        	</p>
+        	<p>
+        		<code>\dfrac{d\theta}{dx} = \dfrac{1}{1+(\dfrac{<var>B</var>}{x})^2}\cdot \dfrac{-(<var>B</var>)}{x^2}  + 
+        		\dfrac{1}{1+(\dfrac{<var>A</var>}{x})^2}\cdot \dfrac{(<var>A</var>)}{x^2}</code>
+        	</p>
+        	<p>
+        		<code>\dfrac{d\theta}{dx} = \dfrac{<var>A</var>}{<var>A</var>^2+x^2} - \dfrac{<var>B</var>}{<var>B</var>^2+x^2}</code>
+        	</p>
+        	<p>
+        		Setting this equal to 0, we have <code>\dfrac{<var>A</var>}{<var>A</var>^2+x^2} = \dfrac{<var>B</var>}{<var>B</var>^2+x^2}</code>
+        	</p>
+        	<p>
+        		Setting this equal to 0, we have <code><var>A</var>\cdot<var>B</var>^2 + <var>A</var>x^2 = <var>B</var>\cdot<var>A</var>^2+<var>B</var>x^2</code>
+        	</p>
+        	<p>
+        		<code>(<var>A</var>- <var>B</var>)x^2 = <var>B</var>\cdot<var>A</var>^2 - <var>A</var>\cdot<var>B</var>^2</code>
+        	</p>
+        	<p>
+        		<code>(<var>A</var>- <var>B</var>)x^2 = <var>A</var> \cdot <var>B</var> \cdot (<var>A</var>-<var>B</var>)</code>
+        	</p>
+        	<p>
+        		<code>x^2 = <var>A</var> \cdot <var>B</var></code>
+        	</p>
+        	<p>
+        		<code>x = \sqrt{<var>A*B</var>}</code>
+        	</p>
+        	<p>
+        		As you can check, the derivative goes from positive to negative as you pass through this critical point. As this is the only critical point, it must be the global maximum.
+        		Thus the angle is maximized when <code>x = \sqrt{<var>A*B</var>}</code>.
+        	</p>
+        	
+        </div>
+       
+</div>      
+</div>
+</div>
+</body>
+</html>

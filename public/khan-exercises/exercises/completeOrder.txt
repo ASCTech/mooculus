@@ -83,3 +83,10 @@ relatedRatesShadowBuilding.html
 relatedRatesCow.html
 relatedRatesChronos.html
 relatedRatesWhale.html
+optimizationCubic.html
+optimizationPrescribingExtrema.html
+optimizationInstallingPipe.html
+optimizationRectangleParabola.html
+optimizationPainting.html
+optimizationDrug.html
+optimizationBox.html

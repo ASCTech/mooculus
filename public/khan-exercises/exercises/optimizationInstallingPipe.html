@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html data-require="math word-problems steveMath8 graphie math-function-parser">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>Installing a gasline</title>
+    <script src="../khan-exercise.js"></script>
+</head>
+<body>
+  <div class="exercise">
+  
+
+    <div class="problems">
+      <div id="quadratic">
+      		
+      		  <div class="vars">
+				<var id="X">randRange(2,10)</var>
+				<var id="R">randRange(2,6)*100</var>
+				<var id="A">randRange(5,20)</var>
+				<var id="B">randRangeExclude(2,10,[2*X])</var>
+				<var id="C">randRange(6,20)</var>
+				<var id="minSquare">displayMode(((2*X-B)/(2*A+2)-X)*((2*X-B)/(2*A+2)-X)+A*((2*X-B)/(2*A+2))*((2*X-B)/(2*A+2)) + B*((2*X-B)/(2*A+2))+C)</var>
+  			  </div>
+        	
+        	<p class="problem">
+        		You are building a new house on a cartesian plane whose units are measured in miles.  
+        		Your house is to be located at the point <code>(<var>X</var>,0)</code>.  Unfortunately, the 
+        		existing gas line follows the curve <code>y = \sqrt{<var>A</var>x^2 + <var>B</var>x+<var>C</var>}</code>.  
+        		It costs <code><var>R</var></code> dollars per mile to install new pipe connecting your house to the existing line.
+        	</p>
+        	<p class="question">
+        		What is the least amount of money you could pay to get hooked up to the system?
+        	</p>
+       <div class="solution" data-type="parsedExpression">
+                	
+              <var>R</var>*sqrt(<var>(((2*X-B)/(2*A+2)-X)*((2*X-B)/(2*A+2)-X)+A*((2*X-B)/(2*A+2))*((2*X-B)/(2*A+2)) + B*((2*X-B)/(2*A+2))+C)</var>)
+                	
+					</div>
+        <div class="hints">
+        	<p>
+        		We will minimize our cost by connecting our house to the pipe at the closest point.
+        	</p>
+        	<p>
+        		The distance from your house at <code>(<var>X</var>,0)</code> to the existing line at the point 
+        		<code>(x,\sqrt{<var>A</var>x^2 + <var>B</var>x+<var>C</var>})</code> is <code>\sqrt{(x-<var>X</var>)^2+(\sqrt{<var>A</var>x^2 + <var>B</var>x+<var>C</var>} - 0)^2}</code>.
+        		It might be tempting to try to minimize this function directly, but it will be algebraically nicer to minimize its square <code>(x-<var>X</var>)^2+(\sqrt{<var>A</var>x^2 + <var>B</var>x+<var>C</var>} )^2</code>.  
+        		This is fine because the squaring function is increasing for positive real numbers, so if we find where the  minimum of the squared function occurs,  the  minimum of the unsquared function will occur at the same location.
+        		We just have to remember to take the square root of our answer when we are done.
+        	</p>
+        	<p>
+        		More formally, let <code>g(x)</code> be the square of the distance from your house to the point on the pipeline whose abscissa is <code>x</code>, that is, 
+        		<code>g(x) =  (x-<var>X</var>)^2+(\sqrt{<var>A</var>x^2 + <var>B</var>x+<var>C</var>} )^2</code>.  Then the square root of the minimum value
+        		of <code>g</code> will be the distance to the closest point.  Multiplying this by the cost of the pipe per mile will give the minimizing cost.
+        	</p>
+        	<p>
+        		Simplifying <code>g</code>, we see that <code>g(x) =  (x-<var>X</var>)^2+<var>A</var>x^2 + <var>B</var>x+<var>C</var></code>.
+        	</p>
+        	<p>
+        		Differentiating we have <code>g'(x) = 2(x-<var>X</var>)+<var>2*A</var>x+<var>B</var></code>
+        	</p>
+        	<p>
+        		Setting this equal to <code>0</code> we have:
+        		<br/>
+        		<code>2(x-<var>X</var>)+<var>2*A</var>x+<var>B</var> = 0</code>
+        		<br/>
+        		<code>2x - <var>2*X</var>+<var>2*A</var>x+<var>B</var> = 0</code>
+        		<br/>
+        		<code><var>2*A+2</var>x + <var>B-2*X</var> = 0</code>
+        		<br/>
+        		<code><var>2*A+2</var>x  = <var>2*X-B</var></code>
+        		<br/>
+        		<code>x  = \dfrac{<var>2*X-B</var>}{<var>2*A+2</var>}</code>
+        	</p>
+        	<p>
+        		Since <code>g'</code> is a linear function with positive slope, we know that it starts negative, passes through the horizontal axis, and then becomes positive.
+        		In other words, <code>g</code> is decreasing until <code>x  = \dfrac{<var>2*X-B</var>}{<var>2*A+2</var>}</code> and then it is increasing, so <code>x  = \dfrac{<var>2*X-B</var>}{<var>2*A+2</var>}</code>
+        		must be where the global minimum of <code>g</code> occurs.
+        	</p>
+        	<p>
+        		The value of <code>g</code> at this point is 
+        		<code>\left(\dfrac{<var>2*X-B</var>}{<var>2*A+2</var>}-<var>X</var>\right)^2+
+        		<var>A</var>\left(\dfrac{<var>2*X-B</var>}{<var>2*A+2</var>}\right)^2 + 
+        		<var>B</var>\left(\dfrac{<var>2*X-B</var>}{<var>2*A+2</var>}\right)+<var>C</var>
+        		=
+        		<var>minSquare</var></code>        	
+        	</p>
+        	<p>
+        		Thus the closest point on the existing pipeline to the house is <code>\sqrt{<var>minSquare</var>}</code>, and so the minimizing cost is <code><var>R</var>\sqrt{<var>minSquare</var>}</code>
+        	</p>
+        </div>
+       
+</div>      
+</div>
+</div>
+</body>
+</html>
