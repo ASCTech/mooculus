@@ -12,7 +12,7 @@ solved by finding the appropriate function and then using techniques
 of calculus to find the maximum or the minimum value required.
 
 
-\section{Maximum and Minimum Values of a Curve}
+\section{Maximum and Minimum Values of Curves}
 
 We already know how to find local extrema. We wish to find
 \textit{absolute extrema}.
@@ -176,10 +176,12 @@ of $f(x)$ on the interval and the maximum is $f(4)=2$, see Figure~\ref{figure:ev
 \end{marginfigure}
 
 \begin{warning}
-If the interval is not closed, for example $(-\pi/2, \pi/2)$ then the
-Extreme Value Theorem, Theorem~\ref{theorem:evt}, \textbf{does not
-  apply}. Consider $f(x) = \tan(x)$, this function has no
-absolute (or even local) extrema on this interval, see Figure~\ref{figure:NOevt tan}.
+The Extreme Value Theorem, Theorem~\ref{theorem:evt}, requires that
+the function in question be \textbf{continuous} on a \textbf{closed}
+interval.  For example consider $f(x)=\tan(x)$ on $(-\pi/2,
+\pi/2)$. In this case, the function is continuous on $(-\pi/2,\pi/2)$,
+but the interval is not closed. Hence, the Extreme Value Theorem
+\textbf{does not apply}, see Figure~\ref{figure:NOevt tan}.
 \end{warning}\begin{marginfigure}
 \begin{tikzpicture}
 	\begin{axis}[
@@ -198,8 +200,7 @@ absolute (or even local) extrema on this interval, see Figure~\ref{figure:NOevt 
         \end{axis}
 \end{tikzpicture}
 \caption{A plot of the function $f(x) = \tan(x)$ on the interval
-  $(-\pi/2,\pi/2)$. Here the Extreme Value Theorem does not apply
-because we are on an open interval.}
+  $(-\pi/2,\pi/2)$. Here the Extreme Value Theorem does not apply.}
 \label{figure:NOevt tan}
 \end{marginfigure}
 
@@ -213,16 +214,88 @@ up to you---our capable reader.
 
 
 
+
 \begin{exercises}
 \noindent Find the maximum value and minimum values of $f(x)$ for $x$
-in the given interval
+on the given interval.
 
 \begin{exercise}
-$f(x) = \begin{cases} 1 + 4 x -x^2 & \text{if  $x\leq 3$} \\ 
+$f(x) = x-2x^2$ on the interval $[0,1]$
+\begin{answer}
+max at $(1/4,1/8)$, min at $(1,-1)$
+\end{answer}
+\end{exercise}
+
+\begin{exercise}
+$f(x) = x-2x^3$ on the interval $[-1,1]$
+\begin{answer}
+max at $(-1,1)$, min at $(1,-1)$
+\end{answer}
+\end{exercise}
+
+\begin{exercise}
+$f(x) = x^3-6x^2+12x-8$ on the interval $[1,3]$
+\begin{answer}
+max at $(1,-1)$, min at $(3,1)$
+\end{answer}
+\end{exercise}
+
+\begin{exercise}
+$f(x) = -x^3-3x^2-2x$ on the interval $[-2,0]$
+\begin{answer}
+max at $(-1+1/\sqrt{3},2/(3\sqrt{3}))$, min at
+$(-1-1/\sqrt{3},-2/(3\sqrt{3}))$
+\end{answer}
+\end{exercise}
+
+\begin{exercise}
+$f(x) = \sin^2(x)$ on the interval $[\pi/4,5\pi/3]$
+\begin{answer}
+max at $(3\pi/2,1)$, min at
+$(\pi,0)$
+\end{answer}
+\end{exercise}
+
+\begin{exercise}
+$f(x) = \arctan(x)$ on the interval $[-\pi,\pi]$
+\begin{answer}
+max at $(\pi,\pi/4)$, min at
+$(-\pi,-\pi/4)$
+\end{answer}
+\end{exercise}
+
+\begin{exercise}
+$f(x) = e^{\sin(x)}$ on the interval $[-\pi,\pi]$
+\begin{answer}
+max at $(\pi/2,e)$, min at
+$(-\pi/2,1/e)$
+\end{answer}
+\end{exercise}
+
+\begin{exercise}
+$f(x) = \ln(\cos(x))$ on the interval $[-\pi/6,\pi/3]$
+\begin{answer}
+max at $(0,0)$, min at
+$(\pi/3,-\ln(2)$
+\end{answer}
+\end{exercise}
+
+\begin{exercise}
+$f(x) = \begin{cases} 1 + 4 x -x^2 & \text{if  $x\leq 3$}, \\ 
 (x+5)/2 &\text{if $x>3$},
 \end{cases}$ on the interval $[0,4]$
 \begin{answer} max at $(2,5)$, min at $(0,1)$
 \end{answer}\end{exercise}
+
+
+\begin{exercise}
+$f(x) = \begin{cases} (x+5)/2 &\text{if $x<3$},\\
+1 + 4 x -x^2 & \text{if  $x\ge 3$},
+\end{cases}$ on the interval $[0,4]$
+\begin{answer} max at $(3,4)$, min at $5/2$
+\end{answer}\end{exercise}
+
+%% two piece wise
 
 \end{exercises}
 
@@ -253,129 +326,163 @@ essentially the following:
 \begin{guidelinesForOptimization}\hfil
 \begin{itemize}
 \item[\textbf{Draw a picture.}] If possible, draw a schematic picture with all the relevant information. 
-\item[\textbf{Find a Function.}] We need the function that needs to be optimized. 
-\item[\textbf{Find critical points and endpoints.}] These will be our
-  candidates for the optimal values.
-\item[\textbf{Check your values.} ] This step is essential!
+\item[\textbf{Determine your goal.}] We need identify what needs to be
+  optimized.
+\item[\textbf{Find constraints.}] What limitations are set on our
+  optimization?
+\item[\textbf{Solve for a single variable.}] Now you should have a function to optimize.
+\item[\textbf{Use calculus to find the extreme values.}] Be sure to check your answer!
 \end{itemize}
 \end{guidelinesForOptimization}
 
 \begin{example}
-Of all rectangles of area 100, which has the smallest perimeter?
+Of all rectangles of area $100$ cm$^3$, which has the smallest
+perimeter?
 \end{example}
 
-\begin{solution}
-First we must translate this into a purely mathematical problem in
-which we want to find the minimum value of a function.
-If $x$ denotes one of the sides of the rectangle, then the adjacent side
-must be $100/x$ (in order that the area be 100).  So the function we want
-to minimize is 
-$$
-  f(x)=2x+2{100\over x}
-$$
-since the perimeter is twice the length plus twice the width of the
-rectangle. Not all values of $x$ make sense in this problem: lengths
-of sides of rectangles must be positive, so $x>0$. If $x>0$ then so is
-$100/x$, so we need no second condition on $x$.
+\begin{marginfigure}
+\begin{tikzpicture}
+\draw [penColor,very thick,fill=fill2] (0,0) rectangle (5,4);
+\node [penColor] at (2.5,2) {$A=100$ cm$^3$};
+\node [right,penColor] at (5,2) {$\frac{100}{x}$ cm};
+\node [below,penColor] at (2.5,0) {$x$ cm};
+\end{tikzpicture}
+\caption{A rectangle with an area of $100$ cm$^3$.}
+\label{fig:rectangle parabola}
+\end{marginfigure}
 
-We next find $f'(x)$ and set it equal to zero: $0=f'(x)=2-200/x^2$.
-Solving $f'(x)=0$ for $x$ gives us $x=\pm 10$. We are interested only
-in $x>0$, so only the value $x=10$ is of interest. Since $f'(x)$ is
-defined everywhere on the interval $(0,\infty)$, there are no more
-critical values, and there are no endpoints. Is there a local maximum,
-minimum, or neither at $x=10$? The second derivative is
-$f''(x)=400/x^3$, and $f''(10)>0$, so there is a local minimum. Since
-there is only one critical value, this is also the global minimum, so the
-rectangle with smallest perimeter is the $10\times10$ square.
+\begin{solution}
+First we draw a picture, see Figure~\ref{figure:rect100}.  If $x$
+denotes one of the sides of the rectangle, then the adjacent side must
+be $100/x$.
+
+
+The perimeter of this rectangle is given by
+\[
+p(x)=2x+2\frac{100}{x}.
+\]
+We wish to maximize $p(x)$.  Note, not all values of $x$ make sense in this
+problem: lengths of sides of rectangles must be positive, so $x>0$. If
+$x>0$ then so is $100/x$, so we need no second condition on $x$.
+
+We next find $p'(x)$ and set it equal to zero. Write
+\[
+p'(x)=2-200/x^2 = 0.
+\]
+Solving for $x$ gives us $x=\pm 10$. We are interested only in $x>0$,
+so only the value $x=10$ is of interest. Since $p'(x)$ is defined
+everywhere on the interval $(0,\infty)$, there are no more critical
+values, and there are no endpoints. Is there a local maximum, minimum,
+or neither at $x=10$? The second derivative is $p''(x)=400/x^3$, and
+$f''(10)>0$, so there is a local minimum. Since there is only one
+critical value, this is also the global minimum, so the rectangle with
+smallest perimeter is the $10$ cm$\times10$ cm square.
 \end{solution}
 
 \begin{example}
 You want to sell a certain number $n$ of items in order to maximize your
-profit.  Market research tells you that if you set the price at \$1.50, you
-will be able to sell 5000 items, and for every 10 cents you lower the price
-below \$1.50 you will be able to sell another 1000 items.  Suppose that
-your fixed costs (``start-up costs'') total \$2000, and the per item cost
-of production (``marginal cost'') is \$0.50.  Find the price to set per
+profit.  Market research tells you that if you set the price at \$$1.50$, you
+will be able to sell $5000$ items, and for every $10$ cents you lower the price
+below \$$1.50$ you will be able to sell another $1000$ items.  Suppose that
+your fixed costs (``start-up costs'') total \$$2000$, and the per item cost
+of production (``marginal cost'') is \$$0.50$.  Find the price to set per
 item and the number of items sold in order to maximize profit, and also
 determine the maximum profit you can get.
 \end{example}
 
 \begin{solution}
 The first step is to convert the problem into a function maximization
-problem. Since we want to maximize profit by setting the price per
-item, we should look for a function $P(x)$ representing the profit
-when the price per item is $x$. Profit is revenue minus costs, and
-revenue is number of items sold times the price per item, so we get
-$P=nx-2000-0.50n$. The number of items sold is itself a function of
-$x$, $n=5000+1000(1.5-x)/0.10$, because $ (1.5-x)/0.10$ is the number
-of multiples of 10 cents that the price is below \$1.50.
-Now we substitute for $n$ in the profit function:
-
+problem. The revenue for selling $n$ items at $x$ dollars is given by
+\[
+r(x) = nx
+\]
+and the cost of producing $n$ items is given by
+\[
+c(x) = 2000+0.5 n. 
+\]
+However, from the problem we see that the number of items sold is
+itself a function of $x$,
+\[
+n(x) =5000+1000(1.5-x)/0.10
+\]
+So profit is give by:
 \begin{align*}
-  P(x) &= (5000+1000(1.5-x)/0.10)x-2000- 0.5(5000+1000(1.5-x)/0.10) \\
-       &=-10000x^2+25000x-12000 
+P(x) &= r(x) - c(x)\\
+&= nx - (2000+0.5 n)\\
+&= (5000+1000(1.5-x)/0.10)x - 2000 - 0.05 (5000+1000(1.5-x)/0.10)\\
+&=-10000x^2+25000x-12000. 
 \end{align*}
-
-We want to know the maximum value of this function when $x$ is
-between 0 and $1.5$. The derivative is $P'(x)=-20000x+25000$, which
-is zero when $x=1.25$. Since $P''(x)=-20000<0$, there must be a local
-maximum at $x=1.25$, and since this is the only critical value it must
-be a global maximum as well. (Alternately, we could compute
-$P(0)=-12000$, $P(1.25)=3625$, and $P(1.5)=3000$ and note that
-$P(1.25)$ is the maximum of these.) Thus the maximum profit is \$3625,
-attained when we set the price at \$1.25 and sell 7500 items.
+We want to know the maximum value of this function when $x$ is between
+0 and $1.5$. The derivative is $P'(x)=-20000x+25000$, which is zero
+when $x=1.25$. Since $P''(x)=-20000<0$, there must be a local maximum
+at $x=1.25$, and since this is the only critical value it must be a
+global maximum as well. Alternately, we could compute $P(0)=-12000$,
+$P(1.25)=3625$, and $P(1.5)=3000$ and note that $P(1.25)$ is the
+maximum of these. Thus the maximum profit is \$$3625$, attained when we
+set the price at \$$1.25$ and sell $7500$ items. 
 \end{solution}
 
 
-%BADBAD 
-%\figure
-%% \vbox{\beginpicture
-%% \normalgraphs
-%% \ninepoint
-%% \setcoordinatesystem units <1.25truecm,0.6truecm>
-%% \setplotarea x from -3 to 3, y from 0 to 9
-%% \axis left shiftedto x=0 /
-%% \axis bottom shiftedto y=0 /
-%% \setquadratic
-%% \plot  -3 9 0 0 3 9 /
-%% \setlinear
-%% \putrule from -1.5 2.25 to 1.5 2.25
-%% \putrule from -1.5 2.25 to -1.5 7
-%% \putrule from 1.5 2.25 to 1.5 7
-%% \putrule from -1.5 7 to 1.5 7
-%% \put {$y=a$} [l] <5pt,0pt> at 3 7
-%% \put {$(x,x^2)$} [tl] <3pt,-1pt> at 1.5 2.25
-%% \put {$\bullet$} at 1.5 2.25
-%% \setdashes
-%% \plot -3 7 3 7 /
-%% \endpicture}
-%% \figrdef{fig:rectangle optimization}
-%% \endfigure{Rectangle in a parabola.}
-
-\begin{example} Find the largest rectangle (that is, the rectangle with largest
-area) that fits inside the graph of the parabola $y=x^2$ below the
-line $y=a$ ($a$ is an unspecified constant value), with the top side of
-the rectangle on the horizontal line $y=a$; see
-figure~\xrefn{fig:rectangle optimization}.)
+\begin{example} 
+Find the rectangle with largest area that fits inside the graph of the
+parabola $y=x^2$ below the line $y=a$, where $a$ is an unspecified
+constant value, with the top side of the rectangle on the horizontal
+line $y=a$. See Figure~\ref{fig:rectangle parabola}.
 \end{example}
 
-\begin{solution}
-We want to find the maximum value of some function $A(x)$ representing
-area.  Perhaps the hardest part of this problem is deciding what $x$
-should represent. The lower right corner of the rectangle is at
-$(x,x^2)$, and once this is chosen the rectangle is completely
-determined. So we can let the $x$ in $A(x)$ be the $x$ of the parabola
-$f(x)=x^2$.  Then the area is $A(x)=(2x)(a-x^2)=-2x^3+2ax$. We want
-the maximum value of $A(x)$ when $x$ is in $[0,\sqrt{a}]$. (You might
-object to allowing $x=0$ or $x=\sqrt{a}$, since then the ``rectangle''
-has either no width or no height, so is not ``really'' a
-rectangle. But the problem is somewhat easier if we simply allow such
-rectangles, which have zero area.) 
+\begin{marginfigure}
+\begin{tikzpicture}
+	\begin{axis}[
+            domain=-3:3, ymin=0, ymax=9, xmin=-3, xmax=3,
+            axis lines =center, xlabel=$x$, ylabel=$y$,
+            ticks=none,
+            every axis y label/.style={at=(current axis.above origin),anchor=south},
+            every axis x label/.style={at=(current axis.right of origin),anchor=west},
+            axis on top,
+          ]
+          \addplot [draw=none, fill=fill2, domain=(-1.5:1.5)] {7} \closedcycle;
+          \addplot [draw=none, fill=background, domain=(-1.5:1.5)] {2.25} \closedcycle;
 
-Setting $0=A'(x)=6x^2+2a$ we get $x=\sqrt{a/3}$ as the only critical
-value. Testing this and the two endpoints, we have
-$A(0)=A(\sqrt{a})=0$ and $A(\sqrt{a/3})=(4/9)\sqrt{3}a^{3/2}$. The
-maximum area thus occurs when the rectangle has dimensions
+          \addplot [very thick,penColor2,domain=(-3:3)] {x^2};
+          \addplot [very thick,penColor5,domain=(-3:3)] {7};
+
+          \addplot [very thick, penColor] plot coordinates {(1.5,2.25) (-1.5,2.25)};
+          \addplot [very thick, penColor] plot coordinates {(1.5,2.25) (1.5,7)};
+          \addplot [very thick, penColor] plot coordinates {(1.5,7) (-1.5,7)};
+          \addplot [very thick, penColor] plot coordinates {(-1.5,7) (-1.5,2.25)};
+          
+          \addplot [color=penColor,fill=penColor,only marks,mark=*] coordinates{(1.5,2.25)};  %% closed hole          
+          \addplot [color=penColor,fill=penColor,only marks,mark=*] coordinates{(-1.5,2.25)};  %% closed hole          
+          \addplot [color=penColor,fill=penColor,only marks,mark=*] coordinates{(1.5,7)};  %% closed hole          
+          \addplot [color=penColor,fill=penColor,only marks,mark=*] coordinates{(-1.5,7)};  %% closed hole   
+
+          \node at (axis cs:0,4.625) [penColor] {$A(x) =$~area};
+          \node at (axis cs:1.5,2.25) [anchor=west,penColor] {$(x,x^2)$};
+          \node at (axis cs:1.5,7.2) [anchor=west,penColor] {$(x,a)$};
+        \end{axis}
+\end{tikzpicture}
+\caption{A plot of the parabola $y=x^2$ along with the line $y=a$ and the rectangle in question.}
+\label{fig:rectangle parabola}
+\end{marginfigure}
+
+\begin{solution}
+We want to maximize value of $A(x)$.  The lower right corner of the
+rectangle is at $(x,x^2)$, and once this is chosen the rectangle is
+completely determined. Then the area is
+\[
+A(x)=(2x)(a-x^2)=-2x^3+2ax.
+\] 
+We want the maximum value of $A(x)$ when $x$ is in $[0,\sqrt{a}]$. You
+might object to allowing $x=0$ or $x=\sqrt{a}$, since then the
+``rectangle'' has either no width or no height, so is not ``really'' a
+rectangle. But the problem is somewhat easier if we simply allow such
+rectangles, which have zero area as we may then apply the Extreme
+Value Theorem, Theorem~\ref{theorem:evt}.
+
+Setting $0=A'(x)=6x^2+2a$ we find $x=\sqrt{a/3}$ as the only critical
+point. Testing this and the two endpoints, we have
+$A(0)=A(\sqrt{a})=0$ and $A(\sqrt{a/3})=(4/9)\sqrt{3}a^{3/2}$. Hence,
+the maximum area thus occurs when the rectangle has dimensions
 $2\sqrt{a/3}\times (2/3)a$.
 \end{solution}
 
@@ -405,49 +512,80 @@ the axis of symmetry, and for which the cross-section cut perpendicular to
 the axis of symmetry at any point is a circle.)
 \end{example}
 
-\begin{solution}
-Let $R$ be the radius of the sphere, and let $r$ and $h$ be the base radius
-and height of the cone inside the sphere.  What we want to maximize is the
-volume of the cone: $\pi r^2h/3$.  Here $R$ is a fixed value, but
-$r$ and $h$ can vary.  Namely, we could choose $r$ to be as large as
-possible---equal to $R$---by taking the height equal to $R$; or we
-could make the cone's height $h$ larger at the expense of making $r$ a
-little less than $R$.  See the cross-section depicted in
-figure~\xrefn{fig:cone in sphere}. We
-have situated the picture in a convenient way relative to the $x$ and
-$y$ axes, namely, with the center of the sphere at the origin and the
-vertex of the cone at the far left on the $x$-axis.
+\begin{marginfigure}
+\begin{tikzpicture}
+\draw[very thick,penColor2!20!background] (2,0) arc (0:180:2 and .7);% top half of ellipse
+\draw [penColor, very thick] (0,1) ellipse (1.7 and .5);
+\draw[penColor, very thick] (1.7,.95) -- (0,-2);
+\draw[penColor, very thick] (-1.7,.95) -- (0,-2);
+\draw[very thick,penColor2] (-2,0) arc (180:360:2 and .7);% bottom half of ellipse
 
-Notice that the function we want to maximize, $\pi r^2h/3$,
-depends on {\it two\/} variables.  This is frequently the case, but
-often the two variables are related in some way so that ``really''
-there is only one variable. So our next step is to
-find the relationship and use it to solve for one of the variables in
-terms of the other, so as to have a function of only one variable to
-maximize.  In this problem, the condition is apparent in the figure:
-the upper corner of the triangle, whose coordinates are $(h-R,r)$,
-must be on the circle of radius $R$.  That is,
-$$
-      (h-R)^2+r^2=R^2.
-$$ 
-We can solve for $h$ in terms of $r$ or for $r$ in terms of $h$.
-Either involves taking a square root, but we notice that the volume
-function contains $r^2$, not $r$ by itself, so it is easiest to solve
-for $r^2$ directly: $r^2=R^2-(h-R)^2$.
-Then we substitute the result into $\pi r^2h/3$:
+
+\draw [penColor2, very thick] (0,0) circle [radius=2];
+
+\draw[penColor2, dashed, very thick] (0,0) -- (2,0);
+\draw[penColor, dashed, very thick] (0,1) -- (1.7,1);
+\draw[penColor, dashed, very thick] (0,1) -- (0,-2);
+
+\node [below,penColor2] at (1.5,0) {$R$};
+\node [above,penColor] at (.85,1) {$r$};
+\node [left,penColor] at (0,-.33) {$h$};
+
+\node [penColor,left] at (-1.5,1.42) {$V_{\text{c}} = \frac{\pi r^2h}{3}$};
+\node [penColor2, right] at (1.5,-1.42) {$V_{s} = \frac{4\pi r^3}{3}$};
+\end{tikzpicture}
+\caption{A cone inside a sphere.}
+\label{fig:cone-sphere}
+\end{marginfigure}
+
+\begin{solution}
+Let $R$ be the radius of the sphere, and let $r$ and $h$ be the base
+radius and height of the cone inside the sphere.  Our goal is to
+maximize the volume of the cone: $V_c=\pi r^2h/3$.  The largest $r$
+could be is $R$ and the largest $h$ could be is $2R$.
+
+Notice that the function we want to maximize, $\pi r^2h/3$, depends on
+\textit{two} variables.  Our next step is to find the relationship and
+use it to solve for one of the variables in terms of the other, so as
+to have a function of only one variable to maximize.  In this problem,
+the condition is apparent in the figure, as the upper corner of the
+triangle, whose coordinates are $(h-R,r)$, must be on the circle of
+radius $R$. Write
+\[
+(h-R)^2+r^2=R^2.
+\] 
+Solving for $r^2$, since $r^2$ is found in the formula for the volume
+of the cone, we find 
+\[
+r^2=R^2-(h-R)^2.
+\]  
+Substitute this into the formula for the volume of the cone to find
 
 \begin{align*}
- V(h)&=\pi(R^2-(h-R)^2)h/3 \\
+ V_{\text{c}}(h)&=\pi(R^2-(h-R)^2)h/3 \\
 &=-{\pi\over3}h^3+{2\over3}\pi h^2R
 \end{align*}
- 
-We want to maximize $V(h)$ when $h$ is between 0 and $2R$.  Now we
-solve $0=f'(h)=-\pi h^2+(4/3)\pi h R$, getting $h=0$ or $h=4R/3$. 
-We compute $V(0)=V(2R)=0$ and $V(4R/3)=(32/81)\pi R^3$. The maximum is
-the latter; since the volume of the sphere is $(4/3)\pi R^3$, the
-fraction of the sphere occupied by the cone is 
-$${(32/81)\pi R^3\over (4/3)\pi R^3}={8\over 27}\approx 30\%.$$
+
+We want to maximize $V_{\text{c}}(h)$ when $h$ is between 0 and $2R$.  We
+solve 
+\[
+V_{\text{c}}'(h)=-\pi h^2+(4/3)\pi h R=0,
+\] 
+finding $h=0$ or $h=4R/3$.  We compute
+\[
+V_{\text{c}}(0)=V_{\text{c}}(2R)=0\qquad\text{and}\qquad V_{\text{c}}(4R/3)=(32/81)\pi R^3.
+\] 
+The maximum is the latter. Since the volume of the sphere is $(4/3)\pi
+R^3$, the fraction of the sphere occupied by the cone is
+\[
+\frac{(32/81)\pi R^3}{(4/3)\pi R^3}=\frac{8}{27}\approx 30\%.
+\]
 \end{solution}
+
+
+
+
+
 
 \begin{example}
 You are making cylindrical containers to contain a given volume.  Suppose
@@ -457,130 +595,165 @@ the cylinder.  Find (in terms of $N$) the ratio of height to base radius of
 the cylinder that minimizes the cost of making the containers.
 \end{example}
 
+\begin{marginfigure}
+\begin{tikzpicture}
+\draw[penColor,very thick] (0,2) ellipse (2 and .7);
+\draw[very thick,penColor!20!background] (2,-2) arc (0:180:2 and .7);% top half of ellipse
+\draw[very thick,penColor] (-2,-2) arc (180:360:2 and .7);% bottom half of ellipse
+
+\draw[penColor, very thick] (2,2) -- (2,-2);
+\draw[penColor, very thick] (-2,2) -- (-2,-2);
+
+\draw[penColor, dashed, very thick] (0,2) -- (2,2);
+\draw[penColor, dashed, very thick] (0,2) -- (0,-2);
+
+\node [above,penColor] at (1,2) {$r$};
+\node [left,penColor] at (0,-.33) {$h$};
+\node [penColor,right] at (2,-1.42) {$V = 2\pi r^2h$};
+\end{tikzpicture}
+\caption{A cylinder with radius $r$, height $h$, volume $V$, $c$ for
+  the cost per unit area of the lateral side of the cylinder.}
+\label{fig:cylinder}
+\end{marginfigure}
+
 \begin{solution}
-Let us first choose letters to represent various things: $h$ for the
-height, $r$ for the base radius, $V$ for the volume of the
-cylinder, and $c$ for the cost per unit area of the lateral side of
-the cylinder; $V$ and $c$ are constants, $h$ and $r$ are variables.
-Now we can write the cost of materials:
-$$
-  c(2\pi rh)+Nc(2\pi r^2).
-$$
-Again we have two variables; the relationship is provided by the fixed
-volume of the cylinder: $V=\pi r^2h$. We use this
-relationship to eliminate $h$ (we could eliminate $r$, but it's a little easier
-if we eliminate $h$, which appears in only one place in the above formula
-for cost).  The result is
-$$
-   f(r)=2c\pi r{V\over\pi r^2}+2Nc\pi r^2={2cV\over r}+2Nc\pi r^2.
-$$
+First we draw a picture, see Figure~\ref{fig:cylinder}.  Now we can
+write an expression for the cost of materials:
+\[
+  C = 2\pi crh+2\pi r^2Nc.
+\]
+Since we know that $V=\pi r^2h$, we can use this relationship to
+eliminate $h$ (we could eliminate $r$, but it's a little easier if we
+eliminate $h$, which appears in only one place in the above formula
+for cost).  We find
+\begin{align*}
+C(r)&=2c\pi r\frac{V}{\pi r^2}+2Nc\pi r^2\\
+&=\frac{2cV}{r}+2Nc\pi r^2.
+\end{align*}
 We want to know the minimum value of this function when $r$ is in
-$(0,\infty)$. 
-We now set $0=f'(r)=-2cV/r^2+4Nc\pi
-r$, giving $r={\root 3 \of {V/(2N\pi)}}$.  
-Since $f''(r)=4cV/r^3+4Nc\pi$ is positive when $r$ is positive, there
-is a local minimum at the critical value, and hence a global minimum
-since there is only one critical value.
+$(0,\infty)$. Setting
+\[
+C'(r)=-2cV/r^2+4Nc\pi r =0
+\]
+we find $r=\sqrt[3]{V/(2N\pi)}$.  Since $C''(r)=4cV/r^3+4Nc\pi$ is
+  positive when $r$ is positive, there is a local minimum at the
+  critical value, and hence a global minimum since there is only one
+  critical value.
 
 Finally, since $h=V/(\pi r^2)$, 
-$$
-{h\over r}={V\over\pi r^3}={V\over \pi(V/(2N\pi))}=2N,
-$$ 
+\begin{align*}
+\frac{h}{r}&=\frac{V}{\pi r^3}\\ 
+&=\frac{V}{\pi(V/(2N\pi))}\\ 
+&=2N,
+\end{align*}
 so the minimum cost occurs when the height $h$ is $2N$ times the
 radius. If, for example, there is no difference in the cost of
-materials, the height is twice the radius (or the height is equal to
-the diameter).
+materials, the height is twice the radius.
 \end{solution}
 
-%% BADBAD
-%% \figure
-%% \vbox{\beginpicture
-%% \normalgraphs
-%% \ninepoint
-%% \setcoordinatesystem units <1cm,1cm>
-%% \setplotarea x from 0 to 5, y from 0 to 3
-%% \axis bottom shiftedto y=0 /
-%% \setlinear
-%% \setplotsymbol ({\tenrm.})
-%% \plot 1 0 2.5 0 4 3 /
-%% \setdashes
-%% \putrule from 4 0 to 4 3
-%% \multiput {$\bullet$} at 1 0 2.5 0 4 3 4 0 /
-%% \put {$x$} [b] <0pt,3pt> at 3.25 0
-%% \put {$a-x$} [b] <0pt,3pt> at 1.75 0
-%% \put {$A$} [b] <0pt,4pt> at 4 3
-%% \put {$D$} [t] <0pt,-4pt> at 1 0
-%% \put {$B$} [t] <0pt,-4pt> at 2.5 0
-%% \put {$C$} [t] <0pt,-4pt> at 4 0
-%% \put {$b$} [l] <3pt,0pt> at 4 1.5
-%% \endpicture}
-%% \figrdef{fig:minimize travel time}
-%% \endfigure{Minimizing travel time.}
 
-\begin{example} Suppose you want to reach a point $A$ that is located across the
-sand from a nearby road (see figure~\xrefn{fig:minimize travel time}).
-Suppose that the road is straight, and $b$ is the distance from $A$ to
-the closest point $C$ on the road.  Let $v$ be your speed on the road,
-and let $w$, which is less than $v$, be your speed on the sand.  Right
-now you are at the point $D$, which is a distance $a$ from $C$.  At
-what point $B$ should you turn off the road and head across the sand
-in order to minimize your travel time to $A$?
+\begin{example}\label{exam:sand and road} Suppose you want to reach a point $A$ that is located across the
+sand from a nearby road, see Figure~\ref{fig:roadsand}.  Suppose that
+the road is straight, and $b$ is the distance from $A$ to the closest
+point $C$ on the road.  Let $v$ be your speed on the road, and let
+$w$, which is less than $v$, be your speed on the sand.  Right now you
+are at the point $D$, which is a distance $a$ from $C$.  At what point
+$B$ should you turn off the road and head across the sand in order to
+minimize your travel time to $A$?
 \end{example}
 
-\begin{solution}
-Let $x$ be the distance short of $C$ where you turn off, i.e., the distance
-from $B$ to $C$.  We want to minimize the total travel time.  Recall
-that when traveling at constant velocity, time is distance divided by velocity.
+\begin{marginfigure}
+\begin{tikzpicture}
+\draw[fill2, fill=fill2] (0,0) rectangle (6,4);
+\draw[fill1, fill=fill1] (0,.4) rectangle (6,1);
 
-You travel the distance
-$\overline{DB}$ at speed $v$, and then the distance $\overline{BA}$ at
-speed $w$.  Since $\overline{DB}=a-x$ and, by the Pythagorean theorem,
-$\overline{BA}=\sqrt{x^2+b^2}$, the total time for the trip is 
-$$
-   f(x)={a-x\over v}+{\sqrt{x^2+b^2}\over w}.
-$$
-We want to find the minimum value of $f$ when $x$ is between 0 and $a$.
-As usual we 
-set $f'(x)=0$ and solve for $x$:
-$$
-\displaylines{
-  0=f'(x)=-{1\over v}+{x\over w\sqrt{x^2+b^2}} \\
-  w\sqrt{x^2+b^2}=vx \\
-  w^2(x^2+b^2) = v^2x^2 \\
-w^2b^2=(v^2-w^2)x^2 \\
-x={wb\over\sqrt{v^2-w^2}}
-}$$
+\node[penColor] at (.5,.75) {\scalebox{-2}[2] \Bicycle};
+
+\draw [penColor, fill] (1,.75) circle [radius=.07];
+\draw [penColor, fill] (2.5,.75) circle [radius=.07];
+\draw [penColor, fill] (5,.75) circle [radius=.07];
+\draw [penColor, fill] (5,3) circle [radius=.07];
+
+\draw[penColor2, very thick, ->] (1.2,.75) -- (2.3,.75);
+\draw[penColor2, very thick, ->] (2.6,.85) -- (4.9,2.9);
+
+\draw[penColor, very thick, dashed] (5,.75) -- (5,3);
+\draw[penColor, very thick, dashed] (5,.75) -- (2.5,.75);
+\draw[penColor, very thick, dashed] (1,.4) -- (5,.4);
+
+\node [right,penColor] at (5,3) {$A$};
+\node [below,penColor] at (1,.75) {$D$};
+\node [below,penColor] at (2.5,.75) {$B$};
+\node [below,penColor] at (5,.75) {$C$};
+\node [right,penColor] at (5,2) {$b$};
+\node [above,penColor] at (4,.75) {$x$};
+\node [left,penColor2] at (3.8,2) {$w$};
+\node [above,penColor2] at (1.75,.75) {$v$};
+\node [below,penColor] at (3,.4) {$a$};
+\end{tikzpicture}
+\caption{A road where one travels at rate $v$, with sand where one
+  travels at rate $w$. Where should one turn off of the road to
+  minimize total travel time from $D$ to $A$?}
+\label{fig:roadsand}
+\end{marginfigure}
+
+\begin{solution}
+Let $x$ be the distance short of $C$ where you turn off, the distance
+from $B$ to $C$.  We want to minimize the total travel time.  Recall
+that when traveling at constant velocity, time is distance divided by
+velocity.
+
+You travel the distance from $D$ to $B$ at speed $v$, and then the
+distance from $B$ to $A$ at speed $w$.  The distance from $D$ to $B$
+is $a-x$. By the Pythagorean theorem, the distance from $B$ to $A$
+is
+\[
+\sqrt{x^2+b^2}.
+\] 
+Hence the total time for the trip is
+\[
+   T(x)=\frac{a-x}{v}+\frac{\sqrt{x^2+b^2}}{w}.
+\]
+We want to find the minimum value of $T$ when $x$ is between 0 and
+$a$.  As usual we set $T'(x)=0$ and solve for $x$. Write
+\[
+  T'(x)=-\frac{1}{v}+\frac{x}{w\sqrt{x^2+b^2}} =0.
+\]
+We find that 
+\[
+x=\frac{wb}{\sqrt{v^2-w^2}}
+\]
 Notice that $a$ does not appear in the last expression, but $a$ is not
 irrelevant, since we are interested only in critical values that are
 in $[0,a]$, and $wb/\sqrt{v^2-w^2}$ is either in this interval or not.
 If it is, we can use the second derivative to test it:
-$$
-f''(x) = {b^2\over (x^2+b^2)^{3/2}w}.
-$$
+\[
+T''(x) = {b^2\over (x^2+b^2)^{3/2}w}.
+\]
 Since this is always positive there is a local minimum at the critical
 point, and so it is a global minimum as well.
 
 If the critical value is not in $[0,a]$ it is larger than $a$. In this
 case the minimum must occur at one of the endpoints. We can compute
 \begin{align*}
-f(0)&={a\over v}+{b\over w} \\
-f(a)&={\sqrt{a^2+b^2}\over w} 
+T(0)&={a\over v}+{b\over w} \\
+T(a)&={\sqrt{a^2+b^2}\over w} 
 \end{align*}
 but it is difficult to determine which of these is smaller by direct
 comparison. If, as is likely in practice, we know the values of $v$,
 $w$, $a$, and $b$, then it is easy to determine this. With a little
 cleverness, however, we can determine the minimum in general. We have seen that
-$f''(x)$ is always positive, so the derivative $f'(x)$ is always increasing.
+$T''(x)$ is always positive, so the derivative $T'(x)$ is always increasing.
 We know that at $wb/\sqrt{v^2-w^2}$ the derivative is zero, so for
 values of $x$ less than that critical value, the derivative is
-negative. This means that $f(0)>f(a)$, so the minimum occurs when $x=a$.
+negative. This means that $T(0)>T(a)$, so the minimum occurs when $x=a$.
 
 So the upshot is this: If you start farther away from $C$ than
 $wb/\sqrt{v^2-w^2}$ then you always want to cut across the sand 
 when you are a distance $wb/\sqrt{v^2-w^2}$ from point $C$. If you
 start closer than this to $C$, you should cut directly across the sand.
 \end{solution}
-\label{exam:sand and road}
+
 
 
 \begin{exercises}
@@ -713,7 +886,7 @@ relating $h$ and $r$.)
 \end{answer}\end{exercise}
 
 \begin{exercise}
-In example~\xrefn{exam:sand and road}, what happens if
+In Example~\ref{exam:sand and road}, what happens if
 $w\ge v$ (i.e., your speed on sand is at least your speed on the
 road)?
 \begin{answer} Go direct from $A$ to $D$.
@@ -857,10 +1030,10 @@ occupies approximately $28.54\%$ of the sphere.
 
 % Maple only?
 \begin{exercise}
-Two electrical charges, one a positive charge A of magnitude $a$ and the
-other a negative charge B of magnitude $b$, are located a distance $c$
-apart.  A positively charged particle $P$ is situated on the line between A
-and B.  Find where $P$ should be put so that the pull away from $A$ towards
+Two electrical charges, one a positive charge $A$ of magnitude $a$ and the
+other a negative charge $B$ of magnitude $b$, are located a distance $c$
+apart.  A positively charged particle $P$ is situated on the line between $A$
+and $B$.  Find where $P$ should be put so that the pull away from $A$ towards
 $B$ is minimal.  Here assume that the force from each charge is
 proportional to the strength of the source and inversely proportional to
 the square of the distance from the source.
@@ -877,76 +1050,65 @@ dimensions of the given triangle.
 \end{answer}\end{exercise}
 
 \begin{exercise}
-How are your answers to Problem~\xrefn{ex:manufacturing}
- affected if the cost per item for the $x$
-items, instead of being simply \$2, decreases below \$2 in proportion to
-$x$ (because of economy of scale and volume discounts) by 1 cent for each
-25 items produced?
+How are your answers to Problem~\ref{ex:manufacturing} affected if
+the cost per item for the $x$ items, instead of being simply \$2,
+decreases below \$2 in proportion to $x$ (because of economy of scale
+and volume discounts) by 1 cent for each 25 items produced?
 \begin{answer} \$7000
 \end{answer}\end{exercise}
 
-\begin{exercise}
-You are standing near the side of a large wading pool of uniform depth when
-you see a child in trouble.  You can run at a speed $v_1$ on land and at a
-slower speed $v_2$ in the water.  Your perpendicular distance from the side
-of the pool is $a$, the child's perpendicular distance is $b$, and the
-distance along the side of the pool between the closest point to you and
-the closest point to the child is $c$ (see the figure below). 
-Without stopping to do any calculus, you instinctively choose the
-quickest route (shown in the figure) and save the child.  Our
-purpose is to derive a relation between the angle $\theta_1$ your path
-makes with the perpendicular to the side of the pool when you're on land,
-and the angle $\theta_2$ your path makes with the perpendicular when you're
-in the water.  To do this, let $x$ be the distance between the closest
-point to you at the side of the pool and the point where you enter the
-water.  Write the total time you run (on land and in the water) in 
-terms of $x$ (and also the constants $a,b,c,v_1,v_2$).  Then set the
-derivative equal to zero.  The result, called ``Snell's law'' or the ``law
-of refraction,'' also governs the bending of light when it goes into water.
-\begin{answer} There is a critical point when
-$\sin\theta_1/v_1=\sin\theta_2/v_2$, and the second derivative is
-positive, so there is a minimum at the critical point.
-\end{answer}\end{exercise}
+%% \begin{exercise}
+%% You are standing near the side of a large wading pool of uniform depth when
+%% you see a child in trouble.  You can run at a speed $v_1$ on land and at a
+%% slower speed $v_2$ in the water.  Your perpendicular distance from the side
+%% of the pool is $a$, the child's perpendicular distance is $b$, and the
+%% distance along the side of the pool between the closest point to you and
+%% the closest point to the child is $c$ (see the figure below). 
+%% Without stopping to do any calculus, you instinctively choose the
+%% quickest route (shown in the figure) and save the child.  Our
+%% purpose is to derive a relation between the angle $\theta_1$ your path
+%% makes with the perpendicular to the side of the pool when you're on land,
+%% and the angle $\theta_2$ your path makes with the perpendicular when you're
+%% in the water.  To do this, let $x$ be the distance between the closest
+%% point to you at the side of the pool and the point where you enter the
+%% water.  Write the total time you run (on land and in the water) in 
+%% terms of $x$ (and also the constants $a,b,c,v_1,v_2$).  Then set the
+%% derivative equal to zero.  The result, called ``Snell's law'' or the ``law
+%% of refraction,'' also governs the bending of light when it goes into water.
+%% \begin{answer} There is a critical point when
+%% $\sin\theta_1/v_1=\sin\theta_2/v_2$, and the second derivative is
+%% positive, so there is a minimum at the critical point.
+%% \end{answer}\end{exercise}
 
-%% BADBAD
-%% \figure
-%% \vbox{\beginpicture
-%% \normalgraphs
-%% \ninepoint
-%% \setcoordinatesystem units <.75truecm,.75truecm>
-%% \setplotarea x from 0 to 6, y from -3 to 3
-%% \axis bottom shiftedto y=0 /
-%% \circulararc 53.13 degrees from 2.667 -1 center at 4 0
-%% \put {$\theta_1$} [tr] <-3pt,-3pt> at 3.6 -1.4
-%% \circulararc 33.69 degrees from 5 1.5 center at 4 0
-%% \put {$\theta_2$} at 4.6 2
-%% \setlinear
-%% \plot 0 -3 4 0 6 3 /
-%% \setdashes
-%% \putrule from 4 -3 to 4 3
-%% \putrule from 6 0 to 6 3
-%% \putrule from 0 -3 to 0 0
-%% \put {$x$} [b] <0pt,4pt> at 2 0
-%% \put {$c-x$} [b] <0pt,4pt> at 5 0
-%% \put {$a$} [l] <4pt,0pt> at 0 -1.5
-%% \put {$b$} [l] <4pt,0pt> at 6 1.5
-%% \endpicture}
-%% \figrdef{fig:rescue}
-%% \endfigure{Wading pool rescue.}
+%% %% BADBAD
+%% %% \figure
+%% %% \vbox{\beginpicture
+%% %% \normalgraphs
+%% %% \ninepoint
+%% %% \setcoordinatesystem units <.75truecm,.75truecm>
+%% %% \setplotarea x from 0 to 6, y from -3 to 3
+%% %% \axis bottom shiftedto y=0 /
+%% %% \circulararc 53.13 degrees from 2.667 -1 center at 4 0
+%% %% \put {$\theta_1$} [tr] <-3pt,-3pt> at 3.6 -1.4
+%% %% \circulararc 33.69 degrees from 5 1.5 center at 4 0
+%% %% \put {$\theta_2$} at 4.6 2
+%% %% \setlinear
+%% %% \plot 0 -3 4 0 6 3 /
+%% %% \setdashes
+%% %% \putrule from 4 -3 to 4 3
+%% %% \putrule from 6 0 to 6 3
+%% %% \putrule from 0 -3 to 0 0
+%% %% \put {$x$} [b] <0pt,4pt> at 2 0
+%% %% \put {$c-x$} [b] <0pt,4pt> at 5 0
+%% %% \put {$a$} [l] <4pt,0pt> at 0 -1.5
+%% %% \put {$b$} [l] <4pt,0pt> at 6 1.5
+%% %% \endpicture}
+%% %% \figrdef{fig:rescue}
+%% %% \endfigure{Wading pool rescue.}
 
 \end{exercises}
 
 
 
 
-
-
-
-
-
-
-
-
-
-\section{Related Rates and Optimization}
 

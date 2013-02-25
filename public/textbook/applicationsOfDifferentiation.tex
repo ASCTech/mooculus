@@ -1019,10 +1019,12 @@ fast is its radius increasing when the radius is 4 cm?
 To start, \textbf{draw a picture}.
 
 \begin{tikzpicture}
-\draw[penColor!50!background,very thick] (0,0) ellipse (2 and 1);
+%\draw[penColor!50!background,very thick] (0,0) ellipse (2 and 1);
+\draw[very thick,penColor!20!background] (2,0) arc (0:180:2 and .7);% top half of ellipse
 \draw [penColor, very thick] (0,0) circle [radius=2];
 \draw[penColor2, dashed, very thick] (0,0) -- (2,0);
 \node [below,penColor2] at (1,0) {$r=4$ cm};
+\draw[very thick,penColor] (-2,0) arc (180:360:2 and .7);% bottom half of ellipse
 \node [penColor,left] at (-1.5,1.42) {$\dd[V]{t} = 7$ cm$^3$/sec};
 \node [penColor, right] at (1.5,-1.42) {$V = \frac{4\pi r^3}{3}$ cm$^3$};
 \end{tikzpicture}
@@ -1057,7 +1059,8 @@ To start, \textbf{draw a picture}.
 
 \begin{tikzpicture}
 \draw[penColor,very thick] (0,4) ellipse (4 and 1);
-\draw[penColor!50!background,very thick] (0,2) ellipse (2 and .5);
+\draw[very thick,penColor!20!background] (2,2) arc (0:180:2 and .5);% top half of ellipse
+\draw[very thick,penColor] (-2,2) arc (180:360:2 and .5);% bottom half of ellipse
 \draw[penColor, very thick] (3.97,3.85) -- (0,0);
 \draw[penColor, very thick] (-3.97,3.85) -- (0,0);
 \draw[penColor, very thick] (0,4) -- (4,4);
@@ -1464,7 +1467,8 @@ $c^2=a^2+b^2-2ab\cos\theta$.
 A road running north to south crosses a road going east to west at the
 point $P$. Car A is 300 meters north of $P$, car B is 400 meters east
 of $P$, both cars are going at constant speed toward $P$, and the two
-cars will collide in 10 seconds.
+cars will collide in 10 seconds. How fast is the distance between the
+two cars changing?
 \begin{answer} $-50$ m/s
 \end{answer}\end{exercise}
 
