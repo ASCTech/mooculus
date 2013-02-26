@@ -21,7 +21,7 @@
 			    		if (toFraction((3*B*B-3*A*A)/(2*B-2*A))[1] == 1){
 			    			return -(3*B*B-3*A*A)/(2*B-2*A)
 			    			}
-			    		else return "\\dfrac{"+toFraction((3*B*B-3*A*A)/(2*B-2*A))[0]+"}{" + toFraction((3*B*B-3*A*A)/(2*B-2*A))[1] +"}"
+			    		else return "\\dfrac{"+toFraction((-3*B*B+3*A*A)/(2*B-2*A))[0]+"}{" + toFraction((-3*B*B+3*A*A)/(2*B-2*A))[1] +"}"
 			    		})(A,B)</var>
   			  </div>
         	
@@ -70,19 +70,19 @@
         		<code>\begin{cases} b =<var>-3*A*A</var>+<var>-2*A</var>(<var>aSol</var>) \\  a=<var>aSol</var>  \end{cases}</code>
         	</p>
         	<p>
-        		<code>\begin{cases} b =<var>-3*A*A+-2*A*(3*B*B-3*A*A)/(2*B-2*A)</var>\\  a=<var>aSol</var>  \end{cases}</code>
+        		<code>\begin{cases} b =<var>-3*A*A+2*A*(3*B*B-3*A*A)/(2*B-2*A)</var>\\  a=<var>aSol</var>  \end{cases}</code>
         	</p>
         	</div>
         	<p>
         		So if this function is going to have extrema at both <code>x = <var>A</var></code> and <code>x = <var>B</var></code>, we need to have 
-        		<code>a=<var>aSol</var></code> and <code> b =<var>-3*A*A+-2*A*(3*B*B-3*A*A)/(2*B-2*A)</var></code>.
+        		<code>a=<var>aSol</var></code> and <code> b =<var>-3*A*A+2*A*(3*B*B-3*A*A)/(2*B-2*A)</var></code>.
         	</p>
         	<p>
-        		<code><var>A</var></code> really is the abscissa of a local maximum, and <code><var>B</var></code> a local maximum, because <code>f'(x) = 3x^2+2(<var>aSol</var>)x + <var>-3*A*A+-2*A*(3*B*B-3*A*A)/(2*B-2*A)</var></code> goes from positive, to negative, to positive again
+        		<code><var>A</var></code> really is the abscissa of a local maximum, and <code><var>B</var></code> a local maximum, because <code>f'(x) = 3x^2+2(<var>aSol</var>)x + <var>-3*A*A+2*A*(3*B*B-3*A*A)/(2*B-2*A)</var></code> goes from positive, to negative, to positive again
         		as you pass through these points.
         	</p>
         	<p>
-        		Thus  <code>f(x)=x^3+(<var>aSol</var>)x^2+(<var>-3*A*A+-2*A*(3*B*B-3*A*A)/(2*B-2*A)</var>)x+<var>constant</var></code>
+        		Thus  <code>f(x)=x^3+(<var>aSol</var>)x^2+(<var>-3*A*A+2*A*(3*B*B-3*A*A)/(2*B-2*A)</var>)x+<var>constant</var></code>
         		
         	</p>
         </div>
