@@ -26,15 +26,15 @@
                             scale: 20,
                            //axisArrows: "&lt;-&gt;",
                             tickStep: 1,
-                           // labelStep: 1,
+                            labelStep: 1,
                             gridOpacity: 0.05,
                             axisOpacity: 0.2,
                             tickOpacity: 0.4,
-                           // labelOpacity: 0.5
+                           
                         });
 
-                       // label( [ 0, 11 ], "y", "above" );
-                        //label( [ 11, 0 ], "x", "right" );
+                        label( [ 0, 11 ], "y", "above" );
+                        label( [ 11, 0 ], "x", "right" );
 
                         addMouseLayer();
                         graph.movablePoint = addMovablePoint({ coord: [ 0, 0 ], snapY: 1, snapX: 1 });

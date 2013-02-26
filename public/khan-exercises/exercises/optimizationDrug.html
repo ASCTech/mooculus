@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html data-require="math word-problems steveMath8 graphie math-function-parser">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>Dosing a patient</title>
+    <script src="../khan-exercise.js"></script>
+</head>
+<body>
+  <div class="exercise">
+  
+
+    <div class="problems">
+      <div id="quadratic">
+      		
+      		  <div class="vars">
+				<var id="A">randRange(1,10)</var>
+				<var id="N">randRange(2,7)</var>
+				<var id="R">randRange(2,20)</var>
+  			  </div>
+        	
+        	<p class="problem">
+        		According to Fowler's Law of Hepatocircumloqutionary Displacement, the concentration of a drug being delivered by an IV drip is 
+        		<code>A(t) = Rt^<var>N</var>e^{<var>-A</var>t}</code>, where <code>t</code> is the number of minutes since the IV began, and 
+        		<code>R</code> is the rate of infusion in ml/min.  It is quite important to know the maximum concentration the drug will reach.
+        		Assume that you are infusing this drug at a rate of <code><var>R</var></code>  ml/min.
+        	</p>
+        	<p class="question">
+        		What is the maximum value of the concentration of the drug?
+        	</p>
+        	
+       <div class="solution" data-type="parsedExpression">
+                	
+           <var>R*Math.pow(N/(A*Math.E),N)</var>
+                	
+					</div>
+        <div class="hints">
+        	<p>
+        		For this rate of infusion, we have <code>A(t) = <var>R</var>t^<var>N</var>e^{<var>-A</var>t}</code>
+        	</p>
+        	<p>
+				Differentiating, we have <code>A'(t) = <var>R</var>\cdot<var>N</var>t^{<var>N-1</var>}e^{<var>-A</var>t}-<var>R</var>\cdot <var>A</var>t^<var>N</var>e^{<var>-A</var>t}</code>
+        	</p>
+        	<p>
+        		Setting this equal to zero, <code><var>R</var>\cdot<var>N</var>t^{<var>N-1</var>}e^{<var>-A</var>t}-<var>R</var>\cdot <var>A</var>t^<var>N</var>e^{<var>-A</var>t}=0</code>
+        	</p>
+        	<p>
+        		<code><var>N</var>t^{<var>N-1</var>}-<var>A</var>t^<var>N</var>=0</code>
+        	</p>
+        	<p>
+        		<code><var>N</var>-<var>A</var>t=0</code>
+        	</p>
+        	<p>
+        		<code>t = <var>displayMode(N/A)</var></code>
+        	</p>
+        	<p>
+        		The derivative goes from being positive to being negative through this root, and so because it is the only critical point, this must be the location of the absolute maximum value
+        		for <code>A</code>.
+        	</p>
+        	<p>
+        		Thus the maximum concentration of drug is <code><var>R</var>\cdot \left(<var>displayMode(N/A)</var>\right)^<var>N</var>e^{<var>-N</var>}</code>
+        	</p>
+        </div>
+       
+</div>      
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html data-require="math word-problems steveMath8 graphie math-function-parser">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>Finding a function with prescribed extrema</title>
+    <script src="../khan-exercise.js"></script>
+</head>
+<body>
+  <div class="exercise">
+  
+
+    <div class="problems">
+      <div id="cubicBothExtrema">
+      		
+      		  <div class="vars">
+				<var id = "A">randRange(-10,0)</var>
+				<var id = "B">randRange(1,10)</var>
+				<var id = "constant">randRange(-20,20)</var>
+			    <var id = "EXP">"x^3+ax^2+bx+"+constant</var>
+			    <var id = "aSol">(function(A,B){
+			    		if (toFraction((3*B*B-3*A*A)/(2*B-2*A))[1] == 1){
+			    			return -(3*B*B-3*A*A)/(2*B-2*A)
+			    			}
+			    		else return "\\dfrac{"+toFraction((3*B*B-3*A*A)/(2*B-2*A))[0]+"}{" + toFraction((3*B*B-3*A*A)/(2*B-2*A))[1] +"}"
+			    		})(A,B)</var>
+  			  </div>
+        	
+        	<p class="problem">
+        		<code>f(x) = x^3+ax^2+bx+<var>constant</var> </code>   for some unknown values of <code>a</code> and <code>b</code>.
+        		<code>f</code> has a local maximum at <code>x = <var>A</var></code> and a local minimum at <code>x = <var>B</var></code>.
+        	</p>
+        	<p class="question">
+        		What is the rule for <code>f</code>?
+        	</p>
+       <div class="solution" data-type="parsedExpression">
+                	
+                x^3+(<var>(3*B*B-3*A*A)/(2*B-2*A)</var>)*x^2+(<var>-3*A*A+-2*A*(3*B*B-3*A*A)/(2*B-2*A)</var>)*x+<var>constant</var>
+                	
+					</div>
+        <div class="hints">
+        	<p>
+        		For <code>f</code> to have local extrema at both <code>x = <var>A</var></code> and <code>x = <var>B</var></code>, we need
+        		to have <code>f'(<var>A</var>) =  0</code> and <code>f'(<var>B</var>) =  0</code>.
+        	</p>
+        	<p>
+        		<code>f'(x) = 3x^2+2ax+b</code>
+        	</p>
+        	<p>
+        		So we need the following system of equations to be satisfied:
+        		<br/>
+        		<code>\begin{cases} 3(<var>A</var>)^2+2a(<var>A</var>)+b =0 \\  3(<var>B</var>)^2+2a(<var>B</var>)+b =0 \end{cases}</code>
+        	</p>
+        	<div>
+        	<p>
+        		<code>\begin{cases} <var>3*A*A</var>+<var>2*A</var>a+b =0 \\  <var>3*B*B</var>+<var>2*B</var>a+b =0  \end{cases}</code>
+        	</p>
+        	<p>
+        		<code>\begin{cases} b =<var>-3*A*A</var>+<var>-2*A</var>a \\  <var>3*B*B</var>+<var>2*B</var>a+b =0  \end{cases}</code>
+        	</p>
+        	<p>
+        		<code>\begin{cases} b =<var>-3*A*A</var>+<var>-2*A</var>a \\  <var>3*B*B</var>+<var>2*B</var>a+<var>-3*A*A</var>+<var>-2*A</var>a =0  \end{cases}</code>
+        	</p>
+        	<p>
+        		<code>\begin{cases} b =<var>-3*A*A</var>+<var>-2*A</var>a \\  <var>2*B-2*A</var>a+<var>3*B*B-3*A*A</var>=0  \end{cases}</code>
+        	</p>
+        	<p>
+        		<code>\begin{cases} b =<var>-3*A*A</var>+<var>-2*A</var>a \\  a=<var>aSol</var>  \end{cases}</code>
+        	</p>
+        	<p>
+        		<code>\begin{cases} b =<var>-3*A*A</var>+<var>-2*A</var>(<var>aSol</var>) \\  a=<var>aSol</var>  \end{cases}</code>
+        	</p>
+        	<p>
+        		<code>\begin{cases} b =<var>-3*A*A+-2*A*(3*B*B-3*A*A)/(2*B-2*A)</var>\\  a=<var>aSol</var>  \end{cases}</code>
+        	</p>
+        	</div>
+        	<p>
+        		So if this function is going to have extrema at both <code>x = <var>A</var></code> and <code>x = <var>B</var></code>, we need to have 
+        		<code>a=<var>aSol</var></code> and <code> b =<var>-3*A*A+-2*A*(3*B*B-3*A*A)/(2*B-2*A)</var></code>.
+        	</p>
+        	<p>
+        		<code><var>A</var></code> really is the abscissa of a local maximum, and <code><var>B</var></code> a local maximum, because <code>f'(x) = 3x^2+2(<var>aSol</var>)x + <var>-3*A*A+-2*A*(3*B*B-3*A*A)/(2*B-2*A)</var></code> goes from positive, to negative, to positive again
+        		as you pass through these points.
+        	</p>
+        	<p>
+        		Thus  <code>f(x)=x^3+(<var>aSol</var>)x^2+(<var>-3*A*A+-2*A*(3*B*B-3*A*A)/(2*B-2*A)</var>)x+<var>constant</var></code>
+        		
+        	</p>
+        </div>
+       
+      </div>
+      <div id="cubicOneExtremaOnePoint">
+      		
+      		  <div class="vars">
+				<var id = "A">randRange(-5,5)*2</var>
+				<var id = "B">A+randRangeExclude(-1,1,[0])*randRange(3,5)</var>
+				<var id = "C">randRange(-10,10)</var>
+				<var id = "D">randRange(-10,10)</var>
+				<var id = "displayMode">(function(x){
+									if (toFraction(x)[1] == 1){
+										return x
+										}
+									else return "\\frac{"+toFraction(x)[0]+"}{" + toFraction(x)[1]+"}"
+									
+									})</var>
+				<var id  = "aVal">displayMode( ((D-3*B*B+3*A*A)/(2*B-2*A)))</var>         				
+				<var id  = "bVal">displayMode(-3*A*A-2*A*((D-3*B*B+3*A*A)/(2*B-2*A)))</var>
+				<var id  = "cVal">displayMode(C - (B*B*B+B*B*((D-3*B*B+3*A*A)/(2*B-2*A))+B*(-3*A*A-2*A*((D-3*B*B+3*A*A)/(2*B-2*A)))))</var>
+				
+				
+				
+				
+				
+				
+			    <var id = "EXP">"x^3+ax^2+bx+c"</var>
+  			  </div>
+        	
+        	<p class="problem">
+        		<code>f(x) = x^3+ax^2+bx+c </code>   for some unknown values of <code>a</code>, <code>b</code>, and <code>c</code>.
+        		We know that <code>f</code> has a local extremum at <code>x = <var>A</var></code>, that <code>f(<var>B</var>) = <var>C</var></code>, 
+        		and that <code>f'(<var>B</var>) =  <var>D</var></code>.
+        	</p>
+        	<p class="question">
+        		What is the rule for <code>f</code>?
+        	</p>
+       <div class="solution" data-type="parsedExpression">
+        x^3+<var> ((D-3*B*B+3*A*A)/(2*B-2*A))</var>*x^2+<var>(-3*A*A-2*A*((D-3*B*B+3*A*A)/(2*B-2*A)))</var>*x+<var>(C - (B*B*B+B*B*((D-3*B*B+3*A*A)/(2*B-2*A))+B*(-3*A*A-2*A*((D-3*B*B+3*A*A)/(2*B-2*A)))))</var>
+        </div>
+        <div class="hints">
+        	<p>
+        		For <code>f</code> to have a local extremum at <code>x  =<var>A</var></code> we need <code>f'(<var>A</var>)=0</code>.  So we know that 
+        		<code>f</code> is being subjected to the following three constraints:
+        	<br/>
+        		<code>
+        		\begin{cases} 
+        					f'(<var>A</var>)=0 \\   
+        					f'(<var>B</var>)=<var>D</var> \\
+        					f(<var>B</var>)=<var>C</var> 
+        		\end{cases}
+        		</code>
+        	</p>
+        	<p>
+        		Since <code>f'(x) = 3x^2+2ax+b</code>, we have
+        		<br/>
+        		<code>
+        		\begin{cases} 
+        					3(<var>A</var>)^2+2(<var>A</var>)a+b=0 \\   
+        					3(<var>B</var>)^2+2(<var>B</var>)a+b=<var>D</var> \\
+        					(<var>B</var>)^3+(<var>B</var>)^2a+(<var>B</var>)b+c=<var>C</var> 
+        		\end{cases}
+        		</code>
+        	</p>
+        	<div>
+        	<p>
+        		<code>
+        		\begin{cases} 
+        					b=<var>-3*A*A</var>-<var>2*A</var>a \\   
+        					3(<var>B</var>)^2+2(<var>B</var>)a+b=<var>D</var> \\
+        					(<var>B</var>)^3+(<var>B</var>)^2a+(<var>B</var>)b+c=<var>C</var> 
+        		\end{cases}
+        		</code>
+        	</p>
+        	<p>
+        		<code>
+        		\begin{cases} 
+        					b=<var>-3*A*A</var>-<var>2*A</var>a \\   
+        					3(<var>B</var>)^2+2(<var>B</var>)a+<var>-3*A*A</var>-<var>2*A</var>a =<var>D</var> \\
+        					(<var>B</var>)^3+(<var>B</var>)^2a+(<var>B</var>)b+c=<var>C</var> 
+        		\end{cases}
+        		</code>
+        	</p>
+        	<p>
+        		<code>
+        		\begin{cases} 
+        					b=<var>-3*A*A</var>-<var>2*A</var>a \\   
+        					(<var>2*B-2*A</var>)a+<var>3*B*B-3*A*A</var> =<var>D</var> \\
+        					(<var>B</var>)^3+(<var>B</var>)^2a+(<var>B</var>)b+c=<var>C</var> 
+        		\end{cases}
+        		</code>
+        	</p>
+        	<p>
+        		<code>
+        		\begin{cases} 
+        					b=<var>-3*A*A</var>-<var>2*A</var>a \\   
+        					(<var>2*B-2*A</var>)a =<var>D-3*B*B+3*A*A</var> \\
+        					(<var>B</var>)^3+(<var>B</var>)^2a+(<var>B</var>)b+c=<var>C</var> 
+        		\end{cases}
+        		</code>
+        	</p>
+        	<p>
+        		<code>
+        		\begin{cases} 
+        					b=<var>-3*A*A</var>-<var>2*A</var>(\dfrac{<var>D-3*B*B+3*A*A</var> }{<var>2*B-2*A</var>}) \\   
+        					a =\dfrac{<var>D-3*B*B+3*A*A</var> }{<var>2*B-2*A</var>}\\
+        					(<var>B</var>)^3+(<var>B</var>)^2a+(<var>B</var>)b+c=<var>C</var> 
+        		\end{cases}
+        		</code>
+        	</p>
+        	<p>
+        		<code>
+        		\begin{cases} 
+        					b=<var>bVal</var> \\   
+        					a =<var>aVal</var>\\
+        					(<var>B</var>)^3+(<var>B</var>)^2a+(<var>B</var>)b+c=<var>C</var> 
+        		\end{cases}
+        		</code>
+        	</p>
+        	<p>
+        		<code>
+        		\begin{cases} 
+        					b=<var>bVal</var> \\   
+        					a =<var>aVal</var>\\
+        					(<var>B</var>)^3+(<var>B</var>)^2(<var>aVal</var>)+(<var>B</var>)(<var>bVal</var>)+c=<var>C</var> 
+        		\end{cases}
+        		</code>
+        	</p>
+        	<p>
+        		<code>
+        		\begin{cases} 
+        					b=<var>bVal</var> \\   
+        					a =<var>aVal</var>\\
+        					c=<var>C</var> - ((<var>B</var>)^3+(<var>B</var>)^2(<var>aVal</var>)+(<var>B</var>)(<var>bVal</var>))
+        		\end{cases}
+        		</code>
+        	</p>
+        	<p>
+        		<code>
+        		\begin{cases} 
+        					b=<var>bVal</var> \\   
+        					a =<var>aVal</var>\\
+        					c=<var>cVal</var>
+        		\end{cases}
+        		</code>
+        	</p>
+        	
+        
+        	</div>
+        	<p>
+        		Thus <code>f(x) = x^3+<var>aVal</var>x^2+<var>bVal</var>x+<var>cVal</var></code> has all of the desired properties.  
+        	</p>
+        </div>
+       
+      </div>
+      
+      
+     
+</div>
+</div>
+</body>
+</html>
