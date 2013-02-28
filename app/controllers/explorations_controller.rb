@@ -8,4 +8,7 @@ class ExplorationsController < ApplicationController
 
   def doppler
   end
+
+  def fifths
+  end
 end
