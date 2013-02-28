@@ -10,7 +10,7 @@ $(function() {
     var playNote = function(frequency){
 	var osc = context.createOscillator();
 	osc.frequency.value = frequency;
-	osc.type = 2;
+	osc.type = 3;
 	osc.connect(out);
 	osc.noteOn(0);
 	oscillators.push( osc );
