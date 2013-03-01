@@ -3,50 +3,71 @@
 \section{Linear Approximation and Differentials}
 
 
-Newton's method is one example of the usefulness of the tangent line
-as an approximation to a curve. Here we explore another such
-application.
 
-Recall that the tangent line to $f(x)$ at a point $x=a$ is given by
-$L(x) = f'(a) (x-a) + f(a)$.  The tangent line in this context is also
-called the {\dfont linear approximation\index{linear approximation}\/}
-to $f$ at $a$.
+Given a function, a \textit{linear approximation} is a fancy phrase
+for something you already know.
 
-If $f$ is differentiable at $a$ then $L$ is a good approximation of
-$f$ so long as $x$ is ``not too far'' from $a$.  Put another way, if
-$f$ is differentiable at $a$ then under a microscope $f$ will look
-very much like a straight line. Figure~\xrefn{fig:linear
-approximation} shows a tangent line to $\ds y=x^2$ at three different
-magnifications. 
+\begin{definition}\index{linear approximation}
+If $f(x)$ is a differentiable function at $x=a$, then a \textbf{linear
+  approximation} for $f(x)$ at $x=a$ is given by
+\[
+\l(x) = f'(a)(x-a) +f(a).
+\]
+\end{definition}
 
-If we want to approximate $f(b)$,
-because computing it exactly is difficult, we can approximate the
-value using a linear approximation, provided that we can compute the
-tangent line at some $a$ close to $b$.
+A linear approximation of $f(x)$ is a good approximation of $f(x)$ as
+long as $x$ is ``not too far'' from $a$.  As we see from
+Figure~\ref{figure:informal-tangent}, if one can ``zoom in'' on $f(x)$
+sufficiently, then $f(x)$ and the linear approximation are nearly
+indistinguishable. Linear approximations allow us to make approximate
+``difficult'' computations.
 
-%% BADBAD
-%% \figure
-%% \hbox to \hsize{\hss
-%% \epsfxsize4.5cm\epsfbox{linear_approx_1.eps}\hfill
-%% \epsfxsize4.5cm\epsfbox{linear_approx_2.eps}\hfill
-%% \epsfxsize4.5cm\epsfbox{linear_approx_3.eps}\hfill
-%% \hss}
-%% \figrdef{fig:linear approximation}
-%% \endfigure{The linear approximation to $\ds y=x^2$.}
-
-\begin{example} Let $\ds f(x)=\sqrt{x+4}$. Then $\ds f'(x)=1/(2\sqrt{x+4})$.
- The linear approximation to $f$ at $x=5$ is $\ds
-L(x)=1/(2\sqrt{5+4})(x-5)+\sqrt{5+4}=(x-5)/6+3$.  As an immediate
-application we can approximate square roots of numbers near 9 by hand.
-To estimate $\ds\sqrt{10}$, we substitute 6 into the linear
-approximation instead of into $f(x)$, so
-$\ds \sqrt{6+4}\approx (6-5)/6+3 = 19/6\approx 3.1\overline{6}$.
-This rounds to $3.17$ while the square root of 10 is actually
-$3.16$ to two decimal places, so this estimate is only accurate to one
-decimal place. This is not too surprising, as 10 is really not very
-close to 9; on the other hand, for many calculations, $3.2$ would be
-accurate enough.
+\begin{example}
+Use a linear approximation of $f(x) =\sqrt[3]{x}$ at $x=64$ to
+approximate $\sqrt[3]{50}$.
 \end{example}
+
+
+
+\begin{marginfigure}
+\begin{tikzpicture}
+	\begin{axis}[
+            xmin=1,xmax=100,ymin=0,ymax=5,
+            axis lines=center,
+            xlabel=$x$, ylabel=$y$,
+            every axis y label/.style={at=(current axis.above origin),anchor=south},
+            every axis x label/.style={at=(current axis.right of origin),anchor=west},
+          ]        
+          \addplot [very thick, penColor, samples=150,smooth,domain=(0:100)] {x^(1/3))};
+          \addplot [very thick, penColor2, domain=(0:100)] {x/48+8/3};
+          \addplot [textColor,dashed] plot coordinates {(64,0) (64,4)};
+          \addplot [textColor,dashed] plot coordinates {(0,4) (64,4)};
+          \node at (axis cs:20,2.3) [penColor] {$f(x)$};
+          \node at (axis cs:20,3.3) [penColor2] {$\l(x)$};
+          \addplot[color=penColor3,fill=penColor3,only marks,mark=*] coordinates{(64,4)};  %% closed hole            
+        \end{axis}
+\end{tikzpicture}
+\caption{A linear approximation of $f(x) = \sqrt[3]{x}$ at $x=4$.}
+\label{figure:la sqrt3x}
+\end{marginfigure}
+
+
+\begin{solution}
+To start, write
+\[
+\ddx f(x) = \ddx x^{1/3} = \frac{1}{3x^{2/3}}.
+\]
+so our linear approximation is
+\begin{align*}
+\l(x) &= \frac{1}{3\cdot 64^{2/3}} (x-64) + 4 \\
+&= \frac{1}{48} (x-64) + 4\\
+&= \frac{x}{48} +\frac{8}{3}.
+\end{align*}
+Now we evaluate $\l(50) \approx 3.71$ and compare it to
+$\sqrt[3]{50}\approx 3.68$, see Figure~\ref{figure:la sqrt3x}. From
+this we see that the linear approximation, while perhaps inexact, is
+computationally \textbf{easier} than computing the cube root.
+\end{solution}
 
 With modern calculators and computing software it may not appear
 necessary to use linear approximations. But in fact they are quite
@@ -57,96 +78,278 @@ calculations involving functions, the linear approximation makes an
 otherwise intractable calculation possible, without serious loss of
 accuracy.
 
-\begin{example}
-\label{exam:linear approximation of sine}
-Consider the trigonometric function $\sin x$. Its linear approximation
-at $x=0$ is simply $L(x)=x$. When $x$ is small this is quite a good
-approximation and is used frequently by engineers and scientists
-to simplify some calculations.
+
+
+
+\begin{example}%\label{exam:linear approximation of sine}
+Use a linear approximation of $f(x) =\sin(x)$ at $x=0$ to approximate
+$\sin(0.3)$.
 \end{example}
 
-\begin{definition} Let $y=f(x)$ be a differentiable function. We define a new
+\begin{marginfigure}
+\begin{tikzpicture}
+	\begin{axis}[
+            xmin=-1.6,xmax=1.6,ymin=-1.5,ymax=1.5,
+            axis lines=center,
+            xtick={-1.57, 0, 1.57},
+            xticklabels={$-\pi/2$, $0$, $\pi/2$},
+            ytick={-1,1},
+            %ticks=none,
+            %width=3in,
+            %height=2in,
+            unit vector ratio*=1 1 1,
+            xlabel=$x$, ylabel=$y$,
+            every axis y label/.style={at=(current axis.above origin),anchor=south},
+            every axis x label/.style={at=(current axis.right of origin),anchor=west},
+          ]        
+          \addplot [very thick, penColor, samples=100,smooth, domain=(-1.6:1.6)] {sin(deg(x))};
+          \addplot [very thick, penColor2, samples=100,smooth] {x};
+          \node at (axis cs:1,.6) [penColor] {$f(x)$};
+          \node at (axis cs:-1,-1.2) [penColor2] {$\l(x)$};
+          \addplot[color=penColor3,fill=penColor3,only marks,mark=*] coordinates{(0,0)};  %% closed hole          
+        \end{axis}
+\end{tikzpicture}
+\caption{A linear approximation of $f(x) = \sin(x)$ at $x=0$.}
+\label{figure:la sin}
+\end{marginfigure}
+
+\begin{solution}
+To start, write
+\[
+\ddx f(x) = \cos(x),
+\]
+so our linear approximation is
+\begin{align*}
+\l(x) &= 1\cdot(x-0) + 0\\
+&= x.
+\end{align*}
+Hence a linear approximation for $\sin(x)$ at $x=0$ is $\l(x) = x$,
+and so $\l(0.3) = 0.3$.  Comparing this to $\sin(.3) \approx 0.295$. As
+we see the approximation is quite good. For this reason, it is common
+to approximate $\sin(x)$ with its linear approximation $\l(x) = x$
+when $x$ is near zero, see Figure~\ref{figure:la sin}.
+\end{solution}
+
+
+\subsection*{Differentials}
+
+The notion of a \textit{differential} goes back to the origins of
+calculus, though our modern conceptualization of a differential is
+somewhat different than how they were initially understood.
+
+\begin{definition}\index{differential}
+Let $f(x)$ be a differentiable function. We define a new
   independent variable $dx$, and a new dependent variable
-  $dy=f'(x)\,dx$. Notice that $dy$ is a function both of $x$ (since
-  $f'(x)$ is a function of $x$) and of $dx$.  We say that $dx$ and
-  $dy$ are \dfont{differentials\index{differential}}.  
+\[
+dy=f'(x)\cdot dx.
+\] 
+The variables $dx$ and $dy$ are called \textbf{differentials}.
 \end{definition}
 
-Let $\Delta x =x-a$ and $\Delta y= f(x)-f(a)$.
-If $x$ is near $a$ then $\Delta x$ is small. If we set
-$dx=\Delta x$ then 
-$$dy = f'(a)\,dx \approx {\Delta y\over\Delta x}\Delta x = \Delta y.$$
-Thus, $dy$ can be used to approximate $\Delta y$, the actual change in
-the function $f$ between $a$ and $x$. This is exactly the
-approximation given by the tangent line:
-$$dy = f'(a)(x-a) = f'(a)(x-a)+f(a)-f(a)=L(x)-f(a).$$
-While $L(x)$ approximates $f(x)$, $dy$ approximates how $f(x)$ has
-changed from $f(a)$.
-Figure~\xrefn{fig:differentials} illustrates the relationships.
+Note, it is now the case (by definition!) that 
+\[
+\frac{dy}{dx} = f'(x).
+\]
 
-%% BADBAD
-%% \figure
-%% \vbox{\beginpicture
-%% \normalgraphs
-%% \sevenpoint
-%% \setcoordinatesystem units <2truecm,2truecm>
-%% \setplotarea x from 0 to 4.5, y from 0 to 2.5
-%% \axis left /
-%% \axis bottom ticks withvalues {$a$} {$x$} / at 1 3 / /
-%% \plot 0.500 0.707 0.588 0.766 0.675 0.822 0.762 0.873 0.850 0.922 
-%% 0.938 0.968 1.025 1.012 1.112 1.055 1.200 1.095 1.288 1.135 
-%% 1.375 1.173 1.462 1.209 1.550 1.245 1.638 1.280 1.725 1.313 
-%% 1.812 1.346 1.900 1.378 1.988 1.410 2.075 1.440 2.162 1.471 
-%% 2.250 1.500 2.338 1.529 2.425 1.557 2.512 1.585 2.600 1.612 
-%% 2.688 1.639 2.775 1.666 2.862 1.692 2.950 1.718 3.038 1.743 
-%% 3.125 1.768 3.212 1.792 3.300 1.817 3.388 1.841 3.475 1.864 
-%% 3.562 1.887 3.650 1.910 3.738 1.933 3.825 1.956 3.912 1.978 
-%% 4.000 2.000 /
-%% \setlinear
-%% \plot 1 1 3 2 3 1 1 1 /
-%% \betweenarrows {$dx=\Delta x$} from 1 0.8 to 3 0.8
-%% \betweenarrows {$\Delta y$} from 3.2 1 to 3.2 1.73
-%% \betweenarrows {$dy$} from 3.6 1 to 3.6 2
-%% \setdashes <2pt>
-%% \putrule from 3 2 to 3.6 2
-%% \putrule from 3 1 to 3.6 1
-%% \putrule from 3 1.73 to 3.2 1.73
-%% \endpicture}
-%% \figrdef{fig:differentials}
-%% \endfigure{Differentials.}
+Essentially, differentials allow us to solve the problems presented in
+the previous examples from a slightly different point of view. Recall,
+when $h$ is near but not equal zero,
+\[
+f'(x) \approx \frac{f(x+h)-f(x)}{h}
+\]
+hence, 
+\[
+f'(x)h \approx f(x+h)-f(x)
+\]
+since $h$ is simply a variable, and $dx$ is simply a variable, we can replace $h$ with $dx$ to write
+\begin{align*}
+f'(x)\cdot dx &\approx f(x+dx)-f(x)\\
+dy &\approx f(x+dx)-f(x).
+\end{align*}
+From this we see that 
+\[
+f(x+dx)\approx dy + f(x).
+\]
+While this is something of a ``slight-of-hand'' with variables, there
+are contexts where the language of differentials is common. We will
+repeat our previous examples using differentials.
+
+\begin{example}
+Use differentials to approximate $\sqrt[3]{50}$.
+\end{example}
+
+\begin{marginfigure}
+\begin{tikzpicture}
+	\begin{axis}[
+            xmin=1,xmax=100,ymin=2,ymax=5,
+            axis lines=center,
+            xlabel=$x$, ylabel=$y$,
+            every axis y label/.style={at=(current axis.above origin),anchor=south},
+            every axis x label/.style={at=(current axis.right of origin),anchor=west},
+          ]        
+          \addplot [very thick, penColor, samples=150,smooth,domain=(0:100)] {x^(1/3))};
+          \addplot [very thick, penColor2, domain=(50:64)] {x/48+8/3};
+          \addplot [textColor,dashed] plot coordinates {(64,0) (64,4)};
+          \node at (axis cs:20,2.3) [penColor] {$f(x)$};
+          \addplot [penColor2,very thick] plot coordinates {(64,4) (64,3.71)};
+          \addplot [penColor2,very thick] plot coordinates {(50,3.71) (64,3.71)};
+          \node [below] at (axis cs:57,3.7) [penColor2] {$dx$};
+          \node [right] at (axis cs:64,3.8) [penColor2] {$dy$};
+          \addplot[color=penColor3,fill=penColor3,only marks,mark=*] coordinates{(64,4)};  %% closed hole            
+        \end{axis}
+\end{tikzpicture}
+\caption{A plot of $f(x) = \sqrt[3]{x}$  along with the differentials $dx$ and
+  $dy$.}
+\label{figure:diff sqrt3x}
+\end{marginfigure}
+
+
+\begin{solution}
+Since $4^3 = 64$ is a perfect cube near $50$, we will set $dx=-14$. In this case
+\[
+\frac{dy}{dx} = f'(x)  = \frac{1}{3x^{2/3}}
+\]
+hence 
+\begin{align*}
+dy &= \frac{1}{3x^{2/3}} \cdot dx\\
+&= \frac{1}{3\cdot64^{2/3}} \cdot(-14)\\
+&= \frac{1}{3\cdot64^{2/3}} \cdot(-14)\\
+&= \frac{-7}{24}
+\end{align*}
+Now $f(50) \approx f(64) + \frac{-7}{24} \approx 3.71$.
+\end{solution}
+
+
+\begin{example}
+Use differentials to approximate $\sin(0.3)$.
+\end{example}
+
+\begin{marginfigure}
+\begin{tikzpicture}
+	\begin{axis}[
+            xmin=-1.6,xmax=1.6,ymin=-1.5,ymax=1.5,
+            axis lines=center,
+            xtick={-1.57, 0, 1.57},
+            xticklabels={$-\pi/2$, $0$, $\pi/2$},
+            ytick={-1,1},
+            %ticks=none,
+            %width=3in,
+            %height=2in,
+            unit vector ratio*=1 1 1,
+            xlabel=$x$, ylabel=$y$,
+            every axis y label/.style={at=(current axis.above origin),anchor=south},
+            every axis x label/.style={at=(current axis.right of origin),anchor=west},
+          ]        
+          \addplot [very thick, penColor, samples=100,smooth, domain=(-1.6:1.6)] {sin(deg(x))};
+          \addplot [very thick, penColor2, domain={0:0.3}] {x};
+          \addplot [penColor2,very thick] plot coordinates {(0,0) (.3,0)};
+          \addplot [penColor2,very thick] plot coordinates {(.3,0) (.3,.3)};
+          \node at (axis cs:1,.6) [penColor] {$f(x)$};
+          \node [below] at (axis cs:.15,.0) [penColor2] {$dx$};
+          \node [right] at (axis cs:.3,.15) [penColor2] {$dy$};
+          \addplot[color=penColor3,fill=penColor3,only marks,mark=*] coordinates{(0,0)};  %% closed hole          
+        \end{axis}
+\end{tikzpicture}
+\caption{A plot of $f(x) = \sin(x)$ along with the differentials $dx$ and
+  $dy$.}
+\label{figure:diff sin}
+\end{marginfigure}
+
+
+\begin{solution}
+Since $\sin(0) = 0$, we will set $dx=0.3$. In this case
+\[
+\frac{dy}{dx} = f'(x)  = \cos(x)
+\]
+hence 
+\begin{align*}
+dy &= \cos(1) \cdot dx\\
+&= 1 \cdot (0.3)\\
+&= 0.3
+\end{align*}
+Now $f(.3) \approx f(0) + 0.3 \approx 0.3$.
+\end{solution}
+
+The upshot is that linear approximations and differentials are simply
+two slightly different ways of doing the exact same thing.
+
+
+
+
 
 \begin{exercises}
 
-\begin{exercise} Let $\ds f(x) = x^4$. If $a=1$ and $dx= \Delta x =1/2$, 
-what are $\Delta y$ and $dy$?
-\begin{answer} $\Delta y=65/16$, $dy=2$
+\begin{exercise}
+Use a linear approximation of $f(x) =\sin(x/2)$ at $x=0$ to approximate
+$f(0.1)$.
+\begin{answer}
+$\sin(0.1/2)\approx 0.05$
+\end{answer}
+\end{exercise}
+
+\begin{exercise}
+Use a linear approximation of $f(x) =\sqrt[3]{x}$ at $x=8$ to approximate
+$f(10)$.
+\begin{answer}
+$\sqrt[3]{10}\approx 2.17$
+\end{answer}
+\end{exercise}
+
+\begin{exercise}
+Use a linear approximation of $f(x) =\sqrt[5]{x}$ at $x=243$ to approximate
+$f(250)$.
+\begin{answer}
+$\sqrt[5]{250}\approx 3.017$
+\end{answer}
+\end{exercise}
+
+
+\begin{exercise}
+Use a linear approximation of $f(x) =\ln(x)$ at $x=1$ to approximate
+$f(1.5)$.
+\begin{answer}
+$\ln(1.5)\approx 0.5$
+\end{answer}
+\end{exercise}
+
+\begin{exercise}
+Use a linear approximation of $f(x) =\ln(\sqrt{x})$ at $x=1$ to approximate
+$f(1.5)$.
+\begin{answer}
+$\ln(\sqrt{1.5})\approx 0.25$
+\end{answer}
+\end{exercise}
+
+
+\begin{exercise} 
+Let $f(x) = \sin(x/2)$. If $x=1$ and $dx=1/2$, what is $dy$?
+\begin{answer} $dy=2$
 \end{answer}\end{exercise}
 
-\begin{exercise} Let $\ds f(x) = \sqrt{x}$. If $a=1$ and $dx= \Delta x
-=1/10$, what are $\Delta y$ and $dy$?
-\begin{answer} $\ds \Delta y=\sqrt{11/10}-1$, $dy=0.05$
+\begin{exercise} 
+Let $f(x) = \sqrt{x}$. If $x=1$ and $dx =1/10$, what is $dy$?
+\begin{answer} $dy=0.05$
+\end{answer}\end{exercise}
+
+\begin{exercise} 
+Let $f(x) = \ln(x)$. If $x=1$ and $dx =1/10$, what is $dy$?
+\begin{answer} $dy=0.1$
 \end{answer}\end{exercise}
 
 
-\begin{exercise} Let $f(x) = \sin (2x)$. If $a=\pi$ and $dx= \Delta x
-=\pi/100$, what are $\Delta y$ and $dy$?
-\begin{answer} $\ds \Delta y=\sin(\pi/50)$, $dy=\pi/50$
+\begin{exercise} 
+Let $f(x) = \sin (2x)$. If $x=\pi$ and $dx=\pi/100$, what is $dy$?
+\begin{answer} $dy=\pi/50$
 \end{answer}\end{exercise}
 
 \begin{exercise} Use differentials to estimate the amount of paint needed to
  apply a coat of paint 0.02 cm thick to a sphere with diameter $40$
- meters. (Recall that the volume of a sphere of radius $r$ is $V
- =(4/3)\pi r^3$. Notice that you are given that $dr=0.02$.)
+ meters. Hint: Recall that the volume of a sphere of radius $r$ is $V
+ =(4/3)\pi r^3$. Notice that you are given that $dr=0.02$.
 \begin{answer} $dV=8\pi/25$
 \end{answer}\end{exercise}
 
-\begin{exercise} Show in detail that the linear approximation of
- $\sin x$ at $x=0$ is $L(x)=x$ and the linear approximation of $\cos x$
- at $x=0$ is $L(x)=1$.
-\end{exercise}
 \end{exercises}
-
-
 
 
 
@@ -174,15 +377,15 @@ Newton's method are well suited to programming for a
 computer. Newton's method uses the fact that the tangent line to a
 curve is a good approximation to the curve near the point of tangency.
 
-\begin{example} Approximate $\ds \sqrt{3}$. Since $\ds \sqrt{3}$ is a solution to
-$\ds x^2=3$ or $\ds x^2-3=0$, we use $\ds f(x)=x^2-3$. We start by guessing
+\begin{example} Approximate $\sqrt{3}$. Since $\sqrt{3}$ is a solution to
+$x^2=3$ or $x^2-3=0$, we use $f(x)=x^2-3$. We start by guessing
 something reasonably close to the true value; this is usually easy to
-do; let's use $\ds \sqrt3\approx2$. Now use the tangent line to the curve
+do; let's use $\sqrt3\approx2$. Now use the tangent line to the curve
 when $x=2$ as an approximation to the curve, as shown in
 figure~\xrefn{fig:newtons method}. Since $f'(x)=2x$, the slope of this
 tangent line is 4 and its equation is $y=4x-7$. The tangent line is
 quite close to $f(x)$, so it crosses the $x$-axis near the point at
-which $f(x)$ crosses, that is, near $\ds \sqrt3$. It is easy to find where
+which $f(x)$ crosses, that is, near $\sqrt3$. It is easy to find where
 the tangent line crosses the $x$-axis: solve $0=4x-7$ to get
 $x=7/4=1.75$. This is certainly a better approximation than 2, but let
 us say not close enough. We can improve it by doing the same thing
@@ -190,20 +393,20 @@ again: find the tangent line at $x=1.75$, find where this new tangent
 line crosses the $x$-axis, and use that value as a better
 approximation. We can continue this indefinitely, though it gets a bit
 tedious. Lets see if we can shortcut the process. Suppose the best
-approximation to the intercept we have so far is $\ds x_i$. To find a
+approximation to the intercept we have so far is $x_i$. To find a
 better approximation we will always
-do the same thing: find the slope of the tangent line at $\ds x_i$, find the
+do the same thing: find the slope of the tangent line at $x_i$, find the
 equation of the tangent line, find the $x$-intercept. The slope is
-$\ds 2x_i$. The tangent line is $\ds y=(2x_i)(x-x_i)+(x_i^2-3)$, using
+$2x_i$. The tangent line is $y=(2x_i)(x-x_i)+(x_i^2-3)$, using
 the point-slope formula for a line. Finally, the intercept is found by
-solving $\ds 0 =(2x_i)(x-x_i)+(x_i^2-3)$. With a little algebra this turns
-into $\ds x=(x_i^2+3)/(2x_i)$; this is the next approximation, which we
-naturally call $\ds x_{i+1}$. Instead of doing the whole tangent line
+solving $0 =(2x_i)(x-x_i)+(x_i^2-3)$. With a little algebra this turns
+into $x=(x_i^2+3)/(2x_i)$; this is the next approximation, which we
+naturally call $x_{i+1}$. Instead of doing the whole tangent line
 computation every time we can simply use this formula to get as many
-approximations as we want. Starting with $\ds x_0=2$, we get
-$\ds x_1=(x_0^2+3)/(2x_0)=(2^2+3)/4=7/4$ (the same approximation we got
-above, of course), $\ds x_2=(x_1^2+3)/(2x_1)=
-((7/4)^2+3)/(7/2)=97/56\approx 1.73214$, $\ds x_3\approx 1.73205$, and so
+approximations as we want. Starting with $x_0=2$, we get
+$x_1=(x_0^2+3)/(2x_0)=(2^2+3)/4=7/4$ (the same approximation we got
+above, of course), $x_2=(x_1^2+3)/(2x_1)=
+((7/4)^2+3)/(7/2)=97/56\approx 1.73214$, $x_3\approx 1.73205$, and so
 on. This is still a bit tedious by hand, but with a calculator or,
 even better, a good computer program, it is quite easy to get many,
 many approximations. We might guess already that $1.73205$ is accurate
@@ -234,25 +437,25 @@ to two decimal places, and in fact it turns out that it is accurate to
 
 Let's think about this process in more general terms. We want to
 approximate a solution to $f(x)=0$.
-We start with a rough guess, which we call $\ds x_0$.  We use the tangent
+We start with a rough guess, which we call $x_0$.  We use the tangent
 line to $f(x)$ to get a new approximation that we hope will be closer
 to the true value. What is the equation of the tangent line when
-$\ds x=x_0$? The slope is $\ds f'(x_0)$ and the line goes through
+$x=x_0$? The slope is $f'(x_0)$ and the line goes through
 $\ds(x_0,f(x_0))$, so the equation of the line is
 $$ y=f'(x_0)(x-x_0)+f(x_0).$$
 Now we find where this crosses the $x$-axis by substituting $y=0$ and
 solving for $x$:
 $$x={x_0f'(x_0)-f(x_0)\over f'(x_0)} = x_0 - {f(x_0)\over f'(x_0)}.$$
 We will typically want to compute more than one of these improved
-approximations, so we number them consecutively; from $\ds x_0$ we have
-computed $\ds x_1$:
+approximations, so we number them consecutively; from $x_0$ we have
+computed $x_1$:
 $$x_1={x_0f'(x_0)-f(x_0)\over f'(x_0)} = x_0 - {f(x_0)\over f'(x_0)},$$
-and in general from $\ds x_i$ we compute $\ds x_{i+1}$:
+and in general from $x_i$ we compute $x_{i+1}$:
 $$x_{i+1}={x_if'(x_i)-f(x_i)\over f'(x_i)} = x_i - {f(x_i)\over f'(x_i)}.$$
 
 \begin{example}
-Returning to the previous example, $\ds f(x)=x^2-3$, $f'(x)=2x$, and the
-formula becomes $\ds x_{i+1}=x_i - (x_i^2-3)/(2x_i)=(x_i^2+3)/(2x_i)$, as
+Returning to the previous example, $f(x)=x^2-3$, $f'(x)=2x$, and the
+formula becomes $x_{i+1}=x_i - (x_i^2-3)/(2x_i)=(x_i^2+3)/(2x_i)$, as
 before.
 \end{example}
 
@@ -267,13 +470,13 @@ enough assurance, in which case we can test the result for accuracy.
 \begin{example} Find the $x$ coordinate of the intersection of the curves $y=2x$
 and $y=\tan x$, accurate to three decimal places. To put this in the
 context of Newton's method, we note that we want to know where $2x=\tan
-x$ or $f(x)=\tan x-2x=0$. We compute $\ds f'(x)=\sec^2 x - 2$ and set up the
+x$ or $f(x)=\tan x-2x=0$. We compute $f'(x)=\sec^2 x - 2$ and set up the
 formula:
 $$x_{i+1} = x_i-{\tan x_i -2x_i\over \sec^2 x_i - 2}.$$ From the graph
 in figure~\xrefn{fig:tanx vs x} 
-we guess $\ds x_0=1$ as a starting point, then using the formula we
-compute $\ds x_1=1.310478030$, $\ds x_2=1.223929096$, $\ds x_3=1.176050900$,
-$\ds x_4=1.165926508$, $\ds x_5=1.165561636$.  So we guess that the first
+we guess $x_0=1$ as a starting point, then using the formula we
+compute $x_1=1.310478030$, $x_2=1.223929096$, $x_3=1.176050900$,
+$x_4=1.165926508$, $x_5=1.165561636$.  So we guess that the first
 three places are correct, but that is not the same as saying $1.165$
 is correct to three decimal places---$1.166$ might be the correct,
 rounded approximation. How can we tell? We can substitute $1.165$,
@@ -325,10 +528,10 @@ places is $1.166$.
 
 \begin{exercises}
 
-\begin{exercise} Approximate the fifth root of 7, using $\ds x_0=1.5$ as a
-first guess. Use Newton's method to find $\ds x_3$ as your
+\begin{exercise} Approximate the fifth root of 7, using $x_0=1.5$ as a
+first guess. Use Newton's method to find $x_3$ as your
 approximation.  
-\begin{answer} $\ds x_3=1.475773162$ 
+\begin{answer} $x_3=1.475773162$ 
 \end{answer}\end{exercise}
 
 \begin{exercise} Use Newton's Method to approximate the cube root of 10 to
@@ -337,7 +540,7 @@ two decimal places.
 \end{answer}\end{exercise}
 
 \begin{exercise} The function 
-$\ds f(x)=x^3-3x^2-3x+6$ has a root between 3 and 4, because
+$f(x)=x^3-3x^2-3x+6$ has a root between 3 and 4, because
 $f(3)=-3$ and $f(4)=10$. Approximate the root to two decimal places.
 \begin{answer}  $3.36$
 \end{answer}\end{exercise}
@@ -386,22 +589,22 @@ Newton's method to find a value of $x$ for which the box has volume
 % 
 % \noindent
 % Bounding $f'$ away from zero should seem reasonable from the
-% definition of $\ds x_n$ but it is not necessary. The following
+% definition of $x_n$ but it is not necessary. The following
 % exercise shows that Newton's method may work even if $f'$ is not
 % bounded away from zero.
 % 
-% \begin{exercise} Let $\ds f(x) = x^2$. Adopt the notation of Newton's
-% theorem. Show that if $\ds x_{n-1 } \neq 0$ then $\ds x_n
-% =x_{n-1}/2$. Suppose that $\ds x_0 = 1.$ What is $\ds x_1$? How about
-% $\ds x_2$? How about $\ds x_n$? Argue that $\ds x_n$ converges to zero
-% as $n$ goes to $\infty$ when $\ds x_0 =1$.
+% \begin{exercise} Let $f(x) = x^2$. Adopt the notation of Newton's
+% theorem. Show that if $x_{n-1 } \neq 0$ then $x_n
+% =x_{n-1}/2$. Suppose that $x_0 = 1.$ What is $x_1$? How about
+% $x_2$? How about $x_n$? Argue that $x_n$ converges to zero
+% as $n$ goes to $\infty$ when $x_0 =1$.
 % 
 % \noindent
-% In the above example, any $\ds x_0$ except zero will do.  The next
+% In the above example, any $x_0$ except zero will do.  The next
 % exercise illustrates what can go wrong if we do not bound $f'$ away
 % from zero.
 % 
-% \begin{exercise} Let $\ds f(x) = x^4 - 4x - 11$. Then $f(0)<0 < f(3)$ so by
+% \begin{exercise} Let $f(x) = x^4 - 4x - 11$. Then $f(0)<0 < f(3)$ so by
 % the intermediate value theorem there exists a root between $x=0$ and
 % $x=3$. What happens if we apply Newton's method when we start at $\ds
 % x_0 =1$?  Sketch the graph of $f$ on the interval $[0,3]$.
@@ -410,9 +613,9 @@ Newton's method to find a value of $x$ for which the box has volume
 % We also require a bound on the second derivative. The following
 % exercise shows what can go wrong.
 % 
-% \begin{exercise} Let $\ds f(x) = x^{1/3}$. Observe that $x=0$ is a root of
+% \begin{exercise} Let $f(x) = x^{1/3}$. Observe that $x=0$ is a root of
 % $f$.  Compute $f''(x)$ and explain why $f''$ is unbounded near
-% $x=0$. Attempt to use Newton's method with $\ds x_0 = 1$.  What
+% $x=0$. Attempt to use Newton's method with $x_0 = 1$.  What
 % happens? Illustrate your conclusion with a diagram.
 %  
 % \noindent
@@ -431,7 +634,7 @@ Newton's method to find a value of $x$ for which the box has volume
 % Newton's method to get a good decimal approximation.
 %  
 % \begin{exercise} Use Newton's method to find the coordinates of the
-% inflection point of $\ds y=x^3/12 + \sin x$ correct to six decimal
+% inflection point of $y=x^3/12 + \sin x$ correct to six decimal
 % places.
 %  
 % \begin{exercise} Let $a$ be a non-zero number. Suppose we want to compute a
@@ -439,7 +642,7 @@ Newton's method to find a value of $x$ for which the box has volume
 % has a large number of decimal places. Newton's method gives us a way
 % of computing $a$ without division.  Let $f(x) = 1/x - a$. Notice that
 % $f$ has a root at $x=1/a$.  Using the notation of Newton's theorem,
-% show that $\ds x_{n} =2x_{n-1} - ax_{n-1}^2$.
+% show that $x_{n} =2x_{n-1} - ax_{n-1}^2$.
 %  
 % \fi
 
@@ -486,13 +689,13 @@ derivative by a different name; let's start by translating the second
 question into something that may be easier to visualize. Suppose that
 the function $f(t)$ gives the position of your car on the toll road at
 time $t$. Your change in position between one toll booth and the next
-is given by $\ds f(t_1)-f(t_0)$, assuming that at time $\ds t_0$ you were at
-the first booth and at time $\ds t_1$ you arrived at the second
+is given by $f(t_1)-f(t_0)$, assuming that at time $t_0$ you were at
+the first booth and at time $t_1$ you arrived at the second
 booth. Your average speed for the trip is
-$\ds (f(t_1)-f(t_0))/(t_1-t_0)$. If we think about the graph of $f(t)$,
+$(f(t_1)-f(t_0))/(t_1-t_0)$. If we think about the graph of $f(t)$,
 the average speed is the slope of the line that connects the two
-points $\ds (t_0,f(t_0))$ and $\ds (t_1,f(t_1))$. Your speed at any particular time
-$t$ between $\ds t_0$ and $\ds t_1$ is $f'(t)$, the slope of the curve. Now
+points $(t_0,f(t_0))$ and $(t_1,f(t_1))$. Your speed at any particular time
+$t$ between $t_0$ and $t_1$ is $f'(t)$, the slope of the curve. Now
 question (2) becomes a question about slope. In particular, if the
 slope between endpoints is 70, what can be said of the slopes at
 points between the endpoints?
@@ -504,12 +707,12 @@ In this case, the problem in its ``slope'' form is somewhat easier to
 simplify than the original, but equivalent, problem.
 
 Here is a special instance of the problem. Suppose that
-$\ds f(t_0)=f(t_1)$. Then the two endpoints have the same height and the
+$f(t_0)=f(t_1)$. Then the two endpoints have the same height and the
 slope of the line connecting the endpoints is zero. What can we say
 about the slope between the endpoints? It shouldn't take much
 experimentation before you are convinced of the truth of this
-statement: Somewhere between $\ds t_0$ and $\ds t_1$ the slope is exactly
-zero, that is, somewhere between $\ds t_0$ and $\ds t_1$ the slope is equal to
+statement: Somewhere between $t_0$ and $t_1$ the slope is exactly
+zero, that is, somewhere between $t_0$ and $t_1$ the slope is equal to
 the slope of the line between the endpoints. This suggests that
 perhaps the same is true even if the endpoints are at different
 heights, and again a bit of experimentation will probably convince you
@@ -550,12 +753,12 @@ general one as well.
 Suppose that $f(x)$ has a derivative on the
 interval $(a,b)$ and is continuous on the interval $[a,b]$. 
 Then at some value
-$c\in (a,b)$, $\ds f'(c)={f(b)-f(a)\over b-a}$.
+$c\in (a,b)$, $f'(c)={f(b)-f(a)\over b-a}$.
 \index{Mean Value Theorem}
 \end{theorem}
 
 \begin{proof}
-Let $\ds m={f(b)-f(a)\over b-a}$, and consider a new function
+Let $m={f(b)-f(a)\over b-a}$, and consider a new function
 $g(x)=f(x) - m(x-a)-f(a)$. We know that $g(x)$ has a derivative
 everywhere, since $g'(x)=f'(x)-m$. We can compute 
 $g(a)=f(a)- m(a-a)-f(a) =0$ and
@@ -613,17 +816,17 @@ of the form $g(x)+k$.
 
 \begin{example}
 Describe all functions that have derivative $5x-3$. It's easy to find
-one: $\ds g(x)=(5/2)x^2-3x$ has $g'(x)=5x-3$. The only other functions
+one: $g(x)=(5/2)x^2-3x$ has $g'(x)=5x-3$. The only other functions
 with the same derivative are therefore of the form
-$\ds f(x)=(5/2)x^2-3x+k$.
+$f(x)=(5/2)x^2-3x+k$.
 
 Alternately, though not obviously, you might have first noticed that 
-$\ds g(x)=(5/2)x^2-3x+47$ has $g'(x)=5x-3$. Then every other function
-with the same derivative must have the form $\ds f(x)=(5/2)x^2-3x+47+k$.
+$g(x)=(5/2)x^2-3x+47$ has $g'(x)=5x-3$. Then every other function
+with the same derivative must have the form $f(x)=(5/2)x^2-3x+47+k$.
 This looks different, but it really isn't. The functions of the form
-$\ds f(x)=(5/2)x^2-3x+k$ are exactly the same as the ones of the form
-$\ds f(x)=(5/2)x^2-3x+47+k$. For example, $\ds (5/2)x^2-3x+10$ is the same as
-$\ds (5/2)x^2-3x+47+(-37)$, and the first is of the first form while
+$f(x)=(5/2)x^2-3x+k$ are exactly the same as the ones of the form
+$f(x)=(5/2)x^2-3x+47+k$. For example, $(5/2)x^2-3x+10$ is the same as
+$(5/2)x^2-3x+47+(-37)$, and the first is of the first form while
 the second has the second form.
 \end{example}
 
@@ -642,14 +845,14 @@ $-\cos x+k$.
 
 
 \begin{example}
-Describe all functions with derivative $\ds \sin x + e^x$. One such
-function is $\ds -\cos x+e^x$, so all such functions have the form
+Describe all functions with derivative $\sin x + e^x$. One such
+function is $-\cos x+e^x$, so all such functions have the form
 $-\cos x+e^x+k$.
 \end{example}
 
 \begin{exercises}
 
-\begin{exercise} Let $\ds f(x) = x^2$.
+\begin{exercise} Let $f(x) = x^2$.
 Find a value $c\in (-1,2)$ so that $f'(c)$ equals the slope between
 the endpoints of $f(x)$ on $[-1,2]$.
 \begin{answer} $c=1/2$
@@ -658,7 +861,7 @@ the endpoints of $f(x)$ on $[-1,2]$.
 \begin{exercise} Verify that $f(x) = x/(x+2)$ satisfies the hypotheses of the
  Mean Value Theorem on the interval $[1,4]$ and then find all of the
  values, $c$, that satisfy the conclusion of the theorem.
-\begin{answer} $\ds c=\sqrt{18}-2$
+\begin{answer} $c=\sqrt{18}-2$
 \end{answer}\end{exercise}
 
 \begin{exercise}
@@ -672,21 +875,21 @@ there is no number $c\in (\pi,2\pi)$ such that $f'(c) =0$. Why does
 this not contradict Rolle's theorem?
 \end{exercise}
 
-\begin{exercise} Let $\ds f(x) = (x-3)^{-2}$.  Show that there is no value 
+\begin{exercise} Let $f(x) = (x-3)^{-2}$.  Show that there is no value 
 $c\in (1,4)$ such that $f'(c) = (f(4)-f(1))/(4-1)$.  Why is
 this not a contradiction of the Mean Value Theorem?
 \end{exercise}
 
-\begin{exercise} Describe all functions with derivative $\ds x^2+47x-5$.
-\begin{answer} $\ds x^3/3+47x^2/2-5x+k$
+\begin{exercise} Describe all functions with derivative $x^2+47x-5$.
+\begin{answer} $x^3/3+47x^2/2-5x+k$
 \end{answer}\end{exercise}
 
-\begin{exercise} Describe all functions with derivative $\ds {1\over 1+x^2}$.
+\begin{exercise} Describe all functions with derivative ${1\over 1+x^2}$.
 \begin{answer} $\arctan x + k$
 \end{answer}\end{exercise}
 
-\begin{exercise} Describe all functions with derivative $\ds x^3-{1\over x}$.
-\begin{answer} $\ds x^4/4 -\ln x +k$
+\begin{exercise} Describe all functions with derivative $x^3-{1\over x}$.
+\begin{answer} $x^4/4 -\ln x +k$
 \end{answer}\end{exercise}
 
 
@@ -694,7 +897,7 @@ this not a contradiction of the Mean Value Theorem?
 \begin{answer} $-\cos(2x)/2 +k$
 \end{answer}\end{exercise}
 
-\begin{exercise} Show that the equation $\ds 6x^4 -7x+1 =0$ does not have more
+\begin{exercise} Show that the equation $6x^4 -7x+1 =0$ does not have more
 than two distinct real roots.
 \end{exercise}
 
@@ -709,7 +912,7 @@ State and prove an analogous result involving sine.
 
 \begin{exercise}
 Show that
-$\ds \sqrt{1+x} \le 1 +(x/2)$ if $-1<x<1$.
+$\sqrt{1+x} \le 1 +(x/2)$ if $-1<x<1$.
 \end{exercise}
 
 \end{exercises}

@@ -98,7 +98,7 @@ L'H\^opital's rule tells us that
             every axis x label/.style={at=(current axis.right of origin),anchor=west},
           ]        
           \addplot [very thick, penColor, samples=100,smooth, domain=(-1.6:1.6)] {sin(deg(x))};
-          \addplot [very thick, penColor2, samples=100,smooth] {x};
+          \addplot [very thick, penColor2] {x};
           \node at (axis cs:1,.6) [penColor] {$f(x)$};
           \node at (axis cs:-1,-1.2) [penColor2] {$g(x)$};
         \end{axis}
@@ -681,8 +681,8 @@ approximately $-9.8\cdot 2.26\approx -22$ meters per second.
 
 Finally, your average velocity during your dive is given by
 \[
-\frac{p'(2.26) -p'(0)}{2.26} \approx \frac{-22}{2.26} =
--9.7~\text{meters per second}.
+\frac{p(2.26) -p(0)}{2.26} \approx \frac{0-25}{2.26} =
+-11.06~\text{meters per second}.
 \]
 \end{solution}
 
@@ -852,8 +852,8 @@ What is the average rate that water flows out (change in volume) from
 5 to 10 minutes? What is the instantaneous rate that water flows out at
 7 minutes?
 \begin{answer}
-average rate: $\approx -0.67$ gal/s; instantaneous rate: $\approx-0.71$
-gal/s
+average rate: $\approx -0.67$ gal/min; instantaneous rate: $\approx-0.71$
+gal/min
 \end{answer}
 \end{exercise}
 
@@ -862,7 +862,7 @@ Starting at rest, the position of a car is given by $p(t) = 1.4t^2$ m,
 where $t$ is time in seconds.  How many seconds does it take the car to reach
 $96$ km/hr? What is the car's average velocity (in km/h) on that time period?
 \begin{answer}
-$\approx 8.9$ s; $\approx 45$ km/h.
+$\approx 9.5$ s; $\approx 48$ km/h.
 \end{answer}
 \end{exercise}
 
