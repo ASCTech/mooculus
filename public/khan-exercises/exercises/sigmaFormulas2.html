@@ -1,0 +1,55 @@
+<html data-require="math">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>Using the integer power sum forumlas 2</title>
+    <script src="../khan-exercise.js"></script>
+</head>
+
+<body>
+    <div class="exercise">
+        <div class="problems">
+    
+     <div id="summingPoly">
+
+           
+                <div class="vars">
+                
+                    <var id="U">randRange( 10, 40)</var>
+                    <var id="A">randRangeNonZero(-10,10)</var>
+                    <var id="B">randRangeNonZero(-10,10)</var>
+                    <var id="C">randRangeNonZero(-10,10)</var>
+                    <var id ="ANSWER">A*U+B*U*(U+1)/2+C*U*(U+1)*(2*U+1)/6</var>
+                    
+                </div>
+                
+              
+              <p class = "question">Evaluate <code>\displaystyle\sum\limits_{i=<var>1</var>}^{<var>U</var>}  \left(  <var>A</var> + <var>B</var>i +<var>C</var>i^2 \right) </code></p>
+                <div class="problem">
+					
+
+                </div>
+                 <div class="solution"><var>ANSWER</var></div>
+				<div class="hints">
+				
+					<p>
+						<code>\displaystyle\sum\limits_{i=<var>1</var>}^{<var>U</var>}  \left(  <var>A</var> + <var>B</var>i +<var>C</var>i^2 \right)  = 
+						<var>A</var>\displaystyle\sum\limits_{i=<var>1</var>}^{<var>U</var>}  \left(  1 \right)  + <var>B</var>\displaystyle\sum\limits_{i=<var>1</var>}^{<var>U</var>}  \left(  i \right)  +<var>C</var>\displaystyle\sum\limits_{i=<var>1</var>}^{<var>U</var>}  \left(  i^2 \right) </code>
+					</p>
+					<p>
+						<code>\phantom{\displaystyle\sum\limits_{i=<var>1</var>}^{<var>U</var>}  \left(  <var>A</var> + <var>B</var>i +<var>C</var>i^2 \right) } = 
+						<var>A</var>\cdot \left(<var>U</var>\right)   + <var>B</var> \cdot \left( \dfrac{<var>U</var> \cdot (<var>U+1</var>)}{2} \right)+<var>C</var>\cdot \left(\dfrac{<var>U</var> \cdot <var>U+1</var> \cdot <var>2*U+1</var>}{6}\right) </code>
+					</p>
+					<p>
+						<code>\phantom{\displaystyle\sum\limits_{i=<var>1</var>}^{<var>U</var>}  \left(  <var>A</var> + <var>B</var>i +<var>C</var>i^2 \right) } = 
+						<var>ANSWER</var></code>
+					</p>
+				
+				
+				
+				</div>
+    </div>
+    
+    	</div>
+    </div>
+</body>
+</html>

@@ -5,6 +5,10 @@ $.extend(KhanUtil, {
         return num && num/Math.abs(num)
     },
     
+     opSign: function(A,B){
+     	return KhanUtil.steveSign(A) == -KhanUtil.steveSign(B)
+     },
+    
     // Approximates a root of f on the interval (xmin,xmax) by successively halving the interval.
     
     displayMode: function(x){
@@ -27,6 +31,8 @@ $.extend(KhanUtil, {
         }
         return z
     },
+    
+   
     
     steveBisectionList: function(f,xmin,xmax){
         var l = xmin
