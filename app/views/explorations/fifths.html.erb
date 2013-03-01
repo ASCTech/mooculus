@@ -1,0 +1,91 @@
+<script>
+$(function() {
+  
+    var context = new webkitAudioContext();
+    var out = context.destination;
+
+    var oscillators = [];
+    var noteButtons = [];
+
+    var playNote = function(frequency){
+	var osc = context.createOscillator();
+	osc.frequency.value = frequency;
+	osc.type = 3;
+	osc.connect(out);
+	osc.noteOn(0);
+	oscillators.push( osc );
+    };
+
+    var stopNotes = function() {
+	var osc;
+
+	while( osc = oscillators.pop() ) {
+	    osc.noteOff(0);
+	}
+
+	var button;
+
+	while( button = noteButtons.pop() ) {
+	    button.animate({ backgroundColor: 'blue' }, 100);	    
+	}
+    };
+
+    $(document).mouseup( stopNotes );
+    $(document).keyup( stopNotes );
+    $(".tone-button").mouseleave( stopNotes );
+
+    $(".tone-button").mousedown( function() {
+	var frequency = parseFloat( $(this).attr('frequency') );
+	playNote(frequency);
+	noteButtons.push( $(this) );
+	$(this).animate({ backgroundColor: 'white' }, 100);
+    });
+
+    var buttons = $(".tone-button");
+    var current_button_index = 0;
+    
+    $(document).keydown(function(evt) {
+	if (evt.keyCode == 13) {
+
+	    //var frequency = parseFloat( $(buttons[current_button_index]).attr('frequency') );
+	    //playNote( frequency );
+	    
+	    $(buttons[current_button_index]).trigger('mousedown');
+
+	    current_button_index++;
+	    
+            if (current_button_index >= buttons.length)
+		current_button_index = 0;
+	}
+    }); 
+
+});
+
+</script>
+
+    <p>We have seen that \(\log \left( \frac{3}{2} \right) \approx \frac{7}{12} \log 2 \), or in other words, \( \left( \frac{3}{2} \right)^{12} \approx 2^7 \).  Since a <a href="http://en.wikipedia.org/wiki/Perfect_fifth">perfect fifth</a> has a <a href="http://en.wikipedia.org/wiki/Interval_ratio">pitch ratio</a> of \( 3:2 \), and an <a href="http://en.wikipedia.org/wiki/Octave">octave</a> has a ratio of \( 2:1 \), we could also express \( \left( \frac{3}{2} \right)^{12} \approx 2^7 \) as saying that &ldquo;twelve fifths is almost seven octaves.&rdquo;</p>
+
+    <p>You can push the <tt>return</tt> key, or touch the blue boxes below, to hear these notes.</p>
+
+<% base = 55.0/1.5/1.5 %>
+
+<h3>Fifths</h3>
+    
+<div style="position: relative; height: 50pt;">
+<% for i in 0..12 %>
+    <% frequency = base * (1.5**i) %>
+    <% position = Math.log( frequency / base ) * 19.78 %>
+    <div frequency="<%= frequency %>" class="tone-button" style="width: 3%; height: 50pt; background-color: blue; position: absolute; left:<%= position %>%;"></div>
+<% end %>
+</div>
+
+<h3>Octaves</h3>
+
+<div style="position: relative; height: 50pt; margin-top: 10pt;">
+<% for i in 0..7 %>
+    <% frequency = base * (2**i) %>
+    <% position = Math.log( frequency / base ) * 19.78 %>
+    <div frequency="<%= frequency %>" class="tone-button" style="width: 3%; height: 50pt; background-color: blue; position: absolute; left:<%= position %>%;"></div>
+<% end %>
+</div>
+
