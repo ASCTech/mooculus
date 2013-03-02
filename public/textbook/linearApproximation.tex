@@ -143,8 +143,33 @@ Let $f(x)$ be a differentiable function. We define a new
 \[
 dy=f'(x)\cdot dx.
 \] 
-The variables $dx$ and $dy$ are called \textbf{differentials}.
+The variables $dx$ and $dy$ are called \textbf{differentials}, see
+Figure~{figure:differentials}.
 \end{definition}
+\begin{marginfigure}[0in]
+\begin{tikzpicture}
+	\begin{axis}[
+            xmin=1, xmax=2, range=0:6,ymax=6,ymin=0,
+            axis lines =left, xlabel=$x$, ylabel=$y$,
+            every axis y label/.style={at=(current axis.above origin),anchor=south},
+            every axis x label/.style={at=(current axis.right of origin),anchor=west},
+            ticks=none,
+            axis on top,
+          ]         
+	  \addplot [penColor2,very thick] plot coordinates {(1.4,10/6) (1.7,10/6)};
+          \addplot [penColor2,very thick] plot coordinates {(1.7,10/6) (1.7,10/6 +.3/.36)};
+          \addplot [penColor,dashed] plot coordinates {(1.4,10/6) (1.7,10/6 +.3/.36)};
+          \addplot [very thick,penColor, smooth,samples=100,domain=(0:1.833)] {-1/(x-2)};
+          \addplot[color=penColor3,fill=penColor3,only marks,mark=*] coordinates{(1.4,10/6)};  %% closed hole            
+          \node at (axis cs:1.55,1.67) [below, penColor2] {$dx$};
+          \node at (axis cs:1.7,2.08) [right, penColor2] {$dy$};
+        \end{axis}
+\end{tikzpicture}
+\caption{While $dy$ and $dx$ are both variables, $dy$ depends on $dx$,
+  and approximates how much a function grows after a change of size
+  $dx$ from a given point.}
+\label{figure:differentials}
+\end{marginfigure}
 
 Note, it is now the case (by definition!) that 
 \[
@@ -188,8 +213,8 @@ Use differentials to approximate $\sqrt[3]{50}$.
             every axis x label/.style={at=(current axis.right of origin),anchor=west},
           ]        
           \addplot [very thick, penColor, samples=150,smooth,domain=(0:100)] {x^(1/3))};
-          \addplot [very thick, penColor2, domain=(50:64)] {x/48+8/3};
-          \addplot [textColor,dashed] plot coordinates {(64,0) (64,4)};
+          %\addplot [very thick, penColor2, domain=(50:64)] {x/48+8/3};
+          %\addplot [textColor,dashed] plot coordinates {(64,0) (64,4)};
           \node at (axis cs:20,2.3) [penColor] {$f(x)$};
           \addplot [penColor2,very thick] plot coordinates {(64,4) (64,3.71)};
           \addplot [penColor2,very thick] plot coordinates {(50,3.71) (64,3.71)};
@@ -241,7 +266,7 @@ Use differentials to approximate $\sin(0.3)$.
             every axis x label/.style={at=(current axis.right of origin),anchor=west},
           ]        
           \addplot [very thick, penColor, samples=100,smooth, domain=(-1.6:1.6)] {sin(deg(x))};
-          \addplot [very thick, penColor2, domain={0:0.3}] {x};
+          %\addplot [very thick, penColor2, domain={0:0.3}] {x};
           \addplot [penColor2,very thick] plot coordinates {(0,0) (.3,0)};
           \addplot [penColor2,very thick] plot coordinates {(.3,0) (.3,.3)};
           \node at (axis cs:1,.6) [penColor] {$f(x)$};
@@ -364,100 +389,197 @@ Let $f(x) = \sin (2x)$. If $x=\pi$ and $dx=\pi/100$, what is $dy$?
 
 \section{Newton's Method}
 
-Suppose you have a function $f(x)$, and you want to find as accurately as
-possible where it crosses the $x$-axis; in other words, you want to solve
-$f(x)=0$.  Suppose you know of no way to find an exact solution by any
-algebraic procedure, but you are able to use an approximation,
-provided it can be made quite close to the true value.
-Newton's method is a way to find a solution to the
-equation to as many decimal places as you want.  It is what is called an
-``iterative procedure,'' meaning that it can be repeated again and again to
-get an answer of greater and greater accuracy.  Iterative procedures like
-Newton's method are well suited to programming for a
-computer. Newton's method uses the fact that the tangent line to a
-curve is a good approximation to the curve near the point of tangency.
+Suppose you have a function $f(x)$, and you want to solve $f(x)=0$.
+Solving equations symbolically, is difficult. However, Newton's method
+gives us a procedure, for finding a solution to many equations to as
+many decimal places as you want.  
 
-\begin{example} Approximate $\sqrt{3}$. Since $\sqrt{3}$ is a solution to
-$x^2=3$ or $x^2-3=0$, we use $f(x)=x^2-3$. We start by guessing
-something reasonably close to the true value; this is usually easy to
-do; let's use $\sqrt3\approx2$. Now use the tangent line to the curve
-when $x=2$ as an approximation to the curve, as shown in
-figure~\xrefn{fig:newtons method}. Since $f'(x)=2x$, the slope of this
-tangent line is 4 and its equation is $y=4x-7$. The tangent line is
-quite close to $f(x)$, so it crosses the $x$-axis near the point at
-which $f(x)$ crosses, that is, near $\sqrt3$. It is easy to find where
-the tangent line crosses the $x$-axis: solve $0=4x-7$ to get
-$x=7/4=1.75$. This is certainly a better approximation than 2, but let
-us say not close enough. We can improve it by doing the same thing
-again: find the tangent line at $x=1.75$, find where this new tangent
-line crosses the $x$-axis, and use that value as a better
-approximation. We can continue this indefinitely, though it gets a bit
-tedious. Lets see if we can shortcut the process. Suppose the best
-approximation to the intercept we have so far is $x_i$. To find a
-better approximation we will always
-do the same thing: find the slope of the tangent line at $x_i$, find the
-equation of the tangent line, find the $x$-intercept. The slope is
-$2x_i$. The tangent line is $y=(2x_i)(x-x_i)+(x_i^2-3)$, using
-the point-slope formula for a line. Finally, the intercept is found by
-solving $0 =(2x_i)(x-x_i)+(x_i^2-3)$. With a little algebra this turns
-into $x=(x_i^2+3)/(2x_i)$; this is the next approximation, which we
-naturally call $x_{i+1}$. Instead of doing the whole tangent line
-computation every time we can simply use this formula to get as many
-approximations as we want. Starting with $x_0=2$, we get
-$x_1=(x_0^2+3)/(2x_0)=(2^2+3)/4=7/4$ (the same approximation we got
-above, of course), $x_2=(x_1^2+3)/(2x_1)=
-((7/4)^2+3)/(7/2)=97/56\approx 1.73214$, $x_3\approx 1.73205$, and so
-on. This is still a bit tedious by hand, but with a calculator or,
-even better, a good computer program, it is quite easy to get many,
-many approximations. We might guess already that $1.73205$ is accurate
-to two decimal places, and in fact it turns out that it is accurate to
-5 places.  \end{example}
+\marginnote[.5in]{The point
+\[
+a_{n+1} = a_n - \frac{f(a_n)}{f'(a_n)}
+\]
+is the solution to the equation $\l_n(x) = 0$, where $\l_n(x)$ is the
+linear approximation of $f(x)$ at $x=a_n$.}
 
-%% BADBAD
-%% \figure
-%% \vbox{\beginpicture
-%% \normalgraphs
-%% \sevenpoint
-%% \setcoordinatesystem units <1.5truecm,0.6truecm>
-%% \setplotarea x from 0 to 4, y from -4 to 7
-%% \axis left /
-%% \axis bottom shiftedto y=0 ticks numbered from 1 to 2 by 1 /
-%% \plot 0.000 -3.000 0.150 -2.978 0.300 -2.910 0.450 -2.798 0.600 -2.640 
-%% 0.750 -2.438 0.900 -2.190 1.050 -1.898 1.200 -1.560 1.350 -1.178 
-%% 1.500 -0.750 1.650 -0.278 1.800 0.240 1.950 0.802 2.100 1.410 
-%% 2.250 2.062 2.400 2.760 2.550 3.502 2.700 4.290 2.850 5.122 
-%% 3.000 6.000 /
-%% \setlinear
-%% \plot 1 -3 3.5 7 /
-%% \endpicture}
-%% \figrdef{fig:newtons method}
-%% \endfigure{Newton's method.
-%% (\expandafter\url\expandafter{\liveurl jsxgraph/newtons_method.html}%
-%% AP\endurl)}
+\begin{newtonsMethod}
+Let $f(x)$ be a differentiable function and let $a_0$ be a
+guess for a solution to the equation
+\[
+f(x) = 0.
+\]
+We can produce a sequence of points $x=a_0, a_1, a_2, a_3, \dots$ via
+the recursive formula
+\[
+a_{n+1} = a_n -\frac{f(a_n)}{f'(a_n)}
+\]
+that (hopefully!) are successively better approximations of a solution
+to the equation $f(x) = 0$.
+\end{newtonsMethod}
+Let's see if we can explain the logic behind this method. Consider the
+following cubic function
+\[
+f(x) = x^3 - 4 x^2 - 5 x - 7.
+\]
+While there is a ``cubic formula'' for finding roots, it can be
+difficult to implement. Since it is clear that $f(10)$ is positive,
+and $f(0)$ is negative, by the Intermediate Value
+Theorem~\ref{theorem:IVT}, there is a solution to the equation $f(x) =
+0$ in the interval $[0,10]$. Let's compute $f'(x) = 3x^2 -8x-5$ and
+guess that $a_0=7$ is a solution. We can easily see that
+\[
+f(a_0) = f(7) = 105\qquad\text{and}\qquad f'(a_0) = f'(7) = 86.
+\]
+This might seem pretty bad, but if we look at the linear approximation
+of $f(x)$ at $x=7$, we find
+\begin{marginfigure}[-1in]
+\begin{tikzpicture}
+	\begin{axis}[
+            xmin=4, xmax=7.5,ymin=-40,ymax=125,domain=(4:8),
+            axis lines =center, xlabel=$x$, ylabel=$y$,
+            every axis y label/.style={at=(current axis.above origin),anchor=south},
+            every axis x label/.style={at=(current axis.right of origin),anchor=west},
+            xtick={7}, ytickmin=1,ytickmax=0,
+            xticklabels={$a_0$},
+            axis on top,
+          ]         
+	  \addplot [penColor2,very thick] {86*(x-7) + 105};
+          \addplot [textColor,dashed] plot coordinates {(7,0) (7,105)};
+          \addplot [very thick,penColor, smooth,samples=100] {x^3 - 4*x^2 - 5*x - 7};
+          \addplot[color=penColor3,fill=penColor3,only marks,mark=*] coordinates{(7,105)};  %% closed hole          
+        \end{axis}
+\end{tikzpicture}
+\caption{Here we see our first guess, along with the linear
+  approximation at that point.}
+\label{figure:newtonCubic1}
+\end{marginfigure}
+\[
+\l_0(x) = 86(x-7) + 105 \qquad\text{which is the same as}\qquad \l_0(x) = f'(a_0)(x-a_0) + f(a_0).
+\]
+Now $\l_0(a_1) = 0$ when
+\[
+a_1 = 7 - \frac{105}{86} \qquad\text{which is the same as}\qquad a_1 = a_0
+-\frac{f(a_0)}{f'(a_0)}.
+\]
+To remind you what is going on geometrically see
+Figure~\ref{figure:newtonCubic1}. Now we repeat the procedure letting
+$a_1$ be our new guess. Now
+\[
+f(a_1) \approx 23.5.
+\]
+We see our new guess is better than our first. If we look at the
+linear approximation of $f(x)$ at $x=a_1$, we find
+\[
+\l_1(x) = f'(a_0)(x-a_0) + f(a_0).
+\]
+Now $\l_1(a_2) = 0$ when
+\[
+a_2 = a_1 - \frac{f(a_1)}{f'(a_1)}.
+\]
 
-Let's think about this process in more general terms. We want to
-approximate a solution to $f(x)=0$.
-We start with a rough guess, which we call $x_0$.  We use the tangent
-line to $f(x)$ to get a new approximation that we hope will be closer
-to the true value. What is the equation of the tangent line when
-$x=x_0$? The slope is $f'(x_0)$ and the line goes through
-$\ds(x_0,f(x_0))$, so the equation of the line is
-$$ y=f'(x_0)(x-x_0)+f(x_0).$$
-Now we find where this crosses the $x$-axis by substituting $y=0$ and
-solving for $x$:
-$$x={x_0f'(x_0)-f(x_0)\over f'(x_0)} = x_0 - {f(x_0)\over f'(x_0)}.$$
-We will typically want to compute more than one of these improved
-approximations, so we number them consecutively; from $x_0$ we have
-computed $x_1$:
-$$x_1={x_0f'(x_0)-f(x_0)\over f'(x_0)} = x_0 - {f(x_0)\over f'(x_0)},$$
-and in general from $x_i$ we compute $x_{i+1}$:
-$$x_{i+1}={x_if'(x_i)-f(x_i)\over f'(x_i)} = x_i - {f(x_i)\over f'(x_i)}.$$
+\begin{marginfigure}[-2in]
+\begin{tikzpicture}
+	\begin{axis}[
+            xmin=4, xmax=7.5,ymin=-40,ymax=125,domain=(4:8),
+            axis lines =center, xlabel=$x$, ylabel=$y$,
+            every axis y label/.style={at=(current axis.above origin),anchor=south},
+            every axis x label/.style={at=(current axis.right of origin),anchor=west},
+            xtick={5.78,7}, ytickmin=1,ytickmax=0,
+            xticklabels={$a_1$,$a_0$},
+            axis on top,
+          ]         
+	  \addplot [penColor2!40!background,very thick] {86*(x-7) + 105};
+          \addplot [textColor!40!background,dashed] plot coordinates {(7,0) (7,105)};
+          \addplot [penColor2,very thick] {49*x-259.4};
+          \addplot [textColor,dashed] plot coordinates {(5.78,0) (5.78,23.57)};
+          \addplot [very thick,penColor, smooth,samples=100] {x^3 - 4*x^2 - 5*x - 7};
+          \addplot[color=penColor3,fill=penColor3,only marks,mark=*] coordinates{(5.78,23.57)};  %% closed hole          
+        \end{axis}
+\end{tikzpicture}
+\caption{Here we see our second guess, along with the linear
+  approximation at that point.}
+\label{figure:newtonCubic2}
+\end{marginfigure}
+See Figure~{figure:newtonCubic2} to see what is going on
+geometrically.  Again, we repeat our procedure letting $a_2$ be our
+next guess, note
+\[
+f(a_2) \approx 2.97,
+\]
+we are getting much closer to a root of $f(x)$. Looking at the linear
+approximation of $f(x)$ at $x=a_2$, we find
+\[
+\l_2(x) = f'(a_2)(x-a_2) + f(a_2).
+\]
+Setting $a_3 = a_2 - \frac{f(a_2)}{f'(a_2)}$, $a_3\approx 5.22$. We now
+have $\l_2(a_3) = 0$. Checking by evaluating $f(x)$ at $a_3$, we find
+\[
+f(a_3) \approx 0.14.
+\]
+
+\begin{marginfigure}[0in]
+\begin{tikzpicture}
+	\begin{axis}[
+            xmin=4, xmax=7.5,ymin=-40,ymax=125,domain=(4:8),
+            axis lines =center, xlabel=$x$, ylabel=$y$,
+            every axis y label/.style={at=(current axis.above origin),anchor=south},
+            every axis x label/.style={at=(current axis.right of origin),anchor=west},
+            xtick={5.22,5.78,7}, ytickmin=1,ytickmax=0,
+            xticklabels={$a_2$,$a_1$,$a_0$},
+            axis on top,
+          ]         
+	  \addplot [penColor2!40!background,very thick] {86*(x-7) + 105};
+          \addplot [textColor!40!background,dashed] plot coordinates {(7,0) (7,105)};
+
+          \addplot [penColor2!40!,very thick] {49*x-259.4};
+          \addplot [textColor!40!,dashed] plot coordinates {(5.78,0) (5.78,23.57)};
+
+          \addplot [penColor2,very thick] {36.8*x-192.2};
+          \addplot [textColor,dashed] plot coordinates {(5.22,0) (5.22,.14)};
+
+          \addplot [very thick,penColor, smooth,samples=100] {x^3 - 4*x^2 - 5*x - 7};
+          \addplot[color=penColor3,fill=penColor3,only marks,mark=*] coordinates{(5.22,.14)};  %% closed hole          
+        \end{axis}
+\end{tikzpicture}
+\caption{Here we see our third guess, along with the linear
+  approximation at that point.}
+\label{figure:newtonCubic3}
+\end{marginfigure}
+We are now very close to a root of $f(x)$, see
+Figure~\ref{figure:newtonCubic3}. This process, Newton's Method, could
+be repeated indefinitely to obtain closer and closer approximations to
+a root of $f(x)$.
+
 
 \begin{example}
-Returning to the previous example, $f(x)=x^2-3$, $f'(x)=2x$, and the
-formula becomes $x_{i+1}=x_i - (x_i^2-3)/(2x_i)=(x_i^2+3)/(2x_i)$, as
-before.
+Use Newton's Method to approximate the solution to 
+\[
+x^3= 50
+\]
+to two decimal places. 
 \end{example}
+
+\begin{solution} 
+To start, set $f(x) = x^3 - 50$. We will use Newton's Method to
+approximate a solution to the equation
+\[
+f(x) = x^3-50 = 0. 
+\]
+Let's choose $a_0=4$ as our first guess. Now compute 
+\[
+f'(x) = 3x^2.
+\]
+At this point we can make a table:
+\[
+\begin{tchart}{llll}
+n &  a_n  & f(a_n)         & a_n - f(a_n)/f'(a_n)\\ \hline
+0 & 4    & 14             & \approx 3.708 \\
+1 & 3.708 & \approx 0.982  & \approx 3.684 \\
+2 & 3.684 & \approx -0.001 & \approx 3.684
+\end{tchart}
+\]
+Hence after only two iterations, we have the solution to three (and
+hence two) decimal places.
+\end{solution}
 
 In practice, which is to say, if you need to approximate a value in
 the course of designing a bridge or a building or an airframe, you
@@ -467,64 +589,143 @@ decimal places stop changing from one approximation to the next it is
 likely that those decimal places are correct. Still, this may not be
 enough assurance, in which case we can test the result for accuracy.
 
-\begin{example} Find the $x$ coordinate of the intersection of the curves $y=2x$
-and $y=\tan x$, accurate to three decimal places. To put this in the
-context of Newton's method, we note that we want to know where $2x=\tan
-x$ or $f(x)=\tan x-2x=0$. We compute $f'(x)=\sec^2 x - 2$ and set up the
-formula:
-$$x_{i+1} = x_i-{\tan x_i -2x_i\over \sec^2 x_i - 2}.$$ From the graph
-in figure~\xrefn{fig:tanx vs x} 
-we guess $x_0=1$ as a starting point, then using the formula we
-compute $x_1=1.310478030$, $x_2=1.223929096$, $x_3=1.176050900$,
-$x_4=1.165926508$, $x_5=1.165561636$.  So we guess that the first
-three places are correct, but that is not the same as saying $1.165$
-is correct to three decimal places---$1.166$ might be the correct,
-rounded approximation. How can we tell? We can substitute $1.165$,
-$1.1655$ and $1.166$ into $\tan x - 2x$; this
-gives $-0.002483652$, $-0.000271247$, $0.001948654$. Since the first
-two are negative and the third is positive, $\tan x - 2x$ crosses the
-$x$ axis between $1.1655$ and $1.166$, so the correct value to three
-places is $1.166$.
+
+Sometimes questions involving Newton's Method do not mention an
+equation that needs to be solved. Here you must reinterpret the
+question as one that is asking for a solution to an equation of the
+form $f(x) = 0$.
+
+\begin{example}
+Use Newton's Method to approximate $\sqrt[3]{50}$ to two decimal
+places.
 \end{example}
 
-%% BADBAD
-%% \figure
-%% \vbox{\beginpicture
-%% \normalgraphs
-%% \sevenpoint
-%% \setcoordinatesystem units <3truecm,0.25truecm>
-%% \setplotarea x from 0 to 1.5, y from 0 to 15
-%% \axis left ticks numbered from 0 to 15 by 5 /
-%% \axis bottom shiftedto y=0 ticks length <2pt> withvalues {$1$} {$1.5$} / at
-%% 1 1.5 / /
-%% \plot 0.000 0.000 0.038 0.038 0.075 0.075 0.112 0.113 0.150 0.151 
-%% 0.188 0.190 0.225 0.229 0.262 0.269 0.300 0.309 0.338 0.351 
-%% 0.375 0.394 0.412 0.438 0.450 0.483 0.488 0.530 0.525 0.579 
-%% 0.562 0.630 0.600 0.684 0.638 0.741 0.675 0.800 0.712 0.864 
-%% 0.750 0.932 0.788 1.004 0.825 1.083 0.862 1.167 0.900 1.260 
-%% 0.938 1.362 0.975 1.475 1.012 1.601 1.050 1.743 1.088 1.905 
-%% 1.125 2.093 1.162 2.312 1.200 2.572 1.238 2.888 1.275 3.282 
-%% 1.312 3.785 1.350 4.455 1.388 5.394 1.425 6.810 1.462 9.198 
-%% 1.500 14.101  /
-%% \setlinear
-%% \plot 0 0 1.5 3 /
-%% \setcoordinatesystem units <3truecm,0.25truecm> point at -2.5 0
-%% \setplotarea x from 0 to 1.5, y from 0 to 15
-%% \axis left ticks numbered from 0 to 15 by 5 /
-%% \axis bottom shiftedto y=0 ticks length <2pt> withvalues {$1$} {$1.5$} / at
-%% 1 1.5 / /
-%% \plot 0.000 -0.000 0.037 -0.037 0.075 -0.075 0.113 -0.112 0.150 -0.149
-%% 0.188 -0.185 0.225 -0.221 0.263 -0.256 0.300 -0.291 0.338 -0.324
-%% 0.375 -0.356 0.412 -0.387 0.450 -0.417 0.487 -0.445 0.525 -0.471
-%% 0.562 -0.495 0.600 -0.516 0.637 -0.534 0.675 -0.550 0.713 -0.561
-%% 0.750 -0.568 0.787 -0.571 0.825 -0.567 0.863 -0.558 0.900 -0.540
-%% 0.938 -0.513 0.975 -0.475 1.012 -0.424 1.050 -0.357 1.087 -0.270
-%% 1.125 -0.157 1.163 -0.013 1.200 0.172 1.238 0.413 1.275 0.732
-%% 1.312 1.160 1.350 1.755 1.387 2.619 1.425 3.960 1.462 6.273
-%% 1.500 11.101 /
-%% \endpicture}
-%% \figrdef{fig:tanx vs x}
-%% \endfigure{$y=\tan x$ and $y=2x$ on the left, $y=\tan x-2x$ on the right.}
+\begin{solution}
+The $\sqrt[3]{50}$ is simply a solution to the equation
+\[
+x^3 -50 = 0.
+\]
+Since we did this in the previous example, we have found
+$\sqrt[3]{50}\approx 3.68$.
+\end{solution}
+
+\begin{warning}
+Sometimes a bad choice for $a_0$ will not lead to a root. Consider 
+\[
+f(x) = x^3 - 3 x^2 - x - 4.
+\]
+If we choose our initial guess to be $a_0=1$ and make a table we find:
+\[
+\begin{tchart}{llll}
+n &  a_n  & f(a_n)         & a_n - f(a_n)/f'(a_n)\\ \hline
+0 & 1    & -7             & -0.75 \\
+1 & -0.75 & \approx -5.359  & \approx 0.283 \\
+2 & 0.283 & \approx -4.501 & \approx -1.548 \\
+3 & -1.548 & \approx -13.350 & \approx -0.685 \\
+4 & -0.685 & \approx -5.044 & \approx 0.432 \\
+  \hdotsfor{4}
+\end{tchart}
+\]
+As you can see, we are not converging to a root, which is
+approximately $x=3.589$.
+\end{warning}
+
+
+
+Iterative procedures like Newton's method are well suited for
+computers. It enables us to solve equations that are otherwise
+impossible to solve through symbolic methods.
+
+
+
+
+
+
+\subsection*{Euler's Method}
+
+
+\marginnote[.2in]{The name ``Euler'' is pronounced ``Oiler.''}
+While Newton's Method allows us to solve equations that are otherwise
+impossible to solve, and hence is of computational importance,
+Euler's Method is more of theoretical importance to us.
+
+\break
+
+\begin{eulersMethod}
+Given a function $f(x)$, and an initial value $(x_0,y_0)$ we wish to
+find a polygonal curve defined by $(x_n,y_n)$ such that this polygonal
+curve approximates $F(x)$ where $F'(x) =f(x)$, and $F(x_0)= y_0$.
+\begin{enumerate}
+\item Choose a step size, call it $h$.
+\item Our polygonal curve defined by connecting the points as
+  described by the iterative process below:
+\[
+\begin{tchart}{lll}
+n & x_n     & y_n \\ \hline
+0 & x_0     & y_0 \\
+1 & x_0 + h & y_0+h\cdot f(x_1)\\
+2 & x_1 + h & y_1+h\cdot f(x_2)\\
+3 & x_2 + h & y_2+h\cdot f(x_3)\\
+4 & x_3 + h & y_3+h\cdot f(x_4)\\
+  \hdotsfor{3}
+\end{tchart}
+\]
+\end{enumerate}
+\end{eulersMethod}
+
+
+Let's see an example of Euler's Method in action.
+
+\begin{example}
+Suppose that the velocity in meters per second of a ball tossed from a
+height of 1 meter is given by
+\[
+v(t) = -9.8t + 6.
+\]
+Rounding to two decimals at each step, use Euler's Method with $h=0.2$
+to approximate the height of the ball after 1 second.
+\end{example}
+\begin{marginfigure}[0in]
+\begin{tikzpicture}
+	\begin{axis}[
+            xmin=0, xmax=1,ymin=0,ymax=3,
+            axis lines =center, xlabel=$t$, ylabel=$y$,
+            every axis y label/.style={at=(current axis.above origin),anchor=south},
+            every axis x label/.style={at=(current axis.right of origin),anchor=west},
+            xtick={0,.2,.4,.6,.8,1},
+            axis on top,
+          ]         
+	  \addplot [penColor2, very thick] plot coordinates {
+            (0,1) (.2,1.81) (.4,2.23) (.6,2.25) (.8,1.88) (1,1.12)
+          };
+          \addplot [very thick,penColor, smooth,samples=100] {6*x-4.9*x^2+1};
+          \node at (axis cs:.3,2.6) [penColor] {$f(x)$};          
+        \end{axis}
+\end{tikzpicture}
+\caption{Here we see our polygonal curve found via Euler's Method and
+  the (unknown) function $F(x)$. Choosing a smaller step-size $h$
+  would yield a better approximation.}
+\label{figure:eulerMethod-ball}
+\end{marginfigure}
+
+\begin{solution}
+We simply need to make a table and use Euler's Method.
+\[
+\begin{tchart}{lll}
+n & t_n & y_n \\ \hline
+0 & 0   & 1 \\
+1 & 0.2 & 1.81\\
+2 & 0.4 & 2.23\\
+3 & 0.6 & 2.25\\
+4 & 0.8 & 1.88\\
+5 & 1 & 1.12
+\end{tchart}
+\]
+Hence the ball is at a height of $1.12$ meters, see
+Figure~\ref{figure:eulerMethod-ball}.
+\end{solution}
+
+
 
 \begin{exercises}
 
@@ -647,14 +848,6 @@ Newton's method to find a value of $x$ for which the box has volume
 % \fi
 
 \end{exercises}
-
-
-
-
-
-
-
-\section{Euler's Method}
 
 
 

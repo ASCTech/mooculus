@@ -133,11 +133,11 @@ not \textbf{differentiable} at $x$.
             xticklabels={$x$,$x+h$}, yticklabels={$f(x)$,$f(x+h)$},
             axis on top,
           ]         
-          \addplot [penColor2!15!background, smooth,domain=(0:2)] {-3.348+4.348*x};
-          \addplot [penColor2!32!background, smooth,domain=(0:2)] {-2.704+3.704*x};
-          \addplot [penColor2!49!background, smooth,domain=(0:2)] {-1.994+2.994*x};         
-          \addplot [penColor2!66!background, smooth,domain=(0:2)] {-1.326+2.326*x}; 
-          \addplot [penColor2!83!background, smooth,domain=(0:2)] {-0.666+1.666*x};
+          \addplot [penColor2!15!background, domain=(0:2)] {-3.348+4.348*x};
+          \addplot [penColor2!32!background, domain=(0:2)] {-2.704+3.704*x};
+          \addplot [penColor2!49!background, domain=(0:2)] {-1.994+2.994*x};         
+          \addplot [penColor2!66!background, domain=(0:2)] {-1.326+2.326*x}; 
+          \addplot [penColor2!83!background, domain=(0:2)] {-0.666+1.666*x};
 	  \addplot [textColor,dashed] plot coordinates {(1,0) (1,1)};
           \addplot [textColor,dashed] plot coordinates {(0,1) (1,1)};
           \addplot [textColor,dashed] plot coordinates {(0,3) (1.666,3)};
