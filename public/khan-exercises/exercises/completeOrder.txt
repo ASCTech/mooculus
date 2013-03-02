@@ -33,10 +33,6 @@ continuityOracle.html
 bisectionOracle.html
 continuityChooseConstant.html
 linearTriangles1.html
-basicSigma.html
-sigmaFormulas1.html
-sigmaFormulas2.html
-riemannSumIntegral.html
 linearTriangles2.html
 linearOracle.html
 tangentLineIdea.html
@@ -101,3 +97,7 @@ eulerMethod.html
 newtonsMethod.html
 antiderivativeSketchPlay.html
 comparingFunctionAndAntiderivative.html
+basicSigma.html
+sigmaFormulas1.html
+sigmaFormulas2.html
+riemannSumIntegral.html
