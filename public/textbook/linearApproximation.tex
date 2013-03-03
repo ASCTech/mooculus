@@ -387,7 +387,9 @@ Let $f(x) = \sin (2x)$. If $x=\pi$ and $dx=\pi/100$, what is $dy$?
 
 
 
-\section{Newton's Method}
+\section{Iterative Methods}
+
+\subsection*{Newton's Method}
 
 Suppose you have a function $f(x)$, and you want to solve $f(x)=0$.
 Solving equations symbolically, is difficult. However, Newton's method
@@ -729,6 +731,35 @@ Figure~\ref{figure:eulerMethod-ball}.
 
 \begin{exercises}
 
+\begin{exercise} The function 
+$f(x)=x^2-2x-5$ has a root between 3 and 4, because $f(3)=-2$ and
+  $f(4)=3$. Use Newton's Method to approximate the root to two decimal
+  places.
+\begin{answer}  $3.45$
+\end{answer}\end{exercise}
+
+\begin{exercise} The function 
+$f(x)=x^3-3x^2-3x+6$ has a root between 3 and 4, because $f(3)=-3$ and
+  $f(4)=10$. Use Newton's Method to approximate the root to two
+  decimal places.
+\begin{answer}  $3.36$
+\end{answer}\end{exercise}
+
+\begin{exercise} The function 
+$f(x)=x^5-2x^3+5$ has a root between $-2$ and $-1$, because
+  $f(-2)=-11$ and $f(-1)=6$. Use Newton's Method to approximate the
+  root to two decimal places.
+\begin{answer}  $-1.72$
+\end{answer}\end{exercise}
+
+
+\begin{exercise} The function 
+$f(x)=x^5-5x^4+5x^2-6$ has a root between $4$ and $5$, because
+  $f(4)=-182$ and $f(5)=119$. Use Newton's Method to approximate the
+  root to two decimal places.
+\begin{answer}  $4.79$
+\end{answer}\end{exercise}
+
 \begin{exercise} Approximate the fifth root of 7, using $x_0=1.5$ as a
 first guess. Use Newton's method to find $x_3$ as your
 approximation.  
@@ -740,21 +771,43 @@ two decimal places.
 \begin{answer} $2.15$
 \end{answer}\end{exercise}
 
-\begin{exercise} The function 
-$f(x)=x^3-3x^2-3x+6$ has a root between 3 and 4, because
-$f(3)=-3$ and $f(4)=10$. Approximate the root to two decimal places.
-\begin{answer}  $3.36$
-\end{answer}\end{exercise}
 
 \begin{exercise} A rectangular piece of cardboard of dimensions $8\times 17$
 is used to make an open-top box by cutting out a small square of side
-$x$ from each corner and bending up the sides.  (See
-exercise~\xrefn{sec:optimization}.\xrefn{exercise: cardboard box}.)
-If $x=2$, then the volume of the box is $2\cdot 4\cdot 13=104$.  Use
-Newton's method to find a value of $x$ for which the box has volume
-100, accurate to 3 significant figures.  
+$x$ from each corner and bending up the sides.  If $x=2$, then the
+volume of the box is $2\cdot 4\cdot 13=104$.  Use Newton's method to
+find a value of $x$ for which the box has volume 100, accurate to two
+decimal places.
 \begin{answer} $2.19$ or $1.26$
-\end{answer}\end{exercise}
+\end{answer}
+\end{exercise}
+
+\begin{exercise}
+Given $f(x) = 3x-4$, use Euler's Method with a step size $0.2$ to
+estimate $F(2)$ where $F'(x) = f(x)$ and $F(1)=5$, to two decimal
+places.
+\begin{answer} $5.8$
+\end{answer}
+\end{exercise}
+
+
+\begin{exercise}
+Given $f(x) = x^2+2x+1$, use Euler's Method with a step size $0.2$ to
+estimate $F(3)$ where $F'(x) = f(x)$ and $F(2)=3$, to two decimal
+places.
+\begin{answer} $16.04$
+\end{answer}
+\end{exercise}
+
+\begin{exercise}
+Given $f(x) = x^2-5x+7$, use Euler's Method with a step size $0.2$ to
+estimate $F(2)$ where $F'(x) = f(x)$ and $F(1)=-4$, to two decimal
+places.
+\begin{answer} $-2.36$
+\end{answer}
+\end{exercise}
+
+
 
 % Mike Wills stuff
 % \iflatetranscendentals
@@ -876,7 +929,7 @@ Here are some  interesting questions involving derivatives:
 While these problems sound very different, it turns out that the
 problems are very closely related. We'll start simply:
 
-\begin{theorem}[Rolle's Theorem]\index{Rolle's Theorem} 
+\begin{mainTheorem}[Rolle's Theorem]\index{Rolle's Theorem} 
 Suppose that $f(x)$ is differentiable on the interval $(a,b)$, is
 continuous on the interval $[a,b]$, and $f(a)=f(b)$. Then 
 \[
@@ -884,7 +937,7 @@ f'(c)=0
 \]
 for some $a<c<b$.
 \label{thm:rolle}
-\end{theorem}
+\end{mainTheorem}
 \begin{marginfigure}[0in]
 \begin{tikzpicture}
 	\begin{axis}[
@@ -907,7 +960,7 @@ for some $a<c<b$.
           \addplot[color=penColor,fill=penColor,only marks,mark=*] coordinates{(3,3)};  %% closed hole          
         \end{axis}
 \end{tikzpicture}
-\caption{A geometric interperation of Rolle's Theorem.}
+\caption{A geometric interpretation of Rolle's Theorem.}
 \label{figure:geoRolle}
 \end{marginfigure}
 \begin{proof}
@@ -968,7 +1021,7 @@ for some $a<c<b$.
           \addplot[color=penColor3,fill=penColor3,only marks,mark=*] coordinates{(2.04,.89+1.5)};  %% closed hole          
         \end{axis}
 \end{tikzpicture}
-\caption{A geometric interpertation of the Mean Value Theorem}
+\caption{A geometric interpretation of the Mean Value Theorem}
 \label{figure:geoMVT}
 \end{marginfigure}
 \begin{proof}
@@ -1008,7 +1061,7 @@ at $60$ miles per hour at some point?
 
 \begin{solution}
 If $p(t)$ is the position of the car at time $t$, and $0$ hours is
-the starting time with $1/2$ hourss being the final time, the Mean Value Theorem states there is a time $c$
+the starting time with $1/2$ hours being the final time, the Mean Value Theorem states there is a time $c$
 \[
 p'(c) = \frac{30-0}{1/2} = 60\qquad \text{where $0<c<1/2$.}
 \]
@@ -1017,11 +1070,12 @@ must have been driving at $60$ miles per hour at some point.
 \end{solution}
 
 Now we will address the unthinkable, could there be a function $f(x)$
-whose dervative is zero on an inteval that is not constant? As we will
+whose derivative is zero on an interval that is not constant? As we will
 see, the answer is ``no.''
 
 \begin{theorem} 
-If $f'(x)=0$ on an interval $I$, then $f(x)$ is constant on $I$.
+If $f'(x)=0$ for all $x$ in an interval $I$, then $f(x)$ is constant
+on $I$.
 \end{theorem}
 
 \begin{proof}
@@ -1030,7 +1084,7 @@ Let $a< b$ be two points in $I$. By the Mean Value Theorem we know
 \frac{f(b)-f(a)}{b-a} = f'(c)
 \]
 for some $c$ in the interval $(a,b)$. Since $f'(c)=0$ we see that
-$f(b)=f(a)$. Moreover, since $a$ and $b$ were arbitrarly choosen,
+$f(b)=f(a)$. Moreover, since $a$ and $b$ were arbitrarily chosen,
 $f(x)$ must be the constant function.
 \end{proof}
 
@@ -1091,23 +1145,30 @@ Verify that $f(x) = x/(x+2)$ satisfies the hypotheses of the Mean
 Value Theorem on the interval $[1,4]$ and then find all of the values,
 $c$, that satisfy the conclusion of the theorem.
 \begin{answer} $c=\sqrt{18}-2$
-\end{answer}\end{exercise}
+\end{answer}
+\end{exercise}
 
 \begin{exercise}
 Verify that $f(x) = 3x/(x+7)$ satisfies the hypotheses of the Mean
 Value Theorem on the interval $[-2 , 6]$ and then find all of the
 values, $c$, that satisfy the conclusion of the theorem.
+\begin{answer} $c=\sqrt{65}-7$
+\end{answer}
 \end{exercise}
 
 \begin{exercise} 
 Let $f(x) = \tan(x)$. Show that $f(\pi ) = f(2\pi)=0$ but there is no
 number $c\in (\pi,2\pi)$ such that $f'(c) =0$. Why does this not
 contradict Rolle's theorem?
+\begin{answer} $f(x)$ is not continuous on $[\pi,2\pi]$
+\end{answer}
 \end{exercise}
 
 \begin{exercise} Let $f(x) = (x-3)^{-2}$.  Show that there is no value 
 $c\in (1,4)$ such that $f'(c) = (f(4)-f(1))/(4-1)$.  Why is
 this not a contradiction of the Mean Value Theorem?
+\begin{answer} $f(x)$ is not continuous on $[1,4]$
+\end{answer}
 \end{exercise}
 
 \begin{exercise} Describe all functions with derivative $x^2+47x-5$.
@@ -1115,35 +1176,47 @@ this not a contradiction of the Mean Value Theorem?
 \end{answer}\end{exercise}
 
 \begin{exercise} Describe all functions with derivative ${1\over 1+x^2}$.
-\begin{answer} $\arctan x + k$
+\begin{answer} $\arctan(x) + k$
 \end{answer}\end{exercise}
 
 \begin{exercise} Describe all functions with derivative $x^3-{1\over x}$.
-\begin{answer} $x^4/4 -\ln x +k$
+\begin{answer} $x^4/4 -\ln(x) +k$
 \end{answer}\end{exercise}
 
 
 \begin{exercise} Describe all functions with derivative $\sin(2x)$.
 \begin{answer} $-\cos(2x)/2 +k$
-\end{answer}\end{exercise}
+\end{answer}
+\end{exercise}
 
 \begin{exercise} Show that the equation $6x^4 -7x+1 =0$ does not have more
 than two distinct real roots.
+\begin{answer} 
+Seeking a contradiction, suppose that we have 3 real roots, call them
+$a$, $b$, and $c$. By Rolle's Theorem, $24x^3-7$ must have a root on
+both $(a,b)$ and $(c,d)$, but this is impossible as $24x^3-7$ has only
+one real root.
+\end{answer}
 \end{exercise}
 
-\begin{exercise} Let $f$ be differentiable on $\R$. Suppose that $f'(x) \neq
+\begin{exercise} Let $f(x)$ be differentiable on $\R$. Suppose that $f'(x) \neq
 0$ for every $x$. Prove that $f$ has at most one real root.
+\begin{answer} 
+Seeking a contradiction, suppose that we have 2 real roots, call them
+$a$, $b$. By Rolle's Theorem, $f'(x)$ must have a root on $(a,b)$, but
+this is impossible.
+\end{answer}
 \end{exercise}
  
-\begin{exercise} Prove that for all real $x$ and $y$
-$|\cos x -\cos y | \leq |x-y|$.
-State and prove an analogous result involving sine.
-\end{exercise}
+%% \begin{exercise} Prove that for all real $x$ and $y$
+%% $|\cos x -\cos y | \leq |x-y|$.
+%% State and prove an analogous result involving sine.
+%% \end{exercise}
 
-\begin{exercise}
-Show that
-$\sqrt{1+x} \le 1 +(x/2)$ if $-1<x<1$.
-\end{exercise}
+%% \begin{exercise}
+%% Show that
+%% $\sqrt{1+x} \le 1 +(x/2)$ if $-1<x<1$.
+%% \end{exercise}
 
 \end{exercises}
 
