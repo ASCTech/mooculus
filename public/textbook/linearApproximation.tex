@@ -120,7 +120,7 @@ To start, write
 \]
 so our linear approximation is
 \begin{align*}
-\l(x) &= 1\cdot(x-0) + 0\\
+\l(x) &= \cos(0)\cdot(x-0) + 0\\
 &= x.
 \end{align*}
 Hence a linear approximation for $\sin(x)$ at $x=0$ is $\l(x) = x$,
@@ -195,7 +195,7 @@ From this we see that
 \[
 f(x+dx)\approx dy + f(x).
 \]
-While this is something of a ``slight-of-hand'' with variables, there
+While this is something of a ``sleight of hand'' with variables, there
 are contexts where the language of differentials is common. We will
 repeat our previous examples using differentials.
 
@@ -288,7 +288,7 @@ Since $\sin(0) = 0$, we will set $dx=0.3$. In this case
 \]
 hence 
 \begin{align*}
-dy &= \cos(1) \cdot dx\\
+dy &= \cos(0) \cdot dx\\
 &= 1 \cdot (0.3)\\
 &= 0.3
 \end{align*}
@@ -723,7 +723,7 @@ n & t_n & y_n \\ \hline
 5 & 1 & 3.08
 \end{tchart}
 \]
-Hence the ball is at a height of $1.12$ meters, see
+Hence the ball is at a height of about $3.08$ meters, see
 Figure~\ref{figure:eulerMethod-ball}.
 \end{solution}
 
