@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html data-require="math interactive graphie steveMath8 math-function-parser">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>Using Euler's method to approximate the solution of a differential equation</title>
+    <script src="../khan-exercise.js"></script>
+</head>
+
+<body>
+    <div class="exercise">
+        <div class="problems">
+
+            <div id="slopeField">
+
+           
+                <div class="vars">
+                    <!--  Setting up variables for the slope field and a correct solution-->
+                    <var id="A">randRange( -2, 2 )/2</var>
+                    <var id="B">randRange( -2, 2 )/2</var>
+                    <var id="C">randRange(1,2)</var>
+                    <var id = "startX">randRange(-3,3)</var>
+                    <var id="startY">randRange(-3,3)</var>
+                    <var id="EXP">A+"*x^"+C+"+"+B+"*y"</var>
+                    <var id="textEXP">MathFunction.parse(EXP).tex()</var>
+                    <var id = "F">(function(X,Y){
+                    	return MathFunction.parse(EXP).evaluate({x:X,y:Y})
+                    	})</var>
+                    	<var id="P1">[startX,startY]</var>
+                    <var id="P2">[startX+.5,P1[1]+.5*F(P1[0],P1[1])]</var>
+                    <var id="P3">[startX+1,P2[1]+.5*F(P2[0],P2[1])]</var>
+                    <var id="P4">[startX+1.5,P3[1]+.5*F(P3[0],P3[1])]</var>
+                     <var id="P5">[startX+2,P4[1]+.5*F(P4[0],P4[1])]</var>
+                </div>
+                
+              
+              <p>
+              	You are interested in the solution to the differential equation <code>\dfrac{dy}{dx} = <var>A</var>x^<var>C</var> + <var>B</var>y</code> which passes through the point 
+              	<code>(<var>startX</var>,<var>startY</var>)</code>.
+              </p>
+              <p class = "question"> 
+                  Use Euler's Method to approximate the value of this function at <code>x = <var>startX+2</var></code> 
+            	  using a step size of <code>\dfrac{1}{2}</code> 
+               </p>
+               <p>Error accumulates, so make sure to work with as many digits of accuracy as you can.  If you can write a program to do this for you, or make a spreadsheet, all the better!</p>
+                <div class="problem">
+					
+                 
+                </div>
+                <p class="solution" data-inexact data-max-error="0.1" data-type="decimal"><var>P5[1]</var></p>
+				<div class="hints">
+					<div>
+						<p>Just to keep our wits about us, lets draw the slope field.</p>
+						   <div class="graphie" id="grid">
+                        graphInit({
+                            range: 10,
+                            scale: 20,
+                            axisArrows: "&lt;-&gt;",
+                            gridOpacity: 0.0005,
+                            axisOpacity: 0.2,
+                            tickOpacity: 0.00004,
+                           
+                        });
+					
+				
+					
+					    circle( [startX,startY], 1/6, {
+         			     stroke: "none",
+         			     fill: "#37ca3e"
+           			     });
+						
+						
+						
+						
+						
+						//This function plots the slope field
+						(function(){
+						var dist = .8
+						for (var i=-10/dist;i<10/dist;i++){
+							for (var j=-10/dist;j<10/dist;j++){
+								var theta = Math.atan(F(i*dist,j*dist))
+								line([i*dist-Math.cos(theta)*.25*dist,j*dist-.25*dist*Math.sin(theta)],[i*dist+.25*dist*Math.cos(theta),j*dist+.25*dist*Math.sin(theta)],{stroke: BLUE, opacity: .6})
+							}
+						}
+						})();
+						
+        
+                        
+                        
+                    </div>
+					</div>
+					<div>
+						<p>The slope at <code>(<var>P1[0]</var>, <var>P1[1]</var>)</code> is <code><var>F(P1[0],P1[1])</var></code> just by plugging the point into the differential equation.
+						Thus the function value at <code>x = <var>startX+.5</var></code> should be approximately <code><var>startY</var>+ \dfrac{1}{2} \cdot <var>F(P1[0],P1[1])</var> \approx <var>P2[1]</var></code>.
+						So we generated another point which is approximately on the solution curve, namely <code>(<var>P2[0]</var>,<var>P2[1]</var>)</code></p>
+						<div class="graphie" data-update="grid">
+							line(P1,P2);
+						 circle( P2, 1/6, {
+         			     stroke: "none",
+         			     fill: "#37ca3e"
+           			     });
+						</div>
+					</div>
+					<div>
+						<p>The slope at <code>(<var>P2[0]</var>, <var>P2[1]</var>)</code> is <code><var>F(P2[0],P2[1])</var></code> just by plugging the point into the differential equation.
+						Thus the function value at <code>x = <var>startX+1</var></code> should be approximately <code><var>P2[1]</var>+ \dfrac{1}{2} \cdot <var>F(P2[0],P2[1])</var> \approx <var>P3[1]</var></code>.
+						So we generated another point which is approximately on the solution curve, namely <code>(<var>P3[0]</var>,<var>P3[1]</var>)</code></p>
+						<div class="graphie" data-update="grid">
+							line(P2,P3);
+						 circle( P3, 1/6, {
+         			     stroke: "none",
+         			     fill: "#37ca3e"
+           			     });
+						</div>
+					</div>
+					<div>
+						<p>The slope at <code>(<var>P3[0]</var>, <var>P3[1]</var>)</code> is <code><var>F(P3[0],P3[1])</var></code> just by plugging the point into the differential equation.
+						Thus the function value at <code>x = <var>startX+1.5</var></code> should be approximately <code><var>P3[1]</var>+ \dfrac{1}{2} \cdot <var>F(P3[0],P3[1])</var> \approx <var>P4[1]</var></code>.
+						So we generated another point which is approximately on the solution curve, namely <code>(<var>P4[0]</var>,<var>P4[1]</var>)</code></p>
+						<div class="graphie" data-update="grid">
+							line(P3,P4);
+						 circle( P4, 1/6, {
+         			     stroke: "none",
+         			     fill: "#37ca3e"
+           			     });
+						</div>
+					</div>
+					<div>
+						<p>The slope at <code>(<var>P4[0]</var>, <var>P4[1]</var>)</code> is <code><var>F(P4[0],P4[1])</var></code> just by plugging the point into the differential equation.
+						Thus the function value at <code>x = <var>startX+2</var></code> should be approximately <code><var>P4[1]</var>+ \dfrac{1}{2} \cdot <var>F(P4[0],P4[1])</var> \approx <var>P5[1]</var></code>.
+						So we generated another point which is approximately on the solution curve, namely <code>(<var>P5[0]</var>,<var>P5[1]</var>)</code>
+						This is the point we were looking for!</p>
+						<div class="graphie" data-update="grid">
+							line(P4,P5);
+						 circle( P5, 1/6, {
+         			     stroke: "none",
+         			     fill: "#37ca3e"
+           			     });
+						</div>
+					</div>
+					
+					
+					
+					<div>
+						<p>Just for comparison, lets see what the actual solution to this differential equation looks like.</p>
+						<div class="graphie" data-update="grid">
+								// This function uses Euler's method to plot the correct solution to the Diff.EQ
+						(function(){
+						var x= startX;
+						var y= startY;
+						for (i=0;i<150;i++){
+							line([x,y],[x+.1,y+.1*F(x,y)],{stroke: RED})
+							x = x+.1
+							y=y+.1*F(x,y)
+							}
+						var x= startX;
+						var y= startY;
+						for (i=0;i<150;i++){
+							line([x,y],[x-.1,y-.1*F(x,y)],{stroke: RED})
+							x = x-.1
+							y=y-.1*F(x,y)
+							}
+						})();
+						</div>
+					</div>
+					<p>
+						The answer is <code><var>P5[1]</var></code>
+					</p>
+				</div>
+    </div>
+    	</div>
+    </div>
+</body>
+</html>

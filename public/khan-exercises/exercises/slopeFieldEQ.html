@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html data-require="math interactive graphie steveMath8 math-function-parser">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>Matching a slope field to its defining differential equation</title>
+    <script src="../khan-exercise.js"></script>
+</head>
+
+<body>
+    <div class="exercise">
+        <div class="problems">
+
+            <div id="slopeField">
+
+           
+                <div class="vars">
+                    <!--  Setting up variables for the slope field-->
+                    <var id="A">randRange( -1, 1 )</var>
+                    <var id="B">randRange( -1, 1 )</var>
+                    <var id="C">randRange( -2, 2 )</var>
+                    <var id="EXP">A+"*x+"+B+"*y+"+C</var>
+                    <var id="textEXP">MathFunction.parse(EXP).tex()</var>
+                    <var id = "F">(function(X,Y){
+                    	return MathFunction.parse(EXP).evaluate({x:X,y:Y})
+                    	})</var>
+                    
+                    <!-- Setting up a different diff EQ  This serves as the "wrong answer"-->
+                    <var id="A2">randRangeExclude(-1,1,[A])</var>
+                    <var id="B2">randRangeExclude(-1,1,[B])</var>
+                    <var id="C2">randRange( -1, 1 )</var>
+                    <var id="EXP2">A2+"*x+"+B2+"*y+"+C2</var>
+                    <var id="incDec">(function(x){
+                    	if (x>0){
+                    		return "increases"
+                    		}
+                    	else {return "decreases"}
+                    	})</var>
+                    	  <var id="posNeg">(function(x){
+                    	if (x>0){
+                    		return "positive"
+                    		}
+                    	else {return "negative"}
+                    	})</var>
+                    <var id="bothNonZero">
+                    	<p><code></code>For a fixed value of <code>y</code>, increasing the value of <code>x</code> <var>incDec(A)</var> the slope</p>
+                    	<p>For a fixed value of <code>x</code>, increasing the value of <code>y</code> <var>incDec(B)</var> the slope</p>
+                    	<p>Thus the coefficient of <code>x</code> should be <var>posNeg(A)</var> and the coefficient of <code>y</code> should be <var>posNeg(B)</var></p>
+                    	<p>Thus the solution is <code>\dfrac{dy}{dx} = <var>A</var>x+<var>B</var>y</code>+<var>C</var></code></p>
+                    </var>
+                    <var id = "AZero">
+                    	<p> For this slope field, the slope is the same along any horizontal line </p>
+                    	<p> Thus the differential equation should show that the slope depends only on <code>y</code></p>
+                    	<p> Thus the solution is <code>\dfrac{dy}{dx} = <var>A</var>x+<var>B</var>y</code>+<var>C</var></code></p>
+                    </var>
+                    <var id = "BZero">
+                    	<p> For this slope field, the slope is the same along any vertical line </p>
+                    	<p> Thus the differential equation should show that the slope depends only on <code>x</code></p>
+                    	<p> Thus the solution is <code>\dfrac{dy}{dx} = <var>A</var>x+<var>B</var>y</code>+<var>C</var></code></p>
+                    </var>
+                    <var id = "crazyHints">
+                    	(function(){
+							if (A*B !=0){return bothNonZero}
+							else if (A ==0){return AZero}
+							else if (B ==0){return BZero}
+							})()
+                    </var>
+                  
+                    
+                </div>
+                
+              
+                <div class="problem">
+					<p>Which differential equation has the slope field displayed below?</p>
+                    <div class="graphie" id="grid">
+                        graphInit({
+                            range: 10,
+                            scale: 20,
+                            axisArrows: "&lt;-&gt;",
+                            gridOpacity: 0.0005,
+                            axisOpacity: 0.2,
+                            tickOpacity: 0.00004,
+                           
+                        });
+					
+						
+						//This function plots the slope field
+						(function(){
+						var dist = .8
+						for (var i=-10/dist;i<10/dist;i++){
+							for (var j=-10/dist;j<10/dist;j++){
+								var theta = Math.atan(F(i*dist,j*dist))
+								line([i*dist-Math.cos(theta)*.25*dist,j*dist-.25*dist*Math.sin(theta)],[i*dist+.25*dist*Math.cos(theta),j*dist+.25*dist*Math.sin(theta)],{stroke: BLUE, opacity: .6})
+							}
+						}
+						})();
+						
+        
+                        
+                        
+                    </div>
+                </div>
+               <p class="solution"><code>\dfrac{dy}{dx} = <var>A</var>x+<var>B</var>y</code>+<var>C</var></code></p>
+                      <ul class="choices">
+                    <li><code>\dfrac{dy}{dx} = <var>A2</var>x+<var>B2</var>y</code>+<var>C2</var></code></li>
+                    
+                </ul>
+				<div class="hints">
+					<var>crazyHints</var>
+				</div>
+    </div>
+    	</div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html data-require="math interactive graphie polynomials steveMath8 calculus">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>Using Newtons method to approximate roots of polynomials</title>
+    <script src="../khan-exercise.js"></script>
+</head>
+
+<body>
+    <div class="exercise">
+        <div class="problems">
+
+            <div id="newtonsMethod">
+
+           
+                <div class="vars" data-ensure="f(0)!=0 && (opSign(f(-8),f(-6)) || opSign(f(-6),f(-4)) || opSign(f(-4),f(-2)) || opSign(f(-2),f(0)) || opSign(f(0),f(2)) || opSign(f(2),f(4)) || opSign(f(4),f(6)) || opSign(f(6),f(8)) )">
+                 	<var id="poly">new Polynomial(0, randRange(3,5))</var>
+                 	<var id="f">(function(x){return poly.evalOf(x)})</var>
+                 	<var id="ddxPoly">ddxPolynomial(poly)</var>
+                 	<var id="g">(function(x){return ddxPoly.evalOf(x)})</var>
+                 	<var id="zerosArray">(function(){
+                 					var u = [];
+                 					for (var i =0; i&lt;8; i++){
+                 						if (opSign( f(-8+2*i), f(-6+2*i) )){
+                 							u.push(-8+2*i);
+                 							}
+                 						}
+                 					return u;
+                 					})()</var>
+                 	<var id="startX">zerosArray[randRange(0,zerosArray.length-1)]</var>
+                 	<var id="X1">startX - f(startX)/g(startX)</var>
+                 	<var id="X2">X1 - f(X1)/g(X1)</var>
+                </div>
+                
+              
+         
+              <p class = "question"> 
+                  Consider the polynomial <code>f(x) = <var>poly.text()</var> \hphantom{A}</code>.  Since <code>f(<var>startX</var>) = <var>f(startX)</var></code> and
+                  <code>f(<var>startX+2</var>) = <var>f(startX+2)</var></code>, we know by the intermediate value theorem that <code>f</code> has a root between these two
+                  abscissas.  Let <code>x_0  = <var>startX</var></code> in Newton's method.  Calculate <code>x_2</code>.
+               </p>
+               <p>
+               	Use as many digits of accuracy as you can throughout the process, so you do not accumulate too many rounding errors. 
+               	 If you can write a program to do this for you, or make a spreadsheet, all the better!
+               </p>
+               <p>
+               	Also note:  You can use this method to approximate roots which have no formula in terms of radicals, or to get decimal approximations for roots that are written in terms of radicals.
+                
+                <p class="solution" data-inexact data-max-error="0.1" data-type="decimal"><var>X2</var></p>
+				
+				<div class="hints">
+					<div>
+						<p>
+							<code>f'(x) =  <var>ddxPoly.text()</var></code>, and Newton's method works iteratively by letting <code>x_{n+1} =  x_n - \dfrac{f(x_n)}{f'(x_n)}</code>
+						</p>
+							 <div class="graphie" id="grid">
+										graphInit({
+										range: [[0,3],[-1,5]],
+										scale: [100,30],
+										tickStep: 1,
+										gridOpacity: 0.00005,
+										axisOpacity: 0.5,
+										tickOpacity: 0.00004,
+										
+										  });
+												
+										  plot(function( x ) {
+										  return ( x*x-2);
+										  }, [-12, 12], {
+										  stroke: RED,
+										  strokeWidth: 3
+										  });
+														 
+										label([2.4,-0.1],"x_n");
+										line([2.4,0],[2.4, 2.4*2.4-2],{opacity:0.3});
+										line ([2.4, 2.4*2.4-2], [2.4-(2.4*2.4-2)/2/2.4,0]);
+										label([2.4-(2.4*2.4-2)/2/2.4,-0.1],"x_{n+1}")
+     					     </div>
+						
+					</div>
+					<p>
+						Since we are given that <code>x_0 = <var>startX</var></code>, we know that 
+						<code>x1 = <var>startX</var> - \dfrac{f(<var>startX</var>)}{f'(<var>startX</var>)} = <var>startX</var> - \dfrac{<var>f(startX)</var>}{<var>g(startX)</var>} \approx <var>X1</var></code>
+					</p>
+					<p>
+						Thus <code>x2 = <var>X1</var> - \dfrac{f(<var>X1</var>)}{f'(<var>X1</var>)} = <var>X1</var> - \dfrac{<var>f(X1)</var>}{<var>g(X1)</var>} \approx <var>X2</var></code>
+					</p>
+				</div>
+    </div>
+    	</div>
+    </div>
+</body>
+</html>
