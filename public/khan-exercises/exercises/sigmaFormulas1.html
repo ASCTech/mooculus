@@ -1,0 +1,137 @@
+<html data-require="math">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>Using the integer power sum forumlas 1</title>
+    <script src="../khan-exercise.js"></script>
+</head>
+
+<body>
+    <div class="exercise">
+        <div class="problems">
+
+            <div id="power0">
+
+           
+                <div class="vars">
+                
+                    <var id="U">randRange( 20, 30)</var>
+                    <var id ="constant">randRange(1,10)</var>
+                    <var id ="ANSWER">U*constant</var>
+                    
+                </div>
+                
+              
+              <p class = "question">Evaluate <code>\displaystyle\sum\limits_{i=<var>1</var>}^{<var>U</var>} \left(<var>constant</var> \right)</code></p>
+                <div class="problem">
+					
+
+                </div>
+                 <div class="solution"><var>ANSWER</var></div>
+				<div class="hints">
+				<p>
+					<code>\displaystyle\sum\limits_<var>1</var>^{<var>U</var>} \left(<var>constant</var> \right) </code> is just asking you to sum <code><var>constant</var></code> repeatedly 
+					<code><var>U</var></code> times.
+				</p>
+				<p>
+					This is the definition of multiplication.
+				</p>
+				<p>
+					The answer is <code><var>constant</var> \cdot <var>U</var> = <var>ANSWER</var></code>
+				</p>
+				
+				</div>
+    </div>
+  		    <div id="power1">
+
+           
+                <div class="vars">
+                
+                    <var id="U">randRange( 10, 40)</var>
+                    <var id ="ANSWER">U*(U+1)/2</var>
+                    
+                </div>
+                
+              
+              <p class = "question">Evaluate <code>\displaystyle\sum\limits_{i=<var>1</var>}^{<var>U</var>}  i </code></p>
+                <div class="problem">
+					
+
+                </div>
+                 <div class="solution"><var>ANSWER</var></div>
+				<div class="hints">
+				
+					<p>
+						The sum formula says <code>\displaystyle\sum\limits_{i=<var>1</var>}^{n}  i  = \dfrac{n \cdot (n+1)}{2}</code>
+					</p>
+					<p>
+						So <code>\displaystyle\sum\limits_{i=<var>1</var>}^{<var>U</var>}  i  =\dfrac{<var>U</var> \cdot <var>U+1</var>}{2}  = <var>U*(U+1)/2</var></code>
+					</p>
+				
+				
+				
+				</div>
+    </div>
+    		<div id="power2">
+
+           
+                <div class="vars">
+                
+                    <var id="U">randRange( 10, 40)</var>
+                    <var id ="ANSWER">U*(U+1)*(2*U+1)/6</var>
+                    
+                </div>
+                
+              
+              <p class = "question">Evaluate <code>\displaystyle\sum\limits_{i=<var>1</var>}^{<var>U</var>}  i^2 </code></p>
+                <div class="problem">
+					
+
+                </div>
+                 <div class="solution"><var>ANSWER</var></div>
+				<div class="hints">
+				
+					<p>
+						The sum formula says <code>\displaystyle\sum\limits_{i=<var>1</var>}^{n}  i^2  = \dfrac{n \cdot (n+1) \cdot (2n+1)}{6}</code>
+					</p>
+					<p>
+						So <code>\displaystyle\sum\limits_{i=<var>1</var>}^{<var>U</var>}  i^2  =\dfrac{<var>U</var> \cdot <var>U+1</var> \cdot <var>2*U+1</var>}{6}  = <var>U*(U+1)*(2*U+1)/6</var></code>
+					</p>
+				
+				
+				
+				</div>
+    </div>
+            <div id="power3">
+
+           
+                <div class="vars">
+                
+                    <var id="U">randRange( 10, 40)</var>
+                    <var id ="ANSWER">U*U*(U+1)*(U+1)/4</var>
+                    
+                </div>
+                
+              
+              <p class = "question">Evaluate <code>\displaystyle\sum\limits_{i=<var>1</var>}^{<var>U</var>}  i^3 </code></p>
+                <div class="problem">
+					
+
+                </div>
+                 <div class="solution"><var>ANSWER</var></div>
+				<div class="hints">
+				
+					<p>
+						The sum formula says <code>\displaystyle\sum\limits_{i=<var>1</var>}^{n}  i^3  = \left( \dfrac{n \cdot (n+1)}{2}\right)^2</code>
+					</p>
+					<p>
+						So <code>\displaystyle\sum\limits_{i=<var>1</var>}^{<var>U</var>}  i^3  =\dfrac{<var>U</var> \cdot <var>U+1</var> }{2}  = \left( <var>U*(U+1)/2</var> \right)^2 = <var>ANSWER</var></code>
+					</p>
+				
+				
+				
+				</div>
+    </div>
+    	</div>
+    </div>
+</body>
+</html>

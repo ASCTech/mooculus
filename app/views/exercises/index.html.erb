@@ -6,15 +6,19 @@
   <strong>Login!</strong>  To do the practice exercises, you must first <%= link_to 'sign in to Coursera', user_omniauth_authorize_path(:coursera) %>.
 </div>
 <% end %>
+
+<% current_week = 9 %>
+
 <div class="accordion" id="accordion">
 <% for week in @exercises_by_weeks.keys.sort.reverse %>
+<% if week <= current_week %>
   <div class="accordion-group">
     <div class="accordion-heading">
       <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse<%= week %>">
         <h4>Week <%= week %></h4>
       </a>
     </div>
-    <div id="collapse<%= week %>" class="accordion-body collapse <% if week == 8 %> in <% end %>">
+    <div id="collapse<%= week %>" class="accordion-body collapse <% if week == current_week %> in <% end %>">
       <div class="accordion-inner">
 
 <table class="table table-striped">
@@ -42,6 +46,7 @@
       </div>
     </div>
   </div>
+<% end %>
 <% end %>
 </div>
 

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html data-require="math interactive graphie steveMath8 math-function-parser">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>Play with drawing solutions to differential equations</title>
+    <script src="../khan-exercise.js"></script>
+</head>
+
+<body>
+    <div class="exercise">
+        <div class="problems">
+
+            <div id="slopeField">
+
+           
+                <div class="vars">
+                    <!--  Setting up variables for the slope field and a correct solution-->
+                    <var id="A">randRange( -2, 2 )/2</var>
+                    <var id="B">randRange( -2, 2 )/2</var>
+                    <var id = "startX">randRange(-3,3)</var>
+                    <var id="startY">randRange(-3,3)</var>
+                    <var id="EXP">A+"*x+"+B+"*y + cos(x)"</var>
+                    <var id="textEXP">MathFunction.parse(EXP).tex()</var>
+                    <var id = "F">(function(X,Y){
+                    	return MathFunction.parse(EXP).evaluate({x:X,y:Y})
+                    	})</var>
+                </div>
+                
+              
+              <p class = "question"> Below is a slope field with a green point marked.  Use the scratchpad (located at the far right underneath the progress bar) to try to draw the solution
+              to the defining differential equation of the slope field which passes through the marked point.  Then click "hint" to reveal the actual solution.  How close were you?</p>
+              <p> You will not be graded on your work for this problem - just play.  Clicking the "Check Answer" button will automatically mark you correct and move you on to the next
+              problem</p>
+                <div class="problem">
+					
+                    <div class="graphie" id="grid">
+                        graphInit({
+                            range: 10,
+                            scale: 20,
+                            axisArrows: "&lt;-&gt;",
+                            gridOpacity: 0.0005,
+                            axisOpacity: 0.2,
+                            tickOpacity: 0.00004,
+                           
+                        });
+					
+				
+					
+					    circle( [startX,startY], 1/4, {
+         			     stroke: "none",
+         			     fill: "#37ca3e"
+           			     });
+						
+						//This function plots the slope field
+						(function(){
+						var dist = .8
+						for (var i=-10/dist;i<10/dist;i++){
+							for (var j=-10/dist;j<10/dist;j++){
+								var theta = Math.atan(F(i*dist,j*dist))
+								line([i*dist-Math.cos(theta)*.25*dist,j*dist-.25*dist*Math.sin(theta)],[i*dist+.25*dist*Math.cos(theta),j*dist+.25*dist*Math.sin(theta)],{stroke: BLUE, opacity: .6})
+							}
+						}
+						})();
+						
+        
+                        
+                        
+                    </div>
+                </div>
+                 <div class="solution" data-type="custom">
+
+                    <div class="guess">1</div>
+                    <div class="validator-function">
+                        return guess==1;
+                    </div>
+                    
+                </div>
+				<div class="hints">
+					<div class="graphie" data-update="grid">
+							// This function uses Euler's method to plot the correct solution to the Diff.EQ
+					(function(){
+					var x= startX;
+					var y= startY;
+					for (i=0;i<150;i++){
+						line([x,y],[x+.1,y+.1*F(x,y)],{stroke: RED})
+						x = x+.1
+						y=y+.1*F(x,y)
+						}
+					var x= startX;
+					var y= startY;
+					for (i=0;i<150;i++){
+						line([x,y],[x-.1,y-.1*F(x,y)],{stroke: RED})
+						x = x-.1
+						y=y-.1*F(x,y)
+						}
+					})();
+					</div>
+				</div>
+    </div>
+    	</div>
+    </div>
+</body>
+</html>

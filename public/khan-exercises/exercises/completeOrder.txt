@@ -90,3 +90,14 @@ optimizationRectangleParabola.html
 optimizationPainting.html
 optimizationDrug.html
 optimizationBox.html
+slopeField.html
+slopeFieldPlay.html
+slopeFieldEQ.html
+eulerMethod.html
+newtonsMethod.html
+antiderivativeSketchPlay.html
+comparingFunctionAndAntiderivative.html
+basicSigma.html
+sigmaFormulas1.html
+sigmaFormulas2.html
+riemannSumIntegral.html

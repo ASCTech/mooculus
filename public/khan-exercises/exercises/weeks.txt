@@ -98,3 +98,17 @@ optimizationPainting
 optimizationDrug
 optimizationBox
 optimizationCubic
+* Week 9
+slopeField
+slopeFieldPlay
+slopeFieldEQ
+eulerMethod
+newtonsMethod
+* Week 10
+antiderivativeSketchPlay
+comparingFunctionAndAntiderivative
+* Week 11
+basicSigma
+sigmaFormulas1
+sigmaFormulas2
+riemannSumIntegral

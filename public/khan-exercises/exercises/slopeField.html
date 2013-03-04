@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html data-require="math interactive graphie steveMath8 math-function-parser">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>How does the solution of a differential equation relate to its slope field?</title>
+    <script src="../khan-exercise.js"></script>
+</head>
+
+<body>
+    <div class="exercise">
+        <div class="problems">
+
+            <div id="slopeField">
+
+           
+                <div class="vars">
+                    <!--  Setting up variables for the slope field and a correct solution-->
+                    <var id="A">randRange( -2, 2 )/2</var>
+                    <var id="B">randRange( -2, 2 )/2</var>
+                    <var id="startY">randRange(-3,3)</var>
+                    <var id="EXP">A+"*x+"+B+"*y + cos(x)"</var>
+                    <var id="textEXP">MathFunction.parse(EXP).tex()</var>
+                    <var id = "F">(function(X,Y){
+                    	return MathFunction.parse(EXP).evaluate({x:X,y:Y})
+                    	})</var>
+                    
+                    <!-- Setting up a different diff EQ, and a solution to that one.  This serves as the "wrong answer"-->
+                    <var id="A2">randRangeExclude(-2,2,[2*A])/2</var>
+                    <var id="B2">randRangeExclude(-2,2,[2*B])/2</var>
+                    <var id="EXP2">A2+"*x+"+B2+"*y + cos(x)"</var>
+                     <var id = "F2">(function(X,Y){
+                    	return MathFunction.parse(EXP2).evaluate({x:X,y:Y})
+                    	})</var>
+                    <var id="startY2">randRange(-3,3)</var>
+                    
+                    <!-- Flips a coin to decide if the correct answer is red or black-->
+                    <var id="redBlack">randRange(0,1)</var>
+                    <var id="correct">(function(){
+                    		if (redBlack == 0){
+                    			return "RED"
+                    			}
+                    		else {return "BLACK"}
+                    		})()</var>
+                     <var id="incorrect">(function(){
+                    		if (redBlack == 0){
+                    			return "BLACK"
+                    			}
+                    		else {return "RED"}
+                    		})()</var>
+                    
+                </div>
+                
+              
+                <div class="problem">
+					<p>Which of the two curves is a solution to the differential equation which defines the slope field?</p>
+                    <div class="graphie" id="grid">
+                        graphInit({
+                            range: 10,
+                            scale: 20,
+                            axisArrows: "&lt;-&gt;",
+                            gridOpacity: 0.0005,
+                            axisOpacity: 0.2,
+                            tickOpacity: 0.00004,
+                           
+                        });
+					
+					// This function uses Euler's method to plot the correct solution to the Diff.EQ
+					(function(){
+					var x= 0;
+					var y= startY;
+					for (i=0;i<100;i++){
+						line([x,y],[x+.1,y+.1*F(x,y)],{stroke: correct})
+						x = x+.1
+						y=y+.1*F(x,y)
+						}
+					var x= 0;
+					var y= startY;
+					for (i=0;i<100;i++){
+						line([x,y],[x-.1,y-.1*F(x,y)],{stroke: correct})
+						x = x-.1
+						y=y-.1*F(x,y)
+						}
+					})();
+					
+					//This function uses Euler's method to plot the solution to the wrong Diff.EQ
+					(function(){
+					var x= 0;
+					var y= startY2;
+					for (i=0;i<100;i++){
+						line([x,y],[x+.1,y+.1*F2(x,y)],{stroke: incorrect})
+						x = x+.1
+						y=y+.1*F2(x,y)
+						}
+					var x= 0;
+					var y= startY2;
+					for (i=0;i<100;i++){
+						line([x,y],[x-.1,y-.1*F2(x,y)],{stroke: incorrect})
+						x = x-.1
+						y=y-.1*F2(x,y)
+						}
+					})();
+						
+						//This function plots the slope field
+						(function(){
+						var dist = .8
+						for (var i=-10/dist;i<10/dist;i++){
+							for (var j=-10/dist;j<10/dist;j++){
+								var theta = Math.atan(F(i*dist,j*dist))
+								line([i*dist-Math.cos(theta)*.25*dist,j*dist-.25*dist*Math.sin(theta)],[i*dist+.25*dist*Math.cos(theta),j*dist+.25*dist*Math.sin(theta)],{stroke: BLUE, opacity: .6})
+							}
+						}
+						})();
+						
+        
+                        
+                        
+                    </div>
+                </div>
+               <p class="solution"><var>correct</var></p>
+                      <ul class="choices" data-category="true">
+                    <li>RED</li>
+                    <li>BLACK</li>
+                </ul>
+				<div class="hints">
+					<p>By definition, a slope field tells you what slope the solution to a differential equation is supposed to have at a given point</p>
+					<p>So every time the solution to a differential equation passes through a point, the little segment of the slope field at that point should be tangent to the solution curve</p>
+					<p>More poetically, the solution should flow through the slope field like a leaf on a river.  This is why we have made the slope field blue.</p>
+					<p>Of the two choices, the only one that does this is <var>correct</var></p>
+				</div>
+    </div>
+    	</div>
+    </div>
+</body>
+</html>

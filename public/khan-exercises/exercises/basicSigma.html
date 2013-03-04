@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html data-require="math interactive graphie steveMath8 math-function-parser">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>Understanding sigma notation</title>
+    <script src="../khan-exercise.js"></script>
+</head>
+
+<body>
+    <div class="exercise">
+        <div class="problems">
+
+            <div id="basicSigma">
+
+           
+                <div class="vars">
+                    <!--  Setting up variables for the slope field and a correct solution-->
+                    <var id="L">randRange(-1,3 )</var>
+                    <var id="N">randRange(3,5)</var>
+                    <var id="U">randRange( L+1, L+N)</var>
+                    <var id="f">(function(){
+                    			var poly = new Polynomial(0,randRange(0,2));
+                    			poly.variable = "i";
+                    			return poly
+                    			})()</var>
+                    <var id ="ANSWER">(function(){
+                    		var sum = 0;
+                    		for (var k = L; k&lt;U+1;k++){
+                    			sum = sum+f.evalOf(k);
+                    			};
+                    		return sum
+                    		})()</var>
+                    <var id="hintExpression1">
+                    (function(){
+                    	var expr = "\\left("+f.hintEvalOf(L)+"\\right)" 
+                    	for (var k = L+1; k&lt;U+1;k++){
+                    			expr = expr+"+\\left("+f.hintEvalOf(k)+"\\right)" 
+                    			};
+                    	return expr
+                    	})()	
+                    </var>
+                    <var id="hintExpression2">
+                    (function(){
+                    	var expr = "\\left("+f.evalOf(L)+"\\right)" 
+                    	for (var k = L+1; k&lt;U+1;k++){
+                    			expr = expr+"+\\left("+f.evalOf(k)+"\\right)" 
+                    			};
+                    	return expr
+                    	})()	
+                    </var>
+                </div>
+                
+              
+              <p class = "question">Evaluate <code>\displaystyle\sum\limits_{i=<var>L</var>}^{<var>U</var>} \left(<var>f.text()</var> \right)</code></p>
+                <div class="problem">
+					
+
+                </div>
+                 <div class="solution"><var>ANSWER</var></div>
+				<div class="hints">
+				<p>
+					<code>\displaystyle\sum\limits_<var>L</var>^{<var>U</var>} \left(<var>f.text()</var> \right) = <var>hintExpression1</var></code>
+				</p>
+				<p>
+					<code>\hphantom{\displaystyle\sum\limits_<var>L</var>^{<var>U</var>} \left(<var>f.text()</var> \right)} = <var>hintExpression2</var></code>
+				</p>
+				<p>
+					<code>\hphantom{\displaystyle\sum\limits_<var>L</var>^{<var>U</var>} \left(<var>f.text()</var> \right)} = <var>ANSWER</var></code>
+				</p>
+				
+				</div>
+    </div>
+    	</div>
+    </div>
+</body>
+</html>
