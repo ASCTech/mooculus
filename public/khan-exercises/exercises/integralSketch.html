@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html data-require="math graphie interactive graphie-helpers steveMath8">
+  <head>
+        <title>Drawing integral valued functions</title>
+        <script src="../khan-exercise.js"></script>
+  </head>
+  <body>
+    <div class="exercise">
+      <div class="problems">   
+      	    <div id="yes"  data-weight="2">
+           <div class="vars" data-ensure="zeroXs.length&gt;0">
+              	  
+	<var id = "L">randRange(-3,3)</var>
+	<var id = "Xs">makeXList()</var>
+	<var id = "A">KhanUtil.rand(4)</var>
+	<var id = "B">KhanUtil.rand(4)</var>
+	<var id = "Ys">makeYList(-8,8,Xs.length)</var>
+	<var id = "points">makeCoordinates(Xs,Ys)</var>
+	<var id = "f">(function(x){return niceFunction(x,points)})</var>
+	<var id = "F">(function(x){return numInt(f,L,x)})</var>
+	<var id = "zeroXs">locateZeros(f,Xs)</var>
+	<var id = "maxF">(function(F,zeroXs){
+				var max = Math.abs(F(-10))
+				for (var i=0;i&lt;zeroXs.length;i++){
+					if (Math.abs(F(zeroXs[i])) &gt; Math.abs(max)){
+						max = Math.abs(F(zeroXs[i]))
+						}
+					}
+				return max
+			})(F,zeroXs)
+		
+		</var>
+		
+	
+	
+	
+	
+	
+	
+	
+		          	
+      </div>
+          
+          
+          	<p class="problem">
+          	 	The function <code>f</code> is drawn below.  Use the scratchpad (located at the far right underneath the progress bar) to try to draw the  integral 
+          	 	valued function <code>A(x) = \displaystyle\int_{<var>L</var>}^{x}f(t) dt</code>
+          	</p>
+          	 <p> 
+          	 	 You will not be graded on your work for this problem - just play.  Clicking the "Check Answer" button will automatically mark you correct and move you on to the next
+             	 problem
+             </p>
+          	
+         
+          
+         
+          <div class="graphie" id="grid">
+            graphInit({
+            range: [[-10,10],[-maxF,maxF]],
+            scale: [20,200/maxF],
+            tickStep: 1,
+			gridOpacity: 0.05,
+            axisOpacity: 0.1,
+            tickOpacity: 0.00004,
+            
+              });
+                    
+           
+				
+				
+			
+			 plot(function( x ) {
+              return ( f(x));
+              }, [-12, 12], {
+              stroke: BLUE,
+              strokeWidth: 2
+              });   
+          </div>
+                
+                
+                     
+           <div class="solution" data-type="custom">
+
+                    <div class="guess">1</div>
+                    <div class="validator-function">
+                        return guess==1;
+                    </div>
+                    
+                </div>
+                  
+                 
+                 
+              
+
+          <div class="hints">
+       				
+       			<div>
+       				<p>
+       					<code>A(<var>L</var>)=0</code>
+       				</p>
+       				<p>
+       					We have added vertical lines at each of the locations where the  function is zero:  These are the places of special interest.
+       				</p>
+       				<div class="graphie" data-update="grid">
+       					for (var l =0; l&lt;zeroXs.length;l++){
+       							 line([zeroXs[l],-maxF],[zeroXs[l],maxF],{opacity:.4})	
+       						}
+       				</div>
+       				
+       			</div>
+       			<div>
+       				<p>
+       					The function is  positive on each of the intervals which have been highlighted in yellow, so <code>A</code> should be increasing on these intervals, and decreasing everywhere else.
+       				</p>
+       				<div class="graphie" data-update="grid">
+       					if (f(-10) &gt;=0){
+       						 plot(function( x ) {
+             					 return ( f(x));
+            					  }, [-10, zeroXs[0]], {
+             					 stroke: "#ffef00",
+       							opacity: .8,
+       							strokeWidth: 5,
+              					});
+       						}
+       					
+       					if (f(10) &gt;=0){
+       						plot(function( x ) {
+             					 return ( f(x));
+            					  }, [zeroXs[zeroXs.length-1], 10], {
+             					 stroke: "#ffef00",
+       							opacity: .8,
+       							strokeWidth: 5,
+              					});
+       						
+       						};
+       					
+       					for (var j=0;j&lt;zeroXs.length-1;j++){
+       						var mid = (zeroXs[j]+zeroXs[j+1])/2;
+       						if (f(mid)&gt;0){
+       							
+       							plot(function( x ) {
+             					 return ( f(x));
+            					  }, [zeroXs[j], zeroXs[j+1]], {
+             					 stroke: "#ffef00",
+       							opacity: .8,
+       							strokeWidth: 5,
+              					});
+       							
+       							
+       							}
+       						};
+       						
+       						
+       						
+       						
+       						
+       				</div>
+       			
+       			</div>
+       			<div>
+       				<p>
+						This is the graph of the <code>A</code>.  How did you do?
+					</p>
+					<div class="graphie" data-update="grid">
+						   plot(function( x ) {
+            				  return ( F(x));
+            				  }, [-12, 12], {
+							  stroke: RED,
+							  strokeWidth: 4
+							  });
+					</div>       			
+       			</div>
+       		</div>
+          </div>   
+        </div>             
+      </div>
+</body>
+</html>

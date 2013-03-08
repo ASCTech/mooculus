@@ -100,4 +100,9 @@ comparingFunctionAndAntiderivative.html
 basicSigma.html
 sigmaFormulas1.html
 sigmaFormulas2.html
+estimatingIntegrals.html
+smallRiemann.html
 riemannSumIntegral.html
+areaValuedFunctionBehavior.html
+integralSketch.html
+wiggleInputIntegral.html

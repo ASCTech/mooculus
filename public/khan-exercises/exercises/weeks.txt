@@ -112,3 +112,9 @@ basicSigma
 sigmaFormulas1
 sigmaFormulas2
 riemannSumIntegral
+smallRiemann
+areaValuedFunctionBehavior
+estimatingIntegrals
+integralSketch
+* Week 12
+wiggleInputIntegral
