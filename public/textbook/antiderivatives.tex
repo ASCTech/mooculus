@@ -1,0 +1,120 @@
+\chapter{Antiderivatives}
+
+\section{Basic Antiderivatives}
+
+Computing derivatives is not too difficult. At this point, you should
+be able to take the derivative of almost any function you can write
+down. However, undoing derivatives is much harder. This process of
+undoing a derivative is called taking an \textit{antiderivative}.
+
+\begin{definition}\index{antiderivative}
+A function $F(x)$ is called an \textbf{antiderivative} of $f(x)$ on an
+interval if
+\[
+F'(x) = f(x)
+\]
+for all $x$ in the interval.
+\end{definition}
+
+
+\begin{definition}\index{antiderivative!notation}\index{indefinite integral}
+The antiderivative is denoted by
+\[
+\int f(x) \d x = F(x)+C,
+\]
+where $C$ is a constant indicating that there a many possible
+antiderivaties, each varying by the addition of a constant.  This is
+often called the \textbf{indefinite integral}.
+\end{definition}
+
+Here are the basic antiderivatives. Note they come \textit{directly}
+from our derivative rules.
+
+
+\begin{fullwidth}
+\begin{mainTheorem}[Basic Antiderivatives of Common Functions]\label{theorem:basicAnti} \hfil
+\begin{multicols}{3}
+\begin{itemize}
+\item $\int k \d x= kx+C$.
+\item $\int x^n \d x= \frac{x^{n+1}}{n+1}+C\qquad(n\ne-1)$.
+\item $\int e^x \d x= e^x + C$.
+\item $\int a^x \d x= \frac{a^x}{\ln(a)}+C$.
+\item $\int \frac{1}{x} \d x= \ln|x|+C$.
+\item $\int \cos(x) \d x = \sin(x) + C$.
+\item $\int \sin(x) \d x = -\cos(x) + C$.  
+\item $\int \tan(x) \d x = \ln|\cos(x)| + C$.  
+\item $\int \sec^2(x) \d x = \tan(x) + C$. 
+\item $\int \csc^2(x) \d x = -\cot(x) + C$.
+\item $\int \sec(x)\tan(x) \d x = \sec(x) + C$.
+\item $\int \csc(x)\cot(x) \d x = -\csc(x) + C$.
+\item $\int \frac{1}{x^2+1}\d x = \arctan(x) + C$.
+\item $\int \frac{1}{\sqrt{1-x^2}}\d x= \arcsin(x)+C$.
+\end{itemize}
+\end{multicols}
+\end{mainTheorem}
+\end{fullwidth}
+It may seem that one could simply memorize these antiderivatives and
+antidifferentiating would be as easy as differentiating. This is
+\textbf{not} the case. The issue comes up when trying to combine these
+functions.  When taking derivatives we have the \textit{product rule}
+and the \textit{chain rule}. The analogues of these two rules are much
+more difficult to deal with when taking antiderivatives. However, not
+all is lost. We have the following analogue of the Sum Rule for
+derivatives, Theorem~\ref{theorem:sumRule}.
+
+\begin{mainTheorem}[The Sum Rule for Antiderivatives]\label{theorem:SRA}
+Given two functions $f(x)$ and $g(x)$ where $k$ is a constant:
+\begin{itemize}
+\item $\int k f(x) \d x= kF(x) + C$.
+\item $\int f(x) + g(x) \d x = F(x) + G(x) + C$.
+\end{itemize}
+\end{mainTheorem}
+
+
+\begin{example}
+Compute
+\[
+\int 3 x^7 \d x.
+\]
+\end{example}
+
+\begin{solution}
+Checking with our Theorem~\ref{theorem:basicAnti} and Theorem~\ref{theorem:SRA}, we see that 
+\begin{align*}
+\int 3 x^7 \d x &= 3 \int x^7 \d x\\
+&= 3 \cdot \frac{x^8}{8}+C.
+\end{align*}
+
+\end{solution}
+
+Now let's consider a slightly harder example.
+
+\begin{example}
+Compute
+\[
+\int \sin(3x) \d x
+\]
+\end{example}
+
+
+\begin{solution}
+Here we might take a guess, say
+\[
+\int \sin(3x) \d x \approx \cos(3x).
+\]
+Now take the derivative of $\cos(3x)$,
+\[
+\ddx \cos(3x) = -3\sin(3x).
+\]
+Ah, we are off by a factor of $3$. Hence
+\[
+\int \sin(3x) \d x = \frac{\sin(3x)}{-3} + C.
+\]
+\end{solution}
+
+
+
+
+
+ We advise that the mathematician view antiderivatives
+as a sort of \textit{puzzle}. Let's see an example.
