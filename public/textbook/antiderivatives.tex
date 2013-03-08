@@ -16,19 +16,21 @@ F'(x) = f(x)
 for all $x$ in the interval.
 \end{definition}
 
+We have special notion for the antiderivative:
 
 \begin{definition}\index{antiderivative!notation}\index{indefinite integral}
 The antiderivative is denoted by
 \[
 \int f(x) \d x = F(x)+C,
 \]
-where $C$ is a constant indicating that there a many possible
-antiderivaties, each varying by the addition of a constant.  This is
-often called the \textbf{indefinite integral}.
+where $dx$ identifies $x$ as the variable and $C$ is a constant
+indicating that there a many possible antiderivaties, each varying by
+the addition of a constant.  This is often called the
+\textbf{indefinite integral}.
 \end{definition}
 
-Here are the basic antiderivatives. Note they come \textit{directly}
-from our derivative rules.
+Here are the basic antiderivatives. Note each of these examples comes
+from knowing our.
 
 
 \begin{fullwidth}
@@ -70,6 +72,7 @@ Given two functions $f(x)$ and $g(x)$ where $k$ is a constant:
 \end{itemize}
 \end{mainTheorem}
 
+Let's put this rule and our knowlege of basic derivatives to work.
 
 \begin{example}
 Compute
@@ -98,15 +101,17 @@ Compute
 
 
 \begin{solution}
-Here we might take a guess, say
+Here we simply try to guess the antiderivative. Start with a guess of
 \[
 \int \sin(3x) \d x \approx \cos(3x).
 \]
-Now take the derivative of $\cos(3x)$,
+Now check to see if you are correct. Rake the derivative of
+$\cos(3x)$,
 \[
 \ddx \cos(3x) = -3\sin(3x).
 \]
-Ah, we are off by a factor of $3$. Hence
+Ah, we are off by a factor of $-3$. Hence we should multiply our guess
+by $1/-3$. We now find
 \[
 \int \sin(3x) \d x = \frac{\sin(3x)}{-3} + C.
 \]
