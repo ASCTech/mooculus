@@ -530,7 +530,7 @@ the axis of symmetry at any point is a circle.)
 \node [left,penColor] at (0,-.33) {$h$};
 
 \node [penColor,left] at (-1.5,1.42) {$V_{\text{c}} = \frac{\pi r^2h}{3}$};
-\node [penColor2, right] at (1.5,-1.42) {$V_{s} = \frac{4\pi r^3}{3}$};
+\node [penColor2, right] at (1.5,-1.42) {$V_{s} = \frac{4\pi R^3}{3}$};
 \end{tikzpicture}
 \caption{A cone inside a sphere.}
 \label{fig:cone-sphere}
@@ -547,10 +547,10 @@ Notice that the function we want to maximize, $\pi r^2h/3$, depends on
 use it to solve for one of the variables in terms of the other, so as
 to have a function of only one variable to maximize.  In this problem,
 the condition is apparent in the figure, as the upper corner of the
-triangle, whose coordinates are $(h-R,r)$, must be on the circle of
+triangle, whose coordinates are $(r,h-R)$, must be on the circle of
 radius $R$. Write
 \[
-(h-R)^2+r^2=R^2.
+r^2 + (h-R)^2=R^2.
 \] 
 Solving for $r^2$, since $r^2$ is found in the formula for the volume
 of the cone, we find 
