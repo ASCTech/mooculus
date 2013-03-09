@@ -292,7 +292,16 @@ leftmargin=40,outerlinecolor=textColor,fontcolor=textColor,backgroundcolor=backg
 skipbelow=\baselineskip]{proof}%
 {Proof}
 
-
+\declaretheoremstyle[ headfont=\normalfont\bfseries,
+  notefont=\mdseries, notebraces={(}{)}, bodyfont=\normalfont,
+  postheadspace=0.5em,
+  preheadhook={\begin{mdframed}[hidealllines=true,roundcorner=10pt,leftmargin=40,%
+rightmargin=40,backgroundcolor=definitionBackground,fontcolor=textColor,%%
+innertopmargin=6pt,%
+splittopskip=\topskip,skipbelow=\baselineskip,%
+skipabove=\baselineskip]},
+  postfoothook=\end{mdframed} ]{thmStyle}%
+\declaretheorem[style=thmStyle,name=Template,numberlike=mainTheorem]{template}
 
 
 \theoremheaderfont{\normalfont\bfseries}
@@ -344,6 +353,17 @@ font=\upshape
   splittopskip=\topskip,skipbelow=\baselineskip,skipabove=\baselineskip,
   font=\upshape ]{eulersMethod}% 
 {Euler's Method}
+
+\theoremheaderfont{\normalfont\bfseries} \theorembodyfont{\upshape}
+\newmdtheoremenv[leftmargin=40,%
+  rightmargin=40,backgroundcolor=definitionBackground,fontcolor=textColor,%%
+  innertopmargin=6pt,innerlinewidth=1,innerlinecolor=mainOtherBorder!20!background,
+  middlelinewidth=2,middlelinecolor=mainOtherBorder,
+  outerlinewidth=1,outerlinecolor=mainOtherBorder!10!background,
+  roundcorner=10pt,
+  splittopskip=\topskip,skipbelow=\baselineskip,skipabove=\baselineskip,
+  font=\upshape ]{guessingAntiderivatives}% 
+{How to Guess Antiderivatives}
 
 \theoremheaderfont{\normalfont\bfseries} \theorembodyfont{\upshape}
 \newmdtheoremenv[leftmargin=40,%

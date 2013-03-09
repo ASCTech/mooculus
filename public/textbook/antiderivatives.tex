@@ -24,7 +24,7 @@ The antiderivative is denoted by
 \int f(x) \d x = F(x)+C,
 \]
 where $dx$ identifies $x$ as the variable and $C$ is a constant
-indicating that there a many possible antiderivaties, each varying by
+indicating that there a many possible antiderivatives, each varying by
 the addition of a constant.  This is often called the
 \textbf{indefinite integral}.
 \end{definition}
@@ -68,11 +68,11 @@ derivatives, Theorem~\ref{theorem:sumRule}.
 Given two functions $f(x)$ and $g(x)$ where $k$ is a constant:
 \begin{itemize}
 \item $\int k f(x) \d x= kF(x) + C$.
-\item $\int f(x) + g(x) \d x = F(x) + G(x) + C$.
+\item $\int \left(f(x) + g(x)\right) \d x = F(x) + G(x) + C$.
 \end{itemize}
 \end{mainTheorem}
 
-Let's put this rule and our knowlege of basic derivatives to work.
+Let's put this rule and our knowledge of basic derivatives to work.
 
 \begin{example}
 Compute
@@ -82,20 +82,199 @@ Compute
 \end{example}
 
 \begin{solution}
-Checking with our Theorem~\ref{theorem:basicAnti} and Theorem~\ref{theorem:SRA}, we see that 
+By Theorem~\ref{theorem:basicAnti} and Theorem~\ref{theorem:SRA}, we
+see that
 \begin{align*}
 \int 3 x^7 \d x &= 3 \int x^7 \d x\\
 &= 3 \cdot \frac{x^8}{8}+C.
 \end{align*}
-
 \end{solution}
 
-Now let's consider a slightly harder example.
+The sum rule for antiderivatives, Theorem~\ref{theorem:SRA}, allows us to integrate term-by-term. Let's see an example of this.
 
 \begin{example}
 Compute
 \[
-\int \sin(3x) \d x
+\int \left(x^4 + 5x^2 - \cos(x)\right) \d x.
+\]
+\end{example}
+
+\begin{solution} 
+Let's start by simplifying the problem using the sum rule for
+antiderivatives, Theorem~\ref{theorem:SRA}.
+\[
+\int \left(x^4 + 5x^2 - \cos(x)\right) \d x = \int x^4 \d x + 5\int x^2 \d x - \int \cos(x) \d x.
+\]
+Now we may integrate term-by-term to find
+\[
+\int \left(x^4 + 5x^2 - \cos(x)\right) \d x = \frac{x^5}{4} + \frac{5x^3}{3}  - \sin(x)+C.
+\]
+\end{solution}
+
+
+\begin{warning}
+While the sum rule for antiderivatives allows us to integrate
+term-by-term, we cannot integrate \textit{factor-by-factor}, meaning
+that in general
+\[
+\int f(x)g(x) \d x \ne \int f(x) \d x\cdot \int g(x) \d x.
+\]
+\end{warning}
+
+
+
+
+
+
+
+
+\subsection*{Tips for Guessing Antiderivatives}
+
+
+Unfortunately, we cannot tell you how to compute every antiderivative.
+We advise that the mathematician view antiderivatives as a sort of
+\textit{puzzle}. Later we will learn a hand-full of techniques for
+computing antiderivatives. However, a robust and simple way to compute
+antiderivatives is guess-and-check.
+
+
+\begin{guessingAntiderivatives}\hfil
+\begin{enumerate}
+\item Make a guess for the antiderivative.
+\item Take the derivative of your guess.
+\item Note how the above derivative is different from the function
+  whose antiderivative you want to find.
+\item Change your original guess by \textbf{multiplying} by constants
+  or by \textbf{adding} in new functions.
+\end{enumerate}
+\end{guessingAntiderivatives}
+
+\begin{template}\label{template:powerchain}
+If the indefinite integral looks \emph{something} like
+\[
+\int \mathrm{stuff}' \cdot (\mathrm{stuff})^n \d x \qquad\text{then guess} \qquad \mathrm{stuff}^{n+1}
+\]
+where $n\ne -1$.
+\end{template}
+
+\begin{example} Compute
+\[
+\int \frac{x^3}{\sqrt{x^4 -6}} \d x.
+\]
+\end{example}
+
+\begin{solution}
+Start by rewriting the definite integral as
+\[
+\int x^3\left(x^4 -6\right)^{-1/2} \d x.
+\]
+Now start with a guess of 
+\[
+\int x^3\left(x^4 -6\right)^{-1/2} \d x \approx \left(x^4 -6\right)^{1/2}.
+\]
+Take the derivative of your guess to see if it is correct:
+\[
+\ddx  \left(x^4 -6\right)^{1/2} = (4/2)x^3\left(x^4 -6\right)^{-1/2}.
+\]
+We're off by a factor of $2/4$, so multiply our guess by this constant
+to get the solution,
+\[
+\int \frac{x^3}{\sqrt{x^4 -6}} \d x = (2/4)\left(x^4 -6\right)^{1/2}+C.
+\]
+\end{solution}
+
+
+\begin{template}\label{template:echain}
+If the indefinite integral looks \emph{something} like
+\[
+\int \mathrm{junk}\cdot e^{\mathrm{stuff}} \d x \qquad\text{then
+  guess}\qquad e^{\mathrm{stuff}} \text{ \textbf{or} }\mathrm{junk}
+\cdot e^{\mathrm{stuff}}.
+\]
+\end{template}
+
+
+\begin{example}
+Compute
+\[
+\int xe^{x} \d x.
+\]
+\end{example}
+
+
+\begin{solution}
+We try to guess the antiderivative. Start with a guess of
+\[
+\int xe^x \d x \approx xe^x.
+\]
+Take the derivative of your guess to see if it is correct:
+\[
+\ddx xe^x = e^x + xe^x.
+\]
+Ah! So we need only subtract $e^x$ from our original guess.  We now
+find
+\[
+\int xe^x \d x =xe^x - e^x + C.
+\]
+\end{solution}
+
+
+
+
+
+\begin{template}\label{template:lnchain}
+If the indefinite integral looks \emph{something} like
+\[
+\int \frac{\mathrm{stuff}'}{\mathrm{stuff}}\d x \qquad\text{then guess}\qquad\ln(\mathrm{stuff}).
+\]
+\end{template}
+
+\begin{example}
+Compute
+\[
+\int \frac{2x^2}{7x^3 + 3} \d x.
+\]
+\end{example}
+
+\begin{solution} We'll start with a guess of
+\[
+\int \frac{2x^2}{7x^3 + 3} \d x \approx \ln(7x^3+3).
+\]
+Take the derivative of your guess to see if it is correct:
+\[
+\ddx \ln(7x^3+3) = \frac{21x^2}{7x^3 + 3}.
+\]
+We are only off by a factor of $2/21$, so we need to multiply our
+original guess by this constant to get the solution,
+\[
+\int \frac{2x^2}{7x^3 + 3} \d x = (2/21)\ln(7x^3+3)+C.
+\]
+\end{solution}
+
+
+
+
+\begin{template}\label{template:trigchain}
+If the indefinite integral looks \emph{something} like
+\[
+\int \mathrm{junk}\cdot \sin(\mathrm{stuff}) \d x \qquad\text{then
+  guess}\qquad \cos(\mathrm{stuff}) \text{ \textbf{or} }\mathrm{junk}
+\cdot \cos(\mathrm{stuff}),
+\]
+likewise if you have 
+\[
+\int \mathrm{junk}\cdot \cos(\mathrm{stuff}) \d x \qquad\text{then
+  guess}\qquad \sin(\mathrm{stuff}) \text{ \textbf{or} }\mathrm{junk}
+\cdot \sin(\mathrm{stuff}),
+\]
+\end{template}
+
+
+
+\begin{example}
+Compute
+\[
+\int x^4\sin(3x^5+7) \d x.
 \]
 \end{example}
 
@@ -103,17 +282,16 @@ Compute
 \begin{solution}
 Here we simply try to guess the antiderivative. Start with a guess of
 \[
-\int \sin(3x) \d x \approx \cos(3x).
+\int x^4\sin(3x^5+7)\d x \approx \cos(3x^5+7).
 \]
-Now check to see if you are correct. Rake the derivative of
-$\cos(3x)$,
+To see if your guess is correct, take the derivative of $\cos(3x)$,
 \[
-\ddx \cos(3x) = -3\sin(3x).
+\ddx \cos(3x^5+7) = -15x^4\sin(3x^5+7).
 \]
-Ah, we are off by a factor of $-3$. Hence we should multiply our guess
-by $1/-3$. We now find
+We are off by a factor of $-1/15$. Hence we should multiply our
+original guess by this constant to find
 \[
-\int \sin(3x) \d x = \frac{\sin(3x)}{-3} + C.
+\int x^4\sin(3x^5+7) \d x = \frac{-\sin(3x)}{15} + C.
 \]
 \end{solution}
 
@@ -121,5 +299,227 @@ by $1/-3$. We now find
 
 
 
- We advise that the mathematician view antiderivatives
-as a sort of \textit{puzzle}. Let's see an example.
+\subsection*{Final Thoughts}
+Computing antiderivatives is a place where insight and rote
+computation meet. We cannot teach you a method that will always
+work. Moreover, merely \emph{understanding} the examples above will
+probably not be enough for you to become proficient in computing
+antiderivatives. You must practice, practice, practice!
+
+
+
+\begin{exercises}
+\noindent Compute the following antiderivatives.
+\begin{multicols}{2}
+\begin{exercise}
+$\int 5\d x$
+\begin{answer}
+\end{answer}
+\end{exercise}
+
+\begin{exercise}
+$\int \left(-7x^4+8\right)\d x$
+\begin{answer}
+\end{answer}
+\end{exercise}
+
+\begin{exercise}
+$\int \left(2e^x -4\right)\d x$
+\begin{answer}
+\end{answer}
+\end{exercise}
+
+\begin{exercise}
+$\int \left(7^x - x^7\right)\d x$
+\begin{answer}
+\end{answer}
+\end{exercise}
+
+
+\begin{exercise}
+$\int \left(\frac{15}{x}+x^{15}\right)\d x$
+\begin{answer}
+\end{answer}
+\end{exercise}
+
+
+\begin{exercise}
+$\int \left(-3\sin(x) + \tan(x)\right)\d x$
+\begin{answer}
+\end{answer}
+\end{exercise}
+
+\begin{exercise}
+$\int \left(\sec^2(x) -\csc^2(x)\right) \d x$
+\begin{answer}
+\end{answer}
+\end{exercise}
+
+
+\begin{exercise}
+$\int\left(\frac{1}{x} + \frac{1}{x^2} + \frac{1}{\sqrt{x}}\right)\d x$
+\begin{answer}
+\end{answer}
+\end{exercise}
+
+\begin{exercise}
+$\int\left(\frac{17}{1 + x^2} +\frac{13}{x}\right)\d x$
+\begin{answer}
+\end{answer}
+\end{exercise}
+
+\begin{exercise}
+$\int\left(\frac{\csc(x)\cot(x)}{4} - \frac{4}{\sqrt{1-x^2}}\right)\d x$
+\begin{answer}
+\end{answer}
+\end{exercise}
+
+\end{multicols}
+
+
+
+\noindent Use Template~\ref{template:powerchain} to compute the
+following antiderivatives:
+\begin{multicols}{2}
+\begin{exercise}
+$\int 2x (x^2+4)^5 \d x$
+\begin{answer}
+\end{answer}
+\end{exercise}
+
+\begin{exercise}
+$\int \frac{\ln(x)^4}{x} \d x$ 
+\begin{answer}
+\end{answer}
+\end{exercise}
+
+\begin{exercise}
+$\int x\sqrt{4-x^2} \d x$
+\begin{answer}
+\end{answer}
+\end{exercise}
+
+\begin{exercise}
+$\int \frac{1}{\sqrt{2x +1}} \d x$ 
+\begin{answer}
+\end{answer}\end{exercise}
+
+\begin{exercise}
+$\int \frac{x}{\sqrt{x^2+1}} \d x$
+\begin{answer}
+\end{answer}\end{exercise}
+
+\begin{exercise}
+$\int \frac{\sqrt{\ln(x)}}{x} \d x$ 
+\begin{answer}
+\end{answer}\end{exercise}
+\end{multicols}
+
+\noindent Use Template~\ref{template:echain} to compute the following
+antiderivatives:
+
+\begin{multicols}{2}
+\begin{exercise}
+$\int 3x^2 e^{x^3-1} \d x$ 
+\begin{answer}
+\end{answer}\end{exercise}
+
+\begin{exercise}
+$\int x e^{3(x^2)} \d x$ 
+\begin{answer}
+\end{answer}\end{exercise}
+
+\begin{exercise}
+$\int 2x e^{-(x^2)} \d x$ 
+\begin{answer}
+\end{answer}\end{exercise}
+
+\begin{exercise}
+$\int \frac{8x}{e^{(x^2)}}\d x$ 
+\begin{answer}
+\end{answer}\end{exercise}
+
+\begin{exercise}
+$\int x e^{5x} \d x$ 
+\begin{answer}
+\end{answer}\end{exercise}
+
+\begin{exercise}
+$\int x e^{-x/2} \d x$ 
+\begin{answer}
+\end{answer}\end{exercise}
+\end{multicols}
+
+\noindent Use Template~\ref{template:lnchain} to compute the following
+antiderivatives:
+
+\begin{multicols}{2}
+\begin{exercise}
+$\int \frac{1}{x} \d x$
+\begin{answer}
+\end{answer}\end{exercise}
+
+\begin{exercise}
+$\int \frac{1}{x\ln(x^2)} \d x$ 
+\begin{answer}
+\end{answer}\end{exercise}
+
+\begin{exercise}
+$\int \frac{x^4}{x^5+1} \d x$
+\begin{answer}
+\end{answer}\end{exercise}
+
+\begin{exercise}
+$\int \frac{x^2}{3-x^3} \d x$  
+\begin{answer}
+\end{answer}\end{exercise}
+
+\begin{exercise}
+$\int \frac{e^x}{1+3e^x} \d x$ 
+\begin{answer}
+\end{answer}\end{exercise}
+
+\begin{exercise}
+$\int \frac{e^{2x}-e^{-2x}}{e^{2x}+e^{-2x}} \d x$ 
+\begin{answer}
+\end{answer}\end{exercise}
+\end{multicols}
+
+\noindent Use Template~\ref{template:trigchain} to compute the
+following antiderivatives:
+
+
+\begin{multicols}{2}
+\begin{exercise}
+$\int 5x^4 \sin(x^5+3) \d x$ 
+\begin{answer}
+\end{answer}\end{exercise}
+
+\begin{exercise}
+$\int x \cos(-2x^2) \d x$
+\begin{answer}
+\end{answer}\end{exercise}
+
+\begin{exercise}
+$\int x \sin(5x^2) \d x$
+\begin{answer}
+\end{answer}\end{exercise}
+
+\begin{exercise}
+$\int 8x\cos(x^2)\d x$       
+\begin{answer}
+\end{answer}\end{exercise}
+
+\begin{exercise}
+$\int 4x \sin(2x) \d x$   
+\begin{answer}
+\end{answer}\end{exercise}
+
+\begin{exercise}
+$\int x\cos(x/5) \d x$ 
+\begin{answer}
+\end{answer}\end{exercise}
+\end{multicols}
+
+
+\end{exercises}
