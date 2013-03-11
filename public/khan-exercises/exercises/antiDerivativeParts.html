@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html data-require="math word-problems steveMath8 graphie math-function-parser">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>Recognizing the product rule in reverse: a preview of integration by parts</title>
+    <script src="../khan-exercise.js"></script>
+</head>
+<body>
+  <div class="exercise">
+  
+    <div class="problems">
+    
+      <div id="chainRule">
+        	<div class="vars">
+				<var id="A">randRangeNonZero(-10,10)</var>
+				<var id="B">randRangeNonZero(-10,10)</var>
+				<var id="n">randRangeExclude(-10,10,[0,1])</var>
+				<var id="functionBank">["cos(x)","sin(x)","e^x","x^"+n,"(1/x)"]</var>
+				<var id="fNum">randRange(0,functionBank.length-1)</var>
+				<var id="gNum">randRangeExclude(0,functionBank.length-1,[fNum])</var>
+				<var id="f">functionBank[fNum]</var>
+				<var id="g">functionBank[gNum]</var>
+				<var id="EXP">MathFunction.parse(f +"*"+g)</var>
+				<var id="derivativeEXP">EXP.derivative("x")</var>
+  			  </div>
+        	
+        	<p class="question">
+        		Find <code>\displaystyle \int <var>derivativeEXP.tex()</var> dx</code>
+        	</p>
+        <p class="solution" data-type="antiDerivativeExpression">
+        	<var>derivativeEXP.toString()</var>
+        </p>
+        <div class="hints">
+        	<p>
+        		This looks like the derivative of a product of two functions, because it has the form given by the product rule.
+        	</p>
+        	<p>
+        		If we are looking for a function of the form <code>f(x)g(x)</code>, then <code>\dfrac{d}{dx} f(x)g(x) = f'(x)g(x)+f(x)g'(x)</code>
+        	</p>
+        	<p>
+        		In this case it looks like <code>f(x) = <var>MathFunction.parse(f).tex()</var></code> and <code>g(x) = <var>MathFunction.parse(g).tex()</var></code>
+        	</p>
+        	<p>
+        		So <code>\displaystyle \int <var>derivativeEXP.tex()</var> dx = <var>EXP.tex()</var></code>
+        	</p>
+        </div>
+       
+      </div>
+     
+      
+      
+    </div>
+  </div>
+</body>

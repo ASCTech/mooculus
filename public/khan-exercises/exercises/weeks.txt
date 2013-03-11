@@ -110,6 +110,8 @@ comparingFunctionAndAntiderivative
 antiDifferentiationBasic
 antidifferentiatePolynomials
 antiDerivativeAffineTransformation
+antiDerivativeBasicChain
+antiDerivativeParts
 * Week 11
 basicSigma
 sigmaFormulas1

@@ -100,6 +100,8 @@ comparingFunctionAndAntiderivative.html
 antiDifferentiationBasic.html
 antidifferentiatePolynomials.html
 antiDerivativeAffineTransformation.html
+antiDerivativeBasicChain.html
+antiDerivativeParts.html
 basicSigma.html
 sigmaFormulas1.html
 sigmaFormulas2.html
