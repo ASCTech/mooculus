@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html data-require="math graphie interactive graphie-helpers steveMath8">
+  <head>
+        <title>How does varying a limit of integration affect the output?</title>
+        <script src="../khan-exercise.js"></script>
+  </head>
+  <body>
+    <div class="exercise">
+     
+
+      <div class="problems">
+        <div id="corner">
+         <div class="vars">
+              	  
+	<var id="L">randRange(0,6)</var>
+	<var id="U">L+randRange(1,3)</var>
+	<var id = "intVAL">randRange(1,10)</var>
+	<var id="fVAL">randRangeNonZero(-10,10)</var>
+	<var id="h">randRange(1,3)/10</var>
+	<var id="f">(function(x){
+				return x*x+1
+				
+			})</var>
+	<var id="ANSWER">intVAL+h*fVAL</var>		
+	
+	
+		          	
+      </div>
+         
+          <p class="problem">
+          	Suppose that <code>\displaystyle\int_{<var>L</var>}^{<var>U</var>} f(x) dx = <var>intVAL</var></code> and 
+          	<code>f(<var>U</var>) = <var>fVAL</var></code>.
+          </p>
+          
+          <p class="question">
+          	Approximate <code>\displaystyle\int_{<var>L</var>}^{<var>U+h</var>} f(x) dx</code> as well as you can given this information.
+          </p>
+                
+                     
+          <p class="solution"  data-type="parsedExpression"><var>ANSWER</var></p>
+          
+          
+          <div class = "hints">
+          		<div>
+          			Here is a generic picture of the situation (signs might not be correct, but the basic idea is):
+          			 <div class="graphie" id="grid">
+            graphInit({
+            range: [[-1,4],[-2,16]],
+            scale: [80,20],
+            tickStep: 1,
+			gridOpacity: 0.00005,
+            axisOpacity: 0.5,
+            tickOpacity: 0.00004,
+            
+              });
+                    
+              plot(function( x ) {
+              return ( f(x));
+              }, [-12, 12], {
+              stroke: RED,
+              strokeWidth: 2
+              });
+              
+         
+               line([1,0],[1,f(1)]);
+			  
+			  label([1,-.3],L)	;
+			   label([2.8,-.3],U);
+			   label([3,-.3],U+h);
+              label([2,f(2)/2],intVAL)
+              label([3.2,f(3)/2],fVAL)
+            	 line([2.8,0],[2.8,f(2.8)]);
+				  line([2.8,f(2.8)],[3,f(2.8)]);
+				  line([3,f(2.8)],[3,0]);
+				  
+				  
+				
+               
+          </div>
+          		</div>
+          		<p>
+          			So the little bit of extra area we get is approximately the area of the rectangle, or in symbols, <code>\displaystyle\int_{<var>U</var>}^{<var>U+h</var>} f(x)dx \approx <var>h</var> \cdot <var>fVAL</var> = <var>h*fVAL</var></code>
+          		</p>
+          		<p>
+          			Thus <code>\displaystyle\int_{<var>L</var>}^{<var>U+h</var>} f(x) dx \approx <var>intVAL</var> + <var>h*fVAL</var> = <var>ANSWER</var></code>
+          		</p>
+          		<p>
+          			Note:  Rephrasing this, we are really saying that the derivative of the function <code>\displaystyle\int_{<var>L</var>}^{x} f(t)dt</code> at 
+          			<code>x= <var>U</var></code> is about <code>f(<var>U</var>)</code>.  This is the essence of the fundamental theorem of calculus. Meditate on this.
+          		</p>
+          </div>
+                  
+                  
+                  
+                 
+                 
+              
+
+      
+       
+        </div>       
+      </div>
+
+     
+   
+    </div>
+
+</body>
+</html>

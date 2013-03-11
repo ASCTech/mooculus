@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html data-require="math graphie interactive graphie-helpers steveMath8">
+  <head>
+        <title>Computing Riemann sums for a small number of rectangles</title>
+        <script src="../khan-exercise.js"></script>
+  </head>
+  <body>
+    <div class="exercise">
+     
+
+      <div class="problems">
+              
+              
+        <div id="corner">
+         <div class="vars">
+			<var id="C">randRangeNonZero(-10,10)</var>
+        	 <var id="B">randRangeNonZero(-10,10)</var> 
+             <var id="A">randRangeNonZero(-10,10)</var>
+             <var id="L">randRange(1,10)</var>
+            <var id="U">randRange(L+4,20)</var>
+            <var id="N">randRange(2,4)</var>
+            <var id="poly">new Polynomial(0,2,[A,B,C])</var>
+            <var id="f">(function(x){return poly.evalOf(x)})</var>
+            <var id="belowAbove">(function(x){
+            		if (f(x)&lt;0){
+            			return "above"
+            			}
+            		else {
+            			return "below"
+            			}
+            		})</var>
+            <var id="hintText1">
+            	(function(){
+            	var text ="";
+            	for (var i=0;i&lt;N-1;i++){
+            		text = text + "f("+displayMode(L+(U-L)*i/N)+")\\cdot "+displayMode((U-L)/N)+"+" 
+            		}
+            	text = text + "f("+displayMode(L+(U-L)*(N-1)/N)+")\\cdot "+displayMode((U-L)/N) 
+            	return text
+            	})()
+            	</var>
+            	<var id="hintText2">
+            	(function(){
+            	var text =""+displayMode((U-L)/N)+"\\left(";
+            	for (var i=0;i&lt;N-1;i++){
+            		text = text + "f("+displayMode(L+(U-L)*i/N)+")"+"+" 
+            		}
+            	text = text + "f("+displayMode(L+(U-L)*(N-1)/N)+")\\right)"
+            	return text
+            	})()
+            	</var>
+            	<var id="hintText3">
+            	(function(){
+            	var text =""+displayMode((U-L)/N)+"\\left(";
+            	for (var i=0;i&lt;N-1;i++){
+            		text = text + displayMode(f(L+(U-L)*i/N))+"+" 
+            		}
+            	text = text +displayMode(f(L+(U-L)*(N-1)/N))+"\\right)"
+            	return text
+            	})()
+            	</var>
+            	<var id="hintText4">
+            	(function(){
+            	var finAnswer =0;
+            	for (var i=0;i&lt;N;i++){
+            		finAnswer = finAnswer + f(L+(U-L)*i/N);
+            		}
+            	return finAnswer
+            	})()
+            	</var>
+            	
+		          	
+         </div>
+          
+          <p class="question">
+          	Find the value of the left Riemann sum using <code><var>N</var></code> rectangles approximating <code>\displaystyle\int_{<var>L</var>}^{<var>U</var>} \left( <var>poly.text()</var>\right) dx</code>
+          </p>
+        
+          <p class="solution" data-type="parsedExpression"><var>((U-L)*hintText4/N)</var></p>
+                  
+                  
+                  
+                 
+                 
+              
+
+          <div class="hints">
+          	<div>
+          		<p>
+          			First we need to draw a picture!
+          		</p>
+          		 <div class="graphie" id="gridlock">
+            graphInit({
+            range: [[L-2,U+2],[-Math.abs(f(U+2)),Math.abs(f(U+2))]],
+            scale: [(500)/(U+L+4),200/(Math.abs(f(U+2)))],
+			gridOpacity: 0.00005,
+            axisOpacity: 0.5,
+            tickOpacity: 0.00004,
+            
+              });
+                    
+              plot(function( x ) {
+              return ( f(x));
+              }, [L-2, U+2], {
+              stroke: RED,
+              strokeWidth: 2
+              });
+              
+                  for (var n = 0;n&lt;N;n++){
+				  
+				  line([L+n*(U-L)/N,0],[L+n*(U-L)/N,f(L+n*(U-L)/N)]);
+				  line([L+n*(U-L)/N,f(L+n*(U-L)/N)],[L+(n+1)*(U-L)/N,f(L+n*(U-L)/N)]);
+				  line([L+(n+1)*(U-L)/N,f(L+n*(U-L)/N) ],[L+(n+1)*(U-L)/N,0]);
+				  label([L+n*(U-L)/N,0],displayMode(L+n*(U-L)/N),belowAbove(L+n*(U-L)/N))
+              	  }
+              	  label([U,0],U,belowAbove(U));
+              	        
+          </div>
+          		
+    		</div>
+          	
+          	<p>
+          		Lets call the integrand <code>f</code>.  Then the sum of signed area of these rectangles is <code><var>hintText1</var></code>
+          	</p>
+          	<p>
+          		<code>=<var>hintText2</var></code>
+          	</p>
+          	<p>
+          		<code>=<var>hintText3</var></code>
+          	</p>
+          	<p>
+          		<code>=<var>displayMode((U-L)/N)</var> \cdot <var>displayMode(hintText4)</var></code>
+          	</p>
+          	<p>
+          		So the value of the left Riemann sum using <code><var>N</var></code> rectangles approximating
+          		 <code>\displaystyle\int_{<var>L</var>}^{<var>U</var>} \left( <var>poly.text()</var>\right) dx</code>
+          		 is <code><var>displayMode((U-L)*hintText4/N)</var></code>
+          	</p>
+          	
+          	
+          </div>
+       
+        </div>
+      </div>
+
+     
+   
+    </div>
+
+</body>
+</html>

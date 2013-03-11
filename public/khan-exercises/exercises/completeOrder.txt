@@ -97,7 +97,17 @@ eulerMethod.html
 newtonsMethod.html
 antiderivativeSketchPlay.html
 comparingFunctionAndAntiderivative.html
+antiDifferentiationBasic.html
+antidifferentiatePolynomials.html
+antiDerivativeAffineTransformation.html
+antiDerivativeBasicChain.html
+antiDerivativeParts.html
 basicSigma.html
 sigmaFormulas1.html
 sigmaFormulas2.html
+estimatingIntegrals.html
+smallRiemann.html
 riemannSumIntegral.html
+areaValuedFunctionBehavior.html
+integralSketch.html
+wiggleInputIntegral.html

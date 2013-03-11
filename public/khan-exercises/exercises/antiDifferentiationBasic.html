@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html data-require="math word-problems steveMath8 graphie math-function-parser">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>Practice recalling basic antidifferentiation facts</title>
+    <script src="../khan-exercise.js"></script>
+</head>
+<body>
+  <div class="exercise">
+  
+    <div class="problems">
+      <div id="constant">
+      		
+      		  <div class="vars">
+				<var id="n">randRangeNonZero(-30,30)</var>
+  			  </div>
+        	
+        	<p class="question">
+        		Find <code>\displaystyle\int <var>n</var> dx</code>
+        	</p>
+        <p class="solution" data-type="antiDerivativeExpression">
+        	<var>n</var>
+        </p>
+        <div class="hints">
+        	<p>
+        		<code>\displaystyle\int <var>n</var> dx = <var>n</var>x+C</code> because <code>\dfrac{d}{dx}<var>n</var> \left( x+C  \right)= <var>n</var> </code>
+        	</p> 
+        </div>
+       
+      </div>
+      <div id="power">
+      		
+      		  <div class="vars">
+				<var id="n">randRange(-30,30)</var>
+  			  </div>
+        	
+        	<p class="question">
+        		Find <code>\displaystyle\int x^{<var>n</var>} dx</code>
+        	</p>
+        <p class="solution" data-type="antiDerivativeExpression">
+        	x^(<var>n</var>)
+        </p>
+        <div class="hints">
+        	<p>
+        		<code>\displaystyle\int x^{<var>n</var>} dx = \dfrac{x^{<var>n+1</var>}}{<var>n+1</var>}+C</code> because <code>\dfrac{d}{dx} \left( \dfrac{x^{<var>n+1</var>}}{<var>n+1</var>}+C \right)=  x^{<var>n</var>} </code>
+        	</p>
+        </div>
+       
+      </div>
+      <div id="reciprocal">
+        	
+        	<p class="question">
+        		Find <code>\displaystyle\int \dfrac{1}{x} dx</code> 
+        	</p>
+        <p class="solution" data-type="antiDerivativeExpression">
+        	1/x
+        </p>
+        <div class="hints">
+        	<p>
+        		<code>\displaystyle\int \dfrac{1}{x} dx = \log(|x|) + C</code>  because <code>\dfrac{d}{dx} \left( \log(|x|) + C \right)= \dfrac{1}{x} </code>
+        	</p>
+        </div>
+       
+      </div>
+      <div id="sine">
+        	
+        	<p class="question">
+        		Find <code>\displaystyle\int \sin(x) dx</code>
+        	</p>
+       <p class="solution" data-type="antiDerivativeExpression">
+        	sin(x)
+        </p>
+        <div class="hints">
+        	<p>
+        		<code>\displaystyle\int \sin(x) dx =-\cos(x) + C</code> because <code>\dfrac{d}{dx} \left( -\cos(x)+c \right)= \sin(x)</code>
+        	</p>
+        </div>
+       
+      </div>
+      <div id="cos">
+        	
+        	<p class="question">
+        		Find <code>\displaystyle\int \cos(x) dx</code>
+        	</p>
+       <p class="solution" data-type="antiDerivativeExpression">
+        	cos(x)
+        </p>
+        <div class="hints">
+        	<p>
+        		<code>\displaystyle\int \cos(x) dx =\sin(x) + C</code> because <code>\dfrac{d}{dx} \left( \sin(x)+C \right) = \cos(x)</code>
+        	</p>
+        </div>
+       
+      </div>
+      <div id="sectan">
+        	
+        	<p class="question">
+        		Find <code>\displaystyle\int \sec(x)\tan(x) dx</code>
+        	</p>
+        <p class="solution" data-type="antiDerivativeExpression">
+        	sec(x)*tan(x)
+        </p>
+        <div class="hints">
+        	<p>
+        		<code>\displaystyle\int \sec(x)\tan(x) dx =\sec(x) + C</code> because <code>\dfrac{d}{dx} \left( \sec(x)+C \right)= \sec(x)\tan(x)</code>
+        	</p>
+        </div>
+       
+      </div>
+      <div id="secSquared">
+        	
+        	<p class="question">
+        		Find <code>\displaystyle\int \sec^2(x) dx</code>
+        	</p>
+        <p class="solution" data-type="antiDerivativeExpression">
+        	(sec(x))^2
+        </p>
+        <div class="hints">
+        	<p>
+        		<code>\displaystyle\int \sec^2(x) dx =\tan(x) + C</code> because <code>\dfrac{d}{dx} \left( \tan(x)+C \right) = \sec^2(x)</code>
+        	</p>
+        </div>
+       
+      </div>
+      <div id="cscSquared">
+        	
+        	<p class="question">
+        		Find <code>\displaystyle\int \csc^2(x) dx</code>
+        	</p>
+       <p class="solution" data-type="antiDerivativeExpression">
+        	(csc(x))^2
+        </p>
+        <div class="hints">
+        	<p>
+        		<code>\displaystyle\int \csc^2(x) dx =-\cot(x) + C</code> because <code>\dfrac{d}{dx} \left( -\cot(x)+C \right)= \csc^2(x)</code>
+        	</p>
+        </div>
+       
+      </div>
+      <div id="csccot">
+        	
+        	<p class="question">
+        		Find <code>\displaystyle\int \csc(x)\cot(x) dx</code>
+        	</p>
+        <p class="solution" data-type="antiDerivativeExpression">
+        	csc(x)*cot(x)
+        </p>
+        <div class="hints">
+        	<p>
+        		<code>\displaystyle\int \csc(x)\cot(x) dx =-\csc(x) + C</code> because <code>\dfrac{d}{dx} \left( -\csc(x)+C \right)= \csc(x)\cot(x)</code>
+        	</p>
+        </div>
+       
+      </div>
+      <div id="exp">
+        	
+        	<p class="question">
+        		Find <code>\displaystyle\int e^x dx</code>
+        	</p>
+        <p class="solution" data-type="antiDerivativeExpression">
+        	e^x
+        </p>
+        <div class="hints">
+        	<p>
+        		<code>\displaystyle\int e^x dx =e^x + C</code> because <code>\dfrac{d}{dx} \left( e^x+C \right)= e^x</code>
+        	</p>
+        </div>
+       
+      </div>
+      
+    </div>
+  </div>
+</body>
+</html>

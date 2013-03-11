@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html data-require="math graphie interactive graphie-helpers steveMath8">
+  <head>
+        <title>Estimating definite integrals graphically</title>
+        <script src="../khan-exercise.js"></script>
+  </head>
+  <body>
+    <div class="exercise">
+     
+
+      <div class="problems">
+        <div id="corner">
+         <div class="vars">
+              	  
+	<var id="L">randRange(-8,8)</var>
+	<var id="U">L+randRange(1,3)</var>
+	<var id = "Xs">makeXList()</var>
+	<var id = "Ys">makeYList(-8,8,Xs.length)</var>
+	<var id = "points">makeCoordinates(Xs,Ys)</var>
+	<var id = "f">(function(x){return niceFunction(x,points)})</var>
+	<var id="ANSWER">numInt(f,L,U)</var>
+	
+		          	
+      </div>
+         
+          <p class="problem">
+          	Estimate <code>\displaystyle\int_{<var>L</var>}^{<var>U</var>} f(x) dx</code>, where <code>f</code> is the function displayed below.
+          </p>
+          
+         
+          <div class="graphie" id="grid">
+            graphInit({
+            range: 10,
+            scale: 20,
+            tickStep: 1,
+            labelStep: 1,
+			gridOpacity: 0.15,
+            axisOpacity: 0.5,
+            tickOpacity: 0.00004,
+            
+              });
+                    
+              plot(function( x ) {
+              return ( f(x));
+              }, [-12, 12], {
+              stroke: RED,
+              strokeWidth: 2
+              });
+             
+             
+              
+              
+
+               
+          </div>
+                
+                
+                     
+          <p class="solution" data-inexact data-max-error="2" data-type="decimal"><var>ANSWER</var></p>
+          
+          
+          <div class = "hints">
+          	<p>
+          		The integral represents an signed area, so you can just count how many one by on squares fit into the region.  Be sure to count squares above the horizontal
+          		axis as positive, and squares below the horizontal axis as negative.  Be sure to account for parts of squares as well, not just the whole ones!
+          	</p>
+          	<p>
+          		The answer is about <var>roundTo(0,ANSWER)</var>.
+          	</p>
+          </div>
+                  
+                  
+                  
+                 
+                 
+              
+
+      
+       
+        </div>       
+      </div>
+
+     
+   
+    </div>
+
+</body>
+</html>

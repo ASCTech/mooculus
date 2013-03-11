@@ -1,0 +1,59 @@
+
+Newtons method exploration:
+
+Inputs:
+A function
+An initial x value
+Number of iterates to use (drop down up to 10?)
+Speed of animation (slider)
+
+____________________
+
+Euler's method exploration:
+
+Inputs:
+A differential equation of the form dy/dx = F(x,y)
+Length of dx (slider)
+starting location (drag point)
+start button
+
+---------------------------
+
+Definite integral exploration:
+
+Inputs:
+A function 
+initial x value
+final x value
+number of rectangles (slider)
+
+Shows rectangles filling in graph.  Click on any one rectangle to be shown how its area was computed.
+
+
+_________________________
+
+Fundamental theorem exploration 1:
+
+Inputs: 
+Function
+initial x value (drag point)
+final x value (drag point)
+
+Draws function and an antiderivative of the function.  Shades area on function, gives vector of change on antiderivative.  They are both labeled with the same number.
+
+_________________________
+
+Fundamental theorem exploration 2:
+
+Inputs:
+function
+initial x value 
+final x value
+number of rectangles = number of line segments (slider from 1 to 100)
+
+Draws function and an antiderivative of the function.  Draws rectangles under function and the corresponding line segment on the antiderivative. 
+
+
+
+
+

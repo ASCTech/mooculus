@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html data-require="math word-problems steveMath8 graphie math-function-parser">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>Antiderivatives involving linear compositions</title>
+    <script src="../khan-exercise.js"></script>
+</head>
+<body>
+  <div class="exercise">
+  
+    <div class="problems">
+    
+      <div id="power">
+      		
+      		  <div class="vars">
+				<var id="n">randRange(-30,30)</var>
+				<var id="A">randRangeNonZero(-10,10)</var>
+				<var id="B">randRangeNonZero(-10,10)</var>
+  			  </div>
+        	
+        	<p class="question">
+        		Find <code>\displaystyle\int (<var>A</var>x+<var>B</var>)^{<var>n</var>} dx</code>
+        	</p>
+        <p class="solution" data-type="antiDerivativeExpression">
+        	(<var>A</var>x+<var>B</var>)^(<var>n</var>)
+        </p>
+        <div class="hints">
+        	<p>
+        		You should guess that <code>\displaystyle\int (<var>A</var>x+<var>B</var>)^{<var>n</var>} dx </code> would be something like <code>\dfrac{1}{<var>n+1</var>}(<var>A</var>x+<var>B</var>)^{<var>n+1</var>}</code>, but this isn't quite right because 
+        		<code>\dfrac{d}{dx} \dfrac{1}{<var>n+1</var>}(<var>A</var>x+<var>B</var>)^{<var>n+1</var>} = <var>A</var>(<var>A</var>x+<var>B</var>)^{<var>n</var>}</code>, which is off from the correct answer by a factor of <code><var>A</var></code>.
+        	</p>
+        	<p>
+        		This is not a big deal: we can just divide by <code><var>A</var></code> to get the right answer!  So the answer is <code>\dfrac{1}{<var>A</var>}\dfrac{1}{<var>n+1</var>}(<var>A</var>x+<var>B</var>)^{<var>n+1</var>}</code>
+        	</p>
+        </div>
+       
+      </div>
+      <div id="reciprocal">
+        	<div class="vars">
+				<var id="A">randRangeNonZero(-10,10)</var>
+				<var id="B">randRangeNonZero(-10,10)</var>
+  			  </div>
+        	
+        	<p class="question">
+        		Find <code>\displaystyle\int \dfrac{1}{<var>A</var>x+<var>B</var>} dx</code> 
+        	</p>
+        <p class="solution" data-type="antiDerivativeExpression">
+        	1/(<var>A</var>x+<var>B</var>)
+        </p>
+        <div class="hints">
+        	<p>
+        		You should guess that <code>\displaystyle\int \dfrac{1}{<var>A</var>x+<var>B</var>} dx </code> would be something like <code>\log(|<var>A</var>x+<var>B</var>|)</code>, but this isn't quite right because 
+        		<code>\dfrac{d}{dx} \log(<var>A</var>x+<var>B</var>) = \dfrac{<var>A</var>}{<var>A</var>x+<var>B</var>}</code>, which is off from the correct answer by a factor of <code><var>A</var></code>.
+        	</p>
+        	<p>
+        		This is not a big deal: we can just divide by <code><var>A</var></code> to get the right answer!  So the answer is <code>\dfrac{1}{<var>A</var>}\log(<var>A</var>x+<var>B</var>)</code>
+        	</p>
+        </div>
+       
+      </div>
+      <div id="sine">
+        	<div class="vars">
+				<var id="A">randRangeNonZero(-10,10)</var>
+				<var id="B">randRangeNonZero(-10,10)</var>
+  			  </div>
+        	
+        	<p class="question">
+        		Find <code>\displaystyle\int \sin(<var>A</var>x+<var>B</var>) dx</code>
+        	</p>
+        <p class="solution" data-type="antiDerivativeExpression">
+        	sin(<var>A</var>x+<var>B</var>)
+        </p>
+        <div class="hints">
+        	<p>
+        		You should guess that <code>\displaystyle\int \sin(<var>A</var>x+<var>B</var>) dx </code> would be something like <code>\cos(<var>A</var>x+<var>B</var>)</code>, but this isn't quite right because 
+        		<code>\dfrac{d}{dx} \cos(<var>A</var>x+<var>B</var>) =<var>A</var> \cos(<var>A</var>x+<var>B</var>)</code>, which is off from the correct answer by a factor of <code><var>A</var></code>.
+        	</p>
+        	<p>
+        		This is not a big deal: we can just divide by <code><var>A</var></code> to get the right answer!  So the answer is <code>\dfrac{1}{<var>A</var>} \cos(<var>A</var>x+<var>B</var>)</code>
+        	</p>
+        </div>
+       
+      </div>
+      <div id="cos">
+        	<div class="vars">
+				<var id="A">randRangeNonZero(-10,10)</var>
+				<var id="B">randRangeNonZero(-10,10)</var>
+  			  </div>
+        	<p class="question">
+        		Find <code>\displaystyle\int \cos(<var>A</var>x+<var>B</var>) dx</code>
+        	</p>
+        <p class="solution" data-type="antiDerivativeExpression">
+        	cos(<var>A</var>x+<var>B</var>)
+        </p>
+        <div class="hints">
+        	<p>
+        		You should guess that <code>\displaystyle\int \cos(<var>A</var>x+<var>B</var>) dx </code> would be something like <code>\sin(<var>A</var>x+<var>B</var>)</code>, but this isn't quite right because 
+        		<code>\dfrac{d}{dx} \sin(<var>A</var>x+<var>B</var>) = <var>A</var>\cos(<var>A</var>x+<var>B</var>)</code>, which is off from the correct answer by a factor of <code><var>A</var></code>.
+        	</p>
+        	<p>
+        		This is not a big deal: we can just divide by <code><var>A</var></code> to get the right answer!  So the answer is <code>\dfrac{1}{<var>A</var>}\sin(<var>A</var>x+<var>B</var>)</code>
+        	</p>
+        </div>
+       
+      </div>
+      <div id="sectan">
+        	<div class="vars">
+				<var id="A">randRangeNonZero(-10,10)</var>
+				<var id="B">randRangeNonZero(-10,10)</var>
+  			  </div>
+        	<p class="question">
+        		Find <code>\displaystyle\int \sec(<var>A</var>x+<var>B</var>)\tan(<var>A</var>x+<var>B</var>) dx</code>
+        	</p>
+        <p class="solution" data-type="antiDerivativeExpression">
+        	sec(<var>A</var>x+<var>B</var>)*tan(<var>A</var>x+<var>B</var>)
+        </p>
+        <div class="hints">
+        	<p>
+        		You should guess that <code>\displaystyle\int \sec(<var>A</var>x+<var>B</var>)\tan(<var>A</var>x+<var>B</var>) dx </code> would be something like <code>\sec(<var>A</var>x+<var>B</var>)</code>, but this isn't quite right because 
+        		<code>\dfrac{d}{dx} \sec(<var>A</var>x+<var>B</var>) = <var>A</var>\sec(<var>A</var>x+<var>B</var>)</code>, which is off from the correct answer by a factor of <code><var>A</var></code>.
+        	</p>
+        	<p>
+        		This is not a big deal: we can just divide by <code><var>A</var></code> to get the right answer!  So the answer is <code>\dfrac{1}{<var>A</var>}\sec(<var>A</var>x+<var>B</var>)</code>
+        	</p>
+        </div>
+       
+      </div>
+      <div id="secSquared">
+        	<div class="vars">
+				<var id="A">randRangeNonZero(-10,10)</var>
+				<var id="B">randRangeNonZero(-10,10)</var>
+  			  </div>
+        	<p class="question">
+        		Find <code>\displaystyle\int \sec^2(<var>A</var>x+<var>B</var>) dx</code>
+        	</p>
+        <p class="solution" data-type="antiDerivativeExpression">
+        	(sec(<var>A</var>x+<var>B</var>))^2
+        </p>
+        <div class="hints">
+        	<p>
+        		You should guess that <code>\displaystyle\int \sec^2(<var>A</var>x+<var>B</var>) dx </code> would be something like <code>\tan(<var>A</var>x+<var>B</var>)</code>, but this isn't quite right because 
+        		<code>\dfrac{d}{dx} \tan(<var>A</var>x+<var>B</var>) = <var>A</var>\tan(<var>A</var>x+<var>B</var>)</code>, which is off from the correct answer by a factor of <code><var>A</var></code>.
+        	</p>
+        	<p>
+        		This is not a big deal: we can just divide by <code><var>A</var></code> to get the right answer!  So the answer is <code>\dfrac{1}{<var>A</var>}\tan(<var>A</var>x+<var>B</var>)</code>
+        	</p>
+        </div>
+       
+      </div>
+      <div id="cscSquared">
+        	<div class="vars">
+				<var id="A">randRangeNonZero(-10,10)</var>
+				<var id="B">randRangeNonZero(-10,10)</var>
+  			  </div>
+        	<p class="question">
+        		Find <code>\displaystyle\int \csc^2(<var>A</var>x+<var>B</var>) dx</code>
+        	</p>
+        <p class="solution" data-type="antiDerivativeExpression">
+        	(csc(<var>A</var>x+<var>B</var>))^2
+        </p>
+        <div class="hints">
+        	<p>
+        		You should guess that <code>\displaystyle\int  \csc^2(<var>A</var>x+<var>B</var>)dx </code> would be something like <code>-\cot(<var>A</var>x+<var>B</var>)</code>, but this isn't quite right because 
+        		<code>\dfrac{d}{dx} -\cot(<var>A</var>x+<var>B</var>) =<var>A</var></code>\csc^2(<var>A</var>x+<var>B</var>), which is off from the correct answer by a factor of <code><var>A</var></code>.
+        	</p>
+        	<p>
+        		This is not a big deal: we can just divide by <code><var>A</var></code> to get the right answer!  So the answer is <code>\dfrac{-1}{<var>A</var>}\cot(<var>A</var>x+<var>B</var>)</code>
+        	</p>
+        </div>
+       
+      </div>
+      <div id="csccot">
+        	<div class="vars">
+				<var id="A">randRangeNonZero(-10,10)</var>
+				<var id="B">randRangeNonZero(-10,10)</var>
+  			  </div>
+        	<p class="question">
+        		Find <code>\displaystyle\int \csc(<var>A</var>x+<var>B</var>)\cot(<var>A</var>x+<var>B</var>) dx</code>
+        	</p>
+        <p class="solution" data-type="antiDerivativeExpression">
+        	csc(<var>A</var>x+<var>B</var>)*cot(<var>A</var>x+<var>B</var>)
+        </p>
+        <div class="hints">
+        	<p>
+        		You should guess that <code>\displaystyle\int \csc(<var>A</var>x+<var>B</var>)\cot(<var>A</var>x+<var>B</var>) dx </code> would be something like <code>-\csc(<var>A</var>x+<var>B</var>)</code>, but this isn't quite right because 
+        		<code>\dfrac{d}{dx} -\csc(<var>A</var>x+<var>B</var>) = <var>A</var>\csc(<var>A</var>x+<var>B</var>)\cot(<var>A</var>x+<var>B</var>)</code>, which is off from the correct answer by a factor of <code><var>A</var></code>.
+        	</p>
+        	<p>
+        		This is not a big deal: we can just divide by <code><var>A</var></code> to get the right answer!  So the answer is <code>\dfrac{-1}{<var>A</var>}\csc(<var>A</var>x+<var>B</var>)</code>
+        	</p>
+        </div>
+       
+      </div>
+      <div id="exp">
+        	<div class="vars">
+				<var id="A">randRangeNonZero(-10,10)</var>
+				<var id="B">randRangeNonZero(-10,10)</var>
+  			  </div>
+        	<p class="question">
+        		Find <code>\displaystyle\int e^{<var>A</var>x+<var>B</var>} dx</code>
+        	</p>
+        <p class="solution" data-type="antiDerivativeExpression">
+        	e^{<var>A</var>x+<var>B</var>}
+        </p>
+        <div class="hints">
+        	<p>
+        		You should guess that <code>\displaystyle\int e^{<var>A</var>x+<var>B</var>} dx </code> would be something like <code>e^{<var>A</var>x+<var>B</var>}</code>, but this isn't quite right because 
+        		<code>\dfrac{d}{dx} e^{<var>A</var>x+<var>B</var>} = <var>A</var>e^{<var>A</var>x+<var>B</var>}</code>, which is off from the correct answer by a factor of <code><var>A</var></code>.
+        	</p>
+        	<p>
+        		This is not a big deal: we can just divide by <code><var>A</var></code> to get the right answer!  So the answer is <code>\dfrac{1}{<var>A</var>}e^{<var>A</var>x+<var>B</var>}</code>
+        	</p>
+        </div>
+       
+      </div>
+      
+    </div>
+  </div>
+</body>
+</html>
