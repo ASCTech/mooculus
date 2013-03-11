@@ -107,6 +107,9 @@ newtonsMethod
 * Week 10
 antiderivativeSketchPlay
 comparingFunctionAndAntiderivative
+antiDifferentiationBasic
+antidifferentiatePolynomials
+antiDerivativeAffineTransformation
 * Week 11
 basicSigma
 sigmaFormulas1

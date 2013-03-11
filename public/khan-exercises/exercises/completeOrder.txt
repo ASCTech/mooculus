@@ -97,6 +97,9 @@ eulerMethod.html
 newtonsMethod.html
 antiderivativeSketchPlay.html
 comparingFunctionAndAntiderivative.html
+antiDifferentiationBasic.html
+antidifferentiatePolynomials.html
+antiDerivativeAffineTransformation.html
 basicSigma.html
 sigmaFormulas1.html
 sigmaFormulas2.html
