@@ -92,7 +92,7 @@
 "ln"                    return 'LOG'
 "exp"                   return 'EXP'
 "sqrt"                  return 'SQRT'
-"abs"                   return 'SQRT'
+"abs"                   return 'ABS'
 <<EOF>>                 return 'EOF'
 .                       return 'INVALID'
 

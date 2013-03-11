@@ -107,8 +107,19 @@ newtonsMethod
 * Week 10
 antiderivativeSketchPlay
 comparingFunctionAndAntiderivative
+antiDifferentiationBasic
+antidifferentiatePolynomials
+antiDerivativeAffineTransformation
+antiDerivativeBasicChain
+antiDerivativeParts
 * Week 11
 basicSigma
 sigmaFormulas1
 sigmaFormulas2
 riemannSumIntegral
+smallRiemann
+areaValuedFunctionBehavior
+estimatingIntegrals
+integralSketch
+* Week 12
+wiggleInputIntegral

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html data-require="math word-problems steveMath8 graphie math-function-parser">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>Antidifferentiating Polynomials</title>
+    <script src="../khan-exercise.js"></script>
+</head>
+<body>
+  <div class="exercise">
+  
+
+    <div class="problems">
+      <div id="quadratic">
+      		
+      		  <div class="vars">
+				<var id="A">randRangeExclude(-10,10,[-1,0,1])</var>
+				<var id="B">randRangeExclude(-10,10,[-1,0,1])</var>
+				<var id="C">randRangeExclude(-10,10,[-1,0,1])</var>
+  			  </div>
+        	
+        	<p class="question">
+        		Find <code>\displaystyle\int <var>A</var>x^2+<var>B</var>x+<var>C</var> dx</code>
+        	</p>
+        <p class="solution" data-type="antiDerivativeExpression">
+        	<var>A</var>x^2+<var>B</var>x+<var>C</var>
+        </p>
+        <div class="hints">
+        	<p>
+        		 <code>\displaystyle\int <var>A</var>x^2+<var>B</var>x+<var>C</var> dx = <var>A</var>\displaystyle\int x^2 dx +  <var>B</var>\displaystyle\int x dx + <var>C</var>\displaystyle\int 1 dx</code>
+        	</p>
+        	<p>
+        		 <code>\hphantom{\displaystyle\int <var>A</var>x^2+<var>B</var>x+<var>C</var> dx} = <var>A</var>\dfrac{x^3}{3} +  <var>B</var>\dfrac{x^2}{2} + <var>C</var>x + C</code>
+        	</p>
+        </div>
+       
+      </div>
+      <div id="cubic">
+      		
+      		  <div class="vars">
+				<var id="A">randRangeExclude(-10,10,[-1,0,1])</var>
+				<var id="B">randRangeExclude(-10,10,[-1,0,1])</var>
+				<var id="C">randRangeExclude(-10,10,[-1,0,1])</var>
+				<var id="D">randRangeExclude(-10,10,[-1,0,1])</var>
+  			  </div>
+        	
+        	<p class="question">
+        		Find <code>\displaystyle\int <var>D</var>x^3+<var>A</var>x^2+<var>B</var>x+<var>C</var> dx</code>
+        	</p>
+       <p class="solution" data-type="antiDerivativeExpression">
+        	<var>D</var>x^3+<var>A</var>x^2+<var>B</var>x+<var>C</var>
+        </p>
+        <div class="hints">
+        	<p>
+        		 <code>\displaystyle\int <var>D</var>x^3+<var>A</var>x^2+<var>B</var>x+<var>C</var> dx = <var>D</var>\displaystyle\int x^3 dx +  <var>A</var>\displaystyle\int x^2 dx +  <var>B</var>\displaystyle\int x dx + <var>C</var>\displaystyle\int 1 dx</code>
+        	</p>
+        	<p>
+        		 <code>\hphantom{\displaystyle\int <var>D</var>x^3+<var>A</var>x^2+<var>B</var>x+<var>C</var> dx} = <var>D</var>\dfrac{x^4}{4} + <var>A</var>\dfrac{x^3}{3} +  <var>B</var>\dfrac{x^2}{2} + <var>C</var>x + C</code>
+        	</p>
+        </div>
+       
+      </div>
+      <div id="highDegree">
+      		
+      		  <div class="vars">
+				<var id="A">randRangeExclude(-10,10,[-1,0,1])</var>
+				<var id="B">randRangeExclude(-10,10,[-1,0,1])</var>
+				<var id="C">randRangeExclude(-10,10,[-1,0,1])</var>
+				<var id="m">randRangeNonZero(-1,1)*randRange(30,40)</var>
+				<var id="n">randRangeNonZero(-1,1)*randRange(70,90)</var>
+  			  </div>
+        	
+        	<p class="question">
+        		Find <code>\displaystyle\int <var>A</var>x^{<var>n</var>}+<var>B</var>x^{<var>m</var>}+<var>C</var> dx</code>
+        	</p>
+        <p class="solution" data-type="antiDerivativeExpression">
+        	<var>A</var>x^(<var>n</var>)+<var>B</var>x^(<var>m</var>)+<var>C</var>
+        </p>
+        <div class="hints">
+        	<p>
+        		 <code>\displaystyle\int <var>A</var>x^{<var>n</var>}+<var>B</var>x^{<var>m</var>}+<var>C</var> dx = <var>A</var>\displaystyle\int x^{<var>n</var>} dx +  <var>B</var>\displaystyle\int x^{<var>m</var>} dx + <var>C</var>\displaystyle\int 1 dx</code>
+        	</p>
+        	<p>
+        		 <code>\hphantom{\displaystyle\int <var>A</var>x^{22}+<var>B</var>x^{11}+<var>C</var> dx} = <var>A</var>\dfrac{x^{<var>n+1</var>}}{<var>n+1</var>} +  <var>B</var>\dfrac{x^{<var>m+1</var>}}{<var>m+1</var>} + <var>C</var>x + C</code>
+        	</p>
+        </div>
+       
+      </div>
+      
+      
+     
+    </div>
+  </div>
+</body>
+</html>
