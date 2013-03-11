@@ -1513,7 +1513,7 @@ Khan.answerTypes = $.extend(Khan.answerTypes, {
 	    var fallback = $(solution).data("fallback");
 
 	    return {
-		validator: Khan.answerTypes["parsedExpression"].createValidator(solution),
+		validator: Khan.answerTypes["antiDerivativeExpression"].createValidator(solution),
 		answer: function() {
 		    var text;
 
