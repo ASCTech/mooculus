@@ -137,23 +137,23 @@ does not exist.
             clip=false,
             %axis on top,
           ]
-          \addplot [draw=none,, fill=fill1, smooth, domain=(0:2)] {2} \closedcycle; %% fill for epsilon  
-          \addplot [color=textColor, dashed, smooth, domain=(0:2)] {2};  %% bndry for epsilon  
-          \addplot [draw=none, fill=background, smooth, domain=(0:1.8)] {1} \closedcycle;
-          \addplot [color=textColor, dashed, smooth, domain=(0:1)] {1};  %% bndry for epsilon  
-          \addplot [draw=none, fill=fill1, smooth, domain=(1.8:2)] {1} \closedcycle;
-          \addplot [draw=none, fill=fill1, smooth, domain=(2:2.2)] {2} \closedcycle;
+          \addplot [draw=none,, fill=fill1, domain=(0:2)] {2} \closedcycle; %% fill for epsilon  
+          \addplot [color=textColor, dashed, domain=(0:2)] {2};  %% bndry for epsilon  
+          \addplot [draw=none, fill=background, domain=(0:1.8)] {1} \closedcycle;
+          \addplot [color=textColor, dashed, domain=(0:1)] {1};  %% bndry for epsilon  
+          \addplot [draw=none, fill=fill1, domain=(1.8:2)] {1} \closedcycle;
+          \addplot [draw=none, fill=fill1, domain=(2:2.2)] {2} \closedcycle;
           \addplot [textColor, very thick] plot coordinates {(2,0) (2,2)};
           \addplot [textColor] plot coordinates {(1.8,0) (1.8,1)};
           \addplot [textColor] plot coordinates {(2.2,0) (2.2,2)};
           \addplot [textColor, very thin, domain=(0:2.3)] {0}; % puts the axis back, axis on top clobbers our open holes
           \addplot [textColor, very thin] plot coordinates {(0,0) (0,2)}; % puts the axis back, axis on top clobbers our open holes
-	  \addplot [very thick, penColor, smooth, domain=(-2:-1)] {-2};
-          \addplot [very thick, penColor, smooth, domain=(-1:0)] {-1};
-          \addplot [very thick, penColor, smooth, domain=(0:1)] {0};
-          \addplot [very thick, penColor, smooth, domain=(1:2)] {1};
-          \addplot [very thick, penColor, smooth, domain=(2:3)] {2};
-          \addplot [very thick, penColor, smooth, domain=(3:4)] {3};
+	  \addplot [very thick, penColor, domain=(-2:-1)] {-2};
+          \addplot [very thick, penColor, domain=(-1:0)] {-1};
+          \addplot [very thick, penColor, domain=(0:1)] {0};
+          \addplot [very thick, penColor, domain=(1:2)] {1};
+          \addplot [very thick, penColor, domain=(2:3)] {2};
+          \addplot [very thick, penColor, domain=(3:4)] {3};
           \addplot[color=penColor,fill=penColor,only marks,mark=*] coordinates{(-2,-2)};  %% closed hole          
           \addplot[color=penColor,fill=penColor,only marks,mark=*] coordinates{(-1,-1)};  %% closed hole          
           \addplot[color=penColor,fill=penColor,only marks,mark=*] coordinates{(0,0)};  %% closed hole          
