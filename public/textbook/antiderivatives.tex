@@ -30,7 +30,7 @@ the addition of a constant.  This is often called the
 \end{definition}
 
 Here are the basic antiderivatives. Note each of these examples comes
-from knowing our.
+directly from our knowledge of basic derivatives.
 
 
 \begin{fullwidth}
@@ -44,7 +44,7 @@ from knowing our.
 \item $\int \frac{1}{x} \d x= \ln|x|+C$.
 \item $\int \cos(x) \d x = \sin(x) + C$.
 \item $\int \sin(x) \d x = -\cos(x) + C$.  
-\item $\int \tan(x) \d x = \ln|\cos(x)| + C$.  
+\item $\int \tan(x) \d x = -\ln|\cos(x)| + C$.  
 \item $\int \sec^2(x) \d x = \tan(x) + C$. 
 \item $\int \csc^2(x) \d x = -\cot(x) + C$.
 \item $\int \sec(x)\tan(x) \d x = \sec(x) + C$.
@@ -351,7 +351,7 @@ $15\ln(x) + x^{16}/16 + C$
 \begin{exercise}
 $\int \left(-3\sin(x) + \tan(x)\right)\d x$
 \begin{answer}
-$3\cos(x) +\ln|\cos(x)|+C$
+$3\cos(x) -\ln|\cos(x)|+C$
 \end{answer}
 \end{exercise}
 
@@ -413,17 +413,19 @@ $\sqrt{2x+1} + C$
 \end{answer}
 \end{exercise}
 
+\columnbreak
+
 \begin{exercise}
 $\int \frac{x}{\sqrt{x^2+1}} \d x$
 \begin{answer}
-$-\sqrt{4-x^2} + C$
+$\sqrt{x^2+1} + C$
 \end{answer}
 \end{exercise}
 
 \begin{exercise}
 $\int x\sqrt{4-x^2} \d x$
 \begin{answer}
-$-(4-x^2)^{2/3}/3 +C$
+$-(4-x^2)^{3/2}/3 +C$
 \end{answer}
 \end{exercise}
 
@@ -461,6 +463,8 @@ $-e^{-(x^2)} + C$
 \end{answer}
 \end{exercise}
 
+\columnbreak
+
 \begin{exercise}
 $\int \frac{8x}{e^{(x^2)}}\d x$ 
 \begin{answer}
@@ -471,7 +475,7 @@ $-4e^{-(x^2)} +C$
 \begin{exercise}
 $\int x e^{5x} \d x$ 
 \begin{answer}
-$e^{5x}/5 - x e^{5x}/25 + C$
+$xe^{5x}/5 - e^{5x}/25 + C$
 \end{answer}
 \end{exercise}
 
@@ -507,6 +511,8 @@ $\int \frac{x^2}{3-x^3} \d x$
 $-\ln(3-x^3)/3+C$
 \end{answer}
 \end{exercise}
+
+\columnbreak
 
 \begin{exercise}
 $\int \frac{1}{x\ln(x)} \d x$ 
@@ -556,6 +562,8 @@ $\int x \sin(5x^2) \d x$
 $-\cos(5x^2)/10 +C$
 \end{answer}
 \end{exercise}
+
+\columnbreak
 
 \begin{exercise}
 $\int 8x\cos(x^2)\d x$       
@@ -764,7 +772,7 @@ around $1000$ yeast cells present.
 
 
 It is worth seeing an example of exponential decay as well. Consider
-this: Living tissue is composed of two types of carbon, a stable
+this: Living tissue contains two types of carbon, a stable
 isotope carbon-12 and a radioactive (unstable) isotope
 carbon-14. While an organism is alive, the ratio of one isotope of
 carbon to the other is always constant. When the organism dies, the
