@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html data-require="math graphie interactive graphie-helpers steveMath8">
+  <head>
+        <title>Estimating the function value from an integral</title>
+        <script src="../khan-exercise.js"></script>
+  </head>
+  <body>
+    <div class="exercise">
+     
+
+      <div class="problems">
+        <div id="corner">
+         <div class="vars">
+              	  
+	<var id="L">randRange(1,6)</var>
+	<var id = "fVAL">randRange(1,10)</var>
+	<var id="h">randRange(1,9)/100</var>
+	<var id = "intVAL">roundTo(3,fVAL*h)</var>
+	<var id="f">(function(x){
+				return x*x+1
+				
+			})</var>		
+	
+	
+		          	
+      </div>
+         
+          <p class="problem">
+          	Suppose that <code>\displaystyle\int_{<var>L</var>}^{<var>L+h</var>} f(x) dx = <var>intVAL</var></code>.
+          </p>
+          
+          <p class="question">
+          	Approximate <code>f(<var>L</var>)</code> as well as you can given this information.
+          </p>
+                
+                     
+          <p class="solution"  data-type="parsedExpression"><var>fVAL</var></p>
+          
+          
+          <div class = "hints">
+          		<div>
+          			<p>
+          				Here is a generic picture of the situation:
+          			</p>
+          			 <div class="graphie" id="grid">
+            graphInit({
+            range: [[-1,4],[-2,16]],
+            scale: [80,20],
+            tickStep: 1,
+			gridOpacity: 0.00005,
+            axisOpacity: 0.5,
+            tickOpacity: 0.00004,
+            
+              });
+                    
+              plot(function( x ) {
+              return ( f(x));
+              }, [-12, 12], {
+              stroke: RED,
+              strokeWidth: 2
+              });
+              
+         
+        	label([2,-0.5],L);
+			line([2,0],[2,f(2)]);
+			line([2,f(2)], [2.3,f(2)]);	  
+			line([2.3,f(2)],[2.3,0]);
+			label([2.3,-0.5],L+h);
+			line([2.15,f(2)/2],[2.15,f(2)/2+.5]);
+			line([2.15+0.5/4,f(2)/2],[2.15,f(2)/2]);
+			line([2.15,f(2)/2],[2.15+.75,f(2)/2+3]);
+			label([2.15+.75,f(2)/2+3.4],intVAL);
+				
+               
+          </div>
+          		</div>
+          		<p>
+          			Geometrically, we see that <code>f(<var>L</var>) \cdot <var>h</var> \approx <var>intVAL</var></code>
+          		</p>
+          		<p>
+          			Thus <code>f(<var>L</var>) \approx \dfrac{<var>intVAL</var>}{<var>h</var>} = <var>fVAL</var> </code>
+          		</p>
+          		<p>
+          			Note:  Rephrasing this, we are really saying that <code>f(x) \approx \dfrac{1}{h}\displaystyle\int_{x}^{x+h} f(t)dt = \dfrac{A(x+h)-A(x)}{h} \approx A'(x)</code>, where 
+          			<code>A(x) = \displaystyle\int_{a}^{x} f(t)dt</code>.  This suggests the fundamental theorem of calculus.
+          		</p>
+          </div>
+                  
+                  
+                  
+                 
+                 
+              
+
+      
+       
+        </div>       
+      </div>
+
+     
+   
+    </div>
+
+</body>
+</html>

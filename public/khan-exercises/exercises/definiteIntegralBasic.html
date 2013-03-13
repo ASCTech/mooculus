@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html data-require="math word-problems steveMath8 graphie math-function-parser">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>Using the Fundamental Theorem Of Calculus</title>
+    <script src="../khan-exercise.js"></script>
+</head>
+<body>
+  <div class="exercise">
+  
+    <div class="problems">
+      <div id="constant">
+      		
+      		  <div class="vars">
+				<var id="n">randRangeNonZero(-30,30)</var>
+				<var id="L">randRange(3,10)</var>
+				<var id="h">randRange(1,20)</var>
+				<var id="U">L+h</var>
+  			  </div>
+        	
+        	<p class="question">
+        		Find <code>\displaystyle\int_{<var>L</var>}^{<var>U</var>} <var>n</var> dx</code>
+        	</p>
+        <p class="solution" data-type="parsedExpression">
+        	<var>n*h</var>
+        </p>
+        <div class="hints">
+        	<p>
+        		<code>\displaystyle\int_{<var>L</var>}^{<var>U</var>} <var>n</var> dx = <var>n</var>(<var>U</var> - <var>L</var>)</code> because 
+        		we are just computing the area of a rectangle with base <code><var>U</var>-<var>L</var></code> and  height <code><var>n</var></code>.
+        	</p>
+        	<p>
+        		Thinking of this using the fundamental theorem instead, we can recognize that <code>\dfrac{d}{dx} \left(<var>n</var>x\right) = <var>n</var></code>, 
+        		and so <code>\left.\displaystyle\int <var>n</var> dx = \left(<var>n</var>x\right)\right|_{<var>L</var>}^{<var>U</var>}</code> which is the same thing.
+        	</p>
+        	<p>
+        		In any case, the final answer is <code><var>n*h</var></code>
+        	</p>
+        </div>
+       
+      </div>
+      <div id="power">
+      		
+      		  <div class="vars">
+      		    <var id="L">randRange(3,10)</var>
+				<var id="h">randRange(1,20)</var>
+				<var id="U">L+h</var>
+				<var id="n">randRangeExclude(-4,5,[-1,0])</var>
+  			  </div>
+        	
+        	<p class="question">
+        		Find <code>\displaystyle\int_{<var>L</var>}^{<var>U</var>} x^{<var>n</var>} dx</code>
+        	</p>
+        <p class="solution" data-type="parsedExpression">
+        	(1/(<var>n+1</var>))*((<var>U</var>)^(<var>n+1</var>) - (<var>L</var>)^(<var>n+1</var>))
+        </p>
+        <div class="hints">
+        	<p>
+        		<code>\left.\displaystyle\int_{<var>L</var>}^{<var>U</var>} x^{<var>n</var>} dx = \dfrac{x^{<var>n+1</var>}}{<var>n+1</var>}\right|_{<var>L</var>}^{<var>U</var>}</code> 
+        		because <code>\dfrac{d}{dx} \left( \dfrac{x^{<var>n+1</var>}}{<var>n+1</var>}\right)=  x^{<var>n</var>} </code> and by the fundamental theorem of calculus.
+        	</p>
+        	<p>
+        		<code>\hphantom{\displaystyle\int_{<var>L</var>}^{<var>U</var>} x^{<var>n</var>} dx } = \dfrac{(<var>U</var>)^{<var>n+1</var>}}{<var>n+1</var>} - \dfrac{(<var>L</var>)^{<var>n+1</var>}}{<var>n+1</var>}</code>
+        	</p>
+        </div>
+       
+      </div>
+      <div id="reciprocal">
+        		 <div class="vars">
+      		    <var id="L">randRange(3,10)</var>
+				<var id="h">randRange(1,20)</var>
+				<var id="U">L+h</var>
+				<var id="n">randRangeExclude(-30,30,[-1,0])</var>
+  			  </div>
+        	<p class="question">
+        		Find <code>\displaystyle\int_{<var>L</var>}^{<var>U</var>} \dfrac{1}{x} dx</code> 
+        	</p>
+        <p class="solution" data-type="parsedExpression">
+        	log(<var>U</var>) - log(<var>L</var>)
+        </p>
+        <div class="hints">
+        	<p>
+        		<code>\left.\displaystyle\int_{<var>L</var>}^{<var>U</var>} \dfrac{1}{x} dx = \log(|x|) \right|_{<var>L</var>}^{<var>U</var>}</code> 
+        		 because <code>\dfrac{d}{dx} \left( \log(|x|)\right)= \dfrac{1}{x} </code> and by the fundamental theorem.
+        	</p>
+        	<p><code>\hphantom{\displaystyle\int_{<var>L</var>}^{<var>U</var>} \dfrac{1}{x} dx} = \log(<var>U</var>) - \log(<var>L</var>) </code></p>
+        </div>
+       
+      </div>
+      <div id="sine">
+        	 <div class="vars">
+      		    <var id="L">randRange(3,10)</var>
+				<var id="h">randRange(1,20)</var>
+				<var id="U">L+h</var>
+				<var id="n">randRangeExclude(-30,30,[-1,0])</var>
+  			  </div>
+        	<p class="question">
+        		Find <code>\displaystyle\int_{<var>L</var>}^{<var>U</var>} \sin(x) dx</code>
+        	</p>
+       <p class="solution" data-type="parsedExpression">
+        	-cos(<var>U</var>) + cos(<var>L</var>)
+        </p>
+        <div class="hints">
+        	<p>
+        		<code>\left.\displaystyle\int_{<var>L</var>}^{<var>U</var>} \sin(x) dx =\left(-\cos(x)\right)\right|_{<var>L</var>}^{<var>U</var>}</code> 
+        		because <code>\dfrac{d}{dx} \left( -\cos(x)\right)= \sin(x)</code> and by the fundamental theorem of calculus.
+        	</p>
+        	<p>
+        		<code>\hphantom{\displaystyle\int_{<var>L</var>}^{<var>U</var>} \sin(x) dx} = -\cos(<var>U</var>)+\cos(<var>L</var>)</code>
+        	</p>
+        </div>
+       
+      </div>
+      <div id="cos">
+        	 <div class="vars">
+      		    <var id="L">randRange(3,10)</var>
+				<var id="h">randRange(1,20)</var>
+				<var id="U">L+h</var>
+				<var id="n">randRangeExclude(-30,30,[-1,0])</var>
+  			  </div>
+        	<p class="question">
+        		Find <code>\displaystyle\int_{<var>L</var>}^{<var>U</var>} \cos(x) dx</code>
+        	</p>
+       <p class="solution" data-type="parsedExpression">
+        	sin(<var>U</var>)-sin(<var>L</var>)
+        </p>
+        <div class="hints">
+        	<p>
+        		<code>\left.\displaystyle\int_{<var>L</var>}^{<var>U</var>} \cos(x) dx =\sin(x)\right|_{<var>L</var>}^{<var>U</var>}</code>
+        		 because <code>\dfrac{d}{dx} \left( \sin(x) \right) = \cos(x)</code> and by the fundamental theorem of calculus.
+        	</p>
+        	<p>
+        		<code>\hphantom{\displaystyle\int_{<var>L</var>}^{<var>U</var>} \cos(x) dx} = \sin(<var>U</var>) - \sin(<var>L</var>)</code>
+        	</p>
+        </div>
+       
+      </div>
+      <div id="sectan">
+        	 <div class="vars">
+      		    <var id="L">roundTo(2,randRange(-10,10)/20)</var>
+				<var id="h">roundTo(2,randRange(1,10)/20)</var>
+				<var id="U">roundTo(2,L+h)</var>
+				<var id="n">randRangeExclude(-30,30,[-1,0])</var>
+  			  </div>
+        	<p class="question">
+        		Find <code>\displaystyle\int_{<var>L</var>}^{<var>U</var>} \sec(x)\tan(x) dx</code>
+        	</p>
+        <p class="solution" data-type="parsedExpression">
+        	sec(<var>U</var>) - sec(<var>L</var>)
+        </p>
+        <div class="hints">
+        	<p>
+        		<code>\left.\displaystyle\int_{<var>L</var>}^{<var>U</var>} \sec(x)\tan(x) dx =\sec(x)\right|_{<var>L</var>}^{<var>U</var>}</code> 
+        		because <code>\dfrac{d}{dx} \left( \sec(x)\right)= \sec(x)\tan(x)</code> and by the fundamental theorem of calculus.
+        	</p>
+        	<p>
+        		<code>\hphantom{\displaystyle\int_{<var>L</var>}^{<var>U</var>} \sec(x)\tan(x) dx} = \sec(<var>U</var>) - \sec(<var>L</var>)</code>
+        	</p>
+        </div>
+       
+      </div>
+      <div id="secSquared">
+        	 <div class="vars">
+      		    <var id="L">roundTo(2,randRange(-10,10)/20)</var>
+				<var id="h">roundTo(2,randRange(1,10)/20)</var>
+				<var id="U">roundTo(2,L+h)</var>
+				<var id="n">randRangeExclude(-30,30,[-1,0])</var>
+  			  </div>
+        	<p class="question">
+        		Find <code>\displaystyle\int_{<var>L</var>}^{<var>U</var>} \sec^2(x) dx</code>
+        	</p>
+        <p class="solution" data-type="parsedExpression">
+        	tan(<var>U</var>)-tan(<var>L</var>)
+        </p>
+        <div class="hints">
+        	<p>
+        		<code>\left.\displaystyle\int_{<var>L</var>}^{<var>U</var>} \sec^2(x) dx =\tan(x)\right|_{<var>L</var>}^{<var>U</var>}</code> 
+        		because <code>\dfrac{d}{dx} \left( \tan(x)\right) = \sec^2(x)</code> and by the fundamental theorem of calculus.
+        	</p>
+        	<p>
+        		<code>\hphantom{\displaystyle\int_{<var>L</var>}^{<var>U</var>} \sec^2(x) dx} = \tan(<var>U</var>)-\tan(<var>L</var>) </code>
+        	</p>
+        </div>
+       
+      </div>
+      <div id="cscSquared">
+        	 <div class="vars">
+      		    <var id="L">roundTo(2,randRange(3,10)/10)</var>
+				<var id="h">roundTo(2,randRange(1,10)/10)</var>
+				<var id="U">roundTo(2,L+h)</var>
+				<var id="n">randRangeExclude(-30,30,[-1,0])</var>
+  			  </div>
+        	<p class="question">
+        		Find <code>\displaystyle\int_{<var>L</var>}^{<var>U</var>} \csc^2(x) dx</code>
+        	</p>
+       <p class="solution" data-type="parsedExpression">
+         	-cot(<var>U</var>) + cot(<var>L</var>)
+        </p>
+        <div class="hints">
+        	<p>
+        		<code>\left.\displaystyle\int_{<var>L</var>}^{<var>U</var>} \csc^2(x) dx =-\cot(x)\right|_{<var>L</var>}^{<var>U</var>}</code> 
+        		because <code>\dfrac{d}{dx} \left( -\cot(x)+C \right)= \csc^2(x)</code> and by the fundamental theorem of calculus.
+        	</p>
+        	<p>
+        		<code>\hphantom{\displaystyle\int_{<var>L</var>}^{<var>U</var>} \csc^2(x) dx = -\cot(<var>U</var>) +\cot(<var>L</var>)</code>
+        	</p>
+        </div>
+       
+      </div>
+      <div id="csccot">
+        	 <div class="vars">
+      		    <var id="L">roundTo(2,randRange(3,10)/10)</var>
+				<var id="h">roundTo(2,randRange(1,10)/10)</var>
+				<var id="U">roundTo(2,L+h)</var>
+				<var id="n">randRangeExclude(-30,30,[-1,0])</var>
+  			  </div>
+        	<p class="question">
+        		Find <code>\displaystyle\int_{<var>L</var>}^{<var>U</var>} \csc(x)\cot(x) dx</code>
+        	</p>
+        <p class="solution" data-type="parsedExpression">
+        	-csc(<var>U</var>)+csc(<var>L</var>)
+        </p>
+        <div class="hints">
+        	<p>
+        		<code>\left.\displaystyle\int_{<var>L</var>}^{<var>U</var>} \csc(x)\cot(x) dx =-\csc(x)\right|_{<var>L</var>}^{<var>U</var>}</code>
+        		 because <code>\dfrac{d}{dx} \left( -\csc(x)\right)= \csc(x)\cot(x)</code> and by the fundamental theorem of calculus.
+        	</p>
+        	<p>
+        		<code>\hphantom{\displaystyle\int_{<var>L</var>}^{<var>U</var>} \csc(x)\cot(x) dx} = -\csc(<var>U</var>)+\csc(<var>L</var>)</code>
+        	</p>
+        </div>
+       
+      </div>
+      <div id="exp">
+        	 <div class="vars">
+      		    <var id="L">randRange(3,10)</var>
+				<var id="h">randRange(1,20)</var>
+				<var id="U">L+h</var>
+				<var id="n">randRangeExclude(-30,30,[-1,0])</var>
+  			  </div>
+        	<p class="question">
+        		Find <code>\displaystyle\int_{<var>L</var>}^{<var>U</var>} e^x dx</code>
+        	</p>
+        <p class="solution" data-type="parsedExpression">
+        	e^(<var>U</var>)-e^(<var>L</var>)
+        </p>
+        <div class="hints">
+        	<p>
+        		<code>\left.\displaystyle\int_{<var>L</var>}^{<var>U</var>} e^x dx =e^x\right|_{<var>L</var>}^{<var>U</var>}</code> 
+        		because <code>\dfrac{d}{dx} \left( e^x\right)= e^x</code> and by the fundamental theorem of calculus.
+        	</p>
+        	<p>
+        		<code>\hphantom{\displaystyle\int_{<var>L</var>}^{<var>U</var>} e^x dx} = e^{<var>U</var>} - e^{<var>L</var>}</code>
+        	</p>
+        </div>
+       
+      </div>
+      
+    </div>
+  </div>
+</body>
+</html>

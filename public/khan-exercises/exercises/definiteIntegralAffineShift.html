@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html data-require="math word-problems steveMath8 graphie math-function-parser">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>Integrating more complicated functions 1</title>
+    <script src="../khan-exercise.js"></script>
+</head>
+<body>
+  <div class="exercise">
+  
+    <div class="problems">
+    
+      <div id="chainRule">
+        	<div class="vars">
+				<var id="A">randRange(2,5)</var>
+				<var id="B">randRange(1,5)</var>
+				<var id="n">randRangeExclude(-10,10,[-1,0,1])</var>
+				<var id="functionBank">
+				[
+				["\\cos("+A+"x+"+B+")","\\sin("+A+"x+"+B+")","\\dfrac{1}{"+A+"}\\sin("+A+"x+"+B+")","(1/"+A+")*sin("+A+"x+"+B+")"],
+				["\\sin("+A+"x+"+B+")","-\\cos("+A+"x+"+B+")","\\dfrac{-1}{"+A+"}\\cos("+A+"x+"+B+")","(-1/"+A+")*cos("+A+"x+"+B+")"],
+				["e^{"+A+"x+"+B+"}","e^{"+A+"x+"+B+"}","\\dfrac{1}{"+A+"}e^{"+A+"x+"+B+"}","(1/"+A+")*e^("+A+"x+"+B+")"],
+				["("+A+"x+"+B+")^{"+n+"}","\\dfrac{1}{"+n+"}("+A+"x+"+B+")^{"+(n+1)+"}","\\dfrac{1}{"+n*A+"}("+A+"x+"+B+")^{"+(n+1)+"}","("+1+"/"+n*A+ ")*("+A+"x+"+B+")^("+(n+1)+")"],
+				["\\dfrac{1}{"+A+"x+"+B+"}","\\log("+A+"x+"+B+")","\\dfrac{1}{"+A+"}\\log("+A+"x+"+B+")","(1/"+A+")*log("+A+"x+"+B+")"]
+				]
+				</var>
+				<var id="k">randRange(0,4)</var>
+				<var id="L">randRange(2,6)</var>
+				<var id="h">randRange(1,3)</var>
+				<var id="U">L+h</var>
+				<var id="F">MathFunction.parse(functionBank[k][3])</var>
+				
+				
+  			  </div>
+        	
+        	<p class="question">
+        		Find <code>\displaystyle\int_{<var>L</var>}^{<var>U</var>} <var>functionBank[k][0]</var> dx</code>
+        	</p>
+        <p class="solution" data-type="parsedExpression">
+        	<var>F.evaluate({x:U}) - F.evaluate({x:L})</var>
+        </p>
+        <div class="hints">
+        	<p>
+        		To use the fundamental theorem we have to first find <code>\displaystyle \int  <var>functionBank[k][0]</var> dx</code>.
+        	</p>
+        	<p>
+        		You should guess that <code>\displaystyle \int  <var>functionBank[k][0]</var> dx</code> would be something like  <code><var>functionBank[k][1]</var></code>, but this isn't quite right because 
+        		<code>\dfrac{d}{dx}  <var>functionBank[k][1]</var> = <var>A</var>\cdot  <var>functionBank[k][0]</var></code>, which is off from the correct answer by a factor of <code><var>A</var></code>.
+        	</p>
+        	<p>
+        		This is not a big deal: we can just divide by <code><var>A</var></code> to get the right answer!  So the answer is <code> <var>functionBank[k][2]</var></code>
+        	</p>
+        	<p>
+        		So by the fundamental theorem of calculus, <code>\left.\displaystyle\int_{<var>L</var>}^{<var>U</var>} <var>functionBank[k][0]</var> dx = <var>functionBank[k][2]</var>\right|_{<var>L</var>}^{<var>U</var>}</code>
+        	</p>
+        	<p>
+        		<code> = <var>functionBank[k][2].replace("x","("+U+")")</var> - <var>functionBank[k][2].replace("x","("+L+")")</var></code>
+        	</p>
+        </div>
+       
+      </div>
+      
+    </div>
+  </div>
+</body>
+</html>

@@ -117,9 +117,15 @@ basicSigma
 sigmaFormulas1
 sigmaFormulas2
 riemannSumIntegral
+riemannSumIntegralQuadratic
 smallRiemann
 areaValuedFunctionBehavior
 estimatingIntegrals
 integralSketch
 * Week 12
 wiggleInputIntegral
+FTOC2intuition
+definiteIntegralBasic
+definiteIntegralPolynomial
+definiteIntegralAffineShift
+definiteIntegralParts
