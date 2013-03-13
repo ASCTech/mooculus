@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html data-require="math word-problems steveMath8 graphie math-function-parser">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>Integrating Polynomials</title>
+    <script src="../khan-exercise.js"></script>
+</head>
+<body>
+  <div class="exercise">
+  
+
+    <div class="problems">
+      <div id="quadratic">
+      		
+      		  <div class="vars">
+				<var id="A">randRangeExclude(-10,10,[-1,0,1])</var>
+				<var id="B">randRangeExclude(-10,10,[-1,0,1])</var>
+				<var id="C">randRangeExclude(-10,10,[-1,0,1])</var>
+				<var id="L">randRange(-5,10)</var>
+				<var id="h">randRange(1,6)</var>
+				<var id="U">L+h</var>
+				<var id="F">(function(x){return A*x*x*x/3+B*x*x/2+C*x})</var>
+				
+  			  </div>
+        	
+        	<p class="question">
+        		Find <code>\displaystyle\int_{<var>L</var>}^{<var>U</var>} <var>A</var>x^2+<var>B</var>x+<var>C</var> dx</code>
+        	</p>
+        <p class="solution" data-type="parsedExpression">
+        	<var>F(U)-F(L)</var>
+        </p>
+        <div class="hints">
+        	<p>
+        		 <code>\displaystyle\int_{<var>L</var>}^{<var>U</var>} <var>A</var>x^2+<var>B</var>x+<var>C</var> dx = 
+        		 \left. \left(<var>A</var>\displaystyle\int x^2 dx +  <var>B</var>\displaystyle\int x dx + <var>C</var>\displaystyle\int 1 dx  \right) \right|_{<var>L</var>}^{<var>U</var>}</code>
+        		 by the fundamental theorem of calculus.
+        	</p>
+        	<p>
+        		 <code>\hphantom{\displaystyle\int <var>A</var>x^2+<var>B</var>x+<var>C</var> dx} = \left.\left(<var>A</var>\dfrac{x^3}{3} +  <var>B</var>\dfrac{x^2}{2} + <var>C</var>x\right) \right|_{<var>L</var>}^{<var>U</var>}</code>
+        	</p>
+        	<p>
+        		 <code>\hphantom{\displaystyle\int <var>A</var>x^2+<var>B</var>x+<var>C</var> dx} = 
+        		 \left(<var>A</var>\dfrac{(<var>U</var>)^3}{3} +  <var>B</var>\dfrac{(<var>U</var>)^2}{2} + <var>C</var>(<var>U</var>)\right) - \left(<var>A</var>\dfrac{(<var>L</var>)^3}{3} +  <var>B</var>\dfrac{(<var>L</var>)^2}{2} + <var>C</var>(<var>L</var>)\right) </code>
+        	</p>
+        	<p>
+        		<code>\hphantom{\displaystyle\int <var>A</var>x^2+<var>B</var>x+<var>C</var> dx} = <var>F(U)-F(L)</var></code>
+        	</p>
+        </div>
+       
+      </div>
+      <div id="cubic">
+      		
+      		  <div class="vars">
+				<var id="A">randRangeExclude(-10,10,[-1,0,1])</var>
+				<var id="B">randRangeExclude(-10,10,[-1,0,1])</var>
+				<var id="C">randRangeExclude(-10,10,[-1,0,1])</var>
+				<var id="D">randRangeExclude(-10,10,[-1,0,1])</var>
+				<var id="L">randRange(-5,10)</var>
+				<var id="h">randRange(1,6)</var>
+				<var id="U">L+h</var>
+				<var id="F">(function(x){return D*x*x*x*x/4+ A*x*x*x/3+B*x*x/2+C*x})</var>
+  			  </div>
+        	
+        	<p class="question">
+        		Find <code>\displaystyle\int_{<var>L</var>}^{<var>U</var>} <var>D</var>x^3+<var>A</var>x^2+<var>B</var>x+<var>C</var> dx</code>
+        	</p>
+       <p class="solution" data-type="parsedExpression">
+        	<var>F(U)-F(L)</var>
+        </p>
+        <div class="hints">
+        	<p>
+        		 <code>\displaystyle\int_{<var>L</var>}^{<var>U</var>} <var>D</var>x^3+<var>A</var>x^2+<var>B</var>x+<var>C</var> dx = \left.\left(<var>D</var>\displaystyle\int x^3 dx +  <var>A</var>\displaystyle\int x^2 dx +  <var>B</var>\displaystyle\int x dx + <var>C</var>\displaystyle\int 1 dx \right) \right|_{<var>L</var>}^{<var>U</var>}</code> by the fundamental theorem of calculus
+        	</p>
+        	<p>
+        		 <code>\hphantom{\displaystyle\int <var>D</var>x^3+<var>A</var>x^2+<var>B</var>x+<var>C</var> dx} = \left.\left(<var>D</var>\dfrac{x^4}{4}<var>A</var>\dfrac{x^3}{3} +  <var>B</var>\dfrac{x^2}{2} + <var>C</var>x\right) \right|_{<var>L</var>}^{<var>U</var>}</code>
+        	</p>
+        	<p>
+        		 <code>\hphantom{\displaystyle\int <var>A</var>x^2+<var>B</var>x+<var>C</var> dx} = 
+        		 \left(<var>D</var>\dfrac{(<var>U</var>)^4}{4}+<var>A</var>\dfrac{(<var>U</var>)^3}{3} +  <var>B</var>\dfrac{(<var>U</var>)^2}{2} + <var>C</var>(<var>U</var>)\right) - \left(<var>D</var>\dfrac{(<var>L</var>)^4}{4}+<var>A</var>\dfrac{(<var>L</var>)^3}{3} +  <var>B</var>\dfrac{(<var>L</var>)^2}{2} + <var>C</var>(<var>L</var>)\right) </code>
+        	</p>
+        	<p>
+        		<code>\hphantom{\displaystyle\int <var>A</var>x^2+<var>B</var>x+<var>C</var> dx} = <var>F(U)-F(L)</var></code>
+        	</p>
+        </div>
+       
+      </div> 
+    </div>
+  </div>
+</body>
+</html>

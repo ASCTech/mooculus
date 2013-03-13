@@ -1,8 +1,6 @@
-<!DOCTYPE html>
-<html data-require="math word-problems steveMath8 graphie math-function-parser">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-    <title>Recognizing the product rule in reverse: a preview of integration by parts</title>
+    <title>Integrating more complicated functions 2</title>
     <script src="../khan-exercise.js"></script>
 </head>
 <body>
@@ -15,24 +13,30 @@
 				<var id="A">randRangeNonZero(-10,10)</var>
 				<var id="B">randRangeNonZero(-10,10)</var>
 				<var id="n">randRangeExclude(-10,10,[-1,0,1])</var>
-				<var id="functionBank">["cos(x)","sin(x)","e^x","x^"+n,"(1/x)"]</var>
+				<var id="functionBank">["cos(x)","sin(x)","e^(x)","(x)^"+n,"(1/(x))"]</var>
 				<var id="fNum">randRange(0,functionBank.length-1)</var>
 				<var id="gNum">randRangeExclude(0,functionBank.length-1,[fNum])</var>
 				<var id="f">functionBank[fNum]</var>
 				<var id="g">functionBank[gNum]</var>
 				<var id="EXP">MathFunction.parse("("+f+")" +"*"+"("+g+")")</var>
 				<var id="derivativeEXP">EXP.derivative("x")</var>
+				 <var id="L">randRange(3,10)</var>
+				<var id="h">randRange(1,20)</var>
+				<var id="U">L+h</var>
   			  </div>
         	
         	<p class="question">
-        		Find <code>\displaystyle \int <var>derivativeEXP.tex()</var> dx</code>
+        	  Find <code>\displaystyle \int_{<var>L</var>}^{<var>U</var>} <var>derivativeEXP.tex()</var> dx</code>
         	</p>
-        <p class="solution" data-type="antiDerivativeExpression">
-        	<var>derivativeEXP.toString()</var>
+        <p class="solution" data-type="parsedExpression">
+        	<var>EXP.toString().replace(/x/g,U) + "-" + EXP.toString().replace(/x/g,L)</var>
         </p>
         <div class="hints">
         	<p>
-        		This looks like the derivative of a product of two functions, because it has the form given by the product rule.
+        		To compute this definite integral using the fundamental theorem of calculus, we have to first find the antiderivative.
+        	</p>
+        	<p>
+        		The integrand looks like the derivative of a product of two functions, because it has the form given by the product rule.
         	</p>
         	<p>
         		If we are looking for a function of the form <code>f(x)g(x)</code>, then <code>\dfrac{d}{dx} f(x)g(x) = f'(x)g(x)+f(x)g'(x)</code>
@@ -42,6 +46,12 @@
         	</p>
         	<p>
         		So <code>\displaystyle \int <var>derivativeEXP.tex()</var> dx = <var>EXP.tex()</var></code>
+        	</p>
+        	<p>
+        		So by the fundamental theorem, <code>\left.\displaystyle \int_{<var>L</var>}^{<var>U</var>} <var>derivativeEXP.tex()</var> dx = <var>EXP.tex()</var>\right|_{<var>L</var>}^{<var>U</var>}</code> 
+        	</p>
+        	<p>
+        		The final answer is <code><var>EXP.tex().replace(/x/g,U)</var> - <var>EXP.tex().replace(/x/g,L)</var></code>
         	</p>
         </div>
        

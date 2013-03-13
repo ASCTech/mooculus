@@ -108,6 +108,12 @@ sigmaFormulas2.html
 estimatingIntegrals.html
 smallRiemann.html
 riemannSumIntegral.html
+riemannSumIntegralQuadratic.html
 areaValuedFunctionBehavior.html
 integralSketch.html
 wiggleInputIntegral.html
+FTOC2intuition.html
+definiteIntegralBasic.html
+definiteIntegralPolynomial.html
+definiteIntegralAffineShift.html
+definiteIntegralParts.html

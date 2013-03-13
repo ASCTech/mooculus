@@ -1,0 +1,153 @@
+<html data-require="math word-problems steveMath8 graphie math-function-parser">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>Evaluating definite integrals of quadratic functions using the definition</title>
+    <script src="../khan-exercise.js"></script>
+</head>
+
+<body>
+    <div class="exercise">
+        <div class="problems">
+ 
+	  <div id="quadratic">
+
+           
+                <div class="vars">                       
+                    <var id="A">randRangeNonZero(-10,10)</var>
+                    <var id="B">randRangeNonZero(-10,10)</var> 
+                    <var id="C">randRangeNonZero(-10,10)</var>
+                    <var id="L">randRange(1,10)</var>
+                    <var id="U">randRange(L+1,20)</var>
+                    
+                    <!-- Useful for drawing the picture in the hint-->
+                    <var id="f">(function(x){return x*x+1})</var> 
+                </div>
+                
+               <p>
+					Consider the definite integral <code>\displaystyle\int_{<var>L</var>}^{<var>U</var>} \left( <var>A</var>x^2+<var>B</var>x+<var>C</var>\right) dx</code>
+                </p>
+              <p class = "question">
+				  First find a closed form expression for the <code>n^{th}</code> right Riemann sum of this integral.  Then take the limit as <code>n \to \infty</code>  to 
+				  find the exact value of this integral.
+              </p>
+               
+                 <div class="solution" data-type="multiple">
+    					<p>
+    					<code>R_n</code> = <span class="sol" data-type="parsedExpression">
+    					
+    					<var>((U-L)*(U-L)*(U-L)*A/6)</var>*n*(n+1)*(2n+1)/(n^3) + <var>((U-L)*B+2*U*A*L-2*L*A*L)*(U-L)</var>*(n+1)/(2*n)+<var>(C+A*L*L+B*L)*(U-L)</var>
+    					
+    					</span>
+    					</p>
+   						 <p>
+   						 	<code>\displaystyle\int_{<var>L</var>}^{<var>U</var>} \left( <var>A</var>x^2+<var>B</var>x+<var>C</var>\right) dx</code> = <span class="sol"><var>((U-L)*(U-L)*(U-L)*A/3 + ((U-L)*B+2*U*A*L-2*L*A*L)*(U-L)/2+(C+A*L*L+B*L)*(U-L))</var></span>
+   						 </p>
+				</div>
+				
+				<div class="hints">
+						<div>
+							<p>
+								Always draw a generic picture for the right Riemann sum of <code>\displaystyle\int_{a}^{b} f(x) dx</code> just to remind yourself of what the formula should be.
+							</p>
+							 <div class="graphie" id="grid">
+            graphInit({
+            range: [[-1,4],[-2,16]],
+            scale: [80,20],
+            tickStep: 1,
+			gridOpacity: 0.00005,
+            axisOpacity: 0.5,
+            tickOpacity: 0.00004,
+            
+              });
+                    
+              plot(function( x ) {
+              return ( x*x+1);
+              }, [-12, 12], {
+              stroke: RED,
+              strokeWidth: 2
+              });
+              
+              label([3.7,3.7*3.7+1.5],"f");
+              label([1,-.3],"a");
+              label([3,-.3],"b");
+              
+              for (var n = 0;n&lt;5;n++){
+				  
+				  line([1+n/5,0],[1+n/5,f(1+(n+1)/5)]);
+				  line([1+n/5,f(1+(n+1)/5)],[1+(n+1)/5,f(1+(n+1)/5)]);
+				  line([1+(1+n)/5,f(1+(n+1)/5)],[1+(1+n)/5,0]);
+				  
+              	  }
+              
+              
+              
+            	 line([2.8,0],[2.8,f(3)]);
+				  line([2.8,f(3)],[3,f(3)]);
+				  line([3,f(3)],[3,0]);
+				  
+				  label([1.7,-.3],"i^{th}")
+               
+          </div>
+						
+						</div>
+						<div>
+							<p>
+								The width of each rectangle is <code>\dfrac{b-a}{n}</code> because the interval of length <code>b-a</code> is being subdivided into <code>n</code>
+								equal sized rectangles
+							</p>
+							<p>
+								Thus the abscissa of the right endpoint of the <code>i^{th}</code> rectangle is <code>a+\dfrac{b-a}{n} \cdot i</code>, and so the height of that rectangle is <code>f(a+\dfrac{b-a}{n} \cdot i)</code>
+							</p>
+							<p>
+								So the area of the <code>i^{th}</code> rectangle is <code>f(a+\dfrac{b-a}{n} \cdot i) \cdot \dfrac{b-a}{n}</code>
+							</p>
+							<p>
+								So the sum of all <code>n</code> rectangles is <code>\displaystyle\sum\limits_{i=1}^{n} f(a+\dfrac{b-a}{n} \cdot i) \cdot \dfrac{b-a}{n}</code>
+							</p>
+						</div>
+						<p>
+							Thus in this particular case, <code>R_n = \displaystyle\sum\limits_{i=1}^{n} \left[ <var>A</var>(<var>L</var>+\dfrac{<var>U</var>-<var>L</var>}{n} \cdot i)^2  + <var>B</var>(<var>L</var>+\dfrac{<var>U</var>-<var>L</var>}{n} \cdot i)+<var>C</var>\right] \cdot \dfrac{<var>U</var>-<var>L</var>}{n}</code>
+						</p>
+						<p>
+							 <code> = \dfrac{<var>U-L</var>}{n} \displaystyle\sum\limits_{i=1}^{n} \left[ <var>A</var>(<var>L</var>+\dfrac{<var>U-L</var>}{n} \cdot i)^2  + <var>B</var>(<var>L</var>+\dfrac{<var>U-L</var>}{n} \cdot i)+<var>C</var>\right]</code> because <code>\dfrac{<var>U-L</var>}{n}</code> is a constant, and so can be factored out
+						</p>
+						<p>
+							 <code> = \dfrac{<var>U-L</var>}{n} \displaystyle\sum\limits_{i=1}^{n} \left[ <var>A</var>(<var>L*L</var>+\dfrac{<var>2*U*L-2*L*L</var>}{n} \cdot i + \dfrac{<var>(U-L)*(U-L)</var>}{n^2}i^2)  + <var>B</var>(<var>L</var>+\dfrac{<var>U-L</var>}{n} \cdot i)+<var>C</var>\right]</code>
+						</p>
+						<p>
+							 <code> = \dfrac{<var>U-L</var>}{n} \displaystyle\sum\limits_{i=1}^{n} \left[ (<var>A*L*L</var>+\dfrac{<var>2*U*L*A-2*L*L*A</var>}{n} \cdot i + \dfrac{<var>(U-L)*(U-L)*A</var>}{n^2}i^2)  + (<var>B*L</var>+\dfrac{<var>(U-L)*B</var>}{n} \cdot i)+<var>C</var>\right]</code>
+						</p>
+						<p>
+							 <code> = \dfrac{<var>U-L</var>}{n} \displaystyle\sum\limits_{i=1}^{n} \left[ \dfrac{<var>(U-L)*(U-L)*A</var>}{n^2}i^2  + \dfrac{<var>(U-L)*B+2*U*A*L-2*L*A*L</var>}{n} i+<var>C+A*L*L+B*L</var>\right]</code>
+						</p>
+						<p>
+							 <code> = \dfrac{<var>U-L</var>}{n} \cdot \dfrac{<var>(U-L)*(U-L)*A</var>}{n^2} \displaystyle\sum\limits_{i=1}^{n}  i^2  + \dfrac{<var>U-L</var>}{n} \cdot \dfrac{<var>(U-L)*B+2*U*A*L-2*L*A*L</var>}{n} \displaystyle\sum\limits_{i=1}^{n}  i+<var>C+A*L*L+B*L</var>\cdot \dfrac{<var>U-L</var>}{n}\displaystyle\sum\limits_{i=1}^{n} 1</code>
+						</p>
+						<p>
+							 <code> = \dfrac{<var>U-L</var>}{n} \cdot \dfrac{<var>(U-L)*(U-L)*A</var>}{n^2} \cdot \dfrac{n(n+1)(2n+1)}{6} + \dfrac{<var>U-L</var>}{n} \cdot \dfrac{<var>(U-L)*B+2*U*A*L-2*L*A*L</var>}{n} \cdot \dfrac{n(n+1)}{2}+<var>C+A*L*L+B*L</var>\cdot \dfrac{<var>U-L</var>}{n}\cdot n</code>
+						</p>
+						<p>
+							 <code> =  \dfrac{<var>(U-L)*(U-L)*(U-L)*A</var>n(n+1)(2n+1)}{6n^3} + \dfrac{<var>((U-L)*B+2*U*A*L-2*L*A*L)*(U-L)</var>(n+1)}{2n}+<var>(C+A*L*L+B*L)*(U-L)</var></code>
+						</p>
+						<p>
+							Thus  <code>R_n =  <var>displayMode((U-L)*(U-L)*(U-L)*A/6)</var>\dfrac{n(n+1)(2n+1)}{n^3} + <var>((U-L)*B+2*U*A*L-2*L*A*L)*(U-L)</var>\dfrac{(n+1)}{2n}+<var>(C+A*L*L+B*L)*(U-L)</var></code>
+						</p>
+						<p>
+							Thus <code>\displaystyle\int_{<var>L</var>}^{<var>U</var>} \left( <var>A</var>x^2+<var>B</var>x+<var>C</var>\right) dx
+							=\displaystyle\lim_{n \to \infty} R_n
+							=\displaystyle\lim_{n \to \infty} <var>displayMode((U-L)*(U-L)*(U-L)*A/6)</var>\dfrac{n(n+1)(2n+1)}{n^3} + <var>((U-L)*B+2*U*A*L-2*L*A*L)*(U-L)</var>\dfrac{(n+1)}{2n}+<var>(C+A*L*L+B*L)*(U-L)</var></code> 
+						</p>
+						<p>
+							<code> = <var>displayMode((U-L)*(U-L)*(U-L)*A/6)</var>\cdot 2 + <var>((U-L)*B+2*U*A*L-2*L*A*L)*(U-L)</var>\cdot \dfrac{1}{2}+<var>(C+A*L*L+B*L)*(U-L)</var></code>
+						</p>
+						<p>
+							<code> = <var>displayMode((U-L)*(U-L)*(U-L)*A/3 + ((U-L)*B+2*U*A*L-2*L*A*L)*(U-L)/2+(C+A*L*L+B*L)*(U-L))</var></code>
+						</p>
+						</div>
+		</div>
+    </div>
+    
+</div>
+
+</body>
+</html>
