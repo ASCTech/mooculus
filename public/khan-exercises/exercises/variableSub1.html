@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html data-require="math word-problems steveMath8 graphie math-function-parser">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>Variable Substitution</title>
+    <script src="../khan-exercise.js"></script>
+</head>
+<body>
+  <div class="exercise">
+  
+    <div class="problems">
+    
+      <div id="varSub1">
+        	<div class="vars">
+				<var id="A">randRangeNonZero(-10,10)</var>
+				<var id="B">randRangeNonZero(-10,10)</var>
+				<var id="n">randRangeExclude(-10,10,[0,1])</var>
+				<var id="functionBank">["cos(x)","sin(x)","e^(x)","(x)^"+n,"(1/(x))"]</var>
+				<var id="fNum">randRange(0,functionBank.length-1)</var>
+				<var id="gNum">randRangeExclude(0,functionBank.length-1,[fNum])</var>
+				<var id="f">functionBank[fNum]</var>
+				<var id="g">functionBank[gNum]</var>
+				<var id="EXP">MathFunction.parse(f.replace("x",g))</var>
+				<var id="derivativeEXP">MathFunction.parse(f.replace("x",g)).derivative("x")</var>
+  			  </div>
+        	
+        	<p class="question">
+        		Find <code>\displaystyle \int <var>derivativeEXP.tex()</var> dx</code>
+        	</p>
+        <p class="solution" data-type="antiDerivativeExpression">
+        	<var>derivativeEXP.toString()</var>
+        </p>
+        <div class="hints">
+        	<p>
+        		Let <code>u = <var>MathFunction.parse(g).tex()</var></code>.
+        	</p>
+        	<p>
+        		Then <code>\dfrac{du}{dx} = <var>MathFunction.parse(g).derivative("x").tex()</var></code>, so <code>du = <var>MathFunction.parse(g).derivative("x").tex()</var>dx</code>
+        	</p>
+        	<p>
+        		Rewriting the integral with this substitution we have <code>\displaystyle\int <var>MathFunction.parse(f.replace(/x/g,"u")).derivative("u").tex()</var> du</code>
+        	</p>
+        	<p>
+        		This is <code><var>MathFunction.parse(f.replace(/x/g,"u")).tex()</var>+C</code>
+        	</p>
+        	<p>
+        		Substituting <code>u = <var>MathFunction.parse(g).tex()</var></code> back we have <code><var>MathFunction.parse(f.replace(/x/g,g)).tex()</var>+C</code>
+        	</p>
+        </div>
+       
+      </div>
+      <div id="varSub2">
+        	<div class="vars">
+				<var id="A">randRangeNonZero(-10,10)</var>
+				<var id="B">randRangeNonZero(-10,10)</var>
+				<var id="n">randRangeExclude(-10,10,[0,1])</var>
+				<var id="functionBank">["arccos(x)","arcsin(x)","e^(x)","(x)^"+n,"(1/(x))"]</var>
+				<var id="fNum">randRange(0,1)</var>
+				<var id="gNum">randRangeExclude(0,functionBank.length-1,[fNum])</var>
+				<var id="f">functionBank[fNum]</var>
+				<var id="g">functionBank[gNum]</var>
+				<var id="EXP">MathFunction.parse(f.replace("x",g))</var>
+				<var id="derivativeEXP">MathFunction.parse(f.replace("x",g)).derivative("x")</var>
+  			  </div>
+        	
+        	<p class="question">
+        		Find <code>\displaystyle \int <var>derivativeEXP.tex()</var> dx</code>
+        	</p>
+        <p class="solution" data-type="antiDerivativeExpression">
+        	<var>derivativeEXP.toString()</var>
+        </p>
+        <div class="hints">
+        	<p>
+        		Let <code>u = <var>MathFunction.parse(g).tex()</var></code>.
+        	</p>
+        	<p>
+        		Then <code>\dfrac{du}{dx} = <var>MathFunction.parse(g).derivative("x").tex()</var></code>, so <code>du = <var>MathFunction.parse(g).derivative("x").tex()</var>dx</code>
+        	</p>
+        	<p>
+        		Rewriting the integral with this substitution we have <code>\displaystyle\int <var>MathFunction.parse(f.replace(/x/g,"u")).derivative("u").tex()</var> du</code>
+        	</p>
+        	<p>
+        		This is <code><var>MathFunction.parse(f.replace(/x/g,"u")).tex()</var>+C</code>
+        	</p>
+        	<p>
+        		Substituting <code>u = <var>MathFunction.parse(g).tex()</var></code> back we have <code><var>MathFunction.parse(f.replace(/x/g,g)).tex()</var>+C</code>
+        	</p>
+        </div>
+       
+      </div>
+      <div id="varSub3">
+        	<div class="vars">
+				<var id="A">randRangeNonZero(-10,10)</var>
+				<var id="B">randRangeNonZero(-10,10)</var>
+				<var id="n">randRangeExclude(-10,10,[0,1])</var>
+				<var id="functionBank">["sec(x)","tan(x)","e^(x)","(x)^"+n]</var>
+				<var id="fNum">randRange(0,1)</var>
+				<var id="gNum">randRangeExclude(0,functionBank.length-1,[fNum])</var>
+				<var id="f">functionBank[fNum]</var>
+				<var id="g">functionBank[gNum]</var>
+				<var id="EXP">MathFunction.parse(f.replace("x",g))</var>
+				<var id="derivativeEXP">MathFunction.parse(f.replace("x",g)).derivative("x")</var>
+  			  </div>
+        	
+        	<p class="question">
+        		Find <code>\displaystyle \int <var>derivativeEXP.tex()</var> dx</code>
+        	</p>
+        <p class="solution" data-type="antiDerivativeExpression">
+        	<var>derivativeEXP.toString()</var>
+        </p>
+        <div class="hints">
+        	<p>
+        		Let <code>u = <var>MathFunction.parse(g).tex()</var></code>.
+        	</p>
+        	<p>
+        		Then <code>\dfrac{du}{dx} = <var>MathFunction.parse(g).derivative("x").tex()</var></code>, so <code>du = <var>MathFunction.parse(g).derivative("x").tex()</var>dx</code>
+        	</p>
+        	<p>
+        		Rewriting the integral with this substitution we have <code>\displaystyle\int <var>MathFunction.parse(f.replace(/x/g,"u")).derivative("u").tex()</var> du</code>
+        	</p>
+        	<p>
+        		This is <code><var>MathFunction.parse(f.replace(/x/g,"u")).tex()</var>+C</code>
+        	</p>
+        	<p>
+        		Substituting <code>u = <var>MathFunction.parse(g).tex()</var></code> back we have <code><var>MathFunction.parse(f.replace(/x/g,g)).tex()</var>+C</code>
+        	</p>
+        </div>
+       
+      </div>
+      <div id="rootTrick">
+        	<div class="vars">
+				<var id="A">randRange(2,10)</var>
+				<var id="B">randRange(2,10)</var>
+				<var id="n">randRange(2,3)</var>
+  			  </div>
+        	
+        	<p class="question">
+        		Find <code>\displaystyle \int <var>A</var>x\sqrt[<var>n</var>]{x+<var>B</var>} dx</code>
+        	</p>
+        <p class="solution" data-type="antiDerivativeExpression">
+        	<var>A</var>*x*(x+<var>B</var>)^(1/(<var>n</var>))
+        </p>
+        <div class="hints">
+        	<p>
+        		Let <code>u = x+<var>B</var></code>
+        	</p>
+        	<p>
+        		Then <code>\dfrac{du}{dx} = 1</code>, so <code>du = dx</code>.  Also note that <code>x = u-<var>B</var></code>
+        	</p>
+        	<p>
+        		Rewriting the integral with this substitution we have <code><var>A</var>\displaystyle\int  (u-<var>B</var>)\sqrt[<var>n</var>]{u}du</code>
+        	</p>
+        	<p>
+        		<code> =<var>A</var> \displaystyle\int  (u-<var>B</var>)u^{\frac{1}{<var>n</var>}}du</code>
+        	</p>
+        	<p>
+        		<code> = <var>A</var>\displaystyle\int  u^{\frac{<var>n+1</var>}{<var>n</var>}}-<var>B</var>u^{\frac{1}{<var>n</var>}}du</code>
+        	</p>
+        	<p>
+        		<code> =  <var>A</var>\left(\dfrac{<var>n</var>}{<var>2*n+1</var>}u^{\frac{<var>2*n+1</var>}{<var>n</var>}}-\dfrac{<var>B*n</var>}{<var>n+1</var>}u^{\frac{<var>n+1</var>}{<var>n</var>}}\right)</code>
+        	</p>
+        	<p>
+        		Substituting <code>u = x+<var>B</var></code> back we have 
+        		<code><var>A</var>\left(\dfrac{<var>n</var>}{<var>2*n+1</var>}(x+<var>B</var>)^{\frac{<var>2*n+1</var>}{<var>n</var>}}-\dfrac{<var>B*n</var>}{<var>n+1</var>}(x+<var>B</var>)^{\frac{<var>n+1</var>}{<var>n</var>}}\right)</code>
+        	</p>
+        </div>
+       
+      </div>
+      
+      
+      
+    </div>
+  </div>
+</body>
