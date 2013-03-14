@@ -401,7 +401,8 @@ together we find
 
 If we take the limit of all such sums as the partitions get finer and
 finer, we obtain closer and closer approximations, see
-Figure~\ref{figure:partitionsfiner}.
+Figure~\ref{figure:partitionsfiner}. Sums of the form we are
+describing are called \textit{Riemann sums}.
 
 \break
 
@@ -450,12 +451,151 @@ Figure~\ref{figure:partitionsfiner}.
 \label{figure:partitionsfiner}
 \end{marginfigure}
 
-One can use \textit{Riemann sums} to compute this area.
 
-\begin{definition}
-A \textbf{Riemann Sum} 
+\begin{definition}\index{Riemann sum}
+Given an interval $[a,b]$ and a partititon defined by
+\[
+a = x_0 < x_1 <x_2 < \cdots x_{n-1}< x_n = b,
+\]
+a \textbf{Riemann sum} for $f(x)$ is a sum of the form
+\[
+\sum_{i=0}^{n-1} f(x_i^*) \cdot (x_{i+1}-x_i)
+\]
+where $x_i^*\in [x_i,x_{i+1}]$.
 \end{definition}
 
+There are actually at least five special Riemann sums, \textit{left},
+\textit{right}, \textit{midpoint}, \textit{upper}, and \textit{lower}.
+
+\begin{definition}
+Consider the following Riemann sum:
+\[
+\sum_{i=0}^{n-1} f(x_i^*) \cdot (x_{i+1}-x_i)
+\]
+\begin{itemize}
+\item This is called a \textbf{left} Riemann sum if each $x_i^* =
+  x_i$.
+\item This is called a \textbf{right} Riemann sum if each $x_i^* =
+  x_{i+1}$.
+\item This is called a \textbf{midpoint} Riemann sum if each $x_i^*
+  = \frac{x_i+x_{i+1}}{2}$.
+\item This is called a \textbf{upper} Riemann sum if each $x_i^*$ is
+  a point that gives a maximum value $f(x)$ on the interval
+  $[x_i,x_{i+1}]$.
+\item This is called a \textbf{lower} Riemann sum if each $x_i^*$ is a
+  point that gives a minimum value $f(x)$ on the interval
+  $[x_i,x_{i+1}]$.
+\end{itemize}
+\end{definition}
+Riemann sums give a mechnisim though which integrals could be
+computed. Let's compute some Riemann sums.
+
+\begin{example}
+Compute the left Riemann sum that approximates
+\[
+\int_1^2 x^2-2x+2\d x
+\]
+using four equally spaced parititons of the interval $[1,2]$.
+\end{example}
+
+\begin{marginfigure}
+
+\begin{tikzpicture}
+	\begin{axis}[
+            domain=.75:2.25, ymax=3,xmax=2.25, xmin=.75,ymin=0,
+            axis lines =left, xlabel=$x$, ylabel=$y$,
+            every axis y label/.style={at=(current axis.above origin),anchor=south},
+            every axis x label/.style={at=(current axis.right of origin),anchor=west},
+            xtick={1,1.25,1.5,1.75,2}, ytickmin=4, ytickmax=1,
+            axis on top,
+          ]
+
+          \addplot [draw=penColor,fill=fillp] plot coordinates {(1,1) (1.25,1)} \closedcycle;
+          \addplot [draw=penColor,fill=fillp] plot coordinates {(1.25,1.06) (1.5,1.06)} \closedcycle;
+          \addplot [draw=penColor,fill=fillp] plot coordinates {(1.5,1.25) (1.75,1.25)} \closedcycle;
+          \addplot [draw=penColor,fill=fillp] plot coordinates {(1.75,1.56) (2,1.56)} \closedcycle;
+
+          \addplot [very thick,penColor, smooth,domain=(0:6)] {x^2-2*x+2};
+          
+          \addplot [color=penColor,fill=penColor,only marks,mark=*] coordinates{(1,1)};  %% closed hole         
+          \addplot [color=penColor,fill=penColor,only marks,mark=*] coordinates{(1.25,1.06)};  %% closed hole       
+          \addplot [color=penColor,fill=penColor,only marks,mark=*] coordinates{(1.5,1.25)};  %% closed hole  
+          \addplot [color=penColor,fill=penColor,only marks,mark=*] coordinates{(1.75,1.56)};  %% closed hole       
+          
+          \node at (axis cs:1,1) [textColor,above] {$f(x_0^*)$};
+          \node at (axis cs:1.25,1.06) [textColor,above] {$f(x_1^*)$};
+          \node at (axis cs:1.5,1.3) [textColor,above] {$f(x_2^*)$};
+          \node at (axis cs:1.75,1.6) [textColor,above] {$f(x_3^*)$};
+        \end{axis}
+\end{tikzpicture}
+\caption{Here we see the interval $[1,2]$ partititoned into four
+  subintervals.}
+\label{figure:drawRiemann1}
+\end{marginfigure}
+
+\begin{solution}
+Start by setting $f(x) = x^2-2x+2$ and examining
+Figure~\ref{figure:drawRiemann1}.  Our partition of $[1,2]$ is
+\[
+[1,1.25]\cup [1.25,1.5]\cup [1.5,1.75]\cup [1.75,2]. 
+\]
+Hence our left Riemann sum is given by 
+\[
+f(1)(1.25-1) + f(1.25)(1.5-1.25) + f(1.5)(1.75-1.5) + f(1.75)(2-1.75).
+\]
+This is equal to 
+\[
+\frac{1}{4} + \frac{17}{64} + \frac{5}{16} + \frac{25}{64} = \frac{39}{32} \approx 1.22.
+\]
+\end{solution}
+
+For a Riemann sum to equal the value of the related integral, we need
+the width of our parititions to go to zero. We'll work through an
+example of this.
+
+\begin{example}
+Compute
+\[
+\int_3^7 2x-1\d x
+\]
+via a left Riemann sum.
+\end{example}
+
+\begin{solution}
+Start by setting $f(x) = 2x-1$ and examining
+Figure~\ref{figure:drawRiemann2}.  The interval $[3,7]$ is divided
+into $n$ subintervals each of width $(7-3)/n$. Our left Riemann sum is
+now
+\[
+\sum_{i=0}^{n-1} f(3+(7-3)i/n) \left(\frac{7-3}{n}\right).
+\]
+Simplifying a bit we find
+\begin{align*}
+\sum_{i=0}^{n-1} f(3+4i/n) \frac{4}{n} &= \sum_{i=0}^{n-1} \left((2(3+4i/n) -1 )\frac{4}{n}\right)\\
+&= \sum_{i=0}^{n-1} \left((5+8i/n )\frac{4}{n}\right)\\
+&= \sum_{i=0}^{n-1} \left(\frac{20}{n} + \frac{32i}{n^2}\right)\\
+&= \sum_{i=0}^{n-1} \frac{20}{n} + \sum_{i=0}^n\frac{32i}{n^2}\\
+&= \frac{20}{n}\sum_{i=0}^{n-1} 1 +\frac{32}{n^2} \sum_{i=0}^n i
+\end{align*}
+Now at this point we need two formulas
+\[
+\sum_{i=0}^{n-1}1 = n-1 \qquad\text{and}\qquad \sum_{i=0}^n i = \frac{n^2-n}{2}.
+\]
+Substituting these formulas for the sums above, we find 
+\begin{align*}
+\frac{20}{n}\sum_{i=0}^{n-1} 1 +\frac{32}{n^2} \sum_{i=0}^n i &=\frac{20}{n}(n-1) +\frac{32}{n^2}\frac{n^2-n}{2}\\
+&=20 -\frac{20}{n}+16 -\frac{16}{n}\\
+&=36 + \frac{36}{n}.
+\end{align*}
+By construction
+\[
+\int_3^7 2x-1 \d x = \lim_{n\to \infty}\sum_{i=0}^{n-1} f(3+(7-3)i/n) \left(\frac{7-3}{n}\right)
+\]
+hence
+\[
+\int_3^7 2x-1 \d x = \lim_{n\to \infty} \left(36 + \frac{4}{n}\right) = 36.
+\]
+\end{solution}
 
 
 
