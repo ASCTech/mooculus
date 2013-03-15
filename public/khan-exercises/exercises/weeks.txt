@@ -129,3 +129,5 @@ definiteIntegralBasic
 definiteIntegralPolynomial
 definiteIntegralAffineShift
 definiteIntegralParts
+* Week 13
+variableSub1
