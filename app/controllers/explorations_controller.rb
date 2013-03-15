@@ -11,4 +11,7 @@ class ExplorationsController < ApplicationController
 
   def fifths
   end
+
+  def euler
+  end
 end
