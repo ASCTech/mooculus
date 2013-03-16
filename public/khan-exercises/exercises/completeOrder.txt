@@ -117,3 +117,4 @@ definiteIntegralBasic.html
 definiteIntegralPolynomial.html
 definiteIntegralAffineShift.html
 definiteIntegralParts.html
+variableSub1.html
