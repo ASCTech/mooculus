@@ -262,9 +262,9 @@ falls into one of the categories described above, rewrite as
 \[
 \lim_{x\to a}e^{v(x)\ln(u(x))}
 \]
-and then examine 
+and then examine the limit of the exponent
 \[
-\lim_{x\to a} \frac{\ln(u(x))}{v(x)^{-1}}
+\lim_{x\to a} v(x)\ln(u(x)) = \lim_{x\to a} \frac{\ln(u(x))}{v(x)^{-1}}
 \]
 using l'H\^opital's rule.  Since these forms are all very similar, we
 will only give a single example.
@@ -282,9 +282,9 @@ Write
 \[
 \lim_{x\to \infty}\left(1 + \frac{1}{x}\right)^x = \lim_{x\to \infty}e^{x\ln\left(1 + \frac{1}{x}\right)}.
 \]
-So now look at
+So now look at the limit of the exponent
 \[
-\lim_{x\to\infty} \frac{\ln\left(1 + \frac{1}{x}\right)}{x^{-1}}
+\lim_{x\to\infty} x\ln\left(1 + \frac{1}{x}\right) = \lim_{x\to\infty} \frac{\ln\left(1 + \frac{1}{x}\right)}{x^{-1}}.
 \]
 Setting $f(x) = \ln\left(1 + \frac{1}{x}\right)$ and $g(x) = x^{-1}$,
 both functions are differentiable for large values of $x$ and

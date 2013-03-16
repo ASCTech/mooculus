@@ -16,7 +16,7 @@ F'(x) = f(x)
 for all $x$ in the interval.
 \end{definition}
 
-We have special notion for the antiderivative:
+We have special notation for the antiderivative:
 
 \begin{definition}\index{antiderivative!notation}\index{indefinite integral}
 The antiderivative is denoted by
@@ -399,9 +399,9 @@ $(x^2+4)^6/6 + C$
 \end{exercise}
 
 \begin{exercise}
-$\int \frac{\ln(x)^4}{x} \d x$ 
+$\int \frac{(\ln(x))^4}{x} \d x$ 
 \begin{answer}
-$\ln(x)^5/5 +C$
+$(\ln(x))^5/5 +C$
 \end{answer}
 \end{exercise}
 
@@ -783,14 +783,15 @@ radiocarbon dating.
 \begin{example}
 The half-life of carbon-14 (the time it takes for half of an amount of
 carbon-14 to decay) is about 5730 years. If the rate of decay is
-proportional to the amount of carbon-14, and if we found a bone where
-the ratio of carbon-12 to carbon-14 is $70$ to $1$, approximately how
-old is the bone?
+proportional to the amount of carbon-14, and if we found a bone with
+$1/70$th of the amount of carbon-14 we would expect to find in a living
+organism, approximately how old is the bone?
 \end{example}
 
 \begin{solution}
 Since the rate of decay of carbon-14 is proportional to the amount of
-carbon-14 present, we can model this situation with the differential equation
+carbon-14 present, we can model this situation with the differential
+equation
 \[
 f'(t) = k f(t).
 \]
@@ -808,7 +809,8 @@ Solving this equation for $k$, gives
 \[
 k = \frac{-\ln(2)}{5730}.
 \]
-Since the proportion of carbon-12 to carbon-14 is $70$ to $1$, we write
+Since we currently have $1/70$th of the original amount of carbon-14
+we write
 \[
 70 = 1\cdot e^{\frac{-\ln(2)t}{5730}}.
 \]
