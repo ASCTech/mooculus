@@ -390,6 +390,31 @@ $1/2$
 
 \endtwocol
 
+\begin{exercise}
+Suppose you know that $\int_{-1}^1 x^2 \d x = \frac{2}{3}$ and that
+$\int_{-1}^1 e^x \d x= e-\frac{1}{e}$. Use properties of definite
+integrals to compute
+\[
+\int_{-1}^1 \left(4 e^x - 3 x^2\right) \d x.
+\]
+\begin{answer}
+$4e - \frac{4}{2} - 2$
+\end{answer}
+\end{exercise}
+
+\begin{exercise}
+Suppose you know that $\int_{1}^2 x^2 \d x = \frac{7}{3}$, $\int_1^2
+\ln(x)\d x = \ln(4) - 1$, and that $\int_1^2 \sin(\pi x) \d x =
+\frac{-2}{\pi}$. Use properties of definite integrals to compute
+\[
+\int_1^2 \left(6 x^2  - 2 \ln(x) +\pi \sin(\pi x) \right) \d x.
+\]
+\begin{answer}
+$14 -2 \ln(4)$
+\end{answer}
+\end{exercise}
+
+
 \noindent For the following exercises consider the accumulation
 function $F(x) = \int_{-2}^x \frac{\sin(t)}{t} \d t$ on the interval
 $[-2\pi,2\pi]$.
@@ -711,16 +736,16 @@ Simplifying a bit we find
 \sum_{i=0}^{n-1} f(3+4i/n) \frac{4}{n} &= \sum_{i=0}^{n-1} \left((2(3+4i/n) -1 )\frac{4}{n}\right)\\
 &= \sum_{i=0}^{n-1} \left((5+8i/n )\frac{4}{n}\right)\\
 &= \sum_{i=0}^{n-1} \left(\frac{20}{n} + \frac{32i}{n^2}\right)\\
-&= \sum_{i=0}^{n-1} \frac{20}{n} + \sum_{i=0}^n\frac{32i}{n^2}\\
-&= \frac{20}{n}\sum_{i=0}^{n-1} 1 +\frac{32}{n^2} \sum_{i=0}^n i
+&= \sum_{i=0}^{n-1} \frac{20}{n} + \sum_{i=0}^{n-1}\frac{32i}{n^2}\\
+&= \frac{20}{n}\sum_{i=0}^{n-1} 1 +\frac{32}{n^2} \sum_{i=0}^{n-1} i
 \end{align*}
 At this point we need two formulas
 \[
-\sum_{i=0}^{n-1}1 = n-1 \qquad\text{and}\qquad \sum_{i=0}^n i = \frac{n^2-n}{2}.
+\sum_{i=0}^{n-1}1 = n-1 \qquad\text{and}\qquad \sum_{i=0}^{n-1} i = \frac{n^2-n}{2}.
 \]
 Substituting these formulas for the sums above, we find 
 \begin{align*}
-\frac{20}{n}\sum_{i=0}^{n-1} 1 +\frac{32}{n^2} \sum_{i=0}^n i &=\frac{20}{n}(n-1) +\frac{32}{n^2}\frac{n^2-n}{2}\\
+\frac{20}{n}\sum_{i=0}^{n-1} 1 +\frac{32}{n^2} \sum_{i=0}^{n-1} i &=\frac{20}{n}(n-1) +\frac{32}{n^2}\frac{n^2-n}{2}\\
 &=20 -\frac{20}{n}+16 -\frac{16}{n}\\
 &=36 + \frac{36}{n}.
 \end{align*}
