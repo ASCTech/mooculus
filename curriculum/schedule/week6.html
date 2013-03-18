@@ -1,0 +1,136 @@
+<h3>Transcendental functions</h3>
+
+<p>The chain rule in <a href="/calc1-001/wiki/view?page=Week5">Week
+5</a> made it easier to differentiate functions like \((1+2x)^5\), but
+there's still functions which we can't differentiate:
+some <strong>transcenental functions</strong> are still
+missing!  <a href="/calc1-001/lecture/151"><i class="icon-film"></i>&nbsp;What
+are transcendental functions?</a>  A transcendendental function is a
+function that is not defined in terms of algebra, like \(e^x\) and
+\(\log x\) and trigonometric functions.  In Week 4, we learned how to
+differentiate \(e^x\) and in Week 5, we learned how to differentiate
+\(\log x\), but this week, we'll <strong>learn how to differentiate the trigonometric
+functions.</strong></p>
+
+<p><a href="/calc1-001/wiki/view?page=OfficeHours">Office Hours</a>
+for this week will be held on February 15, 2013 at 10:30AM EST; if you
+want to be included in the Google+ circle,
+please <a href="/calc1-001/forum/forum/list?forum_id=209">post your
+email address to the forum</a>.</p>
+
+<h3>What is trigonometry?</h3>
+
+<p>The exact size of a triangle isn't determined by one angle, but
+once you determine one non-right-angle in a right triangle, you have
+determined all three angles; that still doesn't nail down the exact
+size, but triangles with the same angles are <strong>similar</strong>,
+so ratios of corresponding sides are equal.  This is, in
+short, <a href="/calc1-001/lecture/163"><i class="icon-film"></i>&nbsp;why
+trigonometry works</a>.  To review these functions, you might
+to <a href="https://mooculus.osu.edu/explorations/trigExplore">play
+with an exploration we've built for trig functions</a></p>
+
+<h3>How can I differentiate trig functions?</h3>
+
+<p>Since <a href="/calc1-001/lecture/179"><i class="icon-film"></i>&nbsp;the
+trig functions are all built from sines and cosines</a>, we begin by
+computing <a href="/calc1-001/lecture/165"><i class="icon-film"></i>&nbsp;the
+derivative of sine and cosine</a>.  Then we can
+compute <a href="/calc1-001/lecture/23"><i class="icon-film"></i>&nbsp;the
+derivative of tangent</a>
+and <a href="/calc1-001/lecture/177"><i class="icon-film"></i>&nbsp;the
+derivative of the other three trig functions</a>.</p>
+
+<p>You can start reading about the derivatives of trig functions
+on <a href="https://mooculus.osu.edu/handouts"><i class="icon-book"></i>&nbsp;Page&nbsp;96
+of the Textbook</a>.  The derivatives are listed
+on <a href="https://mooculus.osu.edu/handouts"><i class="icon-book"></i>&nbsp;Page&nbsp;100
+of the Textbook</a>.</p>
+
+<p>And once we can differentiate trig functions, we can use the Chain
+Rule to <a href="/calc1-001/lecture/169"><i class="icon-film"></i>&nbsp;differentiate
+compositions of trigonometric functions and, say, polynomials, like
+\(f(x) = \sin (x^2)\)</a>.  This is a particularly interesting
+example, considering that \(|f(x)| \leq 1\) but \(f'(x)\) is
+large&mdash;in other words, the function never gets very big, but it
+moves very fast.</p>
+
+<p>Make sure
+to <a href="https://mooculus.osu.edu/exercises/trigDifferentiate"><i class="icon-pencil"></i>&nbsp;practice
+differentiating trig functions</a> on mooculus.</p>
+
+<h3>How can I differentiate inverse trig functions?</h3>
+
+<p>Once we had determined \(\frac{d}{dx} e^x\) back in Week 4, we used
+the Inverse Function Theorem in Week 5 to differentiate \(\log x\),
+and we can play the same sort of game this week: we now know the
+derivatives of trigonometric functions, we consider
+the <a href="/calc1-001/lecture/171"><i class="icon-film"></i>&nbsp;inverse
+trigonometric functions</a>; you can review these functions
+on <a href="https://mooculus.osu.edu/handouts"><i class="icon-book"></i>&nbsp;Page&nbsp;102
+of the Textbook</a>.  With these functions in hand, we next
+consider <a href="/calc1-001/lecture/177"><i class="icon-film"></i>&nbsp;their
+derivatives</a>, which you can find discussed
+on <a href="https://mooculus.osu.edu/handouts"><i class="icon-book"></i>&nbsp;Page&nbsp;105
+of the Textbook</a>.</p>
+
+<p>A minor surprise is that, although the inverse
+trigonometric functions are <em>transcendental</em>, their derivatives
+are not: their derivatives are functions we could have spoken about
+weeks ago; for example, the equation
+<blockquote>
+\(\displaystyle\frac{d}{dx} \arctan x = \displaystyle\frac{1}{1+x^2}\)
+</blockquote>
+is remarkable in that the left hand side involves \(\arctan\), but the
+right hand side is just a friendly rational function.  Perhaps this is
+evidence that the inverse trigonometric functions are more important
+than they appear at first blush.</p>
+
+<p>Make sure
+to <a href="https://mooculus.osu.edu/exercises/inverseTrigDiff1"><i class="icon-pencil"></i>&nbsp;practice
+differentiating inverse trig functions</a> on mooculus.</p>
+
+<h3>What can we learn from the derivatives?</h3>
+
+<p>Knowing the derivatives of sine and cosine provides a
+&ldquo;physical&rdquo; reason
+for <a href="/calc1-001/lecture/173"><i class="icon-film"></i>&nbsp;the
+oscillation of sine and cosine</a>.</p>
+
+<p>You might be skeptical of our earlier calculation of the derivative of sine.  In the limit argument, one key step was replacing \(\sin(\theta + h)\) by \( \sin \theta \cos h + \cos \theta \sin h \).  Sometimes this <strong>angle sum formula</strong> is justified with by appealing to some static Euclidean diagrams, but <a href="/calc1-001/lecture/167"><i class="icon-film"></i>&nbsp;it can also be justified &ldquo;dynamically&rdquo; by considering how rotation works in the plane</a>.  If we apply the angle sum formula to \(\sin (\theta + \theta)\), we get a <strong>double angle identity</strong> namely
+<blockquote>\(\sin (2\theta) = \sin \theta \cos \theta + \cos \theta \sin \theta = 2 \cdot \sin \theta \cos \theta\)</blockquote>.
+
+<p>Since \( \frac{d}{d\theta} \sin \theta = \cos \theta \), we have
+that the derivative of sine at zero is one, so \( \sin h \approx h \)
+for \(h\) near zero.  If we combine this approximation with the double
+angle identity, we
+can <a href="/calc1-001/lecture/175"><i class="icon-film"></i>&nbsp;approximate
+sine of one radian</a>.</p>
+
+<h3>Slide rules return!</h3>
+
+<p>Last week we learned
+how <a href="/calc1-001/lecture/137"><i class="icon-film"></i>&nbsp;quartersquares
+and log tables and slide rules</a> provide methods for performing
+multiplications
+quickly.  <a href="/calc1-001/lecture/161"><i class="icon-film"></i>&nbsp;The
+same is true of trigonometric functions</a> via a method
+called <a href="http://en.wikipedia.org/wiki/prosthaphaeresis">prosthaphaeresis</a>.</p>
+
+<h3>At the end of the week&hellip;</h3>
+
+<p>When you've reached the end of the week, take the <a href="/calc1-001/quiz/start?quiz_id=213">First
+Midterm</a>.  To prepare you and to help you know what to expect
+when you take the real midterm, we've prepared
+a <a href="/calc1-001/quiz/start?quiz_id=37">Fake Midterm</a> for you
+to take as practice.  <strong>Only the Real Midterm will count towards
+your final course grade.</strong></p>
+
+<p>I hope you ace the midterm; if you have any questions at all,
+please <a href="/calc1-001/forum/index">post your question on the
+forum</a> or <a href="/calc1-001/wiki/view?page=OfficeHours">discuss
+your question with me during office hours</a>.  I look forward to
+hearing from you.  <strong>Have fun!</strong></p>
+
+<p>Next week is Week 7, and the start of <strong>applications of the
+derivative</strong>.  There's tons to look forward to.</p>
