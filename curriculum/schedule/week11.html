@@ -6,7 +6,7 @@ we did most recently during <a
 href="/calc1-001/wiki/view?page=Week10">Week 10</a>.  Next week, in <a
 href="/calc1-001/wiki/view?page=Week12">Week 12</a>, we'll be thinking
 about derivatives again when we cover the <strong>Fundamental Theorem of
-Calculus</strong>.  So what is up with this week?  <a href="/calc1-001/lecture/BADBAD"><i
+Calculus</strong>.  So what is up with this week?  <a href="/calc1-001/lecture/275"><i
 class="icon-film"></i>&nbsp;If we aren't differentiating, what are we
 going to do?</a></p>
 
@@ -31,14 +31,18 @@ Hours</a> on March 20, 2013 at 12:30PM EDT.</p>
 
 <p><a
 href="http://en.wikipedia.org/wiki/Summation#Capital-sigma_notation">Sigma
-notation</a> is a fancy way to write down a sum, by <a href="/calc1-001/lecture/BADBAD"><i
+notation</a> is a fancy way to write down a sum, by <a href="/calc1-001/lecture/277"><i
 class="icon-film"></i>&nbsp;using a big $$\displaystyle\sum$$</a> and writing down a
 pattern for each term.  For instance, if I want to add $$10 + 12 + 14
 + 16 + 18 + 20$$, I could write
 <blockquote>
 $$\displaystyle\sum_{n=5}^{10} \left( 2n \right).$$
 </blockquote>
-<p>Sometimes you can evaluate sums in sneaky ways.  For instance, <a href="/calc1-001/lecture/BADBAD"><i
+You can <a
+href="https://mooculus.osu.edu/exercises/basicSigma"><i
+class="icon-pencil"></i>&nbsp;practice summation notation on mooculus</a>.</p>
+
+<p>Sometimes you can evaluate sums in sneaky ways.  For instance, <a href="/calc1-001/lecture/281"><i
 class="icon-film"></i>&nbsp;the sum of the first $$k$$ whole
 numbers</a>, called a <a
 href="http://en.wikipedia.org/wiki/Triangular_number">triangular
@@ -47,22 +51,27 @@ number</a>, has a particularly nice form, namely
 $$\displaystyle\sum_{n=1}^{k} n = 1 + 2 + \cdots + k =
 \displaystyle\frac{k \cdot (k+1)}{2}.$$
 </blockquote>
-Other nice patterns include the fact that <a href="/calc1-001/lecture/BADBAD"><i
+Other nice patterns include the fact that <a href="/calc1-001/lecture/283"><i
 class="icon-film"></i>&nbsp;the sum of the first $$k$$ odd
 numbers is a perfect square</a>, which can be seen geometrically.
-There's a <a href="/calc1-001/lecture/BADBAD"><i
+There's a <a href="/calc1-001/lecture/279"><i
 class="icon-film"></i>&nbsp;formula for the sum of squares</a>, namely 
 <blockquote>
 $$\displaystyle\sum_{n=1}^{k} n^2 = 1^2 + 2^2 + 3^2 + \cdots + k^2 =
 \displaystyle\frac{k \cdot (k+1) \cdot (2k+1)}{6},$$
 </blockquote>
-and the truly remarkable <a href="/calc1-001/lecture/BADBAD"><i
+and the truly remarkable <a href="/calc1-001/lecture/285"><i
 class="icon-film"></i>&nbsp;theorem of Nicomachus</a> which states 
 <blockquote>
 $$\displaystyle\sum_{n=1}^{k} n^3 = 1^3 + 2^3 + 3^3 + \cdots + k^3 =
 \left(\displaystyle\sum_{n=1}^k n \right)^2.$$
 </blockquote>
-Messing around with sums is fun, but there's a question as to why
+You can <a
+href="https://mooculus.osu.edu/exercises/sigmaFormulas1"><i
+class="icon-pencil"></i>&nbsp;practice these &ldquo;power sum&rdquo;
+formulas on mooculus</a>.</p>
+
+<p>Messing around with sums is fun, but there's a question as to why
 we're bothering.  These sum formulas will end up being helpful when we
 work on &ldquo;Riemann sums.&rdquo;
 </p>
@@ -71,7 +80,7 @@ work on &ldquo;Riemann sums.&rdquo;
 
 <p>In our heart, we've all got an idea as to what &ldquo;area&rdquo;
 means, and it's not my place to destroy your intuition!  Nevertheless,
-let's ask the question: <a href="/calc1-001/lecture/BADBAD"><i
+let's ask the question: <a href="/calc1-001/lecture/293"><i
 class="icon-film"></i>&nbsp;what is area?</a>  If one region can be
 cut up into pieces and rearranged to form another region, then those
 two regions must  &ldquo;have the same area&rdquo; but what about the
@@ -91,7 +100,10 @@ Archimedes</a> was lead to this sort of thinking two millenia ago.</p>
 
 <h3>So how do we make this precise</h3>
 
-<p>First off, we'll <a href="/calc1-001/lecture/BADBAD"><i
+<p>Integrals are introduced on <a href="https://mooculus.osu.edu/handouts"><i class="icon-book"></i>&nbsp;Page&nbsp;190
+of the Textbook</a>.</p>
+
+<p>We'll <a href="/calc1-001/lecture/297"><i
 class="icon-film"></i>&nbsp;approximate areas</a> by forming
 <strong>Riemann sums</strong>; if we want to approximate the area
 under the graph $$y = f(x)$$ and between $$x = a$$ and $$x = b$$, I'll
@@ -103,19 +115,27 @@ I'll sample the function.  My approximation to the area is then
 $$\displaystyle\sum_{i=1}^n f({x_i}^\star) \, \left( x_{i} - x_{i-1} \right).$$
 </blockquote>
 The limit of such things (over finer and finer partitions) is the
-<strong>integral</strong>, which <a href="/calc1-001/lecture/BADBAD"><i
+<strong>integral</strong>, which <a href="/calc1-001/lecture/297"><i
 class="icon-film"></i>&nbsp;we denote $$\displaystyle\int_a^b f(x) \, dx$$.</a></p>
+
+<p>I invite you to <a
+href="https://mooculus.osu.edu/exercises/estimatingIntegrals"><i
+class="icon-pencil"></i>&nbsp;gain some intuition for integration on mooculus</a>.</p>
 
 <h3>Can we compute any of these integrals?</h3>
 
-<p>Somewhat surprisingly, we can <a href="/calc1-001/lecture/BADBAD"><i
+<p>Somewhat surprisingly, we can <a href="/calc1-001/lecture/295"><i
 class="icon-film"></i>&nbsp;integrate the function $$f(x) = x^2$$</a>
 by hand.  For instance, $$\displaystyle\int_0^1 x^2 \, dx = 1/3$$,
 which is remarkable, since we are computing the area of a curved
-region exactly.  We can also <a href="/calc1-001/lecture/BADBAD"><i
+region exactly.  We can also <a href="/calc1-001/lecture/303"><i
 class="icon-film"></i>&nbsp;compute $$\displaystyle\int_1^2 x^3
 \,dx$$</a>.  These calculations end up invoking our previous
 work on summation formulas.</p>
+
+<p>You can do some of these <a
+href="https://mooculus.osu.edu/exercises/riemannSumIntegralQuadratic"><i
+class="icon-pencil"></i>&nbsp;integral calculations yourself on mooculus</a>.</p>
 
 <h3>Can we understand anything conceptually about integrals?</h3>
 
@@ -126,14 +146,17 @@ a negative answer.</p>
 
 <p>Another way to understand integrals is to fit specific integrals
 together into a family of integrals; less metaphorically, I am
-suggesting we study the <a href="/calc1-001/lecture/BADBAD"><i
+suggesting we study the <a href="/calc1-001/lecture/289"><i
 class="icon-film"></i>&nbsp;accumulation function</a> given by $$A(x)
 = \displaystyle\int_a^x f(t) \, dt$$.  By thinking about when $$A$$ is increasing
 or decreasing, we get our first glimpse into the <strong>Fundamental
 Theorem of Calculus</strong> coming in <a
-href="/calc1-001/wiki/view?page=Week12">Week 12</a>.</p>
+href="/calc1-001/wiki/view?page=Week12">Week 12</a>.  You can play
+around with <a
+href="https://mooculus.osu.edu/exercises/integralSketch"><i
+class="icon-pencil"></i>&nbsp;accumulation functions on mooculus</a>.</p>
 
-<p>And the integral  <a href="/calc1-001/lecture/BADBAD"><i
+<p>And the integral  <a href="/calc1-001/lecture/291"><i
 class="icon-film"></i>&nbsp;satisfies a few &ldquo;linearity&rdquo;
 properties</a>, like $$\displaystyle\int_a^b \left( f(x) + g(x) \right) \,
 dx = \displaystyle\int_a^b f(x) \, dx +  \displaystyle\int_a^b g(x) \,
@@ -141,8 +164,8 @@ dx$$.</p>
 
 <h3>Can we compute any other integrals?</h3>
 
-<p>Sometimes there is a trick that can be exploited, for instance, if
-you are <a href="/calc1-001/lecture/BADBAD"><i
+<p>There is a trick that can be exploited to evaluate some integrals; if
+you are <a href="/calc1-001/lecture/287"><i
 class="icon-film"></i>&nbsp;integrating an odd function across the
 origin</a>.  The trick is that, say, $$\displaystyle\int_{-1}^0 \sin x
 \, dx = - \displaystyle\int_0^1 \sin x \, dx$$, and so
@@ -153,10 +176,10 @@ without doing any summation calculations.</p>
 
 <p>When you've reached the end of the week, take the <a href="/calc1-001/quiz/index">End of Week 11 Quiz</a>.  So you aren't surprised when you take the quiz, you should expect</p>
 <ul>
-<li>three questions involving <a href="/calc1-001/lecture/BADBAD"><i class="icon-film"></i>&nbsp;summation notation</a>,</li>
-<li>one question about <a href="/calc1-001/lecture/BADBAD"><i class="icon-film"></i>&nbsp;the idea of area</a>,</li>
-<li>four questions about <a href="/calc1-001/lecture/BADBAD"><i class="icon-film"></i>&nbsp;Riemann sums</a>,</li>
-<li>two questions about <a href="/calc1-001/lecture/BADBAD"><i class="icon-film"></i>&nbsp;linearity properties</a> and <a href="/calc1-001/lecture/BADBAD"><i class="icon-film"></i>&nbsp;the sign of the integral</a>.</li>
+<li>three questions involving <a href="/calc1-001/lecture/277"><i class="icon-film"></i>&nbsp;summation notation</a>,</li>
+<li>one question about <a href="/calc1-001/lecture/293"><i class="icon-film"></i>&nbsp;the idea of area</a>,</li>
+<li>four questions about <a href="/calc1-001/lecture/297"><i class="icon-film"></i>&nbsp;Riemann sums</a>,</li>
+<li>two questions about <a href="/calc1-001/lecture/291"><i class="icon-film"></i>&nbsp;linearity properties</a> and <a href="/calc1-001/lecture/287"><i class="icon-film"></i>&nbsp;the sign of the integral</a>.</li>
 </ul>
 <p>If you find yourself confused about the midterm or the exercises,
 make sure to <a href="/calc1-001/forum/index">post a message on the
