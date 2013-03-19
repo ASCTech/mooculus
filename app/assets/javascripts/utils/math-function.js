@@ -494,6 +494,13 @@ var MathFunction = (function () {
 	var operator = tree[0];
 	var operands = tree.slice(1);
 
+	// Exponentiating a fraction should include some parentheses
+	if (operator === "^") {
+	    if (operands[0][0] === "/") {
+		return "\\left(" + latex_ast(operands[0]) + "\\right)^{" + latex_ast(operands[1]) + "}";
+	    }
+	}
+
 	// Display trig functions in a more reasonable format
 	if (operator === "^") {
 	    if (operands[0][0] === "sin")
