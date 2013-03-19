@@ -514,13 +514,14 @@ and considering the subintervals where
 [x_0,x_1]\cup [x_1, x_2]\cup [x_2,x_3]\cup [x_3,x_4]\cup[x_4,x_5] = [a,b]
 \]
 and the $y$-values $f(x_0^*)$, $f(x_1^*)$, $f(x_2^*)$, $f(x_3^*)$, $f(x_4^*)$.}
-\label{figure:areacompute1}
+\label{figure:areacompute2}
 \end{marginfigure}
 For each subinterval pick a point $x_i^*\in [x_i,x_{i+1}]$ and
-evaluate your function $f(x)$ at each of these points. We can now
-compute the area of the rectangles defined by the width of the
-subinterval $[x_i,x_{i+1}]$ and the height $f(x_i^*)$. Adding the
-areas of these rectangles together we find
+evaluate your function $f(x)$ at each of these points, see
+Figure~\ref{figure:areacompute2}. We can now compute the area of the
+rectangles defined by the width of the subinterval $[x_i,x_{i+1}]$ and
+the height $f(x_i^*)$. Adding the areas of these rectangles together
+we find
 \[
 \sum_{i=0}^{n-1} f(x_i^*) \cdot (x_{i+1}-x_i) \approx \int_a^b f(x) \d x.
 \]
