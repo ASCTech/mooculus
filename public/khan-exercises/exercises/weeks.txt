@@ -131,3 +131,4 @@ definiteIntegralAffineShift
 definiteIntegralParts
 * Week 13
 variableSub1
+variableSub2

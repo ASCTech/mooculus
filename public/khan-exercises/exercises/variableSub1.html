@@ -2,7 +2,7 @@
 <html data-require="math word-problems steveMath8 graphie math-function-parser">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-    <title>Variable Substitution</title>
+    <title>Variable Substitution 1</title>
     <script src="../khan-exercise.js"></script>
 </head>
 <body>
@@ -92,7 +92,7 @@
         	<div class="vars">
 				<var id="A">randRangeNonZero(-10,10)</var>
 				<var id="B">randRangeNonZero(-10,10)</var>
-				<var id="n">randRangeExclude(-10,10,[0,1])</var>
+				<var id="n">randRangeExclude(-9,9,[0,1])</var>
 				<var id="functionBank">["sec(x)","tan(x)","e^(x)","(x)^"+n]</var>
 				<var id="fNum">randRange(0,1)</var>
 				<var id="gNum">randRangeExclude(0,functionBank.length-1,[fNum])</var>
@@ -154,7 +154,7 @@
         		<code> =<var>A</var> \displaystyle\int  (u-<var>B</var>)u^{\frac{1}{<var>n</var>}}du</code>
         	</p>
         	<p>
-        		<code> = <var>A</var>\displaystyle\int  u^{\frac{<var>n+1</var>}{<var>n</var>}}-<var>B</var>u^{\frac{1}{<var>n</var>}}du</code>
+        		<code> = <var>A</var>\displaystyle\int  \left( u^{\frac{<var>n+1</var>}{<var>n</var>}}-<var>B</var>u^{\frac{1}{<var>n</var>}} \right) du</code>
         	</p>
         	<p>
         		<code> =  <var>A</var>\left(\dfrac{<var>n</var>}{<var>2*n+1</var>}u^{\frac{<var>2*n+1</var>}{<var>n</var>}}-\dfrac{<var>B*n</var>}{<var>n+1</var>}u^{\frac{<var>n+1</var>}{<var>n</var>}}\right)</code>
