@@ -58,5 +58,5 @@ Developer.create :name => "Isaac Smith",
 
 
 Developer.create :name => "Johann Thiel", :photo => "johann-thiel",
-  :description => 'Johann Thiel is a postdoc at the United States Military Academy (West Point). His main research interests lie in analytic number theory andits applications. In his classes, Johann enjoys designing livedemonstrations to illustrate mathematical concepts.  Johann has built some of the explorations for MOOCulus.',
+  :description => 'Johann Thiel is a postdoc at the United States Military Academy (West Point). His main research interests lie in analytic number theory and its applications. In his classes, Johann enjoys designing live demonstrations to illustrate mathematical concepts.  Johann has built some of the explorations for MOOCulus.',
   :email => 'johann.thiel@usma.edu'
