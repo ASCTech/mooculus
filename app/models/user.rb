@@ -18,6 +18,8 @@ class User < ActiveRecord::Base
   attr_accessible :email, :password, :coursera_id, :password_confirmation, :remember_me
   attr_accessible :name
 
+  attr_accessible :osu_name_dot_number
+
   has_many :authentications, :dependent => :delete_all
   has_many :scores, :dependent => :destroy
   has_many :competencies, :dependent => :destroy

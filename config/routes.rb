@@ -15,8 +15,12 @@ Assessor::Application.routes.draw do
   get "profile/display" => "profile#display"
   get "profile/edit" => "profile#edit"
   post "profile/edit" => "profile#update"
-  get "profile/consent" => "profile#consent"
+
+  # handle the informed consent process via email
+  get "consent" => "profile#consent"
   post "profile/record_consent" => "profile#record_consent"
+  get "consent/:token" => "profile#confirm_consent", :token => /.+/
+
   # place all special exercise routes about resources :exercises
   get "exercises/progress" => "exercises#progress"
   resources :exercises

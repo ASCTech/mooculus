@@ -1,4 +1,5 @@
 class ProfileController < ApplicationController
+
   def display
     unless user_signed_in?
       redirect_to user_omniauth_authorize_path(:coursera)
@@ -56,14 +57,34 @@ class ProfileController < ApplicationController
 
     @user = current_user
     @user.consent = true
+    @user.osu_name_dot_number = params[:osu_name_dot_number].gsub( '@osu.edu', '' )
+    @user.name = params[:name] 
+
+    if not @user.osu_name_dot_number.match( /^[A-z0-9]+\.[0-9]+$/ )
+      redirect_to action: "consent"
+      flash[:error] =  "<strong>Error:</strong> Please make sure to enter your OSU lastname.number."
+    else
+      if @user.save
+        ConsentMailer.informed_consent(@user).deliver
+        
+        redirect_to action: "display"
+        flash[:notice] =  "Please be sure to respond to the email in order to finish joining the research study."
+      else
+        redirect_to action: "consent" 
+        flash[:error] = "There was a problem recording your consent."
+      end
+    end
+  end
+
+  def confirm_consent
+    @user = User.find( Tokenifier.decrypt(params[:token]).to_i )
+
     @user.consented_at = Time.now
 
-    if @user.save
-      redirect_to action: "display"
-      flash[:notice] =  "You are now participating in the research study.  Thank you!"
+    if @user.save    
+      flash[:notice] =  "You have successfully joined the research study."
     else
-      redirect_to action: "consent" 
-      flash[:error] = "There was a problem recording your consent."
+      flash[:error] =  "There was an error; can you try clicking on the link again?"
     end
   end
 
