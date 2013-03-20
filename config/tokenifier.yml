@@ -1,0 +1,8 @@
+production:
+  secret: 905f23078c6741cdf95f3ecf324169a4dad4efc1ca082757f0ff9b9c19ba824e
+
+development:
+  secret: 01ca1bbe2d41133a6eed213a1ce4e67e26a4d36888915f5c8af862fd97e2b894
+
+test:
+  secret: 7d6c81a02708cdeccc01ba468927f1a55b972a4ab5370c4fb16cd329338673c3

@@ -57,3 +57,6 @@ gem 'ambry'
 
 # Use gravatar's on profile pages
 gem 'gravatar_image_tag'
+
+# Use tokenifier to handle email confirmations
+gem "tokenifier", "~> 0.1"

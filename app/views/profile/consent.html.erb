@@ -1,31 +1,76 @@
+<script>
+//<![CDATA[
+$(function() {
+    $('.join-study').prop('disabled', true);
+
+    var validateInput = function() {
+	var count = 0;
+	$('.required-input').each(function(i){
+	    if( $(this).val() === '') {
+		count++;
+            }
+	});
+	    
+	if(count == 0){
+            $('.join-study').prop('disabled', false);
+        } else {
+            $('.join-study').prop('disabled', true);
+        }
+    };
+
+    $('.required-input').change( validateInput );
+    $('.required-input').keyup( validateInput );
+
+    validateInput();
+});
+//]]>
+</script>
+
 <div class="page-header">
-  <h1>Informed Consent Form <small>to participate in the associated research project</small></h1>
+  <h1>Consent <small>for Participation in Research</small></h1>
+  <h5><strong>Researchers:</strong> <span style="font-weight: normal">Robert Griffiths, Ph.D.; Thomas Evans, MA; Henry Griffy, MA; Jim Fowler, Ph.D.</span></h5>
 </div>
 
 <div class="row">
-  <div class="span3"></div>
-<div class="span6">
-
-<p>I consent to participating in (or my child's participation in) research entitled <strong>Massive Open Online Course Technology for Calculus Instruction</strong>.</p>
-
-<!-- <h2>Benefits of the study</h2>
-<h2>Risks or discomforts</h2>
-<h2>Confidentiality</h2>
-<h2>Decision to quit at any time</h2>
-<h2>Findings used for scholarly purposes</h2>
-<h2>Contact information</h2> -->
-
+  <div class="span2"></div>
+<div class="span8">
 
 <div class="accordion" id="accordion2">
   <div class="accordion-group">
     <div class="accordion-heading">
       <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapsePurpose">
-	Purpose of the study        
+	Purpose
       </a>
     </div>
     <div id="collapsePurpose" class="accordion-body collapse in">
       <div class="accordion-inner">
-        Anim pariatur clichea dn such and such
+	The purpose of this study is to determine the impact of learning technology implementation. The results of this study will be used to assist the Department of Mathematics and Learning Technology in determining the feasibility of offering similar courses in the future.
+      </div>
+    </div>
+  </div>
+
+  <div class="accordion-group">
+    <div class="accordion-heading">
+      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseRights">
+	Your Rights
+      </a>
+    </div>
+    <div id="collapseRights" class="accordion-body collapse">
+      <div class="accordion-inner">
+	This activity involves research. Your participation is voluntary, and you may choose to withdraw at any time without penalty, loss of benefits, or impact on your grade. You can refuse to participate without penalty or loss of benefits to which you are otherwise entitled.
+      </div>
+    </div>
+  </div>
+
+  <div class="accordion-group">
+    <div class="accordion-heading">
+      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseRisks">
+	Risks and Benefits
+      </a>
+    </div>
+    <div id="collapseRisks" class="accordion-body collapse">
+      <div class="accordion-inner">
+	There are no risks to this study. Benefits include the opportunity to contribute to the development of technology-assisted teaching models. There are no direct material benefits to individuals who participate in this study.
       </div>
     </div>
   </div>
@@ -33,56 +78,73 @@
   <div class="accordion-group">
     <div class="accordion-heading">
       <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapsePlan">
-        What will be done
+	Study tasks or procedures
       </a>
     </div>
     <div id="collapsePlan" class="accordion-body collapse">
       <div class="accordion-inner">
-        Anim pariatur cliche...
+	To participate in this study, you will be asked to indicate your agreement to have your course data included in the data analysis. All students have the opportunity to use the practice problems presented on mooculus.osu.edu, regardless of whether they consent to the study.  Data for students who do not agree to participate or who are under the age of 18 will not be included in the data analysis. If you agree to take part in the research study, your scores for assignments/activities and your overall course grade will be compared with your activity log on <a href="#">mooculus.osu.edu</a>.
       </div>
     </div>
   </div>
+
+  <div class="accordion-group">
+    <div class="accordion-heading">
+      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseConfidentiality">
+	Confidentiality
+      </a>
+    </div>
+    <div id="collapseConfidentiality" class="accordion-body collapse">
+      <div class="accordion-inner">
+	Your performance on course assignments, your use of <a href="#">mooculus.osu.edu</a> will be kept confidential. All identifiers will be stripped from the data before they are analyzed. Comparisons will be kept confidential, and no individual grades or responses will be shared&mdash;data will be reported as a class aggregate only. Although every effort to protect confidentiality will be made, no guarantee of Internet survey security can be given as, although unlikely, transmissions can be intercepted and IP addresses can be identified.
+      </div>
+    </div>
+  </div>
+
+
+  <div class="accordion-group">
+    <div class="accordion-heading">
+      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseContact">
+	Questions and Concerns
+      </a>
+    </div>
+    <div id="collapseContact" class="accordion-body collapse">
+      <div class="accordion-inner">For questions or concerns regarding this survey questionnaire or project, or if you feel you have been harmed by study participation, you may contact Dr. Jim Fowler at <a href="mailto:fowler@math.osu.edu">fowler@math.osu.edu</a> or 773-809-5659 or Dr. Robert Griffiths at <a href="mailto:griffiths.44@osu.edu">griffiths.44@osu.edu</a> or 614-292-5901. For questions about your rights as a participant in this study or to discuss other study-related concerns or complaints with someone who is not part of the research team, you may contact Ms. Sandra Meadows in the Office of Responsible Research Practices at <a href="mailto:meadows.8@osu.edu">meadows.8@osu.edu</a> or 614-688-8641.
+      </div>
+    </div>
+  </div>
+
 </div>
 
-
-<p>Jim Fowler, Principal Investigator, or his/her authorized
-representative has explained the purpose of the study, the procedures
-to be followed, and the expected duration of my
-participation. Possible benefits of the study have been described, as
-have alternative procedures, if such procedures are applicable and
-available.  I understand that participation in the research is
-voluntary and that participating or not participating will have no
-effect on my (my child's) grade, course, or class standing.</p>
-
-<p>I acknowledge that I have had the opportunity to obtain additional
-information regarding the study and that any questions I ahve raised
-have been answered to my full satisfaction.  Furthermore, I understand
-that I am (my child is) free to withdraw consent at any time and to
-discontinue participation in the study without prejudice to me (my
-child).  Students under 18 should opt out from completing the survey
-unless parental permission is provided.</p>
-
-<p>By completing this survey, I acknowledge that I have read and fully
-understand the consent form.</p>
-
-<p>Questions or concerns regarding this project may be directed to Jim
-Fowler (<a href="mailto:fowler@math.osu.edu">fowler@math.osu.edu</a>)
-or the ORRP by calling 614&ndash;688&ndash;8457.</p>
+<p>I consent to participating in research entitled <em>Enhancing Student Learning with Technology.</em></p>
+<p>Participation in the research is voluntary and participating or not will not affect how any assignments in this course are graded.</p>
+<p>I have had the opportunity to obtain additional information regarding the study. Any questions I have raised have been answered to my full satisfaction. I can stop at any time without penalty to me.</p>
+<p>I have read the consent form. By completing this form, I consent to participate.</p>
 
 </div>
-<div class="span3"></div>
+<div class="span2"></div>
 </div>
-
 
 <div class="row">
-  <div class="span4"></div>
-  <div class="span4"><p>
-    <%= button_to "I want to participate.",
-	  { :controller => "profile", :action => "record_consent" },
-  	  :class => "btn btn-large btn-block btn-primary" %>
-  </p>
-  </div>
-  <div class="span4"></div>
+  <div class="span3"></div>
+  <div class="span6"><p>
+      <%= form_tag '/profile/record_consent', {:class=>'form-horizontal'} do %>
+	<div class="control-group">
+	<%= label_tag :name, nil, :class => 'control-label' %>
+	  <div class="controls">
+	    <%= text_field_tag :name, @user.name %>
+	  </div>
+	
+	<%= label_tag :osu_name_dot_number, 'OSU <em>name.number</em>'.html_safe, :class => 'control-label' %>
+	<div class="controls">
+    <%= text_field_tag :osu_name_dot_number, @user.osu_name_dot_number, :placeholder => "name.123", :class=>'required-input', :style=>'text-align:right;' %><span style="font-family: Courier;">@osu.edu</span>
+	</div>
+	</div>
+
+	<%= button_tag "I want to participate.", :class => "btn btn-large btn-block btn-primary join-study" %>
+      <% end %>
+    </p></div>
+    <div class="span3"></div>
 </div>
 
 <div class="row">
@@ -95,5 +157,3 @@ or the ORRP by calling 614&ndash;688&ndash;8457.</p>
     </p>
     <div class="span4"></div>
 </div>
-
-<!-- <p><a href="/textbook/mooculus-Ch1.pdf" class="btn btn-large btn-block btn-primary" type="button"><i class="icon-ok"></i> I want to participate in the study</a></p></div> -->
