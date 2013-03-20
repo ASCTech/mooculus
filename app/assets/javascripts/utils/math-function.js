@@ -494,20 +494,27 @@ var MathFunction = (function () {
 	var operator = tree[0];
 	var operands = tree.slice(1);
 
+	// Exponentiating a fraction should include some parentheses
+	if (operator === "^") {
+	    if (operands[0][0] === "/") {
+		return "\\left(" + latex_ast(operands[0]) + "\\right)^{" + latex_ast(operands[1]) + "}";
+	    }
+	}
+
 	// Display trig functions in a more reasonable format
 	if (operator === "^") {
 	    if (operands[0][0] === "sin")
-		return "\\sin^{" + latex_ast(operands[1]) + "}" + "\\left(" + operands[0][1] + "\\right)";
+		return "\\sin^{" + latex_ast(operands[1]) + "}" + "\\left(" + latex_ast(operands[0][1]) + "\\right)";
 	    if (operands[0][0] === "cos")
-		return "\\cos^{" + latex_ast(operands[1]) + "}" + "\\left(" + operands[0][1] + "\\right)";
+		return "\\cos^{" + latex_ast(operands[1]) + "}" + "\\left(" + latex_ast(operands[0][1]) + "\\right)";
 	    if (operands[0][0] === "tan")
-		return "\\tan^{" + latex_ast(operands[1]) + "}" + "\\left(" + operands[0][1] + "\\right)";
+		return "\\tan^{" + latex_ast(operands[1]) + "}" + "\\left(" + latex_ast(operands[0][1]) + "\\right)";
 	    if (operands[0][0] === "sec")
-		return "\\sec^{" + latex_ast(operands[1]) + "}" + "\\left(" + operands[0][1] + "\\right)";
+		return "\\sec^{" + latex_ast(operands[1]) + "}" + "\\left(" + latex_ast(operands[0][1]) + "\\right)";
 	    if (operands[0][0] === "csc")
-		return "\\csc^{" + latex_ast(operands[1]) + "}" + "\\left(" + operands[0][1] + "\\right)";
+		return "\\csc^{" + latex_ast(operands[1]) + "}" + "\\left(" + latex_ast(operands[0][1]) + "\\right)";
 	    if (operands[0][0] === "cot")
-		return "\\cot^{" + latex_ast(operands[1]) + "}" + "\\left(" + operands[0][1] + "\\right)";
+		return "\\cot^{" + latex_ast(operands[1]) + "}" + "\\left(" + latex_ast(operands[0][1]) + "\\right)";
 	}
 
 	if (operator in math_functions) {
@@ -928,7 +935,8 @@ var MathFunction = (function () {
 	toString: function() {
 	    return text_ast( this.syntax_tree );
 	},
-	
+
+	// FIXME: This should be deleted
 	equalsForBinding: function(other,bindings) {
 	    var epsilon = 0.01;
 	    var this_evaluated = this.evaluate(bindings);	
