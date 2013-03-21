@@ -1,14 +1,16 @@
-\documentclass[12pt,serif,mathserif,final]{beamer}
+\documentclass[serif,mathserif,final]{beamer}
 \mode<presentation>{\usetheme{Lankton}}
 \usepackage{amsmath,amsfonts,amssymb,pxfonts,eulervm,xspace}
 \usepackage{graphicx}
 \usepackage{kerkis}
-\usepackage[orientation=landscape,size=custom,width=121.92,height=121.92,scale=1.5,debug]{beamerposter}
+\graphicspath{{./figures/}}
+%% coursera tells us the board will be 30in by 40in
+\usepackage[orientation=landscape,size=custom,width=101,height=76,scale=2,debug]{beamerposter}
 
 %-- Header and footer information ----------------------------------
-\newcommand{\footleft}{}
-\newcommand{\footright}{}
-\title{Calculus\&\textsf{MOOCulus}}
+\newcommand{\footleft}{http://www.shawnlankton.com/category/latex/}
+\newcommand{\footright}{shawn at shawn lankton dot com}
+\title{\mdseries{Calculus\&}\textsf{\bfseries{MOOC}\mdseries ULUS}}
 \author{Jim Fowler, Steve Gubkin, and Bart Snapp}
 \institute{The Ohio State University}
 %-------------------------------------------------------------------
@@ -16,47 +18,30 @@
 
 %-- Main Document --------------------------------------------------
 \begin{document}
-
-\begin{frame}[t]
-    \vspace{6cm}
-    \huge \textbf{Calculus and Mooculus} \normalsize
-    \vspace{5cm}
-    %\begin{center}
-    %    \includegraphics{figures/banner}
-    %\end{center}
+\begin{frame}{}
   \begin{columns}[t]
 
     %-- Column 1 ---------------------------------------------------
     \begin{column}{0.32\linewidth}
-    
-      %-- Block 1-1
-      \begin{block}{The No-Three-In-Line Problem}
-        Imagine you are given a chess board with a given number of rows
-        and columns.  How many chess pieces could you place on the board
-        without any three points being on the same line?  Or more generally,
-        how many points can be place on a grid with no three points in a line?
-        \begin{center}
-            %\includegraphics[width=.6\columnwidth]{figures/10x10_wiki_soln.png}
 
-            A solution to the $10\times 10$ case.
-        \end{center}
+      %-- Block 1-1
+      \begin{block}{Summary}
+        This is a poster containing text and other things
+        This part is the summary.  People might read this
       \end{block}
 
       %-- Block 1-2
-      \begin{block}{Our Approach}
-        Using the Hilbert function to count monomials of a given degree,
-        we used combinatorial methods and commutative algebra to generate 
-        complete lists of solutions to the No-Three-In-Line problem.  We 
-        wrote our algorithms in \textit{Macaulay2}, a language designed specifically
-        for commutative algebra.
+      \begin{block}{Motivation}
+        You can make a poster very quickly and easily by cutting and pasting
+        the \LaTeX~codes from the paper!
       \end{block}
 
       %-- Block 1-3
-      \begin{block}{Our Big Decision}
-        Because of the computational complexity of the problem, we chose not
-        to directly pursue the No-Three-In-Line Problem.  Instead, we decided
-        to vary the problem slightly, by meeting the edges of the grid into a
-        donut shape, or torus.
+      \begin{block}{Columns}
+        The columns will automatically align with each other and try to look
+        as nice as possible.  You may have to add {\tt$\backslash$vspace\{1pt\}}
+        commands to adjust the spacing here and there.  Remember that you can
+        use positive or negative numbers.
       \end{block}
 
     \end{column}%1
@@ -65,29 +50,29 @@
     \begin{column}{0.32\linewidth}
 
       %-- Block 2-1
-      \begin{block}{Fun with Tori}
-        \begin{center}
-            %\includegraphics[width=.6\columnwidth]{figures/torusHIRES.pdf}
-
-            An $11\times 11$ torus before points are placed.
-        \end{center}
-        Despite the fact that the torus is curved, we can still imagine 
-        it with grid lines and, therefore, locations to place points.
-        In this variant of the problem, we can still place points in the
-        same way, but we have to be aware of the fact that the lines now
-        wrap around the torus!
+      \begin{block}{Lists}
+        \begin{itemize}
+          \item You can make
+          \item lists, that
+          \item allow people to see quickly
+        \end{itemize}
       \end{block}
 
       %-- Block 2-2
-      \begin{block}{Lines on a Torus}
-        Lines on a torus work just like lines on a grid, they just curve along
-        the surface.  Imagine the line bending as your wrapped the edges around
-        before.
-        \begin{center}
-            %\includegraphics[width=.6\columnwidth]{figures/torus_with_lineHIRES.pdf}
+      \begin{block}{Math}
+        Include math within the text is as simple as $1+1=2$.  You can also
+        highlight more important equations like this:
+        \begin{equation*}
+          \int_0^1\sin(x)+\cos^2(x)+\alpha x~d\!x
+        \end{equation*}
+      \end{block}
 
-            The same torus with a line on it.
-        \end{center}
+      %-- Block 2-3
+      \begin{block}{Pictures}
+        \begin{figure}[htb]
+          \centering
+          \includegraphics[width=.6\columnwidth]{science}
+        \end{figure}
       \end{block}
 
     \end{column}%2
@@ -96,48 +81,25 @@
     \begin{column}{0.32\linewidth}
 
       %-- Block 3-1
-      \begin{block}{Our Results}
-        We were able to enumerate the unique solutions on the torus for square
-        tori up to the $14 \times 14$ case, and for rectangular tori varying from 
-        $2 \times 2$ to $7 \times 19$.  We were also able to form a construction 
-        for maximal (that is $2n$) for the $p \times p^2$ torus, where $p$ is any
-        odd prime.
+      \begin{block}{Experiments}
+        Remember to put lots of figures on your poster... Nobody reads anymore!
       \end{block}
 
       %-- Block 3-2
-      \begin{block}{Notable Features of our Research}
-        \begin{itemize}
-            \item By extending the problem to the torus, we were able to introduce
-                group theory to the no-three-in-line problem
-            \item By using the Hilbert function, we were able to count the number
-                of solutions on both the grid and torus
-            \item Our methods also allowed us to view all of the solutions for
-                a given problem size
-        \end{itemize}
+      \begin{block}{Conclusion}
+        Much less annoying than PowerPoint.  Copy and Paste from your
+        document. Overall, a great idea!
       \end{block}
 
-      \begin{block}{Maximal Solutions}
-        In either case, the obvious upper-bound is $2n$.  That is,
-        $2$ points in every row (or column).
-
-        The image in the first column is a maximal solution on the grid.
-
-        On the square torus, solutions are much different, and somewhat smaller.
-        However, we were able to find completely maximal solutions for the 
-        $p \times p^2$ torus, where $p$ is prime.  The following is a maximal 
-        solution on the $5\times 25$ torus:
-        \begin{center}
-            %\includegraphics[width=\columnwidth]{figures/maximal_torusHIRES.pdf}
-
-            A solution to the $5\times 25$ case.
-        \end{center}
+      %-- Block 3-3
+      \begin{block}{Logo}
+        To change the logo (if you don't want to represent for Georgia Tech).
+        Replace the file {\tt logo.png} and with the logo of your choice!
+        Make sure the background is black.
       \end{block}
 
     \end{column}%3
 
   \end{columns}
-  \begin{center}
-    %\includegraphics{figures/QR_CODE.png}
-  \end{center}
 \end{frame}
 \end{document}
