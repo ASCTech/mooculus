@@ -631,21 +631,21 @@ formal definition.
 
 We close with a useful theorem about continuous functions:
 
-\begin{mainTheorem}[Intermediate Value Theorem]
-If $f(x)$ is a function that is continuous for all $x$ in the closed
-interval $[a,b]$ and $d$ is between $f(a)$ and $f(b)$, then there is a
-number $c$ in $[a, b]$ such that $f(c) = d$.
+\begin{mainTheorem}[Intermediate Value Theorem]\label{theorem:IVT}
+If $f(x)$ is a continuous function for all $x$ in the closed interval
+$[a,b]$ and $d$ is between $f(a)$ and $f(b)$, then there is a number
+$c$ in $[a, b]$ such that $f(c) = d$.
 \end{mainTheorem}
-\marginnote[-.7in]{The Intermediate Value Theorem is most frequently
+\marginnote[-1.2in]{The Intermediate Value Theorem is most frequently
   used when $d=0$.}  
-\marginnote[-.2in]{For a nice proof of this theorem, see: Walk, Stephen
+\marginnote[-.7in]{For a nice proof of this theorem, see: Walk, Stephen
   M. \textit{The intermediate value theorem is NOT obvious---and I am
     going to prove it to you}. College Math. J. 42 (2011), no. 4,
   254--259.}
 In Figure~\ref{figure:intermediate-value}, we see a geometric
 interpretation of this theorem.
 
-\begin{figure}
+\begin{marginfigure}
 \begin{tikzpicture}
 	\begin{axis}[
             domain=0:6, ymin=0, ymax=2.2,xmax=6,
@@ -656,14 +656,14 @@ interpretation of this theorem.
             xticklabels={$a$,$c$,$b$}, yticklabels={$f(a)$,$f(c)=d$,$f(b)$},
             axis on top,
           ]
-          \addplot [draw=none, fill=fill2, smooth, domain=(0:7)] {1.679} \closedcycle;
-          \addplot [draw=none, fill=background, smooth, domain=(0:7)] {.203} \closedcycle;
+          \addplot [draw=none, fill=fill2, domain=(0:7)] {1.679} \closedcycle;
+          \addplot [draw=none, fill=background, domain=(0:7)] {.203} \closedcycle;
           \addplot [textColor,dashed] plot coordinates {(0,1.679) (6,1.679)};
           \addplot [textColor,dashed] plot coordinates {(0,.203) (6,.203)};
           \addplot [textColor,dashed] plot coordinates {(5,0) (5,1.679)};
           \addplot [textColor,dashed] plot coordinates {(1,0) (1,.203)};
           \addplot [textColor,dashed] plot coordinates {(3.587,0) (3.597,1)};
-          \addplot [penColor2, smooth,domain=(0:6)] {1};
+          \addplot [penColor2,domain=(0:6)] {1};
           \addplot [very thick,penColor, smooth,domain=(0:2.5)] {sin(deg((x - 4)/2)) + 1.2};
           \addplot [very thick,penColor, smooth,domain=(4:6)] {sin(deg((x - 4)/2)) + 1.2};
           \addplot [very thick,dashed,penColor!50!background, smooth,domain=(2.5:4)] {sin(deg((x - 4)/2)) + 1.2}; 
@@ -677,7 +677,7 @@ interpretation of this theorem.
   $[a,b]$. Since $d$ is in the interval $[f(a),f(b)]$, there exists a
   value $c$ in $[a,b]$ such that $f(c) = d$.}
 \label{figure:intermediate-value}
-\end{figure}
+\end{marginfigure}
 
 
 
@@ -689,10 +689,11 @@ and 1.
 \end{example}
 
 \begin{solution}
-By Theorem~\ref{theorem:limit-laws}, $\lim_{x\to a} f(x) =
-f(a)$, for all real values of $a$, and hence $f$ is continuous.  Since
-$f(0)=-2$ and $f(1)=3$, and $0$ is between $-2$ and $3$, there is a
-$c\in[0,1]$ such that $f(c)=0$.
+By Theorem~\ref{theorem:limit-laws}, $\lim_{x\to a} f(x) = f(a)$, for
+all real values of $a$, and hence $f$ is continuous.  Since $f(0)=-2$
+and $f(1)=3$, and $0$ is between $-2$ and $3$, by the Intermediate
+Value Theorem, Theorem~\ref{theorem:IVT}, there is a $c\in[0,1]$ such
+that $f(c)=0$.
 \end{solution}
 
 This example also points the way to a simple method for approximating
@@ -705,9 +706,10 @@ Approximate a root of $f(x) =x^3 + 3x^2+x-2$ to one decimal place.
 If we compute $f(0.1)$, $f(0.2)$, and so on, we find that $f(0.6)<0$
 and $f(0.7)>0$, so by the Intermediate Value Theorem, $f$ has a root
 between $0.6$ and $0.7$. Repeating the process with $f(0.61)$,
-$f(0.62)$, and so on, we find that $f(0.61)<0$ and $f(0.62)>0$, so $f$
-has a root between $0.61$ and $0.62$, and the root is $0.6$ rounded to
-one decimal place.
+$f(0.62)$, and so on, we find that $f(0.61)<0$ and $f(0.62)>0$, so by
+the Intermediate Value Theorem, Theorem~\ref{theorem:IVT}, $f(x)$ has
+a root between $0.61$ and $0.62$, and the root is $0.6$ rounded to one
+decimal place.
 \end{solution}
 
 

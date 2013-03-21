@@ -11,15 +11,6 @@
 \setcounter{secnumdepth}{2}
 
 
-\DeclareMathOperator{\arccot}{arccot}
-\DeclareMathOperator{\arcsec}{arcsec}
-\DeclareMathOperator{\arccsc}{arccsc}
-
-\DeclareMathOperator{\sech}{sech}
-\DeclareMathOperator{\csch}{csch}
-\DeclareMathOperator{\arcsinh}{arcsinh}
-\DeclareMathOperator{\arcsech}{arcsech}
-\DeclareMathOperator{\arccosh}{arccosh}
 
 
 % For nicely typeset tabular material
@@ -98,7 +89,10 @@ license, visit
 \url{http://creativecommons.org/licenses/by-nc-sa/3.0/}~or send a~or send a
 letter to Creative Commons, 543 Howard Street, 5th Floor, San
 Francisco, California, 94105, USA. If you distribute this work or a
-derivative, include the history of the document.
+derivative, include the history of the document. 
+
+The source code is available
+at: \url{https://github.com/ASCTech/mooculus/tree/master/public/textbook}
 
 \noindent
 This text is based on David Guichard's open-source calculus text which
@@ -138,7 +132,7 @@ improvement at \texttt{fowler@math.osu.edu} or
 
 \renewcommand{\listtheoremname}{List of Main Theorems}
 \setcounter{tocdepth}{1}
-\listoftheorems[numwidth=3em,ignoreall,show={mainTheorem}]
+\listoftheorems[numwidth=4em,ignoreall,show={mainTheorem}]
 
 
 %\listoffigures
@@ -194,13 +188,14 @@ endeavor. You, the reader, must become a doer of mathematics.
 \input productRuleAndQuotientRule
 \input chainRule
 \input derivativesOfTrigFunctions
+\input applicationsOfDifferentiation
+\input optimization
+\input linearApproximation
+\input antiderivatives
+\input integrals
 
-%\input chapter01
-%\input chapter02
-%\input chapter03
-%\input chapter04
-%\input chapter05
-%\input chapter06
+%\input fundamentalTheoremOfCalculus
+
 
 %\input chapter07
 %\input chapter08
@@ -216,9 +211,10 @@ endeavor. You, the reader, must become a doer of mathematics.
 
 \finalizeanswers
 \chapter*{Answers to Exercises}
+\small
 \addcontentsline{toc}{chapter}{Answers to Exercises}
 \IfFileExists{answers.tex}{\input{answers}}
-
+\normalsize
 \backmatter
 %\addcontentsline{toc}{chapter}{Index}
 \printindex

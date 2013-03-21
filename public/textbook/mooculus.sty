@@ -6,6 +6,7 @@
 
 %\RequirePackage{float}
 \RequirePackage{tabu}
+\RequirePackage{marvosym}
 \RequirePackage[framemethod=TikZ]{mdframed}
 \RequirePackage{environ}
 %\RequirePackage{xkeyval}
@@ -17,7 +18,7 @@
 \RequirePackage{thmtools}
 \RequirePackage{microtype}
 \RequirePackage{enumerate}
-\RequirePackage{pgfplots}\pgfplotsset{compat=1.7}
+\RequirePackage{pgfplots}%\pgfplotsset{compat=1.7}
 %\usepgfplotslibrary{groupplots}
 \RequirePackage{morefloats}
 
@@ -81,13 +82,14 @@
 }{}
 
 \colorlet{penColor}{blue!50!black} % Color of a curve in a plot
-%\colorlet{penColor2}{green!50!black} % Color of a curve in a plot
 \colorlet{penColor2}{red!50!black} % Color of a curve in a plot
 \colorlet{penColor3}{red!50!blue} % Color of a curve in a plot
 \colorlet{penColor4}{green!50!black} % Color of a curve in a plot
 \colorlet{penColor5}{orange!80!black} % Color of a curve in a plot
 \colorlet{fill1}{blue!50!black!20} % Color of fill in a plot
 \colorlet{fill2}{blue!10} % Color of fill in a plot
+\colorlet{fillp}{fill1} % Color of positive area
+\colorlet{filln}{red!50!black!20} % Color of negative area
 \colorlet{gridColor}{gray!50} % Color of grid in a plot
 \colorlet{definitionBackground}{black!8!background} % Color of the background of
                                           % a definition
@@ -173,10 +175,25 @@
 \renewcommand{\epsilon}{\varepsilon}
 \renewcommand{\theta}{\vartheta} %% only for kmath
 \renewcommand{\l}{\ell}
+\renewcommand{\d}{\, d}
 \newcommand{\ddx}{\frac{d}{dx}}
 \newcommand{\dydx}{\frac{dy}{dx}}
-\newcommand{\dd}[1]{\frac{d}{d #1}}
+
+%\newcommand{\dd}[1]{\frac{d}{d #1}}
+\def\dd{\@ifnextchar[{\@with}{\@without}}
+\def\@with[#1]#2{\frac{d #1}{d #2}}
+\def\@without#1{\frac{d}{d #1}}
+
 \newcommand{\R}{\mathbb{R}}
+\DeclareMathOperator{\arccot}{arccot}
+\DeclareMathOperator{\arcsec}{arcsec}
+\DeclareMathOperator{\arccsc}{arccsc}
+\DeclareMathOperator{\sech}{sech}
+\DeclareMathOperator{\csch}{csch}
+\DeclareMathOperator{\arcsinh}{arcsinh}
+\DeclareMathOperator{\arcsech}{arcsech}
+\DeclareMathOperator{\arccosh}{arccosh}
+
 %\DeclareMathOperator*\plim{lim}
 %\renewcommand{\lim}{\displaystyle\plim} if we really want all limits display style
 \everymath{\displaystyle}
@@ -276,7 +293,16 @@ leftmargin=40,outerlinecolor=textColor,fontcolor=textColor,backgroundcolor=backg
 skipbelow=\baselineskip]{proof}%
 {Proof}
 
-
+\declaretheoremstyle[ headfont=\normalfont\bfseries,
+  notefont=\mdseries, notebraces={(}{)}, bodyfont=\normalfont,
+  postheadspace=0.5em,
+  preheadhook={\begin{mdframed}[hidealllines=true,roundcorner=10pt,leftmargin=40,%
+rightmargin=40,backgroundcolor=definitionBackground,fontcolor=textColor,%%
+innertopmargin=6pt,%
+splittopskip=\topskip,skipbelow=\baselineskip,%
+skipabove=\baselineskip]},
+  postfoothook=\end{mdframed} ]{thmStyle}%
+\declaretheorem[style=thmStyle,name=Template,numberlike=mainTheorem]{template}
 
 
 \theoremheaderfont{\normalfont\bfseries}
@@ -288,6 +314,12 @@ splittopskip=\topskip,skipbelow=\baselineskip,skipabove=\baselineskip,
 font=\upshape
 ]{definition}%
 {Definition}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Hard coded environments 
+%% Should be rewritten
 
 \theoremheaderfont{\normalfont\bfseries} \theorembodyfont{\upshape}
 \newmdtheoremenv[leftmargin=40,%
@@ -308,8 +340,84 @@ font=\upshape
   outerlinewidth=1,outerlinecolor=mainOtherBorder!10!background,
   roundcorner=10pt,
   splittopskip=\topskip,skipbelow=\baselineskip,skipabove=\baselineskip,
+  font=\upshape ]{newtonsMethod}% 
+{Newton's Method}
+
+
+\theoremheaderfont{\normalfont\bfseries} \theorembodyfont{\upshape}
+\newmdtheoremenv[leftmargin=40,%
+  rightmargin=40,backgroundcolor=definitionBackground,fontcolor=textColor,%%
+  innertopmargin=6pt,innerlinewidth=1,innerlinecolor=mainOtherBorder!20!background,
+  middlelinewidth=2,middlelinecolor=mainOtherBorder,
+  outerlinewidth=1,outerlinecolor=mainOtherBorder!10!background,
+  roundcorner=10pt,
+  splittopskip=\topskip,skipbelow=\baselineskip,skipabove=\baselineskip,
+  font=\upshape ]{eulersMethod}% 
+{Euler's Method}
+
+\theoremheaderfont{\normalfont\bfseries} \theorembodyfont{\upshape}
+\newmdtheoremenv[leftmargin=40,%
+  rightmargin=40,backgroundcolor=definitionBackground,fontcolor=textColor,%%
+  innertopmargin=6pt,innerlinewidth=1,innerlinecolor=mainOtherBorder!20!background,
+  middlelinewidth=2,middlelinecolor=mainOtherBorder,
+  outerlinewidth=1,outerlinecolor=mainOtherBorder!10!background,
+  roundcorner=10pt,
+  splittopskip=\topskip,skipbelow=\baselineskip,skipabove=\baselineskip,
+  font=\upshape ]{guessingAntiderivatives}% 
+{How to Guess Antiderivatives}
+
+\theoremheaderfont{\normalfont\bfseries} \theorembodyfont{\upshape}
+\newmdtheoremenv[leftmargin=40,%
+  rightmargin=40,backgroundcolor=definitionBackground,fontcolor=textColor,%%
+  innertopmargin=6pt,innerlinewidth=1,innerlinecolor=mainOtherBorder!20!background,
+  middlelinewidth=2,middlelinecolor=mainOtherBorder,
+  outerlinewidth=1,outerlinecolor=mainOtherBorder!10!background,
+  roundcorner=10pt,
+  splittopskip=\topskip,skipbelow=\baselineskip,skipabove=\baselineskip,
   font=\upshape ]{procedureForPlotting}% 
 {Procedure for Sketching the Plots of Functions}
+
+\theoremheaderfont{\normalfont\bfseries} \theorembodyfont{\upshape}
+\newmdtheoremenv[leftmargin=40,%
+  rightmargin=40,backgroundcolor=definitionBackground,fontcolor=textColor,%%
+  innertopmargin=6pt,innerlinewidth=1,innerlinecolor=mainOtherBorder!20!background,
+  middlelinewidth=2,middlelinecolor=mainOtherBorder,
+  outerlinewidth=1,outerlinecolor=mainOtherBorder!10!background,
+  roundcorner=10pt,
+  splittopskip=\topskip,skipbelow=\baselineskip,skipabove=\baselineskip,
+  font=\upshape ]{procedureForConstructingASlopeField}% 
+{Procedure for Constructing a Slope Field}
+
+
+\theoremheaderfont{\normalfont\bfseries} \theorembodyfont{\upshape}
+\newmdtheoremenv[leftmargin=40,%
+  rightmargin=40,backgroundcolor=definitionBackground,fontcolor=textColor,%%
+  innertopmargin=6pt,innerlinewidth=1,innerlinecolor=mainOtherBorder!20!background,
+  middlelinewidth=2,middlelinecolor=mainOtherBorder,
+  outerlinewidth=1,outerlinecolor=mainOtherBorder!10!background,
+  roundcorner=10pt,
+  splittopskip=\topskip,skipbelow=\baselineskip,skipabove=\baselineskip,
+  font=\upshape ]{guidelinesForRelatedRates}% 
+{Guidelines for Related Rates Problems}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\theoremheaderfont{\normalfont\bfseries} \theorembodyfont{\upshape}
+\newmdtheoremenv[leftmargin=40,%
+  rightmargin=40,backgroundcolor=definitionBackground,fontcolor=textColor,%%
+  innertopmargin=6pt,innerlinewidth=1,innerlinecolor=mainOtherBorder!20!background,
+  middlelinewidth=2,middlelinecolor=mainOtherBorder,
+  outerlinewidth=1,outerlinecolor=mainOtherBorder!10!background,
+  roundcorner=10pt,
+  splittopskip=\topskip,skipbelow=\baselineskip,skipabove=\baselineskip,
+  font=\upshape ]{guidelinesForOptimization}% 
+{Guidelines for Optimization}
+
+
+
 
 \theoremheaderfont{\normalfont\bfseries} \theorembodyfont{\upshape}
 \newmdtheoremenv[leftmargin=40,%
@@ -439,10 +547,11 @@ skipabove=\baselineskip]{warning}%
   \dumpanswer[\noexpand\subsection*{Answers for \arabic{chapter}.\arabic{section}}]
   \subsection*{Exercises for Section \arabic{chapter}.\arabic{section}}
   \vspace{-15pt}
-  
   \rule{\textwidth}{2pt}
   \setcounter{exercise}{0}
+  %\small
   \BODY
+  %\normalsize
   \newpage
 }%
 {}

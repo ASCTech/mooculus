@@ -14,16 +14,15 @@ Local \textit{extrema} on a function are points on the graph where the
 $y$ coordinate is larger (or smaller) than all other $y$ coordinates
 on the graph at points ``close to'' $(x,y)$. 
 
-\begin{definition}\hfil
+\begin{definition}\hfil\index{maximum/minimum!local}
 \begin{enumerate}
-\item A point $(x,f(x))$ is a \textbf{local maximum}\index{local
-  maximum} if there is an interval $a<x<b$ with $f(x)\ge f(z)$ for
+\item A point $(x,f(x))$ is a \textbf{local maximum} if there is an interval $a<x<b$ with $f(x)\ge f(z)$ for
   every $z$ in $(a,b)$.
-\item A point $(x,f(x))$ is a \textbf{local minimum}\index{local
-  minimum} if there is an interval $a<x<b$ with $f(x)\le f(z)$ for
-  every $z$ in $(a,b)$.
+\item A point $(x,f(x))$ is a \textbf{local minimum} if
+  there is an interval $a<x<b$ with $f(x)\le f(z)$ for every $z$ in
+  $(a,b)$.
 \end{enumerate}
-A \textbf{local extremum}\index{local extremum} is either a local
+A \textbf{local extremum}\index{extremum!local} is either a local
 maximum or a local minimum.
 \end{definition}
 
@@ -40,9 +39,9 @@ and if the derivative of $f$ exists at $x$, then the graph has a
 tangent line and the tangent line must be horizontal. This is
 important enough to state as a theorem, though we will not prove it.
 
-\begin{mainTheorem}[Fermat's Theorem]\index{Fermat's Theorem}
-If $f(x)$ has a local extremum at $x=a$ and $f(x)$ is differentiable at
-$a$, then $f'(a)=0$.
+\begin{mainTheorem}[Fermat's Theorem]\index{Fermat's Theorem}\label{theorem:fermat}
+If $f(x)$ has a local extremum at $x=a$ and $f(x)$ is differentiable
+at $a$, then $f'(a)=0$.
 \end{mainTheorem}
 \begin{marginfigure}[0in]
 \begin{tikzpicture}
@@ -494,7 +493,7 @@ We know that the sign of the derivative tells us whether a function is
 increasing or decreasing. Likewise, the sign of the second derivative
 $f''(x)$ tells us whether $f'(x)$ is increasing or decreasing. We summarize this in the table below:
 \begin{fullwidth}
-\begin{figure}\index{concave up}\index{concave down}
+\begin{figure}\index{concave up/down}
 {\setlength{\arrayrulewidth}{5pt}
 \taburulecolor{textColor!10!background}
 \begin{tabu}{c|c|c|}
@@ -841,8 +840,8 @@ This is \textbf{not} an inflection point. The curve is concave down on either si
 \end{fullwidth}
 
 We identify inflection points by first finding where $f''(x)$ is zero
-and then checking to see whether $f''(x)$ does in fact go from
-positive to negative or negative to positive at these points.
+or undefined and then checking to see whether $f''(x)$ does in fact go
+from positive to negative or negative to positive at these points.
 
 \begin{warning}
 Even if $f''(a) = 0$, the point determined by $x=a$ might \textbf{not}
@@ -1145,10 +1144,12 @@ the plot of a function.
 \item Find candidates for vertical asymptotes, these are points where
   $f(x)$ is undefined.
 \item Compute $f'(x)$ and $f''(x)$.
-\item Find the critical points, the points where $f'(x) = 0$. 
+\item Find the critical points, the points where $f'(x) = 0$ or
+  $f'(x)$ is undefined.
 \item Use the second derivative test to identify local extrema and/or
   find the intervals where your function is increasing/decreasing.
-\item Find the candidates for inflection points, the points where $f''(x) = 0$.
+\item Find the candidates for inflection points, the points where
+  $f''(x) = 0$ or $f''(x)$ is undefined.
 \item Identify inflection points and concavity.
 \item If possible find the $x$-intercepts, the points where $f(x) =
   0$. Place these points on your graph.

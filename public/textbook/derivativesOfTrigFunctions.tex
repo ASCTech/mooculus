@@ -2,14 +2,14 @@
 
 
 
-\section{The Derivative of Trigonometric Functions}
+\section{The Derivatives of Trigonometric Functions}
 
 Up until this point of the course we have been largely ignoring a large
 class of functions---those involving $\sin(x)$ and $\cos(x)$. It is
 now time to visit our two friends who concern themselves periodically
 with triangles and circles.
 
-\begin{theorem}[The Derivative of sin(\textit{x})]\index{derivative of sine}\label{theorem:deriv sin}
+\begin{theorem}[The Derivative of sin(\textit{x})]\index{derivative!of sine}\label{theorem:deriv sin}
 \[
 \ddx \sin(x) = \cos(x).
 \]
@@ -145,7 +145,7 @@ derivatives of more complicated functions involving the sine.
 
 %\break
 
-\begin{theorem}[The Derivative of cos(\textit{x})]\index{derivative of cosine}
+\begin{theorem}[The Derivative of cos(\textit{x})]\index{derivative!of cosine}
 \[
 \ddx \cos(x) = -\sin(x).
 \]
@@ -167,7 +167,7 @@ Now:
 
 Next we have:
 
-\begin{theorem}[The Derivative of tan(\textit{x})]\index{derivative of tangent}
+\begin{theorem}[The Derivative of tan(\textit{x})]\index{derivative!of tangent}
 \[
 \ddx \tan(x) = \sec^2(x).
 \]
@@ -185,9 +185,9 @@ We'll rewrite $\tan(x)$ as $\frac{\sin(x)}{\cos(x)}$ and use the quotient rule. 
 
 Finally, we have
 
-\begin{theorem}[The Derivative of sec(\textit{x})]\index{derivative of secant}
+\begin{theorem}[The Derivative of sec(\textit{x})]\index{derivative!of secant}
 \[
-\ddx \tan(x) = \sec^2(x).
+\ddx \sec(x) = \sec(x)\tan(x).
 \]
 \end{theorem}
 
@@ -507,8 +507,10 @@ $\cos(\theta)$ when it is restricted to the interval $[0,\pi]$.
 
 Recall that a function and its inverse undo each other in either
 order, for example, 
+\marginnote{Compare this with the fact that while
+  $\left(\sqrt{x}\right)^2=x$, we have that $\sqrt{x^2}=|x|$.}
 \[
-\sqrt[3]{x^3}=x\qquad \text{and}\qquad \sqrt[3]{x^3}=x. 
+\sqrt[3]{x^3}=x\qquad \text{and}\qquad \left(\sqrt[3]{x}\right)^3=x. 
 \]
 However, since arcsine is the inverse of sine restricted to the
 interval $[-\pi/2,\pi/2]$, this does not work with sine and arcsine, for example
@@ -598,7 +600,7 @@ function, we can find its derivative by using implicit
 differentiation and the Inverse Function Theorem, Theorem~\ref{theorem:IFT}.
 
 
-\begin{theorem}[The Derivative of arcsin(\textit{y})]\index{derivative of arcsine}
+\begin{theorem}[The Derivative of arcsin(\textit{y})]\index{derivative!of arcsine}
 \[
 \dd{y} \arcsin(y) = \frac{1}{\sqrt{1-y^2}}.
 \]
@@ -638,7 +640,7 @@ $\cos(\theta)=\sqrt{1-y^2}$ and
 
 We can do something similar with arccosine. 
 
-\begin{theorem}[The Derivative of arccos(\textit{y})]\index{derivative of arccosine}
+\begin{theorem}[The Derivative of arccos(\textit{y})]\index{derivative!of arccosine}
 \[
 \dd{y} \arccos(y) = \frac{-1}{\sqrt{1-y^2}}.
 \]
@@ -678,7 +680,7 @@ $\sin(\theta)=\sqrt{1-y^2}$ and
 
 Finally, let's look at arctangent.
 
-\begin{theorem}[The Derivative of arctan(\textit{y})]\index{derivative of arctangent}
+\begin{theorem}[The Derivative of arctan(\textit{y})]\index{derivative!of arctangent}
 \[
 \dd{y} \arctan(y) = \frac{1}{1+y^2}.
 \]
@@ -757,7 +759,7 @@ inverse trigonometric functions.
 \end{answer}\end{exercise}
 
 \begin{exercise} Find the derivative of $\arccos(e^x)$
-\begin{answer} $-e^x\sqrt{1-e^{2x}}$
+\begin{answer} $-e^x/\sqrt{1-e^{2x}}$
 \end{answer}\end{exercise}
 
 \begin{exercise} Find the derivative of $\arcsin(x) + \arccos(x)$
@@ -769,27 +771,3 @@ inverse trigonometric functions.
 \end{answer}\end{exercise}
 
 \end{exercises}
-
-
-
-
-
-
-
-
-
-
-
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
-%\section{Rates of Change}
-
-
-%\section{Applications}
-
-%\subsection{Related Rates}

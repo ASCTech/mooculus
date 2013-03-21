@@ -137,23 +137,23 @@ does not exist.
             clip=false,
             %axis on top,
           ]
-          \addplot [draw=none,, fill=fill1, smooth, domain=(0:2)] {2} \closedcycle; %% fill for epsilon  
-          \addplot [color=textColor, dashed, smooth, domain=(0:2)] {2};  %% bndry for epsilon  
-          \addplot [draw=none, fill=background, smooth, domain=(0:1.8)] {1} \closedcycle;
-          \addplot [color=textColor, dashed, smooth, domain=(0:1)] {1};  %% bndry for epsilon  
-          \addplot [draw=none, fill=fill1, smooth, domain=(1.8:2)] {1} \closedcycle;
-          \addplot [draw=none, fill=fill1, smooth, domain=(2:2.2)] {2} \closedcycle;
+          \addplot [draw=none,, fill=fill1, domain=(0:2)] {2} \closedcycle; %% fill for epsilon  
+          \addplot [color=textColor, dashed, domain=(0:2)] {2};  %% bndry for epsilon  
+          \addplot [draw=none, fill=background, domain=(0:1.8)] {1} \closedcycle;
+          \addplot [color=textColor, dashed, domain=(0:1)] {1};  %% bndry for epsilon  
+          \addplot [draw=none, fill=fill1, domain=(1.8:2)] {1} \closedcycle;
+          \addplot [draw=none, fill=fill1, domain=(2:2.2)] {2} \closedcycle;
           \addplot [textColor, very thick] plot coordinates {(2,0) (2,2)};
           \addplot [textColor] plot coordinates {(1.8,0) (1.8,1)};
           \addplot [textColor] plot coordinates {(2.2,0) (2.2,2)};
           \addplot [textColor, very thin, domain=(0:2.3)] {0}; % puts the axis back, axis on top clobbers our open holes
           \addplot [textColor, very thin] plot coordinates {(0,0) (0,2)}; % puts the axis back, axis on top clobbers our open holes
-	  \addplot [very thick, penColor, smooth, domain=(-2:-1)] {-2};
-          \addplot [very thick, penColor, smooth, domain=(-1:0)] {-1};
-          \addplot [very thick, penColor, smooth, domain=(0:1)] {0};
-          \addplot [very thick, penColor, smooth, domain=(1:2)] {1};
-          \addplot [very thick, penColor, smooth, domain=(2:3)] {2};
-          \addplot [very thick, penColor, smooth, domain=(3:4)] {3};
+	  \addplot [very thick, penColor, domain=(-2:-1)] {-2};
+          \addplot [very thick, penColor, domain=(-1:0)] {-1};
+          \addplot [very thick, penColor, domain=(0:1)] {0};
+          \addplot [very thick, penColor, domain=(1:2)] {1};
+          \addplot [very thick, penColor, domain=(2:3)] {2};
+          \addplot [very thick, penColor, domain=(3:4)] {3};
           \addplot[color=penColor,fill=penColor,only marks,mark=*] coordinates{(-2,-2)};  %% closed hole          
           \addplot[color=penColor,fill=penColor,only marks,mark=*] coordinates{(-1,-1)};  %% closed hole          
           \addplot[color=penColor,fill=penColor,only marks,mark=*] coordinates{(0,0)};  %% closed hole          
@@ -866,14 +866,16 @@ then $\lim_{x\to a} f(x) = L$.
 \marginnote[.2in]{For a nice discussion of this limit, see: Richman,
   Fred. \textit{A circular argument}. College Math. J. 24 (1993),
   no. 2, 160--162.}
-\begin{example}\label{example:sinx/x}{theorem:deriv sin}
+\begin{example}\label{example:sinx/x}
 Compute
 \[
 \lim_{x\to 0} \frac{\sin(x)}{x}.
 \]
 \end{example}
 
-\marginnote[.2in]{The limit in this example will be used in Theorem~\ref{theorem:deriv sin}.}
+\marginnote[.2in]{The limit in this example will be used in
+  Theorem~\ref{theorem:deriv sin}, and we will give another derivation
+  of this limit in Example~\ref{example:sinx/x-lhopital}.}
 
 \break
 
@@ -919,7 +921,7 @@ time, we'll assume that $x$ is positive---consider the diagrams below:
             every axis x label/.style={at=(current axis.right of origin),anchor=west},
           ]        
           \addplot [draw=none,fill=fill1] plot coordinates {(0,0) (.766,.643)}\closedcycle; %% sector
-          \addplot [draw=none, fill=fill1, smooth, domain=(0:41)] ({cos(x)},{sin(x)})\closedcycle; %% sector 41 is a hack, should be 40
+          \addplot [draw=none, fill=fill1, samples=100, domain=(0:40)] ({cos(x)},{sin(x)})\closedcycle; %% sector 
           \addplot [very thick, penColor2, smooth, domain=(-.2:.2+pi/2)] ({cos(deg(x))},{sin(deg(x))});
           \addplot [textColor] plot coordinates {(0,0) (1,.839)}; %% 40 degrees
           \addplot [textColor] plot coordinates {(.766,0) (.766,.643)}; %% 40 degrees

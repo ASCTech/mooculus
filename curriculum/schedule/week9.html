@@ -1,0 +1,150 @@
+<h3>Linear approximation</h3>
+
+<p>Last week, during <a
+href="/calc1-001/wiki/view?page=Week8">Week 8</a>, we looked at
+optimization and emphasized word problems.  This week we continue our
+applications, but instead of words, we emphasize
+numbers&mdash;specifically, numerical analysis and all the numeric
+issues that calculus raises.  Even if <a href="/calc1-001/lecture/223"><i
+class="icon-film"></i>&nbsp;you do not really like numbers</a> I hope
+that the examples will nevertheless be captivating.</p>
+
+<p>For the last two weeks, the biggest hurdle is converting a word
+problem into mathematics; this week, I think the big hurdle has to do
+with <em>algorithms</em>; much of this is review, and the big change
+this week is that we're doing iterative processes.  I encourage you to
+use a calculation device (or much better, a general purpose computer)
+to automate the procedures you are learning about.  If you're not
+having fun, please let me know <a href="/calc1-001/forum/index">in the
+forum</a>&mdash;and to talk in person, we'll hold
+<a href="/calc1-001/wiki/view?page=OfficeHours">Office Hours</a> on
+March 7 at 2:30PM EST.</p>
+
+<h3>What is linear approximation?</h3>
+
+<p>This week is called linear approximation, so what does that even
+mean?  The basic idea is the formula
+<blockquote>\( f(x+h) = f(x) + h f'(x) \)</blockquote>
+which <a href="/calc1-001/lecture/227"><i
+class="icon-film"></i>&nbsp;comes from the definition of the
+derivative</a>.  By using linear approximation, you can approximate
+the change in a function without actually evaluating the function: a
+classic real-world example is approximating the <a href="/calc1-001/lecture/225"><i
+class="icon-film"></i>&nbsp;volume of an orange rind</a>.
+
+<p>You can read more about this
+on <a href="https://mooculus.osu.edu/handouts"><i class="icon-book"></i>&nbsp;Page&nbsp;153
+of the Textbook</a>.  We also did some exercises along these lines
+during <a href="https://mooculus.osu.edu/exercises/"><i class="icon-pencil"></i>&nbsp;Week
+3 on mooculus</a>.</p>
+
+<h3>What happens if I repeat linear approximation?</h3>
+
+<p>The derivative tells you how wiggling the input affects the output;
+if you do enough wiggling, you can wiggle your way rather far to the
+right!  In other words, by performing  <a href="/calc1-001/lecture/239"><i
+class="icon-film"></i>&nbsp;repeated linear approximation</a>, otherwise
+known as the <a href="http://en.wikipedia.org/wiki/Euler_method">Euler method</a> you can approximate a function, given
+information about its derivative.  To see this sort of technique in action, <a href="/calc1-001/lecture/243"><i
+class="icon-film"></i>&nbsp;compute the natural logarithm of two and
+three</a>, and then read 
+on <a href="https://mooculus.osu.edu/handouts"><i class="icon-book"></i>&nbsp;Page&nbsp;161
+of the Textbook</a>.</p>
+
+<p>These ideas also appear in the 
+during <a href="https://mooculus.osu.edu/exercises/slopeField"><i class="icon-pencil"></i>&nbsp;slope field series of exercises on mooculus</a>.</p>
+
+<h3>What does \(dx\) mean by itself?</h3>
+
+<p>Another way to talk about linear approximation is via <a href="/calc1-001/lecture/245"><i
+class="icon-film"></i>&nbsp;differentials, like \(dx\)</a>.  You can find more about this on <a href="https://mooculus.osu.edu/handouts"><i class="icon-book"></i>&nbsp;Page&nbsp;155 of the Textbook</a>.</p>
+
+<h3>What is Newton's method?</h3>
+
+<p>The derivative can help us approximate zeroes of functions, as
+well,
+via <a href="/calc1-001/lecture/229"><i class="icon-film"></i>&nbsp;Newton's
+method.</a>.  If you're standing near a zero of a function, you can
+replace the function with the tangent line approximation, figure out
+where the tangent line crosses the \(x\)-axis, and then
+use <em>that</em> point as a hopefully better approximation to where
+the function crosses the \(x\)-axis.  This technique is
+described&mdash;with
+pictures!&mdash;on <a href="https://mooculus.osu.edu/handouts"><i class="icon-book"></i>&nbsp;Page&nbsp;158
+of the Textbook</a>.</p>
+
+<p>There's a couple nice applications of Newton's method.  The obvious
+one is to approximate roots of polynomials!  If I were trying to solve
+$$ax^2 + bx + c = 0$$, I'd just use <a
+href="http://en.wikipedia.org/wiki/Quadratic_equation">the quadratic
+equation</a>, but if I try to solve $$x^5 + x^2 -1 = 0$$, I'm in
+trouble, because by <a
+href="http://en.wikipedia.org/wiki/Galois_theory">Galois theory</a>,
+that polynomial's root cannot be expressed using whole numbers, the
+usual arithmetic operations (plus, subtract, multiply, divide) and
+exponents.  Nevertheless, with Newton's method we can <a href="/calc1-001/lecture/233"><i
+class="icon-film"></i>&nbsp;approximate a point \(x\) so that \( x^5 +
+x^2 - 1 = 0 \)</a>.</p>
+
+<p>You can try approximating a root of a polynomial yourself by doing
+the <a href="https://mooculus.osu.edu/exercises/newtonsMethod"><i class="icon-pencil"></i>&nbsp;Newton's
+method exercise on mooculus</a>.</p>
+
+<p>Newton's method is the basis of  <a href="/calc1-001/lecture/241"><i
+class="icon-film"></i>&nbsp;Newton-Raphson division</a>, which is a
+method for dividing without dividing: by which I mean, you can
+approximate $$1/b$$ by adding, subtracting and multiplying repeatedly.</p>
+
+<h3>What is the mean value theorem?</h3>
+
+<p>The <a href="/calc1-001/lecture/231"><i
+class="icon-film"></i>&nbsp;mean value theorem</a> is the main
+technical tool for connecting information about the derivative to the
+original function.  In words, it says that, given a secant line to a
+graph, there is a tangent line with that same slope.  Or more
+precisely,
+<blockquote>
+If \(f\) is continuous on the interval \([a,b]\) and differentiable on
+\((a,b)\), then there is a point \(c\) so that \(f'(c) = \displaystyle\frac{f(b) -
+f(a)}{b-a}\).
+</blockquote>
+You can find a proof on <a href="https://mooculus.osu.edu/handouts"><i class="icon-book"></i>&nbsp;Page&nbsp;165
+of the Textbook</a>.  This ends up
+having some nice applications, like a <a href="/calc1-001/lecture/235"><i
+class="icon-film"></i>&nbsp;proof that $$f'(x) &gt; 0$$ implies $$f$$ is
+increasing</a>.</p>
+
+<p>Many textbook problems on the mean value theorem emphasizing
+finding the point $$c$$ where $$f'(c)$$ equals $$\frac{f(b) -
+f(a)}{b-a}$$, but <a href="/calc1-001/lecture/237"><i
+class="icon-film"></i>&nbsp;it is better to regard the mean value
+theorem as an existential result<a>.</p>
+
+<h3>At the end of the week&hellip;</h3>
+
+<p>When you feel ready, take the <a
+href="/calc1-001/quiz/index">End of Week 9 Quiz</a>.  Let me warn you that
+there is are</p>
+<ul>
+  <li>two <a href="/calc1-001/lecture/227"><i
+class="icon-film"></i>&nbsp;linear approximation</a> problems,</li>
+  <li>a <a href="/calc1-001/lecture/245"><i
+class="icon-film"></i>&nbsp;differential</a> question</li>
+  <li>two <a href="/calc1-001/lecture/229"><i
+class="icon-film"></i>&nbsp;Newton's method</a> questions,</li>
+  <li>an <a href="/calc1-001/lecture/239"><i
+class="icon-film"></i>&nbsp;Euler method</a> question,</li>
+  <li>four <a href="/calc1-001/lecture/231"><i
+class="icon-film"></i>&nbsp;mean value theorem</a> questions, including <a href="/calc1-001/lecture/237"><i
+class="icon-film"></i>&nbsp;a couple that ask
+  you to find the point \(c\)</a>.</li>
+</ul>
+<p>And with that quiz, we finish differentiation and its applications;
+if you are having trouble
+about anything we've done thus far, please <a
+href="/calc1-001/forum/index">let us know on the
+forum</a> so we can help out, and <a href="/calc1-001/wiki/view?page=OfficeHours">discuss
+it with me during office hours</a>.  Next week we start
+antidifferentiation, which sets us up to do integration the following
+week&mdash;after breaking you down, we're getting ready to build you
+back up again.</p>

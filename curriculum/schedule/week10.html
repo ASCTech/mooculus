@@ -1,0 +1,103 @@
+<h3>Antidifferentiation</h3>
+
+<p>During the previous
+week, <a href="/calc1-001/wiki/view?page=Week9">Week 9</a>, we looked
+at some of the numerical issues that Calculus raises.  Alongside
+related rates in <a href="/calc1-001/wiki/view?page=Week7">Week 7</a>
+and optimization problems
+in <a href="/calc1-001/wiki/view?page=Week8">Week 8</a>, that
+concluded our foray into applications of the derivative.  <strong>This
+week is our second midterm of the course</strong> and this mideterm
+emphasizes the &ldquo;applied&rdquo; material.</strong></p>
+
+<p>This week we
+begin <strong>antidifferentiation</strong>.  <a href="/calc1-001/lecture/247"><i class="icon-film"></i>&nbsp;What
+is antidifferentiation?</a>  It is the process of <em>untaking</em>
+derivatives, of finding a function whose derivatives is a given
+function.  Since it involves working backwards, it sometimes feels
+like <em>unbreaking a vase</em>.</p>
+
+<p>In some ways, this week is a bit of a breather, since I want to
+give you time to focus on the midterm.  Yet, in other ways, this week
+is a breathless jump into a brand new, mysterious topic!  <strong>The
+deep reason as to why we care about antiderivatives won't become fully
+clear for a couple weeks.</strong></p>
+
+If you're stuck on anything and want help, <em>please</em> let somebody know <a href="/calc1-001/forum/index">in the
+forum</a>.  We will also have a chance to celebrate $$\pi$$ day together, albeit a bit late, on March 15 at 3:30PM EDT in <a href="/calc1-001/wiki/view?page=OfficeHours">Office Hours</a>.  See you then!</p>
+
+<h3>But there are so many antiderivatives!</h3>
+
+<p>The first of many problems with antidifferentiation is
+that <a href="/calc1-001/lecture/259"><i class="icon-film"></i>&nbsp;there
+is more than one antiderivative</a>.  If $$F'(x) = f(x)$$, then $$F$$
+is an antiderivative for $$f$$, but so would be the function $$G$$
+given by $$G(x) = F(x) + 17$$, since $$G'(x) = f(x)$$.  To deal with
+this, we ask for <strong>the most general antiderivative</strong> and
+write, for instance, $$F(x) + C$$ for an unspecified constant
+$$C$$.</p>
+
+<p>You can get a first taste of antidifferentiation by <a href="https://mooculus.osu.edu/exercises/antiderivativeSketchPlay"><i class="icon-pencil"></i>&nbsp;drawing some antiderivatives on mooculus</a> and you can also start reading <a href="https://mooculus.osu.edu/handouts"><i class="icon-book"></i>&nbsp;Page&nbsp;170
+of the Textbook</a> which begins the chapter on antidifferentiation.</p>
+
+<h3>How am I supposed to compute antiderivatives?</h3>
+
+<p>Often computing antidifferentiation requires some real insight, but there are some rules that help.  The first is that <a href="/calc1-001/lecture/249"><i class="icon-film"></i>&nbsp;the antiderivative of a sum is the sum of antiderivatives</a>.  In other words,
+<blockquote>
+$$\displaystyle\int \left( f(x) + g(x) \right) \, dx = \displaystyle\int f(x) \, dx + \displaystyle\int g(x) \, dx$$.
+</blockquote>
+We haven't previously mentioned this <strong>notation</strong>: we write $$\displaystyle\int f(x) \, dx$$ for the antiderivative of $$f$$.  Sometimes antiderivatives are called &ldquo;indefinite integrals&rdquo; and the process of antidifferentiation is called &ldquo;indefinite integration.&rdquo;  The long s-shaped $$\displaystyle\int$$ is an integral sign, and the reason that it does double duty as an antidifferentiation sign boils down to the biggest theorem in the course, the <strong>the fundamental theorem of calculus</strong>, which we won't get to for a couple weeks.</p>
+
+<p>There are some other rules, too.  For instance, to <a href="/calc1-001/lecture/257"><i class="icon-film"></i>&nbsp;antidifferentiate $$x^n$$</a> you can use
+<blockquote>
+$$\displaystyle\int x^n \, dx = \frac{x^{n+1}}{n+1} + C$$ provided $$n \neq -1$$.
+</blockquote>
+This is the <strong>power rule running in reverse</strong>.  In the case $$n = -1$$, one must <a href="/calc1-001/lecture/273"><i class="icon-film"></i>&nbsp;be a bit more careful about handling constants</a>, though it is enough to remember
+<blockquote>
+$$\displaystyle\int \displaystyle\frac{1}{x} \, dx = \log |x| + C$$.
+</blockquote>
+We can <a href="/calc1-001/lecture/251"><i class="icon-film"></i>&nbsp;antidifferentiate trigonometric functions</a> and 
+<a href="/calc1-001/lecture/271"><i class="icon-film"></i>&nbsp;antidifferentiate $$e^x$$ and $$\log x$$</a>, too.</p>
+
+<p>You can get some practice
+by <a href="https://mooculus.osu.edu/exercises/antidifferentiatePolynomials"><i class="icon-pencil"></i>&nbsp;antidifferentiating
+polynomials on mooculus</a>
+and <a href="https://mooculus.osu.edu/exercises/antiDifferentiationBasic"><i class="icon-pencil"></i>&nbsp;practicing
+running derivatives in reverse</a>.</p>
+
+<h3>This is so hard!</h3>
+
+<p>Antidifferentiation really is harder than differentiating!  One analogy to make is to multiplying and <em>antimultiplying</em>, which normal people would call factoring.  <a href="/calc1-001/lecture/255"><i class="icon-film"></i>&nbsp;It is &ldquo;easy&rdquo; to multiply, and hard to factor,</a> which is somewhat analogous to the difficulties of antidifferentiation.</p>
+
+<p>In fact, <a href="/calc1-001/lecture/253"><i class="icon-film"></i>&nbsp;sometimes we cannot write down the antiderivative, even when it exists</a>.  Think back to  <a
+href="http://en.wikipedia.org/wiki/Galois_theory">Galois theory</a> from last week, where we learned that a certain polynomial's root cannot be expressed using whole numbers, the
+usual arithmetic operations (plus, subtract, multiply, divide) and
+exponents&mdash;and yet, that polynomial does have a root!  We just can't write it down.</p>
+
+<p>But not all hope is lost.  There are some general tricks,
+like <a href="/calc1-001/lecture/263"><i class="icon-film"></i>&nbsp;antidifferentiating
+$$f(mx+b)$$</a> which will develop into fancier and fancier methods as
+we progress in the course.  This trick for $$f(mx+b)$$ can
+be <a href="https://mooculus.osu.edu/exercises/antiDerivativeAffineTransformation"><i class="icon-pencil"></i>&nbsp;practiced
+on mooculus</a>.</p>
+
+
+
+<h3>Why would anyone want to do this?</h3>
+
+<p>Sometimes we only have information about the derivative, and we want to recover information about the original function.  Antidifferentiation can help solve those problems!  The prototypical examples are <a href="/calc1-001/lecture/261"><i class="icon-film"></i>&nbsp;starting with velocity and recovering position</a> or <a href="/calc1-001/lecture/265"><i class="icon-film"></i>&nbsp;starting with acceleration data and recovering position</a>.</p>
+
+<p>And I do think some of the problems are simply fun: a fun example to think about <a href="/calc1-001/lecture/267"><i class="icon-film"></i>&nbsp;antidifferentiating sine squared</a>.  You can see these problems visually by <a href="/calc1-001/lecture/269"><i class="icon-film"></i>&nbsp;considering slope fields</a>.</p>
+
+
+<h3>At the end of the week&hellip;</h3>
+
+<p>When you feel ready, take the <a href="https://class.coursera.org/calc1-001/quiz/index?quiz_type=exam">Fake Midterm 2</a> and the <a href="https://class.coursera.org/calc1-001/quiz/index?quiz_type=exam">Real Midterm 2</a>.  The Fake Midterm does not count for anything, but it is good practice, since <strong>the fake exam is harder than the real exam</strong> and some of the problems are really quite hard.  I hope you have fun with it!</p>
+
+<p>If you have questions about anything at all,
+please <a href="/calc1-001/forum/index">post to the forum</a> so the
+teaching staff can help
+or <a href="/calc1-001/wiki/view?page=OfficeHours">discuss your
+questions with me during Office Hours</a>.  This week is the beginning
+of the end of the course, so I expect things are confusing now, but
+they should be coming into sharper focus in the following weeks.</p>
