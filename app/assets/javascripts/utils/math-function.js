@@ -714,6 +714,14 @@ var MathFunction = (function () {
 	    
 	    if ((variables_in_ast(exponent)).indexOf(x) < 0) {
 		if ((typeof base === 'string') && (base === 'x')) {
+		    if (typeof exponent === 'number') {
+			var power_rule = mathFunctionParser.parse('n * (f^m)');
+			var result = substitute_ast( power_rule, { "n": exponent, "m": exponent - 1, "f": base } );
+			result = clean_ast(result);
+			story.push( 'By the power rule, <code>' + ddx + latex_ast( tree ) + ' = ' + latex_ast( exponent ) + ' \\cdot \\left(' + latex_ast( base ) + '\\right)^{' + latex_ast( ['-', exponent, 1] ) + '}</code>.' );
+			return result;
+		    }
+
 		    var power_rule = mathFunctionParser.parse('n * (f^(n-1))');
 		    var result = substitute_ast( power_rule, { "n": exponent, "f": base } );
 		    result = clean_ast(result);
