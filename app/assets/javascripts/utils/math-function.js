@@ -739,6 +739,14 @@ var MathFunction = (function () {
 		if (exponent === 1)
 		    return a;
 
+		if (typeof exponent === 'number') {
+		    var power_rule = mathFunctionParser.parse('n * (f^m) * a');
+		    var result = substitute_ast( power_rule, { "n": exponent, "m": exponent - 1, "f": base, "a" : a } );
+		    result = clean_ast(result);
+		    story.push( 'So by the power rule and the chain rule, <code>' + ddx + latex_ast( tree ) + ' = ' + latex_ast(result) + '</code>.' );
+		    return result;
+		}
+
 		var power_rule = mathFunctionParser.parse('n * (f^(n-1)) * a');
 		var result = substitute_ast( power_rule, { "n": exponent, "f": base, "a" : a } );
 		result = clean_ast(result);
