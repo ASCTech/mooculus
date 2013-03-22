@@ -1,0 +1,390 @@
+\documentclass[14pt]{beamer}
+
+\usepackage{xcolor}
+\usepackage{colortbl}
+\usepackage{pgf}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{latexsym}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usepackage{pdfpages}
+
+\definecolor{shaded}{RGB}{210,210,210}
+\usecolortheme[named=shaded]{structure}
+
+\definecolor{stressed}{RGB}{150,40,40}
+\setbeamercolor{alerted_text}{fg=stressed}
+
+
+\setbeamertemplate{navigation symbols}{}
+\setbeamersize{text margin left=3mm} 
+\setbeamersize{text margin right=3mm} 
+
+\usepackage{fontspec,xunicode,xltxtra}
+%\setmainfont{Helvetica Neue Light}
+%\setsansfont{Helvetica Neue Light}
+
+%\usepackage[T1]{fontenc}
+%\usepackage{tgheros}
+%\renewcommand*\familydefault{\sfdefault} %% Only if the base font of the document is to be sans serif
+
+\setbeamertemplate{sidebar right}{default}{}
+
+\makeatletter
+\define@key{beamerframe}{nofills}[true]{% top
+  \beamer@frametopskip=0pt\relax%
+  \beamer@framebottomskip=0pt\relax%
+  \beamer@frametopskipautobreak=\beamer@frametopskip\relax%
+  \beamer@framebottomskipautobreak=\beamer@framebottomskip\relax%
+  \def\beamer@initfirstlineunskip{%
+    \def\beamer@firstlineitemizeunskip{%
+      \vskip-\partopsep\vskip-\topsep\vskip-\parskip%
+      \global\let\beamer@firstlineitemizeunskip=\relax}%
+    \everypar{\global\let\beamer@firstlineitemizeunskip=\relax}}
+}
+\makeatother
+
+\newcommand{\setbackgroundpicturewhite}[1]{%
+\usebackgroundtemplate{
+\begin{tikzpicture}
+\draw[fill=white] (current page.north west) rectangle (current page.south east);
+\node[draw,minimum width=\paperwidth,minimum height=\paperheight] [anchor=south west] (mynode) {\includegraphics[width=\paperwidth]{#1}};
+\end{tikzpicture}
+}
+%\begin{pgfpicture}{0in}{0in}{\paperwidth}{\paperheight}
+%\pgfputat{\pgfxy(0,0)}{\includegraphics[width=\paperwidth]{#1}}
+%\color{white}
+%\pgfsetfillopacity{0.0}
+%\pgfrect[fill]{\pgfxy(0,0)}{\pgfpoint{\paperwidth}{\paperheight}}
+%\end{pgfpicture}
+%}
+}
+
+
+\newcommand{\setbackgroundpictureblack}[1]{%
+\usebackgroundtemplate{
+\begin{tikzpicture}
+\draw[fill=black] (current page.north west) rectangle (current page.south east);
+\node[draw,minimum width=\paperwidth,minimum height=\paperheight] [anchor=south west] (mynode) {\includegraphics[width=\paperwidth]{#1}};
+\end{tikzpicture}
+}
+%\begin{pgfpicture}{0in}{0in}{\paperwidth}{\paperheight}
+%\pgfputat{\pgfxy(0,0)}{\includegraphics[width=\paperwidth]{#1}}
+%\color{white}
+%\pgfsetfillopacity{0.0}
+%\pgfrect[fill]{\pgfxy(0,0)}{\pgfpoint{\paperwidth}{\paperheight}}
+%\end{pgfpicture}
+%}
+}
+
+
+\newcommand{\setdarkbackgroundpictureblack}[1]{%
+\usebackgroundtemplate{
+\begin{tikzpicture}
+\draw[fill=black] (current page.north west) rectangle (current page.south east);
+\node[draw,very thick,minimum width=\paperwidth-\pgflinewidth,minimum height=\paperheight-\pgflinewidth] [anchor=south west] (mynode) {\includegraphics[width=\paperwidth]{#1}};
+\draw[fill=black,opacity=0.5] (current page.north west) rectangle (current page.south east);
+\end{tikzpicture}
+}}
+
+
+\newcommand{\setdarkbackgroundpicturewhite}[1]{%
+\usebackgroundtemplate{
+\begin{tikzpicture}
+\draw[fill=white] (current page.north west) rectangle (current page.south east);
+\node[draw,very thick,minimum width=\paperwidth-\pgflinewidth,minimum height=\paperheight-\pgflinewidth] [anchor=south west] (mynode) {\includegraphics[width=\paperwidth]{#1}};
+\draw[fill=white,opacity=0.5] (current page.north west) rectangle (current page.south east);
+\end{tikzpicture}
+}}
+
+
+\newcommand{\clearbackgroundpicture}{\usebackgroundtemplate{}}
+
+\begin{document}
+\setbeamercolor{background canvas}{bg=white,fg=black}
+\usebeamercolor[fg]{background canvas}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\clearbackgroundpicture
+\begin{frame}[nofills]
+  \includegraphics[width=\textwidth]{cow.pdf}
+
+  \vfill
+
+  \textsf{\textbf{Jim Fowler}} \\
+  \textsf{OSU Mathematics Department}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Coursera
+\setbackgroundpicturewhite{coursera-landing-page.pdf}
+\begin{frame}
+\end{frame}
+
+% \setdarkbackgroundpicturewhite{coursera-landing-page.pdf}
+% \begin{frame}
+% \huge\textbf\textsf{http://go.osu.edu/mooculus}
+% \end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Mooculus
+\setbackgroundpictureblack{mooculus-landing-page.png}
+\begin{frame}
+\end{frame}
+
+% \setdarkbackgroundpictureblack{mooculus-landing-page.png}
+% \begin{frame}
+% \color{white}\huge\textbf\textsf{https://mooculus.osu.edu/}
+% \end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\clearbackgroundpicture
+\begin{frame}[nofills]
+  \vfill
+  \scalebox{3}{\textsf{What is}}
+  \includegraphics[width=0.8\textwidth]{cow.pdf}\raisebox{0.25in}{\scalebox{5}{?}}
+  \vfill
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Mooculus as an exercise platform
+\setbackgroundpictureblack{mooculus-exercise-1.png}
+\begin{frame}
+\end{frame}
+\setbackgroundpictureblack{mooculus-exercise-2.png}
+\begin{frame}
+\end{frame}
+\setbackgroundpictureblack{mooculus-exercise-3.png}
+\begin{frame}
+\end{frame}
+\setbackgroundpictureblack{mooculus-exercise-4.png}
+\begin{frame}
+\end{frame}
+\setbackgroundpictureblack{mooculus-exercise-5.png}
+\begin{frame}
+\end{frame}
+
+% online homework?  we can do better.
+
+% \begin{frame}<1-2>[nofills,label=overview]
+%   \fontsize{28}{28}
+%   \fontspec{Helvetica Neue Bold}Three projects
+
+%   \vfill
+
+%   \fontsize{20}{20}
+%   \fontspec{Helvetica Neue}
+
+%   \alert<2>{\quad Using mobile phones as clickers}
+
+%   \vfill
+
+%   \alert<3>{\quad An online calculus course}
+
+%   \vfill
+
+%   \alert<4>{\quad Optical mark recognition for exams}
+
+%   \vfill
+
+% \end{frame}
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \setbackgroundpicture{clicker.png}
+% \begin{frame}
+% \end{frame}
+
+% \setdarkbackgroundpicture{clicker.png}
+% \begin{frame}
+%   \fontsize{32}{32}
+%   \fontspec{Helvetica Neue Bold}
+%   \color{white}
+
+% No expensive clickers.
+
+% \vfill
+
+% Students use their \\
+% mobile phone.
+
+% \end{frame}
+
+% \setbackgroundpicture{poll-everywhere.png}
+% \begin{frame}
+% \end{frame}
+
+% \setbackgroundpicture{top-hat-monocle.png}
+% \begin{frame}
+% \end{frame}
+
+% \setdarkbackgroundpicture{top-hat-monocle.png}
+% \begin{frame}
+%   \fontsize{32}{32}
+%   \fontspec{Helvetica Neue Bold}
+%   \color{white}
+
+% Online in March 2010
+
+% \end{frame}
+
+% \setbackgroundpicture{top-hat-eight-million.png}
+% \begin{frame}
+% \end{frame}
+
+% \setdarkbackgroundpicture{top-hat-eight-million.png}
+% \begin{frame}
+%   \fontsize{32}{32}
+%   \fontspec{Helvetica Neue Bold}
+%   \color{white}
+
+%    100,000 students
+
+%    \vfill
+
+%    150 universities
+
+%    \vfill
+
+%    \$9.56 million in VC
+
+%    \vfill
+%    \pause
+
+%    Could've been OSU
+
+% \end{frame}
+
+
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \clearbackgroundpicture
+% \againframe<3>{overview}
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \clearbackgroundpicture
+% \begin{frame}[nofills]
+
+% \vfill
+
+% \makebox[\textwidth][c]{\includegraphics[width=\paperwidth]{mooculus-logo.pdf}}
+
+% \vfill
+
+% \fontsize{16}{16}
+% \fontspec{Helvetica Neue}
+
+% Bart Snapp \hfill Jim Fowler \hfill Roman Holowinsky \\
+% \vspace{1ex}
+% \hfill Ryan Kowalick \hfill Steve Gubkin \hfill\null \\
+
+% %\vfill
+
+% %Replace community theater with television
+
+% %\vfill
+
+% %Assessment more important than videos
+
+% \vfill
+
+% \end{frame}
+
+% \setbackgroundpicture{coursera.png}
+% \begin{frame}
+% \end{frame}
+
+% \clearbackgroundpicture
+% \begin{frame}
+% \makebox[\textwidth][c]{\includegraphics[height=\paperheight]{enrollments.pdf}}
+% \end{frame}
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \clearbackgroundpicture
+% \begin{frame}[nofills]
+
+% \vfill
+
+% \fontsize{24}{24}
+% \fontspec{Helvetica Neue Bold}
+% Videos \\
+% \fontsize{24}{24}
+% \fontspec{Helvetica Neue}
+% From community theater to TV
+
+% \vfill
+
+% \fontsize{24}{24}
+% \fontspec{Helvetica Neue Bold}
+% Assessment \\
+% \fontsize{24}{24}
+% \fontspec{Helvetica Neue}
+% Iterative development
+
+% \vfill
+
+% \end{frame}
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \clearbackgroundpicture
+% \againframe<4>{overview}
+
+% \clearbackgroundpicture
+% \begin{frame}[nofills]
+
+% \fontsize{24}{24}
+% \fontspec{Helvetica Neue Bold}
+
+% Process
+
+% \vfill
+
+% \fontsize{24}{24}
+% \fontspec{Helvetica Neue}
+
+% \quad Student writes on paper.
+
+% \vfill
+
+% \quad The paper is scanned.
+
+% \vfill
+
+% \quad Grader types comments.
+
+% \vfill
+
+% \quad Graded work is emailed back.
+
+% \vfill
+
+% \end{frame}
+
+% \clearbackgroundpicture
+% \begin{frame}
+% \makebox[\textwidth][c]{\includegraphics[width=\paperwidth]{example-worksheet.pdf}}
+% \end{frame}
+
+% \clearbackgroundpicture
+% \begin{frame}
+% \makebox[\textwidth][c]{\includegraphics[width=\paperwidth]{example-worksheet-complete.pdf}}
+% \end{frame}
+
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \clearbackgroundpicture
+% \begin{frame}[nofills]
+%   \vfill
+%   \begin{center}
+%   \fontsize{60}{60}
+%   \fontspec{Helvetica Neue Bold} Thank You
+%   \end{center}
+
+%   \vfill
+%   \vfill
+%   \includegraphics[width=1in]{cc-logo.pdf}\\
+%   \fontsize{8}{8}\fontspec{Helvetica Neue Light} licensed for reuse under a Creative Commons BY-NC-ND License
+%   \null
+% \end{frame}
+
+\end{document}
