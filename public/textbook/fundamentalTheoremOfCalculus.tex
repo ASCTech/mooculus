@@ -3,4 +3,374 @@
 \section{The Fundamental Theorem}
 
 
+
+Let's rewrite this slightly: 
+\[
+  \int_a^x f(t)\d t = F(x)-F(a).
+\]
+We've replaced the variable $x$ by $t$ and $b$ by $x$. These are just
+different names for quantities, so the substitution doesn't change the
+meaning. It does make it easier to think of the two sides of the
+equation as functions. The expression
+\[
+  \int_a^x f(t)\d t
+\]
+is a function: plug in a value for $x$, get out some other value. The
+expression $F(x)-F(a)$ is of course also a function, and it has a nice
+property: 
+\[
+\ddx (F(x)-F(a)) = F'(x) = f(x),
+\]
+since $F(a)$ is a constant and has derivative zero. In other words, by
+shifting our point of view slightly, we see that the odd looking
+function
+\[
+  G(x)=\int_a^x f(t)\d t
+\]
+has a derivative, and that in fact $G'(x)=f(x)$. This is really just a
+restatement of the Fundamental Theorem of Calculus, and indeed is
+often called the Fundamental Theorem of Calculus. To avoid confusion,
+some people call the two versions of the theorem ``The Fundamental
+Theorem of Calculus, part I'' and ``The Fundamental
+Theorem of Calculus, part II'', although unfortunately there is no
+universal agreement as to which is part I and which part II. Since it
+really is the same theorem, differently stated, some people simply
+call them both ``The Fundamental
+Theorem of Calculus.''
+
+\begin{mainTheorem}[Fundamental Theorem of Calculus---Version I]
+\index{fundamental theorem of calculus---version 1}
+\label{thm:fundamental_theorem_I}
+Suppose that $f(x)$ is continuous on the interval $[a,b]$ and let
+\[
+  F(x)=\int_a^x f(t)\d t.
+\]
+Then $F'(x)=f(x)$.
+\end{proof}
+
+We have not really proved the Fundamental Theorem. In a nutshell, we
+gave the following argument to justify it: Suppose we want to know the
+value of 
+$$
+  \int_a^b f(t)\d t = \lim_{n\to\infty}\sum_{i=0}^{n-1} f(t_i)\Delta t.
+$$
+We can interpret the right hand side as the distance traveled by an
+object whose speed is given by $f(t)$. We know another way to compute
+the answer to such a problem: find the position of the object by
+finding an antiderivative of $f(t)$, then substitute $t=a$ and $t=b$
+and subtract to find the distance traveled. This must be the answer to
+the original problem as well, even if $f(t)$ does not represent a
+speed.
+
+What's wrong with this? In some sense, nothing. As a practical matter
+it is a very convincing argument, because our understanding of the
+relationship between speed and distance seems to be quite solid. From
+the point of view of mathematics, however, it is unsatisfactory to
+justify a purely mathematical relationship by appealing to our
+understanding of the physical universe, which could, however unlikely
+it is in this case, be wrong.
+
+A complete proof is a bit too involved to include here, but we will
+indicate how it goes. First, if we can prove the second version of the
+Fundamental Theorem, theorem~\xrefn{thm:fundamental_theorem_II}, then
+we can prove the first version from that:
+
+\vskip6pt\noindent{\begin{proof}font Proof of 
+Theorem~\xrefn{thm:fundamental_theorem_I}.}\kern1pc\bgroup
+We know from theorem~\xrefn{thm:fundamental_theorem_II} that 
+$$
+  G(x)=\int_a^x f(t)\d t
+$$
+is an antiderivative of $f(x)$, and therefore any antiderivative
+$F(x)$ of $f(x)$ is of the form $F(x)=G(x)+k$. Then 
+$$\eqalign{
+  F(b)-F(a)=G(b)+k-(G(a)+k) &= G(b)-G(a) \\
+  &=\int_a^b f(t)\d t-\int_a^a f(t)\d t. \\
+}$$
+It is not hard to see that $\int_a^a f(t)\d t=0$, so this means that
+$$
+  F(b)-F(a)=\int_a^b f(t)\d t,
+$$
+which is exactly what theorem~\xrefn{thm:fundamental_theorem_I} says.
+\end{proof}
+
+So the real job is to prove
+theorem~\xrefn{thm:fundamental_theorem_II}. We will sketch the proof,
+using some facts that we do not prove. First, the following identity
+is true of integrals:
+$$
+  \int_a^b f(t)\d t = \int_a^c f(t)\d t + \int_c^b f(t)\d t.
+$$
+This can be proved directly from the definition of the integral, that
+is, using the limits of sums. It is quite easy to see that it must be
+true by thinking of either of the two applications of integrals that
+we have seen. It turns out that the identity is true no matter what
+$c$ is, but it is easiest to think about the meaning when 
+$a\le c\le b$.
+
+First, if $f(t)$ represents a speed, then we know that the three
+integrals represent the distance traveled between time $a$ and time $b$;
+the distance traveled between time $a$ and time $c$; and 
+the distance traveled between time $c$ and time $b$. Clearly the sum of
+the latter two is equal to the first of these.
+
+Second, if $f(t)$ represents the height of a curve, the three
+integrals represent the area under the curve between $a$ and $b$;
+the area under the curve between $a$ and $c$;
+and the area under the curve between $c$ and $b$. Again it is clear
+from the geometry that the first is equal to the sum of the second and
+third. 
+
+
+\vskip6pt\noindent{\begin{proof}font Proof sketch for
+Theorem~\xrefn{thm:fundamental_theorem_II}.}\kern1pc\bgroup
+We want to compute $G'(x)$, so we start with the definition of the
+derivative in terms of a limit:
+$$\eqalign{
+  G'(x)&=\lim_{\Delta x\to0}{G(x+\Delta x)-G(x)\over\Delta x} \\
+  &=\lim_{\Delta x\to0}{1\over \Delta x}\left(
+  \int_a^{x+\Delta x} f(t)\d t - \int_a^x f(t)\d t\right) \\
+  &=\lim_{\Delta x\to0}{1\over \Delta x}\left(
+  \int_a^{x} f(t)\d t + \int_x^{x+\Delta x} f(t)\d t - 
+  \int_a^x f(t)\d t\right) \\
+  &=\lim_{\Delta x\to0}{1\over \Delta x}\int_x^{x+\Delta x} f(t)\d t. \\
+}$$
+Now we need to know something about 
+$$
+  \int_x^{x+\Delta x} f(t)\d t
+$$
+when $\Delta x$ is small; in fact, it is very close to 
+$\Delta x f(x)$, but we will not prove this. Once again, it is easy to
+believe this is true by thinking of our two applications:
+The integral 
+$$
+  \int_x^{x+\Delta x} f(t)\d t
+$$
+can be interpreted as the distance traveled by an object over a very
+short interval of time. Over a sufficiently short period of time, the
+speed of the object will not change very much, so the distance
+traveled will be approximately the length of time multiplied by the
+speed at the beginning of the interval, namely, $\Delta x
+f(x)$. Alternately, the integral may be interpreted as the area under
+the curve between $x$ and $x+\Delta x$. When $\Delta x$ is very small,
+this will be very close to the area of the rectangle with base $\Delta
+x$ and height $f(x)$; again this is $\Delta x
+f(x)$. If we accept this, we may proceed:
+$$
+  \lim_{\Delta x\to0}{1\over \Delta x}\int_x^{x+\Delta x} f(t)\d t
+  =\lim_{\Delta x\to0}{\Delta x f(x)\over \Delta x}=f(x),
+$$
+which is what we wanted to show.
+\end{proof}
+
+It is still true that we are depending on an interpretation of the
+integral to justify the argument, but we have isolated this part of
+the argument into two facts that are not too hard to prove. Once the
+last reference to interpretation has been removed from the proofs of
+these facts, we will have a real proof of the Fundamental Theorem.
+
+Now we know that to solve certain kinds of problems, those that lead
+to a sum of a certain form, we ``merely'' find an antiderivative and
+substitute two values and subtract. Unfortunately, finding
+antiderivatives can be quite difficult. While there are a small number
+of rules that allow us to compute the derivative of any common
+function, there are no such rules for antiderivatives. There are some
+techniques that frequently prove useful, but we will never be able to
+reduce the problem to a completely mechanical process.
+
+
+
+
+Because of the close relationship between an integral and an
+antiderivative, the integral sign is also used to mean
+``antiderivative''. You can tell which is intended by whether the
+limits of integration are included:
+$$
+  \int_1^2 x^2\d x
+$$
+is an ordinary integral, also called a 
+{\dfont definite integral\/}\index{definite integral},
+because it has a definite value, namely
+$$
+  \int_1^2 x^2\d x={2^3\over3}-{1^3\over3}={7\over3}.
+$$
+We use
+$$
+  \int x^2\d x
+$$
+to denote the antiderivative of $x^2$, also called an
+{\dfont indefinite integral\/}\index{indefinite integral}.
+So this is evaluated as
+$$
+  \int x^2\d x = {x^3\over 3}+C.
+$$
+It is customary to include the constant $C$ to indicate that there are
+really an infinite number of antiderivatives. We do not need this $C$
+to compute definite integrals, but in other circumstances we will need
+to remember that the $C$ is there, so it is best to get into the habit
+of writing the $C$.
+
+
+
+Suppose you wish to know the signed area between the plot of the
+function $f(x)$ and the $x$-axis on the interval $[a,b]$. This signed area is represented by
+\[
+\int_a^b f(x) \d x= \lim_{n\to \infty}\sum_{i=0}^{n-1} f(x_i) (x_{i+1}-x_i).
+\]
+However, Riemann sums can be difficult to compute. \textit{The Fundamental
+Theorem of Calculus} is what we need:
+
+\begin{mainTheorem}[Fundamental Theorem of Calculus---Version II]\index{fundamental theorem of calculus---version 2}
+\label{thm:fundamental_theorem_II}
+Suppose that $f(x)$ is continuous on the interval $[a,b]$. If $F(x)$
+is any antiderivative of $f(x)$, then
+\[
+  \left.\int_a^b f(x)\d x = F(x) \right|_a^b = F(b)-F(a).
+\]
+\end{mainTheorem}
+
+
+Let's see an example of the the fundamental theorem in action.
+
+\begin{example}
+BLAH
+\end{example}
+
+
+
+When we compute a definite integral, we first find an antiderivative
+and then substitute. It is convenient to first display the
+antiderivative and then do the substitution; we need a notation
+indicating that the substitution is yet to be done. A typical solution
+would look like this:
+$$
+  \int_1^2 x^2\d x=\left.{x^3\over 3}\right|_1^2 = 
+  {2^3\over3}-{1^3\over3}={7\over3}.
+$$
+The vertical line with subscript and superscript is used to indicate
+the operation ``substitute and subtract'' that is needed to finish the
+evaluation. 
+
+\begin{exercises}
+
+Find the antiderivatives of the functions:
+
+\twocol
+
+\begin{exercise} $8\sqrt{x}$
+\begin{answer} $(16/3)x^{3/2}+C$
+\end{answer}\end{exercise}
+
+\begin{exercise} $3t^2+1$
+\begin{answer} $t^3+t+C$
+\end{answer}\end{exercise}
+
+\begin{exercise} $4/\sqrt{x}$
+\begin{answer} $8\sqrt{x}+C$
+\end{answer}\end{exercise}
+
+\begin{exercise} $2/z^2$
+\begin{answer} $-2/z+C$
+\end{answer}\end{exercise}
+
+\iflatetranscendentals
+\else
+\begin{exercise} $7s^{-1}$
+\begin{answer} $7\ln s+C$
+\end{answer}\end{exercise}
+\fi
+
+\begin{exercise} $(5x+1)^2$
+\begin{answer} $(5x+1)^3/15+C$
+\end{answer}\end{exercise}
+
+\begin{exercise} $(x-6)^2$
+\begin{answer} $(x-6)^3/3+C$
+\end{answer}\end{exercise}
+
+\begin{exercise} $x^{3/2}$
+\begin{answer} $2x^{5/2}/5+C$
+\end{answer}\end{exercise}
+
+\begin{exercise} ${2\over x\sqrt x}$
+\begin{answer} $-4/\sqrt{x}+C$
+\end{answer}\end{exercise}
+
+\begin{exercise} $|2t-4|$
+\begin{answer} $4t-t^2+C$, $t<2$; $t^2-4t+8+C$, $t\ge 2$
+\end{answer}\end{exercise}
+
+\endtwocol
+
+\noindent
+Compute the values of the integrals:
+
+\twocol
+
+\begin{exercise} $\int_1^4 t^2+3t\d t$
+\begin{answer} $87/2$
+\end{answer}\end{exercise}
+
+\begin{exercise} $\int_0^\pi \sin t\d t$
+\begin{answer} $2$
+\end{answer}\end{exercise}
+
+\iflatetranscendentals
+\else
+\begin{exercise} $\int_1^{10} {1\over x}\d x$
+\begin{answer} $\ln(10)$
+\end{answer}\end{exercise}
+
+\begin{exercise} $\int_0^5 e^x\d x$
+\begin{answer} $e^5-1$
+\end{answer}\end{exercise}
+\fi
+
+\begin{exercise} $\int_0^3 x^3\d x$
+\begin{answer} $3^4/4$
+\end{answer}\end{exercise}
+
+\begin{exercise} $\int_1^2 x^5\d x$
+\begin{answer} $2^6/6 -1/6$
+\end{answer}\end{exercise}
+
+\endtwocol
+
+\msk
+\begin{exercise} Find the derivative of $G(x)=\int_1^x t^2-3t\d t$
+\begin{answer} $x^2-3x$
+\end{answer}\end{exercise}
+
+\begin{exercise} Find the derivative of $G(x)=\int_1^{x^2} t^2-3t\d t$
+\begin{answer} $2x(x^4-3x^2)$
+\end{answer}\end{exercise}
+
+\iflatetranscendentals
+\else
+\begin{exercise} Find the derivative of $G(x)=\int_1^x e^{t^2}\d t$
+\begin{answer} $e^{x^2}$
+\end{answer}\end{exercise}
+
+\begin{exercise} Find the derivative of $G(x)=\int_1^{x^2} e^{t^2}\d t$
+\begin{answer} $2xe^{x^4}$
+\end{answer}\end{exercise}
+\fi
+
+\begin{exercise} Find the derivative of $G(x)=\int_1^x \tan(t^2)\d t$
+\begin{answer} $\tan(x^2)$
+\end{answer}\end{exercise}
+
+\begin{exercise} Find the derivative of $G(x)=\int_1^{x^2} \tan(t^2)\d t$
+\begin{answer} $2x\tan(x^4)$
+\end{answer}\end{exercise}
+
+\end{exercises}
+
+
+
+
+
 \section{The Accumulation Formula}
+
+
+\section{Euler's Method}
