@@ -7,7 +7,7 @@ Let $f(x)$ be continuous on the real numbers and consider
   F(x) = \int_a^x f(t)\d t.
 \]
 From our previous work we know that $F(x)$ is increasing when $f(x)$
-is postive and $F(x)$ is decreasing when $f(x)$ is negative. Moreover,
+is positive and $F(x)$ is decreasing when $f(x)$ is negative. Moreover,
 with careful observation, we can even see that $F(x)$ is concave up
 when $f'(x)$ is positive and that $F(x)$ is concave down when $f'(x)$
 is negative. Thinking about what we have learned about the
@@ -35,7 +35,7 @@ Write
 F'(x) &= \lim_{h\to 0}\frac{F(x+h)-F(x)}{h}\\ 
 &=\lim_{h\to 0}\frac{1}{h}\left( \int_a^{x+h} f(t)\d t - \int_a^x f(t)\d t\right).
 \end{align*}
-Recall that if the limits of intergration are swapped, then the sign
+Recall that if the limits of integration are swapped, then the sign
 of the integral is swapped, so we have
 \[
 F'(x) =\lim_{h\to 0} \frac{1}{h}\left( \int_a^{x+h} f(t)\d t + \int_x^a f(t)\d t\right)
@@ -134,7 +134,7 @@ Theorem are very closely related. To avoid confusion, some people call
 the two versions of the theorem ``The Fundamental Theorem of
 Calculus---Version I'' and ``The Fundamental Theorem of
 Calculus---Version II'', although unfortunately there is no universal
-agreement as to which is ``Verion I'' and which ``Version II''. Since
+agreement as to which is ``Version I'' and which ``Version II''. Since
 it really is the same theorem, differently stated, people often simply
 call them both ``The Fundamental Theorem of Calculus.''
 
@@ -191,7 +191,7 @@ reduce the problem to a completely mechanical process.
 \subsection*{Euler's Method}
 
 We have given a proof of the Fundamental Theorem of Calculus,
-nevertheless it is good to give intution as to why it is
+nevertheless it is good to give intuition as to why it is
 true. Consider the following example:
 
 \begin{example}
@@ -216,20 +216,21 @@ Hence the ball is at a height of $2.1$ meters.
 
 We did this example before in
 Example~\ref{example:eulersMethodBall}. At that time we used Euler's
-Method to give an approximate solution.
-
-
-Suppose you have a function, 
-
-
+Method to give an approximate solution. Recall, the basic idea is to
+break the time interval between 0 and 1 seconds into many small
+partitions. Then at each step multiply the time duration by the
+velocity of the ball. In essence your are computing a Riemann
+sum. Hence, Euler's method gives some rational as to why the area
+under the curve that gives the velocity should give us the position of
+the ball.
 
 What's wrong with this? In some sense, nothing. As a practical matter
 it is a very convincing argument, because our understanding of the
-relationship between speed and distance seems to be quite solid. From
-the point of view of mathematics, however, it is unsatisfactory to
-justify a purely mathematical relationship by appealing to our
-understanding of the physical universe, which could, however unlikely
-it is in this case, be wrong.
+relationship between velocity and position seems to be quite
+solid. From the point of view of mathematics, however, it is
+unsatisfactory to justify a purely mathematical relationship by
+appealing to our understanding of the physical universe, which could,
+however unlikely it is in this case, be wrong.
 
 
 
@@ -349,329 +350,206 @@ it is in this case, be wrong.
 
 
 
-\section{Area between curves}
+\section{Area Between Curves}
 
-We have seen how integration can be used to find an area between a
+We have seen how integration can be used to find signed area between a
 curve and the $x$-axis. With very little change we can find some areas
-between curves; indeed, the area between a curve and the $x$-axis may
-be interpreted as the area between the curve and a second ``curve''
-with equation $y=0$. In the simplest of cases, the idea is quite easy
-to understand.
+between curves. Let's see an example:
 
-\begin{example} Find the area below $\ds f(x)= -x^2+4x+3$ and above
-$\ds g(x)=-x^3+7x^2-10x+5$ over the interval $1\le x\le2$. In
-figure~\xrefn{fig:area between curves} we show the two curves together, with
-the desired area shaded, then $f$ alone with the area under $f$
-shaded, and then $g$ alone with the area under $g$ shaded. 
-%% \figure
-%% \hbox to \hsize{\hfill
-%% \def\yarrow{-- +(-1.5pt,-3pt) +(0pt,0pt) -- +(1.5pt,-3pt) +(0pt,0pt)}
-%% \def\xarrow{-- +(-3pt,-1.5pt) +(0pt,0pt) -- +(-3pt,1.5pt) +(0pt,0pt) }
-%% \tikzpicture[domain=0:3,y=3mm]
-%% \draw[->] (0,0) -- (3.2,0) \xarrow node [right] {$x$};
-%% \draw[->] (0,0) -- (0,11.2) \yarrow node [above] {$y$};
-%% \gpad
-%% \draw[color=black] plot[id=\the\gpnum,domain=0:3] function{-x**3+7*x**2-10*x+5};
-%% \gpad
-%% \draw[color=black] plot[id=\the\gpnum,domain=0:3] function{-x**2+4*x+3};
-%% \draw[dashed] (1,0) -- (1,6);
-%% \draw[dashed] (2,0) -- (2,7);
-%% \foreach \x in {0,1,2,3} \draw (\x,0) -- (\x,-2pt) node[anchor=north] {\eightpoint $\x$};
-%% \foreach \y in {0,5,10} \draw (0,\y) -- (-2pt,\y) node[anchor=east]
-%%          {\eightpoint $\y$};
-%% \gpad
-%% \fill[opacity=0.5,fill=red!20] plot[id=\the\gpnum,domain=1:2]
-%% function{-x**3+7*x**2-10*x+5} -- (2,7) node {\gpad}
-%% plot[parametric,id=\the\gpnum,domain=0:1] function{2-t,-t**2+7} -- (1,1);
-%% \endtikzpicture
+\begin{example} Find the area below $f(x)= -x^2+4x+3$ and above
+$g(x)=-x^3+7x^2-10x+5$ over the interval $1\le x\le2$. 
+\end{example}
 
-%% \tikzpicture[domain=0:3,y=3mm]
-%% \draw[->] (0,0) -- (3.2,0) \xarrow node [right] {$x$};
-%% \draw[->] (0,0) -- (0,11.2) \yarrow node [above] {$y$};
-%% \gpad
-%% \draw[color=black] plot[id=\the\gpnum,domain=0:3] function{-x**2+4*x+3};
-%% \draw[dashed] (1,0) -- (1,6);
-%% \draw[dashed] (2,0) -- (2,7);
-%% \foreach \x in {0,1,2,3} \draw (\x,0) -- (\x,-2pt) node[anchor=north] {\eightpoint $\x$};
-%% \foreach \y in {0,5,10} \draw (0,\y) -- (-2pt,\y) node[anchor=east] {\eightpoint $\y$};
-%% \gpad\fill[opacity=0.5,fill=red!20] (2,0) -- (2,7)
-%% plot[parametric,id=\the\gpnum,domain=0:1] function{2-t,-t**2+7} -- (1,0) -- (2,0);
-%% \endtikzpicture
+\begin{marginfigure}
+\begin{tikzpicture}
+	\begin{axis}[
+            domain=0:3, ymax=14,xmax=3,ymin=0, xmin=0,
+            axis lines =left, xlabel=$x$, ylabel=$y$,
+            every axis y label/.style={at=(current axis.above origin),anchor=south},
+            every axis x label/.style={at=(current axis.right of origin),anchor=west},
+            axis on top,
+          ]
+          \addplot [draw=none,fill=fillp,domain=1:2] {-x^2+4*x+3} \closedcycle;
+          \addplot [draw=none,fill=background,domain=1:2] {-x^3 + 7*x^2-10*x+5} \closedcycle;
+          \addplot [draw=penColor,very thick] {-x^2+4*x+3};
+          \addplot [draw=penColor2,very thick] {-x^3 + 7*x^2-10*x+5};
+          \node at (axis cs:1,6.7) [penColor] {$f(x)$};
+          \node at (axis cs:2,4) [penColor2] {$g(x)$};
+        \end{axis}
+\end{tikzpicture}
+\caption{The area below $f(x)= -x^2+4x+3$ and above
+$g(x)=-x^3+7x^2-10x+5$ over the interval $1\le x\le2$. }
+\label{fig:area between curves}
+\end{marginfigure}
 
-%% \tikzpicture[domain=0:3,y=3mm]
-%% \draw[angle 90] (0,0) -- (3.2,0) \xarrow node [right] {$x$};
-%% \draw[->] (0,0) -- (0,11.2) \yarrow node [above] {$y$};
-%% \gpad\draw[color=black] plot[id=\the\gpnum,domain=0:3] function{-x**3+7*x**2-10*x+5};
-%% \draw[dashed] (1,0) -- (1,1);
-%% \draw[dashed] (2,0) -- (2,5);
-%% \foreach \x in {0,1,2,3} \draw (\x,0) -- (\x,-2pt) node[anchor=north] {\eightpoint $\x$};
-%% \foreach \y in {0,5,10} \draw (0,\y) -- (-2pt,\y) node[anchor=east]
-%%          {\eightpoint $\y$};
-%% \gpad
-%% \fill[opacity=0.5,fill=red!20] (1,0) -- (1,1) plot[id=\the\gpnum,domain=1:2]
-%% function{-x**3+7*x**2-10*x+5} -- (2,0) -- (1,0);
-%% \endtikzpicture
-%% \hfill}
-%% \figrdef{fig:area between curves}
-%% \endfigure{Area between curves as a difference of areas.}
+\begin{solution}
+In Figure~\ref{fig:area between curves} we show the two curves
+together, with the desired area shaded.
 
-It is clear
-from the figure that the area we want is the area under $f$ minus the
-area under $g$, which is to say
-$$\int_1^2 f(x)\,dx-\int_1^2 g(x)\,dx = \int_1^2 f(x)-g(x)\,dx.$$
+It is clear from the figure that the area we want is the area under
+$f(x)$ minus the area under $g(x)$, which is to say
+\[
+\int_1^2 f(x)\d x-\int_1^2 g(x)\d x = \int_1^2 \left(f(x)-g(x)\right)\d x.
+\]
 It doesn't matter whether we compute the two integrals on the left and
 then subtract or compute the single integral on the right. In this
 case, the latter is perhaps a bit easier:
 \begin{align*}
-  \int_1^2 f(x)-g(x)\,dx&=\int_1^2 -x^2+4x+3-(-x^3+7x^2-10x+5)\,dx \\
-  &=\int_1^2 x^3-8x^2+14x-2\,dx \\
+  \int_1^2 f(x)-g(x)\d x&=\int_1^2 -x^2+4x+3-(-x^3+7x^2-10x+5)\d x \\
+  &=\int_1^2 x^3-8x^2+14x-2\d x \\
   &=\left.{x^4\over4}-{8x^3\over3}+7x^2-2x\right|_1^2 \\
   &={16\over4}-{64\over3}+28-4-({1\over4}-{8\over3}+7-2) \\
-  &=23-{56\over3}-{1\over4}={49\over12}. \\
+  &=23-{56\over3}-{1\over4}={49\over12}.
 \end{align*}
-\vskip-10pt\end{example}
+\end{solution}
 
-It is worth examining this problem a bit more. We have seen one way to
-look at it, by viewing the desired area as a big area minus a small
-area, which leads naturally to the difference between two
-integrals. But it is instructive to consider how we might find the
-desired area directly. We can approximate the area by dividing the
-area into thin sections and approximating the area of each section by
-a rectangle, as indicated in 
-figure~\xrefn{fig:rectangles between curves}. 
-The area of a typical rectangle is 
-$\Delta x(f(x_i)-g(x_i))$, so the total area is approximately
-$$\sum_{i=0}^{n-1} (f(x_i)-g(x_i))\Delta x.$$
-This is exactly the sort of sum that turns into an integral in the
-limit, namely the integral
-$$\int_1^2 f(x)-g(x)\,dx.$$
-Of course, this is the integral we actually computed above, but we
-have now arrived at it directly rather than as a modification of the
-difference between two other integrals. In that example it really
-doesn't matter which approach we take, but in some cases this second
-approach is better.
+In our first example, one curve was higher than the other over the
+entire interval. This does not always happen.
 
-%% \figure
-%% \vbox{\beginpicture
-%% \normalgraphs
-%% \ninepoint
-%% \setcoordinatesystem units <3truecm,0.4truecm>
-%% \setplotarea x from 0 to 3, y from 0 to 10
-%% \axis left ticks numbered from 0 to 10 by 5 /
-%% \axis bottom  ticks numbered from 0 to 3 by 1 /
-%% \setquadratic
-%% %\putrule from 1.52 2.707 to 1.52 6.819
-%% %\putrule from 1.63 2.707 to 1.63 6.819
-%% %\putrule from 1.52 2.707 to 1.63 2.707
-%% %\putrule from 1.52 6.819 to 1.63 6.819
-%% \putrule from 1.465 2.229 to 1.465 6.714
-%% \putrule from 1.575 2.229 to 1.575 6.714
-%% \putrule from 1.575 2.229 to 1.465 2.229
-%% \putrule from 1.575 6.714 to 1.465 6.714
-%% %
-%% \putrule from 1.575 2.707 to 1.575 6.819
-%% \putrule from 1.685 2.707 to 1.685 6.819
-%% \putrule from 1.575 2.707 to 1.685 2.707
-%% \putrule from 1.575 6.819 to 1.685 6.819
-%% \plot
-%% 0.000 3.000 0.075 3.294 0.150 3.578 0.225 3.849 0.300 4.110 
-%% 0.375 4.359 0.450 4.598 0.525 4.824 0.600 5.040 0.675 5.244 
-%% 0.750 5.438 0.825 5.619 0.900 5.790 0.975 5.949 1.050 6.098 
-%% 1.125 6.234 1.200 6.360 1.275 6.474 1.350 6.578 1.425 6.669 
-%% 1.500 6.750 1.575 6.819 1.650 6.878 1.725 6.924 1.800 6.960 
-%% 1.875 6.984 1.950 6.998 2.025 6.999 2.100 6.990 2.175 6.969 
-%% 2.250 6.938 2.325 6.894 2.400 6.840 2.475 6.774 2.550 6.698 
-%% 2.625 6.609 2.700 6.510 2.775 6.399 2.850 6.278 2.925 6.144 
-%% 3.000 6.000 /
-%% \plot
-%% 0.000 5.000 0.075 4.289 0.150 3.654 0.225 3.093 0.300 2.603 
-%% 0.375 2.182 0.450 1.826 0.525 1.535 0.600 1.304 0.675 1.132 
-%% 0.750 1.016 0.825 0.953 0.900 0.941 0.975 0.978 1.050 1.060 
-%% 1.125 1.186 1.200 1.352 1.275 1.557 1.350 1.797 1.425 2.071 
-%% 1.500 2.375 1.575 2.707 1.650 3.065 1.725 3.446 1.800 3.848 
-%% 1.875 4.268 1.950 4.703 2.025 5.151 2.100 5.609 2.175 6.075 
-%% 2.250 6.547 2.325 7.021 2.400 7.496 2.475 7.968 2.550 8.436 
-%% 2.625 8.896 2.700 9.347 2.775 9.785 2.850 10.208 2.925 10.614 
-%% 3.000 11.000 /
-%% \setdashes
-%% \putrule from 1 0 to 1 6
-%% \putrule from 2 0 to 2 7
-%% \setsolid
-%% \endpicture}
-%% \figrdef{fig:rectangles between curves}
-%% \endfigure{Approximating area between curves with rectangles.}
 
-\begin{example} Find the area below $\ds f(x)= -x^2+4x+1$ and above
-$\ds g(x)=-x^3+7x^2-10x+3$ over the interval $1\le x\le2$; these are the
-same curves as before but lowered by 2. In
-figure~\xrefn{fig:area between curves too} we show the two curves
-together. Note that the lower curve now dips below the $x$-axis. This
-makes it somewhat tricky to view the desired area as a big area minus
-a smaller area, but it is just as easy as before to think of
-approximating the area by rectangles. The height of a typical
-rectangle will still be $f(x_i)-g(x_i)$, even if $g(x_i)$ is
-negative. Thus the area is 
-$$
-  \int_1^2 -x^2+4x+1-(-x^3+7x^2-10x+3)\,dx
-  =\int_1^2 x^3-8x^2+14x-2\,dx.
-$$
-This is of course the same integral as before, because the region
-between the curves is identical to the former region---it has just
-been moved down by 2.
+\begin{example} Find the area between $f(x)= -x^2+4x$ and
+$g(x)=x^2-6x+5$ over the interval $0\le x\le 1$.
 \end{example}
 
-%% \figure
-%% \hbox{\hfill
-%% \tikzpicture[domain=0:3,y=3mm]
-%% \draw[->] (0,0) -- (3.2,0) ;
-%% \draw[->] (0,0) -- (0,10.2) ;
-%% \gpad
-%% \draw[color=black] plot[id=\the\gpnum,domain=0:3] function{-x**3+7*x**2-10*x+3};
-%% \gpad
-%% \draw[color=black] plot[id=\the\gpnum,domain=0:3] function{-x**2+4*x+1};
-%% \draw[dashed] (1,0) -- (1,4);
-%% \draw[dashed] (2,0) -- (2,5);
-%% \foreach \x in {0,1,2,3} \draw (\x,0) -- (\x,-2pt) node[anchor=north] {\eightpoint $\x$};
-%% \foreach \y in {0,5,10} \draw (0,\y) -- (-2pt,\y) node[anchor=east] {\eightpoint $\y$};
-%% \gpad
-%% \fill[opacity=0.5,fill=red!20] plot[id=\the\gpnum,domain=1:2]
-%% function{-x**3+7*x**2-10*x+3} -- (2,5) node {\gpad}
-%% plot[parametric,id=\the\gpnum,domain=0:1] function{2-t,-t**2+5} -- (1,-1);
-%% \endtikzpicture
-%% \hfill}
-%% \figrdef{fig:area between curves too}
-%% \endfigure{Area between curves.}
+\begin{marginfigure}
+\begin{tikzpicture}
+	\begin{axis}[
+            domain=-1:2, ymax=6,xmax=1.5,ymin=0, xmin=-.5,
+            axis lines =center, xlabel=$x$, ylabel=$y$,
+            every axis y label/.style={at=(current axis.above origin),anchor=south},
+            every axis x label/.style={at=(current axis.right of origin),anchor=west},
+            axis on top,
+          ]
+          \addplot [draw=none,fill=fillp,domain=0:0.56] {x^2-6*x+5} \closedcycle;
+          \addplot [draw=none,fill=background,domain=0:0.56] {-x^2+4*x} \closedcycle;
+          \addplot [draw=none,fill=fillp,domain=0.56:1] {-x^2+4*x} \closedcycle;
+          \addplot [draw=none,fill=background,domain=0.56:1] {x^2-6*x+5} \closedcycle;
+          \addplot [draw=penColor,very thick] {-x^2+4*x};
+          \addplot [draw=penColor2,very thick] {x^2 - 6*x+5};
+          \node at (axis cs:1.25,3.1) [penColor] {$f(x)$};
+          \node at (axis cs:.25,4.3) [penColor2] {$g(x)$};
+        \end{axis}
+\end{tikzpicture}
+\caption{The area between $f(x)= -x^2+4x$ and
+$g(x)=x^2-6x+5$ over the interval $0\le x\le 1$.}
+\label{fig:curves cross}
+\end{marginfigure}
 
-\begin{example} Find the area between $\ds f(x)= -x^2+4x$ and
-$\ds g(x)=x^2-6x+5$ over the interval $0\le x\le 1$; the
-curves are shown in figure~\xrefn{fig:curves cross}. Generally we
+
+\begin{solution}
+The curves are shown in Figure~\ref{fig:curves cross}. Generally we
 should interpret ``area'' in the usual sense, as a necessarily
-positive quantity. Since the two curves cross, we need to compute two 
+positive quantity. Since the two curves cross, we need to compute two
 areas and add them. First we find the intersection point of the
 curves:
 \begin{align*}
   -x^2+4x&=x^2-6x+5 \\
   0&=2x^2-10x+5 \\
-  x&={10\pm\sqrt{100-40}\over4}={5\pm\sqrt{15}\over2}. \\
+  x&={10\pm\sqrt{100-40}\over4}={5\pm\sqrt{15}\over2}.
 \end{align*}
-The intersection point we want is $\ds x=a=(5-\sqrt{15})/2$. Then
+The intersection point we want is $x=a=(5-\sqrt{15})/2$. Then
 the total area is 
 \begin{align*}
-  \int_0^a x^2-6x+5-(-x^2+4x)\,dx&+\int_a^1 -x^2+4x-(x^2-6x+5)\,dx \\
-  &=\int_0^a 2x^2-10x+5\,dx+\int_a^1 -2x^2+10x-5\,dx \\
+  \int_0^a x^2-6x+5-(-x^2+4x)\d x&+\int_a^1 -x^2+4x-(x^2-6x+5)\d x \\
+  &=\int_0^a 2x^2-10x+5\d x+\int_a^1 -2x^2+10x-5\d x \\
   &=\left.{2x^3\over3}-5x^2+5x\right|_0^a + 
     \left.-{2x^3\over3}+5x^2-5x\right|_a^1 \\
   &=-{52\over3}+5\sqrt{15},
 \end{align*}
 after a bit of simplification.
+\end{solution}
+
+
+In both of our examples above, we gave you the limits of integration
+by bounding the $x$-values between $0$ and $1$. However, some problems
+are not so simple.
+
+\begin{example} Find the area between $f(x)= -x^2+4x$ and
+$g(x)=x^2-6x+5$.
 \end{example}
 
-%% \figure
-%% \hbox{\hfill\tikzpicture[domain=0:1,x=3cm,y=1cm]
-%% \draw[->] (0,0) -- (1.1,0) ;
-%% \draw[->] (0,0) -- (0,5.2) ;
-%% \gpad
-%% \draw[color=black] plot[id=\the\gpnum,domain=0:1] function{x**2-6*x+5};
-%% \gpad
-%% \draw[color=black] plot[id=\the\gpnum,domain=0:1] function{-x**2+4*x};
-%% \draw[dashed] (1,0) -- (1,3);
-%% \foreach \x in {0,1} \draw (\x,0) -- (\x,-2pt) node[anchor=north] {\eightpoint $\x$};
-%% \foreach \y in {0,1,2,3,4,5} \draw (0,\y) -- (-2pt,\y)
-%% node[anchor=east] {\eightpoint $\y$};
-%% \gpad
-%% \fill[opacity=0.5,fill=red!20] plot[id=\the\gpnum,domain=0:0.564]
-%% function{-x**2+4*x} node {\gpad}
-%% plot[parametric,id=\the\gpnum,domain=0.564:0]
-%% function{t,(t)**2-6*(t)+5} -- (0,0);
-%% \gpad
-%% \fill[opacity=0.5,fill=red!20] plot[id=\the\gpnum,domain=0.564:1]
-%% function{-x**2+4*x} node {\gpad}
-%% -- (1,0) plot[parametric,id=\the\gpnum,domain=1:0.564] function{t,(t)**2-6*(t)+5};
-%% \endtikzpicture\hfill}
-%% \figrdef{fig:curves cross}
-%% \endfigure{Area between curves that cross.}
+\begin{marginfigure}
+\begin{tikzpicture}
+	\begin{axis}[
+            domain=0:5, ymax=5,xmax=5,ymin=-5, xmin=0,
+            axis lines =center, xlabel=$x$, ylabel=$y$,
+            every axis y label/.style={at=(current axis.above origin),anchor=south},
+            every axis x label/.style={at=(current axis.right of origin),anchor=west},
+            axis on top,
+          ]
+          \addplot [draw=none,fill=fillp,domain=.56:4] {-x^2+4*x} \closedcycle;
+          \addplot [draw=none,fill=fillp,domain=.56:4.44] {x^2-6*x+5} \closedcycle;
+          \addplot [draw=none,fill=background,domain=4:5] {-x^2+4*x} \closedcycle;
+          \addplot [draw=none,fill=background,domain=0:1] {x^2-6*x+5} \closedcycle;
+          %\addplot [draw=none,fill=fillp,domain=.56:4] {-x^2+4*x} \closedcycle;       
+          \addplot [draw=penColor,very thick,smooth] {-x^2+4*x};
+          \addplot [draw=penColor2,very thick,smooth] {x^2-6*x+5};
+          
+          \node at (axis cs:2,4.4) [penColor] {$f(x)$};
+          \node at (axis cs:1,-1) [penColor2] {$g(x)$};
+        \end{axis}
+\end{tikzpicture}
+\caption{The area between $f(x)= -x^2+4x$ and $g(x)=x^2-6x+5$.}
+\label{fig:area bounded by curves}
+\end{marginfigure}
 
-\begin{example} Find the area between $\ds f(x)= -x^2+4x$ and
-$\ds g(x)=x^2-6x+5$; the
-curves are shown in figure~\xrefn{fig:area bounded by curves}. Here we
-are not given a specific interval, so it must be the case that there
-is a ``natural'' region involved. Since the curves are both parabolas,
-the only reasonable interpretation is the region between the two
-intersection points, which we found in the previous example:
+\begin{solution}
+The curves are shown in Figure~\ref{fig:area bounded by curves}. Here
+we are not given a specific interval, so it must be the case that
+there is a ``natural'' region involved. Since the curves are both
+parabolas, the only reasonable interpretation is the region between
+the two intersection points, which we found in the previous example:
 $${5\pm\sqrt{15}\over2}.$$
-If we let $\ds a=(5-\sqrt{15})/2$ and $\ds b=(5+\sqrt{15})/2$,
+If we let $a=(5-\sqrt{15})/2$ and $b=(5+\sqrt{15})/2$,
 the total area is 
 \begin{align*}
-  \int_a^b -x^2+4x-(x^2-6x+5)\,dx
-  &=\int_a^b -2x^2+10x-5\,dx \\
+  \int_a^b -x^2+4x-(x^2-6x+5)\d x
+  &=\int_a^b -2x^2+10x-5\d x \\
   &=\left.-{2x^3\over3}+5x^2-5x\right|_a^b \\
-  &=5\sqrt{15}. \\
+  &=5\sqrt{15},
 \end{align*}
 after a bit of simplification.
-\end{example}
+\end{solution}
 
-%% \figure
-%% \vbox{\beginpicture
-%% \normalgraphs
-%% \ninepoint
-%% \setcoordinatesystem units <1.7truecm,0.4truecm>
-%% \setplotarea x from 0 to 5, y from -5 to 5
-%% \axis left ticks numbered from -5 to 5 by 5 /
-%% \axis bottom shiftedto y=0 ticks numbered from 1 to 5 by 1 /
-%% \setquadratic
-%% \plot
-%% 0.000 0.000 0.250 0.938 0.500 1.750 0.750 2.438 1.000 3.000 
-%% 1.250 3.438 1.500 3.750 1.750 3.938 2.000 4.000 2.250 3.938 
-%% 2.500 3.750 2.750 3.438 3.000 3.000 3.250 2.438 3.500 1.750 
-%% 3.750 0.938 4.000 0.000 4.250 -1.062 4.500 -2.250 4.750 -3.562 
-%% 5.000 -5.000 /
-%% \plot
-%% 0.000 5.000 0.250 3.562 0.500 2.250 0.750 1.062 1.000 0.000 
-%% 1.250 -0.938 1.500 -1.750 1.750 -2.438 2.000 -3.000 2.250 -3.438 
-%% 2.500 -3.750 2.750 -3.938 3.000 -4.000 3.250 -3.938 3.500 -3.750 
-%% 3.750 -3.438 4.000 -3.000 4.250 -2.438 4.500 -1.750 4.750 -0.938 
-%% 5.000 0.000 /
-%% \endpicture}
-%% \figrdef{fig:area bounded by curves}
-%% \endfigure{Area bounded by two curves.}
+
 
 \begin{exercises}
 
 \noindent Find the area bounded by the curves.
 
-\begin{exercise} $\ds y=x^4-x^2$ and $\ds y=x^2$ (the part to the right of the $y$-axis)
-\begin{answer} $\ds 8\sqrt2/15$
+\begin{exercise} $y=x^4-x^2$ and $y=x^2$ (the part to the right of the $y$-axis)
+\begin{answer} $8\sqrt2/15$
 \end{answer}\end{exercise}
 
-\begin{exercise} $\ds x=y^3$ and $\ds x=y^2$
+\begin{exercise} $x=y^3$ and $x=y^2$
 \begin{answer} $1/12$
 \end{answer}\end{exercise}
 
-\begin{exercise} $\ds x=1-y^2$ and $y=-x-1$
+\begin{exercise} $x=1-y^2$ and $y=-x-1$
 \begin{answer} $9/2$
 \end{answer}\end{exercise}
 
-\begin{exercise} $\ds x=3y-y^2$ and $x+y=3$
+\begin{exercise} $x=3y-y^2$ and $x+y=3$
 \begin{answer} $4/3$
 \end{answer}\end{exercise}
 
-\begin{exercise} $y=\cos(\pi x/2)$ and $\ds y=1- x^2$ (in the first quadrant)
+\begin{exercise} $y=\cos(\pi x/2)$ and $y=1- x^2$ (in the first quadrant)
 \begin{answer} $2/3-2/\pi$
 \end{answer}\end{exercise}
 
 \begin{exercise} $y=\sin(\pi x/3)$ and $y=x$ (in the first quadrant)
-\begin{answer} $\ds 3/\pi - 3\sqrt3/(2\pi)-1/8$
+\begin{answer} $3/\pi - 3\sqrt3/(2\pi)-1/8$
 \end{answer}\end{exercise}
 
-\begin{exercise} $\ds y=\sqrt{x}$ and $\ds y=x^2$
+\begin{exercise} $y=\sqrt{x}$ and $y=x^2$
 \begin{answer} $1/3$
 \end{answer}\end{exercise}
 
-\begin{exercise} $\ds y=\sqrt x$ and $\ds y=\sqrt{x+1}$, $0\le x\le 4$
-\begin{answer} $\ds 10\sqrt{5}/3-6$
+\begin{exercise} $y=\sqrt x$ and $y=\sqrt{x+1}$, $0\le x\le 4$
+\begin{answer} $10\sqrt{5}/3-6$
 \end{answer}\end{exercise}
 
-\begin{exercise} $x=0$ and $\ds x=25-y^2$
+\begin{exercise} $x=0$ and $x=25-y^2$
 \begin{answer} $500/3$
 \end{answer}\end{exercise}
 
@@ -679,11 +557,11 @@ after a bit of simplification.
 \begin{answer} $2$
 \end{answer}\end{exercise}
 
-\begin{exercise} $\ds y=x^{3/2}$ and $\ds y=x^{2/3}$
+\begin{exercise} $y=x^{3/2}$ and $y=x^{2/3}$
 \begin{answer} $1/5$
 \end{answer}\end{exercise}
 
-\begin{exercise} $\ds y=x^2-2x$ and $y=x-2$
+\begin{exercise} $y=x^2-2x$ and $y=x-2$
 \begin{answer} $1/6$
 \end{answer}\end{exercise}
 
