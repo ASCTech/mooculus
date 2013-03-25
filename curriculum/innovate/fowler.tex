@@ -9,6 +9,7 @@
 \usepackage{tikz}
 \usepackage{pgfplots}
 \usepackage{pdfpages}
+\usepackage{ulem}
 
 \definecolor{shaded}{RGB}{210,210,210}
 \usecolortheme[named=shaded]{structure}
@@ -21,7 +22,7 @@
 \setbeamersize{text margin left=3mm} 
 \setbeamersize{text margin right=3mm} 
 
-\usepackage{fontspec,xunicode,xltxtra}
+%\usepackage{fontspec,xunicode,xltxtra}
 %\setmainfont{Helvetica Neue Light}
 %\setsansfont{Helvetica Neue Light}
 
@@ -84,7 +85,7 @@
 \begin{tikzpicture}
 \draw[fill=black] (current page.north west) rectangle (current page.south east);
 \node[draw,very thick,minimum width=\paperwidth-\pgflinewidth,minimum height=\paperheight-\pgflinewidth] [anchor=south west] (mynode) {\includegraphics[width=\paperwidth]{#1}};
-\draw[fill=black,opacity=0.5] (current page.north west) rectangle (current page.south east);
+\draw[fill=black,opacity=0.75] (current page.north west) rectangle (current page.south east);
 \end{tikzpicture}
 }}
 
@@ -94,7 +95,7 @@
 \begin{tikzpicture}
 \draw[fill=white] (current page.north west) rectangle (current page.south east);
 \node[draw,very thick,minimum width=\paperwidth-\pgflinewidth,minimum height=\paperheight-\pgflinewidth] [anchor=south west] (mynode) {\includegraphics[width=\paperwidth]{#1}};
-\draw[fill=white,opacity=0.5] (current page.north west) rectangle (current page.south east);
+\draw[fill=white,opacity=0.75] (current page.north west) rectangle (current page.south east);
 \end{tikzpicture}
 }}
 
@@ -122,10 +123,12 @@
 \begin{frame}
 \end{frame}
 
-% \setdarkbackgroundpicturewhite{coursera-landing-page.pdf}
-% \begin{frame}
-% \huge\textbf\textsf{http://go.osu.edu/mooculus}
-% \end{frame}
+\setdarkbackgroundpicturewhite{coursera-landing-page.pdf}
+\begin{frame}
+\huge\textsf{\textbf{35k students enrolled}}
+\end{frame}
+
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Mooculus
@@ -165,7 +168,22 @@
 \begin{frame}
 \end{frame}
 
-% online homework?  we can do better.
+\clearbackgroundpicture
+\begin{frame}[nofills]
+ online homework?  we can do better.
+\end{frame}
+
+\begin{frame}[nofills]
+ What's the promise of MOOCs?
+
+ \sout{Cheaper?}  Better!
+
+ 
+\end{frame}
+
+
+
+
 
 % \begin{frame}<1-2>[nofills,label=overview]
 %   \fontsize{28}{28}

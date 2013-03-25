@@ -1,0 +1,138 @@
+<h3>Fundamental theorem of calculus</h3>
+
+<p>After putting in so much work, we finally reap our reward:
+<strong>the fundamental theorem of calculus.</strong>  The
+antidifferentiation from <a
+href="/calc1-001/wiki/view?page=Week10">Week 10</a> and the
+integration from <a
+href="/calc1-001/wiki/view?page=Week11">Week 11</a> combine this week,
+in a single theorem.  You might be wondering:  <a href="/calc1-001/lecture/305"><i
+class="icon-film"></i>&nbsp;what is the big deal about the fundamental
+theorem of calculus?</a>  The big deal is that we can <strong>evaluate
+integrals by finding antiderivatives</strong> and the latter operation
+of antidifferentiation is much easier than the Riemann sum business.</p>
+
+<p>More than anything else this week, I want to make sure you have an understanding of <em>why</em> the
+fundamental theorem of calculus is true, so we'll see the theorem from
+a few different perspectives; if you're looking for more computational
+practice, we'll do plenty more during <a
+href="/calc1-001/wiki/view?page=Week13">Week 13</a>.</p>
+<p>And there's one more week to finish the midterm: please <a href="/calc1-001/forum/index">post a message to the
+forum</a> if you're having any trouble with the midterm, or talk with
+me during  <a href="/calc1-001/wiki/view?page=OfficeHours">Office
+Hours</a> on March 29, 2013 at 10:30AM EDT.</p>
+
+<h3>What is the fundamental theorem of calculus?</h3>
+
+<p>The <a
+href="http://en.wikipedia.org/wiki/Fundamental_theorem_of_calculus">fundamental
+theorem of calculus</a> comes in a couple forms.  In the <a href="/calc1-001/lecture/307"><i
+class="icon-film"></i>&nbsp;first version of the theorem</a>, we learn
+that the derivative of the accumulation function is the original
+function.  More explicitly, suppose $$f : [a,b] \to \mathbb{R}$$ is
+continuous, and define $$F$$ by the rule $$F(x) =
+\displaystyle\int_a^x f(t) \, dt$$.  Then $$F$$ is continuous on
+$$[a,b]$$ and differentiable on $$(a,b)$$ and $$F'(x) = f(x)$$.</p>
+<p>You can play around with <a href="https://mooculus.osu.edu/exercises/wiggleInputIntegral"><i
+class="icon-pencil"></i>&nbsp;how wiggling the endpoints of
+integration affects the integral on mooculus</a>.  The fundamental
+theorem is presented on <a href="https://mooculus.osu.edu/handouts"><i class="icon-book"></i>&nbsp;Page&nbsp;203
+of the Textbook</a>.</p>
+
+<h3>How am I supposed to use the fundamental theorem?</h3>
+
+<p>In what is often called the <a href="/calc1-001/lecture/309"><i
+class="icon-film"></i>&nbsp;second version of the fundamental
+theorem</a>, we learn that if, say, $$f$$ is continuous and $$F$$ is
+an antiderivative of $$f$$, then $$\displaystyle\int_a^b f(x) \, dx =
+F(b) - F(a)$$.  In other words, evaluating an integral amounts to
+taking the difference of an antiderivative evaluated at the endpoints; you can <a href="https://mooculus.osu.edu/exercises/definiteIntegralBasic"><i
+class="icon-pencil"></i>&nbsp;practice evaluating integrals using the
+fundamental theorem on mooculus</a>.</p>
+
+<p>The second version of the fundamental
+theorem of calculus is presented on <a href="https://mooculus.osu.edu/handouts"><i class="icon-book"></i>&nbsp;Page&nbsp;205
+of the Textbook</a>.</p>
+
+<p>Additionally, <strong>you can see some examples worked
+out.</strong>  We can use the fundamental theorem to <a href="/calc1-001/lecture/313"><i
+class="icon-film"></i>&nbsp;evaluate $$\displaystyle\int_0^\pi \sin x \,
+dx$$</a> and to <a href="/calc1-001/lecture/315"><i
+class="icon-film"></i>&nbsp;evaluate $$\displaystyle\int_0^1 x^4 \,
+dx$$</a>  
+
+<h3>What else can we compute this way?</h3>
+
+<p>Integrals are calculating &ldquo;(signed!) area under the
+curve&rdquo; but you can also use them to calculate area between two
+curves.  For instance, we can <a href="/calc1-001/lecture/317"><i
+class="icon-film"></i>&nbsp;compute the area between the graph of $$y
+= \sqrt{x}$$ and $$y = x^2$$,</a> and we can <a href="/calc1-001/lecture/317"><i
+class="icon-film"></i>&nbsp;compute the area between the graph of $$y
+= x^2$$ and $$y = 1-x^2$$.</a></p>
+
+<p>We can also play around with the <a href="/calc1-001/lecture/321"><i
+class="icon-film"></i>&nbsp;accumulation function for a
+semicircle $$y = \sqrt{1-x^2}$$</a>, which is a great example: we can find the accumulation
+function by doing some geometry, and also verify that the derivative
+of the accumulation is $$\sqrt{1-x^2}$$, that is, we can
+&ldquo;see&rdquo; that the fundamental theorem is true in this
+case.</p>
+
+<h3>But why is the fundamental theorem true?</h3>
+
+<p>There are a few different perspectives I'd like to present.</p>
+
+<p>We already used the <a
+href="http://en.wikipedia.org/wiki/Euler_method">Euler method</a> to
+numerically approximate antiderivatives.  Not coincidentally, <a href="/calc1-001/lecture/323"><i
+class="icon-film"></i>&nbsp;the method of Euler looks a lot like a
+Riemann sum,</a> which makes sense: the Riemann sum is approximating
+the accumulation function, which is an antiderivative!</p>
+
+<p>Second, there's an <a href="/calc1-001/lecture/325"><i
+class="icon-film"></i>&nbsp;analogy between summation and
+integration.</a>  We can <a href="/calc1-001/lecture/325"><i
+class="icon-film"></i>&nbsp;use this analogy to compute
+$$\displaystyle\sum_{n=1}^k n^4$$,</a> so if you believe that you can
+evaluate sums by &ldquo;antidifferencing&rdquo; you might believe you
+can evaluate integrals by antidifferentiating!</p>
+
+<p>Finally, we can <a href="/calc1-001/lecture/331"><i
+class="icon-film"></i>&nbsp;rephrase the fundamental theorem as a
+physical statement about velocity,</a> which makes it a bit more
+intuitive: the accumulation function of velocity is computing total displacement,
+and differentiating displacement is velocity, so it's again, the
+fundamental theorem!</p>
+
+<p>We'll end the week by <a href="/calc1-001/lecture/329"><i
+class="icon-film"></i>&nbsp;considering
+$$\displaystyle\frac{d}{dx} \displaystyle\int_x^b f(t) \, dt$$,</a>
+which gives us a chance to review the fundamental theorem yet again.</p>
+<h3>At the end of the week&hellip;</h3>
+
+<p>When you've reached the end of the week, take the <a
+href="/calc1-001/quiz/index">End of Week 12 Quiz</a>.  You can expect
+<ul>
+  <li>two questions on  <a href="/calc1-001/lecture/307"><i
+  class="icon-film"></i>&nbsp;the derivative of the accumulation function</a>,</li>
+  <li>many questions which somehow <a href="/calc1-001/lecture/309"><i
+  class="icon-film"></i>&nbsp;use the second version of the
+  fundamental theorem of calculus</a>,</li>
+    <li>two questions <a href="/calc1-001/lecture/313"><i
+  class="icon-film"></i>&nbsp;involving trigonometric
+  integrals</a>,</li>
+      <li>a few questions which <a href="/calc1-001/lecture/315"><i
+  class="icon-film"></i>&nbsp;involving integrals of
+  polynomials</a>,</li>
+      <li>one question <a href="/calc1-001/lecture/317"><i
+  class="icon-film"></i>&nbsp;asking for area between curves</a>,</li>
+  <li>one question touching on <a href="/calc1-001/lecture/321"><i
+  class="icon-film"></i>&nbsp;the accumulation function of $$f(x) = \sqrt{1-x^2}$$</a>, and</li>
+        <li>one question about <a href="/calc1-001/lecture/325"><i
+  class="icon-film"></i>&nbsp;the analogy between summation and integration</a>.</li>
+</ul>
+<p>If you want to talk about anything at all, please <a href="/calc1-001/forum/index">post a message on the
+forum</a> so we can work through the problem, or <a
+href="/calc1-001/wiki/view?page=OfficeHours">join office hours</a>.
+<strong>You can make it!</strong></p>
