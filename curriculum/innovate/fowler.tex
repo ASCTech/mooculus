@@ -47,12 +47,12 @@
 \makeatother
 
 \newcommand{\setbackgroundpicturewhite}[1]{%
-\usebackgroundtemplate{
-\begin{tikzpicture}
-\draw[fill=white] (current page.north west) rectangle (current page.south east);
-\node[draw,minimum width=\paperwidth,minimum height=\paperheight] [anchor=south west] (mynode) {\includegraphics[width=\paperwidth]{#1}};
-\end{tikzpicture}
-}
+\usebackgroundtemplate{%
+\begin{tikzpicture}%
+\draw[fill=white] (current page.north west) rectangle (current page.south east);%
+\node[draw,minimum width=\paperwidth,minimum height=\paperheight] [anchor=south west] (mynode) {\includegraphics[width=\paperwidth]{#1}};%
+\end{tikzpicture}%
+}%
 %\begin{pgfpicture}{0in}{0in}{\paperwidth}{\paperheight}
 %\pgfputat{\pgfxy(0,0)}{\includegraphics[width=\paperwidth]{#1}}
 %\color{white}
@@ -64,12 +64,12 @@
 
 
 \newcommand{\setbackgroundpictureblack}[1]{%
-\usebackgroundtemplate{
-\begin{tikzpicture}
-\draw[fill=black] (current page.north west) rectangle (current page.south east);
-\node[draw,minimum width=\paperwidth,minimum height=\paperheight] [anchor=south west] (mynode) {\includegraphics[width=\paperwidth]{#1}};
-\end{tikzpicture}
-}
+\usebackgroundtemplate{%
+\begin{tikzpicture}%
+\draw[fill=black] (current page.north west) rectangle (current page.south east);%
+\node[draw,minimum width=\paperwidth,minimum height=\paperheight] [anchor=south west] (mynode) {\includegraphics[width=\paperwidth]{#1}};%
+\end{tikzpicture}%
+}%
 %\begin{pgfpicture}{0in}{0in}{\paperwidth}{\paperheight}
 %\pgfputat{\pgfxy(0,0)}{\includegraphics[width=\paperwidth]{#1}}
 %\color{white}
@@ -81,23 +81,23 @@
 
 
 \newcommand{\setdarkbackgroundpictureblack}[1]{%
-\usebackgroundtemplate{
-\begin{tikzpicture}
-\draw[fill=black] (current page.north west) rectangle (current page.south east);
-\node[draw,very thick,minimum width=\paperwidth-\pgflinewidth,minimum height=\paperheight-\pgflinewidth] [anchor=south west] (mynode) {\includegraphics[width=\paperwidth]{#1}};
-\draw[fill=black,opacity=0.75] (current page.north west) rectangle (current page.south east);
-\end{tikzpicture}
-}}
+\usebackgroundtemplate{%
+\begin{tikzpicture}%
+\draw[fill=black] (current page.north west) rectangle (current page.south east);%
+\node[draw,very thick,minimum width=\paperwidth-\pgflinewidth,minimum height=\paperheight-\pgflinewidth] [anchor=south west] (mynode) {\includegraphics[width=\paperwidth]{#1}};%
+\draw[fill=black,opacity=0.75] (current page.north west) rectangle (current page.south east);%
+\end{tikzpicture}%
+}}%
 
 
 \newcommand{\setdarkbackgroundpicturewhite}[1]{%
-\usebackgroundtemplate{
-\begin{tikzpicture}
-\draw[fill=white] (current page.north west) rectangle (current page.south east);
-\node[draw,very thick,minimum width=\paperwidth-\pgflinewidth,minimum height=\paperheight-\pgflinewidth] [anchor=south west] (mynode) {\includegraphics[width=\paperwidth]{#1}};
-\draw[fill=white,opacity=0.75] (current page.north west) rectangle (current page.south east);
-\end{tikzpicture}
-}}
+\usebackgroundtemplate{%
+\begin{tikzpicture}%
+\draw[fill=white] (current page.north west) rectangle (current page.south east);%
+\node[draw,very thick,minimum width=\paperwidth-\pgflinewidth,minimum height=\paperheight-\pgflinewidth] [anchor=south west] (mynode) {\includegraphics[width=\paperwidth]{#1}};%
+\draw[fill=white,opacity=0.75] (current page.north west) rectangle (current page.south east);%
+\end{tikzpicture}%
+}}%
 
 
 \newcommand{\clearbackgroundpicture}{\usebackgroundtemplate{}}
@@ -237,18 +237,137 @@ Hints and answers \\
 
 \clearbackgroundpicture
 \begin{frame}[nofills]
- online homework?  we can do better.
+\Huge\textbf{What's the benefit \\
+\quad of a MOOC?}
+
+\vfill
+\uncover<2->{\hfill\alt<1-2>{Cheaper?}{\textcolor{gray}{\sout{Cheaper?}}}%
+\hfill\uncover<3->{\textcolor{red!50!black}{Better!}}\hfill\null}
+\vfill
+ 
 \end{frame}
 
+\setbackgroundpictureblack{Math_lecture_at_TKK.jpg}
+\begin{frame}
+\end{frame}
+
+\setdarkbackgroundpictureblack{Math_lecture_at_TKK.jpg}
+\begin{frame}[nofill]
+\vfill
+\Huge\color{white}
+Doing mathematics \\
+\vfill
+\quad is better than \\
+\vfill
+watching mathematics.
+\vfill
+\end{frame}
+
+%%% THIS SEGUE IS NOT SO CLEAN
+
+\clearbackgroundpicture
 \begin{frame}[nofills]
- What's the promise of MOOCs?
+\Huge\textbf{What's \textit{massive} \\\quad about a MOOC?}
 
- \sout{Cheaper?}  Better!
-
+\vfill
+\uncover<2->{\hfill\alt<1-2>{Enrollment?}{\textcolor{gray}{\sout{Enrollment?}}}%
+\hfill\uncover<3->{\textcolor{red!50!black}{Data!}}\hfill\null}
+\vfill
  
 \end{frame}
 
 
+
+\begin{frame}[nofills]
+INCLUDE DATA
+\end{frame}
+
+
+\begin{frame}[nofills]
+\Huge
+\vfill
+  Evolution requires \\
+  \quad heritable variation.
+\vfill
+  Unlike an offline course, \\
+  \quad MOOCs offer this.
+\vfill
+\end{frame}
+
+
+\setbackgroundpicturewhite{brownian-motion/brownian-motion-1.pdf}
+\begin{frame}[nofills]
+\null\vspace{1ex}
+\Huge An analogy
+\end{frame}
+\setbackgroundpicturewhite{brownian-motion/brownian-motion-2.pdf}
+\begin{frame}[nofills]
+\end{frame}
+\setbackgroundpicturewhite{brownian-motion/brownian-motion-3.pdf}
+\begin{frame}[nofills]
+\end{frame}
+\setbackgroundpicturewhite{brownian-motion/brownian-motion-more-1.pdf}
+\begin{frame}[nofills]
+\end{frame}
+\setbackgroundpicturewhite{brownian-motion/brownian-motion-more-2.pdf}
+\begin{frame}[nofills]
+\end{frame}
+\setbackgroundpicturewhite{brownian-motion/brownian-motion-more-3.pdf}
+\begin{frame}[nofills]
+\end{frame}
+\setbackgroundpicturewhite{brownian-motion/brownian-motion-more-4.pdf}
+\begin{frame}[nofills]
+\end{frame}
+\setbackgroundpicturewhite{brownian-motion/brownian-motion-more-5.pdf}
+\begin{frame}[nofills]
+\end{frame}
+\setbackgroundpicturewhite{brownian-motion/brownian-motion-more-5.pdf}
+\begin{frame}[nofills]
+\Huge Teaching without data \\
+\quad is a random walk.
+\end{frame}
+
+\setbackgroundpicturewhite{brownian-motion/brownian-motion-weighted-1.pdf}
+\begin{frame}[nofills]
+\null\vspace{1ex}
+\Huge But with feedback?
+\end{frame}
+\setbackgroundpicturewhite{brownian-motion/brownian-motion-weighted-2.pdf}
+\begin{frame}[nofills]
+\end{frame}
+\setbackgroundpicturewhite{brownian-motion/brownian-motion-weighted-3.pdf}
+\begin{frame}[nofills]
+\end{frame}
+\setbackgroundpicturewhite{brownian-motion/brownian-motion-weighted-more-1.pdf}
+\begin{frame}[nofills]
+\end{frame}
+\setbackgroundpicturewhite{brownian-motion/brownian-motion-weighted-more-2.pdf}
+\begin{frame}[nofills]
+\end{frame}
+\setbackgroundpicturewhite{brownian-motion/brownian-motion-weighted-more-3.pdf}
+\begin{frame}[nofills]
+\end{frame}
+\setbackgroundpicturewhite{brownian-motion/brownian-motion-weighted-more-4.pdf}
+\begin{frame}[nofills]
+\end{frame}
+\setbackgroundpicturewhite{brownian-motion/brownian-motion-weighted-more-5.pdf}
+\begin{frame}[nofills]
+\end{frame}
+\setbackgroundpicturewhite{brownian-motion/brownian-motion-weighted-more-5.pdf}
+\begin{frame}[nofills]
+\Huge MOOCs are really about data. \\
+\end{frame}
+
+\setbackgroundpicturewhite{brownian-motion/brownian-motion-together.pdf}
+\begin{frame}[nofills]
+\Huge \uncover<2->{\color{blue}{MOOCs will improve.}}
+\vfill
+\uncover<3->{\color{red}{Will the University?}}
+\end{frame}
+
+\begin{frame}[nofills]
+Data transformed medicine from anecdote to science.
+\end{frame}
 
 
 
