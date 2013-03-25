@@ -2,172 +2,177 @@
 
 \section{The Fundamental Theorem}
 
+Let $f(x)$ be continuous on the real numbers and consider
+\[
+  F(x) = \int_a^x f(t)\d t.
+\]
+From our previous work we know that $F(x)$ is increasing when $f(x)$
+is postive and $F(x)$ is decreasing when $f(x)$ is negative. Moreover,
+with careful observation, we can even see that $F(x)$ is concave up
+when $f'(x)$ is positive and that $F(x)$ is concave down when $f'(x)$
+is negative. Thinking about what we have learned about the
+relationship of a function to its first and second derivatives, it is
+not too hard to guess that there must be a connection between $F'(x)$
+and the function $f(x)$. This is a good guess, check out our next
+theorem:
 
-
-Let's rewrite this slightly: 
-\[
-  \int_a^x f(t)\d t = F(x)-F(a).
-\]
-We've replaced the variable $x$ by $t$ and $b$ by $x$. These are just
-different names for quantities, so the substitution doesn't change the
-meaning. It does make it easier to think of the two sides of the
-equation as functions. The expression
-\[
-  \int_a^x f(t)\d t
-\]
-is a function: plug in a value for $x$, get out some other value. The
-expression $F(x)-F(a)$ is of course also a function, and it has a nice
-property: 
-\[
-\ddx (F(x)-F(a)) = F'(x) = f(x),
-\]
-since $F(a)$ is a constant and has derivative zero. In other words, by
-shifting our point of view slightly, we see that the odd looking
-function
-\[
-  G(x)=\int_a^x f(t)\d t
-\]
-has a derivative, and that in fact $G'(x)=f(x)$. This is really just a
-restatement of the Fundamental Theorem of Calculus, and indeed is
-often called the Fundamental Theorem of Calculus. To avoid confusion,
-some people call the two versions of the theorem ``The Fundamental
-Theorem of Calculus, part I'' and ``The Fundamental
-Theorem of Calculus, part II'', although unfortunately there is no
-universal agreement as to which is part I and which part II. Since it
-really is the same theorem, differently stated, some people simply
-call them both ``The Fundamental
-Theorem of Calculus.''
 
 \begin{mainTheorem}[Fundamental Theorem of Calculus---Version I]
 \index{fundamental theorem of calculus---version 1}
-\label{thm:fundamental_theorem_I}
-Suppose that $f(x)$ is continuous on the interval $[a,b]$ and let
+\label{thm:fundamental_theorem_I}\hfil
+
+\noindent Suppose that $f(x)$ is continuous on the real numbers and let
 \[
   F(x)=\int_a^x f(t)\d t.
 \]
 Then $F'(x)=f(x)$.
+\end{mainTheorem}
+
+\begin{proof}
+Using the limit definition of the derivative we'll compute $F'(x)$.
+Write
+\begin{align*}
+F'(x) &= \lim_{h\to 0}\frac{F(x+h)-F(x)}{h}\\ 
+&=\lim_{h\to 0}\frac{1}{h}\left( \int_a^{x+h} f(t)\d t - \int_a^x f(t)\d t\right).
+\end{align*}
+Recall that if the limits of intergration are swapped, then the sign
+of the integral is swapped, so we have
+\[
+F'(x) =\lim_{h\to 0} \frac{1}{h}\left( \int_a^{x+h} f(t)\d t + \int_x^a f(t)\d t\right)
+\]
+At this point, we can combine the integrals, as we are just ``connecting'' adjacent signed areas to find
+\begin{equation}\label{ftc:eqn1}
+F'(x)=\lim_{h\to 0} \frac{1}{h}\int_x^{x+h} f(t)\d t.
+\end{equation}
+Since $f(x)$ is continuous on the interval $[x,x+h]$, and $h$ is
+approaching zero, there is an $\epsilon$ that goes to zero as $h$ goes
+to zero such that
+\[
+f(x)-\epsilon < f(x^*) < f(x) + \epsilon \qquad \text{for all }x^*\in[x,x+h].
+\]
+This means that 
+\[
+(f(x) - \epsilon)h < \int_x^{x+h} f(t)\d t < (f(x) + \epsilon)h
+\]
+Dividing all sides by $h$ we find
+\[
+f(x) - \epsilon < \frac{1}{h}\int_x^{x+h} f(t)\d t < f(x) + \epsilon.
+\]
+Comparing this to Equation~\ref{ftc:eqn1}, and taking the limit as $h$
+goes to zero (remembering that this also means that $\epsilon$ goes to
+zero) we see that $F'(x) = f(x)$.
 \end{proof}
 
-We have not really proved the Fundamental Theorem. In a nutshell, we
-gave the following argument to justify it: Suppose we want to know the
-value of 
-$$
-  \int_a^b f(t)\d t = \lim_{n\to\infty}\sum_{i=0}^{n-1} f(t_i)\Delta t.
-$$
-We can interpret the right hand side as the distance traveled by an
-object whose speed is given by $f(t)$. We know another way to compute
-the answer to such a problem: find the position of the object by
-finding an antiderivative of $f(t)$, then substitute $t=a$ and $t=b$
-and subtract to find the distance traveled. This must be the answer to
-the original problem as well, even if $f(t)$ does not represent a
-speed.
+The Fundamental Theorem of Calculus says that an accumulation function
+of $f(x)$ is an antiderivative of $f(x)$.  Because of the close
+relationship between an integral and an antiderivative, the integral
+sign is also used to mean ``antiderivative.'' You can tell which is
+intended by whether the limits of integration are included. Hence
+\[
+  \int_a^b f(x)\d x
+\] 
+is a definite integral, because it has a definite value---the signed
+area between $f(x)$ and the $x$-axis.  On the other hand, we use
+\[
+  \int f(x)\d x
+\]
+to denote the antiderivative of $f(x)$, also called an
+\textit{indefinite integral}\index{indefinite integral}.
+This is evaluated as
+\[
+  \int f(x)\d x = F(x)+C.
+\]
+Where the constant $C$ indicates that there are really an infinite
+number of antiderivatives. We do not need this $C$ to compute definite
+integrals, but in other circumstances we will need to remember that
+the $C$ is there, so it is best to get into the habit of writing the
+$C$.
 
-What's wrong with this? In some sense, nothing. As a practical matter
-it is a very convincing argument, because our understanding of the
-relationship between speed and distance seems to be quite solid. From
-the point of view of mathematics, however, it is unsatisfactory to
-justify a purely mathematical relationship by appealing to our
-understanding of the physical universe, which could, however unlikely
-it is in this case, be wrong.
+There is a another common form of the Fundamental Theorem of Calculus:
 
-A complete proof is a bit too involved to include here, but we will
-indicate how it goes. First, if we can prove the second version of the
-Fundamental Theorem, theorem~\xrefn{thm:fundamental_theorem_II}, then
-we can prove the first version from that:
+\marginnote[.4in]{
+Here the notation
+\[
+F(x) \Biggr|_a^b
+\]
+means that one should evaluate $F(x)$ at $b$ and then subtract from this $F(x)$ evaluated at $a$. Hence
+\[
+F(x) \Biggr|_a^b = F(b)-F(a).
+\]  
+}
+\begin{mainTheorem}[Fundamental Theorem of Calculus---Version II]\index{fundamental theorem of calculus---version 2}
+\label{thm:fundamental_theorem_II}\hfil
 
-\vskip6pt\noindent{\begin{proof}font Proof of 
-Theorem~\xrefn{thm:fundamental_theorem_I}.}\kern1pc\bgroup
-We know from theorem~\xrefn{thm:fundamental_theorem_II} that 
-$$
+\noindent Suppose that $f(x)$ is continuous on the interval $[a,b]$. If $F(x)$
+is any antiderivative of $f(x)$, then
+\[
+  \left.\int_a^b f(x)\d x = F(x) \right|_a^b = F(b)-F(a).
+\]
+\end{mainTheorem}
+
+\begin{proof}
+We know from Theorem~\ref{thm:fundamental_theorem_I} 
+\[
   G(x)=\int_a^x f(t)\d t
-$$
+\]
 is an antiderivative of $f(x)$, and therefore any antiderivative
 $F(x)$ of $f(x)$ is of the form $F(x)=G(x)+k$. Then 
-$$\eqalign{
-  F(b)-F(a)=G(b)+k-(G(a)+k) &= G(b)-G(a) \\
-  &=\int_a^b f(t)\d t-\int_a^a f(t)\d t. \\
-}$$
+\begin{align*}
+  F(b)-F(a) &=G(b)+k-(G(a)+k) 
+  &= G(b)-G(a) \\
+  &=\int_a^b f(t)\d t-\int_a^a f(t)\d t.
+\end{align*}
 It is not hard to see that $\int_a^a f(t)\d t=0$, so this means that
-$$
+\[
   F(b)-F(a)=\int_a^b f(t)\d t,
-$$
-which is exactly what theorem~\xrefn{thm:fundamental_theorem_I} says.
+\]
+which is exactly what Theorem~\ref{thm:fundamental_theorem_II} says.
 \end{proof}
 
-So the real job is to prove
-theorem~\xrefn{thm:fundamental_theorem_II}. We will sketch the proof,
-using some facts that we do not prove. First, the following identity
-is true of integrals:
-$$
-  \int_a^b f(t)\d t = \int_a^c f(t)\d t + \int_c^b f(t)\d t.
-$$
-This can be proved directly from the definition of the integral, that
-is, using the limits of sums. It is quite easy to see that it must be
-true by thinking of either of the two applications of integrals that
-we have seen. It turns out that the identity is true no matter what
-$c$ is, but it is easiest to think about the meaning when 
-$a\le c\le b$.
+From this you should see that the two versions of the Fundamental
+Theorem are very closely related. To avoid confusion, some people call
+the two versions of the theorem ``The Fundamental Theorem of
+Calculus---Version I'' and ``The Fundamental Theorem of
+Calculus---Version II'', although unfortunately there is no universal
+agreement as to which is ``Verion I'' and which ``Version II''. Since
+it really is the same theorem, differently stated, people often simply
+call them both ``The Fundamental Theorem of Calculus.''
 
-First, if $f(t)$ represents a speed, then we know that the three
-integrals represent the distance traveled between time $a$ and time $b$;
-the distance traveled between time $a$ and time $c$; and 
-the distance traveled between time $c$ and time $b$. Clearly the sum of
-the latter two is equal to the first of these.
+Let's see an example of the the fundamental theorem in action.
 
-Second, if $f(t)$ represents the height of a curve, the three
-integrals represent the area under the curve between $a$ and $b$;
-the area under the curve between $a$ and $c$;
-and the area under the curve between $c$ and $b$. Again it is clear
-from the geometry that the first is equal to the sum of the second and
-third. 
+\begin{example}
+Compute
+\[
+\int_1^2\left(x^9 + \frac{1}{x}\right) \d x
+\]
+\end{example}
+
+\begin{solution}
+Here we start by finding an antiderivative of 
+\[
+x^9 + \frac{1}{x}.
+\]
+The correct choice is $10x^{10} + \ln(x)$, one could verify this by
+taking the derivative. Hence
+\begin{align*}
+\int_1^2\left(x^9 + \frac{1}{x}\right) \d x &= \left(10x^{10} + \ln(x)\right)\Bigg|_1^2 \\
+&= 10\cdot 2^{10} \ln(2) - 10.
+\end{align*}
+\end{solution}
 
 
-\vskip6pt\noindent{\begin{proof}font Proof sketch for
-Theorem~\xrefn{thm:fundamental_theorem_II}.}\kern1pc\bgroup
-We want to compute $G'(x)$, so we start with the definition of the
-derivative in terms of a limit:
-$$\eqalign{
-  G'(x)&=\lim_{\Delta x\to0}{G(x+\Delta x)-G(x)\over\Delta x} \\
-  &=\lim_{\Delta x\to0}{1\over \Delta x}\left(
-  \int_a^{x+\Delta x} f(t)\d t - \int_a^x f(t)\d t\right) \\
-  &=\lim_{\Delta x\to0}{1\over \Delta x}\left(
-  \int_a^{x} f(t)\d t + \int_x^{x+\Delta x} f(t)\d t - 
-  \int_a^x f(t)\d t\right) \\
-  &=\lim_{\Delta x\to0}{1\over \Delta x}\int_x^{x+\Delta x} f(t)\d t. \\
-}$$
-Now we need to know something about 
-$$
-  \int_x^{x+\Delta x} f(t)\d t
-$$
-when $\Delta x$ is small; in fact, it is very close to 
-$\Delta x f(x)$, but we will not prove this. Once again, it is easy to
-believe this is true by thinking of our two applications:
-The integral 
-$$
-  \int_x^{x+\Delta x} f(t)\d t
-$$
-can be interpreted as the distance traveled by an object over a very
-short interval of time. Over a sufficiently short period of time, the
-speed of the object will not change very much, so the distance
-traveled will be approximately the length of time multiplied by the
-speed at the beginning of the interval, namely, $\Delta x
-f(x)$. Alternately, the integral may be interpreted as the area under
-the curve between $x$ and $x+\Delta x$. When $\Delta x$ is very small,
-this will be very close to the area of the rectangle with base $\Delta
-x$ and height $f(x)$; again this is $\Delta x
-f(x)$. If we accept this, we may proceed:
-$$
-  \lim_{\Delta x\to0}{1\over \Delta x}\int_x^{x+\Delta x} f(t)\d t
-  =\lim_{\Delta x\to0}{\Delta x f(x)\over \Delta x}=f(x),
-$$
-which is what we wanted to show.
-\end{proof}
-
-It is still true that we are depending on an interpretation of the
-integral to justify the argument, but we have isolated this part of
-the argument into two facts that are not too hard to prove. Once the
-last reference to interpretation has been removed from the proofs of
-these facts, we will have a real proof of the Fundamental Theorem.
+When we compute a definite integral, we first find an antiderivative
+and then substitute. It is convenient to first display the
+antiderivative and then do the substitution; we need a notation
+indicating that the substitution is yet to be done. A typical solution
+would look like this:
+\[
+  \left.\int_1^2 x^2\d x={x^3\over 3}\right|_1^2 = 
+  {2^3\over3}-{1^3\over3}={7\over3}.
+\]
+The vertical line with subscript and superscript is used to indicate
+the operation ``substitute and subtract'' that is needed to finish the
+evaluation. 
 
 Now we know that to solve certain kinds of problems, those that lead
 to a sum of a certain form, we ``merely'' find an antiderivative and
@@ -181,129 +186,66 @@ reduce the problem to a completely mechanical process.
 
 
 
-Because of the close relationship between an integral and an
-antiderivative, the integral sign is also used to mean
-``antiderivative''. You can tell which is intended by whether the
-limits of integration are included:
-$$
-  \int_1^2 x^2\d x
-$$
-is an ordinary integral, also called a 
-{\dfont definite integral\/}\index{definite integral},
-because it has a definite value, namely
-$$
-  \int_1^2 x^2\d x={2^3\over3}-{1^3\over3}={7\over3}.
-$$
-We use
-$$
-  \int x^2\d x
-$$
-to denote the antiderivative of $x^2$, also called an
-{\dfont indefinite integral\/}\index{indefinite integral}.
-So this is evaluated as
-$$
-  \int x^2\d x = {x^3\over 3}+C.
-$$
-It is customary to include the constant $C$ to indicate that there are
-really an infinite number of antiderivatives. We do not need this $C$
-to compute definite integrals, but in other circumstances we will need
-to remember that the $C$ is there, so it is best to get into the habit
-of writing the $C$.
 
 
+\subsection*{Euler's Method}
 
-Suppose you wish to know the signed area between the plot of the
-function $f(x)$ and the $x$-axis on the interval $[a,b]$. This signed area is represented by
-\[
-\int_a^b f(x) \d x= \lim_{n\to \infty}\sum_{i=0}^{n-1} f(x_i) (x_{i+1}-x_i).
-\]
-However, Riemann sums can be difficult to compute. \textit{The Fundamental
-Theorem of Calculus} is what we need:
-
-\begin{mainTheorem}[Fundamental Theorem of Calculus---Version II]\index{fundamental theorem of calculus---version 2}
-\label{thm:fundamental_theorem_II}
-Suppose that $f(x)$ is continuous on the interval $[a,b]$. If $F(x)$
-is any antiderivative of $f(x)$, then
-\[
-  \left.\int_a^b f(x)\d x = F(x) \right|_a^b = F(b)-F(a).
-\]
-\end{mainTheorem}
-
-
-Let's see an example of the the fundamental theorem in action.
+We have given a proof of the Fundamental Theorem of Calculus,
+nevertheless it is good to give intution as to why it is
+true. Consider the following example:
 
 \begin{example}
-BLAH
+Suppose that the velocity in meters per second of a ball tossed from a
+height of 1 meter is given by
+\[
+v(t) = -9.8t + 6.
+\]
+What is the height of the ball after 1 second?
 \end{example}
 
+\begin{solution}
+Since the derivative of position is velocity, and we want to know the
+height (position) after one second, we need to compute
+\begin{align*}
+\int_0^1 -9.8t + 6 \d t &= (-4.9t^2 + 6t)\Bigg|_0^1\\
+&= -4.9 + 6 - 0\\
+&= 2.1.
+\end{align*}
+Hence the ball is at a height of $2.1$ meters. 
+\end{solution}
+
+We did this example before in
+Example~\ref{example:eulersMethodBall}. At that time we used Euler's
+Method to give an approximate solution.
 
 
-When we compute a definite integral, we first find an antiderivative
-and then substitute. It is convenient to first display the
-antiderivative and then do the substitution; we need a notation
-indicating that the substitution is yet to be done. A typical solution
-would look like this:
-$$
-  \int_1^2 x^2\d x=\left.{x^3\over 3}\right|_1^2 = 
-  {2^3\over3}-{1^3\over3}={7\over3}.
-$$
-The vertical line with subscript and superscript is used to indicate
-the operation ``substitute and subtract'' that is needed to finish the
-evaluation. 
+Suppose you have a function, 
+
+
+
+What's wrong with this? In some sense, nothing. As a practical matter
+it is a very convincing argument, because our understanding of the
+relationship between speed and distance seems to be quite solid. From
+the point of view of mathematics, however, it is unsatisfactory to
+justify a purely mathematical relationship by appealing to our
+understanding of the physical universe, which could, however unlikely
+it is in this case, be wrong.
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 \begin{exercises}
-
-Find the antiderivatives of the functions:
-
-\twocol
-
-\begin{exercise} $8\sqrt{x}$
-\begin{answer} $(16/3)x^{3/2}+C$
-\end{answer}\end{exercise}
-
-\begin{exercise} $3t^2+1$
-\begin{answer} $t^3+t+C$
-\end{answer}\end{exercise}
-
-\begin{exercise} $4/\sqrt{x}$
-\begin{answer} $8\sqrt{x}+C$
-\end{answer}\end{exercise}
-
-\begin{exercise} $2/z^2$
-\begin{answer} $-2/z+C$
-\end{answer}\end{exercise}
-
-\iflatetranscendentals
-\else
-\begin{exercise} $7s^{-1}$
-\begin{answer} $7\ln s+C$
-\end{answer}\end{exercise}
-\fi
-
-\begin{exercise} $(5x+1)^2$
-\begin{answer} $(5x+1)^3/15+C$
-\end{answer}\end{exercise}
-
-\begin{exercise} $(x-6)^2$
-\begin{answer} $(x-6)^3/3+C$
-\end{answer}\end{exercise}
-
-\begin{exercise} $x^{3/2}$
-\begin{answer} $2x^{5/2}/5+C$
-\end{answer}\end{exercise}
-
-\begin{exercise} ${2\over x\sqrt x}$
-\begin{answer} $-4/\sqrt{x}+C$
-\end{answer}\end{exercise}
-
-\begin{exercise} $|2t-4|$
-\begin{answer} $4t-t^2+C$, $t<2$; $t^2-4t+8+C$, $t\ge 2$
-\end{answer}\end{exercise}
-
-\endtwocol
-
-\noindent
-Compute the values of the integrals:
+\noindent Compute the following definite integrals:
 
 \twocol
 
@@ -315,8 +257,6 @@ Compute the values of the integrals:
 \begin{answer} $2$
 \end{answer}\end{exercise}
 
-\iflatetranscendentals
-\else
 \begin{exercise} $\int_1^{10} {1\over x}\d x$
 \begin{answer} $\ln(10)$
 \end{answer}\end{exercise}
@@ -324,7 +264,6 @@ Compute the values of the integrals:
 \begin{exercise} $\int_0^5 e^x\d x$
 \begin{answer} $e^5-1$
 \end{answer}\end{exercise}
-\fi
 
 \begin{exercise} $\int_0^3 x^3\d x$
 \begin{answer} $3^4/4$
@@ -334,33 +273,65 @@ Compute the values of the integrals:
 \begin{answer} $2^6/6 -1/6$
 \end{answer}\end{exercise}
 
+
+\begin{exercise} $\int_1^9 8\sqrt{x}\d x$
+\begin{answer} $416/3$
+\end{answer}\end{exercise}
+
+\begin{exercise} $\int_1^4 \frac{4}{\sqrt{x}}\d x$
+\begin{answer} $8$
+\end{answer}\end{exercise}
+
+
+\begin{exercise} $\int_{-2}^{-1}7x^{-1}\d x$
+\begin{answer} $-7\ln(2)$
+\end{answer}\end{exercise}
+
+
+\begin{exercise} $\int_{-2}^3 (5x+1)^2\d x$
+\begin{answer} $965/3$
+\end{answer}\end{exercise}
+
+\begin{exercise} $\int_{-7}^4(x-6)^2 \d x$
+\begin{answer} $2189/3$
+\end{answer}\end{exercise}
+
+\begin{exercise} $\int_3^{27}x^{3/2}\d x$
+\begin{answer} $4356 \sqrt{3}/5$
+\end{answer}\end{exercise}
+
+\begin{exercise} $\int_4^9\frac{2}{x\sqrt x}\d x$
+\begin{answer} $2/3$
+\end{answer}\end{exercise}
+
+\begin{exercise} $\int_{-4}^1|2x-4|\d x$
+\begin{answer} $35$
+\end{answer}\end{exercise}
+
 \endtwocol
 
-\msk
-\begin{exercise} Find the derivative of $G(x)=\int_1^x t^2-3t\d t$
+\begin{exercise} Find the derivative of $F(x)=\int_1^x t^2-3t\d t$
 \begin{answer} $x^2-3x$
 \end{answer}\end{exercise}
 
-\begin{exercise} Find the derivative of $G(x)=\int_1^{x^2} t^2-3t\d t$
+\begin{exercise} Find the derivative of $F(x)=\int_1^{x^2} t^2-3t\d t$
 \begin{answer} $2x(x^4-3x^2)$
 \end{answer}\end{exercise}
 
-\iflatetranscendentals
-\else
-\begin{exercise} Find the derivative of $G(x)=\int_1^x e^{t^2}\d t$
-\begin{answer} $e^{x^2}$
+\begin{exercise} Find the derivative of $F(x)=\int_1^x e^{\left(t^2\right)}\d t$
+\begin{answer} $e^{\left(x^2\right)}$
 \end{answer}\end{exercise}
 
-\begin{exercise} Find the derivative of $G(x)=\int_1^{x^2} e^{t^2}\d t$
-\begin{answer} $2xe^{x^4}$
+\begin{exercise} Find the derivative of $F(x)=\int_1^{x^2} e^{\left(t^2\right)}\d t$
+\begin{answer} $2xe^{\left(x^4\right)}$
 \end{answer}\end{exercise}
-\fi
 
-\begin{exercise} Find the derivative of $G(x)=\int_1^x \tan(t^2)\d t$
+
+\begin{exercise} Find the derivative of $F(x)=\int_1^x \tan(t^2)\d t$
 \begin{answer} $\tan(x^2)$
 \end{answer}\end{exercise}
 
-\begin{exercise} Find the derivative of $G(x)=\int_1^{x^2} \tan(t^2)\d t$
+\begin{exercise} Find the derivative of $F(x)=\int_1^{x^2} \tan(t^2)\d t$
 \begin{answer} $2x\tan(x^4)$
 \end{answer}\end{exercise}
 
@@ -370,7 +341,353 @@ Compute the values of the integrals:
 
 
 
-\section{The Accumulation Formula}
 
 
-\section{Euler's Method}
+
+
+
+
+
+
+\section{Area between curves}
+
+We have seen how integration can be used to find an area between a
+curve and the $x$-axis. With very little change we can find some areas
+between curves; indeed, the area between a curve and the $x$-axis may
+be interpreted as the area between the curve and a second ``curve''
+with equation $y=0$. In the simplest of cases, the idea is quite easy
+to understand.
+
+\begin{example} Find the area below $\ds f(x)= -x^2+4x+3$ and above
+$\ds g(x)=-x^3+7x^2-10x+5$ over the interval $1\le x\le2$. In
+figure~\xrefn{fig:area between curves} we show the two curves together, with
+the desired area shaded, then $f$ alone with the area under $f$
+shaded, and then $g$ alone with the area under $g$ shaded. 
+%% \figure
+%% \hbox to \hsize{\hfill
+%% \def\yarrow{-- +(-1.5pt,-3pt) +(0pt,0pt) -- +(1.5pt,-3pt) +(0pt,0pt)}
+%% \def\xarrow{-- +(-3pt,-1.5pt) +(0pt,0pt) -- +(-3pt,1.5pt) +(0pt,0pt) }
+%% \tikzpicture[domain=0:3,y=3mm]
+%% \draw[->] (0,0) -- (3.2,0) \xarrow node [right] {$x$};
+%% \draw[->] (0,0) -- (0,11.2) \yarrow node [above] {$y$};
+%% \gpad
+%% \draw[color=black] plot[id=\the\gpnum,domain=0:3] function{-x**3+7*x**2-10*x+5};
+%% \gpad
+%% \draw[color=black] plot[id=\the\gpnum,domain=0:3] function{-x**2+4*x+3};
+%% \draw[dashed] (1,0) -- (1,6);
+%% \draw[dashed] (2,0) -- (2,7);
+%% \foreach \x in {0,1,2,3} \draw (\x,0) -- (\x,-2pt) node[anchor=north] {\eightpoint $\x$};
+%% \foreach \y in {0,5,10} \draw (0,\y) -- (-2pt,\y) node[anchor=east]
+%%          {\eightpoint $\y$};
+%% \gpad
+%% \fill[opacity=0.5,fill=red!20] plot[id=\the\gpnum,domain=1:2]
+%% function{-x**3+7*x**2-10*x+5} -- (2,7) node {\gpad}
+%% plot[parametric,id=\the\gpnum,domain=0:1] function{2-t,-t**2+7} -- (1,1);
+%% \endtikzpicture
+
+%% \tikzpicture[domain=0:3,y=3mm]
+%% \draw[->] (0,0) -- (3.2,0) \xarrow node [right] {$x$};
+%% \draw[->] (0,0) -- (0,11.2) \yarrow node [above] {$y$};
+%% \gpad
+%% \draw[color=black] plot[id=\the\gpnum,domain=0:3] function{-x**2+4*x+3};
+%% \draw[dashed] (1,0) -- (1,6);
+%% \draw[dashed] (2,0) -- (2,7);
+%% \foreach \x in {0,1,2,3} \draw (\x,0) -- (\x,-2pt) node[anchor=north] {\eightpoint $\x$};
+%% \foreach \y in {0,5,10} \draw (0,\y) -- (-2pt,\y) node[anchor=east] {\eightpoint $\y$};
+%% \gpad\fill[opacity=0.5,fill=red!20] (2,0) -- (2,7)
+%% plot[parametric,id=\the\gpnum,domain=0:1] function{2-t,-t**2+7} -- (1,0) -- (2,0);
+%% \endtikzpicture
+
+%% \tikzpicture[domain=0:3,y=3mm]
+%% \draw[angle 90] (0,0) -- (3.2,0) \xarrow node [right] {$x$};
+%% \draw[->] (0,0) -- (0,11.2) \yarrow node [above] {$y$};
+%% \gpad\draw[color=black] plot[id=\the\gpnum,domain=0:3] function{-x**3+7*x**2-10*x+5};
+%% \draw[dashed] (1,0) -- (1,1);
+%% \draw[dashed] (2,0) -- (2,5);
+%% \foreach \x in {0,1,2,3} \draw (\x,0) -- (\x,-2pt) node[anchor=north] {\eightpoint $\x$};
+%% \foreach \y in {0,5,10} \draw (0,\y) -- (-2pt,\y) node[anchor=east]
+%%          {\eightpoint $\y$};
+%% \gpad
+%% \fill[opacity=0.5,fill=red!20] (1,0) -- (1,1) plot[id=\the\gpnum,domain=1:2]
+%% function{-x**3+7*x**2-10*x+5} -- (2,0) -- (1,0);
+%% \endtikzpicture
+%% \hfill}
+%% \figrdef{fig:area between curves}
+%% \endfigure{Area between curves as a difference of areas.}
+
+It is clear
+from the figure that the area we want is the area under $f$ minus the
+area under $g$, which is to say
+$$\int_1^2 f(x)\,dx-\int_1^2 g(x)\,dx = \int_1^2 f(x)-g(x)\,dx.$$
+It doesn't matter whether we compute the two integrals on the left and
+then subtract or compute the single integral on the right. In this
+case, the latter is perhaps a bit easier:
+\begin{align*}
+  \int_1^2 f(x)-g(x)\,dx&=\int_1^2 -x^2+4x+3-(-x^3+7x^2-10x+5)\,dx \\
+  &=\int_1^2 x^3-8x^2+14x-2\,dx \\
+  &=\left.{x^4\over4}-{8x^3\over3}+7x^2-2x\right|_1^2 \\
+  &={16\over4}-{64\over3}+28-4-({1\over4}-{8\over3}+7-2) \\
+  &=23-{56\over3}-{1\over4}={49\over12}. \\
+\end{align*}
+\vskip-10pt\end{example}
+
+It is worth examining this problem a bit more. We have seen one way to
+look at it, by viewing the desired area as a big area minus a small
+area, which leads naturally to the difference between two
+integrals. But it is instructive to consider how we might find the
+desired area directly. We can approximate the area by dividing the
+area into thin sections and approximating the area of each section by
+a rectangle, as indicated in 
+figure~\xrefn{fig:rectangles between curves}. 
+The area of a typical rectangle is 
+$\Delta x(f(x_i)-g(x_i))$, so the total area is approximately
+$$\sum_{i=0}^{n-1} (f(x_i)-g(x_i))\Delta x.$$
+This is exactly the sort of sum that turns into an integral in the
+limit, namely the integral
+$$\int_1^2 f(x)-g(x)\,dx.$$
+Of course, this is the integral we actually computed above, but we
+have now arrived at it directly rather than as a modification of the
+difference between two other integrals. In that example it really
+doesn't matter which approach we take, but in some cases this second
+approach is better.
+
+%% \figure
+%% \vbox{\beginpicture
+%% \normalgraphs
+%% \ninepoint
+%% \setcoordinatesystem units <3truecm,0.4truecm>
+%% \setplotarea x from 0 to 3, y from 0 to 10
+%% \axis left ticks numbered from 0 to 10 by 5 /
+%% \axis bottom  ticks numbered from 0 to 3 by 1 /
+%% \setquadratic
+%% %\putrule from 1.52 2.707 to 1.52 6.819
+%% %\putrule from 1.63 2.707 to 1.63 6.819
+%% %\putrule from 1.52 2.707 to 1.63 2.707
+%% %\putrule from 1.52 6.819 to 1.63 6.819
+%% \putrule from 1.465 2.229 to 1.465 6.714
+%% \putrule from 1.575 2.229 to 1.575 6.714
+%% \putrule from 1.575 2.229 to 1.465 2.229
+%% \putrule from 1.575 6.714 to 1.465 6.714
+%% %
+%% \putrule from 1.575 2.707 to 1.575 6.819
+%% \putrule from 1.685 2.707 to 1.685 6.819
+%% \putrule from 1.575 2.707 to 1.685 2.707
+%% \putrule from 1.575 6.819 to 1.685 6.819
+%% \plot
+%% 0.000 3.000 0.075 3.294 0.150 3.578 0.225 3.849 0.300 4.110 
+%% 0.375 4.359 0.450 4.598 0.525 4.824 0.600 5.040 0.675 5.244 
+%% 0.750 5.438 0.825 5.619 0.900 5.790 0.975 5.949 1.050 6.098 
+%% 1.125 6.234 1.200 6.360 1.275 6.474 1.350 6.578 1.425 6.669 
+%% 1.500 6.750 1.575 6.819 1.650 6.878 1.725 6.924 1.800 6.960 
+%% 1.875 6.984 1.950 6.998 2.025 6.999 2.100 6.990 2.175 6.969 
+%% 2.250 6.938 2.325 6.894 2.400 6.840 2.475 6.774 2.550 6.698 
+%% 2.625 6.609 2.700 6.510 2.775 6.399 2.850 6.278 2.925 6.144 
+%% 3.000 6.000 /
+%% \plot
+%% 0.000 5.000 0.075 4.289 0.150 3.654 0.225 3.093 0.300 2.603 
+%% 0.375 2.182 0.450 1.826 0.525 1.535 0.600 1.304 0.675 1.132 
+%% 0.750 1.016 0.825 0.953 0.900 0.941 0.975 0.978 1.050 1.060 
+%% 1.125 1.186 1.200 1.352 1.275 1.557 1.350 1.797 1.425 2.071 
+%% 1.500 2.375 1.575 2.707 1.650 3.065 1.725 3.446 1.800 3.848 
+%% 1.875 4.268 1.950 4.703 2.025 5.151 2.100 5.609 2.175 6.075 
+%% 2.250 6.547 2.325 7.021 2.400 7.496 2.475 7.968 2.550 8.436 
+%% 2.625 8.896 2.700 9.347 2.775 9.785 2.850 10.208 2.925 10.614 
+%% 3.000 11.000 /
+%% \setdashes
+%% \putrule from 1 0 to 1 6
+%% \putrule from 2 0 to 2 7
+%% \setsolid
+%% \endpicture}
+%% \figrdef{fig:rectangles between curves}
+%% \endfigure{Approximating area between curves with rectangles.}
+
+\begin{example} Find the area below $\ds f(x)= -x^2+4x+1$ and above
+$\ds g(x)=-x^3+7x^2-10x+3$ over the interval $1\le x\le2$; these are the
+same curves as before but lowered by 2. In
+figure~\xrefn{fig:area between curves too} we show the two curves
+together. Note that the lower curve now dips below the $x$-axis. This
+makes it somewhat tricky to view the desired area as a big area minus
+a smaller area, but it is just as easy as before to think of
+approximating the area by rectangles. The height of a typical
+rectangle will still be $f(x_i)-g(x_i)$, even if $g(x_i)$ is
+negative. Thus the area is 
+$$
+  \int_1^2 -x^2+4x+1-(-x^3+7x^2-10x+3)\,dx
+  =\int_1^2 x^3-8x^2+14x-2\,dx.
+$$
+This is of course the same integral as before, because the region
+between the curves is identical to the former region---it has just
+been moved down by 2.
+\end{example}
+
+%% \figure
+%% \hbox{\hfill
+%% \tikzpicture[domain=0:3,y=3mm]
+%% \draw[->] (0,0) -- (3.2,0) ;
+%% \draw[->] (0,0) -- (0,10.2) ;
+%% \gpad
+%% \draw[color=black] plot[id=\the\gpnum,domain=0:3] function{-x**3+7*x**2-10*x+3};
+%% \gpad
+%% \draw[color=black] plot[id=\the\gpnum,domain=0:3] function{-x**2+4*x+1};
+%% \draw[dashed] (1,0) -- (1,4);
+%% \draw[dashed] (2,0) -- (2,5);
+%% \foreach \x in {0,1,2,3} \draw (\x,0) -- (\x,-2pt) node[anchor=north] {\eightpoint $\x$};
+%% \foreach \y in {0,5,10} \draw (0,\y) -- (-2pt,\y) node[anchor=east] {\eightpoint $\y$};
+%% \gpad
+%% \fill[opacity=0.5,fill=red!20] plot[id=\the\gpnum,domain=1:2]
+%% function{-x**3+7*x**2-10*x+3} -- (2,5) node {\gpad}
+%% plot[parametric,id=\the\gpnum,domain=0:1] function{2-t,-t**2+5} -- (1,-1);
+%% \endtikzpicture
+%% \hfill}
+%% \figrdef{fig:area between curves too}
+%% \endfigure{Area between curves.}
+
+\begin{example} Find the area between $\ds f(x)= -x^2+4x$ and
+$\ds g(x)=x^2-6x+5$ over the interval $0\le x\le 1$; the
+curves are shown in figure~\xrefn{fig:curves cross}. Generally we
+should interpret ``area'' in the usual sense, as a necessarily
+positive quantity. Since the two curves cross, we need to compute two 
+areas and add them. First we find the intersection point of the
+curves:
+\begin{align*}
+  -x^2+4x&=x^2-6x+5 \\
+  0&=2x^2-10x+5 \\
+  x&={10\pm\sqrt{100-40}\over4}={5\pm\sqrt{15}\over2}. \\
+\end{align*}
+The intersection point we want is $\ds x=a=(5-\sqrt{15})/2$. Then
+the total area is 
+\begin{align*}
+  \int_0^a x^2-6x+5-(-x^2+4x)\,dx&+\int_a^1 -x^2+4x-(x^2-6x+5)\,dx \\
+  &=\int_0^a 2x^2-10x+5\,dx+\int_a^1 -2x^2+10x-5\,dx \\
+  &=\left.{2x^3\over3}-5x^2+5x\right|_0^a + 
+    \left.-{2x^3\over3}+5x^2-5x\right|_a^1 \\
+  &=-{52\over3}+5\sqrt{15},
+\end{align*}
+after a bit of simplification.
+\end{example}
+
+%% \figure
+%% \hbox{\hfill\tikzpicture[domain=0:1,x=3cm,y=1cm]
+%% \draw[->] (0,0) -- (1.1,0) ;
+%% \draw[->] (0,0) -- (0,5.2) ;
+%% \gpad
+%% \draw[color=black] plot[id=\the\gpnum,domain=0:1] function{x**2-6*x+5};
+%% \gpad
+%% \draw[color=black] plot[id=\the\gpnum,domain=0:1] function{-x**2+4*x};
+%% \draw[dashed] (1,0) -- (1,3);
+%% \foreach \x in {0,1} \draw (\x,0) -- (\x,-2pt) node[anchor=north] {\eightpoint $\x$};
+%% \foreach \y in {0,1,2,3,4,5} \draw (0,\y) -- (-2pt,\y)
+%% node[anchor=east] {\eightpoint $\y$};
+%% \gpad
+%% \fill[opacity=0.5,fill=red!20] plot[id=\the\gpnum,domain=0:0.564]
+%% function{-x**2+4*x} node {\gpad}
+%% plot[parametric,id=\the\gpnum,domain=0.564:0]
+%% function{t,(t)**2-6*(t)+5} -- (0,0);
+%% \gpad
+%% \fill[opacity=0.5,fill=red!20] plot[id=\the\gpnum,domain=0.564:1]
+%% function{-x**2+4*x} node {\gpad}
+%% -- (1,0) plot[parametric,id=\the\gpnum,domain=1:0.564] function{t,(t)**2-6*(t)+5};
+%% \endtikzpicture\hfill}
+%% \figrdef{fig:curves cross}
+%% \endfigure{Area between curves that cross.}
+
+\begin{example} Find the area between $\ds f(x)= -x^2+4x$ and
+$\ds g(x)=x^2-6x+5$; the
+curves are shown in figure~\xrefn{fig:area bounded by curves}. Here we
+are not given a specific interval, so it must be the case that there
+is a ``natural'' region involved. Since the curves are both parabolas,
+the only reasonable interpretation is the region between the two
+intersection points, which we found in the previous example:
+$${5\pm\sqrt{15}\over2}.$$
+If we let $\ds a=(5-\sqrt{15})/2$ and $\ds b=(5+\sqrt{15})/2$,
+the total area is 
+\begin{align*}
+  \int_a^b -x^2+4x-(x^2-6x+5)\,dx
+  &=\int_a^b -2x^2+10x-5\,dx \\
+  &=\left.-{2x^3\over3}+5x^2-5x\right|_a^b \\
+  &=5\sqrt{15}. \\
+\end{align*}
+after a bit of simplification.
+\end{example}
+
+%% \figure
+%% \vbox{\beginpicture
+%% \normalgraphs
+%% \ninepoint
+%% \setcoordinatesystem units <1.7truecm,0.4truecm>
+%% \setplotarea x from 0 to 5, y from -5 to 5
+%% \axis left ticks numbered from -5 to 5 by 5 /
+%% \axis bottom shiftedto y=0 ticks numbered from 1 to 5 by 1 /
+%% \setquadratic
+%% \plot
+%% 0.000 0.000 0.250 0.938 0.500 1.750 0.750 2.438 1.000 3.000 
+%% 1.250 3.438 1.500 3.750 1.750 3.938 2.000 4.000 2.250 3.938 
+%% 2.500 3.750 2.750 3.438 3.000 3.000 3.250 2.438 3.500 1.750 
+%% 3.750 0.938 4.000 0.000 4.250 -1.062 4.500 -2.250 4.750 -3.562 
+%% 5.000 -5.000 /
+%% \plot
+%% 0.000 5.000 0.250 3.562 0.500 2.250 0.750 1.062 1.000 0.000 
+%% 1.250 -0.938 1.500 -1.750 1.750 -2.438 2.000 -3.000 2.250 -3.438 
+%% 2.500 -3.750 2.750 -3.938 3.000 -4.000 3.250 -3.938 3.500 -3.750 
+%% 3.750 -3.438 4.000 -3.000 4.250 -2.438 4.500 -1.750 4.750 -0.938 
+%% 5.000 0.000 /
+%% \endpicture}
+%% \figrdef{fig:area bounded by curves}
+%% \endfigure{Area bounded by two curves.}
+
+\begin{exercises}
+
+\noindent Find the area bounded by the curves.
+
+\begin{exercise} $\ds y=x^4-x^2$ and $\ds y=x^2$ (the part to the right of the $y$-axis)
+\begin{answer} $\ds 8\sqrt2/15$
+\end{answer}\end{exercise}
+
+\begin{exercise} $\ds x=y^3$ and $\ds x=y^2$
+\begin{answer} $1/12$
+\end{answer}\end{exercise}
+
+\begin{exercise} $\ds x=1-y^2$ and $y=-x-1$
+\begin{answer} $9/2$
+\end{answer}\end{exercise}
+
+\begin{exercise} $\ds x=3y-y^2$ and $x+y=3$
+\begin{answer} $4/3$
+\end{answer}\end{exercise}
+
+\begin{exercise} $y=\cos(\pi x/2)$ and $\ds y=1- x^2$ (in the first quadrant)
+\begin{answer} $2/3-2/\pi$
+\end{answer}\end{exercise}
+
+\begin{exercise} $y=\sin(\pi x/3)$ and $y=x$ (in the first quadrant)
+\begin{answer} $\ds 3/\pi - 3\sqrt3/(2\pi)-1/8$
+\end{answer}\end{exercise}
+
+\begin{exercise} $\ds y=\sqrt{x}$ and $\ds y=x^2$
+\begin{answer} $1/3$
+\end{answer}\end{exercise}
+
+\begin{exercise} $\ds y=\sqrt x$ and $\ds y=\sqrt{x+1}$, $0\le x\le 4$
+\begin{answer} $\ds 10\sqrt{5}/3-6$
+\end{answer}\end{exercise}
+
+\begin{exercise} $x=0$ and $\ds x=25-y^2$
+\begin{answer} $500/3$
+\end{answer}\end{exercise}
+
+\begin{exercise} $y=\sin x\cos x$ and $y=\sin x$, $0\le x\le \pi$
+\begin{answer} $2$
+\end{answer}\end{exercise}
+
+\begin{exercise} $\ds y=x^{3/2}$ and $\ds y=x^{2/3}$
+\begin{answer} $1/5$
+\end{answer}\end{exercise}
+
+\begin{exercise} $\ds y=x^2-2x$ and $y=x-2$
+\begin{answer} $1/6$
+\end{answer}\end{exercise}
+
+
+
+\end{exercises}
+
