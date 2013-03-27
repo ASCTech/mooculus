@@ -1,0 +1,281 @@
+\section{Substitution}{}{}
+
+
+Needless to say, most problems we encounter will not be so
+simple. Here's a slightly more complicated example: find
+$$\int 2x\cos(x^2)\,dx.$$
+This is not a ``simple'' derivative, but a little thought reveals that
+it must have come from an application of the chain rule. Multiplied
+on the ``outside'' is $2x$, which is the derivative of the ``inside''
+function $\ds x^2$. Checking:
+$${d\over dx}\sin(x^2)  = \cos(x^2){d\over dx}x^2 = 2x\cos(x^2),$$
+so 
+$$\int 2x\cos(x^2)\,dx=\sin(x^2)+C .$$
+
+Even when the chain rule has ``produced'' a certain derivative, it is
+not always easy to see. Consider this problem:
+$$\int x^3\sqrt{1-x^2}\,dx.$$
+There are two factors in this expression, $\ds x^3$ and $\ds \sqrt{1-x^2}$,
+but it is not apparent that the chain rule is involved. Some clever
+rearrangement reveals that it is:
+$$
+  \int x^3\sqrt{1-x^2}\,dx=
+  \int(-2x)\left(-{1\over2}\right)(1-(1-x^2))\sqrt{1-x^2}\,dx.
+$$ 
+This looks messy, but we do now have something that looks like the
+result of the chain rule: the function $\ds 1-x^2$ has been substituted
+into $\ds -(1/2)(1-x)\sqrt{x}$, and the derivative of $\ds 1-x^2$, $-2x$,
+multiplied on the outside. If we can find a function $F(x)$ whose derivative
+is $\ds -(1/2)(1-x)\sqrt{x}$ we'll be done, since then
+$$\eqalign{
+  {d\over dx}F(1-x^2) = -2xF'(1-x^2) &= 
+  (-2x)\left(-{1\over2}\right)(1-(1-x^2))\sqrt{1-x^2} \\
+  &=x^3\sqrt{1-x^2} \\
+}$$
+But this isn't hard:
+$$\eqalignno{
+  \int-{1\over2}(1-x)\sqrt{x}\,dx&=\int -{1\over2}(x^{1/2}-x^{3/2})\,dx&
+  \eqrdef{eq:auxiliary integral}(\xrefn{eq:auxiliary integral}) \\
+  &=-{1\over2}\left({2\over3}x^{3/2}-{2\over 5}x^{5/2}\right)+C \\
+  &=\left({1\over5}x-{1\over3}\right)x^{3/2}+C. \\
+  }$$
+So finally we have
+$$
+  \int x^3\sqrt{1-x^2}\,dx=\left({1\over5}(1-x^2)-{1\over3}\right)
+  (1-x^2)^{3/2}+C.
+$$
+
+So we succeeded, but it required a clever first step, rewriting the
+original function so that it looked like the result of using the chain
+rule. Fortunately, there is a technique that makes such problems
+simpler, without requiring cleverness to rewrite a function in just
+the right way. It does sometimes not work, or may require more than one
+attempt, but the idea is simple: guess at the most likely candidate for
+the ``inside function'', then do some algebra to see what this
+requires the rest of the function to look like.
+
+One frequently good guess is any complicated expression inside a
+square root, so we start by trying $\ds u=1-x^2$, using a new variable,
+$u$, for convenience in the manipulations that follow. Now we know
+that the chain rule will multiply by the derivative of this inner
+function:
+$${du\over dx} = -2x,$$
+so we need to rewrite the original function to include this:
+$$
+  \int x^3\sqrt{1-x^2}=\int x^3\sqrt{u}{-2x\over-2x}\,dx=
+  \int {x^2\over-2}\sqrt{u}\,{du\over dx}\,dx.
+$$ 
+Recall that one benefit of the Leibniz notation is that it often turns out
+that what looks like ordinary arithmetic gives the correct answer,
+even if something more complicated is going on. For example, in
+Leibniz notation the chain rule is
+$${dy\over dx}={dy\over dt}{dt\over dx}.$$
+The same is true of our current expression:
+$$
+  \int {x^2\over-2}\sqrt{u}\,{du\over dx}\,dx=
+  \int {x^2\over-2}\sqrt{u}\,du.
+$$
+Now we're almost there: since $\ds u=1-x^2$, $\ds x^2=1-u$ and the integral is
+$$\int -{1\over2}(1-u)\sqrt{u}\,du.$$
+It's no coincidence that this is exactly the integral we computed in
+(\xrefn{eq:auxiliary integral}), 
+we have simply renamed the variable $u$ to make the
+calculations less confusing. Just as before:
+$$
+  \int-{1\over2}(1-u)\sqrt{u}\,du=
+  \left({1\over5}u-{1\over3}\right)u^{3/2}+C.
+$$
+Then since $\ds u=1-x^2$:
+$$
+  \int x^3\sqrt{1-x^2}\,dx=\left({1\over5}(1-x^2)-{1\over3}\right)
+  (1-x^2)^{3/2}+C.
+$$
+To summarize: if we suspect that a given function is the derivative of
+another via the chain rule, we let $u$ denote a likely candidate for
+the inner function, then translate the given function so that it is
+written entirely in terms of $u$, with no $x$ remaining in the
+expression. If we can integrate this new function of $u$, then the
+antiderivative of the original function is obtained by replacing $u$
+by the equivalent expression in $x$.
+
+Even in simple cases you may prefer to use this mechanical procedure,
+since it often helps to avoid silly mistakes. For example, consider
+again this simple problem:
+$$\int 2x\cos(x^2)\,dx.$$
+Let $\ds u=x^2$, then $du/dx = 2x$ or $du = 2x\,dx$. Since we have exactly 
+$2x\,dx$ in the original integral, we can replace it by $du$:
+$$\int 2x\cos(x^2)\,dx=\int \cos u\,du=\sin u +C = \sin(x^2)+C.$$
+This is not the only way to do the algebra, and typically there are
+many paths to the correct answer. Another possibility, for example,
+is: Since $du/dx = 2x$, $dx=du/2x$, and then the integral becomes
+$$\int 2x\cos(x^2)\,dx=\int 2x\cos u\,{du\over 2x}=\int \cos u\,du.$$
+The important thing to remember is that you must eliminate all
+instances of the original variable $x$.
+
+\begin{example}
+Evaluate $\ds\int(ax+b)^n\,dx$, assuming that $a$ and $b$ are
+constants, $a\not=0$, and $n$ is a positive integer.
+We let $u=ax+b$ so $du=a\,dx$ or $dx=du/a$. Then
+$$
+  \int(ax+b)^n\,dx=\int {1\over a} u^n\,du={1\over a(n+1)}u^{n+1}+C=
+  {1\over a(n+1)}(ax+b)^{n+1}+C.
+$$
+\vskip-10pt\end{example}
+
+\begin{example}
+Evaluate $\ds\int \sin(ax+b)\,dx$, assuming that $a$ and $b$ are
+constants and $a\not=0$.
+Again we let $u=ax+b$ so $du=a\,dx$ or $dx=du/a$. Then
+$$
+  \int\sin(ax+b)\,dx=\int {1\over a} \sin u\,du={1\over a}(-\cos u)+C=
+-{1\over a}\cos(ax+b)+C.
+$$
+\vskip-10pt\end{example}
+
+\begin{example}
+Evaluate $\ds\int_2^4 x\sin(x^2)\,dx$. First we compute the
+antiderivative, then evaluate the definite integral.
+Let $\ds u=x^2$ so $du=2x\,dx$ or $x\,dx=du/2$. Then
+$$
+  \int x\sin(x^2)\,dx=\int {1\over 2} \sin u\,du={1\over 2}(-\cos u)+C=
+  -{1\over 2}\cos(x^2)+C.
+$$
+Now
+$$
+  \int_2^4 x\sin(x^2)\,dx=\left.-{1\over 2}\cos(x^2)\right|_2^4
+  =-{1\over 2}\cos(16)+{1\over 2}\cos(4).
+$$
+A somewhat neater alternative to this method is to change the original
+limits to match the variable $u$. Since $\ds u=x^2$, when $x=2$, $u=4$,
+and when $x=4$, $u=16$. So we can do this:
+$$
+  \int_2^4 x\sin(x^2)\,dx=
+  \int_4^{16} {1\over 2} \sin u\,du=\left.-{1\over 2}(\cos u)\right|_4^{16}
+  =-{1\over 2}\cos(16)+{1\over 2}\cos(4).
+$$
+An incorrect, and dangerous, alternative is something like this:
+$$
+  \int_2^4 x\sin(x^2)\,dx=\int_2^4 {1\over 2} \sin u\,du=
+  \left.-{1\over 2}\cos (u)\right|_2^4=
+  \left.-{1\over 2}\cos(x^2)\right|_2^4=-{1\over 2}\cos(16)+{1\over
+  2}\cos(4).
+$$
+This is incorrect because $\ds\int_2^4 {1\over 2} \sin u\,du$
+means that $u$ takes on values between 2 and 4, which is wrong. It
+is dangerous, because it is very easy to get to 
+the point $\ds\left.-{1\over 2}\cos (u)\right|_2^4$ and forget to substitute
+$\ds x^2$ back in for $u$, thus getting the incorrect answer
+$\ds -{1\over 2}\cos(4)+{1\over 2}\cos(2)$. A somewhat clumsy, but
+acceptable, alternative is something like this:
+$$
+  \int_2^4 x\sin(x^2)\,dx=\int_{x=2}^{x=4} {1\over 2} \sin u\,du=
+  \left.-{1\over 2}\cos (u)\right|_{x=2}^{x=4}=
+  \left.-{1\over 2}\cos(x^2)\right|_2^4=-{\cos(16)\over 2}+{\cos(4)\over2}.
+$$
+\vskip-10pt\end{example}
+
+\begin{example}
+Evaluate $\ds\int_{1/4}^{1/2}{\cos(\pi t)\over\sin^2(\pi t)}\,dt$.
+Let $u=\sin(\pi t)$ so $du=\pi\cos(\pi t)\,dt$ or $du/\pi=\cos(\pi
+t)\,dt$. We change the limits to $\ds \sin(\pi/4)=\sqrt2/2$ and 
+$\sin(\pi/2)=1$.
+Then
+$$
+  \int_{1/4}^{1/2}{\cos(\pi t)\over\sin^2(\pi t)}\,dt=
+  \int_{\sqrt2/2}^{1}{1\over \pi}{1\over u^2}\,du=
+  \int_{\sqrt2/2}^{1} {1\over \pi}u^{-2}\,du=
+  \left.{1\over \pi}{u^{-1}\over -1}\right|_{\sqrt2/2}^{1}=
+  -{1\over\pi}+{\sqrt2\over\pi}.
+$$
+\vskip-10pt\end{example}
+
+\begin{exercises}
+
+Find the antiderivatives.
+
+
+\twocol
+
+\begin{exercise} $\ds\int (1-t)^9\,dt$
+\begin{answer} $\ds -(1-t)^{10}/10+C$
+\end{answer}\end{exercise}
+
+\begin{exercise} $\ds\int (x^2+1)^2\,dx$
+\begin{answer} $\ds x^5/5+2x^3/3+x+C$
+\end{answer}\end{exercise}
+
+\begin{exercise} $\ds\int x(x^2+1)^{100}\,dx$
+\begin{answer} $\ds (x^2+1)^{101}/202+C$
+\end{answer}\end{exercise}
+
+\begin{exercise} $\ds\int {1\over\root 3 \of {1-5t}}\,dt$ 
+\begin{answer} $\ds -3(1-5t)^{2/3}/10+C$
+\end{answer}\end{exercise}
+
+\begin{exercise} $\ds\int \sin^3x\cos x\,dx$
+\begin{answer} $\ds (\sin^4x)/4+C$
+\end{answer}\end{exercise}
+
+\begin{exercise} $\ds\int x\sqrt{100-x^2}\,dx$
+\begin{answer} $\ds -(100-x^2)^{3/2}/3+C$
+\end{answer}\end{exercise}
+
+\begin{exercise} $\ds\int {x^2\over\sqrt{1-x^3}}\,dx$
+\begin{answer} $\ds \ds -2\sqrt{1-x^3}/3+C$
+\end{answer}\end{exercise}
+
+\begin{exercise} $\ds\int \cos(\pi t)\cos\bigl(\sin(\pi t)\bigr)\,dt$
+\begin{answer} $\ds \sin(\sin\pi t)/\pi+C$
+\end{answer}\end{exercise}
+
+\begin{exercise} $\ds\int {\sin x\over\cos^3 x}\,dx$
+\begin{answer} $\ds \ds 1/(2\cos^2 x)=(1/2)\sec^2x+C$
+\end{answer}\end{exercise}
+
+\begin{exercise} $\ds\int\tan x\,dx$
+\begin{answer} $-\ln|\cos x|+C$
+\end{answer}\end{exercise}
+
+\begin{exercise}  $\ds\int_0^\pi\sin^5(3x)\cos(3x)\,dx$
+\begin{answer} $0$
+\end{answer}\end{exercise}
+
+\begin{exercise} $\ds\int\sec^2x\tan x\,dx$
+\begin{answer} $\ds \tan^2(x)/2+C$
+\end{answer}\end{exercise}
+
+\begin{exercise} $\ds\int_0^{\sqrt{\pi}/2} x\sec^2(x^2)\tan(x^2)\,dx$
+\begin{answer} $1/4$
+\end{answer}\end{exercise}
+
+\begin{exercise} $\ds\int {\sin(\tan x)\over\cos^2x}\,dx$
+\begin{answer} $-\cos(\tan x)+C$
+\end{answer}\end{exercise}
+
+\begin{exercise} $\ds\int_3^4 {1\over(3x-7)^2}\,dx$
+\begin{answer} $1/10$
+\end{answer}\end{exercise}
+
+\begin{exercise} $\ds\int_0^{\pi/6}(\cos^2x - \sin^2x)\,dx$
+\begin{answer} $\ds \sqrt3/4$
+\end{answer}\end{exercise}
+
+\begin{exercise} $\ds\int {6x\over(x^2 - 7)^{1/9}}\,dx$
+\begin{answer} $\ds (27/8)(x^2-7)^{8/9}$
+\end{answer}\end{exercise}
+
+\begin{exercise} $\ds\int_{-1}^1 (2x^3-1)(x^4-2x)^6\,dx$
+\begin{answer} $\ds -(3^7+1)/14$
+\end{answer}\end{exercise}
+
+\begin{exercise} $\ds\int_{-1}^1 \sin^7 x\,dx$
+\begin{answer} $0$
+\end{answer}\end{exercise}
+
+\begin{exercise} $\ds\int f(x) f'(x)\,dx$ 
+\begin{answer} $\ds f(x)^2/2$
+\end{answer}\end{exercise}
+
+\endtwocol
+
+\end{exercises}
