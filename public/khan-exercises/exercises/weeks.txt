@@ -132,3 +132,7 @@ definiteIntegralParts
 * Week 13
 variableSub1
 variableSub2
+* Week 14
+integrationByParts1
+* Week 15
+volumeRevolution

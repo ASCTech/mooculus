@@ -119,3 +119,5 @@ definiteIntegralAffineShift.html
 definiteIntegralParts.html
 variableSub1.html
 variableSub2.html
+integrationByParts1.html
+volumeRevolution.html
