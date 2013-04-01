@@ -138,7 +138,7 @@ agreement as to which is ``Version I'' and which ``Version II''. Since
 it really is the same theorem, differently stated, people often simply
 call them both ``The Fundamental Theorem of Calculus.''
 
-Let's see an example of the the fundamental theorem in action.
+Let's see an example of the fundamental theorem in action.
 
 \begin{example}
 Compute
@@ -152,11 +152,11 @@ Here we start by finding an antiderivative of
 \[
 x^9 + \frac{1}{x}.
 \]
-The correct choice is $10x^{10} + \ln(x)$, one could verify this by
+The correct choice is $\frac{x^{10}}{10} + \ln(x)$, one could verify this by
 taking the derivative. Hence
 \begin{align*}
-\int_1^2\left(x^9 + \frac{1}{x}\right) \d x &= \left(10x^{10} + \ln(x)\right)\Bigg|_1^2 \\
-&= 10\cdot 2^{10} \ln(2) - 10.
+\int_1^2\left(x^9 + \frac{1}{x}\right) \d x &= \left(\frac{x^{10}}{10} + \ln(x)\right)\Bigg|_1^2 \\
+&= \frac{2^{10}}{10} \ln(2) - \frac{1}{10}.
 \end{align*}
 \end{solution}
 
@@ -209,9 +209,10 @@ height (position) after one second, we need to compute
 \begin{align*}
 \int_0^1 -9.8t + 6 \d t &= (-4.9t^2 + 6t)\Bigg|_0^1\\
 &= -4.9 + 6 - 0\\
-&= 2.1.
+&= 1.1.
 \end{align*}
-Hence the ball is at a height of $2.1$ meters. 
+However, since the ball was tossed at an initial height of $1$ meter,
+the ball is at a height of $2.1$ meters.
 \end{solution}
 
 We did this example before in
@@ -219,7 +220,7 @@ Example~\ref{example:eulersMethodBall}. At that time we used Euler's
 Method to give an approximate solution. Recall, the basic idea is to
 break the time interval between 0 and 1 seconds into many small
 partitions. Then at each step multiply the time duration by the
-velocity of the ball. In essence your are computing a Riemann
+velocity of the ball. In essence you are computing a Riemann
 sum. Hence, Euler's method gives some rational as to why the area
 under the curve that gives the velocity should give us the position of
 the ball.
@@ -311,11 +312,11 @@ however unlikely it is in this case, be wrong.
 
 \endtwocol
 
-\begin{exercise} Find the derivative of $F(x)=\int_1^x t^2-3t\d t$
+\begin{exercise} Find the derivative of $F(x)=\int_1^x \left(t^2-3t\right)\d t$
 \begin{answer} $x^2-3x$
 \end{answer}\end{exercise}
 
-\begin{exercise} Find the derivative of $F(x)=\int_1^{x^2} t^2-3t\d t$
+\begin{exercise} Find the derivative of $F(x)=\int_1^{x^2} \left(t^2-3t\right)\d t$
 \begin{answer} $2x(x^4-3x^2)$
 \end{answer}\end{exercise}
 

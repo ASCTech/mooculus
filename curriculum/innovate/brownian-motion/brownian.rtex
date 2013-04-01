@@ -1,0 +1,27 @@
+\documentclass{article}
+
+\usepackage{geometry}
+\usepackage{tikz}
+\usepackage[pdftex,active,tightpage]{preview}
+
+\begin{document}
+
+\begin{preview}
+\begin{tikzpicture}
+\fill[color=white] (0,3) rectangle (10,-3);
+\draw (0,0) -- (10,0);
+
+<% srand(5) %>
+
+<% for j in 0..75 %>
+\draw[opacity=0.35] (0,0) 
+<% y = 0 %>
+<% for x in 0..500 %>
+  <% y = y + (rand - 0.48)/10  %>
+  -- (<%= x.to_f/50 %>,<%= float(y) %>)
+<% end %>;
+<% end %>
+\end{tikzpicture}  
+\end{preview}
+
+\end{document}

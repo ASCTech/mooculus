@@ -1,0 +1,35 @@
+\documentclass{article}
+
+\usepackage{geometry}
+\usepackage{tikz}
+\usepackage[pdftex,active,tightpage]{preview}
+
+\begin{document}
+
+\begin{preview}
+\begin{tikzpicture}
+\draw (0,0) -- (14.7,0);
+
+<% srand(5) %>
+
+<% for j in 0..40 %>
+\draw[opacity=0.5,color=red] (0,0) 
+<% y = 0 %>
+<% for x in 0..250 %>
+  <% y = y + (rand - 0.50)/5  %>
+  -- (<%= x.to_f/17 %>,<%= float(y) %>)
+<% end %>;
+<% end %>
+
+<% for j in 0..40 %>
+\draw[opacity=0.5,color=blue] (0,0) 
+<% y = 0 %>
+<% for x in 0..250 %>
+  <% y = y + (rand - 0.42)/5  %>
+  -- (<%= x.to_f/17 %>,<%= float(y) %>)
+<% end %>;
+<% end %>
+\end{tikzpicture}  
+\end{preview}
+
+\end{document}
