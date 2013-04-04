@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html data-require="math word-problems steveMath8 graphie math-function-parser">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>The volume of a solid of revolution</title>
+    <script src="../khan-exercise.js"></script>
+</head>
+<body>
+  <div class="exercise">
+  
+    <div class="problems">
+    
+      <div id="xSquareRoot">
+        	<div class="vars">
+				<var id="A">randRange(1,10)</var>
+				<var id="B">A+randRange(1,5)</var>
+				<var id="n">randRange(2,10)</var>
+				<var id="functionBank">["cos(x)","sin(x)","e^(x)","(x)^"+n,"(1/(x))"]</var>
+				<var id="fNum">randRange(0,functionBank.length-1)</var>
+				<var id="gNum">randRangeExclude(0,functionBank.length-1,[fNum])</var>
+				<var id="f">functionBank[fNum]</var>
+				<var id="g">functionBank[gNum]</var>
+				<var id="EXP">MathFunction.parse(f.replace("x",g))</var>
+				<var id="derivativeEXP">MathFunction.parse(f.replace("x",g)).derivative("x")</var>
+				
+  			  </div>
+        	
+        	<p class="question">
+        		Consider the region bounded by the lines <code>x=<var>A</var></code>, <code>x=<var>B</var></code>, the horizontal axis, 
+        		and the function <code>f(x) = \sqrt{<var>derivativeEXP.tex()</var>}</code>.  What is the volume of the solid obtained by revolving this 
+        		region about the horizontal axis?
+        	</p>
+        <p class="solution" data-type="definiteIntegral">1|2|x</p>
+        <div class="hints">
+        	<p>
+        		The volume of this solid of revolution is given by <code>V = \displaystyle\int_{<var>A</var>}^{<var>B</var>} \pi \left[ f(x) \right]^2 dx</code>.  
+        		Make sure you can draw a picture of the thin cylinders which justify this formula.
+        	</p>
+        	<p>
+        		So <code>V = \displaystyle\int_{<var>A</var>}^{<var>B</var>} \pi \left[ \sqrt{<var>derivativeEXP.tex()</var>} \right]^2 dx</code>
+        	</p>
+        	<p>
+        		<code>= \pi \displaystyle\int_{<var>A</var>}^{<var>B</var>} <var>derivativeEXP.tex()</var> dx</code>
+        	</p>
+        	<p>
+        		<code>= \pi \left. \displaystyle\int  <var>derivativeEXP.tex()</var> dx \right|_{<var>A</var>}^{<var>B</var>}</code> by the fundamental theorem
+        	</p>
+        	<p>
+        		Lets just concentrate our attention on that antiderivative of a moment.
+        	</p>
+        	<p>
+        		Let <code>u = <var>MathFunction.parse(g).tex()</var></code>.
+        	</p>
+        	<p>
+        		Then <code>\dfrac{du}{dx} = <var>MathFunction.parse(g).derivative("x").tex()</var></code>, so <code>du = <var>MathFunction.parse(g).derivative("x").tex()</var>dx</code>
+        	</p>
+        	<p>
+        		Rewriting the integral with this substitution we have <code>\displaystyle\int <var>MathFunction.parse(f.replace(/x/g,"u")).derivative("u").tex()</var> du</code>
+        	</p>
+        	<p>
+        		This is <code><var>MathFunction.parse(f.replace(/x/g,"u")).tex()</var>+C</code>
+        	</p>
+        	<p>
+        		Substituting <code>u = <var>MathFunction.parse(g).tex()</var></code> back we have <code><var>MathFunction.parse(f.replace(/x/g,g)).tex()</var>+C</code>
+        	</p>
+        </div>
+       
+      </div>
+      
+      
+      
+    </div>
+  </div>
+</body>

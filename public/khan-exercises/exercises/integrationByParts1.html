@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html data-require="math word-problems steveMath8 graphie math-function-parser">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>Integration by parts</title>
+    <script src="../khan-exercise.js"></script>
+</head>
+<body>
+  <div class="exercise">
+  
+    <div class="problems">
+    
+      <div id="xSinCosExp">
+        	<div class="vars">
+				
+				<var id="functionBank">[["\\cos(x)","\\sin(x)","-\\cos(x)","x*cos(x)"],["\\sin(x)","-\\cos(x)","-\\sin(x)","x*sin(x)"],["e^{x}","e^{x}","e^{x}","x*e^x"]]</var>
+				<var id="fNum">randRange(0,functionBank.length-1)</var>
+				<var id="f">functionBank[fNum]</var>
+				
+				
+  			  </div>
+        	
+        	<p class="question">
+        		Use integration by parts to find <code>\displaystyle \int x <var>f[0]</var> dx</code>
+        	</p>
+        <p class="solution" data-type="antiDerivativeExpression">
+        	<var>f[3]</var>
+        </p>
+        <div class="hints">
+        	<p>
+        		Let <code>u = x</code>, so <code>dv = <var>f[0]</var> dx</code>
+        	</p>
+        	<p>
+        		Then <code>du= dx</code> and <code>v = <var>f[1]</var></code>
+        	</p>
+        	<p>
+        		So <code>\displaystyle \int x <var>f[0]</var> dx = (x)(<var>f[1]</var>) - \displaystyle\int <var>f[1]</var>dx</code> by the integration by parts formula.
+        	</p>
+        	<p>
+        		Thus <code>\displaystyle \int x <var>f[0]</var> dx = (x)(<var>f[1]</var>) - <var>f[2]</var>+C</code>
+        	</p>
+        </div>
+       
+      </div>
+      <div id="xnLogx">
+        	<div class="vars">
+				
+				<var id= "n">randRange(2,9)</var>
+				
+  			  </div>
+        	
+        	<p class="question">
+        		Use integration by parts to find <code>\displaystyle \int x^{<var>n</var>} \log(x) dx</code>
+        	</p>
+        <p class="solution" data-type="antiDerivativeExpression">
+        	x^(<var>n</var>)*log(x)
+        </p>
+        <div class="hints">
+        	<p>
+        		Let <code>u = \log(x)</code>, so <code>dv = x^{<var>n</var>} dx</code>
+        	</p>
+        	<p>
+        		Then <code>du= \dfrac{1}{x}</code> and <code>v = \dfrac{x^{<var>n+1</var>}}{<var>n+1</var>}</code>
+        	</p>
+        	<p>
+        		So <code>\displaystyle \int x^{<var>n</var>} \log(x) dx = \dfrac{x^{<var>n+1</var>}}{<var>n+1</var>} \log(x) - \displaystyle\int  \dfrac{x^{<var>n</var>}}{<var>n+1</var>} dx</code> by the integration by parts formula.
+        	</p>
+        	<p>
+        		Thus <code>\displaystyle \int x^{<var>n</var>} \log(x) dx  = \dfrac{x^{<var>n+1</var>} \log(x)}{<var>n+1</var>} - \dfrac{x^{<var>n+1</var>}}{<var>(n+1)*(n+1)</var>}+C</code>
+        	</p>
+        </div>
+       
+      </div>
+      <div id="inverseTrig">
+        	<div class="vars">
+        		<var id = A>randRange(2,9)</var>
+				<var id="functionBank">[
+				 [
+					 "\\arccos(" +A+"x)"
+					 ,"\\dfrac{-"+A+"}{\\sqrt{1+"+-A*A+"x^2}}"
+					 ,"1+"+-A*A+"x^2"
+					 ,""+-2*A*A+"x"
+					,""+"\\dfrac{1}{"+2*A+"\\sqrt{w}}"
+					, "\\dfrac{1}{"+A+"}\\sqrt{w}"
+					, "\\dfrac{1}{"+A+"}\\sqrt{1-"+ A*A +"x^2}"
+					 ,"arccos("+A+"x)"
+				 ],
+				[
+					"\\arcsin("+A+"x)"
+					,"\\dfrac{"+A+"}{1+"+-A*A+"x^2}"
+					,"1+"+-A*A+"x^2"
+					,""+-2*A*A+"x"
+					,""+"-\\dfrac{1}{"+2*A+"\\sqrt{w}}"
+					, "-\\dfrac{1}{"+A+"}\\sqrt{w}"
+					, "-\\dfrac{1}{"+A+"}\\sqrt{1-"+ A*A +"x^2}"
+					  ,"arcsin("+A+"x)"
+				],
+				[
+					"\\arctan("+A+"x)"
+					,"\\dfrac{"+A+"}{1+"+A*A+"x^2}"
+					,"1+"+A*A+"x^2"
+					, ""+2*A*A+"x"
+					,""+"\\dfrac{1}{"+2*A+"w}"
+					, "\\dfrac{1}{"+2*A+"}\\log(w)"
+					, "\\dfrac{1}{"+2*A+"}\\log(1+"+ A*A +"x^2)"
+					,"arctan("+A+"x)"
+				]
+				]
+				</var>
+				<var id="fNum">randRange(0,functionBank.length-1)</var>
+				<var id="f">functionBank[fNum]</var>
+				
+  			  </div>
+        	
+        	<p class="question">
+        		Use integration by parts to find <code>\displaystyle \int{ <var>f[0]</var> } dx</code>
+        	</p>
+        <p class="solution" data-type="antiDerivativeExpression">
+        	<var>f[7]</var>
+        </p>
+        <div class="hints">
+        	<p>
+        		Let <code>u=<var>f[0]</var></code> so <code>dv =dx</code>
+        	</p>
+        	<p>
+        		Then <code>du = <var>f[1]</var>dx</code> and <code>v = x</code>
+        	</p>
+        	<p>
+        		Thus <code>\displaystyle \int  <var>f[0]</var> dx = x<var>f[0]</var> - \displaystyle\int{ <var>f[1]</var> x dx} </code>
+        	</p>
+        	<p>
+        		Let's focus on <code>\displaystyle\int{ <var>f[1]</var> x dx}</code> : we can solve this using variable substitution.
+        	</p>
+        	<p>
+        		Let <code>w  = <var>f[2]</var></code> Then <code>dw = <var>f[3]</var> dx</code>, so we can rewrite the integral as <code>\displaystyle\int{ <var>f[4]</var> dw}</code>
+        	</p>
+        	<p>
+        		<code>\displaystyle\int{ <var>f[4]</var>  dw} =  <var>f[5]</var> = <var>f[6]</var></code>
+        	</p>
+        	<p>
+        		Thus <code>\displaystyle \int  <var>f[0]</var> dx = x<var>f[0]</var> - <var>f[6]</var></code>
+        	</p>
+        </div>
+       
+      </div>
+      
+      
+    </div>
+  </div>
+</body>
