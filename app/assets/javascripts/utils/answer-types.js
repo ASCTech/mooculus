@@ -1578,7 +1578,7 @@ Khan.answerTypes = $.extend(Khan.answerTypes, {
 		}
 
 		guess_integral = guess_expression.integrate( 'x', endpoint_a, endpoint_b );
-		console.log( "guess = ", correct_integral );
+		console.log( "guess = ", guess_integral );
 
 		if (Math.abs(guess_integral / correct_integral - 1.0) < 0.05)
 		    return true;
