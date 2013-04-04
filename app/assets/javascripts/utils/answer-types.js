@@ -1551,8 +1551,12 @@ Khan.answerTypes = $.extend(Khan.answerTypes, {
 	    correct_endpoint_b = MathFunction.parse(correct[1]).evaluate({});
 
 	    correct = MathFunction.parse(correct[2]);
+	    
+	    var correct_x = correct.variables()[0];
+	    if (correct_x == undefined)
+		correct_x = 'x';
 
-	    var correct_integral = correct.integrate( 'x', correct_endpoint_a, correct_endpoint_b );
+	    var correct_integral = correct.integrate( correct_x, correct_endpoint_a, correct_endpoint_b );
 
 	    return function(guess) {
 		guess = $.trim(guess);
@@ -1575,7 +1579,11 @@ Khan.answerTypes = $.extend(Khan.answerTypes, {
 		    guess_expression = MathFunction.parse(guess);
 		}
 
-		var guess_integral = guess_expression.integrate( 'x', endpoint_a, endpoint_b );
+		var x = guess_expression.variables()[0];
+		if (x == undefined)
+		    x = 'x';
+
+		var guess_integral = guess_expression.integrate( x, endpoint_a, endpoint_b );
 
 		if (Math.abs(guess_integral / correct_integral - 1.0) < 0.05)
 		    return true;
