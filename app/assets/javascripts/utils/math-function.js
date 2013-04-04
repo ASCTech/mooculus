@@ -952,6 +952,19 @@ var MathFunction = (function () {
 	    return text_ast( this.syntax_tree );
 	},
 
+	// numerically integrate via midpoint method with respect to 'x'
+	integrate: function(x,a,b) {
+	    var intervals = 100;
+	    var total = 0.0;
+
+            for( var i=0; i < intervals; i++ ) {
+		var sample_point = a + ((b - a) * (i + 0.5) / intervals);
+		total = total + this.evaluate( { x : sample_point } );
+	    }
+
+	    return total * (b - a) / intervals;
+	},
+
 	// FIXME: This should be deleted
 	equalsForBinding: function(other,bindings) {
 	    var epsilon = 0.01;
