@@ -1547,8 +1547,8 @@ Khan.answerTypes = $.extend(Khan.answerTypes, {
 	    var correct = $.trim($(solution).text());
 	    correct = correct.split( "|" );
 
-	    correct_endpoint_a = parseFloat(correct[0]);
-	    correct_endpoint_b = parseFloat(correct[1]);
+	    correct_endpoint_a = MathFunction.parse(correct[0]).evaluate({});
+	    correct_endpoint_b = MathFunction.parse(correct[1]).evaluate({});
 
 	    correct = MathFunction.parse(correct[2]);
 
@@ -1559,8 +1559,8 @@ Khan.answerTypes = $.extend(Khan.answerTypes, {
 
 		guess = guess.split( "|" );
 
-		endpoint_a = parseFloat(guess[0]);
-		endpoint_b = parseFloat(guess[1]);
+		endpoint_a = MathFunction.parse(guess[0]).evaluate({});
+		endpoint_b = MathFunction.parse(guess[1]).evaluate({});
 		guess = guess[2];
 
 		var guess_expression;
