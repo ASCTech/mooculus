@@ -1567,15 +1567,11 @@ Khan.answerTypes = $.extend(Khan.answerTypes, {
 
 		if (guess.match(/^latex:/)) {
 		    guess = guess.replace(/^latex:/,'');
-		    guess = guess.replace(/dx/,'1');
-		    guess = guess.replace(/dy/,'1');
 		    guess_expression = MathFunction.parse_tex(guess);
 		}
 		    
 		if (guess.match(/^text:/)) {
 		    guess = guess.replace(/^text:/,'');
-		    guess = guess.replace(/dx/,'1');
-		    guess = guess.replace(/dy/,'1');
 		    guess_expression = MathFunction.parse(guess);
 		}
 
