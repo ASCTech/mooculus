@@ -1543,9 +1543,10 @@ Khan.answerTypes = $.extend(Khan.answerTypes, {
 	createValidator: function(solution) {
 	    var correct = $.trim($(solution).text());
 	    correct = correct.split( "|" );
-	    
+	    console.log( correct );
 	    correct_endpoint_a = parseFloat(correct[0]);
 	    correct_endpoint_b = parseFloat(correct[1]);
+	    console.log( correct[2] );
 	    correct = MathFunction.parse(correct[2]);
 
 	    var correct_integral = correct.integrate( 'x', correct_endpoint_a, correct_endpoint_b );
