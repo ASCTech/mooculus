@@ -1517,7 +1517,7 @@ Khan.answerTypes = $.extend(Khan.answerTypes, {
 	    var fallback = $(solution).data("fallback");
 
 	    return {
-		validator: Khan.answerTypes["parsedExpression"].createValidator(solution),
+		validator: Khan.answerTypes["definiteIntegral"].createValidator(solution),
 		answer: function() {
 		    var text;
 
@@ -1534,7 +1534,7 @@ Khan.answerTypes = $.extend(Khan.answerTypes, {
 			(fallback ? fallback + "" : "");
 		},
 		solution: $.trim($(solution).text()),
-		examples: ["A definte integral, with endpoints a and b, and integrand"],
+		examples: ["A definte integral, with endpoints a and b, and integrand."],
 		showGuess: function(guess) {
 		    input.val(guess === undefined ? "" : guess);
 		}
@@ -1543,10 +1543,10 @@ Khan.answerTypes = $.extend(Khan.answerTypes, {
 	createValidator: function(solution) {
 	    var correct = $.trim($(solution).text());
 	    correct = correct.split( "|" );
-	    console.log( correct );
+
 	    correct_endpoint_a = parseFloat(correct[0]);
 	    correct_endpoint_b = parseFloat(correct[1]);
-	    console.log( correct[2] );
+
 	    correct = MathFunction.parse(correct[2]);
 
 	    var correct_integral = correct.integrate( 'x', correct_endpoint_a, correct_endpoint_b );
