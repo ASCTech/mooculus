@@ -2,11 +2,46 @@
 
 \section{Integration by Parts}
 
+While integration by substitution allows us to identify and ``undo''
+the chain rule, \textit{integration by parts} allows us to recogonize
+the product rule.
+
+\begin{mainTheorem}[Integration by Parts Formula] 
+If $f(x)g(x)$ is differentiable on the interval $[a,b]$, then
+\[
+\int_a^b f(x) g'(x) \d x =f(x)g(x) \bigg|_a^b - \int_a^b f'(x) g(x) \d x.
+\]
+\end{mainTheorem}
+\begin{proof} First note by the power rule we have
+\[
+\ddx f(x)g(x) = f(x)g'(x) + f'(x) g(x).
+\]
+Now integrate both sides of the equation above
+\[
+\int_a^b \ddx f(x) g(x) \d x = \int_a^b \left(f(x)g'(x) + f'(x) g(x)\right) \d x.
+\]
+By the Fundamental Theorem of Calculus, the left-hand side of the equation is
+\[
+f(x)g(x) \bigg|_a^b.
+\]
+However, by properties of integrals the right-hand side is equal to 
+\[
+\int_a^b f(x)g'(x)\d x + \int_a^b f'(x) g(x) \d x.
+\]
+Hence
+\[
+f(x)g(x) \bigg|_a^b = \int_a^b f(x)g'(x)\d x + \int_a^b f'(x) g(x) \d x.
+\]
+and so 
+\[
+ \int_a^b f(x)g'(x)\d x = f(x)g(x) \bigg|_a^b -  \int_a^b f'(x) g(x) \d x.
+\]
+\end{proof}
 
 We have already seen that recognizing the product rule can be useful,
 when we noticed that
 $$\int \sec^3u+\sec u \tan^2u\,du=\sec u \tan u.$$
-As with substitution, we do not have to rely on insight or cleverness
+As with substitution, we have tools to help us with insight insight or cleverness
 to discover such antiderivatives; there is a technique that will often
 help to uncover the product rule.
 
@@ -88,23 +123,23 @@ formula. There is a nice tabular method to accomplish the calculation
 that minimizes the chance for error and speeds up the whole
 process. We illustrate with the previous example. Here is the
 table:
-
-\stablestyle3
-\null
-\hbox to\hsize{\hfill\begintable
-sign\vt $u$\vt $dv$\eltt
-\vt $x^2$\vt $\sin x$\elt
-$-$\vt $2x$\vt $-\cos x$\elt
-\vt $2$\vt $-\sin x$\elt
-$-$\vt $0$\vt $\cos x$\endtable
-\hfill \raise 40pt\hbox{or}%
-\hfill\begintable
-$u$\vt $dv$\eltt
-$x^2$\vt $\sin x$\elt
-$-2x$\vt $-\cos x$\elt
-$2$\vt $-\sin x$\elt
-$0$\vt $\cos x$\endtable
-\hfill}
+\[
+\begin{array}{|c|c|c|}\hline
+\text{sign} & u & dv \\ \hline \hline
+ & x^2 & \sin(x) \\ \hline
+- & 2x & -\cos(x) \\ \hline
+  & 2  & -\sin(x) \\ \hline
+- & 0  & \cos(x) \\ \hline
+\end{array}
+\qquad\text{or}\qquad
+\begin{array}{|c|c|}\hline
+u & dv \\ \hline\hline
+x^2 & \sin(x) \\ \hline 
+-2x & -\cos(x) \\\hline
+2 & -\sin(x)\\\hline
+0 & \cos(x)\\\hline
+\end{array}
+\]
 
 To form the first table, we start with $u$ at the top of the second
 column and repeatedly compute the derivative; starting with $dv$ at
@@ -210,7 +245,14 @@ Find the antiderivatives.
 
 
 
-\section{Powers of sine and cosine}
+
+
+
+
+
+
+
+\section{Powers of Sine and Cosine}
 
 
 Functions consisting of products of the sine and cosine can be
