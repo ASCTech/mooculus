@@ -1550,7 +1550,7 @@ Khan.answerTypes = $.extend(Khan.answerTypes, {
 	    correct_endpoint_a = MathFunction.parse(correct[0]).evaluate({});
 	    correct_endpoint_b = MathFunction.parse(correct[1]).evaluate({});
 
-	    correct = MathFunction.parse(correct[2]);
+	    correct = MathFunction.parse(correct.slice(2, correct.length).join('|'));
 	    
 	    var correct_x = correct.variables()[0];
 	    if (correct_x == undefined)
@@ -1565,7 +1565,7 @@ Khan.answerTypes = $.extend(Khan.answerTypes, {
 
 		endpoint_a = MathFunction.parse(guess[0]).evaluate({});
 		endpoint_b = MathFunction.parse(guess[1]).evaluate({});
-		guess = guess[2];
+		guess = guess.slice(2, guess.length).join('|');
 
 		var guess_expression;
 
