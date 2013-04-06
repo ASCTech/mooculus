@@ -38,31 +38,14 @@ and so
 \]
 \end{proof}
 
-We have already seen that recognizing the product rule can be useful,
-when we noticed that
-$$\int \sec^3u+\sec u \tan^2u\,du=\sec u \tan u.$$
-As with substitution, we have tools to help us with insight insight or cleverness
-to discover such antiderivatives; there is a technique that will often
-help to uncover the product rule.
 
-Start with the product rule:
-$$\ddx f(x)g(x)=f'(x)g(x)+f(x)g'(x).$$
-We can rewrite this as
-$$f(x)g(x)=\int f'(x)g(x)\d x +\int f(x)g'(x)\d x,$$
-and then
-$$\int f(x)g'(x)\d x=f(x)g(x)-\int f'(x)g(x)\d x.$$
-This may not seem particularly useful at first glance, but it turns
-out that in many cases we have an integral of the form
-$$\int f(x)g'(x)\d x$$
-but that 
-$$\int f'(x)g(x)\d x$$
-is easier. This technique for turning one integral into another is
-called {\dfont integration by parts\index{integration!by parts}\/},
-and is usually written in more compact form. If we let $u=f(x)$ and
-$v=g(x)$ then $du=f'(x)\d x$ and $dv=g'(x)\d x$ and 
-$$\int u\,dv = uv-\int v\,du.$$
-To use this technique we need to identify likely candidates for
-$u=f(x)$ and $dv=g'(x)\d x$.
+Integration by parts is often written in a more compact form
+\[
+\int u\d v = uv-\int v\d u,
+\]
+where $u=f(x)$, $v=g(x)$, $du=f'(x)\d x$ and $dv=g'(x)\d x$.  To use
+this technique we need to identify likely candidates for $u=f(x)$ and
+$dv=g'(x)\d x$.
 
 \begin{example}
 Evaluate $\int x\ln x\d x$. Let $u=\ln x$ so $du=1/x\d x$. Then
