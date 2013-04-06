@@ -47,57 +47,62 @@ where $u=f(x)$, $v=g(x)$, $du=f'(x)\d x$ and $dv=g'(x)\d x$.  To use
 this technique we need to identify likely candidates for $u=f(x)$ and
 $dv=g'(x)\d x$.
 
-\begin{example}
-Evaluate $\int x\ln x\d x$. Let $u=\ln x$ so $du=1/x\d x$. Then
-we must let $dv=x\d x$ so $v=x^2/2$ and
-$$
- \int x\ln x\d x={x^2\ln x\over 2}-\int {x^2\over2}{1\over x}\d x=
- {x^2\ln x\over 2}-\int {x\over2}\d x={x^2\ln x\over 2}-{x^2\over4}+C.
-$$
-\end{example}
+
 
 \begin{example}
-Evaluate $\int x\sin x\d x$. Let $u=x$ so $du=dx$. Then
-we must let $dv=\sin x\d x$ so $v=-\cos x$ and
-$$\int x\sin x\d x=-x\cos x-\int -\cos x\d x=
--x\cos x+\int \cos x\d x=-x\cos x+\sin x+C.$$
+Compute
+\[
+\int \ln(x)\d x.
+\]
 \end{example}
 
-\begin{example}
-Evaluate $\int\sec^3 x\d x$. Of course we already know the answer
-to this, but we needed to be clever to discover it. Here we'll use the
-new technique to discover the antiderivative.
-Let $u=\sec x$ and $dv=\sec^2 x\d x$. Then $du=\sec x\tan x$ and
-$v=\tan x$ and
+\begin{solution}
+Let $u=\ln(x)$ so $du=1/x\d x$. Hence,  $dv=1\d x$ so $v=x$
+and so 
 \begin{align*}
-  \int\sec^3 x\d x&=\sec x\tan x-\int \tan^2x\sec x\d x \\
-  &=\sec x\tan x-\int (\sec^2x-1)\sec x\d x \\
-  &=\sec x\tan x-\int \sec^3x\d x +\int\sec x\d x.
+ \int \ln(x)\d x&=x\ln (x)-\int \frac{x}{x}\d x\\
+&= x\ln (x)- x+C.\\
 \end{align*}
-At first this looks useless---we're right back to
-$\int\sec^3x\d x$. But looking more closely:
-\begin{align*}
-  \int\sec^3x\d x&=\sec x\tan x-\int \sec^3x\d x +\int\sec x\d x \\
-  \int\sec^3x\d x+\int \sec^3x\d x&=\sec x\tan x +\int\sec x\d x \\
-  2\int\sec^3x\d x&=\sec x\tan x +\int\sec x\d x \\
-  \int\sec^3x\d x&={\sec x\tan x\over2} +{1\over2}\int\sec x\d x \\
-  &={\sec x\tan x\over2} +{\ln|\sec x+\tan x|\over2}+C.
-\end{align*}
-\end{example}
+\end{solution}
 
 \begin{example}
-Evaluate $\int x^2\sin x\d x$. 
-Let $u=x^2$, $dv=\sin x\d x$; then $du=2x\d x$ and $v=-\cos x$. 
-Now $\int x^2\sin x\d x=-x^2\cos x+\int 2x\cos x\d x$. This is
-better than the original integral, but we need to do integration by
-parts again. Let $u=2x$, $dv=\cos x\d x$; then
-$du=2$ and $v=\sin x$, and
-\begin{align*}
-  \int x^2\sin x\d x&=-x^2\cos x+\int 2x\cos x\d x \\
-  &=-x^2\cos x+ 2x\sin x - \int 2\sin x\d x \\
-  &=-x^2\cos x+ 2x\sin x + 2\cos x + C. 
-\end{align*}
+Compute
+\[
+\int x\sin(x) \d x.
+\]
 \end{example}
+
+\begin{solution} Let $u=x$ so $du=dx$. Hence, $dv=\sin(x)\d x$ so $v=-\cos(x)$ and
+\begin{align*}
+\int x\sin(x)\d x &=-x\cos(x)-\int -\cos(x)\d x\\
+&= -x\cos(x)+\int \cos(x)\d x\\
+&=-x\cos(x)+\sin x+C.
+\end{align*}
+\end{solution}
+
+
+\begin{example}
+Compute
+\[
+\int x^2\sin(x)\d x.
+\] 
+\end{example}
+
+\begin{solution}
+Let $u=x^2$, $dv=\sin(x)\d x$; then $du=2x\d x$ and $v=-\cos(x)$. 
+Now 
+\[
+\int x^2\sin(x)\d x=-x^2\cos(x)+\int 2x\cos(x)\d x.
+\] 
+This is better than the original integral, but we need to do
+integration by parts again. Let $u=2x$, $dv=\cos(x)\d x$; then $du=2$
+and $v=\sin(x)$, and
+\begin{align*}
+  \int x^2\sin(x)\d x &=-x^2\cos(x)+\int 2x\cos(x)\d x \\
+  &=-x^2\cos(x)+ 2x\sin(x) - \int 2\sin(x)\d x \\
+  &=-x^2\cos(x)+ 2x\sin(x) + 2\cos(x) + C. 
+\end{align*}
+\end{solution}
 
 Such repeated use of integration by parts is fairly common, but it can
 be a bit tedious to accomplish, and it is easy to make
@@ -128,41 +133,41 @@ To form the first table, we start with $u$ at the top of the second
 column and repeatedly compute the derivative; starting with $dv$ at
 the top of the third column, we repeatedly compute the
 antiderivative. In the first column, we place a ``$-$'' in every
-second row. To form the 
-second table we combine the first and second columns by
-ignoring the boundary; if you do this by hand, you may simply start
-with two columns and add a ``$-$'' to every second row.
+second row. To form the second table we combine the first and second
+columns by ignoring the boundary; if you do this by hand, you may
+simply start with two columns and add a ``$-$'' to every second row.
 
 To compute with this second table we begin at the top. Multiply the
 first entry in column $u$ by the second entry in column $dv$ to get
-$-x^2\cos x$, and add this to the integral of the product of the
+$-x^2\cos(x)$, and add this to the integral of the product of the
 second entry in column $u$ and second entry in column $dv$.  This
 gives:
-$$-x^2\cos x+\int 2x\cos x\d x,$$
+$$-x^2\cos(x)+\int 2x\cos(x)\d x,$$
 or exactly the result of the first application of integration by
 parts.  Since this integral is not yet easy, we return to the table.
-Now we multiply twice on the diagonal, $(x^2)(-\cos x)$ and
-$(-2x)(-\sin x)$ and then once straight across, $(2)(-\sin x)$, and
+Now we multiply twice on the diagonal, $(x^2)(-\cos(x))$ and
+$(-2x)(-\sin(x))$ and then once straight across, $(2)(-\sin(x))$, and
 combine these as
-$$-x^2\cos x+2x\sin x-\int 2\sin x\d x,$$
+\[
+-x^2\cos(x)+2x\sin(x)-\int 2\sin(x)\d x,
+\]
 giving the same result as the second application of integration by
 parts. While this integral is easy, we may return yet once more to the
-table. Now multiply three times on the diagonal to get $
-(x^2)(-\cos x)$, $(-2x)(-\sin x)$, and $(2)(\cos x)$, and once
-straight across, $(0)(\cos x)$. We combine these as before to get
-$$
-  -x^2\cos x+2x\sin x +2\cos x+\int 0\d x=
-  -x^2\cos x+2x\sin x +2\cos x+C.
-$$
+table. Now multiply three times on the diagonal to get
+$(x^2)(-\cos(x))$, $(-2x)(-\sin(x))$, and $(2)(\cos(x))$, and once
+straight across, $(0)(\cos(x))$. We combine these as before to get
+\[
+  -x^2\cos(x)+2x\sin(x) +2\cos(x)+\int 0\d x=
+  -x^2\cos(x)+2x\sin(x) +2\cos(x)+C.
+\]
 Typically we would fill in the table one line at a time, until the
 ``straight across'' multiplication gives an easy integral. If we can
 see that the $u$ column will eventually become zero, we can instead
 fill in the whole table; computing the products as indicated will then
-give the entire integral, including the ``$+C\,$'', as above.
+give the entire integral, including the ``$+C$'', as above.
 
 \begin{exercises}
-
-Find the antiderivatives.
+\noindent Compute the indefinite integrals.
 
 \twocol
 
