@@ -100,4 +100,5 @@ Assessor::Application.routes.draw do
   get "explorations/trains" => "explorations#trains"
   get "explorations/fifths" => "explorations#fifths"
   get "explorations/euler" => "explorations#euler"
+  get "explorations/riemann" => "explorations#riemann"
 end
