@@ -158,7 +158,7 @@ var GraphPreview = {
       $( "#slider_<%= v %>" ).slider( "option", "step", 0.1 );
 
       $( "#slider_<%= v %>" ).slider({
-	  slide: function( event, ui ) { GraphPreview.bindings["<%= v %>"] = $( "#slider_<%= v %>" ).slider( "option", "value" );
+	  slide: function( event, ui ) { GraphPreview.bindings["<%= v %>"] = ui.value;
 					 window.setTimeout(GraphPreview.drawGraph,0); }
       });
 
