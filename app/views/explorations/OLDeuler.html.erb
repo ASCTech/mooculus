@@ -165,7 +165,7 @@ var GraphPreview = {
       $( "#slider_<%= v %>" ).slider( "option", "step", 0.1 );
 
       $( "#slider_<%= v %>" ).slider({
-	  slide: function( event, ui ) { GraphPreview.bindings["<%= v %>"] = ui.value;
+	  slide: function( event, ui ) { GraphPreview.bindings["<%= v %>"] = $( "#slider_<%= v %>" ).slider( "option", "value" );
 					 window.setTimeout(GraphPreview.drawGraph,0); }
       });
 
@@ -178,10 +178,10 @@ var GraphPreview = {
       $( "#steps" ).slider( "option", "min", 1/100 );
       $( "#steps" ).slider( "option", "max", 1/3 );
       $( "#steps" ).slider( "option", "step", 17/12000 );
-      $( "#steps" ).slider( "option", "value", 103/600 );
+      $( "#steps" ).slider( "option", "value", 23/120 );
 
       $( "#steps" ).slider({
-	  slide: function( event, ui ) { steps = 1/ui.value;
+	  slide: function( event, ui ) { steps = 1/$( "#steps" ).slider( "option", "value" );
 					 window.setTimeout(GraphPreview.drawGraph,0); }
       });
 
@@ -192,7 +192,7 @@ var GraphPreview = {
       $( "#y_start" ).slider( "option", "value", 0 );
 
       $( "#y_start" ).slider({
-	  slide: function( event, ui ) { y_start = ui.value;
+	  slide: function( event, ui ) { y_start = $( "#y_start" ).slider( "option", "value" );
 					 window.setTimeout(GraphPreview.drawGraph,0); }
       });
       
@@ -220,17 +220,17 @@ var GraphPreview = {
 
 <div id="sliders" style="float: right;">
 
-<div id="wrap_step" class="slider_wrap" style="padding-top: 12pt;  display:none; width: 310px;">
-    <span><script type="math/tex">h</script></span><div id="steps" style="width: 89%; float: right;"></div>
+<div id="wrap_step" class="slider_wrap" style="padding-top: 12pt;  display:none; width: 320px;">
+    <span><script type="math/tex">h</script></span><div id="steps" style="width: 90%; float: right;"></div>
 </div>
 
-<div id="wrap_y_start" class="slider_wrap" style="padding-top: 12pt;  display:none; width: 310px;">
-    <span><script type="math/tex">y(0)</script></span><div id="y_start" style="width: 89%; float: right;"></div>
+<div id="wrap_y_start" class="slider_wrap" style="padding-top: 12pt;  display:none; width: 320px;">
+    <span><script type="math/tex">y(0)</script></span><div id="y_start" style="width: 90%; float: right;"></div>
 </div>
 
 <% for v in 'a'..'z' %>
-<div id="wrap_<%= v %>" class="slider_wrap" style="padding-top: 12pt;  display:none; width: 310px;">
-    <span><script type="math/tex"><%= v %></script></span><div id="slider_<%= v %>" style="width: 89%; float: right;"></div>
+<div id="wrap_<%= v %>" class="slider_wrap" style="padding-top: 12pt;  display:none; width: 320px;">
+    <span><script type="math/tex"><%= v %></script></span><div id="slider_<%= v %>" style="width: 90%; float: right;"></div>
 </div>
 <% end %>
 

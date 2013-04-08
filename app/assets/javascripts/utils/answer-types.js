@@ -1469,7 +1469,131 @@ Khan.answerTypes = $.extend(Khan.answerTypes, {
 	    };
 	}
     },
+
+    	/*
+	* Takes either mathQuill latex input or a sting, parses it as a function of as many variables as have been used
+	* and checks equality with the answer by evaluating both at random complex inputs. 
+	*/
+    "definiteIntegral": {
+	setup: function(solutionarea, solution) {
+
+	    this.parsedExpressionId = 17;
+
+	    var endpoint_a = $('<p>a = <textarea class="parsed-expression"></textarea></p>');
+	    var endpoint_b = $('<p>b = <textarea class="parsed-expression"></textarea></p>');
+
+	    var tabs = $('<ul class="nav nav-tabs"><li class="active"><a href="#wysiwyg' + this.parsedExpressionId  + '" data-toggle="tab">WYSIWYG</a></li><li><a href="#plaintext' + this.parsedExpressionId + '" data-toggle="tab">Plain Text</a></li></ul>');
+
+	    $(solutionarea).append(endpoint_a);
+	    $(solutionarea).append(endpoint_b);
+	    $(solutionarea).append(tabs);
+
+	    endpoint_a = $(endpoint_a).find('textarea').eq(0);
+	    endpoint_b = $(endpoint_b).find('textarea').eq(0);
+
+	    var tabcontent = $('<div class="tab-content"></div>');
+	    $(solutionarea).append(tabcontent);	    
+
+	    var input_box = $('<div class="tab-pane active parsed-expression-answer-type" id="wysiwyg' + this.parsedExpressionId + '"></div>');
+	    $(tabcontent).append(input_box);
+
+	    var input = $('<span class="mathquill-editable"></span>');
+	    $(input_box).append(input);
+	    $(input).mathquill('editable');
+	    $(input).focus();
+
+	    $(input_box).append('<div class="MathPreview" style="width:100%;"><script type="math/tex"></script></div>');
+	    $(input_box).append('<div class="MathFunctionError" style="display: none; font-weight: bold; color: red;">Error: the expression is invalid.</div>');
+	    $(input_box).append('<div class="MathFunctionErrorForgetBackslash" style="display: none; font-weight: bold; color: red;">Warning: make sure that you use backslashes before functions!</div>');
+
+	    var old_input_box = $('<div class="tab-pane parsed-expression-answer-type" id="plaintext' + this.parsedExpressionId + '"></div>');
+	    $(tabcontent).append(old_input_box);
+
+	    var old_input = $('<textarea class="parsed-expression"></textarea>');
+	    $(old_input_box).append(old_input);
+
+	    $(old_input_box).append('<div class="MathPreview" style="width:100%;"><script type="math/tex"></script></div>');
+	    $(old_input_box).append('<div class="MathFunctionError" style="display: none; font-weight: bold; color: red;">Error: the expression is invalid.</div>');
+
+	    // The fallback variable is used in place of the answer, if no
+	    // answer is provided (i.e. the field is left blank)
+	    var fallback = $(solution).data("fallback");
+
+	    return {
+		validator: Khan.answerTypes["definiteIntegral"].createValidator(solution),
+		answer: function() {
+		    var text;
+
+		    if (input_box.hasClass('active'))
+			text = 'latex:' + $(input).mathquill('latex');
+		    if (old_input_box.hasClass('active'))
+			text = 'text:' + $(old_input).val();
+		    
+		    text = $(endpoint_a).val() + "|" + $(endpoint_b).val() + "|" + text;
+
+		    // return the value in the text box, or the fallback
+		    return text.length > 0 ?
+			text :
+			(fallback ? fallback + "" : "");
+		},
+		solution: $.trim($(solution).text()),
+		examples: ["A definte integral, with endpoints a and b, and integrand."],
+		showGuess: function(guess) {
+		    input.val(guess === undefined ? "" : guess);
+		}
+	    };
+	},
+	createValidator: function(solution) {
+	    var correct = $.trim($(solution).text());
+	    correct = correct.split( "|" );
+
+	    correct_endpoint_a = MathFunction.parse(correct[0]).evaluate({});
+	    correct_endpoint_b = MathFunction.parse(correct[1]).evaluate({});
+
+	    correct = MathFunction.parse(correct.slice(2, correct.length).join('|'));
+	    
+	    var correct_x = correct.variables()[0];
+	    if (correct_x == undefined)
+		correct_x = 'x';
+
+	    var correct_integral = correct.integrate( correct_x, correct_endpoint_a, correct_endpoint_b );
+
+	    return function(guess) {
+		guess = $.trim(guess);
+
+		guess = guess.split( "|" );
+
+		endpoint_a = MathFunction.parse(guess[0]).evaluate({});
+		endpoint_b = MathFunction.parse(guess[1]).evaluate({});
+		guess = guess.slice(2, guess.length).join('|');
+
+		var guess_expression;
+
+		if (guess.match(/^latex:/)) {
+		    guess = guess.replace(/^latex:/,'');
+		    guess_expression = MathFunction.parse_tex(guess);
+		}
+		    
+		if (guess.match(/^text:/)) {
+		    guess = guess.replace(/^text:/,'');
+		    guess_expression = MathFunction.parse(guess);
+		}
+
+		var x = guess_expression.variables()[0];
+		if (x == undefined)
+		    x = 'x';
+
+		var guess_integral = guess_expression.integrate( x, endpoint_a, endpoint_b );
+
+		if (Math.abs(guess_integral / correct_integral - 1.0) < 0.05)
+		    return true;
+
+		return false;
+	    };
+	}
+    },
     
+
     /*
     *Same as parsedExpression, but it checks to see if the derivative of the students response is the same as the solution.  So you should put
     *the integrand as the solution for antidifferentiation problems.  Only works for functions of x currently.

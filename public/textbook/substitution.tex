@@ -20,8 +20,8 @@ differentiable on the interval $[u(a),u(b)]$, then
 \]
 Next we apply the Fundamental Theorem of Calculus. 
 \begin{align*} 
-\int_a^b (f\circ u)'(x) \d x &= f(u(x)) \Biggr|_a^b \\
-&= f(x) \Biggr|_{u(a)}^{u(b)}\\ 
+\int_a^b (f\circ u)'(x) \d x &= f(u(x)) \bigg|_a^b \\
+&= f(x) \bigg|_{u(a)}^{u(b)}\\ 
 &= \int_{g(a)}^{g(b)} f'(u) \d u.
 \end{align*}
 \end{proof}
@@ -53,7 +53,7 @@ Set $u(x) = x^2$ so $u'(x) = 2x$ and now it must be that $f(u) =
 \frac{\cos(u)}{2}$. Now we see
 \begin{align*}
 \int_1^3 2x\cos(x^2)\d x &= \int_1^9 \frac{\cos(u)}{2}\d u\\
-&= \frac{\sin(u)}{2} \Biggr|_1^9 \\
+&= \frac{\sin(u)}{2} \bigg|_1^9 \\
 &= \frac{\sin(9) -\sin(1)}{2}.
 \end{align*}
 \end{solution}
@@ -100,7 +100,7 @@ Hence
 \]
 Now we see
 \begin{align*}
-\int_1^3 x\cos(x^2)\d x &=\frac{\sin(x^2)}{2}\Biggr|_1^3\\
+\int_1^3 x\cos(x^2)\d x &=\frac{\sin(x^2)}{2}\bigg|_1^3\\
 &= \frac{\sin(9) -\sin(1)}{2}.
 \end{align*}
 \end{solution}
@@ -140,8 +140,8 @@ Compute
 Let $u=\ln(x)$ so $du=\frac{1}{x}\d x$. Write
 \begin{align*}
 \int_{2}^{3} \frac{1}{x\ln(x)} \d x = \int_{\ln(2)}^{\ln(3)} \frac{1}{u} \d u\\
-&= \ln(u) \Biggr|_{\ln(2)}^{\ln(3)}\\
-& = \ln(\ln(4)) - \ln(\ln(2)).
+&= \ln(u) \bigg|_{\ln(2)}^{\ln(3)}\\
+& = \ln(\ln(3)) - \ln(\ln(2)).
 \end{align*}
 \end{solution}
 
@@ -164,11 +164,11 @@ in this case
 \[
 du = -2x \d x.
 \]
-Now consider our indefinite interal
+Now consider our indefinite integral
 \[
 \int x^3\sqrt{1-x^2}\d x,
 \]
-immedatiely we can substitute. Write
+immediately we can substitute. Write
 \[
 \int x^3\sqrt{1-x^2}\d x = \int -\frac{x^2\sqrt{u}}{2}\d u.
 \]
@@ -182,7 +182,7 @@ so now we may write
 \[
 \int x^3\sqrt{1-x^2}\d x = \int -\frac{(1-u)\sqrt{u}}{2}\d u.
 \]
-At this point, we are close to be being done. Write
+At this point, we are close to being done. Write
 \begin{align*}
 \int -\frac{(1-u)\sqrt{u}}{2}\d u &= \int \left(\frac{u\sqrt{u}}{2} - \frac{\sqrt{u}}{2}\right) \d u \\
 &= \int \frac{u^{3/2}}{2} \d u - \int \frac{\sqrt{u}}{2} \d u \\

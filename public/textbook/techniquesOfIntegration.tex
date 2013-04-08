@@ -1,0 +1,385 @@
+\chapter{Techniques of Integration}
+
+\section{Powers of Sine and Cosine}
+
+
+Functions consisting of products of the sine and cosine can be
+integrated by using substitution and trigonometric identities. These
+can sometimes be tedious, but the technique is straightforward. The
+basic idea in each case is to somehow take advantage of a
+trigonometric identity, usually:
+\[
+\cos^2(x) + \sin^2(x) = 1, \qquad \sin^2(x) = \frac{1-\cos(2x)}{2}, \qquad \cos^2(x)= \frac{1+\cos(2x)}{2}.
+\]
+Some examples will suffice to explain the approach.
+
+\begin{example}
+Compute
+\[\int \sin^5 x\d x.
+\]
+\end{example}
+
+\begin{solution}
+Rewrite the function:
+$$
+  \int \sin^5 x\d x=\int \sin x \sin^4 x\d x=
+  \int \sin x (\sin^2 x)^2\d x=
+  \int \sin x (1-\cos^2 x)^2\d x.
+$$
+Now use $u=\cos x$, $du=-\sin x\d x$:
+\begin{align*}
+  \int \sin x (1-\cos^2 x)^2\d x&=\int -(1-u^2)^2\d u \\
+  &=\int -(1-2u^2+u^4)\d u \\
+  &=-u+{2\over3}u^3-{1\over5}u^5+C \\
+  &=-\cos x+{2\over3}\cos^3 x-{1\over5}\cos^5x+C. 
+\end{align*}
+\end{solution}
+
+\begin{example}
+Evaluate 
+\[
+\int \sin^6 x\d x.
+\]
+\end{example}
+
+\begin{solution}
+Use $\sin^2x =(1-\cos(2x))/2$ to rewrite the function:
+\begin{align*}
+  \int \sin^6 x\d x=\int (\sin^2 x)^3\d x&=
+  \int {(1-\cos 2x)^3\over 8}\d x \\
+  &={1\over 8}\int 1-3\cos 2x+3\cos^2 2x-\cos^3 2x\d x.
+\end{align*}
+Now we have four integrals to evaluate:
+$$\int 1\d x=x$$
+and
+$$\int -3\cos 2x\d x = -{3\over 2}\sin 2x$$
+are easy. The $\cos^3 2x$ integral is like the previous example:
+\begin{align*}
+  \int -\cos^3 2x\d x&=\int -\cos 2x\cos^2 2x\d x \\
+  &=\int -\cos 2x(1-\sin^2 2x)\d x \\
+  &=\int -{1\over 2}(1-u^2)\d u \\
+  &=-{1\over 2}\left(u-{u^3\over 3}\right) \\
+  &=-{1\over 2}\left(\sin 2x-{\sin^3 2x\over 3}\right).
+\end{align*}
+And finally we use another trigonometric identity,
+$\cos^2x=(1+\cos(2x))/2$:
+$$
+  \int 3\cos^2 2x\d x=3\int {1+\cos 4x\over 2}\d x=
+  {3\over 2}\left(x+{\sin 4x\over 4}\right).
+$$
+So at long last we get
+$$
+  \int \sin^6 x\d x = {x\over8} -{3\over 16}\sin 2x 
+  -{1\over 16}\left(\sin 2x-{\sin^3 2x\over 3}\right)
+  +{3\over 16}\left(x+{\sin 4x\over 4}\right)+C.
+$$
+\end{solution}
+
+\begin{example}
+Compute 
+\[
+\int \sin^2x\cos^2x\d x.
+\]
+\end{example}
+\begin{solution} 
+Use the formulas
+$\sin^2x =(1-\cos(2x))/2$ and $\cos^2x =(1+\cos(2x))/2$ to get:
+$$
+  \int \sin^2x\cos^2x\d x=\int {1-\cos(2x)\over2}\cdot
+  {1+\cos(2x)\over2}\d x.
+$$
+The remainder is left as an exercise.
+\end{solution}
+
+\begin{exercises}
+
+\noindent Find the antiderivatives.
+
+\twocol
+
+\begin{exercise} $\int \sin^2 x\d x$
+\begin{answer} $x/2-\sin(2x)/4+C$
+\end{answer}\end{exercise}
+
+\begin{exercise} $\int \sin^3 x\d x$
+\begin{answer} $-\cos x+(\cos^3x)/3+C$
+\end{answer}\end{exercise}
+
+\begin{exercise} $\int \sin^4 x\d x$
+\begin{answer} $3x/8-(\sin 2x)/4+(\sin 4x)/32+C$
+\end{answer}\end{exercise}
+
+\begin{exercise} $\int \cos^2 x\sin^3 x\d x$
+\begin{answer} $(\cos^5 x)/5-(\cos^3x)/3+C$
+\end{answer}\end{exercise}
+
+\begin{exercise} $\int \cos^3 x\d x$
+\begin{answer} $\sin x-(\sin^3x)/3+C$
+\end{answer}\end{exercise}
+
+\begin{exercise} $\int \sin^2 x\cos^2 x\d x$
+\begin{answer} $x/8-(\sin 4x)/32+C$
+\end{answer}\end{exercise}
+
+\begin{exercise} $\int \cos^3 x \sin^2 x\d x$
+\begin{answer} $(\sin^3x)/3-(\sin^5x)/5+C$
+\end{answer}\end{exercise}
+
+\begin{exercise} $\int \sin x (\cos x)^{3/2}\d x$
+\begin{answer} $-2(\cos x)^{5/2}/5+C$
+\end{answer}\end{exercise}
+
+\begin{exercise} $\int \sec^2 x\csc^2 x\d x$
+\begin{answer} $\tan x-\cot x+C$
+\end{answer}\end{exercise}
+
+\begin{exercise} $\int \tan^3x \sec x\d x$
+\begin{answer} $(\sec^3x)/3-\sec x+C$
+\end{answer}\end{exercise}
+
+\endtwocol
+
+\end{exercises}
+
+
+
+
+
+
+
+
+
+
+
+
+
+\section{Integration by Parts}
+
+While integration by substitution allows us to identify and ``undo''
+the chain rule, \textit{integration by parts} allows us to recognize
+the product rule.
+
+\begin{mainTheorem}[Integration by Parts Formula] 
+If $f(x)g(x)$ is differentiable on the interval $[a,b]$, then
+\[
+\int_a^b f(x) g'(x) \d x =f(x)g(x) \bigg|_a^b - \int_a^b f'(x) g(x) \d x.
+\]
+\end{mainTheorem}
+\begin{proof} First note by the power rule we have
+\[
+\ddx f(x)g(x) = f(x)g'(x) + f'(x) g(x).
+\]
+Now integrate both sides of the equation above
+\[
+\int_a^b \ddx f(x) g(x) \d x = \int_a^b \left(f(x)g'(x) + f'(x) g(x)\right) \d x.
+\]
+By the Fundamental Theorem of Calculus, the left-hand side of the equation is
+\[
+f(x)g(x) \bigg|_a^b.
+\]
+However, by properties of integrals the right-hand side is equal to 
+\[
+\int_a^b f(x)g'(x)\d x + \int_a^b f'(x) g(x) \d x.
+\]
+Hence
+\[
+f(x)g(x) \bigg|_a^b = \int_a^b f(x)g'(x)\d x + \int_a^b f'(x) g(x) \d x.
+\]
+and so 
+\[
+ \int_a^b f(x)g'(x)\d x = f(x)g(x) \bigg|_a^b -  \int_a^b f'(x) g(x) \d x.
+\]
+\end{proof}
+
+
+Integration by parts is often written in a more compact form
+\[
+\int u\d v = uv-\int v\d u,
+\]
+where $u=f(x)$, $v=g(x)$, $du=f'(x)\d x$ and $dv=g'(x)\d x$.  To use
+this technique we need to identify likely candidates for $u=f(x)$ and
+$dv=g'(x)\d x$.
+
+
+
+\begin{example}
+Compute
+\[
+\int \ln(x)\d x.
+\]
+\end{example}
+
+\begin{solution}
+Let $u=\ln(x)$ so $du=1/x\d x$. Hence,  $dv=1\d x$ so $v=x$
+and so 
+\begin{align*}
+ \int \ln(x)\d x&=x\ln (x)-\int \frac{x}{x}\d x\\
+&= x\ln (x)- x+C.\\
+\end{align*}
+\end{solution}
+
+\begin{example}
+Compute
+\[
+\int x\sin(x) \d x.
+\]
+\end{example}
+
+\begin{solution} Let $u=x$ so $du=dx$. Hence, $dv=\sin(x)\d x$ so $v=-\cos(x)$ and
+\begin{align*}
+\int x\sin(x)\d x &=-x\cos(x)-\int -\cos(x)\d x\\
+&= -x\cos(x)+\int \cos(x)\d x\\
+&=-x\cos(x)+\sin x+C.
+\end{align*}
+\end{solution}
+
+
+\begin{example}
+Compute
+\[
+\int x^2\sin(x)\d x.
+\] 
+\end{example}
+
+\begin{solution}
+Let $u=x^2$, $dv=\sin(x)\d x$; then $du=2x\d x$ and $v=-\cos(x)$. 
+Now 
+\[
+\int x^2\sin(x)\d x=-x^2\cos(x)+\int 2x\cos(x)\d x.
+\] 
+This is better than the original integral, but we need to do
+integration by parts again. Let $u=2x$, $dv=\cos(x)\d x$; then $du=2$
+and $v=\sin(x)$, and
+\begin{align*}
+  \int x^2\sin(x)\d x &=-x^2\cos(x)+\int 2x\cos(x)\d x \\
+  &=-x^2\cos(x)+ 2x\sin(x) - \int 2\sin(x)\d x \\
+  &=-x^2\cos(x)+ 2x\sin(x) + 2\cos(x) + C. 
+\end{align*}
+\end{solution}
+
+Such repeated use of integration by parts is fairly common, but it can
+be a bit tedious to accomplish, and it is easy to make
+errors, especially sign errors involving the subtraction in the
+formula. There is a nice tabular method to accomplish the calculation
+that minimizes the chance for error and speeds up the whole
+process. We illustrate with the previous example. Here is the
+table:
+\[
+\begin{array}{|c|c|c|}\hline
+\text{sign} & u & dv \\ \hline \hline
+ & x^2 & \sin(x) \\ \hline
+- & 2x & -\cos(x) \\ \hline
+  & 2  & -\sin(x) \\ \hline
+- & 0  & \cos(x) \\ \hline
+\end{array}
+\qquad\text{or}\qquad
+\begin{array}{|c|c|}\hline
+u & dv \\ \hline\hline
+x^2 & \sin(x) \\ \hline 
+-2x & -\cos(x) \\\hline
+2 & -\sin(x)\\\hline
+0 & \cos(x)\\\hline
+\end{array}
+\]
+
+To form the first table, we start with $u$ at the top of the second
+column and repeatedly compute the derivative; starting with $dv$ at
+the top of the third column, we repeatedly compute the
+antiderivative. In the first column, we place a ``$-$'' in every
+second row. To form the second table we combine the first and second
+columns by ignoring the boundary; if you do this by hand, you may
+simply start with two columns and add a ``$-$'' to every second row.
+
+To compute with this second table we begin at the top. Multiply the
+first entry in column $u$ by the second entry in column $dv$ to get
+$-x^2\cos(x)$, and add this to the integral of the product of the
+second entry in column $u$ and second entry in column $dv$.  This
+gives:
+$$-x^2\cos(x)+\int 2x\cos(x)\d x,$$
+or exactly the result of the first application of integration by
+parts.  Since this integral is not yet easy, we return to the table.
+Now we multiply twice on the diagonal, $(x^2)(-\cos(x))$ and
+$(-2x)(-\sin(x))$ and then once straight across, $(2)(-\sin(x))$, and
+combine these as
+\[
+-x^2\cos(x)+2x\sin(x)-\int 2\sin(x)\d x,
+\]
+giving the same result as the second application of integration by
+parts. While this integral is easy, we may return yet once more to the
+table. Now multiply three times on the diagonal to get
+$(x^2)(-\cos(x))$, $(-2x)(-\sin(x))$, and $(2)(\cos(x))$, and once
+straight across, $(0)(\cos(x))$. We combine these as before to get
+\[
+  -x^2\cos(x)+2x\sin(x) +2\cos(x)+\int 0\d x=
+  -x^2\cos(x)+2x\sin(x) +2\cos(x)+C.
+\]
+Typically we would fill in the table one line at a time, until the
+``straight across'' multiplication gives an easy integral. If we can
+see that the $u$ column will eventually become zero, we can instead
+fill in the whole table; computing the products as indicated will then
+give the entire integral, including the ``$+C$'', as above.
+
+\begin{exercises}
+\noindent Compute the indefinite integrals.
+
+\twocol
+
+\begin{exercise} $\int x\cos x\d x$
+\begin{answer} $\cos x+x\sin x+C$
+\end{answer}\end{exercise}
+
+\begin{exercise} $\int x^2\cos x\d x$
+\begin{answer} $x^2\sin x-2 \sin x+2x\cos x +C$
+\end{answer}\end{exercise}
+
+\begin{exercise} $\int xe^x\d x$
+\begin{answer} $(x-1)e^x +C$
+\end{answer}\end{exercise}
+
+\begin{exercise} $\int xe^{x^2}\d x$
+\begin{answer} $(1/2)e^{x^2} +C$
+\end{answer}\end{exercise}
+
+\begin{exercise} $\int \sin^2 x\d x$
+\begin{answer} $(x/2)-\sin(2x)/4 +C$
+\end{answer}\end{exercise}
+
+\begin{exercise} $\int \ln x\d x$
+\begin{answer} $x\ln x-x +C$
+\end{answer}\end{exercise}
+
+\begin{exercise} $\int x\arctan x\d x$
+\begin{answer} $(x^2\arctan x +\arctan x -x)/2+C$
+\end{answer}\end{exercise}
+
+\begin{exercise} $\int x^3\sin x\d x$
+\begin{answer} $-x^3\cos x+3x^2\sin x+6x\cos x-6\sin x+C$
+\end{answer}\end{exercise}
+
+\begin{exercise} $\int x^3\cos x\d x$
+\begin{answer} $x^3\sin x+3x^2\cos x-6x\sin x-6\cos x+C$
+\end{answer}\end{exercise}
+
+\begin{exercise} $\int x\sin^2 x\d x$
+\begin{answer} $x^2/4-(\cos^2 x)/4-(x\sin x\cos x)/2+C$
+\end{answer}\end{exercise}
+
+\begin{exercise} $\int x\sin x\cos x\d x$
+\begin{answer} $x/4-(x\cos^2 x)/2+(\cos x\sin x)/4+C$
+\end{answer}\end{exercise}
+
+\begin{exercise} $\int \arctan(\sqrt x)\d x$
+\begin{answer} $x\arctan(\sqrt x)+\arctan(\sqrt x)-\sqrt{x}+C$
+\end{answer}\end{exercise}
+
+\begin{exercise} $\int \sin(\sqrt x)\d x$
+\begin{answer} $2\sin(\sqrt x)-2\sqrt x\cos(\sqrt x)+C$
+\end{answer}\end{exercise}
+
+\begin{exercise} $\int\sec^2 x\csc^2 x\d x$
+\begin{answer} $\sec x\csc x-2\cot x+C$
+\end{answer}\end{exercise}
+
+\endtwocol
+
+\end{exercises}
