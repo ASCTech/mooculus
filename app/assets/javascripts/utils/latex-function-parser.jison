@@ -27,13 +27,13 @@
 "\\cdot"                return '*'
 "\\pi"                  return 'PI'
 "\\frac"                return 'FRAC'
-"\\pi"                  return 'PI'
-"\\sin"\^                 return 'SIN_POWER'
-"\\cos"\^                 return 'COS_POWER'
-"\\tan"\^                 return 'TAN_POWER'
-"\\csc"\^                 return 'CSC_POWER'
-"\\sec"\^                 return 'SEC_POWER'
-"\\cot"\^                 return 'COT_POWER'
+"\pi"                   return 'PI'
+"\\sin"\^               return 'SIN_POWER'
+"\\cos"\^               return 'COS_POWER'
+"\\tan"\^               return 'TAN_POWER'
+"\\csc"\^               return 'CSC_POWER'
+"\\sec"\^               return 'SEC_POWER'
+"\\cot"\^               return 'COT_POWER'
 "\\sin"                 return 'SIN'
 "\\cos"                 return 'COS'
 "\\tan"                 return 'TAN'
@@ -72,6 +72,10 @@
 
 number
     : NUMBER {$$ = parseFloat(yytext.replace(',','.'));}
+    | E
+        {$$ = "e";}
+    | PI
+        {$$ = "pi";}
     | '{' number '}' {$$ = $2;}
 ;
 
@@ -87,10 +91,6 @@ term
         { $$ = $1; }
     | VARIABLE
         {$$ = yytext;}
-    | E
-        {$$ = "e";}
-    | PI
-        {$$ = "pi";}
     | '(' e ')'
         {$$ = $2;}
     | '{' e '}'
