@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html data-require="math word-problems steveMath8 graphie math-function-parser">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>Arclength</title>
+    <script src="../khan-exercise.js"></script>
+</head>
+<body>
+  <div class="exercise">
+  
+    <div class="problems">
+    
+      
+      
+      <div id="funcVertical">
+        	<div class="vars">
+        		
+        		<var id="A">randRange(2,10)</var>
+        		<var id="V">randRange(-4,A)</var>
+				<var id="B">randRange(2,10)</var>
+				<var id="C">randRange(2,10)</var>
+				<var id="L">randRange(1,10)</var>
+				<var id="U">L+randRange(1,5)</var>
+				<var id="n">randRange(2,5)</var>
+				<var id="functionBank">["cos(x)","sin(x)","x^"+n,"arctan(x)","sqrt(10+x)",""+A+"x+"+B, ""+A+"x^2+"+B+"x+"+C]</var>
+				<var id="fNum">randRange(0,6)</var>
+				<var id="gNum">randRangeExclude(0,4,[fNum])</var>
+				<var id="f">functionBank[fNum]</var>
+				<var id="g">(function(){
+							if ( fNum &gt; 4){
+								return "x"
+								}
+							else {
+								return functionBank[gNum]
+								}
+							})</var>
+				<var id="EXP">MathFunction.parse(f.replace("x",g))</var>
+  			  </div>
+        	
+        	<p class="question">
+        		Consider the graph of the function <code>f(x) = <var>EXP.tex()</var> </code> between <code>x=<var>L</var></code> and <code>x=<var>U</var></code>.
+        		Write an integral representing the length of this graph.
+        	</p>
+        <p class="solution" data-type="definiteIntegral">
+        	<var>L</var>|<var>U</var>| sqrt(1+(<var>EXP.derivative("x").toString()</var>)^2)
+        </p>
+        <div class="hints">
+        	<p>
+        		The formula for the length of a function <code>f</code> from <code>x = a</code> to <code>x=b</code> is <code>\displaystyle\int_a^b \sqrt{1+\left[ f'(x)\right]^2} dx</code>
+        	</p>
+        	<p>
+        		In this case, <code>f'(x) = <var>EXP.derivative("x").tex()</var></code>
+        	</p>
+        	<p>
+        		Thus, the integral we seek is <code>\displaystyle\int_{<var>L</var>}^{<var>U</var>} \sqrt{1+\left[ <var>EXP.derivative("x").tex()</var> \right]^2}</code>.
+        	</p>
+        </div>
+       
+      </div>
+      
+      
+      
+    </div>
+  </div>
+</body>

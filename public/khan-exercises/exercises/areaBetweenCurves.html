@@ -1,0 +1,137 @@
+<html data-require="math word-problems steveMath8 graphie math-function-parser">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>Areas of regions between functions</title>
+    <script src="../khan-exercise.js"></script>
+</head>
+<body>
+  <div class="exercise">
+  
+    <div class="problems">
+    
+<div id="funcX">
+        	<div class="vars">
+        		<var id="A">randRange(2,10)</var>
+				<var id="B">randRange(2,10)</var>
+				<var id="C">randRange(2,10)</var>
+				<var id="L">randRange(1,10)</var>
+				<var id="U">L+randRange(1,5)</var>
+				<var id="n">randRange(2,5)</var>
+				<var id="functionBank">["cos(x)","sin(x)","x^"+n,"arctan(x)","sqrt(10+x)",""+A+"x+"+B, ""+A+"x^2+"+B+"x+"+C]</var>
+				<var id="fNum">randRange(0,6)</var>
+				<var id="gNum">randRangeExclude(0,4,[fNum])</var>
+				<var id="f">functionBank[fNum]</var>
+				<var id="g">(function(){
+							if ( fNum &gt; 4){
+								return "x"
+								}
+							else {
+								return functionBank[gNum]
+								}
+							})</var>
+				<var id="EXP">MathFunction.parse(f.replace("x",g))</var>
+			 	
+			 	<var id="A2">randRange(2,10)</var>
+				<var id="B2">randRange(2,10)</var>
+				<var id="C2">randRange(2,10)</var>
+				<var id="n2">randRange(2,5)</var>
+				<var id="functionBank2">["cos(x)","sin(x)","x^"+n,"arctan(x)","sqrt(10+x)",""+A+"x+"+B, ""+A+"x^2+"+B+"x+"+C]</var>
+				<var id="fNum2">randRangeExclude(0,6,[fNum])</var>
+				<var id="gNum2">randRangeExclude(0,4,[fNum2])</var>
+				<var id="f2">functionBank[fNum2]</var>
+				<var id="g2">(function(){
+							if ( fNum2 &gt; 4){
+								return "x"
+								}
+							else {
+								return functionBank[gNum2]
+								}
+							})</var>
+				<var id="EXP2">MathFunction.parse(f2.replace("x",g2))</var>
+  			  </div>
+        	
+        	<p class="question">
+        		Write an integral representing the area of the region bounded by the lines <code>x=<var>L</var></code>, <code>x=<var>U</var></code>, the function <code>f(x)=<var>EXP.tex()</var></code>, 
+        		and the function <code>g(x) = <var>EXP2.tex()</var> </code>.  
+        	</p>
+        	<p>
+        		Hint:  to express this area as a single integral, you may need to use the absolute value function!
+        	</p>
+        <p class="solution" data-type="definiteIntegral">
+        	<var>L</var>|<var>U</var>|abs(<var>EXP2.toString()</var> - <var>EXP.toString()</var>)
+        </p>
+        <div class="hints">
+        	<div>
+        		<p>
+        			 <div class="graphie" id="grid">
+            graphInit({
+            range: [[-1,4],[-2,16]],
+            scale: [80,20],
+            tickStep: 1,
+			gridOpacity: 0.00005,
+            axisOpacity: 0.5,
+            tickOpacity: 0.00004,
+            
+              });
+                    
+              plot(function( x ) {
+              return ( x*x+3);
+              }, [-12, 12], {
+              stroke: RED,
+              strokeWidth: 2
+              });
+              
+               plot(function( x ) {
+              return ( x);
+              }, [-12, 12], {
+              stroke: RED,
+              strokeWidth: 2
+              });
+              
+              label([3.7,3.7*3.7+1.5],"f");
+              label([1,-.3],"a");
+              label([3,-.3],"b");
+              
+              var p = function(x){return x*x+3};
+              var k = function(x){return x};
+              
+              label([3.7,p(3.7)+.5],"f");
+              label([3.7,k(3.7)+.5],"g");
+              label([1,-.3],"a");
+              label([3,-.3],"b");
+              
+              for (var n = 0;n&lt;10;n++){
+				  
+				  line([1+n/5,k(1+n/5)],[1+n/5,p(1+(n+1)/5)]);
+				  line([1+n/5,p(1+(n+1)/5)],[1+(n+1)/5,p(1+(n+1)/5)]);
+				  line([1+(1+n)/5,p(1+(n+1)/5)],[1+(1+n)/5,k(1+(1+n)/5)]);
+				   line([1+(1+n)/5,k(1+(n+1)/5)],[1+n/5,k(1+(1+n)/5)]);
+				  
+              	  }
+              
+               
+          </div>
+        		</p>
+        		<p>
+        			As you can see from the picture, we can approximate the volume of this region by summing the 
+        			areas of a large number of rectangles.  Say that the width of each subinterval is <code>\Delta x</code>
+        			and that a point <code>x_i</code> in each subinterval has been chosen. 
+        		</p>
+        		<p>
+        			The area of each rectangle is <code> \left| f(x_i) - g(x_i) \right| \Delta x</code>.
+        		</p>
+        		<p>
+        			Thus the total area of all the rectangles is <code>\displaystyle\sum_{1}^{n} \left| f(x_i) - g(x_i) \right| \Delta x</code>.  
+        			What integral is this the Riemann sum for?
+        		</p>
+        	</div>
+        	<p>
+        		The integral is <code>\displaystyle\int_{<var>L</var>}^{<var>U</var>} \left| f(x) - g(x) \right| dx =  \displaystyle\int_{<var>L</var>}^{<var>U</var>} \left| <var>EXP.tex()</var> -<var>EXP2.tex()</var>\right| dx </code>
+        	</p>
+        </div>
+       
+      </div>
+            
+    </div>
+  </div>
+</body>

@@ -120,4 +120,7 @@ definiteIntegralParts.html
 variableSub1.html
 variableSub2.html
 integrationByParts1.html
+introWeek15.html
+areaBetweenCurves.html
 volumeRevolution.html
+arclength.html
