@@ -1,7 +1,7 @@
 if (typeof require === "function") {
     $ = require('jquery')
     mathFunctionParser = require('./math-function-parser.js');
-    latexFunctionParser = require('./math-function-parser.js');
+    latexFunctionParser = require('./latex-function-parser.js');
 }
 
 var MathFunction = (function () {
@@ -392,7 +392,7 @@ var MathFunction = (function () {
 	var result = leaves( tree );
 
 	result = $.grep( result, function(v,i) {
-	    return (typeof v === 'string') && (v != "e")
+	    return (typeof v === 'string') && (v != "e") && (v != "pi")
 	});
 
 	result = result.filter(function(itm,i,a){
