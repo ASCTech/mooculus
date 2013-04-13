@@ -14,4 +14,7 @@ class ExplorationsController < ApplicationController
 
   def euler
   end
+
+  def riemann
+  end
 end

@@ -1,6 +1,11 @@
+
 <script>
 
 <% resolution = 500 %>
+
+	var h = 25;
+	var sum;
+	var adjust = 0.5;
 
 var GraphPreview = {
     f: MathFunction.parse("x"),
@@ -24,13 +29,19 @@ var GraphPreview = {
 	
 	var resolution = <%= resolution %>;
 
+	paper.clear();
+
+   sum = 0;
+
+console.log(adjust);
+
 	var path = '';
 	var code = 'M';
 	var overrender = 1;
 	for( var i=0; i<overrender * resolution; i ++ ) {
 	    var x = i * (x2 - x1) / (overrender * resolution) + x1;
 	    var x_pixel = Math.round(i / overrender);
-	    bindings["x"] = x + 0.0000001;
+	    bindings["x"] = x;
 	    var y = f.evaluate( bindings );
 	    var y_pixel = Math.round(resolution - j);
 	    var j = (y - y1) * resolution / (y2 - y1);
@@ -46,10 +57,26 @@ var GraphPreview = {
 		code = 'L';
 	    } else {
 		code = 'M';
+	    }    	 	    
+	    
+	    if(i%h==0){
+	    bindings["x"] = x + adjust*h/25;
+
+	    var y3 = f.evaluate( bindings );
+	    var j2 = (y3 - y1) * resolution / (y2 - y1);
+	    sum += y3;
+		 if(Math.round(resolution - j2)<250){
+		 var r = paper.rect(x_pixel,Math.round(resolution - j2),h,250-Math.round(resolution - j2));
+		 r.attr({fill: '#778899', stroke: '#000', 'stroke-width': 0.25});		 
+		 }
+		 
+		 if(Math.round(resolution - j2)>250){
+		 var r = paper.rect(x_pixel,250,h,Math.round(resolution - j2)-250);
+		 r.attr({fill: '#b22222', stroke: '#000', 'stroke-width': 0.25});
+		 } 	   	    
 	    }
 	}
-	paper.clear();
-	
+		
 	var p = paper.path( path );
 	p.attr("stroke-width", "4");	
 
@@ -71,6 +98,11 @@ var GraphPreview = {
 	    var p = paper.path( grid );
 	    p.attr("opacity", "0.15");	
 	}
+	
+		var sum2 = MathJax.Hub.getAllJax($("#sum_est2")[0])[0];	  
+		var text2 = "\\sum_{i=1}^n f(x_i^*)\\Delta x = " + sum/h;
+		MathJax.Hub.Queue(["Text",sum2,text2]);	
+	
     },
 
     update: function () {
@@ -78,13 +110,21 @@ var GraphPreview = {
 	var text = document.getElementById("MathInput").value; 
 	if (text.length > 0) {
 	    var math = MathJax.Hub.getAllJax($("#MathPreview")[0])[0];
+	    
+		 var sum2 = MathJax.Hub.getAllJax($("#sum_est2")[0])[0];	    	    
+	    
 	    try
 	    {
                 var f = this.f = MathFunction.parse(text);
-		var text = 'y = ' + f.tex();
+		var text = 'f(x) = ' + f.tex();
 		MathJax.Hub.Queue(["Text",math,text]);
+		var text2 = "\\sum_{i=1}^n f(x_i^*)\\Delta x = " + sum;
+		MathJax.Hub.Queue(["Text",sum2,text2]);
 		$("#MathFunctionError").hide();
 		$("#MathPreview").show();
+		
+		$("#sum_est2").show();
+      $("#sum_est").show();
 
                 var vars = f.variables();
 
@@ -96,6 +136,8 @@ var GraphPreview = {
 		});
 
 		$("#sliders").children().hide();
+		$("#wrap_step").show();
+      $("#sample_slide").show();
 		for( var i=0; i<vars.length; i++ ) {
 		    $("#wrap_" + vars[i]).show();
 		}
@@ -111,11 +153,15 @@ var GraphPreview = {
 	    {
 		$("#MathFunctionError").show();
 		$("#MathPreview").hide();
+ 		$("#sum_est2").hide();
+      $("#sum_est").hide();
 		$("#claim").hide();
 	    }
 	} else {
 	    $("#MathPreview").hide();
 	    $("#claim").hide();
+	    $("#sum_est2").hide();
+       $("#sum_est").hide();
 	}
     },
 };
@@ -167,26 +213,63 @@ var GraphPreview = {
 
 	  <% end %>
 
-      var text = "(a+1)*x^2";
+      $( "#steps" ).slider();
+      $( "#steps" ).slider( "option", "min", 3 );
+      $( "#steps" ).slider( "option", "max", 47 );
+      $( "#steps" ).slider( "option", "step", 2 );
+      $( "#steps" ).slider( "option", "value", 25 );
+
+      $( "#steps" ).slider({
+	  slide: function( event, ui ) { h = ui.value;
+					 window.setTimeout(GraphPreview.drawGraph,0); }
+      });
+
+      $( "#sample" ).slider();
+      $( "#sample" ).slider( "option", "min", 0 );
+      $( "#sample" ).slider( "option", "max", 1 );
+      $( "#sample" ).slider( "option", "step", 0.5 );
+      $( "#sample" ).slider( "option", "value", 0.5 );
+
+      $( "#sample" ).slider({
+	  slide: function( event, ui ) { adjust = ui.value;				 
+					  window.setTimeout(GraphPreview.drawGraph,0);}
+      });
+
+      var text = "(a+5)*arctan(x)*sin(x-4)";
       document.getElementById("MathInput").value = text;
       GraphPreview.f = MathFunction.parse(text);
       $("#MathPreview").show();
       $("#claim").show();
       $("#wrap_a").show();
+      $("#wrap_step").show();
+      $("#sample_slide").show();
+      $("#sum_est2").show();
+      $("#sum_est").show();
       window.setTimeout(GraphPreview.drawGraph,0);
+
+
 
   });
 
 </script>
 
 <div class="page-header">
-  <h1>Graph! <small>Control other variables with sliders.</small></h1>
+  <h1>Riemann sums! <small>Control the step size and sample points with the sliders and buttons.</small></h1>
 </div>
 
 <div id="graph" style="float: left; padding-right: 12pt; padding-bottom: 12pt; font-family: 'Computer Modern'; width: <%= resolution %>px; height: <%= resolution %>px;"></div>
 <div>
 
 <div id="sliders" style="float: right;">
+
+<div id="wrap_step" class="slider_wrap" style="padding-top: 12pt;  display:none; width: 300px;">
+    <span><script type="math/tex">\Delta x</script></span><div id="steps" style="width: 90%; float: right;"></div>
+</div>
+
+<div id="sample_slide" class="slider_wrap" style="padding-top: 12pt;  display:none; width: 300px;">
+    <span><script type="math/tex">x_i^*</script></span><div id="sample" style="width: 90%; float: right;"></div>
+</div>
+
 <% for v in 'a'..'z' %>
 <div id="wrap_<%= v %>" class="slider_wrap" style="padding-top: 12pt;  display:none; width: 300px;">
     <span><script type="math/tex"><%= v %></script></span><div id="slider_<%= v %>" style="width: 90%; float: right;"></div>
@@ -195,11 +278,16 @@ var GraphPreview = {
 </div>
 
 <div>
-    <script type="math/tex">y = </script>&nbsp;<input class="function" id="MathInput" onkeyup="GraphPreview.update()" autocomplete="off" type="text" value="" />
+    <script type="math/tex">f(x) = </script>&nbsp;<input class="function" id="MathInput" onkeyup="GraphPreview.update()" autocomplete="off" type="text" value="" />
 </div>
 
-    <div id="claim" style="display: none; font-family: 'Computer Modern';"><span id="MathPreview"><script type="math/tex">y = \left( (a+1) \cdot x^2 \right)</script></span>.</div>
+<div id="claim" style="display: none; font-family: 'Computer Modern';"><span id="MathPreview"><script type="math/tex">f(x) = \left( (a+5))*arctan(x)*sin(x-4) \right)</script></span>.</div>
+
 <div id="MathFunctionError" style="display: none; font-weight: bold; color: red;">Error: the expression is invalid.</div>
 
+
+<div id="sum_est" style="display: none; font-family: 'Computer Modern';">
+    <span id="sum_est2"><script type="math/tex">\sum_{i=1}^n f(x_i^*)\Delta x = -0.37807271127852926.</script></span>
+</div>
 
 </div>
