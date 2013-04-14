@@ -135,4 +135,7 @@ variableSub2
 * Week 14
 integrationByParts1
 * Week 15
+introWeek15
+areaBetweenCurves
 volumeRevolution
+arclength
