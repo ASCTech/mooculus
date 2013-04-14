@@ -746,92 +746,104 @@ Find the volume of the solid.
 
 \section{Arc Length}
 
-Here is another geometric application of the integral: find the length
-of a portion of a curve. As usual, we need to think about how we might
-approximate the length, and turn the approximation into an integral.
+Here is another geometric application of the integral, finding the
+length of a portion of a curve. As usual, we need to think about how
+we might approximate the length, and turn the approximation into an
+integral.
+
+\begin{marginfigure}[0in]
+\begin{tikzpicture}
+  \begin{axis}[
+      xmin=0, xmax=7, ymin=0, ymax=5,
+      clip=false,
+      ticks=none,
+      axis lines =center, xlabel=$x$, ylabel=$y$,
+      every axis y label/.style={at=(current axis.above origin),anchor=south},
+      every axis x label/.style={at=(current axis.right of origin),anchor=west},
+      axis on top,
+    ] 
+    \addplot [very thick, penColor] plot coordinates {(3,2) (6,4)};
+    \addplot [dashed, textColor] plot coordinates {(3,2) (6,2)};
+    \addplot [dashed, textColor] plot coordinates {(6,4) (6,2)};
+    \addplot[color=penColor,fill=penColor,only marks,mark=*] coordinates{(3,2)};  %% closed hole
+    \addplot[color=penColor,fill=penColor,only marks,mark=*] coordinates{(6,4)};  %% closed hole
+    \node at (axis cs:3,2) [anchor=east] {$(x_0,y_0)$};
+    \node at (axis cs:6,4) [anchor=west] {$(x_1,y_1)$};
+    \node at (axis cs:4.5,3.2) [penColor,anchor=east] {$\sqrt{(x_1-x_0)^2+(y_1-y_0)^2}$};
+  \end{axis}
+\end{tikzpicture}
+\caption{The length of a line segment.}
+\label{fig:length of a line segment}
+\end{marginfigure}
+
 
 We already know how to compute one simple arc length, that of a line
-segment. If the endpoints are $P_0(x_0,y_0)$ and $P_1(x_1,y_1)$
-then the length of the segment is the distance between the points,
-$\sqrt{(x_1-x_0)^2+(y_1-y_0)^2}$, from the Pythagorean theorem, as
-illustrated in Figure~\ref{fig:length of a line segment}.
+segment. If the endpoints are $(x_0,y_0)$ and $(x_1,y_1)$ then the
+length of the segment is the distance between the points,
+$\sqrt{(x_1-x_0)^2+(y_1-y_0)^2}$, see Figure~\ref{fig:length of a line segment}.
 
-%% \figure
-%% \vbox{\beginpicture
-%% \normalgraphs
-%% \sevenpoint
-%% \setcoordinatesystem units <1.5truecm,1.5truecm>
-%% \setplotarea x from 0 to 5, y from 0 to 3
-%% \axis bottom /
-%% \axis left /
-%% \putrule from 2 1 to 4.5 1
-%% \putrule from 4.5 1 to 4.5 2.5
-%% \plot 2 1 4.5 2.5 /
-%% \put {$(x_1,y_1)$} [bl] <3pt,3pt> at 4.5 2.5
-%% \put {$(x_0,y_0)$} [tr] <-3pt,-3pt> at 2 1
-%% \put {$x_1-x_0$} [t] <0pt,-3pt> at 3.25 1
-%% \put {$y_1-y_0$} [l] <3pt,0pt> at 4.5 1.75
-%% \put {$\sqrt{(x_1-x_0)^2+(y_1-y_0)^2}$} [br] <-3pt,3pt> at 3.25 1.75
-%% \endpicture}
-%% \figrdef{fig:length of a line segment}
-%% \endfigure{The length of a line segment.}
+Now if $f(x)$ is ``nice'' (say, differentiable) it appears that we can
+approximate the length of a portion of the curve with line segments,
+and that as the number of segments increases, and their lengths
+decrease, the sum of the lengths of the line segments will approach
+the true arc length, see Figure~\ref{fig:approximating arc length}.
 
-Now if the graph of $f$ is ``nice'' (say, differentiable) it appears
-that we can approximate the length of a portion of the curve with line
-segments, and that as the number of segments increases, and their
-lengths decrease, the sum of the lengths of the line segments will
-approach the true arc length; see 
-Figure~\ref{fig:approximating arc length}.
+\begin{marginfigure}[0in]
+\begin{tikzpicture}
+	\begin{axis}[
+            domain=-3:2,
+            ymax=5,
+            ymin=-5,
+            %samples=100,
+            axis lines =middle, xlabel=$x$, ylabel=$y$,
+            every axis y label/.style={at=(current axis.above origin),anchor=south},
+            every axis x label/.style={at=(current axis.right of origin),anchor=west}
+          ]
+          \addplot [dashed, textColor, smooth] {-(x^4)/4 - (x^3)/3 +x^2};
+          \addplot [very thick, penColor] plot coordinates {
+            (-3,-9/4) (-2,8/3) (-1,13/12) (0,0) (1,5/12) (2,-8/3)
+          };
+          \addplot[color=penColor,fill=penColor,only marks,mark=*] coordinates{(-3,-9/4) (-2,8/3) (-1,13/12) (0,0) (1,5/12) (2,-8/3)};  %% closed hole
 
-%% \figure
-%% \vbox{\beginpicture
-%% \normalgraphs
-%% \sevenpoint
-%% \setcoordinatesystem units <1.5truecm,0.8truecm>
-%% \setplotarea x from 0 to 8, y from 0 to 5
-%% \axis bottom /
-%% \axis left /
-%% \setquadratic\plot 
-%% 1.000 1.000 1.150 1.953 1.300 2.694 1.450 3.246 1.600 3.636 
-%% 1.750 3.884 1.900 4.012 2.050 4.041 2.200 3.990 2.350 3.874 
-%% 2.500 3.711 2.650 3.515 2.800 3.299 2.950 3.075 3.100 2.853 
-%% 3.250 2.644 3.400 2.454 3.550 2.290 3.700 2.157 3.850 2.060 
-%% 4.000 2.000 4.150 1.979 4.300 1.996 4.450 2.050 4.600 2.138 
-%% 4.750 2.255 4.900 2.396 5.050 2.554 5.200 2.721 5.350 2.886 
-%% 5.500 3.039 5.650 3.168 5.800 3.258 5.950 3.294 6.100 3.261 
-%% 6.250 3.140 6.400 2.912 6.550 2.556 6.700 2.051 6.850 1.374 
-%% 7.000 0.500 /
-%% \multiput {$\bullet$} at 1 1 2.050 4.041 3.250 2.644
-%% 4.300 1.996 5.500 3.039 6.250 3.140 7 0.5 /
-%% \setlinear\plot
-%% 1 1 2.050 4.041 3.250 2.644
-%% 4.300 1.996 5.500 3.039 6.250 3.140 7 0.5 /
-%% \endpicture}
-%% \figrdef{fig:approximating arc length}
-%% \endfigure{Approximating arc length with line segments.}
+          \node at (axis cs:-1.3,2) [anchor=west,textColor] {$f(x)$};  
+        \end{axis}
+\end{tikzpicture}
+\caption{Approximating the arc length of the curve defined by $f(x)$.}
+\label{fig:approximating arc length}
+\end{marginfigure}
 
 Now we need to write a formula for the sum of the lengths of the line
 segments, in a form that we know becomes an integral in the limit.  So
 we suppose we have divided the interval $[a,b]$ into $n$ subintervals
-as usual, each with length $\Delta x =(b-a)/n$, and endpoints $
-a=x_0$, $x_1$, $x_2$, \dots, $x_n=b$.  The length of a
-typical line segment, joining $(x_i,f(x_i))$ to $
-(x_{i+1},f(x_{i+1}))$, is $\sqrt{(\Delta x )^2
-  +(f(x_{i+1})-f(x_i))^2}$.  By the Mean Value Theorem
-(\xrefn{thm:mvt}), there is a number $t_i$ in $(x_i,x_{i+1})$
-such that $f'(t_i)\Delta x=f(x_{i+1})-f(x_i)$, so the length of
-the line segment can be written as
+as usual, each with length $h=(b-a)/n$, and endpoints 
+\[
+a=x_0, x_1, x_2, \dots, x_n=b.
+\]
+The length of a typical line segment, joining $(x_i,f(x_i))$ to $
+(x_{i+1},f(x_{i+1}))$, is $\sqrt{h^2 +(f(x_{i+1})-f(x_i))^2}$.
+By the Mean Value Theorem, Theorem~\ref{thm:mvt}, there is a number $c_i$
+in $(x_i,x_{i+1})$ such that 
+\[
+f'(c_i)=\frac{f(x_{i+1})-f(x_i)}{x_{i+1}-x_i} = \frac{f(x_{i+1})-f(x_i)}{h}.
+\]
+so $f'(c_i)h=f(x_{i+1})-f(x_i).$ Hence, the length of the line segment
+can be written as
 $$
-  \sqrt{(\Delta x)^2 + (f'(t_i))^2\Delta x^2}=
-  \sqrt{1+(f'(t_i))^2}\,\Delta x.
-$$
+  \sqrt{h^2 + (f'(c_i))^2h^2}=
+  h\sqrt{1+(f'(c_i))^2}.
+$$ 
 The arc length is then
-$$
-  \lim_{n\to\infty}\sum_{i=0}^{n-1} \sqrt{1+(f'(t_i))^2}\,\Delta x=
+\[
+\lim_{n\to\infty}\sum_{i=0}^{n-1} h\sqrt{1+(f'(c_i))^2} 
+\]
+This is a Riemann sum! Now we may take the limit as the number of
+$x_i$'s chosen goes to infinity and $h$ goes to zero to obtain the
+integral
+\[
   \int_a^b \sqrt{1+(f'(x))^2}\d x.
-$$
+\]
 Note that the sum looks a bit different than others we have
-encountered, because the approximation contains a $t_i$ instead of an
+encountered, because the approximation contains a $c_i$ instead of an
 $x_i$. In the past we have always used left endpoints (namely, $x_i$)
 to get a representative value of $f$ on $[x_i,x_{i+1}]$; now we are
 using a different point, but the principle is the same.
@@ -888,13 +900,6 @@ interval $[\pi/4,\pi/3]$.
 \begin{answer} $\ln((\sqrt2+1)/\sqrt3)$
 \end{answer}\end{exercise}
 
-\begin{exercise} Let $a>0$. Show that the length of $y=\cosh x$ on
-$[0,a]$ is equal to $\int _0 ^a \cosh x\d x$.
-\end{exercise}
-
-\begin{exercise} Find the arc length of $f(x)=\cosh x$ on $[0, \ln 2]$.
-\begin{answer} $3/4$
-\end{answer}\end{exercise}
 
 \begin{exercise} Set up the integral to find the arc length of $\sin x$ 
 on the interval $[0,\pi]$; do not evaluate the integral. If you have
