@@ -1,0 +1,51 @@
+<html data-require="math word-problems steveMath8 graphie math-function-parser">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>Introduction to Week 15</title>
+    <script src="../khan-exercise.js"></script>
+</head>
+<body>
+  <div class="exercise">
+  
+    <div class="problems">
+    
+      <div id="onlyProblem">
+        	<div class="vars">
+				<var id="A">randRange(1,10)</var>
+				<var id="B">A+randRange(1,5)</var>
+				<var id="n">randRange(2,4)</var>
+				<var id="functionBank">["cos(x)","sin(x)","(x)^"+n]</var>
+				<var id="fNum">randRange(0,functionBank.length-1)</var>
+				<var id="gNum">randRangeExclude(0,functionBank.length-1,[fNum])</var>
+				<var id="f">functionBank[fNum]</var>
+				<var id="g">functionBank[gNum]</var>
+				<var id="varName">["x","y","z","t","u"][randRange(0,4)]</var>
+				<var id="EXP">MathFunction.parse(f.replace("x",g).replace(/x/g,varName))</var>
+			
+				
+  			  </div>
+        	
+        	<p class="question">
+        		Use the new answer type format to input the definite integral <code>\displaystyle\int_{<var>A</var>}^{<var>B</var>} <var>EXP.tex()</var> d<var>varName</var></code>.  
+        		<code>a</code> is the lower limit of integration, <code>b</code> is the upper limit of integration of integration, and the last field is for the integrand.  Do not include d<var>varName</var>
+        		in your intergrand.
+        	</p>
+        	
+        	<p>
+        		Note: This week, you will not be evaluating any integrals - just setting them up.  There are a couple reasons for this.  One is to keep distinct skills separate.  This weeks exercises
+        		will only test you on your ability to find the integral that solves a problem, not on how to evaluate it.  A more important reason is that the vast majority of integrals that come up in
+        		the real world do not have elementary antiderivatives, so we have no hope of getting an exact answer.  Of far greater practical importance is the ability to set up the integral,
+        		and approximate the result (either using Riemann sums, or fancier things like Simpson's rule).
+        	</p>
+        <p class="solution" data-type="definiteIntegral">
+        	<var>A</var>|<var>B</var>|<var>EXP.toString()</var>
+        </p>
+       
+       
+      </div>
+      
+      
+      
+    </div>
+  </div>
+</body>
