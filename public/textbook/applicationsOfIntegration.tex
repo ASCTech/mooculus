@@ -514,11 +514,11 @@ Hence, the whole volume is
       every axis x label/.style={at=(current axis.right of origin),anchor=west},
       axis on top,
     ] 
-    \addplot [penColor,very thick] {x+1};
-    \addplot [penColor2,very thick] {(x-1)^2};
+    \addplot [penColor2,very thick] {x+1};
+    \addplot [penColor,very thick] {(x-1)^2};
 
-    \node at (axis cs:.5,1.7) [penColor] {$f(x)$};
-    \node at (axis cs:2.5,1.7) [penColor2] {$g(x)$};
+    \node at (axis cs:.5,1.7) [penColor2] {$f(x)$};
+    \node at (axis cs:2.5,1.7) [penColor] {$g(x)$};
     \addplot [very thick, penColor4] plot coordinates {(.25,.56) (1.75,.56)};
     \addplot [very thick, penColor4] plot coordinates {(1,2) (2.41,2)};
     \end{axis}
@@ -552,11 +552,11 @@ $$
       every axis x label/.style={at=(current axis.right of origin),anchor=west},
       axis on top,
     ] 
-    \addplot [penColor,very thick] {x+1};
-    \addplot [penColor2,very thick] {(x-1)^2};
+    \addplot [penColor2,very thick] {x+1};
+    \addplot [penColor,very thick] {(x-1)^2};
 
-    \node at (axis cs:.5,1.7) [penColor] {$f(x)$};
-    \node at (axis cs:2.5,1.7) [penColor2] {$g(x)$};
+    \node at (axis cs:.5,1.7) [penColor2] {$f(x)$};
+    \node at (axis cs:2.5,1.7) [penColor] {$g(x)$};
     \addplot [very thick, penColor4] plot coordinates {(1.5,2.5) (1.5,.25)};
   \end{axis}
 \end{tikzpicture}
@@ -579,12 +579,12 @@ volume.
      xlabel=$x$, ylabel=$z$, zlabel=$y$,
    ]
 
-  \addplot3[surf,shader=faceted interp,opacity=.7,
+  \addplot3[surf,colormap/\surfaceColorTwo,shader=faceted interp,opacity=.7, %inside
   samples=10,
   samples y =20,
   domain=0:3,y domain=0:2*pi,
   z buffer=sort]
-  (x*cos(deg(y)), {(x) * sin(deg(y))},{(x-1)^2});
+  (x* cos(deg(y)), {(x) * sin(deg(y))},{x+1});
 
   \addplot3[surf,colormap/\sliceColor,shader=interp,%shell
   samples=5,
@@ -594,12 +594,14 @@ volume.
 ]
   ({1.5*cos(deg(y))}, {1.5*sin(deg(y))},x);
 
-  \addplot3[surf,colormap/\surfaceColorTwo,shader=faceted interp,opacity=.1, %inside
+
+  \addplot3[surf,shader=faceted interp,opacity=.3, %outside
   samples=10,
   samples y =20,
   domain=0:3,y domain=0:2*pi,
   z buffer=sort]
-  (x* cos(deg(y)), {(x) * sin(deg(y))},{x+1});
+  (x*cos(deg(y)), {(x) * sin(deg(y))},{(x-1)^2});
+
 
  \end{axis}
 \end{tikzpicture}
