@@ -27,28 +27,28 @@ and 20 meters on a side at the base.
  \begin{axis}[view={30}{30},colormap/\surfaceColor,
    xlabel=$x$, ylabel=$z$, zlabel=$y$,]
 
-  \addplot3[surf,shader=faceted interp,opacity=.3,
+  \addplot3[surf,opacity=.3,
   samples=12,
   samples y = 6,
   domain=-10:10,y domain=0:.5,
   z buffer=sort]
   ({10*(1-y)},{(1-y)*(x)}, {y*20});
 
-  \addplot3[surf,shader=faceted interp,opacity=.3,
+  \addplot3[surf,opacity=.3,
   samples=12,
   samples y = 6,
   domain=-10:10,y domain=0:.5,
   z buffer=sort]
   ({x*(1-y)},{(1-y)*(10)}, {y*20}); 
 
-  \addplot3[surf,shader=faceted interp,opacity=.7, %front
+  \addplot3[surf,opacity=.7, %front
   samples=12,
   samples y = 6,
   domain=-10:10,y domain=0:.5,
   z buffer=sort]
   ({x*(1-y)},{(1-y)*(-10)}, {y*20});
  
- \addplot3[surf,shader=faceted interp,opacity=.7, %front
+ \addplot3[surf,opacity=.7, %front
   samples=12,
   samples y = 6,
   domain=-10:10,y domain=0:.5,
@@ -66,28 +66,28 @@ and 20 meters on a side at the base.
   ({10*(.5)*y},{(.5)*(x)*10}, {.5*20});
 
 
-  \addplot3[surf,shader=faceted interp,opacity=.3,
+  \addplot3[surf,opacity=.3,
   samples=12,
   samples y = 6,
   domain=-10:10,y domain=.5:1,
   z buffer=sort]
   ({10*(1-y)},{(1-y)*(x)}, {y*20});
 
-  \addplot3[surf,shader=faceted interp,opacity=.3,
+  \addplot3[surf,opacity=.3,
   samples=12,
   samples y = 6,
   domain=-10:10,y domain=.5:1,
   z buffer=sort]
   ({x*(1-y)},{(1-y)*(10)}, {y*20}); 
 
-  \addplot3[surf,shader=faceted interp,opacity=.7, %front
+  \addplot3[surf,opacity=.7, %front
   samples=12,
   samples y = 6,
   domain=-10:10,y domain=.5:1,
   z buffer=sort]
   ({x*(1-y)},{(1-y)*(-10)}, {y*20});
  
- \addplot3[surf,shader=faceted interp,opacity=.7, %front
+ \addplot3[surf,opacity=.7, %front
   samples=12,
   samples y = 6,
   domain=-10:10,y domain=.5:1,
@@ -166,14 +166,14 @@ solid.
  \begin{axis}[view={30}{30},colormap/\surfaceColor,
    xlabel=$x$, ylabel=$z$, zlabel=$y$,]
 
-  \addplot3[surf,shader=faceted interp,opacity=.3,
+  \addplot3[surf,opacity=.3,
   samples=12,
   samples y = 6,
   domain=-1:.5,y domain=0:1,
   z buffer=sort]
   (x,{(1-y)*(-x^2+1)}, {y*sqrt(3)*(1-x^2)});
 
-  \addplot3[surf,shader=faceted interp,opacity=.7,%front
+  \addplot3[surf,opacity=.7,%front
   samples=12,
   samples y = 6,
   domain=-1:.5,y domain=0:1,
@@ -188,14 +188,14 @@ solid.
   z buffer=sort]
   (.5,{x*(1-y)*(.5^2-1)}, {abs(x)*y*sqrt(3)*(1-.5^2)});
 
-  \addplot3[surf,shader=faceted interp,opacity=.3, 
+  \addplot3[surf,opacity=.3, 
   samples=4,
   samples y = 6,
   domain=.5:1,y domain=0:1,
   z buffer=sort]
   (x,{(1-y)*(-x^2+1)}, {y*sqrt(3)*(1-x^2)});
 
-  \addplot3[surf,shader=faceted interp,opacity=.7,%front
+  \addplot3[surf,opacity=.7,%front
   samples=4,
   samples y = 6,
   domain=.5:1,y domain=0:1,
@@ -256,7 +256,7 @@ $x$-axis will generate a figure whose volume we can compute.
    xlabel=$x$, ylabel=$z$, zlabel=$y$,
    ]
 
-  \addplot3[surf,shader=faceted interp,opacity=.3,
+  \addplot3[surf,opacity=.3,
   samples=10,
   samples y =20,
   domain=1:2.7,y domain=0:2*pi,
@@ -272,7 +272,7 @@ $x$-axis will generate a figure whose volume we can compute.
   (2.7,{3.337*x*cos(deg(y))}, {3.337*x*sin(deg(y))});
 
 
-  \addplot3[surf,shader=faceted interp,opacity=.3,
+  \addplot3[surf,opacity=.3,
   samples=10,
   samples y=20,
   domain=2.7:4,y domain=0:2*pi,
@@ -280,7 +280,7 @@ $x$-axis will generate a figure whose volume we can compute.
   (x,{(16-19*x+8*x^2-x^3) * cos(deg(y))}, {(16-19*x+8*x^2-x^3) * sin(deg(y))});
 
 
-  \addplot3[surf,shader=faceted interp,opacity=.7,
+  \addplot3[surf,opacity=.7,
   samples=5,
   samples y = 20,
   domain=0:1,y domain=0:2*pi,
@@ -313,7 +313,7 @@ with the tip of the cone directly over the center of the base.
      xlabel=$x$, ylabel=$z$, zlabel=$y$,
    ]
 
-  \addplot3[surf,shader=faceted interp,opacity=.3,
+  \addplot3[surf,opacity=.3,
   samples=10,
   samples y =20,
   domain=0:12,y domain=0:2*pi,
@@ -329,7 +329,7 @@ with the tip of the cone directly over the center of the base.
   (12,{6*x*cos(deg(y))}, {6*x*sin(deg(y))});
 
 
-  \addplot3[surf,shader=faceted interp,opacity=.3,
+  \addplot3[surf,opacity=.3,
   samples=10,
   samples y=20,
   domain=12:20,y domain=0:2*pi,
@@ -337,7 +337,7 @@ with the tip of the cone directly over the center of the base.
   (x,{(x/2) * cos(deg(y))}, {(x/2) * sin(deg(y))});
 
 
-  \addplot3[surf,shader=faceted interp,opacity=.7,
+  \addplot3[surf,opacity=.7,
   samples=5,
   samples y = 20,
   domain=0:1,y domain=0:2*pi,
@@ -428,14 +428,14 @@ Figure~\ref{figure:regionHole}.
      xlabel=$x$, ylabel=$z$, zlabel=$y$,
    ]
 
-  \addplot3[surf,shader=faceted interp,opacity=.7,
+  \addplot3[surf,opacity=.7,
   samples=10,
   samples y =20,
   domain=0:.5,y domain=0:2*pi,
   z buffer=sort]
   (x,{(x) * cos(deg(y))}, {(x) * sin(deg(y))});
 
-  \addplot3[surf,colormap/\surfaceColorTwo,shader=faceted interp,opacity=.1, %inside
+  \addplot3[surf,colormap/\surfaceColorTwo,opacity=.1, %inside
   samples=10,
   samples y =20,
   domain=0:.5,y domain=0:2*pi,
@@ -451,14 +451,14 @@ Figure~\ref{figure:regionHole}.
   (.5,{x*cos(deg(y))}, {x*sin(deg(y))});
 
 
-  \addplot3[surf,shader=faceted interp,opacity=.7,
+  \addplot3[surf,opacity=.7,
   samples=10,
   samples y=20,
   domain=.5:1,y domain=0:2*pi,
   z buffer=sort]
   (x,{(x) * cos(deg(y))}, {(x) * sin(deg(y))});
 
-  \addplot3[surf,colormap/\surfaceColorTwo,shader=faceted interp,opacity=.1,
+  \addplot3[surf,colormap/\surfaceColorTwo,opacity=.1,
   samples=10,
   samples y=20,
   domain=.5:1,y domain=0:2*pi,
@@ -536,11 +536,11 @@ that go from the line to the parabola and those that touch the
 parabola on both ends, see Figure~\ref{figure:washerHARD}. To compute
 the volume using this approach, we need to break the problem into two
 parts and compute two integrals:
-$$
+\[
   \pi\int_0^1 (1+\sqrt{y})^2-(1-\sqrt{y})^2\d y+
   \pi\int_1^4  (1+\sqrt{y})^2-(y-1)^2\d y={8\over3}\pi + {65\over6}\pi
   ={27\over2}\pi.
-$$
+\]
 
 \begin{marginfigure}[0in]
 \begin{tikzpicture}
@@ -579,14 +579,14 @@ volume.
      xlabel=$x$, ylabel=$z$, zlabel=$y$,
    ]
 
-  \addplot3[surf,shader=faceted interp,opacity=.7,
+  \addplot3[surf,opacity=.7,
   samples=10,
   samples y =20,
   domain=0:3,y domain=0:2*pi,
   z buffer=sort]
   (x*cos(deg(y)), {(x) * sin(deg(y))},{(x-1)^2});
 
-  \addplot3[surf,colormap/\sliceColor,shader=interp,%shell
+  \addplot3[surf,colormap/\sliceColor,opacity=.7,%shell
   samples=5,
   samples y = 20,
   domain=.25:2.5,y domain=0:2*pi,
@@ -594,7 +594,7 @@ volume.
 ]
   ({1.5*cos(deg(y))}, {1.5*sin(deg(y))},x);
 
-  \addplot3[surf,colormap/\surfaceColorTwo,shader=faceted interp,opacity=.1, %inside
+  \addplot3[surf,colormap/\surfaceColorTwo,opacity=.1, %inside
   samples=10,
   samples y =20,
   domain=0:3,y domain=0:2*pi,
