@@ -103,11 +103,6 @@ Balof, and Mike Wills have contributed additional material.
 
 \noindent This book is typeset in the Kerkis font, 
 Kerkis \copyright~Department of Mathematics, University of the Aegean.
-% BADBAD
-%\msk\noindent
-%This copy of the text was compiled from source at 
-%\the\bighand:\ifnum\littlehand<10{0}\fi
-%        \the\littlehand\ on \the\month/\the\day/\the\year.
 
 
 \noindent We will be glad to receive corrections and suggestions for
@@ -116,15 +111,19 @@ improvement at \texttt{fowler@math.osu.edu} or
 
 \end{fullwidth}
 
-% r.5 contents
+
 \tableofcontents
 
 
-%\listoftheorems[ignoreall,show={mainTheorem}]
+%% \renewcommand{\listtheoremname}{List of Main Theorems}
+%% \setcounter{tocdepth}{1}
+%% \listoftheorems[numwidth=4em,ignoreall,show={mainTheorem}]
 
-\renewcommand{\listtheoremname}{List of Main Theorems}
-\setcounter{tocdepth}{1}
-\listoftheorems[numwidth=4em,ignoreall,show={mainTheorem}]
+
+
+\chapter*{List of Main Theorems}% uses ntheorem
+\theoremlisttype{opt} 
+\listtheorems{mainTheorem}
 
 
 %\listoffigures
@@ -167,28 +166,29 @@ endeavor. You, the reader, must become a doer of mathematics.
 
 
 
-
+\setcounter{chapter}{-1}
 
 %%
 % Start the main matter (normal chapters)
 %\mainmatter
 %\tikzexternaldisable
+\input functions
 \input limits
-\input infinityAndContinuity
-\input basicsOfDerivatives
-\input curveSketching
-\input productRuleAndQuotientRule
-\input chainRule
-\input derivativesOfTrigFunctions
-\input applicationsOfDifferentiation
-\input optimization
-\input linearApproximation
-\input antiderivatives
-\input integrals
-\input fundamentalTheoremOfCalculus
-\input substitution
-\input techniquesOfIntegration
-\input applicationsOfIntegration
+%% \input infinityAndContinuity
+%% \input basicsOfDerivatives
+%% \input curveSketching
+%% \input productRuleAndQuotientRule
+%% \input chainRule
+%% \input derivativesOfTrigFunctions
+%% \input applicationsOfDifferentiation
+%% \input optimization
+%% \input linearApproximation
+%% \input antiderivatives
+%% \input integrals
+%% \input fundamentalTheoremOfCalculus
+%% \input substitution
+%% \input techniquesOfIntegration
+%% \input applicationsOfIntegration
 
 
 

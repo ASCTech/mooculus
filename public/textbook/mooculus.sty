@@ -14,10 +14,20 @@
 %\RequirePackage{amssymb}
 %\RequirePackage{amsmath}
 \RequirePackage{mathtools} %% trying to get cases to work in caption
-\RequirePackage{ntheorem}
+\RequirePackage[hyperref]{ntheorem}
 \RequirePackage{thmtools}
 \RequirePackage{microtype}
 \RequirePackage{enumerate}
+%%%%%%%%%%%%%%%
+% Used in theorem list
+\usepackage{regexpatch}
+\makeatletter
+%\xpatchcmd*{\thm@@thmline}{2.3em}{5em}{}{} % not really needed
+\xpatchcmd*{\thm@@thmline@name}{2.3em}{5em}{}{} 
+\xpatchcmd*{\thm@@thmline@noname}{2.3em}{5em}{}{}
+\makeatother
+%%%%%%%%%%%%%%%
+
 \RequirePackage{pgfplots}%\pgfplotsset{compat=1.7}
 %\usepgfplotslibrary{groupplots}
 
@@ -120,7 +130,7 @@
 } 
 
 %% Table colors
-\newenvironment{tchart}{\rowcolors{2}{}{background!95!textColor}\array}{\endarray}
+\newenvironment{tchart}{\rowcolors{2}{}{background!90!textColor}\array}{\endarray}
 
 
 
