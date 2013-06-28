@@ -36,7 +36,7 @@ group :test do
 end
 
 group :staging, :production do
-#  gem 'libv8'
+  gem 'libv8'
   gem 'piwik_analytics', '~> 1.0.1'
 end
 
