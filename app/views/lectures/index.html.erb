@@ -1,0 +1,47 @@
+<h1>Lectures</h1>
+<p>When the course starts again on <a href="https://www.coursera.org/course/calc1">Coursera</a> in the fall, you will be able to <a href="https://class.coursera.org/calc1-002/lecture/index">view the lectures on Coursera</a>.  In the meantime, here are the videos from the first run of Calculus One.</p>
+
+<div class="accordion" id="accordion">
+  <% for week in 1..15 %>
+  <div class="accordion-group">
+    <div class="accordion-heading">
+      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse<%= week %>">
+        <h4>Week <%= week %></h4>
+      </a>
+    </div>
+    <div id="collapse<%= week %>" class="accordion-body collapse">
+      <div class="accordion-inner">
+
+	<table class="table table-striped">
+	  <thead>
+	    <tr>
+	      <th>
+		Lecture
+	      </th> 
+	      <th>
+		Title
+	      </th>
+	    </tr>
+	  </thead>
+
+	  <tbody>
+	    <% for youtube in @youtube.in_week(week).chronological.to_a %>
+	    <tr>
+	    <td>
+	      <% if youtube.lecture > 0 %> 
+	        <%= youtube.lecture %>
+              <% end %>
+	    </td>
+	    <td><a href="<%=raw youtube.url %>"><%=raw youtube.title %></a></td>
+	    </tr>
+	    <% end %>
+	  </tbody>
+	</table>
+
+      </div>
+    </div>
+  </div>
+  <% end %>
+</div>
+
+
