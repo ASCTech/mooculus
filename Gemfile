@@ -14,12 +14,13 @@ gem "oauth-plugin", "~> 0.4.0"
 
 gem 'twitter-bootstrap-rails'
 gem 'less-rails'
-gem 'newrelic_rpm'
+# gem 'newrelic_rpm'
 
 # use Devise for login
 gem 'devise'
 gem 'omniauth'
 gem 'omniauth-oauth'
+gem 'omniauth-openid'
 
 # use Nokogiri to parse the exercise files
 gem 'nokogiri'
@@ -35,7 +36,7 @@ group :test do
 end
 
 group :staging, :production do
-  gem 'libv8'
+#  gem 'libv8'
   gem 'piwik_analytics', '~> 1.0.1'
 end
 

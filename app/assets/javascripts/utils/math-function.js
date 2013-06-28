@@ -403,126 +403,257 @@ var MathFunction = (function () {
     }
 
     /****************************************************************/
-    // convert an AST to parseable text
+    // convert an AST to text
 
-    var text_functions = {
-	"+": function(operands) { return "(" + operands.join( ' + ' ) + ")"; },
-	"-": function(operands) { return "(" + operands.join( ' - ' ) + ")"; },
-	"~": function(operands) { return "-( " + operands.join( ' + ' ) + ")"; },
-	"*": function(operands) { return "(" + operands.join( " * " ) + ")"; },
-	"/": function(operands) { return "((" + operands[0] + ")/(" + operands[1] + "))"; },
-	"^": function(operands) { return "(" + operands[0]  + ")^(" + operands[1] + ")"; },
-	"sin": function(operands) { return "sin (" + operands[0] + ")"; },
-	"cos": function(operands) { return "cos (" + operands[0] + ")"; },
-	"tan": function(operands) { return "tan (" + operands[0] + ")"; },
-	"arcsin": function(operands) { return "arcsin (" + operands[0] + ")"; },
-	"arccos": function(operands) { return "arccos (" + operands[0] + ")"; },
-	"arctan": function(operands) { return "arctan (" + operands[0] + ")"; },
-	"arccsc": function(operands) { return "arccsc (" + operands[0] + ")"; },
-	"arcsec": function(operands) { return "arcsec (" + operands[0] + ")"; },
-	"arccot": function(operands) { return "arccot (" + operands[0] + ")"; },
-	"csc": function(operands) { return "csc (" + operands[0] + ")"; },
-	"sec": function(operands) { return "sec (" + operands[0] + ")"; },
-	"cot": function(operands) { return "cot (" + operands[0] + ")"; },
-	"log": function(operands) { return "log (" + operands[0] + ")"; },
-	"sqrt": function(operands) { return "sqrt(" + operands[0] + ")"; },
-	"abs": function(operands) { return "abs(" + operands[0] + ")"; },
-	"apply": function(operands) { return operands[0] + "(" + operands[1] + ")"; },
-    };
-
-    function text_ast(tree) {
-	if (typeof tree === 'number') {
-	    return tree;
-	}
-
-	if (typeof tree === 'string') {
+    text_ast = (function() {
+	var operators = {
+	    "+": function(operands) { return operands.join( ' + ' ); },
+	    "-": function(operands) { return operands.join( ' - ' ); },
+	    "~": function(operands) { return "-" + operands.join( ' - ' ); },
+	    "*": function(operands) { return operands.join( " * " ); },
+	    "/": function(operands) { return operands[0] + "/" + operands[1]; },
+	    "^": function(operands) { return operands[0]  + "^" + operands[1]; },
+	    "sin": function(operands) { return "sin " + operands[0]; },
+	    "cos": function(operands) { return "cos " + operands[0]; },
+	    "tan": function(operands) { return "tan " + operands[0]; },
+	    "arcsin": function(operands) { return "arcsin " + operands[0]; },
+	    "arccos": function(operands) { return "arccos " + operands[0]; },
+	    "arctan": function(operands) { return "arctan " + operands[0]; },
+	    "arccsc": function(operands) { return "arccsc " + operands[0]; },
+	    "arcsec": function(operands) { return "arcsec " + operands[0]; },
+	    "arccot": function(operands) { return "arccot " + operands[0]; },
+	    "csc": function(operands) { return "csc " + operands[0]; },
+	    "sec": function(operands) { return "sec " + operands[0]; },
+	    "cot": function(operands) { return "cot " + operands[0]; },
+	    "log": function(operands) { return "log " + operands[0]; },
+	    "sqrt": function(operands) { return "sqrt" + operands[0]; },
+	    "abs": function(operands) { return "abs" + operands[0]; },
+	    "apply": function(operands) { return operands[0] + "(" + operands[1] + ")"; },
+	};
+	
+	/*    
+	      expression =
+	      expression '+' term | 
+	      expression '-' term |
+	      term
+	*/
+	
+	function expression(tree) {
+	    if ((typeof tree === 'string') || (typeof tree === 'number')) {
+		return term(tree);	
+	    }
 	    
-	    return tree;
-	}    
-	
-	var operator = tree[0];
-	var operands = tree.slice(1);
-	
-	if (operator in math_functions) {
-	    return "(" + text_functions[operator]( $.map( operands, function(v,i) { return text_ast(v); } ) ) + ")";
+	    var operator = tree[0];
+	    var operands = tree.slice(1);
+	    
+	    if ((operator == '+') || (operator == '-')) {
+		return operators[operator]( _.map( operands, function(v,i) { return term(v); } ) );
+	    }
+	    
+	    return term(tree);
 	}
 	
-	return NaN;
-    };
+	/*
+	  term =
+	  term '*' factor |
+	  term nonMinusFactor |
+	  term '/' factor |
+	  factor
+	*/
+	
+	function term(tree) {
+	    if ((typeof tree === 'string') || (typeof tree === 'number')) {
+		return factor(tree);	
+	    }
+	    
+	    var operator = tree[0];
+	    var operands = tree.slice(1);
+	    
+	    if ((operator == '*') || (operator == '/')) {
+		return operators[operator]( _.map( operands, function(v,i) { return factor(v); } ) );
+	    }
+	    
+	    return factor(tree);	
+	}
+	
+	/*
+	  factor =
+	  '(' expression ')' |
+	  number | 
+	  variable |
+	  function factor |
+	  factor '^' factor
+	  '-' factor |
+	  nonMinusFactor
+	*/
+	
+	function isFunctionSymbol( symbol )
+	{
+	    var functionSymbols = ['sin', 'cos', 'tan', 'csc', 'sec', 'cot', 'arcsin', 'arccos', 'arctan', 'arcsin', 'arccos', 'arctan', 'log', 'log', 'exp', 'sqrt', 'abs'];
+	    return (functionSymbols.indexOf(symbol) != -1);
+	}
+	
+	function factor(tree) {
+	    if (typeof tree === 'string') {
+		return tree;
+	    }    
+	    
+	    if (typeof tree === 'number') {
+		return tree;
+	    }
+	    
+	    var operator = tree[0];
+	    var operands = tree.slice(1);	
+	    
+	    if (isFunctionSymbol(operator)) {
+		return operators[operator]( _.map( operands, function(v,i) { return factor(v); } ) );
+	    }
+	    
+	    if (operator == '^') {
+		return operators[operator]( _.map( operands, function(v,i) { return factor(v); } ) );
+	    }
+	    
+	    if (operator == '~') {
+		return operators[operator]( _.map( operands, function(v,i) { return factor(v); } ) );
+	    }
+	    
+	    return '(' + expression(tree) + ')';
+	}
+	
+	return function(tree) {
+	    console.log( 'examining ', tree );
+
+	    return expression(tree);
+	};
+    })();
 
 
     /****************************************************************/
     // convert an AST to a LaTeX expression
 
-    var latex_functions = {
-	"+": function(operands) { return "\\left(" + operands.join( ' + ' ) + "\\right)"; },
-	"-": function(operands) { return "\\left(" + operands.join( ' - ' ) + "\\right)"; },
-	"~": function(operands) { return "-\\left( " + operands.join( ' + ' ) + "\\right)"; },
-	"*": function(operands) { return "\\left(" + operands.join( " \\cdot " ) + "\\right)"; },
-	"/": function(operands) { return "\\frac{" + operands[0] + "}{" + operands[1] + "}"; },
-	"^": function(operands) { return operands[0] + "^{" + operands[1] + "}"; },
-	"sin": function(operands) { return "\\sin \\left(" + operands[0] + "\\right)"; },
-	"cos": function(operands) { return "\\cos \\left(" + operands[0] + "\\right)"; },
-	"tan": function(operands) { return "\\tan \\left(" + operands[0] + "\\right)"; },
-	"arcsin": function(operands) { return "\\arcsin \\left(" + operands[0] + "\\right)"; },
-	"arccos": function(operands) { return "\\arccos \\left(" + operands[0] + "\\right)"; },
-	"arctan": function(operands) { return "\\arctan \\left(" + operands[0] + "\\right)"; },
-	"arccsc": function(operands) { return "\\mbox{arccsc} \\left(" + operands[0] + "\\right)"; },
-	"arcsec": function(operands) { return "\\mbox{arcsec} \\left(" + operands[0] + "\\right)"; },
-	"arccot": function(operands) { return "\\mbox{arccot} \\left(" + operands[0] + "\\right)"; },
-	"csc": function(operands) { return "\\csc \\left(" + operands[0] + "\\right)"; },
-	"sec": function(operands) { return "\\sec \\left(" + operands[0] + "\\right)"; },
-	"cot": function(operands) { return "\\cot \\left(" + operands[0] + "\\right)"; },
-	"log": function(operands) { return "\\log \\left(" + operands[0] + "\\right)"; },
-	"sqrt": function(operands) { return "\\sqrt{" + operands[0] + "}"; },
-	"abs":  function(operands) { return "\\left|" + operands[0] + "\\right|"; },
-	"apply": function(operands) { return operands[0] + " \\left(" + operands[1] + "\\right)"; },
-    };
-
-    function latex_ast(tree) {
-	if (typeof tree === 'number') {
-	    return tree;
-	}
-
-	if (typeof tree === 'string') {
-	    if (tree == "pi")
-		return "\\pi";
-	    
-	    return tree;
-	}    
+    latex_ast = (function() {
+	var operators = {
+	    "+": function(operands) { return operands.join( ' + ' ) ; },
+	    "-": function(operands) { return operands.join( ' - ' ) ; },
+	    "~": function(operands) { return "-" + operands.join( ' + ' ) ; },
+	    "*": function(operands) { return operands.join( " \\cdot " ) ; },
+	    "/": function(operands) { return "\\frac{" + operands[0] + "}{" + operands[1] + "}"; },
+	    "^": function(operands) { return operands[0] + "^{" + operands[1] + "}"; },
+	    "sin": function(operands) { return "\\sin " + operands[0] ; },
+	    "cos": function(operands) { return "\\cos " + operands[0] ; },
+	    "tan": function(operands) { return "\\tan " + operands[0] ; },
+	    "arcsin": function(operands) { return "\\arcsin " + operands[0] ; },
+	    "arccos": function(operands) { return "\\arccos " + operands[0] ; },
+	    "arctan": function(operands) { return "\\arctan " + operands[0] ; },
+	    "arccsc": function(operands) { return "\\mbox{arccsc} " + operands[0] ; },
+	    "arcsec": function(operands) { return "\\mbox{arcsec} " + operands[0] ; },
+	    "arccot": function(operands) { return "\\mbox{arccot} " + operands[0] ; },
+	    "csc": function(operands) { return "\\csc " + operands[0] ; },
+	    "sec": function(operands) { return "\\sec " + operands[0] ; },
+	    "cot": function(operands) { return "\\cot " + operands[0] ; },
+	    "log": function(operands) { return "\\log " + operands[0] ; },
+	    "sqrt": function(operands) { return "\\sqrt{" + operands[0] + "}"; },
+	    "abs":  function(operands) { return "\\left|" + operands[0] + "\\right|"; },
+	    "apply": function(operands) { return operands[0] + " \\left(" + operands[1] ; },
+	};
 	
-	var operator = tree[0];
-	var operands = tree.slice(1);
-
-	// Exponentiating a fraction should include some parentheses
-	if (operator === "^") {
-	    if (operands[0][0] === "/") {
-		return "\\left(" + latex_ast(operands[0]) + "\\right)^{" + latex_ast(operands[1]) + "}";
+	function expression(tree) {
+	    if ((typeof tree === 'string') || (typeof tree === 'number')) {
+		return term(tree);	
 	    }
-	}
-
-	// Display trig functions in a more reasonable format
-	if (operator === "^") {
-	    if (operands[0][0] === "sin")
-		return "\\sin^{" + latex_ast(operands[1]) + "}" + "\\left(" + latex_ast(operands[0][1]) + "\\right)";
-	    if (operands[0][0] === "cos")
-		return "\\cos^{" + latex_ast(operands[1]) + "}" + "\\left(" + latex_ast(operands[0][1]) + "\\right)";
-	    if (operands[0][0] === "tan")
-		return "\\tan^{" + latex_ast(operands[1]) + "}" + "\\left(" + latex_ast(operands[0][1]) + "\\right)";
-	    if (operands[0][0] === "sec")
-		return "\\sec^{" + latex_ast(operands[1]) + "}" + "\\left(" + latex_ast(operands[0][1]) + "\\right)";
-	    if (operands[0][0] === "csc")
-		return "\\csc^{" + latex_ast(operands[1]) + "}" + "\\left(" + latex_ast(operands[0][1]) + "\\right)";
-	    if (operands[0][0] === "cot")
-		return "\\cot^{" + latex_ast(operands[1]) + "}" + "\\left(" + latex_ast(operands[0][1]) + "\\right)";
-	}
-
-	if (operator in math_functions) {
-	    return "{" + latex_functions[operator]( $.map( operands, function(v,i) { return latex_ast(v); } ) ) + "}";
+	    
+	    var operator = tree[0];
+	    var operands = tree.slice(1);
+	    
+	    if ((operator == '+') || (operator == '-')) {
+		return operators[operator]( _.map( operands, function(v,i) { return term(v); } ) );
+	    }
+	    
+	    return term(tree);
 	}
 	
-	return NaN;
-    };
+	function term(tree) {
+	    if ((typeof tree === 'string') || (typeof tree === 'number')) {
+		return factor(tree);	
+	    }
+
+	    var operator = tree[0];
+	    var operands = tree.slice(1);
+	
+	    if ((operator == '*') || (operator == '/')) {
+		return operators[operator]( _.map( operands, function(v,i) { return factor(v); } ) );
+	    }
+	    
+	    return factor(tree);	
+	}
+	
+	function isFunctionSymbol( symbol )
+	{
+	    var functionSymbols = ['sin', 'cos', 'tan', 'csc', 'sec', 'cot', 'arcsin', 'arccos', 'arctan', 'arcsin', 'arccos', 'arctan', 'log', 'log', 'exp', 'sqrt', 'abs'];
+	    return (functionSymbols.indexOf(symbol) != -1);
+	}
+	
+	function factor(tree) {
+	    if (typeof tree === 'string') {
+		if (tree == "pi")
+		    return "\\pi";
+	    
+		return tree;
+	    }    
+	    
+	    if (typeof tree === 'number') {
+		return tree;
+	    }
+	    
+	    var operator = tree[0];
+	    var operands = tree.slice(1);	
+	    
+	    if (isFunctionSymbol(operator)) {
+		return operators[operator]( _.map( operands, function(v,i) { return factor(v); } ) );
+	    }
+
+	    // Exponentiating a fraction should include some parentheses
+	    if (operator === "^") {
+		if (operands[0][0] === "/") {
+		    return "\\left(" + factor(operands[0]) + "\\right)^{" + factor(operands[1]) + "}";
+		}
+	    }
+
+	    // Display trig functions in a more reasonable format
+	    if (operator === "^") {
+		if (operands[0][0] === "sin")
+		    return "\\sin^{" + factor(operands[1]) + "}" + "\\left(" + factor(operands[0][1]) + "\\right)";
+		if (operands[0][0] === "cos")
+		    return "\\cos^{" + factor(operands[1]) + "}" + "\\left(" + factor(operands[0][1]) + "\\right)";
+		if (operands[0][0] === "tan")
+		    return "\\tan^{" + factor(operands[1]) + "}" + "\\left(" + factor(operands[0][1]) + "\\right)";
+		if (operands[0][0] === "sec")
+		    return "\\sec^{" + factor(operands[1]) + "}" + "\\left(" + factor(operands[0][1]) + "\\right)";
+		if (operands[0][0] === "csc")
+		    return "\\csc^{" + factor(operands[1]) + "}" + "\\left(" + factor(operands[0][1]) + "\\right)";
+		if (operands[0][0] === "cot")
+		    return "\\cot^{" + factor(operands[1]) + "}" + "\\left(" + factor(operands[0][1]) + "\\right)";
+	    }
+	    
+	    if (operator == '^') {
+		return operators[operator]( _.map( operands, function(v,i) { return factor(v); } ) );
+	    }
+	    
+	    if (operator == '~') {
+		return operators[operator]( _.map( operands, function(v,i) { return factor(v); } ) );
+	    }
+	    
+	    return '(' + expression(tree) + ')';
+	}
+	
+	function astToText(tree) {
+	    return '\\left(' + expression(tree) + '\\right)';
+	};
+
+	/****************************************************************/
+	// export
+	return astToText;
+    })();
 
     /****************************************************************/
     // differentiate an AST

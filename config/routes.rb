@@ -1,4 +1,5 @@
 Assessor::Application.routes.draw do
+
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
   root :to => 'home#index'
@@ -26,6 +27,8 @@ Assessor::Application.routes.draw do
   resources :exercises
   resources :handouts
   resources :videos
+
+  get "lectures/" => "lectures#index"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

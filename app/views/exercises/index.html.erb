@@ -3,14 +3,14 @@
 <% else %>
 <div class="alert">
   <button type="button" class="close" data-dismiss="alert">&times;</button>
-  <strong>Login!</strong>  To do the practice exercises, you must first <%= link_to 'sign in to Coursera', user_omniauth_authorize_path(:coursera) %>.
+  <strong>Login!</strong>  To do the practice exercises, you must first <%= link_to 'sign into your account', user_omniauth_authorize_path(:coursera) %>.
 </div>
 <% end %>
 
-<% current_week = 15 %>
+<% current_week = 16 %>
 
 <div class="accordion" id="accordion">
-<% for week in @exercises_by_weeks.keys.sort.reverse %>
+<% for week in @exercises_by_weeks.keys.sort %>
 <% if week <= current_week %>
   <div class="accordion-group">
     <div class="accordion-heading">
