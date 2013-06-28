@@ -48,9 +48,6 @@ class User < ActiveRecord::Base
 
   def self.find_for_open_id(access_token, signed_in_resource=nil)
     data = access_token.info
-    File.open("dump.txt",'w') do |f|
-      f.puts data
-    end
 
     if user = User.where(:email => data["email"]).first
       user
