@@ -46,6 +46,21 @@ class User < ActiveRecord::Base
     user
   end
 
+  def self.find_for_open_id(access_token, signed_in_resource=nil)
+    data = access_token.info
+    File.open("dump.txt",'w') do |f|
+      f.puts data
+    end
+
+    if user = User.where(:email => data["email"]).first
+      user
+    else
+      User.create!(:name => data["name"],
+                   :email => data["email"],
+                   :password => Devise.friendly_token[0,20])
+    end
+  end
+
   #################################################################
   # some methods for computing simple statistics for badges
   def total_hints_requested

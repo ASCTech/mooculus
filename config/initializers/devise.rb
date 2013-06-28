@@ -208,6 +208,12 @@ Devise.setup do |config|
 
   require "omniauth-coursera"
   config.omniauth :coursera, 'db127b155312155233e6e5da331adfed38f96e4f', 'f4e61cf7794c5c703b8aa714d6cc4acca42c76ee'
+  config.omniauth :open_id, :name => 'google', :identifier => 'https://www.google.com/accounts/o8/id'
+
+#  require "omniauth-google-oauth2"
+#  config.omniauth :google_oauth2, "477602199932.apps.googleusercontent.com", "7D754R-1H2TL0IQ37Qw4hPvO"
+
+#, { access_type: "offline", approval_prompt: "" }
 
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or

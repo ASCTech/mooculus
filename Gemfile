@@ -20,7 +20,7 @@ gem 'less-rails'
 gem 'devise'
 gem 'omniauth'
 gem 'omniauth-oauth'
-# gem 'omniauth-google-oauth2'
+gem 'omniauth-openid'
 
 # use Nokogiri to parse the exercise files
 gem 'nokogiri'
