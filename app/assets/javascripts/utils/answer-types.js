@@ -1580,6 +1580,8 @@ Khan.answerTypes = $.extend(Khan.answerTypes, {
 		    guess_expression = MathFunction.parse(guess);
 		}
 
+		console.log(guess_expression.tex());
+
 		var x = guess_expression.variables()[0];
 		if (x == undefined)
 		    x = 'x';
