@@ -2,7 +2,7 @@
 
 \section{For Each Input, Exactly One Output}
 
-Life is complex. Part of this complexity stemms from the fact that
+Life is complex. Part of this complexity stems from the fact that
 there are many relations between seemingly independent events. Armed
 with mathematics we seek to understand the world, and hence we need
 tools for talking about these relations.
@@ -25,8 +25,8 @@ Consider the function $f$ that maps from the real numbers to the real
 numbers by taking a number and mapping it to its cube:
 \begin{align*}
 1 &\mapsto 1\\
-2 &\mapsto 8\\
-3 &\mapsto 27
+-2 &\mapsto -8\\
+1.5 &\mapsto 3.375
 \end{align*}
 and so on. This function can be described by the formula $f(x)=x^3$ or
 by the plot shown in Figure~\ref{plot:fxn x^3}.
@@ -63,17 +63,91 @@ formula or its plot.
 
 
 \begin{example}
-Consider the function defined by the formula:
+Consider the \textit{greatest integer function}, denoted by
 \[
-f(x) = x^2
+f(x) = \lfloor x \rfloor.
 \]
-see Figure~\ref{} for a plot of this function. Some might be confused
-because here we have two inputs that give the same output. However,
-this is not a problem. To be a function, we mererly need a that for
-each input, there is exactly one output, and this is satisfied.
+This is the function that maps any real number $x$ to the the greatest
+integer less than or equal to $x$. See Figure~\ref{plot:greatest-integer fxn} for a plot of
+this function. Some might be confused because here we have multiple
+inputs that give the same output. However, this is not a problem. To
+be a function, we merely need a that for each input, there is exactly
+one output, and this is satisfied.
+\end{example}
+\begin{marginfigure}[0in]
+\begin{tikzpicture}
+	\begin{axis}[
+            domain=-2:4,
+            axis lines =middle, xlabel=$x$, ylabel=$y$,
+            every axis y label/.style={at=(current axis.above origin),anchor=south},
+            every axis x label/.style={at=(current axis.right of origin),anchor=west},
+            clip=false,
+            %axis on top,
+          ]
+          \addplot [textColor, very thin, domain=(0:2.3)] {0}; % puts the axis back, axis on top clobbers our open holes
+          \addplot [textColor, very thin] plot coordinates {(0,0) (0,2)}; % puts the axis back, axis on top clobbers our open holes
+	  \addplot [very thick, penColor, domain=(-2:-1)] {-2};
+          \addplot [very thick, penColor, domain=(-1:0)] {-1};
+          \addplot [very thick, penColor, domain=(0:1)] {0};
+          \addplot [very thick, penColor, domain=(1:2)] {1};
+          \addplot [very thick, penColor, domain=(2:3)] {2};
+          \addplot [very thick, penColor, domain=(3:4)] {3};
+          \addplot[color=penColor,fill=penColor,only marks,mark=*] coordinates{(-2,-2)};  %% closed hole          
+          \addplot[color=penColor,fill=penColor,only marks,mark=*] coordinates{(-1,-1)};  %% closed hole          
+          \addplot[color=penColor,fill=penColor,only marks,mark=*] coordinates{(0,0)};  %% closed hole          
+          \addplot[color=penColor,fill=penColor,only marks,mark=*] coordinates{(1,1)};  %% closed hole          
+          \addplot[color=penColor,fill=penColor,only marks,mark=*] coordinates{(2,2)};  %% closed hole  
+          \addplot[color=penColor,fill=penColor,only marks,mark=*] coordinates{(3,3)};  %% closed hole                  
+          \addplot[color=penColor,fill=background,only marks,mark=*] coordinates{(-1,-2)};  %% open hole
+          \addplot[color=penColor,fill=background,only marks,mark=*] coordinates{(0,-1)};  %% open hole
+          \addplot[color=penColor,fill=background,only marks,mark=*] coordinates{(1,0)};  %% open hole
+          \addplot[color=penColor,fill=background,only marks,mark=*] coordinates{(2,1)};  %% open hole
+          \addplot[color=penColor,fill=background,only marks,mark=*] coordinates{(3,2)};  %% open hole
+          \addplot[color=penColor,fill=background,only marks,mark=*] coordinates{(4,3)};  %% open hole
+        \end{axis}
+\end{tikzpicture}
+\caption{A plot of $f(x)=\lfloor x\rfloor$. Here we can see that for each input---a
+  value on the $x$-axis, there is exactly one output---a value on the
+  $y$-axis.}
+\label{plot:greatest-integer fxn}
+\end{marginfigure}
+
+
+Just to remind you, a function maps from one set to another. We call
+the set a function is mapping from the \textit{domain}\index{domain} or
+\textit{source} and we call the set a function is mapping to the
+\textit{range}\index{range} or \textit{target}.
+
+PICT
+
+
+In our previous examples the domain and range have both been the real
+numbers, denoted by $\R$. In our next examples we show that this is
+not always the case.
+
+
+\begin{example}
+$\sqrt{x}$ positive R to positive R (Note different from solution to $x^2 -2$)
 \end{example}
 
 
+
+\begin{example}
+$f(x) = \frac{x^2 - 3x + 2}{x-2}$
+\end{example}
+
+
+
+\begin{exercises}
+
+\begin{exercise} 
+Use a table and a calculator to estimate $\lim_{x\to 0} \frac{x}{\sin\left(\frac{x}{3}\right)}$.
+\begin{answer}
+  $3$
+\end{answer}
+\end{exercise}
+
+\end{exercises}
 
 
 
