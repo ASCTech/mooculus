@@ -18,6 +18,7 @@
 \RequirePackage{thmtools}
 \RequirePackage{microtype}
 \RequirePackage{enumerate}
+\RequirePackage{multicol}
 %%%%%%%%%%%%%%%
 % Used in theorem list
 \usepackage{regexpatch}
@@ -553,8 +554,8 @@ skipabove=\baselineskip]{warning}%
 
 
 
-\usepackage{multicol} % Use letters for lists
-\renewcommand{\theenumi}{$(\mathrm{\alph{enumi}})$}
+
+\renewcommand{\theenumi}{$(\mathrm{\alph{enumi}})$}  %% use letters for lists
 \renewcommand{\labelenumi}{\theenumi}
 
 
