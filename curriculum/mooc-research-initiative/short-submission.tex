@@ -1,0 +1,129 @@
+\documentclass[12pt]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{times}
+\usepackage{hyperref}
+
+\begin{document}
+
+\begin{center}
+  \textbf{MOOCulus}
+\end{center}
+
+Short submission
+
+\subsubsection*{Proposal overview}
+
+Clearly detail research methods, techniques, and tools
+
+\subsubsection*{Literature}
+
+and existing research
+that informs their proposal
+ 
+\subsubsection*{Context of research}
+
+The Ohio State math department launched its first massive open online
+course (MOOC) in January 2013; that course, ``Calculus One,'' was
+designed to cover the same content as the local, in-person sections of
+calculus at Ohio State.  Coursera was chosen as the MOOC provider, but
+since Coursera's platform lacked, for instance, randomly generated
+math problems, the course team built their own MOOC platform at Ohio
+State to complement Coursera's services---that home-built platform is
+called MOOCulus, and can be explored at
+\url{https://mooculus.osu.edu/}.
+
+In addition to building MOOCulus and running Calculus One, both Fowler
+and Snapp have experience using technology and analyzing its
+effectiveness.  For example, Fowler built the mobile phone clicker
+used to measure student engagement for OSU's technology enhanced
+calculus lectures, and Snapp has worked with OSU's Center for
+Enterprise Transformation \& Innovation to build interactive textbooks
+for the iPad, with the goal of measuring student engagement while
+reading the textbook.
+
+\subsubsection*{Data sources}
+
+What data sources will be used for the project
+
+Describe how data will be acquired for analysis, including sources,
+ethics clearance, tools used for data cleaning, and evaluation
+methods
+
+10.3 person--years were spent doing exercises on MOOCulus, with a
+total of 2,079,428 correct answers submitted.  
+
+With an initial enrollment of 35k, the course still had 11k students
+engaging with the material after four weeks, and 2k students at
+Week~15.
+
+\subsubsection*{Research questions}
+
+MOOCulus stores student input on all homework exercises, whether the
+input is a correct or incorrect response to the randomly generated
+question, and how much time it took the student to arrive at that
+input.  We also log whenever the student requests a "hint."  This data
+is fed into a hidden Markov model to produce an estimate of the
+student's understanding; the student receives additional practice
+problems of the same sort until our estimate of their understanding
+reaches a threshold, at which point they are given a new type of
+exercise and the process repeats.  You can see this in action at
+http://mooculus.osu.edu/ The overall goal is to keep providing
+exercises that are difficult enough to be fun and educational, but not
+so easy as to become boring and repetitive.
+
+But there's more.
+
+As students participate, we get the data needed to refine the
+parameters in the hidden Markov model; we have grad students working
+on this analysis now.  To what degree is a correct answer after three
+hints strong evidence of student understanding?  How likely is a
+strong student to submit a correct answer on the first try?  The
+parameters depend strongly on the particular homework exercise: some
+exercises are conceptually deep but procedurally easy, while some
+questions are conceptually light but procedurally quite involved, so
+even a strong student may make "careless" mistakes which the model
+shouldn't count against him/her.  It's easy for an expert to
+qualitatively make these judgments, but big data is needed to make
+this quantitative.
+
+I like to say "MOOCs are massive, but not mass-produced."  The idea
+that students will pay tuition for a human instructor to merely assign
+and grade the exact same ten problems from the textbook will be seen
+as charmingly anachronistic---a sort of throwback to the 20th
+century's mass-produced education.  In spite of the fact that MOOCulus
+had many tens of thousands of students, they each experienced a
+personalized path through the material.
+
+With tens of thousands of students, we have had millions of attempts
+on our homework exercises, so I've already looked at correlations
+between student success on earlier problems and later problems.  This
+fall when we run the course again, we will emphasize those problems as
+effective preparation for what is to come.  When a student earns a "A"
+in Calculus One, what we are trying to say is that there is evidence
+that this student will succeed in Calculus Two, but the way in which
+faculty write final exams isn't yet nearly as data-driven as what
+MOOCs provide.
+
+to be addressed by the project
+
+How can MOOCs improve other types of instruction, including blended learning, face to face and online instructional experiences for academically weak students?
+
+    How can MOOCs help students succeed in remedial and introductory coursework?
+    What are the challenges, issues, and barriers to engaging less academically prepared and less self-motivated students in MOOC coursework? What are promising approaches?
+    Can MOOCs effectively customize/personalize the learning experience for students?
+    For which students, disciplines, types of learning and contexts are MOOCs more/less effective?
+    What perceptions about MOOCs exist among students, faculty, administrators, and state/regulatory leaders? How do these perceptions influence current and future opportunities for MOOCs to serve the higher education community and, in particular, low-income and disadvantaged young adult populations?
+
+Is there a realistic business model for MOOCs focused on remedial and introductory coursework?
+
+\subsubsection*{Methodology}
+
+ planned for research activities
+
+\end{document}
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: t
+%%% End: 
