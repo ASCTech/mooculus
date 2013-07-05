@@ -37,6 +37,22 @@ State to complement Coursera's services---that home-built platform is
 called MOOCulus, and can be explored at
 \url{https://mooculus.osu.edu/}.
 
+MOOCulus logs student input on all homework exercises, whether the
+input is a correct or incorrect response to the randomly generated
+question, and how much time it took the student to arrive at that
+input.  We also log whenever the student requests a "hint."  This data
+is fed into a hidden Markov model to produce an estimate of the
+student's understanding; the student receives additional practice
+problems of the same sort until our estimate of their understanding
+reaches a threshold, at which point they are given a new type of
+exercise and the process repeats.  The overall goal is to keep
+providing exercises that are difficult enough to be fun and
+educational, but not so easy as to become boring and repetitive.
+
+In short, MOOCs are massive, but not mass-produced.  The idea In spite
+of the fact that MOOCulus had many tens of thousands of students, they
+each experienced a personalized path through the material.
+
 In addition to building MOOCulus and running Calculus One, both Fowler
 and Snapp have experience using technology and analyzing its
 effectiveness.  For example, Fowler built the mobile phone clicker
@@ -69,81 +85,33 @@ online course with their in-class performance.
 The activity logs are stored in a SQL database; this database is
 imported for analysis into R.
 
-\subsubsection*{Research questions}
+\subsubsection*{Research question}
 
-MOOCulus stores student input on all homework exercises, whether the
-input is a correct or incorrect response to the randomly generated
-question, and how much time it took the student to arrive at that
-input.  We also log whenever the student requests a "hint."  This data
-is fed into a hidden Markov model to produce an estimate of the
-student's understanding; the student receives additional practice
-problems of the same sort until our estimate of their understanding
-reaches a threshold, at which point they are given a new type of
-exercise and the process repeats.  You can see this in action at
-http://mooculus.osu.edu/ The overall goal is to keep providing
-exercises that are difficult enough to be fun and educational, but not
-so easy as to become boring and repetitive.
-
-But there's more.
-
-As students participate, we get the data needed to refine the
-parameters in the hidden Markov model; we have grad students working
-on this analysis now.  To what degree is a correct answer after three
-hints strong evidence of student understanding?  How likely is a
-strong student to submit a correct answer on the first try?  The
-parameters depend strongly on the particular homework exercise: some
-exercises are conceptually deep but procedurally easy, while some
+As students participate with MOOCulus, we get the data needed to
+refine the parameters in the hidden Markov model.  To what degree is a
+correct answer after three hints strong evidence of student
+understanding?  What prior probability should be assigned to the
+likelihood of a student to submit a correct answer on the first try?
+The parameters depend strongly on the particular homework exercise:
+some exercises are conceptually deep but procedurally easy, while some
 questions are conceptually light but procedurally quite involved, so
-even a strong student may make "careless" mistakes which the model
+even a strong student may make ``careless'' mistakes which the model
 shouldn't count against him/her.  It's easy for an expert to
 qualitatively make these judgments, but big data is needed to make
 this quantitative.
 
-I like to say "MOOCs are massive, but not mass-produced."  The idea
-that students will pay tuition for a human instructor to merely assign
-and grade the exact same ten problems from the textbook will be seen
-as charmingly anachronistic---a sort of throwback to the 20th
-century's mass-produced education.  In spite of the fact that MOOCulus
-had many tens of thousands of students, they each experienced a
-personalized path through the material.
-
-With tens of thousands of students, we have had millions of attempts
-on our homework exercises, so I've already looked at correlations
-between student success on earlier problems and later problems.  This
-fall when we run the course again, we will emphasize those problems as
-effective preparation for what is to come.  When a student earns a "A"
-in Calculus One, what we are trying to say is that there is evidence
-that this student will succeed in Calculus Two, but the way in which
-faculty write final exams isn't yet nearly as data-driven as what
-MOOCs provide.
-
-to be addressed by the project
-
-How can MOOCs improve other types of instruction, including blended
-learning, face to face and online instructional experiences for
-academically weak students?
-
-How can MOOCs help students succeed in remedial and introductory
-coursework?  What are the challenges, issues, and barriers to engaging
-less academically prepared and less self-motivated students in MOOC
-coursework? What are promising approaches?  Can MOOCs effectively
-customize/personalize the learning experience for students?  For which
-students, disciplines, types of learning and contexts are MOOCs
-more/less effective?  What perceptions about MOOCs exist among
-students, faculty, administrators, and state/regulatory leaders? How
-do these perceptions influence current and future opportunities for
-MOOCs to serve the higher education community and, in particular,
-low-income and disadvantaged young adult populations?
-
-Is there a realistic business model for MOOCs focused on remedial and introductory coursework?
-
-\subsubsection*{Methodology}
-
-planned for research activities
-
-affective surveys
-
-A/B user testing
+There are, then, two basic questions:
+\begin{itemize}
+\item What parameters in the adaptive
+  learning model best align online student performance with in-class
+  student performance?
+\item To what extent does student use
+  of adaptive learning correlate with success in traditional,
+  in-person courses?
+\end{itemize}
+The former question addresses improving the hidden Markov model that
+powers MOOCulus; the second question gets deeper, by addressing the
+extent to which adaptive learning helps with in-person courses.
 
 \subsubsection*{Literature}
 
@@ -153,6 +121,21 @@ presented at the International Conference on Educational Data Mining,
 ``Discovery of Student Strategies using Hidden Markov Model
 Clustering.''  The survey papers of Romero and Ventura provide an
 excellent overview.
+
+\subsubsection*{Methodology}
+
+First, by using the Baum-Welch algorithm on historic data, the
+parameters in the MOOCulus hidden Markov model will be set for each
+problem separately.
+
+Then, in addition to teaching the online MOOC, Snapp will be teaching
+calculus to two, quite different, student populations in Fall 2013.
+The first is a calculus course for middle school teachers ($n=28$);
+the second is a calculus course for engineering students ($n\approx
+180$).  By involving his in-person students also in the online
+MOOCulus course, the extent to which participation in the adaptive
+learning system correlates with success on in-person assessments can
+be determined.
 
 \end{document}
 
