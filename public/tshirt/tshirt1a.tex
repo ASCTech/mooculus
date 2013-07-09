@@ -1,20 +1,18 @@
-%\documentclass{article}
-\documentclass{standalone}
+\documentclass{article}
+%\documentclass{standalone}
 \usepackage{tikz,xcolor}
-\usepackage{pgfplots}
-\usepackage{kmath,kerkis}
+\usepackage{kerkis}
+\usepackage{fullpage}
 
 
 \colorlet{background}{white} % Color of the page
 \colorlet{textColor}{black} % Color of the text
-\colorlet{penColor}{blue!50!black} % Color of a curve in a plot
 \colorlet{cowLight}{background} % the light colors of the cow --
                                 % usually the same as the background
 \colorlet{cowDark}{textColor} % the dark colors of the cow -- usually
 
 \pagecolor{background}
 \color{textColor} 
-
 
 
 
@@ -67,7 +65,7 @@ arc (5:90:0.35in) % top ear
 
 
 \newcommand{\cow}[1]{
-  \begin{scope}[transform canvas={scale=#1},shift={(30mm,-20mm)},line width=2pt]  %% make function that can be moved and scaled. 
+  \begin{scope}[transform canvas={scale=#1},shift={(30mm,-8mm)},line width=2pt]  %% make function that can be moved and scaled. 
  
     \drawbody
 
@@ -123,33 +121,24 @@ arc (5:90:0.35in) % top ear
 
 
 
-
-
-
 \begin{document}
-\begin{tikzpicture}%[line width=1pt,scale=0.5, every node/.style={transform shape}]]  %%%%%%%% begin cow
-\begin{axis}[
-            ymin=-2,ymax=3,
-            xmin=-1,xmax=10,
-            domain=.1:10,
-            width=\linewidth,
-            ticks=none,
-            samples=100,
-            axis lines =middle,
-          ]
-	  \addplot [very thick, penColor, smooth] {ln(x)};
-          
-        \end{axis}
-%\clip(0,-10) rectangle (\linewidth,2); % bounding box
-\begin{scope}[xshift=1.5in,yshift=2.8in]
-\cow{.9}
-\end{scope}
-\begin{scope}[xshift=2in,yshift=2.7in]
-\cow{1}
-\end{scope}
-%\cow{2}
-%\cow{3}
-\end{tikzpicture}
+
+
+    \begin{tikzpicture}%[line width=1pt,scale=0.5, every node/.style={transform shape}]]  
+
+    \cow{1}
+    % draw title MOOCulus
+    \node[anchor=west] at (0.55in,0.2) {\scalebox{3.2}{\sffamily\Huge\textbf{MOOC}ULUS}};
+    %\node[anchor=west] at (1.35in,0.2) {\scalebox{3.2}{\sffamily\Huge\textbf{O}}};
+    %\node[anchor=west] at (2.16in,0.2) {\scalebox{3.2}{\sffamily\Huge\textbf{O}}};
+    %\node[anchor=west] at (2.97in,0.2) {\scalebox{3.2}{\sffamily\Huge\textbf{C}}};
+    %\node[anchor=west] at (3.5in,0.2) {\scalebox{3.2}{\sffamily\Huge ULUS}};
+
+    % draw subtitle
+    \node[anchor=north west] at (0.6in,-0.30in) {\sffamily\scalebox{2.1}{\footnotesize massive open online calculus}};
+
+    
+  \end{tikzpicture}%%%% end cow
 
 
 
