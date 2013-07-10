@@ -9,7 +9,7 @@ def float(x)
   return '%0.5f' % x
 end
 
-title = 'How fast does water drip from a faucet?'
+title = 'Welcome to Calculus One!'
 
 frame_count = 150
 
