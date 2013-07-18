@@ -7,6 +7,7 @@
 \geometry{paperwidth=5.333333333333333333in,paperheight=3in,margin=0.1in}
 \setlength{\parindent}{0in}
 %\usepackage{fontspec}
+\usepackage{kmath,kerkis}
 \usepackage{tikz}
 \usepackage{xcolor}
 \usepackage{graphicx}
@@ -24,7 +25,7 @@
 %  \node [shift={(<%= float(f3/3.0) %>em,0em)},color=gray!70!blue,opacity=<%= float(f4) %>,anchor=south west,rotate=0] at (current page.south west) {\sffamily \scalebox{2.2}{\Huge Calculus One}};%
 
 
-  \node [shift={(0em,<%= float(f0+5.0) %>em)}] (copyright) at (current page.south) {\textsf{\textcolor{white}{mooculus}\textcolor{gray}{.osu.edu}}};
+  \node [shift={(0em,<%= float(f0+5.0) %>em)}] (copyright) at (current page.south) {\textsf{\textcolor{white}{\textbf{mooc}ulus}\textcolor{gray}{.osu.edu}}};
 \end{tikzpicture}
 
 \end{document}

@@ -12,16 +12,16 @@
 \usepackage{xcolor}
 \usepackage{graphicx}
 
-\usepackage{eso-pic}
-\newcommand\BackgroundPic{
-\put(0,0){
-\parbox[b][\paperheight]{\paperwidth}{%
-\vfill
-\centering
-\includegraphics[width=\paperwidth,height=\paperheight,
-keepaspectratio]{OSUlogo.jpg}%
-\vfill
-}}}
+% \usepackage{eso-pic}
+% \newcommand\BackgroundPic{
+% \put(0,0){
+% \parbox[b][\paperheight]{\paperwidth}{%
+% \vfill
+% \centering
+% \includegraphics[width=\paperwidth,height=\paperheight,
+% keepaspectratio]{OSUlogo.jpg}%
+% \vfill
+% }}}
 
 
 
@@ -29,20 +29,20 @@ keepaspectratio]{OSUlogo.jpg}%
 
 \begin{document}
 %\sffamily
-\AddToShipoutPicture{\BackgroundPic}
+%\AddToShipoutPicture{\BackgroundPic}
 
 \begin{tikzpicture}[remember picture,overlay]
-%  \draw [fill=white] (current page.north west) rectangle (current page.south east);
+  \draw [fill=white] (current page.north west) rectangle (current page.south east);
 
-%  \shade[shading=axis,bottom color=white,top color=white,middle color=black!13!white,shading angle=<%= float(f5) %>] (current page.north west) rectangle (current page.south east);
+  \shade[shading=axis,bottom color=blue!50!black!70!red,top color=blue!50!black!70!red,middle color=yellow!10!white,shading angle=<%= float(f5) %>] (current page.north west) rectangle (current page.south east);
 
-  \node [shift={(<%= float(f1/3.0) %>em,0em)},color=gray!70!blue,opacity=<%= float(f2) %>,anchor=north east,rotate=0] at (current page.north east) {\sffamily \scalebox{2.2}{\Huge\textbf{MOOC}ULUS}};%
+  \node [shift={(<%= float(f1/3.0) %>em,0em)},color=white,opacity=<%= float(f2) %>,anchor=north east,rotate=0] at (current page.north east) {\sffamily \scalebox{2.2}{\Huge\textbf{MOOC}ULUS}};%
 
-  \node [shift={(<%= float(f3/3.0) %>em,0em)},color=gray!70!blue,opacity=<%= float(f4) %>,anchor=south west,rotate=0] at (current page.south west) {\sffamily \scalebox{2.2}{\Huge Calculus One}};%
+  \node [shift={(<%= float(f3/3.0) %>em,0em)},color=white,opacity=<%= float(f4) %>,anchor=south west,rotate=0] at (current page.south west) {\sffamily \scalebox{2.2}{\Huge Calculus One}};%
 
 
 
-  \node [shift={(0em,<%= float(f0) %>em)}] (copyright) at (current page.center) {\scalebox{2.5}{\parbox{2in}{\begin{center}\bigtitle\end{center}}}};
+  \node [shift={(0em,<%= float(f0) %>em)}] (copyright) at (current page.center) {\scalebox{2.5}{\parbox{2in}{\begin{center}\textbf\bigtitle\end{center}}}};
 \end{tikzpicture}
 
 \end{document}

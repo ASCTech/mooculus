@@ -9,7 +9,7 @@ def float(x)
   return '%0.5f' % x
 end
 
-title = 'Welcome to Calculus One!'
+title = 'WELCOME!'
 
 frame_count = 150
 

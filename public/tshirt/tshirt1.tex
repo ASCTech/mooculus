@@ -133,8 +133,8 @@ arc (5:90:0.35in) % top ear
 
 
 \begin{tikzpicture}
-\clip(-.5,-1.2) rectangle (\linewidth,1.3); % the box
-
+\clip(-.5,-3) rectangle (12.8in,1.5in); % the box
+ \begin{scope}[transform canvas={scale=3}]
       \begin{scope}[xshift=.47in,yshift=0in]
         \cow{.6}
         \end{scope}
@@ -145,6 +145,7 @@ arc (5:90:0.35in) % top ear
     \node[anchor=north west] at (.629in,-0.172in) {\sffamily\scalebox{1.657}{\footnotesize massive open online calculus}};
     \node at (0in,0) {}; % needed for alignment
 
+    \end{scope}
   \end{tikzpicture}
 
 \end{document}
