@@ -994,6 +994,13 @@ function parse (string) {
 };
 
 function parse_tex (string) {
+    // patch "2^32" to mean "2^{3}2"
+    string = string.replace( /\^([0-9])/g, "^{$1}" )
+    // things like \cdot2 confuses my tokenizer
+    string = string.replace( /([^0-9])([0-9])/g, "$1 $2" )
+    // mathquill inserts space after periods
+    string = string.replace( /\. ([0-9])/g, ".$1" )
+    string = string.replace( /, ([0-9])/g, ",$1" )
     return new StraightLineProgram( latexToAst(string) );
 };
 

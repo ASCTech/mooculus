@@ -16,6 +16,7 @@
 
    nonMinusFactor =
     '(' expression ')' |
+    '{' expression '}' |
     number | 
     variable |
     function factor |
@@ -190,6 +191,13 @@ var latexToAst = (function() {
 	    advance();
 	    var result = expression();
 	    if (symbol != ')') {
+		throw 'Expected )';	    
+	    }
+	    advance();
+	} else if (symbol == '{') {
+	    advance();
+	    var result = expression();
+	    if (symbol != '}') {
 		throw 'Expected )';	    
 	    }
 	    advance();
