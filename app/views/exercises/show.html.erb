@@ -23,7 +23,11 @@
 
         var updateCompetency = function() {
             var $bar = $('.bar');
-            $bar.width( (100 * competency).toFixed(2) + '%' );
+	    if (competency > 0.90) {
+              $bar.width( (100 * 1.0).toFixed(2) + '%' );
+            } else {
+              $bar.width( (100 * competency).toFixed(2) + '%' );
+            }
 
 	    var percentage = Math.round(competency * 100);
   	    if (percentage <= 50) {
