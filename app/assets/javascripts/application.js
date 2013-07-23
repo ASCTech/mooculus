@@ -16,6 +16,14 @@
 //= require underscore
 //= require setup-khan
 //= require khan-exercise
+//= require utils/complex-number
+//= require utils/lexer
+//= require utils/text-to-ast
+//= require utils/ast-to-text
+//= require utils/ast-to-latex
+//= require utils/latex-lexer
+//= require utils/latex-to-ast
+//= require utils/math-function
 //= require_tree .
 
 //= require twitter/bootstrap

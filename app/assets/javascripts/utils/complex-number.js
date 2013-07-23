@@ -225,3 +225,5 @@ ComplexNumber.prototype = {
 	).multiply( half_i );
     },
 };
+
+// module.exports = ComplexNumber;
