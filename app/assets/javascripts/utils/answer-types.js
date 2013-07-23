@@ -1412,7 +1412,7 @@ Khan.answerTypes = $.extend(Khan.answerTypes, {
 	    $(input_box).append('<div class="MathPreview" style="width:100%;"><script type="math/tex"></script></div>');		
 
 	    var addAlert = function(name, text) {
-		$(input_box).append('<div class="' + name + ' alert alert-error" style="display: none;"><button type="button" class="close" data-dismiss="alert">&times;</button>' + text + '</div>');
+		$(input_box).append('<div class="' + name + ' alert alert-error" style="display: none;">' + text + '</div>');
 	    };
 
 	    addAlert( 'MathFunctionError', '<strong>Parsing Error!</strong> I am not sure what you mean.' );
