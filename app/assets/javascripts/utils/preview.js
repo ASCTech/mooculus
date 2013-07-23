@@ -20,6 +20,13 @@ $(function() {
 			}
 		    }
 
+		    $(input_box).children(".MathFunctionErrorEmptyCaret").hide();
+		    console.log( text );
+		    if (text.match( '\\\^{ }' )) {
+			console.log( 'empty caret' );
+			$(input_box).children(".MathFunctionErrorEmptyCaret").show();
+		    }
+
 		} else {
 		    text = $(input_box).children('.parsed-expression').val();
 		    parser = MathFunction.parse;
@@ -41,6 +48,9 @@ $(function() {
 		    }
 		} else {
 		    $(input_box).children(".MathPreview").hide();
+		    $(input_box).children(".MathFunctionError").hide();
+		    $(input_box).children(".MathFunctionErrorForgetBackslash").hide();			
+		    $(input_box).children(".MathFunctionErrorEmptyCaret").hide();
 		}
 	    }, 250 );
 	});
