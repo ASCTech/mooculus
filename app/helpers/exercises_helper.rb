@@ -8,7 +8,7 @@ module ExercisesHelper
                else " bar-success"
                end
 
-    if (progress > 95)
+    if (progress > 90)
       return %(<div class="progress progress-striped" style="margin-bottom: 0px;"><div class="bar bar-success" style="width: 100%;"></div></div>)
     else
       return %(<div class="progress" style="margin-bottom: 0px;"><div class="bar#{modifier}" style="width: #{progress}%;"></div></div>)
