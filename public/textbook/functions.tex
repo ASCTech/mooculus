@@ -227,9 +227,14 @@ filling the pool is given by:
 \[
 v(t) = 700t + 200
 \]
-What does the inverse tell you? What is the inverse of this function?
+What does the inverse of this function tell you? What is the inverse
+of this function?
 \end{example}
 
+
+\marginnote[.5in]{Here we abuse notation slightly, allowing $v$ and $t$
+  to simultaneously be names of variables and functions.  This is
+  standard practice in calculus classes.}
 \begin{solution}
 While $v(t)$ tells you how many gallons of water are in the pool after
 a period of time, the inverse of $v(t)$ tells you how must time must
@@ -242,8 +247,79 @@ Now solve for $t$:
 \[
 t = v/700 - 2/7
 \]
-This is a function that assigns volumes to times, and so $t(v) = v/700 - 2/7$.
+This is a function that maps volumes to times, and 
+$t(v) = v/700-2/7$.
 \end{solution}
+
+
+Now let's consider a different example.
+
+\begin{example}
+Suppose you are standing on a bridge that is 60 meters above
+sea-level. You toss a ball up into the air with an initial velocity of
+30 meters per second.  If $t$ is the time (in seconds) after we toss
+the ball, then the height at time $t$ is approximately $h(t) = -5 t^2
++30t+60$. What does the inverse of this function tell you? What is the inverse
+of this function?
+\end{example}
+
+
+\begin{solution}
+While $h(t)$ tells you how height the ball is above sea-level at an
+instant of time, the inverse of $h(t)$ tells you what time it is when
+the ball is at a given height. There is only one problem: There is no
+function that is the inverse of $h(t)$. Consider Figure~\ref{plot:fxn
+  ball}, we can see that for some heights---namely 60 meters, there
+are two times. 
+
+While there is no inverse function for $h(t)$, we can find one if we
+\textit{restrict the domain} of $h(t)$. Take it as given that the
+maximum of $h(t)$ is at $105$ meters and $t=3$ seconds, later on in
+this course you'll know how to find points like this with ease. In
+this case, we may find an inverse of $h(t)$ on the interval
+$[3,\infty)$. Write
+\begin{align*}
+h &=  -5 t^2 +30t+60\\
+0 &= -5 t^2 +30t+(60 - h)
+\end{align*}
+and solve for $t$ using the quadratic formula
+\begin{align*}
+t &= \frac{-30\pm \sqrt{30^2 -4(-5)(60-h)}}{2(-5)}\\
+&= \frac{-30\pm \sqrt{30^2 +20(60-h)}}{-10}\\
+&=3\mp \sqrt{3^2+ .2(60-h)}\\
+&=3\mp \sqrt{9+ .2(60-h)}\\
+&=3\mp \sqrt{21-.2h}
+\end{align*}
+Now we must think about what it means to restrict the domain of $h(t)$
+to values of $t$ in $[3,\infty)$. Since $h(t)$ has its maximum value
+  of $105$ when $t=3$, the largest $h$ could be is $105$. This means
+  that $21-.2h >0$ and so $\sqrt{21-.2h}$ is a real number. We know
+  something else too, $t>3$. This means that the ``$\mp$'' that we see
+  above must be a ``$+$.''  So the inverse of $h(t)$ on the interval
+  $[3,\infty)$ is $t(h) = 3+ \sqrt{21-.2h}$. A similar argument will
+    show that the inverse of $h(t)$ on the interval $(-\infty, 3]$ is
+  $t(h) = 3- \sqrt{21-.2h}$.
+\end{solution}
+\begin{marginfigure}[-3in]
+\begin{tikzpicture}
+	\begin{axis}[
+            clip=false, domain=0:7.58, axis lines =middle, xlabel=$t$,
+            ylabel=$h$, every axis y label/.style={at=(current
+              axis.above origin),anchor=south}, every axis x
+            label/.style={at=(current axis.right of
+              origin),anchor=west}, ] \addplot [very thick, penColor,
+            smooth] {-5*x^2 +30*x+60};
+        \end{axis}
+\end{tikzpicture}
+\caption{A plot of $h(t)=-5t^2+30t+60$. Here we can see that for each
+  input---a value on the $t$-axis, there is exactly one output---a
+  value on the $h$-axis. However, for each value on the $h$ axis,
+  sometimes there are two values on the $t$-axis. Hence there is no
+  function that is the inverse of $h(t)$.}
+\label{plot:fxn ball}
+\end{marginfigure}
+
+
 
 
 \subsection{One-to-One Functions}
