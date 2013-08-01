@@ -1,0 +1,113 @@
+Thank you for your submission to the MOOC Research Initiative. I'm 
+pleased to inform you that your
+submission MOOCulus: Iteratively Improving Calculus Instruction has been 
+selected, by peer reviewers, for a full submission.
+
+The full submission should follow the format of your short submission:
+1. Proposal overview
+2. Literature and existing research that informs their proposal
+3. Context of research (MOOC taught, designed, university/organizational 
+affiliation, MOOC provider,
+publisher)
+4. Research questions to be addressed by the project
+5. Data sources being considered for the project
+6. Methodology planned for research activities
+
+Additionally, please include a section on your budget needs. MRI will 
+fund proposals in the $10,000-
+$25,000 range.
+
+Your final application should be in the range of 6-8 pages (excluding 
+citations) and should use 12 pt Times
+New Roman font. Please consider feedback from reviewers as you extend 
+your proposal.
+
+DEADLINE: We have extended the deadline for proposals to August 27, 2013 
+- a slight delay of the
+previously planned deadline to account for the delay in notifying you of 
+your acceptance.
+
+Sincerely,
+
+George Siemens
+On behalf of the MRI Steering Committee and Reviewers
+
+
+----------------------- REVIEW 1 ---------------------
+PAPER: 101
+TITLE: MOOCulus: Iteratively Improving Calculus Instruction
+AUTHORS: Jim Fowler and Bart Snapp
+
+OVERALL EVALUATION: 3 (strong accept)
+REVIEWER'S CONFIDENCE: 4 (high)
+Quality of the Proposed Work: Research method techniques and tools to be 
+used are CLEAR; novel contribution to research and ability to compare 
+results with established research and/or other MOOC research: 4 (good)
+Access to data and description of tools and methods: How they are going 
+to access the data for analysis;  data as aligned with research 
+questions.: 5 (excellent)
+Experience and capacity of researchers to conduct the work: Evaluation 
+of the researchers' expertise in the MOOC area and/or in the research 
+methods proposed.: 5 (excellent)
+Clear definition of scope of analysis and application and context of 
+application (e.g. upper-division STEM courses using xMOOCs), and whether 
+research allows application beyond one course or discipline: 4 (good)
+
+----------- REVIEW -----------
+The proposal aims to examine user logs from a MOOC add-on called 
+MOOCulus to investigate adaptive learning. The approach is sound and 
+should provide detailed insight into adaptive learning models and use of 
+hints or analysis of carelessness.
+
+
+----------------------- REVIEW 2 ---------------------
+PAPER: 101
+TITLE: MOOCulus: Iteratively Improving Calculus Instruction
+AUTHORS: Jim Fowler and Bart Snapp
+
+OVERALL EVALUATION: 0 (borderline paper)
+REVIEWER'S CONFIDENCE: 4 (high)
+Quality of the Proposed Work: Research method techniques and tools to be 
+used are CLEAR; novel contribution to research and ability to compare 
+results with established research and/or other MOOC research: 3 (fair)
+Access to data and description of tools and methods: How they are going 
+to access the data for analysis;  data as aligned with research 
+questions.: 3 (fair)
+Experience and capacity of researchers to conduct the work: Evaluation 
+of the researchers' expertise in the MOOC area and/or in the research 
+methods proposed.: 3 (fair)
+Clear definition of scope of analysis and application and context of 
+application (e.g. upper-division STEM courses using xMOOCs), and whether 
+research allows application beyond one course or discipline: 3 (fair)
+
+----------- REVIEW -----------
+I felt this paper was too closely focused around one course and that the 
+results would not be generalisable. The MOOC calculus tool might be 
+useful, but it doesn't fit into the broader research initiative as well 
+as other proposals.
+
+
+----------------------- REVIEW 3 ---------------------
+PAPER: 101
+TITLE: MOOCulus: Iteratively Improving Calculus Instruction
+AUTHORS: Jim Fowler and Bart Snapp
+
+OVERALL EVALUATION: 3 (strong accept)
+REVIEWER'S CONFIDENCE: 4 (high)
+Quality of the Proposed Work: Research method techniques and tools to be 
+used are CLEAR; novel contribution to research and ability to compare 
+results with established research and/or other MOOC research: 5 
+(excellent)
+Access to data and description of tools and methods: How they are going 
+to access the data for analysis;  data as aligned with research 
+questions.: 5 (excellent)
+Experience and capacity of researchers to conduct the work: Evaluation 
+of the researchers' expertise in the MOOC area and/or in the research 
+methods proposed.: 5 (excellent)
+Clear definition of scope of analysis and application and context of 
+application (e.g. upper-division STEM courses using xMOOCs), and whether 
+research allows application beyond one course or discipline: 4 (good)
+
+----------- REVIEW -----------
+Strong proposal. Researchers have technical and research capacity to 
+address the scope of intended research.
