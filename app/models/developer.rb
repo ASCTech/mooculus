@@ -4,12 +4,16 @@ class Developer
 end
 
 Developer.create :name => "Bart Snapp", :photo => "bart-snapp",
-  :description => 'Bart Snapp teaches mathematics at OSU.  His research interests include commutative ring theory and recreational mathematics.  He enjoys exploring connections between mathematics and the real-world problems, art, and music.Currently Bart is the head instructor (&ldquo;project manager&rdquo;) for MOOCulus</p>',
-  :link => 'http://www.math.osu.edu/~snapp/',
-  :email => 'snapp.14@osu.edu'
+  :description => 'Bart Snapp teaches mathematics at OSU.  His
+  research interests include commutative ring theory and recreational
+  mathematics.  He enjoys exploring connections between mathematics
+  and the real-world problems, art, and music. Currently Bart is the
+  head instructor (&ldquo;project manager&rdquo;) for MOOCulus.',
+  :link => 'http://www.math.osu.edu/~snapp/', 
+  :email =>'snapp.14@osu.edu'
 
 Developer.create :name => "Jim Fowler", :photo => "jim-fowler",
-  :description => 'Jim\'s research broadly includes geometry and topology; specifically, his interests focus on the topology of high-dimensional manifolds and geometric group theory, which means he thinks about highly symmetric (and therefore very beautiful) geometric objects.  He\'s fond of using computational techniques to attack problems in pure mathematics.</p><p>He received an undergraduate degree from <a href="http://www.harvard.edu/">Harvard University</a> and received a Ph.D. from the <a href="http://www.uchicago.edu/">University of Chicago</a>.</p>',
+  :description => 'Jim\'s research broadly includes geometry and topology; specifically, his interests focus on the topology of high-dimensional manifolds and geometric group theory, which means he thinks about highly symmetric (and therefore very beautiful) geometric objects.  He\'s fond of using computational techniques to attack problems in pure mathematics. He received an undergraduate degree from <a href="http://www.harvard.edu/">Harvard University</a> and received a Ph.D. from the <a href="http://www.uchicago.edu/">University of Chicago</a>.',
   :link => 'http://www.math.osu.edu/~fowler/',
   :email => 'fowler@math.osu.edu'
 
@@ -57,3 +61,8 @@ Developer.create :name => "Johann Thiel", :photo => "johann-thiel",
 Developer.create :name => "Chris Bolognese", :photo => "chris-bolognese",
   :description => 'Chris Bolognese has taught mathematics both at the high school and college level.  Next year he is the district teacher leader for mathematics K-12 for Upper Arlington Schools.  Chris enjoys mathematics competitions and mathematical technology.  For mooculus, Chris will be a teaching assistant and also contribute items for exercises.',
   :email => 'cbolognese@uaschools.org'
+
+
+Developer.create :name => "David Lindberg", :photo => "david-lindberg",
+  :description => 'David Lindberg is a mathematics masters student at OSU.  For Calculus One, David is performing data analysis on the exercises to help improve the educational aspects of MOOCulus.',
+  :email => 'lindberg.24@buckeyemail.osu.edu'
