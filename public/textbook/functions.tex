@@ -134,7 +134,7 @@ Consider the function that maps non-negative real numbers to their positive squa
 \[
 f(x) = \sqrt{x}.
 \]
-Note, since this is a function, and its range consists of the positive real numbers, we have that 
+Note, since this is a function, and its range consists of the non-negative real numbers, we have that 
 \[
 \sqrt{x^2} = |x|.
 \]
@@ -371,7 +371,7 @@ of this function?
   standard practice in calculus classes.}
 \begin{solution}
 While $v(t)$ tells you how many gallons of water are in the pool after
-a period of time, the inverse of $v(t)$ tells you how must time must
+a period of time, the inverse of $v(t)$ tells you how much time must
 be spent to obtain a given volume. To compute the inverse function,
 first set $v=v(t)$ and write
 \[
@@ -399,7 +399,7 @@ of this function?
 
 
 \begin{solution}
-While $h(t)$ tells you how height the ball is above sea-level at an
+While $h(t)$ tells you how the height the ball is above sea-level at an
 instant of time, the inverse of $h(t)$ tells you what time it is when
 the ball is at a given height. There is only one problem: There is no
 function that is the inverse of $h(t)$. Consider Figure~\ref{plot:fxn
@@ -470,7 +470,7 @@ to values of $t$ in $[3,\infty)$. Since $h(t)$ has its maximum value
         \end{axis}
 \end{tikzpicture}
 \caption{A plot of $h(t)=-5t^2+30t+60$. While this plot passes the
-  vertical line test, and hence represents $y$ as a function of $x$,
+  vertical line test, and hence represents $h$ as a function of $t$,
   it does not pass the horizontal line test, so the function is not one-to-one.}
 \label{plot:fxn vert/horiz}
 \end{marginfigure}
@@ -486,9 +486,9 @@ there is exactly one value in the domain.
 \end{definition}
 
 You may recall that a plot gives $y$ as a function of $x$ if every
-vertical line cross the plot at most once, this is commonly known as
+vertical line crosses the plot at most once, this is commonly known as
 the vertical line test. A function is one-to-one if every horizontal
-line cross the plot at most once, this is commonly known as the
+line crosses the plot at most once, which is commonly known as the
 horizontal line test, see Figure~\ref{plot:fxn vert/horiz}.  We can
 only find an inverse to a function when it is one-to-one, otherwise we
 must restrict the domain as we did in
@@ -575,9 +575,9 @@ the interval $[0,\infty)$. Hence we can find an inverse of $f(x)=x^2$
           \node at (axis cs:1.4,1) [penColor2, anchor=west] {$f^{-1}(x)$};
         \end{axis}
 \end{tikzpicture}
-\caption{A plot of $f(x)=x^3$ and $f^{-1}(x) = \sqrt{x}$. While
+\caption{A plot of $f(x)=x^2$ and $f^{-1}(x) = \sqrt{x}$. While
   $f(x)=x^2$ is not one-to-one on $\R$, it is one-to-one on
-  $[0,\infty$.}
+  $[0,\infty)$.}
 \label{plot:fxn and inverse x^2}
 \end{marginfigure}
 
@@ -607,7 +607,7 @@ This confusing notation is often exasperated by the fact that
 \]
 
 In the case of trigonometric functions, this confusion can be avoided
-by using the notation $\arcsin$ and so on for other trionometric
+by using the notation $\arcsin$ and so on for other trigonometric
 functions.
 
 
@@ -624,7 +624,7 @@ by
 Give the inverse of $\l(t)$.  What does the inverse of $\l(t)$
  represent?
 \begin{answer}
-$t(\l) = \frac{\l}{8} - 3$, this function gives the number of months
+$t(\l) = \frac{3l}{8} - 3$, this function gives the number of months
   required to grow hair to a given length. 
 \end{answer}
 \end{exercise}
@@ -637,8 +637,8 @@ m(t) = 900t + 300
 where $t$ is time in months. Give the inverse of $m(t)$.  What does 
 the inverse of $m(t)$ represent?
 \begin{answer}
-$t(m) = \frac{m}{900} - 1/3$, this function gives the number of months
-  required to aquire a given amount of money. 
+$t(m) = \frac{m}{900} - \frac{1}/{3}$, this function gives the number of months
+  required to acquire a given amount of money. 
 \end{answer}
 \end{exercise}
 
@@ -651,6 +651,12 @@ h(t) = -5t^2+10t+2
 where $h(t)$ is the height in meters and $t$ is in seconds after
 letting go. Give two different inverses on two different restricted
 domains. What do these inverses represent?
+\being{answer}
+\[
+t(h) = 1 \mp \sqrt(1.4-0.2h).  Either function gives the time in terms of 
+a height the cap reaches.
+\]
+\end{answer}
 \end{exercise}
 
 \begin{exercise}
