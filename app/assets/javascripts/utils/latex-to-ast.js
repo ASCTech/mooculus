@@ -16,7 +16,6 @@
 
    nonMinusFactor =
     '(' expression ')' |
-    '{' expression '}' |
     number | 
     variable |
     function factor |
@@ -28,11 +27,9 @@
     '-' factor |
     nonMinusFactor
 */
-
-var latexToAst = (function() {
+var latexToAst = (function(){
     /****************************************************************/
     /* setup the lexer */
-
     latexLexer.parse('');
     var lexer = latexLexer.parser.yy.lexer;
 
@@ -166,6 +163,9 @@ var latexToAst = (function() {
 	} else if (symbol == 'VAR') {
 	    result = yytext();
 	    advance();
+	} else if (symbol == 'PI') {
+	    result = "pi"
+	    advance();
 	} else if (isFunctionSymbol(symbol)) {
 	    var functionName = symbol.toLowerCase();
 	    advance();
@@ -191,13 +191,6 @@ var latexToAst = (function() {
 	    advance();
 	    var result = expression();
 	    if (symbol != ')') {
-		throw 'Expected )';	    
-	    }
-	    advance();
-	} else if (symbol == '{') {
-	    advance();
-	    var result = expression();
-	    if (symbol != '}') {
 		throw 'Expected )';	    
 	    }
 	    advance();

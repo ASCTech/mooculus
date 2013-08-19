@@ -26,10 +26,9 @@
     '-' factor |
     nonMinusFactor
 */
-
+var textToAst = (function(){
     /****************************************************************/
     /* setup the lexer */
-var textToAst = (function(){
     textLexer.parse('');
     var lexer = textLexer.parser.yy.lexer;
 
@@ -133,6 +132,9 @@ var textToAst = (function(){
 	} else if (symbol == 'VAR') {
 	    result = yytext();
 	    advance();
+	} else if (symbol == 'PI') {
+	    result = "pi"
+	    advance();
 	} else if (isFunctionSymbol(symbol)) {
 	    var functionName = symbol.toLowerCase();
 	    advance();
@@ -173,4 +175,4 @@ var textToAst = (function(){
 
     //module.exports = parse;
     return parse;
-}());
+})();

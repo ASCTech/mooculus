@@ -619,36 +619,38 @@ case 33:return 'SEC'
 break;
 case 34:return 'COT'
 break;
-case 35:return 'ARCSIN'
+case 35:return 'PI'
 break;
-case 36:return 'ARCCOS'
+case 36:return 'ARCSIN'
 break;
-case 37:return 'ARCTAN'
+case 37:return 'ARCCOS'
 break;
-case 38:return 'ARCSIN'
+case 38:return 'ARCTAN'
 break;
-case 39:return 'ARCCOS'
+case 39:return 'ARCSIN'
 break;
-case 40:return 'ARCTAN'
+case 40:return 'ARCCOS'
 break;
-case 41:return 'LOG'
+case 41:return 'ARCTAN'
 break;
 case 42:return 'LOG'
 break;
-case 43:return 'EXP'
+case 43:return 'LOG'
 break;
-case 44:return 'SQRT'
+case 44:return 'EXP'
 break;
-case 45:return 'VAR'
+case 45:return 'SQRT'
 break;
-case 46:return 4
+case 46:return 'VAR'
 break;
-case 47:return 'INVALID'
+case 47:return 4
+break;
+case 48:return 'INVALID'
 break;
 }
 },
-rules: [/^(?:\s+)/,/^(?:[0-9]+(\.[0-9]+)?)/,/^(?:\*)/,/^(?:\/)/,/^(?:-)/,/^(?:\+)/,/^(?:\^)/,/^(?:\()/,/^(?:\\left\()/,/^(?:\\right\))/,/^(?:\\left\[)/,/^(?:\\right\])/,/^(?:\[)/,/^(?:\])/,/^(?:\\left\|)/,/^(?:\\right\|)/,/^(?:\))/,/^(?:\{)/,/^(?:\})/,/^(?:\\cdot\b)/,/^(?:\\pi\b)/,/^(?:\\frac\b)/,/^(?:\\pi\b)/,/^(?:\\sin\b)/,/^(?:\\cos\b)/,/^(?:\\tan\b)/,/^(?:\\csc\b)/,/^(?:\\sec\b)/,/^(?:\\cot\b)/,/^(?:\\sin\b)/,/^(?:\\cos\b)/,/^(?:\\tan\b)/,/^(?:\\csc\b)/,/^(?:\\sec\b)/,/^(?:\\cot\b)/,/^(?:\\arcsin\b)/,/^(?:\\arccos\b)/,/^(?:\\arctan\b)/,/^(?:\\asin\b)/,/^(?:\\acos\b)/,/^(?:\\atan\b)/,/^(?:\\log\b)/,/^(?:\\ln\b)/,/^(?:\\exp\b)/,/^(?:\\sqrt\b)/,/^(?:[A-Za-z])/,/^(?:$)/,/^(?:.)/],
-conditions: {"INITIAL":{"rules":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47],"inclusive":true}}
+rules: [/^(?:\s+)/,/^(?:[0-9]+(\.[0-9]+)?)/,/^(?:\*)/,/^(?:\/)/,/^(?:-)/,/^(?:\+)/,/^(?:\^)/,/^(?:\()/,/^(?:\\left\()/,/^(?:\\right\))/,/^(?:\\left\[)/,/^(?:\\right\])/,/^(?:\[)/,/^(?:\])/,/^(?:\\left\|)/,/^(?:\\right\|)/,/^(?:\))/,/^(?:\{)/,/^(?:\})/,/^(?:\\cdot\b)/,/^(?:\\pi\b)/,/^(?:\\frac\b)/,/^(?:\\pi\b)/,/^(?:\\sin\b)/,/^(?:\\cos\b)/,/^(?:\\tan\b)/,/^(?:\\csc\b)/,/^(?:\\sec\b)/,/^(?:\\cot\b)/,/^(?:\\sin\b)/,/^(?:\\cos\b)/,/^(?:\\tan\b)/,/^(?:\\csc\b)/,/^(?:\\sec\b)/,/^(?:\\cot\b)/,/^(?:\\pi\b)/,/^(?:\\arcsin\b)/,/^(?:\\arccos\b)/,/^(?:\\arctan\b)/,/^(?:\\asin\b)/,/^(?:\\acos\b)/,/^(?:\\atan\b)/,/^(?:\\log\b)/,/^(?:\\ln\b)/,/^(?:\\exp\b)/,/^(?:\\sqrt\b)/,/^(?:[A-Za-z])/,/^(?:$)/,/^(?:.)/],
+conditions: {"INITIAL":{"rules":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48],"inclusive":true}}
 };
 return lexer;
 })();

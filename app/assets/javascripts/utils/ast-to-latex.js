@@ -89,6 +89,7 @@ var astToLatex = (function(){
 
     function factor(tree) {
 	if (typeof tree === 'string') {
+	    if (tree == "pi") return "\\pi";
 	    return tree;
 	}    
 	
