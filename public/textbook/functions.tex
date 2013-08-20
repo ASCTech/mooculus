@@ -16,12 +16,18 @@ tools for talking about these relations.
 
 A \textit{function} is a relation between sets of objects that can be
 thought of as a ``mathematical machine.'' This means for each input,
-there is exactly one output. Moreover, whenever we talk about
-functions, we should try to explicitly state what type of things the
-inputs are and what type of things the outputs are.
+there is exactly one output. Let's say this explicitly.
 
-In calculus, functions often define a relation from (a subset of) the
-real numbers to (a subset of) the real numbers.
+\begin{definition}\index{function}
+A \textbf{function} is a relation between sets, where for each input,
+there is exactly one output.
+\end{definition}
+
+Moreover, whenever we talk about functions, we should try to
+explicitly state what type of things the inputs are and what type of
+things the outputs are.  In calculus, functions often define a
+relation from (a subset of) the real numbers to (a subset of) the real
+numbers.
 
 
 \marginnote[.5in]{While the name of the function is technically ``$f$,'' we
@@ -40,7 +46,7 @@ by the plot shown in Figure~\ref{plot:fxn x^3}.
 \end{example}
 
 \begin{warning}
-A function is a mapping (such that for each input, there is exactly one
+A function is a relation (such that for each input, there is exactly one
 output) between sets and should not be confused with either its
 formula or its plot.
 \begin{itemize}
@@ -134,7 +140,7 @@ Consider the function that maps non-negative real numbers to their positive squa
 \[
 f(x) = \sqrt{x}.
 \]
-Note, since this is a function, and its range consists of the positive real numbers, we have that 
+Note, since this is a function, and its range consists of the non-negative real numbers, we have that 
 \[
 \sqrt{x^2} = |x|.
 \]
@@ -197,16 +203,59 @@ $x=2$. See Figure~\ref{plot:point undfed fxn} for a plot of this function.
 
 \begin{exercises}
 
+\begin{marginfigure}[0in]
+\begin{tikzpicture}
+	\begin{axis}[
+            domain=-5:5,
+            ymin=-2,
+            ymax=4,
+            axis lines =middle, xlabel=$x$, ylabel=$y$,
+            every axis y label/.style={at=(current axis.above origin),anchor=south},
+            every axis x label/.style={at=(current axis.right of origin),anchor=west},
+            grid=both,
+            grid style={dashed, gridColor},
+            xtick={-4,...,4},
+            ytick={-1,...,4},
+          ]
+	  \addplot [very thick, penColor,domain=2:5] {abs(x-2)};
+          \addplot [very thick, penColor,domain=-5:2] {abs(x-2)};
+        \end{axis}
+\end{tikzpicture}
+\caption{A plot of $y=f(x)$.}
+\label{plot:absforexer}
+\end{marginfigure}
+
 \begin{exercise} 
-In Figure~\ref{} we see a plot of $y=f(x)$. What is $f(4)$?    %% insert picture of f(x) = abs(x-2) on [-5, 5].
+In Figure~\ref{plot:absforexer} we see a plot of $y=f(x)$. What is $f(4)$?    %% insert picture of f(x) = abs(x-2) on [-5, 5].
 \begin{answer}
 $2$
 \end{answer}
 \end{exercise}
 
 
+
+\begin{marginfigure}[0in]
+\begin{tikzpicture}
+	\begin{axis}[
+            ymin=-4,
+            ymax=4,
+            axis lines =middle, xlabel=$x$, ylabel=$y$,
+            every axis y label/.style={at=(current axis.above origin),anchor=south},
+            every axis x label/.style={at=(current axis.right of origin),anchor=west},
+            grid=both,
+            grid style={dashed, gridColor},
+            xtick={-4,...,4},
+            ytick={-4,...,4},
+          ]
+	  \addplot [very thick, penColor,smooth,domain=-3:5] {(x-1)/(x+3)};
+          \addplot [very thick, penColor,smooth,domain=-5:-4.5] {(x-1)/(x+3)};
+        \end{axis}
+\end{tikzpicture}
+\caption{A plot of $y=f(x)$.}
+\label{plot:rtnlforexer}
+\end{marginfigure}
 \begin{exercise} 
-In Figure~\ref{} we see a plot of $y=f(x)$. What is $f(-2)$?  %% insert picture of f(x) = (x-1)/(x+3) on [-5, 5].
+In Figure~\ref{plot:rtnlforexer} we see a plot of $y=f(x)$. What is $f(-2)$?  %% insert picture of f(x) = (x-1)/(x+3) on [-5, 5].
 \begin{answer}
 $-3$
 \end{answer}
@@ -371,7 +420,7 @@ of this function?
   standard practice in calculus classes.}
 \begin{solution}
 While $v(t)$ tells you how many gallons of water are in the pool after
-a period of time, the inverse of $v(t)$ tells you how must time must
+a period of time, the inverse of $v(t)$ tells you how much time must
 be spent to obtain a given volume. To compute the inverse function,
 first set $v=v(t)$ and write
 \[
@@ -399,7 +448,7 @@ of this function?
 
 
 \begin{solution}
-While $h(t)$ tells you how height the ball is above sea-level at an
+While $h(t)$ tells you how the height the ball is above sea-level at an
 instant of time, the inverse of $h(t)$ tells you what time it is when
 the ball is at a given height. There is only one problem: There is no
 function that is the inverse of $h(t)$. Consider Figure~\ref{plot:fxn
@@ -470,7 +519,7 @@ to values of $t$ in $[3,\infty)$. Since $h(t)$ has its maximum value
         \end{axis}
 \end{tikzpicture}
 \caption{A plot of $h(t)=-5t^2+30t+60$. While this plot passes the
-  vertical line test, and hence represents $y$ as a function of $x$,
+  vertical line test, and hence represents $h$ as a function of $t$,
   it does not pass the horizontal line test, so the function is not one-to-one.}
 \label{plot:fxn vert/horiz}
 \end{marginfigure}
@@ -486,9 +535,9 @@ there is exactly one value in the domain.
 \end{definition}
 
 You may recall that a plot gives $y$ as a function of $x$ if every
-vertical line cross the plot at most once, this is commonly known as
+vertical line crosses the plot at most once, this is commonly known as
 the vertical line test. A function is one-to-one if every horizontal
-line cross the plot at most once, this is commonly known as the
+line crosses the plot at most once, which is commonly known as the
 horizontal line test, see Figure~\ref{plot:fxn vert/horiz}.  We can
 only find an inverse to a function when it is one-to-one, otherwise we
 must restrict the domain as we did in
@@ -575,9 +624,9 @@ the interval $[0,\infty)$. Hence we can find an inverse of $f(x)=x^2$
           \node at (axis cs:1.4,1) [penColor2, anchor=west] {$f^{-1}(x)$};
         \end{axis}
 \end{tikzpicture}
-\caption{A plot of $f(x)=x^3$ and $f^{-1}(x) = \sqrt{x}$. While
+\caption{A plot of $f(x)=x^2$ and $f^{-1}(x) = \sqrt{x}$. While
   $f(x)=x^2$ is not one-to-one on $\R$, it is one-to-one on
-  $[0,\infty$.}
+  $[0,\infty)$.}
 \label{plot:fxn and inverse x^2}
 \end{marginfigure}
 
@@ -607,7 +656,7 @@ This confusing notation is often exasperated by the fact that
 \]
 
 In the case of trigonometric functions, this confusion can be avoided
-by using the notation $\arcsin$ and so on for other trionometric
+by using the notation $\arcsin$ and so on for other trigonometric
 functions.
 
 
@@ -624,8 +673,8 @@ by
 Give the inverse of $\l(t)$.  What does the inverse of $\l(t)$
  represent?
 \begin{answer}
-$t(\l) = \frac{\l}{8} - 3$, this function gives the number of months
-  required to grow hair to a given length. 
+$\l^{-1}(t) = \frac{3t}{8} - 3$, this function gives the number of
+  months required to grow hair to a given length.
 \end{answer}
 \end{exercise}
 
@@ -637,8 +686,8 @@ m(t) = 900t + 300
 where $t$ is time in months. Give the inverse of $m(t)$.  What does 
 the inverse of $m(t)$ represent?
 \begin{answer}
-$t(m) = \frac{m}{900} - 1/3$, this function gives the number of months
-  required to aquire a given amount of money. 
+$m^{-1}(t) = \frac{t}{900} - \frac{1}{3}$, this function gives the
+  number of months required to acquire a given amount of money.
 \end{answer}
 \end{exercise}
 
@@ -651,6 +700,10 @@ h(t) = -5t^2+10t+2
 where $h(t)$ is the height in meters and $t$ is in seconds after
 letting go. Give two different inverses on two different restricted
 domains. What do these inverses represent?
+\begin{answer}
+$h^{-1}(t) = 1 \mp \sqrt{1.4-0.2t}$.  Either function gives the time
+  in terms of a height the cap reaches.
+\end{answer}
 \end{exercise}
 
 \begin{exercise}
@@ -661,11 +714,26 @@ n(t) =17t^2 - 20t + 700
 where $t$ is the temperature of the food in degrees Celsius.  Give two
 different inverses on two different restricted domains. What do these
 inverses represent?
+\begin{answer}
+$n^{-1}(t)= \frac{-1}{2} \pm \frac{\sqrt{68t-47200}}{34}$, where
+  either function describes the temperature it takes to reach a
+  certain number of bacteria.
+\end{answer}
 \end{exercise}
 
 
 \begin{exercise}
-sin word problem
+The height in meters of a person off the ground as they ride a 
+Ferris Wheel can be modeled by
+\[
+h(t) = 18\cdot \sin( \frac{\pi}{7} ) + 20
+\]
+where $t$ is time elapsed in seconds.  If $h$ is restricted to the
+domain $[3.5, 10.5]$, find and interpret the meaning of $h^-1(20)$.
+\begin{answer}
+$h^{-1}(20)=7$.  This means that a height of 20 meters is achieved at 7 seconds
+in the restricted interval.
+\end{answer}
 \end{exercise}
 
 
@@ -675,14 +743,26 @@ modeled by
 \[
 v(t) = 10000\cdot 0.8^{t}.
 \]
-Find an equation for the inverse $v^{-1}(t)$ and explain in words
-what it represents.
+Find $v^{-1}(4000)$ and explain in words what it represents.
+\begin{answer}
+$v^{-1}(4000) = 4.1$.  This means that it takes approximately 4.1 years
+for the car's value to reach 4000 dollars.
+\end{answer}
 \end{exercise}
 
 
 
 \begin{exercise}
-ln e word problem
+The loudness $d$ (in decibels) is given by the equation
+\[
+d(I) = 10\cdot \log(\frac{I}{I_0})
+\]
+where $I$ is the given intensity and $I_0$ is the threshold sound (the
+quietest detectable intensity).  Determine $d^{-1}(85)$ in terms of the
+threshold sound.
+\begin{answer}
+$d^{-1}(85) = 3.2 \cdot 10^{8} \cdot  I_0$ or approximately 320 million times the threshold sound.
+\end{answer}
 \end{exercise}
 
 
@@ -698,11 +778,25 @@ $f^{-1}(x)$ is the inverse function (if it exists) of $f(x)$;
 
 
 \begin{exercise}
-$\sin^2 x$, $\sin(x)^2$  $(\sin x)^2$ $\sin(x^2)$ $\sin x^2$ $\sin(x) \sin(x)$ $(\sin x)(\sin x)$
+Sort the following expressions into two equivalent groups:
+\[
+\sin^2 x \qquad \sin(x)^2 \qquad (\sin x)^2 \qquad \sin(x^2) \qquad  \sin x^2 \qquad (\sin x)(\sin x)
+\]
+\begin{answer}
+Group A:  $\sin^2x$, $(\sin x)^2$, $(\sin x)(\sin x)$;
+Group B: $\sin(x)^2$, $\sin(x^2)$, $\sin x^2$
+\end{answer}
 \end{exercise}
 
 \begin{exercise}
-$\arcsin(x)$ $\sin^{-1}(x)$ $\sin(x)^{-1}$ $\frac{1}{\sin(x)}$ $\sin(x^{-1})$  $(\sin x)^{-1}$
+Sort the following expressions into two equivalent groups:
+\[
+\arcsin(x) \qquad (\sin x)^{-1} \qquad  \sin^{-1}(x) \qquad \qquad \frac{1}{\sin(x)} 
+\]
+\begin{answer}
+Group A: $\arcsin(x)$, $\sin^{-1}(x)$;
+Group B: $\frac{1}{\sin(x)}$, $(\sin x)^{-1}$
+\end{answer}
 \end{exercise}
 
 \begin{exercise} 
