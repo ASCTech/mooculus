@@ -15,7 +15,8 @@ $(function() {
 
 		    $(input_box).children(".MathFunctionErrorForgetBackslash").hide();			
 		    for( var i = 0; i < function_list.length; i++ ) {
-			if (text.match( function_list[i] ) && !(text.match( '\\\\' + function_list[i] ))) {
+			// do not complain if the user types \arccos even though we see cos without seeing \cos
+			if (text.match( function_list[i] ) && !(text.match( 'arc' + function_list[i]) && !(text.match( '\\\\' + function_list[i] ))) {
 			    $(input_box).children(".MathFunctionErrorForgetBackslash").show();			
 			}
 		    }
@@ -40,7 +41,7 @@ $(function() {
 			MathJax.Hub.Queue(["Text",math,latex]);
 			$(input_box).children(".MathFunctionError").hide();
 			$(input_box).children(".MathPreview").show();
-		    }
+		    } 
 		    catch(err)
 		    {
 			$(input_box).children(".MathFunctionError").show();
