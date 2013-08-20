@@ -37,7 +37,8 @@ var latexToAst = (function(){
     
     function advance() {
 	symbol = lexer.lex();
-	
+	console.log( symbol );
+
 	if (symbol == 4)
 	    symbol = 'EOF';
 	
@@ -60,6 +61,7 @@ var latexToAst = (function(){
     /* grammar */
     
     function expression() {
+	console.log( "in expression" );
 	var lhs = term();
 	
 	while ((symbol == '+') || (symbol == '-')) {
@@ -88,35 +90,7 @@ var latexToAst = (function(){
     }    
 
     function term() {
-	if (symbol == 'FRAC') {
-	    advance();
-
-	    if (symbol != '{') {
-		throw 'Expected {';
-	    }
-	    advance();	    
-
-	    var numerator = expression();
-
-	    if (symbol != '}') {
-		throw 'Expected }';
-	    }
-	    advance();
-
-	    if (symbol != '{') {
-		throw 'Expected {';
-	    }
-	    advance();	    
-
-	    var denominator = expression();
-
-	    if (symbol != '}') {
-		throw 'Expected }';
-	    }
-	    advance();
-
-	    return ['/', numerator, denominator];
-	}
+	console.log( "in term" );
 
 	var lhs = factor();
 
@@ -157,7 +131,13 @@ var latexToAst = (function(){
     function nonMinusFactor() {
 	var result = false;
 
-	if (symbol == 'NUMBER') {
+	if (symbol == 'FRAC') {
+	    advance();
+	    var numerator = factor();
+	    var denominator = factor();
+
+	    return ['/', numerator, denominator];
+	} else if (symbol == 'NUMBER') {
 	    result = parseFloat( yytext() );
 	    advance();
 	} else if (symbol == 'VAR') {
