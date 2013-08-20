@@ -4,7 +4,15 @@ var astToLatex = (function(){
 	"+": function(operands) { return operands.join( ' + ' ); },
 	"-": function(operands) { return operands.join( ' - ' ); },
 	"~": function(operands) { return "-" + operands.join( ' - ' ); },
-	"*": function(operands) { return operands.join( " \\, " ); },
+	"*": function(operands) {
+	    console.log( _.map );
+	    return _.map( operands, function (operand) { 
+		if (operand.toString().match( /^-/ ) || (typeof operand == 'number'))
+		    return '\\left(' + operand + '\\right)';
+		else
+		    return operand;
+	    }).join( " \\, " );
+	},
 	"/": function(operands) { return "\\frac{" + operands[0] + "}{" + operands[1] + "}"; },
 	"^": function(operands) { return operands[0]  + "^{" + operands[1] + "}"; },
 	"sin": function(operands) { return "\\sin " + operands[0]; },
