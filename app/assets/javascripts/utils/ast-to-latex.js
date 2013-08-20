@@ -5,13 +5,18 @@ var astToLatex = (function(){
 	"-": function(operands) { return operands.join( ' - ' ); },
 	"~": function(operands) { return "-" + operands.join( ' - ' ); },
 	"*": function(operands) {
-	    console.log( _.map );
-	    return _.map( operands, function (operand) { 
-		if (operand.toString().match( /^-/ ) || (typeof operand == 'number'))
-		    return '\\left(' + operand + '\\right)';
+	    return _.reduce( operands, function(memo, operand, index, operands) {
+		if (operand.toString().match( /^-/ ))
+		    return memo + "\\left(" + operand.toString() + "\\right)";
+
+		if ((typeof operand == 'number') && (operands.length > 0) && (typeof operands[index-1] == 'number'))
+		    return memo + " \\cdot " + operand.toString();
+
+		if (index > 0) 
+		    return memo + " \\, " + operand.toString();
 		else
-		    return operand;
-	    }).join( " \\, " );
+		    return operand.toString();
+	    }, '');
 	},
 	"/": function(operands) { return "\\frac{" + operands[0] + "}{" + operands[1] + "}"; },
 	"^": function(operands) { return operands[0]  + "^{" + operands[1] + "}"; },
@@ -130,6 +135,22 @@ var astToLatex = (function(){
 		return "\\csc^{" + factor(operands[1]) + "}" + "\\left(" + factor(operands[0][1]) + "\\right)";
 	    if (operands[0][0] === "cot")
 		return "\\cot^{" + factor(operands[1]) + "}" + "\\left(" + factor(operands[0][1]) + "\\right)";
+
+	    if (operands[0][0] === "arcsin")
+		return "\\arcsin^{" + factor(operands[1]) + "}" + "\\left(" + factor(operands[0][1]) + "\\right)";
+	    if (operands[0][0] === "arccos")
+		return "\\arccos^{" + factor(operands[1]) + "}" + "\\left(" + factor(operands[0][1]) + "\\right)";
+	    if (operands[0][0] === "arctan")
+		return "\\arctan^{" + factor(operands[1]) + "}" + "\\left(" + factor(operands[0][1]) + "\\right)";
+	    if (operands[0][0] === "arcsec")
+		return "\\arcsec^{" + factor(operands[1]) + "}" + "\\left(" + factor(operands[0][1]) + "\\right)";
+	    if (operands[0][0] === "arccsc")
+		return "\\arccsc^{" + factor(operands[1]) + "}" + "\\left(" + factor(operands[0][1]) + "\\right)";
+	    if (operands[0][0] === "arccot")
+		return "\\arccot^{" + factor(operands[1]) + "}" + "\\left(" + factor(operands[0][1]) + "\\right)";
+
+	    if (operands[0][0] === "log")
+		return "\\left(\\log " + factor(operands[0][1]) + " \\right)^{" + factor(operands[1]) + "}";
 
 	    return operators[operator]( _.map( operands, function(v,i) { return factor(v); } ) );
 	}
