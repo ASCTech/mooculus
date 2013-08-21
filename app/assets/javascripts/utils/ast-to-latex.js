@@ -6,7 +6,7 @@ var astToLatex = (function(){
 	"~": function(operands) { return "-" + operands.join( ' - ' ); },
 	"*": function(operands) {
 	    return _.reduce( operands, function(memo, operand, index, operands) {
-		if (operand.toString().match( /^-/ ))
+		if ((index > 0) && (operand.toString().match( /^-/ )))
 		    return memo + "\\left(" + operand.toString() + "\\right)";
 
 		if ((typeof operand == 'number') && (operands.length > 0) && (typeof operands[index-1] == 'number'))
