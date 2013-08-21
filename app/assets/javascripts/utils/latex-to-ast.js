@@ -16,7 +16,6 @@
 
    nonMinusFactor =
     '(' expression ')' |
-    '{' expression '}' |
     number | 
     variable |
     function factor |
@@ -28,11 +27,9 @@
     '-' factor |
     nonMinusFactor
 */
-
-var latexToAst = (function() {
+var latexToAst = (function(){
     /****************************************************************/
     /* setup the lexer */
-
     latexLexer.parse('');
     var lexer = latexLexer.parser.yy.lexer;
 
@@ -40,7 +37,7 @@ var latexToAst = (function() {
     
     function advance() {
 	symbol = lexer.lex();
-	
+
 	if (symbol == 4)
 	    symbol = 'EOF';
 	
@@ -91,36 +88,6 @@ var latexToAst = (function() {
     }    
 
     function term() {
-	if (symbol == 'FRAC') {
-	    advance();
-
-	    if (symbol != '{') {
-		throw 'Expected {';
-	    }
-	    advance();	    
-
-	    var numerator = expression();
-
-	    if (symbol != '}') {
-		throw 'Expected }';
-	    }
-	    advance();
-
-	    if (symbol != '{') {
-		throw 'Expected {';
-	    }
-	    advance();	    
-
-	    var denominator = expression();
-
-	    if (symbol != '}') {
-		throw 'Expected }';
-	    }
-	    advance();
-
-	    return ['/', numerator, denominator];
-	}
-
 	var lhs = factor();
 
 	var keepGoing = false;
@@ -159,13 +126,25 @@ var latexToAst = (function() {
     
     function nonMinusFactor() {
 	var result = false;
-	
-	if (symbol == 'NUMBER') {
+
+	if (symbol == 'FRAC') {
+	    advance();
+	    var numerator = factor();
+	    var denominator = factor();
+
+	    return ['/', numerator, denominator];
+	} else if (symbol == 'NUMBER') {
 	    result = parseFloat( yytext() );
 	    advance();
 	} else if (symbol == 'VAR') {
 	    result = yytext();
 	    advance();
+	} else if (symbol == 'PI') {
+	    result = "pi"
+	    advance();
+	} else if (symbol == 'EXP') {
+	    advance();
+	    result = ['^', 'e', factor()];
 	} else if (isFunctionSymbol(symbol)) {
 	    var functionName = symbol.toLowerCase();
 	    advance();
@@ -174,6 +153,15 @@ var latexToAst = (function() {
 		advance();
 		var parameter = expression();
 		if (symbol != ')') {
+		    throw 'Expected )';	    
+		}
+		advance();
+
+		result = [functionName, parameter];
+	    } else if (symbol == '{') {
+		advance();
+		var parameter = expression();
+		if (symbol != '}') {
 		    throw 'Expected )';	    
 		}
 		advance();

@@ -19,7 +19,8 @@ body {
 }
 
 body.splash {
-    background:url(/images/Flat_earth_night.jpg) top right no-repeat;
+    background:url(/images/inYourFace.jpg) top right no-repeat;
+    background-size: 100%;
     background-position: fixed;
     background-attachment: fixed;
 }

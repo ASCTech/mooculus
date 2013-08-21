@@ -104,6 +104,11 @@ var astToText = (function(){
 
 	// Display trig functions in a more reasonable format
 	if (operator === "^") {
+	    if (operands[0][0] === "^")
+		return "(" + factor(operands[0]) + ")^" + factor(operands[1]);
+	    if (operands[1][0] === "^")
+		return factor(operands[0]) + "^(" + factor(operands[1]) + ")";
+
 	    if (operands[0][0] === "sin")
 		return "sin^" + factor(operands[1]) + " " + factor(operands[0][1]);
 	    if (operands[0][0] === "cos")

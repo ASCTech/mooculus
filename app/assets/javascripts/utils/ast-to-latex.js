@@ -4,7 +4,23 @@ var astToLatex = (function(){
 	"+": function(operands) { return operands.join( ' + ' ); },
 	"-": function(operands) { return operands.join( ' - ' ); },
 	"~": function(operands) { return "-" + operands.join( ' - ' ); },
-	"*": function(operands) { return operands.join( " \\, " ); },
+	"*": function(operands) {
+	    return _.reduce( operands, function(memo, operand, index, operands) {
+		if (index > 0) {
+		    if ( (operand.toString().match( /^[0-9\-,]/ )) &&
+			 (operands[index-1].toString().match( /[0-9\-,]$/ )) )
+			return memo + " \\cdot " + operand.toString();
+
+		    if (operand.toString().match( /^-/ ))
+			return memo + "\\left(" + operand.toString() + "\\right)";
+		}
+
+		if (index > 0) 
+		    return memo + " \\, " + operand.toString();
+		else
+		    return operand.toString();
+	    }, '');
+	},
 	"/": function(operands) { return "\\frac{" + operands[0] + "}{" + operands[1] + "}"; },
 	"^": function(operands) { return operands[0]  + "^{" + operands[1] + "}"; },
 	"sin": function(operands) { return "\\sin " + operands[0]; },
@@ -89,6 +105,7 @@ var astToLatex = (function(){
 
     function factor(tree) {
 	if (typeof tree === 'string') {
+	    if (tree == "pi") return "\\pi";
 	    return tree;
 	}    
 	
@@ -109,6 +126,12 @@ var astToLatex = (function(){
 
 	// Display trig functions in a more reasonable format
 	if (operator === "^") {
+	    // nested exponentials need to be written unambiguously
+	    if (operands[0][0] === "^")
+		return "\\left(" + factor(operands[0]) + " \\right)^{" + factor(operands[1]) + "}";		
+	    if (operands[1][0] === "^")
+		return factor(operands[0]) + "^{\\left(" + factor(operands[1]) + "\\right)}";
+
 	    if (operands[0][0] === "sin")
 		return "\\sin^{" + factor(operands[1]) + "}" + "\\left(" + factor(operands[0][1]) + "\\right)";
 	    if (operands[0][0] === "cos")
@@ -121,6 +144,22 @@ var astToLatex = (function(){
 		return "\\csc^{" + factor(operands[1]) + "}" + "\\left(" + factor(operands[0][1]) + "\\right)";
 	    if (operands[0][0] === "cot")
 		return "\\cot^{" + factor(operands[1]) + "}" + "\\left(" + factor(operands[0][1]) + "\\right)";
+
+	    if (operands[0][0] === "arcsin")
+		return "\\arcsin^{" + factor(operands[1]) + "}" + "\\left(" + factor(operands[0][1]) + "\\right)";
+	    if (operands[0][0] === "arccos")
+		return "\\arccos^{" + factor(operands[1]) + "}" + "\\left(" + factor(operands[0][1]) + "\\right)";
+	    if (operands[0][0] === "arctan")
+		return "\\arctan^{" + factor(operands[1]) + "}" + "\\left(" + factor(operands[0][1]) + "\\right)";
+	    if (operands[0][0] === "arcsec")
+		return "\\arcsec^{" + factor(operands[1]) + "}" + "\\left(" + factor(operands[0][1]) + "\\right)";
+	    if (operands[0][0] === "arccsc")
+		return "\\arccsc^{" + factor(operands[1]) + "}" + "\\left(" + factor(operands[0][1]) + "\\right)";
+	    if (operands[0][0] === "arccot")
+		return "\\arccot^{" + factor(operands[1]) + "}" + "\\left(" + factor(operands[0][1]) + "\\right)";
+
+	    if (operands[0][0] === "log")
+		return "\\left(\\log " + factor(operands[0][1]) + " \\right)^{" + factor(operands[1]) + "}";
 
 	    return operators[operator]( _.map( operands, function(v,i) { return factor(v); } ) );
 	}

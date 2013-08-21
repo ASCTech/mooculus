@@ -553,11 +553,11 @@ case 0:/* skip whitespace */
 break;
 case 1:return 'NUMBER'
 break;
-case 2:return 'E'
+case 2:return '^'
 break;
-case 3:return '^'
+case 3:return '*' // there is some variety in multiplication symbols
 break;
-case 4:return '*' // there is some variety in multiplication symbols
+case 4:return '*'
 break;
 case 5:return '*'
 break;
@@ -567,13 +567,13 @@ case 7:return '*'
 break;
 case 8:return '*'
 break;
-case 9:return '*'
+case 9:return '/'
 break;
-case 10:return '/'
+case 10:return '-'
 break;
-case 11:return '-'
+case 11:return '-' // there is quite some variety with unicode hyphens
 break;
-case 12:return '-' // there is quite some variety with unicode hyphens
+case 12:return '-'
 break;
 case 13:return '-'
 break;
@@ -659,11 +659,11 @@ case 53:return '-'
 break;
 case 54:return '-'
 break;
-case 55:return '-'
+case 55:return '+'
 break;
-case 56:return '+'
+case 56:return '^' // lots of ways to denote exponentiation
 break;
-case 57:return '^' // lots of ways to denote exponentiation
+case 57:return '^'
 break;
 case 58:return '^'
 break;
@@ -673,68 +673,66 @@ case 60:return '^'
 break;
 case 61:return '^'
 break;
-case 62:return '^'
+case 62:return '('
 break;
-case 63:return '('
+case 63:return ')'
 break;
-case 64:return ')'
+case 64:return '('
 break;
-case 65:return '('
+case 65:return ')'
 break;
-case 66:return ')'
+case 66:return '('
 break;
-case 67:return '('
+case 67:return ')'
 break;
-case 68:return ')'
+case 68:return 'PI'
 break;
-case 69:return 'PI'
+case 69:return 'SIN'
 break;
-case 70:return 'SIN'
+case 70:return 'COS'
 break;
-case 71:return 'COS'
+case 71:return 'TAN'
 break;
-case 72:return 'TAN'
+case 72:return 'CSC'
 break;
-case 73:return 'CSC'
+case 73:return 'SEC'
 break;
-case 74:return 'SEC'
+case 74:return 'COT'
 break;
-case 75:return 'COT'
+case 75:return 'ARCSIN'
 break;
-case 76:return 'ARCSIN'
+case 76:return 'ARCCOS'
 break;
-case 77:return 'ARCCOS'
+case 77:return 'ARCTAN'
 break;
-case 78:return 'ARCTAN'
+case 78:return 'ARCSIN'
 break;
-case 79:return 'ARCSIN'
+case 79:return 'ARCCOS'
 break;
-case 80:return 'ARCCOS'
+case 80:return 'ARCTAN'
 break;
-case 81:return 'ARCTAN'
+case 81:return 'LOG'
 break;
 case 82:return 'LOG'
 break;
-case 83:return 'LOG'
+case 83:return 'EXP'
 break;
-case 84:return 'EXP'
+case 84:return 'SQRT'
 break;
-case 85:return 'SQRT'
+case 85:return 'ABS'
 break;
-case 86:return 'ABS'
+case 86:return 'VAR'
 break;
-case 87:return 'VAR'
+case 87:return 4
 break;
 case 88:return 4
 break;
-case 89:return 4
-break;
-case 90:return 'INVALID'
+case 89:return 'INVALID'
 break;
 }
 },
-rules: [/^(?:\s+)/,/^(?:[0-9]+([,.][0-9]+)?)/,/^(?:e\b)/,/^(?:\*\*)/,/^(?:\*)/,/^(?:\\xB7)/,/^(?:\u00B7)/,/^(?:\u2022)/,/^(?:\u22C5)/,/^(?:\u00D7)/,/^(?:\/)/,/^(?:-)/,/^(?:\u002D)/,/^(?:\u007E)/,/^(?:\u00AD)/,/^(?:\u058A)/,/^(?:\u05BE)/,/^(?:\u1400)/,/^(?:\u1806)/,/^(?:\u2010)/,/^(?:\u2011)/,/^(?:\u2012)/,/^(?:\u2013)/,/^(?:\u2014)/,/^(?:\u2015)/,/^(?:\u207B)/,/^(?:\u208B)/,/^(?:\u2212)/,/^(?:\u2E17)/,/^(?:\u2E3A)/,/^(?:\u2E3B)/,/^(?:\u301C)/,/^(?:\u3030)/,/^(?:\u30A0)/,/^(?:\uFE31)/,/^(?:\uFE32)/,/^(?:\uFE58)/,/^(?:\uFE63)/,/^(?:\uFF0D)/,/^(?:\u002D)/,/^(?:\u007E)/,/^(?:\u00AD)/,/^(?:\u058A)/,/^(?:\u1806)/,/^(?:\u2010)/,/^(?:\u2011)/,/^(?:\u2012)/,/^(?:\u2013)/,/^(?:\u2014)/,/^(?:\u2015)/,/^(?:\u2053)/,/^(?:\u207B)/,/^(?:\u208B)/,/^(?:\u2212)/,/^(?:\u301C)/,/^(?:\u3030)/,/^(?:\+)/,/^(?:\^)/,/^(?:\u2038)/,/^(?:\u2041)/,/^(?:\u028C)/,/^(?:\u2227)/,/^(?:\u02C7)/,/^(?:\()/,/^(?:\))/,/^(?:\[)/,/^(?:\])/,/^(?:\{)/,/^(?:\})/,/^(?:pi\b)/,/^(?:sin\b)/,/^(?:cos\b)/,/^(?:tan\b)/,/^(?:csc\b)/,/^(?:sec\b)/,/^(?:cot\b)/,/^(?:arcsin\b)/,/^(?:arccos\b)/,/^(?:arctan\b)/,/^(?:asin\b)/,/^(?:acos\b)/,/^(?:atan\b)/,/^(?:log\b)/,/^(?:ln\b)/,/^(?:exp\b)/,/^(?:sqrt\b)/,/^(?:abs\b)/,/^(?:[A-Za-z]+\b)/,/^(?:$)/,/^(?:EOF\b)/,/^(?:.)/],
-conditions: {"INITIAL":{"rules":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90],"inclusive":true}}
+rules: [/^(?:\s+)/,/^(?:[0-9]+([,.][0-9]+)?)/,/^(?:\*\*)/,/^(?:\*)/,/^(?:\\xB7)/,/^(?:\u00B7)/,/^(?:\u2022)/,/^(?:\u22C5)/,/^(?:\u00D7)/,/^(?:\/)/,/^(?:-)/,/^(?:\u002D)/,/^(?:\u007E)/,/^(?:\u00AD)/,/^(?:\u058A)/,/^(?:\u05BE)/,/^(?:\u1400)/,/^(?:\u1806)/,/^(?:\u2010)/,/^(?:\u2011)/,/^(?:\u2012)/,/^(?:\u2013)/,/^(?:\u2014)/,/^(?:\u2015)/,/^(?:\u207B)/,/^(?:\u208B)/,/^(?:\u2212)/,/^(?:\u2E17)/,/^(?:\u2E3A)/,/^(?:\u2E3B)/,/^(?:\u301C)/,/^(?:\u3030)/,/^(?:\u30A0)/,/^(?:\uFE31)/,/^(?:\uFE32)/,/^(?:\uFE58)/,/^(?:\uFE63)/,/^(?:\uFF0D)/,/^(?:\u002D)/,/^(?:\u007E)/,/^(?:\u00AD)/,/^(?:\u058A)/,/^(?:\u1806)/,/^(?:\u2010)/,/^(?:\u2011)/,/^(?:\u2012)/,/^(?:\u2013)/,/^(?:\u2014)/,/^(?:\u2015)/,/^(?:\u2053)/,/^(?:\u207B)/,/^(?:\u208B)/,/^(?:\u2212)/,/^(?:\u301C)/,/^(?:\u3030)/,/^(?:\+)/,/^(?:\^)/,/^(?:\u2038)/,/^(?:\u2041)/,/^(?:\u028C)/,/^(?:\u2227)/,/^(?:\u02C7)/,/^(?:\()/,/^(?:\))/,/^(?:\[)/,/^(?:\])/,/^(?:\{)/,/^(?:\})/,/^(?:pi\b)/,/^(?:sin\b)/,/^(?:cos\b)/,/^(?:tan\b)/,/^(?:csc\b)/,/^(?:sec\b)/,/^(?:cot\b)/,/^(?:arcsin\b)/,/^(?:arccos\b)/,/^(?:arctan\b)/,/^(?:asin\b)/,/^(?:acos\b)/,/^(?:atan\b)/,/^(?:log\b)/,/^(?:ln\b)/,/^(?:exp\b)/,/^(?:sqrt\b)/,/^(?:abs\b)/,/^(?:[A-Za-z]+\b)/,/^(?:$)/,/^(?:EOF\b)/,/^(?:.)/],
+conditions: {"INITIAL":{"rules":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89],"inclusive":true}}
 };
 return lexer;
 })();

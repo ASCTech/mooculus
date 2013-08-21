@@ -197,10 +197,10 @@
 \newcommand{\ddx}{\frac{d}{dx}}
 \newcommand{\dydx}{\frac{dy}{dx}}
 
-%\newcommand{\dd}[1]{\frac{d}{d #1}}
-\def\dd{\@ifnextchar[{\@with}{\@without}}
-\def\@with[#1]#2{\frac{d #1}{d #2}}
-\def\@without#1{\frac{d}{d #1}}
+\newcommand{\dd}[2][]{\frac{d #1}{d #2}}
+%% \def\dd{\@ifnextchar[{\@with}{\@without}} % was causing errors!
+%% \def\@with[#1]#2{\frac{d #1}{d #2}}
+%% \def\@without#1{\frac{d}{d #1}}
 
 \newcommand{\R}{\mathbb{R}}
 \DeclareMathOperator{\arccot}{arccot}
