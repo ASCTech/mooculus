@@ -9,8 +9,13 @@ var astToLatex = (function(){
 		if ((index > 0) && (operand.toString().match( /^-/ )))
 		    return memo + "\\left(" + operand.toString() + "\\right)";
 
-		if ((typeof operand == 'number') && (operands.length > 0) && (typeof operands[index-1] == 'number'))
-		    return memo + " \\cdot " + operand.toString();
+		if ((typeof operand == 'number') && (operands.length > 0)) {
+		    if (typeof operands[index-1] == 'number')
+			return memo + " \\cdot " + operand.toString();
+
+		    if (expression(operands[index-1]).match( /[0-9]$/ )) 
+			return memo + " \\cdot " + operand.toString();
+		}
 
 		if (index > 0) 
 		    return memo + " \\, " + operand.toString();
