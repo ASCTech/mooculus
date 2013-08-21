@@ -4,7 +4,7 @@ class Developer
 end
 
 Developer.create :name => "Bart Snapp", :photo => "bart-snapp",
-  :description => 'Bart Snapp teaches mathematics at OSU.  His research interests include commutative ring theory and recreational mathematics.  He enjoys exploring connections between mathematics and real-world problems, art, and music.  Bart is the head instructor for MOOCulus.',
+  :description => 'Bart Snapp teaches mathematics at OSU.  His research interests include commutative ring theory and recreational mathematics.  He enjoys exploring connections between mathematics and real-world problems, art, and music.  Bart is currently the head instructor for MOOCulus.',
   :link => 'http://www.math.osu.edu/~snapp/', 
   :email =>'snapp.14@osu.edu'
 
@@ -34,10 +34,6 @@ Developer.create :name => "Sean Corey", :photo => "sean-corey",
   :description => 'Sean teaches mathematics in secondary schools and is a proponent of independent learning. Game theory and the development of artificial intelligence are prominent interests of his.  For MOOCulus, Sean has developed some of the interactive exercises and edited the textbook.',
   :email => 'corey.osumath@gmail.com'
 
-
-Developer.create :name => "Kevin Jones",
-  :description => 'Kevin Jones is a Senior Producer/Director for Media Services at The Ohio State University; for MOOCulus, Kevin Jones handles the video editing.',
-  :email => 'jones.51@osu.edu'
 
 Developer.create :name => "Johann Thiel", :photo => "johann-thiel",
   :description => 'Johann Thiel is a postdoc at the United States Military Academy (West Point). His main research interests lie in analytic number theory and its applications. In his classes, Johann enjoys designing live demonstrations to illustrate mathematical concepts.  Johann has built some of the explorations for MOOCulus.',
