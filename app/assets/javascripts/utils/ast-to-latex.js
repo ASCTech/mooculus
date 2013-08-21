@@ -123,6 +123,10 @@ var astToLatex = (function(){
 
 	// Display trig functions in a more reasonable format
 	if (operator === "^") {
+	    // nested exponentials need to be written unambiguously
+	    if (operands[0][0] === "^")
+		return "\\left(" + factor(operands[0]) + " \\right)^{" + factor(operands[1]) + "}";		
+
 	    if (operands[0][0] === "sin")
 		return "\\sin^{" + factor(operands[1]) + "}" + "\\left(" + factor(operands[0][1]) + "\\right)";
 	    if (operands[0][0] === "cos")
