@@ -126,6 +126,8 @@ var astToLatex = (function(){
 	    // nested exponentials need to be written unambiguously
 	    if (operands[0][0] === "^")
 		return "\\left(" + factor(operands[0]) + " \\right)^{" + factor(operands[1]) + "}";		
+	    if (operands[1][0] === "^")
+		return factor(operands[0]) + "^{\\left(" + factor(operands[1]) + "\\right)}";
 
 	    if (operands[0][0] === "sin")
 		return "\\sin^{" + factor(operands[1]) + "}" + "\\left(" + factor(operands[0][1]) + "\\right)";
