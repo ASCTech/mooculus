@@ -37,7 +37,6 @@ var latexToAst = (function(){
     
     function advance() {
 	symbol = lexer.lex();
-	console.log( symbol );
 
 	if (symbol == 4)
 	    symbol = 'EOF';
@@ -61,7 +60,6 @@ var latexToAst = (function(){
     /* grammar */
     
     function expression() {
-	console.log( "in expression" );
 	var lhs = term();
 	
 	while ((symbol == '+') || (symbol == '-')) {
@@ -90,8 +88,6 @@ var latexToAst = (function(){
     }    
 
     function term() {
-	console.log( "in term" );
-
 	var lhs = factor();
 
 	var keepGoing = false;
@@ -146,6 +142,9 @@ var latexToAst = (function(){
 	} else if (symbol == 'PI') {
 	    result = "pi"
 	    advance();
+	} else if (symbol == 'EXP') {
+	    advance();
+	    result = ['^', 'e', factor()];
 	} else if (isFunctionSymbol(symbol)) {
 	    var functionName = symbol.toLowerCase();
 	    advance();

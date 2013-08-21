@@ -135,6 +135,9 @@ var textToAst = (function(){
 	} else if (symbol == 'PI') {
 	    result = "pi"
 	    advance();
+	} else if (symbol == 'EXP') {
+	    advance();
+	    result = ['^', 'e', factor()];
 	} else if (isFunctionSymbol(symbol)) {
 	    var functionName = symbol.toLowerCase();
 	    advance();
@@ -164,7 +167,7 @@ var textToAst = (function(){
 	    }
 	    advance();
 	}
-	
+
 	if (symbol == '^') {
 	    advance();
 	    return ['^', result, factor()];
