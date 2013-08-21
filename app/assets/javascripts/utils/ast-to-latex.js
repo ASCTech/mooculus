@@ -6,15 +6,13 @@ var astToLatex = (function(){
 	"~": function(operands) { return "-" + operands.join( ' - ' ); },
 	"*": function(operands) {
 	    return _.reduce( operands, function(memo, operand, index, operands) {
-		if ((index > 0) && (operand.toString().match( /^-/ )))
-		    return memo + "\\left(" + operand.toString() + "\\right)";
-
-		if ((typeof operand == 'number') && (operands.length > 0)) {
-		    if (typeof operands[index-1] == 'number')
+		if (index > 0) {
+		    if ( (operand.toString().match( /^[0-9\-,]/ )) &&
+			 (operands[index-1].toString().match( /[0-9\-,]$/ )) )
 			return memo + " \\cdot " + operand.toString();
 
-		    if (expression(operands[index-1]).match( /[0-9]$/ )) 
-			return memo + " \\cdot " + operand.toString();
+		    if (operand.toString().match( /^-/ ))
+			return memo + "\\left(" + operand.toString() + "\\right)";
 		}
 
 		if (index > 0) 
