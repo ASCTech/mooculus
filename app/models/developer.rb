@@ -4,16 +4,12 @@ class Developer
 end
 
 Developer.create :name => "Bart Snapp", :photo => "bart-snapp",
-  :description => 'Bart Snapp teaches mathematics at OSU.  His
-  research interests include commutative ring theory and recreational
-  mathematics.  He enjoys exploring connections between mathematics
-  and the real-world problems, art, and music. Currently Bart is the
-  head instructor (&ldquo;project manager&rdquo;) for MOOCulus.',
+  :description => 'Bart Snapp teaches mathematics at OSU.  His research interests include commutative ring theory and recreational mathematics.  He enjoys exploring connections between mathematics and real-world problems, art, and music.  Bart is the head instructor for MOOCulus.',
   :link => 'http://www.math.osu.edu/~snapp/', 
   :email =>'snapp.14@osu.edu'
 
 Developer.create :name => "Jim Fowler", :photo => "jim-fowler",
-  :description => 'Jim\'s research broadly includes geometry and topology; specifically, his interests focus on the topology of high-dimensional manifolds and geometric group theory, which means he thinks about highly symmetric (and therefore very beautiful) geometric objects.  He\'s fond of using computational techniques to attack problems in pure mathematics. He received an undergraduate degree from <a href="http://www.harvard.edu/">Harvard University</a> and received a Ph.D. from the <a href="http://www.uchicago.edu/">University of Chicago</a>.',
+  :description => 'Jim\'s research broadly includes geometry and topology; specifically, his interests focus on the topology of high-dimensional manifolds and geometric group theory, which means he thinks about highly symmetric (and therefore very beautiful) geometric objects.  He\'s fond of using computational techniques to attack problems in pure mathematics. He received an undergraduate degree from <a href="http://www.harvard.edu/">Harvard University</a> and received a Ph.D. from the <a href="http://www.uchicago.edu/">University of Chicago</a>.  Jim built the adaptive learning platform that powers MOOCulus.',
   :link => 'http://www.math.osu.edu/~fowler/',
   :email => 'fowler@math.osu.edu'
 
@@ -22,13 +18,6 @@ Developer.create :name => "Steve Gubkin", :photo => "steve-gubkin",
   :description => 'Steve Gubkin is a mathematics Ph.D. student at OSU.  Steve has extensive experience with the <a href="https://github.com/Khan/khan-exercises/" rel="external">khan exercise framework</a>, so for MOOCulus, he leads the development of <a href="/exercises">our interactive exercises</a>.',
   :link => 'http://www.math.osu.edu/people/gubkin.1/view',
   :email => 'gubkin@math.osu.edu'
-
-
-Developer.create :name => "Ryan Kowalick", :photo => "ryan-kowalick",
-  :description => 'Ryan Kowalick is a mathematics Ph.D. student at OSU.  For MOOCulus, Ryan uses his extensive backgroud in <a href="http://rubyonrails.org/" rel="external">Rails</a> to handle coding tasks for this website.',
-  :link => 'http://www.math.osu.edu/people/kowalick.1',
-  :email => 'rkowalick@math.osu.edu'
-
 
 Developer.create :name => "Tom Evans", :photo => "tom-evans",
   :description => 'Tom Evans is an Educational Technologist and the lead for open courses at the Ohio State University. You can follow him on Twitter at <a href="http://www.twitter.com/taevans">@taevans</a>.  For MOOCulus, Tom created the music and edited some of the videos.',
@@ -46,12 +35,9 @@ Developer.create :name => "Sean Corey", :photo => "sean-corey",
   :email => 'corey.osumath@gmail.com'
 
 
-
 Developer.create :name => "Kevin Jones",
   :description => 'Kevin Jones is a Senior Producer/Director for Media Services at The Ohio State University; for MOOCulus, Kevin Jones handles the video editing.',
   :email => 'jones.51@osu.edu'
-
-
 
 Developer.create :name => "Johann Thiel", :photo => "johann-thiel",
   :description => 'Johann Thiel is a postdoc at the United States Military Academy (West Point). His main research interests lie in analytic number theory and its applications. In his classes, Johann enjoys designing live demonstrations to illustrate mathematical concepts.  Johann has built some of the explorations for MOOCulus.',
@@ -59,7 +45,7 @@ Developer.create :name => "Johann Thiel", :photo => "johann-thiel",
 
 
 Developer.create :name => "Chris Bolognese", :photo => "chris-bolognese",
-  :description => 'Chris Bolognese has taught mathematics both at the high school and college level.  Next year he is the district teacher leader for mathematics K-12 for Upper Arlington Schools.  Chris enjoys mathematics competitions and mathematical technology.  For mooculus, Chris will be a teaching assistant and also contribute items for exercises.',
+  :description => 'Chris Bolognese has taught mathematics both at the high school and college level.  Next year he is the district teacher leader for mathematics K-12 for Upper Arlington Schools.  Chris enjoys mathematics competitions and mathematical technology.  For MOOCulus, Chris will be a teaching assistant and also contribute items for exercises.',
   :email => 'cbolognese@uaschools.org'
 
 
