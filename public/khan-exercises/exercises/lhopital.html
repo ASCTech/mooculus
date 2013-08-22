@@ -49,7 +49,7 @@
        			Differentiating the numerator and denominator we have <code>\displaystyle\lim_{x \to <var>A</var>} \dfrac{<var>ddxPolynomial(num).text()</var>}{<var>ddxPolynomial(denom).text()</var>}</code></code>
        		</p>
        		<p>
-       			But this is the limit of a rational function at a point where the denominator is not zero, so by continuity, we can evaluate the limit just by evaluating this rational function at <code>x = <var>A</var></code>, i.e. the value
+       			But this is the limit of a quotient at a point where the denominator is not zero, so by continuity, we can evaluate the limit just by evaluating this quotient at <code>x = <var>A</var></code>, i.e. the value
        			is just <code>\dfrac{<var>ddxPolynomial(num).hintEvalOf(A)</var>}{<var>ddxPolynomial(denom).hintEvalOf(A)</var>} = \dfrac{<var>ddxPolynomial(num).evalOf(A)</var>}{<var>ddxPolynomial(denom).evalOf(A)</var>}</code>
        		</p>
        		<p>
@@ -89,7 +89,7 @@
        			Differentiating the numerator and denominator we have <code>\displaystyle\lim_{x \to <var>A</var>} \dfrac{\frac{1}{x}}{<var>ddxPolynomial(denom).text()</var>}</code></code>
        		</p>
        		<p>
-       			But this is the limit of a rational function at a point where the denominator is not zero, so by continuity, we can evaluate the limit just by evaluating this rational function at <code>x = 1</code>, i.e. the value
+       			But this is the limit of a quotient at a point where the denominator is not zero, so by continuity, we can evaluate the limit just by evaluating this quotient at <code>x = 1</code>, i.e. the value
        			is just <code>\dfrac{1}{<var>ddxPolynomial(denom).hintEvalOf(1)</var>} = \dfrac{1}{<var>ddxPolynomial(denom).evalOf(1)</var>}</code>
        		</p>
        		<p>
@@ -129,11 +129,11 @@
        			Differentiating the numerator and denominator we have <code>\displaystyle\lim_{x \to <var>A</var>} \dfrac{e^x}{<var>ddxPolynomial(denom).text()</var>}</code></code>
        		</p>
        		<p>
-       			But this is the limit of a rational function at a point where the denominator is not zero, so by continuity, we can evaluate the limit just by evaluating this rational function at <code>x = 1</code>, i.e. the value
+       			But this is the limit of a quotient at a point where the denominator is not zero, so by continuity, we can evaluate the limit just by evaluating this quotient at <code>x = 1</code>, i.e. the value
        			is just <code>\dfrac{e}{<var>ddxPolynomial(denom).hintEvalOf(1)</var>} = \dfrac{e}{<var>ddxPolynomial(denom).evalOf(1)</var>}</code>
        		</p>
        		<p>
-       			In summary, <code>\displaystyle\lim_{x \to 1} \dfrac{\log(x)}{<var>denom.text()</var>} = \dfrac{e}{<var>ddxPolynomial(denom).evalOf(1)</var>}</code>	
+       			In summary, <code>\displaystyle\lim_{x \to 1} \dfrac{e^x-e}{<var>denom.text()</var>} = \dfrac{e}{<var>ddxPolynomial(denom).evalOf(1)</var>}</code>	
        		</p>
         </div>
        
