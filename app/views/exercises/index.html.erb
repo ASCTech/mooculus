@@ -15,7 +15,11 @@
   <div class="accordion-group">
     <div class="accordion-heading">
       <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse<%= week %>">
-        <h4>Week <%= week %></h4>
+	<% if week == 15 %>
+          <h4>Experimental exercises</h4>
+        <% else %>
+          <h4>Week <%= week %></h4>
+        <% end %>
       </a>
     </div>
     <div id="collapse<%= week %>" class="accordion-body collapse <% if week == current_week %> in <% end %>">
