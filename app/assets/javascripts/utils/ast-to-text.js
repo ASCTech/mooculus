@@ -3,7 +3,23 @@ var astToText = (function(){
 	"+": function(operands) { return operands.join( ' + ' ); },
 	"-": function(operands) { return operands.join( ' - ' ); },
 	"~": function(operands) { return "-" + operands.join( ' - ' ); },
-	"*": function(operands) { return operands.join( " " ); },
+	"*": function(operands) {
+	    return _.reduce( operands, function(memo, operand, index, operands) {
+		if (index > 0) {
+		    if ( (operand.toString().match( /^[0-9\-,]/ )) &&
+			 (operands[index-1].toString().match( /[0-9\-,]$/ )) )
+			return memo + " * " + operand.toString();
+
+		    if (operand.toString().match( /^-/ ))
+			return memo + "(" + operand.toString() + ")";
+		}
+
+		if (index > 0) 
+		    return memo + " " + operand.toString();
+		else
+		    return operand.toString();
+	    }, '');
+	},
 	"/": function(operands) { return "" + operands[0] + "/" + operands[1]; },
 	"^": function(operands) { return operands[0]  + "^" + operands[1] + ""; },
 	"sin": function(operands) { return "sin " + operands[0]; },
