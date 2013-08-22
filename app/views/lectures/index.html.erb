@@ -16,9 +16,6 @@
 	  <thead>
 	    <tr>
 	      <th>
-		Lecture
-	      </th> 
-	      <th>
 		Title
 	      </th>
 	    </tr>
@@ -27,11 +24,6 @@
 	  <tbody>
 	    <% for youtube in @youtube.in_week(week).chronological.to_a %>
 	    <tr>
-	    <td>
-	      <% if youtube.lecture > 0 %> 
-	        <%= youtube.lecture %>
-              <% end %>
-	    </td>
 	    <td><a href="<%=raw youtube.url %>"><%=raw youtube.title %></a></td>
 	    </tr>
 	    <% end %>
