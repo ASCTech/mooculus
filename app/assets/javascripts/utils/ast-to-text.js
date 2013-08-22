@@ -137,6 +137,22 @@ var astToText = (function(){
 		return "csc^" + factor(operands[1]) + " " + factor(operands[0][1]);
 	    if (operands[0][0] === "cot")
 		return "cot^" + factor(operands[1]) + " " + factor(operands[0][1]);
+
+	    if (operands[0][0] === "arcsin")
+		return "arcsin^" + factor(operands[1]) + " " + factor(operands[0][1]);
+	    if (operands[0][0] === "arccos")
+		return "arccos^" + factor(operands[1]) + " " + factor(operands[0][1]);
+	    if (operands[0][0] === "arctan")
+		return "arctan^" + factor(operands[1]) + " " + factor(operands[0][1]);
+	    if (operands[0][0] === "arcsec")
+		return "arcsec^" + factor(operands[1]) + " " + factor(operands[0][1]);
+	    if (operands[0][0] === "arccsc")
+		return "arccsc^" + factor(operands[1]) + " " + factor(operands[0][1]);
+	    if (operands[0][0] === "arccot")
+		return "arccot^" + factor(operands[1]) + " " + factor(operands[0][1]);
+
+	    if (operands[0][0] === "log")
+		return "(log " + factor(operands[0][1]) + ")^" + factor(operands[1]);
 	}
 
 	if (operator === "^") {
