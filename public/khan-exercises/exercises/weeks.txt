@@ -1,22 +1,17 @@
 * Week 1
-abscissaOrdinate
-plotPoint
-signedDistances
 pointOnFunction
 pointOnFunction2
 evaluatingFunctions
 isThisAFunctionPoints
+linearTriangles1
+linearTriangles2
+linearOracle
 graphingFromEquation
 functionTransformationPointwise
-identifyPosNeg
-identifyIncreaseDecrease
-identifyMaxMin
-identifyConcavity
 limitsGraphical
 limitsOracleGraphical
 limitsOracle
 limitIndeterminateForms
-limitsSymbolic
 limitsFactoring
 limitCompute
 * Week 2
@@ -35,9 +30,6 @@ continuityOracle
 bisectionOracle
 continuityChooseConstant
 * Week 3
-linearTriangles1
-linearTriangles2
-linearOracle
 tangentLineIdea
 tangentLineIdeaSlope
 tangentLineIdeaSecant
@@ -52,17 +44,21 @@ differentiateUsingLimit
 repeatedLinApprox
 numChainRule
 * Week 4
+identifyPosNeg
+identifyIncreaseDecrease
+identifyMaxMin
+identifyConcavity
 intuitiveCurveSketch
-productRulePoints
-productRuleTwoWays
-quotientRulePoints
 secondDerivativeSign
-testingRandFunction
-productRuleCompute
 increaseDecreaseDerivativePoint
 curveSketchPoints
-quotientRuleCompute
+testingRandFunction
 differentiatePolynomial
+productRuleTwoWays
+productRulePoints
+productRuleCompute
+quotientRuleCompute
+quotientRulePoints
 * Week 5
 chainRuleTable
 chainRule1
@@ -132,10 +128,13 @@ definiteIntegralParts
 * Week 13
 variableSub1
 variableSub2
-* Week 14
 integrationByParts1
-* Week 15
+* Week 14
 introWeek15
 areaBetweenCurves
 volumeRevolution
 arclength
+* Week 15
+abscissaOrdinate
+plotPoint
+limitsSymbolic
