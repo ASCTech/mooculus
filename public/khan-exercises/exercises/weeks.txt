@@ -1,17 +1,13 @@
 * Week 1
-abscissaOrdinate
-plotPoint
-signedDistances
 pointOnFunction
 pointOnFunction2
 evaluatingFunctions
 isThisAFunctionPoints
+linearTriangles1
+linearTriangles2
+linearOracle
 graphingFromEquation
 functionTransformationPointwise
-identifyPosNeg
-identifyIncreaseDecrease
-identifyMaxMin
-identifyConcavity
 limitsGraphical
 limitsOracleGraphical
 limitsOracle
@@ -35,9 +31,6 @@ continuityOracle
 bisectionOracle
 continuityChooseConstant
 * Week 3
-linearTriangles1
-linearTriangles2
-linearOracle
 tangentLineIdea
 tangentLineIdeaSlope
 tangentLineIdeaSecant
@@ -52,18 +45,23 @@ differentiateUsingLimit
 repeatedLinApprox
 numChainRule
 * Week 4
+identifyPosNeg
+identifyIncreaseDecrease
+identifyMaxMin
+identifyConcavity
 intuitiveCurveSketch
+secondDerivativeSign
+increaseDecreaseDerivativePoint
+curveSketchPoints
+* Week 5
 productRulePoints
 productRuleTwoWays
 quotientRulePoints
-secondDerivativeSign
 testingRandFunction
 productRuleCompute
-increaseDecreaseDerivativePoint
-curveSketchPoints
 quotientRuleCompute
 differentiatePolynomial
-* Week 5
+* Week 6
 chainRuleTable
 chainRule1
 chainRule2
@@ -76,12 +74,12 @@ inverseFunctionPointGraph
 inverseFunctionExpression
 tangentLineInverse
 inverseFunctionRulePoint
-* Week 6
+* Week 7
 trigDifferentiate
 trigDifferentiate2
 inverseTrigDiff1
 inverseTrigDiff2
-* Week 7
+* Week 8
 lhopital
 relatedRatesBacteria
 relatedRatesBoats
@@ -90,7 +88,7 @@ relatedRatesCow
 relatedRatesChronos
 relatedRatesWhale
 relatedRatesBubble
-* Week 8
+* Week 9
 optimizationPrescribingExtrema
 optimizationInstallingPipe
 optimizationRectangleParabola
@@ -98,13 +96,13 @@ optimizationPainting
 optimizationDrug
 optimizationBox
 optimizationCubic
-* Week 9
+* Week 10
 slopeField
 slopeFieldPlay
 slopeFieldEQ
 eulerMethod
 newtonsMethod
-* Week 10
+* Week 11
 antiderivativeSketchPlay
 comparingFunctionAndAntiderivative
 antiDifferentiationBasic
@@ -112,7 +110,7 @@ antidifferentiatePolynomials
 antiDerivativeAffineTransformation
 antiDerivativeBasicChain
 antiDerivativeParts
-* Week 11
+* Week 12
 basicSigma
 sigmaFormulas1
 sigmaFormulas2
@@ -122,19 +120,17 @@ smallRiemann
 areaValuedFunctionBehavior
 estimatingIntegrals
 integralSketch
-* Week 12
+* Week 13
 wiggleInputIntegral
 FTOC2intuition
 definiteIntegralBasic
 definiteIntegralPolynomial
 definiteIntegralAffineShift
 definiteIntegralParts
-* Week 13
+* Week 14
 variableSub1
 variableSub2
-* Week 14
 integrationByParts1
-* Week 15
 introWeek15
 areaBetweenCurves
 volumeRevolution
