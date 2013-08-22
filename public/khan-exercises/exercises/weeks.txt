@@ -12,7 +12,6 @@ limitsGraphical
 limitsOracleGraphical
 limitsOracle
 limitIndeterminateForms
-limitsSymbolic
 limitsFactoring
 limitCompute
 * Week 2
@@ -53,15 +52,14 @@ intuitiveCurveSketch
 secondDerivativeSign
 increaseDecreaseDerivativePoint
 curveSketchPoints
-* Week 5
-productRulePoints
-productRuleTwoWays
-quotientRulePoints
 testingRandFunction
+differentiatePolynomial
+productRuleTwoWays
+productRulePoints
 productRuleCompute
 quotientRuleCompute
-differentiatePolynomial
-* Week 6
+quotientRulePoints
+* Week 5
 chainRuleTable
 chainRule1
 chainRule2
@@ -74,12 +72,12 @@ inverseFunctionPointGraph
 inverseFunctionExpression
 tangentLineInverse
 inverseFunctionRulePoint
-* Week 7
+* Week 6
 trigDifferentiate
 trigDifferentiate2
 inverseTrigDiff1
 inverseTrigDiff2
-* Week 8
+* Week 7
 lhopital
 relatedRatesBacteria
 relatedRatesBoats
@@ -88,7 +86,7 @@ relatedRatesCow
 relatedRatesChronos
 relatedRatesWhale
 relatedRatesBubble
-* Week 9
+* Week 8
 optimizationPrescribingExtrema
 optimizationInstallingPipe
 optimizationRectangleParabola
@@ -96,13 +94,13 @@ optimizationPainting
 optimizationDrug
 optimizationBox
 optimizationCubic
-* Week 10
+* Week 9
 slopeField
 slopeFieldPlay
 slopeFieldEQ
 eulerMethod
 newtonsMethod
-* Week 11
+* Week 10
 antiderivativeSketchPlay
 comparingFunctionAndAntiderivative
 antiDifferentiationBasic
@@ -110,7 +108,7 @@ antidifferentiatePolynomials
 antiDerivativeAffineTransformation
 antiDerivativeBasicChain
 antiDerivativeParts
-* Week 12
+* Week 11
 basicSigma
 sigmaFormulas1
 sigmaFormulas2
@@ -120,18 +118,23 @@ smallRiemann
 areaValuedFunctionBehavior
 estimatingIntegrals
 integralSketch
-* Week 13
+* Week 12
 wiggleInputIntegral
 FTOC2intuition
 definiteIntegralBasic
 definiteIntegralPolynomial
 definiteIntegralAffineShift
 definiteIntegralParts
-* Week 14
+* Week 13
 variableSub1
 variableSub2
 integrationByParts1
+* Week 14
 introWeek15
 areaBetweenCurves
 volumeRevolution
 arclength
+* Week 15
+abscissaOrdinate
+plotPoint
+limitsSymbolic
