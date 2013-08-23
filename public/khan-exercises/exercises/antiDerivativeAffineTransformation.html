@@ -13,9 +13,9 @@
       <div id="power">
       		
       		  <div class="vars">
-				<var id="n">randRange(-30,30)</var>
-				<var id="A">randRangeNonZero(-10,10)</var>
-				<var id="B">randRangeNonZero(-10,10)</var>
+				<var id="n">randRangeNonZero(-1,1)*randRange(2,4)</var>
+				<var id="A">randRangeExclude(-10,10,[0,1])</var>
+				<var id="B">randRangeExclude(-10,10,[0,1])</var>
   			  </div>
         	
         	<p class="question">
@@ -37,8 +37,8 @@
       </div>
       <div id="reciprocal">
         	<div class="vars">
-				<var id="A">randRangeNonZero(-10,10)</var>
-				<var id="B">randRangeNonZero(-10,10)</var>
+				<var id="A">randRangeExclude(-10,10,[0,1])</var>
+				<var id="B">randRangeExclude(-10,10,[0,1])</var>
   			  </div>
         	
         	<p class="question">
@@ -60,8 +60,8 @@
       </div>
       <div id="sine">
         	<div class="vars">
-				<var id="A">randRangeNonZero(-10,10)</var>
-				<var id="B">randRangeNonZero(-10,10)</var>
+				<var id="A">randRangeExclude(-10,10,[0,1])</var>
+				<var id="B">randRangeExclude(-10,10,[0,1])</var>
   			  </div>
         	
         	<p class="question">
@@ -83,8 +83,8 @@
       </div>
       <div id="cos">
         	<div class="vars">
-				<var id="A">randRangeNonZero(-10,10)</var>
-				<var id="B">randRangeNonZero(-10,10)</var>
+				<var id="A">randRangeExclude(-10,10,[0,1])</var>
+				<var id="B">randRangeExclude(-10,10,[0,1])</var>
   			  </div>
         	<p class="question">
         		Find <code>\displaystyle\int \cos(<var>A</var>x+<var>B</var>) dx</code>
@@ -105,8 +105,8 @@
       </div>
       <div id="sectan">
         	<div class="vars">
-				<var id="A">randRangeNonZero(-10,10)</var>
-				<var id="B">randRangeNonZero(-10,10)</var>
+				<var id="A">randRangeExclude(-10,10,[0,1])</var>
+				<var id="B">randRangeExclude(-10,10,[0,1])</var>
   			  </div>
         	<p class="question">
         		Find <code>\displaystyle\int \sec(<var>A</var>x+<var>B</var>)\tan(<var>A</var>x+<var>B</var>) dx</code>
@@ -127,8 +127,8 @@
       </div>
       <div id="secSquared">
         	<div class="vars">
-				<var id="A">randRangeNonZero(-10,10)</var>
-				<var id="B">randRangeNonZero(-10,10)</var>
+				<var id="A">randRangeExclude(-10,10,[0,1])</var>
+				<var id="B">randRangeExclude(-10,10,[0,1])</var>
   			  </div>
         	<p class="question">
         		Find <code>\displaystyle\int \sec^2(<var>A</var>x+<var>B</var>) dx</code>
@@ -149,8 +149,8 @@
       </div>
       <div id="cscSquared">
         	<div class="vars">
-				<var id="A">randRangeNonZero(-10,10)</var>
-				<var id="B">randRangeNonZero(-10,10)</var>
+				<var id="A">randRangeExclude(-10,10,[0,1])</var>
+				<var id="B">randRangeExclude(-10,10,[0,1])</var>
   			  </div>
         	<p class="question">
         		Find <code>\displaystyle\int \csc^2(<var>A</var>x+<var>B</var>) dx</code>
@@ -171,8 +171,8 @@
       </div>
       <div id="csccot">
         	<div class="vars">
-				<var id="A">randRangeNonZero(-10,10)</var>
-				<var id="B">randRangeNonZero(-10,10)</var>
+				<var id="A">randRangeExclude(-10,10,[0,1])</var>
+				<var id="B">randRangeExclude(-10,10,[0,1])</var>
   			  </div>
         	<p class="question">
         		Find <code>\displaystyle\int \csc(<var>A</var>x+<var>B</var>)\cot(<var>A</var>x+<var>B</var>) dx</code>
@@ -193,8 +193,8 @@
       </div>
       <div id="exp">
         	<div class="vars">
-				<var id="A">randRangeNonZero(-10,10)</var>
-				<var id="B">randRangeNonZero(-10,10)</var>
+				<var id="A">randRangeExclude(-10,10,[0,1])</var>
+				<var id="B">randRangeExclude(-10,10,[0,1])</var>
   			  </div>
         	<p class="question">
         		Find <code>\displaystyle\int e^{<var>A</var>x+<var>B</var>} dx</code>

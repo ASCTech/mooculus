@@ -74,7 +74,8 @@
                     plot(function( x ) {
                                 return ( f(x));
                             }, [inflectionPoints[m], inflectionPoints[m+1]], {
-                                stroke: GREEN
+                                stroke: GREEN,
+                                strokeWidth: 5
                             });
                
                    circle( [inflectionPoints[m],f(inflectionPoints[m])], 1/4, {
