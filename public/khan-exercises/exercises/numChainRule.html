@@ -9,12 +9,11 @@
     <div class="exercise">
         <div class="vars">
 		<var id="X">randRange(0,10)</var>
-		<var id="DELTA_X">roundTo(3,randRange(0,10)*.01)</var>
+		<var id="DELTA_X">roundTo(3,randRange(1,10)*.01)</var>
 		<var id="fPRIME">roundTo(3,randRange(0,9))</var>
 		<var id="gPRIME">roundTo(3,randRange(0,9))</var>
 		<var id="fVALUE">randRange(0,10)</var>
 		<var id="gVALUE">randRange(0,10)</var>
-		
 		<var id="X_NEW">roundTo(3,X+DELTA_X)</var>
 		<var id="APPROX">roundTo(3,gVALUE + DELTA_X*fPRIME*gPRIME)</var>
         </div>

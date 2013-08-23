@@ -15,28 +15,19 @@
     <var id = "f">(function(x){return niceFunction(x,points)})</var>
     <var id = "X">randRangeExclude(-8,8,[-2,-1,0,1,2])</var>
     <var id = "Y">f(X)</var>
-    <var id = "zeroXs">locateZeros(f,Xs)</var>
-    <var id = "zeroYs">(
-        function(n){ 
-            var list = []
-            for(var i=0; i&lt;n;i++){
-                list.push(0)
-            }
-          return list
-        })(zeroXs.length) </var>
-    <var id = "zeroPoints">makeCoordinates(zeroXs,zeroYs)</var>
-    <var id = "criticalXs">Xs.concat(zeroXs).sort(function(a,b){return a - b})</var>
-    <var id = "criticalPoints">points.concat(zeroPoints).sort(function(a,b){return a[0] - b[0]})</var>
-    <var id = "m">randRange(0,criticalPoints.length-2)</var>
+    
 	
               </div>
 
               <div class="problems">
-              
-                  <div id="finding-point-on-fxn">
+                 <div id="finding-point-on-fxn">
                       <p class="problem">Below is the graph of a function <code>f</code>.</p>
                       
-                      <p class="question"> What is <code>f(<var>X</var>)</code>? </p>
+                      <p class="question"> What is <code>f(<var>X</var>)</code>?</p>
+                      
+                      <p>
+                      	Give your answer as a decimal, accurate to within at least <code>\frac{1}{2}</code>
+                      </p>
                       
                       
                       <div class="graphie" id="grid">
@@ -61,16 +52,7 @@
                
                        </div>
                 
-                
-                     
-                
-                  </div>
-                  
-                 
-                 
-              </div>
-              
-              <p class="solution" data-inexact="data-inexact" data-max-error="0.5" data-type="decimal"><var>Y</var></p>
+                    <p class="solution" data-inexact="data-inexact" data-max-error="0.5" data-type="decimal"><var>Y</var></p>
 
               <div class="hints">
                   <p><code>f(<var>X</var>)</code> is the ordinate of the point on the 
@@ -85,7 +67,7 @@ graph of <code>f</code> whose abscissa is <code><var>X</var></code>.</p>
                                     }, function() {
                                         line( [ X, -11], [ X, 11 ] );
                                     });
-                                    graph.movablePoint.toFront();
+                                    
                       </div> 
                        
                   </div>
@@ -99,7 +81,7 @@ graph of <code>f</code> whose abscissa is <code><var>X</var></code>.</p>
                                     }, function() {
                                         line( [ X, Y], [ 0, Y ] );
                                     });
-                                    graph.movablePoint.toFront();
+                                   
                          </div> 
                   </div>
                   <div>
@@ -107,6 +89,12 @@ graph of <code>f</code> whose abscissa is <code><var>X</var></code>.</p>
                   </div>
                   
               </div>
+                     
+                
+                  </div>
+              </div>
+              
+              
               
           </div>
       </body>
