@@ -8,7 +8,7 @@ var astToLatex = (function(){
 	    return _.reduce( operands, function(memo, operand, index, operands) {
 		if (index > 0) {
 		    if ( (operand.toString().match( /^[0-9\-,]/ )) &&
-			 (operands[index-1].toString().match( /[0-9\-,]$/ )) )
+			 (operands[index-1].toString().match( /[0-9\-,]}*$/ )) )
 			return memo + " \\cdot " + operand.toString();
 
 		    if (operand.toString().match( /^-/ ))
