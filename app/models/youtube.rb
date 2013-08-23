@@ -15,12 +15,18 @@ class Youtube
 end
 
 Youtube.create :title => "Who will help me?", :url => "http://www.youtube.com/watch?v=R4xtSdvkG-s", :week => 1, :lecture => 0
+Youtube.create :title => "Cat-years vs. human-years", :url => "http://youtu.be/ED-oYu4e3LU", :week => 1, :lecture => 0.5
 Youtube.create :title => "What is a function?", :url => "http://www.youtube.com/watch?v=2MrH499MvHw", :week => 1, :lecture => 1
+Youtube.create :title => "The greatest integer function", :url => "http://youtu.be/k698XGE6EUA", :week => 1, :lecture => 1.5
+Youtube.create :title => "Linear functions", :url => "http://youtu.be/hYrPYeI32Gw", :week => 1, :lecture => 1.7
+Youtube.create :title => "Inverses of functions", :url => "http://www.youtube.com/watch?v=daKVqDF8hng", :week => 1, :lecture => 1.8
 Youtube.create :title => "When are two functions the same?", :url => "https://www.youtube.com/watch?v=GVlMFJ5TTmg", :week => 1, :lecture => 2
 Youtube.create :title => "How can more functions be made?", :url => "https://www.youtube.com/watch?v=nEqCaj3hBKU", :week => 1, :lecture => 3
 Youtube.create :title => "What are some real-world examples of functions?", :url => "https://www.youtube.com/watch?v=qfWM5vyXW7M", :week => 1, :lecture => 4
 Youtube.create :title => "What is the domain of square root?", :url => "https://www.youtube.com/watch?v=DQ-76j0sHy0", :week => 1, :lecture => 5
-Youtube.create :title => "What is the limit of \\(\\frac{x^2 - 1}{x-1}\\)?", :url => "https://www.youtube.com/watch?v=YTKoob7m3DM", :week => 1, :lecture => 6
+Youtube.create :title => "A motivating example for limits", :url => "http://youtu.be/0WVpVxdX9YQ", :week => 1, :lecture => 6
+Youtube.create :title => "What is the limit of \\(\\frac{x^2 - 1}{x-1}\\)?", :url => "https://www.youtube.com/watch?v=YTKoob7m3DM", :week => 1, :lecture => 6.5
+Youtube.create :title => "Four examples of limits", :url => "http://youtu.be/MTl8wh_iyWg", :week => 1, :lecture => 6.7
 Youtube.create :title => "What is the limit of \\((\\sin x)/x\\)?", :url => "https://www.youtube.com/watch?v=otW6HcxrRlY", :week => 1, :lecture => 7
 Youtube.create :title => "What is the limit of \\(\\sin (1/x)\\)?", :url => "https://www.youtube.com/watch?v=oSwyUcJhrsE", :week => 1, :lecture => 8
 Youtube.create :title => "Morally, what is the limit of a sum?", :url => "https://www.youtube.com/watch?v=uHEFFyVmDSc", :week => 1, :lecture => 9

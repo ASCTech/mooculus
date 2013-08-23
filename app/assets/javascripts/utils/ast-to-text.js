@@ -3,7 +3,23 @@ var astToText = (function(){
 	"+": function(operands) { return operands.join( ' + ' ); },
 	"-": function(operands) { return operands.join( ' - ' ); },
 	"~": function(operands) { return "-" + operands.join( ' - ' ); },
-	"*": function(operands) { return operands.join( " " ); },
+	"*": function(operands) {
+	    return _.reduce( operands, function(memo, operand, index, operands) {
+		if (index > 0) {
+		    if ( (operand.toString().match( /^[0-9\-,]/ )) &&
+			 (operands[index-1].toString().match( /[0-9\-,]$/ )) )
+			return memo + " * " + operand.toString();
+
+		    if (operand.toString().match( /^-/ ))
+			return memo + "(" + operand.toString() + ")";
+		}
+
+		if (index > 0) 
+		    return memo + " " + operand.toString();
+		else
+		    return operand.toString();
+	    }, '');
+	},
 	"/": function(operands) { return "" + operands[0] + "/" + operands[1]; },
 	"^": function(operands) { return operands[0]  + "^" + operands[1] + ""; },
 	"sin": function(operands) { return "sin " + operands[0]; },
@@ -121,6 +137,22 @@ var astToText = (function(){
 		return "csc^" + factor(operands[1]) + " " + factor(operands[0][1]);
 	    if (operands[0][0] === "cot")
 		return "cot^" + factor(operands[1]) + " " + factor(operands[0][1]);
+
+	    if (operands[0][0] === "arcsin")
+		return "arcsin^" + factor(operands[1]) + " " + factor(operands[0][1]);
+	    if (operands[0][0] === "arccos")
+		return "arccos^" + factor(operands[1]) + " " + factor(operands[0][1]);
+	    if (operands[0][0] === "arctan")
+		return "arctan^" + factor(operands[1]) + " " + factor(operands[0][1]);
+	    if (operands[0][0] === "arcsec")
+		return "arcsec^" + factor(operands[1]) + " " + factor(operands[0][1]);
+	    if (operands[0][0] === "arccsc")
+		return "arccsc^" + factor(operands[1]) + " " + factor(operands[0][1]);
+	    if (operands[0][0] === "arccot")
+		return "arccot^" + factor(operands[1]) + " " + factor(operands[0][1]);
+
+	    if (operands[0][0] === "log")
+		return "(log " + factor(operands[0][1]) + ")^" + factor(operands[1]);
 	}
 
 	if (operator === "^") {

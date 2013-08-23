@@ -23,6 +23,7 @@ body.splash {
     background-size: 100%;
     background-position: fixed;
     background-attachment: fixed;
+    background-color:#020200;
 }
 
 body.splash hr {
