@@ -833,35 +833,7 @@ While one can solve this differential equation, we cannot solve it
 \textit{yet}. Supposing we needed a solution, we could try to find a
 numerical solution using Euler's Method.
 
-\begin{example}\label{example:slopefield1}
-Consider the differential equation
-\[
-f'(x) = \left(f(x)\right)^2 - 6f(x) + 8.
-\]
-Suppose you know that $f(1)= 3.8$. Rounding to two decimals at each
-step, use Euler's Method with $h=0.2$ to approximate $f(3)$. 
-\end{example}
-
-\begin{solution}
-To solve this problem we'll use a variation on Euler's Method. We'll
-make a table following this format
-\[
-\begin{tchart}{lll}
-n & x_n     & y_n \\ \hline
-0 & x_0     & y_0 \\
-1 & x_0 + h & y_0+h\cdot \left(y_0^2-6y_0+8\right)\\
-2 & x_1 + h & y_1+h\cdot \left(y_1^2-6y_1+8\right)\\
-3 & x_2 + h & y_2+h\cdot \left(y_2^2-6y_2+8\right)\\
-4 & x_3 + h & y_3+h\cdot \left(y_3^2-6y_3+8\right)\\
-  \hdotsfor{3}
-\end{tchart}
-\]
-At each step, we are simply making a linear approximation to
-$f(x)$. Filling out this table, we produce
-Table~\ref{table:diffeuler1}.  Hence our estimate for $f(3)$ is
-$2.30$, see Figure~\ref{figure:eulerDiffEQ}.
-\end{solution}
-\begin{margintable}[-4in]
+\begin{margintable}[0in]
 \[
 \begin{tchart}{lll}
 n & t_n & y_n \\ \hline
@@ -883,6 +855,17 @@ n & t_n & y_n \\ \hline
   $f(1) = 3.8$.}
 \label{table:diffeuler1}
 \end{margintable}
+
+
+\begin{example}\label{example:slopefield1}
+Consider the differential equation
+\[
+f'(x) = \left(f(x)\right)^2 - 6f(x) + 8.
+\]
+Suppose you know that $f(1)= 3.8$. Rounding to two decimals at each
+step, use Euler's Method with $h=0.2$ to approximate $f(3)$. 
+\end{example}
+
 
 \begin{marginfigure}[0in]
 \begin{tikzpicture}
@@ -908,6 +891,28 @@ n & t_n & y_n \\ \hline
 \label{figure:eulerDiffEQ}
 \end{marginfigure}
 
+\begin{solution}
+To solve this problem we'll use a variation on Euler's Method. We'll
+make a table following this format
+\[
+\begin{tchart}{lll}
+n & x_n     & y_n \\ \hline
+0 & x_0     & y_0 \\
+1 & x_0 + h & y_0+h\cdot \left(y_0^2-6y_0+8\right)\\
+2 & x_1 + h & y_1+h\cdot \left(y_1^2-6y_1+8\right)\\
+3 & x_2 + h & y_2+h\cdot \left(y_2^2-6y_2+8\right)\\
+4 & x_3 + h & y_3+h\cdot \left(y_3^2-6y_3+8\right)\\
+  \hdotsfor{3}
+\end{tchart}
+\]
+At each step, we are simply making a linear approximation to
+$f(x)$. Filling out this table, we produce
+Table~\ref{table:diffeuler1}.  Hence our estimate for $f(3)$ is
+$2.30$, see Figure~\ref{figure:eulerDiffEQ}.
+\end{solution}
+
+
+
 Let's try this example again with a different initial condition.
 
 
@@ -930,21 +935,6 @@ f'(x) &= \left(f(x)\right)^2 - 6f(x) + 8\\
 0 &= \left(4\right)^2 - 6\cdot4 + 8.
 \end{align*}
 \end{solution}
-
-
-Finally, we'll try do the same example again with another initial
-condition.
-
-
-\begin{example}\label{example:slopefield3}
-Consider the differential equation
-\[
-f'(x) = \left(f(x)\right)^2 - 6f(x) + 8.
-\]
-Suppose you know that $f(1)= 2$. Rounding to two decimals at each
-step, use Euler's Method with $h=0.2$ to approximate $f(3)$. 
-\end{example}
-
 
 
 \begin{margintable}[0in]
@@ -970,17 +960,10 @@ n & t_n & y_n \\ \hline
 \label{table:diffeuler2}
 \end{margintable}
 
-\begin{solution}
-Using the same variation on Euler's Method as before, see
-Table~\ref{table:diffeuler3}.  This time our solution is simply the
-function $f(x) = 2$. Note, this does solve the differential equation
-as, given
-\begin{align*}
-f'(x) &= \left(f(x)\right)^2 - 6f(x) + 8\\
-0 &= \left(2\right)^2 - 6\cdot2 + 8.
-\end{align*}
-\end{solution}
-\begin{margintable}[2in]
+Finally, we'll try do the same example again with another initial
+condition.
+
+\begin{margintable}[0in]
 \[
 \begin{tchart}{lll}
 n & t_n & y_n \\ \hline
@@ -1002,6 +985,30 @@ n & t_n & y_n \\ \hline
   $f(1) = 2$.}
 \label{table:diffeuler3}
 \end{margintable}
+
+\begin{example}\label{example:slopefield3}
+Consider the differential equation
+\[
+f'(x) = \left(f(x)\right)^2 - 6f(x) + 8.
+\]
+Suppose you know that $f(1)= 2$. Rounding to two decimals at each
+step, use Euler's Method with $h=0.2$ to approximate $f(3)$. 
+\end{example}
+
+
+
+
+\begin{solution}
+Using the same variation on Euler's Method as before, see
+Table~\ref{table:diffeuler3}.  This time our solution is simply the
+function $f(x) = 2$. Note, this does solve the differential equation
+as, given
+\begin{align*}
+f'(x) &= \left(f(x)\right)^2 - 6f(x) + 8\\
+0 &= \left(2\right)^2 - 6\cdot2 + 8.
+\end{align*}
+\end{solution}
+
 
 
 From our examples above, we see that certain differential equations
@@ -1163,7 +1170,7 @@ $f(5)$?
 $3$
 \end{answer}
 \end{exercise}
-\begin{marginfigure}
+\begin{marginfigure}[-2in]
 {\def\length{sqrt(1+(-y^2+4*y-3)^2)}
 \begin{tikzpicture}
   \begin{axis}[
