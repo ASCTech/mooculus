@@ -48,9 +48,9 @@ Since $f(x)$ is continuous on the interval $[x,x+h]$, and $h$ is
 approaching zero, there is an $\epsilon$ that goes to zero as $h$ goes
 to zero such that
 \[
-f(x)-\epsilon < f(x^*) < f(x) + \epsilon \qquad \text{for all }x^*\in[x,x+h].
+f(x)-\epsilon < f(x^*) < f(x) + \epsilon \qquad \text{for all }x^*\in[x,x+h],
 \]
-This means that 
+see Figure~\ref{F:fun diagram}. This means that 
 \[
 (f(x) - \epsilon)h < \int_x^{x+h} f(t)\d t < (f(x) + \epsilon)h
 \]
@@ -62,6 +62,30 @@ Comparing this to Equation~\ref{ftc:eqn1}, and taking the limit as $h$
 goes to zero (remembering that this also means that $\epsilon$ goes to
 zero) we see that $F'(x) = f(x)$.
 \end{proof}
+
+\begin{marginfigure}[-6in]
+\begin{tikzpicture}
+  \begin{axis}[
+      xmin=0, xmax=2,ymin=0,ymax=2.3,domain=0:2,
+      axis lines =center, xlabel=$x$, ylabel=$y$,
+      every axis y label/.style={at=(current axis.above origin),anchor=south},
+      every axis x label/.style={at=(current axis.right of origin),anchor=west},
+      axis on top,
+      xtick={.5,1.3,1.453,1.7}, 
+      ytickmin=4, ytickmax=1,
+      xticklabels={$a$,$x$,$x^*$,$x+h$}, 
+    ] 
+    \addplot [draw=none, fill=fill1,domain=1.3:1.7] {1+sin(deg(x))*sin(deg(x^2/1.3))} \closedcycle;
+    \addplot [textColor,dashed] plot coordinates {(1.453,0) (1.453,1.99)};
+    \addplot [penColor,very thick,smooth] {1+sin(deg(x))*sin(deg(x^2/1.3))};
+    
+    \node at (axis cs:.9,1.7) [penColor] {$f(x)$};
+  \end{axis}
+\end{tikzpicture}
+\caption{Here we see $f(x)$ along with $a$, $x$, $x^*$ and $x+h$.}
+\label{F:fun diagram}
+\end{marginfigure}
+
 
 The Fundamental Theorem of Calculus says that an accumulation function
 of $f(x)$ is an antiderivative of $f(x)$.  Because of the close
@@ -82,11 +106,11 @@ This is evaluated as
 \[
   \int f(x)\d x = F(x)+C.
 \]
-Where the constant $C$ indicates that there are really an infinite
-number of antiderivatives. We do not need this $C$ to compute definite
-integrals, but in other circumstances we will need to remember that
-the $C$ is there, so it is best to get into the habit of writing the
-$C$.
+Where $F'(x) = f(x)$ and the constant $C$ indicates that there are
+really an infinite number of antiderivatives. We do not need to add
+this $C$ to compute definite integrals, but in other circumstances we
+will need to remember that the $C$ is there, so it is best to get into
+the habit of writing the $C$.
 
 There is a another common form of the Fundamental Theorem of Calculus:
 
