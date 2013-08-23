@@ -54,6 +54,24 @@ f(x) = \frac{1}{(x-1)}
 While we have $\lim_{x\to 1} f(x) \ne \pm\infty$, we do have one-sided
 limits, $\lim_{x\to 1+} f(x) = \infty$ and $\lim_{x\to 1-} f(x) =
 -\infty$, see Figure~\ref{plot:1/(x-1)}.
+
+
+\begin{definition}\label{def:vert asymptote}\index{asymptote!vertical}\index{vertical asymptote}
+If 
+\[
+\lim_{x\to a} f(x) = \pm\infty, \qquad \lim_{x\to a+} f(x) = \pm\infty, \qquad\text{or}\qquad \lim_{x\to a-} f(x) = \pm\infty,
+\]
+then the line $x=a$ is a \textbf{vertical asymptote} of $f(x)$.
+\end{definition}
+
+
+\begin{example}
+Find the vertical asymptotes of 
+\[
+f(x) = \frac{x^2-9x+14}{x^2-5x+6}.
+\]
+\end{example}
+
 \begin{marginfigure}
 \begin{tikzpicture}
 	\begin{axis}[
@@ -75,21 +93,8 @@ limits, $\lim_{x\to 1+} f(x) = \infty$ and $\lim_{x\to 1-} f(x) =
 \end{marginfigure}
 
 
-\begin{definition}\label{def:vert asymptote}\index{asymptote!vertical}\index{vertical asymptote}
-If 
-\[
-\lim_{x\to a} f(x) = \pm\infty, \qquad \lim_{x\to a+} f(x) = \pm\infty, \qquad\text{or}\qquad \lim_{x\to a-} f(x) = \pm\infty,
-\]
-then the line $x=a$ is a \textbf{vertical asymptote} of $f(x)$.
-\end{definition}
 
 
-\begin{example}
-Find the vertical asymptotes of 
-\[
-f(x) = \frac{x^2-9x+14}{x^2-5x+6}.
-\]
-\end{example}
 \begin{solution}
 Start by factoring both the numerator and the denominator:
 \[
@@ -112,7 +117,7 @@ $\lim_{x\to 3-} x-3$ approaches $0$ from the left and the numerator is
 negative, $\lim_{x\to 3-} f(x) = \infty$. Hence we have a vertical
 asymptote at $x=3$, see Figure~\ref{plot:(x^2-9x+14)/(x^2-5x+6)}.
 \end{solution}
-\begin{marginfigure}[-4in]
+\begin{marginfigure}[0in]
 \begin{tikzpicture}
 	\begin{axis}[
             domain=1:4,
