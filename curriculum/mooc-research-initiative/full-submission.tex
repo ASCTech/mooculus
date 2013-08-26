@@ -107,16 +107,19 @@ these parameters.
 
 This leads to two basic questions:
 \begin{itemize}
-\item What parameters in the adaptive
-  learning model best align online student performance with in-class
-  student performance?
-\item To what extent does student use
-  of adaptive learning correlate with success in traditional,
-  in-person courses?
+\item What parameters in the adaptive learning model best align online
+  student performance with in-class student performance?
+\item To what extent does student use of adaptive learning correlate
+  with success in traditional, in-person courses?
 \end{itemize}
 The former question addresses improving the hidden Markov model that
 powers MOOCulus; the second question gets deeper, by addressing the
 extent to which adaptive learning helps with in-person courses.
+
+These questions, though framed in the setting of a calculus class, are
+quite general. In particular, the MOOCulus platform has already been
+used in another MOOC, \textit{Rhetorical Composing}, a MOOC run by the
+English department at OSU, \texttt{https://wexmooc.osu.edu/}.
 
 \section{Data sources}
 
@@ -141,21 +144,32 @@ performance in the online course with their in-class performance.
 
 \section{Methodology}
 
-To set the parameters of the hidden Markov model, the Baum-Welch
-algorithm will be used on data gathered from the first run of the
-Calculus One MOOC. This will allow the parameters in the MOOCulus
-hidden Markov model will be set for each problem separately, for a
-more effective implementation in Spring 2013.
+\paragraph{Hidden Markov parameters}
+
+The data will be analyzed in R. The Baum-Welch algorithm will be used
+to set the parameters in the hidden Markov model. This will allow the
+parameters in the MOOCulus hidden Markov model to be set for each
+problem separately. While these parameters are independently of
+interest to researchers, they also will provide for a more effective
+implementation of MOOCulus in Spring 2014.
+
+\paragraph{Correllation to success}
 
 To assess the correlation between success in the MOOC and success in
 the traditional course, in addition to teaching the online MOOC, Snapp
-will be teaching calculus to two, quite different, student populations
-in Fall 2013.  The first is a calculus course for middle school
-teachers ($n=28$); the second is a calculus course for engineering
-students ($n\approx 180$).  By involving his in-person students also
-in the online MOOCulus course, the extent to which participation in
-the adaptive learning system correlates with success on in-person
-assessments can be determined.
+is teaching calculus to two, quite different, student populations in
+Fall 2013.  The first is a calculus course for middle school teachers
+($n=28$). In this course, students will complete online assignments on
+MOOCulus as part of their grade.  The second is a calculus course for
+engineering students ($n\approx 200$).  In this course, students will
+be encouraged to work online problems in MOOCulus, but there will be
+no grade attached to their progress.  By involving his in-person
+students also in the online MOOCulus course, the extent to which
+participation in the adaptive learning system correlates with success
+on in-person assessments can be determined.
+
+
+
 
 \section{Budget needs}
 
