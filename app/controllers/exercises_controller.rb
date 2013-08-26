@@ -64,7 +64,7 @@ class ExercisesController < ApplicationController
       current_user.competencies.order(:estimate).reverse_order.map { |c| c.exercise }
     incomplete_exercises = exercises - completed_exercises
     @exercises = completed_exercises + incomplete_exercises
-    @competencies = Competency
+    @competencies = current_user.competencies if user_signed_in?
     @exercises_by_weeks = (completed_exercises.group_by &:week)
   end
 
