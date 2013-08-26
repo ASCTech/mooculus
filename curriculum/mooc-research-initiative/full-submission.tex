@@ -1,0 +1,173 @@
+\documentclass[12pt]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{times} %should use 12 pt Times New Roman font.
+\usepackage[T1]{fontenc}
+\usepackage{mathptmx}
+\usepackage{hyperref}
+
+\usepackage[style=authoryear]{biblatex}
+\addbibresource{references.bib}
+
+\usepackage{titlesec}
+\titleformat*{\section}{\normalsize\bfseries}
+
+\begin{document}
+
+\begin{center}
+  \textbf{MOOCulus: Iteratively Improving Calculus Instruction}
+\end{center}
+
+% PROPOSAL FORMAT
+% 
+% 1. Proposal overview
+% 2. Literature and existing research that informs their proposal
+% 3. Context of research (MOOC taught, designed, university/organizational affiliation, MOOC provider, publisher)
+% 4. Research questions to be addressed by the project
+% 5. Data sources being considered for the project
+% 6. Methodology planned for research activities
+
+\section{Proposal overview}
+
+In January 2013, The Ohio State University Mathematics Department
+launched its first massive open online course.  This MOOC was designed
+to cover the same content as the local, in-person sections of calculus
+at Ohio State.
+
+Part of this MOOC consisted of a home-built platform designed to
+deliver randomly-generated interactive mathematics problems to
+students; this platform has already been re-used for a English writing
+course called WexMOOC \parencite{gates-foundation-grant}.
+
+With tens of thousands of students enrolled in the calculus MOOC,
+there have been millions of attempts on homework exercises, with data
+on each of these attempts.  Funding is sought to use this data to both
+evaluate the success of and improve upon the adaptive learning
+platform built at OSU.
+
+\section{Literature}
+
+Hidden Markov models are widely used in educational data mining; one
+nice example of such is Shih-Koedinger-Scheines' 2010 paper
+presented at the International Conference on Educational Data Mining,
+``Discovery of Student Strategies using Hidden Markov Model
+Clustering.''  The survey papers of Romero and Ventura provide an
+excellent overview.
+
+\section{Context of research}
+
+Coursera was chosen as the MOOC provider, but since Coursera's
+platform lacked randomly generated math problems, the team at Ohio
+State built their own MOOC platform to complement Coursera's
+services---this home-built platform is called MOOCulus, and can be
+explored at \url{https://mooculus.osu.edu/}.
+
+MOOCulus logs all student input on homework exercises. This data is
+fed into a hidden Markov model to produce an estimate of the student's
+understanding. The student receives additional practice problems of
+the same sort until it is estimated that their understanding reaches a
+threshold, at which point the student is given a new type of exercise
+and the process repeats.  The overall goal is to keep providing
+exercises that are difficult enough to be fun and educational, but not
+so easy as to become boring and repetitive.  In spite of the fact that
+many tens of thousands of students used MOOCulus, each experienced a
+personalized path through the material.  In short, MOOCulus promises
+to enable MOOCs to be massive, but not mass-produced.
+
+In addition to building MOOCulus and running Calculus One, both Fowler
+and Snapp have experience using technology and analyzing its
+effectiveness.  For example, Fowler built the mobile phone clicker
+used to measure student engagement for OSU's technology enhanced
+calculus lectures, and Fowler's research training includes
+high-dimensional data analysis from a topological perspective; Snapp
+taught for Calculus Remote at OSU (CROSU), and worked with OSU's
+Center for Enterprise Transformation \& Innovation to build
+interactive textbooks for the iPad, with the goal of measuring student
+engagement while reading the textbook.
+
+\section{Research questions}
+
+As students interact with MOOCulus, the data needed to refine the
+parameters of the hidden Markov model are obtained.  At this point a
+number of questions arise. To what degree is a correct answer after
+three ``hints'' strong evidence of student understanding?  What prior
+probability should be assigned to the likelihood of a student to
+submit a correct answer on the first try?  The parameters depend
+strongly on the particular homework exercise; some exercises are
+conceptually deep but procedurally easy, while some questions are
+conceptually light but procedurally quite involved, so even a strong
+student may make ``careless'' mistakes which the model shouldn't count
+against him/her.  It's easy for an expert to qualitatively make these
+judgments, but analysis of big data is required to accurately set
+these parameters.
+
+This leads to two basic questions:
+\begin{itemize}
+\item What parameters in the adaptive
+  learning model best align online student performance with in-class
+  student performance?
+\item To what extent does student use
+  of adaptive learning correlate with success in traditional,
+  in-person courses?
+\end{itemize}
+The former question addresses improving the hidden Markov model that
+powers MOOCulus; the second question gets deeper, by addressing the
+extent to which adaptive learning helps with in-person courses.
+
+\section{Data sources}
+
+A large data set already exists from the first run of the Calculus One
+MOOC in Spring 2013; with a total enrollment of 47k~students, the
+course still had 11,000 students engaging with the material after four
+weeks, and 2,000 students at Week~15.  Altogether, a total of
+2,079,428 correct answers were submitted to MOOCulus, with a total of
+10.3 person-years having been spent by students working problems.  The
+activity logs are stored in a SQL database and this database is
+imported for analysis into R.
+
+A second iteration of the Calculus One MOOC has been started at OSU
+for Fall 2013.  In addition, Snapp is teaching two on-campus calculus
+courses: a course for engineers and a course for teachers.  Fowler and
+Snapp have obtained a letter of final determination from the
+Institutional Review Board facilitating the use of human subjects in
+our research.  The proposed plan is to have each of these groups of
+students enroll in MOOCulus so that we can directly compare students'
+performance in the online course with their in-class performance.
+
+
+\section{Methodology}
+
+To set the parameters of the hidden Markov model, the Baum-Welch
+algorithm will be used on data gathered from the first run of the
+Calculus One MOOC. This will allow the parameters in the MOOCulus
+hidden Markov model will be set for each problem separately, for a
+more effective implementation in Spring 2013.
+
+To assess the correlation between success in the MOOC and success in
+the traditional course, in addition to teaching the online MOOC, Snapp
+will be teaching calculus to two, quite different, student populations
+in Fall 2013.  The first is a calculus course for middle school
+teachers ($n=28$); the second is a calculus course for engineering
+students ($n\approx 180$).  By involving his in-person students also
+in the online MOOCulus course, the extent to which participation in
+the adaptive learning system correlates with success on in-person
+assessments can be determined.
+
+\section{Budget needs}
+
+A course buyout provides time for Bart Snapp to perform data analysis,
+to write up the results, and to oversee the work of his Master's
+student, David Lindberg.  One course buyout for Bart Snapp is \$15k.
+To release David Lindberg from his teaching further costs \$1925/month
+plus 12.6\% in benefits; for the Spring Semester from January--May,
+this costs $\$1925 \cdot 5 \cdot 112.6\% = \$10838$.  Altogether, the
+total cost for the two researchers' time is \$25838.
+
+\printbibliography
+
+\end{document}
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: t
+%%% End: 
