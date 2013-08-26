@@ -85,32 +85,49 @@ development, emerging out of a handful of workshops from the early
 the International Working Group on Educational Data
 Mining \parencite{WIDM:WIDM1075}.
 
+\subsection{Deciding which student interactions should be logged}
+
+Before launching a research project like MOOCulus---or any EDM
+project---there is a serious choice to be made: exactly what data will
+be mined?  What sorts of data will be stored on each student
+interaction?  Some systems have chosen to record the date and time the
+student has engaged with various educational
+applications \parencite{RomeroZaldivar20121058}; others are looking at
+clickstream data \parencite{boyer2013student}.  Going forward, it is
+worth considering a format for heterogenous data logging for student
+interaction, like the Tin Cap API \parencite{tin-can-api}.
+
 \subsection{Bayesian models}
 
 Much work has been done on using adaptive learning systems to teach
 college mathematics, such as ALEKS \parencite{hagerty2005using}, but
-they can be difficult for instructors to use.  Some of these depend on
-Bayesian methods.  Hidden Markov models have also been used in
-educational data mining for clustering
+they can be difficult for instructors to use.  Some of these use
+Bayesian networks to estimate a student's current
+understanding \parencite{romero2010educational}.  Hidden Markov models
+have also been used in educational data mining for clustering
 \parencite{shihdiscovery}.  Such ``machine learning'' techniques can
 predict student grades based on only a few
 assignments \parencite{predict-grades}, even with incomplete
-data \parencite{Zafra201115020}, which make them helpful for an
-adaptive learning platform where not too much student data may be
-available initially.
+data \parencite{Zafra201115020}, which make them especially useful for
+an adaptive learning platform where not too much student data may be
+available on which to base initial predictions.
 
 \subsection{The parameter problem}
 
-One issue with all these adaptive learning systems is that instructors
-often ``have to provide appropriate values for the parameters in
-advance in order to obtain good results/model and therefore, the user
-must possess a certain amount of expertise in order to find the right
-settings.'' \parencite{romero2010educational}.  There are, for
-instance, Java tools for analyzing Moodle data, which attempt to make
-educational data mining a bit easier for the
-novice \parencite{java-data-mining}, but nothing like an easy-to-use
-version of the Baum-Welch algorithm for EDM is available to handle the
-training of a hidden Markov model.
+A serious issue with all these adaptive learning systems is that
+instructors often ``have to provide appropriate values for the
+parameters in advance in order to obtain good results/model and
+therefore, the user must possess a certain amount of expertise in
+order to find the right settings.'' \parencite{romero2010educational}.
+Determining appropriate values for these parameters is one of the
+major research questions this proposed project addresses.  Some work
+has been done in this direction already: there are, for instance, Java
+tools for analyzing Moodle data, which attempt to make educational
+data mining a bit easier for the novice \parencite{java-data-mining},
+but nothing like an easy-to-use version of the Baum-Welch algorithm
+for EDM is available to handle the training of a hidden Markov model.
+
+\subsection{Empowering instructors with data analysis}
 
 To verify that such adaptive methods are working, instructors need
 easy methods to visualize student data.  David Bressoud---the
@@ -123,37 +140,28 @@ the following:
   the nature of a given college or
   university. \parencite{bressoud-sky-falling}.
 \end{quote}
-The Ohio State Department of Mathematics has already begun to look at
-these local, contextualized issues.  A pilot study of ``technology
-enhanced lectures'' at OSU showed significant improvement in student
-opinion of The Ohio State Department of Mathematics, from 29\% of
+The Ohio State University (OSU) Department of Mathematics has already
+begun to look at these local, contextualized issues.  A pilot study of
+``technology enhanced lectures'' at OSU showed significant improvement
+in student opinion of the OSU Department of Mathematics, from 29\% of
 students having a favorable opinion, to 80\% of students in the
 technology-enhanced sections having a favorable opinion
 \cite{miller-tech-enhanced-calculus}.  Such affective data can be an
-even more important predictor than grades in STEM retention: after
-all, 81\% of the ``switchers'' who left STEM nevertheless received a
-grade of C or higher in their calculus course
+even more important predictor than grades when considering STEM
+retention: after all, 81\% of the ``switchers'' who left STEM
+nevertheless received a grade of C or higher in their calculus course
 \cite{calculus-programs}.
 
-\subsection{Data logs}
-
-Before launching a research project like MOOCulus, there is a serious
-choice to be made: exactly what sorts of data will be stored on each
-student interaction?  Some systems have chosen to record the date and
-time the student has engaged with various educational
-applications \parencite{RomeroZaldivar20121058}; others are looking at
-clickstream data \parencite{boyer2013student}.  Going forward, it is
-worth considering a format for heterogenous data logging for student
-interaction, like the Tin Cap API \parencite{tin-can-api}.
 
 \section{Context of research}
 
 
 \paragraph{Coursera and MOOCulus.} 
 Coursera was chosen as the MOOC provider, but since Coursera's
-platform lacked randomly generated problems, the team at Ohio State
-built their own MOOC platform to complement Coursera's services---this
-home-built platform is called MOOCulus, and can be explored at:
+platform lacked randomly generated problems, the team at The Ohio
+State built their own MOOC platform to complement Coursera's
+services---this home-built platform is called MOOCulus, and can be
+explored at:
 \[
 \texttt{https://mooculus.osu.edu/}
 \]
@@ -167,6 +175,10 @@ with a huge amount of data concerning student interaction with
 MOOCulus.  Since the platform is hosted on OSU servers, not only do
 the researchers have immediate access to the data, but they also have
 the ability to modify and adapt what type of data is collected.
+
+\begin{float}
+  \caption{Diagram of the MOOCulus HMM.}
+\end{float}
 
 Once the MOOCulus data is collected, it is fed into a hidden Markov
 model to produce an estimate of the student's
