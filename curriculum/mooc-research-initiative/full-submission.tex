@@ -5,6 +5,7 @@
 \usepackage[T1]{fontenc}
 \usepackage{mathptmx}
 \usepackage{hyperref}
+\usepackage{url}
 
 \usepackage[style=numeric]{biblatex}
 \addbibresource{references.bib}
@@ -12,6 +13,7 @@
 \usepackage{titlesec}
 \titleformat*{\section}{\normalsize\bfseries}
 \titleformat*{\subsection}{\normalsize\bfseries}
+
 
 \begin{document}
 
@@ -32,15 +34,15 @@
 
 In January 2013, The Ohio State University Mathematics Department
 launched its first massive open online course designed to cover the
-same content as the local, in-person sections of calculus at Ohio
-State.  Part of this MOOC consisted of a home-built platform designed
-to deliver randomly-generated interactive problems to students.  This
-home-built adaptive learning platform is usable for much more than
-calculus: this same platform has already been re-used for a English
-writing course called WexMOOC \parencite{gates-foundation-grant}, and
-the American Languages Program at The Ohio State has also reached out
-to modify the adaptive learning platform to teach English grammar for
-their ESL students.
+same content as the local, in-person sections of calculus one.  Part
+of this MOOC consisted of a home-built platform designed to deliver
+randomly-generated interactive problems to students.  This home-built
+adaptive learning platform is usable for much more than calculus: this
+same platform has already been re-used for a English writing course
+called WexMOOC \parencite{gates-foundation-grant}, and the American
+Languages Program at The Ohio State has also reached out to modify the
+adaptive learning platform to teach English grammar for their ESL
+students.
 
 With tens of thousands of students enrolled in the calculus MOOC,
 there have been millions of attempts on homework exercises, with data
@@ -146,37 +148,44 @@ interaction, like the Tin Cap API \parencite{tin-can-api}.
 
 \section{Context of research}
 
+
+\paragraph{Coursera and MOOCulus.} 
 Coursera was chosen as the MOOC provider, but since Coursera's
 platform lacked randomly generated problems, the team at Ohio State
 built their own MOOC platform to complement Coursera's services---this
-home-built platform is called MOOCulus, and can be explored at
-\url{https://mooculus.osu.edu/}.
-
-MOOCulus provides the researchers with a huge amount of data
-concerning student interacting with MOOCulus. MOOCulus logs all
-student input on homework exercises---this includes interaction with
-MOOCulus such as requesting a ``hint'' and obtaining a correct
-response on a first attempt.  Since the platform is hosted on OSU
-servers, not only do the researchers have immediate access to the
-data, but they also have the ability to modify and adapt what type of
-data is collected. 
+home-built platform is called MOOCulus, and can be explored at:
+\[
+\texttt{https://mooculus.osu.edu/}
+\]
 
 
-The MOOCulus data is fed into a hidden Markov model to produce an
-estimate of the student's understanding. Essentially the students are
-assumed to be in one of two states, ``knowing'' and ``unknowing.''
-From the students' performance on the exercises provided by MOOCulus,
-the hidden Markov model decideds what state each student is in. The
-student receives additional practice problems of the same sort until
-it is estimated that their understanding reaches a threshold, at which
-point the student is given a new type of exercise and the process
-repeats.  The overall goal is to keep providing exercises that are
-difficult enough to be fun and educational, but not so easy as to
-become boring and repetitive.  In spite of the fact that many tens of
-thousands of students used MOOCulus, each experienced a personalized
-path through the material.  In short, MOOCulus promises to enable
-MOOCs to be massive, but not mass-produced.
+\paragraph{MOOCulus and data collection.} 
+MOOCulus logs all student input on homework exercises---this includes
+interaction with MOOCulus such as requesting a ``hint'' and obtaining
+a correct response on a first attempt.  This provides the researchers
+with a huge amount of data concerning student interaction with
+MOOCulus.  Since the platform is hosted on OSU servers, not only do
+the researchers have immediate access to the data, but they also have
+the ability to modify and adapt what type of data is collected.
 
+Once the MOOCulus data is collected, it is fed into a hidden Markov
+model to produce an estimate of the student's
+understanding. Essentially the students are assumed to be in one of
+two states, ``knowing'' and ``unknowing.''  From the students'
+performance on the exercises provided by MOOCulus, the hidden Markov
+model decides what state each student is in. The student receives
+additional practice problems of the same sort until it is estimated
+that their understanding reaches a threshold, at which point the
+student is given a new type of exercise and the process repeats.  The
+overall goal is to keep providing exercises that are difficult enough
+to be fun and educational, but not so easy as to become boring and
+repetitive.  In spite of the fact that many tens of thousands of
+students used MOOCulus, each experienced a personalized path through
+the material.  In short, MOOCulus promises to enable MOOCs to be
+massive, but not mass-produced.
+
+
+\paragraph{Personnel.} 
 In addition to building MOOCulus and running Calculus One, both Fowler
 and Snapp have experience using technology and analyzing its
 effectiveness.  For example, Fowler built the mobile phone clicker
@@ -186,7 +195,10 @@ high-dimensional data analysis from a topological perspective; Snapp
 taught for Calculus Remote at OSU (CROSU), and worked with OSU's
 Center for Enterprise Transformation \& Innovation to build
 interactive textbooks for the iPad, with the goal of measuring student
-engagement while reading the textbook.
+engagement while reading the textbook. David Lindberg is a student in
+the masters of mathematical sciences program specializing in
+mathematics education. He has experience with data analysis and is
+currently working with Snapp on his masters thesis.
 
 \section{Research questions}
 
@@ -219,7 +231,7 @@ These questions, though framed in the setting of a calculus class, are
 quite general. With the MOOCulus platform being used in the above
 mentioned WexMOOC, and the additional interest from other departments
 on campus, this research would be of interest to many researchers and
-educators alike, regardless of their speciality of expertiese.
+educators alike, regardless of their specialty of expertise.
 
 \section{Data sources}
 
@@ -253,7 +265,7 @@ problem separately. While these parameters are independently of
 interest to researchers, they also will provide for a more effective
 implementation of MOOCulus in Spring 2014.
 
-\paragraph{Correllation to success}
+\paragraph{Correlation to success}
 
 To assess the correlation between success in the MOOC and success in
 the traditional course, in addition to teaching the online MOOC, Snapp
