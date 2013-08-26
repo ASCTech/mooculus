@@ -64,8 +64,8 @@ being used at some of the most prestigious US research
 universities \parencite{morris2013moocs}---may provide a method by
 which research universities can rein in costs and improve student
 outcomes \parencite{bowen2013higher}.  In particular, there is
-evidence that online assessment can improve student outcomes in math
-courses \parencite{angus2009does}.
+evidence that online assessment techniques can improve student
+outcomes in math courses \parencite{angus2009does}.
 
 \subsection{A platform for more than calculus}
 
@@ -124,7 +124,7 @@ major research questions this proposed project addresses.  Some work
 has been done in this direction already: there are, for instance, Java
 tools for analyzing Moodle data, which attempt to make educational
 data mining a bit easier for the novice \parencite{java-data-mining},
-but nothing like an easy-to-use version of the Baum-Welch algorithm
+but nothing like an easy-to-use version of the Baum--Welch algorithm
 for EDM is available to handle the training of a hidden Markov model.
 
 \subsection{Empowering instructors with data analysis}
@@ -155,78 +155,117 @@ nevertheless received a grade of C or higher in their calculus course
 
 \section{Context of research}
 
-
 \paragraph{Coursera and MOOCulus.} 
-Coursera was chosen as the MOOC provider, but since Coursera's
-platform lacked randomly generated problems, the team at The Ohio
-State built their own MOOC platform to complement Coursera's
-services---this home-built platform is called MOOCulus, and can be
-explored at:
+Coursera was chosen as the MOOC provider; some assessments, like the
+weekly quizzes, are done entirely within Coursera's platform, but
+there are some limitations.  Most seriously, Coursera lacked an easy
+method for producing randomly generated math problems, and so the team
+at The Ohio State built their own MOOC platform to complement the
+missing aspects of Coursera's assessment offerings.  This home-built
+MOOC platform is called MOOCulus, and can be explored at
 \[
-\texttt{https://mooculus.osu.edu/}
+\href{https://mooculus.osu.edu/}{\texttt{https://mooculus.osu.edu/}}
 \]
-
+using either a Coursera or Google login.  The platform is a Rails app
+which uses Khan Academy's exercise framework for generating random
+instances of problems from an XML exercise schema.  Steve Gubkin, a
+graduate student at OSU, has written 122 calculus exercises in this
+framework for the Calculus One course.
 
 \paragraph{MOOCulus and data collection.} 
 MOOCulus logs all student input on homework exercises---this includes
 interaction with MOOCulus such as requesting a ``hint'' and obtaining
-a correct response on a first attempt.  This provides the researchers
-with a huge amount of data concerning student interaction with
-MOOCulus.  Since the platform is hosted on OSU servers, not only do
-the researchers have immediate access to the data, but they also have
-the ability to modify and adapt what type of data is collected.
+a correct response on a first attempt (``ace'').  This provides the
+researchers with a huge amount of data concerning student interaction
+with MOOCulus.  To ensure FERPA compliance, the platform is hosted
+entirely on OSU servers, and so not only do the researchers have
+immediate access to the data, but they also have the ability to modify
+and adapt what type of data is collected.
 
-\begin{float}
+\begin{figure}
+  \vspace{2in}
   \caption{Diagram of the MOOCulus HMM.}
-\end{float}
+\end{figure}
 
 Once the MOOCulus data is collected, it is fed into a hidden Markov
 model to produce an estimate of the student's
-understanding. Essentially the students are assumed to be in one of
-two states, ``knowing'' and ``unknowing.''  From the students'
+understanding. Essentially, the students are assumed to be in one of
+two states: ``knowing'' and ``unknowing.''  From the students'
 performance on the exercises provided by MOOCulus, the hidden Markov
-model decides what state each student is in. The student receives
-additional practice problems of the same sort until it is estimated
-that their understanding reaches a threshold, at which point the
-student is given a new type of exercise and the process repeats.  The
-overall goal is to keep providing exercises that are difficult enough
-to be fun and educational, but not so easy as to become boring and
-repetitive.  In spite of the fact that many tens of thousands of
-students used MOOCulus, each experienced a personalized path through
-the material.  In short, MOOCulus promises to enable MOOCs to be
-massive, but not mass-produced.
+model decides what state each student is in.  For example, the time series data
+$$
+\mbox{correct},\quad\mbox{incorrect},\quad\mbox{correct},\quad\mbox{incorrect},\quad\mbox{correct},\quad\mbox{incorrect}
+$$
+is not strong evidence that the student is in the hidden ``knowing''
+state.  On the other hand, time series data which would,
+superficially, result in the same ``score'' of ``half right, half wrong,'' such as
+$$
+\mbox{incorrect},\quad\mbox{incorrect},\quad\mbox{incorrect},\quad\mbox{correct},\quad\mbox{correct},\quad\mbox{correct}
+$$
+is strong evidence of that the student has reached the ``knowing''
+state.  The order matters.
 
+The student receives additional practice problems of the same sort
+until it is estimated that their understanding reaches a threshold, at
+which point the student is given a new type of exercise and the
+process repeats.  The overall goal is to keep providing exercises that
+are difficult enough to be fun and educational, but not so easy as to
+become boring and repetitive.  In spite of the fact that many tens of
+thousands of students used MOOCulus, each experienced a personalized
+path through the material.  In short, MOOCulus promises to enable
+MOOCs to be massive, but not mass-produced.
 
-\paragraph{Personnel.} 
-In addition to building MOOCulus and running Calculus One, both Fowler
+\subsection*{Personnel}
+
+In addition to both building MOOCulus and running Calculus One, Fowler
 and Snapp have experience using technology and analyzing its
-effectiveness.  For example, Fowler built the mobile phone clicker
-used to measure student engagement for OSU's technology enhanced
-calculus lectures, and Fowler's research training includes
-high-dimensional data analysis from a topological perspective; Snapp
-taught for Calculus Remote at OSU (CROSU), and worked with OSU's
-Center for Enterprise Transformation \& Innovation to build
-interactive textbooks for the iPad, with the goal of measuring student
-engagement while reading the textbook. David Lindberg is a student in
-the masters of mathematical sciences program specializing in
-mathematics education. He has experience with data analysis and is
-currently working with Snapp on his masters thesis.
+effectiveness.
+
+\paragraph*{Jim Fowler.} For example, Fowler built the mobile phone
+clicker used to measure student engagement for OSU's technology
+enhanced calculus lectures, and Fowler's research training includes
+high-dimensional data analysis from a topological perspective.
+
+\paragraph*{Bart Snapp.} Having taught Calculus Remote at OSU (CROSU),
+Snapp has also worked with OSU's Center for Enterprise Transformation
+\& Innovation to build interactive textbooks for the iPad, with the
+goal of measuring student engagement while reading the textbook.
+Snapp will be teaching two sections of calculus during Fall~2013 which
+will be making heavy use of MOOCulus.
+
+\paragraph*{David Lindberg.} A student in the masters of mathematical
+sciences program specializing in mathematics education, David Lindberg
+has experience with data analysis and programming experience with R,
+python, and ruby.  Lindberg is currently working with Snapp on his
+Master's thesis, which will be examining results from the MOOCulus
+data set and the adaptive learning platform that MOOCulus represents.
 
 \section{Research questions}
 
-As students interact with MOOCulus, the data needed to refine the
-parameters of the hidden Markov model are obtained.  At this point a
-number of questions arise. To what degree is a correct answer after
-three ``hints'' strong evidence of student understanding?  What prior
-probability should be assigned to the likelihood of a student to
-submit a correct answer on the first try?  The parameters depend
-strongly on the particular homework exercise; some exercises are
-conceptually deep but procedurally easy, while some questions are
-conceptually light but procedurally quite involved, so even a strong
-student may make ``careless'' mistakes which the model shouldn't count
-against him/her.  It's easy for an expert to qualitatively make these
-judgments, but analysis of big data is required to accurately set
-these parameters.
+\begin{figure}
+  \vspace{2in}
+  \caption{Parameters in the HMM}
+  \label{fig:parameters}
+\end{figure}
+
+The hidden Markov model behind MOOCulus involves quite a few
+parameters (see Figure~\ref{fig:parameters}).  These parameters were
+set by hand initially; choosing the appropriate values which yields an
+accurate model of student understanding takes a great deal of
+instructor intervention \parencite{romero2010educational}; can this be
+automated?  Can this be justified?  As students interact with
+MOOCulus, the data needed to refine the parameters of the hidden
+Markov model is obtained.  At this point, a number of questions
+arise. To what degree is a correct answer after three ``hints'' strong
+evidence of student understanding?  What prior probability should be
+assigned to the likelihood of a student to submit a correct answer on
+the first try?  The parameters depend strongly on the particular
+homework exercise; some exercises are conceptually deep but
+procedurally easy, while some questions are conceptually light but
+procedurally quite involved, so even a strong student may make
+``careless'' mistakes which the model shouldn't count against him/her.
+It's easy for an expert to qualitatively make these judgments, but
+analysis of big data is required to accurately set these parameters.
 
 This leads to two basic questions:
 \begin{itemize}
@@ -257,31 +296,31 @@ activity logs are stored in a SQL database and this database is
 imported for analysis into R.
 
 A second iteration of the Calculus One MOOC has been started at OSU
-for Fall 2013.  In addition, Snapp is teaching two on-campus calculus
-courses: a course for engineers and a course for teachers.  Fowler and
-Snapp have obtained a letter of final determination from the
-Institutional Review Board facilitating the use of human subjects in
-our research.  The proposed plan is to have each of these groups of
-students enroll in MOOCulus so that we can directly compare students'
-performance in the online course with their in-class performance.
-
+for Fall 2013.  There are already 25k students enrolled in that second
+run.  In addition, Snapp is teaching two on-campus calculus courses: a
+course for engineers and a course for teachers.  Fowler and Snapp have
+obtained a letter of final determination from the Institutional Review
+Board facilitating the use of human subjects in our research.  The
+proposed plan is to have each of these groups of students enroll in
+MOOCulus so that we can directly compare students' performance in the
+online course with their in-class performance.
 
 \section{Methodology}
 
 \paragraph{Hidden Markov parameters}
 
-The data will be analyzed in R. The Baum-Welch algorithm will be used
+The data will be analyzed in R. The Baum--Welch algorithm will be used
 to set the parameters in the hidden Markov model. This will allow the
 parameters in the MOOCulus hidden Markov model to be set for each
-problem separately. While these parameters are independently of
-interest to researchers, they also will provide for a more effective
-implementation of MOOCulus in Spring 2014.
+problem separately.  These parameters are independently of interest to
+researchers, and they also will provide for a better student
+experience for MOOCulus in Spring 2014.
 
 \paragraph{Correlation to success}
 
 To assess the correlation between success in the MOOC and success in
 the traditional course, in addition to teaching the online MOOC, Snapp
-is teaching calculus to two, quite different, student populations in
+is teaching calculus to two---quite different---student populations in
 Fall 2013.  The first is a calculus course for middle school teachers
 ($n=28$). In this course, students will complete online assignments on
 MOOCulus as part of their grade.  The second is a calculus course for
@@ -292,20 +331,19 @@ students also in the online MOOCulus course, the extent to which
 participation in the adaptive learning system correlates with success
 on in-person assessments can be determined.
 
-
-
-
 \section{Budget needs}
-A course buyout provides time for Bart Snapp to perform data analysis,
-to write up the results, and to oversee the work of his Master's
-student, David Lindberg.  One course buyout for Bart Snapp is 15\% of
-the combination of his base salary (\$60132) plus 29.6\% in
-benefits. For the spring semester this will amount to $.15 \cdot
+A course buyout provides necessary time for Bart Snapp to perform the
+data analysis, to write up the results, and to oversee the analysis
+work of his Master's student, David Lindberg.  One course buyout for
+Bart Snapp is 15\% of the combination of his base salary (\$60132)
+plus 29.6\% in benefits. For Spring 2013, this amounts to $.15 \cdot
 1.296\cdot 60132=\$11690$.  To release David Lindberg from his
 teaching further costs \$1925/month plus 12.6\% in benefits; for the
 Spring Semester from January--May, this costs $\$1925 \cdot 5 \cdot
 1.126 = \$10838$.  Altogether, the total cost for the two researchers'
 time is \$22528.
+
+% travel money to get to http://www.educationaldatamining.org/EDM2014/
 
 \pagebreak
 \printbibliography
