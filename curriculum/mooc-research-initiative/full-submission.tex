@@ -6,11 +6,12 @@
 \usepackage{mathptmx}
 \usepackage{hyperref}
 
-\usepackage[style=authoryear]{biblatex}
+\usepackage[style=numeric]{biblatex}
 \addbibresource{references.bib}
 
 \usepackage{titlesec}
 \titleformat*{\section}{\normalsize\bfseries}
+\titleformat*{\subsection}{\normalsize\bfseries}
 
 \begin{document}
 
@@ -57,16 +58,20 @@ are ``doing the worst job in maintaining student confidence in their
 mathematical abilities, enjoyment of mathematics, and interest in
 continuing with the mathematics that is needed to pursue their
 intended careers'' \parencite{calculus-students}.  MOOCs---already
-been using at some of the most prestigious US research
+being used at some of the most prestigious US research
 universities \parencite{morris2013moocs}---may provide a method by
 which research universities can rein in costs and improve student
-outcomes \parencite{bowen2013higher}.
+outcomes \parencite{bowen2013higher}.  In particular, there is
+evidence that online assessment can improve student outcomes in math
+courses \parencite{angus2009does}.
 
-To do so, there must be ``customizable, sustainable
-platforms'' \parencite{bowen2013higher} for online content; MOOCulus,
-a home-built platform from The Ohio State University, is such a
-platform for calculus instruction \parencite{evans}, but it has also
-been used for, say, English courses as
+\subsection{A platform for more than calculus}
+
+For MOOCs to succeed, there must be ``customizable, sustainable
+platforms'' \parencite{bowen2013higher} for online instruction;
+MOOCulus, a home-built platform from The Ohio State University, is
+such a platform for calculus instruction \parencite{evans}, but
+MOOCulus has also been used for English courses as
 well \parencite{gates-foundation-grant}.  Indeed, discipline-based
 education research is inherently interdisciplinary \cite{dber-report};
 in studying how best to teach calculus, there are huge opportunities
@@ -74,79 +79,70 @@ to think outside the traditional boundaries of the mathematics
 department, and to apply the interdisciplinary toolkit of educational
 data mining (EDM).  Educational data mining is a relatively recent
 development, emerging out of a handful of workshops from the early
-00s; since 2008, there has been an annual International Conference on
-Educational Data Mining organized by the International Working Group
-on Educational Data Mining \parencite{WIDM:WIDM1075}.
+00s; since 2008, there has been an annual EDM conference organized by
+the International Working Group on Educational Data
+Mining \parencite{WIDM:WIDM1075}.
 
-There has been specific work done on using adaptive learning systems
-to teach college mathematics, such as
-ALEKS \parencite{hagerty2005using}, but they can be difficult for
-instructors to use.  Instructors ``have to provide appropriate values
-for the parameters in advance in order to obtain good results/model
-and therefore, the user must possess a certain amount of expertise in
-order to find the right settings.'' \parencite{romero2010educational}.
-There are, for instance, Java tools for analyzing Moodle data, which
-attempt to make educational data mining a bit easier for the
-novice \parencite{java-data-mining}.
+\subsection{Bayesian models}
 
+Much work has been done on using adaptive learning systems to teach
+college mathematics, such as ALEKS \parencite{hagerty2005using}, but
+they can be difficult for instructors to use.  Some of these depend on
+Bayesian methods.  Hidden Markov models have also been used in
+educational data mining for clustering
+\parencite{shihdiscovery}.  Such ``machine learning'' techniques can
+predict student grades based on only a few
+assignments \parencite{predict-grades}, even with incomplete
+data \parencite{Zafra201115020}, which make them helpful for an
+adaptive learning platform where not too much student data may be
+available initially.
 
-     ``One possible solution
-is the development of wizard tools that use a default al- gorithm for
-each task and parameter-free DM algorithms to simplify the
-configuration and execution for nonexpert users.''
+\subsection{The parameter problem}
 
+One issue with all these adaptive learning systems is that instructors
+often ``have to provide appropriate values for the parameters in
+advance in order to obtain good results/model and therefore, the user
+must possess a certain amount of expertise in order to find the right
+settings.'' \parencite{romero2010educational}.  There are, for
+instance, Java tools for analyzing Moodle data, which attempt to make
+educational data mining a bit easier for the
+novice \parencite{java-data-mining}, but nothing like an easy-to-use
+version of the Baum-Welch algorithm for EDM is available to handle the
+training of a hidden Markov model.
 
+To verify that such adaptive methods are working, instructors need
+easy methods to visualize student data.  David Bressoud---the
+researcher behind the largest survey ever of calculus students---asks
+the following:
+\begin{quote}
+  How can we modify our courses so as to capitalize on the strengths
+  and correct the weaknesses that these students bring?  The answers
+  to these questions will necessarily be local, highly dependent on
+  the nature of a given college or
+  university. \parencite{bressoud-sky-falling}.
+\end{quote}
+The Ohio State Department of Mathematics has already begun to look at
+these local, contextualized issues.  A pilot study of ``technology
+enhanced lectures'' at OSU showed significant improvement in student
+opinion of The Ohio State Department of Mathematics, from 29\% of
+students having a favorable opinion, to 80\% of students in the
+technology-enhanced sections having a favorable opinion
+\cite{miller-tech-enhanced-calculus}.  Such affective data can be an
+even more important predictor than grades in STEM retention: after
+all, 81\% of the ``switchers'' who left STEM nevertheless received a
+grade of C or higher in their calculus course
+\cite{calculus-programs}.
 
-``How can we modify our courses so as to capitalize on the strengths
-and correct the weaknesses that these students bring?  The answers to
-these questions will necessarily be local, highly dependent on the
-nature of a given college or university.'' \cite{bressoud-sky-falling}
+\subsection{Data logs}
 
-
-
-One method that the OSU mathematics department is already implementing
-with growing success for improving student attitudes is
-``technology-enhanced lectures,'' which for us, means clicker
-questions, lectures with interactive figures, lecture notes and
-lecture videos.  The previous pilot in the OSU Department of
-Mathematics showed significant improvement in student opinion of the
-OSU Department of Mathematics, from 29\% of students having a
-favorable opinion, to 80\% of students in the technology-enhanced
-sections having a favorable opinion
-\cite{miller-tech-enhanced-calculus}.  Grades are not the whole story:
-81\% of the ``switchers'' who left STEM received a grade of C or
-higher \cite{calculus-programs}.  By targeting student attitudes, an
-intervention like a MOOC addresses a key issue.
-
-
-
-
-
-Hidden Markov models are widely used in educational data mining; one
-nice example of such is Shih-Koedinger-Scheines' 2010 paper
-presented at the International Conference on Educational Data Mining,
-``Discovery of Student Strategies using Hidden Markov Model
-Clustering.''  \parencite{shihdiscovery}
-
-
-Records the date and time when the real application started.
-Invokes the real application and captures all the output messages produced (if any).
-Stores these output messages.
-Records the date and time when the real application finished.
-\parencite{RomeroZaldivar20121058} 
-which is much like a simple version of the \parencite{tin-can-api}.
-
-
-taking into account many features, even if some of the features are
-missing, in order to predict student
-success \parencite{Zafra201115020}
-
-can predict grades based on only a few assignemnts \parencite{predict-grades}
-
-
-There 
-
-
+Before launching a research project like MOOCulus, there is a serious
+choice to be made: exactly what sorts of data will be stored on each
+student interaction?  Some systems have chosen to record the date and
+time the student has engaged with various educational
+applications \parencite{RomeroZaldivar20121058}; others are looking at
+clickstream data \parencite{boyer2013student}.  Going forward, it is
+worth considering a format for heterogenous data logging for student
+interaction, like the Tin Cap API \parencite{tin-can-api}.
 
 \section{Context of research}
 
