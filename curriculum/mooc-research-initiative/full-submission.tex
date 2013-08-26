@@ -6,6 +6,10 @@
 \usepackage{mathptmx}
 \usepackage{hyperref}
 \usepackage{url}
+\usepackage{microtype}
+\usepackage{tikz}
+\usetikzlibrary{positioning, shapes}
+\usetikzlibrary{decorations.pathmorphing}
 
 \usepackage[style=numeric]{biblatex}
 \addbibresource{references.bib}
@@ -183,8 +187,42 @@ immediate access to the data, but they also have the ability to modify
 and adapt what type of data is collected.
 
 \begin{figure}
-  \vspace{2in}
-  \caption{Diagram of the MOOCulus HMM.}
+\begin{tikzpicture}
+
+\draw (-1,2) -- (1,2);
+\draw (-1,2) -- (-1,-2.2);
+\draw (1,2) -- (1,-2.2);
+
+\draw [->] (-1.5,1.8) -- (-1.5,-2);
+
+\node at (-1.8,0) [rotate=90] {time};
+
+\draw [decorate, decoration={zigzag,segment length = 3mm, amplitude = 1mm}]  (-1,-2.2) -- (1,-2.2);
+
+\node at (0,0) {\begin{minipage}{2cm}\begin{center}correct\\[.2cm] \hrule \vspace{.2cm} incorrect\\[.2cm] \hrule \vspace{.2cm} hint 1\\[.2cm] \hrule \vspace{.2cm}  hint 2 \\[.2cm] \hrule  \vspace{.2cm} correct\\[.2cm] \hrule \vspace{.2cm} correct \end{center}\end{minipage}};
+
+\draw [->,gray, line join=round,line width=.5mm,double, double distance=.5mm,
+decorate, decoration={
+    zigzag,
+    segment length=10,
+    amplitude=2,post=lineto,
+    post length=2pt
+}]  (1.5,0) -- (2.5,0);
+
+\node at (5,0) [cloud,draw,cloud puffs=10,cloud puff arc=120, aspect=1] {\begin{minipage}{1in}\begin{center}Hidden \\ Markov\\ Model\end{center}\end{minipage}};
+
+\draw [->,gray, line join=round,line width=.5mm,double, double distance=.5mm,
+decorate, decoration={
+    zigzag,
+    segment length=10,
+    amplitude=2,post=lineto,
+    post length=2pt
+}]  (7.5,0) -- (8.5,0);
+
+\node at (10.5,0) {\begin{minipage}{1.2in}72\% confidence that the student understands.\end{minipage}};
+
+\end{tikzpicture}
+  \caption{Diagram of the MOOCulus hidden Markov model.}
 \end{figure}
 
 Once the MOOCulus data is collected, it is fed into a hidden Markov
