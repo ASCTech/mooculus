@@ -15,7 +15,7 @@
 				<var id="A">randRangeNonZero(-10,10)</var>
 				<var id="B">randRangeNonZero(-10,10)</var>
 				<var id="n">randRangeExclude(-10,10,[0,1])</var>
-				<var id="functionBank">["cos(x)","sin(x)","e^x","x^"+n,"(1/x)"]</var>
+				<var id="functionBank">["(cos(x))","(sin(x))","(e^(x))","(x^("+n+"))","(1/(x))"]</var>
 				<var id="fNum">randRange(0,functionBank.length-1)</var>
 				<var id="gNum">randRangeExclude(0,functionBank.length-1,[fNum])</var>
 				<var id="f">functionBank[fNum]</var>
@@ -38,7 +38,7 @@
         		If we are looking for a function of the form <code>f(g(x))</code>, then <code>\dfrac{d}{dx}f(g(x)) =f'(g(x))g'(x) </code>
         	</p>
         	<p>
-        		In this case, it looks like <code>f'(g(x)) = <var>MathFunction.parse(f).derivative("x").tex().replace("x",g)</var></code> and
+        		In this case, it looks like <code>f'(g(x)) = <var>MathFunction.parse(f).derivative("x").tex().replace("x","{("+MathFunction.parse(g).tex()+")}")</var></code> and
         		<code>g'(x) = <var>MathFunction.parse(g).derivative("x").tex()</var></code>
         	</p>
         	<p>

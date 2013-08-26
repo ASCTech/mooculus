@@ -57,7 +57,7 @@
               
                   <div id="problem-type-or-description">
                       <p class="problem">The graph below is of the derivative of an unknown function <code>f</code>, i.e. it is the graph of <code>f'</code>
-                      for some <code>f</code>.  An interval between two critical points of <code>f \hspace{1mm}</code> has been made green.
+                      for some <code>f</code>.  An interval between two points of <code>f</code> has been made green.
                       </p>
                       <p class="question">Which of the four choices reflects the behavior of the original function <code>f</code> on the indicated interval?
                       Remember:  The pictured graph is the graph of <code>f'</code>, but the question is asking about the behavior of <code>f</code>.
@@ -65,7 +65,7 @@
                       
                       <div class="graphie" id="grid">
                     graphInit({
-                        range: 10,
+                        range: 11,
                         scale: 20,
                         tickStep: 1,
                          gridOpacity: 0.00005,
@@ -76,16 +76,17 @@
                     
                     plot(function( x ) {
                                 return ( f(x));
-                            }, [-10, 10], {
+                            }, [-11, 11], {
                                 stroke: RED
                             });
                     
-                    label([0,10],"f&apos;(x)","right");
-                   label([10,0],"x","right");
+                    label([0,11],"f&apos;(x)","right");
+                   label([11,0],"x","right");
                     plot(function( x ) {
                                 return ( f(x));
                             }, [criticalXs[m], criticalXs[m+1]], {
-                                stroke: GREEN
+                                stroke: GREEN,
+                                strokeWidth:5
                             });
                
                    circle( criticalPoints[m], 1/4, {

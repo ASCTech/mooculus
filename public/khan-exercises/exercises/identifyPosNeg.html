@@ -59,7 +59,7 @@
                       
                       <div class="graphie" id="grid">
                     graphInit({
-                        range: 10,
+                        range: 11,
                         scale: 20,
                         tickStep: 1,
                        
@@ -67,14 +67,15 @@
                     
                     plot(function( x ) {
                                 return ( f(x));
-                            }, [-10, 10], {
+                            }, [-11, 11], {
                                 stroke: RED
                             });
                    
                     plot(function( x ) {
                                 return ( f(x));
                             }, [criticalXs[m], criticalXs[m+1]], {
-                                stroke: GREEN
+                                stroke: GREEN,
+                                strokeWidth: 5
                             });
                
                    circle( criticalPoints[m], 1/4, {

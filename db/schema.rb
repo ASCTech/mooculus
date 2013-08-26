@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130108002651) do
+ActiveRecord::Schema.define(:version => 20130723163538) do
 
   create_table "authentications", :force => true do |t|
     t.integer  "user_id"
@@ -60,10 +60,24 @@ ActiveRecord::Schema.define(:version => 20130108002651) do
     t.string   "title"
     t.text     "description"
     t.string   "page"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "created_at",          :null => false
+    t.datetime "updated_at",          :null => false
     t.integer  "position"
     t.integer  "week"
+    t.float    "prior_knowing"
+    t.float    "prior_unknowing"
+    t.float    "knowing_knowing"
+    t.float    "knowing_unknowing"
+    t.float    "unknowing_knowing"
+    t.float    "unknowing_unknowing"
+    t.float    "knowing_ace"
+    t.float    "knowing_correct"
+    t.float    "knowing_incorrect"
+    t.float    "knowing_hint"
+    t.float    "unknowing_ace"
+    t.float    "unknowing_correct"
+    t.float    "unknowing_incorrect"
+    t.float    "unknowing_hint"
   end
 
   create_table "handouts", :force => true do |t|
