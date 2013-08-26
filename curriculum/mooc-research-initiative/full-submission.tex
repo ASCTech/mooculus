@@ -30,18 +30,16 @@
 \section{Proposal overview}
 
 In January 2013, The Ohio State University Mathematics Department
-launched its first massive open online course.  This MOOC was designed
-to cover the same content as the local, in-person sections of calculus
-at Ohio State.
-
-Part of this MOOC consisted of a home-built platform designed to
-deliver randomly-generated interactive mathematics problems to
-students.  This home-built adaptive learning platform is usable for
-much more than calculus: this same platform has already been re-used
-for a English writing course called
-WexMOOC \parencite{gates-foundation-grant}.  The American Languages
-Program at The Ohio State has also reached out to modify the adaptive
-learning platform to teach English grammar for their ESL students.
+launched its first massive open online course designed to cover the
+same content as the local, in-person sections of calculus at Ohio
+State.  Part of this MOOC consisted of a home-built platform designed
+to deliver randomly-generated interactive problems to students.  This
+home-built adaptive learning platform is usable for much more than
+calculus: this same platform has already been re-used for a English
+writing course called WexMOOC \parencite{gates-foundation-grant}, and
+the American Languages Program at The Ohio State has also reached out
+to modify the adaptive learning platform to teach English grammar for
+their ESL students.
 
 With tens of thousands of students enrolled in the calculus MOOC,
 there have been millions of attempts on homework exercises, with data
@@ -153,22 +151,35 @@ There
 \section{Context of research}
 
 Coursera was chosen as the MOOC provider, but since Coursera's
-platform lacked randomly generated math problems, the team at Ohio
-State built their own MOOC platform to complement Coursera's
-services---this home-built platform is called MOOCulus, and can be
-explored at \url{https://mooculus.osu.edu/}.
+platform lacked randomly generated problems, the team at Ohio State
+built their own MOOC platform to complement Coursera's services---this
+home-built platform is called MOOCulus, and can be explored at
+\url{https://mooculus.osu.edu/}.
 
-MOOCulus logs all student input on homework exercises. This data is
-fed into a hidden Markov model to produce an estimate of the student's
-understanding. The student receives additional practice problems of
-the same sort until it is estimated that their understanding reaches a
-threshold, at which point the student is given a new type of exercise
-and the process repeats.  The overall goal is to keep providing
-exercises that are difficult enough to be fun and educational, but not
-so easy as to become boring and repetitive.  In spite of the fact that
-many tens of thousands of students used MOOCulus, each experienced a
-personalized path through the material.  In short, MOOCulus promises
-to enable MOOCs to be massive, but not mass-produced.
+MOOCulus provides the researchers with a huge amount of data
+concerning student interacting with MOOCulus. MOOCulus logs all
+student input on homework exercises---this includes interaction with
+MOOCulus such as requesting a ``hint'' and obtaining a correct
+response on a first attempt.  Since the platform is hosted on OSU
+servers, not only do the researchers have immediate access to the
+data, but they also have the ability to modify and adapt what type of
+data is collected. 
+
+
+The MOOCulus data is fed into a hidden Markov model to produce an
+estimate of the student's understanding. Essentially the students are
+assumed to be in one of two states, ``knowing'' and ``unknowing.''
+From the students' performance on the exercises provided by MOOCulus,
+the hidden Markov model decideds what state each student is in. The
+student receives additional practice problems of the same sort until
+it is estimated that their understanding reaches a threshold, at which
+point the student is given a new type of exercise and the process
+repeats.  The overall goal is to keep providing exercises that are
+difficult enough to be fun and educational, but not so easy as to
+become boring and repetitive.  In spite of the fact that many tens of
+thousands of students used MOOCulus, each experienced a personalized
+path through the material.  In short, MOOCulus promises to enable
+MOOCs to be massive, but not mass-produced.
 
 In addition to building MOOCulus and running Calculus One, both Fowler
 and Snapp have experience using technology and analyzing its
@@ -209,9 +220,10 @@ powers MOOCulus; the second question gets deeper, by addressing the
 extent to which adaptive learning helps with in-person courses.
 
 These questions, though framed in the setting of a calculus class, are
-quite general. In particular, the MOOCulus platform has already been
-used in another MOOC, \textit{Rhetorical Composing}, a MOOC run by the
-English department at OSU, \texttt{https://wexmooc.osu.edu/}.
+quite general. With the MOOCulus platform being used in the above
+mentioned WexMOOC, and the additional interest from other departments
+on campus, this research would be of interest to many researchers and
+educators alike, regardless of their speciality of expertiese.
 
 \section{Data sources}
 
@@ -264,14 +276,16 @@ on in-person assessments can be determined.
 
 
 \section{Budget needs}
-
 A course buyout provides time for Bart Snapp to perform data analysis,
 to write up the results, and to oversee the work of his Master's
-student, David Lindberg.  One course buyout for Bart Snapp is 15\% of the combination of his base salary \$60132 plus 29.6\% in benefits. For the spring smeester this will amount to $.15 \cdot 1.296\cdot 60132=\$11690$.
-To release David Lindberg from his teaching further costs \$1925/month
-plus 12.6\% in benefits; for the Spring Semester from January--May,
-this costs $\$1925 \cdot 5 \cdot 1.126 = \$10838$.  Altogether, the
-total cost for the two researchers' time is \$22528.
+student, David Lindberg.  One course buyout for Bart Snapp is 15\% of
+the combination of his base salary (\$60132) plus 29.6\% in
+benefits. For the spring semester this will amount to $.15 \cdot
+1.296\cdot 60132=\$11690$.  To release David Lindberg from his
+teaching further costs \$1925/month plus 12.6\% in benefits; for the
+Spring Semester from January--May, this costs $\$1925 \cdot 5 \cdot
+1.126 = \$10838$.  Altogether, the total cost for the two researchers'
+time is \$22528.
 
 \pagebreak
 \printbibliography
