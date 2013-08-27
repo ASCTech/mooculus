@@ -269,7 +269,7 @@ Let $f(x) = \lfloor x\rfloor$. Discuss
 \]
 \end{example}
 \begin{solution}
-From the plot of $f(x)$, see Figure~\ref{plot:greatist-integer}, we see that 
+From the plot of $f(x)$, see Figure~\ref{plot:greatest-integer}, we see that 
 \[
 \lim_{x\to 2-} f(x)=1, \qquad\text{and}\quad \lim_{x\to 2+} f(x) = 2.
 \]
@@ -502,7 +502,7 @@ and so we want
 |x-2| &< \frac{\epsilon}{5}
 \end{align*}
 Recall, we assumed that $x\in[1,3]$, which is equivalent to
-$|x-2|<1$. Hence we must set $\delta = \min\left(\dfrac{\epsilon}{5},1\right)$.
+$|x-2|\le 1$. Hence we must set $\delta = \min\left(\dfrac{\epsilon}{5},1\right)$.
 \end{solution}
 
 
@@ -604,20 +604,26 @@ Suppose that $\lim_{x\to a}g(x)=M$ and $\lim_{x\to M}f(x) = f(M)$. Then
 \]
 \end{theorem}
 
-Note the special form of the condition on $f(x)$: it is not enough to
-know that $\lim_{x\to L}f(x)$ exists, though it is a bit tricky to see
-why. Consider
+\begin{warning}
+You may be tempted to think that the condition on $f(x)$ in
+Theorem~\ref{thm:limit of composition} is unneeded, and that it will
+always be the case that if $\lim_{x\to a}g(x)=M$ and 
+$\lim_{x\to M}f(x) = L$ then
+\[
+\lim_{x\to a} f(g(x)) = L.
+\]
+However, consider
 \[
 f(x) =\begin{cases}
 3 & \text{if $x=2$,}\\
 4 & \text{if $x\ne 2$.}
 \end{cases}
 \]
-and $g(x) = 2$. Now the conditions of Theorem~\ref{thm:limit of
-  composition} are not satisfied, and
+and $g(x) = 2$. Now the conditions of Theorem~\ref{thm:limit of composition} are not satisfied, and
 \[
 \lim_{x\to 1} f(g(x)) = 3 \qquad{but}\qquad \lim_{x\to 2} f(x) = 4.
 \]
+\end{warning}
 
 
 Many of the most familiar functions do satisfy the conditions of
