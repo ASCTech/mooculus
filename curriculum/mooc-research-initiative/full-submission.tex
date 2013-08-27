@@ -170,10 +170,11 @@ MOOC platform is called MOOCulus, and can be explored at
 \href{https://mooculus.osu.edu/}{\texttt{https://mooculus.osu.edu/}}
 \]
 using either a Coursera or Google login.  The platform is a Rails app
-which uses Khan Academy's exercise framework for generating random
-instances of problems from an XML exercise schema.  Steve Gubkin, a
-graduate student at OSU, has written 122 calculus exercises in this
-framework for the Calculus One course.
+which uses Khan Academy's exercise framework \parencite{khan-academy}
+for generating random instances of problems from an XML exercise
+schema.  Steve Gubkin, a graduate student at OSU, has written 122
+calculus exercises in this framework for the Calculus One
+course \parencite{steve-gubkin}.
 
 \paragraph{MOOCulus and data collection.} 
 MOOCulus logs all student input on homework exercises---this includes
@@ -284,8 +285,6 @@ data set and the adaptive learning platform that MOOCulus represents.
 \begin{tikzpicture}
 \tikzset{block/.style={rectangle,draw}}
 
-%  \node at (5,0) [cloud,draw,cloud puffs=10,cloud puff arc=120, aspect=1] {\begin{minipage}{1in}\begin{center}Hidden \\ Markov\\ Model\end{center}\end{minipage}};
-
   \node [block] (knowing) {\begin{minipage}{1.5in}\begin{center}knowing\\(prior=$p_k$)\end{center}\end{minipage}};
   \node [block, right=1 cm of knowing] (unknowing) {\begin{minipage}{1.5in}\begin{center}unknowing\\(prior=$p_u$)\end{center}\end{minipage}};
 
@@ -307,32 +306,50 @@ data set and the adaptive learning platform that MOOCulus represents.
 
 \end{tikzpicture}
 \end{center}
-  \caption{Parameters in the HMM.  A student is assumed to be either ``knowing'' or ``unknowing'' with some prior probabilities which must sum to one, meaning $p_k + p_u = 1$; as the student explores an exercise, they may change states---perhaps developing new misconceptions, or by unlearning prior misconceptions.  These transition probabilities need to satisfy $t_{k,k} + t_{k,u} = t_{u,u} + t_{u,k} = 1$.  Whether knowing or unknowing, the student may submit correct answers, incorrect answers, request hints: the emission probabilities of doing so within each hidden state must likewise sum to one, e.g.,$k_{\mbox{\footnotesize ace}} + k_{\mbox{\footnotesize hint}} + k_{\mbox{\footnotesize correct}} + k_{\mbox{\footnotesize incorrect}}=1$.  There are, therefore, nine free parameters for each exercise to set by hand---or, under the proposed activity, using the Baum--Welch algorithm.}
+  \caption{Parameters in the HMM.}
+
   \label{fig:parameters}
 \end{figure}
 
 The hidden Markov model behind MOOCulus involves quite a few
-parameters (see Figure~\ref{fig:parameters}).  These parameters were
-set by hand initially; choosing the appropriate values which yields an
-accurate model of student understanding takes a great deal of
-instructor intervention and skill \parencite{romero2010educational};
-can this be automated?  Can the hand-chosen parameters be justified?
+parameters (see Figure~\ref{fig:parameters}).  A student is assumed to
+be either ``knowing'' or ``unknowing'' with some prior probabilities
+which must sum to one, meaning $p_k + p_u = 1$; as the student
+explores an exercise, they may change states---perhaps developing new
+misconceptions, or by unlearning prior misconceptions.  These
+transition probabilities need to satisfy $t_{k,k} + t_{k,u} = t_{u,u}
++ t_{u,k} = 1$.  Whether knowing or unknowing, the student may submit
+correct answers, incorrect answers, request hints: the emission
+probabilities of doing so within each hidden state must likewise sum
+to one, e.g.,$k_{\mbox{\footnotesize ace}} + k_{\mbox{\footnotesize
+    hint}} + k_{\mbox{\footnotesize correct}} + k_{\mbox{\footnotesize
+    incorrect}}=1$.  There are, therefore, nine free parameters for
+each exercise to set by hand.
+
+Choosing the appropriate values which yields an accurate model of
+student understanding takes a great deal of instructor intervention
+and skill \parencite{romero2010educational}; can this be automated?
+Can those hand-chosen parameters be justified?
 
 Student data provides a method for doing precisely this.  As students
 interact with MOOCulus, the data needed to refine the parameters of
-the hidden Markov model is obtained.  Many of the parameters are
-pedagogically meaningful.  To what degree is a correct answer after
-three ``hints'' strong evidence of student understanding?  What prior
-probability should be assigned to the likelihood of a student to
-submit a correct answer on the first try?  The parameters depend
-strongly on the particular homework exercise; some exercises are
-conceptually deep but procedurally easy, while some questions are
-conceptually light but procedurally quite involved, so even a strong
-student may make ``careless'' mistakes which the model shouldn't count
-against him/her.  The hand-chosen parameters appear to work ``well
-enough'' in practice, but the analysis of the data is required to
-justify the hand-chosen parameters, and refinement may improve the
-student experience. This leads to two basic questions:
+the hidden Markov model is obtained.  Specifically, under the proposed
+activity, the Baum--Welch algorithm would be used to set those
+parameters.
+
+Many of the parameters are pedagogically meaningful.  To what degree
+is a correct answer after three ``hints'' strong evidence of student
+understanding?  What prior probability should be assigned to the
+likelihood of a student to submit a correct answer on the first try?
+The parameters depend strongly on the particular homework exercise;
+some exercises are conceptually deep but procedurally easy, while some
+questions are conceptually light but procedurally quite involved, so
+even a strong student may make ``careless'' mistakes which the model
+shouldn't count against him/her on those procedurally involved
+exercises.  The hand-chosen parameters appear to work ``well enough''
+in practice, but the analysis of the data is required to justify the
+hand-chosen parameters, and refinement may improve the student
+experience. This leads to three basic questions:
 \begin{itemize}
 \item What parameters in the adaptive learning model best align online
   student performance with in-class student performance?
