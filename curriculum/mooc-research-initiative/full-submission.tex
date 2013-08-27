@@ -281,8 +281,34 @@ data set and the adaptive learning platform that MOOCulus represents.
 \section{Research questions}
 
 \begin{figure}
-  \vspace{2in}
-  \caption{Parameters in the HMM}
+\begin{center}
+\begin{tikzpicture}
+\tikzset{block/.style={rectangle,draw}}
+
+%  \node at (5,0) [cloud,draw,cloud puffs=10,cloud puff arc=120, aspect=1] {\begin{minipage}{1in}\begin{center}Hidden \\ Markov\\ Model\end{center}\end{minipage}};
+
+  \node [block] (knowing) {\begin{minipage}{1.5in}\begin{center}knowing\\(prior=$p_k$)\end{center}\end{minipage}};
+  \node [block, right=1 cm of knowing] (unknowing) {\begin{minipage}{1.5in}\begin{center}unknowing\\(prior=$p_u$)\end{center}\end{minipage}};
+
+\path ([xshift=-1cm]knowing.north) edge[thick,->,out=45,in=135] node[align=center,yshift=0.25cm]{{$t_{k,u}$}} ([xshift=1cm]unknowing.north);
+\path (unknowing.north) edge[thick,->,out=135,in=45] node [align=center,yshift=-0.25cm]{{$t_{u,k}$}}  (knowing.north);
+\path ([yshift=0cm]unknowing.east) edge[thick,->,out=45,in=-45,loop] node [align=center,xshift=0.35cm]{{$t_{u,u}$}}  ([yshift=-0cm]unknowing.east);
+\path ([yshift=0cm]knowing.west) edge[thick,->,out=135,in=-135,loop] node [align=center,xshift=-0.35cm]{{$t_{k,k}$}}  ([yshift=-0cm]knowing.west);
+
+\node [xshift=0.5cm,below=1.5cm of knowing] (knowing-emit) {\begin{minipage}{5cm}$k_{\mbox{\footnotesize ace}}$, $k_{\mbox{\footnotesize hint}}$, $k_{\mbox{\footnotesize correct}}$, $k_{\mbox{\footnotesize incorrect}}$\end{minipage}};
+\node [xshift=0.5cm,below=1.5cm of unknowing] (unknowing-emit) {\begin{minipage}{5cm}$u_{\mbox{\footnotesize ace}}$, $u_{\mbox{\footnotesize hint}}$, $u_{\mbox{\footnotesize correct}}$, $u_{\mbox{\footnotesize incorrect}}$\end{minipage}};
+
+\draw [decorate, color=gray,decoration={zigzag,segment length = 1mm, amplitude = 0.25mm}]  ([xshift=-5.5cm,yshift=-0.9cm]knowing.south) -- ([xshift=2.5cm,yshift=-1cm]unknowing.south);
+
+\node [color=gray,xshift=-4cm,below=0.25cm of knowing.south] (hiddens) {hidden states};
+\node [color=gray,below=0.1cm of hiddens] (visibles) {visible emissions};
+
+%\draw [decorate,decoration={brace,amplitude=10pt,mirror},yshift=0pt]
+%([yshift=-1cm]knowing-emit) -- ([yshift=1cm]unknowing-emit) node [black,midway,xshift=2cm] {emissions};
+
+\end{tikzpicture}
+\end{center}
+  \caption{Parameters in the HMM; the priors must sum to one, meaning $p_k + p_u = 1$; the transition probabilities need to satisfy $t_{k,k} + t_{k,u} = t_{u,u} + t_{u,k} = 1$; the emission probabilities within each hidden state must likewise sum to one, e.g.,$k_{\mbox{\footnotesize ace}} + k_{\mbox{\footnotesize hint}} + k_{\mbox{\footnotesize correct}} + k_{\mbox{\footnotesize incorrect}}=1$.  There are, therefore, nine free parameters.}
   \label{fig:parameters}
 \end{figure}
 
