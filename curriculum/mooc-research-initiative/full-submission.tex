@@ -308,7 +308,7 @@ data set and the adaptive learning platform that MOOCulus represents.
 
 \end{tikzpicture}
 \end{center}
-  \caption{Parameters in the HMM; the priors must sum to one, meaning $p_k + p_u = 1$; the transition probabilities need to satisfy $t_{k,k} + t_{k,u} = t_{u,u} + t_{u,k} = 1$; the emission probabilities within each hidden state must likewise sum to one, e.g.,$k_{\mbox{\footnotesize ace}} + k_{\mbox{\footnotesize hint}} + k_{\mbox{\footnotesize correct}} + k_{\mbox{\footnotesize incorrect}}=1$.  There are, therefore, nine free parameters.}
+  \caption{Parameters in the HMM.  A student is assumed to be either ``knowing'' or ``unknowing'' with some prior probabilities which must sum to one, meaning $p_k + p_u = 1$; as the student explores an exercise, they may change states---perhaps developing new misconceptions, or by unlearning prior misconceptions.  These transition probabilities need to satisfy $t_{k,k} + t_{k,u} = t_{u,u} + t_{u,k} = 1$.  Whether knowing or unknowing, the student may submit correct answers, incorrect answers, request hints: the emission probabilities of doing so within each hidden state must likewise sum to one, e.g.,$k_{\mbox{\footnotesize ace}} + k_{\mbox{\footnotesize hint}} + k_{\mbox{\footnotesize correct}} + k_{\mbox{\footnotesize incorrect}}=1$.  There are, therefore, nine free parameters for each exercise to set by hand---or, under the proposed activity, using the Baum--Welch algorithm.}
   \label{fig:parameters}
 \end{figure}
 
@@ -316,20 +316,24 @@ The hidden Markov model behind MOOCulus involves quite a few
 parameters (see Figure~\ref{fig:parameters}).  These parameters were
 set by hand initially; choosing the appropriate values which yields an
 accurate model of student understanding takes a great deal of
-instructor intervention \parencite{romero2010educational}; can this be
-automated?  Can this be justified?  As students interact with
-MOOCulus, the data needed to refine the parameters of the hidden
-Markov model is obtained.  At this point, a number of questions
-arise. To what degree is a correct answer after three ``hints'' strong
-evidence of student understanding?  What prior probability should be
-assigned to the likelihood of a student to submit a correct answer on
-the first try?  The parameters depend strongly on the particular
-homework exercise; some exercises are conceptually deep but
-procedurally easy, while some questions are conceptually light but
-procedurally quite involved, so even a strong student may make
-``careless'' mistakes which the model shouldn't count against him/her.
-It's easy for an expert to qualitatively make these judgments, but
-analysis of big data is required to accurately set these parameters.
+instructor intervention and skill \parencite{romero2010educational};
+can this be automated?  Can the hand-chosen parameters be justified?
+
+Student data provides a method for doing precisely this.  As students
+interact with MOOCulus, the data needed to refine the parameters of
+the hidden Markov model is obtained.  Many of the parameters are
+pedagogically meaningful.  To what degree is a correct answer after
+three ``hints'' strong evidence of student understanding?  What prior
+probability should be assigned to the likelihood of a student to
+submit a correct answer on the first try?  The parameters depend
+strongly on the particular homework exercise; some exercises are
+conceptually deep but procedurally easy, while some questions are
+conceptually light but procedurally quite involved, so even a strong
+student may make ``careless'' mistakes which the model shouldn't count
+against him/her.  The hand-chosen parameters appear to work ``well
+enough'' in practice, but the analysis of the data is required to
+justify the hand-chosen parameters, and refinement may improve the
+student experience.
 
 This leads to two basic questions:
 \begin{itemize}
@@ -337,16 +341,24 @@ This leads to two basic questions:
   student performance with in-class student performance?
 \item To what extent does student use of adaptive learning correlate
   with success in traditional, in-person courses?
+\item Should the proposed model of student performance (i.e., two
+  categories) be refined into additional categories?  
 \end{itemize}
 The former question addresses improving the hidden Markov model that
 powers MOOCulus; the second question gets deeper, by addressing the
 extent to which adaptive learning helps with in-person courses.
 
 These questions, though framed in the setting of a calculus class, are
-quite general. With the MOOCulus platform being used in the above
-mentioned WexMOOC, and the additional interest from other departments
-on campus, this research would be of interest to many researchers and
-educators alike, regardless of their specialty of expertise.
+actually quite general; discipline specific education research is
+inherently interdisciplinary \cite{dber-report}.  The MOOCulus
+platform has already been used in the aforementioned English writing
+MOOC---the so-called WexMOOC \parencite{gates-foundation-grant}; there
+has been interest from other departments on campus and from the Office
+of Distance Education at OSU.  These research questions, and the
+resulting improvements to an open-source adaptive learning platform,
+would be of interest to both education researchers and educators
+alike, regardless of their chhosen content area or specialty of
+expertise.
 
 \section{Data sources}
 
