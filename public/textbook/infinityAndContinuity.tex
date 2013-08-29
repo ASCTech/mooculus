@@ -305,11 +305,12 @@ Compute
 \end{example}
 
 \begin{solution}
-In this case, the denominator is positive when $x$ is large, and the numerator is negative, hence
+In this case we multiply the numerator and denominator by $-1/x$,
+which is a positive number as since $x\to -\infty$, $x$ is a negative
+number.
 \begin{align*}
-\lim_{x\to -\infty} \frac{x+1}{\sqrt{x^2}} &= -\lim_{x\to \infty} \frac{x+1}{\sqrt{x^2}}\\
-&= -\lim_{x\to \infty} \frac{x+1}{\sqrt{x^2}} \cdot \frac{1/x}{1/x}\\
-&= -\lim_{x\to \infty} \frac{1+1/x}{\sqrt{x^2/x^2}}\\
+\lim_{x\to -\infty} \frac{x+1}{\sqrt{x^2}} &= \lim_{x\to -\infty} \frac{x+1}{\sqrt{x^2}} \cdot \frac{-1/x}{-1/x}\\
+&= \lim_{x\to -\infty} \frac{-1-1/x}{\sqrt{x^2/x^2}}\\
 &= -1.
 \end{align*}
 \end{solution}
