@@ -6,14 +6,13 @@ A [live demo](https://mooculus.osu.edu/) is available at [mooculus.osu.edu](http
 
 ### Preliminaries
 
-First you must install gcc. You can get it for free here:
-link:https://github.com/downloads/kennethreitz/osx-gcc-installer/GCC-10.7-v2.pkg.
+First you must install gcc. You can get it for free [here](https://github.com/downloads/kennethreitz/osx-gcc-installer/GCC-10.7-v2.pkg).
 
-Next, install MySQL server link:http://dev.mysql.com/downloads/mysql (I recommend choosing the dmg).
+Next, install [MySQL server](http://dev.mysql.com/downloads/mysql); I recommend choosing the `dmg`.
 
 ### RVM And Bundler
 
-Now you need to install rvm link:https://rvm.io. This can be
+Now you need to install [rvm](https://rvm.io). This can be
 done by copy and pasting the following command into your terminal:
 
 `\curl -L https://get.rvm.io | bash -s stable --ruby`
