@@ -36,31 +36,45 @@
 
 \section{Proposal overview}
 
-In January 2013, The Ohio State University Mathematics Department
-launched its first massive open online course designed to cover the
-same content as the local, in-person sections of calculus one.  Part
-of this MOOC consisted of a home-built platform designed to deliver
-randomly-generated interactive problems to students.  This home-built
-adaptive learning platform is usable for much more than calculus: this
-same platform has already been re-used for a English writing course
-called WexMOOC \parencite{gates-foundation-grant}, and the American
-Languages Program at The Ohio State has also reached out to modify the
-adaptive learning platform to teach English grammar for their ESL
-students.
+In January 2013, The Ohio State University (OSU) Mathematics
+Department launched its first massive open online course (MOOC).  This
+MOOC was designed to cover the same content as the local, in-person
+sections of Math~1151, the first semester calculus course at OSU.  The
+largest component of this MOOC consisted of a home-built adaptive
+learning platform, called MOOCulus, which delivers randomly-generated
+interactive problems to students.
 
-With tens of thousands of students enrolled in the calculus MOOC,
-there have been millions of attempts on homework exercises, with data
-on each of these attempts.  Funding is sought to use this data to both
-evaluate the success of and improve upon the adaptive learning
-platform built at OSU.
+\paragraph*{Large data set.} MOOCulus has already generated
+significant amounts of data.  As of August~2013, there have been over
+72k enrollments in the Coursera calculus courses and over 30k
+subscriptions on iTunes~U.  These enrollments have led to millions of
+attempts on homework exercises on MOOCulus.  Funding is sought to use
+this large data set to evaluate the success of and to improve upon the
+adaptive learning platform.
+
+\paragraph*{Much more than calculus.} Although the proposed activity
+considers adaptive learning through the lens of a specific course, the
+platform and proposed activity benefits much more than a single course
+or even a single department.  The home-built adaptive learning
+platform has \textit{already} been used outside the math department:
+specifically, pieces of MOOCulus were re-used for a English writing
+course, called WexMOOC \parencite{gates-foundation-grant}.  The
+American Languages Program at The Ohio State has also reached out to
+use the adaptive learning platform to teach English grammar for their
+ESL students.  
+
+In short, an open-source adaptive learning platform, supported with
+research on its effectiveness, is likely to be usable by many
+disciplines.
 
 \section{Literature}
 
-Calculus is the gateway to science, technology, engineering,
-mathematics (STEM) majors; unfortunately, students abandon STEM majors
-because of low quality of instruction ``with calculus often cited as a
-primary reason'' \parencite{calculus-programs}.  Research universities
-are ``doing the worst job in maintaining student confidence in their
+Why focus then on calculus?  Calculus is the gateway to science,
+technology, engineering, mathematics (STEM) majors; unfortunately,
+students abandon STEM majors because of the low quality of instruction
+``with calculus often cited as a primary
+reason'' \parencite{calculus-programs}.  Research universities are
+``doing the worst job in maintaining student confidence in their
 mathematical abilities, enjoyment of mathematics, and interest in
 continuing with the mathematics that is needed to pursue their
 intended careers'' \parencite{calculus-students}.  MOOCs---already
@@ -75,61 +89,103 @@ outcomes in math courses \parencite{angus2009does}.
 
 For MOOCs to succeed, there must be ``customizable, sustainable
 platforms'' \parencite{bowen2013higher} for online instruction;
-MOOCulus, a home-built platform from The Ohio State University, is
-such a platform for calculus instruction \parencite{evans}, but
-MOOCulus has also been used for English courses as
-well \parencite{gates-foundation-grant}.  Indeed, discipline-based
-education research is inherently interdisciplinary \cite{dber-report};
-in studying how best to teach calculus, there are huge opportunities
-to think outside the traditional boundaries of the mathematics
-department, and to apply the interdisciplinary toolkit of educational
-data mining (EDM).  Educational data mining is a relatively recent
-development, emerging out of a handful of workshops from the early
-00s; since 2008, there has been an annual EDM conference organized by
-the International Working Group on Educational Data
-Mining \parencite{WIDM:WIDM1075}.
+MOOCulus, the home-built adaptive learning platform from The Ohio
+State University, is such a platform for calculus
+instruction \parencite{evans}, but parts of MOOCulus have also been
+used for English courses \parencite{gates-foundation-grant}.  Indeed,
+discipline-based education research is inherently interdisciplinary
+\cite{dber-report}; in studying how best to teach calculus, there are
+huge opportunities to think outside the traditional boundaries of the
+mathematics department, and to apply the interdisciplinary toolkit of
+educational data mining (EDM).  Educational data mining is a
+relatively recent development, emerging out of a handful of workshops
+from the early 00s; since 2008, there has been an annual EDM
+conference organized by the International Working Group on Educational
+Data Mining \parencite{WIDM:WIDM1075}.
 
 \subsection{Deciding which student interactions should be logged}
 
 Before launching a research project like MOOCulus---or any EDM
-project---there is a serious choice to be made: exactly what data will
-be mined?  What sorts of data will be stored on each student
-interaction?  Some systems have chosen to record the date and time the
-student has engaged with various educational
-applications \parencite{RomeroZaldivar20121058}; others are looking at
-clickstream data \parencite{boyer2013student}.  Going forward, it is
-worth considering a format for heterogenous data logging for student
-interaction, like the Tin Cap API \parencite{tin-can-api}.
+project---there is a serious prior choice to be made: exactly what
+data will be mined?  What sorts of data will be stored on each student
+interaction?  Such a decision, if made poorly, may seriously constrain
+the usefulness of the research project.  Some systems have chosen to
+record the date and time the student has engaged with various
+educational applications \parencite{RomeroZaldivar20121058}; others
+are looking at clickstream data \parencite{boyer2013student}.  Going
+forward, it is worth considering a format for heterogeneous data
+logging for student interaction, like the Tin Cap
+API \parencite{tin-can-api}.  For the time being, MOOCulus logs the
+data in the format similar to that of Khan Academy's exercise platform
+\cite{khan-academy}, but there may be advantages to gathering data
+from other sources, such as video views from within Coursera's
+platform, or forum posts.
 
-\subsection{Bayesian models}
+\subsection{Adaptive learning, in general}
 
 Much work has been done on using adaptive learning systems to teach
-college mathematics, such as ALEKS \parencite{hagerty2005using}, but
-they can be difficult for instructors to use.  Some of these use
-Bayesian networks to estimate a student's current
-understanding \parencite{romero2010educational}.  Hidden Markov models
-have also been used in educational data mining for clustering
-\parencite{shihdiscovery}.  Such ``machine learning'' techniques can
-predict student grades based on only a few
+college mathematics.  Examples of such are
+ALEKS \parencite{hagerty2005using} or Knewton at Arizona
+State \parencite{parry2012big}, though both of these emphasize
+pre-calculus, developmental coursework.  What is an instructor to do?
+For a calculus instructor---or for any instructor who would like to
+customize an adaptive learning platform for his/her own course---it
+can be very difficult to make use of an adaptive learning platform.
+
+Some of these platforms use Bayesian networks to estimate a student's
+current understanding \parencite{romero2010educational}.  Hidden
+Markov models (HMMs) have also been used in educational data mining
+for clustering
+\parencite{shihdiscovery}.  These techniques and related ``machine
+learning'' techniques can predict student grades based on only a few
 assignments \parencite{predict-grades}, even with incomplete
 data \parencite{Zafra201115020}, which make them especially useful for
 an adaptive learning platform where not too much student data may be
-available on which to base initial predictions.
+available on which to base the initial predictions.
+
+\subsection{Hidden Markov Models, in particular}
+
+It is possible to apply a hidden Markov model (HMM) to predict student
+retention in a MOOC; this was done, in particular, with edX's course
+``CS169.1x---Software as a
+Service'' \parencite{balakrishnan2013predicting}.  Hidden Markov
+models can provide strong predictions of student behavior; in one
+example, a hidden Markov model---trained, as in the proposed project,
+via the Baum--Welch algorithm---did a better job of predicting student
+behavior in an e-Learning context than did a neural
+net \parencite{anari2012intelligent}.
+
+The proposed project asks for more than predictions of student
+behavior, however.  MOOCulus aims to use a hidden Markov model to
+quantify student understanding.  There have been projects which use
+hidden Markov models to gauge student performance in, for instance,
+foreign language courses \parencite{khan2013automatic}; it will be
+interesting to compare MOOCulus' HMM approach with the ``knowledge
+spaces'' \parencite{albert1999knowledge} used by ALEKS.
 
 \subsection{The parameter problem}
 
-A serious issue with all these adaptive learning systems is that
-instructors often ``have to provide appropriate values for the
-parameters in advance in order to obtain good results/model and
-therefore, the user must possess a certain amount of expertise in
-order to find the right settings.'' \parencite{romero2010educational}.
-Determining appropriate values for these parameters is one of the
-major research questions this proposed project addresses.  Some work
-has been done in this direction already. There are Java tools for
-analyzing Moodle data which attempt to make educational data mining a
-bit easier for the novice \parencite{java-data-mining}. However,
-currently no easy-to-use version of the Baum--Welch algorithm for EDM
-is available to handle the training of a hidden Markov model.
+Parameter estimation is an extremely well-studied topic in the theory
+of Markov processes, e.g., see \parencite{MR0202264,MR0123419}.
+Before having access to student data, instructors often ``have to
+provide appropriate values for the parameters in advance in order to
+obtain good results/model and therefore, the user must possess a
+certain amount of expertise in order to find the right
+settings'' \parencite{romero2010educational}.  This is a serious
+usability problem with many adaptive learning systems---MOOCulus
+included (see Figure~\ref{fig:parameters}).
+
+Determining appropriate values for these parameters is a usability
+issue, and also one of the major research questions this proposed
+project addresses.  Some work has been done in the direction of making
+data mining easier for instructors. There are Java tools for analyzing
+Moodle data which attempt to make educational data mining a bit easier
+for the novice \parencite{java-data-mining}.  However, currently no
+easy-to-use version of the Baum--Welch algorithm for EDM is available
+to handle the training of a hidden Markov model; if the proposed
+activity is funded, David Lindberg will be setting up the GHMM library
+\parencite{ghmm} so improvements to the parameters can be made, say,
+weekly just by re-running a few scripts.
 
 \subsection{Empowering instructors with data analysis}
 
@@ -155,10 +211,9 @@ retention: after all, 81\% of the ``switchers'' who left STEM
 nevertheless received a grade of C or higher in their calculus course
 \cite{calculus-programs}.
 
-
 \section{Context of research}
 
-\paragraph{Coursera and MOOCulus.} 
+\paragraph{Coursera and MOOCulus.}
 Coursera was chosen as the MOOC provider; some assessments, like the
 weekly quizzes, are done entirely within Coursera's platform, but
 there are some limitations.  Most seriously, Coursera lacked an easy
@@ -176,13 +231,18 @@ schema.  Steve Gubkin, a graduate student at OSU, has written 122
 calculus exercises in this framework for the Calculus One
 course \parencite{steve-gubkin}.
 
+\paragraph{iTunes~U and MOOCulus.} The same content on Coursera is
+also available on iTunes~U \parencite{itunesu}, which then also links
+to MOOCulus.  The ability to deploy the ``same'' MOOC on multiple
+platforms is a significant advantage of a home-built platform.
+
 \paragraph{MOOCulus and data collection.} 
 MOOCulus logs and timestamps all student input on homework exercises;
-this includes interaction with MOOCulus such as requesting a ``hint''
-and obtaining a correct response on a first attempt (``ace'').  This
+examples of such student input include requesting a ``hint'' or
+obtaining a correct response on a first attempt (``ace'').  This
 provides the researchers with a huge amount of data concerning student
 interaction with MOOCulus.  To ensure FERPA compliance, the platform
-is hosted entirely on OSU servers, and so not only do the researchers
+runs in virtual machine instances entirely on OSU servers, and so not only do the researchers
 have immediate access to the data, but they also have the ability to
 modify and adapt what type of data is collected.
 
@@ -228,11 +288,11 @@ decorate, decoration={
 \end{figure}
 
 Once the MOOCulus data is collected, it is fed into a hidden Markov
-model to produce an estimate of the student's
+model to produce an estimate (via the Viterbi algorithm) of the student's
 understanding. Essentially, the students are assumed to be in one of
 two states: ``knowing'' and ``unknowing.''  From the students'
 performance on the exercises provided by MOOCulus, the hidden Markov
-model decides what state each student is in.  For example, the time series data
+model estimates what state each student is most likely to be in.  For example, the time series data
 $$
 \mbox{correct},\quad\mbox{incorrect},\quad\mbox{correct},\quad\mbox{incorrect},\quad\mbox{correct},\quad\mbox{incorrect}
 $$
@@ -243,7 +303,7 @@ $$
 \mbox{incorrect},\quad\mbox{incorrect},\quad\mbox{incorrect},\quad\mbox{correct},\quad\mbox{correct},\quad\mbox{correct}
 $$
 is strong evidence of that the student has reached the ``knowing''
-state.  The order matters.
+state by the end.  The order matters, and the HMM makes use of the order.
 
 The student receives additional practice problems of the same sort
 until it is estimated that their understanding reaches a threshold, at
@@ -265,7 +325,7 @@ assisting Fowler and Snapp.
 \paragraph*{Jim Fowler.} Fowler built the mobile phone
 clicker used to measure student engagement for OSU's technology
 enhanced calculus lectures, and Fowler's research training includes
-high-dimensional data analysis from a topological perspective.
+high-dimensional data analysis from a topological perspective.  Tools from topological data analysis may prove useful when considering the MOOCulus data.
 
 \paragraph*{Bart Snapp.} Having taught Calculus Remote at OSU (CROSU),
 Snapp has also worked with OSU's Center for Enterprise Transformation
@@ -318,24 +378,28 @@ MOOCulus.
 \end{figure}
 
 The hidden Markov model behind MOOCulus involves quite a few
-parameters (see Figure~\ref{fig:parameters}).  A student is assumed to
-be either ``knowing'' or ``unknowing'' with some prior probabilities
-which must sum to one, meaning $p_k + p_u = 1$; as the student
-explores an exercise, they may change states---perhaps developing new
-misconceptions, or by unlearning prior misconceptions.  These
-transition probabilities need to satisfy $t_{k,k} + t_{k,u} = t_{u,u}
-+ t_{u,k} = 1$.  Whether knowing or unknowing, the student may submit
-correct answers, incorrect answers, request hints: the emission
-probabilities of doing so within each hidden state must likewise sum
-to one, e.g., $k_{\mbox{\footnotesize ace}} + k_{\mbox{\footnotesize
-    hint}} + k_{\mbox{\footnotesize correct}} + k_{\mbox{\footnotesize
+parameters (see Figure~\ref{fig:parameters}).  In the current model, a
+student is assumed to be either ``knowing'' or ``unknowing'' with some
+prior probabilities which must sum to one, meaning $p_k + p_u = 1$; as
+the student explores an exercise, they may change states---perhaps by
+unlearning prior misconceptions (moving from ``unknowing'' to
+``knowing'') or by developing new misconceptions (moving from
+``knowing'' to ``unknowing'').  These transition probabilities need to
+satisfy $t_{k,k} + t_{k,u} = t_{u,u} + t_{u,k} = 1$.  Whether knowing
+or unknowing, the student may submit correct answers, incorrect
+answers, request hints: the emission probabilities of doing so within
+each hidden state must likewise sum to one, e.g.,
+$k_{\mbox{\footnotesize ace}} + k_{\mbox{\footnotesize hint}} +
+k_{\mbox{\footnotesize correct}} + k_{\mbox{\footnotesize
     incorrect}}=1$.  There are, therefore, nine free parameters for
-each exercise to set by hand.
+each exercise to set by hand.  Since the visible emissions depend on
+the hidden state, there is hope to recover information about the
+hidden state by considering the visible emissions.
 
-Choosing the appropriate values which yields an accurate model of
+Choosing the appropriate values for the nine parameters in order to achieve an accurate model of
 student understanding takes a great deal of instructor intervention
 and skill \parencite{romero2010educational}; can this be automated?
-Can those hand-chosen parameters be justified?
+Can hand-chosen parameters be justified?
 
 Student data provides a method for doing precisely this.  As students
 interact with MOOCulus, the data needed to refine the parameters of
@@ -347,7 +411,7 @@ Many of the parameters are pedagogically meaningful.  To what degree
 is a correct answer after three ``hints'' strong evidence of student
 understanding?  What prior probability should be assigned to the
 likelihood of a student to submit a correct answer on the first try?
-The parameters depend strongly on the particular homework exercise;
+The best parameters depend strongly on the particular homework exercise;
 some exercises are conceptually deep but procedurally easy, while some
 questions are conceptually light but procedurally quite involved, so
 even a strong student may make ``careless'' mistakes which the model
@@ -362,14 +426,14 @@ experience. This leads to three basic questions:
 \item To what extent does student use of adaptive learning correlate
   with success in traditional, in-person courses?
 \item Should the proposed model of student performance (i.e., two
-  categories) be refined into additional categories?  
+  categories) be refined into additional categories?
 \end{itemize}
 The former question addresses improving the hidden Markov model that
 powers MOOCulus; the second question gets deeper, by addressing the
 extent to which adaptive learning helps with in-person courses.
 
 These questions, though framed in the setting of a calculus class, are
-actually quite general; discipline specific education research is
+quite general; discipline specific education research is
 inherently interdisciplinary \cite{dber-report}.  The MOOCulus
 platform has already been used in the aforementioned English writing
 MOOC---the so-called WexMOOC \parencite{gates-foundation-grant}; there
@@ -377,7 +441,7 @@ has been interest from other departments on campus and from the Office
 of Distance Education at OSU.  These research questions, and the
 resulting improvements to an open-source adaptive learning platform,
 would be of interest to both education researchers and educators
-alike, regardless of their chhosen content area or specialty of
+alike, regardless of their chosen content area or specialty of
 expertise.
 
 \section{Data sources}
@@ -388,8 +452,9 @@ course still had 11,000 students engaging with the material after four
 weeks, and 2,000 students at Week~15.  Altogether, a total of
 2,079,428 correct answers were submitted to MOOCulus, with a total of
 10.3 person-years having been spent by students working problems.  The
-activity logs are stored in a SQL database and this database is
-imported for analysis into R.
+activity logs are stored in a SQL database and this database has been
+imported for analysis into R, though very little data analysis has
+been done to date.
 
 A second iteration of the Calculus One MOOC has been started at OSU
 for Fall 2013.  There are already 25k students enrolled in that second
@@ -405,12 +470,12 @@ online course with their in-class performance.
 
 \paragraph{Hidden Markov parameters.}
 
-The data will be analyzed in R.  The Baum--Welch algorithm will be used
-to set the parameters in the hidden Markov model. This will allow the
-parameters in the MOOCulus hidden Markov model to be set for each
+The data will be analyzed in R.  The Baum--Welch algorithm will be
+used to set the parameters in the hidden Markov model. This will allow
+the parameters in the MOOCulus hidden Markov model to be set for each
 problem separately.  These parameters are independently of interest to
 researchers, and they also will provide for a better student
-experience for MOOCulus in Spring 2014.
+experience for MOOCulus in Spring 2014.  
 
 \paragraph{Correlation to success.}
 
@@ -427,6 +492,7 @@ students also in the online MOOCulus course, the extent to which
 participation in the adaptive learning system correlates with success
 on in-person assessments can be determined.
 
+
 \section{Budget needs}
 
 A course buyout provides necessary time for Snapp to perform the data
@@ -440,9 +506,9 @@ January--May, this costs $\$1925 \cdot 5 \cdot 1.126 = \$10838$.
 Altogether, the total cost for the two researchers' time is \$22528.
 
 For dissemination, a proposed venue is the
-EDM2014 \parencite{edm-2014}, which has the theme of ``Big Data.''  A
-round-trip economy flight on a US flag carrier for Snapp and Lindberg
-is esimateed to cost \$1211.  Shared lodging is estimated to cost
+EDM2014, which has the appropriate theme of ``Big Data'' \parencite{edm-2014}.  A
+round-trip economy flight on a US~Flag carrier for Snapp and Lindberg
+is estimated to cost \$1211.  Shared lodging is estimated to cost
 \$990.  Altogether, \$2201 is therefore budgeted for conference
 travel, meaning the total budget is \$24729 for the proposed
 activities.
