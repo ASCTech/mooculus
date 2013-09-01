@@ -2,6 +2,8 @@
 
 A [live demo](https://mooculus.osu.edu/) is available at [mooculus.osu.edu](https://mooculus.osu.edu/).  You may also be interested in enrolling in [the associated Coursera course](https://www.coursera.org/course/calc1).
 
+The materials for our calculus two course are available at [https://github.com/kisonecat/sequences-and-series](https://github.com/kisonecat/sequences-and-series).
+
 ## Installation For OSX
 
 ### Preliminaries
