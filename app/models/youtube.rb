@@ -35,12 +35,18 @@ Youtube.create :title => "What is the limit of a quotient?", :url => "https://ww
 Youtube.create :title => "How fast does a ball move?", :url => "https://www.youtube.com/watch?v=HwzVyIaiKcQ", :week => 1, :lecture => 12
 Youtube.create :title => "Where are we in the course?", :url => "https://www.youtube.com/watch?v=aVTzlhkshTk", :week => 2, :lecture => 0
 Youtube.create :title => "What is a one-sided limit?", :url => "https://www.youtube.com/watch?v=KI5tjq2yrcI", :week => 2, :lecture => 1
+Youtube.create :title => "Wild Functions", :url => "http://www.youtube.com/watch?v=cTJx5P11tAY&feature=share&list=PLsvV2phQMzuXQRKrz-U9Wj9abu3PrQAXR", :week => 2, :lecture => 1.5
+Youtube.create :title => "Could a One-Sided Limit Not Exist?", :url => "http://www.youtube.com/watch?v=QT2Mqbn62sw&feature=share&list=PLsvV2phQMzuXQRKrz-U9Wj9abu3PrQAXR", :week => 2, :lecture => 1.7
 Youtube.create :title => "What does \"continuous\" mean?", :url => "https://www.youtube.com/watch?v=ReDZpc5jhCw", :week => 2, :lecture => 2
 Youtube.create :title => "What is the intermediate value theorem?", :url => "https://www.youtube.com/watch?v=ufFla_aAHFU", :week => 2, :lecture => 3
+Youtube.create :title => "Mirko and Roxy Like Food", :url => "http://www.youtube.com/watch?v=_qGIKgeWFzU&feature=share&list=PLsvV2phQMzuXQRKrz-U9Wj9abu3PrQAXR", :week => 2, :lecture => 3.5
 Youtube.create :title => "How can I approximate root two?", :url => "https://www.youtube.com/watch?v=rdva97EI9GU", :week => 2, :lecture => 4
 Youtube.create :title => "Why is there an \\(x\\) so that \\(f(x) = x\\)?", :url => "https://www.youtube.com/watch?v=jeOR1S92ZWo", :week => 2, :lecture => 5
 Youtube.create :title => "What does \\(\lim f(x) = \infty\\) mean?", :url => "https://www.youtube.com/watch?v=XtWc-grgKeQ", :week => 2, :lecture => 6
+Youtube.create :title => "Four More Example of Limits", :url => "http://www.youtube.com/watch?v=u_vCvk5T2JU&feature=share&list=PLsvV2phQMzuXQRKrz-U9Wj9abu3PrQAXR", :week => 2, :lecture => 6.5
 Youtube.create :title => "What is the limit \\(f(x)\\) as \\(x\\) approaches infinity?", :url => "https://www.youtube.com/watch?v=O-7yCtlJzco", :week => 2, :lecture => 7
+Youtube.create :title => "Four Examples of Limits at Infinity", :url => "http://www.youtube.com/watch?v=9EUYKTT5ZH4&feature=share&list=PLsvV2phQMzuXQRKrz-U9Wj9abu3PrQAXR", :week => 2, :lecture => 7.5
+Youtube.create :title => "What are Asymptotes?", :url => "http://www.youtube.com/watch?v=TbEz5Apu3Ns&feature=share&list=PLsvV2phQMzuXQRKrz-U9Wj9abu3PrQAXR", :week => 2, :lecture => 7.7
 Youtube.create :title => "Why is infinity not a number?", :url => "https://www.youtube.com/watch?v=P4uPiXBP_rc", :week => 2, :lecture => 8
 Youtube.create :title => "What is the difference between potential and actual infinity?", :url => "https://www.youtube.com/watch?v=rNBoGy19lHc", :week => 2, :lecture => 9
 Youtube.create :title => "What is the slope of a staircase?", :url => "https://www.youtube.com/watch?v=R5wKjst_sMM", :week => 2, :lecture => 10
