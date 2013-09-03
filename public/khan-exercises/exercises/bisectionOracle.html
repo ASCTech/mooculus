@@ -6,7 +6,7 @@
     <script src="../khan-exercise.js"></script>
 </head>
 <body>
-    <div class="exercise" data-ensure="Math.abs(f(ANSWERS[0])) &gt; .001 &amp;&amp; Math.abs(f(ANSWERS[1])) &gt; .001 &amp;&amp; Math.abs(f(ANSWERS[2])) &gt; .001">
+    <div class="exercise" data-ensure="Math.abs(f(ANSWERS[0])) &gt; .01 &amp;&amp; Math.abs(f(ANSWERS[1])) &gt; .01 &amp;&amp; Math.abs(f(ANSWERS[2])) &gt; .01">
         <div class="vars" data-ensure="zeroXs.length &gt; 0">
 	    		<var id = "Xs">makeXList()</var>
     			<var id = "Ys">makeYList(-8,8,Xs.length)</var>
@@ -26,7 +26,7 @@
             	a formula for <code>f</code>, you can evaluate <code>f</code> for various values below. 
             	<code>f(<var>leftBound</var>) \approx <var>roundTo(3,f(leftBound))</var></code> and 
             	<code>f(<var>rightBound</var>) \approx <var>roundTo(3,f(rightBound))</var></code>.  By the intermediate value theorem, there must be
-            	at least one root of <code>f</code> between <code><var>leftBound</var></code> and <code><var>rightBound</var></code>. We have insured that their is
+            	at least one root of <code>f</code> between <code><var>leftBound</var></code> and <code><var>rightBound</var></code>. We have guaranteed that there is
             	only one zero in that interval.
             	</p>
             	
