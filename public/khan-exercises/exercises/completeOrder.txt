@@ -20,7 +20,6 @@ limitsSymbolicInfinite.html
 limitComputeInfinite.html
 limitsAtInfinityGraphical.html
 limitsAtInfinityOracle.html
-limitsAtInfinitySymbolic.html
 limitsAtInfinityCompute.html
 continuityGraphical.html
 continuityOracleGraphical.html
@@ -123,3 +122,4 @@ arclength.html
 abscissaOrdinate.html
 plotPoint.html
 limitsSymbolic.html
+limitsAtInfinitySymbolic.html

@@ -290,7 +290,7 @@
     var cenY = 300;
     var rad = 100
     var theta = 0
-    var thetaText = paper.text(450,100,"Theta = 0.0000000000000000").attr({'font-size': 12});
+    var thetaText = paper.text(450,100,"Theta = 0.00 \u03C0 \u2248 0.00").attr({'font-size': 12});
     var unitCirc = paper.circle(cenX,cenY,rad).attr({"stroke-width":2});
     //circ is the point located at (cos theta, sin theta)
     var circ = paper.circle(cenX+rad, cenY, 7).attr({
@@ -385,7 +385,7 @@ move = function (x, y) {
 	pointGraphCosec.attr({'cx': cenX2+rad*theta, 'cy': cenY2-rad/Math.sin(theta)});
 	pointGraphCotan.attr({'cx': cenX2+rad*theta, 'cy': cenY2-rad/Math.tan(theta)});
 	
-	thetaText.attr({'text':  "Theta ="+theta})
+	thetaText.attr({'text':  "Theta = "+Math.round(theta/Math.PI*100)/100.0 +" \u03C0 " + "\u2248 "+Math.round(theta*100)/100.0 })
 	
     this.attr({cx: cenX+rad*X, cy:  cenY-rad*Y});
    

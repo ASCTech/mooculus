@@ -22,7 +22,6 @@ limitsSymbolicInfinite
 limitComputeInfinite
 limitsAtInfinityGraphical
 limitsAtInfinityOracle
-limitsAtInfinitySymbolic
 limitsAtInfinityCompute
 continuityGraphical
 continuityOracleGraphical
@@ -138,3 +137,4 @@ arclength
 abscissaOrdinate
 plotPoint
 limitsSymbolic
+limitsAtInfinitySymbolic
