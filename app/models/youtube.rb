@@ -46,7 +46,7 @@ Youtube.create :title => "What does \\(\lim f(x) = \infty\\) mean?", :url => "ht
 Youtube.create :title => "Four More Example of Limits", :url => "http://www.youtube.com/watch?v=u_vCvk5T2JU&feature=share&list=PLsvV2phQMzuXQRKrz-U9Wj9abu3PrQAXR", :week => 2, :lecture => 6.5
 Youtube.create :title => "What is the limit \\(f(x)\\) as \\(x\\) approaches infinity?", :url => "https://www.youtube.com/watch?v=O-7yCtlJzco", :week => 2, :lecture => 7
 Youtube.create :title => "Four Examples of Limits at Infinity", :url => "http://www.youtube.com/watch?v=9EUYKTT5ZH4&feature=share&list=PLsvV2phQMzuXQRKrz-U9Wj9abu3PrQAXR", :week => 2, :lecture => 7.5
-Youtube.create :title => "What are Asymptotes?", :url => "http://www.youtube.com/watch?v=TbEz5Apu3Ns&feature=share&list=PLsvV2phQMzuXQRKrz-U9Wj9abu3PrQAXR", :week => 2, :lecture => 7.7
+Youtube.create :title => "What are Asymptotes?", :url => "http://youtu.be/doQJmwxdMZQ", :week => 2, :lecture => 7.7
 Youtube.create :title => "Why is infinity not a number?", :url => "https://www.youtube.com/watch?v=P4uPiXBP_rc", :week => 2, :lecture => 8
 Youtube.create :title => "What is the difference between potential and actual infinity?", :url => "https://www.youtube.com/watch?v=rNBoGy19lHc", :week => 2, :lecture => 9
 Youtube.create :title => "What is the slope of a staircase?", :url => "https://www.youtube.com/watch?v=R5wKjst_sMM", :week => 2, :lecture => 10
