@@ -120,9 +120,7 @@ The \textbf{derivative} of $f(x)$ is the function
 \ddx f(x) = \lim_{h\to 0} \frac{f(x+h) - f(x)}{h}.
 \]
 If this limit does not exist for a given value of $x$, then $f(x)$ is
-not \textbf{differentiable} at $x$. Note, if the domain of the
-function is bounded on the right or left, then we only the appropriate
-one-sided limit to exist for the function to be differentiable.
+not \textbf{differentiable} at $x$.
 \end{definitionOfTheDerivative}
 \begin{marginfigure}[-1.75in]
 \begin{tikzpicture}
@@ -528,7 +526,7 @@ Consider the plot of $f(x)$ in Figure~\ref{figure:plot-cont-diff}.
 \item Sketch a plot of $f'(x)$.  
 \end{enumerate}
 \begin{answer}
-(a) $[0,4.5)\cup(4.5,6]$, (b) $[0,3)\cup(3,4.5)\cup(4.5,6]$, (c) See Figure\begin{marginfigure}[0in]
+(a) $(0,4.5)\cup(4.5,6)$, (b) $(0,3)\cup(3,4.5)\cup(4.5,6)$, (c) See Figure\begin{marginfigure}[0in]
   \begin{tikzpicture}
 	\begin{axis}[
             domain=0:6,
@@ -906,7 +904,7 @@ However, we can look at some examples. Consider $(2^h-1)/h$ and $(3^h-1)/h$:
  1 & 1  \\
  0.1 &  \approx0.7177 \\
  0.01 & \approx0.6956 \\
- 0.001 & \approx0.6834 \\
+ 0.001 & \approx0.6934 \\
  0.0001 & \approx0.6932 \\
  0.00001 & \approx0.6932 \\
 \end{tchart}
