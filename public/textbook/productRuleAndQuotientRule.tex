@@ -43,7 +43,7 @@ If $f(x)$ and $g(x)$ are differentiable, then
 \begin{tikzpicture}
 	\begin{axis}[
             clip=false,
-            domain=0:6, 
+            domain=1.5:6, 
             ytickmin=1,ytickmax=0,
             xtick={4},ytickmin=1,ytickmax=0,
             xticklabels={$a$},
@@ -78,7 +78,7 @@ If $f(x)$ and $g(x)$ are differentiable, then
           \node at (axis cs:2,1.95) [anchor=north,penColor2] {$g(x)$};
           \node at (axis cs:4.7,4.3) [anchor=east,penColor3] {$f(x)g(x)$};
 
-          \node at (axis cs:5,3.91) [anchor=west] {${\color{penColor}f(a)}{\color{penColor4}g'(a)h}+{\color{penColor5}f'(a)h}{\color{penColor2}g(a)}$};
+          \node at (axis cs:5,3.91) [anchor=west] {${\color{penColor}f(a)}{\color{penColor4}g'(a)h}+{\color{penColor5}f'(a)h}{\color{penColor2}g(a)} + {\color{penColor5}f'(a)h}{\color{penColor4}g'(a)h}$};
           \node at (axis cs:5,1.65) [anchor=west,penColor5] {$f'(a)h$};
           \node at (axis cs:5,2.4) [anchor=west,penColor4] {$g'(a)h$};
           \node at (axis cs:4.5,1.5) [anchor=north] {$\underbrace{\hspace{.40in}}_{h}$};
@@ -88,14 +88,15 @@ If $f(x)$ and $g(x)$ are differentiable, then
           \addplot[color=penColor3,fill=penColor3,only marks,mark=*] coordinates{(4,3.08)};  %% closed hole          
         \end{axis}
 \end{tikzpicture}
-\caption{A geometric interpretation of the product rule. Since every
+\caption[A geometric interpretation of the product rule.]{A geometric interpretation of the product rule. Since every
   point on $f(x)g(x)$ is the product of the corresponding points on
   $f(x)$ and $g(x)$, increasing $a$ by a ``small amount'' $h$,
   increases $f(a)g(a)$ by the sum of $f(a)g'(a)h$ and
   $f'(a)hg(a)$. Hence,
-\[
-\frac{\Delta y}{\Delta x}\approx \frac{f(a)g'(a)h+f'(a)g(a)h}{h} = f(a)g'(a) + f'(a)g(a).
-\]}
+\begin{align*}
+\frac{\Delta y}{\Delta x} &\approx \frac{f(a)g'(a)h+f'(a)g(a)h + f'(a)g'(a)h^2}{h}\\
+&\approx f(a)g'(a) + f'(a)g(a).
+\end{align*}}
 \end{marginfigure}
 
 \begin{proof}
