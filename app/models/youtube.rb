@@ -55,9 +55,12 @@ Youtube.create :title => "What is the official definition of limit?", :url => "h
 Youtube.create :title => "Why is the limit of \\(x^2\\) as \\(x\\) approaches \\(2\\) equal to \\(4\\)?", :url => "https://www.youtube.com/watch?v=-cK46mR_Dmg", :week => 2, :lecture => 13
 Youtube.create :title => "Why is the limit of \\(2x\\) as \\(x\\) approaches \\(10\\) equal to \\(20\\)?", :url => "https://www.youtube.com/watch?v=-9HyfES1VB0", :week => 2, :lecture => 14
 Youtube.create :title => "What comes next? Derivatives?", :url => "https://www.youtube.com/watch?v=4skfx0S2y6Y", :week => 3, :lecture => 0
+Youtube.create :title => "Slope and derivatives", :url => "http://www.youtube.com/watch?v=l61CwwsL5vw&list=PLsvV2phQMzuXQRKrz-U9Wj9abu3PrQAXR&index=13", :week => 3, :lecture => 0.5
 Youtube.create :title => "What is the definition of derivative?", :url => "https://www.youtube.com/watch?v=-cGbSEdqMt8", :week => 3, :lecture => 1
 Youtube.create :title => "What is a tangent line?", :url => "https://www.youtube.com/watch?v=-P54Jsy8fms", :week => 3, :lecture => 2
+Youtube.create :title => "What can you say now?", :url => "http://www.youtube.com/watch?v=eqWF_TDX4NM&list=PLsvV2phQMzuXQRKrz-U9Wj9abu3PrQAXR&index=14", :week => 3, :lecture => 2.5
 Youtube.create :title => "Why is the absolute value function not differentiable?", :url => "https://www.youtube.com/watch?v=VpEZKqhwbF8", :week => 3, :lecture => 3
+Youtube.create :title => "What is the derivative of the greatest integer function?", :url => "http://www.youtube.com/watch?v=5dqJMXc4_bc&list=PLsvV2phQMzuXQRKrz-U9Wj9abu3PrQAXR&index=15", :week => 3, :lecture => 3.5
 Youtube.create :title => "How does wiggling \\(x\\) affect \\(f(x)\\)?", :url => "https://www.youtube.com/watch?v=IAW2y3LuHc8", :week => 3, :lecture => 4
 Youtube.create :title => "Why is \\(\\sqrt{9999}\\) so close to \\(99.995\\)?", :url => "https://www.youtube.com/watch?v=s2DZ1ZIYyBE", :week => 3, :lecture => 5
 Youtube.create :title => "What information is recorded in the sign of the derivative?", :url => "https://www.youtube.com/watch?v=Kr3mZgcBwOs", :week => 3, :lecture => 6
@@ -66,7 +69,10 @@ Youtube.create :title => "What is the derivative of a constant multiple of \\(f(
 Youtube.create :title => "Why is the derivative of \\(x^2\\) equal to \\(2x\\)?", :url => "https://www.youtube.com/watch?v=-a9gGq5Ya0U", :week => 3, :lecture => 9
 Youtube.create :title => "What is the derivative of \\(x^n\\)?", :url => "https://www.youtube.com/watch?v=XIXctIdQxwg", :week => 3, :lecture => 10
 Youtube.create :title => "What is the derivative of \\(x^3 + x^2\\)?", :url => "https://www.youtube.com/watch?v=O1njJq7eJps", :week => 3, :lecture => 11
+Youtube.create :title => "What is the derivative of \\(\\sqrt{x+3}\\)?", :url => "http://www.youtube.com/watch?v=Xaug5MNA-TU&list=PLsvV2phQMzuXQRKrz-U9Wj9abu3PrQAXR&index=16", :week => 3, :lecture => 11.5
+Youtube.create :title => "What about exponential functions?", :url => "http://www.youtube.com/watch?v=0db6MyRXehI&list=PLsvV2phQMzuXQRKrz-U9Wj9abu3PrQAXR&index=17", :week => 3, :lecture => 11.7
 Youtube.create :title => "Why is the derivative of a sum the sum of derivatives?", :url => "https://www.youtube.com/watch?v=7enfyOJ-y9g", :week => 3, :lecture => 12
+Youtube.create :title => "Basic derivative race", :url => "http://www.youtube.com/watch?v=h-JQ_PE7L2U&list=PLsvV2phQMzuXQRKrz-U9Wj9abu3PrQAXR&index=18", :week => 3, :lecture => 12.5
 Youtube.create :title => "What will Week 4 bring us?", :url => "https://www.youtube.com/watch?v=v6f_nVAZ3Yo", :week => 4, :lecture => 0
 Youtube.create :title => "What is the derivative of \\(f(x)\\,g(x)\\)?", :url => "https://www.youtube.com/watch?v=SQh32rBqoEM", :week => 4, :lecture => 1
 Youtube.create :title => "Morally, why is the product rule true?", :url => "https://www.youtube.com/watch?v=8Ow_O1JZTLs", :week => 4, :lecture => 2

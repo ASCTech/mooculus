@@ -36,8 +36,12 @@ Developer.create :name => "Sean Corey", :photo => "sean-corey",
 
 
 Developer.create :name => "Johann Thiel", :photo => "johann-thiel",
-  :description => 'Johann Thiel is a postdoc at the United States Military Academy (West Point). His main research interests lie in analytic number theory and its applications. In his classes, Johann enjoys designing live demonstrations to illustrate mathematical concepts.  Johann has built some of the explorations for MOOCulus.',
-  :email => 'johann.thiel@usma.edu'
+  :description => 'Johann Thiel is an assistant professor at New York
+  City College of Technology. His main research interests lie in
+  analytic number theory and its applications. In his classes, Johann
+  enjoys designing live demonstrations to illustrate mathematical
+  concepts.  Johann has built some of the explorations for MOOCulus.',
+  :email => 'jthiel@citytech.cuny.edu'
 
 
 Developer.create :name => "Chris Bolognese", :photo => "chris-bolognese",
