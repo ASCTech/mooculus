@@ -15,18 +15,18 @@ class Youtube
 end
 
 Youtube.create :title => "Who will help me?", :url => "http://www.youtube.com/watch?v=R4xtSdvkG-s", :week => 1, :lecture => 0
-Youtube.create :title => "Cat-years vs. human-years", :url => "http://youtu.be/ED-oYu4e3LU", :week => 1, :lecture => 0.5
+Youtube.create :title => "Cat-years vs. human-years", :url => "http://www.youtube.com/watch?v=ED-oYu4e3LU", :week => 1, :lecture => 0.5
 Youtube.create :title => "What is a function?", :url => "http://www.youtube.com/watch?v=2MrH499MvHw", :week => 1, :lecture => 1
-Youtube.create :title => "The greatest integer function", :url => "http://youtu.be/k698XGE6EUA", :week => 1, :lecture => 1.5
-Youtube.create :title => "Linear functions", :url => "http://youtu.be/hYrPYeI32Gw", :week => 1, :lecture => 1.7
+Youtube.create :title => "The greatest integer function", :url => "http://www.youtube.com/watch?v=k698XGE6EUA", :week => 1, :lecture => 1.5
+Youtube.create :title => "Linear functions", :url => "http://www.youtube.com/watch?v=hYrPYeI32Gw", :week => 1, :lecture => 1.7
 Youtube.create :title => "Inverses of functions", :url => "http://www.youtube.com/watch?v=daKVqDF8hng", :week => 1, :lecture => 1.8
 Youtube.create :title => "When are two functions the same?", :url => "https://www.youtube.com/watch?v=GVlMFJ5TTmg", :week => 1, :lecture => 2
 Youtube.create :title => "How can more functions be made?", :url => "https://www.youtube.com/watch?v=nEqCaj3hBKU", :week => 1, :lecture => 3
 Youtube.create :title => "What are some real-world examples of functions?", :url => "https://www.youtube.com/watch?v=qfWM5vyXW7M", :week => 1, :lecture => 4
 Youtube.create :title => "What is the domain of square root?", :url => "https://www.youtube.com/watch?v=DQ-76j0sHy0", :week => 1, :lecture => 5
-Youtube.create :title => "A motivating example for limits", :url => "http://youtu.be/0WVpVxdX9YQ", :week => 1, :lecture => 6
+Youtube.create :title => "A motivating example for limits", :url => "http://www.youtube.com/watch?v=0WVpVxdX9YQ", :week => 1, :lecture => 6
 Youtube.create :title => "What is the limit of \\(\\frac{x^2 - 1}{x-1}\\)?", :url => "https://www.youtube.com/watch?v=YTKoob7m3DM", :week => 1, :lecture => 6.5
-Youtube.create :title => "Four examples of limits", :url => "http://youtu.be/MTl8wh_iyWg", :week => 1, :lecture => 6.7
+Youtube.create :title => "Four examples of limits", :url => "http://www.youtube.com/watch?v=MTl8wh_iyWg", :week => 1, :lecture => 6.7
 Youtube.create :title => "What is the limit of \\((\\sin x)/x\\)?", :url => "https://www.youtube.com/watch?v=otW6HcxrRlY", :week => 1, :lecture => 7
 Youtube.create :title => "What is the limit of \\(\\sin (1/x)\\)?", :url => "https://www.youtube.com/watch?v=oSwyUcJhrsE", :week => 1, :lecture => 8
 Youtube.create :title => "Morally, what is the limit of a sum?", :url => "https://www.youtube.com/watch?v=uHEFFyVmDSc", :week => 1, :lecture => 9
@@ -35,18 +35,18 @@ Youtube.create :title => "What is the limit of a quotient?", :url => "https://ww
 Youtube.create :title => "How fast does a ball move?", :url => "https://www.youtube.com/watch?v=HwzVyIaiKcQ", :week => 1, :lecture => 12
 Youtube.create :title => "Where are we in the course?", :url => "https://www.youtube.com/watch?v=aVTzlhkshTk", :week => 2, :lecture => 0
 Youtube.create :title => "What is a one-sided limit?", :url => "https://www.youtube.com/watch?v=KI5tjq2yrcI", :week => 2, :lecture => 1
-Youtube.create :title => "Wild Functions", :url => "http://www.youtube.com/watch?v=cTJx5P11tAY&feature=share&list=PLsvV2phQMzuXQRKrz-U9Wj9abu3PrQAXR", :week => 2, :lecture => 1.5
-Youtube.create :title => "Could a One-Sided Limit Not Exist?", :url => "http://www.youtube.com/watch?v=QT2Mqbn62sw&feature=share&list=PLsvV2phQMzuXQRKrz-U9Wj9abu3PrQAXR", :week => 2, :lecture => 1.7
+Youtube.create :title => "Wild Functions", :url => "http://www.youtube.com/watch?v=cTJx5P11tAY", :week => 2, :lecture => 1.5
+Youtube.create :title => "Could a One-Sided Limit Not Exist?", :url => "http://www.youtube.com/watch?v=QT2Mqbn62sw", :week => 2, :lecture => 1.7
 Youtube.create :title => "What does \"continuous\" mean?", :url => "https://www.youtube.com/watch?v=ReDZpc5jhCw", :week => 2, :lecture => 2
 Youtube.create :title => "What is the intermediate value theorem?", :url => "https://www.youtube.com/watch?v=ufFla_aAHFU", :week => 2, :lecture => 3
-Youtube.create :title => "Mirko and Roxy Like Food", :url => "http://www.youtube.com/watch?v=_qGIKgeWFzU&feature=share&list=PLsvV2phQMzuXQRKrz-U9Wj9abu3PrQAXR", :week => 2, :lecture => 3.5
+Youtube.create :title => "Mirko and Roxy Like Food", :url => "http://www.youtube.com/watch?v=_qGIKgeWFzU", :week => 2, :lecture => 3.5
 Youtube.create :title => "How can I approximate root two?", :url => "https://www.youtube.com/watch?v=rdva97EI9GU", :week => 2, :lecture => 4
 Youtube.create :title => "Why is there an \\(x\\) so that \\(f(x) = x\\)?", :url => "https://www.youtube.com/watch?v=jeOR1S92ZWo", :week => 2, :lecture => 5
 Youtube.create :title => "What does \\(\lim f(x) = \infty\\) mean?", :url => "https://www.youtube.com/watch?v=XtWc-grgKeQ", :week => 2, :lecture => 6
-Youtube.create :title => "Four More Example of Limits", :url => "http://www.youtube.com/watch?v=u_vCvk5T2JU&feature=share&list=PLsvV2phQMzuXQRKrz-U9Wj9abu3PrQAXR", :week => 2, :lecture => 6.5
+Youtube.create :title => "Four More Example of Limits", :url => "http://www.youtube.com/watch?v=u_vCvk5T2JU", :week => 2, :lecture => 6.5
 Youtube.create :title => "What is the limit \\(f(x)\\) as \\(x\\) approaches infinity?", :url => "https://www.youtube.com/watch?v=O-7yCtlJzco", :week => 2, :lecture => 7
-Youtube.create :title => "Four Examples of Limits at Infinity", :url => "http://www.youtube.com/watch?v=9EUYKTT5ZH4&feature=share&list=PLsvV2phQMzuXQRKrz-U9Wj9abu3PrQAXR", :week => 2, :lecture => 7.5
-Youtube.create :title => "What are Asymptotes?", :url => "http://youtu.be/doQJmwxdMZQ", :week => 2, :lecture => 7.7
+Youtube.create :title => "Four Examples of Limits at Infinity", :url => "http://www.youtube.com/watch?v=9EUYKTT5ZH4", :week => 2, :lecture => 7.5
+Youtube.create :title => "What are Asymptotes?", :url => "http://www.youtube.com/watch?v=doQJmwxdMZQ", :week => 2, :lecture => 7.7
 Youtube.create :title => "Why is infinity not a number?", :url => "https://www.youtube.com/watch?v=P4uPiXBP_rc", :week => 2, :lecture => 8
 Youtube.create :title => "What is the difference between potential and actual infinity?", :url => "https://www.youtube.com/watch?v=rNBoGy19lHc", :week => 2, :lecture => 9
 Youtube.create :title => "What is the slope of a staircase?", :url => "https://www.youtube.com/watch?v=R5wKjst_sMM", :week => 2, :lecture => 10
@@ -55,12 +55,12 @@ Youtube.create :title => "What is the official definition of limit?", :url => "h
 Youtube.create :title => "Why is the limit of \\(x^2\\) as \\(x\\) approaches \\(2\\) equal to \\(4\\)?", :url => "https://www.youtube.com/watch?v=-cK46mR_Dmg", :week => 2, :lecture => 13
 Youtube.create :title => "Why is the limit of \\(2x\\) as \\(x\\) approaches \\(10\\) equal to \\(20\\)?", :url => "https://www.youtube.com/watch?v=-9HyfES1VB0", :week => 2, :lecture => 14
 Youtube.create :title => "What comes next? Derivatives?", :url => "https://www.youtube.com/watch?v=4skfx0S2y6Y", :week => 3, :lecture => 0
-Youtube.create :title => "Slope and derivatives", :url => "http://www.youtube.com/watch?v=l61CwwsL5vw&list=PLsvV2phQMzuXQRKrz-U9Wj9abu3PrQAXR&index=13", :week => 3, :lecture => 0.5
+Youtube.create :title => "Slope and derivatives", :url => "http://www.youtube.com/watch?v=l61CwwsL5vw", :week => 3, :lecture => 0.5
 Youtube.create :title => "What is the definition of derivative?", :url => "https://www.youtube.com/watch?v=-cGbSEdqMt8", :week => 3, :lecture => 1
 Youtube.create :title => "What is a tangent line?", :url => "https://www.youtube.com/watch?v=-P54Jsy8fms", :week => 3, :lecture => 2
-Youtube.create :title => "What can you say now?", :url => "http://www.youtube.com/watch?v=eqWF_TDX4NM&list=PLsvV2phQMzuXQRKrz-U9Wj9abu3PrQAXR&index=14", :week => 3, :lecture => 2.5
+Youtube.create :title => "What can you say now?", :url => "http://www.youtube.com/watch?v=eqWF_TDX4NM", :week => 3, :lecture => 2.5
 Youtube.create :title => "Why is the absolute value function not differentiable?", :url => "https://www.youtube.com/watch?v=VpEZKqhwbF8", :week => 3, :lecture => 3
-Youtube.create :title => "What is the derivative of the greatest integer function?", :url => "http://www.youtube.com/watch?v=5dqJMXc4_bc&list=PLsvV2phQMzuXQRKrz-U9Wj9abu3PrQAXR&index=15", :week => 3, :lecture => 3.5
+Youtube.create :title => "What is the derivative of the greatest integer function?", :url => "http://www.youtube.com/watch?v=5dqJMXc4_bc", :week => 3, :lecture => 3.5
 Youtube.create :title => "How does wiggling \\(x\\) affect \\(f(x)\\)?", :url => "https://www.youtube.com/watch?v=IAW2y3LuHc8", :week => 3, :lecture => 4
 Youtube.create :title => "Why is \\(\\sqrt{9999}\\) so close to \\(99.995\\)?", :url => "https://www.youtube.com/watch?v=s2DZ1ZIYyBE", :week => 3, :lecture => 5
 Youtube.create :title => "What information is recorded in the sign of the derivative?", :url => "https://www.youtube.com/watch?v=Kr3mZgcBwOs", :week => 3, :lecture => 6
@@ -69,10 +69,10 @@ Youtube.create :title => "What is the derivative of a constant multiple of \\(f(
 Youtube.create :title => "Why is the derivative of \\(x^2\\) equal to \\(2x\\)?", :url => "https://www.youtube.com/watch?v=-a9gGq5Ya0U", :week => 3, :lecture => 9
 Youtube.create :title => "What is the derivative of \\(x^n\\)?", :url => "https://www.youtube.com/watch?v=XIXctIdQxwg", :week => 3, :lecture => 10
 Youtube.create :title => "What is the derivative of \\(x^3 + x^2\\)?", :url => "https://www.youtube.com/watch?v=O1njJq7eJps", :week => 3, :lecture => 11
-Youtube.create :title => "What is the derivative of \\(\\sqrt{x+3}\\)?", :url => "http://www.youtube.com/watch?v=Xaug5MNA-TU&list=PLsvV2phQMzuXQRKrz-U9Wj9abu3PrQAXR&index=16", :week => 3, :lecture => 11.5
-Youtube.create :title => "What about exponential functions?", :url => "http://www.youtube.com/watch?v=0db6MyRXehI&list=PLsvV2phQMzuXQRKrz-U9Wj9abu3PrQAXR&index=17", :week => 3, :lecture => 11.7
+Youtube.create :title => "What is the derivative of \\(\\sqrt{x+3}\\)?", :url => "http://www.youtube.com/watch?v=Xaug5MNA-TU", :week => 3, :lecture => 11.5
+Youtube.create :title => "What about exponential functions?", :url => "http://www.youtube.com/watch?v=0db6MyRXehI", :week => 3, :lecture => 11.7
 Youtube.create :title => "Why is the derivative of a sum the sum of derivatives?", :url => "https://www.youtube.com/watch?v=7enfyOJ-y9g", :week => 3, :lecture => 12
-Youtube.create :title => "Basic derivative race", :url => "http://www.youtube.com/watch?v=h-JQ_PE7L2U&list=PLsvV2phQMzuXQRKrz-U9Wj9abu3PrQAXR&index=18", :week => 3, :lecture => 12.5
+Youtube.create :title => "Basic derivative race", :url => "http://www.youtube.com/watch?v=h-JQ_PE7L2U", :week => 3, :lecture => 12.5
 Youtube.create :title => "What will Week 4 bring us?", :url => "https://www.youtube.com/watch?v=v6f_nVAZ3Yo", :week => 4, :lecture => 0
 Youtube.create :title => "What is the derivative of \\(f(x)\\,g(x)\\)?", :url => "https://www.youtube.com/watch?v=SQh32rBqoEM", :week => 4, :lecture => 1
 Youtube.create :title => "Morally, why is the product rule true?", :url => "https://www.youtube.com/watch?v=8Ow_O1JZTLs", :week => 4, :lecture => 2
