@@ -31,20 +31,20 @@
         
           var solution = &quot;&quot;
           if (points[m][0] &lt; 10){
-         	 if (points[m][1] &gt; points[m+1][1]){solution =solution.concat(&quot;local maxima&quot;)}
-          	 if (points[m][1]&lt;points[m+1][1]){solution =solution.concat(&quot;local minima&quot;)}
+         	 if (points[m][1] &gt; points[m+1][1]){solution =solution.concat(&quot;local maximum&quot;)}
+          	 if (points[m][1]&lt;points[m+1][1]){solution =solution.concat(&quot;local minimum&quot;)}
           	 }
           else{	 
-         	 if (points[m-1][1] &lt; points[m][1]){solution =solution.concat(&quot;local maxima&quot;)}
-          	 if (points[m-1][1] &gt; points[m][1]){solution =solution.concat(&quot;local minima&quot;)}
+         	 if (points[m-1][1] &lt; points[m][1]){solution =solution.concat(&quot;local maximum&quot;)}
+          	 if (points[m-1][1] &gt; points[m][1]){solution =solution.concat(&quot;local minimum&quot;)}
           	 }
           return solution
           })(points,m)</var>
 
 	<var id = "hintPosNegIncDec">(function(criticalPoints,m){
           var solution = &quot;&quot;
-          if (criticalPoints[m+1][1] &gt; criticalPoints[m+2][1]){solution =solution.concat(&quot;local maxima&quot;)}
-          if (criticalPoints[m+1][1]&lt;criticalPoints[m+2][1]){solution =solution.concat(&quot;local minima&quot;)}
+          if (criticalPoints[m+1][1] &gt; criticalPoints[m+2][1]){solution =solution.concat(&quot;local maximum&quot;)}
+          if (criticalPoints[m+1][1]&lt;criticalPoints[m+2][1]){solution =solution.concat(&quot;local minimum&quot;)}
           return solution
           })(criticalPoints,m)</var>
 		          	
@@ -59,7 +59,7 @@
           <p class="question"> 
 	    
 	    On the interval <code>[-10,10]</code>,
-	    does <code>f</code> have a local maxima, a local minima,
+	    does <code>f</code> have a local maximum, a local minimum,
 	    or neither, at the green point?<code>^*</code>
           </p>
           <p>* since the domain has been restricted to <code>[-10,10]</code>, either of these two endpoints could be a local extrema </p>
@@ -112,8 +112,8 @@
                      
           <p class="solution"><var>solution</var></p>
           <ul class="choices" data-category="true">
-            <li>local maxima</li>
-            <li>local minima</li>
+            <li>local maximum</li>
+            <li>local minimum</li>
             <li>neither</li>
           </ul>
                   
@@ -123,11 +123,11 @@
               
 
           <div class="hints">
-            <p>A point <code>(a,f(a))</code> is a local maxima for <code>f</code> if there is an interval around 
+            <p>A point <code>(a,f(a))</code> is a local maximum for <code>f</code> if there is an interval around 
               <code>x=a</code> where <code>f(a)</code> is greater than or equal to all other values of 
               <code>f</code> in that interval.
               <br/><br/>
-              A point <code>(a,f(a))</code> is a local minima for <code>f</code> if there is an interval around 
+              A point <code>(a,f(a))</code> is a local minimum for <code>f</code> if there is an interval around 
               <code>x=a</code> where <code>f(a)</code> is less than or equal to all other values of 
               <code>f</code> in that interval.
             </p>
@@ -145,7 +145,7 @@
           <p class="question"> 
 	    
 	    On the interval <code>[-10,10]</code>,
-	    does <code>f</code> have a local maxima, a local minima,
+	    does <code>f</code> have a local maximum, a local minimum,
 	    or neither, at the green point?<code>^*</code>
           </p>
           <p>* since the domain has been restricted to <code>[-10,10]</code>, either of these two endpoints could be a local extrema </p>
@@ -195,23 +195,23 @@
                      
           <p class="solution">neither</p>
           <ul class="choices" data-category="true">
-            <li>local maxima</li>
-            <li>local minima</li>
+            <li>local maximum</li>
+            <li>local minimum</li>
             <li>neither</li>
           </ul>
         
          <div class="hints">
-        <p>A point <code>(a,f(a))</code> is a local maxima for <code>f</code> if there is an interval around 
+        <p>A point <code>(a,f(a))</code> is a local maximum for <code>f</code> if there is an interval around 
           <code>x=a</code> where <code>f(a)</code> is bigger than or equal to all other values of 
           <code>f</code> in that interval.
           <br/><br/>
-          A point <code>(a,f(a))</code> is a local minima for <code>f</code> if there is an interval around 
+          A point <code>(a,f(a))</code> is a local minimum for <code>f</code> if there is an interval around 
           <code>x=a</code> where <code>f(a)</code> is smaller than or equal to all other values of 
           <code>f</code> in that interval.
         </p>
                  
         <p>
-          The green point is neither a local maxima or a local minima.
+          The green point is neither a local maximum or a local minimum.
         </p>
       </div>
         
