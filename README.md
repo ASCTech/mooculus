@@ -4,7 +4,7 @@ A [live demo](https://mooculus.osu.edu/) is available at [mooculus.osu.edu](http
 
 The materials for our calculus two course are available at [https://github.com/kisonecat/sequences-and-series](https://github.com/kisonecat/sequences-and-series).
 
-## Installation For OSX
+## Installation For OSX and Linux*
 
 ### Preliminaries
 
@@ -22,7 +22,7 @@ done by copy and pasting the following command into your terminal:
 Hopefully, the installation was successful. If it wasn't, I recommend the "google the 
 error message" strategy. You must now put the line 
 
-`source /Users/lornajohnston/.rvm/scripts/rvm`
+`source ~/.rvm/scripts/rvm`
 
 at the end of the (hidden) file `~/.bashrc`. Open a new terminal and check that you are using a new
 version of ruby by running
@@ -60,4 +60,6 @@ and navigate to `localhost:3000` in your browser!
 
 If you add more exercises, for them to be loaded, you must run
 
-`bundle exec exercise:all`
+`bundle exec rake exercise:all`
+
+\* *Linux users should be able to follow these instructions after insuring that* ```ruby, ruby-dev, libxml2-dev, libxslt-dev```  *and* ```libmysqlclient-dev``` *are installed*
