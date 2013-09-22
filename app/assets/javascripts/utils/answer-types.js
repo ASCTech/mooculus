@@ -1416,7 +1416,7 @@ Khan.answerTypes = $.extend(Khan.answerTypes, {
 	    };
 
 	    addAlert( 'MathFunctionError', '<strong>Parsing Error!</strong> I am not sure what you mean.' );
-	    addAlert( 'MathFunctionErrorForgetBackslash', '<strong>Backslash!</strong>  Make sure that you use backslashes before function names.' );
+	    addAlert( 'MathFunctionErrorForgetBackslash', '<strong>Backslash!</strong>  Make sure that you use backslashes before function names.  For example, type <tt>\\sin</tt> for sine or <tt>\\log</tt> for log.' );
 	    addAlert( 'MathFunctionErrorEmptyCaret', '<strong>Exponent!</strong>  Make sure you type something in the exponent.' );
 
 	    var old_input_box = $('<div class="tab-pane parsed-expression-answer-type" id="plaintext' + this.parsedExpressionId + '"></div>');
