@@ -855,7 +855,8 @@ var MathFunction = (function() {
 	var alphabet = "abcdefghijklmnopqrstuvwxyz";
 	var result = new Object();
 	for(var i=0; i<alphabet.length; i++) {
-	    result[alphabet.charAt(i)] = new ComplexNumber( Math.random() * 20.0 - 10.0,  Math.random() * 20.0 - 10.0 );
+	    // result[alphabet.charAt(i)] = new ComplexNumber( Math.random() * 20.0 - 10.0,  Math.random() * 20.0 - 10.0 );
+	    result[alphabet.charAt(i)] = new ComplexNumber( Math.random() * 20.0 - 10.0, 0.0 );
 	}
 	return result;
     };
