@@ -182,7 +182,7 @@ Considering the interval $[-1,1]$, where is $F(x)$ increasing? Where
 is $F(x)$ decreasing? When does $F(x)$ have a local extrema?
 \end{example}
 
-\begin{marginfigure}
+\begin{marginfigure}[-3in]
 \begin{tikzpicture}
   \begin{axis}[
       xmin=-1.2, xmax=1,ymin=-1,ymax=1,domain=-1:1,
@@ -742,13 +742,13 @@ Simplifying a bit we find
 \end{align*}
 At this point we need two formulas
 \[
-\sum_{i=0}^{n-1}1 = n-1 \qquad\text{and}\qquad \sum_{i=0}^{n-1} i = \frac{n^2-n}{2}.
+\sum_{i=0}^{n-1}1 = n \qquad\text{and}\qquad \sum_{i=0}^{n-1} i = \frac{n^2-n}{2}.
 \]
 Substituting these formulas for the sums above, we find 
 \begin{align*}
-\frac{20}{n}\sum_{i=0}^{n-1} 1 +\frac{32}{n^2} \sum_{i=0}^{n-1} i &=\frac{20}{n}(n-1) +\frac{32}{n^2}\frac{n^2-n}{2}\\
-&=20 -\frac{20}{n}+16 -\frac{16}{n}\\
-&=36 - \frac{36}{n}.
+\frac{20}{n}\sum_{i=0}^{n-1} 1 +\frac{32}{n^2} \sum_{i=0}^{n-1} i &=\frac{20}{n}n +\frac{32}{n^2}\frac{n^2-n}{2}\\
+&=20 +16 -\frac{16}{n}\\
+&=36 - \frac{16}{n}.
 \end{align*}
 By construction
 \[
@@ -756,7 +756,7 @@ By construction
 \]
 hence
 \[
-\int_3^7 \left(2x-1 \right)\d x = \lim_{n\to \infty} \left(36 - \frac{36}{n}\right) = 36.
+\int_3^7 \left(2x-1 \right)\d x = \lim_{n\to \infty} \left(36 - \frac{16}{n}\right) = 36.
 \]
 \end{solution}
 
