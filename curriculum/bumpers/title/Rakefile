@@ -9,7 +9,7 @@ def float(x)
   return '%0.5f' % x
 end
 
-title = 'WELCOME!'
+title = "Approximating $\sqrt[10]{1000}$ \\ Guest Lecturer: \\ Stephanie Force"
 
 frame_count = 150
 
