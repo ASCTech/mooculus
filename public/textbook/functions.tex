@@ -731,11 +731,12 @@ h(t) = 18\cdot \sin( \frac{\pi \cdot t}{7} ) + 20
 where $t$ is time elapsed in seconds.  If $h$ is restricted to the
 domain $[3.5, 10.5]$, find and interpret the meaning of $h^{-1}(20)$.
 \begin{answer}
-$h^{-1}(20)=7$.  This means that a height of 20 meters is achieved at 7 seconds
-in the restricted interval.
+  $h^{-1}(20)=7$.  This means that a height of 20 meters is achieved
+  at 7 seconds in the restricted interval.  In fact, it turns out that
+  $h^{-1}(t) = 7 \cdot (\pi - \arcsin((t-20)/9))/\pi$ when $h$ is
+  restricted to the given interval.
 \end{answer}
 \end{exercise}
-
 
 \begin{exercise}
 The value $v$ of a car in dollars after $t$ years of ownership can be
