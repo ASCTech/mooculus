@@ -1,1 +1,1 @@
-rvm use default@mooculus --create
+rvm --create use default@mooculus
