@@ -4,7 +4,7 @@ class Developer
 end
 
 Developer.create :name => "Bart Snapp", :photo => "bart-snapp",
-  :description => 'Bart Snapp teaches mathematics at OSU.  His research interests include commutative ring theory and recreational mathematics.  He enjoys exploring connections between mathematics and real-world problems, art, and music.  Bart is currently the head instructor for MOOCulus.',
+  :description => 'Bart Snapp teaches mathematics at OSU.  His research interests include commutative ring theory and recreational mathematics.  He enjoys exploring connections between mathematics and real-world problems, art, and music.',
   :link => 'http://www.math.osu.edu/~snapp/', 
   :email =>'snapp.14@osu.edu'
 
@@ -13,6 +13,11 @@ Developer.create :name => "Jim Fowler", :photo => "jim-fowler",
   :link => 'http://www.math.osu.edu/~fowler/',
   :email => 'fowler@math.osu.edu'
 
+
+Developer.create :name => "Jenny George", :photo => "jenny-george",
+  :description => 'Jenny George teaches mathematics at The Ohio State University.  Her research is in low-dimensional topology, which means that she gets to work with tangles and knots both in Mathematics and in her knitting. Before coming to Ohio State, she earned her undergraduate degree from <a href="http://miamioh.edu/">Miami University</a>, and then earned her Ph.D. at Ohio State. Jenny George is currently the head instructor for Calculus One.',
+  :link => 'https://u.osu.edu/george.287/personal_info/',
+  :email => 'jgeorge@math.osu.edu'
 
 Developer.create :name => "Steve Gubkin", :photo => "steve-gubkin",
   :description => 'Steve Gubkin is a mathematics Ph.D. student at OSU.  Steve has extensive experience with the <a href="https://github.com/Khan/khan-exercises/" rel="external">khan exercise framework</a>, so for MOOCulus, he leads the development of <a href="/exercises">our interactive exercises</a>.',
