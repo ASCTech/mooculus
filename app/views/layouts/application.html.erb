@@ -28,7 +28,7 @@
             <li class="<%= 'active' if params[:controller] == 'exercises' && params[:action] != "progress" %>"><%= link_to raw("<i class='icon-pencil'></i> Exercises"), exercises_path %></li>
             <% if user_signed_in? %>
               <li class="<%= 'active' if params[:controller] == 'explorations' && params[:action] != "progress" %>"><%= link_to raw("<i class='icon-truck'></i> Explorations"), :controller => "explorations", :action => "index" %></li>
-              <li><a href="https://class.coursera.org/calc1-002/forum/index"><i class="icon-comments"></i> Forum</a></li>
+              <li><a href="https://class.coursera.org/calc1-003/forum/index"><i class="icon-comments"></i> Forum</a></li>
             <% end %>
 	  </ul>
 	  <ul class="nav pull-right">
