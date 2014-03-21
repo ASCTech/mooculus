@@ -157,14 +157,14 @@ Equation~\ref{E:chainRuleDer}, divide both sides by $h$ and set
 $g=g(x+h)$ and $g_0=g(x)$
 \[
 \frac{f(g(x+h))-f(g(x))}{h} = \left(f'(g(x)) +
-E(g(x))\right)\frac{g(x+h)-g(x)}{h}.
+E(g(x+h))\right)\frac{g(x+h)-g(x)}{h}.
 \]
 Taking the limit as $h$ approaches $0$, we see 
 \begin{align*}
 \lim_{h\to 0}\frac{f(g(x+h))-f(g(x))}{h} &= \lim_{h\to 0}\left(f'(g(x))
-+ E(g(x))\right)\frac{g(x+h)-g(x)}{h}\\
++ E(g(x+h))\right)\frac{g(x+h)-g(x)}{h}\\
 &= \lim_{h\to 0}\left(f'(g(x))
-+ E(g(x))\right)\lim_{h\to 0}\frac{g(x+h)-g(x)}{h}\\
++ E(g(x+h))\right)\lim_{h\to 0}\frac{g(x+h)-g(x)}{h}\\
 &= f'(g(x))g'(x).
 \end{align*}
 Hence, $\ddx f(g(x))= f'(g(x))g'(x)$.
