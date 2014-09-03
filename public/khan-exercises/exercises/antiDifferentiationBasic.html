@@ -3,6 +3,10 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <title>Practice recalling basic antidifferentiation facts</title>
+    <script src="/utils/underscore.js"></script>
+    <script src="/utils/lexer.js"></script>
+    <script src="/utils/text-to-ast.js"></script>
+    <script src="/utils/ast-to-text.js"></script>
     <script src="../khan-exercise.js"></script>
 </head>
 <body>
@@ -16,11 +20,11 @@
   			  </div>
         	
         	<p class="question">
-        		Find <code>\displaystyle\int <var>n</var> dx</code>
+        		Find <code>\displaystyle\int <var>n</var>\, dx</code>.  Your answer should include \(+C\).
         	</p>
-        <p class="solution" data-type="antiDerivativeExpression">
-        	<var>n</var>
-        </p>
+		  <p class="solution" data-type="parsedExpression">
+        	    <var>n</var>*x + C
+		  </p>
         <div class="hints">
         	<p>
         		<code>\displaystyle\int <var>n</var> dx = <var>n</var>x+C</code> because <code>\dfrac{d}{dx}<var>n</var> \left( x+C  \right)= <var>n</var> </code>
@@ -35,10 +39,10 @@
   			  </div>
         	
         	<p class="question">
-        		Find <code>\displaystyle\int x^{<var>n</var>} dx</code>
+        		Find <code>\displaystyle\int x^{<var>n</var>}\, dx</code>.    Your answer should include \(+C\).
         	</p>
-        <p class="solution" data-type="antiDerivativeExpression">
-        	x^(<var>n</var>)
+        <p class="solution" data-type="parsedExpression">
+        	x^(<var>n+1</var>)/(<var>n+1</var>) + C
         </p>
         <div class="hints">
         	<p>
@@ -50,25 +54,26 @@
       <div id="reciprocal">
         	
         	<p class="question">
-        		Find <code>\displaystyle\int \dfrac{1}{x} dx</code> 
+        		Find <code>\displaystyle\int \dfrac{1}{x} dx</code>.      Your answer should include \(+C\).
         	</p>
-        <p class="solution" data-type="antiDerivativeExpression">
-        	1/x
+        <p class="solution" data-type="parsedExpression">
+        	log(abs(x)) + C
         </p>
         <div class="hints">
         	<p>
-        		<code>\displaystyle\int \dfrac{1}{x} dx = \log(|x|) + C</code>  because <code>\dfrac{d}{dx} \left( \log(|x|) + C \right)= \dfrac{1}{x} </code>
+        		<code>\displaystyle\int \dfrac{1}{x} dx = \log(|x|) + C</code>  because <code>\dfrac{d}{dx} \left( \log(|x|) + C \right)= \dfrac{1}{x} </code>.
         	</p>
+		<p>There are many other antiderivatives.</p>
         </div>
        
       </div>
       <div id="sine">
         	
         	<p class="question">
-        		Find <code>\displaystyle\int \sin(x) dx</code>
+        		Find <code>\displaystyle\int \sin x \, dx</code>.      Your answer should include \(+C\).
         	</p>
-       <p class="solution" data-type="antiDerivativeExpression">
-        	sin(x)
+       <p class="solution" data-type="parsedExpression">
+        	-cos(x) + C
         </p>
         <div class="hints">
         	<p>
@@ -80,10 +85,10 @@
       <div id="cos">
         	
         	<p class="question">
-        		Find <code>\displaystyle\int \cos(x) dx</code>
+        		Find <code>\displaystyle\int \cos(x) dx</code>.      Your answer should include \(+C\).
         	</p>
-       <p class="solution" data-type="antiDerivativeExpression">
-        	cos(x)
+       <p class="solution" data-type="parsedExpression">
+        	sin(x) + C
         </p>
         <div class="hints">
         	<p>
@@ -95,10 +100,10 @@
       <div id="sectan">
         	
         	<p class="question">
-        		Find <code>\displaystyle\int \sec(x)\tan(x) dx</code>
+        		Find <code>\displaystyle\int \sec x \, \tan x\, dx</code>.    Your answer should include \(+C\).
         	</p>
-        <p class="solution" data-type="antiDerivativeExpression">
-        	sec(x)*tan(x)
+        <p class="solution" data-type="parsedExpression">
+        	sec(x) + C
         </p>
         <div class="hints">
         	<p>
@@ -110,10 +115,10 @@
       <div id="secSquared">
         	
         	<p class="question">
-        		Find <code>\displaystyle\int \sec^2(x) dx</code>
+        		Find <code>\displaystyle\int \sec^2(x) dx</code>.    Your answer should include \(+C\).
         	</p>
-        <p class="solution" data-type="antiDerivativeExpression">
-        	(sec(x))^2
+        <p class="solution" data-type="parsedExpression">
+        	tan(x) + C
         </p>
         <div class="hints">
         	<p>
@@ -125,10 +130,10 @@
       <div id="cscSquared">
         	
         	<p class="question">
-        		Find <code>\displaystyle\int \csc^2(x) dx</code>
+        		Find <code>\displaystyle\int \csc^2(x) dx</code>.    Your answer should include \(+C\).
         	</p>
-       <p class="solution" data-type="antiDerivativeExpression">
-        	(csc(x))^2
+       <p class="solution" data-type="parsedExpression">
+        	-cot(x) + C
         </p>
         <div class="hints">
         	<p>
@@ -140,10 +145,10 @@
       <div id="csccot">
         	
         	<p class="question">
-        		Find <code>\displaystyle\int \csc(x)\cot(x) dx</code>
+        		Find <code>\displaystyle\int \csc(x)\cot(x) dx</code>.  Your answer should include \(+C\).
         	</p>
-        <p class="solution" data-type="antiDerivativeExpression">
-        	csc(x)*cot(x)
+        <p class="solution" data-type="parsedExpression">
+        	-csc(x) + C
         </p>
         <div class="hints">
         	<p>
@@ -155,10 +160,10 @@
       <div id="exp">
         	
         	<p class="question">
-        		Find <code>\displaystyle\int e^x dx</code>
+        		Find <code>\displaystyle\int e^x dx</code>.  Your answer should include \(+C\).
         	</p>
-        <p class="solution" data-type="antiDerivativeExpression">
-        	e^x
+        <p class="solution" data-type="parsedExpression">
+        	exp(x) + C
         </p>
         <div class="hints">
         	<p>

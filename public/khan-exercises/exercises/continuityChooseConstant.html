@@ -24,7 +24,7 @@
             <code>
             	f(x) = \left\{
        			 \begin{array}{ll}
-        		   kx+<var>A</var> &amp; \quad x &lt; <var>C</var> \\
+        		   kx+<var>A</var> &amp; \quad x \lt <var>C</var> \\
           		  <var>B</var>x +k & \quad x \geq <var>C</var>
         		\end{array}
     			\right.
@@ -77,7 +77,7 @@
             <code>
             	f(x) = \left\{
         \begin{array}{ll}
-           \dfrac{<var>num.text()</var>}{<var>lin1.text()</var>} &amp; \quad x &lt; <var>A</var> \\
+           \dfrac{<var>num.text()</var>}{<var>lin1.text()</var>} &amp; \quad x \lt <var>A</var> \\
             <var>F</var>x +k & \quad x \geq <var>A</var>
         \end{array}
     \right.
@@ -98,7 +98,7 @@
 	    	For <code>f</code> to be continuous at <code>x=<var>A</var></code> we need 
 	    	<code>\displaystyle\lim_{x \to <var>A</var>^-}f(x) = \displaystyle\lim_{x \to <var>A</var>^+}f(x) = f(<var>A</var>)</code>
 	    </p>
-	    <p> First lets evaluate <code>\displaystyle\lim_{x \to <var>A</var>^-}f(x)</code>. Since <code>x &lt; <var>A</var></code>
+	    <p> First lets evaluate <code>\displaystyle\lim_{x \to <var>A</var>^-}f(x)</code>. Since <code>x \lt  <var>A</var></code>
 	    as <code>x</code> approaches <code><var>A</var></code> from the left, <code>f(x) = \dfrac{<var>num.text()</var>}{<var>lin1.text()</var>}</code> 
 	    as <code>x \to <var>A</var>^-</code>
 
@@ -106,7 +106,6 @@
 		<div>
 		<p>
 			So <code>\displaystyle\lim_{x \to <var>A</var>^-}f(x) = \displaystyle\lim_{x \to <var>A</var>^-}\dfrac{<var>num.text()</var>}{<var>lin1.text()</var>}</code>
-			[<a href="#" class="show-subhint" data-subhint="computing">Show me how to evaluate that limit</a>]
 		</p>
 		
 			
@@ -188,7 +187,7 @@
             <code>
             	f(x) = \left\{
         \begin{array}{ll}
-            \dfrac{\sin(<var>A</var>x)}{<var>B</var>x} &amp; \quad x &lt;0 \\
+            \dfrac{\sin(<var>A</var>x)}{<var>B</var>x} &amp; \quad x \lt 0 \\
             <var>C</var>x +<var>D</var>k+<var>E</var> & \quad x \geq 0
          \end{array}
    		 \right.
@@ -208,8 +207,7 @@
 	     <div>
 	     <p>
 	    <code> \displaystyle\lim_{x \to 0^-}f(x) = \displaystyle\lim_{x \to 0^-}\dfrac{\sin(<var>A</var>x)}{<var>B</var>x}</code>  because 
-	     <code>x &lt; 0</code> as <code>x</code> approaches <code>0</code> from the left.
-	     [<a href="#" class="show-subhint" data-subhint="computing">Show me how to evaluate that limit</a>]
+	     <code>x \lt  0</code> as <code>x</code> approaches <code>0</code> from the left.
 	     </p>
 	    <div class = "subhint" id = "computing">
 	    <p> Recall that 
@@ -263,114 +261,5 @@
 	  		
         </div>
         
-        <div id="needs-conjugate">
-          <div class="vars">
-            <var id = "A">randRangeNonZero(0,9)</var>			
-       	  </div>
-                
-          <p class="question">      
-           What are values of <code>C</code> and <code>k</code> if <code>f</code> is continuous for all <code>x \geq 0</code>?
-            <br/><br/>
-            <code>
-            	f(x) = \left\{
-       	 \begin{array}{ll}
-           \frac{x-<var>A*A</var>}{\sqrt{x}-<var>A</var>} &amp; \text{if  }  x \neq C \\
-            k & \text{if  } x = C
-        \end{array}
-    \right.
-            </code>
-           
-	  </p>
-	  
-          <div class="solution" data-type="multiple">
-
-                    <p>
-                        <code>C=</code> <span class="sol" ><var>A*A</var></span>
-                        <br/>
-                        <code>k=</code> <span class="sol" ><var>2*A</var></span>
-
-                    </p>
-
-                </div>
-	  <div class="hints">
-	    
-	    <p>
-	    	This function is function <code>\frac{x-<var>A*A</var>}{\sqrt{x}-<var>A</var>}</code> 
-	    	except it has been redefined at one point where <code>x = C</code>
-	    </p>
-	    <p>
-	    	<code>C</code> needs to be <code><var>A*A</var></code> because otherwise <code><var>A*A</var></code> will not even be in
-	    	the domain of <code>f</code>, and so <code>f</code> would have no hope of being continuous for all positive numbers.
-	    </p>
-	    <p>
-	     So now we know <code>f</code> looks like this :
-	     <br/><br/>
-	      <code>
-            	f(x) = \left\{
-       	 \begin{array}{ll}
-           \frac{x-<var>A*A</var>}{\sqrt{x}-<var>A</var>} &amp; \text{if  }  x \neq <var>A*A</var> \\
-            k & \text{if  } x = <var>A*A</var>
-        \end{array}
-    \right.
-            </code>
-	    </p>
-	    <div>
-	    <p>
-	    	For <code>f</code> to be continuous at <code><var>A*A</var></code>, we need 
-	    	<br/><br/>
-	    	<code>f(<var>A*A</var>) = \displaystyle\lim_{x \to <var>A*A</var>}f(x)</code>
-	    	<br/><br/>
-	    	that is,
-	    	<br/><br/>
-	    	<code>k=\displaystyle\lim_{x \to <var>A*A</var>}\frac{x-<var>A*A</var>}{\sqrt{x}-<var>A</var>}</code>
-	    	[<a href="#" class="show-subhint" data-subhint="computing">Show me how to evaluate that limit</a>]
-	    </p>
-	    <div class = "subhint" id="computing">
-	    <p> Note we cannot evaluate this limit directly since the
-	    denominator is zero when <code>x=<var>A*A</var></code>.</p>
-	    
-	    <p> Multiply by the conjugate:
-	    </p>
-
-	    <p> 
-	      <code>\displaystyle\lim_{x \to <var>A*A</var>}\frac{x-<var>A*A</var>}{\sqrt{x}-<var>A</var>} = 
-		\lim_{x \to <var>A*A</var>}\frac{x-<var>A*A</var>}{\sqrt{x}-<var>A</var>} \cdot\frac{\sqrt{x}+<var>A</var>}{\sqrt{x}+<var>A</var>}
-	      </code>
-	    </p>
-	    
-	    <p> Now simplify.
-	      <br/><br/>
-	      <code>\displaystyle\lim_{x \to <var>A*A</var>}\frac{x-<var>A*A</var>}{\sqrt{x}-<var>A</var>} = 
-		\lim_{x \to <var>A*A</var>}\frac{(x-<var>A*A</var>)(\sqrt{x}+<var>A</var>)}{x-<var>A*A</var>} 
-	      </code>
-	    </p>
-
-	    <p> Since we are taking the limit as <code>x\to <var>A*A</var></code>, we may assume that <code>x\ne <var>A*A</var></code>.
-	    </p>
-	   
-	    <p> Canceling factors we see:
-	      <br/><br/>
-	      <code>\displaystyle\lim_{x \to <var>A*A</var>}\frac{x-<var>A*A</var>}{\sqrt{x}-<var>A</var>} = 
-		\lim_{x \to <var>A*A</var>}(\sqrt{x}+<var>A</var>) 
-	      </code>
-	    </p>
-
-	    <p> We can evaluate this function at <code>x = <var>A*A</var></code>.
-	    </p>
-
-	    <p> 
-	    	Hence,  we see the solution is <code><var>2*A</var></code>
-	    </p>
-	    </div>
- 		</div>
- 		<p>
- 		Thus <code>k=\displaystyle\lim_{x \to <var>A*A</var>}\frac{x-<var>A*A</var>}{\sqrt{x}-<var>A</var>}=<var>2*A</var></code>
- 		</p>
-	    </div>
-
-        </div>
-     
-      </div>
-      </div>
 </body>
 </html>

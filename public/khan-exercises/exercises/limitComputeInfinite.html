@@ -15,10 +15,10 @@
             <var id = "B">randRangeNonZero(-9,9)</var>
 	    <var id = "sol">(function(A){
     	      if (A &gt; 0){
-    	      return "infinity"
+    	      return "\\infty"
     	      }
     	      else {
-    	      return "-infinity"
+    	      return "-\\infty"
     	      }	
     	      })
 	    </var>
@@ -35,24 +35,26 @@
           
 	  <p class="question">
             Evaluate the following limit:
-            <br/><br/>
             <code>	
               \displaystyle\lim_{x \to <var>A</var>-}\frac{<var>B</var>}{x-<var>A</var>}   
             </code>
-	    <br/><br/>
-	    Answer either "infinity" or "-infinity".
 	  </p>
    
-          <p class="solution" data-type="text">
-            <var>sol(-B)</var>
+          <p class="solution">
+            \(<var>sol(-B)</var>\)
           </p>
+
+          <ul class="choices" data-category="true">
+	    <li>\(\infty\)</li>
+	    <li>\(-\infty\)</li>
+	  </ul>
 
 	  <div class="hints">
 	    <p> The numerator stays fixed as the denominator approaches zero. </p>
 
 	    <p> Since the numerator is <var>sgn(B)</var> and the denominator is negative, the fraction is <var>sgn(-B)</var></p>
 
-	    <p> Since the fraction is <var>sgn(-B)</var> and the denominator goes to zero, the limit is <var>sol(-B)</var></p>.  
+	    <p> Since the fraction is <var>sgn(-B)</var> and the denominator goes to zero, the limit is \(<var>sol(-B)</var>\)</p>.  
 	  </div>
 	</div> 
 
@@ -64,10 +66,10 @@
             <var id = "B">randRangeNonZero(-9,9)</var>
 	    <var id = "sol">(function(A){
     	      if (A &gt; 0){
-    	      return "infinity"
+    	      return "\\infty"
     	      }
     	      else {
-    	      return "-infinity"
+    	      return "-\\infty"
     	      }	
     	      })
 	    </var>
@@ -84,24 +86,26 @@
  	  
 	  <p class="question">
             Evaluate the following limit:
-            <br/><br/>
             <code>	
               \displaystyle\lim_{x \to <var>A</var>+}\frac{<var>B</var>}{x-<var>A</var>}   
             </code>
-	    <br/><br/>
-	    Answer either "infinity" or "-infinity".
 	  </p>
    
-          <p class="solution" data-type="text">
-            <var>sol(B)</var>
+          <p class="solution">
+            \(<var>sol(B)</var>\)
           </p>
+
+          <ul class="choices" data-category="true">
+	    <li>\(\infty\)</li>
+	    <li>\(-\infty\)</li>
+	  </ul>
 
 	  <div class="hints">
 	    <p> The numerator stays fixed as the denominator approaches zero. </p>
 
 	    <p> Since the numerator is <var>sgn(B)</var> and the denominator is positive, the fraction is <var>sgn(B)</var></p>
 
-	    <p> Since the fraction is <var>sgn(B)</var> and the denominator goes to zero, the limit is <var>sol(B)</var></p>.  
+	    <p> Since the fraction is <var>sgn(B)</var> and the denominator goes to zero, the limit is \(<var>sol(B)</var>\)</p>.  
 	  </div>
 	</div> 
 
@@ -113,10 +117,10 @@
 	    <var id = "b">randRangeNonZero(-1,1)</var>
 	    <var id = "sol">(function(A){
     	      if (A &gt; 0){
-    	      return "infinity"
+    	      return "\\infty"
     	      }
     	      else {
-    	      return "-infinity"
+    	      return "-\\infty"
     	      }	
     	      })
 	    </var>
@@ -133,24 +137,26 @@
  	  
 	  <p class="question">
             Evaluate the following limit:
-            <br/><br/>
             <code>	
               \displaystyle\lim_{x \to <var>-A</var>}\frac{x+<var>b*B</var>}{(x+<var>A</var>)^2}   
             </code>
-	    <br/><br/>
-	    Answer either "infinity" or "-infinity".
 	  </p>
    
-          <p class="solution" data-type="text">
-            <var>sol(B*b-A)</var>
+          <p class="solution">
+            \(<var>sol(B*b-A)</var>\)
           </p>
+
+          <ul class="choices" data-category="true">
+	    <li>\(\infty\)</li>
+	    <li>\(-\infty\)</li>
+	  </ul>
 
 	  <div class="hints">
 	    <p> The numerator approaches <code><var>b*B-A</var></code> as the denominator approaches zero. </p>
 
 	    <p> Since the numerator is <var>sgn(b*B-A)</var> and the denominator is always positive, the fraction is <var>sgn(b*B-A)</var></p>
 
-	    <p> Since the fraction is <var>sgn(b*B-A)</var> and the denominator goes to zero, the limit is <var>sol(B*b-A)</var></p>.  
+	    <p> Since the fraction is <var>sgn(b*B-A)</var> and the denominator goes to zero, the limit is \(<var>sol(B*b-A)</var>\)</p>.  
 	  </div>
 	</div> 
 
@@ -165,10 +171,10 @@
 	     <var id = "C">randRangeExclude(1,9,[c*A])</var>
 	     <var id = "sol">(function(A){
     	      if (A &gt; 0){
-    	      return "infinity"
+    	      return "\\infty"
     	      }
     	      else {
-    	      return "-infinity"
+    	      return "-\\infty"
     	      }	
     	      })
 	    </var>
@@ -185,24 +191,26 @@
  	  
 	  <p class="question">
             Evaluate the following limit:
-            <br/><br/>
             <code>	
               \displaystyle\lim_{x \to <var>-A</var>+}\frac{(x+<var>b*B</var>)(x+<var>c*C</var>)}{(x+<var>A</var>)}   
             </code>
-	    <br/><br/>
-	    Answer either "infinity" or "-infinity".
 	  </p>
    
-          <p class="solution" data-type="text">
-            <var>sol((b*B-A)*(c*C-A))</var>
+          <p class="solution">
+            \(<var>sol((b*B-A)*(c*C-A))</var>\)
           </p>
+
+          <ul class="choices" data-category="true">
+	    <li>\(\infty\)</li>
+	    <li>\(-\infty\)</li>
+	  </ul>
 
 	  <div class="hints">
 	    <p> The numerator approaches <code><var>(b*B-A)*(c*C-A)</var></code> as the denominator approaches zero. </p>
 
 	    <p> Since the numerator is <var>sgn((b*B-A)*(c*C-A))</var> and the denominator is always positive, the fraction is <var>sgn((b*B-A)*(c*C-A))</var>.</p>
 
-	    <p> Since the fraction is <var>sgn((b*B-A)*(c*C-A))</var> and the denominator goes to zero, the limit is <var>sol((b*B-A)*(c*C-A))</var></p>.  
+	    <p> Since the fraction is <var>sgn((b*B-A)*(c*C-A))</var> and the denominator goes to zero, the limit is \(<var>sol((b*B-A)*(c*C-A))</var>\)</p>.  
 	  </div>
 	</div> 
 
@@ -217,10 +225,10 @@
 	    <var id = "C">randRangeExclude(1,9,[c*A])</var>
 	    <var id = "sol">(function(A){
     	      if (A &gt; 0){
-    	      return "infinity"
+    	      return "\\infty"
     	      }
     	      else {
-    	      return "-infinity"
+    	      return "-\\infty"
     	      }	
     	      })
 	    </var>
@@ -237,24 +245,26 @@
  	  
 	  <p class="question">
             Evaluate the following limit:
-            <br/><br/>
             <code>	
               \displaystyle\lim_{x \to <var>-A</var>-}\frac{(x+<var>b*B</var>)(x+<var>c*C</var>)}{(x+<var>A</var>)}   
             </code>
-	    <br/><br/>
-	    Answer either "infinity" or "-infinity".
 	  </p>
    
-          <p class="solution" data-type="text">
-            <var>sol(-(b*B-A)*(c*C-A))</var>
+          <p class="solution">
+            \(<var>sol(-(b*B-A)*(c*C-A))</var>\)
           </p>
+
+          <ul class="choices" data-category="true">
+	    <li>\(\infty\)</li>
+	    <li>\(-\infty\)</li>
+	  </ul>
 
 	  <div class="hints">
 	    <p> The numerator approaches <code><var>(b*B-A)*(c*C-A)</var></code> as the denominator approaches zero. </p>
 
 	    <p> Since the numerator is <var>sgn((b*B-A)*(c*C-A))</var> and the denominator is always negative, the fraction is <var>sgn(-(b*B-A)*(c*C-A))</var>.</p>
 
-	    <p> Since the fraction is <var>sgn(-(b*B-A)*(c*C-A))</var> and the denominator goes to zero, the limit is <var>sol(-(b*B-A)*(c*C-A))</var></p>.  
+	    <p> Since the fraction is <var>sgn(-(b*B-A)*(c*C-A))</var> and the denominator goes to zero, the limit is \(<var>sol(-(b*B-A)*(c*C-A))</var>\)</p>.  
 	  </div>
 	</div> 
 

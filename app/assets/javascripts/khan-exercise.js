@@ -328,6 +328,8 @@ var Khan = (function() {
             "simplify": ["math-model", "ast", "expr-helpers", "expr-normal-form", "steps-helpers"],
             "congruency": ["angles", "interactive"],
             "graphie-3d": ["graphie", "matrix"],
+            "steveMath8": ["math", "graphie"],
+            "math-function-parser": ["text-to-ast"],
             "graphie-geometry": ["graphie", "matrix"],
             "matrix-input": ["jquery.cursor-position"]
         },
@@ -407,9 +409,14 @@ var Khan = (function() {
             });
         },
 
+	currentSolution: undefined,
+
         // Populate this with modules
         Util: {
             debugLog: debugLog,
+	    getSolution: function() {
+		return currentSolution;
+	    },
 
             // http://burtleburtle.net/bob/hash/integer.html
             // This is also used as a PRNG in the V8 benchmark suite
@@ -1294,6 +1301,8 @@ var Khan = (function() {
         userActivityLog = [];
         debugLog("decided on answer type " + answerType);
         answerData = Khan.answerTypes[answerType].setup(solutionarea, solution);
+
+	currentSolution = {answer: solution.text(), answerType: answerType, choices: choices.clone(), problem: problem};
 
         validator = answerData.validator;
         getAnswer = answerData.answer;
@@ -3069,12 +3078,9 @@ var Khan = (function() {
                                 url: urlBase + "exercises/khan-exercise.html",
                                 dataType: "text",
                                 success: function(htmlExercise) {
-
                                     injectTestModeSite(html, htmlExercise);
-
                                 }
                             });
-
                         }
                     });
                 } else {
@@ -3087,9 +3093,9 @@ var Khan = (function() {
 
         function injectTestModeSite(html, htmlExercise) {
             $("body").prepend(html);
+
             $("#container .exercises-header h2").append(document.title);
-            $("#container .exercises-body .current-card-contents").html(
-                htmlExercise);
+            $("#container .exercises-body .current-card-contents").html(htmlExercise);
 
             if (Khan.query.layout === "lite") {
                 $("html").addClass("lite");

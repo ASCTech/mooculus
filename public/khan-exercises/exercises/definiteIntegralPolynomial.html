@@ -3,6 +3,10 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <title>Integrating Polynomials</title>
+    <script src="/utils/underscore.js"></script>
+    <script src="/utils/lexer.js"></script>
+    <script src="/utils/text-to-ast.js"></script>
+    <script src="/utils/ast-to-text.js"></script>    
     <script src="../khan-exercise.js"></script>
 </head>
 <body>
@@ -24,7 +28,7 @@
   			  </div>
         	
         	<p class="question">
-        		Find <code>\displaystyle\int_{<var>L</var>}^{<var>U</var>} <var>A</var>x^2+<var>B</var>x+<var>C</var> dx</code>
+        		Find <code>\displaystyle\int_{<var>L</var>}^{<var>U</var>} \left(<var>A</var>x^2+<var>B</var>x+<var>C</var>\right) dx</code>
         	</p>
         <p class="solution" data-type="parsedExpression">
         	<var>F(U)-F(L)</var>
@@ -62,7 +66,7 @@
   			  </div>
         	
         	<p class="question">
-        		Find <code>\displaystyle\int_{<var>L</var>}^{<var>U</var>} <var>D</var>x^3+<var>A</var>x^2+<var>B</var>x+<var>C</var> dx</code>
+        		Find <code>\displaystyle\int_{<var>L</var>}^{<var>U</var>} \left(<var>D</var>x^3+<var>A</var>x^2+<var>B</var>x+<var>C</var>\right) dx</code>
         	</p>
        <p class="solution" data-type="parsedExpression">
         	<var>F(U)-F(L)</var>

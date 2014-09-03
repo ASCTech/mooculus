@@ -3,6 +3,11 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <title>Arclength</title>
+    <script src="/utils/underscore.js"></script>
+    <script src="/utils/lexer.js"></script>
+    <script src="/utils/text-to-ast.js"></script>
+    <script src="/utils/ast-to-text.js"></script>
+    <script src="/utils/ast-to-latex.js"></script>
     <script src="../khan-exercise.js"></script>
 </head>
 <body>
@@ -39,11 +44,17 @@
         	
         	<p class="question">
         		Consider the graph of the function <code>f(x) = <var>EXP.tex()</var> </code> between <code>x=<var>L</var></code> and <code>x=<var>U</var></code>.
-        		Write an integral representing the length of this graph.
+        		Choose the definite integral computing the length of this graph.
         	</p>
-        <p class="solution" data-type="definiteIntegral">
-        	<var>L</var>|<var>U</var>| sqrt(1+(<var>EXP.derivative("x").toString()</var>)^2)
-        </p>
+        <p class="solution">\(\int_{<var>L</var>}^{<var>U</var>} \sqrt{1+(<var>EXP.derivative("x").tex()</var>)^2} \, dx\)</p>
+
+	<ul class="choices" data-category="true">
+	  <li>\(\int_{<var>L</var>}^{<var>U</var>} \sqrt{1+(<var>EXP.derivative("x").tex()</var>)^2} \, dx\)</li>
+	  <li>\(\int_{<var>L</var>}^{<var>U</var>} \sqrt{1+<var>EXP.derivative("x").tex()</var>} \, dx\)</li>
+	  <li>\(\int_{<var>L</var>}^{<var>U</var>} \sqrt{x^2+<var>EXP.derivative("x").tex()</var>} \, dx\)</li>
+	  <li>\(\int_{<var>L</var>}^{<var>U</var>} \sqrt{x^2+(<var>EXP.derivative("x").tex()</var>)^2} \, dx\)</li>
+	</ul>
+
         <div class="hints">
         	<p>
         		The formula for the length of a function <code>f</code> from <code>x = a</code> to <code>x=b</code> is <code>\displaystyle\int_a^b \sqrt{1+\left[ f'(x)\right]^2} dx</code>

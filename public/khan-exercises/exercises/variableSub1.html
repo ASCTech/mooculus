@@ -3,6 +3,11 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <title>Variable Substitution 1</title>
+    <script src="/utils/underscore.js"></script>
+    <script src="/utils/lexer.js"></script>
+    <script src="/utils/text-to-ast.js"></script>
+    <script src="/utils/ast-to-text.js"></script>
+    <script src="/utils/ast-to-latex.js"></script>
     <script src="../khan-exercise.js"></script>
 </head>
 <body>
@@ -25,10 +30,10 @@
   			  </div>
         	
         	<p class="question">
-        		Find <code>\displaystyle \int <var>derivativeEXP.tex()</var> dx</code>
+        		Find <code>\displaystyle \int <var>derivativeEXP.tex()</var> dx</code>.  Your answer should involve \(+C\).
         	</p>
-        <p class="solution" data-type="antiDerivativeExpression">
-        	<var>derivativeEXP.toString()</var>
+        <p class="solution" data-type="parsedExpression">
+	  <var>f.replace(/x/g,g)</var>+C
         </p>
         <div class="hints">
         	<p>
@@ -64,10 +69,10 @@
   			  </div>
         	
         	<p class="question">
-        		Find <code>\displaystyle \int <var>derivativeEXP.tex()</var> dx</code>
+        		Find <code>\displaystyle \int <var>derivativeEXP.tex()</var> dx</code>.   Your answer should involve \(+C\).
         	</p>
-        <p class="solution" data-type="antiDerivativeExpression">
-        	<var>derivativeEXP.toString()</var>
+        <p class="solution" data-type="parsedExpression">
+	  <var>f.replace(/x/g,g)</var>+C
         </p>
         <div class="hints">
         	<p>
@@ -103,10 +108,10 @@
   			  </div>
         	
         	<p class="question">
-        		Find <code>\displaystyle \int <var>derivativeEXP.tex()</var> dx</code>
+        		Find <code>\displaystyle \int <var>derivativeEXP.tex()</var> dx</code>.   Your answer should involve \(+C\).
         	</p>
-        <p class="solution" data-type="antiDerivativeExpression">
-        	<var>derivativeEXP.toString()</var>
+        <p class="solution" data-type="parsedExpression">
+	  <var>f.replace(/x/g,g)</var>+C
         </p>
         <div class="hints">
         	<p>

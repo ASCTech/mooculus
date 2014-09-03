@@ -197,50 +197,6 @@
                 </div>
             </div>
             
-            <div id="gOrdinateMultiply">
-                <p class="question">
-                    If <code>f(<var>x</var>) = <var>y</var></code> and 
-                    <code>f(x) = <var>c</var> \cdot g(x)</code>, what point 
-                    can you determine on the graph of <code>g</code>?
-                </p>
-                
-
-
-                <div class="solution" data-type="multiple">
-
-                    <p>
-                        <code>( </code><span class="sol"><var>x</var></span>
-                        <code> ,</code><span class="sol"><var>y/c</var></span><code>)</code>
-
-                    </p>
-
-                </div>
-
-                <div class="hints">
-                    <p>
-                    You only have information about a point where <code>x = <var>x</var></code>.
-                    </p>
-                    
-                    <p>
-                    At this point we have <code>f(<var>x</var>) = <var>c</var> \cdot g(<var>x</var>)</code>.
-                    </p>
-                    
-                    <p>
-                    Substituting <code>f(<var>x</var>) = <var>y</var></code> we have 
-                	<code><var>y</var> = <var>c</var> \cdot g(<var>x</var>)</code>.
-                	</p>
-                	
-                	<p>
-                	So <code>g(<var>x</var>) = \frac{<var>y</var>}{<var>c</var>}</code>.
-                	</p>
-                	
-                	<p>
-                	Thus <code>(<var>x</var>,\frac{<var>toFraction(y/c)[0]</var>}{<var>toFraction(y/c)[1]</var>})</code> is on the graph of <code>g</code>.
-                	</p>
-                	
-                </div>
-            </div>
-            
             <div id="fOrdinateMultiply">
                 <p class="question">
                     If <code>f(<var>x</var>) = <var>y</var></code> and 
@@ -280,55 +236,6 @@
                 	
                 	<p>
                 		Thus <code>(<var>x</var>,<var>y*c</var>)</code> is on the graph of <code>g</code>.
-                	</p>
-                </div>
-            </div>
-            
-            <div id="fAbscissaMultiply">
-                <p class="question">
-                    If <code>f(<var>x</var>) = <var>y</var></code> and 
-                    <code>g(x) = f(<var>c</var> \cdot x)</code>, what point 
-                    can you determine on the graph of <code>g</code>?
-                </p>
-                
-
-
-                <div class="solution" data-type="multiple">
-
-                    <p>
-                        <code>( </code><span class="sol"><var>x/c</var></span>
-                        <code> ,</code><span class="sol"><var>y</var></span><code>)</code>
-
-                    </p>
-
-                </div>
-                
-                <div class="hints">
-               		<p>
-               			We only know that when you plug in <code><var>x</var></code> into <code>f</code> you get <code><var>y</var></code>.
-               		</p>
-               		
-                	<p>	
-                		In the equation relating <code>f</code> and <code>g</code> we are plugging 
-                		<code><var>c</var> \cdot x</code> into <code>f</code>, so we want to choose <code>x</code>  
-                		so that <code><var>c</var> \cdot x = <var>x</var></code>.
-                	</p>
-                	
-                	<p>
-                		So we want to choose <code>x=\frac{<var>x</var>}{<var>c</var>}</code>.
-                	</p>
-                	
-                	<p>
-                		Using this value in our equation relating <code>f</code> and <code>g</code> we get 
-                		<code>g(\frac{<var>x</var>}{<var>c</var>}) = f(<var>x</var>)</code>.
-                	</p>
-                	
-                	<p>
-                		So <code>g(\frac{<var>x</var>}{<var>c</var>}) = <var>y</var></code>.
-                	</p>
-                	
-                	<p>
-                		Thus <code>(\frac{<var>toFraction(x/c)[0]</var>}{<var>toFraction(x/c)[1]</var>},<var>y</var>)</code> is on the graph of <code>g</code>.
                 	</p>
                 </div>
             </div>
@@ -421,48 +328,6 @@
                 	</p>
                 </div>
             </div>
-                
-            <div id="gAbscissaDivide">
-                <p class="question">
-                    If <code>f(<var>x</var>) = <var>y</var></code> and 
-                    <code>f(x) = g(\frac{x}{<var>c</var>})</code>, what point 
-                    can you determine on the graph of <code>g</code>?
-                </p>
-                
-
-
-                <div class="solution" data-type="multiple">
-
-                    <p>
-                        <code>( </code><span class="sol"><var>x/c</var></span>
-                        <code> ,</code><span class="sol"><var>y</var></span><code>)</code>
-
-                    </p>
-
-                </div>
-                
-                
-
-                <div class="hints">
-               		<p>
-               			You only have information about a point where <code>x = <var>x</var></code>.
-               		</p>
-               		
-                	<p>
-                		At this point we have <code>f(<var>x</var>) = g(\frac{<var>x</var>}{<var>c</var>})</code>.
-                	</p>
-                	
-                	<p>
-                		Substituting <code>f(<var>x</var>) = <var>y</var></code> we have 
-                		<code><var>y</var> = g(\frac{<var>x</var>}{<var>c</var>})</code>.
-                	</p>
-                	
-                	<p>
-                		Thus <code>(\frac{<var>toFraction(x/c)[0]</var>}{<var>toFraction(x/c)[1]</var>},<var>y</var>)</code> is on the graph of <code>g</code>.
-                	</p>
-                	
-                </div>
-            </div>            
         </div>
     </div>
 </body>

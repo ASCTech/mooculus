@@ -3,6 +3,11 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <title>The volume of a solid of revolution</title>
+    <script src="/utils/underscore.js"></script>
+    <script src="/utils/lexer.js"></script>
+    <script src="/utils/text-to-ast.js"></script>
+    <script src="/utils/ast-to-text.js"></script>
+    <script src="/utils/ast-to-latex.js"></script>
     <script src="../khan-exercise.js"></script>
 </head>
 <body>
@@ -38,18 +43,22 @@
         	<p class="question">
         		Consider the region bounded by the lines <code>x=<var>L</var></code>, <code>x=<var>U</var></code>, the horizontal axis, 
         		and the function <code>f(x) = <var>EXP.tex()</var> </code>.  Write an integral which represents the volume of the 
-        		solid obtained by revolving this region around the x axis.
+        		solid obtained by revolving this region around the <code>x</code>-axis.
         	</p>
-        <p class="solution" data-type="definiteIntegral">
-        	<var>L</var>|<var>U</var>|3.1415926535897882*(<var>EXP.toString()</var>)^2
-        </p>
+
+        <p class="solution">\(\int_{<var>L</var>}^{<var>U</var>} \pi (<var>EXP.tex()</var>)^2 \, dx\)</p>
+
+	<ul class="choices" data-category="true">
+	  <li>\(\int_{<var>L</var>}^{<var>U</var>} \pi (<var>EXP.tex()</var>)^2 \, dx\)</li>
+	  <li>\(\int_{<var>L</var>}^{<var>U</var>} \pi <var>EXP.tex()</var> \, dx\)</li>
+	  <li>\(\int_{<var>L</var>}^{<var>U</var>} (<var>EXP.tex()</var>)^2 \, dx\)</li>
+	  <li>\(\int_{<var>L</var>}^{<var>U</var>} <var>EXP.tex()</var> \, dx\)</li>
+	</ul>
+
         <div class="hints">
         	<div>
         		<p>
-        			<img src="/photos/solids/image3.png" alt="The picture of a solid..." height="420" width="420"/>
-        		</p>
-        		<p>
-        			As you can see from the picture, we can approximate the volume of this region by summing the 
+        			We can approximate the volume of this region by summing the 
         			volumes of a large number of cylinders.  Say that the width of each subinterval is <code>\Delta x</code>
         			and that a point <code>x_i</code> in each subinterval. 
         		</p>
@@ -99,16 +108,20 @@
         		and the function <code>f(x) = <var>EXP.tex()</var> </code>.  Write an integral which represents the volume of the 
         		solid obtained by revolving this region around the line <code>y = <var>H</var></code>
         	</p>
-        <p class="solution" data-type="definiteIntegral">
-        	<var>L</var>|<var>U</var>|3.1415926535897882*((<var>EXP.toString()</var>)-<var>H</var>)^2
-        </p>
+
+        <p class="solution">\(\int_{<var>L</var>}^{<var>U</var>} \pi ((<var>EXP.tex()</var>)-<var>H</var>)^2 \, dx\)</p>
+
+	<ul class="choices" data-category="true">
+	  <li>\(\int_{<var>L</var>}^{<var>U</var>} \pi ((<var>EXP.tex()</var>)-<var>H</var>)^2 \, dx\)</p></li>
+	  <li>\(\int_{<var>L</var>}^{<var>U</var>} \pi ((<var>EXP.tex()</var>)-<var>H</var>) \, dx\)</p></li>
+	  <li>\(\int_{<var>L</var>}^{<var>U</var>} \pi ((<var>EXP.tex()</var>)+<var>H</var>) \, dx\)</p></li>
+	  <li>\(\int_{<var>L</var>}^{<var>U</var>} \pi ((<var>EXP.tex()</var>)+<var>H</var>)^2 \, dx\)</p></li>
+	</ul>
+
         <div class="hints">
         	<div>
         		<p>
-        			<img src="/photos/solids/image3.png" alt="The picture of a solid..." height="420" width="420"/>
-        		</p>
-        		<p>
-        			As you can see from the picture, we can approximate the volume of this region by summing the 
+        			We can approximate the volume of this region by summing the 
         			volumes of a large number of cylinders. Say that the width of each subinterval is <code>\Delta x</code>
         			and that a point <code>x_i</code> in each subinterval.
         		</p>
@@ -157,16 +170,18 @@
         		and the function <code>f(x) = <var>EXP.tex()</var> </code>.  Write an integral which represents the volume of the 
         		solid obtained by revolving this region around the y axis.
         	</p>
-        <p class="solution" data-type="definiteIntegral">
-        	<var>L</var>|<var>U</var>|2*3.1415926535897882*x*(<var>EXP.toString()</var>)
-        </p>
+        <p class="solution">\(\int_{<var>L</var>}^{<var>U</var>} 2\pi\, x \, (<var>EXP.tex()</var>) \, dx\)</p>
+	<ul class="choices" data-category="true">
+	  <li>\(\int_{<var>L</var>}^{<var>U</var>} 2\pi\, x \, (<var>EXP.tex()</var>) \, dx\)</li>
+	  <li>\(\int_{<var>L</var>}^{<var>U</var>} 2\pi \, (<var>EXP.tex()</var>) \, dx\)</li>
+	  <li>\(\int_{<var>L</var>}^{<var>U</var>} \pi \, (<var>EXP.tex()</var>) \, dx\)</li>
+	  <li>\(\int_{<var>L</var>}^{<var>U</var>} \pi\, x \, (<var>EXP.tex()</var>) \, dx\)</li>
+	</ul>
+
         <div class="hints">
         	<div>
         		<p>
-        			<img src="/photos/solids/image7.png" alt="The picture of a solid..." height="420" width="420"/>
-        		</p>
-        		<p>
-        			As you can see from the picture, we can approximate the volume of this region by summing the 
+        			We can approximate the volume of this region by summing the 
         			volumes of a large number of cylindrical shells.  Say that the width of each subinterval is <code>\Delta x</code>
         			and that a point <code>x_i</code> in each subinterval.
         		</p>
@@ -217,16 +232,17 @@
         		and the function <code>f(x) = <var>EXP.tex()</var> </code>.  Write an integral which represents the volume of the 
         		solid obtained by revolving this region around the line <code>x = <var>V</var></code>
         	</p>
-        <p class="solution" data-type="definiteIntegral">
-        	<var>L</var>|<var>U</var>|2*3.1415926535897882*(x - <var>V</var>)*(<var>EXP.toString()</var>)
-        </p>
+        <p class="solution">\(\int_{<var>L</var>}^{<var>U</var>} 2\pi\, (x - <var>V</var>) \, (<var>EXP.tex()</var>) \, dx\)</p>
+	<ul class="choices" data-category="true">
+	  <li>\(\int_{<var>L</var>}^{<var>U</var>} 2\pi\, (x - <var>V</var>) \, (<var>EXP.tex()</var>) \, dx\)</li>
+	  <li>\(\int_{<var>L</var>}^{<var>U</var>} 2\pi\, (x + <var>V</var>) \, (<var>EXP.tex()</var>) \, dx\)</li>
+	  <li>\(\int_{<var>L</var>}^{<var>U</var>} \pi\, (x + <var>V</var>) \, (<var>EXP.tex()</var>) \, dx\)</li>
+	  <li>\(\int_{<var>L</var>}^{<var>U</var>} \pi\, (x - <var>V</var>) \, (<var>EXP.tex()</var>) \, dx\)</li>
+	</ul>
         <div class="hints">
         	<div>
         		<p>
-        			<img src="/photos/solids/image8.png" alt="The picture of a solid..." height="420" width="420"/>
-        		</p>
-        		<p>
-        			As you can see from the picture, we can approximate the volume of this region by summing the 
+        			We can approximate the volume of this region by summing the 
         			volumes of a large number of cylindrical shells.  Say that the width of each subinterval is <code>\Delta x</code>
         			and that a point <code>x_i</code> in each subinterval.
         		</p>
@@ -291,21 +307,23 @@
         	<p class="question">
         		Consider the region bounded by the lines <code>x=<var>L</var></code>, <code>x=<var>U</var></code>, the function <code>f(x) =  <var>EXP2.tex()</var></code>, 
         		and the function <code>g(x) = <var>EXP.tex()</var> </code>.  Write an integral which represents the volume of the 
-        		solid obtained by revolving this region around the x axis. 
+        		solid obtained by revolving this region around the <code>x</code>-axis. 
         	</p>
         	<p>
         		Hint: To write this as a single integral, you may need to use the absolute value function!
         	</p>
-        <p class="solution" data-type="definiteIntegral">
-        	<var>L</var>|<var>U</var>|3.1415926535897882*abs((<var>EXP.toString()</var>)^2 - (<var>EXP2.toString()</var>)^2)
-        </p>
+        <p class="solution">\(\int_{<var>L</var>}^{<var>U</var>} \pi\, \left| (<var>EXP.tex()</var>)^2 - (<var>EXP2.tex()</var>)^2 \right| \, dx\)</p>
+	<ul class="choices" data-category="true">
+          <li>\(\int_{<var>L</var>}^{<var>U</var>} \pi\, \left| (<var>EXP.tex()</var>)^2 - (<var>EXP2.tex()</var>)^2 \right| \, dx\)</li>
+          <li>\(\int_{<var>L</var>}^{<var>U</var>} \pi\, \left| (<var>EXP.tex()</var>)^2 + (<var>EXP2.tex()</var>)^2 \right| \, dx\)</li>
+          <li>\(\int_{<var>L</var>}^{<var>U</var>} \pi\, \left| <var>EXP.tex()</var> + <var>EXP2.tex()</var> \right| \, dx\)</li>
+          <li>\(\int_{<var>L</var>}^{<var>U</var>} \pi\, \left| <var>EXP.tex()</var> - (<var>EXP2.tex()</var>) \right| \, dx\)</li>
+	</ul>
+
         <div class="hints">
         	<div>
         		<p>
-        			<img src="/photos/solids/image1.png" alt="The picture of a solid..." height="420" width="420"/>
-        		</p>
-        		<p>
-        			As you can see from the picture, we can approximate the volume of this region by summing the 
+        			We can approximate the volume of this region by summing the 
         			volumes of a large number of washers.  Say that the width of each subinterval is <code>\Delta x</code>
         			and that a point <code>x_i</code> in each subinterval.
         		</p>
@@ -377,16 +395,19 @@
         		Hint: To write this as a single integral, you may need to use the absolute value function!
         	</p>
         	
-        <p class="solution" data-type="definiteIntegral">
-        	<var>L</var>|<var>U</var>|3.1415926535897882*abs(  ((<var>EXP.toString()</var>)-<var>H</var>)^2 - ((<var>EXP2.toString()</var>)-<var>H</var>)^2  )
-        </p>
+
+        <p class="solution">\(\int_{<var>L</var>}^{<var>U</var>} \pi\, \left| ((<var>EXP.tex()</var>)-<var>H</var>)^2 - ((<var>EXP2.tex()</var>)-<var>H</var>)^2 \right| \, dx\)</p>
+	<ul class="choices" data-category="true">
+	  <li>\(\int_{<var>L</var>}^{<var>U</var>} \pi\, \left| ((<var>EXP.tex()</var>)-<var>H</var>)^2 - ((<var>EXP2.tex()</var>)-<var>H</var>)^2 \right| \, dx\)</li>
+	  <li>\(\int_{<var>L</var>}^{<var>U</var>} \pi\, \left| ((<var>EXP.tex()</var>)-<var>H</var>)^2 + ((<var>EXP2.tex()</var>)-<var>H</var>)^2 \right| \, dx\)</li>
+	  <li>\(\int_{<var>L</var>}^{<var>U</var>} \pi\, \left| ((<var>EXP.tex()</var>)+<var>H</var>)^2 + ((<var>EXP2.tex()</var>)+<var>H</var>)^2 \right| \, dx\)</li>
+	  <li>\(\int_{<var>L</var>}^{<var>U</var>} \pi\, \left| ((<var>EXP.tex()</var>)+<var>H</var>)^2 - ((<var>EXP2.tex()</var>)+<var>H</var>)^2 \right| \, dx\)</li>
+	</ul>
+
         <div class="hints">
         	<div>
         		<p>
-        			<img src="/photos/solids/image2.png" alt="The picture of a solid..." height="420" width="420"/>
-        		</p>
-        		<p>
-        			As you can see from the picture, we can approximate the volume of this region by summing the 
+        			We can approximate the volume of this region by summing the 
         			volumes of a large number of washers.   Say that the width of each subinterval is <code>\Delta x</code>
         			and that a point <code>x_i</code> in each subinterval.
         		</p>
@@ -457,16 +478,18 @@
         	<p>
         		Hint: To write this as a single integral, you may need to use the absolute value function!
         	</p>
-        <p class="solution" data-type="definiteIntegral">
-        	<var>L</var>|<var>U</var>|2*3.1415926535897882*x*abs((<var>EXP.toString()</var>) - (<var>EXP2.toString()</var>))
-        </p>
+        <p class="solution">\(\int_{<var>L</var>}^{<var>U</var>} 2\pi\, x\,\left| (<var>EXP.tex()</var>) - (<var>EXP2.tex()</var>) \right| \, dx\)</p>
+	<ul class="choices" data-category="true">
+	  <li>\(\int_{<var>L</var>}^{<var>U</var>} 2\pi\, x\,\left| (<var>EXP.tex()</var>) - (<var>EXP2.tex()</var>) \right| \, dx\)</li>
+	  <li>\(\int_{<var>L</var>}^{<var>U</var>} 2\pi\, x\,\left| (<var>EXP.tex()</var>) + (<var>EXP2.tex()</var>) \right| \, dx\)</li>
+	  <li>\(\int_{<var>L</var>}^{<var>U</var>} 2\pi\, \left| (<var>EXP.tex()</var>) + (<var>EXP2.tex()</var>) \right| \, dx\)</li>
+	  <li>\(\int_{<var>L</var>}^{<var>U</var>} 2\pi\, \left| (<var>EXP.tex()</var>) - (<var>EXP2.tex()</var>) \right| \, dx\)</li>
+	</ul>
+
         <div class="hints">
         	<div>
         		<p>
-        			<img src="/photos/solids/image5.png" alt="The picture of a solid..." height="420" width="420"/>
-        		</p>
-        		<p>
-        			As you can see from the picture, we can approximate the volume of this region by summing the 
+        			We can approximate the volume of this region by summing the 
         			volumes of a large number of cylindrical shells.   Say that the width of each subinterval is <code>\Delta x</code>
         			and that a point <code>x_i</code> in each subinterval.
         		</p>
@@ -539,16 +562,17 @@
         	<p>
         		Hint: To write this as a single integral, you may need to use the absolute value function!
         	</p>
-        <p class="solution" data-type="definiteIntegral">
-        	<var>L</var>|<var>U</var>|2*3.1415926535897882*(x - <var>V</var>)*abs((<var>EXP.toString()</var>)-(<var>EXP2.toString()</var>))
-        </p>
+        <p class="solution">\(\int_{<var>L</var>}^{<var>U</var>} 2\pi\, (x - <var>V</var>) \, \left| (<var>EXP.tex()</var>)-(<var>EXP2.tex()</var>) \right| \, dx\)</p>
+	<ul class="choices" data-category="true">
+          <li>\(\int_{<var>L</var>}^{<var>U</var>} 2\pi\, (x - <var>V</var>) \, \left| (<var>EXP.tex()</var>)-(<var>EXP2.tex()</var>) \right| \, dx\)</li>
+          <li>\(\int_{<var>L</var>}^{<var>U</var>} 2\pi\, (x + <var>V</var>) \, \left| (<var>EXP.tex()</var>)-(<var>EXP2.tex()</var>) \right| \, dx\)</li>
+          <li>\(\int_{<var>L</var>}^{<var>U</var>} 2\pi\, (x + <var>V</var>) \, \left| <var>EXP.tex()</var>+<var>EXP2.tex()</var> \right| \, dx\)</li>
+          <li>\(\int_{<var>L</var>}^{<var>U</var>} 2\pi\, (x - <var>V</var>) \, \left| <var>EXP.tex()</var>+<var>EXP2.tex()</var> \right| \, dx\)</li>
+
         <div class="hints">
         	<div>
         		<p>
-        			<img src="/photos/solids/image6.png" alt="The picture of a solid..." height="420" width="420"/>
-        		</p>
-        		<p>
-        			As you can see from the picture, we can approximate the volume of this region by summing the 
+        			We can approximate the volume of this region by summing the 
         			volumes of a large number of cylindrical shells.   Say that the width of each subinterval is <code>\Delta x</code>
         			and that a point <code>x_i</code> in each subinterval.
         		</p>

@@ -7,10 +7,10 @@
 </head>
 <body>
     <div class="exercise">
-        <div class="vars">
+        <div class="vars" data-ensure="X != Y && X != M && Y != M">
           <var id="X">randRange(-10,10)</var>
-          <var id="Y">randRange(-10,10)</var>
-          <var id="M">randRangeExclude(-10,10,[-1,0,1])</var>
+          <var id="Y">randRange(1,10)</var>
+          <var id="M">randRangeExclude(1,10,[-1,0,1])</var>
         </div>
 
         <div class="problems">
@@ -18,18 +18,19 @@
                 <p class="problem">Suppose that <code>f(<var>X</var>) = <var>Y</var></code>, and <code>f'(<var>X</var>) = <var>M</var></code>.
 		</p>
 		<p class="question">
-			Using this information you can determine one and only one value of <code>f^{-1}(x)</code>.  Find it.
+			Using this information you can determine one and only one value of the derivative of <code>f^{-1}(x)</code>.
 		</p>    
-                <div class="solution" data-type="multiple">
+                <div class="solution"><code>(f^{-1})'(<var>Y</var>) =1/<var>M</var></code></div>
 
-              <p>
-                <code>(f^{-1})'( </code><span class="sol"><var>Y</var></span>
-                <code> =</code><span class="sol"><var>1/M</var></span>
-			
-              </p>
-
-            </div>
-            
+		<ul class="choices" data-category="true">
+		  <li><code>(f^{-1})'(<var>Y</var>) =1/<var>M</var></code></li>
+		  <li><code>(f^{-1})'(<var>Y</var>) =<var>M</var></code></li>
+		  <li><code>(f^{-1})'(<var>X</var>) =<var>M</var></code></li>
+		  <li><code>(f^{-1})'(<var>X</var>) =1/<var>M</var></code></li>
+		  <li><code>(f^{-1})'(<var>X</var>) =<var>Y</var></code></li>
+		  <li><code>(f^{-1})'(<var>X</var>) =1/<var>Y</var></code></li>
+		</ul>
+		
              <div class="hints">
              		<p>
              			The inverse function rule says that <code>(f^{-1})'(x)= \dfrac{1}{f'(f^{-1}(x))}</code>

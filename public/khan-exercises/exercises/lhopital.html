@@ -1,8 +1,12 @@
 <!DOCTYPE html>
-<html data-require="math word-problems steveMath8 graphie math-function-parser">
+<html data-require="math word-problems polynomials calculus steveMath8 graphie math-function-parser">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <title>Th&eacute;or&egrave;me de l&rsquo;H&ocirc;pital</title>
+    <script src="/utils/underscore.js"></script>
+    <script src="/utils/lexer.js"></script>
+    <script src="/utils/text-to-ast.js"></script>
+    <script src="/utils/ast-to-text.js"></script>
     <script src="../khan-exercise.js"></script>
 </head>
 <body>
@@ -29,11 +33,10 @@
   			  </div>	
         <p class="question">
         		Use L'Hôpital's Rule to evaluate the following limit:
-        		<br/><br/>
         		<code>\displaystyle\lim_{x \to <var>A</var>} \dfrac{<var>f.subtract(fA).text()</var>}{<var>g.subtract(gA).text()</var>}</code>	
         	</p>
         <p class="solution" data-type="parsedExpression">
-        	<var>MathFunction.parse(fExp).derivative('x').evaluate({x:A})/MathFunction.parse(gExp).derivative('x').evaluate({x:A})</var>
+        	<var>MathFunction.parse(fExp).derivative('x').evaluate({x:A})</var>/<var>MathFunction.parse(gExp).derivative('x').evaluate({x:A})</var>
         </p>
         <div class="hints">
         	
@@ -69,11 +72,10 @@
   			  </div>	
         <p class="question">
         		Use L'Hôpital's Rule to evaluate the following limit:
-        		<br/><br/>
-        		<code>\displaystyle\lim_{x \to 1} \dfrac{log(x)}{<var>f.subtract(f1).text()</var>}</code>	
+        		<code>\displaystyle\lim_{x \to 1} \dfrac{\log(x)}{<var>f.subtract(f1).text()</var>}</code>	
         	</p>
         <p class="solution" data-type="parsedExpression">
-        	<var>1/MathFunction.parse(fExp).derivative('x').evaluate({x:1})</var>
+        	1/<var>MathFunction.parse(fExp).derivative('x').evaluate({x:1})</var>
         </p>
         <div class="hints">
         	
@@ -109,11 +111,10 @@
   			  </div>	
         <p class="question">
         		Use L'Hôpital's Rule to evaluate the following limit:
-        		<br/><br/>
         		<code>\displaystyle\lim_{x \to 1} \dfrac{e^x-e}{<var>f.subtract(f1).text()</var>}</code>	
         	</p>
         <p class="solution" data-type="parsedExpression">
-        	<var>Math.E/MathFunction.parse(fExp).derivative('x').evaluate({x:1})</var>
+        	e/<var>MathFunction.parse(fExp).derivative('x').evaluate({x:1})</var>
         </p>
         <div class="hints">
         	

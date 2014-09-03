@@ -59,6 +59,11 @@ $.extend(KhanUtil, {
         var ymin = ymax - (graph.ypixels / graph.scale[1]);
         graph.range = [[xmin, xmax], [ymin, ymax]];
 
+	// FIXME: I'm simply NOT USING the mouse layer anymore---hope that not having it doesn't break anything!  ~jim
+	graph.mouselayer = graph.raphael;
+        Khan.scratchpad.disable();
+	return;
+
         graph.mouselayer = Raphael(graph.raphael.canvas.parentNode, graph.xpixels, graph.ypixels);
         $(graph.mouselayer.canvas).css("z-index", 1);
         Khan.scratchpad.disable();
@@ -800,16 +805,20 @@ $.extend(KhanUtil, {
                     lineLength = graph.range[1][1] - graph.range[1][0];
                 }
             }
-            this.visibleLine.translate(scaledA[0] - this.visibleLine.attr("translation").x,
-                    scaledA[1] - this.visibleLine.attr("translation").y);
-            this.visibleLine.rotate(-angle, scaledA[0], scaledA[1]);
-            this.visibleLine.scale(lineLength, 1, scaledA[0], scaledA[1]);
+
+	    var t = [["r", -angle, scaledA[0], scaledA[1]],
+		     ["s", lineLength, 1, scaledA[0], scaledA[1]],
+		     ['t', scaledA[0], scaledA[1]]];
+
+            this.visibleLine.transform(t); 
+	    lineSegment.visibleLine.attr( {'stroke-width': lineLength} );
 
             if (!this.fixed) {
-                this.mouseTarget.translate(scaledA[0] - this.mouseTarget.attr("translation").x,
-                        scaledA[1] - this.mouseTarget.attr("translation").y);
-                this.mouseTarget.rotate(-angle, scaledA[0], scaledA[1]);
-                this.mouseTarget.scale(lineLength, 1, scaledA[0], scaledA[1]);
+		var t = [["r", -angle, scaledA[0], scaledA[1]],
+			 ["s", lineLength, 1, scaledA[0], scaledA[1]],
+			 ['t', scaledA[0], scaledA[1]]];
+
+		this.mouseTarget.transform(t); 
             }
         };
 

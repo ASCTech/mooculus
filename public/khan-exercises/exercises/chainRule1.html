@@ -1,8 +1,12 @@
 <!DOCTYPE html>
-<html data-require="math word-problems steveMath8 graphie math-function-parser">
+<html data-require="math word-problems steveMath8 graphie polynomials math-function-parser">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <title>Chain Rule Computations 1</title>
+    <script src="/utils/underscore.js"></script>
+    <script src="/utils/lexer.js"></script>
+    <script src="/utils/text-to-ast.js"></script>
+    <script src="/utils/ast-to-text.js"></script>
     <script src="../khan-exercise.js"></script>
 </head>
 <body>
@@ -17,7 +21,7 @@
 				<var id = "power">randRange(3,5)</var>
 			    <var id = "EXP">"("+f.text().replace(/{/g,"").replace(/}/g,"")+")^(" + power + ")" </var>
 				<var id="story">MathFunction.parse(EXP).derivative_story('x')</var>
-				<var id="ghgh">MathFunctionParser.parse(EXP).evaluate({x:2})</var>
+				<var id="ghgh">MathFunction.parse(EXP).evaluate({x:2})</var>
 			
   			  </div>
         	
@@ -49,8 +53,8 @@
 				<var id = "f">new Polynomial(0,2,[C,B,A])</var>
 			    <var id = "EXP">"sqrt("+f.text().replace(/{/g,"").replace(/}/g,"")+")"</var>
 				<var id="story">MathFunction.parse(EXP).derivative_story('x')</var>
-				<var id="ghgh">MathFunctionParser.parse(EXP).evaluate({x:2})</var>
-			\
+				<var id="ghgh">MathFunction.parse(EXP).evaluate({x:2})</var>
+			
   			  </div>
         	
         	<p class="question">

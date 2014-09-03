@@ -1,8 +1,12 @@
 <!DOCTYPE html>
-<html data-require="math word-problems steveMath8 graphie math-function-parser">
+<html data-require="math word-problems steveMath8 graphie polynomials math-function-parser">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <title>Finding the maximum value of a function</title>
+    <script src="/utils/underscore.js"></script>
+    <script src="/utils/lexer.js"></script>
+    <script src="/utils/text-to-ast.js"></script>
+    <script src="/utils/ast-to-text.js"></script>
     <script src="../khan-exercise.js"></script>
 </head>
 <body>
@@ -126,20 +130,21 @@
 							else if ((-2*A-Math.sqrt(4*A*A-12*B))/6&lt;-5){
 								return (function(A,B){
 											if (A&gt;B){
-												return -5
+												return -5;
 												}
 											else {
-												return 5
+												return 5;
 												}
 										})(-5*5*5+A*5*5-B*5+C,5*5*5+A*5*5+B*5+C);
 								}
 							else if ((-2*A+Math.sqrt(4*A*A-12*B))/6&gt;5){
-								return (-2*A-Math.sqrt(4*A*A-12*B))/6;
+								return '(' + (-2*A).toString() + '+sqrt(' + (4*A*A-12*B).toString() + '))/6';
 								}
 							else {
 								return (function(X,A,B){
 											if (A &gt; B){
-												return X
+				  return '(' + (-2*A).toString() + '+sqrt(' + (4*A*A-12*B).toString() + '))/6';
+
 												}
 											else{
 												return 5
@@ -151,7 +156,7 @@
         	
         	
         	<p class="question">
-        		For what abscissa <code>x</code> does the function <code>f(x) = x^3+<var>A</var>x^2+<var>B</var>x+<var>C</var></code> assume its maximum value on the interval <code>[-5,5]</code>?
+        		For which <code>x</code> does the function <code>f(x) = x^3+<var>A</var>x^2+<var>B</var>x+<var>C</var></code> assume its maximum value on the interval <code>[-5,5]</code>?
         	</p>
         	
        <div class="solution" data-type="parsedExpression">

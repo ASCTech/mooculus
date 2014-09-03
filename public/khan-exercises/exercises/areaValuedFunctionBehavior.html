@@ -1,7 +1,11 @@
 <!DOCTYPE html>
-<html data-require="math graphie interactive graphie-helpers steveMath8">
+<html data-require="math graphie interactive graphie-helpers steveMath8 polynomials math-function-parser">
   <head>
         <title>The behavior of integral valued functions</title>
+    <script src="/utils/underscore.js"></script>
+    <script src="/utils/lexer.js"></script>
+    <script src="/utils/text-to-ast.js"></script>
+    <script src="/utils/ast-to-text.js"></script>
         <script src="../khan-exercise.js"></script>
   </head>
   <body>
@@ -69,55 +73,25 @@
       </div>
          
           <p class="problem">
-          	Consider the function <code>A(x) = \displaystyle\int_{t = <var>L</var>}^{t=x} f(t) dt</code>, where <code>f</code> is the function displayed below.
+	    Suppose that <code>f(x)</code>  is <var>posNeg</var> whenever <code>x</code> is near <code><var>A</var></code>, and that  <code>f</code> is <var>incDecf</var>.  Consider the function <code>A(x) = \displaystyle\int_{t = <var>L</var>}^{t=x} f(t) dt</code>.
           	
           </p>
           
           <p class="question">
-          	Which of the options best describes the behavior of <code>A</code> near <code>x = <var>A</var></code>?
+          	Which of the choices best describes the behavior of <code>A</code> near <code>x = <var>A</var></code>?
           </p>
          
-          <div class="graphie" id="grid">
-            graphInit({
-            range: 10,
-            scale: 20,
-            tickStep: 1,
-            labelStep: 1,
-			gridOpacity: 0.05,
-            axisOpacity: 0.5,
-            tickOpacity: 0.00004,
-            
-              });
-                    
-              plot(function( x ) {
-              return ( f(x));
-              }, [-12, 12], {
-              stroke: RED,
-              strokeWidth: 2
-              });
-             
-              circle([A,f(A)],1/4,{stroke: "none", fill: GREEN});
-             
-              
-              
 
-               
-          </div>
-                
-                
                      
           <p class="solution"><var>ANSWER</var></p>
-                      <ul class="choices" data-category="true">
-                    <li>increasing and concave up</li>
-                    <li>increasing and concave down</li>
-                    <li>decreasing and concave up</li>
-                    <li>decreasing and concave down</li>
-                </ul>
+          <ul class="choices" data-category="true">
+            <li>increasing and concave up</li>
+            <li>increasing and concave down</li>
+            <li>decreasing and concave up</li>
+            <li>decreasing and concave down</li>
+          </ul>
                   
-                  
-                  
-                 
-                 
+
               
 
           <div class="hints">
@@ -137,7 +111,7 @@
           		Is <code>A</code> <var>incDec</var> at an increasing rate or a decreasing rate?
           	</p>
           	<p>
-          		Since <code>f</code> is <var>incDecf</var>, <code>A</code> is <var>incDec</var> at an <var>incDecf</var> rate. (Make sure you understand why!)
+          		Since <code>f</code> is <var>incDecf</var>, <code>A</code> is <var>incDec</var> at an <var>incDecf</var> rate.
           	</p>
           	
           	<p>

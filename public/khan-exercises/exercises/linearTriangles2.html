@@ -41,99 +41,22 @@
                 </div>
                
                 <div class="problem">
-                    <code>A = (<var>X1</var>,<var>Y1</var>)</code> and 
-                    <code>C = (<var>X2</var>,<var>Y2</var>)</code>.  <code>B</code> is a point on the line passing through
-                    <code>A</code> and <code>C</code>. The abscissa of <code>B</code> is <code><var>X3</var></code>.
+                    Consider points <code>A = (<var>X1</var>,<var>Y1</var>)</code> and 
+                    <code>C = (<var>X2</var>,<var>Y2</var>)</code>.  The point <code>B</code> is on the line passing through
+                    <code>A</code> and <code>C</code>. The <code>x</code>-coordinate of <code>B</code> is <code><var>X3</var></code>.
                     <br/><br/>
-                    Draw a picture and set up your own similar triangles to determine the ordinate of the point <code>B</code>.
-                    
-                    
+                    Determine the <code>y</code>-coordinate of the point <code>B</code>.
                    <br/><br/>
-                    
-                     WARNING: Do not figure out the equation of the line to solve this problem!  This is actually where the formula for 
-                    the equation of a line comes from, and the next few exercises will build up everything you need to know about
-                    lines.
+                    <em>Hint:</em> Do not figure out the equation of the line to solve this problem.  Instead, use similar triangles to discover the equation of a line for yourself.
                 </div>
-                <div class="solution" data-type="multiple">
-   					 <p>
-   					 	Ordinate of <code>B = </code>  <span class="sol"><var>Y3</var></span>
-   					 </p>
-   					  <p class="example">Integers like 6, or reduced fractions like <code>\frac{2}{3}</code></p>
-					</div>
+                <div class="solution" data-type="decimal"><var>Y3</var></div>
+
 
 		<div class="hints">
             
-            <p>Did you draw your picture yet?</p>
-            <div> Your picture should look something like this:
-            	 <div class="graphie" id="grid">
-                        graphInit({
-                            range: 13,
-                            scale: 17,
-                            axisArrows: "&lt;-&gt;",
-                           
-                           
-                            gridOpacity: 0.00005,
-                            axisOpacity: 0.2,
-                            tickOpacity: 0.00004,
-                            
-                        });
+            <p>Draw your picture.</p>
 
-                        
-                        
-                     	    line([X1-20,Y1-20*slope],[X2+20,Y2+20*slope], {stroke: RED});
-                     	 
-                     	    circle( [X1,Y1], 1/4, {
-                            stroke: "none",
-                            fill: GREEN
-                            });
-                            
-                            circle( [X2,Y1], 1/4, {
-                            stroke: "none",
-                            fill: GREEN
-                            });
-                            
-                            circle( [X3,Y1], 1/4, {
-                            stroke: "none",
-                            fill: GREEN
-                            });
-                            
-                            circle( [X2,Y2], 1/4, {
-                            stroke: "none",
-                            fill: GREEN
-                            });
-                            
-                            circle( [X3,Y3], 1/4, {
-                            stroke: "none",
-                            fill: GREEN
-                            });
-                            
-                            line([X1,Y1],[X2,Y1], {stroke: BLUE});
-                            line([X2,Y1],[X2,Y2], {stroke: BLUE});
-                            line([X3,Y1],[X3,Y3], {stroke: BLUE});
-                           
-                            
-                            if (slope &lt; 0){ 
-                            	label( [ X1, Y1 ], "A", "below" );
-                            	label( [ X2, Y2 ], "C", "below" );
-                            	label( [ X3, Y3 ], "B", "below" );
-                            	label( [ X3, Y1 ], "D", "above" );
-                            	label( [ X2, Y1 ], "E", "above" );
-                            	}
-                        	else {
-                        		label( [ X1, Y1 ], "A", "above" );
-                            	label( [ X2, Y2 ], "C", "above" );
-                            	label( [ X3, Y3 ], "B", "above" );
-                            	label( [ X3, Y1 ], "D", "below" );
-                            	label( [ X2, Y1 ], "E", "below" );
-                        		}
-                        
-                          
-                            
-                            
-
-                        
-                    </div>
-            </div>
+            <p>.</p>
             
             <div>
             <code>\triangle ADB</code> is similar to <code>\triangle AEC</code> so 
@@ -142,17 +65,17 @@
             </div>
             <p> 
             	<code>\overline{DA} = </code>
-            	abscissa of <code>D</code> minus abscissa of <code>A=</code>
+            	<code>x</code>-coordinate of <code>D</code> minus <code>x</code>-coordinate of <code>A=</code>
             	<code><var>X3</var> - <var>X1</var> = <var>X3-X1</var></code>
             </p> 
             <p>
             	<code>\overline{CE} = </code>
-            	ordinate of <code>C</code> minus ordinate of <code>E=</code>
+            	<code>y</code>-coordinate of <code>C</code> minus <code>y</code>-coordinate of <code>E=</code>
             	<code>|<var>Y2</var> - <var>Y1</var>| = <var>Math.abs(Y2-Y1)</var></code>
             </p>   
             <p> 
             	<code>\overline{EA} = </code>
-            	abscissa of <code>E</code> minus abscissa of <code>A=</code>
+            	<code>x</code>-coordinate of <code>E</code> minus <code>x</code>-coordinate of <code>A=</code>
             	<code><var>X2</var> - <var>X1</var> = <var>X2-X1</var></code>
             </p> 
             <p>
@@ -163,11 +86,11 @@
             	{<var>toFraction((X3-X1)*Math.abs(Y2-Y1)/(X2-X1))[1]</var>}</code>
             </p>
             <p>
-            	Since <code>B</code> is <var>aboveBelow[0]</var> <code>D</code>, the ordinate of <code>B</code> is the ordinate 
+            	Since <code>B</code> is <var>aboveBelow[0]</var> <code>D</code>, the <code>y</code>-coordinate of <code>B</code> is the <code>y</code>-coordinate 
             	of <code>D</code> <var>aboveBelow[1]</var> the length of <code>\overline{DB}</code>.
             </p>
             <p>
-            	Thus the ordinate of <code>B = <var>Y1</var> <var>aboveBelow[2]</var> \dfrac{<var>toFraction((X3-X1)*Math.abs(Y2-Y1)/(X2-X1))[0]</var>}
+            	Thus the <code>y</code>-coordinate of <code>B = <var>Y1</var> <var>aboveBelow[2]</var> \dfrac{<var>toFraction((X3-X1)*Math.abs(Y2-Y1)/(X2-X1))[0]</var>}
             	{<var>toFraction((X3-X1)*Math.abs(Y2-Y1)/(X2-X1))[1]</var>} = \dfrac{<var>toFraction(Y3)[0]</var>}
             	{<var>toFraction(Y3)[1]</var>}</code>
             </p>

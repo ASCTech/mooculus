@@ -1,7 +1,11 @@
 <!DOCTYPE html>
-<html data-require="math graphie interactive graphie-helpers steveMath8">
+<html data-require="math graphie interactive graphie-helpers polynomials steveMath8 math-function-parser">
   <head>
         <title>Computing Riemann sums for a small number of rectangles</title>
+    <script src="/utils/underscore.js"></script>
+    <script src="/utils/lexer.js"></script>
+    <script src="/utils/text-to-ast.js"></script>
+    <script src="/utils/ast-to-text.js"></script>
         <script src="../khan-exercise.js"></script>
   </head>
   <body>
@@ -77,48 +81,11 @@
           </p>
         
           <p class="solution" data-type="parsedExpression"><var>((U-L)*hintText4/N)</var></p>
-                  
-                  
-                  
-                 
-                 
+
               
 
           <div class="hints">
-          	<div>
-          		<p>
-          			First we need to draw a picture!
-          		</p>
-          		 <div class="graphie" id="gridlock">
-            graphInit({
-            range: [[L-2,U+2],[-Math.abs(f(U+2)),Math.abs(f(U+2))]],
-            scale: [(500)/(U+L+4),200/(Math.abs(f(U+2)))],
-			gridOpacity: 0.00005,
-            axisOpacity: 0.5,
-            tickOpacity: 0.00004,
-            
-              });
-                    
-              plot(function( x ) {
-              return ( f(x));
-              }, [L-2, U+2], {
-              stroke: RED,
-              strokeWidth: 2
-              });
-              
-                  for (var n = 0;n&lt;N;n++){
-				  
-				  line([L+n*(U-L)/N,0],[L+n*(U-L)/N,f(L+n*(U-L)/N)]);
-				  line([L+n*(U-L)/N,f(L+n*(U-L)/N)],[L+(n+1)*(U-L)/N,f(L+n*(U-L)/N)]);
-				  line([L+(n+1)*(U-L)/N,f(L+n*(U-L)/N) ],[L+(n+1)*(U-L)/N,0]);
-				  label([L+n*(U-L)/N,0],displayMode(L+n*(U-L)/N),belowAbove(L+n*(U-L)/N))
-              	  }
-              	  label([U,0],U,belowAbove(U));
-              	        
-          </div>
-          		
-    		</div>
-          	
+
           	<p>
           		Lets call the integrand <code>f</code>.  Then the sum of signed area of these rectangles is <code><var>hintText1</var></code>
           	</p>

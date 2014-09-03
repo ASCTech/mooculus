@@ -3,6 +3,10 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <title>Integration by parts</title>
+    <script src="/utils/underscore.js"></script>
+    <script src="/utils/lexer.js"></script>
+    <script src="/utils/text-to-ast.js"></script>
+    <script src="/utils/ast-to-text.js"></script>
     <script src="../khan-exercise.js"></script>
 </head>
 <body>
@@ -13,7 +17,7 @@
       <div id="xSinCosExp">
         	<div class="vars">
 				
-				<var id="functionBank">[["\\cos(x)","\\sin(x)","-\\cos(x)","x*cos(x)"],["\\sin(x)","-\\cos(x)","-\\sin(x)","x*sin(x)"],["e^{x}","e^{x}","e^{x}","x*e^x"]]</var>
+				<var id="functionBank">[["\\cos(x)","\\sin(x)","-\\cos(x)","x \\cos(x)"],["\\sin(x)","-\\cos(x)","-\\sin(x)","x \\sin(x)"],["e^{x}","e^{x}","e^{x}","x e^x"]]</var>
 				<var id="fNum">randRange(0,functionBank.length-1)</var>
 				<var id="f">functionBank[fNum]</var>
 				
@@ -23,8 +27,8 @@
         	<p class="question">
         		Use integration by parts to find <code>\displaystyle \int x <var>f[0]</var> dx</code>
         	</p>
-        <p class="solution" data-type="antiDerivativeExpression">
-        	<var>f[3]</var>
+        <p class="solution" data-type="parsedExpression">
+        	(x)(<var>f[1].replace('\\','')</var>) - <var>f[2].replace('\\','')</var>+C
         </p>
         <div class="hints">
         	<p>
@@ -52,8 +56,8 @@
         	<p class="question">
         		Use integration by parts to find <code>\displaystyle \int x^{<var>n</var>} \log(x) dx</code>
         	</p>
-        <p class="solution" data-type="antiDerivativeExpression">
-        	x^(<var>n</var>)*log(x)
+        <p class="solution" data-type="parsedExpression">
+        	x^(<var>n+1</var>)*log(x) - (x^(<var>n+1</var>))/(<var>(n+1)*(n+1)</var>) + C
         </p>
         <div class="hints">
         	<p>
@@ -83,7 +87,7 @@
 					,""+"\\dfrac{1}{"+2*A+"\\sqrt{w}}"
 					, "\\dfrac{1}{"+A+"}\\sqrt{w}"
 					, "\\dfrac{1}{"+A+"}\\sqrt{1-"+ A*A +"x^2}"
-					 ,"arccos("+A+"x)"
+					 ,"\\arccos("+A+"x)"
 				 ],
 				[
 					"\\arcsin("+A+"x)"
@@ -115,8 +119,8 @@
         	<p class="question">
         		Use integration by parts to find <code>\displaystyle \int{ <var>f[0]</var> } dx</code>
         	</p>
-        <p class="solution" data-type="antiDerivativeExpression">
-        	<var>f[7]</var>
+        <p class="solution" data-type="parsedExpression">
+        	x*(<var>f[0].replace('\\','')</var>) - (<var>f[6].replace('\\','')</var>) + C
         </p>
         <div class="hints">
         	<p>
@@ -135,10 +139,10 @@
         		Let <code>w  = <var>f[2]</var></code> Then <code>dw = <var>f[3]</var> dx</code>, so we can rewrite the integral as <code>\displaystyle\int{ <var>f[4]</var> dw}</code>
         	</p>
         	<p>
-        		<code>\displaystyle\int{ <var>f[4]</var>  dw} =  <var>f[5]</var> = <var>f[6]</var></code>
+        		<code>\displaystyle\int{ <var>f[4]</var>  dw} =  <var>f[5]</var> + C = <var>f[6]</var> + C</code>
         	</p>
         	<p>
-        		Thus <code>\displaystyle \int  <var>f[0]</var> dx = x<var>f[0]</var> - <var>f[6]</var></code>
+        		Thus <code>\displaystyle \int  <var>f[0]</var> dx = x<var>f[0]</var> - <var>f[6]</var> + C</code>
         	</p>
         </div>
        

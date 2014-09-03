@@ -3,6 +3,10 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <title>Using the Fundamental Theorem Of Calculus</title>
+    <script src="/utils/underscore.js"></script>
+    <script src="/utils/lexer.js"></script>
+    <script src="/utils/text-to-ast.js"></script>
+    <script src="/utils/ast-to-text.js"></script>        
     <script src="../khan-exercise.js"></script>
 </head>
 <body>
@@ -19,7 +23,7 @@
   			  </div>
         	
         	<p class="question">
-        		Find <code>\displaystyle\int_{<var>L</var>}^{<var>U</var>} <var>n</var> dx</code>
+        		Find <code>\displaystyle\int_{<var>L</var>}^{<var>U</var>} \left( <var>n</var> \right) dx</code>
         	</p>
         <p class="solution" data-type="parsedExpression">
         	<var>n*h</var>
@@ -95,7 +99,7 @@
 				<var id="n">randRangeExclude(-30,30,[-1,0])</var>
   			  </div>
         	<p class="question">
-        		Find <code>\displaystyle\int_{<var>L</var>}^{<var>U</var>} \sin(x) dx</code>
+        		Find <code>\displaystyle\int_{<var>L</var>}^{<var>U</var>} \sin x\, dx</code>
         	</p>
        <p class="solution" data-type="parsedExpression">
         	-cos(<var>U</var>) + cos(<var>L</var>)
@@ -119,7 +123,7 @@
 				<var id="n">randRangeExclude(-30,30,[-1,0])</var>
   			  </div>
         	<p class="question">
-        		Find <code>\displaystyle\int_{<var>L</var>}^{<var>U</var>} \cos(x) dx</code>
+        		Find <code>\displaystyle\int_{<var>L</var>}^{<var>U</var>} \cos x \,dx</code>
         	</p>
        <p class="solution" data-type="parsedExpression">
         	sin(<var>U</var>)-sin(<var>L</var>)
@@ -143,7 +147,7 @@
 				<var id="n">randRangeExclude(-30,30,[-1,0])</var>
   			  </div>
         	<p class="question">
-        		Find <code>\displaystyle\int_{<var>L</var>}^{<var>U</var>} \sec(x)\tan(x) dx</code>
+        		Find <code>\displaystyle\int_{<var>L</var>}^{<var>U</var>} \sec(x)\tan(x)\, dx</code>
         	</p>
         <p class="solution" data-type="parsedExpression">
         	sec(<var>U</var>) - sec(<var>L</var>)
@@ -167,7 +171,7 @@
 				<var id="n">randRangeExclude(-30,30,[-1,0])</var>
   			  </div>
         	<p class="question">
-        		Find <code>\displaystyle\int_{<var>L</var>}^{<var>U</var>} \sec^2(x) dx</code>
+        		Find <code>\displaystyle\int_{<var>L</var>}^{<var>U</var>} \sec^2(x) \,dx</code>
         	</p>
         <p class="solution" data-type="parsedExpression">
         	tan(<var>U</var>)-tan(<var>L</var>)
@@ -191,7 +195,7 @@
 				<var id="n">randRangeExclude(-30,30,[-1,0])</var>
   			  </div>
         	<p class="question">
-        		Find <code>\displaystyle\int_{<var>L</var>}^{<var>U</var>} \csc^2(x) dx</code>
+        		Find <code>\displaystyle\int_{<var>L</var>}^{<var>U</var>} \csc^2(x) \,dx</code>
         	</p>
        <p class="solution" data-type="parsedExpression">
          	-cot(<var>U</var>) + cot(<var>L</var>)
@@ -215,7 +219,7 @@
 				<var id="n">randRangeExclude(-30,30,[-1,0])</var>
   			  </div>
         	<p class="question">
-        		Find <code>\displaystyle\int_{<var>L</var>}^{<var>U</var>} \csc(x)\cot(x) dx</code>
+        		Find <code>\displaystyle\int_{<var>L</var>}^{<var>U</var>} \csc(x)\cot(x) \,dx</code>
         	</p>
         <p class="solution" data-type="parsedExpression">
         	-csc(<var>U</var>)+csc(<var>L</var>)
@@ -239,7 +243,7 @@
 				<var id="n">randRangeExclude(-30,30,[-1,0])</var>
   			  </div>
         	<p class="question">
-        		Find <code>\displaystyle\int_{<var>L</var>}^{<var>U</var>} e^x dx</code>
+        		Find <code>\displaystyle\int_{<var>L</var>}^{<var>U</var>} e^x \,dx</code>
         	</p>
         <p class="solution" data-type="parsedExpression">
         	e^(<var>U</var>)-e^(<var>L</var>)
