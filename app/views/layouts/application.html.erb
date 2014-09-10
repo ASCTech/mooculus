@@ -6,7 +6,7 @@
     <%= javascript_include_tag "application" %>
     <%= favicon_link_tag '/favicon.ico' %>
     <%= csrf_meta_tags %>
-<script type="text/javascript" src="https://c328740.ssl.cf1.rackcdn.com/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML&delayStartupUntil=onload"></script>
+<script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML&delayStartupUntil=onload"></script>
 <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,600,300,800,700' rel='stylesheet' type='text/css'>
 </head>
 <body class="<%= @splash ? 'splash' : ''%>">
@@ -26,10 +26,7 @@
             <li class="<%= 'active' if params[:controller] == 'lectures' %>"><%= link_to raw("<i class='icon-film'></i> Lectures"), lectures_path %></li>
             <li class="<%= 'active' if params[:controller] == 'handouts' %>"><%= link_to raw("<i class='icon-book'></i> Textbook"), handouts_path %></li>
             <li class="<%= 'active' if params[:controller] == 'exercises' && params[:action] != "progress" %>"><%= link_to raw("<i class='icon-pencil'></i> Exercises"), exercises_path %></li>
-            <% if user_signed_in? %>
-              <li class="<%= 'active' if params[:controller] == 'explorations' && params[:action] != "progress" %>"><%= link_to raw("<i class='icon-truck'></i> Explorations"), :controller => "explorations", :action => "index" %></li>
-              <li><a href="https://class.coursera.org/calc1-003/forum/index"><i class="icon-comments"></i> Forum</a></li>
-            <% end %>
+            <li class="<%= 'active' if params[:controller] == 'explorations' && params[:action] != "progress" %>"><%= link_to raw("<i class='icon-truck'></i> Explorations"), :controller => "explorations", :action => "index" %></li>
 	  </ul>
 	  <ul class="nav pull-right">
             <% if user_signed_in? %>

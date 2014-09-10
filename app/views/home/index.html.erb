@@ -9,13 +9,11 @@
         </div>
         <div class="span6">
           <% if not user_signed_in? %>
-            <div class="bigverb"><a href="https://www.coursera.org/course/calc1">Enroll <span class="bignoun">in the course</span></a></div>
+            <div class="bigverb"><a href="https://www.coursera.org/learn/calculus1">Enroll <span class="bignoun">in the course</span></a></div>
           <% end %>
 	  <div class="bigverb"><a href="/lectures">Watch <span class="bignoun">the lectures</span></a></div>
 	  <div class="bigverb"><a href="/handouts">Read <span class="bignoun">the textbook</span></a></div>
 	  <div class="bigverb"><a href="/exercises">Do <span class="bignoun">the problems</span></a></div>
-          <% if user_signed_in? %>
-            <div class="bigverb"><a href="https://class.coursera.org/calc1-003/forum/index">Discuss <span class="bignoun">the material</span></a></div>
-          <% end %>
+	  <div class="bigverb"><a href="/explorations">Explore <span class="bignoun">mathematics</span></a></div>
         </div>
       </div>
