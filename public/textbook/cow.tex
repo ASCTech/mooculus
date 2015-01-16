@@ -41,7 +41,7 @@ arc (5:90:0.35in) % top ear
   \begin{tikzpicture}[line width=2pt]
     % draw body
     \begin{scope}
-      \draw[line width=2pt] (0,0) circle (0.5in);
+      \draw[line width=2pt,fill=white] (0,0) circle (0.5in);
       
       \clip (0,0) circle (0.5in);
       \begin{scope}[color=black!85!white]
@@ -117,14 +117,14 @@ arc (5:90:0.35in) % top ear
     \end{scope}
 
     % draw title MOOCulus
-    \node[anchor=west] at (0.5in,0.2) {\scalebox{3.2}{\sffamily\Huge\textbf{M}}};
-    \node[anchor=west] at (1.35in,0.2) {\scalebox{3.2}{\sffamily\Huge\textbf{O}}};
-    \node[anchor=west] at (2.16in,0.2) {\scalebox{3.2}{\sffamily\Huge\textbf{O}}};
-    \node[anchor=west] at (2.97in,0.2) {\scalebox{3.2}{\sffamily\Huge\textbf{C}}};
-    \node[anchor=west] at (3.7in,-0.08) {\scalebox{3.2}{\sffamily\scshape\Huge ulus}};
+    %\node[anchor=west] at (0.5in,0.2) {\scalebox{3.2}{\sffamily\Huge\textbf{M}}};
+    %\node[anchor=west] at (1.35in,0.2) {\scalebox{3.2}{\sffamily\Huge\textbf{O}}};
+    %\node[anchor=west] at (2.16in,0.2) {\scalebox{3.2}{\sffamily\Huge\textbf{O}}};
+    %\node[anchor=west] at (2.97in,0.2) {\scalebox{3.2}{\sffamily\Huge\textbf{C}}};
+    %\node[anchor=west] at (3.7in,-0.08) {\scalebox{3.2}{\sffamily\scshape\Huge ulus}};
 
     % draw subtitle
-    \node[anchor=north west] at (0.6in,-0.30in) {\sffamily\scalebox{2.1}{\footnotesize massive open online calculus}};
+    %\node[anchor=north west] at (0.6in,-0.30in) {\sffamily\scalebox{2.1}{\footnotesize massive open online calculus}};
 
     
   \end{tikzpicture}
