@@ -1,0 +1,61 @@
+\documentclass[11pt]{article}
+\usepackage{geometry}
+\geometry{paperwidth=4.25in,paperheight=5in,margin=0.25in}
+\usepackage{tikz}
+
+%\usepackage[notextcomp]{kpfonts}
+%\RequirePackage[T1]{fontenc}
+
+\setlength{\parindent}{0in}
+
+\begin{document}
+\sffamily
+
+\begin{center}
+  \begin{tikzpicture}[line width=1pt,scale=0.6, every node/.style={transform shape}]
+    \node[anchor=west] at (0.5in,0.2) {\scalebox{3.2}{\sffamily\Huge\textbf{XIMERA}}};
+  \end{tikzpicture}
+\end{center}
+
+\vspace{-3ex}
+
+\begin{tabular}{@{}c@{}c@{}}%
+\begin{minipage}{0.5\textwidth}%
+\begin{center}
+\includegraphics[width=\textwidth]{ximera-qrcode.png}
+
+\vspace{-4ex}
+\scalebox{0.8}{\textsf{https://mooculus.osu.edu/}}%
+\end{center}
+\end{minipage} &%
+\begin{minipage}{0.5\textwidth}%
+\begin{center}
+\huge
+For Students! \\
+For Teachers! \\
+For Education Researchers! \\
+\end{center}
+\end{minipage} \\
+\end{tabular}
+
+\vfill
+
+Building online courses isn't easy---but we want to change this with \textsl{Ximera}!
+
+\vfill
+
+\textsl{Ximera}, pronounced ``chimera,'' uses standard open-source
+tools to build online content. All content is written in \LaTeX, a
+standard markup-language and this content is stored on GitHub, an
+open, online repository for text files. This means that
+\textsl{Ximera} promotes both collaboration on content, and remixing
+of content into new courses.
+
+
+
+\end{document}
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: t
+%%% End: 
