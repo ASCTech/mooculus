@@ -3,7 +3,7 @@ source 'https://rubygems.org'
 gem 'rails'
 
 gem 'sqlite3', :group => [:test, :development]
-gem 'mysql2',  :group => [:production, :staging]
+# gem 'mysql2',  :group => [:production, :staging]
 #gem 'mongoid'
 
 gem 'jquery-rails'
@@ -27,7 +27,7 @@ gem 'omniauth-google-oauth2'
 gem 'nokogiri'
 
 group :development do
-  gem 'capistrano', '~> 2.15.5'
+  gem 'capistrano', '~> 2.14.1'
   gem 'rvm-capistrano'
   gem 'thin'
 end
