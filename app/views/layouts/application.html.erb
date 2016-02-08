@@ -42,7 +42,7 @@
                 </ul>
               </li>
             <% else %>
-              <li class=""><%= link_to raw("<i class='icon-signin'></i> Login via Google"), user_omniauth_authorize_path(:google) %></li>
+              <li class=""><%= link_to raw("<i class='icon-signin'></i> Login via Google"), user_omniauth_authorize_path(:google_oauth2) %></li>
             <% end %>
           </ul>
         </div><!--/.nav-collapse -->
