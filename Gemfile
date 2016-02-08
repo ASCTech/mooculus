@@ -21,6 +21,7 @@ gem 'devise'
 gem 'omniauth'
 gem 'omniauth-oauth'
 gem 'omniauth-openid'
+gem 'omniauth-google-oauth2'
 
 # use Nokogiri to parse the exercise files
 gem 'nokogiri'
