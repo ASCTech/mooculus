@@ -116,8 +116,14 @@ GEM
     omniauth (1.1.1)
       hashie (~> 1.2)
       rack
+    omniauth-google-oauth2 (0.2.6)
+      omniauth (> 1.0)
+      omniauth-oauth2 (~> 1.1)
     omniauth-oauth (1.0.1)
       oauth
+      omniauth (~> 1.0)
+    omniauth-oauth2 (1.1.1)
+      oauth2 (~> 0.8.0)
       omniauth (~> 1.0)
     omniauth-openid (1.0.1)
       omniauth (~> 1.0)
@@ -218,6 +224,7 @@ DEPENDENCIES
   nokogiri
   oauth-plugin (~> 0.4.0)
   omniauth
+  omniauth-google-oauth2
   omniauth-oauth
   omniauth-openid
   piwik_analytics (~> 1.0.1)
