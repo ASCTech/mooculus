@@ -21,12 +21,13 @@ gem 'devise'
 gem 'omniauth'
 gem 'omniauth-oauth'
 gem 'omniauth-openid'
+gem 'omniauth-google-oauth2'
 
 # use Nokogiri to parse the exercise files
 gem 'nokogiri'
 
 group :development do
-  gem 'capistrano'
+  gem 'capistrano', '~> 2.15.5'
   gem 'rvm-capistrano'
   gem 'thin'
 end
