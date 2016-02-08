@@ -1,6 +1,7 @@
 GEM
   remote: https://rubygems.org/
   specs:
+    mysql2 (0.3.11)
     actionmailer (3.2.12)
       actionpack (= 3.2.12)
       mail (~> 2.4.4)
@@ -211,6 +212,7 @@ DEPENDENCIES
   capistrano (~> 2.14.1)
   coffee-rails (~> 3.2.1)
   devise
+  mysql2
   nokogiri
   factory_girl_rails
   gravatar_image_tag
