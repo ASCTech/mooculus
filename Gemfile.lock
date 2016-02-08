@@ -1,7 +1,6 @@
 GEM
   remote: https://rubygems.org/
   specs:
-    mysql2 (0.3.11)
     actionmailer (3.2.12)
       actionpack (= 3.2.12)
       mail (~> 2.4.4)
@@ -23,7 +22,6 @@ GEM
       activesupport (= 3.2.12)
       arel (~> 3.0.2)
       tzinfo (~> 0.3.29)
-    libv8 (3.11.8.12)
     activeresource (3.2.12)
       activemodel (= 3.2.12)
       activesupport (= 3.2.12)
@@ -84,6 +82,7 @@ GEM
     less-rails (2.2.6)
       actionpack (>= 3.1)
       less (~> 2.2.0)
+    libv8 (3.11.8.12)
     mail (2.4.4)
       i18n (>= 0.4.0)
       mime-types (~> 1.16)
@@ -93,6 +92,7 @@ GEM
     mime-types (1.21)
     multi_json (1.6.0)
     multipart-post (1.1.5)
+    mysql2 (0.3.11)
     net-scp (1.1.0)
       net-ssh (>= 2.6.5)
     net-sftp (2.1.1)
@@ -100,6 +100,7 @@ GEM
     net-ssh (2.6.5)
     net-ssh-gateway (1.2.0)
       net-ssh (>= 2.6.5)
+    nokogiri (1.5.6)
     oauth (0.4.7)
     oauth-plugin (0.4.1)
       multi_json
@@ -112,20 +113,11 @@ GEM
       jwt (~> 0.1.4)
       multi_json (~> 1.0)
       rack (~> 1.2)
-    ref (1.0.2)
-    therubyracer (0.11.3)
-      ref
     omniauth (1.1.1)
       hashie (~> 1.2)
       rack
-    omniauth-google-oauth2 (0.2.6)
-      omniauth (> 1.0)
-      omniauth-oauth2 (~> 1.1)
     omniauth-oauth (1.0.1)
       oauth
-      omniauth (~> 1.0)
-    omniauth-oauth2 (1.1.1)
-      oauth2 (~> 0.8.0)
       omniauth (~> 1.0)
     omniauth-openid (1.0.1)
       omniauth (~> 1.0)
@@ -161,10 +153,10 @@ GEM
       rake (>= 0.8.7)
       rdoc (~> 3.4)
       thor (>= 0.14.6, < 2.0)
-    nokogiri (1.5.6)
     rake (10.0.3)
     rdoc (3.12.1)
       json (~> 1.4)
+    ref (1.0.2)
     ruby-openid (2.2.3)
     rvm-capistrano (1.2.7)
       capistrano (>= 2.0.0)
@@ -179,6 +171,8 @@ GEM
       rack (~> 1.0)
       tilt (~> 1.1, != 1.3.0)
     sqlite3 (1.3.7)
+    therubyracer (0.11.3)
+      ref
     thin (1.5.0)
       daemons (>= 1.0.9)
       eventmachine (>= 0.12.6)
@@ -209,34 +203,30 @@ PLATFORMS
 
 DEPENDENCIES
   ambry
-  capistrano (~> 2.14.1)
+  capistrano
   coffee-rails (~> 3.2.1)
   devise
-  mysql2
-  nokogiri
   factory_girl_rails
   gravatar_image_tag
   jquery-rails
   json
   less-rails
+  libv8
   merit
+  mysql2
+  nokogiri
   oauth-plugin (~> 0.4.0)
   omniauth
-  omniauth-google-oauth2
   omniauth-oauth
   omniauth-openid
-  libv8
-  therubyracer
   piwik_analytics (~> 1.0.1)
   rails
   rvm-capistrano
   sass-rails (~> 3.2.3)
   sqlite3
+  therubyracer
   thin
   tokenifier (~> 0.1)
   turbo-sprockets-rails3
   twitter-bootstrap-rails
   uglifier (>= 1.0.3)
-
-BUNDLED WITH
-   1.10.6

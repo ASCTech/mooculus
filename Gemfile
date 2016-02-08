@@ -27,7 +27,7 @@ gem 'omniauth-google-oauth2'
 gem 'nokogiri'
 
 group :development do
-  gem 'capistrano', '~> 2.14.1'
+  gem 'capistrano', '~> 2.15.5'
   gem 'rvm-capistrano'
   gem 'thin'
 end
